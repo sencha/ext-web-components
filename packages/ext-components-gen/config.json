@@ -1,0 +1,15 @@
+{
+  "seeDefaults":false,
+  "useDefaults":true,
+  "createNow":true,
+  "appName":"MyExtAngularApp",
+  "packageName":"my-ext-angular-app",
+  "version":"0.0.1",
+  "description":"my-ext-angular-app description for Angular app MyExtAngularApp",
+  "repositoryURL":"https://github.com/",
+  "keywords":["ExtAngular"],
+  "authorName":"Sencha, Inc.",
+  "license":"ISC",
+  "bugsURL":"https://github.com/",
+  "homepageURL":"http://www.sencha.com"
+}

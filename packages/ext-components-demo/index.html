@@ -1,0 +1,61 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ext-wc</title>
+
+  <script src="extjs/ext.js"></script>
+  <link href="extjs/ext.css" rel='stylesheet'/>
+
+  <script src="ext-web-components/ext-base.js"></script>
+  <script src="ext-web-components/ext-js.js"></script>
+  <script src="ext-web-components/ext-titlebar.js"></script>
+  <script src="ext-web-components/ext-panel.js"></script>
+  <script src="ext-web-components/ext-toolbar.js"></script>
+  <script src="ext-web-components/ext-container.js"></script>
+  <script src="ext-web-components/ext-grid.js"></script>
+  <script src="ext-web-components/ext-button.js"></script>
+  <script src="ext-web-components/ext-wc.js"></script>
+  <script>
+    window.customElements.define('ext-js', ExtJs)
+
+    window.customElements.define('ext-container', ExtContainer)
+    window.customElements.define('ext-button', ExtButton)
+    window.customElements.define('ext-grid', ExtGrid)
+    window.customElements.define('ext-toolbar', ExtToolbar)
+    window.customElements.define('ext-titlebar', ExtTitlebar)
+    window.customElements.define('ext-wc', ExtWc)
+  </script>
+
+</head>
+
+<body>
+  <ext-panel title="ExtWebComponents POC" layout="fit">
+
+    <ext-toolbar docked="top" layout="hbox">
+      <ext-button text="hello"></ext-button>
+      <ext-js config='{"xtype": "spacer"}'></ext-js>
+      <ext-container html="the text" margin="10 10 10 10"></ext-container>
+    </ext-toolbar>
+
+    <ext-grid 
+      config='
+      {
+        "title": "Grid with a single config",
+        "shadow": true,
+        "columns": [
+          {"text": "Name", "width": "250", "dataIndex": "name"},
+          {"text": "Email Address", "flex": "1", "dataIndex": "email"},
+          {"text": "Phone Number", "width": "250", "dataIndex": "phone"}
+        ],
+        "data": [
+          {"name": "Lisa", "email": "lisa@simpsons.com", "phone": "555-111-1224"},
+          {"name": "Bart", "email": "bart@simpsons.com", "phone": "555-222-1234"},
+          {"name": "Homer", "email": "homer@simpsons.com", "phone": "555-222-1244"},
+          {"name": "Marge", "email": "marge@simpsons.com", "phone": "555-222-1254"}
+        ]
+      }'>
+    </ext-grid>
+
+  </ext-panel>
+</body>
+</html>
