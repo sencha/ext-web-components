@@ -1,9 +1,10 @@
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!DOCTYPE HTML>
+<html manifest="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
-  <title>ext-wc</title>
-  <link rel="icon" type="image/x-icon" href="resources/favicon.ico">
+  <title>ExtComponents</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <script src="extjs/ext.js"></script>
   <link href="extjs/ext.css" rel='stylesheet'/>
   <script src="ext-components/base.js"></script>
@@ -19,7 +20,7 @@
 </head>
 
 <body>
-  <ext-panel title="ExtWebComponents POC" layout="fit" bodyPadding="10">
+  <ext-panel title="ExtComponents POC" layout="fit" bodyPadding="10">
 
     <ext-toolbar docked="top" layout="hbox">
       <ext-button text="hello"></ext-button>
@@ -27,7 +28,7 @@
       <ext-container html="the text" margin="10 10 10 10"></ext-container>
     </ext-toolbar>
 
-    <ext-panel
+    <ext-grid
       title="gridtitle"
       shadow=true
       data='[
@@ -41,7 +42,7 @@
         {"text": "Email Address", "flex": "1", "dataIndex": "email"},
         {"text": "Phone Number", "width": "250", "dataIndex": "phone"}
       ]'>
-   </ext-panel>
+   </ext-grid>
 
   </ext-panel>
 
