@@ -22,10 +22,21 @@
 <body>
   <ext-panel title="ExtComponents POC" layout="fit" bodyPadding="10">
 
+    <ext-titlebar docked="top" weight="10">
+      <ext-button iconCls="x-fa fa-bars" onTap="toggleTree()"></ext-button>
+      <span class="ext ext-sencha" style="margin: '0 5px 0 7px;', fontSize: '20px', width: '20px'"></span>
+      <span extjs href="#" class="app-title">Sencha ExtAngular 6.7 Kitchen Sink - Angular v{{ANGULAR_VERSION}}</span>
+    </ext-titlebar>
+
     <ext-toolbar docked="top" layout="hbox">
-      <ext-button text="hello"></ext-button>
+      <ext-button text="hello" onTap='tap(event)'></ext-button>
+      <div>div1<h1>div in the h1</h1></div>
+      <span>span1<h1>span in the h1</h1></span>
+
       <ext-spacer></ext-spacer>
+      <div style="margin:10px 10px 10px 10px;">the text</div>
       <ext-container html="the text" margin="10 10 10 10"></ext-container>
+
     </ext-toolbar>
 
     <ext-grid
@@ -45,6 +56,20 @@
    </ext-grid>
 
   </ext-panel>
+
+
+<script>
+function toggleTree() {
+  console.log('in toggleTree')
+}
+
+function tap(event) {
+  console.log('in tap')
+}
+
+
+</script>
+
 
 </body>
 </html>
