@@ -21,40 +21,42 @@
   <script src="ext-components/aa-router.component.js"></script>
 </head>
 
-<script>
-
-</script>
-
-
-
 <body>
-  <ext-panel title="ExtComponents POC" layout="fit" bodyPadding="0">
+  <ext-panel layout="fit" bodyPadding="0">
+
+    <!-- code button starts-->
+    <ext-button [weight]="5"
+      ui="fab"
+      iconCls="x-font-icon md-icon-code"
+      top="20"
+      right="-27"
+      zIndex="10000"
+      ontap="main.toggleCode()">
+    </ext-button>
+    <!-- code button ends-->
 
     <ext-titlebar docked="top" weight="10">
-      <ext-button iconCls="x-fa fa-bars" onTap="wmain.toggleTree()" onReady="main.readyButton1(event)"></ext-button>
+      <ext-button iconCls="x-fa fa-bars" onTap="main.toggleTree()" onReady="main.readyButton1(event)"></ext-button>
       <span class="ext ext-sencha" style="margin: '0 5px 0 7px;'; font-size: '20px'; width: '20px'"></span>
       <span extjs href="#" class="app-title">Sencha ExtComponents 7.0 Kitchen Sink</span>
     </ext-titlebar>
 
-    <ext-toolbar docked="top">
+    <!-- <ext-toolbar docked="top">
       <ext-button text="hello" onTap="main.test(event)" onReady="main.readyButton2(event)""></ext-button><div>div1<h1>div in the h1</h1></div>
       <span>
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
         </ul>
-
       </span>
       <ext-spacer></ext-spacer>
       <div id="app2" style="margin:10px 10px 10px 10px;">vthe text</div>
       <ext-container html="the text" margin="10 10 10 10"></ext-container>
-
-    </ext-toolbar>
+    </ext-toolbar> -->
 
     <!-- Navtree starts-->
     <ext-panel
       docked="left"
-      title="hi"
       layout="fit"
       border="true"
       shadow="true"
@@ -71,6 +73,39 @@
     <!-- Navtree ends-->
 
     <ext-router padding="10px"></ext-router>
+
+  <!-- code window starts-->
+  <ext-panel
+    docked="right"
+    width="300"
+    layout= "fit"
+    resizable="{ edges: 'west', dynamic: true }"
+    header="false"
+    border="true"
+    collapsible="{ direction: 'right' }"
+    onready="main.readyCodePanel(event)"
+    hidden="true"
+    collapsed="false">
+    <ext-container padding="10" html="<h1>code will be here...</h1>"/>
+    <!-- <tabpanel 
+      [shadow]="true"
+      [tabBar]="{layout: {pack: 'left'}}">
+      <panel *ngFor="let file of files" [hidden]="files.length > 0 ? false: true"
+        layout="fit"
+        [scrollable]="true"
+        [title]="file.name"
+        [ui]="'code-panel'"
+        tab="{ui: 'app-code-tab', flex: 0, minWidth: 120}"
+        [userSelectable]="{element: true, bodyElement: true}"
+        [html]="file.code">
+      </panel>
+    </tabpanel> -->
+  </ext-panel>
+  <!-- code window ends-->
+
+
+
+
 
   </ext-panel>
 

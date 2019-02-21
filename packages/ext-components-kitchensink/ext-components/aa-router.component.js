@@ -18,8 +18,6 @@ Router.prototype = {
     constructor: function (routes) {
         this.routes = routes;
         this.rootElem = document.getElementById('route');
-        console.log('rootElem')
-        console.log(this.rootElem)
     },
     init: function () {
         var r = this.routes;
@@ -84,11 +82,8 @@ class ExtRouter extends HTMLElement {
         var props = {};
         props.xtype = 'widget'
         props.element = el;
-        // console.dir('me.parentNode')
-        // console.dir(me.parentNode)
         me.ext = Ext.create(props)
         var nodeParentName = me.parentNode.nodeName
-        //console.log(me.parentNode)
         if (nodeParentName.substring(0, 3) == 'EXT') {
           var parentCmp = me.parentNode['ext'];
           var childCmp = me.ext;
