@@ -2,7 +2,8 @@ class ExtBase extends HTMLElement {
 
   constructor() {
     super()
-    this._prevProps = {}
+    console.log('cons')
+//    this._prevProps = {}
   }
 
   static get observedAttributes() {
@@ -21,12 +22,14 @@ class ExtBase extends HTMLElement {
   }
 
   attributeChangedCallback(attr, oldVal, newVal) {
+    console.log(attr)
+    console.dir(this)
     if (/^on/.test(attr)) {
       if (newVal) {
-        this[attr] = newVal;
+        //this[attr] = newVal;
         this.addEventListener(attr.slice(2), function() {eval(this[attr])});
       } else {
-        delete this[attr];
+        //delete this[attr];
         this.removeEventListener(attr.slice(2), this);
       }
     } else {
