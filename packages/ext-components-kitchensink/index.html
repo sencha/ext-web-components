@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html manifest="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
+  <title>ExtComponents</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script type="text/javascript" src="dist/bundle.js"></script>
+  <script src="extjs/ext.js"></script>
+  <link href="extjs/ext.css" rel='stylesheet'/>
+  <script src="ext-components/base.js"></script>
+  <script src="ext-components/ext-panel.component.js"></script>
+  <script src="ext-components/ext-titlebar.component.js"></script>
+  <script src="ext-components/ext-toolbar.component.js"></script>
+  <script src="ext-components/ext-treelist.component.js"></script>
+  <script src="ext-components/ext-container.component.js"></script>
+  <script src="ext-components/ext-grid.component.js"></script>
+  <script src="ext-components/ext-column.component.js"></script>
+  <script src="ext-components/ext-button.component.js"></script>
+  <script src="ext-components/ext-spacer.component.js"></script>
+  <script src="ext-components/aa-router.component.js"></script>
+</head>
+
+<script>
+
+</script>
+
+
+
+<body>
+  <ext-panel title="ExtComponents POC" layout="fit" bodyPadding="0">
+
+    <ext-titlebar docked="top" weight="10">
+      <ext-button iconCls="x-fa fa-bars" onTap="wmain.toggleTree()" onReady="main.readyButton1(event)"></ext-button>
+      <span class="ext ext-sencha" style="margin: '0 5px 0 7px;'; font-size: '20px'; width: '20px'"></span>
+      <span extjs href="#" class="app-title">Sencha ExtComponents 7.0 Kitchen Sink</span>
+    </ext-titlebar>
+
+    <ext-toolbar docked="top">
+      <ext-button text="hello" onTap="main.test(event)" onReady="main.readyButton2(event)""></ext-button><div>div1<h1>div in the h1</h1></div>
+      <span>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+
+      </span>
+      <ext-spacer></ext-spacer>
+      <div id="app2" style="margin:10px 10px 10px 10px;">vthe text</div>
+      <ext-container html="the text" margin="10 10 10 10"></ext-container>
+
+    </ext-toolbar>
+
+    <!-- Navtree starts-->
+    <ext-panel
+      docked="left"
+      title="hi"
+      layout="fit"
+      border="true"
+      shadow="true"
+      scrollable="y"
+      width="300">
+      <ext-treelist
+        ui="nav"
+        expanderFirst="false"
+        expanderOnly="false"
+        onready="main.readyTreelist(event)"
+        onselectionchange="main.selectionchange(event)" >
+      </ext-treelist>
+    </ext-panel>
+    <!-- Navtree ends-->
+
+    <ext-router padding="10px"></ext-router>
+
+  </ext-panel>
+
+
+</body>
+</html>
