@@ -233,7 +233,7 @@ class ExtBase extends HTMLElement {
   }
 
   disconnectedCallback() {
+    console.log('ExtBase disconnectedCallback ' + this.ext.xtype)
     delete this.ext
-    console.log('ExtBase disconnectedCallback')
   }
 }
