@@ -8,21 +8,12 @@
   <script type="text/javascript" src="dist/bundle.js"></script>
   <script src="extjs/ext.js"></script>
   <link href="extjs/ext.css" rel='stylesheet'/>
-  <script src="ext-components/base.js"></script>
-  <script src="ext-components/ext-panel.component.js"></script>
-  <script src="ext-components/ext-titlebar.component.js"></script>
-  <script src="ext-components/ext-toolbar.component.js"></script>
-  <script src="ext-components/ext-treelist.component.js"></script>
-  <script src="ext-components/ext-container.component.js"></script>
-  <script src="ext-components/ext-grid.component.js"></script>
-  <script src="ext-components/ext-column.component.js"></script>
-  <script src="ext-components/ext-button.component.js"></script>
-  <script src="ext-components/ext-spacer.component.js"></script>
-  <script src="ext-components/aa-router.component.js"></script>
 </head>
 
 <body>
-  <ext-panel layout="fit" bodyPadding="0">
+  <ext-panel
+  layout="fit"
+  bodyPadding="0">
 
     <!-- code button starts-->
     <ext-button [weight]="5"
@@ -71,8 +62,22 @@
       </ext-treelist>
     </ext-panel>
     <!-- Navtree ends-->
+<!-- 
+    bodyStyle: any = `
+    backgroundSize: 20px 20px;
+    borderWidth: 0px;
+    backgroundColor: #e8e8e8;
+    backgroundImage: 
+      linear-gradient(0deg, #f5f5f5 1.1px, transparent 0), 
+      linear-gradient(90deg, #f5f5f5 1.1px, transparent 0)`
+ -->
 
-    <ext-router padding="10px"></ext-router>
+
+    <ext-router
+      padding="10px"
+
+      
+      ></ext-router>
 
   <!-- code window starts-->
   <ext-panel
