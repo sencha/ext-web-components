@@ -14,13 +14,21 @@ import {
 import { Route } from '@sencha/ext-components';
 
 import main      from './view/main/main.js';
-import home      from './view/home/home.js';
-import basicgrid from './view/grids/corefeatures/basicgrid/basicgrid.js';
 import about     from './view/about/about.js';
-
-import button from './view/components/buttons/button/button.js';
+import home      from './view/home/home.js';
+import button    from './view/components/buttons/button/button.js';
+import basicgrid from './view/grids/corefeatures/basicgrid/basicgrid.js';
 
 (function () {
+
+  init();
+
+  function init() {
+    window.main = new main()
+    window.menu = setMenu();
+    window.routes = [];
+    getItems(window.menu, window.location.hash.substr(1));
+  }
 
   function getItems(items, hash) {
     items.forEach(function(item){
@@ -38,12 +46,9 @@ import button from './view/components/buttons/button/button.js';
     })
   }
 
-  function init() {
-
-    window.main = new main()
-
+  function setMenu() {
     var r = './src/view/'
-    window.menu = [
+    return [
       { text: 'Home', className: home, navIcon: 'icon-buttons', hash: 'home', url: r+'home/home.html', default: true },
       { text: 'About', className: about, navIcon: 'icon-buttons', hash: 'about', url: r+'about/about.html' },
       { text: 'Components', navIcon: 'icon-buttons', children: [
@@ -64,9 +69,6 @@ import button from './view/components/buttons/button/button.js';
         ]}
       ]}
     ]
-    window.routes = [];
-    var hash = window.location.hash.substr(1)
-    getItems(window.menu, hash);
   }
-  init();
+
 }());

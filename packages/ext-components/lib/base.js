@@ -97,10 +97,30 @@ export default class ExtBase extends HTMLElement {
         if (me.PROPERTIESOBJECT.hasOwnProperty(property)) {
           if(me.getAttribute(property) !== null) {
             try {
+              //console.log(property)
+              // if (property == 'collapsible') {
+              //   console.log('*****')
+              //   console.log(property)
+              // }
               props[property] = JSON.parse(me[property])
+              // if (property == 'collapsible') {
+              //   console.log('*****')
+              //   console.log(props[property])
+              // }
             }
             catch(e) {
               props[property] =  me[property]
+              // if (property == 'collapsible') {
+              //   console.log('*****catch')
+              //   console.log(props[property])
+              //   props[property] = { direction: 'left' }
+
+
+              // }
+              // else {
+              //   props[property] =  me[property]
+              // }
+
             }
           }
         }
@@ -174,6 +194,8 @@ export default class ExtBase extends HTMLElement {
   }
 
   addTheChild(parentCmp, childCmp) {
+    //console.log(parentCmp)
+    //console.log(childCmp)
     var parentxtype = parentCmp.xtype
     var childxtype = childCmp.xtype
 
