@@ -48,7 +48,15 @@ export default class main {
     console.log('in test')
   }
 
+  readyTree(event) {
+    var cmp = event.detail.cmp
+    this.treeCmp = cmp
+  }
+
   toggleTree() {
+    var collapsed = this.treeCmp.getCollapsed()
+    if (collapsed == true){collapsed = false} else{collapsed = true}
+    this.treeCmp.setCollapsed(collapsed)
     console.log('in toggleTree')
   }
 

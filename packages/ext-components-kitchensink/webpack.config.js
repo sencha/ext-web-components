@@ -1,4 +1,6 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = function (env) {
   return {
@@ -7,18 +9,13 @@ module.exports = function (env) {
     devtool: false,
     entry: './src/app.js',
     output: {
-      path: path.join(__dirname, './dist'),
-      filename: 'bundle.js',
-      libraryTarget: 'var',
-      library: 'EntryPoint'
-      //umdNamedDefine: true
-//      globalObject: `(typeof self !== 'undefined' ? self : this)`
+      path: path.join(__dirname, './build'),
+      filename: 'bundle.js'
     },
-
     module: {
       rules: [
         {
-          test: /\.(js|jsx)$/,
+          test: /\.(js)$/,
           exclude: /node_modules/,
           use: [
             'babel-loader'
@@ -33,27 +30,28 @@ module.exports = function (env) {
         }
       ]
     },
-
-
-
-  //   module: {
-  //     rules: [{
-  //         test: /\.js$/,
-  //         include: [path.resolve(__dirname, "./src/app")],
-  //         exclude: /node_modules/,
-  //         use: {
-  //             loader: 'babel-loader',
-  //             options: {
-  //                 presets: ['env']
-  //             }
-  //         }
-  //     }]
-  // },
-  plugins: [
-   ]
-
-
-
-
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: "index.html",
+        hash: true,
+        inject: "body"
+      }),
+      new CopyWebpackPlugin([{
+        from: 'extjs',
+        to: 'extjs'
+      }]),
+      new CopyWebpackPlugin([{
+        from: 'src',
+        to: 'src'
+      }]),
+      new CopyWebpackPlugin([{
+        from: 'resources',
+        to: 'resources'
+      }]),
+      new CopyWebpackPlugin([{
+        from: 'favicon.ico',
+        to: 'favicon.ico'
+      }]),
+    ]
   }
 }
