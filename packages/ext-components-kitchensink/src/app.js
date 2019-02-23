@@ -24,10 +24,26 @@ import basicgrid from './view/grids/corefeatures/basicgrid/basicgrid.js';
   init();
 
   function init() {
+
+    var url = './src/view/main/main.html';
     window.main = new main()
-    window.menu = setMenu();
-    window.routes = [];
-    getItems(window.menu, window.location.hash.substr(1));
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+      if (this.readyState === 4 && this.status === 200) {
+        window.menu = setMenu();
+        window.routes = [];
+        getItems(window.menu, window.location.hash.substr(1));
+
+        var me = this
+        //simulate delay with reads
+        //setTimeout(function() { 
+        document.body.innerHTML = me.responseText;
+        //}, 2000);
+      }
+    };
+    xhttp.open('GET', url, true);
+    xhttp.send();
   }
 
   function getItems(items, hash) {
