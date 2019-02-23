@@ -5,115 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
   <title>ExtComponents</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="resources/loader.css" rel='stylesheet'/>
   <script src="extjs/ext.js"></script>
   <link href="extjs/ext.css" rel='stylesheet'/>
 </head>
-
 <body>
-  <ext-panel layout="fit" bodyPadding="0">
-
-    <!-- code button starts-->
-    <ext-button [weight]="5"
-      ui="fab"
-      iconCls="x-font-icon md-icon-code"
-      top="20"
-      right="-27"
-      zIndex="10000"
-      ontap="main.toggleCode()">
-    </ext-button>
-    <!-- code button ends-->
-
-    <!-- Titlebar starts-->
-    <ext-titlebar docked="top" weight="10">
-      <ext-button iconCls="x-fa fa-bars" onTap="main.toggleTree()" onReady="main.readyButton1(event)"></ext-button>
-      <span class="ext ext-sencha" style="margin: '0 5px 0 7px;'; font-size: '20px'; width: '20px'"></span>
-      <span extjs href="#" class="app-title">Sencha ExtComponents 7.0 Kitchen Sink</span>
-    </ext-titlebar>
-    <!-- Titlebar ends-->
-
-    <!-- Breadcrumb starts-->
-    <ext-toolbar docked="top" [weight]="10">
-      <ext-container html="breadcrumb component here..."></ext-container>
-      <ext-dataview [itemTpl]="tplToolbar" [inline]="'true'" [itemCls]="'div.app-toolbar'" id="hide-overflow"
-        (childtap)="doClickToolbar($event)" onready="main.dataviewToolbarReady($event)">
-      </ext-dataview>
-    </ext-toolbar>
-    <!-- Breadcrumb ends-->
-
-    <!-- Navtree starts-->
-    <ext-panel
-      docked="left"
-      layout="fit"
-      border="true"
-      shadow="true"
-      scrollable="y"
-      resizable='{"edges": "east", "dynamic": "true"}'
-      header="false"
-      collapsible='{ "direction": "left" }'
-      collapsed="true"
-      width="300"
-      onready="main.readyTree(event)">
-      <ext-treelist
-        ui="nav"
-        expanderFirst="false"
-        expanderOnly="false"
-        onready="main.readyTreelist(event)"
-        onselectionchange="main.selectionchange(event)" >
-      </ext-treelist>
-    </ext-panel>
-    <!-- Navtree ends-->
-
-    <!-- Router starts-->
-    <ext-router
-      padding="10px">
-    </ext-router>
-    <!-- Router ends-->
-
-    <!-- code window starts-->
-    <ext-panel
-      docked="right"
-      width="300"
-      layout= "fit"
-      resizable="{ edges: 'west', dynamic: true }"
-      header="false"
-      border="true"
-      collapsible="{ direction: 'right' }"
-      onready="main.readyCodePanel(event)"
-      hidden="true"
-      collapsed="false">
-      <ext-container padding="10" html="<h1>code will be here...</h1>"/>
-      <!-- <tabpanel 
-        [shadow]="true"
-        [tabBar]="{layout: {pack: 'left'}}">
-        <panel *ngFor="let file of files" [hidden]="files.length > 0 ? false: true"
-          layout="fit"
-          [scrollable]="true"
-          [title]="file.name"
-          [ui]="'code-panel'"
-          tab="{ui: 'app-code-tab', flex: 0, minWidth: 120}"
-          [userSelectable]="{element: true, bodyElement: true}"
-          [html]="file.code">
-        </panel>
-      </tabpanel> -->
-    </ext-panel>
-    <!-- code window ends-->
-
-  </ext-panel>
+  <div id="loadingSplash">
+    <div id="loadingSplashTop"></div>
+    <div id="loadingSplashBottom"></div>
+    <div class="loading-fading-circle" id="loadingSplashCircles">
+      <div class="loading-circle-1 loading-circle"></div>
+      <div class="loading-circle-2 loading-circle"></div>
+      <div class="loading-circle-3 loading-circle"></div>
+      <div class="loading-circle-4 loading-circle"></div>
+      <div class="loading-circle-5 loading-circle"></div>
+      <div class="loading-circle-6 loading-circle"></div>
+      <div class="loading-circle-7 loading-circle"></div>
+      <div class="loading-circle-8 loading-circle"></div>
+      <div class="loading-circle-9 loading-circle"></div>
+      <div class="loading-circle-10 loading-circle"></div>
+      <div class="loading-circle-11 loading-circle"></div>
+      <div class="loading-circle-12 loading-circle"></div>
+    </div>
+  </div>
 </body>
 </html>
-
-
-
-
-    <!-- <ext-toolbar docked="top">
-      <ext-button text="hello" onTap="main.test(event)" onReady="main.readyButton2(event)""></ext-button><div>div1<h1>div in the h1</h1></div>
-      <span>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-        </ul>
-      </span>
-      <ext-spacer></ext-spacer>
-      <div id="app2" style="margin:10px 10px 10px 10px;">vthe text</div>
-      <ext-container html="the text" margin="10 10 10 10"></ext-container>
-    </ext-toolbar> -->

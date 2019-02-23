@@ -12,24 +12,6 @@ module.exports = function (env) {
       path: path.join(__dirname, './build'),
       filename: 'bundle.js'
     },
-    module: {
-      rules: [
-        {
-          test: /\.(js)$/,
-          exclude: /node_modules/,
-          use: [
-            'babel-loader'
-          ]
-        },
-        {
-          test: /\.css$/,
-          use: [
-              'style-loader', 
-              'css-loader'
-          ]
-        }
-      ]
-    },
     plugins: [
       new HtmlWebpackPlugin({
         template: "index.html",
@@ -52,6 +34,24 @@ module.exports = function (env) {
         from: 'favicon.ico',
         to: 'favicon.ico'
       }]),
-    ]
+    ],
+    module: {
+      rules: [
+        {
+          test: /\.(js)$/,
+          exclude: /node_modules/,
+          use: [
+            'babel-loader'
+          ]
+        },
+        {
+          test: /\.css$/,
+          use: [
+              'style-loader', 
+              'css-loader'
+          ]
+        }
+      ]
+    }
   }
 }
