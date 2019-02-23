@@ -11,7 +11,10 @@
     "dev": "webpack-dev-server --env.environment=development"
   },
   "devDependencies": {
+    "@sencha/ext-components": "^7.0.0",
     "@babel/core": "^7.3.3",
+
+    "@babel/runtime": "^7.3.1",
     "@babel/plugin-proposal-class-properties": "^7.3.3",
     "@babel/plugin-proposal-decorators": "^7.3.0",
     "@babel/plugin-proposal-export-namespace-from": "^7.2.0",

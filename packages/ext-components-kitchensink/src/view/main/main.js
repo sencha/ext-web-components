@@ -1,6 +1,9 @@
-window.main = {
+export default class main {
 
-  transform: function (node, parentUrl) {
+  constructor() {
+  }
+
+  transform(node, parentUrl) {
     node.leaf = !node.hasOwnProperty('children');
     node.iconCls = node.navIcon;
     if (node.text && !node.id) {
@@ -9,67 +12,71 @@ window.main = {
     node.name = node.text;
     if (node.children) {
         node.children = node.children.filter(node => !node.hidden);
-        node.children.forEach(child => main.transform(child, node.id))
+        node.children.forEach(child => this.transform(child, node.id))
     }
-  },
+  }
 
-  selectionchange: function(event) {
+  selectionchange(event) {
     var record = event.detail.record
     var hash = record.data.hash
     var childNum = record.childNodes.length
     if (childNum == 0 && hash != undefined) {
+      var className = record.data.className
+      window[className.name] = new className()
       window.location.hash = '#' + hash
     }
-  },
+  }
 
-  readyTreelist: function(event) {
-    var cmp = event.detail.cmp
+  readyTreelist(event) {
+    var treelistCmp = event.detail.cmp
     var navTreeRoot = {
       id: '/',
       text: 'All',
       children: window.menu
     }
-    main.transform(navTreeRoot, null); 
+    this.transform(navTreeRoot, null); 
     var treeStore = Ext.create('Ext.data.TreeStore', {
       rootVisible: true,
       root: navTreeRoot
     })
-    cmp.setStore(treeStore)
-  },
+    treelistCmp.setStore(treeStore)
+    var node = treelistCmp.getStore().findNode('hash', window.initHash);
+    treelistCmp.setSelection(node);
+  }
 
-  test: function() {
+  test() {
     console.log('in test')
-  },
+  }
 
-  toggleTree: function() {
+  toggleTree() {
     console.log('in toggleTree')
-  },
+  }
 
-  toggleCode: function() {
+  toggleCode() {
     console.log('in toggleCode')
-    var collapsed = window.home.codePanelCmp.getHidden()
+    var collapsed = this.codePanelCmp.getHidden()
     if(collapsed == true) { collapsed = false }
     else { collapsed = true }
-    window.home.codePanelCmp.setHidden(collapsed)
-  },
+    this.codePanelCmp.setHidden(collapsed)
+  }
 
-
-  tap: function(event) {
+  tap(event) {
     console.log('in tap')
-  },
+  }
 
-  readyCodePanel: function(event) {
+  readyCodePanel(event) {
     var cmp = event.detail.cmp
-    window.home.codePanelCmp = cmp
-  },
+    this.codePanelCmp = cmp
+  }
 
-  readyButton1: function(event) {
+  readyButton1(event) {
     //var cmp = event.detail.cmp
-  },
+  }
 
-  readyButton2: function(event) {
+  readyButton2(event) {
     var cmp = event.detail.cmp
     cmp.setText('goodbye')
   }
+
 
 }
