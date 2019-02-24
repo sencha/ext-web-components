@@ -1,11 +1,11 @@
 <ext-panel layout="fit" bodyPadding="0">
 
   <!-- code button starts-->
-  <ext-button [weight]="5"
+  <ext-button weight="5"
     ui="fab"
     iconCls="x-font-icon md-icon-code"
     top="20"
-    right="-27"
+    right="15"
     zIndex="10000"
     ontap="main.toggleCode()">
   </ext-button>
@@ -13,14 +13,14 @@
 
   <!-- Titlebar starts-->
   <ext-titlebar docked="top" weight="10">
-    <ext-button iconCls="x-fa fa-bars" onTap="main.toggleTree()" onReady="main.readyButton1(event)"></ext-button>
+    <ext-button iconCls="x-fa fa-bars" onTap="main.toggleTree()"></ext-button>
     <span class="ext ext-sencha" style="margin: '0 5px 0 7px;'; font-size: '20px'; width: '20px'"></span>
     <span extjs href="#" class="app-title">Sencha ExtComponents 7.0 Kitchen Sink</span>
   </ext-titlebar>
   <!-- Titlebar ends-->
 
   <!-- Breadcrumb starts-->
-  <ext-toolbar docked="top" [weight]="10">
+  <ext-toolbar docked="top" weight="10">
     <ext-container html="breadcrumb component here..."></ext-container>
     <ext-dataview [itemTpl]="tplToolbar" [inline]="'true'" [itemCls]="'div.app-toolbar'" id="hide-overflow"
       (childtap)="doClickToolbar($event)" onready="main.dataviewToolbarReady($event)">
@@ -37,10 +37,10 @@
     scrollable="y"
     resizable='{"edges": "east", "dynamic": "true"}'
     header="false"
-    collapsible='{ "direction": "left" }'
+    collapsible='{"direction": "left"}'
     collapsed="true"
     width="300"
-    onready="main.readyTree(event)">
+    onready="main.readyTreePanel(event)">
     <ext-treelist
       ui="nav"
       expanderFirst="false"
@@ -57,19 +57,17 @@
   </ext-router>
   <!-- Router ends-->
 
-  <!-- shadow="true"
-  tabBar="{layout: {pack: 'left'}}" -->
-
-
   <!-- code window starts-->
   <ext-panel
     docked="right"
     width="300"
     layout= "fit"
-    resizable="{ edges: 'west', dynamic: true }"
+    resizable='{"edges": "west", "dynamic": "true"}'
+    hideAnimation='{"type": "slideOut", "direction": "right", "duration": 100, "easing": "ease" }'
+    showAnimation='{"type": "slideIn", "direction": "left", "duration": 100, "easing": "ease" }'
     header="false"
     border="true"
-    collapsible="{ direction: 'right' }"
+    collapsible='{"direction": "right"}'
     onready="main.readyCodePanel(event)"
     hidden="true"
     collapsed="false">
