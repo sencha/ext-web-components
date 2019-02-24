@@ -18,20 +18,25 @@ function extractAll(dir) {
       extractAll(fullPath);
     } 
     else if (file === `${example}.js`) {
-//      try {
-//        console.log(example)
+      try {
         extractFrom(example, file, fullPath)
-//      } catch (e) {
-//        console.log(`Error extracting code from ${file}`, e)
-//      }
+      } catch (e) {
+       console.log(`Error extracting code from ${file}`, e)
+      }
     }
     else if (file === `${example}.html`) {
-//      try {
-//        console.log(example)
+      try {
         extractFrom(example, file, fullPath)
-//      } catch (e) {
- //       console.log(`Error extracting code from ${file}`, e)
-//      }
+      } catch (e) {
+        console.log(`Error extracting code from ${file}`, e)
+      }
+    }
+    else if (file === `${example}.css`) {
+      try {
+        extractFrom(example, file, fullPath)
+      } catch (e) {
+        console.log(`Error extracting code from ${file}`, e)
+      }
     }
   }
 }

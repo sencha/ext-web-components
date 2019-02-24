@@ -31,7 +31,9 @@
     "html-webpack-plugin": "^3.2.0",
     "copy-webpack-plugin": "^5.0.0",
     "webpack-shell-plugin-next": "^0.6.4",
-    "highlight.js": "~9.14.2",
+    "css-loader": "^2.1.0",
+    "style-loader": "^0.23.1",
+    "highlightjs": "~9.12.0",
     
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3",

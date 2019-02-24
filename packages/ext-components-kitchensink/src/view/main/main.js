@@ -1,9 +1,19 @@
-import hljs from 'highlight.js/lib/highlight'
-hljs.registerLanguage('typescript', require('highlight.js/lib/languages/typescript'));
-hljs.registerLanguage('http', require('highlight.js/lib/languages/http'));
-hljs.registerLanguage('css', require('highlight.js/lib/languages/css'));
-hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'));
-hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'));
+//import hljs from 'highlight.js';
+import hljs, { highlightBlock } from 'highlightjs';
+import 'highlightjs/styles/atom-one-dark.css';
+import H_js from './H_js';
+hljs.registerLanguage('js', H_js);
+import './main.css';
+
+//import javascript from 'highlight.js/lib/languages/javascript';
+//hljs.registerLanguage('javascript', javascript);
+
+//import hljs from 'highlight.js/lib/highlight'
+//hljs.registerLanguage('typescript', require('highlight.js/lib/languages/typescript'));
+//hljs.registerLanguage('http', require('highlight.js/lib/languages/http'));
+//hljs.registerLanguage('css', require('highlight.js/lib/languages/css'));
+//hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'));
+//hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'));
 
 export default class main {
 
@@ -72,21 +82,11 @@ export default class main {
 
   cssClassName = (file) => {
     if (file.endsWith(".html")) {
-      return 'html';
+      return 'xml';
     }
-
     if (file.endsWith(".js")) {
       return 'js';
     }
-
-  //   if (file.endsWith(".css")) {
-  //       return 'css';
-	//   }
-  //   else if(file.endsWith(".TS") || file.endsWith(".ts")) {
-  //     return 'typescript'
-  //   }
-
-	// return "js xml";
 }
 
 
@@ -99,16 +99,31 @@ export default class main {
         me.tabPanelCmp.add({
           xtype: 'panel',
           ui: 'code-panel',
+          layout: 'fit',
+          userSelectable: true,
+          scrollable: true,
           tab: {ui: 'app-code-tab', flex: 0, minWidth: 120},
           title: file,
-          html: `<pre><code mwlHighlightJs id='${file}' class='code ${this.cssClassName(file)}'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
+          //html: `<pre><code mwlHighlightJs id='${file}' class='code ${this.cssClassName(file)}'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
+
+          html: `<pre><code class='code'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
         })
       })
-      document.querySelectorAll(".code").forEach((el) => {
-        // console.log('here')
-        // console.log(el)
-        hljs.highlightBlock(el);
-       });
+
+      setTimeout(function() {
+
+        console.log(hljs)
+        document.querySelectorAll('pre code').forEach((block) => {
+          console.log(block)
+          hljs.highlightBlock(block);
+        });
+
+        // document.querySelectorAll(".code").forEach((el) => {
+        //   console.log('here')
+        //   console.log(el)
+        //   hljs.highlightBlock(el);
+        // });
+      },50);
     }
   }
 
