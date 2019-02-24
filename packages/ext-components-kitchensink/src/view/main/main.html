@@ -57,6 +57,10 @@
   </ext-router>
   <!-- Router ends-->
 
+  <!-- shadow="true"
+  tabBar="{layout: {pack: 'left'}}" -->
+
+
   <!-- code window starts-->
   <ext-panel
     docked="right"
@@ -69,20 +73,11 @@
     onready="main.readyCodePanel(event)"
     hidden="true"
     collapsed="false">
-    <ext-container padding="10" html="<h1>code will be here...</h1>"/>
-    <!-- <tabpanel 
-      [shadow]="true"
-      [tabBar]="{layout: {pack: 'left'}}">
-      <panel *ngFor="let file of files" [hidden]="files.length > 0 ? false: true"
-        layout="fit"
-        [scrollable]="true"
-        [title]="file.name"
-        [ui]="'code-panel'"
-        tab="{ui: 'app-code-tab', flex: 0, minWidth: 120}"
-        [userSelectable]="{element: true, bodyElement: true}"
-        [html]="file.code">
-      </panel>
-    </tabpanel> -->
+    <ext-tabpanel 
+      shadow="true"
+      tabBar='{"layout": {"pack": "left"}}'
+      onready="main.readyTabPanel(event)">
+    </ext-tabpanel>
   </ext-panel>
   <!-- code window ends-->
 

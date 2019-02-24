@@ -1,7 +1,7 @@
 export default class home {
 
   constructor() {
-    //console.log('about constructor')
+    //main.setCodeTabs()
   }
 
   readyButton1(event) {

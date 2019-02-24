@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const WebpackShellPlugin = require('webpack-shell-plugin-next')
+
 
 module.exports = function (env) {
   return {
@@ -34,6 +36,13 @@ module.exports = function (env) {
         from: 'favicon.ico',
         to: 'favicon.ico'
       }]),
+      new WebpackShellPlugin({
+        onBuildEnd:{
+          scripts: ['node extract-code.js'],
+          blocking: false,
+          parallel: true
+        }
+      }),
     ],
     module: {
       rules: [

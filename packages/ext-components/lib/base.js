@@ -164,6 +164,9 @@ export default class ExtBase extends HTMLElement {
             props.renderTo = me.parentNode
           }
           me.ext = Ext.create(props)
+          console.log(props.xtype)
+          console.log(props)
+          console.log(me.ext)
           //console.log(`Ext.create(${props.xtype})`)
           me.dispatchEvent(new CustomEvent('ready',{detail:{cmp: me.ext}}))
 
@@ -194,10 +197,11 @@ export default class ExtBase extends HTMLElement {
   }
 
   addTheChild(parentCmp, childCmp) {
-    //console.log(parentCmp)
     //console.log(childCmp)
-    var parentxtype = parentCmp.xtype
+    //console.log(parentCmp)
     var childxtype = childCmp.xtype
+    var parentxtype = parentCmp.xtype
+
 
     if (this.ext.initialConfig.align != undefined) {
       if (parentxtype != 'titlebar' && parentxtype != 'grid' && parentxtype != 'button') {
