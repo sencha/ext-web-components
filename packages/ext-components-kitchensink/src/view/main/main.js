@@ -105,24 +105,13 @@ export default class main {
           tab: {ui: 'app-code-tab', flex: 0, minWidth: 120},
           title: file,
           //html: `<pre><code mwlHighlightJs id='${file}' class='code ${this.cssClassName(file)}'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
-
           html: `<pre><code class='code'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
         })
       })
-
       setTimeout(function() {
-
-        console.log(hljs)
         document.querySelectorAll('pre code').forEach((block) => {
-          console.log(block)
           hljs.highlightBlock(block);
         });
-
-        // document.querySelectorAll(".code").forEach((el) => {
-        //   console.log('here')
-        //   console.log(el)
-        //   hljs.highlightBlock(el);
-        // });
       },50);
     }
   }
@@ -135,6 +124,7 @@ export default class main {
   readyTabPanel(event) {
     var cmp = event.detail.cmp
     this.tabPanelCmp = cmp
+    this.setCodeTabs()
   }
 
 }

@@ -40,6 +40,7 @@ import basicgrid from './view/grids/corefeatures/basicgrid/basicgrid.js';
         //simulate delay with reads
         //setTimeout(function() { 
         document.body.innerHTML = me.responseText;
+        //window.main.setCodeTabs()
         //}, 2000);
       }
     };
