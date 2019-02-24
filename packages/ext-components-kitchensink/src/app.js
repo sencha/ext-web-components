@@ -1,5 +1,6 @@
 import {
   ExtPanel,
+  ExtTabpanel,
   ExtTitlebar,
   ExtToolbar,
   ExtTreelist,
