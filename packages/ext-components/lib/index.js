@@ -1,5 +1,6 @@
 
 import ExtPanel from './ext-panel.component';
+import ExtSearchfield from './ext-searchfield.component';
 import ExtTabpanel from './ext-tabpanel.component';
 import ExtTitlebar from './ext-titlebar.component';
 import ExtToolbar from './ext-toolbar.component';
@@ -14,6 +15,7 @@ import { Route } from './aa-router.component';
 
 export { 
   ExtPanel,
+  ExtSearchfield,
   ExtTabpanel,
   ExtTitlebar,
   ExtToolbar,
