@@ -1,3 +1,4 @@
+import './home.css';
 export default class home {
 
   constructor() {}
