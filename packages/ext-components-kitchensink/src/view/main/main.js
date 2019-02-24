@@ -69,6 +69,27 @@ export default class main {
     }
   }
 
+
+  cssClassName = (file) => {
+    if (file.endsWith(".html")) {
+      return 'html';
+    }
+
+    if (file.endsWith(".js")) {
+      return 'js';
+    }
+
+  //   if (file.endsWith(".css")) {
+  //       return 'css';
+	//   }
+  //   else if(file.endsWith(".TS") || file.endsWith(".ts")) {
+  //     return 'typescript'
+  //   }
+
+	// return "js xml";
+}
+
+
   setCodeTabs() {
     var codeMap = _code[window.location.hash.substr(1)]
     var me = this
@@ -80,12 +101,12 @@ export default class main {
           ui: 'code-panel',
           tab: {ui: 'app-code-tab', flex: 0, minWidth: 120},
           title: file,
-          html: `<pre><code mwlHighlightJs id='${file}' class='code '>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
+          html: `<pre><code mwlHighlightJs id='${file}' class='code ${this.cssClassName(file)}'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
         })
       })
       document.querySelectorAll(".code").forEach((el) => {
-        console.log('here')
-        console.log(el)
+        // console.log('here')
+        // console.log(el)
         hljs.highlightBlock(el);
        });
     }
