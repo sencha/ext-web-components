@@ -2,24 +2,12 @@ export default class ExtBase extends HTMLElement {
 
   constructor() {
     super()
-    // console.dir(this)
-    // console.log('before')
-    // var me = this
-    // for (let item of me.children) {
-    //   console.log(item.nodeName) 
-    // }
-    // console.log('after')
   }
 
   static get observedAttributes() {
     var attrs = []
     for (var property in this.PROPERTIESOBJECT()) {
-      //console.log(property)
-      //if (this.PROPERTIESOBJECT.hasOwnProperty(property)) {
-      //  if(this.getAttribute(property) !== null) {
-          attrs.push(property)
-      //  }
-      //}
+      attrs.push(property)
     }
     this.EVENTS().forEach(function (eventparameter, index, array) {
       attrs.push('on'+eventparameter.name)
@@ -37,7 +25,6 @@ export default class ExtBase extends HTMLElement {
       }
     } else {
       if (this.ext === undefined) {
-        //this.connectedCallback()
       }
       else {
         var method = 'set' + attr[0].toUpperCase() + attr.substring(1)
@@ -97,30 +84,10 @@ export default class ExtBase extends HTMLElement {
         if (me.PROPERTIESOBJECT.hasOwnProperty(property)) {
           if(me.getAttribute(property) !== null) {
             try {
-              //console.log(property)
-              // if (property == 'collapsible') {
-              //   console.log('*****')
-              //   console.log(property)
-              // }
               props[property] = JSON.parse(me[property])
-              // if (property == 'collapsible') {
-              //   console.log('*****')
-              //   console.log(props[property])
-              // }
             }
             catch(e) {
               props[property] =  me[property]
-              // if (property == 'collapsible') {
-              //   console.log('*****catch')
-              //   console.log(props[property])
-              //   props[property] = { direction: 'left' }
-
-
-              // }
-              // else {
-              //   props[property] =  me[property]
-              // }
-
             }
           }
         }
@@ -147,10 +114,8 @@ export default class ExtBase extends HTMLElement {
             //console.log('\nXTYPE: ' + props.xtype)
             //console.log('parent: ' + nodeParentName)
             me.ext = Ext.create(props)
-            //console.log(`launch: Ext.create(${props.xtype})`)
             me.dispatchEvent(new CustomEvent('ready',{detail:{cmp: me.ext}}))
             if (nodeParentName == 'BODY') {
-              //console.log(`Ext.Viewport.add(${me.ext.xtype})`)
               Ext.Viewport.add([me.ext])
             }
           }
@@ -164,18 +129,13 @@ export default class ExtBase extends HTMLElement {
             props.renderTo = me.parentNode
           }
           me.ext = Ext.create(props)
-          console.log(props.xtype)
-          console.log(props)
-          console.log(me.ext)
           //console.log(`Ext.create(${props.xtype})`)
           me.dispatchEvent(new CustomEvent('ready',{detail:{cmp: me.ext}}))
-
           if (nodeParentName.substring(0, 3) == 'EXT') {
             parentCmp = me.parentNode['ext'];
             childCmp = me.ext;
             me.addTheChild(parentCmp, childCmp)
           }
-
           setTimeout(function() { 
             var i = 0
             var notExtItem = 0

@@ -30,8 +30,8 @@
 
     "html-webpack-plugin": "^3.2.0",
     "copy-webpack-plugin": "^5.0.0",
-
     "webpack-shell-plugin-next": "^0.6.4",
+    "highlight.js": "~9.14.2",
     
     "webpack": "^4.29.5",
     "webpack-cli": "^3.2.3",
