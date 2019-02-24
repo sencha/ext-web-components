@@ -1,23 +1,25 @@
-//import hljs from 'highlight.js';
-import hljs, { highlightBlock } from 'highlightjs';
+import hljs from 'highlightjs';
 import 'highlightjs/styles/atom-one-dark.css';
-import H_js from './H_js';
-hljs.registerLanguage('js', H_js);
+//import H_js from './H_js';
+//hljs.registerLanguage('js', H_js);
 import './main.css';
-
-//import javascript from 'highlight.js/lib/languages/javascript';
-//hljs.registerLanguage('javascript', javascript);
-
-//import hljs from 'highlight.js/lib/highlight'
-//hljs.registerLanguage('typescript', require('highlight.js/lib/languages/typescript'));
-//hljs.registerLanguage('http', require('highlight.js/lib/languages/http'));
-//hljs.registerLanguage('css', require('highlight.js/lib/languages/css'));
-//hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'));
-//hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript'));
 
 export default class main {
 
   constructor() {}
+
+  containsMatches(node) {
+    const found = node.data.name.match(this.filterRegex) || node.childNodes.some(child => this.containsMatches(child));
+    if (found) node.expand();
+    node.data.text = node.data.name.replace(this.filterRegex, '<span style="color:#2196F3;font-weight:bold">$1</span>')
+    return found;
+  }
+
+  filterNav = (event) => {
+    var value = event.detail.newValue
+    this.filterRegex = new RegExp(`(${Ext.String.escapeRegex(value)})`, 'i');
+    this.treelistCmp.getStore().filterBy(record => this.containsMatches(record));
+  }
 
   toggleCode() {
     var collapsed = this.codePanelCmp.getHidden()
@@ -38,7 +40,7 @@ export default class main {
   }
 
   readyTreelist(event) {
-    var treelistCmp = event.detail.cmp
+    this.treelistCmp = event.detail.cmp
     var navTreeRoot = {
       id: '/',
       text: 'All',
@@ -49,9 +51,9 @@ export default class main {
       rootVisible: true,
       root: navTreeRoot
     })
-    treelistCmp.setStore(treeStore)
-    var node = treelistCmp.getStore().findNode('hash', window.initHash);
-    treelistCmp.setSelection(node);
+    this.treelistCmp.setStore(treeStore)
+    var node = this.treelistCmp.getStore().findNode('hash', window.initHash);
+    this.treelistCmp.setSelection(node);
   }
 
   transform(node, parentUrl) {
@@ -79,22 +81,24 @@ export default class main {
     }
   }
 
-
   cssClassName = (file) => {
-    if (file.endsWith(".html")) {
-      return 'xml';
-    }
-    if (file.endsWith(".js")) {
-      return 'js';
-    }
-}
-
+  if (file.endsWith(".html")) {return 'html'}
+  if (file.endsWith(".js")) {return 'js'}
+  }
 
   setCodeTabs() {
-    var codeMap = _code[window.location.hash.substr(1)]
+    //mjg initial one is done twice
+    var hash = window.location.hash.substr(1)
+    if(window.location.hash.substr(1) == '') {
+      //mjg loop through window.routes to find default
+      hash = 'home'
+      window.home = new window.routes[0].className;
+    }
+    var codeMap = _code[hash]
     var me = this
     if(me.tabPanelCmp != undefined) {
       me.tabPanelCmp.removeAll()
+      //mjg order these html, js. css
       Object.keys(codeMap).map((file) => {
         me.tabPanelCmp.add({
           xtype: 'panel',

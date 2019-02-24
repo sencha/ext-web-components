@@ -28,6 +28,8 @@
   </ext-toolbar>
   <!-- Breadcrumb ends-->
 
+  <!-- onchange="this.filterNav" -->
+
   <!-- Navtree starts-->
   <ext-panel
     docked="left"
@@ -41,12 +43,19 @@
     collapsed="true"
     width="300px"
     onready="main.readyTreePanel(event)">
+    <ext-searchfield
+      flex="1"
+      docked="top"
+      ui="faded"
+      margin="7px"
+      onchange="main.filterNav(event)">
+    </ext-searchfield>
     <ext-treelist
       ui="nav"
       expanderFirst="false"
       expanderOnly="false"
       onready="main.readyTreelist(event)"
-      onselectionchange="main.selectionchange(event)" >
+      onselectionchange="main.selectionchange(event)">
     </ext-treelist>
   </ext-panel>
   <!-- Navtree ends-->
@@ -60,7 +69,7 @@
   <!-- code window starts-->
   <ext-panel
     docked="right"
-    width="800px"
+    width="850px"
     layout= "fit"
     resizable='{"edges": "west", "dynamic": "true"}'
     hideAnimation='{"type": "slideOut", "direction": "right", "duration": 100, "easing": "ease" }'

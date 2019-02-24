@@ -1,5 +1,6 @@
 import {
   ExtPanel,
+  ExtSearchfield,
   ExtTabpanel,
   ExtTitlebar,
   ExtToolbar,
@@ -40,7 +41,6 @@ import basicgrid from './view/grids/corefeatures/basicgrid/basicgrid.js';
         //simulate delay with reads
         //setTimeout(function() { 
         document.body.innerHTML = me.responseText;
-        //window.main.setCodeTabs()
         //}, 2000);
       }
     };
@@ -56,7 +56,7 @@ import basicgrid from './view/grids/corefeatures/basicgrid/basicgrid.js';
           window[hash] = new item.className()
           window.initHash = hash
         }
-        window.routes.push(new Route(item.hash, item.url, item.default))
+        window.routes.push(new Route(item.hash, item.className, item.url, item.default))
       }
       else {
         getItems(item.children, hash)
@@ -67,7 +67,7 @@ import basicgrid from './view/grids/corefeatures/basicgrid/basicgrid.js';
   function setMenu() {
     var r = './src/view/'
     return [
-      { text: 'Home', className: home, navIcon: 'icon-buttons', hash: 'home', url: r+'home/home.html', default: true },
+      { text: 'Home', navIcon: 'icon-buttons', hash: 'home', className: home, url: r+'home/home.html', default: true },
       { text: 'About', className: about, navIcon: 'icon-buttons', hash: 'about', url: r+'about/about.html' },
       { text: 'Components', navIcon: 'icon-buttons', children: [
         { text: 'Buttons', navIcon: 'icon-buttons', children: [

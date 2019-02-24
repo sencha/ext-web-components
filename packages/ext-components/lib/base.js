@@ -210,6 +210,8 @@ export default class ExtBase extends HTMLElement {
         return
       } else {
         console.log('child not added')
+        console.log(childCmp)
+        console.log(parentCmp)
       }
     } 
     if (childxtype === 'toolbar' && Ext.isClassic === true) {
@@ -234,6 +236,8 @@ export default class ExtBase extends HTMLElement {
       return
     }
     console.log('child not added')
+    console.log(childCmp)
+    console.log(parentCmp)
   }
 
   disconnectedCallback() {
