@@ -67,8 +67,8 @@ import basicgrid from './view/grids/corefeatures/basicgrid/basicgrid.js';
   function setMenu() {
     var r = './src/view/'
     return [
-      { text: 'Home', navIcon: 'icon-buttons', hash: 'home', className: home, url: r+'home/home.html', default: true },
-      { text: 'About', className: about, navIcon: 'icon-buttons', hash: 'about', url: r+'about/about.html' },
+      {text:'Home', hash:'home', className:home, url:r+'home/home.html',  navIcon:'x-fa fa-home',    default: true},
+      {text:'About',hash:'about',className:about,url:r+'about/about.html',navIcon:'x-fa fa-question'},
       { text: 'Components', navIcon: 'icon-buttons', children: [
         { text: 'Buttons', navIcon: 'icon-buttons', children: [
           { text: 'Button', className: button, navIcon: 'icon-buttons', hash: 'button', url: r+'components/buttons/button/button.html' },
