@@ -1,8 +1,5 @@
 export default class ButtonComponent {
 
-  constructor() {
-  }
-
   readyButton1(event) {
     var cmp = event.detail.cmp
     this.button1 = event.detail.cmp
