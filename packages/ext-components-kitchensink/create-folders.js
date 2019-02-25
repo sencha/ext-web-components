@@ -17,7 +17,7 @@ function createFolders(items, folderPath) {
 
       var htmlData = 
 `<ext-button 
-  text="hello"
+  text="${item.hash}"
   onready="${item.hash}.readyButton1(event)"
   ontap="${item.hash}.tapButton1(event)">
 </ext-button>
