@@ -25,10 +25,6 @@ module.exports = function (env) {
         to: 'extjs'
       }]),
       new CopyWebpackPlugin([{
-        from: 'src',
-        to: 'src'
-      }]),
-      new CopyWebpackPlugin([{
         from: 'resources',
         to: 'resources'
       }]),
