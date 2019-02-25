@@ -7,6 +7,7 @@ import MainComponent from './view/main/MainComponent.js';
   init();
 
   function init() {
+    window.examplesRoot = './src/view/'
     window.main = new MainComponent()
     document.body.innerHTML = window._code['main']['MainComponent' + '.html']
     window.menu = getMenu();

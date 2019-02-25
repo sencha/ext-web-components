@@ -107,7 +107,7 @@ export default class MainComponent {
           layout: 'fit',
           userSelectable: true,
           scrollable: true,
-          tab: {ui: 'app-code-tab', flex: 0, minWidth: 120},
+          tab: {ui: 'app-code-tab', flex: 0, minWidth: 250},
           title: file,
           //html: `<pre><code mwlHighlightJs id='${file}' class='code ${this.csscomponent(file)}'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
           html: `<pre><code class='code'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`

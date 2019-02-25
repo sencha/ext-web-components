@@ -1,177 +1,347 @@
-class SegmentedButtonComponent {}
-class SplitButtonComponent {}
-class ColorPickerComponent {}
-class CarouselComponent {}
-class SimpleDragDropComponent {}
-class ConstraintsDragDropComponent {}
-class ProxiesDragDropComponent {}
-class HandlesDragDropComponent {}
-class GroupsDragDropComponent {}
-class DataDragDropComponent {}
-class FilesDragDropComponent {}
-class DrawComponent {}
-class CheckBoxFieldComponent {}
-class ComboBoxFieldComponent {}
-class MultiSelectComboBoxFieldComponent {}
-class ContainerFieldComponent {}
-class DatePickerFieldComponent {}
-class EmailFieldComponent  {}
-class FieldSetComponent {}
-class FileFieldComponent {}
-class FormPanelComponent {}
-class NumberFieldComponent {}
-class PasswordFieldComponent {}
-class RadioFieldComponent {}
-class SearchFieldComponent {}
-class SelectFieldComponent {}
-class SliderFieldComponent {}
-class SpinnerFieldComponent {}
-class TextAreaFieldComponent {}
-class TextFieldComponent {}
-class TimeFieldComponent {}
-class ToggleFieldComponent {}
-class URLFieldComponent {}
-class ValidationComponent {}
-class DefaultGaugeComponent {}
-class NeedleGaugeComponent {}
-class CardLayoutComponent {}
-class CenterLayoutComponent {}
-class FitLayoutComponent {}
-class FormLayoutComponent {}
-class hboxLayoutComponent {}
-class ResizableLayoutComponent {}
-class vboxLayoutComponent {}
-class BasicListComponent {}
-class DisclosureListComponent {}
-class GroupedListComponent {}
-class NestedListComponent {}
-class PullRefreshListComponent {}
-class PagingListComponent {}
-class BasicAccordionSwiperComponent {}
-class BasicStepSwiperComponent {}
-class UndoableAccordionSwiperComponent {}
-class UndoableStepSwiperComponent {}
-class VideoComponent {}
-class AudioComponent {}
-class BasicPanelComponent {}
-class ResizableHandleComponent {}
-class CollapsiblePanelComponent {}
-class BasicDatePanelComponent {}
-class AdvancedDatePanelComponent {}
-class TimePanelComponent {}
-class DialogPopupComponent {}
-class MessagePopupComponent {}
-class ToastPopupComponent {}
-class ProgressBarComponent {}
-class RippleComponent {}
-class SheetComponent {}
-class BasicTabComponent {}
-class BottomTabComponent {}
-class IconTabComponent {}
-class DesktopTabComponent {}
-class ClosableTabComponent {}
-class ScrollingTabComponent {}
-class TabBarComponent {}
-class TitleBarComponent {}
-class ToolBarComponent {}
-class ToolTipComponent {}
-class TouchEventsComponent {}
-class WizardComponent {}
-class GroupedGridComponent {}
-class LockingGridComponent {}
-class EditableGridComponent {}
-class XMLGridComponent {}
-class GridToolsComponent {}
-class RowExpanderComponent {}
-class RowBodyComponent {}
-class SummaryRowComponent {}
-class GridFilteringComponent {}
-class ViewOptionsComponent {}
-class BigDataComponent {}
-class SelectAndCopyComponent {}
-class ReconfigureGridComponent {}
-class ComponentsInCellsComponent {}
-class StockTickerComponent {}
-class TreeListComponent {}
-class TreeComponent {}
-class EditableTreeComponent {}
-class TreeGridComponent {}
-class TreeDecorationsComponent {}
-class HeterogeneousTreeComponent {}
-class CalendarPanelComponent {}
-class CalendarMonthViewComponent {}
-class CalendarWeekViewComponent {}
-class CalendarDaysViewComponent {}
-class CalendarTimezoneSupportComponent {}
-class CalendarDragResizeValidationComponent {}
-class BasicAreaComponent {}
-class StackedAreaComponent {}
-class FullStackedAreaComponent {}
-class NegativeValuesAreaComponent {}
-class BasicBarComponent {}
-class StackedBarComponent {}
-class FullStackedBarComponent {}
-class BoxPlotComponent {}
-class BasicColumnComponent {}
-class StackedComponent {}
-class ColumnWithRendererComponent {}
-class MultiaxisColumnComponent {}
-class Basic3DColumnComponent {}
-class ThreeDGroupedComponent {}
-class ThreeDStackedComponent {}
-class NegativeValuesComponent {}
-class ThreeDColumnWithRendererComponent {}
-class CandlestickComponent {}
-class OHLCComponent {}
-class BasicGaugeChartComponent {}
-class BasicLineComponent {}
-class BasicMarkersComponent {}
-class SplineComponent {}
-class SplineMarkersComponent {}
-class PlotComponent {}
-class WithRendererComponent {}
-class RealtimeComponent {}
-class NavigatorComponent {}
-class BasicPieComponent {}
-class SpieComponent {}
-class DonutComponent {}
-class DoubleDonutComponent {}
-class ThreeDPieComponent {}
-class BasicRadarComponent {}
-class FilledComponent {}
-class MarkedComponent {}
-class MultiaxisComponent {}
-class BasicScatterComponent {}
-class CustomIconsComponent {}
-class BubbleComponent {}
-class PurchasesByDayComponent {}
-class SalesPerEmployeeComponent {}
-class PivotHeatmapComponent {}
-class ConfigurablePivotHeatmapComponent {}
-class OrgChartComponent {}
-class PackComponent {}
-class SunburstComponent {}
-class ZoomableSunburstComponent {}
-class TreeHierarchyComponent {}
-class TreeMapComponent {}
-class TreeMapToolTipComponent {}
-class ConfigurablePivotTreeMapComponent {}
-class OutlineLayoutComponent {}
-class CompactLayoutComponent {}
-class TabularLayoutComponent {}
-class CollapsibleComponent {}
-class DataChangesComponent {}
-class PivotGridWidgetsComponent {}
-class DrilldownPluginComponent {}
-class ConfiguratorPluginComponent {}
-class RangeEditorPluginComponent {}
-class ExporterPluginComponent {}
+// class SegmentedButtonComponent {}
+// class SplitButtonComponent {}
+// class ColorPickerComponent {}
+// class CarouselComponent {}
+// class SimpleDragDropComponent {}
+// class ConstraintsDragDropComponent {}
+// class ProxiesDragDropComponent {}
+// class HandlesDragDropComponent {}
+// class GroupsDragDropComponent {}
+// class DataDragDropComponent {}
+// class FilesDragDropComponent {}
+// class DrawComponent {}
+// class CheckBoxFieldComponent {}
+// class ComboBoxFieldComponent {}
+// class MultiSelectComboBoxFieldComponent {}
+// class ContainerFieldComponent {}
+// class DatePickerFieldComponent {}
+// class EmailFieldComponent  {}
+// class FieldSetComponent {}
+// class FileFieldComponent {}
+// class FormPanelComponent {}
+// class NumberFieldComponent {}
+// class PasswordFieldComponent {}
+// class RadioFieldComponent {}
+// class SearchFieldComponent {}
+// class SelectFieldComponent {}
+// class SliderFieldComponent {}
+// class SpinnerFieldComponent {}
+// class TextAreaFieldComponent {}
+// class TextFieldComponent {}
+// class TimeFieldComponent {}
+// class ToggleFieldComponent {}
+// class URLFieldComponent {}
+// class ValidationComponent {}
+// class DefaultGaugeComponent {}
+// class NeedleGaugeComponent {}
+// class CardLayoutComponent {}
+// class CenterLayoutComponent {}
+// class FitLayoutComponent {}
+// class FormLayoutComponent {}
+// class hboxLayoutComponent {}
+// class ResizableLayoutComponent {}
+// class vboxLayoutComponent {}
+// class BasicListComponent {}
+// class DisclosureListComponent {}
+// class GroupedListComponent {}
+// class NestedListComponent {}
+// class PullRefreshListComponent {}
+// class PagingListComponent {}
+// class BasicAccordionSwiperComponent {}
+// class BasicStepSwiperComponent {}
+// class UndoableAccordionSwiperComponent {}
+// class UndoableStepSwiperComponent {}
+// class VideoComponent {}
+// class AudioComponent {}
+// class BasicPanelComponent {}
+// class ResizableHandleComponent {}
+// class CollapsiblePanelComponent {}
+// class BasicDatePanelComponent {}
+// class AdvancedDatePanelComponent {}
+// class TimePanelComponent {}
+// class DialogPopupComponent {}
+// class MessagePopupComponent {}
+// class ToastPopupComponent {}
+// class ProgressBarComponent {}
+// class RippleComponent {}
+// class SheetComponent {}
+// class BasicTabComponent {}
+// class BottomTabComponent {}
+// class IconTabComponent {}
+// class DesktopTabComponent {}
+// class ClosableTabComponent {}
+// class ScrollingTabComponent {}
+// class TabBarComponent {}
+// class TitleBarComponent {}
+// class ToolBarComponent {}
+// class ToolTipComponent {}
+// class TouchEventsComponent {}
+// class WizardComponent {}
+// class GroupedGridComponent {}
+// class LockingGridComponent {}
+// class EditableGridComponent {}
+// class XMLGridComponent {}
+// class GridToolsComponent {}
+// class RowExpanderComponent {}
+// class RowBodyComponent {}
+// class SummaryRowComponent {}
+// class GridFilteringComponent {}
+// class ViewOptionsComponent {}
+// class BigDataComponent {}
+// class SelectAndCopyComponent {}
+// class ReconfigureGridComponent {}
+// class ComponentsInCellsComponent {}
+// class StockTickerComponent {}
+// class TreeListComponent {}
+// class TreeComponent {}
+// class EditableTreeComponent {}
+// class TreeGridComponent {}
+// class TreeDecorationsComponent {}
+// class HeterogeneousTreeComponent {}
+// class CalendarMonthViewComponent {}
+// class CalendarWeekViewComponent {}
+// class CalendarDaysViewComponent {}
+// class CalendarTimezoneSupportComponent {}
+// class CalendarDragResizeValidationComponent {}
+// class BasicAreaComponent {}
+// class StackedAreaComponent {}
+// class FullStackedAreaComponent {}
+// class NegativeValuesAreaComponent {}
+// class BasicBarComponent {}
+// class StackedBarComponent {}
+// class FullStackedBarComponent {}
+// class BoxPlotComponent {}
+// class BasicColumnComponent {}
+// class StackedComponent {}
+// class ColumnWithRendererComponent {}
+// class MultiaxisColumnComponent {}
+// class Basic3DColumnComponent {}
+// class ThreeDGroupedComponent {}
+// class ThreeDStackedComponent {}
+// class NegativeValuesComponent {}
+// class ThreeDColumnWithRendererComponent {}
+// class CandlestickComponent {}
+// class OHLCComponent {}
+// class BasicGaugeChartComponent {}
+// class BasicLineComponent {}
+// class BasicMarkersComponent {}
+// class SplineComponent {}
+// class SplineMarkersComponent {}
+// class PlotComponent {}
+// class WithRendererComponent {}
+// class RealtimeComponent {}
+// class NavigatorComponent {}
+// class BasicPieComponent {}
+// class SpieComponent {}
+// class DonutComponent {}
+// class DoubleDonutComponent {}
+// class ThreeDPieComponent {}
+// class BasicRadarComponent {}
+// class FilledComponent {}
+// class MarkedComponent {}
+// class MultiaxisComponent {}
+// class BasicScatterComponent {}
+// class CustomIconsComponent {}
+// class BubbleComponent {}
+// class PurchasesByDayComponent {}
+// class SalesPerEmployeeComponent {}
+// class PivotHeatmapComponent {}
+// class ConfigurablePivotHeatmapComponent {}
+// class OrgChartComponent {}
+// class PackComponent {}
+// class SunburstComponent {}
+// class ZoomableSunburstComponent {}
+// class TreeHierarchyComponent {}
+// class TreeMapComponent {}
+// class TreeMapToolTipComponent {}
+// class ConfigurablePivotTreeMapComponent {}
+// class OutlineLayoutComponent {}
+// class CompactLayoutComponent {}
+// class TabularLayoutComponent {}
+// class CollapsibleComponent {}
+// class DataChangesComponent {}
+// class PivotGridWidgetsComponent {}
+// class DrilldownPluginComponent {}
+// class ConfiguratorPluginComponent {}
+// class RangeEditorPluginComponent {}
+// class ExporterPluginComponent {}
 
 import AboutComponent     from './view/about/AboutComponent.js';
 import HomeComponent      from './view/home/HomeComponent.js';
-import ButtonComponent    from './view/components/buttons/button/ButtonComponent.js';
-import BasicgridComponent from './view/grids/corefeatures/basicgrid/BasicgridComponent.js';
+//import ButtonComponent    from './view/components/buttons/button/ButtonComponent.js';
+//import BasicgridComponent from './view/grids/corefeatures/basicgrid/BasicgridComponent.js';
+//import CalendarPanelComponent from './view/calendar/calendarpanel/CalendarPanelComponent.js';
 
+import ButtonComponent from './view/components/buttons/button/ButtonComponent.js';
+import SegmentedButtonComponent from './view/components/buttons/segmentedbutton/SegmentedButtonComponent.js';
+import SplitButtonComponent from './view/components/buttons/splitbutton/SplitButtonComponent.js';
+import ColorPickerComponent from './view/components/colorpicker/ColorPickerComponent.js';
+import CarouselComponent from './view/components/carousel/CarouselComponent.js';
+import SimpleDragDropComponent from './view/components/drag&drop/simple/SimpleDragDropComponent.js';
+import ConstraintsDragDropComponent from './view/components/drag&drop/constraints/ConstraintsDragDropComponent.js';
+import ProxiesDragDropComponent from './view/components/drag&drop/proxies/ProxiesDragDropComponent.js';
+import HandlesDragDropComponent from './view/components/drag&drop/handles/HandlesDragDropComponent.js';
+import GroupsDragDropComponent from './view/components/drag&drop/groups/GroupsDragDropComponent.js';
+import DataDragDropComponent from './view/components/drag&drop/data/DataDragDropComponent.js';
+import FilesDragDropComponent from './view/components/drag&drop/files/FilesDragDropComponent.js';
+import DrawComponent from './view/components/draw/DrawComponent.js';
+import CheckBoxFieldComponent from './view/components/forms/checkboxfield/CheckBoxFieldComponent.js';
+import ComboBoxFieldComponent from './view/components/forms/comboboxfield/ComboBoxFieldComponent.js';
+import MultiSelectComboBoxFieldComponent from './view/components/forms/multiselectcomboboxfield/MultiSelectComboBoxFieldComponent.js';
+import ContainerFieldComponent from './view/components/forms/containerfield/ContainerFieldComponent.js';
+import DatePickerFieldComponent from './view/components/forms/datepickerfield/DatePickerFieldComponent.js';
+import EmailFieldComponent from './view/components/forms/emailfield/EmailFieldComponent.js';
+import FieldSetComponent from './view/components/forms/fieldset/FieldSetComponent.js';
+import FileFieldComponent from './view/components/forms/filefield/FileFieldComponent.js';
+import FormPanelComponent from './view/components/forms/formpanel/FormPanelComponent.js';
+import NumberFieldComponent from './view/components/forms/numberfield/NumberFieldComponent.js';
+import PasswordFieldComponent from './view/components/forms/passwordfield/PasswordFieldComponent.js';
+import RadioFieldComponent from './view/components/forms/radiofield/RadioFieldComponent.js';
+import SearchFieldComponent from './view/components/forms/searchfield/SearchFieldComponent.js';
+import SelectFieldComponent from './view/components/forms/selectfield/SelectFieldComponent.js';
+import SliderFieldComponent from './view/components/forms/sliderfield/SliderFieldComponent.js';
+import SpinnerFieldComponent from './view/components/forms/spinnerfield/SpinnerFieldComponent.js';
+import TextAreaFieldComponent from './view/components/forms/textareafield/TextAreaFieldComponent.js';
+import TextFieldComponent from './view/components/forms/textfield/TextFieldComponent.js';
+import TimeFieldComponent from './view/components/forms/timefield/TimeFieldComponent.js';
+import ToggleFieldComponent from './view/components/forms/togglefield/ToggleFieldComponent.js';
+import URLFieldComponent from './view/components/forms/urlfield/URLFieldComponent.js';
+import ValidationComponent from './view/components/forms/validation/ValidationComponent.js';
+import DefaultGaugeComponent from './view/components/gauges/defaultgauge/DefaultGaugeComponent.js';
+import NeedleGaugeComponent from './view/components/gauges/needlegauge/NeedleGaugeComponent.js';
+import CardLayoutComponent from './view/components/layouts/card/CardLayoutComponent.js';
+import CenterLayoutComponent from './view/components/layouts/center/CenterLayoutComponent.js';
+import FitLayoutComponent from './view/components/layouts/fit/FitLayoutComponent.js';
+import FormLayoutComponent from './view/components/layouts/form/FormLayoutComponent.js';
+import hboxLayoutComponent from './view/components/layouts/hbox/hboxLayoutComponent.js';
+import ResizableLayoutComponent from './view/components/layouts/resizable/ResizableLayoutComponent.js';
+import vboxLayoutComponent from './view/components/layouts/vbox/vboxLayoutComponent.js';
+import BasicListComponent from './view/components/lists/basiclist/BasicListComponent.js';
+import DisclosureListComponent from './view/components/lists/disclosure/DisclosureListComponent.js';
+import GroupedListComponent from './view/components/lists/grouped/GroupedListComponent.js';
+import NestedListComponent from './view/components/lists/nestedlist/NestedListComponent.js';
+import PullRefreshListComponent from './view/components/lists/pullrefresh/PullRefreshListComponent.js';
+import PagingListComponent from './view/components/lists/paging/PagingListComponent.js';
+import BasicAccordionSwiperComponent from './view/components/lists/basicaccordionswiper/BasicAccordionSwiperComponent.js';
+import BasicStepSwiperComponent from './view/components/lists/basicstepswiper/BasicStepSwiperComponent.js';
+import UndoableAccordionSwiperComponent from './view/components/lists/undoableaccordionswiper/UndoableAccordionSwiperComponent.js';
+import UndoableStepSwiperComponent from './view/components/lists/undoablestepswiper/UndoableStepSwiperComponent.js';
+import VideoComponent from './view/components/media/video/VideoComponent.js';
+import AudioComponent from './view/components/media/audio/AudioComponent.js';
+import BasicPanelComponent from './view/components/panels/basicpanels/BasicPanelComponent.js';
+import ResizableHandleComponent from './view/components/panels/resizablehandle/ResizableHandleComponent.js';
+import CollapsiblePanelComponent from './view/components/panels/collapsiblepanel/CollapsiblePanelComponent.js';
+import BasicDatePanelComponent from './view/components/panels/basicdatepanel/BasicDatePanelComponent.js';
+import AdvancedDatePanelComponent from './view/components/panels/advanceddatepanel/AdvancedDatePanelComponent.js';
+import TimePanelComponent from './view/components/panels/timepanel/TimePanelComponent.js';
+import DialogPopupComponent from './view/components/popups/dialog/DialogPopupComponent.js';
+import MessagePopupComponent from './view/components/popups/message/MessagePopupComponent.js';
+import ToastPopupComponent from './view/components/popups/toast/ToastPopupComponent.js';
+import ProgressBarComponent from './view/components/progressbar/ProgressBarComponent.js';
+import RippleComponent from './view/components/ripple/RippleComponent.js';
+import SheetComponent from './view/components/sheet/SheetComponent.js';
+import BasicTabComponent from './view/components/tabs/basictabs/BasicTabComponent.js';
+import BottomTabComponent from './view/components/tabs/bottomtabs/BottomTabComponent.js';
+import IconTabComponent from './view/components/tabs/icontabs/IconTabComponent.js';
+import DesktopTabComponent from './view/components/tabs/desktoptabs/DesktopTabComponent.js';
+import ClosableTabComponent from './view/components/tabs/closable/ClosableTabComponent.js';
+import ScrollingTabComponent from './view/components/tabs/scrollingtabs/ScrollingTabComponent.js';
+import TabBarComponent from './view/components/tabs/tabbar/TabBarComponent.js';
+import TitleBarComponent from './view/components/titlebar/TitleBarComponent.js';
+import ToolBarComponent from './view/components/toolbar/ToolBarComponent.js';
+import ToolTipComponent from './view/components/tooltip/ToolTipComponent.js';
+import TouchEventsComponent from './view/components/touchevents/TouchEventsComponent.js';
+import WizardComponent from './view/components/wizard/WizardComponent.js';
+import BasicGridComponent from './view/grids/corefeatures/basicgrid/BasicGridComponent.js';
+import GroupedGridComponent from './view/grids/corefeatures/groupedgrid/GroupedGridComponent.js';
+import LockingGridComponent from './view/grids/corefeatures/lockinggrid/LockingGridComponent.js';
+import EditableGridComponent from './view/grids/corefeatures/editablegrid/EditableGridComponent.js';
+import XMLGridComponent from './view/grids/corefeatures/xmlgrid/XMLGridComponent.js';
+import GridToolsComponent from './view/grids/add-ons/gridtools/GridToolsComponent.js';
+import RowExpanderComponent from './view/grids/add-ons/rowexpander/RowExpanderComponent.js';
+import RowBodyComponent from './view/grids/add-ons/rowbody/RowBodyComponent.js';
+import SummaryRowComponent from './view/grids/add-ons/summaryrow/SummaryRowComponent.js';
+import GridFilteringComponent from './view/grids/add-ons/gridfiltering/GridFilteringComponent.js';
+import ViewOptionsComponent from './view/grids/add-ons/viewoptions/ViewOptionsComponent.js';
+import BigDataComponent from './view/grids/advancedfeatures/bigdata/BigDataComponent.js';
+import SelectAndCopyComponent from './view/grids/advancedfeatures/selectandcopy/SelectAndCopyComponent.js';
+import ReconfigureGridComponent from './view/grids/advancedfeatures/reconfiguregrid/ReconfigureGridComponent.js';
+import ComponentsInCellsComponent from './view/grids/advancedfeatures/componentsincells/ComponentsInCellsComponent.js';
+import StockTickerComponent from './view/grids/advancedfeatures/stockticker/StockTickerComponent.js';
+import TreeListComponent from './view/trees/treelist/TreeListComponent.js';
+import TreeComponent from './view/trees/tree/TreeComponent.js';
+import EditableTreeComponent from './view/trees/editabletree/EditableTreeComponent.js';
+import TreeGridComponent from './view/trees/treegrid/TreeGridComponent.js';
+import TreeDecorationsComponent from './view/trees/treedecorations/TreeDecorationsComponent.js';
+import HeterogeneousTreeComponent from './view/trees/heterogeneoustree/HeterogeneousTreeComponent.js';
+import CalendarPanelComponent from './view/calendar/calendarpanel/CalendarPanelComponent.js';
+import CalendarMonthViewComponent from './view/calendar/monthview/CalendarMonthViewComponent.js';
+import CalendarWeekViewComponent from './view/calendar/weekview/CalendarWeekViewComponent.js';
+import CalendarDaysViewComponent from './view/calendar/daysview/CalendarDaysViewComponent.js';
+import CalendarTimezoneSupportComponent from './view/calendar/timezonesupport/CalendarTimezoneSupportComponent.js';
+import CalendarDragResizeValidationComponent from './view/calendar/dragresizevalidation/CalendarDragResizeValidationComponent.js';
+import BasicAreaComponent from './view/charts/area/basicarea/BasicAreaComponent.js';
+import StackedAreaComponent from './view/charts/area/stackedarea/StackedAreaComponent.js';
+import FullStackedAreaComponent from './view/charts/area/fullstackedarea/FullStackedAreaComponent.js';
+import NegativeValuesAreaComponent from './view/charts/area/negativevaluesarea/NegativeValuesAreaComponent.js';
+import BasicBarComponent from './view/charts/bar/basicbar/BasicBarComponent.js';
+import StackedBarComponent from './view/charts/bar/stackedbar/StackedBarComponent.js';
+import FullStackedBarComponent from './view/charts/bar/fullstackedbar/FullStackedBarComponent.js';
+import BoxPlotComponent from './view/charts/boxplot/BoxPlotComponent.js';
+import BasicColumnComponent from './view/charts/column/basiccolumn/BasicColumnComponent.js';
+import StackedComponent from './view/charts/column/stacked/StackedComponent.js';
+import ColumnWithRendererComponent from './view/charts/column/columnwithrenderer/ColumnWithRendererComponent.js';
+import MultiaxisColumnComponent from './view/charts/column/multiaxiscolumn/MultiaxisColumnComponent.js';
+import Basic3DColumnComponent from './view/charts/3dcolumn/basic3dcolumn/Basic3DColumnComponent.js';
+import ThreeDGroupedComponent from './view/charts/3dcolumn/3dgrouped/ThreeDGroupedComponent.js';
+import ThreeDStackedComponent from './view/charts/3dcolumn/3dstacked/ThreeDStackedComponent.js';
+import NegativeValuesComponent from './view/charts/3dcolumn/negativevalues/NegativeValuesComponent.js';
+import ThreeDColumnWithRendererComponent from './view/charts/3dcolumn/3dcolumnwithrenderer/ThreeDColumnWithRendererComponent.js';
+import CandlestickComponent from './view/charts/financial/candlestick/CandlestickComponent.js';
+import OHLCComponent from './view/charts/financial/ohlc/OHLCComponent.js';
+import BasicGaugeChartComponent from './view/charts/gauges/basicgauge/BasicGaugeChartComponent.js';
+import BasicLineComponent from './view/charts/line/basicline/BasicLineComponent.js';
+import BasicMarkersComponent from './view/charts/line/basicmarkers/BasicMarkersComponent.js';
+import SplineComponent from './view/charts/line/spline/SplineComponent.js';
+import SplineMarkersComponent from './view/charts/line/splinemarkers/SplineMarkersComponent.js';
+import PlotComponent from './view/charts/line/plot/PlotComponent.js';
+import WithRendererComponent from './view/charts/line/withrenderer/WithRendererComponent.js';
+import RealtimeComponent from './view/charts/line/realtime/RealtimeComponent.js';
+import NavigatorComponent from './view/charts/navigator/NavigatorComponent.js';
+import BasicPieComponent from './view/charts/pie/basicpie/BasicPieComponent.js';
+import SpieComponent from './view/charts/pie/spie/SpieComponent.js';
+import DonutComponent from './view/charts/pie/donut/DonutComponent.js';
+import DoubleDonutComponent from './view/charts/pie/doubledonut/DoubleDonutComponent.js';
+import ThreeDPieComponent from './view/charts/pie/3dpie/ThreeDPieComponent.js';
+import BasicRadarComponent from './view/charts/radar/basicradar/BasicRadarComponent.js';
+import FilledComponent from './view/charts/radar/filled/FilledComponent.js';
+import MarkedComponent from './view/charts/radar/marked/MarkedComponent.js';
+import MultiaxisComponent from './view/charts/radar/multiaxis/MultiaxisComponent.js';
+import BasicScatterComponent from './view/charts/scatter/basicscatter/BasicScatterComponent.js';
+import CustomIconsComponent from './view/charts/scatter/customicons/CustomIconsComponent.js';
+import BubbleComponent from './view/charts/scatter/bubble/BubbleComponent.js';
+import PurchasesByDayComponent from './view/d3/heatmap/purchasesbyday/PurchasesByDayComponent.js';
+import SalesPerEmployeeComponent from './view/d3/heatmap/salesperemployee/SalesPerEmployeeComponent.js';
+import PivotHeatmapComponent from './view/d3/heatmap/pivotheatmap/PivotHeatmapComponent.js';
+import ConfigurablePivotHeatmapComponent from './view/d3/heatmap/configurablepivotheatmap/ConfigurablePivotHeatmapComponent.js';
+import OrgChartComponent from './view/d3/hierarchy/orgchart/OrgChartComponent.js';
+import PackComponent from './view/d3/hierarchy/pack/PackComponent.js';
+import SunburstComponent from './view/d3/hierarchy/sunburst/SunburstComponent.js';
+import ZoomableSunburstComponent from './view/d3/hierarchy/zoomablesunburst/ZoomableSunburstComponent.js';
+import TreeHierarchyComponent from './view/d3/hierarchy/tree/TreeHierarchyComponent.js';
+import TreeMapComponent from './view/d3/hierarchy/treemap/TreeMapComponent.js';
+import TreeMapToolTipComponent from './view/d3/hierarchy/treemaptooltip/TreeMapToolTipComponent.js';
+import ConfigurablePivotTreeMapComponent from './view/d3/hierarchy/configurablepivottreemap/ConfigurablePivotTreeMapComponent.js';
+import OutlineLayoutComponent from './view/pivotgrids/outlinelayout/OutlineLayoutComponent.js';
+import CompactLayoutComponent from './view/pivotgrids/compactlayout/CompactLayoutComponent.js';
+import TabularLayoutComponent from './view/pivotgrids/tabularlayout/TabularLayoutComponent.js';
+import CollapsibleComponent from './view/pivotgrids/collapsible/CollapsibleComponent.js';
+import DataChangesComponent from './view/pivotgrids/datachanges/DataChangesComponent.js';
+import PivotGridWidgetsComponent from './view/pivotgrids/pivotgridwidgets/PivotGridWidgetsComponent.js';
+import DrilldownPluginComponent from './view/pivotgrids/drilldownplugin/DrilldownPluginComponent.js';
+import ConfiguratorPluginComponent from './view/pivotgrids/configuratorplugin/ConfiguratorPluginComponent.js';
+import RangeEditorPluginComponent from './view/pivotgrids/rangeeditorplugin/RangeEditorPluginComponent.js';
+import ExporterPluginComponent from './view/pivotgrids/exporterplugin/ExporterPluginComponent.js';
 
 export default function getMenu() {
   return [
@@ -283,7 +453,7 @@ export default function getMenu() {
 
     { text: 'Grids', navIcon: 'icon-grids', children: [
       { text: 'Core Features', navIcon: 'icon-grids', children: [
-        { text: 'Basic Grid', component: BasicgridComponent, navIcon: 'icon-grids'},
+        { text: 'Basic Grid', component: BasicGridComponent, navIcon: 'icon-grids'},
         { text: 'Grouped Grid', component: GroupedGridComponent, navIcon: 'icon-grouped-grid'},
         { text: 'Locking Grid', component: LockingGridComponent, navIcon: 'icon-locking-grid'},
         { text: 'Editable Grid', component: EditableGridComponent, navIcon: 'icon-editable-grid'},

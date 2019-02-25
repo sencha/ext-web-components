@@ -17,26 +17,32 @@ function extractAll(dir) {
     if (fs.lstatSync(fullPath).isDirectory()) {
       extractAll(fullPath);
     } 
-    else if (file === `${exampleCap}Component.js`) {
+    else 
+    if (file.slice(-3) === `.js`) {
       try {
         extractFrom(example, file, fullPath)
       } catch (e) {
        console.log(`Error extracting code from ${file}`, e)
       }
     }
-    else if (file === `${exampleCap}Component.html`) {
+    else 
+    if (file.slice(-5) === `.html`) {
       try {
         extractFrom(example, file, fullPath)
       } catch (e) {
         console.log(`Error extracting code from ${file}`, e)
       }
     }
-    else if (file === `${exampleCap}Component.css`) {
+    else 
+    if (file.slice(-4) === `.css`) {
       try {
         extractFrom(example, file, fullPath)
       } catch (e) {
         console.log(`Error extracting code from ${file}`, e)
       }
+    }
+    else {
+      console.log(file)
     }
   }
 }
