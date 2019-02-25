@@ -1,16 +1,17 @@
 export class Route {
 
-  constructor (hash, className, url, defaultRoute) {
+  constructor (hash, component, path, defaultRoute) {
       try {
-        if(!hash || !url) {
-          throw 'error: hash and url params are mandatories';
+        //if(!hash || !url) {
+        if(!hash) {
+          throw 'error: hash param is required';
         }
       } catch (e) {
         console.error(e);
       }
     this.hash = hash;
-    this.url = url;
-    this.className = className;
+    this.path = path;
+    this.component = component;
     this.default = defaultRoute;
   }
 
@@ -50,14 +51,26 @@ export class Router {
           for (var i = 0, length = r.length; i < length; i++) {
               var route = r[i];
               if(route.isActiveRoute(window.location.hash.substr(1))) {
-                  scope.goToRoute(route.url);
+                // if (route.url == undefined) {
+                  var url = route.path + route.hash + '.html';
+                  scope.goToRoute(url);
+                // }
+                // else {
+                //   scope.goToRoute(route.url);
+                // }
               }
           }
       } else {
           for (var i = 0, length = r.length; i < length; i++) {
               var route = r[i];
               if(route.default) {
-                  scope.goToRoute(route.url);
+                //if (route.url == undefined) {
+                  var url = route.path + route.hash + '.html';
+                  scope.goToRoute(url);
+                //}
+                //else {
+                  //scope.goToRoute(route.url);
+                //}
               }
           }
       }

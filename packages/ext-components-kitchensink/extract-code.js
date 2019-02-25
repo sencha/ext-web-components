@@ -5,11 +5,11 @@ const mkdirp = require('mkdirp').sync
 let result = {}
 
 function extractAll(dir) {
-//  console.log(dir)
   const files = fs.readdirSync(dir)
   const parts = dir.split(path.sep)
 
   const example = parts[parts.length - 1]
+  const exampleCap = example.charAt(0).toUpperCase() + example.slice(1)
 
   for (let file of files) {
     const fullPath = path.join(dir, file)
@@ -17,21 +17,21 @@ function extractAll(dir) {
     if (fs.lstatSync(fullPath).isDirectory()) {
       extractAll(fullPath);
     } 
-    else if (file === `${example}.js`) {
+    else if (file === `${exampleCap}Component.js`) {
       try {
         extractFrom(example, file, fullPath)
       } catch (e) {
        console.log(`Error extracting code from ${file}`, e)
       }
     }
-    else if (file === `${example}.html`) {
+    else if (file === `${exampleCap}Component.html`) {
       try {
         extractFrom(example, file, fullPath)
       } catch (e) {
         console.log(`Error extracting code from ${file}`, e)
       }
     }
-    else if (file === `${example}.css`) {
+    else if (file === `${exampleCap}Component.css`) {
       try {
         extractFrom(example, file, fullPath)
       } catch (e) {
