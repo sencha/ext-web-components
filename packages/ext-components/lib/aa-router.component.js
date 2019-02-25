@@ -2,7 +2,6 @@ export class Route {
 
   constructor (hash, component, path, defaultRoute) {
       try {
-        //if(!hash || !url) {
         if(!hash) {
           throw 'error: hash param is required';
         }
@@ -51,43 +50,36 @@ export class Router {
           for (var i = 0, length = r.length; i < length; i++) {
               var route = r[i];
               if(route.isActiveRoute(window.location.hash.substr(1))) {
-                // if (route.url == undefined) {
-                  var url = route.path + route.hash + '.html';
-                  scope.goToRoute(url);
-                // }
-                // else {
-                //   scope.goToRoute(route.url);
-                // }
+                  //var url = route.path + route.component.name + '.html';
+                  //scope.goToRoute(url);
+                  scope.rootElem.innerHTML = window._code[route.hash][route.component.name + '.html']
               }
           }
       } else {
           for (var i = 0, length = r.length; i < length; i++) {
               var route = r[i];
               if(route.default) {
-                //if (route.url == undefined) {
-                  var url = route.path + route.hash + '.html';
-                  scope.goToRoute(url);
-                //}
-                //else {
-                  //scope.goToRoute(route.url);
-                //}
+                  //var url = route.path + route.component.name + '.html';
+                  //scope.goToRoute(url);
+                  scope.rootElem.innerHTML = window._code[route.hash][route.component.name + '.html']
+
               }
           }
       }
   }
 
-  goToRoute(url) {
-    (function(scope) {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-          if (this.readyState === 4 && this.status === 200) {
-            scope.rootElem.innerHTML = this.responseText;
-          }
-        };
-        xhttp.open('GET', url, true);
-        xhttp.send();
-    })(this);
-  }
+  // goToRoute(url) {
+  //   (function(scope) {
+  //       var xhttp = new XMLHttpRequest();
+  //       xhttp.onreadystatechange = function () {
+  //         if (this.readyState === 4 && this.status === 200) {
+  //           scope.rootElem.innerHTML = this.responseText;
+  //         }
+  //       };
+  //       xhttp.open('GET', url, true);
+  //       xhttp.send();
+  //   })(this);
+  // }
 
 }
 
@@ -108,7 +100,7 @@ export default class ExtRouter extends HTMLElement {
         div.style.width="100%";
         div.style.height="100%";
         div.style.padding=me.padding;
-
+//mjg should not be hard coded
         div.style.backgroundSize='20px 20px';
         div.style.borderWidth='0px';
         div.style.backgroundColor='#e8e8e8';
