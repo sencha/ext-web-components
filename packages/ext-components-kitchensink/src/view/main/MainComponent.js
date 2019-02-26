@@ -64,8 +64,8 @@ export default class MainComponent {
     }
     node.name = node.text;
     if (node.children) {
-        node.children = node.children.filter(node => !node.hidden);
-        node.children.forEach(child => this.transform(child, node.id))
+      node.children = node.children.filter(node => !node.hidden);
+      node.children.forEach(child => this.transform(child, node.id))
     }
   }
 
@@ -75,10 +75,8 @@ export default class MainComponent {
     var childNum = record.childNodes.length
     if (childNum == 0 && hash != undefined) {
       window.location.hash = '#' + hash
+      //console.log('selectionchange')
       this.setCodeTabs()
-      var component = record.data.component
-      var hash = record.data.hash
-      window[hash] = new component()
     }
   }
 
@@ -88,31 +86,47 @@ export default class MainComponent {
   }
 
   setCodeTabs() {
-    //mjg initial one is done twice
-    var hash = window.location.hash.substr(1)
-    if(window.location.hash.substr(1) == '') {
-      //mjg loop through window.routes to find default
-      hash = 'home'
-      window.home = new window.routes[0].component;
-    }
-    var codeMap = _code[hash]
     var me = this
     if(me.tabPanelCmp != undefined) {
+      var hash = window.location.hash.substr(1)
+      var currentRoute = {}
+      window.routes.forEach((route) => {
+        if(hash == '') {
+          if (route.default == true) {currentRoute = route}
+        }
+        else {
+          if (route.hash == hash) {currentRoute = route}
+        }
+      });
+      window[currentRoute.hash] = new currentRoute.component()
+      var codeMap = _code[hash]
+      //console.log(currentRoute)
       me.tabPanelCmp.removeAll()
-      //mjg order these html, js. css
-      Object.keys(codeMap).map((file) => {
-        me.tabPanelCmp.add({
-          xtype: 'panel',
-          ui: 'code-panel',
-          layout: 'fit',
-          userSelectable: true,
-          scrollable: true,
+      var file = ''
+      file = currentRoute.component.name + '.html'
+      if (codeMap[file] != undefined ) {
+        me.tabPanelCmp.add({title: file,
+          xtype: 'panel',ui: 'code-panel',layout: 'fit',userSelectable: true,scrollable: true,
           tab: {ui: 'app-code-tab', flex: 0, minWidth: 250},
-          title: file,
-          //html: `<pre><code mwlHighlightJs id='${file}' class='code ${this.csscomponent(file)}'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
           html: `<pre><code class='code'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
         })
-      })
+      }
+      file = currentRoute.component.name + '.js'
+      if (codeMap[file] != undefined ) {
+        me.tabPanelCmp.add({title: file,
+          xtype: 'panel',ui: 'code-panel',layout: 'fit',userSelectable: true,scrollable: true,
+          tab: {ui: 'app-code-tab', flex: 0, minWidth: 250},
+          html: `<pre><code class='code'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
+        })
+      }
+      file = currentRoute.component.name + '.css'
+      if (codeMap[file] != undefined ) {
+        me.tabPanelCmp.add({title: file,
+          xtype: 'panel',ui: 'code-panel',layout: 'fit',userSelectable: true,scrollable: true,
+          tab: {ui: 'app-code-tab', flex: 0, minWidth: 250},
+          html: `<pre><code class='code'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
+        })
+      }
       setTimeout(function() {
         document.querySelectorAll('pre code').forEach((block) => {
           hljs.highlightBlock(block);
@@ -133,3 +147,23 @@ export default class MainComponent {
   }
 
 }
+
+
+      // //mjg order these html, js. css
+      // //let codeMapR = new Map([codeMap].reverse());
+      // Object.keys(codeMap).map((file) => {
+      //   console.log(file)
+      //   //me.tabPanelCmp.insert(0, {
+      //   me.tabPanelCmp.add({
+      //     xtype: 'panel',
+      //     ui: 'code-panel',
+      //     layout: 'fit',
+      //     userSelectable: true,
+      //     scrollable: true,
+      //     tab: {ui: 'app-code-tab', flex: 0, minWidth: 250},
+      //     title: file,
+      //     //html: `<pre><code mwlHighlightJs id='${file}' class='code ${this.csscomponent(file)}'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
+      //     html: `<pre><code class='code'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
+      //   })
+      // })
+
