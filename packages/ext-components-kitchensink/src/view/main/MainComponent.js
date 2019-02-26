@@ -99,8 +99,7 @@ export default class MainComponent {
         }
       });
       window[currentRoute.hash] = new currentRoute.component()
-      var codeMap = _code[hash]
-      //console.log(currentRoute)
+      var codeMap = _code[currentRoute.hash]
       me.tabPanelCmp.removeAll()
       var file = ''
       file = currentRoute.component.name + '.html'
