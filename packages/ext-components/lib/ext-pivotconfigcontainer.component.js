@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtPivotconfigcontainer extends ExtBase {
+export class ExtPivotconfigcontainerComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -731,11 +731,11 @@ export default class ExtPivotconfigcontainer extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtPivotconfigcontainer.METHODS()
-    this.XTYPE = ExtPivotconfigcontainer.XTYPE()
-    //this.PROPERTIES = ExtPivotconfigcontainer.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtPivotconfigcontainer.PROPERTIESOBJECT()
-    this.EVENTS = ExtPivotconfigcontainer.EVENTS()
+    this.METHODS = ExtPivotconfigcontainerComponent.METHODS()
+    this.XTYPE = ExtPivotconfigcontainerComponent.XTYPE()
+    //this.PROPERTIES = ExtPivotconfigcontainerComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtPivotconfigcontainerComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtPivotconfigcontainerComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -747,5 +747,5 @@ export default class ExtPivotconfigcontainer extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-pivotconfigcontainer', ExtPivotconfigcontainer);
+window.customElements.define('ext-pivotconfigcontainer', ExtPivotconfigcontainerComponent);
 })();

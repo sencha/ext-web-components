@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtSurface extends ExtBase {
+export class ExtSurfaceComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -356,11 +356,11 @@ export default class ExtSurface extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtSurface.METHODS()
-    this.XTYPE = ExtSurface.XTYPE()
-    //this.PROPERTIES = ExtSurface.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtSurface.PROPERTIESOBJECT()
-    this.EVENTS = ExtSurface.EVENTS()
+    this.METHODS = ExtSurfaceComponent.METHODS()
+    this.XTYPE = ExtSurfaceComponent.XTYPE()
+    //this.PROPERTIES = ExtSurfaceComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtSurfaceComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtSurfaceComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -372,5 +372,5 @@ export default class ExtSurface extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-surface', ExtSurface);
+window.customElements.define('ext-surface', ExtSurfaceComponent);
 })();

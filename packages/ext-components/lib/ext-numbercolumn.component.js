@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtNumbercolumn extends ExtBase {
+export class ExtNumbercolumnComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get align(){return this.getAttribute('align')};set align(align){this.setAttribute('align',align)}
@@ -739,11 +739,11 @@ export default class ExtNumbercolumn extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtNumbercolumn.METHODS()
-    this.XTYPE = ExtNumbercolumn.XTYPE()
-    //this.PROPERTIES = ExtNumbercolumn.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtNumbercolumn.PROPERTIESOBJECT()
-    this.EVENTS = ExtNumbercolumn.EVENTS()
+    this.METHODS = ExtNumbercolumnComponent.METHODS()
+    this.XTYPE = ExtNumbercolumnComponent.XTYPE()
+    //this.PROPERTIES = ExtNumbercolumnComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtNumbercolumnComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtNumbercolumnComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -755,5 +755,5 @@ export default class ExtNumbercolumn extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-numbercolumn', ExtNumbercolumn);
+window.customElements.define('ext-numbercolumn', ExtNumbercolumnComponent);
 })();

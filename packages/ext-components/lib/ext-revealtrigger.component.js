@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtRevealtrigger extends ExtBase {
+export class ExtRevealtriggerComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -342,11 +342,11 @@ export default class ExtRevealtrigger extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtRevealtrigger.METHODS()
-    this.XTYPE = ExtRevealtrigger.XTYPE()
-    //this.PROPERTIES = ExtRevealtrigger.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtRevealtrigger.PROPERTIESOBJECT()
-    this.EVENTS = ExtRevealtrigger.EVENTS()
+    this.METHODS = ExtRevealtriggerComponent.METHODS()
+    this.XTYPE = ExtRevealtriggerComponent.XTYPE()
+    //this.PROPERTIES = ExtRevealtriggerComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtRevealtriggerComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtRevealtriggerComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -358,5 +358,5 @@ export default class ExtRevealtrigger extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-revealtrigger', ExtRevealtrigger);
+window.customElements.define('ext-revealtrigger', ExtRevealtriggerComponent);
 })();

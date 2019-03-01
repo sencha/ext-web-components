@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtDatecell extends ExtBase {
+export class ExtDatecellComponent extends ExtBase {
 	get align(){return this.getAttribute('align')};set align(align){this.setAttribute('align',align)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
@@ -356,11 +356,11 @@ export default class ExtDatecell extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtDatecell.METHODS()
-    this.XTYPE = ExtDatecell.XTYPE()
-    //this.PROPERTIES = ExtDatecell.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtDatecell.PROPERTIESOBJECT()
-    this.EVENTS = ExtDatecell.EVENTS()
+    this.METHODS = ExtDatecellComponent.METHODS()
+    this.XTYPE = ExtDatecellComponent.XTYPE()
+    //this.PROPERTIES = ExtDatecellComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtDatecellComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtDatecellComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -372,5 +372,5 @@ export default class ExtDatecell extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-datecell', ExtDatecell);
+window.customElements.define('ext-datecell', ExtDatecellComponent);
 })();

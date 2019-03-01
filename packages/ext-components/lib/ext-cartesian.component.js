@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtCartesian extends ExtBase {
+export class ExtCartesianComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -758,11 +758,11 @@ export default class ExtCartesian extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtCartesian.METHODS()
-    this.XTYPE = ExtCartesian.XTYPE()
-    //this.PROPERTIES = ExtCartesian.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtCartesian.PROPERTIESOBJECT()
-    this.EVENTS = ExtCartesian.EVENTS()
+    this.METHODS = ExtCartesianComponent.METHODS()
+    this.XTYPE = ExtCartesianComponent.XTYPE()
+    //this.PROPERTIES = ExtCartesianComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtCartesianComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtCartesianComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -774,5 +774,5 @@ export default class ExtCartesian extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-cartesian', ExtCartesian);
+window.customElements.define('ext-cartesian', ExtCartesianComponent);
 })();

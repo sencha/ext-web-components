@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtBooleancell extends ExtBase {
+export class ExtBooleancellComponent extends ExtBase {
 	get align(){return this.getAttribute('align')};set align(align){this.setAttribute('align',align)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
@@ -360,11 +360,11 @@ export default class ExtBooleancell extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtBooleancell.METHODS()
-    this.XTYPE = ExtBooleancell.XTYPE()
-    //this.PROPERTIES = ExtBooleancell.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtBooleancell.PROPERTIESOBJECT()
-    this.EVENTS = ExtBooleancell.EVENTS()
+    this.METHODS = ExtBooleancellComponent.METHODS()
+    this.XTYPE = ExtBooleancellComponent.XTYPE()
+    //this.PROPERTIES = ExtBooleancellComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtBooleancellComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtBooleancellComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -376,5 +376,5 @@ export default class ExtBooleancell extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-booleancell', ExtBooleancell);
+window.customElements.define('ext-booleancell', ExtBooleancellComponent);
 })();

@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtSimplelistitem extends ExtBase {
+export class ExtSimplelistitemComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -536,11 +536,11 @@ export default class ExtSimplelistitem extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtSimplelistitem.METHODS()
-    this.XTYPE = ExtSimplelistitem.XTYPE()
-    //this.PROPERTIES = ExtSimplelistitem.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtSimplelistitem.PROPERTIESOBJECT()
-    this.EVENTS = ExtSimplelistitem.EVENTS()
+    this.METHODS = ExtSimplelistitemComponent.METHODS()
+    this.XTYPE = ExtSimplelistitemComponent.XTYPE()
+    //this.PROPERTIES = ExtSimplelistitemComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtSimplelistitemComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtSimplelistitemComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -552,5 +552,5 @@ export default class ExtSimplelistitem extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-simplelistitem', ExtSimplelistitem);
+window.customElements.define('ext-simplelistitem', ExtSimplelistitemComponent);
 })();

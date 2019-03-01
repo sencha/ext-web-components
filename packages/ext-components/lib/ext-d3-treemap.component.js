@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtD3_treemap extends ExtBase {
+export class ExtD3_treemapComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -625,11 +625,11 @@ export default class ExtD3_treemap extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtD3_treemap.METHODS()
-    this.XTYPE = ExtD3_treemap.XTYPE()
-    //this.PROPERTIES = ExtD3_treemap.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtD3_treemap.PROPERTIESOBJECT()
-    this.EVENTS = ExtD3_treemap.EVENTS()
+    this.METHODS = ExtD3_treemapComponent.METHODS()
+    this.XTYPE = ExtD3_treemapComponent.XTYPE()
+    //this.PROPERTIES = ExtD3_treemapComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtD3_treemapComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtD3_treemapComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -641,5 +641,5 @@ export default class ExtD3_treemap extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-d3_treemap', ExtD3_treemap);
+window.customElements.define('ext-d3_treemap', ExtD3_treemapComponent);
 })();

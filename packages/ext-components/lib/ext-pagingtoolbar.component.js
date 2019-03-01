@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtPagingtoolbar extends ExtBase {
+export class ExtPagingtoolbarComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -655,11 +655,11 @@ export default class ExtPagingtoolbar extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtPagingtoolbar.METHODS()
-    this.XTYPE = ExtPagingtoolbar.XTYPE()
-    //this.PROPERTIES = ExtPagingtoolbar.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtPagingtoolbar.PROPERTIESOBJECT()
-    this.EVENTS = ExtPagingtoolbar.EVENTS()
+    this.METHODS = ExtPagingtoolbarComponent.METHODS()
+    this.XTYPE = ExtPagingtoolbarComponent.XTYPE()
+    //this.PROPERTIES = ExtPagingtoolbarComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtPagingtoolbarComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtPagingtoolbarComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -671,5 +671,5 @@ export default class ExtPagingtoolbar extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-pagingtoolbar', ExtPagingtoolbar);
+window.customElements.define('ext-pagingtoolbar', ExtPagingtoolbarComponent);
 })();

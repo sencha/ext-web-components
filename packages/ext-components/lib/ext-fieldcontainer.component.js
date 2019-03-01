@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtFieldcontainer extends ExtBase {
+export class ExtFieldcontainerComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -637,11 +637,11 @@ export default class ExtFieldcontainer extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtFieldcontainer.METHODS()
-    this.XTYPE = ExtFieldcontainer.XTYPE()
-    //this.PROPERTIES = ExtFieldcontainer.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtFieldcontainer.PROPERTIESOBJECT()
-    this.EVENTS = ExtFieldcontainer.EVENTS()
+    this.METHODS = ExtFieldcontainerComponent.METHODS()
+    this.XTYPE = ExtFieldcontainerComponent.XTYPE()
+    //this.PROPERTIES = ExtFieldcontainerComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtFieldcontainerComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtFieldcontainerComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -653,5 +653,5 @@ export default class ExtFieldcontainer extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-fieldcontainer', ExtFieldcontainer);
+window.customElements.define('ext-fieldcontainer', ExtFieldcontainerComponent);
 })();

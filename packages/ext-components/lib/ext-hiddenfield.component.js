@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtHiddenfield extends ExtBase {
+export class ExtHiddenfieldComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -610,11 +610,11 @@ export default class ExtHiddenfield extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtHiddenfield.METHODS()
-    this.XTYPE = ExtHiddenfield.XTYPE()
-    //this.PROPERTIES = ExtHiddenfield.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtHiddenfield.PROPERTIESOBJECT()
-    this.EVENTS = ExtHiddenfield.EVENTS()
+    this.METHODS = ExtHiddenfieldComponent.METHODS()
+    this.XTYPE = ExtHiddenfieldComponent.XTYPE()
+    //this.PROPERTIES = ExtHiddenfieldComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtHiddenfieldComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtHiddenfieldComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -626,5 +626,5 @@ export default class ExtHiddenfield extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-hiddenfield', ExtHiddenfield);
+window.customElements.define('ext-hiddenfield', ExtHiddenfieldComponent);
 })();

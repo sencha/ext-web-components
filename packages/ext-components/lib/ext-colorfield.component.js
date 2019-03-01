@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtColorfield extends ExtBase {
+export class ExtColorfieldComponent extends ExtBase {
 	get alignTarget(){return this.getAttribute('alignTarget')};set alignTarget(alignTarget){this.setAttribute('alignTarget',alignTarget)}
 	get alphaDecimalFormat(){return this.getAttribute('alphaDecimalFormat')};set alphaDecimalFormat(alphaDecimalFormat){this.setAttribute('alphaDecimalFormat',alphaDecimalFormat)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
@@ -693,11 +693,11 @@ export default class ExtColorfield extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtColorfield.METHODS()
-    this.XTYPE = ExtColorfield.XTYPE()
-    //this.PROPERTIES = ExtColorfield.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtColorfield.PROPERTIESOBJECT()
-    this.EVENTS = ExtColorfield.EVENTS()
+    this.METHODS = ExtColorfieldComponent.METHODS()
+    this.XTYPE = ExtColorfieldComponent.XTYPE()
+    //this.PROPERTIES = ExtColorfieldComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtColorfieldComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtColorfieldComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -709,5 +709,5 @@ export default class ExtColorfield extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-colorfield', ExtColorfield);
+window.customElements.define('ext-colorfield', ExtColorfieldComponent);
 })();

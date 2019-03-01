@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtGoogle_map extends ExtBase {
+export class ExtGoogle_mapComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -691,11 +691,11 @@ export default class ExtGoogle_map extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtGoogle_map.METHODS()
-    this.XTYPE = ExtGoogle_map.XTYPE()
-    //this.PROPERTIES = ExtGoogle_map.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtGoogle_map.PROPERTIESOBJECT()
-    this.EVENTS = ExtGoogle_map.EVENTS()
+    this.METHODS = ExtGoogle_mapComponent.METHODS()
+    this.XTYPE = ExtGoogle_mapComponent.XTYPE()
+    //this.PROPERTIES = ExtGoogle_mapComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtGoogle_mapComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtGoogle_mapComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -707,5 +707,5 @@ export default class ExtGoogle_map extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-google_map', ExtGoogle_map);
+window.customElements.define('ext-google_map', ExtGoogle_mapComponent);
 })();

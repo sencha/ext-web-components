@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtCheckboxfield extends ExtBase {
+export class ExtCheckboxfieldComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -631,11 +631,11 @@ export default class ExtCheckboxfield extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtCheckboxfield.METHODS()
-    this.XTYPE = ExtCheckboxfield.XTYPE()
-    //this.PROPERTIES = ExtCheckboxfield.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtCheckboxfield.PROPERTIESOBJECT()
-    this.EVENTS = ExtCheckboxfield.EVENTS()
+    this.METHODS = ExtCheckboxfieldComponent.METHODS()
+    this.XTYPE = ExtCheckboxfieldComponent.XTYPE()
+    //this.PROPERTIES = ExtCheckboxfieldComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtCheckboxfieldComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtCheckboxfieldComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -647,5 +647,5 @@ export default class ExtCheckboxfield extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-checkboxfield', ExtCheckboxfield);
+window.customElements.define('ext-checkboxfield', ExtCheckboxfieldComponent);
 })();

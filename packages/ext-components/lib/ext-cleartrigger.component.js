@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtCleartrigger extends ExtBase {
+export class ExtCleartriggerComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -342,11 +342,11 @@ export default class ExtCleartrigger extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtCleartrigger.METHODS()
-    this.XTYPE = ExtCleartrigger.XTYPE()
-    //this.PROPERTIES = ExtCleartrigger.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtCleartrigger.PROPERTIESOBJECT()
-    this.EVENTS = ExtCleartrigger.EVENTS()
+    this.METHODS = ExtCleartriggerComponent.METHODS()
+    this.XTYPE = ExtCleartriggerComponent.XTYPE()
+    //this.PROPERTIES = ExtCleartriggerComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtCleartriggerComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtCleartriggerComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -358,5 +358,5 @@ export default class ExtCleartrigger extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-cleartrigger', ExtCleartrigger);
+window.customElements.define('ext-cleartrigger', ExtCleartriggerComponent);
 })();

@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtSpacefilling extends ExtBase {
+export class ExtSpacefillingComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -754,11 +754,11 @@ export default class ExtSpacefilling extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtSpacefilling.METHODS()
-    this.XTYPE = ExtSpacefilling.XTYPE()
-    //this.PROPERTIES = ExtSpacefilling.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtSpacefilling.PROPERTIESOBJECT()
-    this.EVENTS = ExtSpacefilling.EVENTS()
+    this.METHODS = ExtSpacefillingComponent.METHODS()
+    this.XTYPE = ExtSpacefillingComponent.XTYPE()
+    //this.PROPERTIES = ExtSpacefillingComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtSpacefillingComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtSpacefillingComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -770,5 +770,5 @@ export default class ExtSpacefilling extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-spacefilling', ExtSpacefilling);
+window.customElements.define('ext-spacefilling', ExtSpacefillingComponent);
 })();

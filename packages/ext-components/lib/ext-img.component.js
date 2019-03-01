@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtImg extends ExtBase {
+export class ExtImgComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -540,11 +540,11 @@ export default class ExtImg extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtImg.METHODS()
-    this.XTYPE = ExtImg.XTYPE()
-    //this.PROPERTIES = ExtImg.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtImg.PROPERTIESOBJECT()
-    this.EVENTS = ExtImg.EVENTS()
+    this.METHODS = ExtImgComponent.METHODS()
+    this.XTYPE = ExtImgComponent.XTYPE()
+    //this.PROPERTIES = ExtImgComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtImgComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtImgComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -556,5 +556,5 @@ export default class ExtImg extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-img', ExtImg);
+window.customElements.define('ext-img', ExtImgComponent);
 })();

@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtCarousel extends ExtBase {
+export class ExtCarouselComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -651,11 +651,11 @@ export default class ExtCarousel extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtCarousel.METHODS()
-    this.XTYPE = ExtCarousel.XTYPE()
-    //this.PROPERTIES = ExtCarousel.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtCarousel.PROPERTIESOBJECT()
-    this.EVENTS = ExtCarousel.EVENTS()
+    this.METHODS = ExtCarouselComponent.METHODS()
+    this.XTYPE = ExtCarouselComponent.XTYPE()
+    //this.PROPERTIES = ExtCarouselComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtCarouselComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtCarouselComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -667,5 +667,5 @@ export default class ExtCarousel extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-carousel', ExtCarousel);
+window.customElements.define('ext-carousel', ExtCarouselComponent);
 })();

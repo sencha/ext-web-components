@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtPullrefreshspinner extends ExtBase {
+export class ExtPullrefreshspinnerComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -531,11 +531,11 @@ export default class ExtPullrefreshspinner extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtPullrefreshspinner.METHODS()
-    this.XTYPE = ExtPullrefreshspinner.XTYPE()
-    //this.PROPERTIES = ExtPullrefreshspinner.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtPullrefreshspinner.PROPERTIESOBJECT()
-    this.EVENTS = ExtPullrefreshspinner.EVENTS()
+    this.METHODS = ExtPullrefreshspinnerComponent.METHODS()
+    this.XTYPE = ExtPullrefreshspinnerComponent.XTYPE()
+    //this.PROPERTIES = ExtPullrefreshspinnerComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtPullrefreshspinnerComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtPullrefreshspinnerComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -547,5 +547,5 @@ export default class ExtPullrefreshspinner extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-pullrefreshspinner', ExtPullrefreshspinner);
+window.customElements.define('ext-pullrefreshspinner', ExtPullrefreshspinnerComponent);
 })();

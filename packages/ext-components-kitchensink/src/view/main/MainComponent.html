@@ -23,7 +23,7 @@
   <ext-toolbar docked="top" weight="10">
     <ext-container html="breadcrumb component here..."></ext-container>
     <ext-dataview [itemTpl]="tplToolbar" [inline]="'true'" [itemCls]="'div.app-toolbar'" id="hide-overflow"
-      (childtap)="doClickToolbar($event)" onready="main.dataviewToolbarReady($event)">
+      (childtap)="doClickToolbar(event)" onready="main.dataviewToolbarReady(event)">
     </ext-dataview>
   </ext-toolbar>
   <!-- Breadcrumb ends-->

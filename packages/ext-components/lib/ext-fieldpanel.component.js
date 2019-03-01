@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtFieldpanel extends ExtBase {
+export class ExtFieldpanelComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -763,11 +763,11 @@ export default class ExtFieldpanel extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtFieldpanel.METHODS()
-    this.XTYPE = ExtFieldpanel.XTYPE()
-    //this.PROPERTIES = ExtFieldpanel.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtFieldpanel.PROPERTIESOBJECT()
-    this.EVENTS = ExtFieldpanel.EVENTS()
+    this.METHODS = ExtFieldpanelComponent.METHODS()
+    this.XTYPE = ExtFieldpanelComponent.XTYPE()
+    //this.PROPERTIES = ExtFieldpanelComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtFieldpanelComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtFieldpanelComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -779,5 +779,5 @@ export default class ExtFieldpanel extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-fieldpanel', ExtFieldpanel);
+window.customElements.define('ext-fieldpanel', ExtFieldpanelComponent);
 })();

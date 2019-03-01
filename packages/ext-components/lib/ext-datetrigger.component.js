@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtDatetrigger extends ExtBase {
+export class ExtDatetriggerComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -342,11 +342,11 @@ export default class ExtDatetrigger extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtDatetrigger.METHODS()
-    this.XTYPE = ExtDatetrigger.XTYPE()
-    //this.PROPERTIES = ExtDatetrigger.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtDatetrigger.PROPERTIESOBJECT()
-    this.EVENTS = ExtDatetrigger.EVENTS()
+    this.METHODS = ExtDatetriggerComponent.METHODS()
+    this.XTYPE = ExtDatetriggerComponent.XTYPE()
+    //this.PROPERTIES = ExtDatetriggerComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtDatetriggerComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtDatetriggerComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -358,5 +358,5 @@ export default class ExtDatetrigger extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-datetrigger', ExtDatetrigger);
+window.customElements.define('ext-datetrigger', ExtDatetriggerComponent);
 })();

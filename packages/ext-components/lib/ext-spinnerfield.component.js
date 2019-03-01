@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtSpinnerfield extends ExtBase {
+export class ExtSpinnerfieldComponent extends ExtBase {
 	get accelerateOnTapHold(){return this.getAttribute('accelerateOnTapHold')};set accelerateOnTapHold(accelerateOnTapHold){this.setAttribute('accelerateOnTapHold',accelerateOnTapHold)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get animateUnderline(){return this.getAttribute('animateUnderline')};set animateUnderline(animateUnderline){this.setAttribute('animateUnderline',animateUnderline)}
@@ -690,11 +690,11 @@ export default class ExtSpinnerfield extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtSpinnerfield.METHODS()
-    this.XTYPE = ExtSpinnerfield.XTYPE()
-    //this.PROPERTIES = ExtSpinnerfield.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtSpinnerfield.PROPERTIESOBJECT()
-    this.EVENTS = ExtSpinnerfield.EVENTS()
+    this.METHODS = ExtSpinnerfieldComponent.METHODS()
+    this.XTYPE = ExtSpinnerfieldComponent.XTYPE()
+    //this.PROPERTIES = ExtSpinnerfieldComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtSpinnerfieldComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtSpinnerfieldComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -706,5 +706,5 @@ export default class ExtSpinnerfield extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-spinnerfield', ExtSpinnerfield);
+window.customElements.define('ext-spinnerfield', ExtSpinnerfieldComponent);
 })();

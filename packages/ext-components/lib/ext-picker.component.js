@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtPicker extends ExtBase {
+export class ExtPickerComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -771,11 +771,11 @@ export default class ExtPicker extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtPicker.METHODS()
-    this.XTYPE = ExtPicker.XTYPE()
-    //this.PROPERTIES = ExtPicker.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtPicker.PROPERTIESOBJECT()
-    this.EVENTS = ExtPicker.EVENTS()
+    this.METHODS = ExtPickerComponent.METHODS()
+    this.XTYPE = ExtPickerComponent.XTYPE()
+    //this.PROPERTIES = ExtPickerComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtPickerComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtPickerComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -787,5 +787,5 @@ export default class ExtPicker extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-picker', ExtPicker);
+window.customElements.define('ext-picker', ExtPickerComponent);
 })();

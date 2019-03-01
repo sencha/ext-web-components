@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtTextcolumn extends ExtBase {
+export class ExtTextcolumnComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get align(){return this.getAttribute('align')};set align(align){this.setAttribute('align',align)}
@@ -737,11 +737,11 @@ export default class ExtTextcolumn extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtTextcolumn.METHODS()
-    this.XTYPE = ExtTextcolumn.XTYPE()
-    //this.PROPERTIES = ExtTextcolumn.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtTextcolumn.PROPERTIESOBJECT()
-    this.EVENTS = ExtTextcolumn.EVENTS()
+    this.METHODS = ExtTextcolumnComponent.METHODS()
+    this.XTYPE = ExtTextcolumnComponent.XTYPE()
+    //this.PROPERTIES = ExtTextcolumnComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtTextcolumnComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtTextcolumnComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -753,5 +753,5 @@ export default class ExtTextcolumn extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-textcolumn', ExtTextcolumn);
+window.customElements.define('ext-textcolumn', ExtTextcolumnComponent);
 })();

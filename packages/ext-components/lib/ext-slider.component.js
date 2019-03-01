@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtSlider extends ExtBase {
+export class ExtSliderComponent extends ExtBase {
 	get allowThumbsOverlapping(){return this.getAttribute('allowThumbsOverlapping')};set allowThumbsOverlapping(allowThumbsOverlapping){this.setAttribute('allowThumbsOverlapping',allowThumbsOverlapping)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get animation(){return this.getAttribute('animation')};set animation(animation){this.setAttribute('animation',animation)}
@@ -570,11 +570,11 @@ export default class ExtSlider extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtSlider.METHODS()
-    this.XTYPE = ExtSlider.XTYPE()
-    //this.PROPERTIES = ExtSlider.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtSlider.PROPERTIESOBJECT()
-    this.EVENTS = ExtSlider.EVENTS()
+    this.METHODS = ExtSliderComponent.METHODS()
+    this.XTYPE = ExtSliderComponent.XTYPE()
+    //this.PROPERTIES = ExtSliderComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtSliderComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtSliderComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -586,5 +586,5 @@ export default class ExtSlider extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-slider', ExtSlider);
+window.customElements.define('ext-slider', ExtSliderComponent);
 })();

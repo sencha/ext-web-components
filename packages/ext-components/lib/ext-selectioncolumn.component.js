@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtSelectioncolumn extends ExtBase {
+export class ExtSelectioncolumnComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get align(){return this.getAttribute('align')};set align(align){this.setAttribute('align',align)}
@@ -747,11 +747,11 @@ export default class ExtSelectioncolumn extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtSelectioncolumn.METHODS()
-    this.XTYPE = ExtSelectioncolumn.XTYPE()
-    //this.PROPERTIES = ExtSelectioncolumn.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtSelectioncolumn.PROPERTIESOBJECT()
-    this.EVENTS = ExtSelectioncolumn.EVENTS()
+    this.METHODS = ExtSelectioncolumnComponent.METHODS()
+    this.XTYPE = ExtSelectioncolumnComponent.XTYPE()
+    //this.PROPERTIES = ExtSelectioncolumnComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtSelectioncolumnComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtSelectioncolumnComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -763,5 +763,5 @@ export default class ExtSelectioncolumn extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-selectioncolumn', ExtSelectioncolumn);
+window.customElements.define('ext-selectioncolumn', ExtSelectioncolumnComponent);
 })();

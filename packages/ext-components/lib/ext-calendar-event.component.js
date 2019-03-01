@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtCalendar_event extends ExtBase {
+export class ExtCalendar_eventComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -546,11 +546,11 @@ export default class ExtCalendar_event extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtCalendar_event.METHODS()
-    this.XTYPE = ExtCalendar_event.XTYPE()
-    //this.PROPERTIES = ExtCalendar_event.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtCalendar_event.PROPERTIESOBJECT()
-    this.EVENTS = ExtCalendar_event.EVENTS()
+    this.METHODS = ExtCalendar_eventComponent.METHODS()
+    this.XTYPE = ExtCalendar_eventComponent.XTYPE()
+    //this.PROPERTIES = ExtCalendar_eventComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtCalendar_eventComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtCalendar_eventComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -562,5 +562,5 @@ export default class ExtCalendar_event extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-calendar_event', ExtCalendar_event);
+window.customElements.define('ext-calendar_event', ExtCalendar_eventComponent);
 })();

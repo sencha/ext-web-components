@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtSliderfield extends ExtBase {
+export class ExtSliderfieldComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -631,11 +631,11 @@ export default class ExtSliderfield extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtSliderfield.METHODS()
-    this.XTYPE = ExtSliderfield.XTYPE()
-    //this.PROPERTIES = ExtSliderfield.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtSliderfield.PROPERTIESOBJECT()
-    this.EVENTS = ExtSliderfield.EVENTS()
+    this.METHODS = ExtSliderfieldComponent.METHODS()
+    this.XTYPE = ExtSliderfieldComponent.XTYPE()
+    //this.PROPERTIES = ExtSliderfieldComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtSliderfieldComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtSliderfieldComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -647,5 +647,5 @@ export default class ExtSliderfield extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-sliderfield', ExtSliderfield);
+window.customElements.define('ext-sliderfield', ExtSliderfieldComponent);
 })();

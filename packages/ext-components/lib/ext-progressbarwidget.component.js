@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtProgressbarwidget extends ExtBase {
+export class ExtProgressbarwidgetComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get animate(){return this.getAttribute('animate')};set animate(animate){this.setAttribute('animate',animate)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
@@ -533,11 +533,11 @@ export default class ExtProgressbarwidget extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtProgressbarwidget.METHODS()
-    this.XTYPE = ExtProgressbarwidget.XTYPE()
-    //this.PROPERTIES = ExtProgressbarwidget.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtProgressbarwidget.PROPERTIESOBJECT()
-    this.EVENTS = ExtProgressbarwidget.EVENTS()
+    this.METHODS = ExtProgressbarwidgetComponent.METHODS()
+    this.XTYPE = ExtProgressbarwidgetComponent.XTYPE()
+    //this.PROPERTIES = ExtProgressbarwidgetComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtProgressbarwidgetComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtProgressbarwidgetComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -549,5 +549,5 @@ export default class ExtProgressbarwidget extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-progressbarwidget', ExtProgressbarwidget);
+window.customElements.define('ext-progressbarwidget', ExtProgressbarwidgetComponent);
 })();

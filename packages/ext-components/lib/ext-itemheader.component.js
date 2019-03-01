@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtItemheader extends ExtBase {
+export class ExtItemheaderComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -536,11 +536,11 @@ export default class ExtItemheader extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtItemheader.METHODS()
-    this.XTYPE = ExtItemheader.XTYPE()
-    //this.PROPERTIES = ExtItemheader.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtItemheader.PROPERTIESOBJECT()
-    this.EVENTS = ExtItemheader.EVENTS()
+    this.METHODS = ExtItemheaderComponent.METHODS()
+    this.XTYPE = ExtItemheaderComponent.XTYPE()
+    //this.PROPERTIES = ExtItemheaderComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtItemheaderComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtItemheaderComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -552,5 +552,5 @@ export default class ExtItemheader extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-itemheader', ExtItemheader);
+window.customElements.define('ext-itemheader', ExtItemheaderComponent);
 })();

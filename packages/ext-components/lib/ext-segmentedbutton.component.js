@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtSegmentedbutton extends ExtBase {
+export class ExtSegmentedbuttonComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowDepress(){return this.getAttribute('allowDepress')};set allowDepress(allowDepress){this.setAttribute('allowDepress',allowDepress)}
@@ -663,11 +663,11 @@ export default class ExtSegmentedbutton extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtSegmentedbutton.METHODS()
-    this.XTYPE = ExtSegmentedbutton.XTYPE()
-    //this.PROPERTIES = ExtSegmentedbutton.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtSegmentedbutton.PROPERTIESOBJECT()
-    this.EVENTS = ExtSegmentedbutton.EVENTS()
+    this.METHODS = ExtSegmentedbuttonComponent.METHODS()
+    this.XTYPE = ExtSegmentedbuttonComponent.XTYPE()
+    //this.PROPERTIES = ExtSegmentedbuttonComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtSegmentedbuttonComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtSegmentedbuttonComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -679,5 +679,5 @@ export default class ExtSegmentedbutton extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-segmentedbutton', ExtSegmentedbutton);
+window.customElements.define('ext-segmentedbutton', ExtSegmentedbuttonComponent);
 })();

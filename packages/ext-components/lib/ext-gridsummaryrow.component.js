@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtGridsummaryrow extends ExtBase {
+export class ExtGridsummaryrowComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -547,11 +547,11 @@ export default class ExtGridsummaryrow extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtGridsummaryrow.METHODS()
-    this.XTYPE = ExtGridsummaryrow.XTYPE()
-    //this.PROPERTIES = ExtGridsummaryrow.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtGridsummaryrow.PROPERTIESOBJECT()
-    this.EVENTS = ExtGridsummaryrow.EVENTS()
+    this.METHODS = ExtGridsummaryrowComponent.METHODS()
+    this.XTYPE = ExtGridsummaryrowComponent.XTYPE()
+    //this.PROPERTIES = ExtGridsummaryrowComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtGridsummaryrowComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtGridsummaryrowComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -563,5 +563,5 @@ export default class ExtGridsummaryrow extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-gridsummaryrow', ExtGridsummaryrow);
+window.customElements.define('ext-gridsummaryrow', ExtGridsummaryrowComponent);
 })();

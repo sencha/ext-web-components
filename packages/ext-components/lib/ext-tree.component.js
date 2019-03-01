@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtTree extends ExtBase {
+export class ExtTreeComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -941,11 +941,11 @@ export default class ExtTree extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtTree.METHODS()
-    this.XTYPE = ExtTree.XTYPE()
-    //this.PROPERTIES = ExtTree.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtTree.PROPERTIESOBJECT()
-    this.EVENTS = ExtTree.EVENTS()
+    this.METHODS = ExtTreeComponent.METHODS()
+    this.XTYPE = ExtTreeComponent.XTYPE()
+    //this.PROPERTIES = ExtTreeComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtTreeComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtTreeComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -957,5 +957,5 @@ export default class ExtTree extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-tree', ExtTree);
+window.customElements.define('ext-tree', ExtTreeComponent);
 })();

@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtComponent extends ExtBase {
+export class ExtComponentComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -525,11 +525,11 @@ export default class ExtComponent extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtComponent.METHODS()
-    this.XTYPE = ExtComponent.XTYPE()
-    //this.PROPERTIES = ExtComponent.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtComponent.PROPERTIESOBJECT()
-    this.EVENTS = ExtComponent.EVENTS()
+    this.METHODS = ExtComponentComponent.METHODS()
+    this.XTYPE = ExtComponentComponent.XTYPE()
+    //this.PROPERTIES = ExtComponentComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtComponentComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtComponentComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -541,5 +541,5 @@ export default class ExtComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-component', ExtComponent);
+window.customElements.define('ext-component', ExtComponentComponent);
 })();

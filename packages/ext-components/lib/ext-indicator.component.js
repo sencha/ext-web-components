@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtIndicator extends ExtBase {
+export class ExtIndicatorComponent extends ExtBase {
 	get activeIndex(){return this.getAttribute('activeIndex')};set activeIndex(activeIndex){this.setAttribute('activeIndex',activeIndex)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
@@ -548,11 +548,11 @@ export default class ExtIndicator extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtIndicator.METHODS()
-    this.XTYPE = ExtIndicator.XTYPE()
-    //this.PROPERTIES = ExtIndicator.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtIndicator.PROPERTIESOBJECT()
-    this.EVENTS = ExtIndicator.EVENTS()
+    this.METHODS = ExtIndicatorComponent.METHODS()
+    this.XTYPE = ExtIndicatorComponent.XTYPE()
+    //this.PROPERTIES = ExtIndicatorComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtIndicatorComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtIndicatorComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -564,5 +564,5 @@ export default class ExtIndicator extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-indicator', ExtIndicator);
+window.customElements.define('ext-indicator', ExtIndicatorComponent);
 })();

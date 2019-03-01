@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtTabletpicker extends ExtBase {
+export class ExtTabletpickerComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -727,11 +727,11 @@ export default class ExtTabletpicker extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtTabletpicker.METHODS()
-    this.XTYPE = ExtTabletpicker.XTYPE()
-    //this.PROPERTIES = ExtTabletpicker.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtTabletpicker.PROPERTIESOBJECT()
-    this.EVENTS = ExtTabletpicker.EVENTS()
+    this.METHODS = ExtTabletpickerComponent.METHODS()
+    this.XTYPE = ExtTabletpickerComponent.XTYPE()
+    //this.PROPERTIES = ExtTabletpickerComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtTabletpickerComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtTabletpickerComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -743,5 +743,5 @@ export default class ExtTabletpicker extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-tabletpicker', ExtTabletpicker);
+window.customElements.define('ext-tabletpicker', ExtTabletpickerComponent);
 })();

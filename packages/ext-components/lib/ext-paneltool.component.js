@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtPaneltool extends ExtBase {
+export class ExtPaneltoolComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -546,11 +546,11 @@ export default class ExtPaneltool extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtPaneltool.METHODS()
-    this.XTYPE = ExtPaneltool.XTYPE()
-    //this.PROPERTIES = ExtPaneltool.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtPaneltool.PROPERTIESOBJECT()
-    this.EVENTS = ExtPaneltool.EVENTS()
+    this.METHODS = ExtPaneltoolComponent.METHODS()
+    this.XTYPE = ExtPaneltoolComponent.XTYPE()
+    //this.PROPERTIES = ExtPaneltoolComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtPaneltoolComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtPaneltoolComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -562,5 +562,5 @@ export default class ExtPaneltool extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-paneltool', ExtPaneltool);
+window.customElements.define('ext-paneltool', ExtPaneltoolComponent);
 })();

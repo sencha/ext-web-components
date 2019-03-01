@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtThumb extends ExtBase {
+export class ExtThumbComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -529,11 +529,11 @@ export default class ExtThumb extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtThumb.METHODS()
-    this.XTYPE = ExtThumb.XTYPE()
-    //this.PROPERTIES = ExtThumb.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtThumb.PROPERTIESOBJECT()
-    this.EVENTS = ExtThumb.EVENTS()
+    this.METHODS = ExtThumbComponent.METHODS()
+    this.XTYPE = ExtThumbComponent.XTYPE()
+    //this.PROPERTIES = ExtThumbComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtThumbComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtThumbComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -545,5 +545,5 @@ export default class ExtThumb extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-thumb', ExtThumb);
+window.customElements.define('ext-thumb', ExtThumbComponent);
 })();

@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtToolbar extends ExtBase {
+export class ExtToolbarComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -647,11 +647,11 @@ export default class ExtToolbar extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtToolbar.METHODS()
-    this.XTYPE = ExtToolbar.XTYPE()
-    //this.PROPERTIES = ExtToolbar.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtToolbar.PROPERTIESOBJECT()
-    this.EVENTS = ExtToolbar.EVENTS()
+    this.METHODS = ExtToolbarComponent.METHODS()
+    this.XTYPE = ExtToolbarComponent.XTYPE()
+    //this.PROPERTIES = ExtToolbarComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtToolbarComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtToolbarComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -663,5 +663,5 @@ export default class ExtToolbar extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-toolbar', ExtToolbar);
+window.customElements.define('ext-toolbar', ExtToolbarComponent);
 })();

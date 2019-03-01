@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtMenucheckitem extends ExtBase {
+export class ExtMenucheckitemComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -577,11 +577,11 @@ export default class ExtMenucheckitem extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtMenucheckitem.METHODS()
-    this.XTYPE = ExtMenucheckitem.XTYPE()
-    //this.PROPERTIES = ExtMenucheckitem.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtMenucheckitem.PROPERTIESOBJECT()
-    this.EVENTS = ExtMenucheckitem.EVENTS()
+    this.METHODS = ExtMenucheckitemComponent.METHODS()
+    this.XTYPE = ExtMenucheckitemComponent.XTYPE()
+    //this.PROPERTIES = ExtMenucheckitemComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtMenucheckitemComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtMenucheckitemComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -593,5 +593,5 @@ export default class ExtMenucheckitem extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-menucheckitem', ExtMenucheckitem);
+window.customElements.define('ext-menucheckitem', ExtMenucheckitemComponent);
 })();

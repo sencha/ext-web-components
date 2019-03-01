@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtCalendar_multiview extends ExtBase {
+export class ExtCalendar_multiviewComponent extends ExtBase {
 	get compact(){return this.getAttribute('compact')};set compact(compact){this.setAttribute('compact',compact)}
 	get compactOptions(){return this.getAttribute('compactOptions')};set compactOptions(compactOptions){this.setAttribute('compactOptions',compactOptions)}
 	get defaultView(){return this.getAttribute('defaultView')};set defaultView(defaultView){this.setAttribute('defaultView',defaultView)}
@@ -46,11 +46,11 @@ export default class ExtCalendar_multiview extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtCalendar_multiview.METHODS()
-    this.XTYPE = ExtCalendar_multiview.XTYPE()
-    //this.PROPERTIES = ExtCalendar_multiview.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtCalendar_multiview.PROPERTIESOBJECT()
-    this.EVENTS = ExtCalendar_multiview.EVENTS()
+    this.METHODS = ExtCalendar_multiviewComponent.METHODS()
+    this.XTYPE = ExtCalendar_multiviewComponent.XTYPE()
+    //this.PROPERTIES = ExtCalendar_multiviewComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtCalendar_multiviewComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtCalendar_multiviewComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -62,5 +62,5 @@ export default class ExtCalendar_multiview extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-calendar_multiview', ExtCalendar_multiview);
+window.customElements.define('ext-calendar_multiview', ExtCalendar_multiviewComponent);
 })();

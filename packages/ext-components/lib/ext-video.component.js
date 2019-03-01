@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtVideo extends ExtBase {
+export class ExtVideoComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -582,11 +582,11 @@ export default class ExtVideo extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtVideo.METHODS()
-    this.XTYPE = ExtVideo.XTYPE()
-    //this.PROPERTIES = ExtVideo.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtVideo.PROPERTIESOBJECT()
-    this.EVENTS = ExtVideo.EVENTS()
+    this.METHODS = ExtVideoComponent.METHODS()
+    this.XTYPE = ExtVideoComponent.XTYPE()
+    //this.PROPERTIES = ExtVideoComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtVideoComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtVideoComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -598,5 +598,5 @@ export default class ExtVideo extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-video', ExtVideo);
+window.customElements.define('ext-video', ExtVideoComponent);
 })();

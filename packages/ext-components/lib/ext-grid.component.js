@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtGrid extends ExtBase {
+export class ExtGridComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -913,11 +913,11 @@ export default class ExtGrid extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtGrid.METHODS()
-    this.XTYPE = ExtGrid.XTYPE()
-    //this.PROPERTIES = ExtGrid.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtGrid.PROPERTIESOBJECT()
-    this.EVENTS = ExtGrid.EVENTS()
+    this.METHODS = ExtGridComponent.METHODS()
+    this.XTYPE = ExtGridComponent.XTYPE()
+    //this.PROPERTIES = ExtGridComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtGridComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtGridComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -929,5 +929,5 @@ export default class ExtGrid extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-grid', ExtGrid);
+window.customElements.define('ext-grid', ExtGridComponent);
 })();

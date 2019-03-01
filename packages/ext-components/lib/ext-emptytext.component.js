@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtEmptytext extends ExtBase {
+export class ExtEmptytextComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -525,11 +525,11 @@ export default class ExtEmptytext extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtEmptytext.METHODS()
-    this.XTYPE = ExtEmptytext.XTYPE()
-    //this.PROPERTIES = ExtEmptytext.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtEmptytext.PROPERTIESOBJECT()
-    this.EVENTS = ExtEmptytext.EVENTS()
+    this.METHODS = ExtEmptytextComponent.METHODS()
+    this.XTYPE = ExtEmptytextComponent.XTYPE()
+    //this.PROPERTIES = ExtEmptytextComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtEmptytextComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtEmptytextComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -541,5 +541,5 @@ export default class ExtEmptytext extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-emptytext', ExtEmptytext);
+window.customElements.define('ext-emptytext', ExtEmptytextComponent);
 })();

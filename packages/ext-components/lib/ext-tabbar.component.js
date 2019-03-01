@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtTabbar extends ExtBase {
+export class ExtTabbarComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get activeTab(){return this.getAttribute('activeTab')};set activeTab(activeTab){this.setAttribute('activeTab',activeTab)}
@@ -666,11 +666,11 @@ export default class ExtTabbar extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtTabbar.METHODS()
-    this.XTYPE = ExtTabbar.XTYPE()
-    //this.PROPERTIES = ExtTabbar.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtTabbar.PROPERTIESOBJECT()
-    this.EVENTS = ExtTabbar.EVENTS()
+    this.METHODS = ExtTabbarComponent.METHODS()
+    this.XTYPE = ExtTabbarComponent.XTYPE()
+    //this.PROPERTIES = ExtTabbarComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtTabbarComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtTabbarComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -682,5 +682,5 @@ export default class ExtTabbar extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-tabbar', ExtTabbar);
+window.customElements.define('ext-tabbar', ExtTabbarComponent);
 })();

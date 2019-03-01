@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtTextcell extends ExtBase {
+export class ExtTextcellComponent extends ExtBase {
 	get align(){return this.getAttribute('align')};set align(align){this.setAttribute('align',align)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
@@ -354,11 +354,11 @@ export default class ExtTextcell extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtTextcell.METHODS()
-    this.XTYPE = ExtTextcell.XTYPE()
-    //this.PROPERTIES = ExtTextcell.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtTextcell.PROPERTIESOBJECT()
-    this.EVENTS = ExtTextcell.EVENTS()
+    this.METHODS = ExtTextcellComponent.METHODS()
+    this.XTYPE = ExtTextcellComponent.XTYPE()
+    //this.PROPERTIES = ExtTextcellComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtTextcellComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtTextcellComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -370,5 +370,5 @@ export default class ExtTextcell extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-textcell', ExtTextcell);
+window.customElements.define('ext-textcell', ExtTextcellComponent);
 })();

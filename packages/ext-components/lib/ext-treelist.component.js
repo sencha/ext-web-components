@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtTreelist extends ExtBase {
+export class ExtTreelistComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -567,11 +567,11 @@ export default class ExtTreelist extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtTreelist.METHODS()
-    this.XTYPE = ExtTreelist.XTYPE()
-    //this.PROPERTIES = ExtTreelist.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtTreelist.PROPERTIESOBJECT()
-    this.EVENTS = ExtTreelist.EVENTS()
+    this.METHODS = ExtTreelistComponent.METHODS()
+    this.XTYPE = ExtTreelistComponent.XTYPE()
+    //this.PROPERTIES = ExtTreelistComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtTreelistComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtTreelistComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -583,5 +583,5 @@ export default class ExtTreelist extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-treelist', ExtTreelist);
+window.customElements.define('ext-treelist', ExtTreelistComponent);
 })();

@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtGridshowingroupsmenuitem extends ExtBase {
+export class ExtGridshowingroupsmenuitemComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -577,11 +577,11 @@ export default class ExtGridshowingroupsmenuitem extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtGridshowingroupsmenuitem.METHODS()
-    this.XTYPE = ExtGridshowingroupsmenuitem.XTYPE()
-    //this.PROPERTIES = ExtGridshowingroupsmenuitem.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtGridshowingroupsmenuitem.PROPERTIESOBJECT()
-    this.EVENTS = ExtGridshowingroupsmenuitem.EVENTS()
+    this.METHODS = ExtGridshowingroupsmenuitemComponent.METHODS()
+    this.XTYPE = ExtGridshowingroupsmenuitemComponent.XTYPE()
+    //this.PROPERTIES = ExtGridshowingroupsmenuitemComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtGridshowingroupsmenuitemComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtGridshowingroupsmenuitemComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -593,5 +593,5 @@ export default class ExtGridshowingroupsmenuitem extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-gridshowingroupsmenuitem', ExtGridshowingroupsmenuitem);
+window.customElements.define('ext-gridshowingroupsmenuitem', ExtGridshowingroupsmenuitemComponent);
 })();

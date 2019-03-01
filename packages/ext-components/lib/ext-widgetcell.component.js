@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtWidgetcell extends ExtBase {
+export class ExtWidgetcellComponent extends ExtBase {
 	get align(){return this.getAttribute('align')};set align(align){this.setAttribute('align',align)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
@@ -352,11 +352,11 @@ export default class ExtWidgetcell extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtWidgetcell.METHODS()
-    this.XTYPE = ExtWidgetcell.XTYPE()
-    //this.PROPERTIES = ExtWidgetcell.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtWidgetcell.PROPERTIESOBJECT()
-    this.EVENTS = ExtWidgetcell.EVENTS()
+    this.METHODS = ExtWidgetcellComponent.METHODS()
+    this.XTYPE = ExtWidgetcellComponent.XTYPE()
+    //this.PROPERTIES = ExtWidgetcellComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtWidgetcellComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtWidgetcellComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -368,5 +368,5 @@ export default class ExtWidgetcell extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-widgetcell', ExtWidgetcell);
+window.customElements.define('ext-widgetcell', ExtWidgetcellComponent);
 })();

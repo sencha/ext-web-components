@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtNestedlist extends ExtBase {
+export class ExtNestedlistComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowDeselect(){return this.getAttribute('allowDeselect')};set allowDeselect(allowDeselect){this.setAttribute('allowDeselect',allowDeselect)}
@@ -710,11 +710,11 @@ export default class ExtNestedlist extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtNestedlist.METHODS()
-    this.XTYPE = ExtNestedlist.XTYPE()
-    //this.PROPERTIES = ExtNestedlist.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtNestedlist.PROPERTIESOBJECT()
-    this.EVENTS = ExtNestedlist.EVENTS()
+    this.METHODS = ExtNestedlistComponent.METHODS()
+    this.XTYPE = ExtNestedlistComponent.XTYPE()
+    //this.PROPERTIES = ExtNestedlistComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtNestedlistComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtNestedlistComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -726,5 +726,5 @@ export default class ExtNestedlist extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-nestedlist', ExtNestedlist);
+window.customElements.define('ext-nestedlist', ExtNestedlistComponent);
 })();

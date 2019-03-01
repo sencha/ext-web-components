@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtMenuitem extends ExtBase {
+export class ExtMenuitemComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -562,11 +562,11 @@ export default class ExtMenuitem extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtMenuitem.METHODS()
-    this.XTYPE = ExtMenuitem.XTYPE()
-    //this.PROPERTIES = ExtMenuitem.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtMenuitem.PROPERTIESOBJECT()
-    this.EVENTS = ExtMenuitem.EVENTS()
+    this.METHODS = ExtMenuitemComponent.METHODS()
+    this.XTYPE = ExtMenuitemComponent.XTYPE()
+    //this.PROPERTIES = ExtMenuitemComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtMenuitemComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtMenuitemComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -578,5 +578,5 @@ export default class ExtMenuitem extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-menuitem', ExtMenuitem);
+window.customElements.define('ext-menuitem', ExtMenuitemComponent);
 })();

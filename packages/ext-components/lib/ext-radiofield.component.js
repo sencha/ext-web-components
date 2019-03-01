@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtRadiofield extends ExtBase {
+export class ExtRadiofieldComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -634,11 +634,11 @@ export default class ExtRadiofield extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtRadiofield.METHODS()
-    this.XTYPE = ExtRadiofield.XTYPE()
-    //this.PROPERTIES = ExtRadiofield.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtRadiofield.PROPERTIESOBJECT()
-    this.EVENTS = ExtRadiofield.EVENTS()
+    this.METHODS = ExtRadiofieldComponent.METHODS()
+    this.XTYPE = ExtRadiofieldComponent.XTYPE()
+    //this.PROPERTIES = ExtRadiofieldComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtRadiofieldComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtRadiofieldComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -650,5 +650,5 @@ export default class ExtRadiofield extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-radiofield', ExtRadiofield);
+window.customElements.define('ext-radiofield', ExtRadiofieldComponent);
 })();

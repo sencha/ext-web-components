@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtPivotgrid extends ExtBase {
+export class ExtPivotgridComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -1026,11 +1026,11 @@ export default class ExtPivotgrid extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtPivotgrid.METHODS()
-    this.XTYPE = ExtPivotgrid.XTYPE()
-    //this.PROPERTIES = ExtPivotgrid.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtPivotgrid.PROPERTIESOBJECT()
-    this.EVENTS = ExtPivotgrid.EVENTS()
+    this.METHODS = ExtPivotgridComponent.METHODS()
+    this.XTYPE = ExtPivotgridComponent.XTYPE()
+    //this.PROPERTIES = ExtPivotgridComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtPivotgridComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtPivotgridComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -1042,5 +1042,5 @@ export default class ExtPivotgrid extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-pivotgrid', ExtPivotgrid);
+window.customElements.define('ext-pivotgrid', ExtPivotgridComponent);
 })();

@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtPivotrangeeditor extends ExtBase {
+export class ExtPivotrangeeditorComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -790,11 +790,11 @@ export default class ExtPivotrangeeditor extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtPivotrangeeditor.METHODS()
-    this.XTYPE = ExtPivotrangeeditor.XTYPE()
-    //this.PROPERTIES = ExtPivotrangeeditor.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtPivotrangeeditor.PROPERTIESOBJECT()
-    this.EVENTS = ExtPivotrangeeditor.EVENTS()
+    this.METHODS = ExtPivotrangeeditorComponent.METHODS()
+    this.XTYPE = ExtPivotrangeeditorComponent.XTYPE()
+    //this.PROPERTIES = ExtPivotrangeeditorComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtPivotrangeeditorComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtPivotrangeeditorComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -806,5 +806,5 @@ export default class ExtPivotrangeeditor extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-pivotrangeeditor', ExtPivotrangeeditor);
+window.customElements.define('ext-pivotrangeeditor', ExtPivotrangeeditorComponent);
 })();

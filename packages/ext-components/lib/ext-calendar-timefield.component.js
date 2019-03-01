@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtCalendar_timefield extends ExtBase {
+export class ExtCalendar_timefieldComponent extends ExtBase {
 	get alignTarget(){return this.getAttribute('alignTarget')};set alignTarget(alignTarget){this.setAttribute('alignTarget',alignTarget)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get animateUnderline(){return this.getAttribute('animateUnderline')};set animateUnderline(animateUnderline){this.setAttribute('animateUnderline',animateUnderline)}
@@ -750,11 +750,11 @@ export default class ExtCalendar_timefield extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtCalendar_timefield.METHODS()
-    this.XTYPE = ExtCalendar_timefield.XTYPE()
-    //this.PROPERTIES = ExtCalendar_timefield.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtCalendar_timefield.PROPERTIESOBJECT()
-    this.EVENTS = ExtCalendar_timefield.EVENTS()
+    this.METHODS = ExtCalendar_timefieldComponent.METHODS()
+    this.XTYPE = ExtCalendar_timefieldComponent.XTYPE()
+    //this.PROPERTIES = ExtCalendar_timefieldComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtCalendar_timefieldComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtCalendar_timefieldComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -766,5 +766,5 @@ export default class ExtCalendar_timefield extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-calendar_timefield', ExtCalendar_timefield);
+window.customElements.define('ext-calendar_timefield', ExtCalendar_timefieldComponent);
 })();

@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtPanelheader extends ExtBase {
+export class ExtPanelheaderComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -653,11 +653,11 @@ export default class ExtPanelheader extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtPanelheader.METHODS()
-    this.XTYPE = ExtPanelheader.XTYPE()
-    //this.PROPERTIES = ExtPanelheader.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtPanelheader.PROPERTIESOBJECT()
-    this.EVENTS = ExtPanelheader.EVENTS()
+    this.METHODS = ExtPanelheaderComponent.METHODS()
+    this.XTYPE = ExtPanelheaderComponent.XTYPE()
+    //this.PROPERTIES = ExtPanelheaderComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtPanelheaderComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtPanelheaderComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -669,5 +669,5 @@ export default class ExtPanelheader extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-panelheader', ExtPanelheader);
+window.customElements.define('ext-panelheader', ExtPanelheaderComponent);
 })();

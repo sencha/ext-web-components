@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtTooltip extends ExtBase {
+export class ExtTooltipComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get align(){return this.getAttribute('align')};set align(align){this.setAttribute('align',align)}
@@ -757,11 +757,11 @@ export default class ExtTooltip extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtTooltip.METHODS()
-    this.XTYPE = ExtTooltip.XTYPE()
-    //this.PROPERTIES = ExtTooltip.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtTooltip.PROPERTIESOBJECT()
-    this.EVENTS = ExtTooltip.EVENTS()
+    this.METHODS = ExtTooltipComponent.METHODS()
+    this.XTYPE = ExtTooltipComponent.XTYPE()
+    //this.PROPERTIES = ExtTooltipComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtTooltipComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtTooltipComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -773,5 +773,5 @@ export default class ExtTooltip extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-tooltip', ExtTooltip);
+window.customElements.define('ext-tooltip', ExtTooltipComponent);
 })();

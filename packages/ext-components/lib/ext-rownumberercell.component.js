@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtRownumberercell extends ExtBase {
+export class ExtRownumberercellComponent extends ExtBase {
 	get align(){return this.getAttribute('align')};set align(align){this.setAttribute('align',align)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
@@ -356,11 +356,11 @@ export default class ExtRownumberercell extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtRownumberercell.METHODS()
-    this.XTYPE = ExtRownumberercell.XTYPE()
-    //this.PROPERTIES = ExtRownumberercell.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtRownumberercell.PROPERTIESOBJECT()
-    this.EVENTS = ExtRownumberercell.EVENTS()
+    this.METHODS = ExtRownumberercellComponent.METHODS()
+    this.XTYPE = ExtRownumberercellComponent.XTYPE()
+    //this.PROPERTIES = ExtRownumberercellComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtRownumberercellComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtRownumberercellComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -372,5 +372,5 @@ export default class ExtRownumberercell extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-rownumberercell', ExtRownumberercell);
+window.customElements.define('ext-rownumberercell', ExtRownumberercellComponent);
 })();

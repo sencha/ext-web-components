@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtTreelistitem extends ExtBase {
+export class ExtTreelistitemComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -381,11 +381,11 @@ export default class ExtTreelistitem extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtTreelistitem.METHODS()
-    this.XTYPE = ExtTreelistitem.XTYPE()
-    //this.PROPERTIES = ExtTreelistitem.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtTreelistitem.PROPERTIESOBJECT()
-    this.EVENTS = ExtTreelistitem.EVENTS()
+    this.METHODS = ExtTreelistitemComponent.METHODS()
+    this.XTYPE = ExtTreelistitemComponent.XTYPE()
+    //this.PROPERTIES = ExtTreelistitemComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtTreelistitemComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtTreelistitemComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -397,5 +397,5 @@ export default class ExtTreelistitem extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-treelistitem', ExtTreelistitem);
+window.customElements.define('ext-treelistitem', ExtTreelistitemComponent);
 })();

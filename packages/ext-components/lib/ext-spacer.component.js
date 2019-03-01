@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtSpacer extends ExtBase {
+export class ExtSpacerComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -525,11 +525,11 @@ export default class ExtSpacer extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtSpacer.METHODS()
-    this.XTYPE = ExtSpacer.XTYPE()
-    //this.PROPERTIES = ExtSpacer.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtSpacer.PROPERTIESOBJECT()
-    this.EVENTS = ExtSpacer.EVENTS()
+    this.METHODS = ExtSpacerComponent.METHODS()
+    this.XTYPE = ExtSpacerComponent.XTYPE()
+    //this.PROPERTIES = ExtSpacerComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtSpacerComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtSpacerComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -541,5 +541,5 @@ export default class ExtSpacer extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-spacer', ExtSpacer);
+window.customElements.define('ext-spacer', ExtSpacerComponent);
 })();

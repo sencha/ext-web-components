@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtLegend extends ExtBase {
+export class ExtLegendComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -785,11 +785,11 @@ export default class ExtLegend extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtLegend.METHODS()
-    this.XTYPE = ExtLegend.XTYPE()
-    //this.PROPERTIES = ExtLegend.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtLegend.PROPERTIESOBJECT()
-    this.EVENTS = ExtLegend.EVENTS()
+    this.METHODS = ExtLegendComponent.METHODS()
+    this.XTYPE = ExtLegendComponent.XTYPE()
+    //this.PROPERTIES = ExtLegendComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtLegendComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtLegendComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -801,5 +801,5 @@ export default class ExtLegend extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-legend', ExtLegend);
+window.customElements.define('ext-legend', ExtLegendComponent);
 })();

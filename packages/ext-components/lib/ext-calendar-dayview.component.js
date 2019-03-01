@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtCalendar_dayview extends ExtBase {
+export class ExtCalendar_dayviewComponent extends ExtBase {
 	get addForm(){return this.getAttribute('addForm')};set addForm(addForm){this.setAttribute('addForm',addForm)}
 	get allowSelection(){return this.getAttribute('allowSelection')};set allowSelection(allowSelection){this.setAttribute('allowSelection',allowSelection)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
@@ -689,11 +689,11 @@ export default class ExtCalendar_dayview extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtCalendar_dayview.METHODS()
-    this.XTYPE = ExtCalendar_dayview.XTYPE()
-    //this.PROPERTIES = ExtCalendar_dayview.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtCalendar_dayview.PROPERTIESOBJECT()
-    this.EVENTS = ExtCalendar_dayview.EVENTS()
+    this.METHODS = ExtCalendar_dayviewComponent.METHODS()
+    this.XTYPE = ExtCalendar_dayviewComponent.XTYPE()
+    //this.PROPERTIES = ExtCalendar_dayviewComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtCalendar_dayviewComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtCalendar_dayviewComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -705,5 +705,5 @@ export default class ExtCalendar_dayview extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-calendar_dayview', ExtCalendar_dayview);
+window.customElements.define('ext-calendar_dayview', ExtCalendar_dayviewComponent);
 })();

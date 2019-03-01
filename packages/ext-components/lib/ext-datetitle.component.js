@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtDatetitle extends ExtBase {
+export class ExtDatetitleComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -541,11 +541,11 @@ export default class ExtDatetitle extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtDatetitle.METHODS()
-    this.XTYPE = ExtDatetitle.XTYPE()
-    //this.PROPERTIES = ExtDatetitle.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtDatetitle.PROPERTIESOBJECT()
-    this.EVENTS = ExtDatetitle.EVENTS()
+    this.METHODS = ExtDatetitleComponent.METHODS()
+    this.XTYPE = ExtDatetitleComponent.XTYPE()
+    //this.PROPERTIES = ExtDatetitleComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtDatetitleComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtDatetitleComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -557,5 +557,5 @@ export default class ExtDatetitle extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-datetitle', ExtDatetitle);
+window.customElements.define('ext-datetitle', ExtDatetitleComponent);
 })();

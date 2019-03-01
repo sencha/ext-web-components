@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtCombobox extends ExtBase {
+export class ExtComboboxComponent extends ExtBase {
 	get alignTarget(){return this.getAttribute('alignTarget')};set alignTarget(alignTarget){this.setAttribute('alignTarget',alignTarget)}
 	get allQuery(){return this.getAttribute('allQuery')};set allQuery(allQuery){this.setAttribute('allQuery',allQuery)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
@@ -788,11 +788,11 @@ export default class ExtCombobox extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtCombobox.METHODS()
-    this.XTYPE = ExtCombobox.XTYPE()
-    //this.PROPERTIES = ExtCombobox.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtCombobox.PROPERTIESOBJECT()
-    this.EVENTS = ExtCombobox.EVENTS()
+    this.METHODS = ExtComboboxComponent.METHODS()
+    this.XTYPE = ExtComboboxComponent.XTYPE()
+    //this.PROPERTIES = ExtComboboxComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtComboboxComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtComboboxComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -804,5 +804,5 @@ export default class ExtCombobox extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-combobox', ExtCombobox);
+window.customElements.define('ext-combobox', ExtComboboxComponent);
 })();

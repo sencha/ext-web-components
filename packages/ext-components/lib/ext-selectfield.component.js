@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtSelectfield extends ExtBase {
+export class ExtSelectfieldComponent extends ExtBase {
 	get alignTarget(){return this.getAttribute('alignTarget')};set alignTarget(alignTarget){this.setAttribute('alignTarget',alignTarget)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get animateUnderline(){return this.getAttribute('animateUnderline')};set animateUnderline(animateUnderline){this.setAttribute('animateUnderline',animateUnderline)}
@@ -750,11 +750,11 @@ export default class ExtSelectfield extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtSelectfield.METHODS()
-    this.XTYPE = ExtSelectfield.XTYPE()
-    //this.PROPERTIES = ExtSelectfield.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtSelectfield.PROPERTIESOBJECT()
-    this.EVENTS = ExtSelectfield.EVENTS()
+    this.METHODS = ExtSelectfieldComponent.METHODS()
+    this.XTYPE = ExtSelectfieldComponent.XTYPE()
+    //this.PROPERTIES = ExtSelectfieldComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtSelectfieldComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtSelectfieldComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -766,5 +766,5 @@ export default class ExtSelectfield extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-selectfield', ExtSelectfield);
+window.customElements.define('ext-selectfield', ExtSelectfieldComponent);
 })();

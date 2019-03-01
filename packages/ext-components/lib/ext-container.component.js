@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtContainer extends ExtBase {
+export class ExtContainerComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -637,11 +637,11 @@ export default class ExtContainer extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtContainer.METHODS()
-    this.XTYPE = ExtContainer.XTYPE()
-    //this.PROPERTIES = ExtContainer.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtContainer.PROPERTIESOBJECT()
-    this.EVENTS = ExtContainer.EVENTS()
+    this.METHODS = ExtContainerComponent.METHODS()
+    this.XTYPE = ExtContainerComponent.XTYPE()
+    //this.PROPERTIES = ExtContainerComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtContainerComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtContainerComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -653,5 +653,5 @@ export default class ExtContainer extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-container', ExtContainer);
+window.customElements.define('ext-container', ExtContainerComponent);
 })();

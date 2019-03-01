@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtPivotsettings extends ExtBase {
+export class ExtPivotsettingsComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -790,11 +790,11 @@ export default class ExtPivotsettings extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtPivotsettings.METHODS()
-    this.XTYPE = ExtPivotsettings.XTYPE()
-    //this.PROPERTIES = ExtPivotsettings.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtPivotsettings.PROPERTIESOBJECT()
-    this.EVENTS = ExtPivotsettings.EVENTS()
+    this.METHODS = ExtPivotsettingsComponent.METHODS()
+    this.XTYPE = ExtPivotsettingsComponent.XTYPE()
+    //this.PROPERTIES = ExtPivotsettingsComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtPivotsettingsComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtPivotsettingsComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -806,5 +806,5 @@ export default class ExtPivotsettings extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-pivotsettings', ExtPivotsettings);
+window.customElements.define('ext-pivotsettings', ExtPivotsettingsComponent);
 })();

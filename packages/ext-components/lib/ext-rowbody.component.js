@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtRowbody extends ExtBase {
+export class ExtRowbodyComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -525,11 +525,11 @@ export default class ExtRowbody extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtRowbody.METHODS()
-    this.XTYPE = ExtRowbody.XTYPE()
-    //this.PROPERTIES = ExtRowbody.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtRowbody.PROPERTIESOBJECT()
-    this.EVENTS = ExtRowbody.EVENTS()
+    this.METHODS = ExtRowbodyComponent.METHODS()
+    this.XTYPE = ExtRowbodyComponent.XTYPE()
+    //this.PROPERTIES = ExtRowbodyComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtRowbodyComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtRowbodyComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -541,5 +541,5 @@ export default class ExtRowbody extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-rowbody', ExtRowbody);
+window.customElements.define('ext-rowbody', ExtRowbodyComponent);
 })();

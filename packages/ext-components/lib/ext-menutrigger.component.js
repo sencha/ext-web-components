@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtMenutrigger extends ExtBase {
+export class ExtMenutriggerComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -348,11 +348,11 @@ export default class ExtMenutrigger extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtMenutrigger.METHODS()
-    this.XTYPE = ExtMenutrigger.XTYPE()
-    //this.PROPERTIES = ExtMenutrigger.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtMenutrigger.PROPERTIESOBJECT()
-    this.EVENTS = ExtMenutrigger.EVENTS()
+    this.METHODS = ExtMenutriggerComponent.METHODS()
+    this.XTYPE = ExtMenutriggerComponent.XTYPE()
+    //this.PROPERTIES = ExtMenutriggerComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtMenutriggerComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtMenutriggerComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -364,5 +364,5 @@ export default class ExtMenutrigger extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-menutrigger', ExtMenutrigger);
+window.customElements.define('ext-menutrigger', ExtMenutriggerComponent);
 })();

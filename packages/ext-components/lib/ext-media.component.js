@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtMedia extends ExtBase {
+export class ExtMediaComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -574,11 +574,11 @@ export default class ExtMedia extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtMedia.METHODS()
-    this.XTYPE = ExtMedia.XTYPE()
-    //this.PROPERTIES = ExtMedia.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtMedia.PROPERTIESOBJECT()
-    this.EVENTS = ExtMedia.EVENTS()
+    this.METHODS = ExtMediaComponent.METHODS()
+    this.XTYPE = ExtMediaComponent.XTYPE()
+    //this.PROPERTIES = ExtMediaComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtMediaComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtMediaComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -590,5 +590,5 @@ export default class ExtMedia extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-media', ExtMedia);
+window.customElements.define('ext-media', ExtMediaComponent);
 })();

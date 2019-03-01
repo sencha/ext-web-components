@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtGridcolumnsmenu extends ExtBase {
+export class ExtGridcolumnsmenuComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -562,11 +562,11 @@ export default class ExtGridcolumnsmenu extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtGridcolumnsmenu.METHODS()
-    this.XTYPE = ExtGridcolumnsmenu.XTYPE()
-    //this.PROPERTIES = ExtGridcolumnsmenu.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtGridcolumnsmenu.PROPERTIESOBJECT()
-    this.EVENTS = ExtGridcolumnsmenu.EVENTS()
+    this.METHODS = ExtGridcolumnsmenuComponent.METHODS()
+    this.XTYPE = ExtGridcolumnsmenuComponent.XTYPE()
+    //this.PROPERTIES = ExtGridcolumnsmenuComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtGridcolumnsmenuComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtGridcolumnsmenuComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -578,5 +578,5 @@ export default class ExtGridcolumnsmenu extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-gridcolumnsmenu', ExtGridcolumnsmenu);
+window.customElements.define('ext-gridcolumnsmenu', ExtGridcolumnsmenuComponent);
 })();

@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtD3_svg extends ExtBase {
+export class ExtD3_svgComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -550,11 +550,11 @@ export default class ExtD3_svg extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtD3_svg.METHODS()
-    this.XTYPE = ExtD3_svg.XTYPE()
-    //this.PROPERTIES = ExtD3_svg.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtD3_svg.PROPERTIESOBJECT()
-    this.EVENTS = ExtD3_svg.EVENTS()
+    this.METHODS = ExtD3_svgComponent.METHODS()
+    this.XTYPE = ExtD3_svgComponent.XTYPE()
+    //this.PROPERTIES = ExtD3_svgComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtD3_svgComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtD3_svgComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -566,5 +566,5 @@ export default class ExtD3_svg extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-d3_svg', ExtD3_svg);
+window.customElements.define('ext-d3_svg', ExtD3_svgComponent);
 })();

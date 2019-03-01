@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtNumbercell extends ExtBase {
+export class ExtNumbercellComponent extends ExtBase {
 	get align(){return this.getAttribute('align')};set align(align){this.setAttribute('align',align)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
@@ -356,11 +356,11 @@ export default class ExtNumbercell extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtNumbercell.METHODS()
-    this.XTYPE = ExtNumbercell.XTYPE()
-    //this.PROPERTIES = ExtNumbercell.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtNumbercell.PROPERTIESOBJECT()
-    this.EVENTS = ExtNumbercell.EVENTS()
+    this.METHODS = ExtNumbercellComponent.METHODS()
+    this.XTYPE = ExtNumbercellComponent.XTYPE()
+    //this.PROPERTIES = ExtNumbercellComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtNumbercellComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtNumbercellComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -372,5 +372,5 @@ export default class ExtNumbercell extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-numbercell', ExtNumbercell);
+window.customElements.define('ext-numbercell', ExtNumbercellComponent);
 })();

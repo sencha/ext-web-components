@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtPolar extends ExtBase {
+export class ExtPolarComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -760,11 +760,11 @@ export default class ExtPolar extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtPolar.METHODS()
-    this.XTYPE = ExtPolar.XTYPE()
-    //this.PROPERTIES = ExtPolar.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtPolar.PROPERTIESOBJECT()
-    this.EVENTS = ExtPolar.EVENTS()
+    this.METHODS = ExtPolarComponent.METHODS()
+    this.XTYPE = ExtPolarComponent.XTYPE()
+    //this.PROPERTIES = ExtPolarComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtPolarComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtPolarComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -776,5 +776,5 @@ export default class ExtPolar extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-polar', ExtPolar);
+window.customElements.define('ext-polar', ExtPolarComponent);
 })();

@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtSearchfield extends ExtBase {
+export class ExtSearchfieldComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get animateUnderline(){return this.getAttribute('animateUnderline')};set animateUnderline(animateUnderline){this.setAttribute('animateUnderline',animateUnderline)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
@@ -659,11 +659,11 @@ export default class ExtSearchfield extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtSearchfield.METHODS()
-    this.XTYPE = ExtSearchfield.XTYPE()
-    //this.PROPERTIES = ExtSearchfield.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtSearchfield.PROPERTIESOBJECT()
-    this.EVENTS = ExtSearchfield.EVENTS()
+    this.METHODS = ExtSearchfieldComponent.METHODS()
+    this.XTYPE = ExtSearchfieldComponent.XTYPE()
+    //this.PROPERTIES = ExtSearchfieldComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtSearchfieldComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtSearchfieldComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -675,5 +675,5 @@ export default class ExtSearchfield extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-searchfield', ExtSearchfield);
+window.customElements.define('ext-searchfield', ExtSearchfieldComponent);
 })();

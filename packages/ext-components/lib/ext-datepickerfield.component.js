@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtDatepickerfield extends ExtBase {
+export class ExtDatepickerfieldComponent extends ExtBase {
 	get alignTarget(){return this.getAttribute('alignTarget')};set alignTarget(alignTarget){this.setAttribute('alignTarget',alignTarget)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get animateUnderline(){return this.getAttribute('animateUnderline')};set animateUnderline(animateUnderline){this.setAttribute('animateUnderline',animateUnderline)}
@@ -696,11 +696,11 @@ export default class ExtDatepickerfield extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtDatepickerfield.METHODS()
-    this.XTYPE = ExtDatepickerfield.XTYPE()
-    //this.PROPERTIES = ExtDatepickerfield.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtDatepickerfield.PROPERTIESOBJECT()
-    this.EVENTS = ExtDatepickerfield.EVENTS()
+    this.METHODS = ExtDatepickerfieldComponent.METHODS()
+    this.XTYPE = ExtDatepickerfieldComponent.XTYPE()
+    //this.PROPERTIES = ExtDatepickerfieldComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtDatepickerfieldComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtDatepickerfieldComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -712,5 +712,5 @@ export default class ExtDatepickerfield extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-datepickerfield', ExtDatepickerfield);
+window.customElements.define('ext-datepickerfield', ExtDatepickerfieldComponent);
 })();

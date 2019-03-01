@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtSparklinebullet extends ExtBase {
+export class ExtSparklinebulletComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -555,11 +555,11 @@ export default class ExtSparklinebullet extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtSparklinebullet.METHODS()
-    this.XTYPE = ExtSparklinebullet.XTYPE()
-    //this.PROPERTIES = ExtSparklinebullet.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtSparklinebullet.PROPERTIESOBJECT()
-    this.EVENTS = ExtSparklinebullet.EVENTS()
+    this.METHODS = ExtSparklinebulletComponent.METHODS()
+    this.XTYPE = ExtSparklinebulletComponent.XTYPE()
+    //this.PROPERTIES = ExtSparklinebulletComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtSparklinebulletComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtSparklinebulletComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -571,5 +571,5 @@ export default class ExtSparklinebullet extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-sparklinebullet', ExtSparklinebullet);
+window.customElements.define('ext-sparklinebullet', ExtSparklinebulletComponent);
 })();

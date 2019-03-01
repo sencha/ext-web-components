@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtBooleancolumn extends ExtBase {
+export class ExtBooleancolumnComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get align(){return this.getAttribute('align')};set align(align){this.setAttribute('align',align)}
@@ -743,11 +743,11 @@ export default class ExtBooleancolumn extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtBooleancolumn.METHODS()
-    this.XTYPE = ExtBooleancolumn.XTYPE()
-    //this.PROPERTIES = ExtBooleancolumn.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtBooleancolumn.PROPERTIESOBJECT()
-    this.EVENTS = ExtBooleancolumn.EVENTS()
+    this.METHODS = ExtBooleancolumnComponent.METHODS()
+    this.XTYPE = ExtBooleancolumnComponent.XTYPE()
+    //this.PROPERTIES = ExtBooleancolumnComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtBooleancolumnComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtBooleancolumnComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -759,5 +759,5 @@ export default class ExtBooleancolumn extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-booleancolumn', ExtBooleancolumn);
+window.customElements.define('ext-booleancolumn', ExtBooleancolumnComponent);
 })();

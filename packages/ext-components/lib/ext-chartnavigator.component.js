@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtChartnavigator extends ExtBase {
+export class ExtChartnavigatorComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -641,11 +641,11 @@ export default class ExtChartnavigator extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtChartnavigator.METHODS()
-    this.XTYPE = ExtChartnavigator.XTYPE()
-    //this.PROPERTIES = ExtChartnavigator.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtChartnavigator.PROPERTIESOBJECT()
-    this.EVENTS = ExtChartnavigator.EVENTS()
+    this.METHODS = ExtChartnavigatorComponent.METHODS()
+    this.XTYPE = ExtChartnavigatorComponent.XTYPE()
+    //this.PROPERTIES = ExtChartnavigatorComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtChartnavigatorComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtChartnavigatorComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -657,5 +657,5 @@ export default class ExtChartnavigator extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-chartnavigator', ExtChartnavigator);
+window.customElements.define('ext-chartnavigator', ExtChartnavigatorComponent);
 })();

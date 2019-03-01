@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtFilefield extends ExtBase {
+export class ExtFilefieldComponent extends ExtBase {
 	get accept(){return this.getAttribute('accept')};set accept(accept){this.setAttribute('accept',accept)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get animateUnderline(){return this.getAttribute('animateUnderline')};set animateUnderline(animateUnderline){this.setAttribute('animateUnderline',animateUnderline)}
@@ -668,11 +668,11 @@ export default class ExtFilefield extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtFilefield.METHODS()
-    this.XTYPE = ExtFilefield.XTYPE()
-    //this.PROPERTIES = ExtFilefield.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtFilefield.PROPERTIESOBJECT()
-    this.EVENTS = ExtFilefield.EVENTS()
+    this.METHODS = ExtFilefieldComponent.METHODS()
+    this.XTYPE = ExtFilefieldComponent.XTYPE()
+    //this.PROPERTIES = ExtFilefieldComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtFilefieldComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtFilefieldComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -684,5 +684,5 @@ export default class ExtFilefield extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-filefield', ExtFilefield);
+window.customElements.define('ext-filefield', ExtFilefieldComponent);
 })();

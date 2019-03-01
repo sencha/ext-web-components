@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtPickerslot extends ExtBase {
+export class ExtPickerslotComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get align(){return this.getAttribute('align')};set align(align){this.setAttribute('align',align)}
@@ -805,11 +805,11 @@ export default class ExtPickerslot extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtPickerslot.METHODS()
-    this.XTYPE = ExtPickerslot.XTYPE()
-    //this.PROPERTIES = ExtPickerslot.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtPickerslot.PROPERTIESOBJECT()
-    this.EVENTS = ExtPickerslot.EVENTS()
+    this.METHODS = ExtPickerslotComponent.METHODS()
+    this.XTYPE = ExtPickerslotComponent.XTYPE()
+    //this.PROPERTIES = ExtPickerslotComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtPickerslotComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtPickerslotComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -821,5 +821,5 @@ export default class ExtPickerslot extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-pickerslot', ExtPickerslot);
+window.customElements.define('ext-pickerslot', ExtPickerslotComponent);
 })();

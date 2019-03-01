@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtD3_canvas extends ExtBase {
+export class ExtD3_canvasComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -548,11 +548,11 @@ export default class ExtD3_canvas extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtD3_canvas.METHODS()
-    this.XTYPE = ExtD3_canvas.XTYPE()
-    //this.PROPERTIES = ExtD3_canvas.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtD3_canvas.PROPERTIESOBJECT()
-    this.EVENTS = ExtD3_canvas.EVENTS()
+    this.METHODS = ExtD3_canvasComponent.METHODS()
+    this.XTYPE = ExtD3_canvasComponent.XTYPE()
+    //this.PROPERTIES = ExtD3_canvasComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtD3_canvasComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtD3_canvasComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -564,5 +564,5 @@ export default class ExtD3_canvas extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-d3_canvas', ExtD3_canvas);
+window.customElements.define('ext-d3_canvas', ExtD3_canvasComponent);
 })();

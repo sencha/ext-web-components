@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtDatepicker extends ExtBase {
+export class ExtDatepickerComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -792,11 +792,11 @@ export default class ExtDatepicker extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtDatepicker.METHODS()
-    this.XTYPE = ExtDatepicker.XTYPE()
-    //this.PROPERTIES = ExtDatepicker.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtDatepicker.PROPERTIESOBJECT()
-    this.EVENTS = ExtDatepicker.EVENTS()
+    this.METHODS = ExtDatepickerComponent.METHODS()
+    this.XTYPE = ExtDatepickerComponent.XTYPE()
+    //this.PROPERTIES = ExtDatepickerComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtDatepickerComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtDatepickerComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -808,5 +808,5 @@ export default class ExtDatepicker extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-datepicker', ExtDatepicker);
+window.customElements.define('ext-datepicker', ExtDatepickerComponent);
 })();

@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtFilebutton extends ExtBase {
+export class ExtFilebuttonComponent extends ExtBase {
 	get accept(){return this.getAttribute('accept')};set accept(accept){this.setAttribute('accept',accept)}
 	get allowDepress(){return this.getAttribute('allowDepress')};set allowDepress(allowDepress){this.setAttribute('allowDepress',allowDepress)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
@@ -596,11 +596,11 @@ export default class ExtFilebutton extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtFilebutton.METHODS()
-    this.XTYPE = ExtFilebutton.XTYPE()
-    //this.PROPERTIES = ExtFilebutton.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtFilebutton.PROPERTIESOBJECT()
-    this.EVENTS = ExtFilebutton.EVENTS()
+    this.METHODS = ExtFilebuttonComponent.METHODS()
+    this.XTYPE = ExtFilebuttonComponent.XTYPE()
+    //this.PROPERTIES = ExtFilebuttonComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtFilebuttonComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtFilebuttonComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -612,5 +612,5 @@ export default class ExtFilebutton extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-filebutton', ExtFilebutton);
+window.customElements.define('ext-filebutton', ExtFilebuttonComponent);
 })();

@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtColorpickercolorpreview extends ExtBase {
+export class ExtColorpickercolorpreviewComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -525,11 +525,11 @@ export default class ExtColorpickercolorpreview extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtColorpickercolorpreview.METHODS()
-    this.XTYPE = ExtColorpickercolorpreview.XTYPE()
-    //this.PROPERTIES = ExtColorpickercolorpreview.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtColorpickercolorpreview.PROPERTIESOBJECT()
-    this.EVENTS = ExtColorpickercolorpreview.EVENTS()
+    this.METHODS = ExtColorpickercolorpreviewComponent.METHODS()
+    this.XTYPE = ExtColorpickercolorpreviewComponent.XTYPE()
+    //this.PROPERTIES = ExtColorpickercolorpreviewComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtColorpickercolorpreviewComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtColorpickercolorpreviewComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -541,5 +541,5 @@ export default class ExtColorpickercolorpreview extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-colorpickercolorpreview', ExtColorpickercolorpreview);
+window.customElements.define('ext-colorpickercolorpreview', ExtColorpickercolorpreviewComponent);
 })();

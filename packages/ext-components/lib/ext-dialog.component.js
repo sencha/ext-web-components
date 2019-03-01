@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtDialog extends ExtBase {
+export class ExtDialogComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -761,11 +761,11 @@ export default class ExtDialog extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtDialog.METHODS()
-    this.XTYPE = ExtDialog.XTYPE()
-    //this.PROPERTIES = ExtDialog.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtDialog.PROPERTIESOBJECT()
-    this.EVENTS = ExtDialog.EVENTS()
+    this.METHODS = ExtDialogComponent.METHODS()
+    this.XTYPE = ExtDialogComponent.XTYPE()
+    //this.PROPERTIES = ExtDialogComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtDialogComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtDialogComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -777,5 +777,5 @@ export default class ExtDialog extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-dialog', ExtDialog);
+window.customElements.define('ext-dialog', ExtDialogComponent);
 })();

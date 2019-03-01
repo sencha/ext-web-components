@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtChipview extends ExtBase {
+export class ExtChipviewComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -797,11 +797,11 @@ export default class ExtChipview extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtChipview.METHODS()
-    this.XTYPE = ExtChipview.XTYPE()
-    //this.PROPERTIES = ExtChipview.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtChipview.PROPERTIESOBJECT()
-    this.EVENTS = ExtChipview.EVENTS()
+    this.METHODS = ExtChipviewComponent.METHODS()
+    this.XTYPE = ExtChipviewComponent.XTYPE()
+    //this.PROPERTIES = ExtChipviewComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtChipviewComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtChipviewComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -813,5 +813,5 @@ export default class ExtChipview extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-chipview', ExtChipview);
+window.customElements.define('ext-chipview', ExtChipviewComponent);
 })();

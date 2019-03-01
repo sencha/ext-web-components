@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtEmailfield extends ExtBase {
+export class ExtEmailfieldComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get animateUnderline(){return this.getAttribute('animateUnderline')};set animateUnderline(animateUnderline){this.setAttribute('animateUnderline',animateUnderline)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
@@ -659,11 +659,11 @@ export default class ExtEmailfield extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtEmailfield.METHODS()
-    this.XTYPE = ExtEmailfield.XTYPE()
-    //this.PROPERTIES = ExtEmailfield.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtEmailfield.PROPERTIESOBJECT()
-    this.EVENTS = ExtEmailfield.EVENTS()
+    this.METHODS = ExtEmailfieldComponent.METHODS()
+    this.XTYPE = ExtEmailfieldComponent.XTYPE()
+    //this.PROPERTIES = ExtEmailfieldComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtEmailfieldComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtEmailfieldComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -675,5 +675,5 @@ export default class ExtEmailfield extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-emailfield', ExtEmailfield);
+window.customElements.define('ext-emailfield', ExtEmailfieldComponent);
 })();
