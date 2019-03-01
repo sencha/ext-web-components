@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtViewport extends ExtBase {
+export class ExtViewportComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -673,11 +673,11 @@ export default class ExtViewport extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtViewport.METHODS()
-    this.XTYPE = ExtViewport.XTYPE()
-    //this.PROPERTIES = ExtViewport.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtViewport.PROPERTIESOBJECT()
-    this.EVENTS = ExtViewport.EVENTS()
+    this.METHODS = ExtViewportComponent.METHODS()
+    this.XTYPE = ExtViewportComponent.XTYPE()
+    //this.PROPERTIES = ExtViewportComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtViewportComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtViewportComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -689,5 +689,5 @@ export default class ExtViewport extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-viewport', ExtViewport);
+window.customElements.define('ext-viewport', ExtViewportComponent);
 })();

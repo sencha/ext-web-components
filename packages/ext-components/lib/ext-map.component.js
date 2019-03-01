@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtMap extends ExtBase {
+export class ExtMapComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -691,11 +691,11 @@ export default class ExtMap extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtMap.METHODS()
-    this.XTYPE = ExtMap.XTYPE()
-    //this.PROPERTIES = ExtMap.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtMap.PROPERTIESOBJECT()
-    this.EVENTS = ExtMap.EVENTS()
+    this.METHODS = ExtMapComponent.METHODS()
+    this.XTYPE = ExtMapComponent.XTYPE()
+    //this.PROPERTIES = ExtMapComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtMapComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtMapComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -707,5 +707,5 @@ export default class ExtMap extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-map', ExtMap);
+window.customElements.define('ext-map', ExtMapComponent);
 })();

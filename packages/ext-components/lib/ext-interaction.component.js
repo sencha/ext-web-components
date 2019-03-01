@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtInteraction extends ExtBase {
+export class ExtInteractionComponent extends ExtBase {
 	get chart(){return this.getAttribute('chart')};set chart(chart){this.setAttribute('chart',chart)}
 	get enabled(){return this.getAttribute('enabled')};set enabled(enabled){this.setAttribute('enabled',enabled)}
 	get gesture(){return this.getAttribute('gesture')};set gesture(gesture){this.setAttribute('gesture',gesture)}
@@ -92,11 +92,11 @@ export default class ExtInteraction extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtInteraction.METHODS()
-    this.XTYPE = ExtInteraction.XTYPE()
-    //this.PROPERTIES = ExtInteraction.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtInteraction.PROPERTIESOBJECT()
-    this.EVENTS = ExtInteraction.EVENTS()
+    this.METHODS = ExtInteractionComponent.METHODS()
+    this.XTYPE = ExtInteractionComponent.XTYPE()
+    //this.PROPERTIES = ExtInteractionComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtInteractionComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtInteractionComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -108,5 +108,5 @@ export default class ExtInteraction extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-interaction', ExtInteraction);
+window.customElements.define('ext-interaction', ExtInteractionComponent);
 })();

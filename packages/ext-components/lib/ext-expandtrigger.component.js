@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtExpandtrigger extends ExtBase {
+export class ExtExpandtriggerComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -342,11 +342,11 @@ export default class ExtExpandtrigger extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtExpandtrigger.METHODS()
-    this.XTYPE = ExtExpandtrigger.XTYPE()
-    //this.PROPERTIES = ExtExpandtrigger.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtExpandtrigger.PROPERTIESOBJECT()
-    this.EVENTS = ExtExpandtrigger.EVENTS()
+    this.METHODS = ExtExpandtriggerComponent.METHODS()
+    this.XTYPE = ExtExpandtriggerComponent.XTYPE()
+    //this.PROPERTIES = ExtExpandtriggerComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtExpandtriggerComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtExpandtriggerComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -358,5 +358,5 @@ export default class ExtExpandtrigger extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-expandtrigger', ExtExpandtrigger);
+window.customElements.define('ext-expandtrigger', ExtExpandtriggerComponent);
 })();

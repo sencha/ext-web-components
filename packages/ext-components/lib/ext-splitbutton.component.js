@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtSplitbutton extends ExtBase {
+export class ExtSplitbuttonComponent extends ExtBase {
 	get allowDepress(){return this.getAttribute('allowDepress')};set allowDepress(allowDepress){this.setAttribute('allowDepress',allowDepress)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
@@ -591,11 +591,11 @@ export default class ExtSplitbutton extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtSplitbutton.METHODS()
-    this.XTYPE = ExtSplitbutton.XTYPE()
-    //this.PROPERTIES = ExtSplitbutton.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtSplitbutton.PROPERTIESOBJECT()
-    this.EVENTS = ExtSplitbutton.EVENTS()
+    this.METHODS = ExtSplitbuttonComponent.METHODS()
+    this.XTYPE = ExtSplitbuttonComponent.XTYPE()
+    //this.PROPERTIES = ExtSplitbuttonComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtSplitbuttonComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtSplitbuttonComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -607,5 +607,5 @@ export default class ExtSplitbutton extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-splitbutton', ExtSplitbutton);
+window.customElements.define('ext-splitbutton', ExtSplitbuttonComponent);
 })();

@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtButton extends ExtBase {
+export class ExtButtonComponent extends ExtBase {
 	get allowDepress(){return this.getAttribute('allowDepress')};set allowDepress(allowDepress){this.setAttribute('allowDepress',allowDepress)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
@@ -587,11 +587,11 @@ export default class ExtButton extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtButton.METHODS()
-    this.XTYPE = ExtButton.XTYPE()
-    //this.PROPERTIES = ExtButton.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtButton.PROPERTIESOBJECT()
-    this.EVENTS = ExtButton.EVENTS()
+    this.METHODS = ExtButtonComponent.METHODS()
+    this.XTYPE = ExtButtonComponent.XTYPE()
+    //this.PROPERTIES = ExtButtonComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtButtonComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtButtonComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -603,5 +603,5 @@ export default class ExtButton extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-button', ExtButton);
+window.customElements.define('ext-button', ExtButtonComponent);
 })();

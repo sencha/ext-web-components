@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtPivotgridcell extends ExtBase {
+export class ExtPivotgridcellComponent extends ExtBase {
 	get align(){return this.getAttribute('align')};set align(align){this.setAttribute('align',align)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
@@ -362,11 +362,11 @@ export default class ExtPivotgridcell extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtPivotgridcell.METHODS()
-    this.XTYPE = ExtPivotgridcell.XTYPE()
-    //this.PROPERTIES = ExtPivotgridcell.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtPivotgridcell.PROPERTIESOBJECT()
-    this.EVENTS = ExtPivotgridcell.EVENTS()
+    this.METHODS = ExtPivotgridcellComponent.METHODS()
+    this.XTYPE = ExtPivotgridcellComponent.XTYPE()
+    //this.PROPERTIES = ExtPivotgridcellComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtPivotgridcellComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtPivotgridcellComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -378,5 +378,5 @@ export default class ExtPivotgridcell extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-pivotgridcell', ExtPivotgridcell);
+window.customElements.define('ext-pivotgridcell', ExtPivotgridcellComponent);
 })();

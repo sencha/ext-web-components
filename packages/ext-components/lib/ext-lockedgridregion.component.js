@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtLockedgridregion extends ExtBase {
+export class ExtLockedgridregionComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -735,11 +735,11 @@ export default class ExtLockedgridregion extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtLockedgridregion.METHODS()
-    this.XTYPE = ExtLockedgridregion.XTYPE()
-    //this.PROPERTIES = ExtLockedgridregion.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtLockedgridregion.PROPERTIESOBJECT()
-    this.EVENTS = ExtLockedgridregion.EVENTS()
+    this.METHODS = ExtLockedgridregionComponent.METHODS()
+    this.XTYPE = ExtLockedgridregionComponent.XTYPE()
+    //this.PROPERTIES = ExtLockedgridregionComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtLockedgridregionComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtLockedgridregionComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -751,5 +751,5 @@ export default class ExtLockedgridregion extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-lockedgridregion', ExtLockedgridregion);
+window.customElements.define('ext-lockedgridregion', ExtLockedgridregionComponent);
 })();

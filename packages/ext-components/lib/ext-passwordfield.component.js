@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtPasswordfield extends ExtBase {
+export class ExtPasswordfieldComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get animateUnderline(){return this.getAttribute('animateUnderline')};set animateUnderline(animateUnderline){this.setAttribute('animateUnderline',animateUnderline)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
@@ -664,11 +664,11 @@ export default class ExtPasswordfield extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtPasswordfield.METHODS()
-    this.XTYPE = ExtPasswordfield.XTYPE()
-    //this.PROPERTIES = ExtPasswordfield.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtPasswordfield.PROPERTIESOBJECT()
-    this.EVENTS = ExtPasswordfield.EVENTS()
+    this.METHODS = ExtPasswordfieldComponent.METHODS()
+    this.XTYPE = ExtPasswordfieldComponent.XTYPE()
+    //this.PROPERTIES = ExtPasswordfieldComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtPasswordfieldComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtPasswordfieldComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -680,5 +680,5 @@ export default class ExtPasswordfield extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-passwordfield', ExtPasswordfield);
+window.customElements.define('ext-passwordfield', ExtPasswordfieldComponent);
 })();

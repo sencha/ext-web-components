@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtTimepanel extends ExtBase {
+export class ExtTimepanelComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -747,11 +747,11 @@ export default class ExtTimepanel extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtTimepanel.METHODS()
-    this.XTYPE = ExtTimepanel.XTYPE()
-    //this.PROPERTIES = ExtTimepanel.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtTimepanel.PROPERTIESOBJECT()
-    this.EVENTS = ExtTimepanel.EVENTS()
+    this.METHODS = ExtTimepanelComponent.METHODS()
+    this.XTYPE = ExtTimepanelComponent.XTYPE()
+    //this.PROPERTIES = ExtTimepanelComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtTimepanelComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtTimepanelComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -763,5 +763,5 @@ export default class ExtTimepanel extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-timepanel', ExtTimepanel);
+window.customElements.define('ext-timepanel', ExtTimepanelComponent);
 })();

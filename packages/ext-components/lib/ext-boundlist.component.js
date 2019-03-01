@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtBoundlist extends ExtBase {
+export class ExtBoundlistComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -858,11 +858,11 @@ export default class ExtBoundlist extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtBoundlist.METHODS()
-    this.XTYPE = ExtBoundlist.XTYPE()
-    //this.PROPERTIES = ExtBoundlist.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtBoundlist.PROPERTIESOBJECT()
-    this.EVENTS = ExtBoundlist.EVENTS()
+    this.METHODS = ExtBoundlistComponent.METHODS()
+    this.XTYPE = ExtBoundlistComponent.XTYPE()
+    //this.PROPERTIES = ExtBoundlistComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtBoundlistComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtBoundlistComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -874,5 +874,5 @@ export default class ExtBoundlist extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-boundlist', ExtBoundlist);
+window.customElements.define('ext-boundlist', ExtBoundlistComponent);
 })();

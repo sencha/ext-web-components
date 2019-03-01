@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtPickerfield extends ExtBase {
+export class ExtPickerfieldComponent extends ExtBase {
 	get alignTarget(){return this.getAttribute('alignTarget')};set alignTarget(alignTarget){this.setAttribute('alignTarget',alignTarget)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get animateUnderline(){return this.getAttribute('animateUnderline')};set animateUnderline(animateUnderline){this.setAttribute('animateUnderline',animateUnderline)}
@@ -685,11 +685,11 @@ export default class ExtPickerfield extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtPickerfield.METHODS()
-    this.XTYPE = ExtPickerfield.XTYPE()
-    //this.PROPERTIES = ExtPickerfield.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtPickerfield.PROPERTIESOBJECT()
-    this.EVENTS = ExtPickerfield.EVENTS()
+    this.METHODS = ExtPickerfieldComponent.METHODS()
+    this.XTYPE = ExtPickerfieldComponent.XTYPE()
+    //this.PROPERTIES = ExtPickerfieldComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtPickerfieldComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtPickerfieldComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -701,5 +701,5 @@ export default class ExtPickerfield extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-pickerfield', ExtPickerfield);
+window.customElements.define('ext-pickerfield', ExtPickerfieldComponent);
 })();

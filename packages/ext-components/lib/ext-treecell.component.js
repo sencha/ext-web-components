@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtTreecell extends ExtBase {
+export class ExtTreecellComponent extends ExtBase {
 	get align(){return this.getAttribute('align')};set align(align){this.setAttribute('align',align)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
@@ -373,11 +373,11 @@ export default class ExtTreecell extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtTreecell.METHODS()
-    this.XTYPE = ExtTreecell.XTYPE()
-    //this.PROPERTIES = ExtTreecell.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtTreecell.PROPERTIESOBJECT()
-    this.EVENTS = ExtTreecell.EVENTS()
+    this.METHODS = ExtTreecellComponent.METHODS()
+    this.XTYPE = ExtTreecellComponent.XTYPE()
+    //this.PROPERTIES = ExtTreecellComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtTreecellComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtTreecellComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -389,5 +389,5 @@ export default class ExtTreecell extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-treecell', ExtTreecell);
+window.customElements.define('ext-treecell', ExtTreecellComponent);
 })();

@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtCalendar_daysheader extends ExtBase {
+export class ExtCalendar_daysheaderComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -537,11 +537,11 @@ export default class ExtCalendar_daysheader extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtCalendar_daysheader.METHODS()
-    this.XTYPE = ExtCalendar_daysheader.XTYPE()
-    //this.PROPERTIES = ExtCalendar_daysheader.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtCalendar_daysheader.PROPERTIESOBJECT()
-    this.EVENTS = ExtCalendar_daysheader.EVENTS()
+    this.METHODS = ExtCalendar_daysheaderComponent.METHODS()
+    this.XTYPE = ExtCalendar_daysheaderComponent.XTYPE()
+    //this.PROPERTIES = ExtCalendar_daysheaderComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtCalendar_daysheaderComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtCalendar_daysheaderComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -553,5 +553,5 @@ export default class ExtCalendar_daysheader extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-calendar_daysheader', ExtCalendar_daysheader);
+window.customElements.define('ext-calendar_daysheader', ExtCalendar_daysheaderComponent);
 })();

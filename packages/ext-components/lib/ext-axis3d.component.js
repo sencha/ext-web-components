@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtAxis3d extends ExtBase {
+export class ExtAxis3dComponent extends ExtBase {
 	get adjustByMajorUnit(){return this.getAttribute('adjustByMajorUnit')};set adjustByMajorUnit(adjustByMajorUnit){this.setAttribute('adjustByMajorUnit',adjustByMajorUnit)}
 	get background(){return this.getAttribute('background')};set background(background){this.setAttribute('background',background)}
 	get center(){return this.getAttribute('center')};set center(center){this.setAttribute('center',center)}
@@ -111,11 +111,11 @@ export default class ExtAxis3d extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtAxis3d.METHODS()
-    this.XTYPE = ExtAxis3d.XTYPE()
-    //this.PROPERTIES = ExtAxis3d.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtAxis3d.PROPERTIESOBJECT()
-    this.EVENTS = ExtAxis3d.EVENTS()
+    this.METHODS = ExtAxis3dComponent.METHODS()
+    this.XTYPE = ExtAxis3dComponent.XTYPE()
+    //this.PROPERTIES = ExtAxis3dComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtAxis3dComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtAxis3dComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -127,5 +127,5 @@ export default class ExtAxis3d extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-axis3d', ExtAxis3d);
+window.customElements.define('ext-axis3d', ExtAxis3dComponent);
 })();

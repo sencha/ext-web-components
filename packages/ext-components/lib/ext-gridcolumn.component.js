@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtGridcolumn extends ExtBase {
+export class ExtGridcolumnComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get align(){return this.getAttribute('align')};set align(align){this.setAttribute('align',align)}
@@ -737,11 +737,11 @@ export default class ExtGridcolumn extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtGridcolumn.METHODS()
-    this.XTYPE = ExtGridcolumn.XTYPE()
-    //this.PROPERTIES = ExtGridcolumn.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtGridcolumn.PROPERTIESOBJECT()
-    this.EVENTS = ExtGridcolumn.EVENTS()
+    this.METHODS = ExtGridcolumnComponent.METHODS()
+    this.XTYPE = ExtGridcolumnComponent.XTYPE()
+    //this.PROPERTIES = ExtGridcolumnComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtGridcolumnComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtGridcolumnComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -753,5 +753,5 @@ export default class ExtGridcolumn extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-gridcolumn', ExtGridcolumn);
+window.customElements.define('ext-gridcolumn', ExtGridcolumnComponent);
 })();

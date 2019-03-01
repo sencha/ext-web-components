@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtPivotheatmap extends ExtBase {
+export class ExtPivotheatmapComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -567,11 +567,11 @@ export default class ExtPivotheatmap extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtPivotheatmap.METHODS()
-    this.XTYPE = ExtPivotheatmap.XTYPE()
-    //this.PROPERTIES = ExtPivotheatmap.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtPivotheatmap.PROPERTIESOBJECT()
-    this.EVENTS = ExtPivotheatmap.EVENTS()
+    this.METHODS = ExtPivotheatmapComponent.METHODS()
+    this.XTYPE = ExtPivotheatmapComponent.XTYPE()
+    //this.PROPERTIES = ExtPivotheatmapComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtPivotheatmapComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtPivotheatmapComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -583,5 +583,5 @@ export default class ExtPivotheatmap extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-pivotheatmap', ExtPivotheatmap);
+window.customElements.define('ext-pivotheatmap', ExtPivotheatmapComponent);
 })();

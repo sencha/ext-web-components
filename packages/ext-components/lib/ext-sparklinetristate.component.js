@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtSparklinetristate extends ExtBase {
+export class ExtSparklinetristateComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -557,11 +557,11 @@ export default class ExtSparklinetristate extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtSparklinetristate.METHODS()
-    this.XTYPE = ExtSparklinetristate.XTYPE()
-    //this.PROPERTIES = ExtSparklinetristate.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtSparklinetristate.PROPERTIESOBJECT()
-    this.EVENTS = ExtSparklinetristate.EVENTS()
+    this.METHODS = ExtSparklinetristateComponent.METHODS()
+    this.XTYPE = ExtSparklinetristateComponent.XTYPE()
+    //this.PROPERTIES = ExtSparklinetristateComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtSparklinetristateComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtSparklinetristateComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -573,5 +573,5 @@ export default class ExtSparklinetristate extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-sparklinetristate', ExtSparklinetristate);
+window.customElements.define('ext-sparklinetristate', ExtSparklinetristateComponent);
 })();

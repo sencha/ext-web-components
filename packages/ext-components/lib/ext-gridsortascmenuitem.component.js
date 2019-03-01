@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtGridsortascmenuitem extends ExtBase {
+export class ExtGridsortascmenuitemComponent extends ExtBase {
 	get allowUncheck(){return this.getAttribute('allowUncheck')};set allowUncheck(allowUncheck){this.setAttribute('allowUncheck',allowUncheck)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
@@ -581,11 +581,11 @@ export default class ExtGridsortascmenuitem extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtGridsortascmenuitem.METHODS()
-    this.XTYPE = ExtGridsortascmenuitem.XTYPE()
-    //this.PROPERTIES = ExtGridsortascmenuitem.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtGridsortascmenuitem.PROPERTIESOBJECT()
-    this.EVENTS = ExtGridsortascmenuitem.EVENTS()
+    this.METHODS = ExtGridsortascmenuitemComponent.METHODS()
+    this.XTYPE = ExtGridsortascmenuitemComponent.XTYPE()
+    //this.PROPERTIES = ExtGridsortascmenuitemComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtGridsortascmenuitemComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtGridsortascmenuitemComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -597,5 +597,5 @@ export default class ExtGridsortascmenuitem extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-gridsortascmenuitem', ExtGridsortascmenuitem);
+window.customElements.define('ext-gridsortascmenuitem', ExtGridsortascmenuitemComponent);
 })();

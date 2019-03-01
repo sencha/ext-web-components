@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtListswiperitem extends ExtBase {
+export class ExtListswiperitemComponent extends ExtBase {
 	get action(){return this.getAttribute('action')};set action(action){this.setAttribute('action',action)}
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
@@ -645,11 +645,11 @@ export default class ExtListswiperitem extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtListswiperitem.METHODS()
-    this.XTYPE = ExtListswiperitem.XTYPE()
-    //this.PROPERTIES = ExtListswiperitem.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtListswiperitem.PROPERTIESOBJECT()
-    this.EVENTS = ExtListswiperitem.EVENTS()
+    this.METHODS = ExtListswiperitemComponent.METHODS()
+    this.XTYPE = ExtListswiperitemComponent.XTYPE()
+    //this.PROPERTIES = ExtListswiperitemComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtListswiperitemComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtListswiperitemComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -661,5 +661,5 @@ export default class ExtListswiperitem extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-listswiperitem', ExtListswiperitem);
+window.customElements.define('ext-listswiperitem', ExtListswiperitemComponent);
 })();

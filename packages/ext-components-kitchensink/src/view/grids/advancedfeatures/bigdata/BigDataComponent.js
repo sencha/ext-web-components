@@ -27,7 +27,7 @@ export default class BigDataComponent {
   }
 
   readyGrid(event) {
-    console.log('readyGrid')
+//    console.log('readyGrid')
     var cmp = event.detail.cmp
     this.gridCmp = cmp
     this.gridCmp.setStore(this.store)

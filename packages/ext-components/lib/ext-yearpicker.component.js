@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtYearpicker extends ExtBase {
+export class ExtYearpickerComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -858,11 +858,11 @@ export default class ExtYearpicker extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtYearpicker.METHODS()
-    this.XTYPE = ExtYearpicker.XTYPE()
-    //this.PROPERTIES = ExtYearpicker.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtYearpicker.PROPERTIESOBJECT()
-    this.EVENTS = ExtYearpicker.EVENTS()
+    this.METHODS = ExtYearpickerComponent.METHODS()
+    this.XTYPE = ExtYearpickerComponent.XTYPE()
+    //this.PROPERTIES = ExtYearpickerComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtYearpickerComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtYearpickerComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -874,5 +874,5 @@ export default class ExtYearpicker extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-yearpicker', ExtYearpicker);
+window.customElements.define('ext-yearpicker', ExtYearpickerComponent);
 })();

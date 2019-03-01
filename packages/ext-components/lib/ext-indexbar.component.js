@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtIndexbar extends ExtBase {
+export class ExtIndexbarComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get animation(){return this.getAttribute('animation')};set animation(animation){this.setAttribute('animation',animation)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
@@ -546,11 +546,11 @@ export default class ExtIndexbar extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtIndexbar.METHODS()
-    this.XTYPE = ExtIndexbar.XTYPE()
-    //this.PROPERTIES = ExtIndexbar.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtIndexbar.PROPERTIESOBJECT()
-    this.EVENTS = ExtIndexbar.EVENTS()
+    this.METHODS = ExtIndexbarComponent.METHODS()
+    this.XTYPE = ExtIndexbarComponent.XTYPE()
+    //this.PROPERTIES = ExtIndexbarComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtIndexbarComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtIndexbarComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -562,5 +562,5 @@ export default class ExtIndexbar extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-indexbar', ExtIndexbar);
+window.customElements.define('ext-indexbar', ExtIndexbarComponent);
 })();

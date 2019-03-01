@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtDatecolumn extends ExtBase {
+export class ExtDatecolumnComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get align(){return this.getAttribute('align')};set align(align){this.setAttribute('align',align)}
@@ -739,11 +739,11 @@ export default class ExtDatecolumn extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtDatecolumn.METHODS()
-    this.XTYPE = ExtDatecolumn.XTYPE()
-    //this.PROPERTIES = ExtDatecolumn.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtDatecolumn.PROPERTIESOBJECT()
-    this.EVENTS = ExtDatecolumn.EVENTS()
+    this.METHODS = ExtDatecolumnComponent.METHODS()
+    this.XTYPE = ExtDatecolumnComponent.XTYPE()
+    //this.PROPERTIES = ExtDatecolumnComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtDatecolumnComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtDatecolumnComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -755,5 +755,5 @@ export default class ExtDatecolumn extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-datecolumn', ExtDatecolumn);
+window.customElements.define('ext-datecolumn', ExtDatecolumnComponent);
 })();

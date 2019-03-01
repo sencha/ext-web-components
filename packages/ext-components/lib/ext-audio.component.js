@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtAudio extends ExtBase {
+export class ExtAudioComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -574,11 +574,11 @@ export default class ExtAudio extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtAudio.METHODS()
-    this.XTYPE = ExtAudio.XTYPE()
-    //this.PROPERTIES = ExtAudio.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtAudio.PROPERTIESOBJECT()
-    this.EVENTS = ExtAudio.EVENTS()
+    this.METHODS = ExtAudioComponent.METHODS()
+    this.XTYPE = ExtAudioComponent.XTYPE()
+    //this.PROPERTIES = ExtAudioComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtAudioComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtAudioComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -590,5 +590,5 @@ export default class ExtAudio extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-audio', ExtAudio);
+window.customElements.define('ext-audio', ExtAudioComponent);
 })();

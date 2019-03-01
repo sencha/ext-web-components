@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtFieldset extends ExtBase {
+export class ExtFieldsetComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -652,11 +652,11 @@ export default class ExtFieldset extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtFieldset.METHODS()
-    this.XTYPE = ExtFieldset.XTYPE()
-    //this.PROPERTIES = ExtFieldset.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtFieldset.PROPERTIESOBJECT()
-    this.EVENTS = ExtFieldset.EVENTS()
+    this.METHODS = ExtFieldsetComponent.METHODS()
+    this.XTYPE = ExtFieldsetComponent.XTYPE()
+    //this.PROPERTIES = ExtFieldsetComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtFieldsetComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtFieldsetComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -668,5 +668,5 @@ export default class ExtFieldset extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-fieldset', ExtFieldset);
+window.customElements.define('ext-fieldset', ExtFieldsetComponent);
 })();

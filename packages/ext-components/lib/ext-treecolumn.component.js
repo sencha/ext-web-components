@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtTreecolumn extends ExtBase {
+export class ExtTreecolumnComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get align(){return this.getAttribute('align')};set align(align){this.setAttribute('align',align)}
@@ -737,11 +737,11 @@ export default class ExtTreecolumn extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtTreecolumn.METHODS()
-    this.XTYPE = ExtTreecolumn.XTYPE()
-    //this.PROPERTIES = ExtTreecolumn.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtTreecolumn.PROPERTIESOBJECT()
-    this.EVENTS = ExtTreecolumn.EVENTS()
+    this.METHODS = ExtTreecolumnComponent.METHODS()
+    this.XTYPE = ExtTreecolumnComponent.XTYPE()
+    //this.PROPERTIES = ExtTreecolumnComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtTreecolumnComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtTreecolumnComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -753,5 +753,5 @@ export default class ExtTreecolumn extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-treecolumn', ExtTreecolumn);
+window.customElements.define('ext-treecolumn', ExtTreecolumnComponent);
 })();

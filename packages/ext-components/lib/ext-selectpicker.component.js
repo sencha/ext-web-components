@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtSelectpicker extends ExtBase {
+export class ExtSelectpickerComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -771,11 +771,11 @@ export default class ExtSelectpicker extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtSelectpicker.METHODS()
-    this.XTYPE = ExtSelectpicker.XTYPE()
-    //this.PROPERTIES = ExtSelectpicker.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtSelectpicker.PROPERTIESOBJECT()
-    this.EVENTS = ExtSelectpicker.EVENTS()
+    this.METHODS = ExtSelectpickerComponent.METHODS()
+    this.XTYPE = ExtSelectpickerComponent.XTYPE()
+    //this.PROPERTIES = ExtSelectpickerComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtSelectpickerComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtSelectpickerComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -787,5 +787,5 @@ export default class ExtSelectpicker extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-selectpicker', ExtSelectpicker);
+window.customElements.define('ext-selectpicker', ExtSelectpickerComponent);
 })();

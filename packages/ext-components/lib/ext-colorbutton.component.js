@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtColorbutton extends ExtBase {
+export class ExtColorbuttonComponent extends ExtBase {
 	get alphaDecimalFormat(){return this.getAttribute('alphaDecimalFormat')};set alphaDecimalFormat(alphaDecimalFormat){this.setAttribute('alphaDecimalFormat',alphaDecimalFormat)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
@@ -537,11 +537,11 @@ export default class ExtColorbutton extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtColorbutton.METHODS()
-    this.XTYPE = ExtColorbutton.XTYPE()
-    //this.PROPERTIES = ExtColorbutton.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtColorbutton.PROPERTIESOBJECT()
-    this.EVENTS = ExtColorbutton.EVENTS()
+    this.METHODS = ExtColorbuttonComponent.METHODS()
+    this.XTYPE = ExtColorbuttonComponent.XTYPE()
+    //this.PROPERTIES = ExtColorbuttonComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtColorbuttonComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtColorbuttonComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -553,5 +553,5 @@ export default class ExtColorbutton extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-colorbutton', ExtColorbutton);
+window.customElements.define('ext-colorbutton', ExtColorbuttonComponent);
 })();

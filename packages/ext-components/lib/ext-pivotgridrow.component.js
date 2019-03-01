@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtPivotgridrow extends ExtBase {
+export class ExtPivotgridrowComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -547,11 +547,11 @@ export default class ExtPivotgridrow extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtPivotgridrow.METHODS()
-    this.XTYPE = ExtPivotgridrow.XTYPE()
-    //this.PROPERTIES = ExtPivotgridrow.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtPivotgridrow.PROPERTIESOBJECT()
-    this.EVENTS = ExtPivotgridrow.EVENTS()
+    this.METHODS = ExtPivotgridrowComponent.METHODS()
+    this.XTYPE = ExtPivotgridrowComponent.XTYPE()
+    //this.PROPERTIES = ExtPivotgridrowComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtPivotgridrowComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtPivotgridrowComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -563,5 +563,5 @@ export default class ExtPivotgridrow extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-pivotgridrow', ExtPivotgridrow);
+window.customElements.define('ext-pivotgridrow', ExtPivotgridrowComponent);
 })();

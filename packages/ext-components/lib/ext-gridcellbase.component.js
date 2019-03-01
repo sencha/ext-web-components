@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtGridcellbase extends ExtBase {
+export class ExtGridcellbaseComponent extends ExtBase {
 	get align(){return this.getAttribute('align')};set align(align){this.setAttribute('align',align)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
@@ -348,11 +348,11 @@ export default class ExtGridcellbase extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtGridcellbase.METHODS()
-    this.XTYPE = ExtGridcellbase.XTYPE()
-    //this.PROPERTIES = ExtGridcellbase.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtGridcellbase.PROPERTIESOBJECT()
-    this.EVENTS = ExtGridcellbase.EVENTS()
+    this.METHODS = ExtGridcellbaseComponent.METHODS()
+    this.XTYPE = ExtGridcellbaseComponent.XTYPE()
+    //this.PROPERTIES = ExtGridcellbaseComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtGridcellbaseComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtGridcellbaseComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -364,5 +364,5 @@ export default class ExtGridcellbase extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-gridcellbase', ExtGridcellbase);
+window.customElements.define('ext-gridcellbase', ExtGridcellbaseComponent);
 })();

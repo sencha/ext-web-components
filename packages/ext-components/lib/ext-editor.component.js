@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtEditor extends ExtBase {
+export class ExtEditorComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get alignment(){return this.getAttribute('alignment')};set alignment(alignment){this.setAttribute('alignment',alignment)}
@@ -688,11 +688,11 @@ export default class ExtEditor extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtEditor.METHODS()
-    this.XTYPE = ExtEditor.XTYPE()
-    //this.PROPERTIES = ExtEditor.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtEditor.PROPERTIESOBJECT()
-    this.EVENTS = ExtEditor.EVENTS()
+    this.METHODS = ExtEditorComponent.METHODS()
+    this.XTYPE = ExtEditorComponent.XTYPE()
+    //this.PROPERTIES = ExtEditorComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtEditorComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtEditorComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -704,5 +704,5 @@ export default class ExtEditor extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-editor', ExtEditor);
+window.customElements.define('ext-editor', ExtEditorComponent);
 })();

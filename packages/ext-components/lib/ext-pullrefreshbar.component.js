@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtPullrefreshbar extends ExtBase {
+export class ExtPullrefreshbarComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -545,11 +545,11 @@ export default class ExtPullrefreshbar extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtPullrefreshbar.METHODS()
-    this.XTYPE = ExtPullrefreshbar.XTYPE()
-    //this.PROPERTIES = ExtPullrefreshbar.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtPullrefreshbar.PROPERTIESOBJECT()
-    this.EVENTS = ExtPullrefreshbar.EVENTS()
+    this.METHODS = ExtPullrefreshbarComponent.METHODS()
+    this.XTYPE = ExtPullrefreshbarComponent.XTYPE()
+    //this.PROPERTIES = ExtPullrefreshbarComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtPullrefreshbarComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtPullrefreshbarComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -561,5 +561,5 @@ export default class ExtPullrefreshbar extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-pullrefreshbar', ExtPullrefreshbar);
+window.customElements.define('ext-pullrefreshbar', ExtPullrefreshbarComponent);
 })();

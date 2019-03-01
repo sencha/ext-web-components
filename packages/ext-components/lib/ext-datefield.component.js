@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtDatefield extends ExtBase {
+export class ExtDatefieldComponent extends ExtBase {
 	get alignTarget(){return this.getAttribute('alignTarget')};set alignTarget(alignTarget){this.setAttribute('alignTarget',alignTarget)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get animateUnderline(){return this.getAttribute('animateUnderline')};set animateUnderline(animateUnderline){this.setAttribute('animateUnderline',animateUnderline)}
@@ -696,11 +696,11 @@ export default class ExtDatefield extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtDatefield.METHODS()
-    this.XTYPE = ExtDatefield.XTYPE()
-    //this.PROPERTIES = ExtDatefield.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtDatefield.PROPERTIESOBJECT()
-    this.EVENTS = ExtDatefield.EVENTS()
+    this.METHODS = ExtDatefieldComponent.METHODS()
+    this.XTYPE = ExtDatefieldComponent.XTYPE()
+    //this.PROPERTIES = ExtDatefieldComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtDatefieldComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtDatefieldComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -712,5 +712,5 @@ export default class ExtDatefield extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-datefield', ExtDatefield);
+window.customElements.define('ext-datefield', ExtDatefieldComponent);
 })();

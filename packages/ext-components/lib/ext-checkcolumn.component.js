@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtCheckcolumn extends ExtBase {
+export class ExtCheckcolumnComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get align(){return this.getAttribute('align')};set align(align){this.setAttribute('align',align)}
@@ -747,11 +747,11 @@ export default class ExtCheckcolumn extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtCheckcolumn.METHODS()
-    this.XTYPE = ExtCheckcolumn.XTYPE()
-    //this.PROPERTIES = ExtCheckcolumn.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtCheckcolumn.PROPERTIESOBJECT()
-    this.EVENTS = ExtCheckcolumn.EVENTS()
+    this.METHODS = ExtCheckcolumnComponent.METHODS()
+    this.XTYPE = ExtCheckcolumnComponent.XTYPE()
+    //this.PROPERTIES = ExtCheckcolumnComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtCheckcolumnComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtCheckcolumnComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -763,5 +763,5 @@ export default class ExtCheckcolumn extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-checkcolumn', ExtCheckcolumn);
+window.customElements.define('ext-checkcolumn', ExtCheckcolumnComponent);
 })();

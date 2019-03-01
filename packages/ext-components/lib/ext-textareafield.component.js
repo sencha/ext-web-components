@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtTextareafield extends ExtBase {
+export class ExtTextareafieldComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get animateUnderline(){return this.getAttribute('animateUnderline')};set animateUnderline(animateUnderline){this.setAttribute('animateUnderline',animateUnderline)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
@@ -661,11 +661,11 @@ export default class ExtTextareafield extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtTextareafield.METHODS()
-    this.XTYPE = ExtTextareafield.XTYPE()
-    //this.PROPERTIES = ExtTextareafield.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtTextareafield.PROPERTIESOBJECT()
-    this.EVENTS = ExtTextareafield.EVENTS()
+    this.METHODS = ExtTextareafieldComponent.METHODS()
+    this.XTYPE = ExtTextareafieldComponent.XTYPE()
+    //this.PROPERTIES = ExtTextareafieldComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtTextareafieldComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtTextareafieldComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -677,5 +677,5 @@ export default class ExtTextareafield extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-textareafield', ExtTextareafield);
+window.customElements.define('ext-textareafield', ExtTextareafieldComponent);
 })();

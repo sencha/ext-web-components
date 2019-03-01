@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtDatepanel extends ExtBase {
+export class ExtDatepanelComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -797,11 +797,11 @@ export default class ExtDatepanel extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtDatepanel.METHODS()
-    this.XTYPE = ExtDatepanel.XTYPE()
-    //this.PROPERTIES = ExtDatepanel.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtDatepanel.PROPERTIESOBJECT()
-    this.EVENTS = ExtDatepanel.EVENTS()
+    this.METHODS = ExtDatepanelComponent.METHODS()
+    this.XTYPE = ExtDatepanelComponent.XTYPE()
+    //this.PROPERTIES = ExtDatepanelComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtDatepanelComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtDatepanelComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -813,5 +813,5 @@ export default class ExtDatepanel extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-datepanel', ExtDatepanel);
+window.customElements.define('ext-datepanel', ExtDatepanelComponent);
 })();

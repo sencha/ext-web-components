@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtProgress extends ExtBase {
+export class ExtProgressComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get animate(){return this.getAttribute('animate')};set animate(animate){this.setAttribute('animate',animate)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
@@ -533,11 +533,11 @@ export default class ExtProgress extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtProgress.METHODS()
-    this.XTYPE = ExtProgress.XTYPE()
-    //this.PROPERTIES = ExtProgress.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtProgress.PROPERTIESOBJECT()
-    this.EVENTS = ExtProgress.EVENTS()
+    this.METHODS = ExtProgressComponent.METHODS()
+    this.XTYPE = ExtProgressComponent.XTYPE()
+    //this.PROPERTIES = ExtProgressComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtProgressComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtProgressComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -549,5 +549,5 @@ export default class ExtProgress extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-progress', ExtProgress);
+window.customElements.define('ext-progress', ExtProgressComponent);
 })();

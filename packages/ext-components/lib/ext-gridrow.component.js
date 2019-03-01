@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtGridrow extends ExtBase {
+export class ExtGridrowComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -547,11 +547,11 @@ export default class ExtGridrow extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtGridrow.METHODS()
-    this.XTYPE = ExtGridrow.XTYPE()
-    //this.PROPERTIES = ExtGridrow.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtGridrow.PROPERTIESOBJECT()
-    this.EVENTS = ExtGridrow.EVENTS()
+    this.METHODS = ExtGridrowComponent.METHODS()
+    this.XTYPE = ExtGridrowComponent.XTYPE()
+    //this.PROPERTIES = ExtGridrowComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtGridrowComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtGridrowComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -563,5 +563,5 @@ export default class ExtGridrow extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-gridrow', ExtGridrow);
+window.customElements.define('ext-gridrow', ExtGridrowComponent);
 })();

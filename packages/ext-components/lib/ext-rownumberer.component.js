@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtRownumberer extends ExtBase {
+export class ExtRownumbererComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get align(){return this.getAttribute('align')};set align(align){this.setAttribute('align',align)}
@@ -739,11 +739,11 @@ export default class ExtRownumberer extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtRownumberer.METHODS()
-    this.XTYPE = ExtRownumberer.XTYPE()
-    //this.PROPERTIES = ExtRownumberer.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtRownumberer.PROPERTIESOBJECT()
-    this.EVENTS = ExtRownumberer.EVENTS()
+    this.METHODS = ExtRownumbererComponent.METHODS()
+    this.XTYPE = ExtRownumbererComponent.XTYPE()
+    //this.PROPERTIES = ExtRownumbererComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtRownumbererComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtRownumbererComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -755,5 +755,5 @@ export default class ExtRownumberer extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-rownumberer', ExtRownumberer);
+window.customElements.define('ext-rownumberer', ExtRownumbererComponent);
 })();

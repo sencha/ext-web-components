@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtCalendar_list extends ExtBase {
+export class ExtCalendar_listComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -783,11 +783,11 @@ export default class ExtCalendar_list extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtCalendar_list.METHODS()
-    this.XTYPE = ExtCalendar_list.XTYPE()
-    //this.PROPERTIES = ExtCalendar_list.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtCalendar_list.PROPERTIESOBJECT()
-    this.EVENTS = ExtCalendar_list.EVENTS()
+    this.METHODS = ExtCalendar_listComponent.METHODS()
+    this.XTYPE = ExtCalendar_listComponent.XTYPE()
+    //this.PROPERTIES = ExtCalendar_listComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtCalendar_listComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtCalendar_listComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -799,5 +799,5 @@ export default class ExtCalendar_list extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-calendar_list', ExtCalendar_list);
+window.customElements.define('ext-calendar_list', ExtCalendar_listComponent);
 })();

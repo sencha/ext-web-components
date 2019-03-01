@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtMessagebox extends ExtBase {
+export class ExtMessageboxComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -781,11 +781,11 @@ export default class ExtMessagebox extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtMessagebox.METHODS()
-    this.XTYPE = ExtMessagebox.XTYPE()
-    //this.PROPERTIES = ExtMessagebox.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtMessagebox.PROPERTIESOBJECT()
-    this.EVENTS = ExtMessagebox.EVENTS()
+    this.METHODS = ExtMessageboxComponent.METHODS()
+    this.XTYPE = ExtMessageboxComponent.XTYPE()
+    //this.PROPERTIES = ExtMessageboxComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtMessageboxComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtMessageboxComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -797,5 +797,5 @@ export default class ExtMessagebox extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-messagebox', ExtMessagebox);
+window.customElements.define('ext-messagebox', ExtMessageboxComponent);
 })();

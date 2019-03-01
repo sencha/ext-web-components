@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtSparklinediscrete extends ExtBase {
+export class ExtSparklinediscreteComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -557,11 +557,11 @@ export default class ExtSparklinediscrete extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtSparklinediscrete.METHODS()
-    this.XTYPE = ExtSparklinediscrete.XTYPE()
-    //this.PROPERTIES = ExtSparklinediscrete.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtSparklinediscrete.PROPERTIESOBJECT()
-    this.EVENTS = ExtSparklinediscrete.EVENTS()
+    this.METHODS = ExtSparklinediscreteComponent.METHODS()
+    this.XTYPE = ExtSparklinediscreteComponent.XTYPE()
+    //this.PROPERTIES = ExtSparklinediscreteComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtSparklinediscreteComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtSparklinediscreteComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -573,5 +573,5 @@ export default class ExtSparklinediscrete extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-sparklinediscrete', ExtSparklinediscrete);
+window.customElements.define('ext-sparklinediscrete', ExtSparklinediscreteComponent);
 })();

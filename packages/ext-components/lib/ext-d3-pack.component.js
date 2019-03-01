@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtD3_pack extends ExtBase {
+export class ExtD3_packComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -614,11 +614,11 @@ export default class ExtD3_pack extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtD3_pack.METHODS()
-    this.XTYPE = ExtD3_pack.XTYPE()
-    //this.PROPERTIES = ExtD3_pack.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtD3_pack.PROPERTIESOBJECT()
-    this.EVENTS = ExtD3_pack.EVENTS()
+    this.METHODS = ExtD3_packComponent.METHODS()
+    this.XTYPE = ExtD3_packComponent.XTYPE()
+    //this.PROPERTIES = ExtD3_packComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtD3_packComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtD3_packComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -630,5 +630,5 @@ export default class ExtD3_pack extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-d3_pack', ExtD3_pack);
+window.customElements.define('ext-d3_pack', ExtD3_packComponent);
 })();

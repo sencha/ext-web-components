@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtTabpanel extends ExtBase {
+export class ExtTabpanelComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -651,11 +651,11 @@ export default class ExtTabpanel extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtTabpanel.METHODS()
-    this.XTYPE = ExtTabpanel.XTYPE()
-    //this.PROPERTIES = ExtTabpanel.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtTabpanel.PROPERTIESOBJECT()
-    this.EVENTS = ExtTabpanel.EVENTS()
+    this.METHODS = ExtTabpanelComponent.METHODS()
+    this.XTYPE = ExtTabpanelComponent.XTYPE()
+    //this.PROPERTIES = ExtTabpanelComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtTabpanelComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtTabpanelComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -667,5 +667,5 @@ export default class ExtTabpanel extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-tabpanel', ExtTabpanel);
+window.customElements.define('ext-tabpanel', ExtTabpanelComponent);
 })();

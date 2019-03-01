@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtToggleslider extends ExtBase {
+export class ExtTogglesliderComponent extends ExtBase {
 	get allowThumbsOverlapping(){return this.getAttribute('allowThumbsOverlapping')};set allowThumbsOverlapping(allowThumbsOverlapping){this.setAttribute('allowThumbsOverlapping',allowThumbsOverlapping)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get animation(){return this.getAttribute('animation')};set animation(animation){this.setAttribute('animation',animation)}
@@ -570,11 +570,11 @@ export default class ExtToggleslider extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtToggleslider.METHODS()
-    this.XTYPE = ExtToggleslider.XTYPE()
-    //this.PROPERTIES = ExtToggleslider.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtToggleslider.PROPERTIESOBJECT()
-    this.EVENTS = ExtToggleslider.EVENTS()
+    this.METHODS = ExtTogglesliderComponent.METHODS()
+    this.XTYPE = ExtTogglesliderComponent.XTYPE()
+    //this.PROPERTIES = ExtTogglesliderComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtTogglesliderComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtTogglesliderComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -586,5 +586,5 @@ export default class ExtToggleslider extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-toggleslider', ExtToggleslider);
+window.customElements.define('ext-toggleslider', ExtTogglesliderComponent);
 })();

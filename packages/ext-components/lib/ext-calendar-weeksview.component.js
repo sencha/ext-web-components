@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtCalendar_weeksview extends ExtBase {
+export class ExtCalendar_weeksviewComponent extends ExtBase {
 	get addForm(){return this.getAttribute('addForm')};set addForm(addForm){this.setAttribute('addForm',addForm)}
 	get addOnSelect(){return this.getAttribute('addOnSelect')};set addOnSelect(addOnSelect){this.setAttribute('addOnSelect',addOnSelect)}
 	get allowSelection(){return this.getAttribute('allowSelection')};set allowSelection(allowSelection){this.setAttribute('allowSelection',allowSelection)}
@@ -674,11 +674,11 @@ export default class ExtCalendar_weeksview extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtCalendar_weeksview.METHODS()
-    this.XTYPE = ExtCalendar_weeksview.XTYPE()
-    //this.PROPERTIES = ExtCalendar_weeksview.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtCalendar_weeksview.PROPERTIESOBJECT()
-    this.EVENTS = ExtCalendar_weeksview.EVENTS()
+    this.METHODS = ExtCalendar_weeksviewComponent.METHODS()
+    this.XTYPE = ExtCalendar_weeksviewComponent.XTYPE()
+    //this.PROPERTIES = ExtCalendar_weeksviewComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtCalendar_weeksviewComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtCalendar_weeksviewComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -690,5 +690,5 @@ export default class ExtCalendar_weeksview extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-calendar_weeksview', ExtCalendar_weeksview);
+window.customElements.define('ext-calendar_weeksview', ExtCalendar_weeksviewComponent);
 })();

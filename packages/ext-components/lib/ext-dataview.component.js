@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtDataview extends ExtBase {
+export class ExtDataviewComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -781,11 +781,11 @@ export default class ExtDataview extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtDataview.METHODS()
-    this.XTYPE = ExtDataview.XTYPE()
-    //this.PROPERTIES = ExtDataview.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtDataview.PROPERTIESOBJECT()
-    this.EVENTS = ExtDataview.EVENTS()
+    this.METHODS = ExtDataviewComponent.METHODS()
+    this.XTYPE = ExtDataviewComponent.XTYPE()
+    //this.PROPERTIES = ExtDataviewComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtDataviewComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtDataviewComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -797,5 +797,5 @@ export default class ExtDataview extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-dataview', ExtDataview);
+window.customElements.define('ext-dataview', ExtDataviewComponent);
 })();

@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtColorselector extends ExtBase {
+export class ExtColorselectorComponent extends ExtBase {
 	get alphaDecimalFormat(){return this.getAttribute('alphaDecimalFormat')};set alphaDecimalFormat(alphaDecimalFormat){this.setAttribute('alphaDecimalFormat',alphaDecimalFormat)}
 	get cancelButtonText(){return this.getAttribute('cancelButtonText')};set cancelButtonText(cancelButtonText){this.setAttribute('cancelButtonText',cancelButtonText)}
 	get color(){return this.getAttribute('color')};set color(color){this.setAttribute('color',color)}
@@ -68,11 +68,11 @@ export default class ExtColorselector extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtColorselector.METHODS()
-    this.XTYPE = ExtColorselector.XTYPE()
-    //this.PROPERTIES = ExtColorselector.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtColorselector.PROPERTIESOBJECT()
-    this.EVENTS = ExtColorselector.EVENTS()
+    this.METHODS = ExtColorselectorComponent.METHODS()
+    this.XTYPE = ExtColorselectorComponent.XTYPE()
+    //this.PROPERTIES = ExtColorselectorComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtColorselectorComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtColorselectorComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -84,5 +84,5 @@ export default class ExtColorselector extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-colorselector', ExtColorselector);
+window.customElements.define('ext-colorselector', ExtColorselectorComponent);
 })();

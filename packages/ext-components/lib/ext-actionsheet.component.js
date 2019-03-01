@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtActionsheet extends ExtBase {
+export class ExtActionsheetComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -741,11 +741,11 @@ export default class ExtActionsheet extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtActionsheet.METHODS()
-    this.XTYPE = ExtActionsheet.XTYPE()
-    //this.PROPERTIES = ExtActionsheet.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtActionsheet.PROPERTIESOBJECT()
-    this.EVENTS = ExtActionsheet.EVENTS()
+    this.METHODS = ExtActionsheetComponent.METHODS()
+    this.XTYPE = ExtActionsheetComponent.XTYPE()
+    //this.PROPERTIES = ExtActionsheetComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtActionsheetComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtActionsheetComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -757,5 +757,5 @@ export default class ExtActionsheet extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-actionsheet', ExtActionsheet);
+window.customElements.define('ext-actionsheet', ExtActionsheetComponent);
 })();

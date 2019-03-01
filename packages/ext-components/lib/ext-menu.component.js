@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtMenu extends ExtBase {
+export class ExtMenuComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get align(){return this.getAttribute('align')};set align(align){this.setAttribute('align',align)}
@@ -748,11 +748,11 @@ export default class ExtMenu extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtMenu.METHODS()
-    this.XTYPE = ExtMenu.XTYPE()
-    //this.PROPERTIES = ExtMenu.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtMenu.PROPERTIESOBJECT()
-    this.EVENTS = ExtMenu.EVENTS()
+    this.METHODS = ExtMenuComponent.METHODS()
+    this.XTYPE = ExtMenuComponent.XTYPE()
+    //this.PROPERTIES = ExtMenuComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtMenuComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtMenuComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -764,5 +764,5 @@ export default class ExtMenu extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-menu', ExtMenu);
+window.customElements.define('ext-menu', ExtMenuComponent);
 })();

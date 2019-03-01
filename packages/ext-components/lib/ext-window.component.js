@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtWindow extends ExtBase {
+export class ExtWindowComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -761,11 +761,11 @@ export default class ExtWindow extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtWindow.METHODS()
-    this.XTYPE = ExtWindow.XTYPE()
-    //this.PROPERTIES = ExtWindow.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtWindow.PROPERTIESOBJECT()
-    this.EVENTS = ExtWindow.EVENTS()
+    this.METHODS = ExtWindowComponent.METHODS()
+    this.XTYPE = ExtWindowComponent.XTYPE()
+    //this.PROPERTIES = ExtWindowComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtWindowComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtWindowComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -777,5 +777,5 @@ export default class ExtWindow extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-window', ExtWindow);
+window.customElements.define('ext-window', ExtWindowComponent);
 })();

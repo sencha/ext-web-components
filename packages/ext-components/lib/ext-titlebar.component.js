@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtTitlebar extends ExtBase {
+export class ExtTitlebarComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -646,11 +646,11 @@ export default class ExtTitlebar extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtTitlebar.METHODS()
-    this.XTYPE = ExtTitlebar.XTYPE()
-    //this.PROPERTIES = ExtTitlebar.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtTitlebar.PROPERTIESOBJECT()
-    this.EVENTS = ExtTitlebar.EVENTS()
+    this.METHODS = ExtTitlebarComponent.METHODS()
+    this.XTYPE = ExtTitlebarComponent.XTYPE()
+    //this.PROPERTIES = ExtTitlebarComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtTitlebarComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtTitlebarComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -662,5 +662,5 @@ export default class ExtTitlebar extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-titlebar', ExtTitlebar);
+window.customElements.define('ext-titlebar', ExtTitlebarComponent);
 })();

@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtMenuradioitem extends ExtBase {
+export class ExtMenuradioitemComponent extends ExtBase {
 	get allowUncheck(){return this.getAttribute('allowUncheck')};set allowUncheck(allowUncheck){this.setAttribute('allowUncheck',allowUncheck)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
@@ -581,11 +581,11 @@ export default class ExtMenuradioitem extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtMenuradioitem.METHODS()
-    this.XTYPE = ExtMenuradioitem.XTYPE()
-    //this.PROPERTIES = ExtMenuradioitem.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtMenuradioitem.PROPERTIESOBJECT()
-    this.EVENTS = ExtMenuradioitem.EVENTS()
+    this.METHODS = ExtMenuradioitemComponent.METHODS()
+    this.XTYPE = ExtMenuradioitemComponent.XTYPE()
+    //this.PROPERTIES = ExtMenuradioitemComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtMenuradioitemComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtMenuradioitemComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -597,5 +597,5 @@ export default class ExtMenuradioitem extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-menuradioitem', ExtMenuradioitem);
+window.customElements.define('ext-menuradioitem', ExtMenuradioitemComponent);
 })();

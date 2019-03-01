@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtList extends ExtBase {
+export class ExtListComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -857,11 +857,11 @@ export default class ExtList extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtList.METHODS()
-    this.XTYPE = ExtList.XTYPE()
-    //this.PROPERTIES = ExtList.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtList.PROPERTIESOBJECT()
-    this.EVENTS = ExtList.EVENTS()
+    this.METHODS = ExtListComponent.METHODS()
+    this.XTYPE = ExtListComponent.XTYPE()
+    //this.PROPERTIES = ExtListComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtListComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtListComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -873,5 +873,5 @@ export default class ExtList extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-list', ExtList);
+window.customElements.define('ext-list', ExtListComponent);
 })();

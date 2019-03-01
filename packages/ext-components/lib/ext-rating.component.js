@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtRating extends ExtBase {
+export class ExtRatingComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get animate(){return this.getAttribute('animate')};set animate(animate){this.setAttribute('animate',animate)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
@@ -559,11 +559,11 @@ export default class ExtRating extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtRating.METHODS()
-    this.XTYPE = ExtRating.XTYPE()
-    //this.PROPERTIES = ExtRating.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtRating.PROPERTIESOBJECT()
-    this.EVENTS = ExtRating.EVENTS()
+    this.METHODS = ExtRatingComponent.METHODS()
+    this.XTYPE = ExtRatingComponent.XTYPE()
+    //this.PROPERTIES = ExtRatingComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtRatingComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtRatingComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -575,5 +575,5 @@ export default class ExtRating extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-rating', ExtRating);
+window.customElements.define('ext-rating', ExtRatingComponent);
 })();

@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtSparklinebox extends ExtBase {
+export class ExtSparklineboxComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -573,11 +573,11 @@ export default class ExtSparklinebox extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtSparklinebox.METHODS()
-    this.XTYPE = ExtSparklinebox.XTYPE()
-    //this.PROPERTIES = ExtSparklinebox.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtSparklinebox.PROPERTIESOBJECT()
-    this.EVENTS = ExtSparklinebox.EVENTS()
+    this.METHODS = ExtSparklineboxComponent.METHODS()
+    this.XTYPE = ExtSparklineboxComponent.XTYPE()
+    //this.PROPERTIES = ExtSparklineboxComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtSparklineboxComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtSparklineboxComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -589,5 +589,5 @@ export default class ExtSparklinebox extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-sparklinebox', ExtSparklinebox);
+window.customElements.define('ext-sparklinebox', ExtSparklineboxComponent);
 })();

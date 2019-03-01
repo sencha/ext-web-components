@@ -8,6 +8,16 @@ export default class MainComponent {
 
   constructor() {}
 
+  doClickToolbar(event) {
+    var collapsed = this.treePanelCmp.getCollapsed()
+    if (collapsed == true){collapsed = false} else{collapsed = true}
+    this.treePanelCmp.setCollapsed(collapsed)
+  }
+
+  dataviewToolbarReady(event) {
+    var cmp = event.detail.cmp
+  }
+
   containsMatches(node) {
     const found = node.data.name.match(this.filterRegex) || node.childNodes.some(child => this.containsMatches(child));
     if (found) node.expand();

@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtImage extends ExtBase {
+export class ExtImageComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -540,11 +540,11 @@ export default class ExtImage extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtImage.METHODS()
-    this.XTYPE = ExtImage.XTYPE()
-    //this.PROPERTIES = ExtImage.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtImage.PROPERTIESOBJECT()
-    this.EVENTS = ExtImage.EVENTS()
+    this.METHODS = ExtImageComponent.METHODS()
+    this.XTYPE = ExtImageComponent.XTYPE()
+    //this.PROPERTIES = ExtImageComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtImageComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtImageComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -556,5 +556,5 @@ export default class ExtImage extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-image', ExtImage);
+window.customElements.define('ext-image', ExtImageComponent);
 })();

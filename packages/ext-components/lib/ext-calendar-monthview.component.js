@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtCalendar_monthview extends ExtBase {
+export class ExtCalendar_monthviewComponent extends ExtBase {
 	get addForm(){return this.getAttribute('addForm')};set addForm(addForm){this.setAttribute('addForm',addForm)}
 	get addOnSelect(){return this.getAttribute('addOnSelect')};set addOnSelect(addOnSelect){this.setAttribute('addOnSelect',addOnSelect)}
 	get allowSelection(){return this.getAttribute('allowSelection')};set allowSelection(allowSelection){this.setAttribute('allowSelection',allowSelection)}
@@ -679,11 +679,11 @@ export default class ExtCalendar_monthview extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtCalendar_monthview.METHODS()
-    this.XTYPE = ExtCalendar_monthview.XTYPE()
-    //this.PROPERTIES = ExtCalendar_monthview.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtCalendar_monthview.PROPERTIESOBJECT()
-    this.EVENTS = ExtCalendar_monthview.EVENTS()
+    this.METHODS = ExtCalendar_monthviewComponent.METHODS()
+    this.XTYPE = ExtCalendar_monthviewComponent.XTYPE()
+    //this.PROPERTIES = ExtCalendar_monthviewComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtCalendar_monthviewComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtCalendar_monthviewComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -695,5 +695,5 @@ export default class ExtCalendar_monthview extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-calendar_monthview', ExtCalendar_monthview);
+window.customElements.define('ext-calendar_monthview', ExtCalendar_monthviewComponent);
 })();

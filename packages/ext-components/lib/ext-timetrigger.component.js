@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtTimetrigger extends ExtBase {
+export class ExtTimetriggerComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -342,11 +342,11 @@ export default class ExtTimetrigger extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtTimetrigger.METHODS()
-    this.XTYPE = ExtTimetrigger.XTYPE()
-    //this.PROPERTIES = ExtTimetrigger.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtTimetrigger.PROPERTIESOBJECT()
-    this.EVENTS = ExtTimetrigger.EVENTS()
+    this.METHODS = ExtTimetriggerComponent.METHODS()
+    this.XTYPE = ExtTimetriggerComponent.XTYPE()
+    //this.PROPERTIES = ExtTimetriggerComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtTimetriggerComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtTimetriggerComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -358,5 +358,5 @@ export default class ExtTimetrigger extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-timetrigger', ExtTimetrigger);
+window.customElements.define('ext-timetrigger', ExtTimetriggerComponent);
 })();

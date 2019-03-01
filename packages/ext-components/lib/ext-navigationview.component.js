@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtNavigationview extends ExtBase {
+export class ExtNavigationviewComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -665,11 +665,11 @@ export default class ExtNavigationview extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtNavigationview.METHODS()
-    this.XTYPE = ExtNavigationview.XTYPE()
-    //this.PROPERTIES = ExtNavigationview.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtNavigationview.PROPERTIESOBJECT()
-    this.EVENTS = ExtNavigationview.EVENTS()
+    this.METHODS = ExtNavigationviewComponent.METHODS()
+    this.XTYPE = ExtNavigationviewComponent.XTYPE()
+    //this.PROPERTIES = ExtNavigationviewComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtNavigationviewComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtNavigationviewComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -681,5 +681,5 @@ export default class ExtNavigationview extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-navigationview', ExtNavigationview);
+window.customElements.define('ext-navigationview', ExtNavigationviewComponent);
 })();

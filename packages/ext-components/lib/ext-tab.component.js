@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtTab extends ExtBase {
+export class ExtTabComponent extends ExtBase {
 	get active(){return this.getAttribute('active')};set active(active){this.setAttribute('active',active)}
 	get allowDepress(){return this.getAttribute('allowDepress')};set allowDepress(allowDepress){this.setAttribute('allowDepress',allowDepress)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
@@ -597,11 +597,11 @@ export default class ExtTab extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtTab.METHODS()
-    this.XTYPE = ExtTab.XTYPE()
-    //this.PROPERTIES = ExtTab.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtTab.PROPERTIESOBJECT()
-    this.EVENTS = ExtTab.EVENTS()
+    this.METHODS = ExtTabComponent.METHODS()
+    this.XTYPE = ExtTabComponent.XTYPE()
+    //this.PROPERTIES = ExtTabComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtTabComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtTabComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -613,5 +613,5 @@ export default class ExtTab extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-tab', ExtTab);
+window.customElements.define('ext-tab', ExtTabComponent);
 })();

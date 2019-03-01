@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtNumberfield extends ExtBase {
+export class ExtNumberfieldComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get animateUnderline(){return this.getAttribute('animateUnderline')};set animateUnderline(animateUnderline){this.setAttribute('animateUnderline',animateUnderline)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
@@ -673,11 +673,11 @@ export default class ExtNumberfield extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtNumberfield.METHODS()
-    this.XTYPE = ExtNumberfield.XTYPE()
-    //this.PROPERTIES = ExtNumberfield.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtNumberfield.PROPERTIESOBJECT()
-    this.EVENTS = ExtNumberfield.EVENTS()
+    this.METHODS = ExtNumberfieldComponent.METHODS()
+    this.XTYPE = ExtNumberfieldComponent.XTYPE()
+    //this.PROPERTIES = ExtNumberfieldComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtNumberfieldComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtNumberfieldComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -689,5 +689,5 @@ export default class ExtNumberfield extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-numberfield', ExtNumberfield);
+window.customElements.define('ext-numberfield', ExtNumberfieldComponent);
 })();

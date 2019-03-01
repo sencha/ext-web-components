@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtCalendar_calendar_picker extends ExtBase {
+export class ExtCalendar_calendar_pickerComponent extends ExtBase {
 	get alignTarget(){return this.getAttribute('alignTarget')};set alignTarget(alignTarget){this.setAttribute('alignTarget',alignTarget)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get animateUnderline(){return this.getAttribute('animateUnderline')};set animateUnderline(animateUnderline){this.setAttribute('animateUnderline',animateUnderline)}
@@ -750,11 +750,11 @@ export default class ExtCalendar_calendar_picker extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtCalendar_calendar_picker.METHODS()
-    this.XTYPE = ExtCalendar_calendar_picker.XTYPE()
-    //this.PROPERTIES = ExtCalendar_calendar_picker.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtCalendar_calendar_picker.PROPERTIESOBJECT()
-    this.EVENTS = ExtCalendar_calendar_picker.EVENTS()
+    this.METHODS = ExtCalendar_calendar_pickerComponent.METHODS()
+    this.XTYPE = ExtCalendar_calendar_pickerComponent.XTYPE()
+    //this.PROPERTIES = ExtCalendar_calendar_pickerComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtCalendar_calendar_pickerComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtCalendar_calendar_pickerComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -766,5 +766,5 @@ export default class ExtCalendar_calendar_picker extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-calendar_calendar_picker', ExtCalendar_calendar_picker);
+window.customElements.define('ext-calendar_calendar_picker', ExtCalendar_calendar_pickerComponent);
 })();

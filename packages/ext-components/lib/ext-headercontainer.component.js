@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtHeadercontainer extends ExtBase {
+export class ExtHeadercontainerComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -652,11 +652,11 @@ export default class ExtHeadercontainer extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtHeadercontainer.METHODS()
-    this.XTYPE = ExtHeadercontainer.XTYPE()
-    //this.PROPERTIES = ExtHeadercontainer.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtHeadercontainer.PROPERTIESOBJECT()
-    this.EVENTS = ExtHeadercontainer.EVENTS()
+    this.METHODS = ExtHeadercontainerComponent.METHODS()
+    this.XTYPE = ExtHeadercontainerComponent.XTYPE()
+    //this.PROPERTIES = ExtHeadercontainerComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtHeadercontainerComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtHeadercontainerComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -668,5 +668,5 @@ export default class ExtHeadercontainer extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-headercontainer', ExtHeadercontainer);
+window.customElements.define('ext-headercontainer', ExtHeadercontainerComponent);
 })();

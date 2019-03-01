@@ -83,7 +83,7 @@ export class Router {
 
 }
 
-export default class ExtRouter extends HTMLElement {
+export class ExtRouterComponent extends HTMLElement {
 
   get padding(){return this.getAttribute('padding')};set padding(padding){this.setAttribute('padding',padding)}
 
@@ -133,5 +133,5 @@ export default class ExtRouter extends HTMLElement {
   }
 }
 (function () {
-window.customElements.define('ext-router', ExtRouter);
+window.customElements.define('ext-router', ExtRouterComponent);
 })();

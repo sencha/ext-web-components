@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtMenuseparator extends ExtBase {
+export class ExtMenuseparatorComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -525,11 +525,11 @@ export default class ExtMenuseparator extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtMenuseparator.METHODS()
-    this.XTYPE = ExtMenuseparator.XTYPE()
-    //this.PROPERTIES = ExtMenuseparator.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtMenuseparator.PROPERTIESOBJECT()
-    this.EVENTS = ExtMenuseparator.EVENTS()
+    this.METHODS = ExtMenuseparatorComponent.METHODS()
+    this.XTYPE = ExtMenuseparatorComponent.XTYPE()
+    //this.PROPERTIES = ExtMenuseparatorComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtMenuseparatorComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtMenuseparatorComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -541,5 +541,5 @@ export default class ExtMenuseparator extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-menuseparator', ExtMenuseparator);
+window.customElements.define('ext-menuseparator', ExtMenuseparatorComponent);
 })();

@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtFormpanel extends ExtBase {
+export class ExtFormpanelComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -790,11 +790,11 @@ export default class ExtFormpanel extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtFormpanel.METHODS()
-    this.XTYPE = ExtFormpanel.XTYPE()
-    //this.PROPERTIES = ExtFormpanel.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtFormpanel.PROPERTIESOBJECT()
-    this.EVENTS = ExtFormpanel.EVENTS()
+    this.METHODS = ExtFormpanelComponent.METHODS()
+    this.XTYPE = ExtFormpanelComponent.XTYPE()
+    //this.PROPERTIES = ExtFormpanelComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtFormpanelComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtFormpanelComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -806,5 +806,5 @@ export default class ExtFormpanel extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-formpanel', ExtFormpanel);
+window.customElements.define('ext-formpanel', ExtFormpanelComponent);
 })();

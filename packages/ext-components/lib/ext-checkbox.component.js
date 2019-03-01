@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtCheckbox extends ExtBase {
+export class ExtCheckboxComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -631,11 +631,11 @@ export default class ExtCheckbox extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtCheckbox.METHODS()
-    this.XTYPE = ExtCheckbox.XTYPE()
-    //this.PROPERTIES = ExtCheckbox.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtCheckbox.PROPERTIESOBJECT()
-    this.EVENTS = ExtCheckbox.EVENTS()
+    this.METHODS = ExtCheckboxComponent.METHODS()
+    this.XTYPE = ExtCheckboxComponent.XTYPE()
+    //this.PROPERTIES = ExtCheckboxComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtCheckboxComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtCheckboxComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -647,5 +647,5 @@ export default class ExtCheckbox extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-checkbox', ExtCheckbox);
+window.customElements.define('ext-checkbox', ExtCheckboxComponent);
 })();

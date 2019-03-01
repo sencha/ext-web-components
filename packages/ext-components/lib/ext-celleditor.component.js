@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtCelleditor extends ExtBase {
+export class ExtCelleditorComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get alignment(){return this.getAttribute('alignment')};set alignment(alignment){this.setAttribute('alignment',alignment)}
@@ -691,11 +691,11 @@ export default class ExtCelleditor extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtCelleditor.METHODS()
-    this.XTYPE = ExtCelleditor.XTYPE()
-    //this.PROPERTIES = ExtCelleditor.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtCelleditor.PROPERTIESOBJECT()
-    this.EVENTS = ExtCelleditor.EVENTS()
+    this.METHODS = ExtCelleditorComponent.METHODS()
+    this.XTYPE = ExtCelleditorComponent.XTYPE()
+    //this.PROPERTIES = ExtCelleditorComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtCelleditorComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtCelleditorComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -707,5 +707,5 @@ export default class ExtCelleditor extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-celleditor', ExtCelleditor);
+window.customElements.define('ext-celleditor', ExtCelleditorComponent);
 })();

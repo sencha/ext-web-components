@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtListswiperstepper extends ExtBase {
+export class ExtListswiperstepperComponent extends ExtBase {
 	get action(){return this.getAttribute('action')};set action(action){this.setAttribute('action',action)}
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
@@ -657,11 +657,11 @@ export default class ExtListswiperstepper extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtListswiperstepper.METHODS()
-    this.XTYPE = ExtListswiperstepper.XTYPE()
-    //this.PROPERTIES = ExtListswiperstepper.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtListswiperstepper.PROPERTIESOBJECT()
-    this.EVENTS = ExtListswiperstepper.EVENTS()
+    this.METHODS = ExtListswiperstepperComponent.METHODS()
+    this.XTYPE = ExtListswiperstepperComponent.XTYPE()
+    //this.PROPERTIES = ExtListswiperstepperComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtListswiperstepperComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtListswiperstepperComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -673,5 +673,5 @@ export default class ExtListswiperstepper extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-listswiperstepper', ExtListswiperstepper);
+window.customElements.define('ext-listswiperstepper', ExtListswiperstepperComponent);
 })();

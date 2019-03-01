@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtPivotd3container extends ExtBase {
+export class ExtPivotd3containerComponent extends ExtBase {
 	get configurator(){return this.getAttribute('configurator')};set configurator(configurator){this.setAttribute('configurator',configurator)}
 	get drawing(){return this.getAttribute('drawing')};set drawing(drawing){this.setAttribute('drawing',drawing)}
 	get matrix(){return this.getAttribute('matrix')};set matrix(matrix){this.setAttribute('matrix',matrix)}
@@ -32,11 +32,11 @@ export default class ExtPivotd3container extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtPivotd3container.METHODS()
-    this.XTYPE = ExtPivotd3container.XTYPE()
-    //this.PROPERTIES = ExtPivotd3container.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtPivotd3container.PROPERTIESOBJECT()
-    this.EVENTS = ExtPivotd3container.EVENTS()
+    this.METHODS = ExtPivotd3containerComponent.METHODS()
+    this.XTYPE = ExtPivotd3containerComponent.XTYPE()
+    //this.PROPERTIES = ExtPivotd3containerComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtPivotd3containerComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtPivotd3containerComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -48,5 +48,5 @@ export default class ExtPivotd3container extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-pivotd3container', ExtPivotd3container);
+window.customElements.define('ext-pivotd3container', ExtPivotd3containerComponent);
 })();

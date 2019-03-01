@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtCalendar_form_edit extends ExtBase {
+export class ExtCalendar_form_editComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allDayField(){return this.getAttribute('allDayField')};set allDayField(allDayField){this.setAttribute('allDayField',allDayField)}
@@ -830,11 +830,11 @@ export default class ExtCalendar_form_edit extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtCalendar_form_edit.METHODS()
-    this.XTYPE = ExtCalendar_form_edit.XTYPE()
-    //this.PROPERTIES = ExtCalendar_form_edit.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtCalendar_form_edit.PROPERTIESOBJECT()
-    this.EVENTS = ExtCalendar_form_edit.EVENTS()
+    this.METHODS = ExtCalendar_form_editComponent.METHODS()
+    this.XTYPE = ExtCalendar_form_editComponent.XTYPE()
+    //this.PROPERTIES = ExtCalendar_form_editComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtCalendar_form_editComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtCalendar_form_editComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -846,5 +846,5 @@ export default class ExtCalendar_form_edit extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-calendar_form_edit', ExtCalendar_form_edit);
+window.customElements.define('ext-calendar_form_edit', ExtCalendar_form_editComponent);
 })();

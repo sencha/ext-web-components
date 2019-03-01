@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtCalendar_days extends ExtBase {
+export class ExtCalendar_daysComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get addForm(){return this.getAttribute('addForm')};set addForm(addForm){this.setAttribute('addForm',addForm)}
@@ -816,11 +816,11 @@ export default class ExtCalendar_days extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtCalendar_days.METHODS()
-    this.XTYPE = ExtCalendar_days.XTYPE()
-    //this.PROPERTIES = ExtCalendar_days.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtCalendar_days.PROPERTIESOBJECT()
-    this.EVENTS = ExtCalendar_days.EVENTS()
+    this.METHODS = ExtCalendar_daysComponent.METHODS()
+    this.XTYPE = ExtCalendar_daysComponent.XTYPE()
+    //this.PROPERTIES = ExtCalendar_daysComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtCalendar_daysComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtCalendar_daysComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -832,5 +832,5 @@ export default class ExtCalendar_days extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-calendar_days', ExtCalendar_days);
+window.customElements.define('ext-calendar_days', ExtCalendar_daysComponent);
 })();

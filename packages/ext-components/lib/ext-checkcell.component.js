@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtCheckcell extends ExtBase {
+export class ExtCheckcellComponent extends ExtBase {
 	get align(){return this.getAttribute('align')};set align(align){this.setAttribute('align',align)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
@@ -348,11 +348,11 @@ export default class ExtCheckcell extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtCheckcell.METHODS()
-    this.XTYPE = ExtCheckcell.XTYPE()
-    //this.PROPERTIES = ExtCheckcell.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtCheckcell.PROPERTIESOBJECT()
-    this.EVENTS = ExtCheckcell.EVENTS()
+    this.METHODS = ExtCheckcellComponent.METHODS()
+    this.XTYPE = ExtCheckcellComponent.XTYPE()
+    //this.PROPERTIES = ExtCheckcellComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtCheckcellComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtCheckcellComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -364,5 +364,5 @@ export default class ExtCheckcell extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-checkcell', ExtCheckcell);
+window.customElements.define('ext-checkcell', ExtCheckcellComponent);
 })();

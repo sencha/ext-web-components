@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtSpindowntrigger extends ExtBase {
+export class ExtSpindowntriggerComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -342,11 +342,11 @@ export default class ExtSpindowntrigger extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtSpindowntrigger.METHODS()
-    this.XTYPE = ExtSpindowntrigger.XTYPE()
-    //this.PROPERTIES = ExtSpindowntrigger.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtSpindowntrigger.PROPERTIESOBJECT()
-    this.EVENTS = ExtSpindowntrigger.EVENTS()
+    this.METHODS = ExtSpindowntriggerComponent.METHODS()
+    this.XTYPE = ExtSpindowntriggerComponent.XTYPE()
+    //this.PROPERTIES = ExtSpindowntriggerComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtSpindowntriggerComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtSpindowntriggerComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -358,5 +358,5 @@ export default class ExtSpindowntrigger extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-spindowntrigger', ExtSpindowntrigger);
+window.customElements.define('ext-spindowntrigger', ExtSpindowntriggerComponent);
 })();

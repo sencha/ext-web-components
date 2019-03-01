@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtChip extends ExtBase {
+export class ExtChipComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -537,11 +537,11 @@ export default class ExtChip extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtChip.METHODS()
-    this.XTYPE = ExtChip.XTYPE()
-    //this.PROPERTIES = ExtChip.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtChip.PROPERTIESOBJECT()
-    this.EVENTS = ExtChip.EVENTS()
+    this.METHODS = ExtChipComponent.METHODS()
+    this.XTYPE = ExtChipComponent.XTYPE()
+    //this.PROPERTIES = ExtChipComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtChipComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtChipComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -553,5 +553,5 @@ export default class ExtChip extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-chip', ExtChip);
+window.customElements.define('ext-chip', ExtChipComponent);
 })();

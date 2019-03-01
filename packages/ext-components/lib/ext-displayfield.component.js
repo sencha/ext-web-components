@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtDisplayfield extends ExtBase {
+export class ExtDisplayfieldComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -612,11 +612,11 @@ export default class ExtDisplayfield extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtDisplayfield.METHODS()
-    this.XTYPE = ExtDisplayfield.XTYPE()
-    //this.PROPERTIES = ExtDisplayfield.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtDisplayfield.PROPERTIESOBJECT()
-    this.EVENTS = ExtDisplayfield.EVENTS()
+    this.METHODS = ExtDisplayfieldComponent.METHODS()
+    this.XTYPE = ExtDisplayfieldComponent.XTYPE()
+    //this.PROPERTIES = ExtDisplayfieldComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtDisplayfieldComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtDisplayfieldComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -628,5 +628,5 @@ export default class ExtDisplayfield extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-displayfield', ExtDisplayfield);
+window.customElements.define('ext-displayfield', ExtDisplayfieldComponent);
 })();

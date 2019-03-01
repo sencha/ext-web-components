@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtPivottreemap extends ExtBase {
+export class ExtPivottreemapComponent extends ExtBase {
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
 	get ariaAttributes(){return this.getAttribute('ariaAttributes')};set ariaAttributes(ariaAttributes){this.setAttribute('ariaAttributes',ariaAttributes)}
 	get ariaDescribedBy(){return this.getAttribute('ariaDescribedBy')};set ariaDescribedBy(ariaDescribedBy){this.setAttribute('ariaDescribedBy',ariaDescribedBy)}
@@ -629,11 +629,11 @@ export default class ExtPivottreemap extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtPivottreemap.METHODS()
-    this.XTYPE = ExtPivottreemap.XTYPE()
-    //this.PROPERTIES = ExtPivottreemap.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtPivottreemap.PROPERTIESOBJECT()
-    this.EVENTS = ExtPivottreemap.EVENTS()
+    this.METHODS = ExtPivottreemapComponent.METHODS()
+    this.XTYPE = ExtPivottreemapComponent.XTYPE()
+    //this.PROPERTIES = ExtPivottreemapComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtPivottreemapComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtPivottreemapComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -645,5 +645,5 @@ export default class ExtPivottreemap extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-pivottreemap', ExtPivottreemap);
+window.customElements.define('ext-pivottreemap', ExtPivottreemapComponent);
 })();

@@ -1,6 +1,6 @@
 import ExtBase from './base';
 
-export default class ExtChart extends ExtBase {
+export class ExtChartComponent extends ExtBase {
 	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
@@ -758,11 +758,11 @@ export default class ExtChart extends ExtBase {
 
   constructor() {
     super()
-    this.METHODS = ExtChart.METHODS()
-    this.XTYPE = ExtChart.XTYPE()
-    //this.PROPERTIES = ExtChart.PROPERTIES()
-    this.PROPERTIESOBJECT = ExtChart.PROPERTIESOBJECT()
-    this.EVENTS = ExtChart.EVENTS()
+    this.METHODS = ExtChartComponent.METHODS()
+    this.XTYPE = ExtChartComponent.XTYPE()
+    //this.PROPERTIES = ExtChartComponent.PROPERTIES()
+    this.PROPERTIESOBJECT = ExtChartComponent.PROPERTIESOBJECT()
+    this.EVENTS = ExtChartComponent.EVENTS()
   }
 
   connectedCallback() {
@@ -774,5 +774,5 @@ export default class ExtChart extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-chart', ExtChart);
+window.customElements.define('ext-chart', ExtChartComponent);
 })();
