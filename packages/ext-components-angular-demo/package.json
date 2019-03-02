@@ -1,7 +1,7 @@
 {
-  "name": "@sencha/ext-angular-demo",
+  "name": "@sencha/ext-components-angular-demo",
   "version": "6.7.0",
-  "description": "ext-angular-demo",
+  "description": "ext-components-angular-demo",
   "scripts": {
     "start": "npm run dev",
     "clean": "rimraf build",
