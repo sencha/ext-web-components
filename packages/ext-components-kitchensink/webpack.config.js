@@ -19,18 +19,9 @@ module.exports = function (env) {
         hash: true,
         inject: "body"
       }),
-      new CopyWebpackPlugin([{
-        from: 'extjs',
-        to: 'extjs'
-      }]),
-      new CopyWebpackPlugin([{
-        from: 'resources',
-        to: 'resources'
-      }]),
-      new CopyWebpackPlugin([{
-        from: 'favicon.ico',
-        to: 'favicon.ico'
-      }]),
+      new CopyWebpackPlugin([{from: 'copy/extjs',to: 'extjs'}]),
+      new CopyWebpackPlugin([{from: 'copy/resources',to: 'resources'}]),
+      new CopyWebpackPlugin([{from: 'copy/favicon.ico',to: 'favicon.ico'}]),
       new WebpackShellPlugin({
         onBuildEnd:{
           scripts: ['node extract-code.js'],

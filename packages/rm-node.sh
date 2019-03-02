@@ -1,7 +1,7 @@
-rm -r ext-angular/node_modules
-rm -r ext-angular-boilerplate/node_modules
-rm -r ext-angular-demo/node_modules
-rm -r ext-angular-gen/node_modules
-rm -r ext-angular-kitchensink/node_modules
-rm -r ext-angular-tests/node_modules
-rm -r ext-angular-webpack-plugin/node_modules
+rm -r ext-components/node_modules
+rm -r ext-components-angular-demo/node_modules
+rm -r ext-components-boilerplate/node_modules
+rm -r ext-components-demo/node_modules
+rm -r ext-components-gen/node_modules
+rm -r ext-components-kitchensink/node_modules
+rm -r ext-components-tests/node_modules
