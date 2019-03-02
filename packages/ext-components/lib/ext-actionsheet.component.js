@@ -1,7 +1,18 @@
 import ExtBase from './base';
 
 export class ExtActionsheetComponent extends ExtBase {
-	get activeChildTabIndex(){return this.getAttribute('activeChildTabIndex')};set activeChildTabIndex(activeChildTabIndex){this.setAttribute('activeChildTabIndex',activeChildTabIndex)}
+	get activeChildTabIndex(){
+    return this.getAttribute('activeChildTabIndex')
+  };
+  set activeChildTabIndex(activeChildTabIndex){
+    if (activeChildTabIndex) {
+
+    }
+    else {
+      
+    }
+    this.setAttribute('activeChildTabIndex',activeChildTabIndex)
+  }
 	get activeItem(){return this.getAttribute('activeItem')};set activeItem(activeItem){this.setAttribute('activeItem',activeItem)}
 	get allowFocusingDisabledChildren(){return this.getAttribute('allowFocusingDisabledChildren')};set allowFocusingDisabledChildren(allowFocusingDisabledChildren){this.setAttribute('allowFocusingDisabledChildren',allowFocusingDisabledChildren)}
 	get alwaysOnTop(){return this.getAttribute('alwaysOnTop')};set alwaysOnTop(alwaysOnTop){this.setAttribute('alwaysOnTop',alwaysOnTop)}
