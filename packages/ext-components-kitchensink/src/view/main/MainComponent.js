@@ -6,68 +6,28 @@ export default class MainComponent {
 
   constructor() {
     var navTreeRoot = {
-      id: '/',
+      hash: 'all',
+      iconCls: 'x-fa fa-home',
+      leaf: false,
       text: 'All',
       children: window.menu
-    }
+    };
     this.treeStore = Ext.create('Ext.data.TreeStore', {
       rootVisible: true,
       root: navTreeRoot
-    })
-
-    // var me = this;
-    // setTimeout(function() {
-    //   var hash = window.location.hash.substr(1)
-    //   if (hash == '') {
-    //     var node = me.dataviewNavCmp.getStore().getNodeById('components')
-    //     me.dataviewNavCmp.setData(node.childNodes)
-    //     me.showSelection();
-    //   }
-    //   else {
-    //     var node = me.dataviewNavCmp.getStore().getNodeById(hash)
-    //     me.dataviewNavCmp.setData(node.childNodes)
-    //     console.log(node.childNodes)
-    //     me.showRouter();
-    //   }
-    // }, 1000);
-
+    });
+    this.wait = 9;
   }
 
   afterAllLoaded() {
-    if (
-      this.codeButtonCmp != undefined &&
-      this.dataviewBreadcrumbCmp != undefined &&
-      this.treelistCmp != undefined &&
-      this.treePanelCmp != undefined &&
-      this.selectionCmp != undefined &&
-      this.dataviewNavCmp != undefined &&
-      this.router != undefined &&
-      this.codePanelCmp != undefined &&
-      this.tabPanelCmp != undefined
-      ) {
-        var me = this;
-        //setTimeout(function() {
-          var hash = window.location.hash.substr(1)
-          if (hash == '') {
-            //var node = me.dataviewNavCmp.getStore().getNodeById('components')
-            //console.dir(me.dataviewNavCmp.getStore())
-            var node = me.dataviewNavCmp.getStore().findNode('text','All');
-            me.dataviewNavCmp.setData(node.childNodes)
-            this.breadcrumb = this.generateBreadcrumb(node);
-            this.dataviewBreadcrumbCmp.setData(this.breadcrumb)
-            me.showSelection();
-          }
-          else {
-            //var node = me.dataviewNavCmp.getStore().getNodeById(hash)
-            var node = me.dataviewNavCmp.getStore().findNode('hash',hash);
-            me.dataviewNavCmp.setData(node.childNodes)
-            this.breadcrumb = this.generateBreadcrumb(node);
-            this.dataviewBreadcrumbCmp.setData(this.breadcrumb)
-            console.log(node.childNodes)
-            me.showRouter();
-            me.setCodeTabs();
-          }
-        //}, 1000);
+    this.wait = this.wait - 1;
+    if (this.wait == 0) {
+      console.log('window.location.hash')
+      console.log(window.location.hash)
+      var hash = window.location.hash.substr(1)
+      if (hash == '') {hash = 'all'}
+      var node = this.dataviewNavCmp.getStore().findNode('hash',hash);
+      this.navigate(node);
     }
   }
 
@@ -77,14 +37,14 @@ export default class MainComponent {
   }
 
   generateBreadcrumb = (node) => {
-    console.log(node)
+    console.log('generateBreadcrumb')
     try {
       const path = [];
       do {
         path.unshift({
-//          isLeaf: !node.childNodes.length,
+          isLeaf: !node.childNodes.length,
           text: node.get("text"),
-          path: node.get("id"),
+          hash: node.get("text").toLowerCase().replace(/\s/g, ''),
           divider: '&nbsp;>&nbsp;'
         });
       } while (node = node.parentNode)
@@ -104,26 +64,17 @@ export default class MainComponent {
       {text} <span>{divider}</span>
     </div>`
     this.dataviewBreadcrumbCmp.setItemTpl(tpl)
-    //this.dataviewBreadcrumbCmp.setStore(this.treeStore)
-    
-    // //var node = this.dataviewBreadcrumbCmp.getStore().findNode('hash', window.initHash);
-    // var node = this.dataviewBreadcrumbCmp.getStore().findNode('hash','components');
-
-    // this.breadcrumb = this.generateBreadcrumb(node);
-    // this.dataviewBreadcrumbCmp.setData(this.breadcrumb)
     this.afterAllLoaded()
   }
 
-  readyTreePanel(event) {
-    this.treePanelCmp = event.detail.cmp
+  readyNavTreePanel(event) {
+    this.navTreePanelCmp = event.detail.cmp
     this.afterAllLoaded()
   }
 
-  readyTreelist(event) {
-    this.treelistCmp = event.detail.cmp
-    this.treelistCmp.setStore(this.treeStore)
-    var node = this.treelistCmp.getStore().findNode('hash', window.initHash);
-    this.treelistCmp.setSelection(node);
+  readyNavTreelist(event) {
+    this.navTreelistCmp = event.detail.cmp
+    this.navTreelistCmp.setStore(this.treeStore)
     this.afterAllLoaded()
   }
 
@@ -172,9 +123,9 @@ export default class MainComponent {
   }
 
   dataviewBreadcrumbClick = (event) => {
-    console.log(event)
-    var record = event.detail.location.record;
-    this.navigate(record);
+    var hash = event.detail.location.record.data.hash;
+    var node = this.dataviewNavCmp.getStore().findNode('hash',hash);
+    this.navigate(node);
   }
 
   dataviewNavClick = (event) => {
@@ -182,47 +133,59 @@ export default class MainComponent {
     this.navigate(record);
   }
 
-  selectionchange(event) {
+  navTreelistSelectionChange(event) {
     var record = event.detail.record;
     this.navigate(record);
   }
 
   navigate(record) {
+    console.log('navigate')
     if (record == null) {
+      console.log('it was null')
       return
     }
     var hash = record.data.hash
     var childNum = record.childNodes.length
     if (childNum == 0 && hash != undefined) {
+
+      var node = this.dataviewNavCmp.getStore().findNode('hash',hash);
+      this.breadcrumb = this.generateBreadcrumb(node);
+      this.dataviewBreadcrumbCmp.setData(this.breadcrumb)
+
       this.showRouter();
       window.location.hash = '#' + hash
-      this.setCodeTabs()
     }
     else {
-      console.log(hash)
-      var node = this.dataviewNavCmp.getStore().getNodeById(hash)
-      console.log(node)
+
+      var node = this.dataviewNavCmp.getStore().findNode('hash',hash);
+      this.breadcrumb = this.generateBreadcrumb(node);
+      this.dataviewBreadcrumbCmp.setData(this.breadcrumb)
+
       this.dataviewNavCmp.setData(node.childNodes)
+
       this.showSelection();
     }
   }
 
   showSelection() {
+    console.log('showSelection')
     this.selectionCmp.setHidden(false);
     this.router.hidden = true;
     this.codeButtonCmp.setHidden(true);
   }
 
   showRouter() {
+    console.log('showRouter')
     this.selectionCmp.setHidden(true);
     this.router.hidden = false;
     this.codeButtonCmp.setHidden(false);
+    this.setCodeTabs()
   }
 
   doClickToolbar(event) {
-    var collapsed = this.treePanelCmp.getCollapsed()
-    if (collapsed == true){collapsed = false} else{collapsed = true}
-    this.treePanelCmp.setCollapsed(collapsed)
+    var collapsed = this.navTreePanelCmp.getCollapsed()
+    if (collapsed == true){collapsed = false} else {collapsed = true}
+    this.navTreePanelCmp.setCollapsed(collapsed)
   }
 
   containsMatches(node) {
@@ -235,7 +198,7 @@ export default class MainComponent {
   filterNav = (event) => {
     var value = event.detail.newValue
     this.filterRegex = new RegExp(`(${Ext.String.escapeRegex(value)})`, 'i');
-    this.treelistCmp.getStore().filterBy(record => this.containsMatches(record));
+    this.navTreelistCmp.getStore().filterBy(record => this.containsMatches(record));
   }
 
   toggleCode() {
@@ -246,13 +209,10 @@ export default class MainComponent {
   }
 
   toggleTree() {
-    var collapsed = this.treePanelCmp.getCollapsed()
+    var collapsed = this.navTreePanelCmp.getCollapsed()
     if (collapsed == true){collapsed = false} else{collapsed = true}
-    this.treePanelCmp.setCollapsed(collapsed)
+    this.navTreePanelCmp.setCollapsed(collapsed)
   }
-
-
-
 
   csscomponent = (file) => {
   if (file.endsWith(".html")) {return 'html'}
@@ -261,53 +221,50 @@ export default class MainComponent {
 
   setCodeTabs() {
     var me = this
-    if(me.tabPanelCmp != undefined) {
-      var hash = window.location.hash.substr(1)
-      var currentRoute = {}
-      window.routes.forEach((route) => {
-        if(hash == '') {
-          if (route.default == true) {currentRoute = route}
-        }
-        else {
-          if (route.hash == hash) {currentRoute = route}
-        }
-      });
-      window[currentRoute.hash] = new currentRoute.component()
-      var codeMap = _code[currentRoute.hash]
-      me.tabPanelCmp.removeAll()
-      var file = ''
-      file = currentRoute.component.name + '.html'
-      if (codeMap[file] != undefined ) {
-        me.tabPanelCmp.add({title: file,
-          xtype: 'panel',ui: 'code-panel',layout: 'fit',userSelectable: true,scrollable: true,
-          tab: {ui: 'app-code-tab', flex: 0, minWidth: 250},
-          html: `<pre><code class='code'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
-        })
+    var hash = window.location.hash.substr(1)
+    var currentRoute = {}
+    window.routes.forEach((route) => {
+      if(hash == '') {
+        if (route.default == true) {currentRoute = route}
       }
-      file = currentRoute.component.name + '.js'
-      if (codeMap[file] != undefined ) {
-        me.tabPanelCmp.add({title: file,
-          xtype: 'panel',ui: 'code-panel',layout: 'fit',userSelectable: true,scrollable: true,
-          tab: {ui: 'app-code-tab', flex: 0, minWidth: 250},
-          html: `<pre><code class='code'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
-        })
+      else {
+        if (route.hash == hash) {currentRoute = route}
       }
-      file = currentRoute.component.name + '.css'
-      if (codeMap[file] != undefined ) {
-        me.tabPanelCmp.add({title: file,
-          xtype: 'panel',ui: 'code-panel',layout: 'fit',userSelectable: true,scrollable: true,
-          tab: {ui: 'app-code-tab', flex: 0, minWidth: 250},
-          html: `<pre><code class='code'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
-        })
-      }
-      setTimeout(function() {
-        document.querySelectorAll('pre code').forEach((block) => {
-          hljs.highlightBlock(block);
-        });
-      },50);
+    });
+    //window[currentRoute.hash] = new currentRoute.component()
+    var codeMap = _code[currentRoute.hash]
+    me.tabPanelCmp.removeAll()
+    var file = ''
+    file = currentRoute.component.name + '.html'
+    if (codeMap[file] != undefined ) {
+      me.tabPanelCmp.add({title: file,
+        xtype: 'panel',ui: 'code-panel',layout: 'fit',userSelectable: true,scrollable: true,
+        tab: {ui: 'app-code-tab', flex: 0, minWidth: 250},
+        html: `<pre><code class='code'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
+      })
     }
+    file = currentRoute.component.name + '.js'
+    if (codeMap[file] != undefined ) {
+      me.tabPanelCmp.add({title: file,
+        xtype: 'panel',ui: 'code-panel',layout: 'fit',userSelectable: true,scrollable: true,
+        tab: {ui: 'app-code-tab', flex: 0, minWidth: 250},
+        html: `<pre><code class='code'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
+      })
+    }
+    file = currentRoute.component.name + '.css'
+    if (codeMap[file] != undefined ) {
+      me.tabPanelCmp.add({title: file,
+        xtype: 'panel',ui: 'code-panel',layout: 'fit',userSelectable: true,scrollable: true,
+        tab: {ui: 'app-code-tab', flex: 0, minWidth: 250},
+        html: `<pre><code class='code'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
+      })
+    }
+    setTimeout(function() {
+      document.querySelectorAll('pre code').forEach((block) => {
+        hljs.highlightBlock(block);
+      });
+    },50);
   }
-
 
 }
 
@@ -330,3 +287,28 @@ export default class MainComponent {
       //   })
       // })
 
+
+
+
+    // if (
+    //   this.codeButtonCmp != undefined &&
+    //   this.dataviewBreadcrumbCmp != undefined &&
+    //   this.navTreelistCmp != undefined &&
+    //   this.navTreePanelCmp != undefined &&
+    //   this.selectionCmp != undefined &&
+    //   this.dataviewNavCmp != undefined &&
+    //   this.router != undefined &&
+    //   this.codePanelCmp != undefined &&
+    //   this.tabPanelCmp != undefined
+    // ) {
+
+
+      // console.log(this.codeButtonCmp)
+      // console.log(this.dataviewBreadcrumbCmp)
+      // console.log(this.navTreelistCmp)
+      // console.log(this.navTreePanelCmp)
+      // console.log(this.selectionCmp)
+      // console.log(this.dataviewNavCmp)
+      // console.log(this.router)
+      // console.log(this.codePanelCmp)
+      // console.log(this.tabPanelCmp)

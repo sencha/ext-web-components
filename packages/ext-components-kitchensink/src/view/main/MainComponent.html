@@ -22,7 +22,7 @@
   <!-- Breadcrumb starts-->
   <ext-toolbar docked="top" weight="10">
     <ext-dataview inline=true itemCls="div.app-toolbar" id="hide-overflow"
-      onchildtap="dataviewBreadcrumbClick(event)" 
+      onchildtap="main.dataviewBreadcrumbClick(event)" 
       onready="main.readyDataviewBreadcrumb(event)">
     </ext-dataview>
   </ext-toolbar>
@@ -41,7 +41,7 @@
     collapsible='{"direction": "left"}'
     collapsed="true"
     width="300px"
-    onready="main.readyTreePanel(event)">
+    onready="main.readyNavTreePanel(event)">
     <ext-searchfield
       flex="1"
       docked="top"
@@ -53,8 +53,8 @@
       ui="nav"
       expanderFirst="false"
       expanderOnly="false"
-      onready="main.readyTreelist(event)"
-      onselectionchange="main.selectionchange(event)">
+      onready="main.readyNavTreelist(event)"
+      onselectionchange="main.navTreelistSelectionChange(event)">
     </ext-treelist>
   </ext-panel>
   <!-- Navtree ends-->

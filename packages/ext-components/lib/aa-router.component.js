@@ -1,13 +1,13 @@
 export class Route {
 
   constructor (hash, component, defaultRoute) {
-      try {
-        if(!hash) {
-          throw 'error: hash param is required';
-        }
-      } catch (e) {
-        console.error(e);
+    try {
+      if(!hash) {
+        throw 'error: hash param is required';
       }
+    } catch (e) {
+      console.error(e);
+    }
     this.hash = hash;
     this.component = component;
     if (defaultRoute != undefined) {
@@ -32,36 +32,41 @@ export class Router {
       this.rootElem = document.getElementById('route');
       this.init();
     } catch (e) {
-        console.error(e);   
+      console.error(e);   
     }
   }
 
   init() {
     var r = this.routes;
     (function(scope, r) { 
-        window.addEventListener('hashchange', function (e) {
-            scope.hasChanged(scope, r);
-        });
+      window.addEventListener('hashchange', function (e) {
+        scope.hasChanged(scope, r);
+      });
     })(this, r);
     this.hasChanged(this, r);
   }
 
-  hasChanged(scope, r){
-      if (window.location.hash.length > 0) {
-          for (var i = 0, length = r.length; i < length; i++) {
-              var route = r[i];
-              if(route.isActiveRoute(window.location.hash.substr(1))) {
-                  scope.rootElem.innerHTML = window._code[route.hash][route.component.name + '.html']
-              }
-          }
-      } else {
-          for (var i = 0, length = r.length; i < length; i++) {
-              var route = r[i];
-              if(route.default) {
-                  scope.rootElem.innerHTML = window._code[route.hash][route.component.name + '.html']
-              }
-          }
+  hasChanged(scope, r) {
+    console.log('hasChanged: ' + window.location.hash.substr(1))
+    if (window.location.hash.length > 0) {
+      var currentHash = ''
+      var currentComponent = null
+      for (var i = 0, length = r.length; i < length; i++) {
+        var route = r[i];
+        if(route.isActiveRoute(window.location.hash.substr(1))) {
+          currentHash = route.hash
+          currentComponent = route.component
+        }
       }
+      setTimeout(function() {
+        window[currentHash] = new currentComponent()
+        scope.rootElem.innerHTML = window._code[currentHash][currentComponent.name + '.html']
+        console.log(scope.rootElem.innerHTML)
+      },1000);
+    }
+    else {
+      console.log('hash is == 0')
+    }
   }
 
 }
@@ -83,23 +88,14 @@ export class ExtRouterComponent extends HTMLElement {
   }
 
   attributeChangedCallback(attr, oldVal, newVal) {
-//    console.log(attr)
     if (attr == 'hidden') {
       var route = document.getElementById("route");
-//      console.log(route)
-//      console.log(newVal)
       if (route != null) {
         if (newVal == 'true') {
-//          console.log('in true')
-//          console.log(route.style.display)
           route.style.display = "none"
-//          console.log(route.style.display)
         }
         else {
-//          console.log('in false')
-//          console.log(route.style.display)
           route.style.display = "block"
-//          console.log(route.style.display)
         }
       }
     }
@@ -112,16 +108,6 @@ export class ExtRouterComponent extends HTMLElement {
         //this.removeEventListener(attr.slice(2), this);
       }
     } 
-//     else {
-//       if (this.ext === undefined) {
-//       }
-//       else {
-// //mjg check if this method exists for this component
-        
-//         var method = 'set' + attr[0].toUpperCase() + attr.substring(1)
-//         this.ext[method](newVal)
-//       }
-//     }
   }
 
   setEvent(eventparameters,o,me) {
@@ -148,7 +134,6 @@ export class ExtRouterComponent extends HTMLElement {
         div.style.height="100%";
         div.style.padding=me.padding;
         div.style.display = 'none'
-        //div.style.hidden=me.hidden;
 //mjg should not be hard coded
         div.style.backgroundSize='20px 20px';
         div.style.borderWidth='0px';

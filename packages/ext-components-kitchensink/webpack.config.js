@@ -9,7 +9,11 @@ module.exports = function (env) {
     //devtool: (mode === 'development') ? 'inline-source-map' : false,
     devtool: false,
     entry: './src/app.js',
-    output: {path: path.join(__dirname, './build'),filename: 'bundle.js'},
+    output: {
+      path: path.join(__dirname, './build'),
+      //filename: 'bundle.js'
+      filename: "[name].[chunkhash:20].js"
+    },
     plugins: [
       new HtmlWebpackPlugin({template: "index.html",hash: true,inject: "body"}),
       new CopyWebpackPlugin([
