@@ -1,21 +1,228 @@
 import hljs from 'highlightjs';
 import 'highlightjs/styles/atom-one-dark.css';
-//import H_js from './H_js';
-//hljs.registerLanguage('js', H_js);
 import './MainComponent.css';
 
 export default class MainComponent {
 
-  constructor() {}
+  constructor() {
+    var navTreeRoot = {
+      id: '/',
+      text: 'All',
+      children: window.menu
+    }
+    this.treeStore = Ext.create('Ext.data.TreeStore', {
+      rootVisible: true,
+      root: navTreeRoot
+    })
+
+    // var me = this;
+    // setTimeout(function() {
+    //   var hash = window.location.hash.substr(1)
+    //   if (hash == '') {
+    //     var node = me.dataviewNavCmp.getStore().getNodeById('components')
+    //     me.dataviewNavCmp.setData(node.childNodes)
+    //     me.showSelection();
+    //   }
+    //   else {
+    //     var node = me.dataviewNavCmp.getStore().getNodeById(hash)
+    //     me.dataviewNavCmp.setData(node.childNodes)
+    //     console.log(node.childNodes)
+    //     me.showRouter();
+    //   }
+    // }, 1000);
+
+  }
+
+  afterAllLoaded() {
+    if (
+      this.codeButtonCmp != undefined &&
+      this.dataviewBreadcrumbCmp != undefined &&
+      this.treelistCmp != undefined &&
+      this.treePanelCmp != undefined &&
+      this.selectionCmp != undefined &&
+      this.dataviewNavCmp != undefined &&
+      this.router != undefined &&
+      this.codePanelCmp != undefined &&
+      this.tabPanelCmp != undefined
+      ) {
+        var me = this;
+        //setTimeout(function() {
+          var hash = window.location.hash.substr(1)
+          if (hash == '') {
+            //var node = me.dataviewNavCmp.getStore().getNodeById('components')
+            //console.dir(me.dataviewNavCmp.getStore())
+            var node = me.dataviewNavCmp.getStore().findNode('text','All');
+            me.dataviewNavCmp.setData(node.childNodes)
+            this.breadcrumb = this.generateBreadcrumb(node);
+            this.dataviewBreadcrumbCmp.setData(this.breadcrumb)
+            me.showSelection();
+          }
+          else {
+            //var node = me.dataviewNavCmp.getStore().getNodeById(hash)
+            var node = me.dataviewNavCmp.getStore().findNode('hash',hash);
+            me.dataviewNavCmp.setData(node.childNodes)
+            this.breadcrumb = this.generateBreadcrumb(node);
+            this.dataviewBreadcrumbCmp.setData(this.breadcrumb)
+            console.log(node.childNodes)
+            me.showRouter();
+            me.setCodeTabs();
+          }
+        //}, 1000);
+    }
+  }
+
+  readyCodeButton(event) {
+    this.codeButtonCmp = event.detail.cmp
+    this.afterAllLoaded()
+  }
+
+  generateBreadcrumb = (node) => {
+    console.log(node)
+    try {
+      const path = [];
+      do {
+        path.unshift({
+//          isLeaf: !node.childNodes.length,
+          text: node.get("text"),
+          path: node.get("id"),
+          divider: '&nbsp;>&nbsp;'
+        });
+      } while (node = node.parentNode)
+      path[path.length-1].divider = ''
+      return path
+    }
+    catch(e) {
+      console.log('generateBreadcrumb')
+      console.error(e)
+    }
+  };
+
+  readyDataviewBreadcrumb(event) {
+    this.dataviewBreadcrumbCmp = event.detail.cmp
+    var tpl = `
+    <div class="app-toolbar">
+      {text} <span>{divider}</span>
+    </div>`
+    this.dataviewBreadcrumbCmp.setItemTpl(tpl)
+    //this.dataviewBreadcrumbCmp.setStore(this.treeStore)
+    
+    // //var node = this.dataviewBreadcrumbCmp.getStore().findNode('hash', window.initHash);
+    // var node = this.dataviewBreadcrumbCmp.getStore().findNode('hash','components');
+
+    // this.breadcrumb = this.generateBreadcrumb(node);
+    // this.dataviewBreadcrumbCmp.setData(this.breadcrumb)
+    this.afterAllLoaded()
+  }
+
+  readyTreePanel(event) {
+    this.treePanelCmp = event.detail.cmp
+    this.afterAllLoaded()
+  }
+
+  readyTreelist(event) {
+    this.treelistCmp = event.detail.cmp
+    this.treelistCmp.setStore(this.treeStore)
+    var node = this.treelistCmp.getStore().findNode('hash', window.initHash);
+    this.treelistCmp.setSelection(node);
+    this.afterAllLoaded()
+  }
+
+  readySelection(event) {
+    this.selectionCmp = event.detail.cmp
+    var bodyStyle = `
+    backgroundSize: 20px 20px;
+    borderWidth: 0px;
+    backgroundColor: #e8e8e8;
+    backgroundImage: 
+      linear-gradient(0deg, #f5f5f5 1.1px, transparent 0), 
+      linear-gradient(90deg, #f5f5f5 1.1px, transparent 0)`
+    this.selectionCmp.setBodyStyle(bodyStyle)
+    this.afterAllLoaded();
+  }
+
+  readyDataviewNav(event) {
+    this.dataviewNavCmp = event.detail.cmp
+    this.dataviewNavCmp.setStyle({'background':'top','display':'block','text-align':'center'})
+    var tpl = `
+    <div class="app-thumbnail">
+      <div class="app-thumbnail-icon-wrap">
+        <div class="app-thumbnail-icon {iconCls}"></div>
+      </div>
+      <div class="app-thumbnail-text">{text}</div>
+      <div class="{premiumClass}"></div>
+    </div>`
+    this.dataviewNavCmp.setItemTpl(tpl)
+    this.dataviewNavCmp.setStore(this.treeStore)
+    this.afterAllLoaded()
+  }
+
+  readyRouter(event) {
+    this.router = event.target;
+    this.afterAllLoaded()
+  }
+
+  readyCodePanel(event) {
+    this.codePanelCmp = event.detail.cmp
+    this.afterAllLoaded()
+  }
+
+  readyTabPanel(event) {
+    this.tabPanelCmp = event.detail.cmp
+    this.afterAllLoaded()
+  }
+
+  dataviewBreadcrumbClick = (event) => {
+    console.log(event)
+    var record = event.detail.location.record;
+    this.navigate(record);
+  }
+
+  dataviewNavClick = (event) => {
+    var record = event.detail.location.record;
+    this.navigate(record);
+  }
+
+  selectionchange(event) {
+    var record = event.detail.record;
+    this.navigate(record);
+  }
+
+  navigate(record) {
+    if (record == null) {
+      return
+    }
+    var hash = record.data.hash
+    var childNum = record.childNodes.length
+    if (childNum == 0 && hash != undefined) {
+      this.showRouter();
+      window.location.hash = '#' + hash
+      this.setCodeTabs()
+    }
+    else {
+      console.log(hash)
+      var node = this.dataviewNavCmp.getStore().getNodeById(hash)
+      console.log(node)
+      this.dataviewNavCmp.setData(node.childNodes)
+      this.showSelection();
+    }
+  }
+
+  showSelection() {
+    this.selectionCmp.setHidden(false);
+    this.router.hidden = true;
+    this.codeButtonCmp.setHidden(true);
+  }
+
+  showRouter() {
+    this.selectionCmp.setHidden(true);
+    this.router.hidden = false;
+    this.codeButtonCmp.setHidden(false);
+  }
 
   doClickToolbar(event) {
     var collapsed = this.treePanelCmp.getCollapsed()
     if (collapsed == true){collapsed = false} else{collapsed = true}
     this.treePanelCmp.setCollapsed(collapsed)
-  }
-
-  dataviewToolbarReady(event) {
-    var cmp = event.detail.cmp
   }
 
   containsMatches(node) {
@@ -44,51 +251,8 @@ export default class MainComponent {
     this.treePanelCmp.setCollapsed(collapsed)
   }
 
-  readyTreePanel(event) {
-    var cmp = event.detail.cmp
-    this.treePanelCmp = cmp
-  }
 
-  readyTreelist(event) {
-    this.treelistCmp = event.detail.cmp
-    var navTreeRoot = {
-      id: '/',
-      text: 'All',
-      children: window.menu
-    }
-    this.transform(navTreeRoot, null); 
-    var treeStore = Ext.create('Ext.data.TreeStore', {
-      rootVisible: true,
-      root: navTreeRoot
-    })
-    this.treelistCmp.setStore(treeStore)
-    var node = this.treelistCmp.getStore().findNode('hash', window.initHash);
-    this.treelistCmp.setSelection(node);
-  }
 
-  transform(node, parentUrl) {
-    node.leaf = !node.hasOwnProperty('children');
-    node.iconCls = node.navIcon;
-    if (node.text && !node.id) {
-        node.id = (parentUrl === '/' ? '' : parentUrl) + '/' + node.text.toLowerCase().replace(/\s/g, '_').replace(/[^\w]/g, '');
-    }
-    node.name = node.text;
-    if (node.children) {
-      node.children = node.children.filter(node => !node.hidden);
-      node.children.forEach(child => this.transform(child, node.id))
-    }
-  }
-
-  selectionchange(event) {
-    var record = event.detail.record
-    var hash = record.data.hash
-    var childNum = record.childNodes.length
-    if (childNum == 0 && hash != undefined) {
-      window.location.hash = '#' + hash
-      //console.log('selectionchange')
-      this.setCodeTabs()
-    }
-  }
 
   csscomponent = (file) => {
   if (file.endsWith(".html")) {return 'html'}
@@ -144,16 +308,6 @@ export default class MainComponent {
     }
   }
 
-  readyCodePanel(event) {
-    var cmp = event.detail.cmp
-    this.codePanelCmp = cmp
-  }
-
-  readyTabPanel(event) {
-    var cmp = event.detail.cmp
-    this.tabPanelCmp = cmp
-    this.setCodeTabs()
-  }
 
 }
 

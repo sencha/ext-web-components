@@ -1,7 +1,7 @@
 <ext-panel layout="fit" bodyPadding="0">
 
   <!-- code button starts-->
-  <ext-button weight="5"
+  <ext-button weight="5" hidden=true onready="main.readyCodeButton(event)"
     ui="fab"
     iconCls="x-font-icon md-icon-code"
     top="20"
@@ -21,9 +21,9 @@
 
   <!-- Breadcrumb starts-->
   <ext-toolbar docked="top" weight="10">
-    <ext-container html="breadcrumb component here..."></ext-container>
-    <ext-dataview [itemTpl]="tplToolbar" [inline]="'true'" [itemCls]="'div.app-toolbar'" id="hide-overflow"
-      (childtap)="doClickToolbar(event)" onready="main.dataviewToolbarReady(event)">
+    <ext-dataview inline=true itemCls="div.app-toolbar" id="hide-overflow"
+      onchildtap="dataviewBreadcrumbClick(event)" 
+      onready="main.readyDataviewBreadcrumb(event)">
     </ext-dataview>
   </ext-toolbar>
   <!-- Breadcrumb ends-->
@@ -59,8 +59,23 @@
   </ext-panel>
   <!-- Navtree ends-->
 
+  <!-- style="{'background':'top','display':'block','text-align':'center'}" -->
+
+
+  <!-- selections starts-->
+  <ext-panel scrollable="y" hidden=true onready="main.readySelection(event)">
+    <ext-dataview
+      inline="true"
+      centered="true"
+      itemCls="div.app-thumbnail"
+      onchildtap="main.dataviewNavClick(event)"
+      onready="main.readyDataviewNav(event)">
+    </ext-dataview>
+  </ext-panel>
+  <!-- selections ends-->
+
   <!-- Router starts-->
-  <ext-router
+  <ext-router hidden=true onready="main.readyRouter(event)"
     padding="10px">
   </ext-router>
   <!-- Router ends-->

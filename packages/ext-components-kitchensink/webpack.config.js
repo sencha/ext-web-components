@@ -9,19 +9,16 @@ module.exports = function (env) {
     //devtool: (mode === 'development') ? 'inline-source-map' : false,
     devtool: false,
     entry: './src/app.js',
-    output: {
-      path: path.join(__dirname, './build'),
-      filename: 'bundle.js'
-    },
+    output: {path: path.join(__dirname, './build'),filename: 'bundle.js'},
     plugins: [
-      new HtmlWebpackPlugin({
-        template: "index.html",
-        hash: true,
-        inject: "body"
-      }),
-      new CopyWebpackPlugin([{from: 'copy/extjs',to: 'extjs'}]),
-      new CopyWebpackPlugin([{from: 'copy/resources',to: 'resources'}]),
-      new CopyWebpackPlugin([{from: 'copy/favicon.ico',to: 'favicon.ico'}]),
+      new HtmlWebpackPlugin({template: "index.html",hash: true,inject: "body"}),
+      new CopyWebpackPlugin([
+        {from: 'copy/extjs',to: 'extjs'},
+        {from: 'copy/resources',to: 'resources'},
+        {from: 'copy/favicon.ico',to: 'favicon.ico'}
+      ]),
+      // new CopyWebpackPlugin([{from: 'copy/resources',to: 'resources'}]),
+      // new CopyWebpackPlugin([{from: 'copy/favicon.ico',to: 'favicon.ico'}]),
       new WebpackShellPlugin({
         onBuildEnd:{
           scripts: ['node extract-code.js'],
