@@ -18,6 +18,7 @@ export default class ExtBase extends HTMLElement {
   attributeChangedCallback(attr, oldVal, newVal) {
     if (/^on/.test(attr)) {
       if (newVal) {
+//mjg check if this event exists for this component
         this.addEventListener(attr.slice(2), function() {eval(newVal)});
       } else {
         //delete this[attr];
@@ -27,6 +28,7 @@ export default class ExtBase extends HTMLElement {
       if (this.ext === undefined) {
       }
       else {
+//mjg check if this method exists for this component
         var method = 'set' + attr[0].toUpperCase() + attr.substring(1)
         this.ext[method](newVal)
       }
@@ -59,6 +61,7 @@ export default class ExtBase extends HTMLElement {
     var me = this
     props.xtype = me.XTYPE
 
+//mjg fitToParent not working
     if (true === me.fitToParent) {
       props.top=0, 
       props.left=0, 
@@ -98,6 +101,7 @@ export default class ExtBase extends HTMLElement {
         me.setEvent(eventparameter,props,me)
       })
 
+//mjg this should not be hard-coded to APP-ROOT
       if (nodeParentName == 'APP-ROOT') {
         Ext.onReady(function(){
           props.renderTo = me.parentNode
@@ -161,7 +165,6 @@ export default class ExtBase extends HTMLElement {
     //console.log(parentCmp)
     var childxtype = childCmp.xtype
     var parentxtype = parentCmp.xtype
-
 
     if (this.ext.initialConfig.align != undefined) {
       if (parentxtype != 'titlebar' && parentxtype != 'grid' && parentxtype != 'button') {
