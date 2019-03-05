@@ -16,6 +16,7 @@ export default class ExtBase extends HTMLElement {
   }
 
   attributeChangedCallback(attr, oldVal, newVal) {
+    console.log(attr)
     if (/^on/.test(attr)) {
       if (newVal) {
 //mjg check if this event exists for this component
@@ -55,7 +56,7 @@ export default class ExtBase extends HTMLElement {
     var props = {}
 
     var nodeParentName = this.parentNode.nodeName
-    //console.dir(nodeName + ' ,parent: ' + nodeParentName)
+    console.dir('parent: ' + nodeParentName)
     var parentCmp = this.parentNode['ext']
     var childCmp;
     var me = this
@@ -133,7 +134,8 @@ export default class ExtBase extends HTMLElement {
             props.renderTo = me.parentNode
           }
           me.ext = Ext.create(props)
-          //console.log(`Ext.create(${props.xtype})`)
+          console.log(`Ext.create(${props.xtype})`)
+          
           me.dispatchEvent(new CustomEvent('ready',{detail:{cmp: me.ext}}))
           if (nodeParentName.substring(0, 3) == 'EXT') {
             parentCmp = me.parentNode['ext'];

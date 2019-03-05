@@ -21,8 +21,6 @@ module.exports = function (env) {
         {from: 'copy/resources',to: 'resources'},
         {from: 'copy/favicon.ico',to: 'favicon.ico'}
       ]),
-      // new CopyWebpackPlugin([{from: 'copy/resources',to: 'resources'}]),
-      // new CopyWebpackPlugin([{from: 'copy/favicon.ico',to: 'favicon.ico'}]),
       new WebpackShellPlugin({
         onBuildEnd:{
           scripts: ['node extract-code.js'],

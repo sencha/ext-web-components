@@ -2,32 +2,33 @@ const AngularCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin
 //const ExtWebpackPlugin = require('@sencha/ext-angular-webpack-plugin')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const { BaseHrefWebpackPlugin } = require('base-href-webpack-plugin');
 const webpack = require("webpack")
 const FilterWarningsPlugin = require('webpack-filter-warnings-plugin')
 const portfinder = require('portfinder')
 
 module.exports = function (env) {
-  var browserprofile
-  var watchprofile
-  var buildenvironment = env.environment || process.env.npm_package_extbuild_defaultenvironment
-  if (buildenvironment == 'production') {
-    browserprofile = false
-    watchprofile = 'no'
-  }
-  else {
-    if (env.browser == undefined) {env.browser = true}
-    browserprofile = JSON.parse(env.browser) || true
-    watchprofile = env.watch || 'yes'
-  }
-  const isProd = buildenvironment === 'production'
-  var buildprofile = env.profile || process.env.npm_package_extbuild_defaultprofile
-  var buildenvironment = env.environment || process.env.npm_package_extbuild_defaultenvironment
-  var buildverbose = env.verbose || process.env.npm_package_extbuild_defaultverbose
-  if (buildprofile == 'all') { buildprofile = '' }
-  if (env.treeshake == undefined) {env.treeshake = false}
-  var treeshake = env.treeshake ? JSON.parse(env.treeshake) : false
-  var basehref = env.basehref || '/'
+  // var browserprofile
+  // var watchprofile
+  // var buildenvironment = env.environment || process.env.npm_package_extbuild_defaultenvironment
+  // if (buildenvironment == 'production') {
+  //   browserprofile = false
+  //   watchprofile = 'no'
+  // }
+  // else {
+  //   if (env.browser == undefined) {env.browser = true}
+  //   browserprofile = JSON.parse(env.browser) || true
+  //   watchprofile = env.watch || 'yes'
+  // }
+  const isProd = 'development'
+  // var buildprofile = env.profile || process.env.npm_package_extbuild_defaultprofile
+  // var buildenvironment = env.environment || process.env.npm_package_extbuild_defaultenvironment
+  // var buildverbose = env.verbose || process.env.npm_package_extbuild_defaultverbose
+  // if (buildprofile == 'all') { buildprofile = '' }
+  // if (env.treeshake == undefined) {env.treeshake = false}
+  // var treeshake = env.treeshake ? JSON.parse(env.treeshake) : false
+  var basehref = '/'
   var mode = isProd ? 'production': 'development'
 
   portfinder.basePort = (env && env.port) || 1962
@@ -39,23 +40,15 @@ module.exports = function (env) {
         skipCodeGeneration: true
       }),
       new HtmlWebpackPlugin({
-        template: "index.html",
+        template: "./src/index.html",
         inject: "body"
       }),
+      new CopyWebpackPlugin([
+        {from: 'copy/extjs',to: 'extjs'},
+        {from: 'copy/resources',to: 'resources'},
+        {from: 'copy/favicon.ico',to: 'favicon.ico'}
+      ]),
       new BaseHrefWebpackPlugin({ baseHref: basehref }),
-      // new ExtWebpackPlugin({
-      //   framework: 'angular',
-      //   port: port,
-      //   emit: true,
-      //   browser: browserprofile,
-      //   treeshake: treeshake,
-      //   watch: watchprofile,
-      //   profile: buildprofile, 
-      //   environment: buildenvironment, 
-      //   verbose: buildverbose,
-      //   theme: 'theme-material',
-      //   packages: []
-      // }),
       new webpack.ContextReplacementPlugin(
           /\@angular(\\|\/)core(\\|\/)fesm5/,
           path.resolve(__dirname, 'src'),{}
@@ -65,16 +58,17 @@ module.exports = function (env) {
       })
     ]
     return {
+      performance: { hints: false },
       mode: mode,
       devtool: (mode === 'development') ? 'inline-source-map' : false,
-      context: path.join(__dirname, './src'),
+      context: path.join(__dirname, './'),
       entry: {
-        polyfills: "./polyfills.ts",
-        main: "./main.ts"
+        polyfills: "./src/polyfills.ts",
+        main: "./src/main.ts"
       },
       output: {
         path: path.resolve(__dirname, 'build'),
-        filename: "[name].[chunkhash:20].js"
+        filename: "[name].js"
       },
       module: {
         rules: [
