@@ -1,10 +1,7 @@
-GeneratedFolders/*.*
-AllClassesFiles/*.*
-demos/*.*
-dist/*.*
-dist
+copy/
+dist/
+build/
 ext-components-prod
-generators/ext-components/*.*
 testing
 package-lock.json
 node_modules
