@@ -17,6 +17,9 @@ npm login --registry=https://test.npm.sencha.com/ --scope=@sencha
 
 https://alligator.io/angular/using-custom-elements/
 
+https://www.robinwieruch.de/react-eslint-webpack-babel/
+
+https://medium.com/@j_lim_j/summary-of-vuejs-by-sarah-drasner-part-1-of-7-directives-data-rendering-30103729ec9b
 https://alligator.io/vuejs/vue-integrate-web-components/
 https://cli.vuejs.org/guide/webpack.html#simple-configuration
 https://github.com/neutrinojs/webpack-chain#getting-started
