@@ -2,8 +2,8 @@ export default class ExtBase extends HTMLElement {
 
   constructor() {
     super()
-    console.log('in constructor for: ' + this)
-    console.dir(this)
+//    console.log('in constructor for: ' + this)
+//    console.dir(this)
   }
 
   static get observedAttributes() {
@@ -18,6 +18,7 @@ export default class ExtBase extends HTMLElement {
   }
 
   attributeChangedCallback(attr, oldVal, newVal) {
+    console.log(attr)
     if (/^on/.test(attr)) {
       if (newVal) {
 //mjg check if this event exists for this component
@@ -52,7 +53,7 @@ export default class ExtBase extends HTMLElement {
   }
 
   connectedCallback() {
-    console.log('in connectedCallback for: ' + this.XTYPE)
+//    console.log('in connectedCallback for: ' + this.XTYPE)
 
     var elItems = []
     var removeItems = []
@@ -110,11 +111,11 @@ export default class ExtBase extends HTMLElement {
           props.renderTo = me.parentNode
 
           me.ext = Ext.create(props)
-          console.log('Ext.create ' + props.xtype)
-          console.dir(props)
+          //console.log('Ext.create ' + props.xtype)
+          //console.dir(props)
           me.dispatchEvent(new CustomEvent('ready',{detail:{cmp: me.ext}}))
 
-          console.log('renderTo ' + me.parentNode.nodeName)
+          //console.log('renderTo ' + me.parentNode.nodeName)
         });
         return
       }
@@ -123,45 +124,37 @@ export default class ExtBase extends HTMLElement {
         Ext.application({
           name: 'MyExtWCApp',
           launch: function () {
-            //console.log('\nXTYPE: ' + props.xtype)
-            //console.log('parent: ' + nodeParentName)
 
             me.ext = Ext.create(props)
-            console.log('Ext.create ' + props.xtype)
-            console.dir(props)
+            //console.log('Ext.create ' + props.xtype)
+            //console.dir(props)
             me.dispatchEvent(new CustomEvent('ready',{detail:{cmp: me.ext}}))
 
-            //if (nodeParentName == 'BODY') {
-              console.log('Ext.Viewport.add ' + me.ext.xtype)
-              Ext.Viewport.add([me.ext])
-            //}
+            //console.log('Ext.Viewport.add ' + me.ext.xtype)
+            Ext.Viewport.add([me.ext])
           }
         });
       }
       else {
         Ext.onReady(function(){
-          //console.log('\nXTYPE: ' + props.xtype)
-          //console.log('parent: ' + nodeParentName)
           if(nodeParentName.substring(0, 3) != 'EXT') {
             props.renderTo = me.parentNode
           }
 
           me.ext = Ext.create(props)
-          console.log('Ext.create ' + props.xtype)
-          console.dir(props)
-          //console.log(`Ext.create(${props.xtype})`)
+          //console.log('Ext.create ' + props.xtype)
+          //console.dir(props)
           me.dispatchEvent(new CustomEvent('ready',{detail:{cmp: me.ext}}))
 
-          if(nodeParentName.substring(0, 3) != 'EXT') {
-            console.log('renderTo ' + me.parentNode.nodeName)
-          }
-
+          // if(nodeParentName.substring(0, 3) != 'EXT') {
+          //   console.log('renderTo ' + me.parentNode.nodeName)
+          // }
 
           if (nodeParentName.substring(0, 3) == 'EXT') {
             parentCmp = me.parentNode['ext'];
             childCmp = me.ext;
 
-            console.log('addTheChild ')
+            //console.log('addTheChild ')
             me.addTheChild(parentCmp, childCmp)
           }
           setTimeout(function() { 
@@ -185,8 +178,8 @@ export default class ExtBase extends HTMLElement {
   }
 
   addTheChild(parentCmp, childCmp) {
-    console.log(childCmp)
-    console.log(parentCmp)
+    //console.log(childCmp)
+    //console.log(parentCmp)
     var childxtype = childCmp.xtype
     var parentxtype = parentCmp.xtype
 
