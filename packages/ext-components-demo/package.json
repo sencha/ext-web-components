@@ -1,0 +1,43 @@
+{
+  "name": "@sencha/ext-components-demo",
+  "version": "7.0.0",
+  "description": "ext-components-demo",
+
+  "scripts": {
+    "build": "webpack",
+    "start2": "webpack --watch",
+    "start": "npm run dev",
+    "dev": "webpack-dev-server --env.environment=development"
+  },
+  "devDependencies": {
+    "@sencha/ext-components": "^7.0.0",
+    "@sencha/ext-webpack-plugin": "^7.0.0",
+
+    "@babel/core": "^7.3.4",
+    "@babel/runtime": "^7.3.4",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/plugin-proposal-decorators": "^7.3.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
+    "@babel/plugin-proposal-function-sent": "^7.2.0",
+    "@babel/plugin-proposal-json-strings": "^7.2.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.2.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.2.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-syntax-import-meta": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "babel-loader": "^8.0.5",
+
+    "html-webpack-plugin": "^3.2.0",
+    "copy-webpack-plugin": "^5.0.0",
+    "webpack-shell-plugin-next": "^0.6.4",
+    "css-loader": "^2.1.0",
+    "style-loader": "^0.23.1",
+    "highlightjs": "~9.12.0",
+    "fs-extra": "^7.0.1",
+    
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
+  }
+}

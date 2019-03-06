@@ -7,105 +7,40 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <script src="extjs/ext.js"></script>
   <link href="extjs/ext.css" rel='stylesheet'/>
-  <script src="ext-components/base.js"></script>
-  <script src="ext-components/ext-treelist.component.js"></script>
+
   <script>
-    window.main = {}
 
-    function transform(node, parentUrl) {
-      node.leaf = !node.hasOwnProperty('children');
-      node.iconCls = node.navIcon;
-
-      if (node.text && !node.id) {
-          node.id = (parentUrl === '/' ? '' : parentUrl) + '/' + node.text.toLowerCase().replace(/\s/g, '_').replace(/[^\w]/g, '');
-      }
-
-      node.name = node.text;
-
-      if (node.children) {
-          node.children = node.children.filter(node => !node.hidden);
-          node.children.forEach(child => transform(child, node.id))
-      }
+    var panelCmp
+    function readyPanel(event) {
+      console.log(panelCmp);
+      console.log(event);
+      panelCmp = event.detail.cmp;
     }
 
-
-    main.selectionchange = function(event) {
-      console.log('in selectionchange')
+    function tapButton(event) {
+      panelCmp.setTitle('new title from the ext-button')
     }
 
-
-    main.readyTreelist = function(event) {
-      var cmp = event.detail.cmp
-      var navTreeRoot = {
-        id: '/',
-        text: 'All',
-        children: [
-          { text: 'Components', navIcon: 'icon-buttons', leaf: true},
-            { text: 'Components', navIcon: 'icon-buttons', children: [
-                { text: 'Buttons', navIcon: 'icon-buttons', children: [
-                    { text: 'Button',  layout: 'center', navIcon: 'icon-buttons' },
-                    { text: 'SegmentedButton',  layout: 'center', navIcon: 'icon-segmented-buttons' },
-                    { text: 'SplitButton',  layout: 'center', navIcon: 'icon-buttons' },
-                ]},
-                { text: 'ColorPicker', layout: 'center', navIcon: 'icon-color-picker' },
-                { text: 'Carousel', navIcon: 'icon-carousel' },
-                { text: 'Drag & Drop', navIcon: 'icon-drag-drop', children: [
-                    { text: 'Simple',  navIcon: 'icon-drag-simple' },
-                    { text: 'Constraints',  navIcon: 'icon-drag-constraint' },
-
-                    { text: 'Files', navIcon: 'icon-drag-drop-element' }
-                ]}
-            ]}
-        ]
-      }
-      transform(navTreeRoot, null); 
-      var treeStore = Ext.create('Ext.data.TreeStore', {
-        rootVisible: true,
-        root: navTreeRoot
-      })
-      cmp.setStore(treeStore)
+    function htmlClick(event) {
+      panelCmp.setTitle('new title from the htmlClick function')
     }
 
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var d1 = document.getElementById('d1');
+      d1.addEventListener('click', htmlClick);
+    })
 
-    main.toggleTree = function() {
-      console.log('in toggleTree')
-    }
-
-    main.readyButton1 = function(event) {
-      console.log('readyButton1')
-      var cmp = event.detail.cmp
-      console.log(cmp)
-      console.log(cmp.getText())
-    }
-  
   </script>
 
 </head>
-
 <body>
-    <!-- onreset="main.readyTreelist(event)"
-    onready="main.readyTreelist(event)" 
-  expanderOnly="false"
-
-  onselectionchange="main.selectionchange(event)"
-
-  onmoved="main.readyTreelist(event)" 
-  onresize="main.readyTreelist(event)" 
-  onselectionchange="main.readyTreelist(event)" 
-
-
-  -->
-
-  <!-- <ext-button iconCls="x-fa fa-bars" onTap="main.toggleTree()" onReady="main.readyButton1(event)"></ext-button> -->
-
-<ext-treelist
-  ui="nav"
-  expanderFirst="false"
-  onselectionchange="main.selectionchange(event)"
-  onready="main.readyTreelist(event)" 
-  >
-</ext-treelist>
-
-
+  <div>
+    <H1 id="d1">HTML element with a click event</H1>
+    <ext-panel layout="hbox" title="my panel" onready="readyPanel(event)">
+      <ext-button text="hello" ontap="tapButton(event)"></ext-button>
+      <div>some text inside of a div</div>
+      <H1>H1 text</H1>
+    </ext-panel>
+  </div>
 </body>
 </html>

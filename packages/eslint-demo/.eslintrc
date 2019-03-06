@@ -1,0 +1,27 @@
+{
+  "globals": {
+    "Ext": true
+  },
+  "extends": "eslint:recommended",
+  "parser": "babel-eslint",
+  "rules": {
+    "no-unused-vars": ["error", { "varsIgnorePattern": "Ext.{1,}[cC]omponent" }],
+    "space-before-function-paren": ["error", {
+      "anonymous": "always",
+      "named": "never",
+      "asyncArrow": "always"
+    }],
+    "space-in-parens": ["error", "never"],
+    "no-mixed-spaces-and-tabs": ["error", "smart-tabs"],
+    "block-spacing": ["error", "never"],
+    "no-irregular-whitespace": ["error", { "skipComments": false }],
+    "no-multi-spaces": ["error", { "ignoreEOLComments": false }],
+    "comma-spacing": ["error", { "before": false, "after": true }],
+    "func-style": ["error", "declaration", { "allowArrowFunctions": true }],
+    "indent": ["error", 2],
+    "no-console":["warn", { "allow": ["warn"] }],
+    "semi": ["error", "always"],
+    "quotes": ["error", "double"],
+    "max-len": [1, 90, 2, {"ignoreComments": true}]
+  }
+}
