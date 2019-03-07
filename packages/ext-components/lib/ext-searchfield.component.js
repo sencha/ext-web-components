@@ -675,5 +675,7 @@ export class ExtSearchfieldComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-searchfield', ExtSearchfieldComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-searchfield', ExtSearchfieldComponent);
+  });
 })();

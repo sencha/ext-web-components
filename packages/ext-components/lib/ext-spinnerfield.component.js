@@ -706,5 +706,7 @@ export class ExtSpinnerfieldComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-spinnerfield', ExtSpinnerfieldComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-spinnerfield', ExtSpinnerfieldComponent);
+  });
 })();

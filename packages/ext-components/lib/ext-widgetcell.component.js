@@ -368,5 +368,7 @@ export class ExtWidgetcellComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-widgetcell', ExtWidgetcellComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-widgetcell', ExtWidgetcellComponent);
+  });
 })();

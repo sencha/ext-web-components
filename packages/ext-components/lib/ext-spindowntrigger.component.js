@@ -358,5 +358,7 @@ export class ExtSpindowntriggerComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-spindowntrigger', ExtSpindowntriggerComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-spindowntrigger', ExtSpindowntriggerComponent);
+  });
 })();

@@ -602,6 +602,8 @@ export class ExtButtonComponent extends ExtBase {
     super.attributeChangedCallback(attrName, oldVal, newVal)
   }
 }
-//(function () {
-window.customElements.define('ext-button', ExtButtonComponent);
-//})();
+(function () {
+  Ext.onReady(function() {
+    window.customElements.define('ext-button', ExtButtonComponent);
+  });
+})();

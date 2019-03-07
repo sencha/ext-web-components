@@ -541,5 +541,7 @@ export class ExtRowbodyComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-rowbody', ExtRowbodyComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-rowbody', ExtRowbodyComponent);
+  });
 })();

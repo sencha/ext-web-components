@@ -545,5 +545,7 @@ export class ExtMaskComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-mask', ExtMaskComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-mask', ExtMaskComponent);
+  });
 })();

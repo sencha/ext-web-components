@@ -650,5 +650,7 @@ export class ExtRadiofieldComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-radiofield', ExtRadiofieldComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-radiofield', ExtRadiofieldComponent);
+  });
 })();

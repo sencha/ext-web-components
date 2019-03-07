@@ -667,5 +667,7 @@ export class ExtCarouselComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-carousel', ExtCarouselComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-carousel', ExtCarouselComponent);
+  });
 })();

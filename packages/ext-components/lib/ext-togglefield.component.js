@@ -654,5 +654,7 @@ export class ExtTogglefieldComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-togglefield', ExtTogglefieldComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-togglefield', ExtTogglefieldComponent);
+  });
 })();

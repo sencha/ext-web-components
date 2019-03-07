@@ -689,5 +689,7 @@ export class ExtViewportComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-viewport', ExtViewportComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-viewport', ExtViewportComponent);
+  });
 })();

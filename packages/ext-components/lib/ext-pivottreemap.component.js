@@ -645,5 +645,7 @@ export class ExtPivottreemapComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-pivottreemap', ExtPivottreemapComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-pivottreemap', ExtPivottreemapComponent);
+  });
 })();

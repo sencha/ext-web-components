@@ -16,20 +16,17 @@ export default class MainComponent {
       rootVisible: true,
       root: navTreeRoot
     });
-    this.wait = 7;
+    this.wait = 9;
   }
 
   afterAllLoaded(f) {
-//    console.log(f)
     this.wait = this.wait - 1;
 //    console.log('***wait*** ' + this.wait )
     if (this.wait == 0) {
-      console.log('window.location.hash')
-      console.log(window.location.hash)
       var hash = window.location.hash.substr(1)
       if (hash == '') {hash = 'all'}
-//      var node = this.dataviewNavCmp.getStore().findNode('hash',hash);
-//      this.navigate(node);
+      var node = this.dataviewNavCmp.getStore().findNode('hash',hash);
+      this.navigate(node);
     }
   }
 
@@ -60,6 +57,7 @@ export default class MainComponent {
   };
 
   readyDataviewBreadcrumb(event) {
+    console.log('readyDataviewBreadcrumb')
     this.dataviewBreadcrumbCmp = event.detail.cmp
     var tpl = `
     <div class="app-toolbar">
@@ -115,6 +113,7 @@ export default class MainComponent {
   }
 
   readyCodePanel(event) {
+//    console.log('readyCodePanel')
     this.codePanelCmp = event.detail.cmp
     this.afterAllLoaded('readyCodePanel')
   }
@@ -126,14 +125,16 @@ export default class MainComponent {
 
   dataviewBreadcrumbClick = (event) => {
     var hash = event.detail.location.record.data.hash;
-//var node = this.dataviewNavCmp.getStore().findNode('hash',hash);
-    var node = this.navTreelistCmp.getStore().findNode('hash',hash);
+    var node = this.dataviewNavCmp.getStore().findNode('hash',hash);
+    //var node = this.navTreelistCmp.getStore().findNode('hash',hash);
 
     this.navigate(node);
   }
 
   dataviewNavClick = (event) => {
+    console.log(event)
     var record = event.detail.location.record;
+    console.log(record)
     this.navigate(record);
   }
 
@@ -151,26 +152,16 @@ export default class MainComponent {
     var childNum = record.childNodes.length
     if (childNum == 0 && hash != undefined) {
 
-//      var node = this.dataviewNavCmp.getStore().findNode('hash',hash);
-      var node = this.navTreelistCmp.getStore().findNode('hash',hash);
-
-
-      //this.breadcrumb = this.generateBreadcrumb(node);
-      //this.dataviewBreadcrumbCmp.setData(this.breadcrumb)
+      var node = this.dataviewNavCmp.getStore().findNode('hash',hash);
+      this.dataviewBreadcrumbCmp.setData(this.generateBreadcrumb(node))
 
       this.showRouter();
       window.location.hash = '#' + hash
     }
     else {
-
-      //var node = this.dataviewNavCmp.getStore().findNode('hash',hash);
-      var node = this.navTreelistCmp.getStore().findNode('hash',hash);
-
-      //this.breadcrumb = this.generateBreadcrumb(node);
-      //this.dataviewBreadcrumbCmp.setData(this.breadcrumb)
-
-      //this.dataviewNavCmp.setData(node.childNodes)
-
+      var node = this.dataviewNavCmp.getStore().findNode('hash',hash);
+      this.dataviewBreadcrumbCmp.setData(this.generateBreadcrumb(node))
+      this.dataviewNavCmp.setData(node.childNodes)
       this.showSelection();
     }
   }
@@ -208,6 +199,7 @@ export default class MainComponent {
   }
 
   toggleCode() {
+    console.log('toggleCode')
     var collapsed = this.codePanelCmp.getHidden()
     if(collapsed == true) { collapsed = false }
     else { collapsed = true }
@@ -242,8 +234,9 @@ export default class MainComponent {
     me.tabPanelCmp.removeAll()
     var file = ''
     file = currentRoute.component.name + '.html'
+    console.log(codeMap[file])
     if (codeMap[file] != undefined ) {
-      me.tabPanelCmp.add({title: file,
+      this.tabPanelCmp.add({title: file,
         xtype: 'panel',ui: 'code-panel',layout: 'fit',userSelectable: true,scrollable: true,
         tab: {ui: 'app-code-tab', flex: 0, minWidth: 250},
         html: `<pre><code class='code'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`

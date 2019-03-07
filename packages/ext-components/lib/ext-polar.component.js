@@ -776,5 +776,7 @@ export class ExtPolarComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-polar', ExtPolarComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-polar', ExtPolarComponent);
+  });
 })();

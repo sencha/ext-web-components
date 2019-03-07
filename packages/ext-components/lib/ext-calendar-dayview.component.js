@@ -705,5 +705,7 @@ export class ExtCalendar_dayviewComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-calendar_dayview', ExtCalendar_dayviewComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-calendar_dayview', ExtCalendar_dayviewComponent);
+  });
 })();

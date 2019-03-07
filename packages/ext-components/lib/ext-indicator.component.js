@@ -564,5 +564,7 @@ export class ExtIndicatorComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-indicator', ExtIndicatorComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-indicator', ExtIndicatorComponent);
+  });
 })();

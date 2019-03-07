@@ -578,5 +578,7 @@ export class ExtMenuitemComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-menuitem', ExtMenuitemComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-menuitem', ExtMenuitemComponent);
+  });
 })();

@@ -108,5 +108,7 @@ export class ExtInteractionComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-interaction', ExtInteractionComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-interaction', ExtInteractionComponent);
+  });
 })();

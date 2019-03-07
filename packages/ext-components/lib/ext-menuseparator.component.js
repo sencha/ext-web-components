@@ -541,5 +541,7 @@ export class ExtMenuseparatorComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-menuseparator', ExtMenuseparatorComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-menuseparator', ExtMenuseparatorComponent);
+  });
 })();

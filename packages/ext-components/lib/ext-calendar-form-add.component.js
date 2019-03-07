@@ -846,5 +846,7 @@ export class ExtCalendar_form_addComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-calendar_form_add', ExtCalendar_form_addComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-calendar_form_add', ExtCalendar_form_addComponent);
+  });
 })();

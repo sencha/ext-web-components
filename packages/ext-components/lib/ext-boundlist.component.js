@@ -874,5 +874,7 @@ export class ExtBoundlistComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-boundlist', ExtBoundlistComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-boundlist', ExtBoundlistComponent);
+  });
 })();

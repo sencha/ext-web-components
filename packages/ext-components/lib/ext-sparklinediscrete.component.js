@@ -573,5 +573,7 @@ export class ExtSparklinediscreteComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-sparklinediscrete', ExtSparklinediscreteComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-sparklinediscrete', ExtSparklinediscreteComponent);
+  });
 })();

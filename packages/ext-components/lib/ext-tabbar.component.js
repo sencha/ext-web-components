@@ -682,5 +682,7 @@ export class ExtTabbarComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-tabbar', ExtTabbarComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-tabbar', ExtTabbarComponent);
+  });
 })();

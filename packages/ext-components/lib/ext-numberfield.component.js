@@ -689,5 +689,7 @@ export class ExtNumberfieldComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-numberfield', ExtNumberfieldComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-numberfield', ExtNumberfieldComponent);
+  });
 })();

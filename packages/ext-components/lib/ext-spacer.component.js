@@ -541,5 +541,7 @@ export class ExtSpacerComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-spacer', ExtSpacerComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-spacer', ExtSpacerComponent);
+  });
 })();

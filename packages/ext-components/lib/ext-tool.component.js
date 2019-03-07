@@ -562,5 +562,7 @@ export class ExtToolComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-tool', ExtToolComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-tool', ExtToolComponent);
+  });
 })();

@@ -597,5 +597,7 @@ export class ExtGridsortascmenuitemComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-gridsortascmenuitem', ExtGridsortascmenuitemComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-gridsortascmenuitem', ExtGridsortascmenuitemComponent);
+  });
 })();

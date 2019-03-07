@@ -712,5 +712,7 @@ export class ExtDatefieldComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-datefield', ExtDatefieldComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-datefield', ExtDatefieldComponent);
+  });
 })();

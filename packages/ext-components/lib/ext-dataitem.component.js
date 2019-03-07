@@ -660,5 +660,7 @@ export class ExtDataitemComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-dataitem', ExtDataitemComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-dataitem', ExtDataitemComponent);
+  });
 })();

@@ -766,5 +766,7 @@ export class ExtSelectfieldComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-selectfield', ExtSelectfieldComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-selectfield', ExtSelectfieldComponent);
+  });
 })();

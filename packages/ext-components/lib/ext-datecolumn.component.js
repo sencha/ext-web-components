@@ -755,5 +755,7 @@ export class ExtDatecolumnComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-datecolumn', ExtDatecolumnComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-datecolumn', ExtDatecolumnComponent);
+  });
 })();

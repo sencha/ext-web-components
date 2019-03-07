@@ -370,5 +370,7 @@ export class ExtTextcellComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-textcell', ExtTextcellComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-textcell', ExtTextcellComponent);
+  });
 })();

@@ -707,5 +707,7 @@ export class ExtCelleditorComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-celleditor', ExtCelleditorComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-celleditor', ExtCelleditorComponent);
+  });
 })();

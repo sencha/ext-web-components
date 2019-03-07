@@ -552,5 +552,7 @@ export class ExtItemheaderComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-itemheader', ExtItemheaderComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-itemheader', ExtItemheaderComponent);
+  });
 })();

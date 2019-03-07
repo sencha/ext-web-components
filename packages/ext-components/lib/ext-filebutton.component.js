@@ -612,5 +612,7 @@ export class ExtFilebuttonComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-filebutton', ExtFilebuttonComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-filebutton', ExtFilebuttonComponent);
+  });
 })();

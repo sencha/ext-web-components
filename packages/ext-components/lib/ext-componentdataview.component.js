@@ -801,5 +801,7 @@ export class ExtComponentdataviewComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-componentdataview', ExtComponentdataviewComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-componentdataview', ExtComponentdataviewComponent);
+  });
 })();

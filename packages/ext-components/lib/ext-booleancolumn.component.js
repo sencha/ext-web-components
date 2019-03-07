@@ -759,5 +759,7 @@ export class ExtBooleancolumnComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-booleancolumn', ExtBooleancolumnComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-booleancolumn', ExtBooleancolumnComponent);
+  });
 })();

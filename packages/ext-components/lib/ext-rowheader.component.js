@@ -552,5 +552,7 @@ export class ExtRowheaderComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-rowheader', ExtRowheaderComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-rowheader', ExtRowheaderComponent);
+  });
 })();

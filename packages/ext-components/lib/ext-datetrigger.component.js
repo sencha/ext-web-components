@@ -358,5 +358,7 @@ export class ExtDatetriggerComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-datetrigger', ExtDatetriggerComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-datetrigger', ExtDatetriggerComponent);
+  });
 })();

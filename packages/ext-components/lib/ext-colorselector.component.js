@@ -84,5 +84,7 @@ export class ExtColorselectorComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-colorselector', ExtColorselectorComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-colorselector', ExtColorselectorComponent);
+  });
 })();

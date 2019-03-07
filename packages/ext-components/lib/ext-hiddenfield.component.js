@@ -626,5 +626,7 @@ export class ExtHiddenfieldComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-hiddenfield', ExtHiddenfieldComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-hiddenfield', ExtHiddenfieldComponent);
+  });
 })();

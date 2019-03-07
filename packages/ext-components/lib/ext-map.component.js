@@ -707,5 +707,7 @@ export class ExtMapComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-map', ExtMapComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-map', ExtMapComponent);
+  });
 })();

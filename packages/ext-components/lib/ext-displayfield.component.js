@@ -628,5 +628,7 @@ export class ExtDisplayfieldComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-displayfield', ExtDisplayfieldComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-displayfield', ExtDisplayfieldComponent);
+  });
 })();

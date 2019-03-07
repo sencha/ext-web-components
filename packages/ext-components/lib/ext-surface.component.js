@@ -372,5 +372,7 @@ export class ExtSurfaceComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-surface', ExtSurfaceComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-surface', ExtSurfaceComponent);
+  });
 })();

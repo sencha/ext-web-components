@@ -813,5 +813,7 @@ export class ExtDatepanelComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-datepanel', ExtDatepanelComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-datepanel', ExtDatepanelComponent);
+  });
 })();

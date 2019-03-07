@@ -552,5 +552,7 @@ export class ExtSimplelistitemComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-simplelistitem', ExtSimplelistitemComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-simplelistitem', ExtSimplelistitemComponent);
+  });
 })();

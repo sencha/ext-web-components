@@ -709,5 +709,7 @@ export class ExtColorfieldComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-colorfield', ExtColorfieldComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-colorfield', ExtColorfieldComponent);
+  });
 })();

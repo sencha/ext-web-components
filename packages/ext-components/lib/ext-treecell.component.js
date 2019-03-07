@@ -389,5 +389,7 @@ export class ExtTreecellComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-treecell', ExtTreecellComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-treecell', ExtTreecellComponent);
+  });
 })();

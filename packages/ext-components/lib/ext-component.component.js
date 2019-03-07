@@ -541,5 +541,7 @@ export class ExtComponentComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-component', ExtComponentComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-component', ExtComponentComponent);
+  });
 })();

@@ -553,5 +553,7 @@ export class ExtChipComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-chip', ExtChipComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-chip', ExtChipComponent);
+  });
 })();

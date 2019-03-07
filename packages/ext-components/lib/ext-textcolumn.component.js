@@ -753,5 +753,7 @@ export class ExtTextcolumnComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-textcolumn', ExtTextcolumnComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-textcolumn', ExtTextcolumnComponent);
+  });
 })();

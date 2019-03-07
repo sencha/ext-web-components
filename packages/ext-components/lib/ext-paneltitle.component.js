@@ -557,5 +557,7 @@ export class ExtPaneltitleComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-paneltitle', ExtPaneltitleComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-paneltitle', ExtPaneltitleComponent);
+  });
 })();

@@ -563,5 +563,7 @@ export class ExtPivotgridrowComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-pivotgridrow', ExtPivotgridrowComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-pivotgridrow', ExtPivotgridrowComponent);
+  });
 })();

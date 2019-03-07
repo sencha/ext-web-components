@@ -957,5 +957,7 @@ export class ExtTreeComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-tree', ExtTreeComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-tree', ExtTreeComponent);
+  });
 })();

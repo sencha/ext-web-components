@@ -680,5 +680,7 @@ export class ExtPasswordfieldComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-passwordfield', ExtPasswordfieldComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-passwordfield', ExtPasswordfieldComponent);
+  });
 })();

@@ -633,5 +633,7 @@ export class ExtD3_treeComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-d3_tree', ExtD3_treeComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-d3_tree', ExtD3_treeComponent);
+  });
 })();

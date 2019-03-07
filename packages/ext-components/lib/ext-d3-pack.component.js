@@ -630,5 +630,7 @@ export class ExtD3_packComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-d3_pack', ExtD3_packComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-d3_pack', ExtD3_packComponent);
+  });
 })();

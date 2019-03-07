@@ -806,5 +806,7 @@ export class ExtPivotconfigformComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-pivotconfigform', ExtPivotconfigformComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-pivotconfigform', ExtPivotconfigformComponent);
+  });
 })();

@@ -706,5 +706,7 @@ export class ExtTimefieldComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-timefield', ExtTimefieldComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-timefield', ExtTimefieldComponent);
+  });
 })();

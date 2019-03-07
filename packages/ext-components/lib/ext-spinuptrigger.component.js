@@ -358,5 +358,7 @@ export class ExtSpinuptriggerComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-spinuptrigger', ExtSpinuptriggerComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-spinuptrigger', ExtSpinuptriggerComponent);
+  });
 })();

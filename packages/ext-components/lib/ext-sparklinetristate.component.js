@@ -573,5 +573,7 @@ export class ExtSparklinetristateComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-sparklinetristate', ExtSparklinetristateComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-sparklinetristate', ExtSparklinetristateComponent);
+  });
 })();

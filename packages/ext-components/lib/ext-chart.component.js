@@ -774,5 +774,7 @@ export class ExtChartComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-chart', ExtChartComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-chart', ExtChartComponent);
+  });
 })();

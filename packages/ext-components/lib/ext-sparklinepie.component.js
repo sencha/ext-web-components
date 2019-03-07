@@ -569,5 +569,7 @@ export class ExtSparklinepieComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-sparklinepie', ExtSparklinepieComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-sparklinepie', ExtSparklinepieComponent);
+  });
 })();

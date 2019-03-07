@@ -585,5 +585,7 @@ export class ExtSparklinebarComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-sparklinebar', ExtSparklinebarComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-sparklinebar', ExtSparklinebarComponent);
+  });
 })();

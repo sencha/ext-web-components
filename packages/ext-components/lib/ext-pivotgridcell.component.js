@@ -378,5 +378,7 @@ export class ExtPivotgridcellComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-pivotgridcell', ExtPivotgridcellComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-pivotgridcell', ExtPivotgridcellComponent);
+  });
 })();

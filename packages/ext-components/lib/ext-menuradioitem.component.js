@@ -597,5 +597,7 @@ export class ExtMenuradioitemComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-menuradioitem', ExtMenuradioitemComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-menuradioitem', ExtMenuradioitemComponent);
+  });
 })();

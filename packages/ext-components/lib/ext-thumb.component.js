@@ -545,5 +545,7 @@ export class ExtThumbComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-thumb', ExtThumbComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-thumb', ExtThumbComponent);
+  });
 })();

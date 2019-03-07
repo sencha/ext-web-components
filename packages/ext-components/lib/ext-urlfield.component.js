@@ -675,5 +675,7 @@ export class ExtUrlfieldComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-urlfield', ExtUrlfieldComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-urlfield', ExtUrlfieldComponent);
+  });
 })();

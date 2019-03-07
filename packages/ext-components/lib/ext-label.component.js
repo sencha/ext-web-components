@@ -541,5 +541,7 @@ export class ExtLabelComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-label', ExtLabelComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-label', ExtLabelComponent);
+  });
 })();

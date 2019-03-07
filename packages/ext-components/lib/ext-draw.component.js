@@ -691,5 +691,7 @@ export class ExtDrawComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-draw', ExtDrawComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-draw', ExtDrawComponent);
+  });
 })();

@@ -708,5 +708,7 @@ export class ExtCalendar_weekviewComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-calendar_weekview', ExtCalendar_weekviewComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-calendar_weekview', ExtCalendar_weekviewComponent);
+  });
 })();

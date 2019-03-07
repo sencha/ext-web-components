@@ -766,5 +766,7 @@ export class ExtCalendar_calendar_pickerComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-calendar_calendar_picker', ExtCalendar_calendar_pickerComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-calendar_calendar_picker', ExtCalendar_calendar_pickerComponent);
+  });
 })();

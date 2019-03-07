@@ -742,6 +742,8 @@ export class ExtPanelComponent extends ExtBase {
     super.attributeChangedCallback(attrName, oldVal, newVal)
   }
 }
-//(function () {
-window.customElements.define('ext-panel', ExtPanelComponent);
-//})();
+(function () {
+  Ext.onReady(function() {
+    window.customElements.define('ext-panel', ExtPanelComponent);
+  });
+})();

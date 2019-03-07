@@ -562,5 +562,7 @@ export class ExtIndexbarComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-indexbar', ExtIndexbarComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-indexbar', ExtIndexbarComponent);
+  });
 })();

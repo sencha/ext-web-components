@@ -797,5 +797,7 @@ export class ExtMessageboxComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-messagebox', ExtMessageboxComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-messagebox', ExtMessageboxComponent);
+  });
 })();

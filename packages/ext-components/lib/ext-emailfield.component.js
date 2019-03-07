@@ -675,5 +675,7 @@ export class ExtEmailfieldComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-emailfield', ExtEmailfieldComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-emailfield', ExtEmailfieldComponent);
+  });
 })();

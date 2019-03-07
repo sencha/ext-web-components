@@ -832,5 +832,7 @@ export class ExtCalendar_dayComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-calendar_day', ExtCalendar_dayComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-calendar_day', ExtCalendar_dayComponent);
+  });
 })();

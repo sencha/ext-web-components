@@ -662,5 +662,7 @@ export class ExtTitlebarComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-titlebar', ExtTitlebarComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-titlebar', ExtTitlebarComponent);
+  });
 })();

@@ -562,5 +562,7 @@ export class ExtCalendar_eventComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-calendar_event', ExtCalendar_eventComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-calendar_event', ExtCalendar_eventComponent);
+  });
 })();

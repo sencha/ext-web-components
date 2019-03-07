@@ -650,5 +650,7 @@ export class ExtRadioComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-radio', ExtRadioComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-radio', ExtRadioComponent);
+  });
 })();

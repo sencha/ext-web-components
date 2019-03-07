@@ -635,5 +635,7 @@ export class ExtD3_sunburstComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-d3_sunburst', ExtD3_sunburstComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-d3_sunburst', ExtD3_sunburstComponent);
+  });
 })();

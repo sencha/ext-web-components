@@ -544,5 +544,7 @@ export class ExtTitleComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-title', ExtTitleComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-title', ExtTitleComponent);
+  });
 })();

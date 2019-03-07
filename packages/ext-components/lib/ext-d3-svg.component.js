@@ -566,5 +566,7 @@ export class ExtD3_svgComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-d3_svg', ExtD3_svgComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-d3_svg', ExtD3_svgComponent);
+  });
 })();

@@ -743,5 +743,7 @@ export class ExtTabletpickerComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-tabletpicker', ExtTabletpickerComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-tabletpicker', ExtTabletpickerComponent);
+  });
 })();

@@ -779,5 +779,7 @@ export class ExtFieldpanelComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-fieldpanel', ExtFieldpanelComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-fieldpanel', ExtFieldpanelComponent);
+  });
 })();

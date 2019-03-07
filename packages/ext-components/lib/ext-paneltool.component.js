@@ -562,5 +562,7 @@ export class ExtPaneltoolComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-paneltool', ExtPaneltoolComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-paneltool', ExtPaneltoolComponent);
+  });
 })();

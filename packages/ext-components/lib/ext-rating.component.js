@@ -575,5 +575,7 @@ export class ExtRatingComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-rating', ExtRatingComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-rating', ExtRatingComponent);
+  });
 })();

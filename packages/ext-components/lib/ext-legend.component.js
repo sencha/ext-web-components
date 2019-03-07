@@ -801,5 +801,7 @@ export class ExtLegendComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-legend', ExtLegendComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-legend', ExtLegendComponent);
+  });
 })();

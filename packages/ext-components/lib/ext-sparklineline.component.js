@@ -595,5 +595,7 @@ export class ExtSparklinelineComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-sparklineline', ExtSparklinelineComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-sparklineline', ExtSparklinelineComponent);
+  });
 })();

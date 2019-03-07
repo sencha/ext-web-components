@@ -755,5 +755,7 @@ export class ExtRownumbererComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-rownumberer', ExtRownumbererComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-rownumberer', ExtRownumbererComponent);
+  });
 })();

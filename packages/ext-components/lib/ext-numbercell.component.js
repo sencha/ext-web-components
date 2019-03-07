@@ -372,5 +372,7 @@ export class ExtNumbercellComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-numbercell', ExtNumbercellComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-numbercell', ExtNumbercellComponent);
+  });
 })();

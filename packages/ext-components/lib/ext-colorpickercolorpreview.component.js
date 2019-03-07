@@ -541,5 +541,7 @@ export class ExtColorpickercolorpreviewComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-colorpickercolorpreview', ExtColorpickercolorpreviewComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-colorpickercolorpreview', ExtColorpickercolorpreviewComponent);
+  });
 })();

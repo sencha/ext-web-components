@@ -553,5 +553,7 @@ export class ExtCalendar_weeksheaderComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-calendar_weeksheader', ExtCalendar_weeksheaderComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-calendar_weeksheader', ExtCalendar_weeksheaderComponent);
+  });
 })();

@@ -753,5 +753,7 @@ export class ExtTreecolumnComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-treecolumn', ExtTreecolumnComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-treecolumn', ExtTreecolumnComponent);
+  });
 })();

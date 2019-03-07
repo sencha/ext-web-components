@@ -777,5 +777,7 @@ export class ExtWindowComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-window', ExtWindowComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-window', ExtWindowComponent);
+  });
 })();

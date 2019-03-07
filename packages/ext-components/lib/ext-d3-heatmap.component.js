@@ -579,5 +579,7 @@ export class ExtD3_heatmapComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-d3_heatmap', ExtD3_heatmapComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-d3_heatmap', ExtD3_heatmapComponent);
+  });
 })();

@@ -806,5 +806,7 @@ export class ExtPivotsettingsComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-pivotsettings', ExtPivotsettingsComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-pivotsettings', ExtPivotsettingsComponent);
+  });
 })();

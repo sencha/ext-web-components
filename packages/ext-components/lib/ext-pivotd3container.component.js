@@ -48,5 +48,7 @@ export class ExtPivotd3containerComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-pivotd3container', ExtPivotd3containerComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-pivotd3container', ExtPivotd3containerComponent);
+  });
 })();

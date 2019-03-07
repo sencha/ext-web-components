@@ -774,5 +774,7 @@ export class ExtCartesianComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-cartesian', ExtCartesianComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-cartesian', ExtCartesianComponent);
+  });
 })();

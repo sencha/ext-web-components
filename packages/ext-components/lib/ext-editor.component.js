@@ -704,5 +704,7 @@ export class ExtEditorComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-editor', ExtEditorComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-editor', ExtEditorComponent);
+  });
 })();

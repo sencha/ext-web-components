@@ -597,5 +597,7 @@ export class ExtGridsortdescmenuitemComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-gridsortdescmenuitem', ExtGridsortdescmenuitemComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-gridsortdescmenuitem', ExtGridsortdescmenuitemComponent);
+  });
 })();

@@ -590,5 +590,7 @@ export class ExtAudioComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-audio', ExtAudioComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-audio', ExtAudioComponent);
+  });
 })();

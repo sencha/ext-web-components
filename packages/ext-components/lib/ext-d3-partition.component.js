@@ -626,5 +626,7 @@ export class ExtD3_partitionComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-d3_partition', ExtD3_partitionComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-d3_partition', ExtD3_partitionComponent);
+  });
 })();

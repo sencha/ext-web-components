@@ -677,5 +677,7 @@ export class ExtTextareafieldComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-textareafield', ExtTextareafieldComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-textareafield', ExtTextareafieldComponent);
+  });
 })();
