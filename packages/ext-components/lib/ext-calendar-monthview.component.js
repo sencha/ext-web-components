@@ -695,5 +695,7 @@ export class ExtCalendar_monthviewComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-calendar_monthview', ExtCalendar_monthviewComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-calendar_monthview', ExtCalendar_monthviewComponent);
+  });
 })();

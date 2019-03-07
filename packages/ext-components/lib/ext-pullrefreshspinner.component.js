@@ -547,5 +547,7 @@ export class ExtPullrefreshspinnerComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-pullrefreshspinner', ExtPullrefreshspinnerComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-pullrefreshspinner', ExtPullrefreshspinnerComponent);
+  });
 })();

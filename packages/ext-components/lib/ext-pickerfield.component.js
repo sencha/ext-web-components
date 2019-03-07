@@ -701,5 +701,7 @@ export class ExtPickerfieldComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-pickerfield', ExtPickerfieldComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-pickerfield', ExtPickerfieldComponent);
+  });
 })();

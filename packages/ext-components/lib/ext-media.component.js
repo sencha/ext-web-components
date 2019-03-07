@@ -590,5 +590,7 @@ export class ExtMediaComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-media', ExtMediaComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-media', ExtMediaComponent);
+  });
 })();

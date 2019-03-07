@@ -187,6 +187,7 @@ export default class ExtBase extends HTMLElement {
   doCreate(viewport) {
     var me = this;
     me.ext = Ext.create(me.props)
+    //console.log(`Ext.create(${me.props.xtype})`)
     if (viewport == true) {
         Ext.Viewport.add([me.ext])
     }

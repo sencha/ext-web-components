@@ -364,5 +364,7 @@ export class ExtMenutriggerComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-menutrigger', ExtMenutriggerComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-menutrigger', ExtMenutriggerComponent);
+  });
 })();

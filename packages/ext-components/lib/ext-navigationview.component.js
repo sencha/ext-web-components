@@ -681,5 +681,7 @@ export class ExtNavigationviewComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-navigationview', ExtNavigationviewComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-navigationview', ExtNavigationviewComponent);
+  });
 })();

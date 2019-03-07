@@ -364,5 +364,7 @@ export class ExtGridcellbaseComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-gridcellbase', ExtGridcellbaseComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-gridcellbase', ExtGridcellbaseComponent);
+  });
 })();

@@ -671,5 +671,7 @@ export class ExtPagingtoolbarComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-pagingtoolbar', ExtPagingtoolbarComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-pagingtoolbar', ExtPagingtoolbarComponent);
+  });
 })();

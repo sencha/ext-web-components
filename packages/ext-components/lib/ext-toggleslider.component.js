@@ -586,5 +586,7 @@ export class ExtTogglesliderComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-toggleslider', ExtTogglesliderComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-toggleslider', ExtTogglesliderComponent);
+  });
 })();

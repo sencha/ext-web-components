@@ -766,5 +766,7 @@ export class ExtCalendar_timefieldComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-calendar_timefield', ExtCalendar_timefieldComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-calendar_timefield', ExtCalendar_timefieldComponent);
+  });
 })();

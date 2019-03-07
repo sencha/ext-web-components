@@ -667,5 +667,7 @@ export class ExtTabpanelComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-tabpanel', ExtTabpanelComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-tabpanel', ExtTabpanelComponent);
+  });
 })();

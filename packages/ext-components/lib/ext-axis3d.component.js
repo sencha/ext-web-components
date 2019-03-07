@@ -127,5 +127,7 @@ export class ExtAxis3dComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-axis3d', ExtAxis3dComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-axis3d', ExtAxis3dComponent);
+  });
 })();

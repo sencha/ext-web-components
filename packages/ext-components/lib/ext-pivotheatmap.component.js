@@ -583,5 +583,7 @@ export class ExtPivotheatmapComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-pivotheatmap', ExtPivotheatmapComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-pivotheatmap', ExtPivotheatmapComponent);
+  });
 })();

@@ -557,5 +557,7 @@ export class ExtDatetitleComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-datetitle', ExtDatetitleComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-datetitle', ExtDatetitleComponent);
+  });
 })();

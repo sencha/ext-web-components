@@ -341,5 +341,7 @@ export class ExtWidgetComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-widget', ExtWidgetComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-widget', ExtWidgetComponent);
+  });
 })();

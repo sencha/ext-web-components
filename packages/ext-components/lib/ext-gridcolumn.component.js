@@ -753,5 +753,7 @@ export class ExtGridcolumnComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-gridcolumn', ExtGridcolumnComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-gridcolumn', ExtGridcolumnComponent);
+  });
 })();

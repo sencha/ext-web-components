@@ -598,5 +598,7 @@ export class ExtVideoComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-video', ExtVideoComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-video', ExtVideoComponent);
+  });
 })();

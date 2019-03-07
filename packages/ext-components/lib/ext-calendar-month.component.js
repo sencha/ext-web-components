@@ -831,5 +831,7 @@ export class ExtCalendar_monthComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-calendar_month', ExtCalendar_monthComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-calendar_month', ExtCalendar_monthComponent);
+  });
 })();

@@ -647,5 +647,7 @@ export class ExtCheckboxComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-checkbox', ExtCheckboxComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-checkbox', ExtCheckboxComponent);
+  });
 })();

@@ -873,5 +873,7 @@ export class ExtListComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-list', ExtListComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-list', ExtListComponent);
+  });
 })();

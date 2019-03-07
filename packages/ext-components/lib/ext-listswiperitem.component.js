@@ -661,5 +661,7 @@ export class ExtListswiperitemComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-listswiperitem', ExtListswiperitemComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-listswiperitem', ExtListswiperitemComponent);
+  });
 })();

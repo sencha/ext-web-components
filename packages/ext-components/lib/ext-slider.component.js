@@ -586,5 +586,7 @@ export class ExtSliderComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-slider', ExtSliderComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-slider', ExtSliderComponent);
+  });
 })();

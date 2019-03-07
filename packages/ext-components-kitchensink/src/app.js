@@ -1,4 +1,16 @@
-import { Route } from '@sencha/ext-components';
+//import { Route } from '@sencha/ext-components';
+
+import  { Route } from '@sencha/ext-components/lib/aa-router.component';
+import '@sencha/ext-components/lib/ext-button.component';
+import '@sencha/ext-components/lib/ext-dataview.component';
+import '@sencha/ext-components/lib/ext-searchfield.component';
+import '@sencha/ext-components/lib/ext-treelist.component';
+import '@sencha/ext-components/lib/ext-panel.component';
+import '@sencha/ext-components/lib/ext-tabpanel.component';
+import '@sencha/ext-components/lib/ext-titlebar.component';
+import '@sencha/ext-components/lib/ext-toolbar.component';
+
+
 import getMenu from './menu';
 import MainComponent from './view/main/MainComponent.js';
 

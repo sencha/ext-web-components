@@ -753,5 +753,7 @@ export class ExtTemplatecolumnComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-templatecolumn', ExtTemplatecolumnComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-templatecolumn', ExtTemplatecolumnComponent);
+  });
 })();

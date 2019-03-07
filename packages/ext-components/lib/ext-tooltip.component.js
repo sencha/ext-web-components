@@ -773,5 +773,7 @@ export class ExtTooltipComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-tooltip', ExtTooltipComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-tooltip', ExtTooltipComponent);
+  });
 })();

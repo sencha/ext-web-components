@@ -669,5 +669,7 @@ export class ExtPanelheaderComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-panelheader', ExtPanelheaderComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-panelheader', ExtPanelheaderComponent);
+  });
 })();

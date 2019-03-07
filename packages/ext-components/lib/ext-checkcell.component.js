@@ -364,5 +364,7 @@ export class ExtCheckcellComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-checkcell', ExtCheckcellComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-checkcell', ExtCheckcellComponent);
+  });
 })();

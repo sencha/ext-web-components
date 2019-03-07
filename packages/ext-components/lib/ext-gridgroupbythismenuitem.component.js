@@ -578,5 +578,7 @@ export class ExtGridgroupbythismenuitemComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-gridgroupbythismenuitem', ExtGridgroupbythismenuitemComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-gridgroupbythismenuitem', ExtGridgroupbythismenuitemComponent);
+  });
 })();

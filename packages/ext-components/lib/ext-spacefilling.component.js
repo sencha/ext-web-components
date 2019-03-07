@@ -770,5 +770,7 @@ export class ExtSpacefillingComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-spacefilling', ExtSpacefillingComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-spacefilling', ExtSpacefillingComponent);
+  });
 })();

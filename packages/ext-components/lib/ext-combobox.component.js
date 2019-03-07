@@ -804,5 +804,7 @@ export class ExtComboboxComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-combobox', ExtComboboxComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-combobox', ExtComboboxComponent);
+  });
 })();

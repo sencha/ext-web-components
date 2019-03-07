@@ -62,5 +62,7 @@ export class ExtCalendar_multiviewComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-calendar_multiview', ExtCalendar_multiviewComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-calendar_multiview', ExtCalendar_multiviewComponent);
+  });
 })();

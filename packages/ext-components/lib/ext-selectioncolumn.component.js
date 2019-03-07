@@ -763,5 +763,7 @@ export class ExtSelectioncolumnComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-selectioncolumn', ExtSelectioncolumnComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-selectioncolumn', ExtSelectioncolumnComponent);
+  });
 })();

@@ -777,5 +777,7 @@ export class ExtDialogComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-dialog', ExtDialogComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-dialog', ExtDialogComponent);
+  });
 })();

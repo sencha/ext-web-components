@@ -581,5 +581,7 @@ export class ExtGaugeComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-gauge', ExtGaugeComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-gauge', ExtGaugeComponent);
+  });
 })();

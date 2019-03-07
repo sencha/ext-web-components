@@ -593,5 +593,7 @@ export class ExtMenucheckitemComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-menucheckitem', ExtMenucheckitemComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-menucheckitem', ExtMenucheckitemComponent);
+  });
 })();

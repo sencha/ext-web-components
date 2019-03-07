@@ -593,5 +593,7 @@ export class ExtGridshowingroupsmenuitemComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-gridshowingroupsmenuitem', ExtGridshowingroupsmenuitemComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-gridshowingroupsmenuitem', ExtGridshowingroupsmenuitemComponent);
+  });
 })();

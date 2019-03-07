@@ -358,5 +358,7 @@ export class ExtTriggerComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-trigger', ExtTriggerComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-trigger', ExtTriggerComponent);
+  });
 })();

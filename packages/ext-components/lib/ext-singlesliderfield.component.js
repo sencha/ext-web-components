@@ -647,5 +647,7 @@ export class ExtSinglesliderfieldComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-singlesliderfield', ExtSinglesliderfieldComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-singlesliderfield', ExtSinglesliderfieldComponent);
+  });
 })();

@@ -358,5 +358,7 @@ export class ExtCleartriggerComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-cleartrigger', ExtCleartriggerComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-cleartrigger', ExtCleartriggerComponent);
+  });
 })();

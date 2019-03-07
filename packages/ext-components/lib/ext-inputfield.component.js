@@ -626,5 +626,7 @@ export class ExtInputfieldComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-inputfield', ExtInputfieldComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-inputfield', ExtInputfieldComponent);
+  });
 })();

@@ -653,5 +653,7 @@ export class ExtFieldcontainerComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-fieldcontainer', ExtFieldcontainerComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-fieldcontainer', ExtFieldcontainerComponent);
+  });
 })();

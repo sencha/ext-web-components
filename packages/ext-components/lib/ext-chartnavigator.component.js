@@ -657,5 +657,7 @@ export class ExtChartnavigatorComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-chartnavigator', ExtChartnavigatorComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-chartnavigator', ExtChartnavigatorComponent);
+  });
 })();

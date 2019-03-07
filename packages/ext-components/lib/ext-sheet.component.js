@@ -757,5 +757,7 @@ export class ExtSheetComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-sheet', ExtSheetComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-sheet', ExtSheetComponent);
+  });
 })();

@@ -358,5 +358,7 @@ export class ExtTimetriggerComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-timetrigger', ExtTimetriggerComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-timetrigger', ExtTimetriggerComponent);
+  });
 })();

@@ -563,5 +563,7 @@ export class ExtGridrowComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-gridrow', ExtGridrowComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-gridrow', ExtGridrowComponent);
+  });
 })();

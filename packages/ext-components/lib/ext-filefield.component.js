@@ -684,5 +684,7 @@ export class ExtFilefieldComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-filefield', ExtFilefieldComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-filefield', ExtFilefieldComponent);
+  });
 })();

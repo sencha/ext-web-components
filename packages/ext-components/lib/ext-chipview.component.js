@@ -813,5 +813,7 @@ export class ExtChipviewComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-chipview', ExtChipviewComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-chipview', ExtChipviewComponent);
+  });
 })();

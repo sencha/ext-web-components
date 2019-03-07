@@ -583,5 +583,7 @@ export class ExtTreelistComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-treelist', ExtTreelistComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-treelist', ExtTreelistComponent);
+  });
 })();

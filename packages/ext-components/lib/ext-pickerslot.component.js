@@ -821,5 +821,7 @@ export class ExtPickerslotComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-pickerslot', ExtPickerslotComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-pickerslot', ExtPickerslotComponent);
+  });
 })();

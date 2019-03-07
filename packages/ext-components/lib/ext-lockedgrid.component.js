@@ -675,5 +675,7 @@ export class ExtLockedgridComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-lockedgrid', ExtLockedgridComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-lockedgrid', ExtLockedgridComponent);
+  });
 })();

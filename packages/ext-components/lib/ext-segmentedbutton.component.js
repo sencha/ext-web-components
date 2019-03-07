@@ -679,5 +679,7 @@ export class ExtSegmentedbuttonComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-segmentedbutton', ExtSegmentedbuttonComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-segmentedbutton', ExtSegmentedbuttonComponent);
+  });
 })();

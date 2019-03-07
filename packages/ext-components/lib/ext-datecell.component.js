@@ -372,5 +372,7 @@ export class ExtDatecellComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-datecell', ExtDatecellComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-datecell', ExtDatecellComponent);
+  });
 })();

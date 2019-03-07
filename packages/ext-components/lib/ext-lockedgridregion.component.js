@@ -751,5 +751,7 @@ export class ExtLockedgridregionComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-lockedgridregion', ExtLockedgridregionComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-lockedgridregion', ExtLockedgridregionComponent);
+  });
 })();

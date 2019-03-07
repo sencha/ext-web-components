@@ -808,5 +808,7 @@ export class ExtDatepickerComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-datepicker', ExtDatepickerComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-datepicker', ExtDatepickerComponent);
+  });
 })();

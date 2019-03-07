@@ -806,5 +806,7 @@ export class ExtFormpanelComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-formpanel', ExtFormpanelComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-formpanel', ExtFormpanelComponent);
+  });
 })();

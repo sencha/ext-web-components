@@ -549,5 +549,7 @@ export class ExtProgressbarwidgetComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-progressbarwidget', ExtProgressbarwidgetComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-progressbarwidget', ExtProgressbarwidgetComponent);
+  });
 })();

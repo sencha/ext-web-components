@@ -376,5 +376,7 @@ export class ExtBooleancellComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-booleancell', ExtBooleancellComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-booleancell', ExtBooleancellComponent);
+  });
 })();

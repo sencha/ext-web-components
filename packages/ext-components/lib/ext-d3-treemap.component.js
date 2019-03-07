@@ -641,5 +641,7 @@ export class ExtD3_treemapComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-d3_treemap', ExtD3_treemapComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-d3_treemap', ExtD3_treemapComponent);
+  });
 })();

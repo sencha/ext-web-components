@@ -763,5 +763,7 @@ export class ExtCheckcolumnComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-checkcolumn', ExtCheckcolumnComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-checkcolumn', ExtCheckcolumnComponent);
+  });
 })();

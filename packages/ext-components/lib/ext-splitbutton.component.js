@@ -607,5 +607,7 @@ export class ExtSplitbuttonComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-splitbutton', ExtSplitbuttonComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-splitbutton', ExtSplitbuttonComponent);
+  });
 })();

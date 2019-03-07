@@ -874,5 +874,7 @@ export class ExtYearpickerComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-yearpicker', ExtYearpickerComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-yearpicker', ExtYearpickerComponent);
+  });
 })();

@@ -787,5 +787,7 @@ export class ExtSelectpickerComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-selectpicker', ExtSelectpickerComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-selectpicker', ExtSelectpickerComponent);
+  });
 })();

@@ -755,5 +755,7 @@ export class ExtNumbercolumnComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-numbercolumn', ExtNumbercolumnComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-numbercolumn', ExtNumbercolumnComponent);
+  });
 })();

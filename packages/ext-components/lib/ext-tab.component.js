@@ -613,5 +613,7 @@ export class ExtTabComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-tab', ExtTabComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-tab', ExtTabComponent);
+  });
 })();

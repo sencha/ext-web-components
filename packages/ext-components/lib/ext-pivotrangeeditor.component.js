@@ -806,5 +806,7 @@ export class ExtPivotrangeeditorComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-pivotrangeeditor', ExtPivotrangeeditorComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-pivotrangeeditor', ExtPivotrangeeditorComponent);
+  });
 })();

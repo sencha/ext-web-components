@@ -561,5 +561,7 @@ export class ExtPullrefreshbarComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-pullrefreshbar', ExtPullrefreshbarComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-pullrefreshbar', ExtPullrefreshbarComponent);
+  });
 })();

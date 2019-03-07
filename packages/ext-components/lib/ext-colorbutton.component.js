@@ -553,5 +553,7 @@ export class ExtColorbuttonComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-colorbutton', ExtColorbuttonComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-colorbutton', ExtColorbuttonComponent);
+  });
 })();

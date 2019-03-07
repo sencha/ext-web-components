@@ -673,5 +673,7 @@ export class ExtListswiperstepperComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-listswiperstepper', ExtListswiperstepperComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-listswiperstepper', ExtListswiperstepperComponent);
+  });
 })();

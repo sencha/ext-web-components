@@ -566,5 +566,7 @@ export class ExtD3Component extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-d3', ExtD3Component);
+  Ext.onReady(function() {
+    window.customElements.define('ext-d3', ExtD3Component);
+  });
 })();

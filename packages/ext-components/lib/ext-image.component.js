@@ -556,5 +556,7 @@ export class ExtImageComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-image', ExtImageComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-image', ExtImageComponent);
+  });
 })();

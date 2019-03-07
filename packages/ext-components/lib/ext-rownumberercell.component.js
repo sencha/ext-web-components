@@ -372,5 +372,7 @@ export class ExtRownumberercellComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-rownumberercell', ExtRownumberercellComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-rownumberercell', ExtRownumberercellComponent);
+  });
 })();

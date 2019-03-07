@@ -929,5 +929,7 @@ export class ExtGridComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-grid', ExtGridComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-grid', ExtGridComponent);
+  });
 })();

@@ -541,5 +541,7 @@ export class ExtEmptytextComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-emptytext', ExtEmptytextComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-emptytext', ExtEmptytextComponent);
+  });
 })();

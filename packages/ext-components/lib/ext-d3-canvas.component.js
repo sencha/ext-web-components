@@ -564,5 +564,7 @@ export class ExtD3_canvasComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-d3_canvas', ExtD3_canvasComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-d3_canvas', ExtD3_canvasComponent);
+  });
 })();

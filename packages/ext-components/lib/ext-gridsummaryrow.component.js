@@ -563,5 +563,7 @@ export class ExtGridsummaryrowComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-gridsummaryrow', ExtGridsummaryrowComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-gridsummaryrow', ExtGridsummaryrowComponent);
+  });
 })();

@@ -20,12 +20,12 @@
   <!-- Titlebar ends-->
 
   <!-- Breadcrumb starts-->
-  <!-- <ext-toolbar docked="top" weight="10">
+  <ext-toolbar docked="top" weight="10">
     <ext-dataview inline=true itemCls="div.app-toolbar" id="hide-overflow"
       onchildtap="main.dataviewBreadcrumbClick(event)" 
       onready="main.readyDataviewBreadcrumb(event)">
     </ext-dataview>
-  </ext-toolbar> -->
+  </ext-toolbar>
   <!-- Breadcrumb ends-->
 
   <!-- onchange="this.filterNav" -->
@@ -64,13 +64,13 @@
 
   <!-- selections starts-->
   <ext-panel scrollable="y" hidden=true onready="main.readySelection(event)">
-    <!-- <ext-dataview
+    <ext-dataview
       inline="true"
       centered="true"
       itemCls="div.app-thumbnail"
       onchildtap="main.dataviewNavClick(event)"
       onready="main.readyDataviewNav(event)">
-    </ext-dataview> -->
+    </ext-dataview>
   </ext-panel>
   <!-- selections ends-->
 
@@ -83,19 +83,23 @@
   <!-- code window starts-->
   <ext-panel
     docked="right"
+    border=true
+    shadow=true
+    scrollable="y"
     width="850px"
-    layout= "fit"
+    height="100%"
+    layout="fit"
     resizable='{"edges": "west", "dynamic": "true"}'
     hideAnimation='{"type": "slideOut", "direction": "right", "duration": 100, "easing": "ease" }'
     showAnimation='{"type": "slideIn", "direction": "left", "duration": 100, "easing": "ease" }'
-    header="false"
-    border="true"
+    header=false
     collapsible='{"direction": "right"}'
     onready="main.readyCodePanel(event)"
-    hidden="true"
-    collapsed="false">
+    hidden=true
+    collapsed=false>
     <ext-tabpanel 
       shadow="true"
+      height="100%"
       tabBar='{"layout": {"pack": "space-around"}}'
       onready="main.readyTabPanel(event)">
     </ext-tabpanel>

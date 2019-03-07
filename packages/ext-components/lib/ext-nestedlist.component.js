@@ -726,5 +726,7 @@ export class ExtNestedlistComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-nestedlist', ExtNestedlistComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-nestedlist', ExtNestedlistComponent);
+  });
 })();

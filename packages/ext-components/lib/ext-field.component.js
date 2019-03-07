@@ -617,5 +617,7 @@ export class ExtFieldComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-field', ExtFieldComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-field', ExtFieldComponent);
+  });
 })();

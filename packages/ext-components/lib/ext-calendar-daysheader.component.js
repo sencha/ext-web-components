@@ -553,5 +553,7 @@ export class ExtCalendar_daysheaderComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-calendar_daysheader', ExtCalendar_daysheaderComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-calendar_daysheader', ExtCalendar_daysheaderComponent);
+  });
 })();

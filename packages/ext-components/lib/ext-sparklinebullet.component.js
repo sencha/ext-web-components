@@ -571,5 +571,7 @@ export class ExtSparklinebulletComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-sparklinebullet', ExtSparklinebulletComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-sparklinebullet', ExtSparklinebulletComponent);
+  });
 })();

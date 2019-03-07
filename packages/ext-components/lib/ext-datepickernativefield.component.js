@@ -712,5 +712,7 @@ export class ExtDatepickernativefieldComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-datepickernativefield', ExtDatepickernativefieldComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-datepickernativefield', ExtDatepickernativefieldComponent);
+  });
 })();

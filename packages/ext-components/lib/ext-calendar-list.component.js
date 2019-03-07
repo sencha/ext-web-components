@@ -799,5 +799,7 @@ export class ExtCalendar_listComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-calendar_list', ExtCalendar_listComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-calendar_list', ExtCalendar_listComponent);
+  });
 })();

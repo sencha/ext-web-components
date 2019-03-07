@@ -669,5 +669,7 @@ export class ExtListitemComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-listitem', ExtListitemComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-listitem', ExtListitemComponent);
+  });
 })();

@@ -663,5 +663,7 @@ export class ExtToolbarComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-toolbar', ExtToolbarComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-toolbar', ExtToolbarComponent);
+  });
 })();

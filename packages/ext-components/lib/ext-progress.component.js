@@ -549,5 +549,7 @@ export class ExtProgressComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-progress', ExtProgressComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-progress', ExtProgressComponent);
+  });
 })();

@@ -773,5 +773,7 @@ export class ExtPivotconfigpanelComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-pivotconfigpanel', ExtPivotconfigpanelComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-pivotconfigpanel', ExtPivotconfigpanelComponent);
+  });
 })();

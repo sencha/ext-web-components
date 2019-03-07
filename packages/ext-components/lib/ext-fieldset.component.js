@@ -668,5 +668,7 @@ export class ExtFieldsetComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-fieldset', ExtFieldsetComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-fieldset', ExtFieldsetComponent);
+  });
 })();

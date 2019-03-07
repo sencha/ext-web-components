@@ -707,5 +707,7 @@ export class ExtGoogle_mapComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-google_map', ExtGoogle_mapComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-google_map', ExtGoogle_mapComponent);
+  });
 })();

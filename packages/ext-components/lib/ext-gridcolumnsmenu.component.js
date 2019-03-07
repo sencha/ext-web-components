@@ -578,5 +578,7 @@ export class ExtGridcolumnsmenuComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-gridcolumnsmenu', ExtGridcolumnsmenuComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-gridcolumnsmenu', ExtGridcolumnsmenuComponent);
+  });
 })();

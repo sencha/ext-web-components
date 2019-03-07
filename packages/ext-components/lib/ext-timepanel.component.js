@@ -763,5 +763,7 @@ export class ExtTimepanelComponent extends ExtBase {
   }
 }
 (function () {
-window.customElements.define('ext-timepanel', ExtTimepanelComponent);
+  Ext.onReady(function() {
+    window.customElements.define('ext-timepanel', ExtTimepanelComponent);
+  });
 })();
