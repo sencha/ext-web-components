@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
   template: `
   <ext-button text="hi"></ext-button>
   <ext-grid fitToParent=true
-[title]="gridTitle"
-   (ready)="readyGrid($event)">
+    [title]="gridTitle"
+    (ready)="readyGrid($event)">
 
    <!-- Titlebar starts-->
    <ext-titlebar docked="top" weight="10">
