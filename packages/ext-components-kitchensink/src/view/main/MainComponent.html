@@ -20,12 +20,12 @@
   <!-- Titlebar ends-->
 
   <!-- Breadcrumb starts-->
-  <ext-toolbar docked="top" weight="10">
+  <!-- <ext-toolbar docked="top" weight="10">
     <ext-dataview inline=true itemCls="div.app-toolbar" id="hide-overflow"
       onchildtap="main.dataviewBreadcrumbClick(event)" 
       onready="main.readyDataviewBreadcrumb(event)">
     </ext-dataview>
-  </ext-toolbar>
+  </ext-toolbar> -->
   <!-- Breadcrumb ends-->
 
   <!-- onchange="this.filterNav" -->
@@ -39,7 +39,7 @@
     resizable='{"edges": "east", "dynamic": "true"}'
     header="false"
     collapsible='{"direction": "left"}'
-    collapsed="true"
+    collapsed="false"
     width="300px"
     onready="main.readyNavTreePanel(event)">
     <ext-searchfield
@@ -64,13 +64,13 @@
 
   <!-- selections starts-->
   <ext-panel scrollable="y" hidden=true onready="main.readySelection(event)">
-    <ext-dataview
+    <!-- <ext-dataview
       inline="true"
       centered="true"
       itemCls="div.app-thumbnail"
       onchildtap="main.dataviewNavClick(event)"
       onready="main.readyDataviewNav(event)">
-    </ext-dataview>
+    </ext-dataview> -->
   </ext-panel>
   <!-- selections ends-->
 
