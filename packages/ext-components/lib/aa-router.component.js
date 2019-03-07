@@ -47,7 +47,6 @@ export class Router {
   }
 
   hasChanged(scope, r) {
-    console.log('hasChanged: ' + window.location.hash.substr(1))
     if (window.location.hash.length > 0) {
       var currentHash = ''
       var currentComponent = null
@@ -61,8 +60,7 @@ export class Router {
       setTimeout(function() {
         window[currentHash] = new currentComponent()
         scope.rootElem.innerHTML = window._code[currentHash][currentComponent.name + '.html']
-        console.log(scope.rootElem.innerHTML)
-      },1000);
+      },50);
     }
     else {
       console.log('hash is == 0')

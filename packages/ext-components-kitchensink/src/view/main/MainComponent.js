@@ -16,18 +16,20 @@ export default class MainComponent {
       rootVisible: true,
       root: navTreeRoot
     });
-    this.wait = 9;
+    this.wait = 7;
   }
 
-  afterAllLoaded() {
+  afterAllLoaded(f) {
+//    console.log(f)
     this.wait = this.wait - 1;
+//    console.log('***wait*** ' + this.wait )
     if (this.wait == 0) {
       console.log('window.location.hash')
       console.log(window.location.hash)
       var hash = window.location.hash.substr(1)
       if (hash == '') {hash = 'all'}
-      var node = this.dataviewNavCmp.getStore().findNode('hash',hash);
-      this.navigate(node);
+//      var node = this.dataviewNavCmp.getStore().findNode('hash',hash);
+//      this.navigate(node);
     }
   }
 
@@ -64,18 +66,18 @@ export default class MainComponent {
       {text} <span>{divider}</span>
     </div>`
     this.dataviewBreadcrumbCmp.setItemTpl(tpl)
-    this.afterAllLoaded()
+    this.afterAllLoaded('readyDataviewBreadcrumb')
   }
 
   readyNavTreePanel(event) {
     this.navTreePanelCmp = event.detail.cmp
-    this.afterAllLoaded()
+    this.afterAllLoaded('readyNavTreePanel')
   }
 
   readyNavTreelist(event) {
     this.navTreelistCmp = event.detail.cmp
     this.navTreelistCmp.setStore(this.treeStore)
-    this.afterAllLoaded()
+    this.afterAllLoaded('readyNavTreelist')
   }
 
   readySelection(event) {
@@ -88,7 +90,7 @@ export default class MainComponent {
       linear-gradient(0deg, #f5f5f5 1.1px, transparent 0), 
       linear-gradient(90deg, #f5f5f5 1.1px, transparent 0)`
     this.selectionCmp.setBodyStyle(bodyStyle)
-    this.afterAllLoaded();
+    this.afterAllLoaded('readySelection');
   }
 
   readyDataviewNav(event) {
@@ -104,27 +106,29 @@ export default class MainComponent {
     </div>`
     this.dataviewNavCmp.setItemTpl(tpl)
     this.dataviewNavCmp.setStore(this.treeStore)
-    this.afterAllLoaded()
+    this.afterAllLoaded('readyDataviewNav')
   }
 
   readyRouter(event) {
     this.router = event.target;
-    this.afterAllLoaded()
+    this.afterAllLoaded('readyRouter')
   }
 
   readyCodePanel(event) {
     this.codePanelCmp = event.detail.cmp
-    this.afterAllLoaded()
+    this.afterAllLoaded('readyCodePanel')
   }
 
   readyTabPanel(event) {
     this.tabPanelCmp = event.detail.cmp
-    this.afterAllLoaded()
+    this.afterAllLoaded('readyTabPanel')
   }
 
   dataviewBreadcrumbClick = (event) => {
     var hash = event.detail.location.record.data.hash;
-    var node = this.dataviewNavCmp.getStore().findNode('hash',hash);
+//var node = this.dataviewNavCmp.getStore().findNode('hash',hash);
+    var node = this.navTreelistCmp.getStore().findNode('hash',hash);
+
     this.navigate(node);
   }
 
@@ -139,7 +143,6 @@ export default class MainComponent {
   }
 
   navigate(record) {
-    console.log('navigate')
     if (record == null) {
       console.log('it was null')
       return
@@ -148,34 +151,37 @@ export default class MainComponent {
     var childNum = record.childNodes.length
     if (childNum == 0 && hash != undefined) {
 
-      var node = this.dataviewNavCmp.getStore().findNode('hash',hash);
-      this.breadcrumb = this.generateBreadcrumb(node);
-      this.dataviewBreadcrumbCmp.setData(this.breadcrumb)
+//      var node = this.dataviewNavCmp.getStore().findNode('hash',hash);
+      var node = this.navTreelistCmp.getStore().findNode('hash',hash);
+
+
+      //this.breadcrumb = this.generateBreadcrumb(node);
+      //this.dataviewBreadcrumbCmp.setData(this.breadcrumb)
 
       this.showRouter();
       window.location.hash = '#' + hash
     }
     else {
 
-      var node = this.dataviewNavCmp.getStore().findNode('hash',hash);
-      this.breadcrumb = this.generateBreadcrumb(node);
-      this.dataviewBreadcrumbCmp.setData(this.breadcrumb)
+      //var node = this.dataviewNavCmp.getStore().findNode('hash',hash);
+      var node = this.navTreelistCmp.getStore().findNode('hash',hash);
 
-      this.dataviewNavCmp.setData(node.childNodes)
+      //this.breadcrumb = this.generateBreadcrumb(node);
+      //this.dataviewBreadcrumbCmp.setData(this.breadcrumb)
+
+      //this.dataviewNavCmp.setData(node.childNodes)
 
       this.showSelection();
     }
   }
 
   showSelection() {
-    console.log('showSelection')
     this.selectionCmp.setHidden(false);
     this.router.hidden = true;
     this.codeButtonCmp.setHidden(true);
   }
 
   showRouter() {
-    console.log('showRouter')
     this.selectionCmp.setHidden(true);
     this.router.hidden = false;
     this.codeButtonCmp.setHidden(false);
