@@ -41,9 +41,17 @@
   <div>
     <H1 id="d1">HTML element with a click event</H1>
     <ext-panel id="thePanel" layout="hbox" title="my panel" onready="readyPanel(event)">
-      <ext-button text="hello" ontap="tapButton(event)"></ext-button>
-      <div>some text inside of a div</div>
-      <H1>H1 text</H1>
+      <H1>1 first H1 text</H1>
+
+      <ext-container html="<h2>2 container html</h2>" ontap="tapButton(event)"></ext-container>
+
+      <div>3 some text inside of a div</div>
+
+      <H1>4 H1 text</H1>
+      <ext-button text="5 hello" ontap="tapButton(event)"></ext-button>
+      <ext-container html="<h2>6 another container html</h2>" ontap="tapButton(event)"></ext-container>
+
+
     </ext-panel>
   </div>
 </body>
