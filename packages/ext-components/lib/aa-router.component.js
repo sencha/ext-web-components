@@ -63,7 +63,7 @@ export class Router {
       },50);
     }
     else {
-      console.log('hash is == 0')
+      //console.log('hash is == 0')
     }
   }
 

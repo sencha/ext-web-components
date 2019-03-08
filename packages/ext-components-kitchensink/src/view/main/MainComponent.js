@@ -1,8 +1,7 @@
 import hljs from 'highlightjs';
 import 'highlightjs/styles/atom-one-dark.css';
 import './MainComponent.css';
-//require("html-loader!./MainComponent.html");
-import "html-loader!./MainComponent.html";
+import "./MainComponent.html";
 export default class MainComponent {
 
   constructor() {
@@ -38,7 +37,6 @@ export default class MainComponent {
   }
 
   generateBreadcrumb = (node) => {
-    console.log('generateBreadcrumb')
     try {
       const path = [];
       do {
@@ -59,7 +57,6 @@ export default class MainComponent {
   };
 
   readyDataviewBreadcrumb(event) {
-    console.log('readyDataviewBreadcrumb')
     this.dataviewBreadcrumbCmp = event.detail.cmp
     var tpl = `
     <div class="app-toolbar">
