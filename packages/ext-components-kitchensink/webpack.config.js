@@ -41,6 +41,7 @@ module.exports = function (env) {
           environment: buildenvironment, 
           verbose: buildverbose,
           theme: 'theme-kitchensink',
+          script: './extract-code.js',
           packages: [
             'font-ext', 
             'ux', 
@@ -59,13 +60,13 @@ module.exports = function (env) {
           {from: 'copy/resources',to: 'resources'},
           {from: 'copy/favicon.ico',to: 'favicon.ico'}
         ]),
-        new WebpackShellPlugin({
-          onBuildEnd:{
-            scripts: ['node extract-code.js'],
-            blocking: false,
-            parallel: true
-          }
-        }),
+        // new WebpackShellPlugin({
+        //   onBuildEnd:{
+        //     scripts: ['node extract-code.js'],
+        //     blocking: false,
+        //     parallel: true
+        //   }
+        // }),
       ],
       module: {
         rules: [
