@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtWebpackPlugin = require('@sencha/ext-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-const WebpackShellPlugin = require('webpack-shell-plugin-next')
 const portfinder = require('portfinder')
 
 module.exports = function (env) {
@@ -71,13 +70,6 @@ module.exports = function (env) {
             ]
           },
           {
-            test: /\.css$/,
-            use: [
-                'style-loader', 
-                'css-loader'
-            ]
-          },
-          {
             test: /\.(html)$/,
             use: {
               loader: 'html-loader',
@@ -85,6 +77,13 @@ module.exports = function (env) {
                 attrs: [':data-src']
               }
             }
+          },
+          {
+            test: /\.css$/,
+            use: [
+                'style-loader', 
+                'css-loader'
+            ]
           }
         ]
       },
