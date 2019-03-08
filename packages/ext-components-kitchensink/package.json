@@ -6,7 +6,6 @@
 
   "scripts": {
     "build": "webpack",
-    "start2": "webpack --watch",
     "start": "npm run dev",
     "dev": "webpack-dev-server --env.environment=development"
   },
@@ -29,6 +28,7 @@
     "@babel/preset-env": "^7.3.4",
     "babel-loader": "^8.0.5",
 
+    "portfinder": "^1.0.20",
     "html-webpack-plugin": "^3.2.0",
     "copy-webpack-plugin": "^5.0.0",
     "webpack-shell-plugin-next": "^0.6.4",

@@ -30,6 +30,7 @@ export default class MainComponent {
     }
   }
 
+ 
   readyCodeButton(event) {
     this.codeButtonCmp = event.detail.cmp
     this.afterAllLoaded()
@@ -113,7 +114,6 @@ export default class MainComponent {
   }
 
   readyCodePanel(event) {
-//    console.log('readyCodePanel')
     this.codePanelCmp = event.detail.cmp
     this.afterAllLoaded('readyCodePanel')
   }
@@ -126,15 +126,11 @@ export default class MainComponent {
   dataviewBreadcrumbClick = (event) => {
     var hash = event.detail.location.record.data.hash;
     var node = this.dataviewNavCmp.getStore().findNode('hash',hash);
-    //var node = this.navTreelistCmp.getStore().findNode('hash',hash);
-
     this.navigate(node);
   }
 
   dataviewNavClick = (event) => {
-    console.log(event)
     var record = event.detail.location.record;
-    console.log(record)
     this.navigate(record);
   }
 
@@ -266,48 +262,3 @@ export default class MainComponent {
   }
 
 }
-
-
-      // //mjg order these html, js. css
-      // //let codeMapR = new Map([codeMap].reverse());
-      // Object.keys(codeMap).map((file) => {
-      //   console.log(file)
-      //   //me.tabPanelCmp.insert(0, {
-      //   me.tabPanelCmp.add({
-      //     xtype: 'panel',
-      //     ui: 'code-panel',
-      //     layout: 'fit',
-      //     userSelectable: true,
-      //     scrollable: true,
-      //     tab: {ui: 'app-code-tab', flex: 0, minWidth: 250},
-      //     title: file,
-      //     //html: `<pre><code mwlHighlightJs id='${file}' class='code ${this.csscomponent(file)}'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
-      //     html: `<pre><code class='code'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
-      //   })
-      // })
-
-
-
-
-    // if (
-    //   this.codeButtonCmp != undefined &&
-    //   this.dataviewBreadcrumbCmp != undefined &&
-    //   this.navTreelistCmp != undefined &&
-    //   this.navTreePanelCmp != undefined &&
-    //   this.selectionCmp != undefined &&
-    //   this.dataviewNavCmp != undefined &&
-    //   this.router != undefined &&
-    //   this.codePanelCmp != undefined &&
-    //   this.tabPanelCmp != undefined
-    // ) {
-
-
-      // console.log(this.codeButtonCmp)
-      // console.log(this.dataviewBreadcrumbCmp)
-      // console.log(this.navTreelistCmp)
-      // console.log(this.navTreePanelCmp)
-      // console.log(this.selectionCmp)
-      // console.log(this.dataviewNavCmp)
-      // console.log(this.router)
-      // console.log(this.codePanelCmp)
-      // console.log(this.tabPanelCmp)
