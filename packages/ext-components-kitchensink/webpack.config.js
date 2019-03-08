@@ -60,13 +60,6 @@ module.exports = function (env) {
           {from: 'copy/resources',to: 'resources'},
           {from: 'copy/favicon.ico',to: 'favicon.ico'}
         ]),
-        // new WebpackShellPlugin({
-        //   onBuildEnd:{
-        //     scripts: ['node extract-code.js'],
-        //     blocking: false,
-        //     parallel: true
-        //   }
-        // }),
       ],
       module: {
         rules: [
@@ -83,6 +76,15 @@ module.exports = function (env) {
                 'style-loader', 
                 'css-loader'
             ]
+          },
+          {
+            test: /\.(html)$/,
+            use: {
+              loader: 'html-loader',
+              options: {
+                attrs: [':data-src']
+              }
+            }
           }
         ]
       },
