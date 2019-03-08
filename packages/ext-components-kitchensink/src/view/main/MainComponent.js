@@ -1,7 +1,8 @@
 import hljs from 'highlightjs';
 import 'highlightjs/styles/atom-one-dark.css';
 import './MainComponent.css';
-
+//require("html-loader!./MainComponent.html");
+import "html-loader!./MainComponent.html";
 export default class MainComponent {
 
   constructor() {
