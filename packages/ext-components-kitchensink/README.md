@@ -12,9 +12,3 @@ then, in this folder
 ```
 npm start
 ```
-
-if you edit html files, they will not get recompiled yet, to recompile:
-
-```
-node extract-code.js
-```

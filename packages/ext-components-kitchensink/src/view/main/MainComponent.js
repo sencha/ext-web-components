@@ -29,8 +29,8 @@ export default class MainComponent {
       this.navigate(node);
     }
   }
-
  
+
   readyCodeButton(event) {
     this.codeButtonCmp = event.detail.cmp
     this.afterAllLoaded()
