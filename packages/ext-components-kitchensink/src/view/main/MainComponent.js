@@ -193,7 +193,6 @@ export default class MainComponent {
   }
 
   toggleCode() {
-    console.log('toggleCode')
     var collapsed = this.codePanelCmp.getHidden()
     if(collapsed == true) { collapsed = false }
     else { collapsed = true }
@@ -228,7 +227,6 @@ export default class MainComponent {
     me.tabPanelCmp.removeAll()
     var file = ''
     file = currentRoute.component.name + '.html'
-    console.log(codeMap[file])
     if (codeMap[file] != undefined ) {
       this.tabPanelCmp.add({title: file,
         xtype: 'panel',ui: 'code-panel',layout: 'fit',userSelectable: true,scrollable: true,

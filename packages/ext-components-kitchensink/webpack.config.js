@@ -5,26 +5,43 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const portfinder = require('portfinder')
 
 module.exports = function (env) {
-  var browserprofile = true
-  var treeshake = false
-  var watchprofile = 'yes'
-  var buildprofile = 'desktop'
-  var buildenvironment = 'development'
-  var buildverbose = 'no'
-  var isProd = false
+  var browserprofile
+  var watchprofile
+  var buildenvironment = env.environment || process.env.npm_package_extbuild_defaultenvironment
+  if (buildenvironment == 'production') {
+    browserprofile = false
+    watchprofile = 'no'
+  }
+  else {
+    if (env.browser == undefined) {env.browser = true}
+    browserprofile = JSON.parse(env.browser) || true
+    watchprofile = env.watch || 'yes'
+  }
+  const isProd = buildenvironment === 'production'
+  var buildprofile = env.profile || process.env.npm_package_extbuild_defaultprofile
+  var buildenvironment = env.environment || process.env.npm_package_extbuild_defaultenvironment
+  var buildverbose = env.verbose || process.env.npm_package_extbuild_defaultverbose
+  if (buildprofile == 'all') { buildprofile = '' }
+  if (env.treeshake == undefined) {env.treeshake = false}
+  var treeshake = env.treeshake ? JSON.parse(env.treeshake) : false
+  var basehref = env.basehref || '/'
+  var mode = isProd ? 'production': 'development'
+  console.log(mode)
+  var outputFolder = 'build'
 
   portfinder.basePort = (env && env.port) || 1962
   return portfinder.getPortPromise().then(port => {
 
 
     return {
-      mode: 'development',
-      //devtool: (mode === 'development') ? 'inline-source-map' : false,
+      mode: mode,
+      devtool: (mode === 'development') ? 'inline-source-map' : false,
       devtool: false,
       entry: './src/app.js',
       output: {
         path: path.join(__dirname, './build'),
-        filename: 'bundle.js'
+        //filename: 'bundle.js'
+        filename: "[name].js"
         //filename: "[name].[chunkhash:20].js"
       },
       plugins: [
@@ -32,7 +49,7 @@ module.exports = function (env) {
         new ExtWebpackPlugin({
           framework: 'components',
           port: port,
-          emit: false,
+          emit: true,
           browser: browserprofile,
           treeshake: treeshake,
           watch: watchprofile,
@@ -54,11 +71,11 @@ module.exports = function (env) {
             'treegrid'
           ]
         }),
-        new CopyWebpackPlugin([
-          {from: 'copy/extjs',to: 'extjs'},
-          {from: 'copy/resources',to: 'resources'},
-          {from: 'copy/favicon.ico',to: 'favicon.ico'}
-        ]),
+        // new CopyWebpackPlugin([
+        //   {from: 'copy/extjs',to: 'extjs'},
+        //   {from: 'copy/resources',to: 'resources'},
+        //   {from: 'copy/favicon.ico',to: 'favicon.ico'}
+        // ]),
       ],
       module: {
         rules: [
@@ -87,29 +104,21 @@ module.exports = function (env) {
           }
         ]
       },
+      stats: 'none',
+      optimization: {
+        noEmitOnErrors: true
+      },
+      node: false,
       devServer: {
-        contentBase: 'build',
-        hot: true,
+        contentBase: outputFolder,
+        hot: !isProd,
         historyApiFallback: true,
         host: '0.0.0.0',
         port: port,
         disableHostCheck: false,
         compress: isProd,
         inline:!isProd,
-        stats: {
-          assets: false,
-          children: false,
-          chunks: false,
-          hash: false,
-          modules: false,
-          publicPath: false,
-          timings: false,
-          version: false,
-          warnings: false,
-          colors: {
-            green: '\u001b[32m'
-          }
-        }
+        stats: 'none'
       }
     }
 })

@@ -9,7 +9,8 @@ import '@sencha/ext-components/lib/ext-panel.component';
 import '@sencha/ext-components/lib/ext-tabpanel.component';
 import '@sencha/ext-components/lib/ext-titlebar.component';
 import '@sencha/ext-components/lib/ext-toolbar.component';
-
+import '@sencha/ext-components/lib/ext-grid.component';
+import '@sencha/ext-components/lib/ext-column.component';
 
 import getMenu from './menu';
 import MainComponent from './view/main/MainComponent.js';
