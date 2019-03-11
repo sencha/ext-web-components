@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtWebpackPlugin = require('@sencha/ext-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+//const CopyWebpackPlugin = require('copy-webpack-plugin')
 const portfinder = require('portfinder')
 
 module.exports = function (env) {
@@ -24,9 +24,8 @@ module.exports = function (env) {
   if (buildprofile == 'all') { buildprofile = '' }
   if (env.treeshake == undefined) {env.treeshake = false}
   var treeshake = env.treeshake ? JSON.parse(env.treeshake) : false
-  var basehref = env.basehref || '/'
+  //var basehref = env.basehref || '/'
   var mode = isProd ? 'production': 'development'
-  console.log(mode)
   var outputFolder = 'build'
 
   portfinder.basePort = (env && env.port) || 1962
@@ -40,7 +39,6 @@ module.exports = function (env) {
       entry: './src/app.js',
       output: {
         path: path.join(__dirname, './build'),
-        //filename: 'bundle.js'
         filename: "[name].js"
         //filename: "[name].[chunkhash:20].js"
       },
@@ -48,15 +46,16 @@ module.exports = function (env) {
         new HtmlWebpackPlugin({template: "index.html",hash: true,inject: "body"}),
         new ExtWebpackPlugin({
           framework: 'components',
+          toolkit: 'modern',
+          theme: 'theme-kitchensink',
+          profile: buildprofile, 
+          environment: buildenvironment,
+          treeshake: treeshake,
           port: port,
           emit: true,
           browser: browserprofile,
-          treeshake: treeshake,
           watch: watchprofile,
-          profile: buildprofile, 
-          environment: buildenvironment, 
           verbose: buildverbose,
-          theme: 'theme-kitchensink',
           script: './extract-code.js',
           packages: [
             'font-ext', 
@@ -79,28 +78,14 @@ module.exports = function (env) {
       ],
       module: {
         rules: [
-          {
-            test: /\.(js)$/,
-            exclude: /node_modules/,
-            use: [
-              'babel-loader'
-            ]
-          },
+          { test: /\.(js)$/, exclude: /node_modules/, use: ['babel-loader'] },
           {
             test: /\.(html)$/,
-            use: {
-              loader: 'html-loader',
-              options: {
-                attrs: [':data-src']
-              }
-            }
+            use: { loader: 'html-loader' }
           },
           {
             test: /\.css$/,
-            use: [
-                'style-loader', 
-                'css-loader'
-            ]
+            use: ['style-loader','css-loader']
           }
         ]
       },
