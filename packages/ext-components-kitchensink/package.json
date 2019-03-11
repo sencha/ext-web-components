@@ -2,18 +2,47 @@
   "name": "@sencha/ext-components-kitchensink",
   "version": "7.0.0",
   "description": "ext-components-kitchensink",
-
   "scripts": {
-    "build": "webpack",
     "start": "npm run dev",
-    "dev": "webpack-dev-server --env.environment=development"
+    "clean": "rimraf build",
+    "dev": "webpack-dev-server --env.environment=development",
+    "prod": "npm run build",
+
+    "b1": "npm run clean && cross-env webpack --env.environment=production --env.treeshake=true",
+    "b2": "cross-env webpack --env.environment=production --env.basehref='/'",
+
+    "build": "npm run clean && cross-env webpack --env.environment=production --env.treeshake=true && cross-env webpack --env.environment=production --env.basehref='/'",
+    "buildexample": "npm run clean && cross-env webpack --env.environment=production --env.treeshake=true && cross-env webpack --env.environment=production --env.basehref='/ExtAngular/6.7.0/kitchensink/'"
+  },
+  "extbuild": {
+    "defaultprofile": "",
+    "defaultenvironment": "development",
+    "defaultverbose": "yes"
   },
   "devDependencies": {
-    "@sencha/ext-components": "^7.0.0",
+
+    "hammerjs": "^2.0.8",
+    "d3": "4.5.0",
+    "highlight.js": "^9.14.2",
+    "highlightjs": "~9.12.0",
+
+    "@sencha/ext-components": "~7.0.0",
     "@sencha/ext-webpack-plugin": "^7.0.0",
 
+    "@sencha/ext": "~6.7.0",
+    "@sencha/ext-modern": "~6.7.0",
+    "@sencha/ext-modern-treegrid": "~6.7.0",
+    "@sencha/ext-modern-theme-material": "~6.7.0",
+
+    "@sencha/ext-calendar": "~6.7.0",
+    "@sencha/ext-charts": "~6.7.0",
+    "@sencha/ext-d3": "~6.7.0",
+    "@sencha/ext-exporter": "~6.7.0",
+    "@sencha/ext-pivot": "~6.7.0",
+    "@sencha/ext-pivot-d3": "~6.7.0",
+    "@sencha/ext-ux": "~6.7.0",
+
     "@babel/core": "^7.3.4",
-    "@babel/runtime": "^7.3.4",
     "@babel/plugin-proposal-class-properties": "^7.3.4",
     "@babel/plugin-proposal-decorators": "^7.3.0",
     "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
@@ -25,18 +54,21 @@
     "@babel/plugin-syntax-import-meta": "^7.2.0",
     "@babel/plugin-transform-runtime": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
+    "@babel/runtime": "^7.3.4",
     "babel-loader": "^8.0.5",
 
-    "highlightjs": "~9.12.0",
+    "rimraf": "^2.6.3",
+    "cross-env": "^5.2.0",
     "fs-extra": "^7.0.1",
-
-    "html-webpack-plugin": "^3.2.0",
-    "copy-webpack-plugin": "^5.0.0",
     "portfinder": "^1.0.20",
-    "html-loader": "^0.5.5",
+
+    "copy-webpack-plugin": "^5.0.0",
+    "html-webpack-plugin": "^3.2.0",
+
     "css-loader": "^2.1.0",
+    "html-loader": "^0.5.5",
     "style-loader": "^0.23.1",
-     
+
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3",
     "webpack-dev-server": "^3.2.1"
