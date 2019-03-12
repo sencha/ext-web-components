@@ -138,6 +138,8 @@ export default class MainComponent {
   }
 
   navigate(record) {
+    // console.log('navigate')
+    // console.dir(record)
     if (record == null) {
       console.log('it was null')
       return
@@ -149,8 +151,8 @@ export default class MainComponent {
       var node = this.dataviewNavCmp.getStore().findNode('hash',hash);
       this.dataviewBreadcrumbCmp.setData(this.generateBreadcrumb(node))
 
-      this.showRouter();
       window.location.hash = '#' + hash
+      this.showRouter();
     }
     else {
       var node = this.dataviewNavCmp.getStore().findNode('hash',hash);

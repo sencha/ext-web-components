@@ -30,51 +30,50 @@ module.exports = function (env) {
 
   portfinder.basePort = (env && env.port) || 1962
   return portfinder.getPortPromise().then(port => {
-
-
+    const plugins = [
+      new HtmlWebpackPlugin({template: "./src/index.html",hash: true,inject: "body"}),
+      new ExtWebpackPlugin({
+        framework: 'components',
+        toolkit: 'modern',
+        theme: 'theme-kitchensink',
+        profile: buildprofile, 
+        environment: buildenvironment,
+        treeshake: treeshake,
+        port: port,
+        emit: true,
+        browser: browserprofile,
+        watch: watchprofile,
+        verbose: buildverbose,
+        script: './extract-code.js',
+        packages: [
+          'font-ext', 
+          'ux', 
+          'd3',
+          'pivot-d3',
+          'font-awesome', 
+          'exporter',
+          'pivot', 
+          'calendar', 
+          'charts',
+          'treegrid'
+        ]
+      }),
+      // new CopyWebpackPlugin([
+      //   {from: 'copy/extjs',to: 'extjs'},
+      //   {from: 'copy/resources',to: 'resources'},
+      //   {from: 'copy/favicon.ico',to: 'favicon.ico'}
+      // ]),
+    ]
     return {
       mode: mode,
       devtool: (mode === 'development') ? 'inline-source-map' : false,
       entry: './src/app.js',
       output: {
-        path: path.join(__dirname, './build'),
+        path: path.join(__dirname, outputFolder),
         filename: "[name].js"
         //filename: "[name].[chunkhash:20].js"
       },
-      plugins: [
-        new HtmlWebpackPlugin({template: "./src/index.html",hash: true,inject: "body"}),
-        new ExtWebpackPlugin({
-          framework: 'components',
-          toolkit: 'modern',
-          theme: 'theme-kitchensink',
-          profile: buildprofile, 
-          environment: buildenvironment,
-          treeshake: treeshake,
-          port: port,
-          emit: true,
-          browser: browserprofile,
-          watch: watchprofile,
-          verbose: buildverbose,
-          script: './extract-code.js',
-          packages: [
-            'font-ext', 
-            'ux', 
-            'd3',
-            'pivot-d3',
-            'font-awesome', 
-            'exporter',
-            'pivot', 
-            'calendar', 
-            'charts',
-            'treegrid'
-          ]
-        }),
-        // new CopyWebpackPlugin([
-        //   {from: 'copy/extjs',to: 'extjs'},
-        //   {from: 'copy/resources',to: 'resources'},
-        //   {from: 'copy/favicon.ico',to: 'favicon.ico'}
-        // ]),
-      ],
+      plugins: plugins,
       module: {
         rules: [
           { test: /\.(js)$/, exclude: /node_modules/, use: ['babel-loader'] },
