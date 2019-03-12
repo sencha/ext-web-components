@@ -64,12 +64,12 @@ function run() {
 
   var chalk = require('chalk')
   var prefix = ``
-  const platform = require('os').platform()
+  var platform = require('os').platform()
   if (platform == 'darwin') { prefix = `ℹ ｢ext｣:` }
   else { prefix = `i [ext]:` }
   var val = `${chalk.green(prefix)} `
   outputDir = outputDir.replace(process.cwd(), '').trim()
-  console.log(val + 'wrote code.js to ' + outputDir)
+  console.log(val + 'writing code.js to ' + outputDir)
 }
 
 run()

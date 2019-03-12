@@ -35,7 +35,6 @@ module.exports = function (env) {
     return {
       mode: mode,
       devtool: (mode === 'development') ? 'inline-source-map' : false,
-      devtool: false,
       entry: './src/app.js',
       output: {
         path: path.join(__dirname, './build'),
@@ -43,7 +42,7 @@ module.exports = function (env) {
         //filename: "[name].[chunkhash:20].js"
       },
       plugins: [
-        new HtmlWebpackPlugin({template: "index.html",hash: true,inject: "body"}),
+        new HtmlWebpackPlugin({template: "./src/index.html",hash: true,inject: "body"}),
         new ExtWebpackPlugin({
           framework: 'components',
           toolkit: 'modern',
