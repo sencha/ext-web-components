@@ -57,10 +57,10 @@ export class Router {
           currentComponent = route.component
         }
       }
-      setTimeout(function() {
+     // setTimeout(function() {
         window[currentHash] = new currentComponent()
         scope.rootElem.innerHTML = window._code[currentHash][currentComponent.name + '.html']
-      },50);
+     // },50);
     }
     else {
       //console.log('hash is == 0')
@@ -87,15 +87,18 @@ export class ExtRouterComponent extends HTMLElement {
 
   attributeChangedCallback(attr, oldVal, newVal) {
     if (attr == 'hidden') {
-      var route = document.getElementById("route");
-      if (route != null) {
-        if (newVal == 'true') {
-          route.style.display = "none"
+      let timerId = setInterval(() => {
+        var route = document.getElementById("route");
+        if (route != null) {
+          clearInterval(timerId);
+          if (newVal == 'true') {
+            route.style.display = "none"
+          }
+          else {
+            route.style.display = "block"
+          }
         }
-        else {
-          route.style.display = "block"
-        }
-      }
+      }, 50);
     }
     if (attr == 'onready') {
       if (newVal) {
