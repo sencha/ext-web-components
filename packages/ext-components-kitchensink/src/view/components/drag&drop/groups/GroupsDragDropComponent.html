@@ -1,5 +1,18 @@
-<ext-button 
-  text="groups"
-  onready="groups.readyButton1(event)"
-  ontap="groups.tapButton1(event)">
-</ext-button>
+<ext-panel
+    padding="10"
+    shadow="true"
+    onready="groups.parentReady(event)"
+    height="100%">
+
+    <ext-container cls="group1">
+      <ext-container onready="groups.src1Ready(event)" cls="group-source-group1 group-source" html="group1"></ext-container>
+      <ext-container onready="groups.src2Ready(event)" cls="group-source-group2 group-source" html="group2"></ext-container>
+      <ext-container onready="groups.srcbReady(event)" cls="group-source-both group-source" html="group1, group2"></ext-container>
+    </ext-container>
+
+    <ext-container className="group2">
+      <ext-container onready="groups.tar1Ready(event)" cls="group-target-group1 group-target" html="group1"></ext-container>
+      <ext-container onready="groups.tar2Ready(event)" cls="group-target-group2 group-target" html="group2"></ext-container>
+      <ext-container onready="groups.tarbReady(event)" cls="group-target-both group-target" html="group1, group2"></ext-container>
+    </ext-container>
+</ext-panel>
