@@ -1,7 +1,6 @@
 import hljs from 'highlightjs';
 import 'highlightjs/styles/atom-one-dark.css';
 import './MainComponent.css';
-import "./MainComponent.html";
 export default class MainComponent {
 
   constructor() {
@@ -21,7 +20,6 @@ export default class MainComponent {
 
   afterAllLoaded(f) {
     this.wait = this.wait - 1;
-//    console.log('***wait*** ' + this.wait )
     if (this.wait == 0) {
       var hash = window.location.hash.substr(1)
       if (hash == '') {hash = 'all'}
