@@ -1,5 +1,5 @@
 <ext-container height="100%" layout="vbox" padding="10" fitToParent="true">
-  <ext-carousel layout="vbox" margin='5 5 5 5' flex="1" shadow="true">
+  <ext-carousel layout="vbox" margin="5 5 5 5" flex="1" shadow="true" onready="carousel.readyCarouselHorizontal(event)" >
     <ext-container
       flex="1"
       layout='{"type":"vbox", "align": "center", "pack": "center"}'
@@ -23,19 +23,17 @@
     <ext-container flex="1"
       layout='{"type":"vbox", "align": "center", "pack": "center"}'
       cls="card cardDark"
-       style="background-color: #303030; font-size: 18px; color: white;"
-       html="Carousels can also be vertical <em>(swipe up)...">
+      html="Carousels can also be vertical <em>(swipe up)...">
     </ext-container>
     <ext-container flex="1"
       layout='{"type":"vbox", "align": "center", "pack": "center"}'
       cls="card cardDark"
-       style="background-color: #303030; font-size: 18px; color: white;"
-       html="And can also use <code class='code'>ui:light</code>.">
+      html="And can also use <code class='code'>ui:light</code>.">
     </ext-container>
     <ext-container flex="1"
       layout='{"type":"vbox", "align": "center", "pack": "center"}'
       cls="card cardDark"
-       html="Card #3">
+      html="Card #3">
     </ext-container>
   </ext-carousel>
 </ext-container>
