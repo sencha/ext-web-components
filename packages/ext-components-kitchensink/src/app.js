@@ -1,6 +1,8 @@
 //import { Route } from '@sencha/ext-components';
 
 import  { Route } from '@sencha/ext-components/lib/aa-router.component';
+import '@sencha/ext-components/lib/ext-container.component';
+import '@sencha/ext-components/lib/ext-carousel.component';
 import '@sencha/ext-components/lib/ext-button.component';
 import '@sencha/ext-components/lib/ext-dataview.component';
 import '@sencha/ext-components/lib/ext-searchfield.component';
