@@ -1,5 +1,16 @@
-<ext-button 
-  text="handles"
-  onready="handles.readyButton1(event)"
-  ontap="handles.tapButton1(event)">
-</ext-button>
+<ext-panel 
+    shadow="true"
+    onready="handles.parentReady(event)"
+    padding="10"
+    height="100%">
+    
+    <ext-container onready="handles.handleRepeatReady(event)" cls="handle-repeat handle-source">
+      <ext-container cls="handle" html="Foo"></ext-container>
+      <ext-container cls="handle" html="Bar"></ext-container>
+      <ext-container cls="handle" html="Baz"></ext-container>
+    </ext-container>
+
+    <ext-container onready="handles.dragReady(event)" cls="handle-handles handle-source">
+      <ext-container cls="handle" html="Drag"></ext-container>
+    </ext-container>
+</ext-panel>
