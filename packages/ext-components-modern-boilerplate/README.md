@@ -1,10 +1,10 @@
-# ext-components-kitchensink
+# ext-components-modern-boilerplate
 
 
 AT THE ROOT of the repo
 
 ```
-npm install 
+npm install
 ```
 
 then, in this folder
