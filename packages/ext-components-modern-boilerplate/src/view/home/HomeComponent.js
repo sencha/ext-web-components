@@ -1,42 +1,42 @@
 import data from './data.js';
+import "./HomeComponent.html";
+import { xsmall, small } from '../../helper/responsiveFormulas';
 
 export default class HomeComponent {
   readyGrid(event) {
     this.gridCmp = event.detail.cmp;
+  }
+
+  readyGridColumn(event) {
     const store = Ext.create('Ext.data.Store', {
         fields: ['name', 'email', 'phone', 'hoursTaken', 'hoursRemaining'],
         data,
     });
-
-    const columns = [
-        {
-            text: 'Name',
-            flex: '2',
-            dataIndex: 'name',
-        },
-        {
-            text: 'Email',
-            flex: '3',
-            dataIndex: 'email',
-            responsiveConfig: {
-                'width <= 576': { hidden: true },
-                'width > 768': { hidden: false },
-            },
-        },
-        {
-            text: 'Phone',
-            flex: '2',
-            dataIndex: 'phone',
-        },
-    ];
-
-    this.gridCmp.setColumns(columns);
     this.gridCmp.setStore(store);
   }
 
-  onSearch(instanceInfo) {
+  emailGridColumnReady(event) {
+    this.emailGridColumn = event.detail.cmp;
+    if (Ext.os.is.Phone) {
+      this.emailGridColumn.setHidden(true);
+    } else {
+      this.emailGridColumn.setHidden(false);
+    }
+  }
+
+  readySearchField(event) {
+    this.SearchField = event.detail.cmp;
+
+    if (Ext.os.is.Phone) {
+      this.SearchField.setFlex(1);
+    } else {
+      this.SearchField.setFlex(undefined);
+    }
+  }
+
+  onSearch(event) {
     this.gridCmp.getStore().clearFilter();
-    const newValue = instanceInfo.detail.newValue;
+    const newValue = event.detail.newValue;
 
     if (newValue.length) {
         const newValueStr = newValue.toLowerCase();

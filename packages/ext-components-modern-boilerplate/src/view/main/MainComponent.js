@@ -16,6 +16,7 @@ export default class MainComponent {
       root: navTreeRoot
     });
     this.wait = 9;
+
   }
 
   afterAllLoaded(f) {
@@ -32,6 +33,12 @@ export default class MainComponent {
   readyNavTreePanel(event) {
     this.navTreePanelCmp = event.detail.cmp
     this.afterAllLoaded('readyNavTreePanel')
+
+    if(Ext.os.is.Phone) {
+      this.navTreePanelCmp.setCollapsed(true);
+    } else {
+      this.navTreePanelCmp.setCollapsed(false);
+    }
   }
 
   readyNavTreelist(event) {
@@ -40,53 +47,9 @@ export default class MainComponent {
     this.afterAllLoaded('readyNavTreelist')
   }
 
-  readySelection(event) {
-    this.selectionCmp = event.detail.cmp
-    // var bodyStyle = `
-    // backgroundSize: 20px 20px;
-    // borderWidth: 0px;
-    // backgroundColor: #e8e8e8;
-    // backgroundImage:
-    //   linear-gradient(0deg, #f5f5f5 1.1px, transparent 0),
-    //   linear-gradient(90deg, #f5f5f5 1.1px, transparent 0)`
-    // this.selectionCmp.setBodyStyle(bodyStyle)
-    this.afterAllLoaded('readySelection');
-  }
-
-  readyDataviewNav(event) {
-    this.dataviewNavCmp = event.detail.cmp
-    this.dataviewNavCmp.setStyle({'background':'top','display':'block','text-align':'center'})
-    var tpl = `
-    <div class="app-thumbnail">
-      <div class="app-thumbnail-icon-wrap">
-        <div class="app-thumbnail-icon {iconCls}"></div>
-      </div>
-      <div class="app-thumbnail-text">{text}</div>
-      <div class="{premiumClass}"></div>
-    </div>`
-    this.dataviewNavCmp.setItemTpl(tpl)
-    this.dataviewNavCmp.setStore(this.treeStore)
-    this.afterAllLoaded('readyDataviewNav')
-  }
-
   readyRouter(event) {
     this.router = event.target;
     this.afterAllLoaded('readyRouter')
-  }
-
-  readyCodePanel(event) {
-    this.codePanelCmp = event.detail.cmp
-    this.afterAllLoaded('readyCodePanel')
-  }
-
-  readyTabPanel(event) {
-    this.tabPanelCmp = event.detail.cmp
-    this.afterAllLoaded('readyTabPanel')
-  }
-
-  dataviewNavClick = (event) => {
-    var record = event.detail.location.record;
-    this.navigate(record);
   }
 
   navTreelistSelectionChange(event) {
@@ -102,32 +65,17 @@ export default class MainComponent {
     var hash = record.data.hash
     var childNum = record.childNodes.length
     if (childNum == 0 && hash != undefined) {
-
-      var node = this.dataviewNavCmp.getStore().findNode('hash',hash);
-      window.location.hash = '#' + hash
-      this.showRouter();
+      window.location.hash = '#' + hash;
     }
     else {
-      var node = this.dataviewNavCmp.getStore().findNode('hash',hash);
       this.dataviewNavCmp.setData(node.childNodes)
-      this.showSelection();
     }
-  }
 
-  showSelection() {
-    this.selectionCmp.setHidden(false);
-    this.router.hidden = true;
-  }
-
-  showRouter() {
-    this.selectionCmp.setHidden(true);
-    this.router.hidden = false;
-  }
-
-  doClickToolbar(event) {
-    var collapsed = this.navTreePanelCmp.getCollapsed()
-    if (collapsed == true){collapsed = false} else {collapsed = true}
-    this.navTreePanelCmp.setCollapsed(collapsed)
+    if(Ext.os.is.Phone) {
+      var collapsed = this.navTreePanelCmp.getCollapsed()
+      if (collapsed == true){collapsed = false} else{collapsed = true}
+      this.navTreePanelCmp.setCollapsed(collapsed)
+    }
   }
 
   containsMatches(node) {
@@ -137,20 +85,19 @@ export default class MainComponent {
     return found;
   }
 
-  filterNav = (event) => {
-    var value = event.detail.newValue
-    this.filterRegex = new RegExp(`(${Ext.String.escapeRegex(value)})`, 'i');
-    this.navTreelistCmp.getStore().filterBy(record => this.containsMatches(record));
-  }
-
   toggleTree() {
     var collapsed = this.navTreePanelCmp.getCollapsed()
     if (collapsed == true){collapsed = false} else{collapsed = true}
     this.navTreePanelCmp.setCollapsed(collapsed)
   }
 
-  csscomponent = (file) => {
-  if (file.endsWith(".html")) {return 'html'}
-  if (file.endsWith(".js")) {return 'js'}
+  toggleButtonReady(event) {
+    const navButton = event.detail.cmp;
+
+    if (Ext.os.is.Phone) {
+      navButton.setHidden(false);
+    } else {
+      navButton.setHidden(true);
+    }
   }
 }
