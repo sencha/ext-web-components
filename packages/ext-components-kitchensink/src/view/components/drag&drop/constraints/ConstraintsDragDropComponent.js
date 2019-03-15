@@ -1,4 +1,6 @@
 import './ConstraintsDragDropComponent.css';
+import './ConstraintsDragDropComponent.html';
+
 
 export default class ConstraintsDragDropComponent {
 

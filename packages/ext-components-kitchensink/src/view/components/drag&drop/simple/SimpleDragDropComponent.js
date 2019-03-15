@@ -1,4 +1,5 @@
 import './SimpleDragDropComponent.css';
+import './SimpleDragDropComponent.html';
 
 export default class SimpleDragDropComponent {
   constructor () {}
