@@ -41,8 +41,16 @@ function extractAll(dir) {
         console.log(`Error extracting code from ${file}`, e)
       }
     }
+    else 
+    if (file.slice(-5) === `.scss`) {
+      try {
+        extractFrom(example, file, fullPath)
+      } catch (e) {
+        console.log(`Error extracting code from ${file}`, e)
+      }
+    }
     else {
-      console.log(file)
+      console.log(fullPath + '' + file)
     }
   }
 }

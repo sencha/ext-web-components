@@ -244,6 +244,14 @@ export default class MainComponent {
         html: `<pre><code class='code'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
       })
     }
+    file = currentRoute.component.name + '.scss'
+    if (codeMap[file] != undefined ) {
+      me.tabPanelCmp.add({title: file,
+        xtype: 'panel',ui: 'code-panel',layout: 'fit',userSelectable: true,scrollable: true,
+        tab: {ui: 'app-code-tab', flex: 0, minWidth: 250},
+        html: `<pre><code class='code'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
+      })
+    }
     file = currentRoute.component.name + '.css'
     if (codeMap[file] != undefined ) {
       me.tabPanelCmp.add({title: file,
