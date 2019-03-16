@@ -171,6 +171,22 @@ export default class ExtBase extends HTMLElement {
     }
     if (parentxtype === 'grid' || parentxtype === 'lockedgrid') {
       if (childxtype === 'column' || childxtype === 'treecolumn' || childxtype === 'textcolumn' || childxtype === 'checkcolumn' || childxtype === 'datecolumn' || childxtype === 'rownumberer' || childxtype === 'numbercolumn' || childxtype === 'booleancolumn' ) {
+
+        if(location == null) {
+          parentCmp.addColumn(childCmp)
+//          console.log(`${parentCmp.xtype}.add(${childCmp.xtype})`)
+          return
+        }
+        else {
+          parentCmp.insertColumn(location, childCmp)
+          //mjgComment console.log(`${parentCmp.xtype}.insert(${location}, ${childCmp.xtype})`)
+          return
+        }
+
+
+
+
+
         parentCmp.addColumn(childCmp)
 //        console.log(`${parentCmp.xtype}.addColumn(${childCmp.xtype})`)
         return

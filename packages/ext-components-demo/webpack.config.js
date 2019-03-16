@@ -50,20 +50,12 @@ module.exports = function (env) {
         rules: [
           { test: /\.(js)$/, exclude: /node_modules/, use: ['babel-loader'] },
           { test: /\.(html)$/,use: { loader: 'html-loader' } },
-          //{ test: /\.css$/,use: ['style-loader','css-loader'] }
-
           {
             test: /\.(css|scss)$/,
             use: [
-              {
-                loader: 'style-loader'
-              },
-              {
-                loader: 'css-loader'
-              },
-              {
-                loader: 'sass-loader'
-              }
+              { loader: 'style-loader' },
+              { loader: 'css-loader' },
+              { loader: 'sass-loader' }
             ]
           }
         ]
