@@ -1,15 +1,15 @@
 <!-- <ext-container padding="10px" layout="vbox" fitToParent="true" width="100%" height="100%"> -->
 
   <ext-container>
-  <ext-actionsheet displayed="false">
-    <ext-button [handler]="this.exportToXlsx" text="Excel xlsx"></ext-button>
-    <ext-button [handler]="this.exportToXml" text="Excel xml"></ext-button>
-    <ext-button [handler]="this.exportToCSV" text="CSV"></ext-button>
-    <ext-button [handler]="this.exportToTSV" text="TSV"></ext-button>
-    <ext-button [handler]="this.exportToHtml" text="HTML"></ext-button>
-    <ext-button [handler]="this.onCancelExport" text="Cancel"></ext-button>
-  </ext-actionsheet>
-</ext-container>
+    <ext-actionsheet displayed="false">
+      <ext-button [handler]="this.exportToXlsx" text="Excel xlsx"></ext-button>
+      <ext-button [handler]="this.exportToXml" text="Excel xml"></ext-button>
+      <ext-button [handler]="this.exportToCSV" text="CSV"></ext-button>
+      <ext-button [handler]="this.exportToTSV" text="TSV"></ext-button>
+      <ext-button [handler]="this.exportToHtml" text="HTML"></ext-button>
+      <ext-button [handler]="this.onCancelExport" text="Cancel"></ext-button>
+    </ext-actionsheet>
+  </ext-container>
 
   <ext-grid width="100%" height="100%"
     onready="bigdata.readyGrid(event)"

@@ -86,7 +86,7 @@
     border=true
     shadow=true
     scrollable="y"
-    width="850px"
+    width="900px"
     height="100%"
     layout="fit"
     resizable='{"edges": "west", "dynamic": "true"}'
@@ -100,7 +100,13 @@
     <ext-tabpanel 
       shadow="true"
       height="100%"
-      tabBar='{"layout": {"pack": "space-around"}}'
+      tabConfig='{
+        "title": "Custom Title"
+        "tooltip": "A button tooltip".
+        "margin": "0 0 0 -15"
+    }'
+      tabBarPosition="top"
+      tabBar='{"layout": {"pack": "start"}}'
       onready="main.readyTabPanel(event)">
     </ext-tabpanel>
   </ext-panel>
