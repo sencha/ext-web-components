@@ -1,31 +1,5 @@
 function carousel() {
 
-  //<ext-container height="100%" layout="vbox" padding="10" fitToParent="true"></ext-container>
-  // <ext-carousel layout="vbox" margin="5 5 5 5" flex="1" shadow="true" onready="carousel.readyCarouselHorizontal(event)" >
-  //   <ext-container
-  //     flex="1"
-  //     layout='{"type":"vbox", "align": "center", "pack": "center"}'
-  //     cls="card cardLight"
-  //     onready="carousel.readyCarouselHorizontalChild(event)"
-  //     html="Swipe left to show the next card...">
-  //   </ext-container>
-  //   <ext-container
-  //     flex="1"
-  //     layout='{"type":"vbox", "align": "center", "pack": "center"}'
-  //     cls="card cardLight"
-  //     onready="carousel.readyCarouselHorizontalChild(event)"
-  //     html="You can also tap on either side of the indicators.">
-  //   </ext-container>
-  //   <ext-container
-  //     flex="1"
-  //     cls="card cardLight"
-  //     layout='{"type":"vbox", "align": "center", "pack": "center"}'
-  //     onready="carousel.readyCarouselHorizontalChild(event)"
-  //     html="Card #3">
-  //   </ext-container>
-  // </ext-carousel>
-  //</ext-carousel>
-
   var oRoot = {
     xtype: 'container',
     title: 'root',
@@ -70,3 +44,29 @@ function carousel() {
   carousel.insert(2,child03)
 
 }
+
+  //<ext-container height="100%" layout="vbox" padding="10" fitToParent="true"></ext-container>
+  // <ext-carousel layout="vbox" margin="5 5 5 5" flex="1" shadow="true" onready="carousel.readyCarouselHorizontal(event)" >
+  //   <ext-container
+  //     flex="1"
+  //     layout='{"type":"vbox", "align": "center", "pack": "center"}'
+  //     cls="card cardLight"
+  //     onready="carousel.readyCarouselHorizontalChild(event)"
+  //     html="Swipe left to show the next card...">
+  //   </ext-container>
+  //   <ext-container
+  //     flex="1"
+  //     layout='{"type":"vbox", "align": "center", "pack": "center"}'
+  //     cls="card cardLight"
+  //     onready="carousel.readyCarouselHorizontalChild(event)"
+  //     html="You can also tap on either side of the indicators.">
+  //   </ext-container>
+  //   <ext-container
+  //     flex="1"
+  //     cls="card cardLight"
+  //     layout='{"type":"vbox", "align": "center", "pack": "center"}'
+  //     onready="carousel.readyCarouselHorizontalChild(event)"
+  //     html="Card #3">
+  //   </ext-container>
+  // </ext-carousel>
+  //</ext-carousel>
