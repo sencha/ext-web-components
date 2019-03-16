@@ -2,6 +2,10 @@ import hljs from 'highlightjs';
 import 'highlightjs/styles/atom-one-dark.css';
 import './MainComponent.css';
 import "./MainComponent.html";
+
+Ext.require([
+  'Ext.data.TreeStore'
+])
 export default class MainComponent {
 
   constructor() {
@@ -138,8 +142,6 @@ export default class MainComponent {
   }
 
   navigate(record) {
-    // console.log('navigate')
-    // console.dir(record)
     if (record == null) {
       console.log('it was null')
       return
@@ -207,11 +209,6 @@ export default class MainComponent {
     this.navTreePanelCmp.setCollapsed(collapsed)
   }
 
-  csscomponent = (file) => {
-  if (file.endsWith(".html")) {return 'html'}
-  if (file.endsWith(".js")) {return 'js'}
-  }
-
   setCodeTabs() {
     var me = this
     var hash = window.location.hash.substr(1)
@@ -224,47 +221,42 @@ export default class MainComponent {
         if (route.hash == hash) {currentRoute = route}
       }
     });
-    //window[currentRoute.hash] = new currentRoute.component()
     var codeMap = _code[currentRoute.hash]
     me.tabPanelCmp.removeAll()
     var file = ''
     file = currentRoute.component.name + '.html'
     if (codeMap[file] != undefined ) {
-      this.tabPanelCmp.add({title: file,
-        xtype: 'panel',ui: 'code-panel',layout: 'fit',userSelectable: true,scrollable: true,
-        tab: {ui: 'app-code-tab', flex: 0, minWidth: 250},
-        html: `<pre><code class='code'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
-      })
+      me.tabPanelCmp.add(this.getTab(file, codeMap[file]))
     }
     file = currentRoute.component.name + '.js'
     if (codeMap[file] != undefined ) {
-      me.tabPanelCmp.add({title: file,
-        xtype: 'panel',ui: 'code-panel',layout: 'fit',userSelectable: true,scrollable: true,
-        tab: {ui: 'app-code-tab', flex: 0, minWidth: 250},
-        html: `<pre><code class='code'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
-      })
+      me.tabPanelCmp.add(this.getTab(file, codeMap[file]))
     }
     file = currentRoute.component.name + '.scss'
     if (codeMap[file] != undefined ) {
-      me.tabPanelCmp.add({title: file,
-        xtype: 'panel',ui: 'code-panel',layout: 'fit',userSelectable: true,scrollable: true,
-        tab: {ui: 'app-code-tab', flex: 0, minWidth: 250},
-        html: `<pre><code class='code'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
-      })
+      me.tabPanelCmp.add(this.getTab(file, codeMap[file]))
     }
     file = currentRoute.component.name + '.css'
     if (codeMap[file] != undefined ) {
-      me.tabPanelCmp.add({title: file,
-        xtype: 'panel',ui: 'code-panel',layout: 'fit',userSelectable: true,scrollable: true,
-        tab: {ui: 'app-code-tab', flex: 0, minWidth: 250},
-        html: `<pre><code class='code'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
-      })
+      me.tabPanelCmp.add(this.getTab(file, codeMap[file]))
     }
-    setTimeout(function() {
+    file = currentRoute.component.name + 'Data.js'
+    if (codeMap[file] != undefined ) {
+      me.tabPanelCmp.add(this.getTab(file, codeMap[file]))
+    }
+//    setTimeout(function() {
       document.querySelectorAll('pre code').forEach((block) => {
         hljs.highlightBlock(block);
       });
-    },50);
+//    },50);
+  }
+
+  getTab(file,codeMapFile) {
+    return {title: file,
+      xtype: 'panel',ui: 'code-panel',layout: 'fit',userSelectable: true,scrollable: true,
+      tab: {ui: 'app-code-tab', flex: 0, padding: '0 5 0 0', minWidth: 220, maxWidth: 250},
+      html: `<pre><code class='code'>${codeMapFile.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
+    }
   }
 
 }

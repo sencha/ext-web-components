@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { BaseHrefWebpackPlugin } = require('base-href-webpack-plugin');
 const ExtWebpackPlugin = require('@sencha/ext-webpack-plugin')
 const portfinder = require('portfinder')
 
@@ -12,6 +13,7 @@ module.exports = function (env) {
   var browser     = get('browser',     'yes')
   var watch       = get('watch',       'yes')
   var verbose     = get('verbose',     'no')
+  var basehref    = get('basehref',    '/')
 
   const isProd = environment === 'production'
   const outputFolder = 'build'
@@ -20,6 +22,7 @@ module.exports = function (env) {
   return portfinder.getPortPromise().then(port => {
     const plugins = [
       new HtmlWebpackPlugin({template: "index.html",hash: true,inject: "body"}),
+      new BaseHrefWebpackPlugin({ baseHref: basehref }),
       new ExtWebpackPlugin({
         framework: 'components',
         toolkit: 'modern',
