@@ -140,15 +140,19 @@ export default class ExtBase extends HTMLElement {
         removeItems.push(item)
       }
     }
+
+    //mjg after all children are dealt with
+    this.dispatchEvent(new CustomEvent('ready',{detail:{cmp: this.ext}}))
+
   }
 
   doCreate() {
-    var me = this;
-    me.ext = Ext.create(me.props)
-    if (me.props.ariaLabel == 'mjg') {
-      console.log(`Ext.create(${me.props.xtype}) ${me.props.html} `)
-     }
-    me.dispatchEvent(new CustomEvent('ready',{detail:{cmp: me.ext}}))
+    this.ext = Ext.create(this.props)
+    // var me = this;
+    // me.ext = Ext.create(me.props)
+    // if (me.props.ariaLabel == 'mjg') {
+    //   console.log(`Ext.create(${me.props.xtype}) ${me.props.html} `)
+    //  }
   }
 
   addTheChild(parentCmp, childCmp, location) {

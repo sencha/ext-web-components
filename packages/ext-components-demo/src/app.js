@@ -24,4 +24,4 @@ import CarouselComponent from './view/carousel/CarouselComponent.js';
     document.body.innerHTML = window._code['carousel']['CarouselComponent.html']
   }
 
-}());
+  }());
