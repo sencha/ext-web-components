@@ -20,9 +20,10 @@ export default class ExtBase extends HTMLElement {
       this.extParentDefined = true;
     }
 
-    //console.dir(`connectedCallback: ${this.nodeName} parent: ${this.nodeParentName} extParentDefined: ${this.extParentDefined} extChildrenDefined: ${this.extChildrenDefined}`)
+    //console.dir(`connectedCallback: ${this.nodeName} parent: ${this.nodeParentName} extParentDefined: ${this.extParentDefined} extChildrenDefined: ${this.extChildrenDefined} this.children.length: ${this.children.length}`)
     if (this.extChildrenDefined == false && this.children.length > 0) {
       this.childrenCounter = this.children.length
+      //console.dir(`childrenCounter: ${this.nodeName}`)
     }
 
     var parentCmp;
@@ -147,7 +148,9 @@ export default class ExtBase extends HTMLElement {
       }
     }
 
-    if(this.extChildrenDefined == true) {
+    if ( this.extChildrenDefined == true  ||
+        (this.extChildrenDefined == false && this.children.length == 0)
+      ) {
       //console.log(`ready event for ${this.nodeName}`)
       this.dispatchEvent(new CustomEvent('ready',{detail:{cmp: this.ext}}))
     }
@@ -156,7 +159,6 @@ export default class ExtBase extends HTMLElement {
 
   doCreate() {
     this.ext = Ext.create(this.props)
-
     if (this.parentNode.childrenCounter != undefined) {
       this.parentNode.childrenCounter--
       if (this.parentNode.childrenCounter == 0) {
@@ -167,14 +169,6 @@ export default class ExtBase extends HTMLElement {
   }
 
   addTheChild(parentCmp, childCmp, location) {
-    //console.log('addTheChild')
-    //console.log(childCmp.xtype)
-    //console.log(parentCmp.xtype)
-    //f (me.props.ariaLabel == 'mjg') {
-    //if(parentCmp.config.ariaLabel == 'mjg') {
-    // console.log('addTheChild parent:' +  parentCmp.xtype + ' child:' + childCmp.xtype)
-    //}
-
     var childxtype = childCmp.xtype
     var parentxtype = parentCmp.xtype
 
@@ -197,14 +191,6 @@ export default class ExtBase extends HTMLElement {
           //mjgComment console.log(`${parentCmp.xtype}.insert(${location}, ${childCmp.xtype})`)
           return
         }
-
-
-
-
-
-        parentCmp.addColumn(childCmp)
-//        console.log(`${parentCmp.xtype}.addColumn(${childCmp.xtype})`)
-        return
       }
       else if ((childxtype === 'toolbar' || childxtype === 'titlebar') && parentCmp.getHideHeaders != undefined) {
         if (parentCmp.getHideHeaders() === false) {
