@@ -8,7 +8,9 @@ export default class CarouselComponent {
   }
 
   readyCarouselHorizontal(event) {
+    console.log('in ready event')
     this.carouselHorizontalCmp = event.detail.cmp
+    this.carouselHorizontalCmp.setActiveItem(0)
   }
 
   readyCarouselHorizontalChild(event) {
