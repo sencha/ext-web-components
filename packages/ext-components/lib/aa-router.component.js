@@ -1,3 +1,25 @@
+export function getRoutes(items) {
+  //mjg clean this up
+  window._routes = []
+  var routes = _getRoutes(items)
+  window._routes = []
+  return routes
+}
+
+function _getRoutes(items) {
+  items.forEach(function(item){
+    item.leaf = !item.hasOwnProperty('children');
+    item.hash = item.text.toLowerCase().replace(/\s/g, '');
+    if (item.children == undefined) {
+      window._routes.push(new Route(item.hash, item.component, item.default))
+    }
+    else {
+      _getRoutes(item.children)
+    }
+  })
+  return window._routes
+}
+
 export class Route {
 
   constructor (hash, component, defaultRoute) {

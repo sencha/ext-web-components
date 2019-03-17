@@ -1,5 +1,21 @@
-<ext-button 
-  text="proxies"
-  onready="proxies.readyButton1(event)"
-  ontap="proxies.tapButton1(event)">
-</ext-button>
+<ext-panel 
+    height="100%"
+    padding="10"
+    shadow="true"
+    onready="proxies.parentReady(event)">
+    <ext-container 
+      onready="proxies.noneEleReady(event)"
+      cls="proxy-none proxy-source"
+      html="noneText">
+    </ext-container>
+    <ext-container 
+      onready="proxies.originalEleReady(event)"
+      cls="proxy-original proxy-source"
+      html="Element as proxy with revert: true">
+    </ext-container>
+    <ext-container 
+      onready="proxies.placeholderEleReady(event)"
+      cls="proxy-placeholder proxy-source"
+      html="Placeholder">
+    </ext-container>
+  </ext-panel>

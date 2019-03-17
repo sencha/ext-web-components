@@ -1,4 +1,5 @@
-import './CarouselComponent.css';
+import './CarouselComponent.scss';
+import './CarouselComponent.html';
 
 export default class CarouselComponent {
 
@@ -6,13 +7,19 @@ export default class CarouselComponent {
     console.log('in CarouselComponent constructor');
   }
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
+  readyCarouselHorizontal(event) {
+    this.carouselHorizontalCmp = event.detail.cmp
   }
 
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
+  readyCarouselHorizontalChild(event) {
+//    this.carouselHorizontalCmp.setActiveItem(0)
   }
 
+  readyCarouselVertical(event) {
+    this.carouselHorizontalCmp = event.detail.cmp
+  }
+
+  readyCarouselVerticalChild(event) {
+//    this.carouselHorizontalCmp.setActiveItem(0)
+  }
 }
