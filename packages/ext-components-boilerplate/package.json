@@ -1,7 +1,7 @@
 {
-  "name": "@sencha/ext-components-modern-boilerplate",
+  "name": "@sencha/ext-components-boilerplate",
   "version": "7.0.0",
-  "description": "ext-components-modern-boilerplate",
+  "description": "ext-components-boilerplate",
   "scripts": {
     "start": "npm run dev",
     "clean": "rimraf build",
