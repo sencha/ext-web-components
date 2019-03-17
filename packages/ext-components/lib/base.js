@@ -19,7 +19,11 @@ export default class ExtBase extends HTMLElement {
     else {
       this.extParentDefined = true;
     }
-    //mjgComment console.dir(`connectedCallback: ${this.nodeName} parent: ${this.nodeParentName} extParentDefined: ${this.extParentDefined} extChildrenDefined: ${this.extChildrenDefined}`)
+
+    //console.dir(`connectedCallback: ${this.nodeName} parent: ${this.nodeParentName} extParentDefined: ${this.extParentDefined} extChildrenDefined: ${this.extChildrenDefined}`)
+    if (this.extChildrenDefined == false && this.children.length > 0) {
+      this.childrenCounter = this.children.length
+    }
 
     var parentCmp;
     var childCmp;
@@ -73,6 +77,8 @@ export default class ExtBase extends HTMLElement {
     }
     else {
       this.doCreate()
+      //deal with parent
+
       //mjgComment console.log('deal with this item to attach to parent')
       //if extParentDefined is true, then this child to parent
       //if extParentDefined is false, add this child to the extChildren array of the parent
@@ -116,9 +122,10 @@ export default class ExtBase extends HTMLElement {
       }
     }
 
-    //mjgComment console.log(`deal with this item's ${this.children.length} extChildren`)
-    //mjgComment console.dir(this.extChildren)
+    //deal with children
 
+    //mjgComment console.log(`deal with this item's ${this.children.length} extChildren`)
+    //mjg figure out how to make this 1 loop so items added in order
     for (var i = 0; i < this.extChildren.length; i++) {
       var item = this.extChildren[i]
         //mjgComment console.log(`item ${i} ext child`)
@@ -130,7 +137,6 @@ export default class ExtBase extends HTMLElement {
 
     for (var i = 0; i < this.children.length; i++) {
       var item = this.children[i]
-
       if (item.nodeName.substring(0, 3) != "EXT") {
         //mjgComment console.log(`item ${i} NON ext child`)
         var cln = item.cloneNode(true);
@@ -141,18 +147,23 @@ export default class ExtBase extends HTMLElement {
       }
     }
 
-    //mjg after all children are dealt with
-    this.dispatchEvent(new CustomEvent('ready',{detail:{cmp: this.ext}}))
+    if(this.extChildrenDefined == true) {
+      //console.log(`ready event for ${this.nodeName}`)
+      this.dispatchEvent(new CustomEvent('ready',{detail:{cmp: this.ext}}))
+    }
 
   }
 
   doCreate() {
     this.ext = Ext.create(this.props)
-    // var me = this;
-    // me.ext = Ext.create(me.props)
-    // if (me.props.ariaLabel == 'mjg') {
-    //   console.log(`Ext.create(${me.props.xtype}) ${me.props.html} `)
-    //  }
+
+    if (this.parentNode.childrenCounter != undefined) {
+      this.parentNode.childrenCounter--
+      if (this.parentNode.childrenCounter == 0) {
+        //console.log(`ready event for ${this.parentNode.nodeName}`)
+        this.parentNode.dispatchEvent(new CustomEvent('ready',{detail:{cmp: this.parentNode.ext}}))
+      }
+    }
   }
 
   addTheChild(parentCmp, childCmp, location) {

@@ -1,12 +1,17 @@
 //import '@sencha/ext-components'
 
-import '@sencha/ext-components/lib/ext-container.component';
 import '@sencha/ext-components/lib/ext-carousel.component';
+
+import '@sencha/ext-components/lib/ext-container.component';
+
+
+
+import '@sencha/ext-components/lib/ext-panel.component';
+
 import '@sencha/ext-components/lib/ext-button.component';
 import '@sencha/ext-components/lib/ext-dataview.component';
 import '@sencha/ext-components/lib/ext-searchfield.component';
 import '@sencha/ext-components/lib/ext-treelist.component';
-import '@sencha/ext-components/lib/ext-panel.component';
 import '@sencha/ext-components/lib/ext-tabpanel.component';
 import '@sencha/ext-components/lib/ext-titlebar.component';
 import '@sencha/ext-components/lib/ext-toolbar.component';
