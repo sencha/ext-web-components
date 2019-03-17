@@ -1,6 +1,6 @@
   <ext-grid width="100%" height="100%"
     onready="basicgrid.readyGrid(event)"
-    title="Stock Prices"
+    shadow=true
     columns='[
       {"text":"employeeNo","dataIndex":"employeeNo"},
       {"text":"rating","dataIndex":"rating"},
@@ -15,13 +15,16 @@
       {"text":"holidayDays","dataIndex":"holidayDays"},
       {"text":"holidayAllowance","dataIndex":"holidayAllowance"},
       {"text":"noticePeriod","dataIndex":"noticePeriod"}
-    ]'
-    shadow=true>
+    ]'>
+  </ext-grid>
+
+
+
+
 
     <!--
-      <ext-column text="Name" width="150" dataIndex="surname"></ext-column>
-    -->
-    <!-- <ext-column
+    <ext-column text="Name" width="150" dataIndex="surname"></ext-column>
+    <ext-column
       text="Price"
       width="85"
       dataIndex="price"
@@ -46,4 +49,3 @@
       dataIndex="lastChange"
       formatter='date("m/d/Y")'>
     </ext-column> -->
-  </ext-grid>
