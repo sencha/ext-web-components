@@ -1,4 +1,5 @@
 import './FilesDragDropComponent.css';
+import './FilesDragDropComponent.html';
 
 export default class FilesDragDropComponent {
 

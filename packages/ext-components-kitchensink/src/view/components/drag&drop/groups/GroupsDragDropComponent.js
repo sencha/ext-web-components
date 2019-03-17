@@ -1,4 +1,5 @@
 import './GroupsDragDropComponent.css';
+import './GroupsDragDropComponent.html';
 
 export default class GroupsDragDropComponent {
 
