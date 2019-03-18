@@ -1,5 +1,13 @@
-<ext-button 
-  text="multiselectcomboboxfield"
-  onready="multiselectcomboboxfield.readyButton1(event)"
-  ontap="multiselectcomboboxfield.tapButton1(event)">
-</ext-button>
+<ext-formpanel width="250" shadow="true">
+  <ext-comboboxfield
+    multiselect="true"
+    width="200"
+    label="State"
+    displayField="name"
+    valueField="abbrev"
+    queryMode="local"
+    labelAlign="placeholder"
+    clearable="true"
+    onready="multiselectcomboboxfield.multiselectcomboboxfieldready(event)">
+  </ext-comboboxfield>
+</ext-formpanel>
