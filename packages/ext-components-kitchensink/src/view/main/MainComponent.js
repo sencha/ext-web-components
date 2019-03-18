@@ -1,6 +1,12 @@
 import hljs from 'highlightjs';
 import 'highlightjs/styles/atom-one-dark.css';
 import './MainComponent.css';
+import './MainComponent.html';
+
+Ext.require([
+  'Ext.data.TreeStore'
+])
+
 export default class MainComponent {
 
   constructor() {
@@ -15,11 +21,14 @@ export default class MainComponent {
       rootVisible: true,
       root: navTreeRoot
     });
-    this.wait = 9;
+//    this.wait = 9;
+    this.wait = 5;
   }
 
   afterAllLoaded(f) {
-    this.wait = this.wait - 1;
+    this.wait = this.wait - 1
+    //console.log('***wait*** ' + this.wait )
+    
     if (this.wait == 0) {
       var hash = window.location.hash.substr(1)
       if (hash == '') {hash = 'all'}
@@ -27,11 +36,84 @@ export default class MainComponent {
       this.navigate(node);
     }
   }
- 
 
   readyCodeButton(event) {
+    //console.log('readyCodeButton')
     this.codeButtonCmp = event.detail.cmp
-    this.afterAllLoaded()
+    //this.afterAllLoaded()
+  }
+
+  readyDataviewBreadcrumb(event) {
+    //console.log('readyDataviewBreadcrumb')
+    this.dataviewBreadcrumbCmp = event.detail.cmp
+    var tpl = `
+    <div class="app-toolbar">
+      {text} <span>{divider}</span>
+    </div>`
+    this.dataviewBreadcrumbCmp.setItemTpl(tpl)
+    this.afterAllLoaded('readyDataviewBreadcrumb')
+  }
+
+  readyNavTreePanel(event) {
+    //console.log('readyNavTreePanel')
+    this.navTreePanelCmp = event.detail.cmp
+    //this.afterAllLoaded('readyNavTreePanel')
+  }
+
+  readyNavTreelist(event) {
+    //console.log('readyNavTreelist')
+    this.navTreelistCmp = event.detail.cmp
+    this.navTreelistCmp.setStore(this.treeStore)
+    this.afterAllLoaded('readyNavTreelist')
+  }
+
+  readySelection(event) {
+    //console.log('readySelection')
+    this.selectionCmp = event.detail.cmp
+    var bodyStyle = `
+    backgroundSize: 20px 20px;
+    borderWidth: 0px;
+    backgroundColor: #e8e8e8;
+    backgroundImage: 
+      linear-gradient(0deg, #f5f5f5 1.1px, transparent 0), 
+      linear-gradient(90deg, #f5f5f5 1.1px, transparent 0)`
+    this.selectionCmp.setBodyStyle(bodyStyle)
+    //this.afterAllLoaded('readySelection');
+  }
+
+  readyDataviewNav(event) {
+    //console.log('readyDataviewNav')
+    this.dataviewNavCmp = event.detail.cmp
+    this.dataviewNavCmp.setStyle({'background':'top','display':'block','text-align':'center'})
+    var tpl = `
+    <div class="app-thumbnail">
+      <div class="app-thumbnail-icon-wrap">
+        <div class="app-thumbnail-icon {iconCls}"></div>
+      </div>
+      <div class="app-thumbnail-text">{text}</div>
+      <div class="{premiumClass}"></div>
+    </div>`
+    this.dataviewNavCmp.setItemTpl(tpl)
+    this.dataviewNavCmp.setStore(this.treeStore)
+    this.afterAllLoaded('readyDataviewNav')
+  }
+
+  readyRouter(event) {
+    //console.log('readyRouter')
+    this.router = event.target;
+    this.afterAllLoaded('readyRouter')
+  }
+
+  readyCodePanel(event) {
+    //console.log('readyCodePanel')
+    this.codePanelCmp = event.detail.cmp
+    //this.afterAllLoaded('readyCodePanel')
+  }
+
+  readyTabPanel(event) {
+    //console.log('readyTabPanel')
+    this.tabPanelCmp = event.detail.cmp
+    this.afterAllLoaded('readyTabPanel')
   }
 
   generateBreadcrumb = (node) => {
@@ -54,75 +136,10 @@ export default class MainComponent {
     }
   };
 
-  readyDataviewBreadcrumb(event) {
-    this.dataviewBreadcrumbCmp = event.detail.cmp
-    var tpl = `
-    <div class="app-toolbar">
-      {text} <span>{divider}</span>
-    </div>`
-    this.dataviewBreadcrumbCmp.setItemTpl(tpl)
-    this.afterAllLoaded('readyDataviewBreadcrumb')
-  }
-
-  readyNavTreePanel(event) {
-    this.navTreePanelCmp = event.detail.cmp
-    this.afterAllLoaded('readyNavTreePanel')
-  }
-
-  readyNavTreelist(event) {
-    this.navTreelistCmp = event.detail.cmp
-    this.navTreelistCmp.setStore(this.treeStore)
-    this.afterAllLoaded('readyNavTreelist')
-  }
-
-  readySelection(event) {
-    this.selectionCmp = event.detail.cmp
-    var bodyStyle = `
-    backgroundSize: 20px 20px;
-    borderWidth: 0px;
-    backgroundColor: #e8e8e8;
-    backgroundImage: 
-      linear-gradient(0deg, #f5f5f5 1.1px, transparent 0), 
-      linear-gradient(90deg, #f5f5f5 1.1px, transparent 0)`
-    this.selectionCmp.setBodyStyle(bodyStyle)
-    this.afterAllLoaded('readySelection');
-  }
-
-  readyDataviewNav(event) {
-    this.dataviewNavCmp = event.detail.cmp
-    this.dataviewNavCmp.setStyle({'background':'top','display':'block','text-align':'center'})
-    var tpl = `
-    <div class="app-thumbnail">
-      <div class="app-thumbnail-icon-wrap">
-        <div class="app-thumbnail-icon {iconCls}"></div>
-      </div>
-      <div class="app-thumbnail-text">{text}</div>
-      <div class="{premiumClass}"></div>
-    </div>`
-    this.dataviewNavCmp.setItemTpl(tpl)
-    this.dataviewNavCmp.setStore(this.treeStore)
-    this.afterAllLoaded('readyDataviewNav')
-  }
-
-  readyRouter(event) {
-    this.router = event.target;
-    this.afterAllLoaded('readyRouter')
-  }
-
-  readyCodePanel(event) {
-    this.codePanelCmp = event.detail.cmp
-    this.afterAllLoaded('readyCodePanel')
-  }
-
-  readyTabPanel(event) {
-    this.tabPanelCmp = event.detail.cmp
-    this.afterAllLoaded('readyTabPanel')
-  }
-
   dataviewBreadcrumbClick = (event) => {
     var hash = event.detail.location.record.data.hash;
-    var node = this.dataviewNavCmp.getStore().findNode('hash',hash);
-    this.navigate(node);
+    var record = this.dataviewNavCmp.getStore().findNode('hash',hash);
+    this.navigate(record);
   }
 
   dataviewNavClick = (event) => {
@@ -136,8 +153,6 @@ export default class MainComponent {
   }
 
   navigate(record) {
-    // console.log('navigate')
-    // console.dir(record)
     if (record == null) {
       console.log('it was null')
       return
@@ -205,13 +220,7 @@ export default class MainComponent {
     this.navTreePanelCmp.setCollapsed(collapsed)
   }
 
-  csscomponent = (file) => {
-  if (file.endsWith(".html")) {return 'html'}
-  if (file.endsWith(".js")) {return 'js'}
-  }
-
   setCodeTabs() {
-    var me = this
     var hash = window.location.hash.substr(1)
     var currentRoute = {}
     window.routes.forEach((route) => {
@@ -222,39 +231,30 @@ export default class MainComponent {
         if (route.hash == hash) {currentRoute = route}
       }
     });
-    //window[currentRoute.hash] = new currentRoute.component()
     var codeMap = _code[currentRoute.hash]
-    me.tabPanelCmp.removeAll()
-    var file = ''
-    file = currentRoute.component.name + '.html'
-    if (codeMap[file] != undefined ) {
-      this.tabPanelCmp.add({title: file,
-        xtype: 'panel',ui: 'code-panel',layout: 'fit',userSelectable: true,scrollable: true,
-        tab: {ui: 'app-code-tab', flex: 0, minWidth: 250},
-        html: `<pre><code class='code'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
-      })
+    this.tabPanelCmp.removeAll()
+    var componentName = currentRoute.component.name
+    this.setTab(codeMap, componentName + '.html')
+    this.setTab(codeMap, componentName + '.js',)
+    this.setTab(codeMap, componentName + '.scss',)
+    this.setTab(codeMap, componentName + '.css',)
+    this.setTab(codeMap, componentName + 'Data.js')
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightBlock(block);
+    });
+  }
+
+  setTab(codeMap, file) {
+    var codeMapFile = codeMap[file]
+    if (codeMapFile != undefined ) {
+      this.tabPanelCmp.add(
+        { 
+          xtype: 'panel', title: file, ui: 'code-panel', layout: 'fit', userSelectable: true, scrollable: true,
+          tab: {ui: 'app-code-tab', flex: 0, padding: '0 5 0 0', minWidth: 220, maxWidth: 250},
+          html: `<pre><code class='code'>${codeMapFile.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
+        }
+      )
     }
-    file = currentRoute.component.name + '.js'
-    if (codeMap[file] != undefined ) {
-      me.tabPanelCmp.add({title: file,
-        xtype: 'panel',ui: 'code-panel',layout: 'fit',userSelectable: true,scrollable: true,
-        tab: {ui: 'app-code-tab', flex: 0, minWidth: 250},
-        html: `<pre><code class='code'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
-      })
-    }
-    file = currentRoute.component.name + '.css'
-    if (codeMap[file] != undefined ) {
-      me.tabPanelCmp.add({title: file,
-        xtype: 'panel',ui: 'code-panel',layout: 'fit',userSelectable: true,scrollable: true,
-        tab: {ui: 'app-code-tab', flex: 0, minWidth: 250},
-        html: `<pre><code class='code'>${codeMap[file].replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
-      })
-    }
-    setTimeout(function() {
-      document.querySelectorAll('pre code').forEach((block) => {
-        hljs.highlightBlock(block);
-      });
-    },50);
   }
 
 }
