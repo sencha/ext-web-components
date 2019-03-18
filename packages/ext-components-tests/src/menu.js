@@ -10,6 +10,8 @@ import Defaults from  './view/defaults/DefaultsComponent.js';
 import BasicEventComponent from  './view/basicevent/BasicEventComponent.js';
 import SingleEventComponent from './view/singleevent/SingleEventComponent.js';
 
+import HTMLInExtComponent from './view/htmlinextcomponent/HTMLInExtComponent.js';
+
 export default function getMenu() {
   return [
     { text: 'Element Insert Between', component: ElementInsertBetween },
@@ -21,5 +23,6 @@ export default function getMenu() {
     { text: 'Defaults', component: Defaults },
     { text: 'Basic Event', component: BasicEventComponent },
     { text: 'Single Event', component: SingleEventComponent },
+    { text: 'HTML in Ext Component', component: HTMLInExtComponent },
   ]
 };
