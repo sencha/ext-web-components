@@ -13,7 +13,7 @@ export default class ElementInsertStartComponent {
   }
 
   buttonClick() {
-    const panelDomNode = this.panelComp.getRenderTarget().dom;
+    const panelDomNode = document.getElementById('element-insert-start-panel');
     const div = document.createElement("div");
     div.id = "inserted";
     div.innerHTML = "Inserted";

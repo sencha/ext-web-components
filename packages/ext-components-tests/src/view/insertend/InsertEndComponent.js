@@ -11,8 +11,8 @@ export default class InsertEndComponent {
   buttonClick() {
     const buttonDomNode = this.buttonComp.el.dom;
     const container = document.createElement("ext-container");
-    container.setAttribute(itemId, "inserted");
-    container.innerHTML = "Inserted";
+    container.itemId = "inserted";
+    container.html = "Inserted";
     buttonDomNode.insertAdjacentElement('afterend', container);
   }
 }

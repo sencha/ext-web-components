@@ -9,7 +9,7 @@ export default class ElementInsertEndComponent {
   }
 
   buttonClick() {
-    const buttonDomNode = this.buttonComp.el.dom;
+    const buttonDomNode = document.getElementById('element-insert-end-button');
     const div = document.createElement("div");
     div.id = "inserted";
     div.innerHTML = "Inserted";

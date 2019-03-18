@@ -9,10 +9,10 @@ export default class InsertBetweenComponent {
   }
 
   buttonClick() {
-    const buttonDomNode = this.buttonComp.el.dom;
+    const buttonDomNode = document.getElementById('insert-between-button');
     const container = document.createElement("ext-container");
-    container.setAttribute(itemId, "inserted");
-    container.innerHTML = "Inserted";
+    container.itemId = "inserted";
+    container.html = "Inserted";
     buttonDomNode.insertAdjacentElement('beforebegin', container);
   }
 }

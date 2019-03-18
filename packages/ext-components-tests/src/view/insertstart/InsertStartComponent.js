@@ -15,8 +15,8 @@ export default class InsertStartComponent {
   buttonClick() {
     const panelDomNode = this.panelComp.getRenderTarget().dom;
     const container = document.createElement("ext-container");
-    container.setAttribute(itemId, "inserted");
-    container.innerHTML = "Inserted";
-    panelDomNode.prepend(div);
+    container.itemId = "inserted";
+    container.html = "Inserted";
+    panelDomNode.prepend(container);
   }
 }
