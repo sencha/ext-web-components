@@ -1,61 +1,80 @@
 import './ButtonComponent.css';
+import './ButtonComponent.html';
 
 export default class ButtonComponent {
 
-  style = 'Menu';
-  type = 'Text';
-  menuButtons = [];
-  iconCls = '';
-
-
   constructor() {
-    console.log('in ButtonComponent constructor');
+    this.style = 'None';
+    this.type = 'Text';
+    this.menuButtons = [];
+    this.iconButtons = [];
+    this.styleButtons = [];
+    this.iconCls = '';
+    this.menuItem = '';
   }
 
-  toggleRound = function () {
-    console.log(this.round, 'round');
+  buttonReady(event) {
+    this.menuButtons.push(event.detail.cmp);
+  }
+
+  toggleReady(event){
+    this.toggleButton = event.detail.cmp;
+  }
+
+  toggleRound() {
     this.round = !this.round;
+
     if (this.round) {
+      this.toggleButton.setIconCls('x-font-icon md-icon-check');
       this.menuButtons.forEach(buttons => {
         buttons.setUi('round');
       });
-     
+
     }
     else {
+      this.toggleButton.setIconCls(null);
       this.menuButtons.forEach(buttons => {
         buttons.setUi('');
       });
     }
   };
 
-  panelReady = function (event) {
-    this.panel = event.detail.cmp;
-  }
-
-  buttonReady = function (event) {
-    this.menuButtons.push(event.detail.cmp);
-  }
-
-  styleMenuItemChange = function (event) {
-    console.log(event.config.text, 'event');
+  styleMenuItemChange(event) {
     this.style = event.config.text;
+    this.styleButtons.forEach(menuItem => {
+      const menuItemText = menuItem._text;
+      
+      if (menuItemText === this.style) {
+        menuItem.setIconCls('x-font-icon md-icon-check');
+      } else {
+        menuItem.setIconCls(null);
+      }
+    });
+
     if (this.style === 'Menu') {
       this.menuButtons.forEach(buttons => {
         buttons.setHidden(false);
       });
-      var tempMenu = Ext.create('Ext.menu.Menu');
-      var item1 = new Ext.menu.Item({
+
+      const tempMenu = Ext.create('Ext.menu.Menu');
+      const item1 = {
         indented: false,
-        text: "Item 1"
-      });
-      var item2 = new Ext.menu.Item({
+        text: "Item 1",
+        xtype: 'menuitem'
+      };
+
+      const item2 = {
         indented: false,
-        text: "Item 2"
-      });
-      var item3 = new Ext.menu.Item({
+        text: "Item 2",
+        xtype: 'menuitem'
+      };
+
+      const item3 = {
         indented: false,
-        text: "Item 3"
-      });
+        text: "Item 3",
+        xtype: 'menuitem'
+      };
+
       tempMenu.add(item1);
       tempMenu.add(item2);
       tempMenu.add(item3);
@@ -64,30 +83,63 @@ export default class ButtonComponent {
       });
     }
     else {
-      console.log(typeof this.style, 'style');
-      this.style = this.style.toLowerCase();
       this.menuButtons.forEach(buttons => {
-        buttons.setUi(this.style);
+        buttons.setUi(this.style.toLowerCase());
         buttons.setMenu(null);
         buttons.setHidden(false);
       });
     }
   }
-  
-  onTypeChange = function(event){
-    console.log(event.config.text,'event type');
-    this.type = event.config.text; 
-    this.iconCls = this.type.indexOf('Icon') !== -1 ? 'x-fa fa-heart' : null;
-    this.text = this.type.indexOf('Text') !== -1;
-    console.log(this.iconCls,'icon class');
-    this.menuButtons.forEach(button => {
-      button.setIconCls(this.iconCls);
-      // button.setText(this.text);
+
+  onTypeChange(event) {
+    this.type = event.config.text;
+    this.iconButtons.forEach(menuItem => {
+      const menuItemText = menuItem._text;
+      
+      if (menuItemText === this.type) {
+        menuItem.setIconCls('x-font-icon md-icon-check');
+      } else {
+        menuItem.setIconCls(null);
+      }
     });
 
+    this.iconCls = this.type.indexOf('Icon') !== -1 ? 'x-fa fa-heart' : null;
+
+    if(this.type.indexOf('Icon') !== -1){
+      this.menuButtons.forEach(button => {
+        button.setIconCls(this.iconCls);
+        button.setText(null);
+      })
+    };
+
+    if(this.type.indexOf('Text Icon') !== -1){
+      for (let index = 0; index < this.menuButtons.length; index++) {
+        if (index % 3 === 0) {
+          this.menuButtons[index].setText("Normal");
+        } else if (index % 3 === 1) {
+          this.menuButtons[index].setText("Badge");
+        } else {
+          this.menuButtons[index].setText("Disabled");
+        }
+        this.menuButtons[index].setIconCls(this.iconCls);
+      }
+    };
+
+    if(this.type === 'Text') {
+      for (let index = 0; index < this.menuButtons.length; index++) {
+        if (index % 3 === 0) {
+          this.menuButtons[index].setText("Normal");
+        } else if (index % 3 === 1) {
+          this.menuButtons[index].setText("Badge");
+        } else {
+          this.menuButtons[index].setText("Disabled");
+        }
+        this.menuButtons[index].setIconCls(null);
+      }
+    };
   }
 
-  setDeafultsForStyle = function (event) {
+  setDefaultsForStyle(event) {
     this.styleMenu = event.detail.cmp;
     this.styleMenu.setDefaults({
       handler: this.styleMenuItemChange.bind(this),
@@ -99,5 +151,31 @@ export default class ButtonComponent {
     this.typeMenu.setDefaults({
       handler: this.onTypeChange.bind(this),
     });
+  }
+
+  setIcon(event) {
+    const menuItem = event.detail.cmp;
+    const menuItemText = menuItem._text;
+
+    if (menuItemText === this.type) {
+      menuItem.setIconCls('x-font-icon md-icon-check');
+    } else {
+      menuItem.setIconCls(null);
+    }
+
+    this.iconButtons.push(menuItem);
+  }
+
+  setStyle(event) {
+    const menuItem = event.detail.cmp;
+    const menuItemText = menuItem._text;
+
+    if (menuItemText === this.style) {
+      menuItem.setIconCls('x-font-icon md-icon-check');
+    } else {
+      menuItem.setIconCls(null);
+    }
+
+    this.styleButtons.push(menuItem);
   }
 }
