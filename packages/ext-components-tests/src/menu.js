@@ -5,6 +5,8 @@ import InsertBetween from  './view/insertbetween/InsertBetweenComponent.js';
 import InsertEnd from  './view/insertend/InsertEndComponent.js';
 import InsertStart from  './view/insertstart/InsertStartComponent.js';
 
+import Defaults from  './view/defaults/DefaultsComponent.js';
+
 export default function getMenu() {
   return [
     { text: 'Element Insert Between', component: ElementInsertBetween },
@@ -13,5 +15,6 @@ export default function getMenu() {
     { text: 'Insert Between', component: InsertBetween },
     { text: 'Insert End', component: InsertEnd },
     { text: 'Insert Start', component: InsertStart },
+    { text: 'Defaults', component: Defaults },
   ]
 };
