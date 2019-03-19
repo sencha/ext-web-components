@@ -12,6 +12,13 @@ import SingleEventComponent from './view/singleevent/SingleEventComponent.js';
 
 import HTMLInExtComponent from './view/htmlinextcomponent/HTMLInExtComponent.js';
 
+import SimpleAttributeUpdateComponent from './view/simpleattributeupdate/SimpleAttributeUpdateComponent.js';
+import ClassNameUpdateComponent from './view/classnameupdate/ClassNameUpdateComponent.js';
+
+import UpdateFunctionsComponent from './view/updatefunctions/UpdateFunctionsComponent.js';
+
+import SimpleComponent from './view/simple/SimpleComponent.js';
+
 export default function getMenu() {
   return [
     { text: 'Element Insert Between', component: ElementInsertBetween },
@@ -24,5 +31,9 @@ export default function getMenu() {
     { text: 'Basic Event', component: BasicEventComponent },
     { text: 'Single Event', component: SingleEventComponent },
     { text: 'HTML in Ext Component', component: HTMLInExtComponent },
+    { text: 'Simple Attribute Update', component: SimpleAttributeUpdateComponent },
+    { text: 'Class Name Update', component: ClassNameUpdateComponent },
+    { text: 'Update Functions', component: UpdateFunctionsComponent },
+    { text: 'Simple', component: SimpleComponent },
   ]
 };
