@@ -16,7 +16,6 @@ export default class MainComponent {
       root: navTreeRoot
     });
     this.wait = 9;
-
   }
 
   afterAllLoaded(f) {
