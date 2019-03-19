@@ -26,6 +26,7 @@ import RelMenuComponent from './view/rel/relmenu/RelMenuComponent.js';
 import RelGridColumnComponent from './view/rel/relgridcolumn/RelGridColumnComponent.js';
 import RelEditorComponent from './view/rel/releditor/RelEditorComponent.js';
 import RelDialogComponent from './view/rel/reldialog/RelDialogComponent.js';
+import RelComponent from './view/rel/rel/RelComponent.js';
 
 export default function getMenu() {
   return [
@@ -48,6 +49,7 @@ export default function getMenu() {
       ]
     },
     { text: 'Relational', children: [
+      { text: 'Rel', component: RelComponent },
       { text: 'Rel Tooltip', component: RelTooltipComponent },
       { text: 'Rel Menu', component: RelMenuComponent },
       { text: 'Rel Grid Column', component: RelGridColumnComponent },
