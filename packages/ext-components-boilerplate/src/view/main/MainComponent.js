@@ -1,5 +1,3 @@
-import hljs from 'highlightjs';
-import "highlightjs/styles/atom-one-dark.css";
 import "./MainComponent.html";
 export default class MainComponent {
 
@@ -16,7 +14,6 @@ export default class MainComponent {
       root: navTreeRoot
     });
     this.wait = 9;
-
   }
 
   afterAllLoaded(f) {
