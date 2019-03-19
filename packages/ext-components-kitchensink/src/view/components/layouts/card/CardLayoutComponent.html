@@ -1,5 +1,45 @@
-<ext-button 
-  text="card"
-  onready="card.readyButton1(event)"
-  ontap="card.tapButton1(event)">
-</ext-button>
+<ext-container layout="vbox" padding="10" height="100%">
+  <ext-panel 
+      width="auto"
+      shadow="true"
+      ui="instructions"
+      margin="0 0 20 0"
+      html="A <b>card</b> layout shows one item at a time. Each item takes on the 
+          full height and width of the container. Card layouts can optionally be configured to
+          animate when switching cards."
+  ></ext-panel>
+  <ext-container  
+      height="300"
+      activeItem="activeCard" 
+      flex="1"
+      shadow="true"
+      defaults="{scrollable: 'y'}"
+      onready="card.onContainer1Ready(event)"
+      layout="card"
+  >
+      <ext-panel onready="card.onItem1Ready(event)" shadow="true">
+          <ext-container onready="card.onContainer2Ready(event)">
+              <ext-button 
+                  margin="card.margin ? card.margin : null"
+                  key="i"
+                  text="card.text"
+                  ui="alt"
+                  ontap="card.switchCards(null)"
+                  onready="card.buttonReady(event)"
+              ></ext-button>
+          </ext-container>
+      </ext-panel>
+      <ext-panel onready="card.onItem2Ready(event)" shadow="true">
+          <ext-container  *ngFor="let card of contents; let index=i">
+              <ext-button 
+                  margin="card.margin ? card.margin : null"
+                  key="i"
+                  text="card.text"
+                  ui="alt"
+                  ontap="card.switchCards(null)"
+                  onready="card.buttonReady(event)"
+              ></ext-button>
+          </ext-container>
+      </ext-panel>
+  </ext-container>
+</ext-container>

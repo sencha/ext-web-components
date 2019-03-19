@@ -1,18 +1,49 @@
 import './vboxLayoutComponent.css';
+import './vboxLayoutComponent.html';
 
 export default class vboxLayoutComponent {
 
   constructor () {
-    console.log('in vboxLayoutComponent constructor');
+    this.card = {
+      blue: {
+        fontSize: '16px',
+        padding: '10px',
+        backgroundColor: '#673ab7', 
+        color: 'white'
+      },
+      green: {
+        fontSize: '16px',
+        padding: '10px',
+        backgroundColor: '#7c4dff', 
+        color: 'white'
+      },
+      red: {
+        fontSize: '16px',
+        padding: '10px',
+        backgroundColor: '#00bcd4', 
+        color: 'white'
+      }
+    }
   }
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
+  item1Ready(event) {
+    this.cont = event.detail.cmp;
+    this.cont.setStyle(this.card.red);
   }
 
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
+  item2Ready(event) {
+    this.cont = event.detail.cmp;
+    this.cont.setStyle(this.card.blue);
+  }
+
+  item3Ready(event) {
+    this.cont = event.detail.cmp;
+    this.cont.setStyle(this.card.green);
+  }
+
+  containerReady(event) {
+    this.cont = event.detail.cmp;
+    this.cont.setScrollable("true");
   }
 
 }
