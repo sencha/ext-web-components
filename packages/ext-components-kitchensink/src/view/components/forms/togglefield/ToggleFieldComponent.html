@@ -1,5 +1,6 @@
-<ext-button 
-  text="togglefield"
-  onready="togglefield.readyButton1(event)"
-  ontap="togglefield.tapButton1(event)">
-</ext-button>
+<ext-formpanel shadow="true" defaults='{ "padding": "0 10"}' padding="20">
+  <ext-togglefield boxLabel="On" value="true" ></ext-togglefield>
+  <ext-togglefield boxLabel="Off" value="false" ></ext-togglefield>
+  <ext-togglefield boxLabel="Disabled" disabled="true" ></ext-togglefield>
+  <ext-togglefield boxLabel="Disabled (On)" disabled="true" value="true" ></ext-togglefield>
+</ext-formpanel>

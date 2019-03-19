@@ -1,5 +1,11 @@
-<ext-button 
-  text="checkboxfield"
-  onready="checkboxfield.readyButton1(event)"
-  ontap="checkboxfield.tapButton1(event)">
-</ext-button>
+<ext-formpanel
+    onready="checkboxfield.checkboxfieldready1(event)"
+    layout='{"type": "vbox", "align": "left"}'
+    shadow="true"
+    bodyPadding="10"
+>
+    <ext-checkboxfield boxLabel="Unchecked" ></ext-checkboxfield>
+    <ext-checkboxfield boxLabel="Checked" checked="true" ></ext-checkboxfield>
+    <ext-checkboxfield boxLabel="Disabled" disabled="true" ></ext-checkboxfield>
+    <ext-checkboxfield boxLabel="Disabled (checked)" disabled="true" checked="true" ></ext-checkboxfield>
+</ext-formpanel>

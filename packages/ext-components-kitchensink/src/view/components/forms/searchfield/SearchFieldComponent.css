@@ -1,6 +1,13 @@
-.SearchFieldComponent {
-  display: block;
-  font-size: 16px;
-  color: #abb2bf;
-  background: #282c34;
+.heading {
+  font-size: '13px';
+  font-family: 'Menlo, Courier';
+  margin: '0 0 8px 0';
+}
+
+.fadedContainer {
+  background-color: 'white';
+}
+
+.soloContainer {
+  background-color: '#F0F0F0';
 }
