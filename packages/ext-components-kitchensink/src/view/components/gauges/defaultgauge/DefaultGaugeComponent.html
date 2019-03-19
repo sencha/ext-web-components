@@ -1,5 +1,22 @@
-<ext-button 
-  text="defaultgauge"
-  onready="defaultgauge.readyButton1(event)"
-  ontap="defaultgauge.tapButton1(event)">
-</ext-button>
+<ext-container padding="10" layout="fit" fitToParent="true" height="100%">
+
+  <ext-formpanel layout="vbox" shadow="true">
+    <ext-sliderfield label="Value" onchange="defaultgauge.updateGauges(event)" value="40"></ext-sliderfield>
+    <ext-gauge
+      flex="1"
+      onready="defaultgauge.item1Ready(event)"
+      value="40"
+    >
+  </ext-gauge>
+    <ext-gauge
+      flex="1"
+      onready="defaultgauge.item2Ready(event)"
+      value="40"
+      ui="green"
+      trackStart="180"
+      trackLength="360"
+      >
+    </ext-gauge>
+  </ext-formpanel>
+  
+</ext-container>
