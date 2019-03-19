@@ -1,5 +1,7 @@
-<ext-button 
-  text="nestedlist"
-  onready="nestedlist.readyButton1(event)"
-  ontap="nestedlist.tapButton1(event)">
-</ext-button>
+<NestedList title="Products" shadow displayField="text" store={this.store} onLeafItemTap={this.onLeafItemTap}
+  platformConfig={{
+                    '!phone': {
+                        height: 450,
+                        width: 300
+                    }
+                }} />

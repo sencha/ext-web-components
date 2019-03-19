@@ -1,5 +1,9 @@
-<ext-button 
-  text="basiclist"
-  onready="basiclist.readyButton1(event)"
-  ontap="basiclist.tapButton1(event)">
-</ext-button>
+<ext-list
+    shadow="true"
+    onSelect="basiclist.onSelect"
+    platformConfig='{
+                    "!phone": {
+                        "height": "450",
+                        "width": "300"
+                    }
+                }' />

@@ -20,6 +20,9 @@ import '@sencha/ext-components/lib/ext-colorselector.component';
 import '@sencha/ext-components/lib/ext-draw.component';
 import '@sencha/ext-components/lib/ext-spacer.component';
 
+import '@sencha/ext-components/lib/ext-list.component';
+import '@sencha/ext-components/lib/ext-segmentedbutton.component';
+import '@sencha/ext-components/lib/ext-nestedlist.component';
 
 import getMenu from './menu';
 import MainComponent from './view/main/MainComponent.js';

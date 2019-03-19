@@ -1,5 +1,10 @@
-<ext-button 
-  text="undoableaccordionswiper"
-  onready="undoableaccordionswiper.readyButton1(event)"
-  ontap="undoableaccordionswiper.tapButton1(event)">
-</ext-button>
+<List shadow itemTpl={this.tpl} store={this.store} onSelect={this.onSelect} platformConfig={{
+                    '!phone': {
+                        height: 450,
+                        width: 300
+                    }
+                }}
+  plugins={[{ type: 'listswiper' , defaults: { ui: 'action' }, left: [{ iconCls: 'x-fa fa-phone' , text: 'Call' ,
+  commit: this.onCall }], right: [{ iconCls: 'x-fa fa-envelope' , ui: 'alt confirm' , text: 'Message' , commit:
+  this.onMessage }, { iconCls: 'x-fa fa-trash' , ui: 'alt decline' , text: 'Delete' , precommit: this.onDeleteItem,
+  commit: this.onCommitDeleteItem, revert: this.onUndoDeleteItem, undoable: true }] }]} />

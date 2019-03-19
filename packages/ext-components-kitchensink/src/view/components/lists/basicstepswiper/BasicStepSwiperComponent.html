@@ -1,5 +1,31 @@
-<ext-button 
-  text="basicstepswiper"
-  onready="basicstepswiper.readyButton1(event)"
-  ontap="basicstepswiper.tapButton1(event)">
-</ext-button>
+<ext-list
+    shadow="true"
+    itemTpl="this.tpl"
+    store="this.store"
+    onSelect="this.onSelect"
+    platformConfig='{
+                    "!phone": {
+                        "height": "450",
+                        "width": "300"
+                    }
+                }'
+    plugins='[{
+                    "type": "listswiper" ,
+                    "defaults": { "ui": "action" },
+                    "widget": { "xtype": "listswiperstepper" },
+                    "left": [{
+                                "iconCls": "x-fa fa-phone" ,
+                                "text": "Call" ,
+                                "commit": "this.onCall"
+                            }],
+                    "right": [{
+                                "iconCls": "x-fa fa-envelope" ,
+                                "ui":"alt confirm" ,
+                                "text": "Message" ,
+                                "commit": "this.onMessage"
+                             }, {
+                                "iconCls": "x-fa fa-edit" ,
+                                "text": "Edit" ,
+                                "commit": "this.onEdit"
+                             }],
+             }]' />

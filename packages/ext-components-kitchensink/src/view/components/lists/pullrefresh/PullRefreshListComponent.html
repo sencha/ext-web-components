@@ -1,5 +1,7 @@
-<ext-button 
-  text="pullrefresh"
-  onready="pullrefresh.readyButton1(event)"
-  ontap="pullrefresh.tapButton1(event)">
-</ext-button>
+<List shadow itemTpl="{name}" store={this.store} plugins={[ { type: 'pullrefresh' , mergeData: false } ]}
+  platformConfig={{
+                    '!phone': {
+                        height: 450,
+                        width: 300
+                    }
+                }} />

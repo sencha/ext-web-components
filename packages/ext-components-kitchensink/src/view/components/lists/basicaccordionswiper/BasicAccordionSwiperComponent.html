@@ -1,5 +1,10 @@
-<ext-button 
-  text="basicaccordionswiper"
-  onready="basicaccordionswiper.readyButton1(event)"
-  ontap="basicaccordionswiper.tapButton1(event)">
-</ext-button>
+<ext-list
+    shadow="true"
+    onready="basicaccordionswiper.listready(event)"
+    platformConfig='{
+                    "!phone": {
+                        "height": "450",
+                        "width": "300"
+                    }
+                }'
+    />
