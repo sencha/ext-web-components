@@ -1,7 +1,9 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BaseHrefWebpackPlugin } = require('base-href-webpack-plugin');
-const ExtWebpackPlugin = require('@sencha/ext-webpack-plugin')
+const ExtWebpackPlugin = require('@sencha/ext-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 const portfinder = require('portfinder')
 
 module.exports = function (env) {
@@ -48,7 +50,11 @@ module.exports = function (env) {
         browser: browser,
         watch: watch,
         verbose: verbose
-      })
+      }),
+      new CopyWebpackPlugin([{
+        from: '../node_modules/@sencha/ext-ux/modern/resources',
+        to: './ext/ux'
+      }])
     ]
     return {
       mode: environment,
