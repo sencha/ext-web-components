@@ -1,6 +1,7 @@
 //import { Route } from '@sencha/ext-components';
 
 import  { getRoutes } from '@sencha/ext-components/lib/aa-router.component';
+import '@sencha/ext-components/lib/ext-audio.component';
 import '@sencha/ext-components/lib/ext-container.component';
 import '@sencha/ext-components/lib/ext-menu.component';
 import '@sencha/ext-components/lib/ext-menuitem.component';
@@ -22,7 +23,11 @@ import '@sencha/ext-components/lib/ext-sliderfield.component';
 import '@sencha/ext-components/lib/ext-gauge.component';
 import '@sencha/ext-components/lib/ext-colorselector.component';
 import '@sencha/ext-components/lib/ext-draw.component';
+import '@sencha/ext-components/lib/ext-progress.component';
 import '@sencha/ext-components/lib/ext-spacer.component';
+import '@sencha/ext-components/lib/ext-sheet.component';
+import '@sencha/ext-components/lib/ext-video.component';
+
 
 
 import getMenu from './menu';

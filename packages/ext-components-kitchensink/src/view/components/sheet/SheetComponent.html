@@ -1,5 +1,73 @@
-<ext-button 
-  text="sheet"
-  onready="sheet.readyButton1(event)"
-  ontap="sheet.tapButton1(event)">
-</ext-button>
+<ext-container  padding="10" maxWidth="500">
+
+  <ext-sheet
+    onready = "sheet.sheetReady(event)" 
+    onHide="sheet.onHide()"
+    layout="vbox"
+    padding="15 0"
+    direct="left"
+    modal="true"
+    reveal="false"
+    displayed="false"  
+  >
+    <ext-button text="Settings" iconCls="x-fa fa-gear" ontap="sheet.toggleMenu()" onready="sheet.buttonReady(event)"></ext-button>
+    <ext-button text="New Item" iconCls="x-fa fa-pencil" ontap="sheet.toggleMenu()" onready="sheet.buttonReady(event)" ></ext-button>
+    <ext-button text="Star" iconCls="x-fa fa-star" ontap="sheet.toggleMenu()" onready="sheet.buttonReady(event)"></ext-button>
+  </ext-sheet>
+  
+  <ext-panel  shadow="true" ui="instructions" layout='{"type": "vbox", "align": "left"}'>
+    <ext-container  layout="hbox" >
+      <ext-container docked="top"><div #extitem>
+        <div>Sheet is a component which allows you to easily display sliding menus from any side of the screen. You can show the menu by clicking the "Show Menu" button below or by swiping from the edge of the screen.</div>
+      </div></ext-container>
+    </ext-container>
+  </ext-panel>
+
+  <ext-panel layout='{"type": "vbox", "align": "left"}' shadow margin="20 0 0 0" padding="15" shadow="true">
+    <ext-container layout="hbox" > 
+      <ext-button 
+        onready = "sheet.buttonReady1(event)" 
+        ui="action" 
+        enableToggle="true" 
+        ontap="sheet.toggleMenu()"
+        margin= "0 0 10 0">
+      </ext-button>
+    </ext-container>
+
+    <ext-container layout="hbox" >
+      <ext-container docked="top"><div #extitem>
+        <div>side</div>
+      </div></ext-container>
+    </ext-container>
+
+    <ext-segmentedbutton  margin= "0 0 10 0">
+      <ext-button text="left" ontap="sheet.directLeft()" onready="sheet.buttonReady2(event)"></ext-button>
+      <ext-button text="right" ontap="sheet.directRight()" onready="sheet.buttonReady2(event)"></ext-button>
+      <ext-button text="top" ontap="sheet.directTop()" onready="sheet.buttonReady2(event)"></ext-button>
+      <ext-button text="bottom" ontap="sheet.directBottom()" onready="sheet.buttonReady2(event)"></ext-button>
+    </ext-segmentedbutton>
+
+    <ext-container layout="hbox" >
+      <ext-container docked="top"><div #extitem>
+        <div>reveal</div>
+      </div></ext-container>
+    </ext-container>
+
+    <ext-segmentedbutton  margin= "0 0 10 0">
+      <ext-button text="yes" ontap="sheet.setReveal()" onready="sheet.buttonReady3(event)"></ext-button>
+      <ext-button text="no" ontap="sheet.unsetReveal()" onready="sheet.buttonReady3(event)"></ext-button>
+    </ext-segmentedbutton>
+
+    <ext-container layout="hbox" >
+      <ext-container docked="top"><div #extitem>
+        <div>modal</div>
+      </div></ext-container>
+    </ext-container>
+
+    <ext-segmentedbutton onready="sheet.segmentedbuttonReady(event)">
+      <ext-button text="yes" ontap="sheet.setModal()" onready="sheet.buttonReady4(event)"></ext-button>
+      <ext-button text="no" ontap="sheet.unsetModal()" onready="sheet.buttonReady4(event)"></ext-button>
+    </ext-segmentedbutton>
+
+  </ext-panel>
+</ext-container>
