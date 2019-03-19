@@ -1,5 +1,5 @@
-<ext-button 
-  text="progressbar"
-  onready="progressbar.readyButton1(event)"
-  ontap="progressbar.tapButton1(event)">
-</ext-button>
+<ext-panel layout="vbox" bodyPadding="20" shadow="true" width="300">
+  <ext-progress  onready="progressbar.progressReady(event)"></ext-progress>
+  <ext-container style="margin-top: 10px;" onready="progressbar.containerReady(event)"></ext-container>
+  <ext-progress onready="progressbar.progressReady1(event)" ></ext-progress>
+</ext-panel>
