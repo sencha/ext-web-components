@@ -101,7 +101,9 @@ export default class ExtBase extends HTMLElement {
           //mjgComment console.log('created the extChildren array')
           this.parentNode.extChildren = []
         }
-        for (var i = 0; i < this.parentNode.children.length; i++) {
+        //this.parentNode.children2 = this.parentNode.children
+        //for (var i = 0; i < this.parentNode.children.length; i++) {
+        for (var i = this.parentNode.children.length-1; i > -1; i--) {
           var item = this.parentNode.children[i]
           if (item.nodeName.substring(0, 3) == "EXT") {
             if (item.props == this.props) {
@@ -110,18 +112,25 @@ export default class ExtBase extends HTMLElement {
             }
           }
           else {
-            var cln = item.cloneNode(true);
+            console.log(i)
+            var par = item.parentNode
+
+            console.dir(this.parentNode.children)
+            var cln = par.removeChild(item);
+            console.dir(this.parentNode.children)
+
+            //var cln = item.cloneNode(true);
             var el = Ext.get(cln);
             var ext = Ext.create({xtype:'widget', element:el})
             this.parentNode.extChildren.push({ADDORDER:i,XTYPE:'widget',EXT:ext})
-            item.style.display = 'none';
-            removeItems.push(item)
+            //item.style.display = 'none';
+            //removeItems.push(item)
           }
         }
       }
-      for (let item of removeItems) {
-        item.remove(); 
-      }
+      // for (let item of removeItems) {
+      //   item.remove(); 
+      // }
     }
 
     //deal with children
@@ -137,15 +146,21 @@ export default class ExtBase extends HTMLElement {
         this.addTheChild(parentCmp, childCmp, location)
     }
 
-    for (var i = 0; i < this.children.length; i++) {
+    //for (var i = 0; i < this.children.length; i++) {
+    for (var i = this.children.length-1; i > -1; i--) {
       var item = this.children[i]
       if (item.nodeName.substring(0, 3) != "EXT") {
         //mjgComment console.log(`item ${i} NON ext child`)
-        var cln = item.cloneNode(true);
+//        var cln = item.cloneNode(true);
+        //var cln = this.parentNode.removeChild(item);
+        var par = item.parentNode
+        var cln = par.removeChild(item);
+
+
         var el = Ext.get(cln);
         this.ext.insert(i,{xtype:'widget', element:el});
-        item.style.display = 'none';
-        removeItems.push(item)
+        //item.style.display = 'none';
+        //removeItems.push(item)
       }
     }
 
