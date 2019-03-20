@@ -40,10 +40,4 @@ export default class vboxLayoutComponent {
     this.cont = event.detail.cmp;
     this.cont.setStyle(this.card.green);
   }
-
-  containerReady(event) {
-    this.cont = event.detail.cmp;
-    this.cont.setScrollable("true");
-  }
-
 }

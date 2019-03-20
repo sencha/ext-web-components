@@ -9,10 +9,6 @@ export default class ProgressBarComponent {
     this.progressText = '';
     this.updateLoop;
   }
-  connectedCallback(){
-    alert();
-  
-  }
 
   progressReady(event){
     this.progressText = "1%";
@@ -28,11 +24,12 @@ export default class ProgressBarComponent {
 
     }, 100)
   } 
+
   progressReady1(event){
     this.progressBar1 = event.detail.cmp;
     
   }
-
+  
   containerReady(event){
     this.container = event.detail.cmp;
   }
