@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npm run dev",
     "clean": "rimraf build",
-    "dev": "webpack-dev-server",
+    "dev": "webpack-dev-server --env.browser='yes' --env.verbose='no'",
     "build": "npm run clean && cross-env webpack --env.environment='production' --env.treeshake='yes' && cross-env webpack --env.environment='production' --env.treeshake='no'"
   },
   "devDependencies": {
@@ -19,6 +19,9 @@
     "@sencha/ext-modern-theme-material": "~6.7.0",
 
     "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/runtime": "^7.3.4",
+
     "@babel/plugin-proposal-class-properties": "^7.3.4",
     "@babel/plugin-proposal-decorators": "^7.3.0",
     "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
@@ -29,14 +32,13 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-syntax-import-meta": "^7.2.0",
     "@babel/plugin-transform-runtime": "^7.3.4",
-    "@babel/preset-env": "^7.3.4",
-    "@babel/runtime": "^7.3.4",
 
     "rimraf": "^2.6.3",
     "cross-env": "^5.2.0",
     "portfinder": "^1.0.20",
 
-     "html-webpack-plugin": "^3.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "base-href-webpack-plugin": "~2.0.0",
 
     "babel-loader": "^8.0.5",
     "html-loader": "^0.5.5",

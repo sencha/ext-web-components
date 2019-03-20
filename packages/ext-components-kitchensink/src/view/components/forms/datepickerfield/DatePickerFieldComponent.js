@@ -1,18 +1,13 @@
 import './DatePickerFieldComponent.css';
+import './DatePickerFieldComponent.html';
 
 export default class DatePickerFieldComponent {
-
   constructor () {
     console.log('in DatePickerFieldComponent constructor');
   }
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
+  datepickerfieldready(event) {
+    this.cmp = event.detail.cmp;
+    this.cmp.setValue(new Date());
   }
-
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
-  }
-
 }

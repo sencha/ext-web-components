@@ -3,23 +3,14 @@ import './CarouselComponent.html';
 
 export default class CarouselComponent {
 
-  constructor () {
-    console.log('in CarouselComponent constructor');
-  }
-
   readyCarouselHorizontal(event) {
     this.carouselHorizontalCmp = event.detail.cmp
-  }
-
-  readyCarouselHorizontalChild(event) {
-//    this.carouselHorizontalCmp.setActiveItem(0)
+    this.carouselHorizontalCmp.setActiveItem(0)
   }
 
   readyCarouselVertical(event) {
-    this.carouselHorizontalCmp = event.detail.cmp
+    this.carouselVerticalCmp = event.detail.cmp
+    this.carouselVerticalCmp.setActiveItem(0)
   }
 
-  readyCarouselVerticalChild(event) {
-//    this.carouselHorizontalCmp.setActiveItem(0)
-  }
 }

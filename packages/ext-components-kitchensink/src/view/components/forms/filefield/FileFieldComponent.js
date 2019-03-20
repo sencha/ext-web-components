@@ -1,18 +1,18 @@
 import './FileFieldComponent.css';
+import './FileFieldComponent.html';
 
 export default class FileFieldComponent {
-
   constructor () {
     console.log('in FileFieldComponent constructor');
+    this.filefield = null;
   }
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
+  onfilefieldchange(event, value) {
+    this.filefield = event.detail.newValue;
+    this.cmp.setHtml(`You selected ${this.filefield}`);
   }
 
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
+  containerready(event) {
+    this.cmp = event.detail.cmp;
   }
-
 }

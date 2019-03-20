@@ -1,18 +1,24 @@
 import './DefaultGaugeComponent.css';
+import './DefaultGaugeComponent.html';
 
 export default class DefaultGaugeComponent {
-
   constructor () {
-    console.log('in DefaultGaugeComponent constructor');
+    this.value = 40;
   }
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
+  updateGauges(event) {
+    if(this.value === event.detail.oldValue[0]){
+      this.value = event.detail.newValue;
+      this.gauge1.setValue(this.value);
+      this.gauge2.setValue(this.value);
+    }
   }
 
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
+  item1Ready(event) {
+    this.gauge1 = event.detail.cmp;
   }
 
+  item2Ready(event) {
+    this.gauge2 = event.detail.cmp;
+  }
 }

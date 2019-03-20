@@ -1,18 +1,33 @@
 import './FitLayoutComponent.css';
+import './FitLayoutComponent.html';
 
 export default class FitLayoutComponent {
 
   constructor () {
-    console.log('in FitLayoutComponent constructor');
+    this.card = {
+      blue: {
+        fontSize: '16px',
+        padding: '10px',
+        backgroundColor: '#673ab7', 
+        color: 'white'
+      },
+      green: {
+        fontSize: '16px',
+        padding: '10px',
+        backgroundColor: '#7c4dff', 
+        color: 'white'
+      },
+      red: {
+        fontSize: '16px',
+        padding: '10px',
+        backgroundColor: '#00bcd4', 
+        color: 'white'
+      }
+    }
   }
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
+  itemReady(event) {
+    this.cont = event.detail.cmp;
+    this.cont.setStyle(this.card.red);
   }
-
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
-  }
-
 }
