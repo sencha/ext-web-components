@@ -69,6 +69,13 @@ export default class SheetComponent {
       this.text = 'Show Menu'
     }
 
+    if(this.direct === 'left' || this.direct === 'right'){
+      this.width = '250'
+    } else {
+      this.width = 'undefined'
+    }
+
+    this.button.setWidth(this.width);
     this.button1.setText(this.text);
     this.button1.setPressed(this.displayed);
     this.sheet.setSide(this.direct);
