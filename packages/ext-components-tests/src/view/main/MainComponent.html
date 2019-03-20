@@ -1,8 +1,10 @@
 <ext-panel layout="fit" bodyPadding="0">
+
   <ext-titlebar docked="top" weight="10">
     <ext-button iconCls="x-fa fa-bars" onReady="main.toggleButtonReady(event)" onTap="main.toggleTree()"></ext-button>
-    <span extjs href="#" class="app-title">Sencha Ext Components 7.0 Boilerplate</span>
+    <span href="#" class="app-title">Sencha Ext Components 7.0 Tests</span>
   </ext-titlebar>
+
   <ext-panel
     docked="left"
     border="true"
@@ -22,5 +24,7 @@
       onselectionchange="main.navTreelistSelectionChange(event)">
     </ext-treelist>
   </ext-panel>
+
   <ext-router hidden=false onready="main.readyRouter(event)" padding="2" style="overflow:scroll;"></ext-router>
+  
 </ext-panel>
