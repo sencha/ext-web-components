@@ -34,9 +34,6 @@ export default class BigDataComponent {
   }
 
   showExportSheet = false;
-
-
-
   grid
   gridReady = (event) => {
     this.grid = event.ext;

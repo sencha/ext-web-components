@@ -1,4 +1,5 @@
 import './ContainerFieldComponent.css';
+import './ContainerFieldComponent.html';
 
 export default class ContainerFieldComponent {
 
@@ -6,13 +7,12 @@ export default class ContainerFieldComponent {
     console.log('in ContainerFieldComponent constructor');
   }
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
-  }
+  containerfieldcomponentready(event) {
+    const isPhone = Ext.os.is.Phone;
+    this.cmp = event.detail.cmp;
 
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
-  }
+    const layout = isPhone ? "vbox" : "hbox";
+    this.cmp.setLayout(layout);
 
+  }
 }

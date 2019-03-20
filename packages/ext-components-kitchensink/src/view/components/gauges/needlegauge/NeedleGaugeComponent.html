@@ -1,5 +1,17 @@
-<ext-button 
-  text="needlegauge"
-  onready="needlegauge.readyButton1(event)"
-  ontap="needlegauge.tapButton1(event)">
-</ext-button>
+<ext-container padding="10" layout="fit" fitToParent="true" height="100%">
+
+  <ext-formpanel layout="vbox" shadow="true">
+    <ext-sliderfield label="Value" onchange="needlegauge.updateGauges(event)" value="30"></ext-sliderfield>
+    <ext-container flex="1" layout="hbox">
+      <ext-container flex="1" layout="vbox">
+        <ext-gauge flex="1" value="30" onready="needlegauge.item1Ready(event)"></ext-gauge>
+        <ext-gauge flex="1" value="30" onready="needlegauge.item2Ready(event)" needle="wedge"></ext-gauge>
+      </ext-container>
+      <ext-container flex="1" layout="vbox">
+        <ext-gauge flex="1" value="30" onready="needlegauge.item3Ready(event)" needle="spike"></ext-gauge>
+        <ext-gauge flex="1" value="30" onready="needlegauge.item4Ready(event)"></ext-gauge>
+      </ext-container>
+    </ext-container>
+  </ext-formpanel>
+  
+</ext-container>

@@ -1,4 +1,6 @@
 import './ValidationComponent.css';
+import './ValidationComponent.html';
+Ext.require("Ext.data.validator.*");
 
 export default class ValidationComponent {
 
@@ -6,13 +8,16 @@ export default class ValidationComponent {
     console.log('in ValidationComponent constructor');
   }
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
-  }
+  validateCapitalization(value){
+    debugger;
+    const words = value.split(/\s+/);
 
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
-  }
+    for (let word of words) {
+      if (word.length && !word.match(/^[A-Z].*$/)) {
+        return 'All words must be capitalized.';
+      }
+    }
 
+    return true;
+  }
 }
