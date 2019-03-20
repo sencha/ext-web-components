@@ -1,7 +1,7 @@
 describe("Simple", () => {
     it('should have the button with right text', () => {
         ST.navigate('#simple');
-        ST.component('#button')
+        ST.component('#buttonSimple')
             .visible()
             .text('Click Me');
     });

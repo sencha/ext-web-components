@@ -6,7 +6,7 @@ describe('Sencha Test Hooks', () => {
     });
     
     it('should support component selection by Item Id', () => {
-        ST.component('#target').visible();
-        ST.component('#target').visible().text("Target");
+        ST.component('#targetSenchaHooks').visible();
+        ST.component('#targetSenchaHooks').visible().text("Target");
     });
 });
