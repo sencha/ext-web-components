@@ -215,6 +215,12 @@ export default class MainComponent {
   }
 
   toggleTree() {
+    var t = document.getElementById('theTitle');
+    console.log(t)
+    t.innerHTML = "change"
+
+
+
     var collapsed = this.navTreePanelCmp.getCollapsed()
     if (collapsed == true){collapsed = false} else{collapsed = true}
     this.navTreePanelCmp.setCollapsed(collapsed)
