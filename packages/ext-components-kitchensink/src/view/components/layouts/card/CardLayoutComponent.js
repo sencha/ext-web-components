@@ -23,10 +23,14 @@ export default class CardLayoutComponent {
         backgroundColor: '#00bcd4', 
         color: 'white'
       }
-    }
+    };
+
     this.animation = null;
     this.activeCard = 0; 
-    // this.layout = {type: 'card', animation: this.animation}
+    this.animationDefaults = {
+      duration: 500,
+      easing: 'ease-in-out'
+    };
 
     this.contents = [
       { text: 'Slide Left', animation: { type: 'slide', direction: 'left', ...this.animationDefaults } },
@@ -47,48 +51,69 @@ export default class CardLayoutComponent {
     ];
   }
 
-  switchCards(animation) {
-    this.animation = animation;
-    this.activeCard = this.activeCard === 0 ? 1 : 0;
+  switchCards(event) {
+    const buttonText = event.srcElement.text;
+    const targetItem = this.contents.filter(function(button) {return button.text === buttonText})[0];
+    console.log(targetItem);
+    
+    this.animation = targetItem.animation;
+    
+    if (this.activeCard === 0) {
+      this.activeCard = 1;
+    } else {
+      this.activeCard = 0;
+    }
+    this.contParent.setLayout({ animation: this.animation });
+    this.contParent.setActiveItem(this.activeCard);
   }
 
   onItem1Ready(event) {
-    this.colors = this.card.blue;
-    this.textContainer = event.detail.cmp;
-    this.textContainer.setBodyStyle(this.colors);
+    this.displayPanel1 = event.detail.cmp;
+    this.displayPanel1.setBodyStyle(this.card.blue);
   }
 
   onItem2Ready(event) {
-    this.colors = this.card.green;
-    this.textContainer = event.detail.cmp;
-    this.textContainer.setBodyStyle(this.colors);
+    this.displayPanel2 = event.detail.cmp;
+    this.displayPanel2.setBodyStyle(this.card.green);
   }
 
   onContainer1Ready(event) {
-    this.cont = event.detail.cmp;
-    // this.cont.setLayout(this.layout);
+    this.contParent = event.detail.cmp;
   }
 
   onContainer2Ready(event) {
-    this.cont = event.detail.cmp;
-    const contTemp = this.cont;
-    this.contents.forEach(function(button){
-      contTemp.setHidden(false);
-    })
+    this.cont2 = event.detail.cmp;
+
+    for (let buttonItem of this.contents) {
+      const buttonElement = document.createElement('ext-button');
+      
+      if (buttonItem.margin) {
+        buttonElement.margin = buttonItem.margin;
+      }
+
+      buttonElement.text = buttonItem.text;
+      buttonElement.ui = 'alt';
+      buttonElement.setAttribute('onTap', "card.switchCards(event)");
+      buttonElement.setAttribute('animation', buttonItem.animation);
+      buttonElement.animation = buttonItem.animation;
+      this.cont2.el.dom.append(buttonElement);
+    }
   }
 
-  buttonReady(event) {
-    this.btn = event.detail.cmp;
-    const buttonTemp = this.btn;
-    this.contents.forEach(function(button){
-      // console.log(button.text);
-      buttonTemp.setText(button.text);
-    })
+  onContainer3Ready(event) {
+    this.cont3 = event.detail.cmp;
+
+    for (let buttonItem of this.contents) {
+      const buttonElement = document.createElement('ext-button');
+      
+      if (buttonItem.margin) {
+        buttonElement.margin = buttonItem.margin;
+      }
+
+      buttonElement.text = buttonItem.text;
+      buttonElement.ui = 'alt';
+      buttonElement.setAttribute('onTap', "card.switchCards(event)");
+      this.cont3.el.dom.append(buttonElement);
+    }
   }
-
-  animationDefaults = {
-      duration: 500,
-      easing: 'ease-in-out'
-  };
-
 }
