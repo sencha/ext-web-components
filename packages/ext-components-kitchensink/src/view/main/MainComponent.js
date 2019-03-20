@@ -32,7 +32,8 @@ export default class MainComponent {
     if (this.wait == 0) {
       var hash = window.location.hash.substr(1)
       if (hash == '') {hash = 'all'}
-      var node = this.dataviewNavCmp.getStore().findNode('hash',hash);
+      var node = this.navTreelistCmp.getStore().findNode('hash',hash);
+      this.navTreelistCmp.setSelection(node);
       this.navigate(node);
     }
   }
