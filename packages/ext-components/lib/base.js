@@ -112,12 +112,8 @@ export default class ExtBase extends HTMLElement {
             }
           }
           else {
-            console.log(i)
             var par = item.parentNode
-
-            console.dir(this.parentNode.children)
             var cln = par.removeChild(item);
-            console.dir(this.parentNode.children)
 
             //var cln = item.cloneNode(true);
             var el = Ext.get(cln);
