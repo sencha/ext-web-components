@@ -1,18 +1,31 @@
 import './DialogPopupComponent.css';
+import './DialogPopupComponent.html';
 
 export default class DialogPopupComponent {
 
   constructor () {
-    console.log('in DialogPopupComponent constructor');
+    this.isDialogShowing = false;
   }
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
+  dialogReady(event){
+    this.dialog = event.detail.cmp;
   }
 
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
+  showDialog(){
+    this.dialog.setDisplayed(!this.isDialogShowing);
+  }
+
+  onHide(){
+    this.dialog.setDisplayed(this.isDialogShowing);
+  }
+
+  onCancel(){
+    debugger;
+    this.dialog.setDisplayed(this.isDialogShowing);
+  }
+
+  onOk(){
+    this.dialog.setDisplayed(this.isDialogShowing);
   }
 
 }
