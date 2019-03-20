@@ -8,7 +8,7 @@ export default class FilesDragDropComponent {
   iconCls = 'drag-file-icon';
   labelText = 'Drag a file from your computer here.';
 
-  parentReady = (ele) => {
+  parentReady(ele) {
     this.parentRef = ele.detail.cmp.el;
     this.target.setElement(this.parentRef);
     this.parentRef.destroy = this.doDestroy.bind(this);
@@ -30,19 +30,20 @@ export default class FilesDragDropComponent {
     this.iconContainer = event.detail.cmp.el;
   }
 
-  onDrop = (target, info) => {
+  onDrop(target, info) {
     const files = info.files;
     this.iconContainer.setCls('drag-file-icon dropped fa-spin');
 
     const labelText = files.length > 1 ? `Dropped ${files.length} files.` : `Dropped ${files[0].name}`
     this.textContainer.setHtml(labelText);
 
-    this.timer = setTimeout(() => {
-      if(!this.parentRef.destroyed) {
-        this.iconContainer.setCls('drag-file-icon drag-file-fadeout');
-        this.textContainer.setHtml('Drag a file from your computer here.');
+    const comp = this;
+    this.timer = setTimeout(function(){
+      if(!comp.parentRef.destroyed) {
+        comp.iconContainer.setCls('drag-file-icon drag-file-fadeout');
+        comp.textContainer.setHtml('Drag a file from your computer here.');
       }
-      this.timer = null;
+      comp.timer = null;
     }, 2000);
   }
 

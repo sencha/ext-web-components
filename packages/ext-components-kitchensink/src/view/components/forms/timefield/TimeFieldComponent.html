@@ -1,5 +1,47 @@
-<ext-button 
-  text="timefield"
-  onready="timefield.readyButton1(event)"
-  ontap="timefield.tapButton1(event)">
-</ext-button>
+<ext-container
+    platformConfig='{
+                    "phone": {
+                        "layout": "fit"
+                    },
+                    "!phone": {
+                        "layout": "center",
+                        "padding": "10"
+                    }
+                }'>
+    <ext-formpanel
+        shadow="true"
+        padding="20"
+        platformConfig='{
+                        "!phone": {
+                            "maxHeight": "500",
+                            "width": "350"
+                        }
+                    }'>
+    <ext-fieldset
+        title="Personal Info"
+         defaults='{"labelAlign": "placeholder"}'>
+        <ext-timefield
+            required="true"
+            label="Time Field"
+            value="3:42 PM"
+            name="time"
+            onready="timefield.timefieldready(event)" >
+        </ext-timefield>
+    </ext-fieldset>
+    <ext-toolbar
+        shadow="false"
+        docked="bottom"
+        layout='{ "type": "hbox", "pack": "right" }'>
+        <ext-button
+            onready="timefield.buttonready(event)"
+            text="Disable All"
+            margin="0 10 0 0"
+            onTap="timefield.toggleDisable()" >
+        </ext-button>
+         <ext-button
+            text="Reset"
+            onTap="timefield.resettimefield()" >
+        </ext-button>
+    </ext-toolbar>
+    </ext-formpanel>
+</ext-container>
