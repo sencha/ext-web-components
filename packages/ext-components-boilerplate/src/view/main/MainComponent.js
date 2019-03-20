@@ -13,16 +13,16 @@ export default class MainComponent {
       rootVisible: true,
       root: navTreeRoot
     });
-    this.wait = 9;
+    this.wait = 3;
   }
 
   afterAllLoaded(f) {
     this.wait = this.wait - 1;
-
     if (this.wait == 0) {
       var hash = window.location.hash.substr(1)
-      if (hash == '') {hash = 'home'}
-      var node = this.dataviewNavCmp.getStore().findNode('hash',hash);
+      if (hash == '') {hash = 'home'} //mjg need function for this in router
+      var node = this.navTreelistCmp.getStore().findNode('hash',hash);
+      this.navTreelistCmp.setSelection(node);
       this.navigate(node);
     }
   }
