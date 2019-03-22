@@ -12,7 +12,7 @@
   "devDependencies": {
     "@sencha/ext-components": "~7.0.0",
     
-    "eslint": "^5.15.1",
+    "eslint": "^5.15.3",
     "eslint-loader": "^2.1.2",
 
     "babel-loader": "^8.0.5",

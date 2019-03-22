@@ -33,7 +33,7 @@ import LifecycleComponent from './view/lifecycle/LifecycleComponent.js';
 export default function getMenu() {
   return [
     { text: 'Create Child', children: [
-      { text: 'Element Insert Between', component: ElementInsertBetween },
+      { text: 'Element Insert Between', component: ElementInsertBetween, default: true },
       { text: 'Element Insert End', component: ElementInsertEnd },
       { text: 'Element Insert Start', component: ElementInsertStart },
       { text: 'Insert Between', component: InsertBetween },
