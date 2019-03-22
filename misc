@@ -2,10 +2,12 @@ https://docs.google.com/spreadsheets/d/1_VUmebo5GZwhoBaLAOEme-iLvXJzkBRdYja_uIZU
 
 git remote add upstream https://github.com/sencha/ext-components.git
 
-git fetch upstream
-exit
 
-git merge upstream
+git fetch upstream
+git merge upstream/master
+
+
+
 
 /ext-components-7.0.x
 
