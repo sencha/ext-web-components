@@ -28,6 +28,8 @@ import RelEditorComponent from './view/rel/releditor/RelEditorComponent.js';
 import RelDialogComponent from './view/rel/reldialog/RelDialogComponent.js';
 import RelComponent from './view/rel/rel/RelComponent.js';
 
+import LifecycleComponent from './view/lifecycle/LifecycleComponent.js';
+
 export default function getMenu() {
   return [
     { text: 'Create Child', children: [
@@ -61,5 +63,6 @@ export default function getMenu() {
     { text: 'Update Functions', component: UpdateFunctionsComponent },
     { text: 'Simple', component: SimpleComponent },
     { text: 'Sencha Test Hooks', component: SenchaTestHooksComponent },
+    { text: 'Lifecycle', component: LifecycleComponent },
   ]
 };
