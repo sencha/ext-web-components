@@ -1,5 +1,3 @@
-import AboutComponent from './view/about/AboutComponent.js';
-import HomeComponent from './view/home/HomeComponent.js';
 import ButtonComponent from './view/components/buttons/button/ButtonComponent.js';
 import SegmentedButtonComponent from './view/components/buttons/segmentedbutton/SegmentedButtonComponent.js';
 import SplitButtonComponent from './view/components/buttons/splitbutton/SplitButtonComponent.js';
@@ -173,8 +171,6 @@ import ExporterPluginComponent from './view/pivotgrids/exporterplugin/ExporterPl
 
 export default function getMenu() {
   return [
-    { text: 'Home', component: HomeComponent, iconCls:'x-fa fa-home', default: true},
-    { text: 'About', component: AboutComponent, iconCls:'x-fa fa-question' },
     { text: 'Components', iconCls: 'icon-buttons', children: [
       { text: 'Buttons', iconCls: 'icon-buttons', children: [
         { text: 'Button', component: ButtonComponent, layout: 'center', iconCls: 'icon-buttons' },
@@ -353,8 +349,8 @@ export default function getMenu() {
         { text: 'OHLC', component: OHLCComponent, iconCls: 'icon-financial-ohlc' }
       ] },
       { text: 'Gauges', iconCls: 'icon-gauge-charts', children: [
-        { text: 'Basic Gauge', component: BasicGaugeChartComponent, iconCls: 'icon-gauge-basic' }  
-      ] }, 
+        { text: 'Basic Gauge', component: BasicGaugeChartComponent, iconCls: 'icon-gauge-basic' }
+      ] },
       { text: 'Line', iconCls: 'icon-line-charts', children: [
         { text: 'Basic Line', component: BasicLineComponent, iconCls: 'icon-line-basic' },
         { text: 'Basic Markers', component: BasicMarkersComponent, iconCls: 'icon-line-markers' },
@@ -370,7 +366,7 @@ export default function getMenu() {
         { text: 'Spie', component: SpieComponent, iconCls: 'icon-pie-custom' },
         { text: 'Donut', component: DonutComponent, iconCls: 'icon-pie-donut' },
         { text: 'Double Donut', component: DoubleDonutComponent, iconCls: 'icon-pie-double-donut' },
-        { text: '3D Pie', component: ThreeDPieComponent, iconCls: 'icon-pie-3d' } 
+        { text: '3D Pie', component: ThreeDPieComponent, iconCls: 'icon-pie-3d' }
       ] },
       { text: 'Radar', iconCls: 'icon-radar-charts', children: [
         { text: 'Basic Radar', component: BasicRadarComponent, iconCls: 'icon-radar-basic' },
