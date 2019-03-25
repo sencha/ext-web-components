@@ -58,7 +58,7 @@ import '@sencha/ext-components/lib/ext-tooltip.component';
 
 import '@sencha/ext-components/lib/ext-segmentedbutton.component';
 import '@sencha/ext-components/lib/ext-indicator.component';
-
+import '@sencha/ext-components/lib/ext-list.component';
 
 
 import getMenu from './menu';
