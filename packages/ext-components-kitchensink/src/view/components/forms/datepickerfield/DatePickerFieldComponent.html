@@ -1,5 +1,11 @@
-<ext-button 
-  text="datepickerfield"
-  onready="datepickerfield.readyButton1(event)"
-  ontap="datepickerfield.tapButton1(event)">
-</ext-button>
+<ext-formpanel width="200" shadow="true">
+  <ext-datepickerfield 
+      width="150"
+      destroyPickerOnHide="true"
+      label="Date"
+      picker='{
+                "yearFrom": "1990"
+              }'
+      onready="datepickerfield.datepickerfieldready(event)">
+  </ext-datepickerfield>
+</FormPanel>

@@ -1,4 +1,6 @@
 import './SelectFieldComponent.css';
+import './SelectFieldComponent.html';
+Ext.require('Ext.Toast');
 
 export default class SelectFieldComponent {
 
@@ -6,13 +8,8 @@ export default class SelectFieldComponent {
     console.log('in SelectFieldComponent constructor');
   }
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
-  }
-
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
+  onchangeselectfield(event) {
+    return Ext.toast(`You selected the item with value ${event.detail.newValue}`);
   }
 
 }

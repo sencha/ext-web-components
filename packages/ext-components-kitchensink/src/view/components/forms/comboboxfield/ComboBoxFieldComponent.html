@@ -1,5 +1,12 @@
-<ext-button 
-  text="comboboxfield"
-  onready="comboboxfield.readyButton1(event)"
-  ontap="comboboxfield.tapButton1(event)">
-</ext-button>
+<ext-formpanel width="250" shadow="true" >
+  <ext-comboboxfield
+    width="200"
+    label="State"
+    displayField="name"
+    valueField="abbrev"
+    queryMode="local"
+    labelAlign="placeholder"
+    clearable="true"
+    onready="comboboxfield.comboboxfieldready(event)">
+  </ext-comboboxfield>
+</ext-formpanel>
