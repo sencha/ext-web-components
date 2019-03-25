@@ -14,7 +14,6 @@ export default class ToolBarComponent {
   }
 
   buttonHandler(event) {
-    console.log(event.detail.button._text,'event');
     this.containerReady.setHtml("User clicked \"" + event.detail.button._text + "\"")
   }
 

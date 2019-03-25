@@ -1,4 +1,5 @@
 import './BottomTabComponent.css';
+import './BottomTabComponent.js';
 
 export default class BottomTabComponent {
 
