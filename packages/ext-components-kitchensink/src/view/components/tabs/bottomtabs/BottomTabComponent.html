@@ -1,7 +1,7 @@
 <ext-container padding="10" layout="fit" fitToParent="true">
   <ext-tabpanel 
     shadow="true"
-    tabBar='{ "docked": "bottom" }'
+    onready= 'bottomtabs.tabpanelReady(event)'
     defaults='{"cls": "card", "layout": "center"}'>
     <ext-panel title="Info" iconCls="x-fa fa-info-circle" layout="center">
       <ext-container html='Docking tabs to the bottom will automatically change their style.'></ext-container>
