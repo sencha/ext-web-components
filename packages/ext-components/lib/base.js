@@ -32,7 +32,6 @@ export default class ExtBase extends HTMLElement {
 
     this.props = {};
     this.props.xtype = this.XTYPE;
-
     //mjg fitToParent not working
     if (true === this.fitToParent) {
       console.log('here')

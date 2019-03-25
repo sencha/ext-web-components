@@ -857,7 +857,6 @@ export class ExtListComponent extends ExtBase {
 
   constructor() {
     super();
-		debugger;
     this.METHODS = ExtListComponent.METHODS()
     this.XTYPE = ExtListComponent.XTYPE()
     //this.PROPERTIES = ExtListComponent.PROPERTIES()
