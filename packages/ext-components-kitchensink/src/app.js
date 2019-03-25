@@ -11,6 +11,7 @@ import '@sencha/ext-components/lib/ext-splitbutton.component';
 import '@sencha/ext-components/lib/ext-dataview.component';
 import '@sencha/ext-components/lib/ext-dialog.component';
 import '@sencha/ext-components/lib/ext-searchfield.component';
+import '@sencha/ext-components/lib/ext-spacer.component';
 import '@sencha/ext-components/lib/ext-treelist.component';
 import '@sencha/ext-components/lib/ext-panel.component';
 import '@sencha/ext-components/lib/ext-segmentedbutton.component';
