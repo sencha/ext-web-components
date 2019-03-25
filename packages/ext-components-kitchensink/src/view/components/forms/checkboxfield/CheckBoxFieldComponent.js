@@ -1,18 +1,20 @@
 import './CheckBoxFieldComponent.css';
+import './CheckBoxFieldComponent.html';
 
 export default class CheckBoxFieldComponent {
-
   constructor () {
     console.log('in CheckBoxFieldComponent constructor');
-  }
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
-  }
+     }
 
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
-  }
+  checkboxfieldready1(event) {
+    const isPhone = Ext.os.is.Phone;
+    this.cmp = event.detail.cmp;
 
+    const top = !isPhone ? 10 : null
+    const left = !isPhone ? 10 : null
+
+    this.cmp.setTop(top);
+    this.cmp.setLeft(left);
+  }
 }

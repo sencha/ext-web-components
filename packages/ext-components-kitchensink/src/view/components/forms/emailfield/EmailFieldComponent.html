@@ -1,5 +1,8 @@
-<ext-button 
-  text="emailfield"
-  onready="emailfield.readyButton1(event)"
-  ontap="emailfield.tapButton1(event)">
-</ext-button>
+<ext-formpanel shadow="true">
+  <ext-emailfield
+    width="250"
+    placeholder="user@domain.com"
+    label="Email"
+    validators="email">
+  </ext-emailfield>
+</ext-formpanel>

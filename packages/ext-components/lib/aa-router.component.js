@@ -79,13 +79,26 @@ export class Router {
           currentComponent = route.component
         }
       }
-     // setTimeout(function() {
-        window[currentHash] = new currentComponent()
-        scope.rootElem.innerHTML = window._code[currentHash][currentComponent.name + '.html']
-     // },50);
+      window[currentHash] = new currentComponent()
+      scope.rootElem.innerHTML = window._code[currentHash][currentComponent.name + '.html']
     }
     else {
-      //console.log('hash is == 0')
+      var currentHash = ''
+      var currentComponent = null
+      for (var i = 0, length = r.length; i < length; i++) {
+        var route = r[i];
+        if(route.default == true) {
+          currentHash = route.hash
+          currentComponent = route.component
+        }
+      }
+      if (currentHash == ''){
+        console.log('no default route specified')
+      }
+      else {
+        window[currentHash] = new currentComponent()
+        scope.rootElem.innerHTML = window._code[currentHash][currentComponent.name + '.html']  
+      }
     }
   }
 

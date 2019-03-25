@@ -1,5 +1,77 @@
-<ext-button 
-  text="wizard"
-  onready="wizard.readyButton1(event)"
-  ontap="wizard.tapButton1(event)">
-</ext-button>
+<ext-container
+  layout="vbox"
+  padding="10"
+  platformConfig='{
+                    "!phone": {
+                        "height": "350",
+                        "width": "550"
+                    }
+                }'>
+  <ext-container
+    layout="hbox"
+    margin="0 0 10 0">
+    <ext-segmentedbutton
+      onready="wizard.segmentedbuttonready(event)"
+      onchange="wizard.changeTapMode(event)"
+      defaultUI="toolbar-default">
+      <ext-button
+        text="direction"
+        value="direction"
+        onready="wizard.buttonready3(event)">
+      </ext-button>
+      <ext-button
+        text="item"
+        value="item"
+        onready="wizard.buttonready4(event)">
+      </ext-button>
+    </ext-segmentedbutton>
+  </ext-container>
+
+  <ext-panel
+    onready="wizard.panelready(event)"
+    activeItem="0"
+    shadow="true"
+    layout="card"
+    flex="1">
+    <ext-container
+      onready="wizard.containerready1(event)"
+      padding="5 20"
+      style="font-size: '16px'">
+    </ext-container>
+    <ext-container
+      onready="wizard.containerready2(event)"
+      padding="20"
+      style="font-size: '16px'">
+    </ext-container>
+    <ext-container
+      onready="wizard.containerready3(event)"
+      padding="5 20"
+      style="font-size: '16px'">
+    </ext-container>
+    <ext-toolbar
+      docked="bottom"
+      layout='{ "type": "hbox", "align": "center", "pack": "space-between" }'>
+      <ext-button
+        onready="wizard.buttonready1(event)"
+        text="Previous"
+        onTap="wizard.previous()"
+        iconCls="x-fa fa-chevron-left" >
+      </ext-button>
+      <ext-indicator
+        count="3"
+        onready="wizard.indicatorready1(event)"
+        onNext="wizard.next()"
+        onPrevious="wizard.previous()"
+        tapMode="direction"
+        onIndicatorTap="wizard.onIndicatorTap(event)" >
+      </ext-indicator>
+      <ext-button
+        onready="wizard.buttonready2(event)"
+        text="Next"
+        onTap="wizard.next()"
+        iconCls="x-fa fa-chevron-right"
+        iconAlign="right" >
+      </ext-button>
+    </ext-toolbar>
+  </ext-panel>
+</ext-container>
