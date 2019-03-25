@@ -1,11 +1,12 @@
 import hljs from 'highlightjs';
 import 'highlightjs/styles/atom-one-dark.css';
 import './MainComponent.css';
-import "./MainComponent.html";
+import './MainComponent.html';
 
 Ext.require([
   'Ext.data.TreeStore'
 ])
+
 export default class MainComponent {
 
   constructor() {
@@ -25,12 +26,14 @@ export default class MainComponent {
   }
 
   afterAllLoaded(f) {
-    this.wait = this.wait - 1;
+    this.wait = this.wait - 1
     //console.log('***wait*** ' + this.wait )
+    
     if (this.wait == 0) {
       var hash = window.location.hash.substr(1)
       if (hash == '') {hash = 'all'}
-      var node = this.dataviewNavCmp.getStore().findNode('hash',hash);
+      var node = this.navTreelistCmp.getStore().findNode('hash',hash);
+      this.navTreelistCmp.setSelection(node);
       this.navigate(node);
     }
   }
@@ -213,6 +216,12 @@ export default class MainComponent {
   }
 
   toggleTree() {
+    var t = document.getElementById('theTitle');
+    console.log(t)
+    t.innerHTML = "change"
+
+
+
     var collapsed = this.navTreePanelCmp.getCollapsed()
     if (collapsed == true){collapsed = false} else{collapsed = true}
     this.navTreePanelCmp.setCollapsed(collapsed)

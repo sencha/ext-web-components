@@ -5,20 +5,14 @@ export default class DrawComponent {
 
   constructor () {}
 
-  refs = {
-    draw: {}
-  };
-  isPhone = Ext.os.is.Phone;
-  supportsTouch = Ext.supports.Touch;
-  
   onReady(ele) {
     this.drawRef = ele.detail.cmp;
     this.drawRef.on({
       element: 'element',
-      mousedown: this.onMouseDown,
-      mousemove: this.onMouseMove,
-      mouseup: this.onMouseUp,
-      mouseleave: this.onMouseUp
+      mousedown: this.onMouseDown.bind(this),
+      mousemove: this.onMouseMove.bind(this),
+      mouseup: this.onMouseUp.bind(this),
+      mouseleave: this.onMouseUp.bind(this)
     });
   }
   
@@ -77,7 +71,7 @@ export default class DrawComponent {
           this.drawRef.list.push(this.drawRef.lastEventX + 1, this.drawRef.lastEventY + 1);
         }
   
-        path = smoothList(this.drawRef.list);
+        path = this.smoothList(this.drawRef.list);
   
         this.drawRef.sprite.setAttributes({
           path: path
@@ -101,27 +95,26 @@ export default class DrawComponent {
     this.drawRef.renderFrame();
   }
 
-}
-
-function smoothList(points) {
-  if (points.length < 3) {
-      return ['M', points[0], points[1]];
+  smoothList(points) {
+    if (points.length < 3) {
+        return ['M', points[0], points[1]];
+    }
+  
+    var dx = [], dy = [], result = ['M'], i, ln = points.length;
+  
+    for (i = 0; i < ln; i += 2) {
+      dx.push(points[i]);
+      dy.push(points[i + 1]);
+    }
+  
+    dx = Ext.draw.Draw.spline(dx);
+    dy = Ext.draw.Draw.spline(dy);
+    result.push(dx[0], dy[0], 'C');
+  
+    for (i = 1, ln = dx.length; i < ln; i++) {
+      result.push(dx[i], dy[i]);
+    }
+  
+    return result;
   }
-
-  var dx = [], dy = [], result = ['M'], i, ln = points.length;
-
-  for (i = 0; i < ln; i += 2) {
-    dx.push(points[i]);
-    dy.push(points[i + 1]);
-  }
-
-  dx = Ext.draw.Draw.spline(dx);
-  dy = Ext.draw.Draw.spline(dy);
-  result.push(dx[0], dy[0], 'C');
-
-  for (i = 1, ln = dx.length; i < ln; i++) {
-    result.push(dx[i], dy[i]);
-  }
-
-  return result;
 }

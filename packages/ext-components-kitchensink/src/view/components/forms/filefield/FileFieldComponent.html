@@ -1,5 +1,6 @@
-<ext-button 
-  text="filefield"
-  onready="filefield.readyButton1(event)"
-  ontap="filefield.tapButton1(event)">
-</ext-button>
+<ext-panel shadow="true" height="200" width="400" bodyPadding="20" layout="vbox">
+  <ext-filefield label="Attachment" onChange="filefield.onfilefieldchange(event)" >
+  </ext-filefield>
+  <ext-container onready="filefield.containerready(event)">
+  </ext-container>
+</ext-panel>

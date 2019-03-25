@@ -1,5 +1,32 @@
-<ext-button 
-  text="sliderfield"
-  onready="sliderfield.readyButton1(event)"
-  ontap="sliderfield.tapButton1(event)">
-</ext-button>
+<ext-formpanel shadow="true" width="300" padding="20">
+  <ext-sliderfield
+    onChange="sliderfield.onsinglechange(event)"
+    value="20"
+    label="Single Thumb"
+    padding="5" >
+  </ext-sliderfield>
+  <ext-container
+    onready="sliderfield.oncontainerready1(event)"
+    style="margin-bottom: '20px';" >
+  </ext-container>
+  <ext-sliderfield
+    onChange="sliderfield.onliveupdatechange(event)"
+    value="60"
+    label="Live Update"
+    liveUpdate="true"
+    padding="5" >
+  </ext-sliderfield>
+  <ext-container
+    onready="sliderfield.oncontainerready2(event)"
+    style="margin-bottom: '20px';" >
+  </ext-container>
+  <ext-sliderfield
+    onChange="sliderfield.onmultiplechange(event)"
+    value='[10, 70]'
+    label="Multiple Thumbs"
+    padding="5" >
+  </ext-sliderfield>
+  <ext-container
+    onready="sliderfield.oncontainerready3(event)" >
+  </ext-container>
+</ext-formpanel>

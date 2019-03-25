@@ -18,11 +18,11 @@ export default class SimpleDragDropComponent {
     Ext.destroy(this.source);
   }
 
-  onParentReady = (ele) => {
+  onParentReady(ele) {
     this.parent = ele.detail.cmp.el;
   }
 
-  onItemReady = (ele) => {
+  onItemReady(ele) {
     this.item = ele.detail.cmp.el;
     this.source = new Ext.drag.Source({
       element: this.item,
