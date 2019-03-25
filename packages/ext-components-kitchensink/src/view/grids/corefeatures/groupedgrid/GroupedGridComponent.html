@@ -1,5 +1,35 @@
-<ext-button 
-  text="groupedgrid"
-  onready="groupedgrid.readyButton1(event)"
-  ontap="groupedgrid.tapButton1(event)">
-</ext-button>
+<ext-container layout="vbox" padding="10">
+    <ext-toolbar margin="0 0 20 0" shadow="true">
+        <ext-container key="1" html='Grouping:'></ext-container>
+        <ext-segmentedbutton key="2" label="Grouping" >
+            <ext-button key="1" ui="toolbar-default" text="ON"></ext-button>
+            <ext-button key="2" ui="toolbar-default" text="OFF"></ext-button>
+        </ext-segmentedbutton>
+    </ext-toolbar>
+    <ext-grid
+        height="100%"
+        width="100%"
+        title="Restaurants"
+        shadow="true"
+        grouped="true"
+        onready="groupedgrid.onReady(event)"
+    >
+        <ext-column
+            text="Name"
+            dataIndex="name"
+            flex="1"
+        >
+        </ext-column>
+        <ext-column
+            text="Cuisine"
+            dataIndex="cuisine"
+            flex="1"
+        >
+        </ext-column>
+        <ext-column
+            text="Rating"
+            dataIndex="rating"
+        >
+        </ext-column>
+    </ext-grid>
+</ext-container>
