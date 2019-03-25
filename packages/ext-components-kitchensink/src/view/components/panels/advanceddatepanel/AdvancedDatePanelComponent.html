@@ -1,5 +1,12 @@
-<ext-button 
-  text="advanceddatepanel"
-  onready="advanceddatepanel.readyButton1(event)"
-  ontap="advanceddatepanel.tapButton1(event)">
-</ext-button>
+<ext-container
+onready="advanceddatepanel.containerready1(event)"
+  layout="fit">
+  <ext-datepanel
+  onready="advanceddatepanel.datepanelready1(event)"
+   shadow="true"
+    panes="3"
+     hideCaptions="false"
+      showTodayButton="true"
+       disabledDays='[1]'>
+    </ext-datepanel>
+</ext-container>

@@ -1,4 +1,8 @@
 import './CollapsiblePanelComponent.css';
+import './CollapsiblePanelComponent.html';
+import {mediumText} from './CollapsiblePanelComponentDummy.js';
+
+Ext.require('Ext.panel.Collapser');
 
 export default class CollapsiblePanelComponent {
 

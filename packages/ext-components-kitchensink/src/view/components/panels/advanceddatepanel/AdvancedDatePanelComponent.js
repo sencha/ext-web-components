@@ -1,18 +1,19 @@
 import './AdvancedDatePanelComponent.css';
+import './AdvancedDatePanelComponent.html';
 
 export default class AdvancedDatePanelComponent {
 
   constructor () {
     console.log('in AdvancedDatePanelComponent constructor');
   }
-
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
+  containerready1(event) {
+    debugger;
+    this.containerCmp = event.detail.cmp;
+    const padding = Ext.os.is.Phone ? 0 : 10;
+    this.containerCmp.setPadding(padding);
   }
 
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
+  datepanelready1(event) {
+    debugger;
   }
-
 }

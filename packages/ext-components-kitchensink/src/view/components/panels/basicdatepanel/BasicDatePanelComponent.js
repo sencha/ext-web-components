@@ -1,4 +1,5 @@
 import './BasicDatePanelComponent.css';
+import './BasicDatePanelComponent.html';
 
 export default class BasicDatePanelComponent {
 
@@ -6,13 +7,10 @@ export default class BasicDatePanelComponent {
     console.log('in BasicDatePanelComponent constructor');
   }
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
+  readycontainer1(event) {
+    debugger;
+    this.containerCmp = event.detail.cmp;
+    const padding = Ext.os.is.Phone ? 0 : 10;
+    this.containerCmp.setPadding(padding);
   }
-
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
-  }
-
 }
