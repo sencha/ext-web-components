@@ -1,5 +1,22 @@
-<ext-button 
-  text="paging"
-  onready="paging.readyButton1(event)"
-  ontap="paging.tapButton1(event)">
-</ext-button>
+<ext-container layout="center" flex="1" height="100%">
+  <ext-list
+    width="300" height="400"
+    shadow="true"
+    onready="paging.listReady(event)"
+    >
+    <ext-container docked="top">
+        <ext-container>
+          <div style='padding:15px;'>
+            <!-- <b>Auto Paging</b>: {{bufferZone === false ? 'OFF' : 'ON (buffer zone: '+bufferZone+' )'}} -->
+          </div>
+        </ext-container>
+      <ext-segmentedbutton>
+        <ext-button text="Off" pressed="bufferZone === false" ontap="paging.setBufferZone(false)" flex="1"></ext-button>
+        <ext-button text="0"   pressed="bufferZone === 0"     ontap="paging.setBufferZone(0)"     flex="1"></ext-button>
+        <ext-button text="8"   pressed="bufferZone === 8"     ontap="paging.setBufferZone(8)"     flex="1"></ext-button>
+        <ext-button text="16"  pressed="bufferZone === 16"    ontap="paging.setBufferZone(16)"    flex="1"></ext-button>
+        <ext-button text="32"  pressed="bufferZone === 32"    ontap="paging.setBufferZone(32)"    flex="1"></ext-button>
+      </ext-segmentedbutton>
+    </ext-container>
+  </ext-list>
+</ext-container>

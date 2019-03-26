@@ -1,5 +1,13 @@
-<ext-button 
-  text="nestedlist"
-  onready="nestedlist.readyButton1(event)"
-  ontap="nestedlist.tapButton1(event)">
-</ext-button>
+<ext-container layout="center" flex="1" height="100%">
+  <ext-nestedlist 
+    title="Products"
+    shadow="true"
+    displayField="text"
+    onready="nestedlist.onItemReady(event)"
+    onleafitemtap="nestedlist.onLeafItemTap(event)"
+    height="450"
+    width="300"
+  >
+  </ext-nestedlist>
+</ext-container>
+

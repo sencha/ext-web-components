@@ -55,7 +55,7 @@ import '@sencha/ext-components/lib/ext-sheet.component';
 import '@sencha/ext-components/lib/ext-video.component';
 import '@sencha/ext-components/lib/ext-list.component';
 import '@sencha/ext-components/lib/ext-widget.component';
-
+import '@sencha/ext-components/lib/ext-nestedlist.component';
 
 import '@sencha/ext-components/lib/ext-segmentedbutton.component';
 import '@sencha/ext-components/lib/ext-indicator.component';
