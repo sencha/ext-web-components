@@ -246,6 +246,7 @@ export default class MainComponent {
     this.setTab(codeMap, componentName + '.scss',)
     this.setTab(codeMap, componentName + '.css',)
     this.setTab(codeMap, componentName + 'Data.js')
+    this.setTab(codeMap, componentName + 'Dummy.js')
     document.querySelectorAll('pre code').forEach((block) => {
       hljs.highlightBlock(block);
     });
