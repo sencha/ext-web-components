@@ -4,7 +4,6 @@ import './SegmentedButtonComponent.html';
 export default class SegmentedButtonComponent {
 
   constructor () {
-    console.log('in SegmentedButtonComponent constructor');
     this.button1 = 'low';
     this.button2 = 'low';
     this.isPhone = Ext.os.is.Phone;

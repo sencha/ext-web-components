@@ -4,7 +4,6 @@ import './ProgressBarComponent.html';
 export default class ProgressBarComponent {
 
   constructor () {
-    console.log('in ProgressBarComponent constructor');
     this.progress = 1;
     this.progressText = '';
     this.updateLoop;

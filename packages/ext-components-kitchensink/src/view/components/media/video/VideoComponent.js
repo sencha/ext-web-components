@@ -4,7 +4,6 @@ import './VideoComponent.html';
 export default class VideoComponent {
 
   constructor () {
-    console.log('in VideoComponent constructor');
   }
 
   readyButton1(event) {
