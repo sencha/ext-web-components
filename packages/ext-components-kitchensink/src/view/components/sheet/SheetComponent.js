@@ -44,23 +44,32 @@ export default class SheetComponent {
     }
   }
 
-  buttonReady3(event){
-    this.button3 = event.detail.cmp;
-    this.button3.setPressed(this.reveal);
+  buttonRevealY(event){
+    this.buttonRevealY = event.detail.cmp;
+    this.buttonRevealY.setPressed(false);
   }
 
-  buttonReady4(event){
-    this.button4 = event.detail.cmp;
-    this.button4.setPressed(this.modal);
+  buttonRevealN(event){
+    this.buttonRevealN = event.detail.cmp;
+    this.buttonRevealN.setPressed(true);
+  }
+
+  buttonModalY(event){
+    this.buttonModalY = event.detail.cmp;
+    this.buttonModalY.setPressed(true);
+  }
+
+  buttonModalN(event){
+    this.buttonModalN = event.detail.cmp;
+    this.buttonModalN.setPressed(false);
   }
 
   segmentedbuttonReady(event){
-    this.button5 = event.detail.cmp;
-    this.button5.setDisabled(this.reveal);
+    this.segmentedbutton = event.detail.cmp;
+    this.segmentedbutton.setDisabled(this.reveal);
   }
 
   toggleMenu() {
-    debugger;
     this.displayed = !this.displayed;
 
     if(this.displayed) {
@@ -81,6 +90,7 @@ export default class SheetComponent {
     this.sheet.setSide(this.direct);
     this.sheet.setModal(this.modal);
     this.sheet.setReveal(this.reveal);
+
     this.sheet.setDisplayed(this.displayed);
   }
 
@@ -94,41 +104,35 @@ export default class SheetComponent {
 
   directLeft() {
     this.direct='left';
-    this.sheet.setSide(this.direct);
   }
 
   directRight() {
     this.direct='right';
-    this.sheet.setSide(this.direct);
   }
 
   directTop() {
     this.direct='top';
-    this.sheet.setSide(this.direct);
   }
 
   directBottom() {
     this.direct='bottom';
-    this.sheet.setSide(this.direct);
   }
 
   setReveal() {
     this.reveal = true;
-    this.sheet.setReveal(this.reveal);
+    this.segmentedbutton.setDisabled(this.reveal);
   }
 
   unsetReveal() {
     this.reveal = false;
-    this.sheet.setReveal(this.reveal);
+    this.segmentedbutton.setDisabled(this.reveal);
   }
 
   setModal() {
     this.modal = true;
-    this.sheet.setModal(this.modal);
   }
 
   unsetModal() {
     this.modal = false;
-    this.sheet.setModal(this.modal);
   }
 }
