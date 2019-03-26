@@ -1,0 +1,30 @@
+<ext-tabpanel
+    shadow="true"
+    defaults='{"layout": "center", "cls": "card", "bodyPadding": "0",
+      "tab": {
+        "minWidth": "130"
+      }
+    }'
+    width="400"
+    height="600"
+    onready="scrollingtabs.tabPanelReady(event)"
+>
+    <ext-panel title="Home">
+        <ext-container width="100%" html="You can set <code>{`layout: { overflow: 'scroller' }`}</code> on the <code>tabBar</code> prop in combination with a <code>minWidth</code> on each tab to make the tab bar scroll when it runs out of room."></ext-container>
+    </ext-panel>
+    <ext-panel title="Politics">
+      <ext-container html="Politics"></ext-container>
+    </ext-panel>
+    <ext-panel title="Entertainment">
+      <ext-container html="Entertainment"></ext-container>
+    </ext-panel>
+    <ext-panel title="World">
+      <ext-container html="World"></ext-container>
+    </ext-panel>
+    <ext-panel title="Markets">
+      <ext-container html="Markets"></ext-container>
+    </ext-panel>
+    <ext-panel title="Sports">
+      <ext-container html="Sports"></ext-container>
+    </ext-panel>
+</TabPanel>
