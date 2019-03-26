@@ -53,7 +53,7 @@ import '@sencha/ext-components/lib/ext-progress.component';
 import '@sencha/ext-components/lib/ext-spacer.component';
 import '@sencha/ext-components/lib/ext-sheet.component';
 import '@sencha/ext-components/lib/ext-video.component';
-
+import '@sencha/ext-components/lib/ext-list.component';
 
 
 import '@sencha/ext-components/lib/ext-segmentedbutton.component';
@@ -76,3 +76,4 @@ import MainComponent from './view/main/MainComponent.js';
   }
 
 }());
+ 

@@ -1,18 +1,33 @@
 import './BasicListComponent.css';
+import './BasicListComponent.html';
 
 export default class BasicListComponent {
 
-  constructor () {
-    console.log('in BasicListComponent constructor');
+  constructor () {}
+
+  onItemReady(event){
+    this.theListview = event.detail.cmp;
+    const tpl =
+    `<div>
+        <div style="font-size:16px;margin-bottom:5px;">{first_name} {last_name}</div>
+        <div style="font-size:12px;color:#666;">{title}</div>
+    </div>`;
+
+    this.store = Ext.create('Ext.data.Store', { 
+      autoLoad: true,
+      proxy: {
+        type: 'rest',
+        url: 'resources/data/people.json'
+      },
+      sorters: ['last_name', 'first_name']
+    });
+
+    this.theListview.setStore(this.store);
+    this.theListview.setItemTpl(tpl);
   }
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
+  onSelect(event) {
+    const selected = event.detail.selected.data;
+    Ext.toast(`You selected ${selected.first_name} ${selected.last_name}.`);
   }
-
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
-  }
-
 }
