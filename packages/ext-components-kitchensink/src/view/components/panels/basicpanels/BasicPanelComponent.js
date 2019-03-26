@@ -1,4 +1,3 @@
-import './BasicPanelComponent.css';
 import './BasicPanelComponent.html';
 import { shortText, mediumText } from './BasicPanelComponentDummy.js';
 

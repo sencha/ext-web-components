@@ -1,5 +1,6 @@
-import './BasicDatePanelComponent.css';
 import './BasicDatePanelComponent.html';
+
+Ext.require('Ext.panel.Date');
 
 export default class BasicDatePanelComponent {
 

@@ -1,4 +1,3 @@
-import './CollapsiblePanelComponent.css';
 import './CollapsiblePanelComponent.html';
 import {mediumText} from './CollapsiblePanelComponentDummy.js';
 
@@ -10,13 +9,22 @@ export default class CollapsiblePanelComponent {
     console.log('in CollapsiblePanelComponent constructor');
   }
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
+  readyContainer1(event) {
+    var containerCmp = event.detail.cmp;
+    this.containerCmp.setLayout(Ext.os.is.Phone ? 'fit' : 'auto');
+    this.containerCmp.setPadding(Ext.os.is.Phone ? 0 : 10);
   }
 
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
+  readypanel1(event) {
+    this. panelCmp1 = event.detail.cmp;
+    this.panelCmp1.setHeight(Ext.os.is.Phone ? undefined : 400);
+    this.panelCmp1.setWidth(Ext.os.is.Phone ? undefined : 400);
+    this.panelCmp1.setHtml(`<div>${mediumText}</div>`);
+  }
+
+  readypanel2(event) {
+    this.panelCmp2 = event.detail.cmp;
+    this.panelCmp2.setHtml(`<div>${mediumText}</div>`);
   }
 
 }
