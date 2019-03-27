@@ -1,20 +1,22 @@
 import './UndoableAccordionSwiperComponent.html';
 
+Ext.require([
+  'Ext.dataview.listswiper.ListSwiper',
+]);
+
 export default class UndoableAccordionSwiperComponent {
-
   constructor () {
+  }
 
+  listready(event) {
     this.store = Ext.create('Ext.data.Store', {
       autoLoad: true,
       sorters: ['last_name', 'first_name'],
       proxy: {
         type: 'rest',
-        url: 'resources/data/people.json'
-      }
+        url: 'resources/data/people.json',
+      },
     });
-  }
-
-  listready(event) {
     const tpl = `<div><div style="fontSize: '16px', marginBottom: '5px'">{first_name} {last_name}</div><div style="fontSize: '12px', color: '#666'">{title}</div></div>`;
     this.cmp = event.detail.cmp;
     this.cmp.setStore(this.store);
