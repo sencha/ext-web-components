@@ -1,11 +1,12 @@
-import './RestaurantData';
-
 Ext.require([
     'Ext.grid.cell.Number',
     'Ext.grid.cell.Widget',
     'Ext.grid.SummaryRow',
     'Ext.ux.rating.Picker'
 ]);
+
+import './RestaurantData.js';
+import './GroupedGridComponent.html';
 
 export default class GroupedGridComponent {
   constructor () {

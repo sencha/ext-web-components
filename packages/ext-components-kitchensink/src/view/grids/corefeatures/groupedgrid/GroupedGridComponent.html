@@ -1,4 +1,4 @@
-<ext-container layout="vbox" padding="10">
+<ext-container layout="vbox" padding="10" height="95%">
     <ext-toolbar margin="0 0 20 0" shadow="true">
         <ext-container key="1" html='Grouping:'></ext-container>
         <ext-segmentedbutton key="2" label="Grouping" >
@@ -11,25 +11,16 @@
         width="100%"
         title="Restaurants"
         shadow="true"
-        grouped="true"
         onready="groupedgrid.onReady(event)"
-    >
-        <ext-column
-            text="Name"
-            dataIndex="name"
-            flex="1"
-        >
-        </ext-column>
-        <ext-column
-            text="Cuisine"
-            dataIndex="cuisine"
-            flex="1"
-        >
-        </ext-column>
-        <ext-column
-            text="Rating"
-            dataIndex="rating"
-        >
-        </ext-column>
+        grouped="true"
+        groupFooter='{"xtype": "gridsummaryrow"}'
+        columns='[
+          {"text":"Name","dataIndex":"name", "flex": "1"},
+          {"text":"Cuisine","dataIndex":"cuisine", "flex": "1"},
+          {"text":"Rating","dataIndex":"rating", "flex": "1"}
+        ]'>
     </ext-grid>
 </ext-container>
+
+<!--
+, "groupHeaderTpl": "'{columnName}: {value:htmlEncode}'" -->
