@@ -1,5 +1,6 @@
 import './MultiSelectComboBoxFieldComponent.css';
 import './MultiSelectComboBoxFieldComponent.html';
+import data from './data.js';
 import data from './MultiSelectComboBoxFieldComponentData.js';
 
 export default class MultiSelectComboBoxFieldComponent {

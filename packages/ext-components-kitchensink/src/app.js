@@ -27,6 +27,9 @@ import '@sencha/ext-components/lib/ext-panel.component';
 import '@sencha/ext-components/lib/ext-passwordfield.component';
 import '@sencha/ext-components/lib/ext-radiofield.component';
 import '@sencha/ext-components/lib/ext-searchfield.component';
+import '@sencha/ext-components/lib/ext-selectfield.component';
+import '@sencha/ext-components/lib/ext-sliderfield.component';
+import '@sencha/ext-components/lib/ext-spinnerfield.component';
 import '@sencha/ext-components/lib/ext-spacer.component';
 import '@sencha/ext-components/lib/ext-selectfield.component';
 import '@sencha/ext-components/lib/ext-sliderfield.component';
@@ -34,6 +37,8 @@ import '@sencha/ext-components/lib/ext-spinnerfield.component';
 import '@sencha/ext-components/lib/ext-treelist.component';
 import '@sencha/ext-components/lib/ext-panel.component';
 import '@sencha/ext-components/lib/ext-segmentedbutton.component';
+import '@sencha/ext-components/lib/ext-tabbar.component';
+import '@sencha/ext-components/lib/ext-tab.component';
 import '@sencha/ext-components/lib/ext-tabpanel.component';
 import '@sencha/ext-components/lib/ext-textareafield.component';
 import '@sencha/ext-components/lib/ext-textfield.component';
@@ -51,12 +56,16 @@ import '@sencha/ext-components/lib/ext-gauge.component';
 import '@sencha/ext-components/lib/ext-colorselector.component';
 import '@sencha/ext-components/lib/ext-draw.component';
 import '@sencha/ext-components/lib/ext-progress.component';
-import '@sencha/ext-components/lib/ext-spacer.component';
 import '@sencha/ext-components/lib/ext-sheet.component';
 import '@sencha/ext-components/lib/ext-video.component';
 import '@sencha/ext-components/lib/ext-datepanel.component';
 import '@sencha/ext-components/lib/ext-tooltip.component';
 import '@sencha/ext-components/lib/ext-timepanel.component';
+import '@sencha/ext-components/lib/ext-segmentedbutton.component';
+import '@sencha/ext-components/lib/ext-indicator.component';
+
+import '@sencha/ext-components/lib/ext-tooltip.component';
+
 import '@sencha/ext-components/lib/ext-segmentedbutton.component';
 import '@sencha/ext-components/lib/ext-indicator.component';
 

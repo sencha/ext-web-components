@@ -71,7 +71,7 @@ import BottomTabComponent from './view/components/tabs/bottomtabs/BottomTabCompo
 import IconTabComponent from './view/components/tabs/icontabs/IconTabComponent.js';
 import DesktopTabComponent from './view/components/tabs/desktoptabs/DesktopTabComponent.js';
 import ClosableTabComponent from './view/components/tabs/closable/ClosableTabComponent.js';
-import ScrollingTabComponent from './view/components/tabs/scrollingtabs/ScrollingTabComponent.js';
+import ScrollingTabsComponent from './view/components/tabs/scrollingtabs/ScrollingTabsComponent.js';
 import TabBarComponent from './view/components/tabs/tabbar/TabBarComponent.js';
 import TitleBarComponent from './view/components/titlebar/TitleBarComponent.js';
 import ToolBarComponent from './view/components/toolbar/ToolBarComponent.js';
@@ -264,7 +264,7 @@ export default function getMenu() {
         { text: 'Icon Tabs', component: IconTabComponent, iconCls: 'icon-icon-tabs' },
         { text: 'Desktop Tabs', component: DesktopTabComponent, iconCls: 'icon-Desktop-Tabs' },
         { text: 'Closable', component: ClosableTabComponent, iconCls: 'icon-Closable-Tabs' },
-        { text: 'ScrollingTabs', component: ScrollingTabComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-Scrolling-Tabs' },
+        { text: 'ScrollingTabs', component: ScrollingTabsComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-Scrolling-Tabs' },
         { text: 'TabBar', component: TabBarComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-Tab-Bar' }
       ]},
       { text: 'TitleBar', component: TitleBarComponent, iconCls: 'icon-Title-Bar' },

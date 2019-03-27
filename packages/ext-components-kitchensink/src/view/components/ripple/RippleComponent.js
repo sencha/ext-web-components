@@ -1,5 +1,5 @@
-import './RippleComponent.css';
 import './RippleComponent.html';
+import './RippleComponent.scss';
 
 export default class RippleComponent {
 

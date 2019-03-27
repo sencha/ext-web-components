@@ -1,5 +1,17 @@
-<ext-button 
-  text="desktoptabs"
-  onready="desktoptabs.readyButton1(event)"
-  ontap="desktoptabs.tapButton1(event)">
-</ext-button>
+<ext-tabpanel
+  flex="1"
+  shadow="true"
+  onready= 'desktoptabs.tabpanelReady(event)'
+  height="100%"
+  defaults='{"cls": "card", "layout": "center"}'
+>
+  <ext-panel title="Tab 1" flex="0" minWidth="100">
+    <ext-container html="When optimizing for desktops, you may want to tabs on the left side of the tab bar.  You can do this by setting <code>pack: \'left\'</code> in the tab bar\'s layout config."></ext-container>
+  </ext-panel>
+  <ext-panel title="Tab 2" flex="0" minWidth="100">
+    <ext-container cls="action" html="User tapped Tab 2"></ext-container>
+  </ext-panel>
+  <ext-panel title="Tab 3" flex="0" minWidth="100">
+    <ext-container cls="action" html="User tapped Tab 3"></ext-container>
+  </ext-panel>
+</ext-tabpanel>
