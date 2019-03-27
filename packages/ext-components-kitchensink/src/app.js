@@ -34,7 +34,9 @@ import '@sencha/ext-components/lib/ext-spacer.component';
 import '@sencha/ext-components/lib/ext-treelist.component';
 import '@sencha/ext-components/lib/ext-panel.component';
 import '@sencha/ext-components/lib/ext-segmentedbutton.component';
-import '@sencha/ext-components/lib/ext-tabpanel.component';
+import '@sencha/ext-components/lib/ext-tabbar.component';
+import '@sencha/ext-components/lib/ext-tab.component';
+
 import '@sencha/ext-components/lib/ext-textareafield.component';
 import '@sencha/ext-components/lib/ext-textfield.component';
 import '@sencha/ext-components/lib/ext-timefield.component';

@@ -1,18 +1,24 @@
-import './TabBarComponent.css';
+import './TabBarComponent.html';
 
 export default class TabBarComponent {
-
-  constructor () {
-    console.log('in TabBarComponent constructor');
+  constructor() {
+    this.activeTab = "info";
   }
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
+  tabbarReady(event) {
+    this.tabbar = event.detail.cmp;
+    this.tabbar.setActiveTab('info');
+    this.tabbar.on('activeTabChange', this.onTabChange.bind(this));
   }
 
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
+  onTabChange(sender, value) {
+    this.activeTab = value._text;
+    this.container.setHtml(`Active Tab: ${this.activeTab}`);
   }
 
+  containerReady(event) {
+    debugger;
+    this.container = event.detail.cmp;
+    this.container.setHtml(`Active Tab: ${this.activeTab}`);
+  }
 }
