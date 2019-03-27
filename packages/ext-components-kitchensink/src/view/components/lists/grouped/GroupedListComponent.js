@@ -19,15 +19,16 @@ export default class GroupedListComponent {
         url: 'resources/data/people.json'
       },
       grouper: {
-        groupFn(record){
-          record.data.last_name
-        } 
+        groupFn: this.groupFn.bind(this)
       },
       sorters: ['last_name', 'first_name']
     });
     this.theListview.setStore(this.store);
-    // console.log(this.theListview.setStore(this.store))
     this.theListview.setItemTpl(tpl);
+  }
+
+  groupFn(record) {
+    return record.get('last_name')[0];
   }
 
   onSelect(event) {

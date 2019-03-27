@@ -1,20 +1,36 @@
 import './PagingListComponent.css';
 import './PagingListComponent.html';
+import './stocks.js';
+
+Ext.require('Ext.plugin.ListPaging');
 
 export default class PagingListComponent {
   constructor () {
     this.bufferZone = false;
   }
 
+  onContainerReady(event) {
+    this.list1 = event.detail.cmp;
+  }
+
   setBufferZone(value) {
+    debugger;
     this.bufferZone = value;
-    const store = this.list.getStore()
-    console.log(store);
+    let labelText;
+
+    if (this.bufferZone === false) {
+      labelText = '<b>Auto Paging</b>: OFF';
+    }
+    else{
+      labelText = `<b>Auto Paging</b>: ON (buffer zone: ${this.bufferZone})`;
+    }
+
+    this.list1.setHtml(labelText);
     const plugin = this.list.findPlugin('listpaging');
-    store.removeAll();
+    this.store.removeAll();
     plugin.setAutoPaging(value !== false);
     plugin.setBufferZone(value || 0);
-    store.loadPage(1);
+    this.store.loadPage(1);
   }
 
   listReady(ele) {
@@ -27,7 +43,7 @@ export default class PagingListComponent {
       autoLoad: true,
       proxy: {
         type: 'ajax',
-        url: 'resources/data/CompanyData.json',
+        url: '/KitchenSink/Company',
         reader: {
           type: 'json',
           rootProperty: 'data',
@@ -38,8 +54,7 @@ export default class PagingListComponent {
         }
       }
     });
-    this.list.setStore(this.store);
     this.list.setItemTpl(tpl);
-    this.list.setPlugins(plugins);
+    this.list.setStore(this.store);
   }
 }
