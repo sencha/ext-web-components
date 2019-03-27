@@ -14,7 +14,6 @@ export default class PagingListComponent {
   }
 
   setBufferZone(value) {
-    debugger;
     this.bufferZone = value;
     let labelText;
 
@@ -36,7 +35,6 @@ export default class PagingListComponent {
   listReady(ele) {
     this.list = ele.detail.cmp;
     const tpl = `<div>{name}</div>`;
-    const plugins = [{type: 'listpaging'}];
 
     this.store = Ext.create('Ext.data.Store', {
       fields: ['name'],

@@ -49,7 +49,6 @@ export default class UndoableAccordionSwiperComponent {
     this.list.setStore(this.store);
   }
 
-
   onSelect(event) {
     const selected = event.detail.selected.data;
     Ext.toast(`You selected ${selected.first_name} ${selected.last_name}.`);
@@ -77,4 +76,8 @@ export default class UndoableAccordionSwiperComponent {
     Ext.toast(`Recover ${record.get('first_name')} ${record.get('last_name')}`)
   }
 
-}
+  onUndoDeleteItem(list, info) {
+    const record = info.record;
+    Ext.toast(`Recover ${record.get('first_name')} ${record.get('last_name')}`)
+  }   
+} 
