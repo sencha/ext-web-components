@@ -15,6 +15,7 @@ import '@sencha/ext-components/lib/ext-containerfield.component';
 import '@sencha/ext-components/lib/ext-splitbutton.component';
 import '@sencha/ext-components/lib/ext-dataview.component';
 import '@sencha/ext-components/lib/ext-dialog.component';
+import '@sencha/ext-components/lib/ext-datepanel.component';
 import '@sencha/ext-components/lib/ext-datepickerfield.component';
 import '@sencha/ext-components/lib/ext-datepickernativefield.component';
 import '@sencha/ext-components/lib/ext-emailfield.component';
@@ -39,6 +40,10 @@ import '@sencha/ext-components/lib/ext-tab.component';
 import '@sencha/ext-components/lib/ext-textareafield.component';
 import '@sencha/ext-components/lib/ext-textfield.component';
 import '@sencha/ext-components/lib/ext-timefield.component';
+import '@sencha/ext-components/lib/ext-textareafield.component';
+import '@sencha/ext-components/lib/ext-textfield.component';
+import '@sencha/ext-components/lib/ext-timefield.component';
+import '@sencha/ext-components/lib/ext-timepanel.component';
 import '@sencha/ext-components/lib/ext-titlebar.component';
 import '@sencha/ext-components/lib/ext-togglefield.component';
 import '@sencha/ext-components/lib/ext-toolbar.component';
@@ -78,4 +83,4 @@ import MainComponent from './view/main/MainComponent.js';
   }
 
 }());
-    
+

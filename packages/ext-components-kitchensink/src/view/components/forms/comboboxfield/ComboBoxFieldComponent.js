@@ -1,6 +1,7 @@
 import './ComboBoxFieldComponent.css';
 import './ComboBoxFieldComponent.html';
 import data from './data.js';
+import data from './ComboBoxFieldComponentData.js';
 
 export default class ComboBoxFieldComponent {
   constructor () {
