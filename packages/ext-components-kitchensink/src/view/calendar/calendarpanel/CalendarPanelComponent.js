@@ -7,13 +7,9 @@ export default class CalendarPanelComponent {
     console.log('in CalendarPanelComponent constructor');
   }
 
-  readyButton1(event) {
+  onReady(event) {
+    debugger;
     var cmp = event.detail.cmp;
     this.button1Cmp = event.detail.cmp;
   }
-
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
-  }
-
 }

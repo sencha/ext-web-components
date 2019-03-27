@@ -59,8 +59,7 @@ import '@sencha/ext-components/lib/ext-tooltip.component';
 import '@sencha/ext-components/lib/ext-timepanel.component';
 import '@sencha/ext-components/lib/ext-segmentedbutton.component';
 import '@sencha/ext-components/lib/ext-indicator.component';
-
-
+import '@sencha/ext-components/lib/ext-calendar.component';
 
 import getMenu from './menu';
 import MainComponent from './view/main/MainComponent.js';
