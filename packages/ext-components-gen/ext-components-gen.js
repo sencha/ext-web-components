@@ -31,7 +31,7 @@ function getPrefix () {
   return prefix
 }
 
-var app =(`${boldGreen(getPrefix())} ext-angular-gen:`)
+var app =(`${boldGreen(getPrefix())} ext-components-gen:`)
 
 var answers = {
   'seeDefaults': null,
@@ -72,9 +72,9 @@ function stepStart() {
   var dataConfig = fs.readFileSync(nodeDir + '/config.json')
   config = JSON.parse(dataConfig)
 
-  console.log(boldGreen(`\ext-angular-gen - Sencha ExtAngular Code Generator v${version}`))
+  console.log(boldGreen(`\ext-components-gen - Sencha ExtComponents Code Generator v${version}`))
   console.log('')
-  
+
   let mainDefinitions = [{ name: 'command', defaultOption: true }]
   const mainCommandArgs = commandLineArgs(mainDefinitions, { stopAtFirstUnknown: true })
 //  console.log('');console.log(`mainCommandArgs: ${JSON.stringify(mainCommandArgs)}`)
@@ -145,13 +145,13 @@ function stepCheckCmdLine() {
   //console.log('stepCheckCmdLine');console.log(`cmdLine: ${JSON.stringify(cmdLine)}, length: ${Object.keys(cmdLine).length}, process.argv.length: ${process.argv.length}`)
   setDefaults()
   if (cmdLine.verbose == true) {
-    process.env.EXTANGULARGEN_VERBOSE = 'true'
+    process.env.EXTCOMPONENTSGEN_VERBOSE = 'true'
   }
   else {
-    process.env.EXTANGULARGEN_VERBOSE = 'false'
+    process.env.EXTCOMPONENTSGEN_VERBOSE = 'false'
   }
   if (cmdLine.help == true) {
-    stepHelpGeneral() 
+    stepHelpGeneral()
   }
   else if (cmdLine.command == undefined) {
     console.log(`${app} ${boldRed('[ERR]')} no command specified (app, view)`)
@@ -186,7 +186,7 @@ function stepCheckCmdLine() {
 
 function stepSeeDefaults() {
   new Confirm({
-    message: 
+    message:
     `would you like to see the defaults for package.json?`,
     default: config.seeDefaults
   }).run().then(answer => {
@@ -219,7 +219,7 @@ function stepCreateWithDefaults() {
 
 function stepNameYourApp() {
   new Input({
-    message: 'What would you like to name your ExtAngular app?',
+    message: 'What would you like to name your ExtComponents app?',
     default:  config.appName
   }).run().then(answer => {
     answers['appName'] = answer
@@ -232,7 +232,7 @@ function stepPackageName() {
   new Input({
     message: 'What would you like to name the npm Package?',
     default:  kebabCase(answers['appName'])
-  }).run().then(answer => { 
+  }).run().then(answer => {
     answers['packageName'] = answer
     stepVersion()
   })
@@ -240,9 +240,9 @@ function stepPackageName() {
 
 function stepVersion() {
   new Input({
-    message: 'What version is your ExtAngular application?',
+    message: 'What version is your ExtComponents application?',
     default: config.version
-  }).run().then(answer => { 
+  }).run().then(answer => {
     if (semver.valid(answer) == null) {
       console.log('version is not a valid format, must be 0.0.0')
       stepVersion()
@@ -258,7 +258,7 @@ function stepDescription() {
   new Input({
     message: 'What is the description?',
     default: config.description
-  }).run().then(answer => { 
+  }).run().then(answer => {
     answers['description'] = answer
     stepRepositoryURL()
   })
@@ -268,7 +268,7 @@ function stepRepositoryURL() {
   new Input({
     message: 'What is the GIT repository URL?',
     default: config.repositoryURL
-  }).run().then(answer => { 
+  }).run().then(answer => {
     answers['repositoryURL'] = answer
     stepKeywords()
   })
@@ -278,7 +278,7 @@ function stepKeywords() {
   new Input({
     message: 'What are the npm keywords?',
     default: config.keywords
-  }).run().then(answer => { 
+  }).run().then(answer => {
     answers['keywords'] = answer
     stepAuthorName()
   })
@@ -288,7 +288,7 @@ function stepAuthorName() {
   new Input({
     message: `What is the Author's Name?`,
     default: config.authorName
-  }).run().then(answer => { 
+  }).run().then(answer => {
     answers['authorName'] = answer
     stepLicense()
   })
@@ -298,7 +298,7 @@ function stepLicense() {
   new Input({
     message: 'What type of License does this project need?',
     default: config.license
-  }).run().then(answer => { 
+  }).run().then(answer => {
     answers['license'] = answer
     stepBugsURL()
   })
@@ -308,7 +308,7 @@ function stepBugsURL() {
   new Input({
     message: 'What is the URL to submit bugs?',
     default: config.bugsURL
-  }).run().then(answer => { 
+  }).run().then(answer => {
     answers['bugsURL'] = answer
     stepHomepageURL()
   })
@@ -318,7 +318,7 @@ function stepHomepageURL() {
   new Input({
     message: 'What is the Home Page URL?',
     default: config.homepageURL
-  }).run().then(answer => { 
+  }).run().then(answer => {
     answers['homepageURL'] = answer
     stepGo()
   })
@@ -335,10 +335,10 @@ function stepGo() {
 
   var message
   if (cmdLine.defaults == true) {
-    message = 'Generate the ExtAngular npm project?'
+    message = 'Generate the ExtComponents npm project?'
   }
   else {
-    message = 'Would you like to generate the ExtAngular npm project with above config now?'
+    message = 'Would you like to generate the ExtComponents npm project with above config now?'
   }
 
   new Confirm({
@@ -373,7 +373,7 @@ async function stepCreate() {
   console.log(`${app} ${destDir} created`)
 
   var boilerplate = ''
-  boilerplate = nodeDir + '/node_modules/@sencha/ext-angular-boilerplate'
+  boilerplate = nodeDir + '/node_modules/@sencha/ext-components-boilerplate'
 
   //copy in files from boilerplate
   glob.sync('**/*', { cwd: boilerplate, ignore: ['build/**', 'node_modules/**', 'index.js'], dot: true })
@@ -399,7 +399,7 @@ async function stepCreate() {
     const substrings = ['[ERR]', '[WRN]', '[INF] Processing', "[INF] Server", "[INF] Writing content", "[INF] Loading Build", "[INF] Waiting", "[LOG] Fashion waiting"];
     var command = `npm${/^win/.test(require('os').platform()) ? ".cmd" : ""}`
     var args = []
-    if (process.env.EXTANGULARGEN_VERBOSE == 'true') {
+    if (process.env.EXTCOMPONENTSGEN_VERBOSE == 'true') {
       args = ['install']
     }
     else {
@@ -419,7 +419,7 @@ async function stepCreate() {
   } catch(err) {
     console.log(boldRed('Error in npm install: ' + err));
   }
-  console.log(`${app} Your ExtAngular project is ready`)
+  console.log(`${app} Your ExtComponents project is ready`)
   console.log(boldGreen(`\ntype "cd ${answers['packageName']}" then "npm start" to run the development build and open your new application in a web browser\n`))
  }
 
@@ -427,7 +427,7 @@ async function stepCreate() {
   if (cmdLine.name != undefined) {
     answers['appName'] = cmdLine.name
     answers['packageName'] = kebabCase(answers['appName'])
-    answers['description'] = `${answers['packageName']} description for ExtAngular app ${answers['appName']}`
+    answers['description'] = `${answers['packageName']} description for ExtComponents app ${answers['appName']}`
   }
   else {
     answers['appName'] = config.appName
@@ -444,7 +444,7 @@ async function stepCreate() {
 }
 
 function displayDefaults() {
-  console.log(boldGreen(`Defaults for ExtAngular app:`))
+  console.log(boldGreen(`Defaults for ExtComponents app:`))
   console.log(`appName:\t${answers['appName']}`)
   console.log('')
   console.log(boldGreen(`Defaults for package.json:`))
@@ -466,9 +466,9 @@ function stepHelpGeneral() {
 
 function stepHelpApp() {
 
-  var message = `${boldGreen('Quick Start:')} ext-angular-gen -a
+  var message = `${boldGreen('Quick Start:')} ext-components-gen -a
 
-ext-angular-gen app (-h) (-d) (-i) (-n 'name')
+ext-components-gen app (-h) (-d) (-i) (-n 'name')
 
 -h --help          show help (no parameters also shows help)
 -d --defaults      show defaults for package.json
@@ -476,24 +476,24 @@ ext-angular-gen app (-h) (-d) (-i) (-n 'name')
 -n --name          name for Ext JS generated app
 -v --verbose       verbose npm messages (for problems only)
 
-${boldGreen('Examples:')} 
-ext-angular-gen app  --name CoolExtAngularApp
-ext-angular-gen app --interactive
-ext-angular-gen app -a -n CoolExtAngularApp
+${boldGreen('Examples:')}
+ext-components-gen app  --name CoolExtComponentsApp
+ext-components-gen app --interactive
+ext-components-gen app -a -n CoolExtComponentsApp
 
 `
   console.log(message)
 }
 
 function stepShortHelp() {
-  var message = `${boldGreen('Quick Start:')} 
-ext-angular-gen app CoolExtAngularApp
-ext-angular-gen app -i
- 
-${boldGreen('Examples:')} 
-ext-angular-gen app --name CoolExtAngularApp
+  var message = `${boldGreen('Quick Start:')}
+ext-components-gen app CoolExtComponentsApp
+ext-components-gen app -i
 
-Run ${boldGreen('ext-angular-gen --help')} to see all options
+${boldGreen('Examples:')}
+ext-components-gen app --name CoolExtComponentsApp
+
+Run ${boldGreen('ext-components-gen --help')} to see all options
 `
   console.log(message)
 }
