@@ -1,4 +1,5 @@
 import './CalendarPanelComponent.css';
+import './CalendarPanelComponent.html';
 
 export default class CalendarPanelComponent {
 
