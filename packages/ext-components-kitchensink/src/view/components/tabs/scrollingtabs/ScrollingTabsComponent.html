@@ -1,26 +1,25 @@
-<ext-tabpanel
-    shadow="true"
-    defaults='{"layout": "center", "cls": "card", "bodyPadding": "0"}'
-    width="400"
-    height="600"
-    onready="scrollingtabs.tabPanelReady(event)"
->
-    <ext-panel title="Home" layout="center" tab='{"minWidth":"130px"}'>
-        <ext-container width="100%" html="You can set <code>{`layout: { overflow: 'scroller' }`}</code> on the <code>tabBar</code> prop in combination with a <code>minWidth</code> on each tab to make the tab bar scroll when it runs out of room."></ext-container>
-    </ext-panel>
-    <ext-panel title="Politics" layout="center" tab='{"minWidth":"130px"}'>
-      <ext-container html="Politics"></ext-container>
-    </ext-panel>
-    <ext-panel title="Entertainment" layout="center" tab='{"minWidth":"130px"}'>
-      <ext-container html="Entertainment"></ext-container>
-    </ext-panel>
-    <ext-panel title="World" layout="center" tab='{"minWidth":"130px"}'>
-      <ext-container html="World"></ext-container>
-    </ext-panel>
-    <ext-panel title="Markets" layout="center" tab='{"minWidth":"130px"}'>
-      <ext-container html="Markets"></ext-container>
-    </ext-panel>
-    <ext-panel title="Sports" layout="center" tab='{"minWidth":"130px"}'>
-      <ext-container html="Sports"></ext-container>
-    </ext-panel>
+<ext-tabpanel shadow="true" defaults='{"layout": "center", "cls": "card", "bodyPadding": "0"}' width="400" height="600"
+  onready="scrollingtabs.tabPanelReady(event)">
+
+  <ext-panel title="Home" layout="center">
+    <ext-container width="100%"
+      html="You can set <code>{`layout: { overflow: 'scroller' }`}</code> on the <code>tabBar</code> prop in combination with a <code>minWidth</code> on each tab to make the tab bar scroll when it runs out of room.">
+    </ext-container>
+  </ext-panel>
+  <ext-panel title="Politics" layout="center">
+    <ext-container html="Politics"></ext-container>
+  </ext-panel>
+  <ext-panel title="Entertainment" layout="center">
+    <ext-container html="Entertainment"></ext-container>
+  </ext-panel>
+  <ext-panel title="World" layout="center">
+    <ext-container html="World"></ext-container>
+  </ext-panel>
+  <ext-panel title="Markets" layout="center">
+    <ext-container html="Markets"></ext-container>
+  </ext-panel>
+  <ext-panel title="Sports" layout="center">
+    <ext-container html="Sports"></ext-container>
+  </ext-panel>
+
 </ext-tabpanel>

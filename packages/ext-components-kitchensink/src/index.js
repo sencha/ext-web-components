@@ -78,4 +78,4 @@ import MainComponent from './view/main/MainComponent.js';
   }
 
 }());
-  
+    

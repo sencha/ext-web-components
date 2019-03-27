@@ -1,4 +1,3 @@
-import './MessagePopupComponent.css';
 import './MessagePopupComponent.html';
 
 export default class MessagePopupComponent {

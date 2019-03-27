@@ -1,4 +1,3 @@
-import './ToolBarComponent.css';
 import './ToolBarComponent.html';
 
 export default class ToolBarComponent {
