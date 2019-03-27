@@ -4,7 +4,6 @@ import './RippleComponent.html';
 export default class RippleComponent {
 
   constructor() {
-    console.log('in RippleComponent constructor');
   }
   containerReady(event) {
     this.container = event.detail.cmp;

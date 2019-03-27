@@ -4,7 +4,6 @@ import './AudioComponent.html';
 export default class AudioComponent {
 
   constructor() {
-    console.log('in AudioComponent constructor');
     this.playing = '';
     this.audio = '';
     this.isAndroid = Ext.os.is.Android;

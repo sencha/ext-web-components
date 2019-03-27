@@ -1,4 +1,6 @@
-import './TimePanelComponent.css';
+import './TimePanelComponent.html';
+
+Ext.require('Ext.panel.Time');
 
 export default class TimePanelComponent {
 
@@ -6,13 +8,9 @@ export default class TimePanelComponent {
     console.log('in TimePanelComponent constructor');
   }
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
+  containerready(event) {
+    this.containerCmp = event.detail.cmp;
+    this.containerCmp.setPadding(Ext.os.is.Phone ? 0 : 10);
+    this.containerCmp.setLayout(Ext.os.is.Phone ? 'fit' : 'auto');
   }
-
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
-  }
-
 }
