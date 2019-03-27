@@ -15,7 +15,7 @@
   <ext-titlebar docked="top" weight="10">
     <ext-button iconCls="x-fa fa-bars" onTap="main.toggleTree()"></ext-button>
     <span class="ext ext-sencha" style="margin: '0 5px 0 7px;'; font-size: '20px'; width: '20px'"></span>
-    <span extjs href="#" class="app-title">Sencha ExtComponents 7.0 Kitchen Sink</span>
+    <span id="theTitle" href="#" class="app-title">Sencha ExtComponents 7.0 Kitchen Sink</span>
   </ext-titlebar>
   <!-- Titlebar ends-->
 
@@ -75,7 +75,10 @@
   <!-- selections ends-->
 
   <!-- Router starts-->
-  <ext-router hidden=false onready="main.readyRouter(event)"
+  <ext-router
+    hidden=false
+    onready="main.readyRouter(event)"
+    style="overflow:scroll;"
     padding="10px">
   </ext-router>
   <!-- Router ends-->
@@ -86,7 +89,7 @@
     border=true
     shadow=true
     scrollable="y"
-    width="850px"
+    width="900px"
     height="100%"
     layout="fit"
     resizable='{"edges": "west", "dynamic": "true"}'
@@ -100,7 +103,13 @@
     <ext-tabpanel 
       shadow="true"
       height="100%"
-      tabBar='{"layout": {"pack": "space-around"}}'
+      tabConfig='{
+        "title": "Custom Title"
+        "tooltip": "A button tooltip".
+        "margin": "0 0 0 -15"
+    }'
+      tabBarPosition="top"
+      tabBar='{"layout": {"pack": "start"}}'
       onready="main.readyTabPanel(event)">
     </ext-tabpanel>
   </ext-panel>

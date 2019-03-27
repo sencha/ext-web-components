@@ -1,8 +1,15 @@
+https://docs.google.com/spreadsheets/d/1_VUmebo5GZwhoBaLAOEme-iLvXJzkBRdYja_uIZUd2g/edit?ts=5c8b94ec#gid=0
+
 git remote add upstream https://github.com/sencha/ext-components.git
+
 
 git fetch upstream
 git merge upstream/master
-git merge upstream/ext-components-7.0.x
+
+
+
+
+/ext-components-7.0.x
 
 rm ~/.npmrc
 cat ~/.npmrc

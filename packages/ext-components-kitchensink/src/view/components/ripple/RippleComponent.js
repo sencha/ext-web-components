@@ -1,18 +1,19 @@
 import './RippleComponent.css';
+import './RippleComponent.html';
 
 export default class RippleComponent {
 
-  constructor () {
-    console.log('in RippleComponent constructor');
+  constructor() {
+  }
+  containerReady(event) {
+    this.container = event.detail.cmp;
+    this.container.setDefaults({
+      handler: this.clickHandler.bind(this),
+    })
   }
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
-  }
-
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
+  clickHandler(event) {
+    Ext.get(event.target).ripple(event, {})
   }
 
 }

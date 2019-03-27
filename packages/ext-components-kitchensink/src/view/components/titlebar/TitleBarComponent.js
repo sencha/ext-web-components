@@ -1,18 +1,34 @@
 import './TitleBarComponent.css';
+import './TitleBarComponent.html';
 
 export default class TitleBarComponent {
-
-  constructor () {
-    console.log('in TitleBarComponent constructor');
+  constructor() {
+    this.isPhone = Ext.os.is.Phone;
   }
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
+  menuReady(event) {
+    this.menuCmp = event.detail.cmp;
+    this.menuCmp.setHidden(!this.isPhone);
   }
 
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
+  buttonReady(event){
+    this.btnCmp = event.detail.cmp;
+    this.btnCmp.setHidden(this.isPhone);
+  }
+
+  buttonReady1(event){
+    this.btnCmp1 = event.detail.cmp;
+    this.btnCmp1.setHidden(this.isPhone);
+  }
+  
+  searchReady(event){
+    this.search = event.detail.cmp;
+    this.search.setHidden(this.isPhone);
+  }
+
+  searchReady1(event){
+    this.search1 = event.detail.cmp;
+    this.search1.setHidden(!this.isPhone);
   }
 
 }

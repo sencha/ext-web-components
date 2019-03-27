@@ -1,5 +1,18 @@
-<ext-button 
-  text="ripple"
-  onready="ripple.readyButton1(event)"
-  ontap="ripple.tapButton1(event)">
-</ext-button>
+<ext-container layout="vbox">
+  <ext-container 
+      cls="ripple-target"
+      margin="30 0 30 0"
+      ripple="true"
+      onready="ripple.containerReady(event)"
+      html="I ripple when clicked"
+  >
+  </ext-container>
+  <ext-container 
+      cls="ripple-target"
+      margin="30 0 30 0"
+      ripple="true"
+      html="Any ExtComponents component can also have a ripple."
+  >
+  </ext-container>
+</ext-container>
+

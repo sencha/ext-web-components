@@ -1,18 +1,20 @@
 import './ComboBoxFieldComponent.css';
+import './ComboBoxFieldComponent.html';
+import data from './ComboBoxFieldComponentData.js';
 
 export default class ComboBoxFieldComponent {
-
   constructor () {
     console.log('in ComboBoxFieldComponent constructor');
+
+    this.store = Ext.create('Ext.data.Store', {
+      fields: ['name', 'abbrev'],
+      data
+    });
   }
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
-  }
-
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
+  comboboxfieldready(event) {
+    this.cmp = event.detail.cmp;
+    this.cmp.setStore(this.store);
   }
 
 }

@@ -1,18 +1,18 @@
 import './SegmentedButtonComponent.css';
+import './SegmentedButtonComponent.html';
 
 export default class SegmentedButtonComponent {
 
   constructor () {
-    console.log('in SegmentedButtonComponent constructor');
+    this.button1 = 'low';
+    this.button2 = 'low';
+    this.isPhone = Ext.os.is.Phone;
+  }
+  onButton1Change = function(event){
+    this.button1 = event.value; 
   }
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
+  onButton2Change = function(event){
+    this.button2 = event.value; 
   }
-
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
-  }
-
 }

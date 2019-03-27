@@ -1,0 +1,33 @@
+<ext-grid onready="home.readyGrid(event)" height="100%">
+    <ext-toolbar docked="top">
+        <ext-searchfield
+            ui="faded"
+            placeholder="Search..."
+            onChange="home.onSearch(event)"
+            onready="home.readySearchField(event)"
+        />
+    </ext-toolbar>
+    <ext-column
+      text="Name"
+      flex="2"
+      dataIndex="name"
+      resizable="true"
+    >
+    </ext-column>
+    <ext-column
+      text="Email"
+      flex="3"
+      dataIndex="email"
+      resizable="true"
+      onready="home.emailGridColumnReady(event)"
+    >
+    </ext-column>
+    <ext-column
+      text="Phone"
+      flex="2"
+      dataIndex="phone"
+      resizable="true"
+      onready="home.readyGridColumn(event)"
+    >
+    </ext-column>
+</ext-grid>

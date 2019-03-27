@@ -1,18 +1,11 @@
-import './BasicGridComponent.css';
-
+import './BasicGridComponent.scss';
+import './BasicGridComponent.html';
+import { BasicGridComponentData } from './BasicGridComponentData';
 export default class BasicGridComponent {
 
-  constructor () {
-    console.log('in BasicGridComponent constructor');
-  }
-
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
-  }
-
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
+  readyGrid(event) {
+    this.gridCmp = event.detail.cmp
+    this.gridCmp.setData(new BasicGridComponentData(50).data)
   }
 
 }

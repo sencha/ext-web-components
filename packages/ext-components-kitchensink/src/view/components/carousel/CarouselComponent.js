@@ -1,18 +1,16 @@
-import './CarouselComponent.css';
+import './CarouselComponent.scss';
+import './CarouselComponent.html';
 
 export default class CarouselComponent {
 
-  constructor () {
-    console.log('in CarouselComponent constructor');
+  readyCarouselHorizontal(event) {
+    this.carouselHorizontalCmp = event.detail.cmp
+    this.carouselHorizontalCmp.setActiveItem(0)
   }
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
-  }
-
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
+  readyCarouselVertical(event) {
+    this.carouselVerticalCmp = event.detail.cmp
+    this.carouselVerticalCmp.setActiveItem(0)
   }
 
 }
