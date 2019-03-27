@@ -14,8 +14,8 @@ export default class UndoableAccordionSwiperComponent {
       sorters: ['last_name', 'first_name'],
       proxy: {
         type: 'rest',
-        url: 'resources/data/people.json',
-      },
+        url: 'resources/data/people.json'
+      }
     });
     const tpl = `<div><div style="fontSize: '16px', marginBottom: '5px'">{first_name} {last_name}</div><div style="fontSize: '12px', color: '#666'">{title}</div></div>`;
     this.cmp = event.detail.cmp;

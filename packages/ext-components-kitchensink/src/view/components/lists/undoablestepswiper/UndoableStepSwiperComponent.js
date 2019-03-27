@@ -6,7 +6,6 @@ Ext.require([
 ]);
 
 export default class UndoableStepSwiperComponent {
-
   constructor() {
     console.log('in UndoableStepSwiperComponent constructor');
 
