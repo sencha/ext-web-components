@@ -24,7 +24,7 @@ export default class ChartToolbar extends HTMLElement {
     constructor() {
         super()
 
-        this.toolbarready = this.toolbarready.bind(this);
+        // this.toolbarready = this.toolbarready.bind(this);
         debugger;
     }
 
@@ -89,11 +89,13 @@ export default class ChartToolbar extends HTMLElement {
     }
 
     connectedCallback() {
+        debugger;
         const button1 = document.createElement('ext-button');
         button1.margin = "0 10px 0 0";
         button1.ui = "action";
         button1.iconCls = "x-fa fa-eye";
         button1.text = "Preview";
+        button1.setAttribute("onready", "charttoolbar.toolbarready(event)");
         button1.setAttribute("ontap", "charttoolbar.toolbarready(event)");
 
         // button1.handler = this.downloadChart.bind(this);

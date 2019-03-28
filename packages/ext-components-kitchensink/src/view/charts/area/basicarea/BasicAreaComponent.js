@@ -1,4 +1,4 @@
-import '../../charttoolbar/chartToolbar.js';
+import '../../charttoolbar/ChartToolbar.js';
 import './BasicAreaComponent.css';
 import './BasicAreaComponent.html';
 // import chartToolbar from '../charttoolbar/chartToolbar.js';
