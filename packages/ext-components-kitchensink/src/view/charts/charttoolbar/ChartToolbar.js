@@ -25,17 +25,17 @@ export default class ChartToolbar extends HTMLElement {
         super()
 
         // this.toolbarready = this.toolbarready.bind(this);
-        debugger;
+//        debugger;
     }
 
     toolbarready(event) {
-        debugger;
+//        debugger;
         this.toolbarCmp = event.detail.cmp;
         this.toolbarCmp.setMargin(Ext.os.is.Phone ? '0 10' : '10 0 0 10');
 }
 
     buttonready1(event) {
-        debugger;
+//        debugger;
         this.buttonCmp1 = event.detail.cmp;
     }
 
@@ -89,14 +89,14 @@ export default class ChartToolbar extends HTMLElement {
     }
 
     connectedCallback() {
-        debugger;
+//        debugger;
         const button1 = document.createElement('ext-button');
         button1.margin = "0 10px 0 0";
         button1.ui = "action";
         button1.iconCls = "x-fa fa-eye";
         button1.text = "Preview";
-        button1.setAttribute("onready", "charttoolbar.toolbarready(event)");
-        button1.setAttribute("ontap", "charttoolbar.toolbarready(event)");
+//        button1.setAttribute("onready", "charttoolbar.toolbarready(event)");
+//        button1.setAttribute("ontap", "charttoolbar.toolbarready(event)");
 
         // Also tried button1.ontap = "charttoolbar.toolbarready(event)", but not working.
         this.append(button1);

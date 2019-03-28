@@ -8,12 +8,12 @@ import './BasicAreaComponent.html';
 export default class BasicAreaComponent {
 
   constructor () {
-    debugger;
-    console.log('in BasicAreaComponent constructor');
+//    debugger;
+//    console.log('in BasicAreaComponent constructor');
   }
 
   containerready(event) {
-    debugger;
+//    debugger;
     this.cmp  = event.detail.cmp;
   }
 
