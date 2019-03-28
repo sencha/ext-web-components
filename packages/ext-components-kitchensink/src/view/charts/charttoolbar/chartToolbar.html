@@ -1,0 +1,105 @@
+<ext-toolbar
+    onready="charttoolbar.toolbarready(event)"
+    docked="top"
+    ui="app-transparent-toolbar"
+    shadow="false"
+>
+    <ext-button
+        onready="charts.buttonready1(event)"
+        margin="0 10px 0 0"
+        iconCls="x-fa fa-picture-o"
+        text="Theme"
+        ui="action">
+        <ext-menu>
+            <ext-menuitem
+                onready="charts.menuitemready1(event)"
+                text="Default"
+                handler="onThemeChangeDefault">
+            </ext-menuitem>
+            <ext-menuitem
+                onready="charts.menuitemready2(event)"
+                text="Green"
+                handler="onThemeChangeGreen">
+            </ext-menuitem>
+            <ext-menuitem
+                onready="charts.menuitemready3(event)"
+                text="Midnight"
+                handler="onThemeChangeMidnight">
+            </ext-menuitem>
+            <ext-menuitem
+                onready="charts.menuitemready4(event)"
+                text="Muted"
+                handler="onThemeChangeMuted">
+            </ext-menuitem>
+            <ext-menuitem
+                onready="charts.menuitemready5(event)"
+                text="Red"
+                handler="onThemeChangeRed">
+            </ext-menuitem>
+            <ext-menuitem
+                onready="charts.menuitemready6(event)"
+                text="Sky"
+                handler="onThemeChangeSky">
+            </ext-menuitem>
+            <ext-menuitem
+                onready="charts.menuitemready7(event)"
+                text="Yellow"
+                handler="onThemeChangeYellow">
+            </ext-menuitem>
+        </ext-menu>
+    </ext-button>
+
+    <ext-button
+        onready="charts.buttonready2(event)"
+        margin="0 10px 0 0"
+        ui="action"
+        iconCls="x-fa fa-eye"
+        text="Preview"
+        handler="downloadChart"
+        platformConfig='{
+            "desktop": {"text": "DOWNLOAD","iconCls": "x-fa fa-download"}}'>
+    </ext-button>
+
+    <ext-button
+        onready="charts.buttonready3(event)"
+        ui="action"
+        margin="0 10px 0 0"
+        iconCls="x-fa fa-refresh"
+        handler="onRefreshClick"
+        text="REFRESH">
+    </ext-button>
+
+    <spacer></spacer>
+
+    <ext-segmentedbutton
+        onready="charts.segmentedbuttonready1(event)"
+        margin="0 10px 0 0"
+        change="onStackGroup($event)">
+        <ext-button iconCls="x-fa fa-bars" text="STACK"></ext-button>
+        <ext-button iconCls="x-fa fa-bar-chart" text="GROUP"></ext-button>
+    </ext-segmentedbutton>
+
+    <ext-segmentedbutton
+        onready="charts.segmentedbuttonready2(event)"
+        value="zoom">
+        <ext-button
+            iconCls="x-fa fa-arrows"
+            handler="onToggleZoomOnPanPan"
+            text="PAN"
+            value="false">
+        </ext-button>
+        <ext-button
+            iconCls="x-fa fa-search-plus"
+            handler="onToggleZoomOnPanZoom"
+            text="ZOOM"
+            value="true">
+        </ext-button>
+        <ext-button
+            onready="charts.buttonready4(event)"
+            iconCls="x-fa fa-crosshairs"
+            handler="onToggleCrosshairLocal"
+            text="CROSSHAIR"
+            value="crosshair">
+        </ext-button>
+    </ext-segmentedbutton>
+</ext-toolbar>

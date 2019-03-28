@@ -1,18 +1,20 @@
+import '../../charttoolbar/chartToolbar.js';
 import './BasicAreaComponent.css';
+import './BasicAreaComponent.html';
+// import chartToolbar from '../charttoolbar/chartToolbar.js';
+
+// window.customElements.define('chart-toolbar', chartToolbar);
 
 export default class BasicAreaComponent {
 
   constructor () {
+    debugger;
     console.log('in BasicAreaComponent constructor');
   }
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
-  }
-
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
+  containerready(event) {
+    debugger;
+    this.cmp  = event.detail.cmp;
   }
 
 }
