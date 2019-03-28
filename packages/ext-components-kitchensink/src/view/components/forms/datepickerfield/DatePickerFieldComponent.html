@@ -1,11 +1,15 @@
-<ext-formpanel width="200" shadow="true">
+<ext-formpanel
+  layout='{"type": "vbox", "align": "stretch"}'
+  width="300"
+  height="600"
+  bodyPadding="10"
+  shadow="true">
   <ext-datepickerfield 
-      width="150"
-      destroyPickerOnHide="true"
-      label="Date"
-      picker='{
-                "yearFrom": "1990"
-              }'
-      onready="datepickerfield.datepickerfieldready(event)">
+    destroyPickerOnHide="true"
+    label="Date"
+    picker='{
+      "yearFrom": "1990"
+    }'
+    onready="datepickerfield.datepickerfieldready(event)">
   </ext-datepickerfield>
 </FormPanel>

@@ -5,7 +5,6 @@ Ext.require('Ext.Toast');
 export default class SelectFieldComponent {
 
   constructor () {
-    console.log('in SelectFieldComponent constructor');
   }
 
   onchangeselectfield(event) {

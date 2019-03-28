@@ -84,7 +84,6 @@ export class ExtTextfieldComponent extends ExtBase {
 	get parseValidator(){return this.getAttribute('parseValidator')};set parseValidator(parseValidator){this.setAttribute('parseValidator',parseValidator)}
 	get pattern(){return this.getAttribute('pattern')};set pattern(pattern){this.setAttribute('pattern',pattern)}
 	get placeholder(){return this.getAttribute('placeholder')};set placeholder(placeholder){this.setAttribute('placeholder',placeholder)}
-	get placeHolder(){return this.getAttribute('placeHolder')};set placeHolder(placeHolder){this.setAttribute('placeHolder',placeHolder)}
 	get plugins(){return this.getAttribute('plugins')};set plugins(plugins){this.setAttribute('plugins',plugins)}
 	get publishes(){return this.getAttribute('publishes')};set publishes(publishes){this.setAttribute('publishes',publishes)}
 	get readOnly(){return this.getAttribute('readOnly')};set readOnly(readOnly){this.setAttribute('readOnly',readOnly)}
@@ -289,7 +288,6 @@ export class ExtTextfieldComponent extends ExtBase {
     "parseValidator": "Ext.data.validator.Validator",
     "pattern": "String",
     "placeholder": "String",
-    "placeHolder": "String",
     "plugins": "Array/Ext.enums.Plugin/Object/Ext.plugin.Abstract",
     "publishes": "String/String[]/Object",
     "readOnly": "Boolean",
