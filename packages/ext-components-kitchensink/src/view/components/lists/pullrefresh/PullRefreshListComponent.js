@@ -1,6 +1,5 @@
-import './PullRefreshListComponent.css';
 import './PullRefreshListComponent.html';
-require('./stocks');
+// import '../stocks.js';
 
 Ext.require([
   'Ext.plugin.PullRefresh'
@@ -9,7 +8,7 @@ Ext.require([
 export default class PullRefreshListComponent {
   constructor () {}
 
-  listready(event) {
+  listReady(event) {
     this.list = event.detail.cmp;
     const tpl = `<div>{name}</div>`;
     this.store = Ext.create('Ext.data.Store', {
@@ -17,7 +16,7 @@ export default class PullRefreshListComponent {
       autoLoad: true,
       proxy: {
           type: 'ajax',
-          url: '/KitchenSink/Company',
+          // url: '/KitchenSink/Company',
           reader: {
               type: 'json',
               rootProperty: 'data',

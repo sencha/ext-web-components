@@ -1,14 +1,14 @@
-import './UndoableStepSwiperComponent.css';
 import './UndoableStepSwiperComponent.html';
 
 export default class UndoableStepSwiperComponent {
-  constructor() {
-    console.log('in UndoableStepSwiperComponent constructor');
-  }
+  constructor() {}
 
   listReady(event) {
     this.list = event.detail.cmp;
-    const tpl = `<div><div style="fontSize: '16px', marginBottom: '5px'">{first_name} {last_name}</div><div style="fontSize: '12px', color: '#666'">{title}</div></div>`;
+    const tpl = `<div>
+          <div style="font-size:16px;margin-bottom:5px;">{first_name} {last_name}</div>
+          <div style="font-size:12px;color:#666;">{title}</div>
+          </div>`;
     this.store = Ext.create('Ext.data.Store', { 
       autoLoad: true,
       proxy: {
@@ -44,24 +44,9 @@ export default class UndoableStepSwiperComponent {
           undoable: true
       }]
     }];
-    this.list.setStore(this.store);
     this.list.setItemTpl(tpl);
+    this.list.setStore(this.store);
     this.list.setPlugins(plugins);
-  }
-
-  onCall(list, info) {
-    const record = info.record;
-    Ext.toast(`Call ${record.get('first_name')} ${record.get('last_name')}`)
-  }
-
-  onMessage(list, info) {
-    const record = info.record;
-    Ext.toast(`Message ${record.get('first_name')} ${record.get('last_name')}`)
-  }
-
-  onEdit(list, info) {
-    const record = info.record;
-    Ext.toast(`Edit ${record.get('first_name')} ${record.get('last_name')}`)
   }
 
   onSelect(event) {
@@ -69,23 +54,29 @@ export default class UndoableStepSwiperComponent {
     Ext.toast(`You selected ${selected.first_name} ${selected.last_name}.`);
   }
 
-  onCommitDeleteItem = (list, info) => {
-      const record = info.record;
-
-    Ext.toast(`Commit delete ${record.get('first_name')} ${record.get('last_name')}`)
-
-    this.store.remove(record);
-    this.cmp.setStore(this.store);
+  onCall(list, {record}) {
+    Ext.toast(`Call ${record.get('first_name')} ${record.get('last_name')}`)
   }
 
-  onDeleteItem = (list, info) => {
-    const record = info.record;
+  onMessage(list, {record}) {
+    Ext.toast(`Message ${record.get('first_name')} ${record.get('last_name')}`)
+  }
+
+  onEdit(list, {record}) {
+    Ext.toast(`Edit ${record.get('first_name')} ${record.get('last_name')}`)
+  }
+
+  onCommitDeleteItem(list, {record}) {
+    const store = list.getStore();
+    Ext.toast(`Commit delete ${record.get('first_name')} ${record.get('last_name')}`)
+    store.remove(record);
+  }
+
+  onDeleteItem(list, {record}) {
     Ext.toast(`Delete ${record.get('first_name')} ${record.get('last_name')}`)
   }
 
-  onUndoDeleteItem = (list, info) => {
-    const record = info.record;
+  onUndoDeleteItem(list, {record}) {
     Ext.toast(`Recover ${record.get('first_name')} ${record.get('last_name')}`)
-  }    
-
+  }
 }

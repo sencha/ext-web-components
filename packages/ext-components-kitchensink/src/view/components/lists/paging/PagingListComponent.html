@@ -10,11 +10,11 @@
       <ext-container onready="paging.onContainerReady(event)" html="<b>Auto Paging</b>: OFF" style='padding:15px;'>
       </ext-container>
       <ext-segmentedbutton>
-        <ext-button text="Off" ontap="paging.setBufferZone(false)" flex="1"></ext-button>
-        <ext-button text="O" ontap="paging.setBufferZone(0)" flex="1"></ext-button> 
-        <ext-button text="8" ontap="paging.setBufferZone(8)" flex="1"></ext-button>
-        <ext-button text="16" ontap="paging.setBufferZone(16)" flex="1"></ext-button>
-        <ext-button text="32" ontap="paging.setBufferZone(32)" flex="1"></ext-button>
+        <ext-button text="Off" pressed="bufferZone === false" ontap="paging.setBufferZone(false)" flex="1"></ext-button>
+        <ext-button text="O" pressed="bufferZone === 0" ontap="paging.setBufferZone(0)" flex="1"></ext-button> 
+        <ext-button text="8" pressed="bufferZone === 0" ontap="paging.setBufferZone(8)" flex="1"></ext-button>
+        <ext-button text="16" pressed="bufferZone === 0" ontap="paging.setBufferZone(16)" flex="1"></ext-button>
+        <ext-button text="32" pressed="bufferZone === 0" ontap="paging.setBufferZone(32)" flex="1"></ext-button>
       </ext-segmentedbutton>
     </ext-container>
   </ext-list>

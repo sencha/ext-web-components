@@ -1,4 +1,3 @@
-import './NestedListComponent.css';
 import './NestedListComponent.html';
 
 export default class NestedListComponent {
@@ -10,7 +9,7 @@ export default class NestedListComponent {
       autoLoad: true,
       root: {},
       proxy: {
-        type: 'ajax',
+        type: 'rest',
         url: 'resources/data/tree/cars.json'
       },
       sorters: ['last_name', 'first_name']

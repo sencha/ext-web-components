@@ -1,8 +1,6 @@
-import './BasicAccordionSwiperComponent.css';
 import './BasicAccordionSwiperComponent.html';
 
 export default class BasicAccordionSwiperComponent {
-
   constructor () {}
 
   onItemReady(event) {
@@ -11,7 +9,6 @@ export default class BasicAccordionSwiperComponent {
               <div style={{fontSize: '16px', marginBottom: '5px'}}>{first_name} {last_name}</div>
               <div style={{fontSize: '12px', color: '#666'}}>{title}</div>
             </div>`;
-
     this.store = Ext.create('Ext.data.Store', { 
       autoLoad: true,
       sorters: ['last_name', 'first_name'],
@@ -20,7 +17,6 @@ export default class BasicAccordionSwiperComponent {
           url: 'resources/data/people.json'
       }
     });
-
     const plugins=[{
       type: 'listswiper',
       defaults: {ui: 'action'},
@@ -41,8 +37,8 @@ export default class BasicAccordionSwiperComponent {
       }]
     }]
 
-    this.theListview.setStore(this.store);
     this.theListview.setItemTpl(tpl);
+    this.theListview.setStore(this.store);
     this.theListview.setPlugins(plugins);
   }
 

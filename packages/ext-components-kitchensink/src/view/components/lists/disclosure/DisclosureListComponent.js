@@ -1,14 +1,11 @@
-import './DisclosureListComponent.css';
 import './DisclosureListComponent.html';
 
 export default class DisclosureListComponent {
-
   constructor () {}
 
   onItemReady(event) {
     this.theListview = event.detail.cmp;
     const tpl = `<div>{first_name} {last_name}</div>`;
-
     this.store = Ext.create('Ext.data.Store', { 
       autoLoad: true,
       proxy: {
@@ -19,8 +16,8 @@ export default class DisclosureListComponent {
     });
 
     this.theListview.setOnItemDisclosure(this.msgAlert.bind(this));
-    this.theListview.setStore(this.store);
     this.theListview.setItemTpl(tpl);
+    this.theListview.setStore(this.store);
   }
 
   msgAlert(param) {

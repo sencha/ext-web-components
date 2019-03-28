@@ -1,4 +1,3 @@
-import './GroupedListComponent.css';
 import './GroupedListComponent.html';
 
 export default class GroupedListComponent {
@@ -11,7 +10,6 @@ export default class GroupedListComponent {
         <div style="font-size:16px;margin-bottom:5px;">{first_name} {last_name}</div>
         <div style="font-size:12px;color:#666;">{title}</div>
     </div>`;
-
     this.store = Ext.create('Ext.data.Store', { 
       autoLoad: true,
       proxy: {
@@ -23,8 +21,8 @@ export default class GroupedListComponent {
       },
       sorters: ['last_name', 'first_name']
     });
-    this.theListview.setStore(this.store);
     this.theListview.setItemTpl(tpl);
+    this.theListview.setStore(this.store);
   }
 
   groupFn(record) {
