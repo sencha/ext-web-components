@@ -98,8 +98,7 @@ export default class ChartToolbar extends HTMLElement {
         button1.setAttribute("onready", "charttoolbar.toolbarready(event)");
         button1.setAttribute("ontap", "charttoolbar.toolbarready(event)");
 
-        // button1.handler = this.downloadChart.bind(this);
-
+        // Also tried button1.ontap = "charttoolbar.toolbarready(event)", but not working.
         this.append(button1);
     }
 }
