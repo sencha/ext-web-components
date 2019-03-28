@@ -11,7 +11,7 @@ var nodeDir = path.resolve(__dirname)
 var pkg = (fs.existsSync(nodeDir + '/package.json') && JSON.parse(fs.readFileSync(nodeDir + '/package.json', 'utf-8')) || {});
 version = pkg.version
 
-console.log (`Welcome to ${boldGreen('Sencha ExtComponentsGen')} v${version} - The Ext-Components code generator
+console.log (`Welcome to ${boldGreen('Sencha ext-components-gen')} v${version} - The ExtComponents code generator
 
 ${boldGreen('Quick Start:')}
 ext-components-gen app CoolExtComponentsApp
