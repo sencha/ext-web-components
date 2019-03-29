@@ -1,5 +1,24 @@
-<ext-button 
-  text="monthview"
-  onready="monthview.readyButton1(event)"
-  ontap="monthview.tapButton1(event)">
-</ext-button>
+<ext-container padding="10" layout="fit" fitToParent="true"  width="100%" height="100%" >
+
+  <ext-panel
+    docked="left"
+    title="Calendars"
+    ui="light"
+    width="150"
+    height="100%"
+    bodyPadding="5"
+    hidden="false">
+    <ext-calendar-list onready="monthview.calendarListReady(event)"></ext-calendar-list>
+  </ext-panel>
+
+  <ext-calendar-month
+    flex= "1"
+    visibleWeeks="null"
+    timezoneOffset="0"
+    height="100%"
+    gestureNavigation="false"
+    height="100%"
+    onready= "monthview.calendarMonthReady(event)">
+  </ext-calendar-month>
+
+</ext-container>

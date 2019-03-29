@@ -62,9 +62,14 @@ import '@sencha/ext-components/lib/ext-progress.component';
 import '@sencha/ext-components/lib/ext-spacer.component';
 import '@sencha/ext-components/lib/ext-sheet.component';
 import '@sencha/ext-components/lib/ext-video.component';
+import '@sencha/ext-components/lib/ext-pivotgrid.component';
+import '@sencha/ext-components/lib/ext-calendar.component';
+import '@sencha/ext-components/lib/ext-calendar-list.component';
+import '@sencha/ext-components/lib/ext-calendar-day.component';
+import '@sencha/ext-components/lib/ext-calendar-days.component';
+import '@sencha/ext-components/lib/ext-calendar-month.component';
+import '@sencha/ext-components/lib/ext-calendar-week.component';
 import '@sencha/ext-components/lib/ext-cartesian.component';
-
-
 import '@sencha/ext-components/lib/ext-segmentedbutton.component';
 import '@sencha/ext-components/lib/ext-indicator.component';
 
