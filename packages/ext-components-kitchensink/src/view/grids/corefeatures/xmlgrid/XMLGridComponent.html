@@ -1,5 +1,27 @@
-<ext-button 
-  text="xmlgrid"
-  onready="xmlgrid.readyButton1(event)"
-  ontap="xmlgrid.tapButton1(event)">
-</ext-button>
+<ext-grid
+  shadow="true"
+  title="Products"
+  onready="xmlgrid.ready(event)"
+  height="75%"
+  width="100%"
+  columns='[
+    {
+      "text":"Author",
+      "dataIndex":"Author",
+      "flex":"1"
+    }, {
+      "text":"Title",
+      "dataIndex":"Title",
+      "flex":"1"
+    }, {
+      "text":"Manufacturer",
+      "dataIndex":"Manufacturer",
+      "flex":"1"
+    }, {
+      "text":"Product Group",
+      "dataIndex":"ProductGroup",
+      "width":"125"
+    }
+  ]'
+>
+</ext-grid>
