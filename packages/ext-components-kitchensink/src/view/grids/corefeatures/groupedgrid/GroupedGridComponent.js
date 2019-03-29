@@ -5,7 +5,6 @@ Ext.require([
     'Ext.ux.rating.Picker'
 ]);
 
-import './RestaurantData.js';
 import './GroupedGridComponent.html';
 
 export default class GroupedGridComponent {
@@ -15,8 +14,8 @@ export default class GroupedGridComponent {
     const store = Ext.create('Ext.data.Store', {
         autoLoad: true,
         proxy: {
-            type: 'ajax',
-            url: '/KitchenSink/Restaurants'
+          type: 'ajax',
+          url: 'resources/data/restaurants.json',
         },
         sorters: ['cuisine', 'name'],
         groupField: 'cuisine'
