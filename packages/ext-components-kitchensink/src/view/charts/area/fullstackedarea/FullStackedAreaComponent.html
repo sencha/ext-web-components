@@ -1,5 +1,20 @@
-<ext-button 
-  text="fullstackedarea"
-  onready="fullstackedarea.readyButton1(event)"
-  ontap="fullstackedarea.tapButton1(event)">
-</ext-button>
+<ext-container
+  onready="fullstackedarea.containerready(event)"
+  width="100%"
+  height="100%"
+  layout="fit"
+  padding="10">
+  <ext-toolbar
+    onready="basicarea.toolbarready(event)"
+    docked="top" ui="app-transparent-toolbar"
+    shadow="false"
+    padding="0 10 0 10">
+    <chart-toolbar theme="default"></chart-toolbar>
+  </ext-toolbar>
+  <ext-cartesian
+    onready="fullstackedarea.cartesianready(event)"
+    shadow="true"
+    insetPadding="20 20 0 0"
+    legend='{"type":"sprite"}'>
+  </ext-cartesian>
+</ext-container>

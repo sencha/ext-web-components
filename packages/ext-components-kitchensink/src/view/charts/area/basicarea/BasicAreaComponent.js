@@ -1,20 +1,39 @@
 import '../../charttoolbar/ChartToolbar.js';
-import './BasicAreaComponent.css';
 import './BasicAreaComponent.html';
-// import chartToolbar from '../charttoolbar/chartToolbar.js';
+import createData from './BasicAreaComponentData.js';
 
-// window.customElements.define('chart-toolbar', chartToolbar);
+Ext.require([
+  'Ext.chart.theme.Midnight',
+  'Ext.chart.theme.Green',
+  'Ext.chart.theme.Muted',
+  'Ext.chart.theme.Purple',
+  'Ext.chart.theme.Sky',
+  'Ext.chart.series.Area',
+  'Ext.chart.axis.Numeric',
+  'Ext.chart.axis.Category'
+]);
 
 export default class BasicAreaComponent {
 
   constructor () {
-//    debugger;
-//    console.log('in BasicAreaComponent constructor');
+
+    this.store = Ext.create('Ext.data.Store', {
+      fields: ['id', 'g0', 'g1', 'g2', 'g3', 'g4', 'g5', 'g6', 'name'],
+    });
+
+    this.store.loadData(createData(25));
+  }
+
+  toolbarready(event) {
   }
 
   containerready(event) {
-//    debugger;
     this.cmp  = event.detail.cmp;
+  }
+
+  cartesianready(event) {
+    this.cartesianCmp = event.detail.cmp;
+    this.cartesianCmp.setStore(this.store);
   }
 
 }
