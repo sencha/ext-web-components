@@ -1,6 +1,20 @@
-<ext-container height="100%" onready="basicarea.containerready(event)" layout="fit">
-  <chart-toolbar theme="hey"></chart-toolbar>
+<ext-container
+  padding="10"
+  height="100%"
+  width="100%"
+  onready="basicarea.containerready(event)"
+  layout="fit">
+  <ext-toolbar
+    onready="basicarea.toolbarready(event)"
+    docked="top"
+    ui="app-transparent-toolbar"
+    shadow="false"
+    padding="0 10 0 10"
+  >
+    <chart-toolbar theme="default" refresh="true" ></chart-toolbar>
+  </ext-toolbar>
   <ext-cartesian
+    onready="basicarea.cartesianready(event)"
     shadow="true"
     downloadServerUrl="http://svg.sencha.io"
     insetPadding="25 35 0 10"
@@ -31,7 +45,7 @@
               "style": { "stroke": "black" , "lineWidth": "2", "fillOpacity": "0.8" }
             }]'
     platformConfig='{
-                      "phone": { "insetPadding": '15 5 0 0' }
+                      "phone": { "insetPadding": "15 5 0 0" }
                     }'
     interactions='[{
                     "type": "panzoom" ,

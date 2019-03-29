@@ -1,5 +1,20 @@
-<ext-button 
-  text="negativevaluesarea"
-  onready="negativevaluesarea.readyButton1(event)"
-  ontap="negativevaluesarea.tapButton1(event)">
-</ext-button>
+<ext-container
+  padding="10"
+  width="100%"
+  layout="fit"
+  height="100%"
+  onready="negativevaluesarea.containerready(event)">
+  <ext-toolbar
+    onready="basicarea.toolbarready(event)"
+    docked="top" ui="app-transparent-toolbar"
+    shadow="false"
+    padding="0 10 0 10">
+    <chart-toolbar theme="default"></chart-toolbar>
+  </ext-toolbar>
+  <ext-cartesian
+    onready="negativevaluesarea.cartesianready(event)"
+    shadow="true"
+    insetPadding="20 20 10 10"
+    legend='{"type":"sprite"}'>
+  </ext-cartesian>
+</ext-container>
