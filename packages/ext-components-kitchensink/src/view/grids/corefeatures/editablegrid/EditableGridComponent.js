@@ -1,4 +1,5 @@
 import model from '../CompanyModel';
+import './EditableGridComponent.html';
 
 Ext.require([
   'Ext.grid.plugin.Editable',
@@ -12,7 +13,6 @@ export default class EditableGridComponent {
   constructor () {}
 
   onReady(event) {
-    debugger;
     const store = Ext.create('Ext.data.Store', {
       model,
       autoLoad: true,
@@ -27,28 +27,3 @@ export default class EditableGridComponent {
     editableGrid.setStore(store);
   }
 }
-
-
-
-//
-//
-// signTpl = (field, format, data) => {
-//   const value = data[field];
-//   return (
-//     <span style={{ color: value > 0 ? 'green' : value < 0 ? 'red' : ''}}>
-//       {Ext.util.Format.number(value, format)}
-//     </span>
-//   )
-// }
-//
-// createSignTpl = format => new Template(value => (
-//       <span style={{ color: value > 0 ? 'green' : value < 0 ? 'red' : ''}}>
-//           {Ext.util.Format.number(value, format)}
-//       </span>
-//   ));
-//
-//   renderSign = (format, value) => (
-//       <span style={{ color: value > 0 ? 'green' : value < 0 ? 'red' : ''}}>
-//           {Ext.util.Format.number(value, format)}
-//       </span>
-//   )

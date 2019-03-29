@@ -1,11 +1,14 @@
 <ext-grid
   left="10"
   top="10"
-  width="1000"
+  width="700"
   height="400"
   title="Stock Prices"
   shadow="true"
   onready="editablegrid.onReady(event)"
+  plugins='{
+    "gridcellediting": "true"
+  }'
   columns='[
     {
       "text": "Company",
@@ -19,19 +22,23 @@
       "formatter": "usMoney",
       "editable": "true"
     }, {
-      "text": "% Change",
+      "text": "Change",
       "width": "130",
-      "dataIndex": "pctChange",
+      "dataIndex": "change",
+      "xtype": "numbercolumn",
+      "format": "0.00"
     }, {
       "text": "% Change",
       "width": "130",
       "dataIndex": "pctChange",
+      "xtype": "numbercolumn",
+      "format": "0.00%"
     }, {
       "text": "Last Updated",
       "width": "150",
       "dataIndex": "lastChange",
       "formatter": "date(\"m/d/Y\")"
-    },
+    }
   ]'
 >
   <ext-toolbar docked="top">
@@ -41,7 +48,16 @@
   </ext-toolbar>
 </ext-grid>
 
-<!--
+<!--{
+  "locked": "right",
+  "text": "Change",
+  "width": "130",
+  "align": "right",
+  "dataIndex": "change",
+  "cell": {
+    "encodeHtml": "false"
+  }
+},
 <Column
   text="Company"
   width="150"
