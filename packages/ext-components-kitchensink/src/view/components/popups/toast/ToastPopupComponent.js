@@ -1,4 +1,4 @@
-import './ToastPopupComponent.css';
+import './ToastPopupComponent.html';
 
 export default class ToastPopupComponent {
 

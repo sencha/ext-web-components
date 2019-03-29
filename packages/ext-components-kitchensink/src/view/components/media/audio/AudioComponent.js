@@ -1,4 +1,3 @@
-import './AudioComponent.css';
 import './AudioComponent.html';
 
 export default class AudioComponent {

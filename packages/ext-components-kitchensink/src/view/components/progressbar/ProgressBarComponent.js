@@ -1,4 +1,3 @@
-import './ProgressBarComponent.css';
 import './ProgressBarComponent.html';
 
 export default class ProgressBarComponent {

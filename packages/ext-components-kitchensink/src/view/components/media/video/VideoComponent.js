@@ -1,4 +1,3 @@
-import './VideoComponent.css';
 import './VideoComponent.html';
 
 export default class VideoComponent {

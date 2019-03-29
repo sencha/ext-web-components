@@ -21,9 +21,6 @@ export class ExtThumbComponent extends ExtBase {
 	get displayed(){return this.getAttribute('displayed')};set displayed(displayed){this.setAttribute('displayed',displayed)}
 	get docked(){return this.getAttribute('docked')};set docked(docked){this.setAttribute('docked',docked)}
 	get draggable(){return this.getAttribute('draggable')};set draggable(draggable){this.setAttribute('draggable',draggable)}
-	get enterAnimation(){return this.getAttribute('enterAnimation')};set enterAnimation(enterAnimation){this.setAttribute('enterAnimation',enterAnimation)}
-	get eventHandlers(){return this.getAttribute('eventHandlers')};set eventHandlers(eventHandlers){this.setAttribute('eventHandlers',eventHandlers)}
-	get exitAnimation(){return this.getAttribute('exitAnimation')};set exitAnimation(exitAnimation){this.setAttribute('exitAnimation',exitAnimation)}
 	get fillCls(){return this.getAttribute('fillCls')};set fillCls(fillCls){this.setAttribute('fillCls',fillCls)}
 	get fillTrack(){return this.getAttribute('fillTrack')};set fillTrack(fillTrack){this.setAttribute('fillTrack',fillTrack)}
 	get flex(){return this.getAttribute('flex')};set flex(flex){this.setAttribute('flex',flex)}
@@ -174,9 +171,6 @@ export class ExtThumbComponent extends ExtBase {
     "displayed": "Boolean",
     "docked": "String",
     "draggable": "Boolean/Object/Ext.drag.Source",
-    "enterAnimation": "String/Mixed",
-    "eventHandlers": "Object",
-    "exitAnimation": "String/Mixed",
     "fillCls": "String",
     "fillTrack": "Boolean/String",
     "flex": "Number/String/Object",

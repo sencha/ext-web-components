@@ -9,7 +9,6 @@
     "build": "npm run clean && cross-env webpack --env.environment='production' --env.treeshake='yes' && cross-env webpack --env.environment='production'  --env.treeshake='no'"
   },
   "devDependencies": {
-
     "@sencha/ext-components": "~7.0.0",
     "@sencha/ext-webpack-plugin": "^7.0.0",
 

@@ -30,10 +30,7 @@ export class ExtCalendar_weekviewComponent extends ExtBase {
 	get droppable(){return this.getAttribute('droppable')};set droppable(droppable){this.setAttribute('droppable',droppable)}
 	get editForm(){return this.getAttribute('editForm')};set editForm(editForm){this.setAttribute('editForm',editForm)}
 	get endTime(){return this.getAttribute('endTime')};set endTime(endTime){this.setAttribute('endTime',endTime)}
-	get enterAnimation(){return this.getAttribute('enterAnimation')};set enterAnimation(enterAnimation){this.setAttribute('enterAnimation',enterAnimation)}
 	get eventDefaults(){return this.getAttribute('eventDefaults')};set eventDefaults(eventDefaults){this.setAttribute('eventDefaults',eventDefaults)}
-	get eventHandlers(){return this.getAttribute('eventHandlers')};set eventHandlers(eventHandlers){this.setAttribute('eventHandlers',eventHandlers)}
-	get exitAnimation(){return this.getAttribute('exitAnimation')};set exitAnimation(exitAnimation){this.setAttribute('exitAnimation',exitAnimation)}
 	get firstDayOfWeek(){return this.getAttribute('firstDayOfWeek')};set firstDayOfWeek(firstDayOfWeek){this.setAttribute('firstDayOfWeek',firstDayOfWeek)}
 	get flex(){return this.getAttribute('flex')};set flex(flex){this.setAttribute('flex',flex)}
 	get floated(){return this.getAttribute('floated')};set floated(floated){this.setAttribute('floated',floated)}
@@ -217,10 +214,7 @@ export class ExtCalendar_weekviewComponent extends ExtBase {
     "droppable": "Boolean",
     "editForm": "Object",
     "endTime": "Number",
-    "enterAnimation": "String/Mixed",
     "eventDefaults": "Object",
-    "eventHandlers": "Object",
-    "exitAnimation": "String/Mixed",
     "firstDayOfWeek": "Number",
     "flex": "Number/String/Object",
     "floated": "Boolean",

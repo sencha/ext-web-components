@@ -1,4 +1,3 @@
-import './DialogPopupComponent.css';
 import './DialogPopupComponent.html';
 
 export default class DialogPopupComponent {

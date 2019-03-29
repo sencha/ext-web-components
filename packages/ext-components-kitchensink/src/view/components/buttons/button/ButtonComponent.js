@@ -1,4 +1,3 @@
-import './ButtonComponent.css';
 import './ButtonComponent.html';
 
 export default class ButtonComponent {
@@ -39,8 +38,8 @@ export default class ButtonComponent {
     }
   };
 
-  styleMenuItemChange(event) {
-    this.style = event.config.text;
+  styleMenuItemChange(sender, value) {
+    this.style = value._text;
     this.styleButtons.forEach(menuItem => {
       const menuItemText = menuItem._text;
       
@@ -91,8 +90,8 @@ export default class ButtonComponent {
     }
   }
 
-  onTypeChange(event) {
-    this.type = event.config.text;
+  onTypeChange(sender, value) {
+    this.type = value._text;
     this.iconButtons.forEach(menuItem => {
       const menuItemText = menuItem._text;
       
@@ -141,16 +140,12 @@ export default class ButtonComponent {
 
   setDefaultsForStyle(event) {
     this.styleMenu = event.detail.cmp;
-    this.styleMenu.setDefaults({
-      handler: this.styleMenuItemChange.bind(this),
-    });
+    this.styleMenu.on('click', this.styleMenuItemChange.bind(this));
   }
 
-  setTypeForStyle = function (event) {
+  setTypeForStyle(event) {
     this.typeMenu = event.detail.cmp;
-    this.typeMenu.setDefaults({
-      handler: this.onTypeChange.bind(this),
-    });
+    this.typeMenu.on('click', this.onTypeChange.bind(this));
   }
 
   setIcon(event) {

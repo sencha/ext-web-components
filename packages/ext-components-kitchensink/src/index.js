@@ -35,6 +35,11 @@ import '@sencha/ext-components/lib/ext-treelist.component';
 import '@sencha/ext-components/lib/ext-panel.component';
 import '@sencha/ext-components/lib/ext-segmentedbutton.component';
 import '@sencha/ext-components/lib/ext-tabpanel.component';
+import '@sencha/ext-components/lib/ext-tabbar.component';
+import '@sencha/ext-components/lib/ext-tab.component';
+import '@sencha/ext-components/lib/ext-textareafield.component';
+import '@sencha/ext-components/lib/ext-textfield.component';
+import '@sencha/ext-components/lib/ext-timefield.component';
 import '@sencha/ext-components/lib/ext-textareafield.component';
 import '@sencha/ext-components/lib/ext-textfield.component';
 import '@sencha/ext-components/lib/ext-timefield.component';
@@ -62,6 +67,7 @@ import '@sencha/ext-components/lib/ext-calendar-day.component';
 import '@sencha/ext-components/lib/ext-calendar-days.component';
 import '@sencha/ext-components/lib/ext-calendar-month.component';
 import '@sencha/ext-components/lib/ext-calendar-week.component';
+import '@sencha/ext-components/lib/ext-cartesian.component';
 import '@sencha/ext-components/lib/ext-segmentedbutton.component';
 import '@sencha/ext-components/lib/ext-indicator.component';
 
@@ -82,4 +88,4 @@ import MainComponent from './view/main/MainComponent.js';
   }
 
 }());
-            
+

@@ -1,4 +1,3 @@
-import './TitleBarComponent.css';
 import './TitleBarComponent.html';
 
 export default class TitleBarComponent {
