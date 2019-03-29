@@ -25,9 +25,6 @@ export class ExtIndexbarComponent extends ExtBase {
 	get docked(){return this.getAttribute('docked')};set docked(docked){this.setAttribute('docked',docked)}
 	get draggable(){return this.getAttribute('draggable')};set draggable(draggable){this.setAttribute('draggable',draggable)}
 	get dynamic(){return this.getAttribute('dynamic')};set dynamic(dynamic){this.setAttribute('dynamic',dynamic)}
-	get enterAnimation(){return this.getAttribute('enterAnimation')};set enterAnimation(enterAnimation){this.setAttribute('enterAnimation',enterAnimation)}
-	get eventHandlers(){return this.getAttribute('eventHandlers')};set eventHandlers(eventHandlers){this.setAttribute('eventHandlers',eventHandlers)}
-	get exitAnimation(){return this.getAttribute('exitAnimation')};set exitAnimation(exitAnimation){this.setAttribute('exitAnimation',exitAnimation)}
 	get flex(){return this.getAttribute('flex')};set flex(flex){this.setAttribute('flex',flex)}
 	get floated(){return this.getAttribute('floated')};set floated(floated){this.setAttribute('floated',floated)}
 	get focusCls(){return this.getAttribute('focusCls')};set focusCls(focusCls){this.setAttribute('focusCls',focusCls)}
@@ -186,9 +183,6 @@ export class ExtIndexbarComponent extends ExtBase {
     "docked": "String",
     "draggable": "Boolean/Object/Ext.drag.Source",
     "dynamic": "Boolean",
-    "enterAnimation": "String/Mixed",
-    "eventHandlers": "Object",
-    "exitAnimation": "String/Mixed",
     "flex": "Number/String/Object",
     "floated": "Boolean",
     "focusCls": "String",

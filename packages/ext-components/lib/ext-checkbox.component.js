@@ -26,14 +26,11 @@ export class ExtCheckboxComponent extends ExtBase {
 	get displayed(){return this.getAttribute('displayed')};set displayed(displayed){this.setAttribute('displayed',displayed)}
 	get docked(){return this.getAttribute('docked')};set docked(docked){this.setAttribute('docked',docked)}
 	get draggable(){return this.getAttribute('draggable')};set draggable(draggable){this.setAttribute('draggable',draggable)}
-	get enterAnimation(){return this.getAttribute('enterAnimation')};set enterAnimation(enterAnimation){this.setAttribute('enterAnimation',enterAnimation)}
 	get error(){return this.getAttribute('error')};set error(error){this.setAttribute('error',error)}
 	get errorMessage(){return this.getAttribute('errorMessage')};set errorMessage(errorMessage){this.setAttribute('errorMessage',errorMessage)}
 	get errorTarget(){return this.getAttribute('errorTarget')};set errorTarget(errorTarget){this.setAttribute('errorTarget',errorTarget)}
 	get errorTip(){return this.getAttribute('errorTip')};set errorTip(errorTip){this.setAttribute('errorTip',errorTip)}
 	get errorTpl(){return this.getAttribute('errorTpl')};set errorTpl(errorTpl){this.setAttribute('errorTpl',errorTpl)}
-	get eventHandlers(){return this.getAttribute('eventHandlers')};set eventHandlers(eventHandlers){this.setAttribute('eventHandlers',eventHandlers)}
-	get exitAnimation(){return this.getAttribute('exitAnimation')};set exitAnimation(exitAnimation){this.setAttribute('exitAnimation',exitAnimation)}
 	get flex(){return this.getAttribute('flex')};set flex(flex){this.setAttribute('flex',flex)}
 	get floated(){return this.getAttribute('floated')};set floated(floated){this.setAttribute('floated',floated)}
 	get focusCls(){return this.getAttribute('focusCls')};set focusCls(focusCls){this.setAttribute('focusCls',focusCls)}
@@ -46,7 +43,6 @@ export class ExtCheckboxComponent extends ExtBase {
 	get html(){return this.getAttribute('html')};set html(html){this.setAttribute('html',html)}
 	get id(){return this.getAttribute('id')};set id(id){this.setAttribute('id',id)}
 	get inline(){return this.getAttribute('inline')};set inline(inline){this.setAttribute('inline',inline)}
-	get inputCls(){return this.getAttribute('inputCls')};set inputCls(inputCls){this.setAttribute('inputCls',inputCls)}
 	get inputType(){return this.getAttribute('inputType')};set inputType(inputType){this.setAttribute('inputType',inputType)}
 	get inputValue(){return this.getAttribute('inputValue')};set inputValue(inputValue){this.setAttribute('inputValue',inputValue)}
 	get instanceCls(){return this.getAttribute('instanceCls')};set instanceCls(instanceCls){this.setAttribute('instanceCls',instanceCls)}
@@ -218,14 +214,11 @@ export class ExtCheckboxComponent extends ExtBase {
     "displayed": "Boolean",
     "docked": "String",
     "draggable": "Boolean/Object/Ext.drag.Source",
-    "enterAnimation": "String/Mixed",
     "error": "String/String[]",
     "errorMessage": "String",
     "errorTarget": "String",
     "errorTip": "Object",
     "errorTpl": "String/String[]/Ext.XTemplate",
-    "eventHandlers": "Object",
-    "exitAnimation": "String/Mixed",
     "flex": "Number/String/Object",
     "floated": "Boolean",
     "focusCls": "String",
@@ -238,7 +231,6 @@ export class ExtCheckboxComponent extends ExtBase {
     "html": "String/Ext.dom.Element/HTMLElement",
     "id": "String",
     "inline": "Boolean",
-    "inputCls": "String",
     "inputType": "String",
     "inputValue": "any",
     "instanceCls": "String/String[]",

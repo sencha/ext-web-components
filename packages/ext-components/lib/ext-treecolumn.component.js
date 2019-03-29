@@ -43,9 +43,6 @@ export class ExtTreecolumnComponent extends ExtBase {
 	get draggable(){return this.getAttribute('draggable')};set draggable(draggable){this.setAttribute('draggable',draggable)}
 	get editable(){return this.getAttribute('editable')};set editable(editable){this.setAttribute('editable',editable)}
 	get editor(){return this.getAttribute('editor')};set editor(editor){this.setAttribute('editor',editor)}
-	get enterAnimation(){return this.getAttribute('enterAnimation')};set enterAnimation(enterAnimation){this.setAttribute('enterAnimation',enterAnimation)}
-	get eventHandlers(){return this.getAttribute('eventHandlers')};set eventHandlers(eventHandlers){this.setAttribute('eventHandlers',eventHandlers)}
-	get exitAnimation(){return this.getAttribute('exitAnimation')};set exitAnimation(exitAnimation){this.setAttribute('exitAnimation',exitAnimation)}
 	get exportRenderer(){return this.getAttribute('exportRenderer')};set exportRenderer(exportRenderer){this.setAttribute('exportRenderer',exportRenderer)}
 	get exportStyle(){return this.getAttribute('exportStyle')};set exportStyle(exportStyle){this.setAttribute('exportStyle',exportStyle)}
 	get exportSummaryRenderer(){return this.getAttribute('exportSummaryRenderer')};set exportSummaryRenderer(exportSummaryRenderer){this.setAttribute('exportSummaryRenderer',exportSummaryRenderer)}
@@ -130,7 +127,6 @@ export class ExtTreecolumnComponent extends ExtBase {
 	get summaryDataIndex(){return this.getAttribute('summaryDataIndex')};set summaryDataIndex(summaryDataIndex){this.setAttribute('summaryDataIndex',summaryDataIndex)}
 	get summaryFormatter(){return this.getAttribute('summaryFormatter')};set summaryFormatter(summaryFormatter){this.setAttribute('summaryFormatter',summaryFormatter)}
 	get summaryRenderer(){return this.getAttribute('summaryRenderer')};set summaryRenderer(summaryRenderer){this.setAttribute('summaryRenderer',summaryRenderer)}
-	get summaryType(){return this.getAttribute('summaryType')};set summaryType(summaryType){this.setAttribute('summaryType',summaryType)}
 	get tabIndex(){return this.getAttribute('tabIndex')};set tabIndex(tabIndex){this.setAttribute('tabIndex',tabIndex)}
 	get text(){return this.getAttribute('text')};set text(text){this.setAttribute('text',text)}
 	get toFrontOnShow(){return this.getAttribute('toFrontOnShow')};set toFrontOnShow(toFrontOnShow){this.setAttribute('toFrontOnShow',toFrontOnShow)}
@@ -267,9 +263,6 @@ export class ExtTreecolumnComponent extends ExtBase {
     "draggable": "Boolean/Object/Ext.drag.Source",
     "editable": "Boolean",
     "editor": "Object/String",
-    "enterAnimation": "String/Mixed",
-    "eventHandlers": "Object",
-    "exitAnimation": "String/Mixed",
     "exportRenderer": "Boolean/Function/String",
     "exportStyle": "Ext.exporter.file.Style/Ext.exporter.file.Style[]",
     "exportSummaryRenderer": "Boolean/Function/String",
@@ -354,7 +347,6 @@ export class ExtTreecolumnComponent extends ExtBase {
     "summaryDataIndex": "String",
     "summaryFormatter": "String",
     "summaryRenderer": "Function/String",
-    "summaryType": "String/Function",
     "tabIndex": "Number",
     "text": "String",
     "toFrontOnShow": "Boolean",
