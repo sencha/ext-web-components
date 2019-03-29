@@ -240,7 +240,7 @@ export class ExtCalendar_listComponent extends ExtBase {
 	get onupdatedata(){return this.getAttribute('onupdatedata')};set onupdatedata(onupdatedata){this.setAttribute('onupdatedata',onupdatedata)}
 	get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange(onwidthchange){this.setAttribute('onwidthchange',onwidthchange)}
 
-	static XTYPE() {return 'calendar_list'}
+	static XTYPE() {return 'calendar-list'}
   static PROPERTIESOBJECT() { return {
     "activeChildTabIndex": "Number",
     "activeItem": "Ext.Component/Object/String/Number",
@@ -800,6 +800,6 @@ export class ExtCalendar_listComponent extends ExtBase {
 }
 (function () {
   Ext.onReady(function() {
-    window.customElements.define('ext-calendar_list', ExtCalendar_listComponent);
+    window.customElements.define('ext-calendar-list', ExtCalendar_listComponent);
   });
 })();

@@ -1,15 +1,18 @@
-import './CalendarPanelComponent.css';
 import './CalendarPanelComponent.html';
+import '../data.js';
 
 export default class CalendarPanelComponent {
-
-  constructor () {
-    console.log('in CalendarPanelComponent constructor');
-  }
+  constructor() {}
 
   onReady(event) {
-    debugger;
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
+    const store = Ext.create('Ext.calendar.store.Calendars', {
+      autoLoad: true,
+      proxy: {
+        type: 'ajax',
+        url: '/KitchenSink/CalendarFull'
+      }
+    });
+    this.panel = event.detail.cmp;
+    this.panel.setStore(store);
   }
 }

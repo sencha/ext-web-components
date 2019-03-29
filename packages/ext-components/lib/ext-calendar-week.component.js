@@ -258,7 +258,7 @@ export class ExtCalendar_weekComponent extends ExtBase {
 	get onvaluechange(){return this.getAttribute('onvaluechange')};set onvaluechange(onvaluechange){this.setAttribute('onvaluechange',onvaluechange)}
 	get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange(onwidthchange){this.setAttribute('onwidthchange',onwidthchange)}
 
-	static XTYPE() {return 'calendar_week'}
+	static XTYPE() {return 'calendar-week'}
   static PROPERTIESOBJECT() { return {
     "activeChildTabIndex": "Number",
     "activeItem": "Ext.Component/Object/String/Number",
@@ -835,6 +835,6 @@ export class ExtCalendar_weekComponent extends ExtBase {
 }
 (function () {
   Ext.onReady(function() {
-    window.customElements.define('ext-calendar_week', ExtCalendar_weekComponent);
+    window.customElements.define('ext-calendar-week', ExtCalendar_weekComponent);
   });
 })();

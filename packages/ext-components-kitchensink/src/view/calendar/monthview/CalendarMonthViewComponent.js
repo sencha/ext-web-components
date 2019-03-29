@@ -1,18 +1,23 @@
-import './CalendarMonthViewComponent.css';
+import './CalendarMonthViewComponent.html';
 
 export default class CalendarMonthViewComponent {
 
-  constructor () {
-    console.log('in CalendarMonthViewComponent constructor');
+  constructor() { }
+ 
+  calendarListReady(event) {
+    this.store = Ext.create('Ext.calendar.store.Calendars', {
+      autoLoad: true,
+      proxy:{
+        type: 'ajax',
+        url: '/KitchenSink/CalendarFull'
+      }
+    })
+    this.calendarListReady = event.detail.cmp;
+    this.calendarListReady.setStore(this.store);
   }
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
+  calendarMonthReady(event){
+    this.calendarMonthReady = event.detail.cmp;
+    this.calendarMonthReady.setStore(this.store);
   }
-
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
-  }
-
 }
