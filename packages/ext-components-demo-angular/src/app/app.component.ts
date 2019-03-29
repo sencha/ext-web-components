@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styles: [``],
   template: `
   <ext-button text="hi"></ext-button>
+  
   <ext-grid fitToParent=true
     [title]="gridTitle"
     (ready)="readyGrid($event)">
@@ -18,52 +19,39 @@ import { Component } from '@angular/core';
    </ext-titlebar>
    <!-- Titlebar ends-->
 
-
-
   </ext-grid>
 
-
   <ext-tabpanel 
-  height="600px"
-  [shadow]="true"
-  [tabBar]="{layout: {pack: 'left'}}">
-  <ext-panel *ngFor="let file of files" [hidden]="files.length > 0 ? false: true"
-    layout="fit"
     height="600px"
-    [scrollable]="true"
-    [title]="file.name"
-    [ui]="'code-panel'"
-    tab="{ui: 'app-code-tab', flex: 0, minWidth: 120}"
-    [userSelectable]="{element: true, bodyElement: true}"
-    [html]="'file.code'">
-    <ext-button text="hi"></ext-button>
-  </ext-panel>
-</ext-tabpanel>
-
-
-
-
-
+    [shadow]="true"
+    [tabBar]="{layout: {pack: 'left'}}">
+    <ext-panel *ngFor="let file of files" [hidden]="files.length > 0 ? false: true"
+      layout="fit"
+      height="600px"
+      [scrollable]="true"
+      [title]="file.name"
+      [ui]="'code-panel'"
+      tab="{ui: 'app-code-tab', flex: 0, minWidth: 120}"
+      [userSelectable]="{element: true, bodyElement: true}"
+      [html]="'file.code'">
+      <ext-button text="hi"></ext-button>
+    </ext-panel>
+  </ext-tabpanel>
 
   `
 })
 export class AppComponent {
 
-
   files = [
     { name: 'n', code: "123" },
     { name: 'n', code: "123" },
     { name: 'n', code: "123" }
-
   ]
-
 
   gridTitle = "my grid title"
 
   readyGrid($event) {
     console.log($event)
-
   }
-
 
 }

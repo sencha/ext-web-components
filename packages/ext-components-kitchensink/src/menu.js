@@ -393,7 +393,7 @@ export default function getMenu() {
         { text: 'Pack', component: PackComponent, iconCls: 'icon-d3-view-pack' },
         { text: 'Sunburst', component: SunburstComponent, iconCls: 'icon-d3-view-sunburst' },
         { text: 'Zoomable Sunburst', component: ZoomableSunburstComponent, iconCls: 'icon-d3-view-sunburst-zoom' },
-        { text: 'Tree', component: TreeHierarchyComponent, iconCls: 'icon-d3-view-tree' },
+        { text: 'D3 Tree', component: TreeHierarchyComponent, iconCls: 'icon-d3-view-tree' },
         { text: 'TreeMap', component: TreeMapComponent, iconCls: 'icon-d3-view-treemap' },
         { text: 'TreeMap Tooltip', component: TreeMapToolTipComponent, iconCls: 'icon-d3-view-treemap-tooltip' },
         { text: 'Configurable Pivot TreeMap', component: ConfigurablePivotTreeMapComponent, iconCls: 'icon-d3-view-treemap-pivot-configurator' }

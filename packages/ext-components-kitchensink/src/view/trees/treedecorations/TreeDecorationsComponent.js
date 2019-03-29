@@ -1,18 +1,19 @@
-import './TreeDecorationsComponent.css';
+import './TreeDecorationsComponent.html';
+import data from "./data";
 
 export default class TreeDecorationsComponent {
 
-  constructor () {
-    console.log('in TreeDecorationsComponent constructor');
-  }
+  constructor () {}
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
+  onTreeReady(event) {
+    this.tree = event.detail.cmp;
+    const isPhone = Ext.os.is.Phone;
+    const width = !isPhone ? '400' : null
+    const height = !isPhone ? '600' : null
+  
+    this.store = data;
+    this.tree.setWidth(width);
+    this.tree.setHeight(height);
+    this.tree.setStore(this.store);
   }
-
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
-  }
-
 }

@@ -252,7 +252,7 @@ export class ExtCalendar_monthComponent extends ExtBase {
 	get onvaluechange(){return this.getAttribute('onvaluechange')};set onvaluechange(onvaluechange){this.setAttribute('onvaluechange',onvaluechange)}
 	get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange(onwidthchange){this.setAttribute('onwidthchange',onwidthchange)}
 
-	static XTYPE() {return 'calendar_month'}
+	static XTYPE() {return 'calendar-month'}
   static PROPERTIESOBJECT() { return {
     "activeChildTabIndex": "Number",
     "activeItem": "Ext.Component/Object/String/Number",
@@ -826,6 +826,6 @@ export class ExtCalendar_monthComponent extends ExtBase {
 }
 (function () {
   Ext.onReady(function() {
-    window.customElements.define('ext-calendar_month', ExtCalendar_monthComponent);
+    window.customElements.define('ext-calendar-month', ExtCalendar_monthComponent);
   });
 })();
