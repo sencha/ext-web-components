@@ -38,9 +38,6 @@ export class ExtSpacefillingComponent extends ExtBase {
 	get downloadServerUrl(){return this.getAttribute('downloadServerUrl')};set downloadServerUrl(downloadServerUrl){this.setAttribute('downloadServerUrl',downloadServerUrl)}
 	get draggable(){return this.getAttribute('draggable')};set draggable(draggable){this.setAttribute('draggable',draggable)}
 	get engine(){return this.getAttribute('engine')};set engine(engine){this.setAttribute('engine',engine)}
-	get enterAnimation(){return this.getAttribute('enterAnimation')};set enterAnimation(enterAnimation){this.setAttribute('enterAnimation',enterAnimation)}
-	get eventHandlers(){return this.getAttribute('eventHandlers')};set eventHandlers(eventHandlers){this.setAttribute('eventHandlers',eventHandlers)}
-	get exitAnimation(){return this.getAttribute('exitAnimation')};set exitAnimation(exitAnimation){this.setAttribute('exitAnimation',exitAnimation)}
 	get flex(){return this.getAttribute('flex')};set flex(flex){this.setAttribute('flex',flex)}
 	get floated(){return this.getAttribute('floated')};set floated(floated){this.setAttribute('floated',floated)}
 	get focusableContainer(){return this.getAttribute('focusableContainer')};set focusableContainer(focusableContainer){this.setAttribute('focusableContainer',focusableContainer)}
@@ -261,9 +258,6 @@ export class ExtSpacefillingComponent extends ExtBase {
     "downloadServerUrl": "String",
     "draggable": "Boolean/Object/Ext.drag.Source",
     "engine": "String",
-    "enterAnimation": "String/Mixed",
-    "eventHandlers": "Object",
-    "exitAnimation": "String/Mixed",
     "flex": "Number/String/Object",
     "floated": "Boolean",
     "focusableContainer": "Boolean",

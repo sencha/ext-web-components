@@ -50,9 +50,6 @@ export class ExtPivotrangeeditorComponent extends ExtBase {
 	get draggable(){return this.getAttribute('draggable')};set draggable(draggable){this.setAttribute('draggable',draggable)}
 	get enableSubmissionForm(){return this.getAttribute('enableSubmissionForm')};set enableSubmissionForm(enableSubmissionForm){this.setAttribute('enableSubmissionForm',enableSubmissionForm)}
 	get enctype(){return this.getAttribute('enctype')};set enctype(enctype){this.setAttribute('enctype',enctype)}
-	get enterAnimation(){return this.getAttribute('enterAnimation')};set enterAnimation(enterAnimation){this.setAttribute('enterAnimation',enterAnimation)}
-	get eventHandlers(){return this.getAttribute('eventHandlers')};set eventHandlers(eventHandlers){this.setAttribute('eventHandlers',eventHandlers)}
-	get exitAnimation(){return this.getAttribute('exitAnimation')};set exitAnimation(exitAnimation){this.setAttribute('exitAnimation',exitAnimation)}
 	get fieldSeparators(){return this.getAttribute('fieldSeparators')};set fieldSeparators(fieldSeparators){this.setAttribute('fieldSeparators',fieldSeparators)}
 	get flex(){return this.getAttribute('flex')};set flex(flex){this.setAttribute('flex',flex)}
 	get floated(){return this.getAttribute('floated')};set floated(floated){this.setAttribute('floated',floated)}
@@ -289,9 +286,6 @@ export class ExtPivotrangeeditorComponent extends ExtBase {
     "draggable": "Boolean/Object/Ext.drag.Source",
     "enableSubmissionForm": "Boolean",
     "enctype": "String",
-    "enterAnimation": "String/Mixed",
-    "eventHandlers": "Object",
-    "exitAnimation": "String/Mixed",
     "fieldSeparators": "Boolean",
     "flex": "Number/String/Object",
     "floated": "Boolean",
