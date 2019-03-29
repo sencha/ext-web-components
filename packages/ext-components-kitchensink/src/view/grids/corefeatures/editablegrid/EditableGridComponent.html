@@ -1,5 +1,94 @@
-<ext-button 
-  text="editablegrid"
-  onready="editablegrid.readyButton1(event)"
-  ontap="editablegrid.tapButton1(event)">
-</ext-button>
+<ext-grid
+  left="10"
+  top="10"
+  width="700"
+  height="400"
+  title="Stock Prices"
+  shadow="true"
+  onready="editablegrid.onReady(event)"
+  plugins='{
+    "gridcellediting": "true"
+  }'
+  columns='[
+    {
+      "text": "Company",
+      "width": "150",
+      "dataIndex": "name",
+      "editable": "true"
+    }, {
+      "text": "Price",
+      "width": "120",
+      "dataIndex": "price",
+      "formatter": "usMoney",
+      "editable": "true"
+    }, {
+      "text": "Change",
+      "width": "130",
+      "dataIndex": "change",
+      "xtype": "numbercolumn",
+      "format": "0.00"
+    }, {
+      "text": "% Change",
+      "width": "130",
+      "dataIndex": "pctChange",
+      "xtype": "numbercolumn",
+      "format": "0.00%"
+    }, {
+      "text": "Last Updated",
+      "width": "150",
+      "dataIndex": "lastChange",
+      "formatter": "date(\"m/d/Y\")"
+    }
+  ]'
+>
+  <ext-toolbar docked="top">
+    <div style='{color: "#666", fontSize: "13px" }'>
+      Double-Click or Tap a row to edit
+    </div>
+  </ext-toolbar>
+</ext-grid>
+
+<!--{
+  "locked": "right",
+  "text": "Change",
+  "width": "130",
+  "align": "right",
+  "dataIndex": "change",
+  "cell": {
+    "encodeHtml": "false"
+  }
+},
+<Column
+  text="Company"
+  width="150"
+  dataIndex="name"
+  editable
+/>
+<Column
+  text="Price"
+  width="120"
+  dataIndex="price"
+  formatter="usMoney"
+  editable
+>
+  <NumberField required validators={{type:"number", message:"Invalid price"}}/>
+</Column>
+<Column
+  text="Change"
+  width="90"
+  dataIndex="change"
+  renderer={this.renderSign.bind(this, '0.00')}
+/>
+<Column
+  text="% Change"
+  width="100"
+  dataIndex="pctChange"
+  renderer={this.renderSign.bind(this, '0.00')}
+/>
+<Column
+  text="Last Updated"
+  width="125"
+  dataIndex="lastChange"
+  formatter="date('m/d/Y')"
+/>
+</Grid> -->

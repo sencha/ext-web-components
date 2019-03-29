@@ -1,18 +1,29 @@
-import './EditableGridComponent.css';
+import model from '../CompanyModel';
+import './EditableGridComponent.html';
+
+Ext.require([
+  'Ext.grid.plugin.Editable',
+  'Ext.grid.plugin.CellEditing',
+  'Ext.data.validator.Presence',
+  'Ext.data.validator.Number',
+  'Ext.data.validator.Date'
+]);
 
 export default class EditableGridComponent {
+  constructor () {}
 
-  constructor () {
-    console.log('in EditableGridComponent constructor');
+  onReady(event) {
+    const store = Ext.create('Ext.data.Store', {
+      model,
+      autoLoad: true,
+      pageSize: 0,
+      proxy: {
+        type: 'ajax',
+        url: 'resources/data/CompanyData.json',
+      }
+    });
+
+    const editableGrid = event.detail.cmp;
+    editableGrid.setStore(store);
   }
-
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
-  }
-
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
-  }
-
 }

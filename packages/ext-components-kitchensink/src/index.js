@@ -72,7 +72,7 @@ import '@sencha/ext-components/lib/ext-calendar-week.component';
 import '@sencha/ext-components/lib/ext-cartesian.component';
 import '@sencha/ext-components/lib/ext-segmentedbutton.component';
 import '@sencha/ext-components/lib/ext-indicator.component';
-
+import '@sencha/ext-components/lib/ext-lockedgrid.component';
 
 
 import getMenu from './menu';
@@ -90,4 +90,3 @@ import MainComponent from './view/main/MainComponent.js';
   }
 
 }());
-
