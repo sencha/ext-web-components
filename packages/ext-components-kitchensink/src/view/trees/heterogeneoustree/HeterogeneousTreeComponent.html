@@ -1,5 +1,27 @@
-<ext-button 
-  text="heterogeneoustree"
-  onready="heterogeneoustree.readyButton1(event)"
-  ontap="heterogeneoustree.tapButton1(event)">
-</ext-button>
+<ext-container scrollable="true" layout="fit" fitToParent="true" height="100%">
+  <ext-tree 
+    shadow="true"
+    rootVisible="false"
+    onready="heterogeneoustree.onTreeReady(event)"
+    onselect="heterogeneoustree.onSelectionChange(event)"
+    onselectionchange="heterogeneoustree.onSelectionChange(event)"
+    columns='[{
+      "xtype":"treecolumn",
+      "text":"Name",
+      "dataIndex":"name",
+      "width":"100%"
+    }]'
+  >
+    <ext-toolbar docked="bottom">
+      <ext-textfield
+        onaction="heterogeneoustree.onFieldAction(event)"
+        onready="heterogeneoustree.onTextFieldReady(event)">
+      </ext-textfield>
+      <ext-button  
+        text="Add Territory"
+        ontap="heterogeneoustree.addItem(event)"
+        onready="heterogeneoustree.onButtonReady(event)">
+      </ext-button>
+    </ext-toolbar>
+  </ext-tree>
+</ext-container>

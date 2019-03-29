@@ -1,18 +1,27 @@
-import './TreeComponent.css';
+import './TreeComponent.html';
+import data from "./data";
 
 export default class TreeComponent {
 
-  constructor () {
-    console.log('in TreeComponent constructor');
-  }
+  constructor () {}
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
-  }
+  onTreeReady(event) {
+    this.tree = event.detail.cmp;
+    const isPhone = Ext.os.is.Phone;
+    const top = !isPhone ? '10' : null
+    const left = !isPhone ? '10' : null
+    const width = !isPhone ? '400' : null
+    const height = !isPhone ? '600' : null
 
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
-  }
+    this.treeStore = Ext.create('Ext.data.TreeStore', {
+      rootVisible: true,
+      root: data
+    })
 
+    this.tree.setTop(top);
+    this.tree.setLeft(left);
+    this.tree.setWidth(width);
+    this.tree.setHeight(height);
+    this.tree.setStore(this.treeStore);
+  }
 }

@@ -1,5 +1,26 @@
-<ext-button 
-  text="treedecorations"
-  onready="treedecorations.readyButton1(event)"
-  ontap="treedecorations.tapButton1(event)">
-</ext-button>
+<ext-container padding="10" layout="fit" fitToParent="true" height="100%">
+  <ext-tabpanel
+    shadow="true"
+    tabBar='{"docked": "top"}'>
+
+    <ext-panel layout="fit" title="Row Lines">
+      <ext-tree
+        onready="treedecorations.onTreeReady(event)"
+        header="false"
+        rowLines="true"
+        rootVisible="false"
+        shadow= "true">
+      </ext-tree>
+    </ext-panel>
+
+    <ext-panel layout="fit" title="Single Expand">
+      <ext-tree
+        onready="treedecorations.onTreeReady(event)"
+        header="false"
+        singleExpand="true"
+        rootVisible="false"
+        shadow= "true">
+      </ext-tree>
+    </ext-panel>
+  </ext-tabpanel>
+</ext-container>
