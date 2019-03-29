@@ -19,7 +19,6 @@ export class ExtCheckcellComponent extends ExtBase {
 	get defaultListenerScope(){return this.getAttribute('defaultListenerScope')};set defaultListenerScope(defaultListenerScope){this.setAttribute('defaultListenerScope',defaultListenerScope)}
 	get defaultToolWeights(){return this.getAttribute('defaultToolWeights')};set defaultToolWeights(defaultToolWeights){this.setAttribute('defaultToolWeights',defaultToolWeights)}
 	get disabled(){return this.getAttribute('disabled')};set disabled(disabled){this.setAttribute('disabled',disabled)}
-	get eventHandlers(){return this.getAttribute('eventHandlers')};set eventHandlers(eventHandlers){this.setAttribute('eventHandlers',eventHandlers)}
 	get flex(){return this.getAttribute('flex')};set flex(flex){this.setAttribute('flex',flex)}
 	get floated(){return this.getAttribute('floated')};set floated(floated){this.setAttribute('floated',floated)}
 	get focusCls(){return this.getAttribute('focusCls')};set focusCls(focusCls){this.setAttribute('focusCls',focusCls)}
@@ -102,7 +101,6 @@ export class ExtCheckcellComponent extends ExtBase {
     "defaultListenerScope": "Boolean",
     "defaultToolWeights": "Object",
     "disabled": "Boolean",
-    "eventHandlers": "Object",
     "flex": "Number/String/Object",
     "floated": "Boolean",
     "focusCls": "String",
