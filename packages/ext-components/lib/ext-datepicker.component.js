@@ -51,10 +51,7 @@ export class ExtDatepickerComponent extends ExtBase {
 	get doneButton(){return this.getAttribute('doneButton')};set doneButton(doneButton){this.setAttribute('doneButton',doneButton)}
 	get draggable(){return this.getAttribute('draggable')};set draggable(draggable){this.setAttribute('draggable',draggable)}
 	get enter(){return this.getAttribute('enter')};set enter(enter){this.setAttribute('enter',enter)}
-	get enterAnimation(){return this.getAttribute('enterAnimation')};set enterAnimation(enterAnimation){this.setAttribute('enterAnimation',enterAnimation)}
-	get eventHandlers(){return this.getAttribute('eventHandlers')};set eventHandlers(eventHandlers){this.setAttribute('eventHandlers',eventHandlers)}
 	get exit(){return this.getAttribute('exit')};set exit(exit){this.setAttribute('exit',exit)}
-	get exitAnimation(){return this.getAttribute('exitAnimation')};set exitAnimation(exitAnimation){this.setAttribute('exitAnimation',exitAnimation)}
 	get flex(){return this.getAttribute('flex')};set flex(flex){this.setAttribute('flex',flex)}
 	get floated(){return this.getAttribute('floated')};set floated(floated){this.setAttribute('floated',floated)}
 	get focusableContainer(){return this.getAttribute('focusableContainer')};set focusableContainer(focusableContainer){this.setAttribute('focusableContainer',focusableContainer)}
@@ -294,10 +291,7 @@ export class ExtDatepickerComponent extends ExtBase {
     "doneButton": "String/Mixed",
     "draggable": "Boolean/Object/Ext.drag.Source",
     "enter": "'top'/'bottom'/'left'/'right'",
-    "enterAnimation": "String/Mixed",
-    "eventHandlers": "Object",
     "exit": "'top'/'bottom'/'left'/'right'",
-    "exitAnimation": "String/Mixed",
     "flex": "Number/String/Object",
     "floated": "Boolean",
     "focusableContainer": "Boolean",

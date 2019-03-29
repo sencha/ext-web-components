@@ -15,7 +15,6 @@ export class ExtSurfaceComponent extends ExtBase {
 	get defaultListenerScope(){return this.getAttribute('defaultListenerScope')};set defaultListenerScope(defaultListenerScope){this.setAttribute('defaultListenerScope',defaultListenerScope)}
 	get dirty(){return this.getAttribute('dirty')};set dirty(dirty){this.setAttribute('dirty',dirty)}
 	get disabled(){return this.getAttribute('disabled')};set disabled(disabled){this.setAttribute('disabled',disabled)}
-	get eventHandlers(){return this.getAttribute('eventHandlers')};set eventHandlers(eventHandlers){this.setAttribute('eventHandlers',eventHandlers)}
 	get flex(){return this.getAttribute('flex')};set flex(flex){this.setAttribute('flex',flex)}
 	get flipRtlText(){return this.getAttribute('flipRtlText')};set flipRtlText(flipRtlText){this.setAttribute('flipRtlText',flipRtlText)}
 	get floated(){return this.getAttribute('floated')};set floated(floated){this.setAttribute('floated',floated)}
@@ -92,7 +91,6 @@ export class ExtSurfaceComponent extends ExtBase {
     "defaultListenerScope": "Boolean",
     "dirty": "Boolean",
     "disabled": "Boolean",
-    "eventHandlers": "Object",
     "flex": "Number/String/Object",
     "flipRtlText": "Boolean",
     "floated": "Boolean",

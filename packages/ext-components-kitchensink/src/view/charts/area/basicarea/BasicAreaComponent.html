@@ -1,5 +1,45 @@
-<ext-button 
-  text="basicarea"
-  onready="basicarea.readyButton1(event)"
-  ontap="basicarea.tapButton1(event)">
-</ext-button>
+<ext-container height="100%" onready="basicarea.containerready(event)" layout="fit">
+  <chart-toolbar theme="hey"></chart-toolbar>
+  <ext-cartesian
+    shadow="true"
+    downloadServerUrl="http://svg.sencha.io"
+    insetPadding="25 35 0 10"
+    axes='[{
+            "type": "numeric" ,
+            "position": "left" ,
+            "fields": ["g1", "g2" , "g3" , "g4" , "g5" , "g6" ],
+            "label": { "rotate": { "degrees": "-30" } },
+            "grid": { "odd": { "fill": "#e8e8e8" } },
+            "title": { "text": "Summation of Data" , "fontSize": "20" }
+            }, {
+            "type": "category",
+            "position": "bottom", 
+            "fields": "name",
+            "grid": "true",
+            "visibleRange": ["0", "0.25"],
+            "title": { "text": "theme", "fontSize": "20" }
+          }]'
+    legend='{
+              "type": "sprite",
+              "position": "bottom"
+            }'
+    series='[{
+              "type": "area" ,
+              "xField": "name",
+              "yField": ["g1", "g2" , "g3" , "g4" , "g5" ],
+              "title": ["G1", "G2" , "G3" , "G4" , "G5" ],
+              "style": { "stroke": "black" , "lineWidth": "2", "fillOpacity": "0.8" }
+            }]'
+    platformConfig='{
+                      "phone": { "insetPadding": '15 5 0 0' }
+                    }'
+    interactions='[{
+                    "type": "panzoom" ,
+                    "axes": {
+                              "left": { "allowPan": "false", "allowZoom": "false" },
+                              "bottom": { "allowPan": "true", "allowZoom": "true" }
+                            }
+                  }]'
+     >
+  </ext-cartesian>
+</ext-container>

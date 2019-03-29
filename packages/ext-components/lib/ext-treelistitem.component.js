@@ -13,7 +13,6 @@ export class ExtTreelistitemComponent extends ExtBase {
 	get controller(){return this.getAttribute('controller')};set controller(controller){this.setAttribute('controller',controller)}
 	get defaultListenerScope(){return this.getAttribute('defaultListenerScope')};set defaultListenerScope(defaultListenerScope){this.setAttribute('defaultListenerScope',defaultListenerScope)}
 	get disabled(){return this.getAttribute('disabled')};set disabled(disabled){this.setAttribute('disabled',disabled)}
-	get eventHandlers(){return this.getAttribute('eventHandlers')};set eventHandlers(eventHandlers){this.setAttribute('eventHandlers',eventHandlers)}
 	get expandable(){return this.getAttribute('expandable')};set expandable(expandable){this.setAttribute('expandable',expandable)}
 	get expanded(){return this.getAttribute('expanded')};set expanded(expanded){this.setAttribute('expanded',expanded)}
 	get flex(){return this.getAttribute('flex')};set flex(flex){this.setAttribute('flex',flex)}
@@ -101,7 +100,6 @@ export class ExtTreelistitemComponent extends ExtBase {
     "controller": "String/Object/Ext.app.ViewController",
     "defaultListenerScope": "Boolean",
     "disabled": "Boolean",
-    "eventHandlers": "Object",
     "expandable": "Boolean",
     "expanded": "Boolean",
     "flex": "Number/String/Object",

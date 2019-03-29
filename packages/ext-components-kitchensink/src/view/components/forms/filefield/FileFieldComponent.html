@@ -1,6 +1,14 @@
-<ext-panel shadow="true" height="200" width="400" bodyPadding="20" layout="vbox">
-  <ext-filefield label="Attachment" onChange="filefield.onfilefieldchange(event)" >
+<ext-panel
+  layout='{"type": "vbox", "align": "stretch"}'
+  width="300"
+  height="600"
+  bodyPadding="10"
+  shadow="true">
+  <ext-filefield
+    label="Attachment"
+    onChange="filefield.onfilefieldchange(event)">
   </ext-filefield>
-  <ext-container onready="filefield.containerready(event)">
+  <ext-container
+    onready="filefield.containerready(event)">
   </ext-container>
 </ext-panel>

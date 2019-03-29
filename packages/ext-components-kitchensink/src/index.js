@@ -60,7 +60,7 @@ import '@sencha/ext-components/lib/ext-progress.component';
 import '@sencha/ext-components/lib/ext-spacer.component';
 import '@sencha/ext-components/lib/ext-sheet.component';
 import '@sencha/ext-components/lib/ext-video.component';
-
+import '@sencha/ext-components/lib/ext-cartesian.component';
 import '@sencha/ext-components/lib/ext-segmentedbutton.component';
 import '@sencha/ext-components/lib/ext-indicator.component';
 import '@sencha/ext-components/lib/ext-lockedgrid.component';
