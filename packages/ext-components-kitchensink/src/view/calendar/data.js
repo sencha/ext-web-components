@@ -89,11 +89,11 @@ Ext.define('KitchenSink.data.calendar.Full', { }, function() {
         people = ['Louis', 'Mitch', 'Ava', 'Shelly', 'Vicki', 'Stefanie', 'Jason', 'Elena', 'Randy', 'Fred', 'Debbie'],
         teams1 = ['Release', 'QA', 'Development', 'PM', 'R&D'],
         teams2 = ['Marketing', 'Sales'],
-        clients1 = ['Client A', 'Client B', 'Client C', 'Client D'], 
+        clients1 = ['Client A', 'Client B', 'Client C', 'Client D'],
         clients2 = ['Client E', 'Client F', 'Client G', 'Client H'],
         workActions = ['Meet', 'Call', 'Review'],
         leisure = ['Hike', 'Gallery', 'Gaming', 'Theatre', 'Bowling', 'Concert'];
-    
+
     var U = KitchenSink.data.calendar.Util,
         D = Ext.Date,
         N = Ext.Number,
@@ -238,7 +238,7 @@ Ext.define('KitchenSink.data.calendar.Full', { }, function() {
             })()
         };
 
-    
+
 
     Ext.ux.ajax.SimManager.register({
         '/KitchenSink/CalendarFull': {
@@ -292,4 +292,3 @@ Ext.define('KitchenSink.data.calendar.Full', { }, function() {
         }
     });
 });
-
