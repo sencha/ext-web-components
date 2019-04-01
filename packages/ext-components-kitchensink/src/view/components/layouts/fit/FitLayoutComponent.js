@@ -1,4 +1,3 @@
-import './FitLayoutComponent.css';
 import './FitLayoutComponent.html';
 
 export default class FitLayoutComponent {

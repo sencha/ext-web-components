@@ -1,4 +1,4 @@
-import './ConstraintsDragDropComponent.css';
+import './ConstraintsDragDropComponent.scss';
 import './ConstraintsDragDropComponent.html';
 
 

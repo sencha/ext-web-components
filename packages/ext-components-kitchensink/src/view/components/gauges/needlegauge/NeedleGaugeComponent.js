@@ -1,4 +1,3 @@
-import './NeedleGaugeComponent.css';
 import './NeedleGaugeComponent.html';
 
 export default class NeedleGaugeComponent {
