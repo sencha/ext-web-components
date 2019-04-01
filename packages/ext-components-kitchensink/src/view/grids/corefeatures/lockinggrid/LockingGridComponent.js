@@ -23,7 +23,5 @@ export default class LockingGridComponent {
     lockedGrid.setStore(store);
   }
 
-  greenClick(event) {
-    debugger;
-  }
+  greenClick(event) {}
 }
