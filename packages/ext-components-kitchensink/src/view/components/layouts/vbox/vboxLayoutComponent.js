@@ -1,4 +1,4 @@
-import './vboxLayoutComponent.css';
+import './vboxLayoutComponent.scss';
 import './vboxLayoutComponent.html';
 
 export default class vboxLayoutComponent {

@@ -1,4 +1,3 @@
-import './hboxLayoutComponent.css';
 import './hboxLayoutComponent.html';
 
 export default class hboxLayoutComponent {

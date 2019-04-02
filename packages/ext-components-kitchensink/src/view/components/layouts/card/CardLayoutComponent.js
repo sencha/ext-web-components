@@ -1,4 +1,3 @@
-import './CardLayoutComponent.css';
 import './CardLayoutComponent.html';
 
 export default class CardLayoutComponent {

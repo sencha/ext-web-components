@@ -1,4 +1,4 @@
-import './ProxiesDragDropComponent.css';
+import './ProxiesDragDropComponent.scss';
 import './ProxiesDragDropComponent.html';
 
 export default class ProxiesDragDropComponent {

@@ -1,4 +1,3 @@
-import './CenterLayoutComponent.css';
 import './CenterLayoutComponent.html';
 
 export default class CenterLayoutComponent {

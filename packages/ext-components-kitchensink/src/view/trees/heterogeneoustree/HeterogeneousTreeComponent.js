@@ -109,7 +109,6 @@ export default class HeterogeneousTreeComponent {
       if (!target.isExpanded()) {
         target.expand(false);
       }
-      this.treeField.select(node);
       this.textField.reset();
     }
     else {

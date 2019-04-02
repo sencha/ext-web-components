@@ -1,4 +1,4 @@
-import './DataDragDropComponent.css';
+import './DataDragDropComponent.scss';
 import './DataDragDropComponent.html';
 
 export default class DataDragDropComponent {
