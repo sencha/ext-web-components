@@ -51,6 +51,7 @@ export default class StackedAreaComponent {
   cartesianready(event) {
     this.cartesianCmp = event.detail.cmp;
     this.cartesianCmp.setStore(this.store);
+    this.cartesianCmp.setTheme(this.theme);
     this.cartesianCmp.setAxes([{
         type: 'numeric',
         fields: 'data1',
