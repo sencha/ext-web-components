@@ -26,9 +26,6 @@ export default class StackedAreaComponent {
     this.menuCmpArray = [];
   }
 
-  toolbarready(event) {
-  }
-
   onMenuItemReady(event) {
     this.menuCmpArray.push(event.detail.cmp);
     event.detail.cmp.on('click', this.onThemeChange.bind(this));
