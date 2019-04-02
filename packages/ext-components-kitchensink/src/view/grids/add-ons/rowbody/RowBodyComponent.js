@@ -6,7 +6,6 @@ export default class RowBodyComponent {
   constructor () {}
 
   gridReady(event) {
-    debugger;
     const store = Ext.create('Ext.data.Store', {
       model,
       autoLoad: true,

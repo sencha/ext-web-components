@@ -1,5 +1,60 @@
-<ext-button 
-  text="viewoptions"
-  onready="viewoptions.readyButton1(event)"
-  ontap="viewoptions.tapButton1(event)">
-</ext-button>
+<ext-grid
+  title="Grid with View Options"
+  shadow="true"
+  height="100%"
+  plugins="gridviewoptions"
+  onready="viewoptions.gridReady(event)"
+>
+  <ext-toolbar docked="top">
+    <div style="fontSize: '14px', fontWeight: 'normal'">
+      Long press on a column header to customize this grid.
+    </div>
+  </ext-toolbar>
+  <ext-column
+    text="Company"
+    dataIndex="name"
+    width="150"
+  >
+  </ext-column>
+  <ext-column
+    text="Phone"
+    dataIndex="phone"
+    width="100"
+    hidden="true"
+  >
+  </ext-column>
+  <ext-column
+    text="Industry"
+    dataIndex="industry"
+    width="150"
+    hidden="true"
+  >
+  </ext-column>
+  <ext-column
+    text="Price"
+    dataIndex="price"
+    width="75"
+    formatter="usMoney"
+  >
+  </ext-column>
+  <ext-column
+    text="Change"
+    width="100"
+    dataIndex="priceChange"
+    onready="viewoptions.changeColumnReady(event)"
+  >
+  </ext-column>
+  <ext-column
+    text="% Change"
+    dataIndex="priceChangePct"
+    onready="viewoptions.percentChangeColumnReady(event)"
+  >
+  </ext-column>
+  <ext-column
+    text="Last Updated"
+    dataIndex="priceLastChange"
+    width="125"
+    formatter="date('m/d/Y')"
+  >
+  </ext-column>
+</ext-grid>
