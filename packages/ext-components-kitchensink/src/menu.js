@@ -101,8 +101,8 @@ import TreeGridComponent from './view/trees/treegrid/TreeGridComponent.js';
 import TreeDecorationsComponent from './view/trees/treedecorations/TreeDecorationsComponent.js';
 import HeterogeneousTreeComponent from './view/trees/heterogeneoustree/HeterogeneousTreeComponent.js';
 import CalendarPanelComponent from './view/calendar/calendarpanel/CalendarPanelComponent.js';
-import CalendarMonthViewComponent from './view/calendar/monthview/CalendarMonthViewComponent.js';
-import CalendarWeekViewComponent from './view/calendar/weekview/CalendarWeekViewComponent.js';
+import CalendarMonthViewComponent from './view/calendar/calendarmonthview/CalendarMonthViewComponent.js';
+import CalendarWeekViewComponent from './view/calendar/calendarweekview/CalendarWeekViewComponent.js';
 import CalendarDaysViewComponent from './view/calendar/calendardaysview/CalendarDaysViewComponent.js';
 import CalendarTimezoneSupportComponent from './view/calendar/timezonesupport/CalendarTimezoneSupportComponent.js';
 import CalendarDragResizeValidationComponent from './view/calendar/dragresizevalidation/CalendarDragResizeValidationComponent.js';
@@ -168,7 +168,6 @@ import DrilldownPluginComponent from './view/pivotgrids/drilldownplugin/Drilldow
 import ConfiguratorPluginComponent from './view/pivotgrids/configuratorplugin/ConfiguratorPluginComponent.js';
 import RangeEditorPluginComponent from './view/pivotgrids/rangeeditorplugin/RangeEditorPluginComponent.js';
 import ExporterPluginComponent from './view/pivotgrids/exporterplugin/ExporterPluginComponent.js';
-import CalendarDaysViewComponent from './view/calendar/calendardaysview/CalendarDaysViewComponent.js';
 
 export default function getMenu() {
   return [
