@@ -80,11 +80,8 @@ export class Router {
         }
       }
       window[currentHash] = new currentComponent()
-      console.dir(window._code)
-      scope.rootElem.innerHTML = window._code[currentHash][currentComponent.name + '.html']
-      console.dir()
-      console.dir(currentComponent)
-      scope.rootElem.innerHTML = window._code[currentHash][currentComponent.name + '.html']
+      var componentHtml = Object.keys( window._code[currentHash])[0];
+      scope.rootElem.innerHTML = window._code[currentHash][componentHtml]
     }
     else {
       var currentHash = ''
