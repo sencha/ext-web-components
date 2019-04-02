@@ -1,5 +1,3 @@
-import './GridFilteringComponent.css';
-
 export default class GridFilteringComponent {
 
   constructor () {

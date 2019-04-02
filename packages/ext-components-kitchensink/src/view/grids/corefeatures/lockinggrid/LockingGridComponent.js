@@ -1,5 +1,5 @@
 import './LockingGridComponent.html';
-import model from '../CompanyModel.js';
+import model from '../../CompanyModel.js';
 Ext.require([
     'Ext.data.summary.Average',
     'Ext.data.summary.Max',
