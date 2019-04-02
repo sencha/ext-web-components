@@ -81,7 +81,7 @@ export default class StackedAreaComponent {
         highlightCfg: { opacity: 1, scaling: 1.5 },
         tooltip: {
           trackMouse: true,
-          renderer: this.onSeriesTooltipRender
+          renderer: this.onSeriesTooltipRender.bind(this),
         }
     }]);
   }
@@ -91,7 +91,7 @@ export default class StackedAreaComponent {
   }
 
   onSeriesTooltipRender(tooltip, record, item) {
-    var fieldIndex = Ext.Array.indexOf(item.series.getYField(), item.field),
+    let fieldIndex = Ext.Array.indexOf(item.series.getYField(), item.field),
       browser = item.series.getTitle()[fieldIndex];
     tooltip.setHtml(`${browser} on ${record.get('month')}: ${record.get(item.field)}%`)
   }
