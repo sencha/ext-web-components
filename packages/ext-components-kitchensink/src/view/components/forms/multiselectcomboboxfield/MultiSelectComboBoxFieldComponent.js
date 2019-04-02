@@ -2,15 +2,13 @@ import './MultiSelectComboBoxFieldComponent.html';
 import data from './MultiSelectComboBoxFieldComponentData.js';
 
 export default class MultiSelectComboBoxFieldComponent {
-  constructor () {
-    console.log('in MultiSelectComboBoxFieldComponent constructor');
 
+  constructor () {
     this.store = Ext.create('Ext.data.Store', {
       fields: ['name', 'abbrev'],
       data
     });
   }
-
 
   multiselectcomboboxfieldready(event) {
     this.cmp = event.detail.cmp;

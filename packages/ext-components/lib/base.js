@@ -114,19 +114,12 @@ export default class ExtBase extends HTMLElement {
           else {
             var par = item.parentNode
             var cln = par.removeChild(item);
-
-            //var cln = item.cloneNode(true);
             var el = Ext.get(cln);
             var ext = Ext.create({xtype:'widget', element:el})
             this.parentNode.extChildren.push({ADDORDER:i,XTYPE:'widget',EXT:ext})
-            //item.style.display = 'none';
-            //removeItems.push(item)
           }
         }
       }
-      // for (let item of removeItems) {
-      //   item.remove(); 
-      // }
     }
 
     //deal with children
@@ -170,6 +163,7 @@ export default class ExtBase extends HTMLElement {
   }
 
   doCreate() {
+    //console.dir(this.props)
     this.ext = Ext.create(this.props)
     if (this.parentNode.childrenCounter != undefined) {
       this.parentNode.childrenCounter--
@@ -278,9 +272,14 @@ export default class ExtBase extends HTMLElement {
   }
 
   attributeChangedCallback(attr, oldVal, newVal) {
+    console.log('attributeChangedCallback')
+    console.log(attr)
     if (/^on/.test(attr)) {
+      console.log(attr)
       if (newVal) {
         //mjg check if this event exists for this component
+        console.dir(this)
+        console.log(newVal)
         this.addEventListener(attr.slice(2), function() {eval(newVal)});
       } else {
         //delete this[attr];

@@ -51,10 +51,6 @@ export class ExtPivotgridComponent extends ExtBase {
 	get emptyTextProperty(){return this.getAttribute('emptyTextProperty')};set emptyTextProperty(emptyTextProperty){this.setAttribute('emptyTextProperty',emptyTextProperty)}
 	get enableColumnSort(){return this.getAttribute('enableColumnSort')};set enableColumnSort(enableColumnSort){this.setAttribute('enableColumnSort',enableColumnSort)}
 	get enableLoadMask(){return this.getAttribute('enableLoadMask')};set enableLoadMask(enableLoadMask){this.setAttribute('enableLoadMask',enableLoadMask)}
-	get enableTextSelection(){return this.getAttribute('enableTextSelection')};set enableTextSelection(enableTextSelection){this.setAttribute('enableTextSelection',enableTextSelection)}
-	get enterAnimation(){return this.getAttribute('enterAnimation')};set enterAnimation(enterAnimation){this.setAttribute('enterAnimation',enterAnimation)}
-	get eventHandlers(){return this.getAttribute('eventHandlers')};set eventHandlers(eventHandlers){this.setAttribute('eventHandlers',eventHandlers)}
-	get exitAnimation(){return this.getAttribute('exitAnimation')};set exitAnimation(exitAnimation){this.setAttribute('exitAnimation',exitAnimation)}
 	get flex(){return this.getAttribute('flex')};set flex(flex){this.setAttribute('flex',flex)}
 	get floated(){return this.getAttribute('floated')};set floated(floated){this.setAttribute('floated',floated)}
 	get focusableContainer(){return this.getAttribute('focusableContainer')};set focusableContainer(focusableContainer){this.setAttribute('focusableContainer',focusableContainer)}
@@ -181,7 +177,6 @@ export class ExtPivotgridComponent extends ExtBase {
 	get ui(){return this.getAttribute('ui')};set ui(ui){this.setAttribute('ui',ui)}
 	get userCls(){return this.getAttribute('userCls')};set userCls(userCls){this.setAttribute('userCls',userCls)}
 	get userSelectable(){return this.getAttribute('userSelectable')};set userSelectable(userSelectable){this.setAttribute('userSelectable',userSelectable)}
-	get useSimpleItems(){return this.getAttribute('useSimpleItems')};set useSimpleItems(useSimpleItems){this.setAttribute('useSimpleItems',useSimpleItems)}
 	get variableHeights(){return this.getAttribute('variableHeights')};set variableHeights(variableHeights){this.setAttribute('variableHeights',variableHeights)}
 	get verticalOverflow(){return this.getAttribute('verticalOverflow')};set verticalOverflow(verticalOverflow){this.setAttribute('verticalOverflow',verticalOverflow)}
 	get viewModel(){return this.getAttribute('viewModel')};set viewModel(viewModel){this.setAttribute('viewModel',viewModel)}
@@ -391,10 +386,6 @@ export class ExtPivotgridComponent extends ExtBase {
     "emptyTextProperty": "String",
     "enableColumnSort": "Boolean",
     "enableLoadMask": "Boolean",
-    "enableTextSelection": "Boolean",
-    "enterAnimation": "String/Mixed",
-    "eventHandlers": "Object",
-    "exitAnimation": "String/Mixed",
     "flex": "Number/String/Object",
     "floated": "Boolean",
     "focusableContainer": "Boolean",
@@ -521,7 +512,6 @@ export class ExtPivotgridComponent extends ExtBase {
     "ui": "String/String[]",
     "userCls": "String/String[]",
     "userSelectable": "Boolean/String/Object",
-    "useSimpleItems": "Boolean",
     "variableHeights": "Boolean",
     "verticalOverflow": "Boolean",
     "viewModel": "String/Object/Ext.app.ViewModel",

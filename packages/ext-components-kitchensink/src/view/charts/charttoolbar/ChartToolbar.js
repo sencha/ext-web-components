@@ -12,10 +12,8 @@ export default class ChartToolbar extends HTMLElement {
         super()
         this.theme = "default";
     }
-
  
     connectedCallback() {
-   
         const theme = this.getAttribute('theme');
         const show = this.getAttribute('show');
         const preview = this.getAttribute('preview');
@@ -115,7 +113,7 @@ export default class ChartToolbar extends HTMLElement {
                 </ext-segmentedbutton>
 
                 <ext-segmentedbutton
-                    hidden=${!(show || onToggleZoomOnPan ) || supportsTouch}
+                    hidden=${!(show || onToggleZoomOnPan) || supportsTouch}
                     >
                     <ext-button
                     iconCls="x-fa fa-arrows"

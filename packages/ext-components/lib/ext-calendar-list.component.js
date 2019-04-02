@@ -40,11 +40,7 @@ export class ExtCalendar_listComponent extends ExtBase {
 	get emptyText(){return this.getAttribute('emptyText')};set emptyText(emptyText){this.setAttribute('emptyText',emptyText)}
 	get emptyTextDefaults(){return this.getAttribute('emptyTextDefaults')};set emptyTextDefaults(emptyTextDefaults){this.setAttribute('emptyTextDefaults',emptyTextDefaults)}
 	get emptyTextProperty(){return this.getAttribute('emptyTextProperty')};set emptyTextProperty(emptyTextProperty){this.setAttribute('emptyTextProperty',emptyTextProperty)}
-	get enableTextSelection(){return this.getAttribute('enableTextSelection')};set enableTextSelection(enableTextSelection){this.setAttribute('enableTextSelection',enableTextSelection)}
 	get enableToggle(){return this.getAttribute('enableToggle')};set enableToggle(enableToggle){this.setAttribute('enableToggle',enableToggle)}
-	get enterAnimation(){return this.getAttribute('enterAnimation')};set enterAnimation(enterAnimation){this.setAttribute('enterAnimation',enterAnimation)}
-	get eventHandlers(){return this.getAttribute('eventHandlers')};set eventHandlers(eventHandlers){this.setAttribute('eventHandlers',eventHandlers)}
-	get exitAnimation(){return this.getAttribute('exitAnimation')};set exitAnimation(exitAnimation){this.setAttribute('exitAnimation',exitAnimation)}
 	get flex(){return this.getAttribute('flex')};set flex(flex){this.setAttribute('flex',flex)}
 	get floated(){return this.getAttribute('floated')};set floated(floated){this.setAttribute('floated',floated)}
 	get focusableContainer(){return this.getAttribute('focusableContainer')};set focusableContainer(focusableContainer){this.setAttribute('focusableContainer',focusableContainer)}
@@ -240,7 +236,7 @@ export class ExtCalendar_listComponent extends ExtBase {
 	get onupdatedata(){return this.getAttribute('onupdatedata')};set onupdatedata(onupdatedata){this.setAttribute('onupdatedata',onupdatedata)}
 	get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange(onwidthchange){this.setAttribute('onwidthchange',onwidthchange)}
 
-	static XTYPE() {return 'calendar_list'}
+	static XTYPE() {return 'calendar-list'}
   static PROPERTIESOBJECT() { return {
     "activeChildTabIndex": "Number",
     "activeItem": "Ext.Component/Object/String/Number",
@@ -281,11 +277,7 @@ export class ExtCalendar_listComponent extends ExtBase {
     "emptyText": "String/Boolean",
     "emptyTextDefaults": "Object/Ext.Component",
     "emptyTextProperty": "String",
-    "enableTextSelection": "Boolean",
     "enableToggle": "Boolean",
-    "enterAnimation": "String/Mixed",
-    "eventHandlers": "Object",
-    "exitAnimation": "String/Mixed",
     "flex": "Number/String/Object",
     "floated": "Boolean",
     "focusableContainer": "Boolean",
@@ -800,6 +792,6 @@ export class ExtCalendar_listComponent extends ExtBase {
 }
 (function () {
   Ext.onReady(function() {
-    window.customElements.define('ext-calendar_list', ExtCalendar_listComponent);
+    window.customElements.define('ext-calendar-list', ExtCalendar_listComponent);
   });
 })();

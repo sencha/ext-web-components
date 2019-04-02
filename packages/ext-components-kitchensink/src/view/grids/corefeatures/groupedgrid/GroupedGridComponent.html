@@ -28,32 +28,35 @@
         onready="groupedgrid.onReady(event)"
         grouped="true"
         groupFooter='{"xtype": "gridsummaryrow"}'
-        columns='[
-          {
-            "text":"Name",
-            "dataIndex":"name",
-            "flex": "1",
-            "groupHeaderTpl": "{columnName}: {value:htmlEncode}"
-          }, {
-            "text":"Cuisine",
-            "dataIndex":"cuisine",
-            "flex": "1"
-          },
-          {
-            "text":"Rating",
-            "dataIndex":"rating",
-            "flex": "1",
-            "summaryCell": "numbercell",
-            "groupHeaderTpl": "{value:repeat(`★`)} ({value:plural(`Star`)})",
-            "onready":"groupedgrid.onRatingColumnReady(event)",
-            "cell": {
-              "xtype": "widgetcell",
-              "widget": {
-                "xtype": "rating",
-                "tip": "Set to {tracking:plural(`Star`)}"
-              }
+      >
+        <ext-column
+          text="Name"
+          dataIndex="name"
+          flex="1"
+          groupHeaderTpl="{columnName}: {value:htmlEncode}"
+        >
+        </ext-column>
+        <ext-column
+          text="Cuisine"
+          dataIndex="cuisine"
+          flex="1"
+        >
+        </ext-column>
+        <ext-column
+          text="Rating"
+          dataIndex="rating"
+          flex="1"
+          summaryCell="numbercell"
+          groupHeaderTpl='{value:repeat("★")} ({value:plural("Star")})'
+          cell='{
+            "xtype": "widgetcell",
+            "widget": {
+              "xtype": "rating",
+              "tip": "Set to {tracking:plural(`Star`)}"
             }
-          }
-        ]'>
+          }'
+        >
+        </ext-column>
+
     </ext-grid>
 </ext-container>

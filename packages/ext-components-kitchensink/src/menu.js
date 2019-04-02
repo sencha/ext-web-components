@@ -103,7 +103,7 @@ import HeterogeneousTreeComponent from './view/trees/heterogeneoustree/Heterogen
 import CalendarPanelComponent from './view/calendar/calendarpanel/CalendarPanelComponent.js';
 import CalendarMonthViewComponent from './view/calendar/monthview/CalendarMonthViewComponent.js';
 import CalendarWeekViewComponent from './view/calendar/weekview/CalendarWeekViewComponent.js';
-import CalendarDaysViewComponent from './view/calendar/daysview/CalendarDaysViewComponent.js';
+import CalendarDaysViewComponent from './view/calendar/calendardaysview/CalendarDaysViewComponent.js';
 import CalendarTimezoneSupportComponent from './view/calendar/timezonesupport/CalendarTimezoneSupportComponent.js';
 import CalendarDragResizeValidationComponent from './view/calendar/dragresizevalidation/CalendarDragResizeValidationComponent.js';
 import BasicAreaComponent from './view/charts/area/basicarea/BasicAreaComponent.js';
@@ -168,6 +168,7 @@ import DrilldownPluginComponent from './view/pivotgrids/drilldownplugin/Drilldow
 import ConfiguratorPluginComponent from './view/pivotgrids/configuratorplugin/ConfiguratorPluginComponent.js';
 import RangeEditorPluginComponent from './view/pivotgrids/rangeeditorplugin/RangeEditorPluginComponent.js';
 import ExporterPluginComponent from './view/pivotgrids/exporterplugin/ExporterPluginComponent.js';
+import CalendarDaysViewComponent from './view/calendar/calendardaysview/CalendarDaysViewComponent.js';
 
 export default function getMenu() {
   return [
@@ -393,7 +394,7 @@ export default function getMenu() {
         { text: 'Pack', component: PackComponent, iconCls: 'icon-d3-view-pack' },
         { text: 'Sunburst', component: SunburstComponent, iconCls: 'icon-d3-view-sunburst' },
         { text: 'Zoomable Sunburst', component: ZoomableSunburstComponent, iconCls: 'icon-d3-view-sunburst-zoom' },
-        { text: 'Tree', component: TreeHierarchyComponent, iconCls: 'icon-d3-view-tree' },
+        { text: 'D3 Tree', component: TreeHierarchyComponent, iconCls: 'icon-d3-view-tree' },
         { text: 'TreeMap', component: TreeMapComponent, iconCls: 'icon-d3-view-treemap' },
         { text: 'TreeMap Tooltip', component: TreeMapToolTipComponent, iconCls: 'icon-d3-view-treemap-tooltip' },
         { text: 'Configurable Pivot TreeMap', component: ConfigurablePivotTreeMapComponent, iconCls: 'icon-d3-view-treemap-pivot-configurator' }

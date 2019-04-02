@@ -3,8 +3,6 @@ import data from './ComboBoxFieldComponentData.js';
 
 export default class ComboBoxFieldComponent {
   constructor () {
-    console.log('in ComboBoxFieldComponent constructor');
-
     this.store = Ext.create('Ext.data.Store', {
       fields: ['name', 'abbrev'],
       data

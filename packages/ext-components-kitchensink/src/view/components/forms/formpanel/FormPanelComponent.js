@@ -4,8 +4,6 @@ Ext.require('Ext.field.InputMask');
 export default class FormPanelComponent {
 
   constructor () {
-    console.log('in FormPanelComponent constructor');
-
     this.disabled = false;
     this.componentArray = [];
   }
@@ -39,4 +37,5 @@ export default class FormPanelComponent {
   componentready(event) {
     this.componentArray.push(event.detail.cmp);
   }
+  
 }
