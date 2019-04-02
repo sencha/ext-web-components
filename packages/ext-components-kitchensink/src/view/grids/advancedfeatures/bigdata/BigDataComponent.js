@@ -1,6 +1,6 @@
 import './BigDataComponent.css';
 import { model } from './GridModel';
-import { BigDataService } from './BigDataService';
+import './BigDataService';
 
 Ext.require([
   'Ext.grid.plugin.*',
@@ -130,7 +130,7 @@ export default class BigDataComponent {
     } else {
       count = store.getCount();
     }
-    
+
     Ext.Msg.confirm('Verify All',
       'Are you sure you want to verify all ' + count + ' items?',
       answer => {
@@ -172,14 +172,14 @@ export default class BigDataComponent {
 
   renderRatingThisYear = (value) => {
     //value && <Rating value={value} tip='Set to {tracking:plural("Star")}'/>
-    return value; 
+    return value;
   }
 
   renderSparkline = (rating) => {
-      return 
-    `<sparkline 
-      height={16} 
-      values={rating} 
+      return
+    `<sparkline
+      height={16}
+      values={rating}
       tipTpl='Price: {y:number("0.00")}'
     ></sparkline>`
   }
@@ -198,7 +198,7 @@ export default class BigDataComponent {
   renderVerifyAll = (value, record, dataIndex, cell) => {
     return `
     <Container>
-      <Button 
+      <Button
         ui="action"
         text="All"
         handler={this.onVerifyAll.bind(this, cell)}
@@ -233,7 +233,7 @@ export default class BigDataComponent {
           horizontal: 'Right'
         }
       }
-    }, 
+    },
     {
       text: 'All',
       dataIndex: 'rating',
@@ -256,7 +256,7 @@ export default class BigDataComponent {
       dataIndex: "sickDays",
       align: 'center',
       summary: 'sum'
-    }, 
+    },
     {
         text:"Holidays",
         xtype: 'textcolumn',
@@ -334,4 +334,3 @@ export default class BigDataComponent {
 function formatDate(date) {
     return Ext.util.Format.date(date, "d/m/Y")
   };
-  
