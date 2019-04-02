@@ -1,7 +1,8 @@
 <template>
-  <ext-panel :title="'gus'">
-    <ext-button :text="'mjg'"></ext-button>
-  </ext-panel>
+  <div id="app">
+    <img alt="Vue logo" src="./assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  </div>
 </template>
 
 <script>
