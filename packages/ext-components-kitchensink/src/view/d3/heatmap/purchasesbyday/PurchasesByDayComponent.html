@@ -1,5 +1,72 @@
-<ext-button 
-  text="purchasesbyday"
-  onready="purchasesbyday.readyButton1(event)"
-  ontap="purchasesbyday.tapButton1(event)">
-</ext-button>
+<ext-panel shadow="true" layout="fit" height="90%">
+    <ext-D3-HeatMap
+        padding="20 20 40 60"
+        onready="purchasesbyday.mainCompReady(event)"
+        platformConfig='{
+            "desktop": {
+                "legend": {
+                    "docked": "bottom",
+                    "padding": "60",
+                    "items": {
+                        "count": 7,
+                        "slice": [1],
+                        "reverse": "true",
+                        "size": {
+                            "x": 60,
+                            "y": 30
+                        }
+                    }
+                },
+                "padding": {
+                    "top": "20",
+                    "right": "30",
+                    "bottom": "20",
+                    "left": "80"
+                }
+            }
+        }'
+        xAxis='{
+            "platformConfig": {
+                "desktop": {
+                    "title": {
+                        "text": "Date"
+                    }
+                }
+            },
+            "axis": {
+                "ticks": "d3.timeDay",
+                "orient": "bottom"
+            },
+            "scale": {
+                "type": "time"
+            },
+            "field": "date",
+            "step": 86400000
+        }'
+        yAxis='{
+            "axis": {
+                "orient": "left",
+            },
+            scale: {
+                "type": "linear"
+            },
+            "field": "bucket",
+            "step": 100
+        }'
+        colorAxis='{
+            "scale": {
+                "type": "linear",
+                "range": "[\"white\", \"green\"]"
+            },
+            "field": "count",
+            "minimum": 0
+        }'
+        tiles='{
+            "attr": {
+                "stroke": "green",
+                "stroke-width": 1
+            }
+        }'
+    >
+    </ext-D3-HeatMap>
+</ext-panel>

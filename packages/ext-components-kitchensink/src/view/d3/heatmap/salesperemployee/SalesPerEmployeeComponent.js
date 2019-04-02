@@ -1,12 +1,11 @@
-import './SalesPerEmployeeComponent.css';
+import './SalesPerEmployeeComponent.html';
 
 export default class SalesPerEmployeeComponent {
 
-  constructor () {
-    console.log('in SalesPerEmployeeComponent constructor');
-  }
+  constructor () {}
 
-  readyButton1(event) {
+  d3heatmapReady(event) {
+    debugger;
     var cmp = event.detail.cmp;
     this.button1Cmp = event.detail.cmp;
   }

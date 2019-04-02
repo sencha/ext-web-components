@@ -1,5 +1,8 @@
-<ext-button 
-  text="configurablepivotheatmap"
-  onready="configurablepivotheatmap.readyButton1(event)"
-  ontap="configurablepivotheatmap.tapButton1(event)">
-</ext-button>
+<ext-container layout="fit" fitToParent="true">
+  <ext-pivotd3container
+    onready="configurablepivotheatmap.mainCtnReady(event)"
+    shadow="true"
+    layout="fit"
+  >
+  </ext-pivotd3container>
+</ext-container>

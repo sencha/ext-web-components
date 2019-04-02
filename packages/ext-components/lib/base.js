@@ -31,6 +31,7 @@ export default class ExtBase extends HTMLElement {
     var removeItems = [];
 
     this.props = {};
+
     this.props.xtype = this.XTYPE;
     //mjg fitToParent not working
     if (true === this.fitToParent) {

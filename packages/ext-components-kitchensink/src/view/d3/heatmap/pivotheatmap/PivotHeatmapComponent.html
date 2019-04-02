@@ -1,5 +1,9 @@
-<ext-button 
-  text="pivotheatmap"
-  onready="pivotheatmap.readyButton1(event)"
-  ontap="pivotheatmap.tapButton1(event)">
-</ext-button>
+<ext-panel shadow="true" layout="fit" fitToParent="true">
+
+  <ext-toolbar docked="top">
+    <ext-spacer></ext-spacer>
+    <ext-button iconCls="x-fa fa-refresh" text="Refresh Data"></ext-button>
+  </ext-toolbar>
+  <ext-pivotheatmap onready="pivotheatmap.pivotHeatMapReady(event)">
+  </ext-pivotheatmap>
+</ext-panel>

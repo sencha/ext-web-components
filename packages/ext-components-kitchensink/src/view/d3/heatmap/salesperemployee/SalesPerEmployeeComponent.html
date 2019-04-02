@@ -1,5 +1,24 @@
-<ext-button 
-  text="salesperemployee"
-  onready="salesperemployee.readyButton1(event)"
-  ontap="salesperemployee.tapButton1(event)">
-</ext-button>
+<ext-panel  shadow="true" layout="vbox" fitToParent="true">
+  <ext-toolbar  docked="top">
+      <ext-button  iconCls="x-fa fa-refresh" text="Refresh Data"></ext-button>
+      <ext-button  iconCls="x-fa fa-table" text="Refresh Size"></ext-button>
+  </ext-toolbar>
+  <ext-d3-heatmap
+      onready= "salesperemployee.d3heatmapReady(event)"  
+      padding="30 30 40 100"
+      flex="1"
+      colorAxis='{
+          "scale": {
+              "type": "linear",
+              "range": ["#ffffd9", "#49b6c4", "#225ea8"]
+          },
+          "field": "sales"
+      }'
+      tiles='{
+          "attr": {
+              "stroke": "#081d58",
+              "stroke-width": 2
+          }
+      }'
+  ></ext-d3-heatmap>
+</ext-panel>
