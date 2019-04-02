@@ -24,9 +24,6 @@ export default class NegativeValuesAreaComponent {
     });
   }
 
-  toolbarready(event) {
-  }
-
   onMenuItemReady(event) {
     this.menuCmpArray.push(event.detail.cmp);
     event.detail.cmp.on('click', this.onThemeChange.bind(this));
