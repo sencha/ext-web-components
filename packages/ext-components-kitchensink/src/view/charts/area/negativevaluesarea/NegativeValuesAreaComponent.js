@@ -22,6 +22,8 @@ export default class NegativeValuesAreaComponent {
         { quarter: 'Q4 2014', consumer: 9, gaming: 11, phone: 11, corporate: -4 }
       ]
     });
+    this.theme = 'default';
+    this.menuCmpArray = [];
   }
 
   onMenuItemReady(event) {
@@ -49,6 +51,7 @@ export default class NegativeValuesAreaComponent {
   cartesianready(event) {
     this.cartesianCmp = event.detail.cmp;
     this.cartesianCmp.setStore(this.store);
+    this.cartesianCmp.setTheme(this.theme);
     this.cartesianCmp.setAxes([{
         type: 'numeric',
         adjustByMajorUnit: true,
