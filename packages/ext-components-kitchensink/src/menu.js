@@ -168,6 +168,7 @@ import DrilldownPluginComponent from './view/pivotgrids/drilldownplugin/Drilldow
 import ConfiguratorPluginComponent from './view/pivotgrids/configuratorplugin/ConfiguratorPluginComponent.js';
 import RangeEditorPluginComponent from './view/pivotgrids/rangeeditorplugin/RangeEditorPluginComponent.js';
 import ExporterPluginComponent from './view/pivotgrids/exporterplugin/ExporterPluginComponent.js';
+import CalendarDaysViewComponent from './view/calendar/calendardaysview/CalendarDaysViewComponent.js';
 
 export default function getMenu() {
   return [

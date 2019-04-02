@@ -1,4 +1,4 @@
-import model from '../CompanyModel';
+import model from '../../CompanyModel';
 import './EditableGridComponent.html';
 
 Ext.require([
