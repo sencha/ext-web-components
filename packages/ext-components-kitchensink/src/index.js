@@ -63,6 +63,8 @@ import '@sencha/ext-components/lib/ext-spacer.component';
 import '@sencha/ext-components/lib/ext-sheet.component';
 import '@sencha/ext-components/lib/ext-video.component';
 import '@sencha/ext-components/lib/ext-pivotgrid.component';
+import '@sencha/ext-components/lib/ext-menu.component';
+import '@sencha/ext-components/lib/ext-menuitem.component';
 import '@sencha/ext-components/lib/ext-calendar.component';
 import '@sencha/ext-components/lib/ext-calendar-list.component';
 import '@sencha/ext-components/lib/ext-calendar-day.component';
