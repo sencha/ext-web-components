@@ -22,9 +22,7 @@ export default class BigDataComponent {
     }
   });
 
-  constructor(e) {
-    var b = new BigDataService()
-  }
+  constructor(e) {}
 
   readyGrid(event) {
 //    console.log('readyGrid')
