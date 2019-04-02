@@ -34,8 +34,8 @@ export default class RowExpanderComponent {
     this.changeColumn.setRenderer(this.renderSign.bind(this, '0.00'));
   }
   percentChangeColumnReady(event) {
-    this.changeColumn = event.detail.cmp;
-    this.changeColumn.setRenderer(this.renderSign.bind(this, '0.00%'));
+    this.pctChangeColumn = event.detail.cmp;
+    this.pctChangeColumn.setRenderer(this.renderSign.bind(this, '0.00%'));
   }
 
   renderSign(format, value, record, dataIndex, cell, column) {
