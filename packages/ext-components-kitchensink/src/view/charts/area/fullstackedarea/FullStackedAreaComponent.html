@@ -5,11 +5,14 @@
   layout="fit"
   padding="10">
   <ext-toolbar
-    onready="basicarea.toolbarready(event)"
     docked="top" ui="app-transparent-toolbar"
     shadow="false"
     padding="0 10 0 10">
-    <chart-toolbar theme="default"></chart-toolbar>
+    <chart-toolbar
+      onItemReady="fullstackedarea.onMenuItemReady(event)"
+      onThemeChange="fullstackedarea.onThemeChange(event)"
+      theme="default" >
+    </chart-toolbar>
   </ext-toolbar>
   <ext-cartesian
     onready="fullstackedarea.cartesianready(event)"

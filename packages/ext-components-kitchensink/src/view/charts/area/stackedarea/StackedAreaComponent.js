@@ -22,10 +22,25 @@ export default class StackedAreaComponent {
         { month: 'Nov', data1: 15, data2: 31, data3: 46, data4: 4, other: 4 },
         { month: 'Dec', data1: 15, data2: 31, data3: 47, data4: 4, other: 3 }]
     });
-
+    this.theme = 'default';
+    this.menuCmpArray = [];
   }
 
-  toolbarready(event) {
+  onMenuItemReady(event) {
+    this.menuCmpArray.push(event.detail.cmp);
+    event.detail.cmp.on('click', this.onThemeChange.bind(this));
+  }
+
+  onThemeChange(event) {
+    this.theme = event.config.text.toLowerCase();
+    this.menuCmpArray.forEach((cmp, index) => {
+      if (index == parseInt(event.config.itemId)) {
+        cmp.setIconCls('x-font-icon md-icon-done');
+        return;
+      }
+      cmp.setIconCls('');
+    });
+    this.cartesianCmp.setTheme(event.config.text.toLowerCase());
   }
 
   containerready(event) {
@@ -36,6 +51,7 @@ export default class StackedAreaComponent {
   cartesianready(event) {
     this.cartesianCmp = event.detail.cmp;
     this.cartesianCmp.setStore(this.store);
+    this.cartesianCmp.setTheme(this.theme);
     this.cartesianCmp.setAxes([{
         type: 'numeric',
         fields: 'data1',
@@ -66,7 +82,7 @@ export default class StackedAreaComponent {
         highlightCfg: { opacity: 1, scaling: 1.5 },
         tooltip: {
           trackMouse: true,
-          renderer: this.onSeriesTooltipRender
+          renderer: this.onSeriesTooltipRender.bind(this),
         }
     }]);
   }
@@ -76,7 +92,7 @@ export default class StackedAreaComponent {
   }
 
   onSeriesTooltipRender(tooltip, record, item) {
-    var fieldIndex = Ext.Array.indexOf(item.series.getYField(), item.field),
+    let fieldIndex = Ext.Array.indexOf(item.series.getYField(), item.field),
       browser = item.series.getTitle()[fieldIndex];
     tooltip.setHtml(`${browser} on ${record.get('month')}: ${record.get(item.field)}%`)
   }
