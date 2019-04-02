@@ -25,7 +25,21 @@ export default class FullStackedAreaComponent {
     });
   }
 
-  toolbarready(event) {
+  onMenuItemReady(event) {
+    this.menuCmpArray.push(event.detail.cmp);
+    event.detail.cmp.on('click', this.onThemeChange.bind(this));
+  }
+
+  onThemeChange(event) {
+    this.theme = event.config.text.toLowerCase();
+    this.menuCmpArray.forEach((cmp, index) => {
+      if (index == parseInt(event.config.itemId)) {
+        cmp.setIconCls('x-font-icon md-icon-done');
+        return;
+      }
+      cmp.setIconCls('');
+    });
+    this.cartesianCmp.setTheme(event.config.text.toLowerCase());
   }
 
   containerready(event) {

@@ -1,4 +1,3 @@
-import './WizardComponent.css';
 import './WizardComponent.html';
 
 export default class WizardComponent {

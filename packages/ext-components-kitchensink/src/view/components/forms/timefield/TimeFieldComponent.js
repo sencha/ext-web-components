@@ -1,4 +1,3 @@
-import './TimeFieldComponent.css';
 import './TimeFieldComponent.html';
 Ext.require('Ext.field.InputMask'); // need to require this specifically for inputMask props to work
 

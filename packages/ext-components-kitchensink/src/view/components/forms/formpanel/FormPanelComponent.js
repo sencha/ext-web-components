@@ -1,4 +1,3 @@
-import './FormPanelComponent.css';
 import './FormPanelComponent.html';
 Ext.require('Ext.field.InputMask');
 

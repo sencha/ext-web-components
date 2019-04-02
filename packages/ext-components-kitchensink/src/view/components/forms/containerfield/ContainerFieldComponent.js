@@ -1,4 +1,3 @@
-import './ContainerFieldComponent.css';
 import './ContainerFieldComponent.html';
 
 export default class ContainerFieldComponent {

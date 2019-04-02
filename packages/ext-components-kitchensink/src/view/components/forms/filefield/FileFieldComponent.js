@@ -1,4 +1,3 @@
-import './FileFieldComponent.css';
 import './FileFieldComponent.html';
 
 export default class FileFieldComponent {

@@ -1,4 +1,3 @@
-import './SelectFieldComponent.css';
 import './SelectFieldComponent.html';
 Ext.require('Ext.Toast');
 
