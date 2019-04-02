@@ -80,7 +80,7 @@ export default class NegativeValuesAreaComponent {
   }
 
   tooltipRenderer(tooltip, record, item) {
-    var name = '';
+    let name = '';
     switch (item.field) {
       case 'consumer':
         name = 'Consumer Licensing';
