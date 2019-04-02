@@ -103,6 +103,7 @@ import HeterogeneousTreeComponent from './view/trees/heterogeneoustree/Heterogen
 import CalendarPanelComponent from './view/calendar/calendarpanel/CalendarPanelComponent.js';
 import CalendarMonthViewComponent from './view/calendar/monthview/CalendarMonthViewComponent.js';
 import CalendarWeekViewComponent from './view/calendar/weekview/CalendarWeekViewComponent.js';
+import CalendarDaysViewComponent from './view/calendar/calendardaysview/CalendarDaysViewComponent.js';
 import CalendarTimezoneSupportComponent from './view/calendar/timezonesupport/CalendarTimezoneSupportComponent.js';
 import CalendarDragResizeValidationComponent from './view/calendar/dragresizevalidation/CalendarDragResizeValidationComponent.js';
 import BasicAreaComponent from './view/charts/area/basicarea/BasicAreaComponent.js';

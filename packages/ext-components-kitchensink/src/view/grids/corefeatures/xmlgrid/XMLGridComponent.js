@@ -4,7 +4,6 @@ export default class XMLGridComponent {
   constructor () {}
 
   ready(event) {
-    debugger;
     const grid = event.detail.cmp;
     const store = Ext.create('Ext.data.Store', {
       autoLoad: true,

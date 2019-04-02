@@ -1,5 +1,4 @@
 //import { Route } from '@sencha/ext-components';
-
 import  { getRoutes } from '@sencha/ext-components/lib/aa-router.component';
 import '@sencha/ext-components/lib/ext-audio.component';
 import '@sencha/ext-components/lib/ext-container.component';
@@ -74,7 +73,7 @@ import '@sencha/ext-components/lib/ext-segmentedbutton.component';
 import '@sencha/ext-components/lib/ext-indicator.component';
 import '@sencha/ext-components/lib/ext-lockedgrid.component';
 
-
+import './Data.js';
 import getMenu from './menu';
 import MainComponent from './view/main/MainComponent.js';
 
