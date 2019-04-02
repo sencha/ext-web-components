@@ -1,5 +1,26 @@
-<ext-button 
-  text="basicbar"
-  onready="basicbar.readyButton1(event)"
-  ontap="basicbar.tapButton1(event)">
-</ext-button>
+<ext-container
+  padding="10"
+  layout="fit"
+  height="100%"
+  width="100%"
+  fitToParent="true">
+  <ext-toolbar
+    docked="top"
+    ui="app-transparent-toolbar"
+    shadow="false"
+    padding="0 10 0 10">
+    <chart-toolbar
+      onItemReady="basicbar.onMenuItemReady(event)"
+      onThemeChange="basicbar.onThemeChange(event)"
+      theme="default">
+    </chart-toolbar>
+  </ext-toolbar>
+  <ext-cartesian
+    onready="basicbar.cartesianready(event)"
+    downloadServerUrl="http://svg.sencha.io"
+    flipXY="true"
+    shadow="true"
+    insetPadding="70 40 0" >
+  </ext-cartesian>
+
+</ext-container>
