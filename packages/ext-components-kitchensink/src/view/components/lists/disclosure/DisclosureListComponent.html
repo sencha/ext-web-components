@@ -1,5 +1,11 @@
-<ext-button 
-  text="disclosure"
-  onready="disclosure.readyButton1(event)"
-  ontap="disclosure.tapButton1(event)">
-</ext-button>
+<ext-container layout="center" flex="1" height="100%">
+  <ext-list 
+    shadow="true"
+    scrollable="true"
+    onready="disclosure.onItemReady(event)"
+    height="450"
+    width="300"
+    onItemDisclosure="disclosure.msgAlert(event)"
+  >
+  </ext-list>
+</ext-container>

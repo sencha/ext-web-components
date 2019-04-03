@@ -240,7 +240,9 @@ export default class MainComponent {
     });
     var codeMap = _code[currentRoute.hash]
     this.tabPanelCmp.removeAll()
-    var componentName = currentRoute.component.name
+    //var componentName = currentRoute.component.name
+    var componentName = currentRoute.hash + 'component'
+
     this.setTab(codeMap, componentName + '.html')
     this.setTab(codeMap, componentName + '.js',)
     this.setTab(codeMap, componentName + '.scss',)

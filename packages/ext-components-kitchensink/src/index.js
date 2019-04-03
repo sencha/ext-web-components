@@ -61,6 +61,9 @@ import '@sencha/ext-components/lib/ext-progress.component';
 import '@sencha/ext-components/lib/ext-spacer.component';
 import '@sencha/ext-components/lib/ext-sheet.component';
 import '@sencha/ext-components/lib/ext-video.component';
+import '@sencha/ext-components/lib/ext-list.component';
+import '@sencha/ext-components/lib/ext-widget.component';
+import '@sencha/ext-components/lib/ext-nestedlist.component';
 import '@sencha/ext-components/lib/ext-pivotgrid.component';
 import '@sencha/ext-components/lib/ext-calendar.component';
 import '@sencha/ext-components/lib/ext-calendar-list.component';
@@ -85,7 +88,8 @@ import MainComponent from './view/main/MainComponent.js';
     window.menu = getMenu();
     window.routes = getRoutes(window.menu);
     window.main = new MainComponent()
-    document.body.innerHTML = window._code['main']['MainComponent.html']
+    document.body.innerHTML = window._code['main']['maincomponent.html']
   }
 
 }());
+  

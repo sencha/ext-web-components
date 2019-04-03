@@ -1,6 +1,6 @@
 import './DataChangesComponent.html';
 import { generateData, randomItem } from '../generateSaleData';
-import SaleModel from '../SaleModel';
+import saleModel from '../saleModel';
 
 export default class DataChangesComponent {
 
@@ -8,7 +8,7 @@ export default class DataChangesComponent {
     this.store = Ext.create('Ext.data.Store', {
       autoLoad: true,
       autoDestroy: true,
-      model: SaleModel,
+      model: saleModel,
       proxy: { type: 'memory' }
     });
     this.pivotMatrix = {
