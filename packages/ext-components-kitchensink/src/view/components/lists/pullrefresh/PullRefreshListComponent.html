@@ -1,5 +1,10 @@
-<ext-button 
-  text="pullrefresh"
-  onready="pullrefresh.readyButton1(event)"
-  ontap="pullrefresh.tapButton1(event)">
-</ext-button>
+<ext-container layout="center" flex="1" height="100%">
+  <ext-list
+    onready="pullrefresh.listReady(event)"
+    shadow="true"
+    width="300" 
+    height="400" 
+    plugins='[{"type":"pullrefresh","mergeData":"false"}]'
+  >
+  </ext-list>
+</ext-container>

@@ -61,6 +61,9 @@ import '@sencha/ext-components/lib/ext-progress.component';
 import '@sencha/ext-components/lib/ext-spacer.component';
 import '@sencha/ext-components/lib/ext-sheet.component';
 import '@sencha/ext-components/lib/ext-video.component';
+import '@sencha/ext-components/lib/ext-list.component';
+import '@sencha/ext-components/lib/ext-widget.component';
+import '@sencha/ext-components/lib/ext-nestedlist.component';
 import '@sencha/ext-components/lib/ext-pivotgrid.component';
 import '@sencha/ext-components/lib/ext-menu.component';
 import '@sencha/ext-components/lib/ext-menuitem.component';
@@ -91,3 +94,4 @@ import MainComponent from './view/main/MainComponent.js';
   }
 
 }());
+  
