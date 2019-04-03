@@ -1,5 +1,31 @@
-<ext-button 
-  text="stacked"
-  onready="stacked.readyButton1(event)"
-  ontap="stacked.tapButton1(event)">
-</ext-button>
+<ext-container
+  padding="10"
+  layout="fit"
+  fitToParent="true"
+  height="100%"
+  width="100%">
+
+<ext-toolbar
+  docked="top"
+  ui="app-transparent-toolbar"
+  shadow="false"
+  padding="0 10 0 10">
+  <chart-toolbar
+  onThemeChange="stacked.onThemeChange(event)"  
+  onRefreshButtonReady="stacked.onRefreshButtonReady(event)"
+  onToggleZoomOnPan="stacked.onToggleZoomOnPan(event)"
+  onStackGroup="stacked.onStackedToggle(event)">
+  </chart-toolbar>
+</ext-toolbar>
+
+  <ext-cartesian
+    onready="stacked.cartesianready(event)"
+    downloadServerUrl ="http://svg.sencha.io"
+    shadow="true"
+    insetPadding="20 20 10 10"
+    legend='{
+            "type": "sprite",
+            "position": "bottom"
+        }'>
+  </ext-cartesian>
+</ext-container>
