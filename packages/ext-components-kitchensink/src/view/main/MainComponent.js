@@ -238,10 +238,10 @@ export default class MainComponent {
         if (route.hash == hash) {currentRoute = route}
       }
     });
-    var codeMap = _code[currentRoute.hash]
+    //var codeItem = currentRoute.hash.toLowerCase()
+    var codeMap = _code[currentRoute.hashlower]
     this.tabPanelCmp.removeAll()
-    //var componentName = currentRoute.component.name
-    var componentName = currentRoute.hash + 'component'
+    var componentName = currentRoute.hash + 'Component'
 
     this.setTab(codeMap, componentName + '.html')
     this.setTab(codeMap, componentName + '.js',)

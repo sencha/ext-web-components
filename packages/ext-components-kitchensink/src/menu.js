@@ -35,7 +35,7 @@ import URLFieldComponent from './view/components/forms/urlfield/URLFieldComponen
 import ValidationComponent from './view/components/forms/validation/ValidationComponent.js';
 import DefaultGaugeComponent from './view/components/gauges/defaultgauge/DefaultGaugeComponent.js';
 import NeedleGaugeComponent from './view/components/gauges/needlegauge/NeedleGaugeComponent.js';
-import CardLayoutComponent from './view/components/layouts/card/CardLayoutComponent.js';
+import CardLayoutComponent from './view/components/layouts/cardlayout/CardLayoutComponent.js';
 import CenterLayoutComponent from './view/components/layouts/center/CenterLayoutComponent.js';
 import FitLayoutComponent from './view/components/layouts/fit/FitLayoutComponent.js';
 import FormLayoutComponent from './view/components/layouts/form/FormLayoutComponent.js';
@@ -218,7 +218,7 @@ export default function getMenu() {
         { text: 'Needle Gauge', component: NeedleGaugeComponent, layout: 'center', iconCls: 'icon-gauge-charts' }
       ]},
       { text: 'Layouts', iconCls: 'icon-layouts', children: [
-        { text: 'card', component: CardLayoutComponent, iconCls: 'icon-layout-card' },
+        { text: 'Card Layout', component: CardLayoutComponent, iconCls: 'icon-layout-card' },
         { text: 'center', component: CenterLayoutComponent, iconCls: 'icon-layout-center' },
         { text: 'fit', component: FitLayoutComponent, iconCls: 'icon-layout-fit' },
         { text: 'form', component: FormLayoutComponent, layout: 'auto', iconCls: 'icon-layout-form' },
