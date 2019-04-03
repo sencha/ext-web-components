@@ -57,11 +57,8 @@ export class ExtCalendar_daysComponent extends ExtBase {
 	get droppable(){return this.getAttribute('droppable')};set droppable(droppable){this.setAttribute('droppable',droppable)}
 	get editForm(){return this.getAttribute('editForm')};set editForm(editForm){this.setAttribute('editForm',editForm)}
 	get endTime(){return this.getAttribute('endTime')};set endTime(endTime){this.setAttribute('endTime',endTime)}
-	get enterAnimation(){return this.getAttribute('enterAnimation')};set enterAnimation(enterAnimation){this.setAttribute('enterAnimation',enterAnimation)}
 	get eventDefaults(){return this.getAttribute('eventDefaults')};set eventDefaults(eventDefaults){this.setAttribute('eventDefaults',eventDefaults)}
-	get eventHandlers(){return this.getAttribute('eventHandlers')};set eventHandlers(eventHandlers){this.setAttribute('eventHandlers',eventHandlers)}
 	get eventRelayers(){return this.getAttribute('eventRelayers')};set eventRelayers(eventRelayers){this.setAttribute('eventRelayers',eventRelayers)}
-	get exitAnimation(){return this.getAttribute('exitAnimation')};set exitAnimation(exitAnimation){this.setAttribute('exitAnimation',exitAnimation)}
 	get flex(){return this.getAttribute('flex')};set flex(flex){this.setAttribute('flex',flex)}
 	get floated(){return this.getAttribute('floated')};set floated(floated){this.setAttribute('floated',floated)}
 	get focusableContainer(){return this.getAttribute('focusableContainer')};set focusableContainer(focusableContainer){this.setAttribute('focusableContainer',focusableContainer)}
@@ -257,7 +254,7 @@ export class ExtCalendar_daysComponent extends ExtBase {
 	get onvaluechange(){return this.getAttribute('onvaluechange')};set onvaluechange(onvaluechange){this.setAttribute('onvaluechange',onvaluechange)}
 	get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange(onwidthchange){this.setAttribute('onwidthchange',onwidthchange)}
 
-	static XTYPE() {return 'calendar_days'}
+	static XTYPE() {return 'calendar-days'}
   static PROPERTIESOBJECT() { return {
     "activeChildTabIndex": "Number",
     "activeItem": "Ext.Component/Object/String/Number",
@@ -315,11 +312,8 @@ export class ExtCalendar_daysComponent extends ExtBase {
     "droppable": "Boolean",
     "editForm": "Object",
     "endTime": "Number",
-    "enterAnimation": "String/Mixed",
     "eventDefaults": "Object",
-    "eventHandlers": "Object",
     "eventRelayers": "Object",
-    "exitAnimation": "String/Mixed",
     "flex": "Number/String/Object",
     "floated": "Boolean",
     "focusableContainer": "Boolean",
@@ -833,6 +827,6 @@ export class ExtCalendar_daysComponent extends ExtBase {
 }
 (function () {
   Ext.onReady(function() {
-    window.customElements.define('ext-calendar_days', ExtCalendar_daysComponent);
+    window.customElements.define('ext-calendar-days', ExtCalendar_daysComponent);
   });
 })();

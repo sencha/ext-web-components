@@ -1,4 +1,3 @@
-import './SegmentedButtonComponent.css';
 import './SegmentedButtonComponent.html';
 
 export default class SegmentedButtonComponent {

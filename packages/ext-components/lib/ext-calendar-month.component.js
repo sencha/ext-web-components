@@ -57,11 +57,8 @@ export class ExtCalendar_monthComponent extends ExtBase {
 	get draggable(){return this.getAttribute('draggable')};set draggable(draggable){this.setAttribute('draggable',draggable)}
 	get droppable(){return this.getAttribute('droppable')};set droppable(droppable){this.setAttribute('droppable',droppable)}
 	get editForm(){return this.getAttribute('editForm')};set editForm(editForm){this.setAttribute('editForm',editForm)}
-	get enterAnimation(){return this.getAttribute('enterAnimation')};set enterAnimation(enterAnimation){this.setAttribute('enterAnimation',enterAnimation)}
 	get eventDefaults(){return this.getAttribute('eventDefaults')};set eventDefaults(eventDefaults){this.setAttribute('eventDefaults',eventDefaults)}
-	get eventHandlers(){return this.getAttribute('eventHandlers')};set eventHandlers(eventHandlers){this.setAttribute('eventHandlers',eventHandlers)}
 	get eventRelayers(){return this.getAttribute('eventRelayers')};set eventRelayers(eventRelayers){this.setAttribute('eventRelayers',eventRelayers)}
-	get exitAnimation(){return this.getAttribute('exitAnimation')};set exitAnimation(exitAnimation){this.setAttribute('exitAnimation',exitAnimation)}
 	get firstDayOfWeek(){return this.getAttribute('firstDayOfWeek')};set firstDayOfWeek(firstDayOfWeek){this.setAttribute('firstDayOfWeek',firstDayOfWeek)}
 	get flex(){return this.getAttribute('flex')};set flex(flex){this.setAttribute('flex',flex)}
 	get floated(){return this.getAttribute('floated')};set floated(floated){this.setAttribute('floated',floated)}
@@ -255,7 +252,7 @@ export class ExtCalendar_monthComponent extends ExtBase {
 	get onvaluechange(){return this.getAttribute('onvaluechange')};set onvaluechange(onvaluechange){this.setAttribute('onvaluechange',onvaluechange)}
 	get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange(onwidthchange){this.setAttribute('onwidthchange',onwidthchange)}
 
-	static XTYPE() {return 'calendar_month'}
+	static XTYPE() {return 'calendar-month'}
   static PROPERTIESOBJECT() { return {
     "activeChildTabIndex": "Number",
     "activeItem": "Ext.Component/Object/String/Number",
@@ -313,11 +310,8 @@ export class ExtCalendar_monthComponent extends ExtBase {
     "draggable": "Boolean",
     "droppable": "Boolean",
     "editForm": "Object",
-    "enterAnimation": "String/Mixed",
     "eventDefaults": "Object",
-    "eventHandlers": "Object",
     "eventRelayers": "Object",
-    "exitAnimation": "String/Mixed",
     "firstDayOfWeek": "Boolean",
     "flex": "Number/String/Object",
     "floated": "Boolean",
@@ -832,6 +826,6 @@ export class ExtCalendar_monthComponent extends ExtBase {
 }
 (function () {
   Ext.onReady(function() {
-    window.customElements.define('ext-calendar_month', ExtCalendar_monthComponent);
+    window.customElements.define('ext-calendar-month', ExtCalendar_monthComponent);
   });
 })();

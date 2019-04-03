@@ -1,4 +1,3 @@
-import './TextFieldComponent.css';
 import './TextFieldComponent.html';
 
 export default class TextFieldComponent {

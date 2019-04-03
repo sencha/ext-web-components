@@ -1,5 +1,3 @@
-import './ExporterPluginComponent.css';
-
 export default class ExporterPluginComponent {
 
   constructor () {

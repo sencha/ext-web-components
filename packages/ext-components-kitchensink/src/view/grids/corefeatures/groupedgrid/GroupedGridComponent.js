@@ -1,18 +1,47 @@
-import './GroupedGridComponent.css';
+Ext.require([
+    'Ext.grid.cell.Number',
+    'Ext.grid.cell.Widget',
+    'Ext.grid.SummaryRow',
+    'Ext.ux.rating.Picker'
+]);
+
+import './GroupedGridComponent.html';
 
 export default class GroupedGridComponent {
+  constructor () {}
 
-  constructor () {
-    console.log('in GroupedGridComponent constructor');
+  onReady(event) {
+    const store = Ext.create('Ext.data.Store', {
+        autoLoad: true,
+        proxy: {
+          type: 'ajax',
+          url: 'resources/data/restaurants.json',
+        },
+        sorters: ['cuisine', 'name'],
+        groupField: 'cuisine'
+    });
+
+    this.grid = event.detail.cmp;
+    this.grid.setStore(store);
   }
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
+  onButtonReady(event) {
+    this.onButton = event.detail.cmp;
   }
 
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
+  offButtonReady(event) {
+    this.offButton = event.detail.cmp;
   }
 
+  onGroupClick(event) {
+    this.grid.setGrouped(true);
+    this.onButton.setPressed(true);
+    this.offButton.setPressed(false);
+  }
+
+  offGroupClick(event) {
+    this.grid.setGrouped(false);
+    this.offButton.setPressed(true);
+    this.onButton.setPressed(false);
+  }
 }

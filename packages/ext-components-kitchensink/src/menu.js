@@ -71,7 +71,7 @@ import BottomTabComponent from './view/components/tabs/bottomtabs/BottomTabCompo
 import IconTabComponent from './view/components/tabs/icontabs/IconTabComponent.js';
 import DesktopTabComponent from './view/components/tabs/desktoptabs/DesktopTabComponent.js';
 import ClosableTabComponent from './view/components/tabs/closable/ClosableTabComponent.js';
-import ScrollingTabComponent from './view/components/tabs/scrollingtabs/ScrollingTabComponent.js';
+import ScrollingTabsComponent from './view/components/tabs/scrollingtabs/ScrollingTabsComponent.js';
 import TabBarComponent from './view/components/tabs/tabbar/TabBarComponent.js';
 import TitleBarComponent from './view/components/titlebar/TitleBarComponent.js';
 import ToolBarComponent from './view/components/toolbar/ToolBarComponent.js';
@@ -101,9 +101,9 @@ import TreeGridComponent from './view/trees/treegrid/TreeGridComponent.js';
 import TreeDecorationsComponent from './view/trees/treedecorations/TreeDecorationsComponent.js';
 import HeterogeneousTreeComponent from './view/trees/heterogeneoustree/HeterogeneousTreeComponent.js';
 import CalendarPanelComponent from './view/calendar/calendarpanel/CalendarPanelComponent.js';
-import CalendarMonthViewComponent from './view/calendar/monthview/CalendarMonthViewComponent.js';
-import CalendarWeekViewComponent from './view/calendar/weekview/CalendarWeekViewComponent.js';
-import CalendarDaysViewComponent from './view/calendar/daysview/CalendarDaysViewComponent.js';
+import CalendarMonthViewComponent from './view/calendar/calendarmonthview/CalendarMonthViewComponent.js';
+import CalendarWeekViewComponent from './view/calendar/calendarweekview/CalendarWeekViewComponent.js';
+import CalendarDaysViewComponent from './view/calendar/calendardaysview/CalendarDaysViewComponent.js';
 import CalendarTimezoneSupportComponent from './view/calendar/timezonesupport/CalendarTimezoneSupportComponent.js';
 import CalendarDragResizeValidationComponent from './view/calendar/dragresizevalidation/CalendarDragResizeValidationComponent.js';
 import BasicAreaComponent from './view/charts/area/basicarea/BasicAreaComponent.js';
@@ -264,7 +264,7 @@ export default function getMenu() {
         { text: 'Icon Tabs', component: IconTabComponent, iconCls: 'icon-icon-tabs' },
         { text: 'Desktop Tabs', component: DesktopTabComponent, iconCls: 'icon-Desktop-Tabs' },
         { text: 'Closable', component: ClosableTabComponent, iconCls: 'icon-Closable-Tabs' },
-        { text: 'ScrollingTabs', component: ScrollingTabComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-Scrolling-Tabs' },
+        { text: 'ScrollingTabs', component: ScrollingTabsComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-Scrolling-Tabs' },
         { text: 'TabBar', component: TabBarComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-Tab-Bar' }
       ]},
       { text: 'TitleBar', component: TitleBarComponent, iconCls: 'icon-Title-Bar' },
@@ -393,7 +393,7 @@ export default function getMenu() {
         { text: 'Pack', component: PackComponent, iconCls: 'icon-d3-view-pack' },
         { text: 'Sunburst', component: SunburstComponent, iconCls: 'icon-d3-view-sunburst' },
         { text: 'Zoomable Sunburst', component: ZoomableSunburstComponent, iconCls: 'icon-d3-view-sunburst-zoom' },
-        { text: 'Tree', component: TreeHierarchyComponent, iconCls: 'icon-d3-view-tree' },
+        { text: 'D3 Tree', component: TreeHierarchyComponent, iconCls: 'icon-d3-view-tree' },
         { text: 'TreeMap', component: TreeMapComponent, iconCls: 'icon-d3-view-treemap' },
         { text: 'TreeMap Tooltip', component: TreeMapToolTipComponent, iconCls: 'icon-d3-view-treemap-tooltip' },
         { text: 'Configurable Pivot TreeMap', component: ConfigurablePivotTreeMapComponent, iconCls: 'icon-d3-view-treemap-pivot-configurator' }

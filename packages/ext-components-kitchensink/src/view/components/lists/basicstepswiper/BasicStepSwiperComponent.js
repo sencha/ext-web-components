@@ -1,4 +1,3 @@
-import './BasicStepSwiperComponent.css';
 import './BasicStepSwiperComponent.html';
 
 export default class BasicStepSwiperComponent {

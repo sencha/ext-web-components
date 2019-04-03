@@ -1,11 +1,8 @@
-import './SliderFieldComponent.css';
 import './SliderFieldComponent.html';
 
 export default class SliderFieldComponent {
 
   constructor () {
-    console.log('in SliderFieldComponent constructor');
-
     this.singleValue = 20;
     this.liveUpdateValue = 60;
     this.multipleValue = [10, 70];
@@ -40,4 +37,5 @@ export default class SliderFieldComponent {
     this.multipleValue = event.detail.newValue;
     this.containercmp3.setHtml(`Value: ${event.detail.newValue}`);
   }
+  
 }

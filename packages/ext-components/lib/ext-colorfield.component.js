@@ -35,14 +35,11 @@ export class ExtColorfieldComponent extends ExtBase {
 	get draggable(){return this.getAttribute('draggable')};set draggable(draggable){this.setAttribute('draggable',draggable)}
 	get edgePicker(){return this.getAttribute('edgePicker')};set edgePicker(edgePicker){this.setAttribute('edgePicker',edgePicker)}
 	get editable(){return this.getAttribute('editable')};set editable(editable){this.setAttribute('editable',editable)}
-	get enterAnimation(){return this.getAttribute('enterAnimation')};set enterAnimation(enterAnimation){this.setAttribute('enterAnimation',enterAnimation)}
 	get error(){return this.getAttribute('error')};set error(error){this.setAttribute('error',error)}
 	get errorMessage(){return this.getAttribute('errorMessage')};set errorMessage(errorMessage){this.setAttribute('errorMessage',errorMessage)}
 	get errorTarget(){return this.getAttribute('errorTarget')};set errorTarget(errorTarget){this.setAttribute('errorTarget',errorTarget)}
 	get errorTip(){return this.getAttribute('errorTip')};set errorTip(errorTip){this.setAttribute('errorTip',errorTip)}
 	get errorTpl(){return this.getAttribute('errorTpl')};set errorTpl(errorTpl){this.setAttribute('errorTpl',errorTpl)}
-	get eventHandlers(){return this.getAttribute('eventHandlers')};set eventHandlers(eventHandlers){this.setAttribute('eventHandlers',eventHandlers)}
-	get exitAnimation(){return this.getAttribute('exitAnimation')};set exitAnimation(exitAnimation){this.setAttribute('exitAnimation',exitAnimation)}
 	get flex(){return this.getAttribute('flex')};set flex(flex){this.setAttribute('flex',flex)}
 	get floated(){return this.getAttribute('floated')};set floated(floated){this.setAttribute('floated',floated)}
 	get floatedPicker(){return this.getAttribute('floatedPicker')};set floatedPicker(floatedPicker){this.setAttribute('floatedPicker',floatedPicker)}
@@ -60,7 +57,6 @@ export class ExtColorfieldComponent extends ExtBase {
 	get html(){return this.getAttribute('html')};set html(html){this.setAttribute('html',html)}
 	get id(){return this.getAttribute('id')};set id(id){this.setAttribute('id',id)}
 	get inline(){return this.getAttribute('inline')};set inline(inline){this.setAttribute('inline',inline)}
-	get inputCls(){return this.getAttribute('inputCls')};set inputCls(inputCls){this.setAttribute('inputCls',inputCls)}
 	get inputMask(){return this.getAttribute('inputMask')};set inputMask(inputMask){this.setAttribute('inputMask',inputMask)}
 	get inputType(){return this.getAttribute('inputType')};set inputType(inputType){this.setAttribute('inputType',inputType)}
 	get inputValue(){return this.getAttribute('inputValue')};set inputValue(inputValue){this.setAttribute('inputValue',inputValue)}
@@ -96,7 +92,6 @@ export class ExtColorfieldComponent extends ExtBase {
 	get picker(){return this.getAttribute('picker')};set picker(picker){this.setAttribute('picker',picker)}
 	get pickerSlotAlign(){return this.getAttribute('pickerSlotAlign')};set pickerSlotAlign(pickerSlotAlign){this.setAttribute('pickerSlotAlign',pickerSlotAlign)}
 	get placeholder(){return this.getAttribute('placeholder')};set placeholder(placeholder){this.setAttribute('placeholder',placeholder)}
-	get placeHolder(){return this.getAttribute('placeHolder')};set placeHolder(placeHolder){this.setAttribute('placeHolder',placeHolder)}
 	get plugins(){return this.getAttribute('plugins')};set plugins(plugins){this.setAttribute('plugins',plugins)}
 	get popup(){return this.getAttribute('popup')};set popup(popup){this.setAttribute('popup',popup)}
 	get publishes(){return this.getAttribute('publishes')};set publishes(publishes){this.setAttribute('publishes',publishes)}
@@ -255,14 +250,11 @@ export class ExtColorfieldComponent extends ExtBase {
     "draggable": "Boolean/Object/Ext.drag.Source",
     "edgePicker": "Object",
     "editable": "Boolean",
-    "enterAnimation": "String/Mixed",
     "error": "String/String[]",
     "errorMessage": "String",
     "errorTarget": "String",
     "errorTip": "Object",
     "errorTpl": "String/String[]/Ext.XTemplate",
-    "eventHandlers": "Object",
-    "exitAnimation": "String/Mixed",
     "flex": "Number/String/Object",
     "floated": "Boolean",
     "floatedPicker": "Object",
@@ -280,7 +272,6 @@ export class ExtColorfieldComponent extends ExtBase {
     "html": "String/Ext.dom.Element/HTMLElement",
     "id": "String",
     "inline": "Boolean",
-    "inputCls": "String",
     "inputMask": "String/Ext.field.InputMask",
     "inputType": "String",
     "inputValue": "any",
@@ -316,7 +307,6 @@ export class ExtColorfieldComponent extends ExtBase {
     "picker": "String/Object",
     "pickerSlotAlign": "String",
     "placeholder": "String",
-    "placeHolder": "String",
     "plugins": "Array/Ext.enums.Plugin/Object/Ext.plugin.Abstract",
     "popup": "Object",
     "publishes": "String/String[]/Object",

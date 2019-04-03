@@ -1,5 +1,5 @@
 import './PullRefreshListComponent.html';
-// import '../stocks.js';
+import '../stocks.js';
 
 Ext.require([
   'Ext.plugin.PullRefresh'
@@ -16,12 +16,10 @@ export default class PullRefreshListComponent {
       autoLoad: true,
       proxy: {
           type: 'ajax',
-          // url: '/KitchenSink/Company',
+          url: '/KitchenSink/Company',
           reader: {
               type: 'json',
               rootProperty: 'data',
-              // Do not attempt to load orders inline.
-              // They are loaded through the proxy
               implicitIncludes: false
           },
           extraParams: {

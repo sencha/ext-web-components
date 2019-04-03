@@ -1,5 +1,4 @@
 //import { Route } from '@sencha/ext-components';
-
 import  { getRoutes } from '@sencha/ext-components/lib/aa-router.component';
 import '@sencha/ext-components/lib/ext-audio.component';
 import '@sencha/ext-components/lib/ext-container.component';
@@ -31,10 +30,17 @@ import '@sencha/ext-components/lib/ext-searchfield.component';
 import '@sencha/ext-components/lib/ext-selectfield.component';
 import '@sencha/ext-components/lib/ext-sliderfield.component';
 import '@sencha/ext-components/lib/ext-spinnerfield.component';
+import '@sencha/ext-components/lib/ext-tree.component';
 import '@sencha/ext-components/lib/ext-treelist.component';
+import '@sencha/ext-components/lib/ext-treelistitem.component';
 import '@sencha/ext-components/lib/ext-panel.component';
 import '@sencha/ext-components/lib/ext-segmentedbutton.component';
 import '@sencha/ext-components/lib/ext-tabpanel.component';
+import '@sencha/ext-components/lib/ext-tabbar.component';
+import '@sencha/ext-components/lib/ext-tab.component';
+import '@sencha/ext-components/lib/ext-textareafield.component';
+import '@sencha/ext-components/lib/ext-textfield.component';
+import '@sencha/ext-components/lib/ext-timefield.component';
 import '@sencha/ext-components/lib/ext-textareafield.component';
 import '@sencha/ext-components/lib/ext-textfield.component';
 import '@sencha/ext-components/lib/ext-timefield.component';
@@ -58,12 +64,21 @@ import '@sencha/ext-components/lib/ext-video.component';
 import '@sencha/ext-components/lib/ext-list.component';
 import '@sencha/ext-components/lib/ext-widget.component';
 import '@sencha/ext-components/lib/ext-nestedlist.component';
-
+import '@sencha/ext-components/lib/ext-pivotgrid.component';
+import '@sencha/ext-components/lib/ext-menu.component';
+import '@sencha/ext-components/lib/ext-menuitem.component';
+import '@sencha/ext-components/lib/ext-calendar.component';
+import '@sencha/ext-components/lib/ext-calendar-list.component';
+import '@sencha/ext-components/lib/ext-calendar-day.component';
+import '@sencha/ext-components/lib/ext-calendar-days.component';
+import '@sencha/ext-components/lib/ext-calendar-month.component';
+import '@sencha/ext-components/lib/ext-calendar-week.component';
+import '@sencha/ext-components/lib/ext-cartesian.component';
 import '@sencha/ext-components/lib/ext-segmentedbutton.component';
 import '@sencha/ext-components/lib/ext-indicator.component';
+import '@sencha/ext-components/lib/ext-lockedgrid.component';
 
-
-
+import './Data.js';
 import getMenu from './menu';
 import MainComponent from './view/main/MainComponent.js';
 

@@ -1,5 +1,48 @@
-<ext-button 
-  text="gridtools"
-  onready="gridtools.readyButton1(event)"
-  ontap="gridtools.tapButton1(event)">
-</ext-button>
+<ext-grid title="Grid Tools"
+  columnLines="true"
+  grouped="true"
+  shadow="true"
+  height="100%"
+  onready="gridtools.onGridReady(event)"
+  itemConfig='{
+    "header":{
+      "tools":{
+        "refresh":  {
+          "handler": "gridtools.groupRefresh(event)"
+        },
+        "print": {
+          "handler": "this.onGroupPrint",
+          "tooltip": "Print group...",
+          "zone": "tail"
+        },
+        "save": {
+          "handler": "this.onGroupSave",
+          "zone": "end"
+        }
+      }
+    }
+  }'
+>
+  <ext-column
+    text="Name"
+    dataIndex="name"
+    flex="1"
+    maxWidth="200"
+    onready="gridtools.firstColumnReady(event)"
+  >
+  </ext-column>
+  <ext-column
+    text="Cuisine"
+    dataIndex="cuisine"
+    flex="1"
+    maxWidth="150"
+    onready="gridtools.secondColumnReady(event)"
+  >
+  </ext-column>
+  <ext-column
+    text="Actions"
+    width="80"
+    onready="gridtools.thirdColumnReady(event)"
+  >
+  </ext-column>
+</ext-grid>

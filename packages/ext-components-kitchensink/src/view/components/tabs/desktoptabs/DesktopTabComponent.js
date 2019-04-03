@@ -1,18 +1,10 @@
-import './DesktopTabComponent.css';
+import './DesktopTabComponent.html';
 
 export default class DesktopTabComponent {
+  constructor() {}
 
-  constructor () {
-    console.log('in DesktopTabComponent constructor');
+  tabpanelReady(event) {
+    this.tabpanel = event.detail.cmp;
+    this.tabpanel.setTabBar({ layout: { pack: 'left' } });
   }
-
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
-  }
-
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
-  }
-
 }

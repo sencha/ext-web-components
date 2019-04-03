@@ -1,4 +1,3 @@
-import './ToolBarComponent.css';
 import './ToolBarComponent.html';
 
 export default class ToolBarComponent {
@@ -14,7 +13,6 @@ export default class ToolBarComponent {
   }
 
   buttonHandler(event) {
-    console.log(event.detail.button._text,'event');
     this.containerReady.setHtml("User clicked \"" + event.detail.button._text + "\"")
   }
 

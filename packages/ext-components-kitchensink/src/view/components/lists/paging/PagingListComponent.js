@@ -1,5 +1,5 @@
 import './PagingListComponent.html';
-// import '../stocks.js';
+import '../stocks.js';
 
 Ext.require('Ext.plugin.ListPaging');
 
@@ -40,7 +40,7 @@ export default class PagingListComponent {
       autoLoad: true,
       proxy: {
         type: 'ajax',
-        // url: '/KitchenSink/Company',
+        url: '/KitchenSink/Company',
         reader: {
           type: 'json',
           rootProperty: 'data',

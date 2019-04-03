@@ -19,16 +19,16 @@ export default class ExtBase extends HTMLElement {
     else {
       this.extParentDefined = true;
     }
+    this.rawChildren = Array.from(this.children)
 
-    //console.dir(`connectedCallback: ${this.nodeName} parent: ${this.nodeParentName} extParentDefined: ${this.extParentDefined} extChildrenDefined: ${this.extChildrenDefined} this.children.length: ${this.children.length}`)
+    console.dir(`connectedCallback: ${this.nodeName} parent: ${this.nodeParentName} extParentDefined: ${this.extParentDefined} extChildrenDefined: ${this.extChildrenDefined} this.children.length: ${this.children.length}`)
+    
     if (this.extChildrenDefined == false && this.children.length > 0) {
       this.childrenCounter = this.children.length
-      //console.dir(`childrenCounter: ${this.nodeName}`)
     }
 
     var parentCmp;
     var childCmp;
-    var removeItems = [];
 
     this.props = {};
     this.props.xtype = this.XTYPE;
@@ -74,11 +74,11 @@ export default class ExtBase extends HTMLElement {
       });
     }
     else if(this.nodeParentName.substring(0, 3) != 'EXT') {
-      this.props.renderTo = this.parentNode
-      this.doCreate()
+       this.props.renderTo = this
+       this.doCreate()
     }
     else {
-      this.doCreate()
+       this.doCreate()
       //deal with parent
 
       //mjgComment console.log('deal with this item to attach to parent')
@@ -88,8 +88,11 @@ export default class ExtBase extends HTMLElement {
         parentCmp = this.parentNode['ext'];
         childCmp = this.ext;
         var location = null
-        for (var i = 0; i < this.parentNode.children.length; i++) {
-          var item = this.parentNode.children[i]
+        console.log('this.parentNode.rawChildren')
+        console.dir(this.parentNode)
+        console.dir(this.parentNode.rawChildren)
+        for (var i = 0; i < this.parentNode.rawChildren.length; i++) {
+          var item = this.parentNode.rawChildren[i]
           if (item.props == this.props) {
             location = i
           }
@@ -114,19 +117,12 @@ export default class ExtBase extends HTMLElement {
           else {
             var par = item.parentNode
             var cln = par.removeChild(item);
-
-            //var cln = item.cloneNode(true);
             var el = Ext.get(cln);
             var ext = Ext.create({xtype:'widget', element:el})
             this.parentNode.extChildren.push({ADDORDER:i,XTYPE:'widget',EXT:ext})
-            //item.style.display = 'none';
-            //removeItems.push(item)
           }
         }
       }
-      // for (let item of removeItems) {
-      //   item.remove(); 
-      // }
     }
 
     //deal with children
@@ -141,10 +137,11 @@ export default class ExtBase extends HTMLElement {
         var location = item.ADDORDER
         this.addTheChild(parentCmp, childCmp, location)
     }
-
     //for (var i = 0; i < this.children.length; i++) {
-    for (var i = this.children.length-1; i > -1; i--) {
-      var item = this.children[i]
+      console.log('children')
+      console.dir(this.rawChildren)
+    for (var i = this.rawChildren.length-1; i > -1; i--) {
+      var item = this.rawChildren[i]
       if (item.nodeName.substring(0, 3) != "EXT") {
         //mjgComment console.log(`item ${i} NON ext child`)
 //        var cln = item.cloneNode(true);
@@ -152,11 +149,8 @@ export default class ExtBase extends HTMLElement {
         var par = item.parentNode
         var cln = par.removeChild(item);
 
-
         var el = Ext.get(cln);
         this.ext.insert(i,{xtype:'widget', element:el});
-        //item.style.display = 'none';
-        //removeItems.push(item)
       }
     }
 
@@ -278,7 +272,10 @@ export default class ExtBase extends HTMLElement {
   }
 
   attributeChangedCallback(attr, oldVal, newVal) {
+    //console.log('attributeChangedCallback')
+    //console.log(attr)
     if (/^on/.test(attr)) {
+      console.log(attr)
       if (newVal) {
         //mjg check if this event exists for this component
         this.addEventListener(attr.slice(2), function() {eval(newVal)});

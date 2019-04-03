@@ -1,4 +1,4 @@
-import './HandlesDragDropComponent.css';
+import './HandlesDragDropComponent.scss';
 import './HandlesDragDropComponent.html';
 
 export default class HandlesDragDropComponent {

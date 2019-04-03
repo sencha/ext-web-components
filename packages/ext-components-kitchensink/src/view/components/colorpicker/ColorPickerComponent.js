@@ -1,4 +1,3 @@
-import './ColorPickerComponent.css';
 import './ColorPickerComponent.html';
 
 export default class ColorPickerComponent {

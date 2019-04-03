@@ -1,11 +1,8 @@
-import './CheckBoxFieldComponent.css';
 import './CheckBoxFieldComponent.html';
 
 export default class CheckBoxFieldComponent {
   constructor () {
-    console.log('in CheckBoxFieldComponent constructor');
-
-     }
+  }
 
   checkboxfieldready1(event) {
     const isPhone = Ext.os.is.Phone;

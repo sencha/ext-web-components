@@ -1,4 +1,3 @@
-import './DrawComponent.css';
 import './DrawComponent.html';
 
 export default class DrawComponent {
