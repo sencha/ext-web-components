@@ -15,14 +15,14 @@ export default class CollapsiblePanelComponent {
     this.containerCmp.setPadding(Ext.os.is.Phone ? 0 : 10);
   }
 
-  readypanel1(event) {
+  readyPanel1(event) {
     this. panelCmp1 = event.detail.cmp;
     this.panelCmp1.setHeight(Ext.os.is.Phone ? undefined : 400);
     this.panelCmp1.setWidth(Ext.os.is.Phone ? undefined : 400);
     this.panelCmp1.setHtml(`<div>${mediumText}</div>`);
   }
 
-  readypanel2(event) {
+  readyPanel2(event) {
     this.panelCmp2 = event.detail.cmp;
     this.panelCmp2.setHtml(`<div>${mediumText}</div>`);
   }

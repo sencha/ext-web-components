@@ -2,19 +2,19 @@
     height="100%"
     padding="10"
     shadow="true"
-    onready="proxies.parentReady(event)">
+    onready="proxiesdragdrop.parentReady(event)">
     <ext-container 
-      onready="proxies.noneEleReady(event)"
+      onready="proxiesdragdrop.noneEleReady(event)"
       cls="proxy-none proxy-source"
       html="noneText">
     </ext-container>
     <ext-container 
-      onready="proxies.originalEleReady(event)"
+      onready="proxiesdragdrop.originalEleReady(event)"
       cls="proxy-original proxy-source"
       html="Element as proxy with revert: true">
     </ext-container>
     <ext-container 
-      onready="proxies.placeholderEleReady(event)"
+      onready="proxiesdragdrop.placeholderEleReady(event)"
       cls="proxy-placeholder proxy-source"
       html="Placeholder">
     </ext-container>

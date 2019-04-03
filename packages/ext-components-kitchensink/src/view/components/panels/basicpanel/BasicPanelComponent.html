@@ -1,6 +1,6 @@
 <ext-container
   padding="10"
-  onready="basicpanels.readycontainer1(event)"
+  onready="basicpanel.readycontainer1(event)"
   layout='{
     "type": "vbox",
     "pack": "center",
@@ -15,12 +15,12 @@
                 "shadow": "true",
                 "margin": "10"
               }'
-    onready="basicpanels.readycontainer2(event)"
+    onready="basicpanel.readycontainer2(event)"
     flex="1"
   >
-    <ext-panel onready="basicpanels.readypanel1(event)">
+    <ext-panel onready="basicpanel.readypanel1(event)">
     </ext-panel>
-    <ext-panel title="Title" onready="basicpanels.readypanel2(event)">
+    <ext-panel title="Title" onready="basicpanel.readypanel2(event)">
     </ext-panel>
   </ext-container>
   <ext-container
@@ -31,11 +31,11 @@
                 "shadow": "true",
                 "margin": "10"
               }'
-    onready="basicpanels.readycontainer3(event)"
+    onready="basicpanel.readycontainer3(event)"
     flex="1">
-    <ext-panel title="Built in Tools" onready="basicpanels.readypanel3(event)" >
+    <ext-panel title="Built in Tools" onready="basicpanel.readypanel3(event)" >
     </ext-panel>
-    <ext-panel title="Custom Tools w/ iconCls" onready="basicpanels.readypanel4(event)" >
+    <ext-panel title="Custom Tools w/ iconCls" onready="basicpanel.readypanel4(event)" >
     </ext-panel>
   </ext-container>
 </ext-container>

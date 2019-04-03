@@ -1,10 +1,10 @@
 <ext-container padding="10" fitToParent="true">
 
-  <ext-button text="Show dialog" ontap="dialog.showDialog()" ui="action raised"></ext-button>
+  <ext-button text="Show dialog" ontap="dialogpopup.showDialog()" ui="action raised"></ext-button>
 
   <ext-dialog
     displayed="false"
-    onready='dialog.dialogReady(event)'
+    onready='dialogpopup.dialogReady(event)'
     title="Dialog"
     closable="false"
     maximizable="true"

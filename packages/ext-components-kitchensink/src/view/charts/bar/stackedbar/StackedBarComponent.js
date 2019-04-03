@@ -12,8 +12,6 @@ Ext.require([
 export default class StackedBarComponent {
 
   constructor () {
-    console.log('in StackedBarComponent constructor');
-
     this.store = Ext.create('Ext.data.Store', {
       fields: ['id', 'g1', 'g2', 'g3', 'g4', 'g5', 'g6', 'name']
     });

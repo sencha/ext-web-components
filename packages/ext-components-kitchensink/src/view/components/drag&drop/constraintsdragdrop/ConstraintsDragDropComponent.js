@@ -1,7 +1,6 @@
 import './ConstraintsDragDropComponent.scss';
 import './ConstraintsDragDropComponent.html';
 
-
 export default class ConstraintsDragDropComponent {
 
   constructor () {}

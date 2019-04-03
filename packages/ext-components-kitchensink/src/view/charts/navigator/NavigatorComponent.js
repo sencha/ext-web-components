@@ -3,7 +3,6 @@ import './NavigatorComponent.css';
 export default class NavigatorComponent {
 
   constructor () {
-    console.log('in NavigatorComponent constructor');
   }
 
   readyButton1(event) {

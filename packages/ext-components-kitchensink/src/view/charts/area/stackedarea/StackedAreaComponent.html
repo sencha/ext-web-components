@@ -15,9 +15,11 @@
   </chart-toolbar>
   </ext-toolbar>
   <ext-cartesian
+    onready="stackedarea.cartesianready(event)"
+    downloadServerUrl="http://svg.sencha.io"
     shadow="true"
     insetPadding="20 20 10 10"
     legend='{"type":"sprite"}'
-    onready="stackedarea.cartesianready(event)">
+  >
   </ext-cartesian>
 </ext-container>
