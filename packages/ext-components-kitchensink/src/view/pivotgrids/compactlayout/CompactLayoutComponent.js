@@ -1,11 +1,11 @@
 import './CompactLayoutComponent.html';
 import { generateData } from '../generateSaleData';
-import SaleModel from '../SaleModel';
+import saleModel from '../saleModel';
 
 export default class CompactLayoutComponent {
   constructor () {
     this.store = Ext.create('Ext.data.Store', {
-      model: SaleModel,
+      model: saleModel,
       data: generateData()
     });
     this.monthLabelRenderer = function(value) {return Ext.Date.monthNames[value];} 
