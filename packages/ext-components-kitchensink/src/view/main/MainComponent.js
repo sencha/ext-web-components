@@ -155,7 +155,7 @@ export default class MainComponent {
 
   navigate(record) {
     if (record == null) {
-      console.log('it was null')
+      //console.log('it was null')
       return
     }
     var hash = record.data.hash
@@ -217,11 +217,8 @@ export default class MainComponent {
 
   toggleTree() {
     var t = document.getElementById('theTitle');
-    console.log(t)
-    t.innerHTML = "change"
-
-
-
+    // console.log(t)
+    // t.innerHTML = "change"
     var collapsed = this.navTreePanelCmp.getCollapsed()
     if (collapsed == true){collapsed = false} else{collapsed = true}
     this.navTreePanelCmp.setCollapsed(collapsed)

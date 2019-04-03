@@ -45,6 +45,7 @@ export default class ExtBase extends HTMLElement {
         if(this.getAttribute(property) !== null) {
           try {
             this.props[property] = JSON.parse(this[property])
+            //this.props[property] = this[property]
           }
           catch(e) {
             this.props[property] =  this[property]

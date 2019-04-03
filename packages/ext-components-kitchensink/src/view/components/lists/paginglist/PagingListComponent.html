@@ -3,11 +3,11 @@
     width="300" 
     height="400"
     shadow="true"
-    onready="paging.listReady(event)"
+    onready="paginglist.listReady(event)"
     plugins='[{ "type": "listpaging" }]'
   >
     <ext-container docked="top">
-      <ext-container onready="paging.onContainerReady(event)" html="<b>Auto Paging</b>: OFF" style='padding:15px;'>
+      <ext-container onready="paginglist.onContainerReady(event)" html="<b>Auto Paging</b>: OFF" style='padding:15px;'>
       </ext-container>
       <ext-segmentedbutton>
         <ext-button text="Off" pressed="bufferZone === false" ontap="paging.setBufferZone(false)" flex="1"></ext-button>
