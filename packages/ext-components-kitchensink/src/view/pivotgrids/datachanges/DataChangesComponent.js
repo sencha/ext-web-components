@@ -71,7 +71,6 @@ export default class DataChangesComponent {
   }
 
   addData() { 
-    alert('hey')
     this.store.add(generateData(1)); 
   }
 
