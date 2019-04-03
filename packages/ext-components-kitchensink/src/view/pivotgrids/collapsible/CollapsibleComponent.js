@@ -1,12 +1,12 @@
 import './CollapsibleComponent.html';
 import { generateData, randomDate } from '../generateSaleData';
-import SaleModel from '../SaleModel';
+import saleModel from '../saleModel';
 
 export default class CollapsibleComponent {
 
   constructor () {
     this.store = Ext.create('Ext.data.Store', {
-      model: SaleModel
+      model: saleModel
     });
     this.monthLabelRenderer = function(value) {return Ext.Date.monthNames[value]} ;
     this.pivotgridMatrix = {
