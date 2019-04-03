@@ -36,18 +36,18 @@ import ValidationComponent from './view/components/forms/validation/ValidationCo
 import DefaultGaugeComponent from './view/components/gauges/defaultgauge/DefaultGaugeComponent.js';
 import NeedleGaugeComponent from './view/components/gauges/needlegauge/NeedleGaugeComponent.js';
 import CardLayoutComponent from './view/components/layouts/cardlayout/CardLayoutComponent.js';
-import CenterLayoutComponent from './view/components/layouts/center/CenterLayoutComponent.js';
-import FitLayoutComponent from './view/components/layouts/fit/FitLayoutComponent.js';
-import FormLayoutComponent from './view/components/layouts/form/FormLayoutComponent.js';
-import hboxLayoutComponent from './view/components/layouts/hbox/hboxLayoutComponent.js';
-import ResizableLayoutComponent from './view/components/layouts/resizable/ResizableLayoutComponent.js';
-import vboxLayoutComponent from './view/components/layouts/vbox/vboxLayoutComponent.js';
+import CenterLayoutComponent from './view/components/layouts/centerlayout/CenterLayoutComponent.js';
+import FitLayoutComponent from './view/components/layouts/fitlayout/FitLayoutComponent.js';
+import FormLayoutComponent from './view/components/layouts/formlayout/FormLayoutComponent.js';
+import hboxLayoutComponent from './view/components/layouts/hboxlayout/hboxLayoutComponent.js';
+import ResizableLayoutComponent from './view/components/layouts/resizablelayout/ResizableLayoutComponent.js';
+import vboxLayoutComponent from './view/components/layouts/vboxlayout/vboxLayoutComponent.js';
 import BasicListComponent from './view/components/lists/basiclist/BasicListComponent.js';
-import DisclosureListComponent from './view/components/lists/disclosure/DisclosureListComponent.js';
-import GroupedListComponent from './view/components/lists/grouped/GroupedListComponent.js';
+import DisclosureListComponent from './view/components/lists/disclosurelist/DisclosureListComponent.js';
+import GroupedListComponent from './view/components/lists/groupedlist/GroupedListComponent.js';
 import NestedListComponent from './view/components/lists/nestedlist/NestedListComponent.js';
-import PullRefreshListComponent from './view/components/lists/pullrefresh/PullRefreshListComponent.js';
-import PagingListComponent from './view/components/lists/paging/PagingListComponent.js';
+import PullRefreshListComponent from './view/components/lists/pullrefreshlist/PullRefreshListComponent.js';
+import PagingListComponent from './view/components/lists/paginglist/PagingListComponent.js';
 import BasicAccordionSwiperComponent from './view/components/lists/basicaccordionswiper/BasicAccordionSwiperComponent.js';
 import BasicStepSwiperComponent from './view/components/lists/basicstepswiper/BasicStepSwiperComponent.js';
 import UndoableAccordionSwiperComponent from './view/components/lists/undoableaccordionswiper/UndoableAccordionSwiperComponent.js';
@@ -179,8 +179,8 @@ export default function getMenu() {
       ]},
       { text: 'ColorPicker', component: ColorPickerComponent, layout: 'center', iconCls: 'icon-color-picker' },
       { text: 'Carousel', component: CarouselComponent, iconCls: 'icon-carousel' },
-      { text: 'Drag & Drop', iconCls: 'icon-drag-drop', children: [
-        { text: 'Simple', component: SimpleDragDropComponent, iconCls: 'icon-drag-simple' },
+      { text: 'Drag and Drop', iconCls: 'icon-drag-drop', children: [
+        { text: 'Simple Drag Drop', component: SimpleDragDropComponent, iconCls: 'icon-drag-simple' },
         { text: 'Constraints', component: ConstraintsDragDropComponent, iconCls: 'icon-drag-constraint' },
         { text: 'Proxies', component: ProxiesDragDropComponent, iconCls: 'icon-drag-proxy' },
         { text: 'Handles', component: HandlesDragDropComponent, iconCls: 'icon-drag-handle' },
@@ -219,20 +219,20 @@ export default function getMenu() {
       ]},
       { text: 'Layouts', iconCls: 'icon-layouts', children: [
         { text: 'Card Layout', component: CardLayoutComponent, iconCls: 'icon-layout-card' },
-        { text: 'center', component: CenterLayoutComponent, iconCls: 'icon-layout-center' },
-        { text: 'fit', component: FitLayoutComponent, iconCls: 'icon-layout-fit' },
-        { text: 'form', component: FormLayoutComponent, layout: 'auto', iconCls: 'icon-layout-form' },
-        { text: 'hbox', component: hboxLayoutComponent, layout: 'auto', iconCls: 'icon-layout-horizontal-box' },
-        { text: 'resizable', component: ResizableLayoutComponent, iconCls: 'icon-layout-box' },
-        { text: 'vbox', component: vboxLayoutComponent, layout: 'auto', iconCls: 'icon-layout-vertical-box' }
+        { text: 'Center Layout', component: CenterLayoutComponent, iconCls: 'icon-layout-center' },
+        { text: 'Fit Layout', component: FitLayoutComponent, iconCls: 'icon-layout-fit' },
+        { text: 'Form Layout', component: FormLayoutComponent, layout: 'auto', iconCls: 'icon-layout-form' },
+        { text: 'hbox Layout', component: hboxLayoutComponent, layout: 'auto', iconCls: 'icon-layout-horizontal-box' },
+        { text: 'Resizable Layout', component: ResizableLayoutComponent, iconCls: 'icon-layout-box' },
+        { text: 'vbox Layout', component: vboxLayoutComponent, layout: 'auto', iconCls: 'icon-layout-vertical-box' }
       ]},
       { text: 'Lists', iconCls: 'icon-lists', children: [
         { text: 'Basic List', component: BasicListComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-basic-list' },
-        { text: 'Disclosure', component: DisclosureListComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-disclosure-list' },
-        { text: 'Grouped', component: GroupedListComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-grouped-list' },
-        { text: 'NestedList', component: NestedListComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-nested-list' },
-        { text: 'Pull Refresh', component: PullRefreshListComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-pullrefresh-list' },
-        { text: 'Paging', component: PagingListComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-listpaging-list' },
+        { text: 'Disclosure List', component: DisclosureListComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-disclosure-list' },
+        { text: 'Grouped List', component: GroupedListComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-grouped-list' },
+        { text: 'Nested List', component: NestedListComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-nested-list' },
+        { text: 'Pull Refresh List', component: PullRefreshListComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-pullrefresh-list' },
+        { text: 'Paging List', component: PagingListComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-listpaging-list' },
         { text: 'Basic Accordion Swiper', component: BasicAccordionSwiperComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-basic-accordion-swiper'},
         { text: 'Basic Step Swiper', component: BasicStepSwiperComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-basic-step-swiper'},
         { text: 'Undoable Accordion Swiper', component: UndoableAccordionSwiperComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-undoable-accordion-swiper'},
