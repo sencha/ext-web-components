@@ -21,7 +21,7 @@ export default class ExtBase extends HTMLElement {
     }
     this.rawChildren = Array.from(this.children)
 
-    console.dir(`connectedCallback: ${this.nodeName} parent: ${this.nodeParentName} extParentDefined: ${this.extParentDefined} extChildrenDefined: ${this.extChildrenDefined} this.children.length: ${this.children.length}`)
+    //console.dir(`connectedCallback: ${this.nodeName} parent: ${this.nodeParentName} extParentDefined: ${this.extParentDefined} extChildrenDefined: ${this.extChildrenDefined} this.children.length: ${this.children.length}`)
     
     if (this.extChildrenDefined == false && this.children.length > 0) {
       this.childrenCounter = this.children.length
@@ -137,9 +137,9 @@ export default class ExtBase extends HTMLElement {
         var location = item.ADDORDER
         this.addTheChild(parentCmp, childCmp, location)
     }
+    //console.log('children')
+    //console.dir(this.rawChildren)
     //for (var i = 0; i < this.children.length; i++) {
-      console.log('children')
-      console.dir(this.rawChildren)
     for (var i = this.rawChildren.length-1; i > -1; i--) {
       var item = this.rawChildren[i]
       if (item.nodeName.substring(0, 3) != "EXT") {
@@ -148,7 +148,6 @@ export default class ExtBase extends HTMLElement {
         //var cln = this.parentNode.removeChild(item);
         var par = item.parentNode
         var cln = par.removeChild(item);
-
         var el = Ext.get(cln);
         this.ext.insert(i,{xtype:'widget', element:el});
       }
