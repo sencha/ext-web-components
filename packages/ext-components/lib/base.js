@@ -88,9 +88,9 @@ export default class ExtBase extends HTMLElement {
         parentCmp = this.parentNode['ext'];
         childCmp = this.ext;
         var location = null
-        console.log('this.parentNode.rawChildren')
-        console.dir(this.parentNode)
-        console.dir(this.parentNode.rawChildren)
+        // console.log('this.parentNode.rawChildren')
+        // console.dir(this.parentNode)
+        // console.dir(this.parentNode.rawChildren)
         for (var i = 0; i < this.parentNode.rawChildren.length; i++) {
           var item = this.parentNode.rawChildren[i]
           if (item.props == this.props) {
@@ -274,7 +274,7 @@ export default class ExtBase extends HTMLElement {
     //console.log('attributeChangedCallback')
     //console.log(attr)
     if (/^on/.test(attr)) {
-      console.log(attr)
+      //console.log(attr)
       if (newVal) {
         //mjg check if this event exists for this component
         this.addEventListener(attr.slice(2), function() {eval(newVal)});

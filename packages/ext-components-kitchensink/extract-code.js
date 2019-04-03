@@ -56,13 +56,13 @@ function extractAll(dir) {
 }
 
 function extractFrom(example, file, fullPath) {
-  var fileLower = file.toLowerCase()
+//  var fileLower = file.toLowerCase()
   if (!fs.existsSync(fullPath)) return
   const content = fs.readFileSync(path.join(fullPath), 'utf8');
   if (result[example] == undefined) {
     result[example] = {}
   }
-  result[example][fileLower] = content
+  result[example][file] = content
 }
 
 function run() {

@@ -13,15 +13,15 @@
       flex="1"
       layout="card"
       shadow="true"
-      onready="card.onContainer1Ready(event)"
+      onready="cardlayout.onContainer1Ready(event)"
       scrollable="true"
   >
-      <ext-panel onready="card.onItem1Ready(event)" shadow="true" scrollable="true">
-          <ext-container onready="card.onContainer2Ready(event)" scrollable="true">
+      <ext-panel onready="cardlayout.onItem1Ready(event)" shadow="true" scrollable="true">
+          <ext-container onready="cardlayout.onContainer2Ready(event)" scrollable="true">
           </ext-container>
       </ext-panel>
-      <ext-panel onready="card.onItem2Ready(event)" shadow="true" scrollable="true">
-        <ext-container onready="card.onContainer3Ready(event)" scrollable="true">
+      <ext-panel onready="cardlayout.onItem2Ready(event)" shadow="true" scrollable="true">
+        <ext-container onready="cardlayout.onContainer3Ready(event)" scrollable="true">
         </ext-container>
     </ext-panel>
   </ext-container>
