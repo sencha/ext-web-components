@@ -2,30 +2,30 @@
   height="100%"
   padding="10"
   shadow="true"
-  onready="constraints.parentReady(event)">
+  onready="constraintsdragdrop.parentReady(event)">
 
-  <ext-container onready="constraints.elementReady(event)" cls="dand-constraints-dragCt">
+  <ext-container onready="constraintsdragdrop.elementReady(event)" cls="dand-constraints-dragCt">
     <ext-container 
-      onready="constraints.toParentReady(event)"
+      onready="constraintsdragdrop.toParentReady(event)"
       cls="dand-constraints-item dand-constraints-to-parent"
       html="To parent">
     </ext-container>
   </ext-container>
 
   <ext-container 
-    onready="constraints.verticalReady(event)"
+    onready="constraintsdragdrop.verticalReady(event)"
     cls="dand-constraints-item dand-constraints-vertical"
     html="Vertical">
   </ext-container>
 
   <ext-container 
-    onready="constraints.horizontalReady(event)"
+    onready="constraintsdragdrop.horizontalReady(event)"
     cls="dand-constraints-item dand-constraints-horizontal"
     html="Horizontal">
   </ext-container>
 
   <ext-container 
-    onready="constraints.snapReady(event)"
+    onready="constraintsdragdrop.snapReady(event)"
     cls="dand-constraints-item dand-constraints-snap"
     html="snap: 60,50">
   </ext-container>

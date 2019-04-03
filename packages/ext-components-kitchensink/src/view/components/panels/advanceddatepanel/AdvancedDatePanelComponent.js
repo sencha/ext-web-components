@@ -5,7 +5,6 @@ Ext.require('Ext.panel.Date');
 export default class AdvancedDatePanelComponent {
 
   constructor () {
-    console.log('in AdvancedDatePanelComponent constructor');
   }
   containerready1(event) {
     this.containerCmp = event.detail.cmp;

@@ -1,7 +1,7 @@
 Ext.require('Ext.layout.overflow.Scroller');
-import './ScrollingTabsComponent.html';
+import './ScrollingTabComponent.html';
 
-export default class ScrollingTabsComponent {
+export default class ScrollingTabComponent {
   constructor() {
     console.log('in ScrollingTabsComponent constructor');
   }

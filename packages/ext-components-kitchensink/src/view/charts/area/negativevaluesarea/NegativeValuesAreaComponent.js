@@ -4,7 +4,6 @@ import './NegativeValuesAreaComponent.html';
 export default class NegativeValuesAreaComponent {
 
   constructor () {
-    console.log('in NegativeValuesAreaComponent constructor');
     this.store = Ext.create('Ext.data.Store', {
       fields: ['quarter', 'consumer', 'gaming', 'phone', 'corporate'],
       data: [

@@ -12,7 +12,6 @@ Ext.require([
 export default class BoxPlotComponent {
 
   constructor () {
-    console.log('in BoxPlotComponent constructor');
     this.colors = [
       {
         fillStyle: '#96BBDC',
