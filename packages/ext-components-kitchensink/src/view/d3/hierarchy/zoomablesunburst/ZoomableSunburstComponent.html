@@ -1,5 +1,8 @@
-<ext-button 
-  text="zoomablesunburst"
-  onready="zoomablesunburst.readyButton1(event)"
-  ontap="zoomablesunburst.tapButton1(event)">
-</ext-button>
+<ext-panel  shadow layout="fit" fitToParent="true" height="100%">
+  <ext-d3-sunburst 
+          padding="20"
+          onready="zoomablesunburst.onSubBurstReady(event)"
+          expandEventName="false"
+          transitions='{"select": "false"}'
+  ></ext-d3-sunburst>
+</panel>

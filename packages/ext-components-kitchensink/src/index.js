@@ -74,16 +74,23 @@ import '@sencha/ext-components/lib/ext-cartesian.component';
 import '@sencha/ext-components/lib/ext-segmentedbutton.component';
 import '@sencha/ext-components/lib/ext-indicator.component';
 import '@sencha/ext-components/lib/ext-lockedgrid.component';
+import '@sencha/ext-components/lib/ext-d3-horizontal-tree.component';
+import '@sencha/ext-components/lib/ext-d3-pack.component';
+import '@sencha/ext-components/lib/ext-d3-sunburst.component';
+
 
 import './Data.js';
 import getMenu from './menu';
 import MainComponent from './view/main/MainComponent.js';
+import * as d3 from 'd3'
 
 (function () {
 
   init();
 
   function init() {
+
+    window.d3 = d3;
     window.menu = getMenu();
     window.routes = getRoutes(window.menu);
     window.main = new MainComponent()
