@@ -1,10 +1,8 @@
-import './TreeHierarchyComponent.css';
+import './TreeHierarchyComponent.html';
 
 export default class TreeHierarchyComponent {
 
-  constructor () {
-    console.log('in TreeHierarchyComponent constructor');
-  }
+  constructor () {}
 
   readyButton1(event) {
     var cmp = event.detail.cmp;
