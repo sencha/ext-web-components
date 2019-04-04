@@ -17,7 +17,7 @@ export default class BigDataComponent {
 
   readyGrid(event) {
     this.gridCmp = event.detail.cmp;
-    const store = Ext.create('Ext.data.Store', {
+    this.store = Ext.create('Ext.data.Store', {
       model,
       autoLoad: true,
       pageSize: 0,
@@ -30,7 +30,7 @@ export default class BigDataComponent {
 
     this.setItemConfig();
 
-    this.gridCmp.setStore(store);
+    this.gridCmp.setStore(this.store);
     this.exportMenu = Ext.getCmp("exportMenuOfBigData");
     this.exportMenu.getMenu().on('click', this.exportOptionChanged.bind(this));
     this.ratingAvgColumn = Ext.getCmp("ratingAverageColumn");
@@ -187,7 +187,6 @@ export default class BigDataComponent {
 
   emptyColumnReady(event) {
     const emptyColumn = event.detail.cmp;
-
     emptyColumn.setCell({
       xtype: 'widgetcell',
       widget: {
@@ -200,6 +199,7 @@ export default class BigDataComponent {
         handler: this.onVerify.bind(this)
       }
     });
+
     emptyColumn.setSummaryCell({
         xtype: 'widgetcell',
         widget: {
@@ -235,11 +235,11 @@ export default class BigDataComponent {
       answer => {
         if (answer === 'yes') {
             // Don't want to grid to update on each change:
-            store.suspendEvent('update');
+            this.store.suspendEvent('update');
             (group || store).each(function (rec) {
               rec.set('verified', true);
             });
-            store.resumeEvent('update');
+            this.store.resumeEvent('update');
             // Now update all the things
             grid.refresh();
         }
