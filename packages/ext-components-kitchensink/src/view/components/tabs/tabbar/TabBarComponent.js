@@ -17,7 +17,6 @@ export default class TabBarComponent {
   }
 
   containerReady(event) {
-    debugger;
     this.container = event.detail.cmp;
     this.container.setHtml(`Active Tab: ${this.activeTab}`);
   }
