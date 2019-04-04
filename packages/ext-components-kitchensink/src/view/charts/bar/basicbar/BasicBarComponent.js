@@ -10,8 +10,6 @@ Ext.require([
 export default class BasicBarComponent {
 
   constructor () {
-    console.log('in BasicBarComponent constructor');
-
     this.store = Ext.create('Ext.data.Store', {
       fields: ['country', 'agr', 'ind', 'ser'],
       data: [

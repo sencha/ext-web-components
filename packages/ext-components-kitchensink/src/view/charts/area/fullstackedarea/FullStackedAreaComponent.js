@@ -4,8 +4,6 @@ import './FullStackedAreaComponent.html';
 export default class FullStackedAreaComponent {
 
   constructor () {
-    console.log('in FullStackedAreaComponent constructor');
-
     this.store = Ext.create('Ext.data.Store', {
       fields: ['month', 'data1', 'data2', 'data3', 'data4', 'other'],
       data: [

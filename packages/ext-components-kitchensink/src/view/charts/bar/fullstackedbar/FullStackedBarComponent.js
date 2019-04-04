@@ -4,8 +4,6 @@ import './FullStackedBarComponent.html';
 export default class FullStackedBarComponent {
 
   constructor () {
-    console.log('in FullStackedBarComponent constructor');
-
     this.store = Ext.create('Ext.data.Store', {
       fields: ['month', 'data1', 'data2', 'data3', 'data4', 'other'],
       data: [

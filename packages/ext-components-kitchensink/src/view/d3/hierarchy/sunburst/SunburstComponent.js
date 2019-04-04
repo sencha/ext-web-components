@@ -1,18 +1,95 @@
-import './SunburstComponent.css';
+import './SunburstComponent.html';
+
+Ext.require([
+  'Ext.util.Format',
+  'Ext.plugin.Responsive'
+]);
 
 export default class SunburstComponent {
 
-  constructor () {
-    console.log('in SunburstComponent constructor');
+  constructor() {
+    this.store = Ext.create('Ext.data.TreeStore', {
+      autoLoad: true,
+      defaultRootText: 'd3',
+      fields: [
+        'name',
+        'path',
+        'size',
+        {
+          name: 'leaf',
+          calculate: function (data) {
+            return data.root ? false : !data.children;
+          }
+        },
+        {
+          name: 'text',
+          calculate: function (data) {
+            return data.name;
+          }
+        }
+      ],
+      proxy: {
+        type: 'ajax',
+        url: 'resources/data/tree/tree.json'
+      },
+      idProperty: 'path'
+    });
   }
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
+  onSelectionChange(field, selection) {
+    if (Ext.isArray(selection)) selection = selection[0];
+    this.selection = selection;
   }
 
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
+  onTooltip(component, tooltip, node) {
+    try {
+      const record = node.data,
+          size = record.get('size'),
+          length = record.childNodes.length;
+
+      tooltip.setTitle(record.get('text'));
+      tooltip.setHtml(size ? 
+          Ext.util.Format.fileSize(size) :
+          length + ' file' + (length === 1 ? '' : 's') + ' inside.'
+      );
+    }
+    catch (e) {
+      console.error(e)
+    }
+  }
+  
+  onTreeReady(event) {
+    const treeList = event.detail.cmp;
+
+    if (Ext.os.is.Phone) {
+      treeList.setWidth(undefined);
+      treeList.setHeight(200);
+    } else {
+      treeList.setWidth(230);
+      treeList.setHeight(undefined);
+    }
+
+    treeList.setStore(this.store);
+    treeList.on('click', this.onSelectionChange.bind(this));
+    treeList.setSelection(this.selection);
+  }
+
+  onPanelReady(event) {
+    let cmp = event.detail.cmp;
+    cmp.setResponsiveConfig(
+      {
+        'width > 600': { layout: 'hbox' }
+      }
+    )
+  }
+
+  ond3Ready(event) {
+    let cmp = event.detail.cmp;
+    cmp.setSelection(this.selection);
+    cmp.setStore(this.store);
+    cmp.setTooltip({
+      renderer:this.onTooltip.bind(this),
+    })
   }
 
 }

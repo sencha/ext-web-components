@@ -1,5 +1,26 @@
-<ext-button 
-  text="tabularlayout"
-  onready="tabularlayout.readyButton1(event)"
-  ontap="tabularlayout.tapButton1(event)">
-</ext-button>
+<ext-container layout="fit" padding="10" fitToParent="true" height="100%">
+  <ext-pivotgrid 
+    shadow="true"
+    onready="tabularlayout.onPivotGridReady(event)"
+    startRowGroupsCollapsed="false"
+    startColGroupsCollapsed="false">
+  </ext-pivotgrid>
+
+  <ext-toolbar 
+    shadow="false"
+    docked="top"
+    ui="app-transparent-toolbar"
+    padding="5 8"
+    layout='{
+      "type": "hbox",
+      "align": "stretch"
+    }'
+    defaults='{
+      "margin": "0 10 0 0",
+      "shadow": "true",
+      "ui": "action"
+    }'>
+    <ext-button text="Expand All" onready="tabularlayout.onButtonReady1(event)"></ext-button>
+    <ext-button text="Collapse All" onready="tabularlayout.onButtonReady2(event)"></ext-button>
+  </ext-toolbar>
+</ext-container>

@@ -6,7 +6,6 @@ Ext.require('Ext.panel.Resizer');
 export default class ResizableHandleComponent {
 
   constructor () {
-    console.log('in ResizableHandleComponent constructor');
   }
 
   readypanel(event) {

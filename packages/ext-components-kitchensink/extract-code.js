@@ -9,7 +9,7 @@ function extractAll(dir) {
   const parts = dir.split(path.sep)
 
   const example = parts[parts.length - 1]
-  const exampleCap = example.charAt(0).toUpperCase() + example.slice(1)
+  //const exampleCap = example.charAt(0).toUpperCase() + example.slice(1)
 
   for (let file of files) {
     const fullPath = path.join(dir, file)
@@ -56,6 +56,7 @@ function extractAll(dir) {
 }
 
 function extractFrom(example, file, fullPath) {
+//  var fileLower = file.toLowerCase()
   if (!fs.existsSync(fullPath)) return
   const content = fs.readFileSync(path.join(fullPath), 'utf8');
   if (result[example] == undefined) {
