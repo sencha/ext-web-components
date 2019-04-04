@@ -77,6 +77,8 @@ import '@sencha/ext-components/lib/ext-lockedgrid.component';
 import '@sencha/ext-components/lib/ext-d3-horizontal-tree.component';
 import '@sencha/ext-components/lib/ext-d3-pack.component';
 import '@sencha/ext-components/lib/ext-d3-sunburst.component';
+import '@sencha/ext-components/lib/ext-d3-tree.component';
+
 
 
 import './Data.js';
