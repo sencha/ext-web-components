@@ -738,6 +738,6 @@ export class ExtPanelComponent extends ExtBase {
 }
 (function () {
   Ext.onReady(function() {
-    window.customElements.define('ext-panel', ExtPanelComponent);
+   window.customElements.define('ext-panel', ExtPanelComponent);
   });
 })();

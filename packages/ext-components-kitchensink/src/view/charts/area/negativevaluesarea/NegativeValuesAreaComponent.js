@@ -4,7 +4,6 @@ import './NegativeValuesAreaComponent.html';
 export default class NegativeValuesAreaComponent {
 
   constructor () {
-    console.log('in NegativeValuesAreaComponent constructor');
     this.store = Ext.create('Ext.data.Store', {
       fields: ['quarter', 'consumer', 'gaming', 'phone', 'corporate'],
       data: [
@@ -22,10 +21,27 @@ export default class NegativeValuesAreaComponent {
         { quarter: 'Q4 2014', consumer: 9, gaming: 11, phone: 11, corporate: -4 }
       ]
     });
+    this.theme = 'default';
+    this.menuCmpArray = [];
   }
 
-  toolbarready(event) {
+  onMenuItemReady(event) {
+    this.menuCmpArray.push(event.detail.cmp);
+    event.detail.cmp.on('click', this.onThemeChange.bind(this));
   }
+
+  onThemeChange(event) {
+    this.theme = event.config.text.toLowerCase();
+    this.menuCmpArray.forEach((cmp, index) => {
+      if (index == parseInt(event.config.itemId)) {
+        cmp.setIconCls('x-font-icon md-icon-done');
+        return;
+      }
+      cmp.setIconCls('');
+    });
+    this.cartesianCmp.setTheme(event.config.text.toLowerCase());
+  }
+
 
   containerready(event) {
     this.containerCmp = event.detail.cmp;
@@ -34,6 +50,7 @@ export default class NegativeValuesAreaComponent {
   cartesianready(event) {
     this.cartesianCmp = event.detail.cmp;
     this.cartesianCmp.setStore(this.store);
+    this.cartesianCmp.setTheme(this.theme);
     this.cartesianCmp.setAxes([{
         type: 'numeric',
         adjustByMajorUnit: true,
@@ -65,7 +82,7 @@ export default class NegativeValuesAreaComponent {
   }
 
   tooltipRenderer(tooltip, record, item) {
-    var name = '';
+    let name = '';
     switch (item.field) {
       case 'consumer':
         name = 'Consumer Licensing';

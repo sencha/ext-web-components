@@ -5,7 +5,6 @@ Ext.require('Ext.panel.Date');
 export default class BasicDatePanelComponent {
 
   constructor () {
-    console.log('in BasicDatePanelComponent constructor');
   }
 
   readycontainer1(event) {

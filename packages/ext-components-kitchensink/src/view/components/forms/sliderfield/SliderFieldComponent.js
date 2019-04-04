@@ -1,4 +1,3 @@
-import './SliderFieldComponent.css';
 import './SliderFieldComponent.html';
 
 export default class SliderFieldComponent {

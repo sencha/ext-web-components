@@ -71,11 +71,10 @@ import '@sencha/ext-components/lib/ext-calendar-day.component';
 import '@sencha/ext-components/lib/ext-calendar-days.component';
 import '@sencha/ext-components/lib/ext-calendar-weeks.component';
 import '@sencha/ext-components/lib/ext-cartesian.component';
-
 import '@sencha/ext-components/lib/ext-tooltip.component';
-
 import '@sencha/ext-components/lib/ext-segmentedbutton.component';
 import '@sencha/ext-components/lib/ext-indicator.component';
+import '@sencha/ext-components/lib/ext-d3-horizontal-tree.component';
 
 import getMenu from './menu';
 import MainComponent from './view/main/MainComponent.js';
@@ -85,6 +84,7 @@ import MainComponent from './view/main/MainComponent.js';
   init();
 
   function init() {
+    window.d3 = d3;
     window.menu = getMenu();
     window.routes = getRoutes(window.menu);
     window.main = new MainComponent()

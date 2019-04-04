@@ -1,5 +1,8 @@
-<ext-button 
-  text="orgchart"
-  onready="orgchart.readyButton1(event)"
-  ontap="orgchart.tapButton1(event)">
-</ext-button>
+<ext-panel  shadow="true" layout="fit" title="Organization Chart" fitToParent="true" height="100%">
+  <ext-d3-horizontal-tree
+    onready="orgchart.horizontaltreeReady(event)" 
+    nodeSize="[200, 100]"
+    imagePath="resources/images/org-chart/"
+    height="100%"
+  ></ext-d3-horizontal-tree>
+</ext-panel>

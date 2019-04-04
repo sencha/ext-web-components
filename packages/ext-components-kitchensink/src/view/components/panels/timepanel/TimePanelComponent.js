@@ -5,7 +5,6 @@ Ext.require('Ext.panel.Time');
 export default class TimePanelComponent {
 
   constructor () {
-    console.log('in TimePanelComponent constructor');
   }
 
   containerready(event) {

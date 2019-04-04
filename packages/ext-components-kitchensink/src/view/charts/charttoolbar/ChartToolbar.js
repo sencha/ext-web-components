@@ -7,151 +7,129 @@ Ext.require([
     'Ext.chart.theme.Yellow'
 ]);
 
-// const toolbarItemDefaults = {
-//     margin: '0 10px 0 0'
-// }
-
-const downloadChart = (chart) => {
-    debugger;
-    if (Ext.is.Desktop) {
-        chart.download({ filename: 'Chart' });
-    } else {
-        chart.preview();
-    }
-}
-
 export default class ChartToolbar extends HTMLElement {
     constructor() {
         super()
-
-        // this.toolbarready = this.toolbarready.bind(this);
-//        debugger;
+        this.theme = "default";
     }
-
-    toolbarready(event) {
-        this.toolbarCmp = event.detail.cmp;
-        this.toolbarCmp.setMargin(Ext.os.is.Phone ? '0 10' : '10 0 0 10');
-}
-
-    buttonready1(event) {
-        this.buttonCmp1 = event.detail.cmp;
-    }
-
-    buttonready2(event) {
-        this.buttonCmp2 = event.detail.cmp;
-        this.buttonCmp2.setHidden(!(show || theme));
-    }
-
-    buttonready3(event) {
-        this.buttonCmp3 = event.detail.cmp;
-    }
-
-    buttonready4(event) {
-        this.buttonCmp4 = event.detail.cmp;
-    }
-
-    segmentedbuttonready1(event) {
-        this.segmentedbuttonCmp1 = event.detail.cmp;
-    }
-
-    segmentedbuttonready2(event) {
-        this.segmentedbuttonCmp2 = event.detail.cmp;
-    }
-
-    menuitemready1(event) {
-        this.menuitemCmp1 = event.detail.cmp;
-    }
-
-    menuitemready2(event) {
-        this.menuitemCmp2 = event.detail.cmp;
-    }
-
-    menuitemready3(event) {
-        this.menuitemCmp3 = event.detail.cmp;
-    }
-
-    menuitemready4(event) {
-        this.menuitemCmp4 = event.detail.cmp;
-    }
-
-    menuitemready5(event) {
-        this.menuitemCmp5 = event.detail.cmp;
-    }
-
-    menuitemready6(event) {
-        this.menuitemCmp6 = event.detail.cmp;
-    }
-
-    menuitemready7(event) {
-        this.menuitemCmp7 = event.detail.cmp;
-    }
-
+ 
     connectedCallback() {
-   
+        const theme = this.getAttribute('theme');
+        const show = this.getAttribute('show');
+        const preview = this.getAttribute('preview');
+        const onlyMidnight = this.getAttribute('onlyMidnight') || false;
+        const refresh = this.getAttribute('onRefreshButtonReady') || false;
+        const onStackGroup = this.getAttribute('onStackGroup');
+        const onToggleCrosshair = this.getAttribute('onToggleCrosshair');
+        const onToggleZoomOnPan = this.getAttribute('onToggleZoomOnPan');
+        const supportsTouch = this.getAttribute('supportsTouch');
+        const onMenuItemReady = this.getAttribute('onItemReady')
+
      this.innerHTML = `
             <ext-container>
                 <ext-button
-                    hidden=${!(this.attributes.theme || this.attributes.show)}
+                    hidden=${!(theme || show)}
                     margin="0 10px 0 0"
                     iconCls="x-fa fa-picture-o"
                     text="Theme"
                     ui="action">
                     <ext-menu>
                         <ext-menuitem
-                            onready="charts.menuitemready1(event)"
+                            onready=${onMenuItemReady}
                             text="Default"
-                            handler="onThemeChangeDefault">
+                            iconCls="x-font-icon md-icon-done"
+                            itemId="0">
                         </ext-menuitem>
                         <ext-menuitem
-                            onready="charts.menuitemready2(event)"
+                            onready=${onMenuItemReady}
                             text="Green"
-                            handler="onThemeChangeGreen">
+                            hidden=${onlyMidnight}
+                            itemId="1">
                         </ext-menuitem>
                         <ext-menuitem
-                            onready="charts.menuitemready3(event)"
+                            onready=${onMenuItemReady}
                             text="Midnight"
-                            handler="onThemeChangeMidnight">
+                            itemId="2">
                         </ext-menuitem>
                         <ext-menuitem
-                            onready="charts.menuitemready4(event)"
+                            onready=${onMenuItemReady}
+                            hidden=${onlyMidnight}
                             text="Muted"
-                            handler="onThemeChangeMuted">
+                            itemId="3">
                         </ext-menuitem>
                         <ext-menuitem
-                            onready="charts.menuitemready5(event)"
+                            hidden=${onlyMidnight}
+                            onready=${onMenuItemReady}
                             text="Red"
-                            handler="onThemeChangeRed">
+                            itemId="4">
                         </ext-menuitem>
                         <ext-menuitem
-                            onready="charts.menuitemready6(event)"
+                            hidden=${onlyMidnight}
+                            onready=${onMenuItemReady}
                             text="Sky"
-                            handler="onThemeChangeSky">
+                            itemId="5">
                         </ext-menuitem>
                         <ext-menuitem
-                            onready="charts.menuitemready7(event)"
                             text="Yellow"
-                            handler="onThemeChangeYellow">
+                            hidden=${onlyMidnight}
+                            onready=${onMenuItemReady}
+                            itemId="6">
                         </ext-menuitem>
                     </ext-menu>
                 </ext-button>
                 <ext-button
-                    hidden=${!this.attributes.preview}
+                    hidden=${!preview}
                     margin="0 10px 0 0"
                     ui="action"
                     iconCls="x-fa fa-eye"
                     text="Preview"
-                    handler="downloadChart"
                     platformConfig='{
-                        "desktop": {"text": "DOWNLOAD","iconCls": "x-fa fa-download"}}'>
+                        "desktop": {
+                            "text": "DOWNLOAD",
+                            "iconCls": "x-fa fa-download"
+                        }}'>
                 </ext-button>
                 <ext-button
-                    hidden=${!this.attributes.refresh}
+                    onready=${refresh}
+                    hidden=${!refresh}
                     ui="action"
                     margin="0 10px 0 0"
                     iconCls="x-fa fa-refresh"
-                    handler="onRefreshClick"
                     text="REFRESH">
                 </ext-button>
+
+                <ext-segmentedbutton
+                    hidden=${!(show || onStackGroup)}
+                    margin="0 10px 0 0">
+                    <ext-button
+                        iconCls="x-fa fa-bars"
+                        text="STACK" >
+                    </ext-button>
+                    <ext-button
+                        iconCls="x-fa fa-bar-chart"
+                        text="GROUP">
+                    </ext-button>
+                </ext-segmentedbutton>
+
+                <ext-segmentedbutton
+                    hidden=${!(show || onToggleZoomOnPan) || supportsTouch}
+                    >
+                    <ext-button
+                    iconCls="x-fa fa-arrows"
+                    text="PAN"
+                    value="false">
+                    </ext-button>
+                    <ext-button
+                    iconCls="x-fa fa-search-plus"
+                    text="ZOOM"
+                    value="true">
+                    </ext-button>
+                    <ext-button
+                    hidden=${!onToggleCrosshair}
+                    iconCls="x-fa fa-crosshairs"
+                    text="CROSSHAIR" value="crosshair">
+                    </ext-button>
+                </ext-segmentedbutton>
             </ext-container>
         `;
     }

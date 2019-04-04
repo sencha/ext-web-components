@@ -1,4 +1,3 @@
-import './MultiSelectComboBoxFieldComponent.css';
 import './MultiSelectComboBoxFieldComponent.html';
 import data from './MultiSelectComboBoxFieldComponentData.js';
 

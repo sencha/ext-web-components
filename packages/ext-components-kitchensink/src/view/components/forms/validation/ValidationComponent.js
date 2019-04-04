@@ -1,4 +1,3 @@
-import './ValidationComponent.css';
 import './ValidationComponent.html';
 Ext.require("Ext.data.validator.*");
 

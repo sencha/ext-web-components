@@ -1,5 +1,10 @@
-<ext-button 
-  text="undoablestepswiper"
-  onready="undoablestepswiper.readyButton1(event)"
-  ontap="undoablestepswiper.tapButton1(event)">
-</ext-button>
+<ext-container layout="center" flex="1" height="100%">
+  <ext-list
+    shadow="true"
+    width="300" 
+    height="400"
+    onselect="undoablestepswiper.onSelect(event)"
+    onready="undoablestepswiper.listReady(event)"
+  >
+  </ext-list>
+</ext-container>

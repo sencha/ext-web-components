@@ -9,9 +9,10 @@ export function getRoutes(items) {
 function _getRoutes(items) {
   items.forEach(function(item){
     item.leaf = !item.hasOwnProperty('children');
-    item.hash = item.text.toLowerCase().replace(/\s/g, '');
+    item.hash = item.text.replace(/\s/g, '');
+    item.hashlower = item.hash.toLowerCase();
     if (item.children == undefined) {
-      window._routes.push(new Route(item.hash, item.component, item.default))
+      window._routes.push(new Route(item.hash, item.hashlower, item.component, item.default))
     }
     else {
       _getRoutes(item.children)
@@ -22,7 +23,7 @@ function _getRoutes(items) {
 
 export class Route {
 
-  constructor (hash, component, defaultRoute) {
+  constructor (hash, hashlower, component, defaultRoute) {
     try {
       if(!hash) {
         throw 'error: hash param is required';
@@ -31,6 +32,7 @@ export class Route {
       console.error(e);
     }
     this.hash = hash;
+    this.hashlower = hashlower;
     this.component = component;
     if (defaultRoute != undefined) {
       this.default = defaultRoute;
@@ -71,24 +73,29 @@ export class Router {
   hasChanged(scope, r) {
     if (window.location.hash.length > 0) {
       var currentHash = ''
+      var currentHashLower = ''
       var currentComponent = null
       for (var i = 0, length = r.length; i < length; i++) {
         var route = r[i];
         if(route.isActiveRoute(window.location.hash.substr(1))) {
           currentHash = route.hash
+          currentHashLower = route.hashlower
           currentComponent = route.component
         }
       }
-      window[currentHash] = new currentComponent()
-      scope.rootElem.innerHTML = window._code[currentHash][currentComponent.name + '.html']
+      window[currentHashLower] = new currentComponent()
+      var componentHtml = currentHash + 'Component.html'
+      scope.rootElem.innerHTML = window._code[currentHashLower][componentHtml]
     }
     else {
       var currentHash = ''
+      var currentHashLower = ''
       var currentComponent = null
       for (var i = 0, length = r.length; i < length; i++) {
         var route = r[i];
         if(route.default == true) {
           currentHash = route.hash
+          currentHashLower = route.hashlower
           currentComponent = route.component
         }
       }
@@ -96,8 +103,9 @@ export class Router {
         console.log('no default route specified')
       }
       else {
-        window[currentHash] = new currentComponent()
-        scope.rootElem.innerHTML = window._code[currentHash][currentComponent.name + '.html']  
+        window[currentHashLower] = new currentComponent()
+        var componentHtml = currentHash + 'Component.html'
+        scope.rootElem.innerHTML = window._code[currentHashLower][componentHtml]
       }
     }
   }
