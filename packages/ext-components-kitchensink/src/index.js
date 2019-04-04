@@ -76,7 +76,7 @@ import '@sencha/ext-components/lib/ext-widgetcell.component';
 import '@sencha/ext-components/lib/ext-datecolumn.component';
 import '@sencha/ext-components/lib/ext-textcolumn.component';
 import '@sencha/ext-components/lib/ext-checkcolumn.component';
-
+import '@sencha/ext-components/lib/ext-menucheckitem.component';
 
 import './Data.js';
 import getMenu from './menu';
