@@ -1,5 +1,15 @@
-<ext-button 
-  text="treemaptooltip"
-  onready="treemaptooltip.readyButton1(event)"
-  ontap="treemaptooltip.tapButton1(event)">
-</ext-button>
+<ext-panel  shadow layout="fit" fitToParent="true" height="100%">
+  <ext-d3-treemap 
+      onready= "treemaptooltip.d3Ready(event)"
+      rootVisible="false"
+      interactions='{
+          "type": "panzoom",
+          "pan": { "momentum": null },
+          "zoom": { "doubleTap": false }
+      }'
+       selectEventName="null"
+       expandEventName="null"
+       noParentValue="true"
+       scaleLabels="true"
+  ></ext-d3-treemap>
+</ext-panel>
