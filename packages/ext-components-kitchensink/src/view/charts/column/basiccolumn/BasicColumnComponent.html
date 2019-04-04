@@ -1,5 +1,25 @@
-<ext-button 
-  text="basiccolumn"
-  onready="basiccolumn.readyButton1(event)"
-  ontap="basiccolumn.tapButton1(event)">
-</ext-button>
+<ext-container
+  layout="fit"
+  padding="8"
+  fitToParent="true"
+  height="100%"
+  width="100%">
+  <ext-toolbar
+    docked="top"
+    ui="app-transparent-toolbar"
+    shadow="false"
+    padding="0 10 0 10">
+    <chart-toolbar
+      onItemReady="basiccolumn.onMenuItemReady(event)"
+      onThemeChange="basiccolumn.onThemeChange(event)"
+      theme="default"
+      onRefreshButtonReady="basiccolumn.onRefreshButtonReady(event)">
+    </chart-toolbar>
+  </ext-toolbar>
+  <ext-cartesian
+    onready="basiccolumn.cartesianready(event)"
+    downloadServerUrl="http://svg.sencha.io"
+    shadow="true"
+    insetPadding="20 10">
+</ext-cartesian>
+</ext-container>
