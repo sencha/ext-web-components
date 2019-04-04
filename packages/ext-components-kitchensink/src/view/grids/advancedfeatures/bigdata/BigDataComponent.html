@@ -78,15 +78,15 @@
     </ext-checkcolumn>
     <ext-column
       text="Ratings"
-      onReady="bigdata.ratingsColumnReady(event)"
       columns='[
         {
           "text": "Avg",
-          "xtype": "numbercolumn",
           "dataIndex": "averageRating",
           "summary": "average",
           "width": "75",
           "id": "ratingAverageColumn",
+          "summaryFormatter": "number(\"0.00\")",
+          "formatter": "number(\"0.00\")",
           "cell": {
             "cls": "big-data-ratings-cell"
           },
@@ -112,10 +112,10 @@
       }]'
     >
     </ext-column>
-    <ext-column
+    <ext-datecolumn
       dataIndex="dob"
       editable="true"
-      formatter="date('m-d-Y')"
+      format="d-m-Y"
       text="Date of Birth"
       width="115"
       exportStyle='[{
@@ -128,8 +128,7 @@
           "format": "Short Date"
       }]'
     >
-    </ext-column>
-
+    </ext-datecolumn>
     <ext-column
       text=""
       width="100"
@@ -167,27 +166,20 @@
     </ext-textcolumn>
     <ext-column
       text='Absences'
+      columns='[{
+        "text":"Illness",
+        "dataIndex":"sickDays",
+        "summary":"sum"
+      }, {
+        "text":"Holidays",
+        "dataIndex":"holidayDays",
+        "summary":"sum"
+      }, {
+        "text":"Holiday Allowance",
+        "dataIndex":"holidayAllowance",
+        "summary":"sum"
+      }]'
     >
-      <ext-textcolumn
-        text="Illness"
-        dataIndex="sickDays"
-        summary="sum"
-      >
-      </ext-textcolumn>
-      <ext-textcolumn
-        text="Holidays"
-        dataIndex="holidayDays"
-        summary="sum"
-      >
-      </ext-textcolumn>
-      <ext-textcolumn
-        text="Holiday Allowance"
-        dataIndex="holidayAllowance"
-        summary="sum"
-        summaryFormatter="number('0.00')"
-        formatter="number('0.00')"
-      >
-      </ext-textcolumn>
     </ext-column>
     <ext-column
       text="Rating This Year"
@@ -213,7 +205,7 @@
     <ext-textcolumn
       text="Salary"
       dataIndex="salary"
-      renderer="usMoney"
+      formatter="usMoney"
       width="150"
       editable="true"
       summary="sum"

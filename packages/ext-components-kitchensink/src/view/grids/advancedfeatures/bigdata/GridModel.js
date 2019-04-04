@@ -1,4 +1,4 @@
-export const model =  Ext.define('BigDataGridModel', {
+export default Ext.define('BigDataGridModel', {
     extend: 'Ext.data.Model',
     fields: [
         {
@@ -34,7 +34,6 @@ export const model =  Ext.define('BigDataGridModel', {
         }, {
             name: 'dob',
             type: 'date',
-            dateFormat: 'Ymd'
         }, {
             name: 'joinDate',
             type: 'date',

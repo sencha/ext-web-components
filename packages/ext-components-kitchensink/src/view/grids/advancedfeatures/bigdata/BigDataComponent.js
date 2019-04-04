@@ -17,9 +17,8 @@ export default class BigDataComponent {
 
   readyGrid(event) {
     this.gridCmp = event.detail.cmp;
-
     const store = Ext.create('Ext.data.Store', {
-      model:model,
+      model,
       autoLoad: true,
       pageSize: 0,
       groupField: 'department',
@@ -30,9 +29,13 @@ export default class BigDataComponent {
     });
 
     this.setItemConfig();
+
     this.gridCmp.setStore(store);
     this.exportMenu = Ext.getCmp("exportMenuOfBigData");
     this.exportMenu.getMenu().on('click', this.exportOptionChanged.bind(this));
+    this.ratingAvgColumn = Ext.getCmp("ratingAverageColumn");
+    this.ratingAvgColumn.setRenderer(this.renderRating.bind(this));
+    this.ratingAvgColumn.setSummaryRenderer(this.renderSummaryRating.bind(this));
   }
 
   exportOptionChanged(sender, item) {
@@ -60,12 +63,6 @@ export default class BigDataComponent {
     `;
 
     this.gridCmp.setItemConfig({ viewModel: {}, body: { tpl: rowBodyTpl }});
-  }
-
-  ratingsColumnReady(event) {
-    debugger;
-    this.exportMenu = Ext.getCmp("ratingAverageColumn");
-    this.exportMenu.setRenderer(this.renderRating.bind(this));
   }
 
   exportToXlsx() {
@@ -114,7 +111,7 @@ export default class BigDataComponent {
 
   doExport(config) {
     this.showExportSheet = false;
-    this.grid.saveDocumentAs(config);
+    this.gridCmp.saveDocumentAs(config);
   }
 
   onCancelExport() {
@@ -158,12 +155,7 @@ export default class BigDataComponent {
     view.unmask();
   }
 
-  averageColumnReady(event) {
-    const averageColumn = event.detail.cmp;
-    averageColumn.setRenderer(this.renderRating.bind(this));
-  }
-
-  renderRating(value, record) {
+  renderRating(value, record, column, cell) {
     const age = record.get('averageRating');
     let group = "over6";
     if (age < 4) {
@@ -173,7 +165,24 @@ export default class BigDataComponent {
     } else if (age < 6) {
         group = "under6";
     }
-    return `<div class=${group}>${value.toFixed(2)}</div>`;
+
+    cell.setCls(`${group} big-data-ratings-cell`);
+    return value;
+  }
+
+  renderSummaryRating(value, record, column, cell) {
+    const age = value;
+    let group = "over6";
+    if (age < 4) {
+        group = "under4";
+    } else if (age < 5) {
+        group = "under5";
+    } else if (age < 6) {
+        group = "under6";
+    }
+
+    record.cell.setCls(`${group} big-data-ratings-cell`);
+    return age;
   }
 
   emptyColumnReady(event) {
@@ -237,56 +246,4 @@ export default class BigDataComponent {
       }
     );
   }
-
-  salarySummaryRenderer = (value) => {
-    return Ext.util.Format.usMoney(value);
-  }
-
-  renderSparkline = (rating) => {
-      return
-    `<sparkline
-      height={16}
-      values={rating}
-      tipTpl='Price: {y:number("0.00")}'
-    ></sparkline>`
-  }
-
-  renderVerify = (value, record) => {
-    return `
-    <Container>
-      <Button
-        text={value ? 'Verified' : 'Verify'}
-        ui="action"
-        handler={this.onVerify.bind(this, record)}
-      />
-    </Container>`
-  }
-
-  renderVerifyAll = (value, record, dataIndex, cell) => {
-    return `
-    <Container>
-      <Button
-        ui="action"
-        text="All"
-        handler={this.onVerifyAll.bind(this, cell)}
-      />
-    </Container>`
-  }
-
-//<button  ui ="action" [handler] ="this.onVerify" [bind] = "widgetCellBind" text = "VERIFY"></button>
-//widgetCellBind = {tooltip : 'Verify {record.fullName}'};
-
-
-  ratingsCell =  {
-    xtype: 'widgetcell',
-    widget: {
-    xtype: 'rating',
-    tip: 'Set to {tracking:plural("Star")}'
-    }
-  };
-
 }
-
-function formatDate(date) {
-    return Ext.util.Format.date(date, "d/m/Y")
-  };
