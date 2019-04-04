@@ -8,7 +8,6 @@ export default class ValidationComponent {
     }
 
     validateCapitalization(value) {
-        debugger;
         const words = value.split(/\s+/);
 
         for (let word of words) {
@@ -20,3 +19,4 @@ export default class ValidationComponent {
         return true;
     }
 }
+
