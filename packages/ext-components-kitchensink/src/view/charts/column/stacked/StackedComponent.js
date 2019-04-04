@@ -33,25 +33,40 @@ export default class StackedComponent {
   }
 
   onStackButtonReady(event) {
+    this.stackButtonCmp = event.detail.cmp;
+    this.stackButtonCmp.on('tap', this.onStackedToggle.bind(this, { value: 0}));
+  }
 
+  onGroupButtonReady(event) {
+    this.groupButtonCmp = event.detail.cmp;
+    this.groupButtonCmp.on('tap', this.onStackedToggle.bind(this, { value: 1 }));
+  }
+
+  onZoomButtonReady(event) {
+    this.zoomButtonCmp = event.detail.cmp;
+    this.zoomButtonCmp.on('tap', this.toggleZoomOnPan.bind(this, true));
+  }
+
+  onPanButtonReady(event) {
+    this.panButtonCmp = event.detail.cmp;
+    this.panButtonCmp.on('tap', this.toggleZoomOnPan.bind(this, false));
   }
 
   toggleZoomOnPan(zoomOnPan) {
     //Added cmp to access component attributes in ext-react16 [revisit]
-    this.chart.getInteraction('panzoom').setZoomOnPan(zoomOnPan);
+    this.cartesianCmp.getInteraction('panzoom').setZoomOnPan(zoomOnPan);
     this.zoom = zoomOnPan;
   };
 
   onStackedToggle(event) {
-
     if (event.value == 0) {
       this.stacked = 1;
     } else {
       this.stacked = 0;
     }
 
-    this.chart.getSeries()[0].setStacked(this.stacked);
-    this.chart.redraw();
+    this.cartesianCmp.getSeries()[0].setStacked(this.stacked);
+    this.cartesianCmp.redraw();
   };
 
   onThemeChange(event) {
@@ -66,12 +81,7 @@ export default class StackedComponent {
     this.cartesianCmp.setTheme(event.config.text.toLowerCase());
   }
 
-  containerready(event) {
-    this.cmp = event.detail.cmp;
-  }
-
   cartesianready(event) {
-    this.chart = event.ext;
     this.cartesianCmp = event.detail.cmp;
     this.cartesianCmp.setStore(this.store);
     this.cartesianCmp.setTheme(this.theme);

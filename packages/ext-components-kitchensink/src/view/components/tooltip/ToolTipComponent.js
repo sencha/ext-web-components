@@ -1,4 +1,3 @@
-import './ToolTipComponent.css';
 import './ToolTipComponent.html';
 
 export default class ToolTipComponent {

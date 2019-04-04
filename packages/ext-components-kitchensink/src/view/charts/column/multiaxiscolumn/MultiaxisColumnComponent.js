@@ -24,12 +24,10 @@ export default class MultiaxisColumnComponent {
         }
       ]
     });
-    this.store.loadData(createData());
   }
 
   cartesianready(event) {
     this.cartesianCmp = event.detail.cmp;
-    this.cartesianCmp.setStore(this.store);
     this.cartesianCmp.setAxes([
       {
         type: 'numeric',
@@ -120,5 +118,8 @@ export default class MultiaxisColumnComponent {
         }
       ]
     }]);
+
+    this.store.loadData(createData());
+    this.cartesianCmp.setStore(this.store);
   }
 }
