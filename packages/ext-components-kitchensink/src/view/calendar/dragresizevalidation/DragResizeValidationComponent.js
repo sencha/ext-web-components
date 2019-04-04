@@ -1,4 +1,4 @@
-import './CalendarDragResizeValidationComponent.html';
+import './DragResizeValidationComponent.html';
 import './data.js';
 
 export default class CalendarDragResizeValidationComponent {

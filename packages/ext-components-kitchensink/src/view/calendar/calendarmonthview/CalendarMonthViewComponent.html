@@ -1,5 +1,4 @@
 <ext-container padding="10" layout="fit" fitToParent="true"  width="100%" height="100%" >
-
   <ext-panel
     docked="left"
     title="Calendars"
@@ -8,9 +7,8 @@
     height="100%"
     bodyPadding="5"
     hidden="false">
-    <ext-calendar-list onready="monthview.calendarListReady(event)"></ext-calendar-list>
+    <ext-calendar-list onready="calendarmonthview.calendarListReady(event)"></ext-calendar-list>
   </ext-panel>
-
   <ext-calendar-month
     flex= "1"
     visibleWeeks="null"
@@ -18,7 +16,6 @@
     height="100%"
     gestureNavigation="false"
     height="100%"
-    onready= "monthview.calendarMonthReady(event)">
+    onready= "calendarmonthview.calendarMonthReady(event)">
   </ext-calendar-month>
-
 </ext-container>
