@@ -91,7 +91,7 @@ export default class CardLayoutComponent {
       }
       buttonElement.text = buttonItem.text;
       buttonElement.ui = 'alt';
-      // buttonElement.width = '100%';
+      buttonElement.width = '100%';
       buttonElement.setAttribute('onTap', "cardlayout.switchCards(event)");
       buttonElement.setAttribute('animation', buttonItem.animation);
       buttonElement.animation = buttonItem.animation;
