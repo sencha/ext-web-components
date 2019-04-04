@@ -10,6 +10,7 @@ export default class ColumnWithRendererComponent {
       fields: ['id', 'g1', 'g2', 'g3', 'g4', 'g5', 'g6', 'name']
     });
     this.numRecords = 10; 
+    this.store.loadData(createData(this.numRecords));
   }
 
   onRefreshButtonReady(event) {

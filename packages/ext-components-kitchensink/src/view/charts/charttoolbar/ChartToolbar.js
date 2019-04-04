@@ -48,7 +48,6 @@ export default class ChartToolbar extends HTMLElement {
                         </ext-menuitem>
                         <ext-menuitem
                             onready=${onMenuItemReady}
-                            hidden=${onlyMidnight}
                             text="Midnight"
                             itemId="2">
                         </ext-menuitem>
@@ -103,10 +102,12 @@ export default class ChartToolbar extends HTMLElement {
                     hidden=${!(show || onStackGroup)}
                     margin="0 10px 0 0">
                     <ext-button
+                        onready=${onStackGroup}
                         iconCls="x-fa fa-bars"
                         text="STACK" >
                     </ext-button>
                     <ext-button
+                        onready=${onStackGroup}
                         iconCls="x-fa fa-bar-chart"
                         text="GROUP">
                     </ext-button>

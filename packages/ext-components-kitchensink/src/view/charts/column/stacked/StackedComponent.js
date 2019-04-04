@@ -17,7 +17,6 @@ export default class StackedComponent {
 
   }
 
-
   onMenuItemReady(event) {
     this.menuCmpArray.push(event.detail.cmp);
     event.detail.cmp.on('click', this.onThemeChange.bind(this));
@@ -29,8 +28,11 @@ export default class StackedComponent {
   }
 
   onRefreshClick(event) {
-    this.store.loadData(createData());
+    this.store.loadData(createData(this.numRecords));
     this.cartesianCmp.setStore(this.store);
+  }
+
+  onStackButtonReady(event) {
 
   }
 
@@ -41,6 +43,7 @@ export default class StackedComponent {
   };
 
   onStackedToggle(event) {
+
     if (event.value == 0) {
       this.stacked = 1;
     } else {
