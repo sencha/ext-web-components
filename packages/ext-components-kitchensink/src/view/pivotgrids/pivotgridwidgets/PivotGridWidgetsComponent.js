@@ -4,6 +4,7 @@ import SaleModel from '../SaleModel';
 
 export default class PivotGridWidgetsComponent {
   constructor () {
+
     this.store = Ext.create('Ext.data.Store', {
       model: SaleModel,
       data: generateData()
@@ -64,6 +65,7 @@ export default class PivotGridWidgetsComponent {
   onButtonReady2(event) {
     this.button2 = event.detail.cmp;
     this.button2.setHandler(this.updateData.bind(this));
+
   }
 
   onButtonReady3(event) {

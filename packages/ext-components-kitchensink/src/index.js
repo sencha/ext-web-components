@@ -88,7 +88,7 @@ import MainComponent from './view/main/MainComponent.js';
     window.menu = getMenu();
     window.routes = getRoutes(window.menu);
     window.main = new MainComponent()
-    document.body.innerHTML = window._code['main']['maincomponent.html']
+    document.body.innerHTML = window._code['main']['MainComponent.html']
   }
 
 }());

@@ -4,6 +4,7 @@ import SaleModel from '../SaleModel';
 
 export default class RangeEditorPluginComponent {
   constructor () {
+
     this.store = Ext.create('Ext.data.Store', {
       model: SaleModel,
       data: generateData()
@@ -41,6 +42,7 @@ export default class RangeEditorPluginComponent {
   onPivotGridReady(event) {
     this.pivotgrid = event.detail.cmp;
     this.pivotgrid.setMatrix(this.pivotgridMatrix);
+
   }
 
   onButtonReady1(event){

@@ -3,7 +3,6 @@ import './StackedComponent.css';
 export default class StackedComponent {
 
   constructor () {
-    console.log('in StackedComponent constructor');
   }
 
   readyButton1(event) {

@@ -9,6 +9,7 @@ Ext.require([
 
 export default class ExporterPluginComponent {
   constructor () {
+
     this.store = Ext.create('Ext.data.Store', {
       model: SaleModel,
       data: generateData()
@@ -151,6 +152,7 @@ export default class ExporterPluginComponent {
       {"type": "html", text: "HTML (all items)", "fileName": "ExportAll.html"},
       {"type": "html", text: "HTML (visible items)", "fileName": "ExportVisible.html","onlyExpandedNodes": true}
     ];
+
   }
 
   onPivotGridReady(event) {
