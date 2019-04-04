@@ -23,14 +23,12 @@ export default class BasicPanelComponent {
   readycontainer2(event) {
     this.containerCmp2 = event.detail.cmp;
     const type = Ext.os.is.Phone ? 'vbox' : 'hbox';
-    debugger;
     this.containerCmp2.setLayout({ type, pack: 'center', align: 'stretch' });
   }
 
   readycontainer3(event) {
     this.containerCmp3 = event.detail.cmp;
     const type = Ext.os.is.Phone ? 'vbox' : 'hbox';
-    debugger;
     this.containerCmp3.setLayout({ type, pack: 'center', align: 'stretch' });
   }
 
@@ -52,7 +50,6 @@ export default class BasicPanelComponent {
   }
 
   toolHandler(owner, tool) {
-    debugger;
       Ext.toast(`You clicked ${tool.config.type || 'a custom tool'}.`);
     }
 
