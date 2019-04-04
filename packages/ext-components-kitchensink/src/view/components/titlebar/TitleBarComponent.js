@@ -1,10 +1,8 @@
-import './TitleBarComponent.css';
 import './TitleBarComponent.html';
 
 export default class TitleBarComponent {
   constructor() {
     this.isPhone = Ext.os.is.Phone;
-    console.log(this.isPhone);
   }
 
   menuReady(event) {

@@ -14,7 +14,6 @@ export class ExtMenutriggerComponent extends ExtBase {
 	get defaultListenerScope(){return this.getAttribute('defaultListenerScope')};set defaultListenerScope(defaultListenerScope){this.setAttribute('defaultListenerScope',defaultListenerScope)}
 	get destroyMenu(){return this.getAttribute('destroyMenu')};set destroyMenu(destroyMenu){this.setAttribute('destroyMenu',destroyMenu)}
 	get disabled(){return this.getAttribute('disabled')};set disabled(disabled){this.setAttribute('disabled',disabled)}
-	get eventHandlers(){return this.getAttribute('eventHandlers')};set eventHandlers(eventHandlers){this.setAttribute('eventHandlers',eventHandlers)}
 	get field(){return this.getAttribute('field')};set field(field){this.setAttribute('field',field)}
 	get flex(){return this.getAttribute('flex')};set flex(flex){this.setAttribute('flex',flex)}
 	get floated(){return this.getAttribute('floated')};set floated(floated){this.setAttribute('floated',floated)}
@@ -98,7 +97,6 @@ export class ExtMenutriggerComponent extends ExtBase {
     "defaultListenerScope": "Boolean",
     "destroyMenu": "Boolean",
     "disabled": "Boolean",
-    "eventHandlers": "Object",
     "field": "Ext.field.Text",
     "flex": "Number/String/Object",
     "floated": "Boolean",

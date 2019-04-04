@@ -3,7 +3,6 @@ import './PivotGridWidgetsComponent.css';
 export default class PivotGridWidgetsComponent {
 
   constructor () {
-    console.log('in PivotGridWidgetsComponent constructor');
   }
 
   readyButton1(event) {

@@ -1,18 +1,19 @@
-import './ToolBarComponent.css';
+import './ToolBarComponent.html';
 
 export default class ToolBarComponent {
 
-  constructor () {
-    console.log('in ToolBarComponent constructor');
+  constructor() {
+    this.optionButton = '';
+    this.isPhone = Ext.os.is.Phone;
   }
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
+  containerReady(event) {
+    this.containerReady = event.detail.cmp;
+    this.containerReady.setHtml("Option 1 is Selected");
   }
 
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
+  buttonHandler(event) {
+    this.containerReady.setHtml("User clicked \"" + event.detail.button._text + "\"")
   }
 
 }

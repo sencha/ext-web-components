@@ -1,9 +1,6 @@
-import './ExporterPluginComponent.css';
-
 export default class ExporterPluginComponent {
 
   constructor () {
-    console.log('in ExporterPluginComponent constructor');
   }
 
   readyButton1(event) {

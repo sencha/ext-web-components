@@ -1,10 +1,9 @@
-import './RippleComponent.css';
 import './RippleComponent.html';
+//import './RippleComponent.scss';
 
 export default class RippleComponent {
 
   constructor() {
-    console.log('in RippleComponent constructor');
   }
   containerReady(event) {
     this.container = event.detail.cmp;

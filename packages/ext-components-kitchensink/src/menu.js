@@ -1,17 +1,15 @@
-import AboutComponent from './view/about/AboutComponent.js';
-import HomeComponent from './view/home/HomeComponent.js';
 import ButtonComponent from './view/components/buttons/button/ButtonComponent.js';
 import SegmentedButtonComponent from './view/components/buttons/segmentedbutton/SegmentedButtonComponent.js';
 import SplitButtonComponent from './view/components/buttons/splitbutton/SplitButtonComponent.js';
 import ColorPickerComponent from './view/components/colorpicker/ColorPickerComponent.js';
 import CarouselComponent from './view/components/carousel/CarouselComponent.js';
-import SimpleDragDropComponent from './view/components/drag&drop/simple/SimpleDragDropComponent.js';
-import ConstraintsDragDropComponent from './view/components/drag&drop/constraints/ConstraintsDragDropComponent.js';
-import ProxiesDragDropComponent from './view/components/drag&drop/proxies/ProxiesDragDropComponent.js';
-import HandlesDragDropComponent from './view/components/drag&drop/handles/HandlesDragDropComponent.js';
-import GroupsDragDropComponent from './view/components/drag&drop/groups/GroupsDragDropComponent.js';
-import DataDragDropComponent from './view/components/drag&drop/data/DataDragDropComponent.js';
-import FilesDragDropComponent from './view/components/drag&drop/files/FilesDragDropComponent.js';
+import SimpleDragDropComponent from './view/components/drag&drop/simpledragdrop/SimpleDragDropComponent.js';
+import ConstraintsDragDropComponent from './view/components/drag&drop/constraintsdragdrop/ConstraintsDragDropComponent.js';
+import ProxiesDragDropComponent from './view/components/drag&drop/proxiesdragdrop/ProxiesDragDropComponent.js';
+import HandlesDragDropComponent from './view/components/drag&drop/handlesdragdrop/HandlesDragDropComponent.js';
+import GroupsDragDropComponent from './view/components/drag&drop/groupsdragdrop/GroupsDragDropComponent.js';
+import DataDragDropComponent from './view/components/drag&drop/datadragdrop/DataDragDropComponent.js';
+import FilesDragDropComponent from './view/components/drag&drop/filesdragdrop/FilesDragDropComponent.js';
 import DrawComponent from './view/components/draw/DrawComponent.js';
 import CheckBoxFieldComponent from './view/components/forms/checkboxfield/CheckBoxFieldComponent.js';
 import ComboBoxFieldComponent from './view/components/forms/comboboxfield/ComboBoxFieldComponent.js';
@@ -37,43 +35,43 @@ import URLFieldComponent from './view/components/forms/urlfield/URLFieldComponen
 import ValidationComponent from './view/components/forms/validation/ValidationComponent.js';
 import DefaultGaugeComponent from './view/components/gauges/defaultgauge/DefaultGaugeComponent.js';
 import NeedleGaugeComponent from './view/components/gauges/needlegauge/NeedleGaugeComponent.js';
-import CardLayoutComponent from './view/components/layouts/card/CardLayoutComponent.js';
-import CenterLayoutComponent from './view/components/layouts/center/CenterLayoutComponent.js';
-import FitLayoutComponent from './view/components/layouts/fit/FitLayoutComponent.js';
-import FormLayoutComponent from './view/components/layouts/form/FormLayoutComponent.js';
-import hboxLayoutComponent from './view/components/layouts/hbox/hboxLayoutComponent.js';
-import ResizableLayoutComponent from './view/components/layouts/resizable/ResizableLayoutComponent.js';
-import vboxLayoutComponent from './view/components/layouts/vbox/vboxLayoutComponent.js';
+import CardLayoutComponent from './view/components/layouts/cardlayout/CardLayoutComponent.js';
+import CenterLayoutComponent from './view/components/layouts/centerlayout/CenterLayoutComponent.js';
+import FitLayoutComponent from './view/components/layouts/fitlayout/FitLayoutComponent.js';
+import FormLayoutComponent from './view/components/layouts/formlayout/FormLayoutComponent.js';
+import hboxLayoutComponent from './view/components/layouts/hboxlayout/hboxLayoutComponent.js';
+import ResizableLayoutComponent from './view/components/layouts/resizablelayout/ResizableLayoutComponent.js';
+import vboxLayoutComponent from './view/components/layouts/vboxlayout/vboxLayoutComponent.js';
 import BasicListComponent from './view/components/lists/basiclist/BasicListComponent.js';
-import DisclosureListComponent from './view/components/lists/disclosure/DisclosureListComponent.js';
-import GroupedListComponent from './view/components/lists/grouped/GroupedListComponent.js';
+import DisclosureListComponent from './view/components/lists/disclosurelist/DisclosureListComponent.js';
+import GroupedListComponent from './view/components/lists/groupedlist/GroupedListComponent.js';
 import NestedListComponent from './view/components/lists/nestedlist/NestedListComponent.js';
-import PullRefreshListComponent from './view/components/lists/pullrefresh/PullRefreshListComponent.js';
-import PagingListComponent from './view/components/lists/paging/PagingListComponent.js';
+import PullRefreshListComponent from './view/components/lists/pullrefreshlist/PullRefreshListComponent.js';
+import PagingListComponent from './view/components/lists/paginglist/PagingListComponent.js';
 import BasicAccordionSwiperComponent from './view/components/lists/basicaccordionswiper/BasicAccordionSwiperComponent.js';
 import BasicStepSwiperComponent from './view/components/lists/basicstepswiper/BasicStepSwiperComponent.js';
 import UndoableAccordionSwiperComponent from './view/components/lists/undoableaccordionswiper/UndoableAccordionSwiperComponent.js';
 import UndoableStepSwiperComponent from './view/components/lists/undoablestepswiper/UndoableStepSwiperComponent.js';
 import VideoComponent from './view/components/media/video/VideoComponent.js';
 import AudioComponent from './view/components/media/audio/AudioComponent.js';
-import BasicPanelComponent from './view/components/panels/basicpanels/BasicPanelComponent.js';
+import BasicPanelComponent from './view/components/panels/basicpanel/BasicPanelComponent.js';
 import ResizableHandleComponent from './view/components/panels/resizablehandle/ResizableHandleComponent.js';
 import CollapsiblePanelComponent from './view/components/panels/collapsiblepanel/CollapsiblePanelComponent.js';
 import BasicDatePanelComponent from './view/components/panels/basicdatepanel/BasicDatePanelComponent.js';
 import AdvancedDatePanelComponent from './view/components/panels/advanceddatepanel/AdvancedDatePanelComponent.js';
 import TimePanelComponent from './view/components/panels/timepanel/TimePanelComponent.js';
-import DialogPopupComponent from './view/components/popups/dialog/DialogPopupComponent.js';
-import MessagePopupComponent from './view/components/popups/message/MessagePopupComponent.js';
-import ToastPopupComponent from './view/components/popups/toast/ToastPopupComponent.js';
+import DialogPopupComponent from './view/components/popups/dialogpopup/DialogPopupComponent.js';
+import MessagePopupComponent from './view/components/popups/messagepopup/MessagePopupComponent.js';
+import ToastPopupComponent from './view/components/popups/toastpopup/ToastPopupComponent.js';
 import ProgressBarComponent from './view/components/progressbar/ProgressBarComponent.js';
 import RippleComponent from './view/components/ripple/RippleComponent.js';
 import SheetComponent from './view/components/sheet/SheetComponent.js';
-import BasicTabComponent from './view/components/tabs/basictabs/BasicTabComponent.js';
-import BottomTabComponent from './view/components/tabs/bottomtabs/BottomTabComponent.js';
-import IconTabComponent from './view/components/tabs/icontabs/IconTabComponent.js';
-import DesktopTabComponent from './view/components/tabs/desktoptabs/DesktopTabComponent.js';
-import ClosableTabComponent from './view/components/tabs/closable/ClosableTabComponent.js';
-import ScrollingTabComponent from './view/components/tabs/scrollingtabs/ScrollingTabComponent.js';
+import BasicTabComponent from './view/components/tabs/basictab/BasicTabComponent.js';
+import BottomTabComponent from './view/components/tabs/bottomtab/BottomTabComponent.js';
+import IconTabComponent from './view/components/tabs/icontab/IconTabComponent.js';
+import DesktopTabComponent from './view/components/tabs/desktoptab/DesktopTabComponent.js';
+import ClosableTabComponent from './view/components/tabs/closabletab/ClosableTabComponent.js';
+import ScrollingTabComponent from './view/components/tabs/scrollingtab/ScrollingTabComponent.js';
 import TabBarComponent from './view/components/tabs/tabbar/TabBarComponent.js';
 import TitleBarComponent from './view/components/titlebar/TitleBarComponent.js';
 import ToolBarComponent from './view/components/toolbar/ToolBarComponent.js';
@@ -103,9 +101,9 @@ import TreeGridComponent from './view/trees/treegrid/TreeGridComponent.js';
 import TreeDecorationsComponent from './view/trees/treedecorations/TreeDecorationsComponent.js';
 import HeterogeneousTreeComponent from './view/trees/heterogeneoustree/HeterogeneousTreeComponent.js';
 import CalendarPanelComponent from './view/calendar/calendarpanel/CalendarPanelComponent.js';
-import CalendarMonthViewComponent from './view/calendar/monthview/CalendarMonthViewComponent.js';
-import CalendarWeekViewComponent from './view/calendar/weekview/CalendarWeekViewComponent.js';
-import CalendarDaysViewComponent from './view/calendar/daysview/CalendarDaysViewComponent.js';
+import CalendarMonthViewComponent from './view/calendar/calendarmonthview/CalendarMonthViewComponent.js';
+import CalendarWeekViewComponent from './view/calendar/calendarweekview/CalendarWeekViewComponent.js';
+import CalendarDaysViewComponent from './view/calendar/calendardaysview/CalendarDaysViewComponent.js';
 import CalendarTimezoneSupportComponent from './view/calendar/timezonesupport/CalendarTimezoneSupportComponent.js';
 import CalendarDragResizeValidationComponent from './view/calendar/dragresizevalidation/CalendarDragResizeValidationComponent.js';
 import BasicAreaComponent from './view/charts/area/basicarea/BasicAreaComponent.js';
@@ -127,7 +125,7 @@ import NegativeValuesComponent from './view/charts/3dcolumn/negativevalues/Negat
 import ThreeDColumnWithRendererComponent from './view/charts/3dcolumn/3dcolumnwithrenderer/ThreeDColumnWithRendererComponent.js';
 import CandlestickComponent from './view/charts/financial/candlestick/CandlestickComponent.js';
 import OHLCComponent from './view/charts/financial/ohlc/OHLCComponent.js';
-import BasicGaugeChartComponent from './view/charts/gauges/basicgauge/BasicGaugeChartComponent.js';
+import BasicGaugeChartComponent from './view/charts/gauges/basicgaugechart/BasicGaugeChartComponent.js';
 import BasicLineComponent from './view/charts/line/basicline/BasicLineComponent.js';
 import BasicMarkersComponent from './view/charts/line/basicmarkers/BasicMarkersComponent.js';
 import SplineComponent from './view/charts/line/spline/SplineComponent.js';
@@ -156,7 +154,7 @@ import OrgChartComponent from './view/d3/hierarchy/orgchart/OrgChartComponent.js
 import PackComponent from './view/d3/hierarchy/pack/PackComponent.js';
 import SunburstComponent from './view/d3/hierarchy/sunburst/SunburstComponent.js';
 import ZoomableSunburstComponent from './view/d3/hierarchy/zoomablesunburst/ZoomableSunburstComponent.js';
-import TreeHierarchyComponent from './view/d3/hierarchy/tree/TreeHierarchyComponent.js';
+import TreeHierarchyComponent from './view/d3/hierarchy/treehierarchy/TreeHierarchyComponent.js';
 import TreeMapComponent from './view/d3/hierarchy/treemap/TreeMapComponent.js';
 import TreeMapToolTipComponent from './view/d3/hierarchy/treemaptooltip/TreeMapToolTipComponent.js';
 import ConfigurablePivotTreeMapComponent from './view/d3/hierarchy/configurablepivottreemap/ConfigurablePivotTreeMapComponent.js';
@@ -173,8 +171,6 @@ import ExporterPluginComponent from './view/pivotgrids/exporterplugin/ExporterPl
 
 export default function getMenu() {
   return [
-    { text: 'Home', component: HomeComponent, iconCls:'x-fa fa-home', default: true},
-    { text: 'About', component: AboutComponent, iconCls:'x-fa fa-question' },
     { text: 'Components', iconCls: 'icon-buttons', children: [
       { text: 'Buttons', iconCls: 'icon-buttons', children: [
         { text: 'Button', component: ButtonComponent, layout: 'center', iconCls: 'icon-buttons' },
@@ -184,13 +180,13 @@ export default function getMenu() {
       { text: 'ColorPicker', component: ColorPickerComponent, layout: 'center', iconCls: 'icon-color-picker' },
       { text: 'Carousel', component: CarouselComponent, iconCls: 'icon-carousel' },
       { text: 'Drag & Drop', iconCls: 'icon-drag-drop', children: [
-        { text: 'Simple', component: SimpleDragDropComponent, iconCls: 'icon-drag-simple' },
-        { text: 'Constraints', component: ConstraintsDragDropComponent, iconCls: 'icon-drag-constraint' },
-        { text: 'Proxies', component: ProxiesDragDropComponent, iconCls: 'icon-drag-proxy' },
-        { text: 'Handles', component: HandlesDragDropComponent, iconCls: 'icon-drag-handle' },
-        { text: 'Groups', component: GroupsDragDropComponent, iconCls: 'icon-drag-group' },
-        { text: 'Data', component: DataDragDropComponent, iconCls: 'icon-drag-data' },
-        { text: 'Files', component: FilesDragDropComponent, iconCls: 'icon-drag-drop-element' }
+        { text: 'Simple Drag Drop', component: SimpleDragDropComponent, iconCls: 'icon-drag-simple' },
+        { text: 'Constraints Drag Drop', component: ConstraintsDragDropComponent, iconCls: 'icon-drag-constraint' },
+        { text: 'Proxies Drag Drop', component: ProxiesDragDropComponent, iconCls: 'icon-drag-proxy' },
+        { text: 'Handles Drag Drop', component: HandlesDragDropComponent, iconCls: 'icon-drag-handle' },
+        { text: 'Groups Drag Drop', component: GroupsDragDropComponent, iconCls: 'icon-drag-group' },
+        { text: 'Data Drag Drop', component: DataDragDropComponent, iconCls: 'icon-drag-data' },
+        { text: 'Files Drag Drop', component: FilesDragDropComponent, iconCls: 'icon-drag-drop-element' }
       ]},
       { text: 'Draw', component: DrawComponent, layout: 'center', iconCls: 'icon-drawing' },
       { text: 'Forms', iconCls: 'icon-forms', children: [
@@ -222,21 +218,21 @@ export default function getMenu() {
         { text: 'Needle Gauge', component: NeedleGaugeComponent, layout: 'center', iconCls: 'icon-gauge-charts' }
       ]},
       { text: 'Layouts', iconCls: 'icon-layouts', children: [
-        { text: 'card', component: CardLayoutComponent, iconCls: 'icon-layout-card' },
-        { text: 'center', component: CenterLayoutComponent, iconCls: 'icon-layout-center' },
-        { text: 'fit', component: FitLayoutComponent, iconCls: 'icon-layout-fit' },
-        { text: 'form', component: FormLayoutComponent, layout: 'auto', iconCls: 'icon-layout-form' },
-        { text: 'hbox', component: hboxLayoutComponent, layout: 'auto', iconCls: 'icon-layout-horizontal-box' },
-        { text: 'resizable', component: ResizableLayoutComponent, iconCls: 'icon-layout-box' },
-        { text: 'vbox', component: vboxLayoutComponent, layout: 'auto', iconCls: 'icon-layout-vertical-box' }
+        { text: 'Card Layout', component: CardLayoutComponent, iconCls: 'icon-layout-card' },
+        { text: 'Center Layout', component: CenterLayoutComponent, iconCls: 'icon-layout-center' },
+        { text: 'Fit Layout', component: FitLayoutComponent, iconCls: 'icon-layout-fit' },
+        { text: 'Form Layout', component: FormLayoutComponent, layout: 'auto', iconCls: 'icon-layout-form' },
+        { text: 'hbox Layout', component: hboxLayoutComponent, layout: 'auto', iconCls: 'icon-layout-horizontal-box' },
+        { text: 'Resizable Layout', component: ResizableLayoutComponent, iconCls: 'icon-layout-box' },
+        { text: 'vbox Layout', component: vboxLayoutComponent, layout: 'auto', iconCls: 'icon-layout-vertical-box' }
       ]},
       { text: 'Lists', iconCls: 'icon-lists', children: [
         { text: 'Basic List', component: BasicListComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-basic-list' },
-        { text: 'Disclosure', component: DisclosureListComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-disclosure-list' },
-        { text: 'Grouped', component: GroupedListComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-grouped-list' },
-        { text: 'NestedList', component: NestedListComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-nested-list' },
-        { text: 'Pull Refresh', component: PullRefreshListComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-pullrefresh-list' },
-        { text: 'Paging', component: PagingListComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-listpaging-list' },
+        { text: 'Disclosure List', component: DisclosureListComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-disclosure-list' },
+        { text: 'Grouped List', component: GroupedListComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-grouped-list' },
+        { text: 'Nested List', component: NestedListComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-nested-list' },
+        { text: 'Pull Refresh List', component: PullRefreshListComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-pullrefresh-list' },
+        { text: 'Paging List', component: PagingListComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-listpaging-list' },
         { text: 'Basic Accordion Swiper', component: BasicAccordionSwiperComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-basic-accordion-swiper'},
         { text: 'Basic Step Swiper', component: BasicStepSwiperComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-basic-step-swiper'},
         { text: 'Undoable Accordion Swiper', component: UndoableAccordionSwiperComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-undoable-accordion-swiper'},
@@ -247,7 +243,7 @@ export default function getMenu() {
         { text: 'Audio', iconCls: 'icon-audio', component: AudioComponent }
       ] },
       { text: 'Panels', iconCls: 'icon-panels', children: [
-        { text: 'Basic Panels', component: BasicPanelComponent, layout: Ext.os.is.Phone ? 'auto': 'center', iconCls: 'icon-panels' },
+        { text: 'Basic Panel', component: BasicPanelComponent, layout: Ext.os.is.Phone ? 'auto': 'center', iconCls: 'icon-panels' },
         { text: 'Resizable Handle', component: ResizableHandleComponent, layout: 'fit', iconCls: 'icon-panel-handleresize', hidden: Ext.os.is.Phone },
         { text: 'Collapsible Panel', component: CollapsiblePanelComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-panel-collapsible' },
         { text: 'Basic Date Panel', component: BasicDatePanelComponent, layout: 'center', iconCls: 'icon-panel-date' },
@@ -255,21 +251,21 @@ export default function getMenu() {
         { text: 'Time Panel', component: TimePanelComponent, layout: 'center', iconCls: 'icon-panel-date-adv', hidden: Ext.os.is.Phone },
       ]},
       { text: 'Popups', iconCls: 'icon-windows', children: [
-        { text: 'Dialog', component: DialogPopupComponent, layout: 'center', iconCls: 'icon-basic-dialog' },
-        { text: 'Message', component: MessagePopupComponent, layout: 'center', iconCls: 'icon-overlays' },
-        { text: 'Toast', component: ToastPopupComponent, layout: 'center', iconCls: 'icon-toast-view' }
+        { text: 'Dialog Popup', component: DialogPopupComponent, layout: 'center', iconCls: 'icon-basic-dialog' },
+        { text: 'Message Popup', component: MessagePopupComponent, layout: 'center', iconCls: 'icon-overlays' },
+        { text: 'Toast Popup', component: ToastPopupComponent, layout: 'center', iconCls: 'icon-toast-view' }
       ]},
       { text: 'ProgressBar', component: ProgressBarComponent, layout: 'center', iconCls: 'icon-progress-decorated' },
       { text: 'Ripple', component: RippleComponent, layout: 'center', iconCls: 'icon-Ripple' },
       { text: 'Sheet', component: SheetComponent, layout: 'center', iconCls: 'icon-actionsheets' },
       { text: 'Tabs', iconCls: 'icon-tabs', children: [
-        { text: 'Basic Tabs', component: BasicTabComponent, iconCls: 'icon-basic-tabs' },
-        { text: 'Bottom Tabs', component: BottomTabComponent, iconCls: 'icon-bottom-tabs' },
-        { text: 'Icon Tabs', component: IconTabComponent, iconCls: 'icon-icon-tabs' },
-        { text: 'Desktop Tabs', component: DesktopTabComponent, iconCls: 'icon-Desktop-Tabs' },
-        { text: 'Closable', component: ClosableTabComponent, iconCls: 'icon-Closable-Tabs' },
-        { text: 'ScrollingTabs', component: ScrollingTabComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-Scrolling-Tabs' },
-        { text: 'TabBar', component: TabBarComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-Tab-Bar' }
+        { text: 'Basic Tab', component: BasicTabComponent, iconCls: 'icon-basic-tabs' },
+        { text: 'Bottom Tab', component: BottomTabComponent, iconCls: 'icon-bottom-tabs' },
+        { text: 'Icon Tab', component: IconTabComponent, iconCls: 'icon-icon-tabs' },
+        { text: 'Desktop Tab', component: DesktopTabComponent, iconCls: 'icon-Desktop-Tabs' },
+        { text: 'Closable Tab', component: ClosableTabComponent, iconCls: 'icon-Closable-Tabs' },
+        { text: 'Scrolling Tab', component: ScrollingTabComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-Scrolling-Tabs' },
+        { text: 'Tab Bar', component: TabBarComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-Tab-Bar' }
       ]},
       { text: 'TitleBar', component: TitleBarComponent, iconCls: 'icon-Title-Bar' },
       { text: 'Toolbar', component: ToolBarComponent, iconCls: 'icon-toolbar' },
@@ -353,8 +349,8 @@ export default function getMenu() {
         { text: 'OHLC', component: OHLCComponent, iconCls: 'icon-financial-ohlc' }
       ] },
       { text: 'Gauges', iconCls: 'icon-gauge-charts', children: [
-        { text: 'Basic Gauge', component: BasicGaugeChartComponent, iconCls: 'icon-gauge-basic' }  
-      ] }, 
+        { text: 'Basic Gauge', component: BasicGaugeChartComponent, iconCls: 'icon-gauge-basic' }
+      ] },
       { text: 'Line', iconCls: 'icon-line-charts', children: [
         { text: 'Basic Line', component: BasicLineComponent, iconCls: 'icon-line-basic' },
         { text: 'Basic Markers', component: BasicMarkersComponent, iconCls: 'icon-line-markers' },
@@ -370,7 +366,7 @@ export default function getMenu() {
         { text: 'Spie', component: SpieComponent, iconCls: 'icon-pie-custom' },
         { text: 'Donut', component: DonutComponent, iconCls: 'icon-pie-donut' },
         { text: 'Double Donut', component: DoubleDonutComponent, iconCls: 'icon-pie-double-donut' },
-        { text: '3D Pie', component: ThreeDPieComponent, iconCls: 'icon-pie-3d' } 
+        { text: '3D Pie', component: ThreeDPieComponent, iconCls: 'icon-pie-3d' }
       ] },
       { text: 'Radar', iconCls: 'icon-radar-charts', children: [
         { text: 'Basic Radar', component: BasicRadarComponent, iconCls: 'icon-radar-basic' },
@@ -397,9 +393,9 @@ export default function getMenu() {
         { text: 'Pack', component: PackComponent, iconCls: 'icon-d3-view-pack' },
         { text: 'Sunburst', component: SunburstComponent, iconCls: 'icon-d3-view-sunburst' },
         { text: 'Zoomable Sunburst', component: ZoomableSunburstComponent, iconCls: 'icon-d3-view-sunburst-zoom' },
-        { text: 'Tree', component: TreeHierarchyComponent, iconCls: 'icon-d3-view-tree' },
-        { text: 'TreeMap', component: TreeMapComponent, iconCls: 'icon-d3-view-treemap' },
-        { text: 'TreeMap Tooltip', component: TreeMapToolTipComponent, iconCls: 'icon-d3-view-treemap-tooltip' },
+        { text: 'Tree Hierarchy', component: TreeHierarchyComponent, iconCls: 'icon-d3-view-tree' },
+        { text: 'Tree Map', component: TreeMapComponent, iconCls: 'icon-d3-view-treemap' },
+        { text: 'Tree Map Tooltip', component: TreeMapToolTipComponent, iconCls: 'icon-d3-view-treemap-tooltip' },
         { text: 'Configurable Pivot TreeMap', component: ConfigurablePivotTreeMapComponent, iconCls: 'icon-d3-view-treemap-pivot-configurator' }
       ]}
     ]},

@@ -20,7 +20,6 @@ export class ExtRownumberercellComponent extends ExtBase {
 	get defaultToolWeights(){return this.getAttribute('defaultToolWeights')};set defaultToolWeights(defaultToolWeights){this.setAttribute('defaultToolWeights',defaultToolWeights)}
 	get disabled(){return this.getAttribute('disabled')};set disabled(disabled){this.setAttribute('disabled',disabled)}
 	get encodeHtml(){return this.getAttribute('encodeHtml')};set encodeHtml(encodeHtml){this.setAttribute('encodeHtml',encodeHtml)}
-	get eventHandlers(){return this.getAttribute('eventHandlers')};set eventHandlers(eventHandlers){this.setAttribute('eventHandlers',eventHandlers)}
 	get flex(){return this.getAttribute('flex')};set flex(flex){this.setAttribute('flex',flex)}
 	get floated(){return this.getAttribute('floated')};set floated(floated){this.setAttribute('floated',floated)}
 	get focusCls(){return this.getAttribute('focusCls')};set focusCls(focusCls){this.setAttribute('focusCls',focusCls)}
@@ -107,7 +106,6 @@ export class ExtRownumberercellComponent extends ExtBase {
     "defaultToolWeights": "Object",
     "disabled": "Boolean",
     "encodeHtml": "Boolean",
-    "eventHandlers": "Object",
     "flex": "Number/String/Object",
     "floated": "Boolean",
     "focusCls": "String",

@@ -1,18 +1,24 @@
-import './EditableTreeComponent.css';
+import './EditableTreeComponent.html';
+import data from "./data";
 
 export default class EditableTreeComponent {
 
-  constructor () {
-    console.log('in EditableTreeComponent constructor');
-  }
+  constructor () {}
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
-  }
+  onTreeReady(event) {
+    this.tree = event.detail.cmp;
+    const isPhone = Ext.os.is.Phone;
+    const top = !isPhone ? '10' : null
+    const left = !isPhone ? '10' : null
+    const width = !isPhone ? '600' : null
+    const height = !isPhone ? '600' : null
 
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
-  }
+    this.treeStore = data;
 
+    this.tree.setTop(top);
+    this.tree.setLeft(left);
+    this.tree.setWidth(width);
+    this.tree.setHeight(height);
+    this.tree.setStore(this.treeStore);
+  }
 }

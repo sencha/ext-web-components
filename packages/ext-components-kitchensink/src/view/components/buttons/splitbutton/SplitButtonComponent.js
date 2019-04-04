@@ -1,4 +1,3 @@
-import './SplitButtonComponent.css';
 import './SplitButtonComponent.html';
 
 export default class SplitButtonComponent {
@@ -27,7 +26,7 @@ export default class SplitButtonComponent {
     this.menuButtons.push(this.splitButton);
   }
 
-  toggleReady(event){
+  toggleReady(event) {
     this.toggleButton = event.detail.cmp;
   }
 
@@ -49,12 +48,11 @@ export default class SplitButtonComponent {
     }
   };
 
-  onTypeChange(event) {
-    console.log(event.config.text,'event')
-    this.type = event.config.text;
+  onTypeChange(sender, value) {
+    this.type = value._text;
     this.iconButtons.forEach(menuItem => {
       const menuItemText = menuItem._text;
-      
+
       if (menuItemText === this.type) {
         menuItem.setIconCls('x-font-icon md-icon-check');
       } else {
@@ -64,14 +62,14 @@ export default class SplitButtonComponent {
 
     this.iconCls = this.type.indexOf('Icon') !== -1 ? 'x-fa fa-heart' : null;
 
-    if(this.type.indexOf('Icon') !== -1){
+    if (this.type.indexOf('Icon') !== -1) {
       this.menuButtons.forEach(button => {
         button.setIconCls(this.iconCls);
         button.setText(null);
       })
     };
 
-    if(this.type.indexOf('Text Icon') !== -1){
+    if(this.type.indexOf('Text & Icon') !== -1){
       for (let index = 0; index < this.menuButtons.length; index++) {
         if (index % 3 === 0) {
           this.menuButtons[index].setText("Normal");
@@ -84,7 +82,7 @@ export default class SplitButtonComponent {
       }
     };
 
-    if(this.type === 'Text') {
+    if (this.type === 'Text') {
       for (let index = 0; index < this.menuButtons.length; index++) {
         if (index % 3 === 0) {
           this.menuButtons[index].setText("Normal");
@@ -98,12 +96,11 @@ export default class SplitButtonComponent {
     };
   }
 
-  styleMenuItemChange(event) {
-     this.style = event.config.text;
-    console.log(this.style,'style')
+  styleMenuItemChange(sender, value) {
+    this.style = value._text;
     this.styleButtons.forEach(menuItem => {
       const menuItemText = menuItem._text;
-      
+
       if (menuItemText === this.style) {
         menuItem.setIconCls('x-font-icon md-icon-check');
       } else {
@@ -111,27 +108,22 @@ export default class SplitButtonComponent {
       }
     });
 
-      this.menuButtons.forEach(buttons => {
-        buttons.setUi(this.style.toLowerCase());
-      });
-    
+    this.menuButtons.forEach(buttons => {
+      buttons.setUi(this.style.toLowerCase());
+    });
+
   }
 
   setDefaultsForStyle(event) {
-    console.log(event.detail.cmp,'event');
     this.styleMenu = event.detail.cmp;
-    this.styleMenu.setDefaults({
-      handler: this.styleMenuItemChange.bind(this),
-    });
+    this.styleMenu.on('click', this.styleMenuItemChange.bind(this));
   }
 
   setTypeForStyle(event) {
     this.typeMenu = event.detail.cmp;
-    this.typeMenu.setDefaults({
-      handler: this.onTypeChange.bind(this),
-    });
+    this.typeMenu.on('click', this.onTypeChange.bind(this));
   }
-  
+
   setIcon(event) {
     const menuItem = event.detail.cmp;
     const menuItemText = menuItem._text;
@@ -148,7 +140,6 @@ export default class SplitButtonComponent {
   setStyle(event) {
     const menuItem = event.detail.cmp;
     const menuItemText = menuItem._text;
-    console.log(this.style,'style')
     if (menuItemText === this.style) {
       menuItem.setIconCls('x-font-icon md-icon-check');
     } else {

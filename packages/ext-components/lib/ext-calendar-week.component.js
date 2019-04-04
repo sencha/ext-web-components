@@ -57,11 +57,8 @@ export class ExtCalendar_weekComponent extends ExtBase {
 	get droppable(){return this.getAttribute('droppable')};set droppable(droppable){this.setAttribute('droppable',droppable)}
 	get editForm(){return this.getAttribute('editForm')};set editForm(editForm){this.setAttribute('editForm',editForm)}
 	get endTime(){return this.getAttribute('endTime')};set endTime(endTime){this.setAttribute('endTime',endTime)}
-	get enterAnimation(){return this.getAttribute('enterAnimation')};set enterAnimation(enterAnimation){this.setAttribute('enterAnimation',enterAnimation)}
 	get eventDefaults(){return this.getAttribute('eventDefaults')};set eventDefaults(eventDefaults){this.setAttribute('eventDefaults',eventDefaults)}
-	get eventHandlers(){return this.getAttribute('eventHandlers')};set eventHandlers(eventHandlers){this.setAttribute('eventHandlers',eventHandlers)}
 	get eventRelayers(){return this.getAttribute('eventRelayers')};set eventRelayers(eventRelayers){this.setAttribute('eventRelayers',eventRelayers)}
-	get exitAnimation(){return this.getAttribute('exitAnimation')};set exitAnimation(exitAnimation){this.setAttribute('exitAnimation',exitAnimation)}
 	get firstDayOfWeek(){return this.getAttribute('firstDayOfWeek')};set firstDayOfWeek(firstDayOfWeek){this.setAttribute('firstDayOfWeek',firstDayOfWeek)}
 	get flex(){return this.getAttribute('flex')};set flex(flex){this.setAttribute('flex',flex)}
 	get floated(){return this.getAttribute('floated')};set floated(floated){this.setAttribute('floated',floated)}
@@ -258,7 +255,7 @@ export class ExtCalendar_weekComponent extends ExtBase {
 	get onvaluechange(){return this.getAttribute('onvaluechange')};set onvaluechange(onvaluechange){this.setAttribute('onvaluechange',onvaluechange)}
 	get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange(onwidthchange){this.setAttribute('onwidthchange',onwidthchange)}
 
-	static XTYPE() {return 'calendar_week'}
+	static XTYPE() {return 'calendar-week'}
   static PROPERTIESOBJECT() { return {
     "activeChildTabIndex": "Number",
     "activeItem": "Ext.Component/Object/String/Number",
@@ -316,11 +313,8 @@ export class ExtCalendar_weekComponent extends ExtBase {
     "droppable": "Boolean",
     "editForm": "Object",
     "endTime": "Number",
-    "enterAnimation": "String/Mixed",
     "eventDefaults": "Object",
-    "eventHandlers": "Object",
     "eventRelayers": "Object",
-    "exitAnimation": "String/Mixed",
     "firstDayOfWeek": "Number",
     "flex": "Number/String/Object",
     "floated": "Boolean",
@@ -835,6 +829,6 @@ export class ExtCalendar_weekComponent extends ExtBase {
 }
 (function () {
   Ext.onReady(function() {
-    window.customElements.define('ext-calendar_week', ExtCalendar_weekComponent);
+    window.customElements.define('ext-calendar-week', ExtCalendar_weekComponent);
   });
 })();

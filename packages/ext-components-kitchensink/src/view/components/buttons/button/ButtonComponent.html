@@ -3,12 +3,12 @@
     margin="0 0 10 0"
     defaults='{ "margin": "0 10 0 0"}'>
     <ext-button ui="action raised" text="Style" >
-      <ext-menu onready="button.setDefaultsForStyle(event)">
-        <ext-menuitem text="None" name="none" value="" onready="button.setStyle(event)" ></ext-menuitem>
-        <ext-menuitem text="Action" name="action" value="action"  iconCls="" onready="button.setStyle(event)"></ext-menuitem>
-        <ext-menuitem text="Decline" name="decline" value="decline" iconCls="" onready="button.setStyle(event)"></ext-menuitem>
-        <ext-menuitem text="Confirm" name="confirm" value="confirm" iconCls="" onready="button.setStyle(event)"></ext-menuitem>
-        <ext-menuitem text="Menu" name="menu"  value="menu" iconCls="" onready="button.setStyle(event)"></ext-menuitem>
+      <ext-menu onready="button.setDefaultsForStyle(event)" activeItem="1">
+        <ext-menuitem text="None" value="" onready="button.setStyle(event)" ></ext-menuitem>
+        <ext-menuitem text="Action" value="action"  iconCls="" onready="button.setStyle(event)"></ext-menuitem>
+        <ext-menuitem text="Decline" value="decline" iconCls="" onready="button.setStyle(event)"></ext-menuitem>
+        <ext-menuitem text="Confirm" value="confirm" iconCls="" onready="button.setStyle(event)"></ext-menuitem>
+        <ext-menuitem text="Menu" value="menu" iconCls="" onready="button.setStyle(event)"></ext-menuitem>
       </ext-menu>
     </ext-button>
     <ext-button ui="action raised" text="Type">

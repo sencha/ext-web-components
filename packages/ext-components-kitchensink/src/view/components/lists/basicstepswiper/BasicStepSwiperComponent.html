@@ -1,5 +1,11 @@
-<ext-button 
-  text="basicstepswiper"
-  onready="basicstepswiper.readyButton1(event)"
-  ontap="basicstepswiper.tapButton1(event)">
-</ext-button>
+<ext-container layout="center" flex="1" height="100%">
+  <ext-list 
+    scrollable="true"
+    shadow="true"
+    onready="basicstepswiper.onItemReady(event)"
+    onselect="basicstepswiper.onSelect(event)"
+    height="450"
+    width="300"
+  >
+  </ext-list>
+</ext-container>
