@@ -1,5 +1,27 @@
-<ext-button 
-  text="rangeeditorplugin"
-  onready="rangeeditorplugin.readyButton1(event)"
-  ontap="rangeeditorplugin.tapButton1(event)">
-</ext-button>
+<ext-container layout="fit" padding="10" fitToParent="true" height="100%">
+  <ext-toolbar 
+    docked="top"
+    ui="app-transparent-toolbar"
+    padding="5 8"
+    shadow="false"
+    defaults='{
+      "margin": "0 10 0 0",
+      "shadow": "true",
+      "ui": "action"
+    }'>
+    <ext-button text="Expand All" onready="rangeeditorplugin.onButtonReady1(event)"></ext-button>
+    <ext-button text="Collapse All" onready="rangeeditorplugin.onButtonReady2(event)"></ext-button>
+    <ext-spacer></ext-spacer>
+    <ext-container layout="hbox">
+      <span>
+        <div style="font-size: '12px'; font-weight: 'normal'; margin-left: '10px';">Double click an amount to edit.</div>
+      </span>
+    </ext-container>
+  </ext-toolbar>
+
+  <ext-pivotgrid 
+    shadow="true"
+    onready="rangeeditorplugin.onPivotGridReady(event)"
+    plugins='[{ "type": "pivotrangeeditor" }]'>
+  </ext-pivotgrid>
+</ext-container>
