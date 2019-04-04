@@ -75,6 +75,12 @@ import '@sencha/ext-components/lib/ext-cartesian.component';
 import '@sencha/ext-components/lib/ext-segmentedbutton.component';
 import '@sencha/ext-components/lib/ext-indicator.component';
 import '@sencha/ext-components/lib/ext-lockedgrid.component';
+
+import '@sencha/ext-components/lib/ext-widgetcell.component';
+import '@sencha/ext-components/lib/ext-datecolumn.component';
+import '@sencha/ext-components/lib/ext-textcolumn.component';
+import '@sencha/ext-components/lib/ext-checkcolumn.component';
+
 import '@sencha/ext-components/lib/ext-d3-horizontal-tree.component';
 import '@sencha/ext-components/lib/ext-d3-pack.component';
 import '@sencha/ext-components/lib/ext-d3-sunburst.component';
