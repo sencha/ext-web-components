@@ -3,7 +3,6 @@ import './OutlineLayoutComponent.css';
 export default class OutlineLayoutComponent {
 
   constructor () {
-    console.log('in OutlineLayoutComponent constructor');
   }
 
   readyButton1(event) {

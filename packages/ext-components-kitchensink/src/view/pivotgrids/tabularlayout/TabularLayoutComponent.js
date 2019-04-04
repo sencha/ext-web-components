@@ -3,7 +3,6 @@ import './TabularLayoutComponent.css';
 export default class TabularLayoutComponent {
 
   constructor () {
-    console.log('in TabularLayoutComponent constructor');
   }
 
   readyButton1(event) {

@@ -1,5 +1,9 @@
-<ext-button 
-  text="undoableaccordionswiper"
-  onready="undoableaccordionswiper.readyButton1(event)"
-  ontap="undoableaccordionswiper.tapButton1(event)">
-</ext-button>
+<ext-container layout="center" flex="1" height="100%">
+  <ext-list 
+      shadow="true"
+      width="300" height="400"
+      onready="undoableaccordionswiper.listReady(event)"
+      onselect="undoableaccordionswiper.onSelect(event)"
+  >
+  </ext-list>
+</ext-container>

@@ -21,7 +21,7 @@ export default class ExtBase extends HTMLElement {
     }
     this.rawChildren = Array.from(this.children)
 
-    console.dir(`connectedCallback: ${this.nodeName} parent: ${this.nodeParentName} extParentDefined: ${this.extParentDefined} extChildrenDefined: ${this.extChildrenDefined} this.children.length: ${this.children.length}`)
+    //console.dir(`connectedCallback: ${this.nodeName} parent: ${this.nodeParentName} extParentDefined: ${this.extParentDefined} extChildrenDefined: ${this.extChildrenDefined} this.children.length: ${this.children.length}`)
     
     if (this.extChildrenDefined == false && this.children.length > 0) {
       this.childrenCounter = this.children.length
@@ -45,6 +45,7 @@ export default class ExtBase extends HTMLElement {
         if(this.getAttribute(property) !== null) {
           try {
             this.props[property] = JSON.parse(this[property])
+            //this.props[property] = this[property]
           }
           catch(e) {
             this.props[property] =  this[property]
@@ -88,9 +89,9 @@ export default class ExtBase extends HTMLElement {
         parentCmp = this.parentNode['ext'];
         childCmp = this.ext;
         var location = null
-        console.log('this.parentNode.rawChildren')
-        console.dir(this.parentNode)
-        console.dir(this.parentNode.rawChildren)
+        // console.log('this.parentNode.rawChildren')
+        // console.dir(this.parentNode)
+        // console.dir(this.parentNode.rawChildren)
         for (var i = 0; i < this.parentNode.rawChildren.length; i++) {
           var item = this.parentNode.rawChildren[i]
           if (item.props == this.props) {
@@ -137,9 +138,9 @@ export default class ExtBase extends HTMLElement {
         var location = item.ADDORDER
         this.addTheChild(parentCmp, childCmp, location)
     }
+    //console.log('children')
+    //console.dir(this.rawChildren)
     //for (var i = 0; i < this.children.length; i++) {
-      console.log('children')
-      console.dir(this.rawChildren)
     for (var i = this.rawChildren.length-1; i > -1; i--) {
       var item = this.rawChildren[i]
       if (item.nodeName.substring(0, 3) != "EXT") {
@@ -148,7 +149,6 @@ export default class ExtBase extends HTMLElement {
         //var cln = this.parentNode.removeChild(item);
         var par = item.parentNode
         var cln = par.removeChild(item);
-
         var el = Ext.get(cln);
         this.ext.insert(i,{xtype:'widget', element:el});
       }
@@ -275,7 +275,7 @@ export default class ExtBase extends HTMLElement {
     //console.log('attributeChangedCallback')
     //console.log(attr)
     if (/^on/.test(attr)) {
-      console.log(attr)
+      //console.log(attr)
       if (newVal) {
         //mjg check if this event exists for this component
         this.addEventListener(attr.slice(2), function() {eval(newVal)});

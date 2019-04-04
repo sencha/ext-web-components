@@ -1,18 +1,23 @@
-import './NestedListComponent.css';
+import './NestedListComponent.html';
 
 export default class NestedListComponent {
+  constructor () {}
 
-  constructor () {
-    console.log('in NestedListComponent constructor');
+  onItemReady(event) {
+    this.theListview = event.detail.cmp;
+    this.store = Ext.create('Ext.data.TreeStore', { 
+      autoLoad: true,
+      root: {},
+      proxy: {
+        type: 'rest',
+        url: 'resources/data/tree/cars.json'
+      },
+      sorters: ['last_name', 'first_name']
+    });
+    this.theListview.setStore(this.store);
   }
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
+  onLeafItemTap({record}) {
+    Ext.toast(`You selected ${record.get('text')}`)
   }
-
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
-  }
-
 }

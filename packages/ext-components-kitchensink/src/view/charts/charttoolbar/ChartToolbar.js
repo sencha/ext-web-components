@@ -48,7 +48,6 @@ export default class ChartToolbar extends HTMLElement {
                         </ext-menuitem>
                         <ext-menuitem
                             onready=${onMenuItemReady}
-                            hidden=${onlyMidnight}
                             text="Midnight"
                             itemId="2">
                         </ext-menuitem>

@@ -1,0 +1,18 @@
+
+<ext-container padding="40" layout="fit" fitToParent="true" height="100%">
+  <ext-tabpanel 
+    onready="closabletap.tabPanelReady(event)"
+    style='{ "backgroundColor": "white"}'
+    shadow="true" 
+   >
+  </ext-tabpanel>
+  <ext-button 
+    top="48" 
+    right="90"
+    iconCls="x-fa fa-plus" 
+    ontap="closable.addTab()"
+    ui="alt round"
+    tooltip="New Tab"
+  >
+  </ext-button>
+</ext-container>

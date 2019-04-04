@@ -3,7 +3,6 @@ import './RangeEditorPluginComponent.css';
 export default class RangeEditorPluginComponent {
 
   constructor () {
-    console.log('in RangeEditorPluginComponent constructor');
   }
 
   readyButton1(event) {
