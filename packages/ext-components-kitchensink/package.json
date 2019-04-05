@@ -8,7 +8,7 @@
     "dev": "webpack-dev-server --env.browser='yes' --env.verbose='no'",
     "build2": "npm run clean && cross-env webpack --env.environment='production' --env.treeshake='yes' && cross-env webpack --env.environment='production'  --env.treeshake='no'",
     "build": "npm run clean && cross-env webpack --env.environment=production --env.treeshake=yes && cross-env webpack --env.environment=production --env.basehref=build",
-    "buildexample": "npm run clean && cross-env webpack --env.environment=production --env.treeshake=yes --env.basehref=/ExtComponents/7.0.0/kitchensink/"
+    "buildexample": "npm run clean && cross-env webpack --env.environment=production --env.treeshake=yes && cross-env webpack --env.environment=production --env.basehref=/ExtComponents/7.0.0/kitchensink/"
   },
   "devDependencies": {
     "hammerjs": "^2.0.8",
