@@ -69,7 +69,6 @@ import '@sencha/ext-components/lib/ext-calendar-days.component';
 import '@sencha/ext-components/lib/ext-calendar-month.component';
 import '@sencha/ext-components/lib/ext-calendar-week.component';
 import '@sencha/ext-components/lib/ext-cartesian.component';
-import '@sencha/ext-components/lib/ext-segmentedbutton.component';
 import '@sencha/ext-components/lib/ext-indicator.component';
 import '@sencha/ext-components/lib/ext-lockedgrid.component';
 import '@sencha/ext-components/lib/ext-widgetcell.component';
@@ -77,6 +76,7 @@ import '@sencha/ext-components/lib/ext-datecolumn.component';
 import '@sencha/ext-components/lib/ext-textcolumn.component';
 import '@sencha/ext-components/lib/ext-checkcolumn.component';
 import '@sencha/ext-components/lib/ext-menucheckitem.component';
+import '@sencha/ext-components/lib/ext-numbercolumn.component';
 
 import './Data.js';
 import getMenu from './menu';
