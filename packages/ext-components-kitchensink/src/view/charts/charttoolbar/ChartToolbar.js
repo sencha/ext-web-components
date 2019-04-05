@@ -19,9 +19,11 @@ export default class ChartToolbar extends HTMLElement {
         const preview = this.getAttribute('preview');
         const onlyMidnight = this.getAttribute('onlyMidnight') || false;
         const refresh = this.getAttribute('onRefreshButtonReady') || false;
-        const onStackGroup = this.getAttribute('onStackGroup');
+        const onStack = this.getAttribute('onStackButtonReady') || false;
+        const onGroup = this.getAttribute('onGroupButtonReady') || false;
+        const onPan = this.getAttribute('onPanButtonReady') || false;
+        const onZoom = this.getAttribute('onZoomButtonReady') || false;
         const onToggleCrosshair = this.getAttribute('onToggleCrosshair');
-        const onToggleZoomOnPan = this.getAttribute('onToggleZoomOnPan');
         const supportsTouch = this.getAttribute('supportsTouch');
         const onMenuItemReady = this.getAttribute('onItemReady')
 
@@ -99,27 +101,31 @@ export default class ChartToolbar extends HTMLElement {
                 </ext-button>
 
                 <ext-segmentedbutton
-                    hidden=${!(show || onStackGroup)}
+                    hidden=${!(onGroup || onStack)}
                     margin="0 10px 0 0">
                     <ext-button
+                        onready=${onStack}
                         iconCls="x-fa fa-bars"
                         text="STACK" >
                     </ext-button>
                     <ext-button
+                        onready=${onGroup}
                         iconCls="x-fa fa-bar-chart"
                         text="GROUP">
                     </ext-button>
                 </ext-segmentedbutton>
 
                 <ext-segmentedbutton
-                    hidden=${!(show || onToggleZoomOnPan) || supportsTouch}
+                    hidden=${!(onPan || onZoom) || supportsTouch}
                     >
                     <ext-button
+                    onready=${onPan}
                     iconCls="x-fa fa-arrows"
                     text="PAN"
                     value="false">
                     </ext-button>
                     <ext-button
+                    onready=${onZoom}
                     iconCls="x-fa fa-search-plus"
                     text="ZOOM"
                     value="true">

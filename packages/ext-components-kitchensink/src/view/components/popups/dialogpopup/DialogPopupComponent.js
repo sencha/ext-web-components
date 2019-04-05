@@ -19,7 +19,6 @@ export default class DialogPopupComponent {
   }
 
   onCancel(){
-    debugger;
     this.dialog.setDisplayed(this.isDialogShowing);
   }
 

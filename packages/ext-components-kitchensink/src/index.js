@@ -65,8 +65,6 @@ import '@sencha/ext-components/lib/ext-list.component';
 import '@sencha/ext-components/lib/ext-widget.component';
 import '@sencha/ext-components/lib/ext-nestedlist.component';
 import '@sencha/ext-components/lib/ext-pivotgrid.component';
-import '@sencha/ext-components/lib/ext-menu.component';
-import '@sencha/ext-components/lib/ext-menuitem.component';
 import '@sencha/ext-components/lib/ext-calendar.component';
 import '@sencha/ext-components/lib/ext-calendar-list.component';
 import '@sencha/ext-components/lib/ext-calendar-day.component';
@@ -80,15 +78,30 @@ import '@sencha/ext-components/lib/ext-lockedgrid.component';
 import '@sencha/ext-components/lib/ext-polar.component';
 import '@sencha/ext-components/lib/ext-chart.component';
 
+import '@sencha/ext-components/lib/ext-widgetcell.component';
+import '@sencha/ext-components/lib/ext-datecolumn.component';
+import '@sencha/ext-components/lib/ext-textcolumn.component';
+import '@sencha/ext-components/lib/ext-checkcolumn.component';
+
+import '@sencha/ext-components/lib/ext-d3-horizontal-tree.component';
+import '@sencha/ext-components/lib/ext-d3-pack.component';
+import '@sencha/ext-components/lib/ext-d3-sunburst.component';
+import '@sencha/ext-components/lib/ext-d3-tree.component';
+
+
+
 import './Data.js';
 import getMenu from './menu';
 import MainComponent from './view/main/MainComponent.js';
+import * as d3 from 'd3'
 
 (function () {
 
   init();
 
   function init() {
+
+    window.d3 = d3;
     window.menu = getMenu();
     window.routes = getRoutes(window.menu);
     window.main = new MainComponent()

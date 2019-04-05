@@ -176,7 +176,7 @@ export class ExtD3_sunburstComponent extends ExtBase {
 	get onupdatedata(){return this.getAttribute('onupdatedata')};set onupdatedata(onupdatedata){this.setAttribute('onupdatedata',onupdatedata)}
 	get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange(onwidthchange){this.setAttribute('onwidthchange',onwidthchange)}
 
-	static XTYPE() {return 'd3_sunburst'}
+	static XTYPE() {return 'd3-sunburst'}
   static PROPERTIESOBJECT() { return {
     "alwaysOnTop": "Boolean/Number",
     "ariaAttributes": "Object",
@@ -630,6 +630,6 @@ export class ExtD3_sunburstComponent extends ExtBase {
 }
 (function () {
   Ext.onReady(function() {
-    window.customElements.define('ext-d3_sunburst', ExtD3_sunburstComponent);
+    window.customElements.define('ext-d3-sunburst', ExtD3_sunburstComponent);
   });
 })();

@@ -104,8 +104,8 @@ import CalendarPanelComponent from './view/calendar/calendarpanel/CalendarPanelC
 import CalendarMonthViewComponent from './view/calendar/calendarmonthview/CalendarMonthViewComponent.js';
 import CalendarWeekViewComponent from './view/calendar/calendarweekview/CalendarWeekViewComponent.js';
 import CalendarDaysViewComponent from './view/calendar/calendardaysview/CalendarDaysViewComponent.js';
-import CalendarTimezoneSupportComponent from './view/calendar/timezonesupport/CalendarTimezoneSupportComponent.js';
-import CalendarDragResizeValidationComponent from './view/calendar/dragresizevalidation/CalendarDragResizeValidationComponent.js';
+import CalendarTimezoneSupportComponent from './view/calendar/timezonesupport/TimezoneSupportComponent.js';
+import CalendarDragResizeValidationComponent from './view/calendar/dragresizevalidation/DragResizeValidationComponent.js';
 import BasicAreaComponent from './view/charts/area/basicarea/BasicAreaComponent.js';
 import StackedAreaComponent from './view/charts/area/stackedarea/StackedAreaComponent.js';
 import FullStackedAreaComponent from './view/charts/area/fullstackedarea/FullStackedAreaComponent.js';
@@ -268,7 +268,7 @@ export default function getMenu() {
         { text: 'Tab Bar', component: TabBarComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-Tab-Bar' }
       ]},
       { text: 'TitleBar', component: TitleBarComponent, iconCls: 'icon-Title-Bar' },
-      { text: 'Toolbar', component: ToolBarComponent, iconCls: 'icon-toolbar' },
+      { text: 'ToolBar', component: ToolBarComponent, iconCls: 'icon-toolbar' },
       { text: 'ToolTip', component: ToolTipComponent, layout: 'center', iconCls: 'icon-tooltips'  },
       { text: 'Touch Events', component: TouchEventsComponent, iconCls: 'icon-touch-events' },
       //{ text: 'Transition', component: Transition, iconCls: 'icon-Transition' },
@@ -311,9 +311,9 @@ export default function getMenu() {
 
     { text: 'Calendar', premium: false, iconCls: 'icon-calendar', children:[
       { text: 'Calendar Panel', component: CalendarPanelComponent, iconCls: 'icon-calendar-panel' },
-      { text: 'Month View', component: CalendarMonthViewComponent, iconCls: 'icon-calendar-month-view' },
-      { text: 'Week View', component: CalendarWeekViewComponent, iconCls: 'icon-calendar-week-view' },
-      { text: 'Days View', component: CalendarDaysViewComponent, iconCls: 'icon-calendar-days-view' },
+      { text: 'Calendar Month View', component: CalendarMonthViewComponent, iconCls: 'icon-calendar-month-view' },
+      { text: 'Calendar Week View', component: CalendarWeekViewComponent, iconCls: 'icon-calendar-week-view' },
+      { text: 'Calendar Days View', component: CalendarDaysViewComponent, iconCls: 'icon-calendar-days-view' },
       { text: 'Timezone Support', component: CalendarTimezoneSupportComponent, iconCls: 'icon-calendar-timezone' },
       { text: 'Drag Resize Validation', component: CalendarDragResizeValidationComponent, iconCls: 'icon-calendar-validation' }
     ]},
