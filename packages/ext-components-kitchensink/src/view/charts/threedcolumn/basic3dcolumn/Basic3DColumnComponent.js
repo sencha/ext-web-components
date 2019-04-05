@@ -34,7 +34,7 @@ export default class Basic3DColumnComponent {
   }
 
   onRefreshClick(event) {
-    this.store.loadData(createData());
+    this.store.loadData(createData(15));
     this.cartesianCmp.setStore(this.store);
 
   }

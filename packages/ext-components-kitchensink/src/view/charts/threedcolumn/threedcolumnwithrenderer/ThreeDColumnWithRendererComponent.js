@@ -12,12 +12,10 @@ Ext.require([
 export default class ThreeDColumnWithRendererComponent {
 
   constructor () {
-    debugger;
-    console.log('in ThreeDColumnWithRendererComponent constructor');
     this.store = Ext.create('Ext.data.Store', {
-    fields: ['month', 'data1', 'data2', 'data3', 'data4', 'other'],
-    data: storeData
-  })
+      fields: ['month', 'data1', 'data2', 'data3', 'data4', 'other'],
+      data: storeData
+    });
   }
 
   onDownloadButtonReady(event) {
@@ -35,7 +33,27 @@ export default class ThreeDColumnWithRendererComponent {
 
   cartesianready(event) {
     this.cartesianCmp = event.detail.cmp;
-    this.cartesianCmp.setStore(this.store);
+    this.cartesianCmp.setAxes([
+      {
+        type: 'numeric3d',
+        fields: 'data3',
+        position: 'left',
+        grid: true,
+        renderer: (axis, label, layoutContext) => layoutContext.renderer(label) + '%'
+      },
+      {
+        type: 'category3d',
+        fields: 'month',
+        position: 'bottom',
+        grid: true,
+        label: {
+          rotate: {
+            degrees: '-60'
+          }
+        },
+      }
+    ]);
+
     this.cartesianCmp.setSeries([
     {
       type: 'bar3d',
@@ -67,28 +85,7 @@ export default class ThreeDColumnWithRendererComponent {
       }
     }
   ]);
-  this.cartesianCmp.setAxes([
-    {
-      type: 'numeric3d',
-      fields: 'data3',
-      position: 'left',
-      grid: true,
-      renderer: (axis, label, layoutContext) => layoutContext.renderer(label) + '%'
-    }, 
-    {
-      type: 'category3d',
-      fields: 'month',
-      position: 'bottom',
-      grid: true,
-      label: {
-        rotate: {
-          degrees: '-60'
-        }
-      }
-    }
-  ]);
-    this.cartesianCmp.setInnerPadding({ top: 0, left: 0, right: 3, bottom: 4 });
-    this.cartesianCmp.setInsetPadding({top: 10, left: 10, right: 0, bottom: 20});
+  this.cartesianCmp.setTheme('muted');
+  this.cartesianCmp.setStore(this.store);
   }
-
 }
