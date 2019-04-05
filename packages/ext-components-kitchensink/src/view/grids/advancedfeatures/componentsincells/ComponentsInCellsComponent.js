@@ -1,4 +1,5 @@
 import './ComponentsInCellsComponent.html';
+import './ComponentsInCellsComponent.scss';
 import model from '../../CompanyModel';
 
 export default class ComponentsInCellsComponent {
@@ -40,6 +41,26 @@ export default class ComponentsInCellsComponent {
         }]
       }
     });
+  }
+
+  changeColumnReady(event) {
+    this.changeColumn = event.detail.cmp;
+    this.changeColumn.setRenderer(this.renderSign.bind(this, '0.00'));
+  }
+  percentChangeColumnReady(event) {
+    this.pctChangeColumn = event.detail.cmp;
+    this.pctChangeColumn.setRenderer(this.renderSign.bind(this, '0.00%'));
+  }
+
+  renderSign(format, value, record, dataIndex, cell, column) {
+    if(value>0) {
+      cell.setCls('greenClass');
+    }
+    else if(value<0){
+      cell.setCls('redClass');
+    }
+
+    return Ext.util.Format.number(value, format)
   }
 
   buttonClick(button) {

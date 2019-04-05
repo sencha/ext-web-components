@@ -5,14 +5,32 @@
   onready="componentsincells.onGridReady(event)"
   height="100%"
 >
-  <ext-column text="Company" dataIndex="name" width="150">
+  <ext-column
+    text="Company"
+    dataIndex="name"
+    width="150"
+  >
   </ext-column>
-  <ext-column text="Price" width="85" dataIndex="price" formatter="usMoney">
+  <ext-column
+    text="Price"
+    width="85"
+    dataIndex="price"
+    formatter="usMoney"
+  >
   </ext-column>
-  <ext-numbercolumn text="Change" width="100" dataIndex="priceChange" format="0.00">
-  </ext-numbercolumn>
-  <ext-numbercolumn text="% Change" dataIndex="priceChangePct" format="0.00%">
-  </ext-numbercolumn>
+  <ext-column
+    text="Change"
+    width="100"
+    dataIndex="priceChange"
+    onready="componentsincells.changeColumnReady(event)"
+  >
+  </ext-column>
+  <ext-column
+    text="% Change"
+    dataIndex="priceChangePct"
+    onready="componentsincells.percentChangeColumnReady(event)"
+  >
+  </ext-column>
   <ext-column
     text="Actions"
     flex="1"
