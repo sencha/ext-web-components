@@ -46,7 +46,6 @@ export default class SelectAndCopyComponent {
   }
 
   onExtensibleChange(sender, value) {
-    debugger;
     this.gridSelectable.extensible = value._text;
     this.grid.setSelectable(this.gridSelectable);
 
