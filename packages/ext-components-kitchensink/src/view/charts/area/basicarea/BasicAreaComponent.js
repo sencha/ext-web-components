@@ -22,9 +22,36 @@ export default class BasicAreaComponent {
     });
 
     this.store.loadData(createData(25));
+    this.theme = 'default';
+    this.menuCmpArray = [];
   }
 
-  toolbarready(event) {
+  onMenuItemReady(event) {
+    this.menuCmpArray.push(event.detail.cmp);
+    event.detail.cmp.on('click', this.onThemeChange.bind(this));
+  }
+
+  onRefreshButtonReady(event) {
+    this.refreshButtonCmp = event.detail.cmp;
+    this.refreshButtonCmp.on('tap', this.onRefreshClick.bind(this));
+  }
+
+  onRefreshClick(event) {
+    this.store.loadData(createData(25));
+    this.cartesianCmp.setStore(this.store);
+
+  }
+
+  onThemeChange(event) {
+    this.theme = event.config.text.toLowerCase();
+    this.menuCmpArray.forEach((cmp, index) => {
+      if (index == parseInt(event.config.itemId)) {
+        cmp.setIconCls('x-font-icon md-icon-done');
+        return;
+      }
+      cmp.setIconCls('');
+    });
+    this.cartesianCmp.setTheme(event.config.text.toLowerCase());
   }
 
   containerready(event) {
@@ -34,6 +61,7 @@ export default class BasicAreaComponent {
   cartesianready(event) {
     this.cartesianCmp = event.detail.cmp;
     this.cartesianCmp.setStore(this.store);
+    this.cartesianCmp.setTheme(this.theme);
   }
 
 }

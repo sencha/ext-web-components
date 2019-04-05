@@ -1,4 +1,3 @@
-import './TouchEventsComponent.css';
 import './TouchEventsComponent.html';
 
 export default class TouchEventsComponent {

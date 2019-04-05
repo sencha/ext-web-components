@@ -1,4 +1,3 @@
-import './DefaultGaugeComponent.css';
 import './DefaultGaugeComponent.html';
 
 export default class DefaultGaugeComponent {

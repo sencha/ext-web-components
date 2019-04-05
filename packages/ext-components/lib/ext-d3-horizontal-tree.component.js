@@ -177,7 +177,7 @@ export class ExtD3_horizontal_treeComponent extends ExtBase {
 	get onupdatedata(){return this.getAttribute('onupdatedata')};set onupdatedata(onupdatedata){this.setAttribute('onupdatedata',onupdatedata)}
 	get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange(onwidthchange){this.setAttribute('onwidthchange',onwidthchange)}
 
-	static XTYPE() {return 'd3_horizontal_tree'}
+	static XTYPE() {return 'd3-horizontal-tree'}
   static PROPERTIESOBJECT() { return {
     "alwaysOnTop": "Boolean/Number",
     "ariaAttributes": "Object",
@@ -628,6 +628,6 @@ export class ExtD3_horizontal_treeComponent extends ExtBase {
 }
 (function () {
   Ext.onReady(function() {
-    window.customElements.define('ext-d3_horizontal_tree', ExtD3_horizontal_treeComponent);
+    window.customElements.define('ext-d3-horizontal-tree', ExtD3_horizontal_treeComponent);
   });
 })();

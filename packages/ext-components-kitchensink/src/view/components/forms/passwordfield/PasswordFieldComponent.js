@@ -1,4 +1,3 @@
-import './PasswordFieldComponent.css';
 import './PasswordFieldComponent.html';
 
 export default class PasswordFieldComponent {

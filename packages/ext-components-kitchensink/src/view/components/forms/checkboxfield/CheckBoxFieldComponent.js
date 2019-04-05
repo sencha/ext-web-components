@@ -1,4 +1,3 @@
-import './CheckBoxFieldComponent.css';
 import './CheckBoxFieldComponent.html';
 
 export default class CheckBoxFieldComponent {

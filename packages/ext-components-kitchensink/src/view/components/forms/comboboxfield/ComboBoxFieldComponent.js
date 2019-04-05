@@ -1,4 +1,3 @@
-import './ComboBoxFieldComponent.css';
 import './ComboBoxFieldComponent.html';
 import data from './ComboBoxFieldComponentData.js';
 

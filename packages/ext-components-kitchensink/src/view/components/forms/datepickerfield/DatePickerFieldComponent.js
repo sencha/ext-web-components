@@ -1,4 +1,3 @@
-import './DatePickerFieldComponent.css';
 import './DatePickerFieldComponent.html';
 
 export default class DatePickerFieldComponent {

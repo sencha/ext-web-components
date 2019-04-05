@@ -5,18 +5,22 @@
   onready="basicarea.containerready(event)"
   layout="fit">
   <ext-toolbar
-    onready="basicarea.toolbarready(event)"
     docked="top"
     ui="app-transparent-toolbar"
     shadow="false"
     padding="0 10 0 10"
   >
-    <chart-toolbar theme="default" refresh="true" ></chart-toolbar>
+    <chart-toolbar
+      onItemReady="basicarea.onMenuItemReady(event)"
+      onThemeChange="basicarea.onThemeChange(event)"
+      theme="default"
+      onRefreshButtonReady="basicarea.onRefreshButtonReady(event)" >
+    </chart-toolbar>
   </ext-toolbar>
   <ext-cartesian
     onready="basicarea.cartesianready(event)"
-    shadow="true"
     downloadServerUrl="http://svg.sencha.io"
+    shadow="true"
     insetPadding="25 35 0 10"
     axes='[{
             "type": "numeric" ,
