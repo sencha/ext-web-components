@@ -1,6 +1,6 @@
 import './ExporterPluginComponent.html';
 import { generateData } from '../generateSaleData';
-import SaleModel from '../SaleModel';
+import SaleModel from '../saleModel';
 
 Ext.require([
   'Ext.pivot.plugin.Exporter',

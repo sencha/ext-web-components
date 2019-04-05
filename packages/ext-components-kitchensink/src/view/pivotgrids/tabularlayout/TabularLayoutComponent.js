@@ -1,6 +1,6 @@
 import './TabularLayoutComponent.html';
 import { generateData } from '../generateSaleData';
-import SaleModel from '../SaleModel';
+import SaleModel from '../saleModel';
 
 export default class TabularLayoutComponent {
   constructor () {

@@ -1,6 +1,6 @@
 import './PivotGridWidgetsComponent.html';
 import { generateData, randomItem } from '../generateSaleData';
-import SaleModel from '../SaleModel';
+import SaleModel from '../saleModel';
 
 export default class PivotGridWidgetsComponent {
   constructor () {
