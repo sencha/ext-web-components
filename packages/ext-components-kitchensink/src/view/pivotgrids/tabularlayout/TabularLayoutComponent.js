@@ -1,12 +1,12 @@
 import './TabularLayoutComponent.html';
 import { generateData } from '../generateSaleData';
-import SaleModel from '../saleModel';
+import saleModel from '../saleModel';
 
 export default class TabularLayoutComponent {
   constructor () {
 
     this.store = Ext.create('Ext.data.Store', {
-      model: SaleModel,
+      model: saleModel,
       data: generateData()
     });
     this.pivotgridMatrix = {

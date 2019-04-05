@@ -1,6 +1,6 @@
 import './ExporterPluginComponent.html';
 import { generateData } from '../generateSaleData';
-import SaleModel from '../saleModel';
+import saleModel from '../saleModel';
 
 Ext.require([
   'Ext.pivot.plugin.Exporter',
@@ -11,7 +11,7 @@ export default class ExporterPluginComponent {
   constructor () {
 
     this.store = Ext.create('Ext.data.Store', {
-      model: SaleModel,
+      model: saleModel,
       data: generateData()
     });
     this.monthRenderer = function(value) {return Ext.Date.monthNames[value]};
