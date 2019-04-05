@@ -1,5 +1,18 @@
-<ext-button 
-  text="basicpie"
-  onready="basicpie.readyButton1(event)"
-  ontap="basicpie.tapButton1(event)">
-</ext-button>
+<ext-container padding="10" layout="fit" fitToParent="true" height="100%">
+  <ext-container padding="10" docked="top">
+    <chart-toolbar
+      onItemReady="basicpie.onMenuItemReady(event)"
+      onThemeChange="basicpie.changeTheme(event)"
+      onRefreshButtonReady="basicpie.onRefreshButtonReady(event)"
+      theme="default"
+    >
+    </chart-toolbar>
+  </ext-container>
+  <ext-polar downloadServerUrl ="http://svg.sencha.io"
+    onready="basicpie.onPolarReady(event)"
+    innerPadding="40"
+    theme="default"
+    shadow="true"
+  >
+  </ext-polar>
+</ext-container>
