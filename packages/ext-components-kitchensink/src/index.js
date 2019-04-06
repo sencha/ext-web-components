@@ -75,6 +75,8 @@ import '@sencha/ext-components/lib/ext-cartesian.component';
 import '@sencha/ext-components/lib/ext-segmentedbutton.component';
 import '@sencha/ext-components/lib/ext-indicator.component';
 import '@sencha/ext-components/lib/ext-lockedgrid.component';
+import '@sencha/ext-components/lib/ext-polar.component';
+import '@sencha/ext-components/lib/ext-chart.component';
 
 import '@sencha/ext-components/lib/ext-widgetcell.component';
 import '@sencha/ext-components/lib/ext-datecolumn.component';
