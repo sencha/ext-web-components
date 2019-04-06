@@ -161,7 +161,7 @@ export class ExtD3_heatmapComponent extends ExtBase {
 	get onupdatedata(){return this.getAttribute('onupdatedata')};set onupdatedata(onupdatedata){this.setAttribute('onupdatedata',onupdatedata)}
 	get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange(onwidthchange){this.setAttribute('onwidthchange',onwidthchange)}
 
-	static XTYPE() {return 'd3_heatmap'}
+	static XTYPE() {return 'd3-heatmap'}
   static PROPERTIESOBJECT() { return {
     "alwaysOnTop": "Boolean/Number",
     "ariaAttributes": "Object",
@@ -574,6 +574,6 @@ export class ExtD3_heatmapComponent extends ExtBase {
 }
 (function () {
   Ext.onReady(function() {
-    window.customElements.define('ext-d3_heatmap', ExtD3_heatmapComponent);
+    window.customElements.define('ext-d3-heatmap', ExtD3_heatmapComponent);
   });
 })();

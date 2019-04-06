@@ -24,6 +24,7 @@ import '@sencha/ext-components/lib/ext-formpanel.component';
 import '@sencha/ext-components/lib/ext-grid.component';
 import '@sencha/ext-components/lib/ext-numberfield.component';
 import '@sencha/ext-components/lib/ext-panel.component';
+import '@sencha/ext-components/lib/ext-label.component';
 import '@sencha/ext-components/lib/ext-passwordfield.component';
 import '@sencha/ext-components/lib/ext-radiofield.component';
 import '@sencha/ext-components/lib/ext-searchfield.component';
@@ -53,7 +54,6 @@ import '@sencha/ext-components/lib/ext-grid.component';
 import '@sencha/ext-components/lib/ext-column.component';
 import '@sencha/ext-components/lib/ext-formpanel.component';
 import '@sencha/ext-components/lib/ext-textfield.component';
-import '@sencha/ext-components/lib/ext-sliderfield.component';
 import '@sencha/ext-components/lib/ext-gauge.component';
 import '@sencha/ext-components/lib/ext-colorselector.component';
 import '@sencha/ext-components/lib/ext-draw.component';
@@ -72,7 +72,6 @@ import '@sencha/ext-components/lib/ext-calendar-days.component';
 import '@sencha/ext-components/lib/ext-calendar-month.component';
 import '@sencha/ext-components/lib/ext-calendar-week.component';
 import '@sencha/ext-components/lib/ext-cartesian.component';
-import '@sencha/ext-components/lib/ext-segmentedbutton.component';
 import '@sencha/ext-components/lib/ext-indicator.component';
 import '@sencha/ext-components/lib/ext-lockedgrid.component';
 
@@ -86,12 +85,21 @@ import '@sencha/ext-components/lib/ext-datecolumn.component';
 import '@sencha/ext-components/lib/ext-textcolumn.component';
 import '@sencha/ext-components/lib/ext-checkcolumn.component';
 
+import '@sencha/ext-components/lib/ext-menucheckitem.component';
+import '@sencha/ext-components/lib/ext-numbercolumn.component';
+
+
+import '@sencha/ext-components/lib/ext-d3.component';
+
 import '@sencha/ext-components/lib/ext-d3-horizontal-tree.component';
 import '@sencha/ext-components/lib/ext-d3-pack.component';
 import '@sencha/ext-components/lib/ext-d3-sunburst.component';
 import '@sencha/ext-components/lib/ext-d3-tree.component';
 import '@sencha/ext-components/lib/ext-d3-treemap.component';
 import '@sencha/ext-components/lib/ext-pivotd3container.component';
+
+import '@sencha/ext-components/lib/ext-d3-heatmap.component';
+import '@sencha/ext-components/lib/ext-pivotheatmap.component';
 
 import './Data.js';
 import getMenu from './menu';

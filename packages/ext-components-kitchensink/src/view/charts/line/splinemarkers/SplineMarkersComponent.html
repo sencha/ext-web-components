@@ -1,5 +1,21 @@
-<ext-button 
-  text="splinemarkers"
-  onready="splinemarkers.readyButton1(event)"
-  ontap="splinemarkers.tapButton1(event)">
-</ext-button>
+<ext-container padding='15' layout="fit" fitToParent="true" height="100%">
+
+  <ext-container docked="top"><div #extitem>
+    <chart-toolbar
+      onItemReady="splinemarkers.onMenuItemReady(event)"
+      onThemeChange="splinemarkers.onThemeChange(event)"
+      theme="default">
+    </chart-toolbar>
+  </div></ext-container>
+
+  <ext-cartesian downloadServerUrl ="http://svg.sencha.io"
+    onready="splinemarkers.onReady(event)"
+    width="800px"
+    shadow="true" 
+    theme="default"
+    insetPadding="10 20 10 10"
+    legend='{"type": "sprite", "docked": "top", "marker": { "size": "16"}}'
+  >
+  </ext-cartesian>
+
+</ext-container>
