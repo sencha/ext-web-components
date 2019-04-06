@@ -71,7 +71,6 @@ import '@sencha/ext-components/lib/ext-calendar-day.component';
 import '@sencha/ext-components/lib/ext-calendar-days.component';
 import '@sencha/ext-components/lib/ext-calendar-weeks.component';
 import '@sencha/ext-components/lib/ext-cartesian.component';
-import '@sencha/ext-components/lib/ext-tooltip.component';
 import '@sencha/ext-components/lib/ext-segmentedbutton.component';
 import '@sencha/ext-components/lib/ext-indicator.component';
 import '@sencha/ext-components/lib/ext-polar.component';
