@@ -1,5 +1,11 @@
-<ext-button 
-  text="purchasesbyday"
-  onready="purchasesbyday.readyButton1(event)"
-  ontap="purchasesbyday.tapButton1(event)">
-</ext-button>
+<ext-container padding="10" layout="fit" fitToParent="true" height="100%">
+    <ext-panel layout="fit" scrollable="true" height="100%">
+
+    <ext-d3-heatmap 
+        onready="purchasesbyday.onHeatMapReady(event)"
+        padding="20 30 20 80"
+    >
+    </ext-d3-heatmap>
+  </ext-panel>
+
+  </ext-container>

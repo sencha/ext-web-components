@@ -75,7 +75,10 @@ import '@sencha/ext-components/lib/ext-segmentedbutton.component';
 import '@sencha/ext-components/lib/ext-indicator.component';
 import '@sencha/ext-components/lib/ext-polar.component';
 import '@sencha/ext-components/lib/ext-chart.component';
+import '@sencha/ext-components/lib/ext-d3.component';
 import '@sencha/ext-components/lib/ext-d3-horizontal-tree.component';
+import '@sencha/ext-components/lib/ext-d3-heatmap.component';
+import '@sencha/ext-components/lib/ext-pivotheatmap.component';
 
 import getMenu from './menu';
 import MainComponent from './view/main/MainComponent.js';
