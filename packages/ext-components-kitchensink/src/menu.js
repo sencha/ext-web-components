@@ -118,11 +118,11 @@ import BasicColumnComponent from './view/charts/column/basiccolumn/BasicColumnCo
 import StackedComponent from './view/charts/column/stacked/StackedComponent.js';
 import ColumnWithRendererComponent from './view/charts/column/columnwithrenderer/ColumnWithRendererComponent.js';
 import MultiaxisColumnComponent from './view/charts/column/multiaxiscolumn/MultiaxisColumnComponent.js';
-import Basic3DColumnComponent from './view/charts/3dcolumn/basic3dcolumn/Basic3DColumnComponent.js';
-import ThreeDGroupedComponent from './view/charts/3dcolumn/3dgrouped/ThreeDGroupedComponent.js';
-import ThreeDStackedComponent from './view/charts/3dcolumn/3dstacked/ThreeDStackedComponent.js';
-import NegativeValuesComponent from './view/charts/3dcolumn/negativevalues/NegativeValuesComponent.js';
-import ThreeDColumnWithRendererComponent from './view/charts/3dcolumn/3dcolumnwithrenderer/ThreeDColumnWithRendererComponent.js';
+import Basic3DColumnComponent from './view/charts/threedcolumn/basic3dcolumn/Basic3DColumnComponent.js';
+import ThreeDGroupedComponent from './view/charts/threedcolumn/threedgrouped/ThreeDGroupedComponent.js';
+import ThreeDStackedComponent from './view/charts/threedcolumn/threedstacked/ThreeDStackedComponent.js';
+import NegativeValuesComponent from './view/charts/threedcolumn/negativevalues/NegativeValuesComponent.js';
+import ThreeDColumnWithRendererComponent from './view/charts/threedcolumn/threedcolumnwithrenderer/ThreeDColumnWithRendererComponent.js';
 import CandlestickComponent from './view/charts/financial/candlestick/CandlestickComponent.js';
 import OHLCComponent from './view/charts/financial/ohlc/OHLCComponent.js';
 import BasicGaugeChartComponent from './view/charts/gauges/basicgaugechart/BasicGaugeChartComponent.js';
@@ -138,7 +138,7 @@ import BasicPieComponent from './view/charts/pie/basicpie/BasicPieComponent.js';
 import SpieComponent from './view/charts/pie/spie/SpieComponent.js';
 import DonutComponent from './view/charts/pie/donut/DonutComponent.js';
 import DoubleDonutComponent from './view/charts/pie/doubledonut/DoubleDonutComponent.js';
-import ThreeDPieComponent from './view/charts/pie/3dpie/ThreeDPieComponent.js';
+import ThreeDPieComponent from './view/charts/pie/threedpie/ThreeDPieComponent.js';
 import BasicRadarComponent from './view/charts/radar/basicradar/BasicRadarComponent.js';
 import FilledComponent from './view/charts/radar/filled/FilledComponent.js';
 import MarkedComponent from './view/charts/radar/marked/MarkedComponent.js';
@@ -337,12 +337,12 @@ export default function getMenu() {
         { text: 'Column With Renderer', component: ColumnWithRendererComponent, iconCls: 'icon-column-renderer' },
         { text: 'Multiaxis Column', component: MultiaxisColumnComponent, iconCls: 'icon-column-multi-axis' }
       ] },
-      { text: '3D Column', iconCls: 'icon-column-3d', children: [
+      { text: 'Three D Column', iconCls: 'icon-column-3d', children: [
         { text: 'Basic 3D Column', component: Basic3DColumnComponent, iconCls: 'icon-column-basic-3d' },
         { text: '3D Grouped', component: ThreeDGroupedComponent, iconCls: 'icon-column-grouped-3d' },
         { text: '3D Stacked', component: ThreeDStackedComponent, iconCls: 'icon-column-stacked-3d' },
         { text: 'Negative Values', component: NegativeValuesComponent, iconCls: 'icon-column-negative-3d' },
-        { text: '3D Column With Renderer', component: ThreeDColumnWithRendererComponent, iconCls: 'icon-column-renderer-3d' }
+        { text: 'Three D Column With Renderer', component: ThreeDColumnWithRendererComponent, iconCls: 'icon-column-renderer-3d' }
       ]},
       { text: 'Financial', iconCls: 'icon-financial-charts', children: [
         { text: 'Candlestick', component: CandlestickComponent, iconCls: 'icon-financial-candlestick' },
@@ -366,7 +366,7 @@ export default function getMenu() {
         { text: 'Spie', component: SpieComponent, iconCls: 'icon-pie-custom' },
         { text: 'Donut', component: DonutComponent, iconCls: 'icon-pie-donut' },
         { text: 'Double Donut', component: DoubleDonutComponent, iconCls: 'icon-pie-double-donut' },
-        { text: '3D Pie', component: ThreeDPieComponent, iconCls: 'icon-pie-3d' }
+        { text: 'Three D Pie', component: ThreeDPieComponent, iconCls: 'icon-pie-3d' }
       ] },
       { text: 'Radar', iconCls: 'icon-radar-charts', children: [
         { text: 'Basic Radar', component: BasicRadarComponent, iconCls: 'icon-radar-basic' },

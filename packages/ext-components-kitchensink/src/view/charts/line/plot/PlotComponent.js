@@ -1,18 +1,91 @@
-import './PlotComponent.css';
+import './PlotComponent.html';
+import '../../charttoolbar/ChartToolbar.js';
+import { createData } from './createData';
 
 export default class PlotComponent {
 
   constructor () {
-    console.log('in PlotComponent constructor');
+    this.menuCmpArray = []
+    this.store = Ext.create('Ext.data.Store', {
+      fields: ['x', 'y']
+    });
+    this.onRefreshClick();
   }
 
-  readyButton1(event) {
-    var cmp = event.detail.cmp;
-    this.button1Cmp = event.detail.cmp;
+  chartNavReady(event) {
+    this.cartesianCmp = event.detail.cmp;
+    this.cartesianCmp.setStore(this.store);
+    this.cartesianCmp.setAxes(
+      [{
+        type: 'numeric',
+        position: 'left',
+        fields: 'y',
+        grid: true,
+        minimum: -4,
+        maximum: 4,
+        title: {
+          text: 'f(x)',
+          fontSize: 16,
+          fillStyle: 'rgb(255, 0, 136)'
+        },
+        floating: {
+          value: 0,
+          alongAxis: 1
+        }
+      }, {
+        type: 'numeric',
+        position: 'bottom',
+        fields: 'x',
+        grid: true,
+        title: {
+          text: 'x',
+          fontSize: 16,
+          fillStyle: 'rgb(255, 0, 136)'
+        },
+        floating: {
+          value: 0,
+          alongAxis: 0
+        }
+      }]
+    );
+    this.cartesianCmp.setSeries(
+      [{
+        type: 'line',
+        xField: 'x',
+        yField: 'y',
+        style: {
+          lineWidth: 2,
+          strokeStyle: 'rgb(0, 119, 204)'
+        }
+      }]
+    );
   }
 
-  tapButton1(event) {
-    this.button1Cmp.setText(new Date())
+  onMenuItemReady(event) {
+    this.menuCmpArray.push(event.detail.cmp);
+    event.detail.cmp.on('click', this.onThemeChange.bind(this));
+  }
+
+  onRefreshButtonReady(event) {
+    this.refreshButtonCmp = event.detail.cmp;
+    this.refreshButtonCmp.on('tap', this.onRefreshClick.bind(this));
+  }
+
+  onRefreshClick(event) {
+    this.store.loadData(createData());
+    // this.cartesianCmp.setStore(this.store);
+  }
+
+  onThemeChange(event) {
+    this.theme = event.config.text.toLowerCase();
+    this.menuCmpArray.forEach((cmp, index) => {
+      if (index == parseInt(event.config.itemId)) {
+        cmp.setIconCls('x-font-icon md-icon-done');
+        return;
+      }
+      cmp.setIconCls('');
+    });
+    this.cartesianCmp.setTheme(event.config.text.toLowerCase());
   }
 
 }

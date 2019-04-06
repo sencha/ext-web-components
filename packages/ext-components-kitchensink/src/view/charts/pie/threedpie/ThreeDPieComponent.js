@@ -1,26 +1,51 @@
-import './BasicMarkersComponent.html';
+import './ThreeDPieComponent.html';
 import '../../charttoolbar/ChartToolbar.js';
-import { generateData } from './generateData';
+import generateData from './generateData';
 
-export default class BasicMarkersComponent {
-
+export default class ThreeDPieComponent {
   constructor () {
+    this.menuCmpArray = [];
     this.store = Ext.create('Ext.data.Store', {
       fields: ['id', 'g1', 'g2', 'g3', 'g4', 'g5', 'g6', 'name']
     });
+    this.polarSeries = [{
+      type: 'pie3d',
+      angleField: 'g1',
+      donut: 10,
+      distortion: 0.6,
+      highlight: {
+        margin: 40
+      },
+      thickness: 60,
+      platformConfig: {
+        phone: {
+          thickness: 40
+        }
+      },
+      label: {
+        field: 'name',
+        calloutColor: 'rgba(0,0,0,0)',
+        calloutLine: {
+          length: 1
+        }
+      },
+      style: {
+        strokeStyle: 'none'
+      }
+    }];
+    this.numRecords = 9;
     this.store.loadData(generateData(this.numRecords));
-    this.numRecords = 10
-    this.menuCmpArray = []
+  }
+
+  onPolarReady(event) {
+    this.polar = event.detail.cmp;
+    this.polar.setStore(this.store);
+    this.polar.setSeries(this.polarSeries);
   }
 
   onMenuItemReady(event) {
     this.menuCmpArray.push(event.detail.cmp);
     event.detail.cmp.on('click', this.onThemeChange.bind(this));
-  }
-
-  cartesianReady(event) {
-    this.cartesianCmp = event.detail.cmp;
-    this.cartesianCmp.setStore(this.store);
   }
 
   onThemeChange(event) {
@@ -32,7 +57,7 @@ export default class BasicMarkersComponent {
       }
       cmp.setIconCls('');
     });
-    this.cartesianCmp.setTheme(event.config.text.toLowerCase());
+    this.polar.setTheme(event.config.text.toLowerCase());
   }
 
   onRefreshButtonReady(event) {
@@ -42,6 +67,6 @@ export default class BasicMarkersComponent {
 
   onRefreshClick(event) {
     this.store.loadData(generateData(this.numRecords));
-    this.cartesianCmp.setStore(this.store);
+    this.polar.setStore(this.store);
   }
 }

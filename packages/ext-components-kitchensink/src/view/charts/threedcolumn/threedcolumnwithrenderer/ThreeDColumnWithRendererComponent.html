@@ -1,0 +1,29 @@
+<ext-container
+  padding="10"
+  layout="fit"
+  fitToParent="true"
+  height="100%"
+  width="100%">
+  <ext-toolbar
+    maxHeight="50"
+    docked="top"
+    ui="app-transparent-toolbar"
+    shadow="false"
+    padding="0 10 0 10">
+    <chart-toolbar
+      onDownloadButtonReady="threedcolumnwithrenderer.onDownloadButtonReady(event)">
+    </chart-toolbar>
+  </ext-toolbar>
+  <ext-cartesian
+    downloadServerUrl="http://svg.sencha.io"
+    onready="threedcolumnwithrenderer.cartesianready(event)"
+    shadow="true"
+    flex="2"
+    innerPadding="30"
+    interactions='{
+      "type": "panzoom",
+      "zoomOnPanGesture": "true"
+    }'
+    >
+  </ext-cartesian>
+</ext-container>
