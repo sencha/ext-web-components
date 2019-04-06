@@ -75,7 +75,12 @@ import '@sencha/ext-components/lib/ext-cartesian.component';
 import '@sencha/ext-components/lib/ext-segmentedbutton.component';
 import '@sencha/ext-components/lib/ext-indicator.component';
 import '@sencha/ext-components/lib/ext-lockedgrid.component';
+
 import '@sencha/ext-components/lib/ext-tooltip.component';
+
+import '@sencha/ext-components/lib/ext-polar.component';
+import '@sencha/ext-components/lib/ext-chart.component';
+
 import '@sencha/ext-components/lib/ext-widgetcell.component';
 import '@sencha/ext-components/lib/ext-datecolumn.component';
 import '@sencha/ext-components/lib/ext-textcolumn.component';
@@ -85,8 +90,8 @@ import '@sencha/ext-components/lib/ext-d3-horizontal-tree.component';
 import '@sencha/ext-components/lib/ext-d3-pack.component';
 import '@sencha/ext-components/lib/ext-d3-sunburst.component';
 import '@sencha/ext-components/lib/ext-d3-tree.component';
-
-
+import '@sencha/ext-components/lib/ext-d3-treemap.component';
+import '@sencha/ext-components/lib/ext-pivotd3container.component';
 
 import './Data.js';
 import getMenu from './menu';

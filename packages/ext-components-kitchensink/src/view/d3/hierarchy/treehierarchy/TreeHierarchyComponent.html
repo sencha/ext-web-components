@@ -1,19 +1,21 @@
-<ext-panel  shadow="true" layout="fit" fitToParent="true">
+<ext-panel  
+    shadow="true" 
+    layout="fit" 
+    fitToParent="true" 
+    height="100%"
+>
   <ext-d3-tree 
-    [store]="this.store"
-    [colorAxis]="{ field: 'id' }"
-    [interactions]="{
-      type: 'panzoom',
-      zoom: {
-        extent: [0.3, 3],
-        doubleTap: false
+    colorAxis='{ "field": "id" }'
+    onready="treehierarchy.treeReady(event)"
+    interactions='{
+      "type": "panzoom",
+      "zoom": {
+        "extent": [0.3, 3],
+        "doubleTap": false
       }
-    }"
+    }'
     padding="10"
-    nodeSize="[300, 40]"
-    nodeRadius="10"
-    [nodeText]="this.getNodeText"
-    [tooltip]="{ renderer: this.onTooltip }"
-    [platformConfig]="platConf"
+    nodeSize="[250, 20]"
+    nodeRadius="5"
   ></ext-d3-tree>
 </ext-panel>

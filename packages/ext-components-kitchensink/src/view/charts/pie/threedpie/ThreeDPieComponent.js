@@ -1,26 +1,46 @@
-import './BasicPieComponent.html';
-import createData from './createData';
+import './ThreeDPieComponent.html';
 import '../../charttoolbar/ChartToolbar.js';
+import generateData from './generateData';
 
-Ext.require([
-  'Ext.chart.series.Pie'
-]);
-
-export default class BasicPieComponent {
+export default class ThreeDPieComponent {
   constructor () {
-    this.store = Ext.create('Ext.data.Store', {
-      fields: ['id', 'g1', 'g2', 'g3', 'g4', 'g5', 'g6', 'name'],
-    });
-    this.store.loadData(createData(5));
-    this.theme = 'default';
     this.menuCmpArray = [];
+    this.store = Ext.create('Ext.data.Store', {
+      fields: ['id', 'g1', 'g2', 'g3', 'g4', 'g5', 'g6', 'name']
+    });
+    this.polarSeries = [{
+      type: 'pie3d',
+      angleField: 'g1',
+      donut: 10,
+      distortion: 0.6,
+      highlight: {
+        margin: 40
+      },
+      thickness: 60,
+      platformConfig: {
+        phone: {
+          thickness: 40
+        }
+      },
+      label: {
+        field: 'name',
+        calloutColor: 'rgba(0,0,0,0)',
+        calloutLine: {
+          length: 1
+        }
+      },
+      style: {
+        strokeStyle: 'none'
+      }
+    }];
+    this.numRecords = 9;
+    this.store.loadData(generateData(this.numRecords));
   }
 
   onPolarReady(event) {
     this.polar = event.detail.cmp;
-    const series = [{ "type": "pie", "xField": "g1", "label": { "field": "name"} }];
-    this.polar.setSeries(series);
     this.polar.setStore(this.store);
+    this.polar.setSeries(this.polarSeries);
   }
 
   onMenuItemReady(event) {
@@ -46,7 +66,7 @@ export default class BasicPieComponent {
   }
 
   onRefreshClick(event) {
-    this.store.loadData(createData(5));
+    this.store.loadData(generateData(this.numRecords));
     this.polar.setStore(this.store);
   }
 }

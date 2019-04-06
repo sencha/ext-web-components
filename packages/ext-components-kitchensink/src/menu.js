@@ -138,7 +138,7 @@ import BasicPieComponent from './view/charts/pie/basicpie/BasicPieComponent.js';
 import SpieComponent from './view/charts/pie/spie/SpieComponent.js';
 import DonutComponent from './view/charts/pie/donut/DonutComponent.js';
 import DoubleDonutComponent from './view/charts/pie/doubledonut/DoubleDonutComponent.js';
-import ThreeDPieComponent from './view/charts/pie/3dpie/ThreeDPieComponent.js';
+import ThreeDPieComponent from './view/charts/pie/threedpie/ThreeDPieComponent.js';
 import BasicRadarComponent from './view/charts/radar/basicradar/BasicRadarComponent.js';
 import FilledComponent from './view/charts/radar/filled/FilledComponent.js';
 import MarkedComponent from './view/charts/radar/marked/MarkedComponent.js';
@@ -366,7 +366,7 @@ export default function getMenu() {
         { text: 'Spie', component: SpieComponent, iconCls: 'icon-pie-custom' },
         { text: 'Donut', component: DonutComponent, iconCls: 'icon-pie-donut' },
         { text: 'Double Donut', component: DoubleDonutComponent, iconCls: 'icon-pie-double-donut' },
-        { text: '3D Pie', component: ThreeDPieComponent, iconCls: 'icon-pie-3d' }
+        { text: 'Three D Pie', component: ThreeDPieComponent, iconCls: 'icon-pie-3d' }
       ] },
       { text: 'Radar', iconCls: 'icon-radar-charts', children: [
         { text: 'Basic Radar', component: BasicRadarComponent, iconCls: 'icon-radar-basic' },
@@ -395,7 +395,7 @@ export default function getMenu() {
         { text: 'Zoomable Sunburst', component: ZoomableSunburstComponent, iconCls: 'icon-d3-view-sunburst-zoom' },
         { text: 'Tree Hierarchy', component: TreeHierarchyComponent, iconCls: 'icon-d3-view-tree' },
         { text: 'Tree Map', component: TreeMapComponent, iconCls: 'icon-d3-view-treemap' },
-        { text: 'Tree Map Tooltip', component: TreeMapToolTipComponent, iconCls: 'icon-d3-view-treemap-tooltip' },
+        { text: 'Tree Map ToolTip', component: TreeMapToolTipComponent, iconCls: 'icon-d3-view-treemap-tooltip' },
         { text: 'Configurable Pivot TreeMap', component: ConfigurablePivotTreeMapComponent, iconCls: 'icon-d3-view-treemap-pivot-configurator' }
       ]}
     ]},
