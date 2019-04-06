@@ -1,8 +1,9 @@
 <ext-container padding="10" layout="fit" fitToParent="true" height="100%">
   <ext-container padding="10" docked="top">
     <chart-toolbar
-      onItemReady="doubledonut.onMenuItemReady(event)"
-      onThemeChange="doubledonut.changeTheme(event)"
+      onItemReady="threedpie.onMenuItemReady(event)"
+      onThemeChange="threedpie.changeTheme(event)"
+      onRefreshButtonReady="threedpie.onRefreshButtonReady(event)"
       theme="default"
     >
     </chart-toolbar>
@@ -10,10 +11,10 @@
 
   <ext-polar downloadServerUrl ="http://svg.sencha.io"
     shadow="true"
-    insetPadding="30"
-    innerPadding="30"
-    onready="doubledonut.onPolarReady(event)"
-    interactions='["rotate", "itemhighlight"]'
+    innerPadding="60"
+    onready="threedpie.onPolarReady(event)"
+    interactions="rotatePie3d"
+    animation='{ "duration": "500", "easing": "easeIn"}'
     theme="default"
   >
   </ext-polar>
