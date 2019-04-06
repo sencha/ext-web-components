@@ -1,4 +1,4 @@
-import './ConfigurablePivotHeatmapComponent.css';
+import './ConfigurablePivotHeatmapComponent.html';
 
 export default class ConfigurablePivotHeatmapComponent {
 

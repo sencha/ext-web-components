@@ -395,7 +395,7 @@ export default function getMenu() {
         { text: 'Zoomable Sunburst', component: ZoomableSunburstComponent, iconCls: 'icon-d3-view-sunburst-zoom' },
         { text: 'Tree Hierarchy', component: TreeHierarchyComponent, iconCls: 'icon-d3-view-tree' },
         { text: 'Tree Map', component: TreeMapComponent, iconCls: 'icon-d3-view-treemap' },
-        { text: 'Tree Map Tooltip', component: TreeMapToolTipComponent, iconCls: 'icon-d3-view-treemap-tooltip' },
+        { text: 'Tree Map ToolTip', component: TreeMapToolTipComponent, iconCls: 'icon-d3-view-treemap-tooltip' },
         { text: 'Configurable Pivot TreeMap', component: ConfigurablePivotTreeMapComponent, iconCls: 'icon-d3-view-treemap-pivot-configurator' }
       ]}
     ]},

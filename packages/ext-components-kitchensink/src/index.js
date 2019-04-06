@@ -87,8 +87,8 @@ import '@sencha/ext-components/lib/ext-d3-horizontal-tree.component';
 import '@sencha/ext-components/lib/ext-d3-pack.component';
 import '@sencha/ext-components/lib/ext-d3-sunburst.component';
 import '@sencha/ext-components/lib/ext-d3-tree.component';
-
-
+import '@sencha/ext-components/lib/ext-d3-treemap.component';
+import '@sencha/ext-components/lib/ext-pivotd3container.component';
 
 import './Data.js';
 import getMenu from './menu';
