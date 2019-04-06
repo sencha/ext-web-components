@@ -1,5 +1,74 @@
-<ext-button 
-  text="selectandcopy"
-  onready="selectandcopy.readyButton1(event)"
-  ontap="selectandcopy.tapButton1(event)">
-</ext-button>
+<ext-container layout="fit" padding="10" width="100%" height="100%">
+    <ext-toolbar docked="top" ui="app-transparent-toolbar" defaults='{ "margin": "0 5 0 0" }' padding="0 10" shadow="false">
+        <ext-button text="Selectable" ui="action">
+            <ext-menu>
+                <ext-menucheckitem
+                  text="rows"
+                  checked="true"
+                  oncheckchange="selectandcopy.onSelectableChange(event)"
+                >
+                </ext-menucheckitem>
+                <ext-menucheckitem
+                  text="cells"
+                  checked="true"
+                  oncheckchange="selectandcopy.onSelectableChange(event)"
+                >
+                </ext-menucheckitem>
+                <ext-menucheckitem
+                  text="columns"
+                  checked="true"
+                  oncheckchange="selectandcopy.onSelectableChange(event)"
+                >
+                </ext-menucheckitem>
+                <ext-menucheckitem
+                  text="drag"
+                  checked="true"
+                  oncheckchange="selectandcopy.onSelectableChange(event)"
+                >
+                </ext-menucheckitem>
+                <ext-menucheckitem
+                  text="checkbox"
+                  checked="true"
+                  oncheckchange="selectandcopy.onSelectableChange(event)"
+                >
+                </ext-menucheckitem>
+            </ext-menu>
+        </ext-button>
+        <ext-button text="Extensible" ui="action">
+            <ext-menu onready="selectandcopy.extensibleMenuReady(event)">
+                <ext-menuitem text="x" onready="selectandcopy.menuItemReady(event)"></ext-menuitem>
+                <ext-menuitem text="y" onready="selectandcopy.menuItemReady(event)"/></ext-menuitem>
+                <ext-menuitem text="both" onready="selectandcopy.menuItemReady(event)" iconCls="x-font-icon md-icon-check"/></ext-menuitem>
+            </ext-menu>
+        </ext-button>
+    </ext-toolbar>
+    <ext-grid
+        plugins='{ "selectionreplicator": "true", "clipboard": "true" }'
+        selectable='{ "extensible": "both", "rows": true, "cells": true, "columns": true, "drag": true, "checkbox":true }'
+        shadow="true"
+        columnLines="true"
+        onready="selectandcopy.gridReady(event)"
+      >
+        <ext-column text="Year" dataIndex="year" flex="1" minWidth="75"></ext-column>
+        <ext-column text="Jan" dataIndex="jan" width="75"></ext-column>
+        <ext-column text="Feb" dataIndex="feb" width="75"></ext-column>
+        <ext-column text="Mar" dataIndex="mar" width="75"></ext-column>
+        <ext-column text="Apr" dataIndex="apr" width="75"></ext-column>
+        <ext-column text="May" dataIndex="may" width="75"></ext-column>
+        <ext-column text="Jun" dataIndex="jun" width="75"></ext-column>
+        <ext-column text="Jul" dataIndex="jul" width="75"></ext-column>
+        <ext-column text="Aug" dataIndex="aug" width="75"></ext-column>
+        <ext-column text="Sep" dataIndex="sep" width="75"></ext-column>
+        <ext-column text="Oct" dataIndex="oct" width="75"></ext-column>
+        <ext-column text="Nov" dataIndex="nov" width="75"></ext-column>
+        <ext-column text="Dec" dataIndex="dec" width="75"></ext-column>
+        <ext-panel docked="bottom" bodyPadding="15" height="35">
+          <ext-container
+            height="25"
+            onready="selectandcopy.infoContainerReady(event)"
+            style="fontSize:14px;font-weight:normal"
+          >
+          </ext-container>
+        </ext-panel>
+    </ext-grid>
+</ext-container>
