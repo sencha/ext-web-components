@@ -1,8 +1,8 @@
-import './MainComponent.html';
+import "./MainComponent.html";
 export default class MainComponent {
 
   constructor() {
-    const navTreeRoot = {
+    var navTreeRoot = {
       hash: 'all',
       iconCls: 'x-fa fa-home',
       leaf: false,
@@ -14,33 +14,28 @@ export default class MainComponent {
       root: navTreeRoot
     });
     this.wait = 3;
-    this.collapsed = false;
-    this.isInitial = true;
-
-    if (Ext.os.is.Phone) {
-      this.collapsed = true;
-    }
   }
 
-  afterAllLoaded() {
+  afterAllLoaded(f) {
     this.wait = this.wait - 1;
-
     if (this.wait == 0) {
-      let hash = window.location.hash.substr(1);
-
-      if (hash == '') {
-        hash = 'home';
-      }
-
-      const node = this.navTreelistCmp.getStore().findNode('hash',hash);
+      var hash = window.location.hash.substr(1)
+      if (hash == '') {hash = 'home'} //mjg need function for this in router
+      var node = this.navTreelistCmp.getStore().findNode('hash',hash);
       this.navTreelistCmp.setSelection(node);
       this.navigate(node);
     }
   }
 
   readyNavTreePanel(event) {
-    this.navTreePanelCmp = event.detail.cmp;
-    this.afterAllLoaded('readyNavTreePanel');
+    this.navTreePanelCmp = event.detail.cmp
+    this.afterAllLoaded('readyNavTreePanel')
+
+    if(Ext.os.is.Phone) {
+      this.navTreePanelCmp.setCollapsed(true);
+    } else {
+      this.navTreePanelCmp.setCollapsed(false);
+    }
   }
 
   readyNavTreelist(event) {
@@ -55,7 +50,7 @@ export default class MainComponent {
   }
 
   navTreelistSelectionChange(event) {
-    const record = event.detail.record;
+    var record = event.detail.record;
     this.navigate(record);
   }
 
@@ -64,46 +59,33 @@ export default class MainComponent {
       console.log('it was null')
       return
     }
-    const hash = record.data.hash
-    const childNum = record.childNodes.length
-
+    var hash = record.data.hash
+    var childNum = record.childNodes.length
     if (childNum == 0 && hash != undefined) {
       window.location.hash = '#' + hash;
-    } else {
+    }
+    else {
       this.dataviewNavCmp.setData(node.childNodes)
     }
 
     if(Ext.os.is.Phone) {
-      let collapsed = this.navTreePanelCmp.getCollapsed();
-
-      if (collapsed === true) {
-        collapsed = false;
-      } else {
-        collapsed = true;
-      }
+      var collapsed = this.navTreePanelCmp.getCollapsed()
+      if (collapsed == true){collapsed = false} else{collapsed = true}
       this.navTreePanelCmp.setCollapsed(collapsed)
     }
   }
 
   containsMatches(node) {
     const found = node.data.name.match(this.filterRegex) || node.childNodes.some(child => this.containsMatches(child));
-    if (found) {
-      node.expand();
-    }
-
+    if (found) node.expand();
     node.data.text = node.data.name.replace(this.filterRegex, '<span style="color:#2196F3;font-weight:bold">$1</span>')
     return found;
   }
 
   toggleTree() {
-    let collapsed = this.navTreePanelCmp.getCollapsed();
-
-    if (collapsed == true) {
-      collapsed = false;
-    } else {
-      collapsed = true;
-    }
-    this.navTreePanelCmp.setCollapsed(collapsed);
+    var collapsed = this.navTreePanelCmp.getCollapsed()
+    if (collapsed == true){collapsed = false} else{collapsed = true}
+    this.navTreePanelCmp.setCollapsed(collapsed)
   }
 
   toggleButtonReady(event) {
