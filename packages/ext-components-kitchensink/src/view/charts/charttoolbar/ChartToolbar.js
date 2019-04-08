@@ -16,7 +16,7 @@ export default class ChartToolbar extends HTMLElement {
     connectedCallback() {
         const theme = this.getAttribute('theme');
         const show = this.getAttribute('show');
-        const preview = this.getAttribute('preview');
+        const preview = this.getAttribute('onDownloadButtonReady') || false;
         const onlyMidnight = this.getAttribute('onlyMidnight') || false;
         const refresh = this.getAttribute('onRefreshButtonReady') || false;
         const onStack = this.getAttribute('onStackButtonReady') || false;
@@ -80,6 +80,7 @@ export default class ChartToolbar extends HTMLElement {
                     </ext-menu>
                 </ext-button>
                 <ext-button
+                    onready=${preview}
                     hidden=${!preview}
                     margin="0 10px 0 0"
                     ui="action"
