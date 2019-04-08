@@ -1,3 +1,4 @@
+import '../../charttoolbar/ChartToolbar.js';
 import './Basic3DColumnComponent.html';
 import createData from './Basic3DColumnComponentData.js';
 
