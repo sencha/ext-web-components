@@ -1,5 +1,11 @@
-<ext-button 
-  text="realtime"
-  onready="realtime.readyButton1(event)"
-  ontap="realtime.tapButton1(event)">
-</ext-button>
+<ext-container padding="10px" layout="fit" fitToParent="true" height="100%">
+  <ext-cartesian downloadServerUrl ="http://svg.sencha.io"
+    onready="realtime.chartNavReady(event)"
+    ondestroy="realtime.stopTask()"
+    shadow="true"
+    ref="chart"
+    title="Time Axis"
+    insetPadding="30 30 10 10"
+    >
+  </ext-cartesian>
+</ext-container>

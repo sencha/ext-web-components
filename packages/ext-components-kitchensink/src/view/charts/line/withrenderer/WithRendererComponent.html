@@ -1,5 +1,22 @@
-<ext-button 
-  text="withrenderer"
-  onready="withrenderer.readyButton1(event)"
-  ontap="withrenderer.tapButton1(event)">
-</ext-button>
+<ext-container padding='15' layout="fit" fitToParent="true" height="100%">
+
+  <ext-container docked="top"><div #extitem>
+    <chart-toolbar
+    onItemReady="withrenderer.onMenuItemReady(event)"
+    onThemeChange="withrenderer.onThemeChange(event)"
+    theme="default"
+    onRefreshButtonReady="withrenderer.onRefreshButtonReady(event)"
+    onlyMidnight="true">
+    </chart-toolbar>
+  </div></ext-container>
+
+  <ext-cartesian 
+    downloadServerUrl ="http://svg.sencha.io"
+    onready="withrenderer.cartesianReady(event)"
+    width="800px"
+    shadow="true"
+    theme="default"
+  >
+  </ext-cartesian>
+
+</ext-container>
