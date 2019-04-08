@@ -9,6 +9,7 @@ import '@sencha/ext-components/lib/ext-toolbar.component';
 import '@sencha/ext-components/lib/ext-column.component';
 import '@sencha/ext-components/lib/ext-grid.component';
 import '@sencha/ext-components/lib/ext-combobox.component';
+import '@sencha/ext-components/lib/ext-list.component';
 
 import getMenu from './menu';
 import { getRoutes } from '@sencha/ext-components/lib/aa-router.component';
