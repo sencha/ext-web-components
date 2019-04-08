@@ -1,5 +1,27 @@
-<ext-button 
-  text="negativevalues"
-  onready="negativevalues.readyButton1(event)"
-  ontap="negativevalues.tapButton1(event)">
-</ext-button>
+<ext-container
+  padding="10"
+  layout="fit"
+  fitToParent="true"
+  height="100%"
+  width="100%">
+  <ext-toolbar
+    maxHeight="50"
+    docked="top"
+    ui="app-transparent-toolbar"
+    shadow="false"
+    padding="0 10 0 10">
+    <chart-toolbar
+      onDownloadButtonReady="negativevalues.onDownloadButtonReady(event)">
+    </chart-toolbar>
+  </ext-toolbar>
+  <ext-cartesian
+    downloadServerUrl="http://svg.sencha.io"
+    onready="negativevalues.cartesianready(event)"
+    shadow="true"
+    flex="2"
+    insetPadding="40 40 20 20"
+    innerPadding="0 3 0 0"
+    interactions="itemhighlight"
+    animation={"easing": "backOut","duration": "500"}'>
+  </ext-cartesian>
+</ext-container>
