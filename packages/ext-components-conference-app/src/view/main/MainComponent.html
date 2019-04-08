@@ -1,10 +1,46 @@
 <ext-panel layout="fit" bodyPadding="0">
-
-  <ext-titlebar docked="top" weight="10">
-    <ext-button iconCls="x-fa fa-bars" onReady="main.toggleButtonReady(event)" onTap="main.toggleTree()"></ext-button>
-    <span href="#" class="app-title">Sencha Ext Components 7.0 Boilerplate</span>
+  <ext-titlebar
+    docked="top"
+    titleAlign="left"
+    shadow="true"
+    style="z-index: 100;"
+    weight="10"
+    platformConfig='{
+      "!desktop": {
+          "titleAlign": "center"
+      }
+    }'
+  >
+    <div>
+        <div class="sencha-logo"></div>
+        <a href="#" class="app-title">Sencha Ext Components 7.0 Conference App</a>
+    </div>
+    <ext-button
+      iconCls="x-fa fa-bars"
+      onReady="main.toggleButtonReady(event)"
+      onTap="main.toggleTree()"
+    >
+    </ext-button>
+    <ext-combobox
+        align="right"
+        ui="alt"
+        placeholder="Search"
+        queryMode="local"
+        clearable="true"
+        hideTrigger="true"
+        valueField="id"
+        matchFieldWidth="false"
+        floatedPicker='{ "width": "500" }'
+        onready="main.comboboxReady(event)"
+        triggers='{
+            "search": {
+                "type": "search",
+                "side": "left"
+            }
+        }'
+    >
+    </ext-combobox>
   </ext-titlebar>
-
   <ext-panel
     docked="left"
     border="true"
@@ -13,9 +49,9 @@
     resizable='{"edges": "east", "dynamic": "true"}'
     header="false"
     collapsible='{"direction": "left"}'
-    collapsed="false"
     width="200px"
-    onready="main.readyNavTreePanel(event)">
+    onready="main.readyNavTreePanel(event)"
+  >
     <ext-treelist
       ui="nav"
       expanderFirst="false"
@@ -24,7 +60,5 @@
       onselectionchange="main.navTreelistSelectionChange(event)">
     </ext-treelist>
   </ext-panel>
-
   <ext-router hidden=false onready="main.readyRouter(event)" padding="2"></ext-router>
-
 </ext-panel>
