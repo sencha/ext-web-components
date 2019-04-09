@@ -40,6 +40,7 @@ export class ExtPivotd3containerComponent extends ExtBase {
   }
 
   connectedCallback() {
+		debugger;
     super.connectedCallback()
   }
 

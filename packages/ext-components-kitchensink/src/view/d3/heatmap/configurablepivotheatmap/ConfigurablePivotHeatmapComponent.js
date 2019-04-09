@@ -1,184 +1,99 @@
 import './ConfigurablePivotHeatmapComponent.html';
 import data from './salesData';
-
 Ext.require('Ext.pivot.d3.HeatMap');
-
-const regions = {
-  "Belgium": 'Europe',
-  "Netherlands": 'Europe',
-  "United Kingdom": 'Europe',
-  "Canada": 'North America',
-  "United States": 'North America',
-  "Australia": 'Australia'
-};
-
 export default class ConfigurablePivotHeatmapComponent {
   constructor () {
-    // debugger;
-    this.store = Ext.create('Ext.data.Store', {
-      fields: [
-          {name: 'id',        type: 'string'},
-          {name: 'company',   type: 'string'},
-          {name: 'country',   type: 'string'},
-          {name: 'person',    type: 'string'},
-          {name: 'date',      type: 'date', dateFormat: 'c'},
-          {name: 'value',     type: 'float'},
-          {name: 'quantity',  type: 'float'},
-          {
-            name: 'year',
-            calculate: function(data){
-              return parseInt(Ext.Date.format(data.date, "Y"), 10);
-            }
-          },{
-            name: 'month',
-            calculate: function(data){
-              return parseInt(Ext.Date.format(data.date, "m"), 10) - 1;
-            }
-          },{
-            name: 'continent',
-            calculate: function(data){
-              return regions[data.country];
-            }
-          }
-      ],
-      data: data
-    });
+
   }
 
-  mainContainerReady(event) {
+  mainPivotReady(event) {
     debugger;
-    this.mainCtn = event.detail.cmp;
-    const matrixVar = {
-      store: this.store,
-      aggregate: [{
-        dataIndex: 'value',
-        header: 'Value',
-        aggregator: 'avg'
-      }],
-  
-      leftAxis: [{
-        dataIndex: 'person',
-        header: 'Person'
-      }],
-  
-      topAxis: [{
-        dataIndex: 'year',
-        header: 'Year'
-      }]
-    };
-    const drawingVar = {
-      xtype: 'pivotheatmap',
-  
-      legend: {
-        items: {
-          count: 10
-        }
-      },
-  
-      tooltip: {
-        renderer: this.onTooltip.bind(this)
-      },
-  
-      platformConfig: {
-        phone: {
-          tiles: {
-            cls: 'phone-tiles'
-          }
-        },
-        tablet: {
-          tiles: {
-            cls: 'tablet-tiles'
-          }
-        }
-      }
-    };
-    const configuratorVar = {
-      fields: [{
-        dataIndex:  'quantity',
-        header:     'Qty',
-        aggregator: 'sum',
-        formatter: 'number("0")',
-  
-        settings: {
-          allowed: ['aggregate'],
-          style: {
-            fontWeight: 'bold'
-          },
-          formatters: {
-            '0': 'number("0")',
-            '0%': 'number("0%")'
-          }
-        }
-      }, {
-          dataIndex:  'value',
-          header:     'Value',
-  
-          settings: {
-            allowed: 'aggregate',
-            aggregators: ['sum', 'avg', 'count'],
-            style: {
-              fontWeight: 'bold'
-            },
-            formatters: {
-              '0': 'number("0")',
-              '0.00': 'number("0.00")',
-              '0,000.00': 'number("0,000.00")',
-              '0%': 'number("0%")',
-              '0.00%': 'number("0.00%")'
-            }
-          }
-      }, {
-        dataIndex:  'company',
-        header:     'Company',
-  
-        settings: {
-          aggregators: ['count']
-        }
-      }, {
-        dataIndex:  'country',
-        header:     'Country',
-  
-        settings: {
-          aggregators: ['count']
-        }
-      }, {
-        dataIndex: 'person',
-        header: 'Person',
-  
-        settings: {
-          aggregators: 'count'
-        }
-      }, {
-        dataIndex:  'year',
-        header:     'Year',
-  
-        settings: {
-          allowed: ['leftAxis', 'topAxis']
-        }
-      }, {
-        dataIndex:      'month',
-        header:         'Month',
-        labelRenderer:  'monthLabelRenderer',
-  
-        settings: {
-          allowed: ['leftAxis', 'topAxis']
-        }
-      }]
+    const regions = {
+      "Belgium": 'Europe',
+      "Netherlands": 'Europe',
+      "United Kingdom": 'Europe',
+      "Canada": 'North America',
+      "United States": 'North America',
+      "Australia": 'Australia'
     };
 
-    const pivotD3Container = document.createElement('ext-pivotd3container');
-    pivotD3Container.setAttribute('configurator', configuratorVar);
-    pivotD3Container.setAttribute('matrix', matrixVar);
-    pivotD3Container.setAttribute('drawing', drawingVar);
-    pivotD3Container.setAttribute('shadow', true);
-    pivotD3Container.setAttribute('layout', "fit");
-    pivotD3Container.setAttribute('onBeforeMoveConfigField', this.onBeforeAddConfigField.bind(this));
-    pivotD3Container.setAttribute('onShowConfigFieldSettings', this.onShowFieldSettings.bind(this));
+    const store = Ext.create('Ext.data.Store', {
+      fields: [
+        {name: 'id',        type: 'string'},
+        {name: 'company',   type: 'string'},
+        {name: 'country',   type: 'string'},
+        {name: 'person',    type: 'string'},
+        {name: 'date',      type: 'date', dateFormat: 'c'},
+        {name: 'value',     type: 'float'},
+        {name: 'quantity',  type: 'float'},
+        {
+          name: 'year',
+          calculate: function(data){
+              return parseInt(Ext.Date.format(data.date, "Y"), 10);
+          }
+        },{
+          name: 'month',
+          calculate: function(data){
+              return parseInt(Ext.Date.format(data.date, "m"), 10) - 1;
+          }
+        },{
+          name: 'continent',
+          calculate: function(data){
+              return regions[data.country];
+          }
+        }
+      ],
+      data
+    });
 
+    // const matrixVar = {
+    //   store: store,
+    //   aggregate: [{
+    //       dataIndex: 'value',
+    //       header: 'Value',
+    //       aggregator: 'avg'
+    //   }],
+    //
+    //   leftAxis: [{
+    //       dataIndex: 'person',
+    //       header: 'Person',
+    //   }],
+    //
+    //   topAxis: [{
+    //       dataIndex: 'year',
+    //       header: 'Year',
+    //   }]
+    // };
+    //
+    // const drawingVar = {
+    //   xtype: 'pivotheatmap',
+    //
+    //   legend: {
+    //     items: {
+    //       count: '10'
+    //     }
+    //   },
+    //
+    //   platformConfig: {
+    //     phone: {
+    //       tiles: {
+    //         cls: 'phone-tiles'
+    //       }
+    //     },
+    //     tablet: {
+    //       tiles: {
+    //         cls: 'tablet-tiles'
+    //       }
+    //     }
+    //   }
+    // };
+
+    this.pivotD3ContainerCmp = event.detail.cmp;
+    const currentMatrix = this.pivotD3ContainerCmp.getMatrix();
+    currentMatrix.store = store;
     debugger;
-    this.mainCtn.el.dom.appendChild(pivotD3Container);
-    // this.mainCtn.on('onBeforeMoveConfigField', this.onBeforeAddConfigField.bind(this));
-    // this.mainCtn.on('onShowConfigFieldSettings', this.onShowFieldSettings.bind(this));
+    // this.pivotD3ContainerCmp.setDrawing(drawingVar);
+    this.pivotD3ContainerCmp.setMatrix(currentMatrix);
   }
 
   showConfigurator() {
