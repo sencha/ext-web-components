@@ -1,5 +1,18 @@
-<ext-button 
-  text="multiaxis"
-  onready="multiaxis.readyButton1(event)"
-  ontap="multiaxis.tapButton1(event)">
-</ext-button>
+<ext-container padding="15" layout="fit" fitToParent="true" height="100%">
+  <ext-container padding="15" docked="top">
+    <chart-toolbar
+      onItemReady="multiaxis.onMenuItemReady(event)"
+      onThemeChange="multiaxis.changeTheme"
+      onRefreshButtonReady="multiaxis.onRefreshButtonReady(event)"
+      theme="default">
+    </chart-toolbar>
+  </ext-container>
+
+  <ext-polar downloadServerUrl ="http://svg.sencha.io"
+    onready="multiaxis.onPolarReady(event)"
+    shadow="true"
+    insetPadding="25"
+    interactions='["rotate"]'
+    theme="default">
+  </ext-polar>
+</ext-container>
