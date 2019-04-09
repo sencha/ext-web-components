@@ -14,7 +14,6 @@ const regions = {
 
 export default class ConfigurablePivotHeatmapComponent {
   constructor () {
-    // debugger;
     this.store = Ext.create('Ext.data.Store', {
       fields: [
           {name: 'id',        type: 'string'},
@@ -46,7 +45,6 @@ export default class ConfigurablePivotHeatmapComponent {
   }
 
   mainContainerReady(event) {
-    debugger;
     this.mainCtn = event.detail.cmp;
     const matrixVar = {
       store: this.store,
@@ -175,7 +173,6 @@ export default class ConfigurablePivotHeatmapComponent {
     pivotD3Container.setAttribute('onBeforeMoveConfigField', this.onBeforeAddConfigField.bind(this));
     pivotD3Container.setAttribute('onShowConfigFieldSettings', this.onShowFieldSettings.bind(this));
 
-    debugger;
     this.mainCtn.el.dom.appendChild(pivotD3Container);
     // this.mainCtn.on('onBeforeMoveConfigField', this.onBeforeAddConfigField.bind(this));
     // this.mainCtn.on('onShowConfigFieldSettings', this.onShowFieldSettings.bind(this));

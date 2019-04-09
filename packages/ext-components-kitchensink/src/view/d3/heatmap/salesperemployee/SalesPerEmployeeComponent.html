@@ -1,5 +1,13 @@
-<ext-button 
-  text="salesperemployee"
-  onready="salesperemployee.readyButton1(event)"
-  ontap="salesperemployee.tapButton1(event)">
-</ext-button>
+<ext-container padding="10" layout="fit" fitToParent="true" height="100%">
+  <ext-panel layout="fit" height="100%">
+    <ext-toolbar  docked="top">
+        <ext-button  iconCls="x-fa fa-refresh" onready="salesperemployee.onRefreshDataButtonReady(event)" text="Refresh Data"></ext-button>
+        <ext-button  iconCls="x-fa fa-table" onready="salesperemployee.onRefreshSizeButtonReady(event)" text="Refresh Size"></ext-button>
+    </ext-toolbar>
+    <ext-d3-heatmap  
+        onready="salesperemployee.onHeatMapReady(event)"
+        padding="30 30 50 100"
+        flex="1"
+    ></ext-d3-heatmap>
+  </ext-panel>
+</ext-container>

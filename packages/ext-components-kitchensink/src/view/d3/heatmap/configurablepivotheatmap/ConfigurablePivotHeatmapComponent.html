@@ -1,9 +1,96 @@
-<ext-container
-  padding="10"
-  layout="fit"
-  fitToParent="true"
-  height="100%"
-  onready="configurablepivotheatmap.mainContainerReady(event)"
->
-ABCD
+<ext-container padding="10" layout="fit" fitToParent="true" height="100%">
+  <ext-pivotd3container 
+    onready="configurablepivotheatmap.mainCtnReady(event)"
+    shadow="true"
+    layout="fit"
+    configurator='{
+      "fields": [{
+        "dataIndex": "quantity",
+        "header":     "Qty",
+        "aggregator": "sum",
+        "formatter": "number(\"0\")",
+  
+        "settings": {
+          "allowed": ["aggregate"],
+          "style": {
+            "fontWeight": "bold"
+          },
+          "formatters": {
+            "0": "number(\"0\")",
+            "0%": "number(\"0%\")"
+          }
+        }
+      }, {
+          "dataIndex":  "value",
+          "header":     "Value",
+  
+          "settings": {
+            "allowed": "aggregate",
+            "aggregators": ["sum", "avg", "count"],
+            "style": {
+              "fontWeight": "bold"
+            },
+            "formatters": {
+              "0": "number(\"0\")",
+              "0.00": "number(\"0.00\")",
+              "0,000.00": "number(\"0,000.00\")",
+              "0%": "number(\"0%\")",
+              "0.00%": "number(\"0.00%\")"
+            }
+          }
+      }, {
+        "dataIndex":  "company",
+        "header":     "Company",
+  
+        "settings": {
+          "aggregators": ["count"]
+        }
+      }, {
+        "dataIndex":  "country",
+        "header":    "Country",
+  
+        "settings": {
+          "aggregators": ["count"]
+        }
+      }, {
+        "dataIndex": "person",
+        "header": "Person",
+  
+        "settings": {
+          "aggregators": "count"
+        }
+      }, {
+        "dataIndex":  "year",
+        "header":     "Year",
+  
+        "settings": {
+          "allowed": ["leftAxis", "topAxis"]
+        }
+      }, {
+        "dataIndex":     "month",
+        "header":        "Month",
+        "labelRenderer": "monthLabelRenderer",
+  
+        "settings": {
+          "allowed": ["leftAxis", "topAxis"]
+        }
+      }]
+    }'
+    matrix='{
+      "leftAxis": [{
+        "dataIndex": "person",
+        "header": "Person"
+      }],
+  
+      "topAxis": [{
+        "dataIndex": "year",
+        "header": "Year"
+      }]
+    }'
+    >
+    <ext-toolbar docked="top">
+      <ext-spacer></ext-spacer>
+      <ext-button onready="configurablepivotheatmap.onButtonReady(event)" text="Show configurator"></ext-button>
+    </ext-toolbar>
+  </ext-pivotd3container>
 </ext-container>
