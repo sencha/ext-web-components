@@ -339,8 +339,8 @@ export default function getMenu() {
       ] },
       { text: 'Three D Column', iconCls: 'icon-column-3d', children: [
         { text: 'Basic 3D Column', component: Basic3DColumnComponent, iconCls: 'icon-column-basic-3d' },
-        { text: '3D Grouped', component: ThreeDGroupedComponent, iconCls: 'icon-column-grouped-3d' },
-        { text: '3D Stacked', component: ThreeDStackedComponent, iconCls: 'icon-column-stacked-3d' },
+        { text: 'Three D Grouped', component: ThreeDGroupedComponent, iconCls: 'icon-column-grouped-3d' },
+        { text: 'Three D Stacked', component: ThreeDStackedComponent, iconCls: 'icon-column-stacked-3d' },
         { text: 'Negative Values', component: NegativeValuesComponent, iconCls: 'icon-column-negative-3d' },
         { text: 'Three D Column With Renderer', component: ThreeDColumnWithRendererComponent, iconCls: 'icon-column-renderer-3d' }
       ]},
