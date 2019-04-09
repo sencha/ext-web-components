@@ -1,1 +1,26 @@
-I am a Speaker.
+<ext-container
+    onready="speakers.containerready(event)"
+    activeItem="1"
+    platformConfig='{
+                    "!phone": {
+                        "layout": "hbox"
+                    },
+                    "phone": {
+                        "layout": { 
+                            "type": "card", 
+                            "animation": "slide" 
+                        }
+                    }
+                }'
+    height="100%"
+    width="100%"
+>
+    <ext-list
+        shadow="true"
+        onready="speakers.listready(event)"
+        itemCls="app-list-item"
+        flex="1"
+        rowLines="true"
+        cls="app-list"
+    ></ext-list>
+</ext-container>
