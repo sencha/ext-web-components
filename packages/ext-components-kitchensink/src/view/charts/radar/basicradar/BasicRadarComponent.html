@@ -1,5 +1,18 @@
-<ext-button 
-  text="basicradar"
-  onready="basicradar.readyButton1(event)"
-  ontap="basicradar.tapButton1(event)">
-</ext-button>
+<ext-container padding="15" layout="fit" fitToParent="true" height="100%">
+  <ext-container docked="top" padding="15">
+    <chart-toolbar
+      onItemReady="basicradar.onMenuItemReady(event)"
+      onThemeChange="basicradar.changeTheme(event)"
+      theme="default">
+    </chart-toolbar>
+  </ext-container>
+
+  <ext-polar downloadServerUrl ="http://svg.sencha.io"
+    onready="basicradar.onPolarReady(event)"
+    width="800px"
+    shadow="true"
+    insetPadding="25"
+    theme="default"
+    interactions="rotate">
+  </ext-polar>
+</ext-container>
