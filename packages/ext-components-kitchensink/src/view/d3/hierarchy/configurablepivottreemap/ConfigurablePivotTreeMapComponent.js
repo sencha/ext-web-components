@@ -17,35 +17,6 @@ export default class ConfigurablePivotTreemapComponent {
       "Australia": 'Australia'
     };
 
-    const store = Ext.create('Ext.data.Store', {
-      fields: [
-        {name: 'id',        type: 'string'},
-        {name: 'company',   type: 'string'},
-        {name: 'country',   type: 'string'},
-        {name: 'person',    type: 'string'},
-        {name: 'date',      type: 'date', dateFormat: 'c'},
-        {name: 'value',     type: 'float'},
-        {name: 'quantity',  type: 'float'},
-        {
-          name: 'year',
-          calculate: function(data){
-              return parseInt(Ext.Date.format(data.date, "Y"), 10);
-          }
-        },{
-          name: 'month',
-          calculate: function(data){
-              return parseInt(Ext.Date.format(data.date, "m"), 10) - 1;
-          }
-        },{
-          name: 'continent',
-          calculate: function(data){
-              return regions[data.country];
-          }
-        }
-      ],
-      data: createData()
-    });
-
     const matrixVar = {
       store: createData(),
       aggregate: [{
@@ -102,36 +73,30 @@ export default class ConfigurablePivotTreemapComponent {
         }, {
             dataIndex:  'company',
             header:     'Company',
-
             settings: {
                 aggregators: ['count']
             }
         }, {
             dataIndex:  'country',
             header:     'Country',
-
             settings: {
                 aggregators: ['count']
             }
         }, {
             dataIndex: 'person',
             header: 'Person',
-
             settings: {
                 aggregators: 'count'
             }
         }, {
             dataIndex:  'year',
             header:     'Year',
-
             settings: {
                 allowed: ['leftAxis', 'topAxis']
             }
         }, {
             dataIndex:      'month',
             header:         'Month',
-            labelRenderer:  'monthLabelRenderer',
-
             settings: {
                 allowed: ['leftAxis', 'topAxis']
             }
@@ -150,6 +115,9 @@ export default class ConfigurablePivotTreemapComponent {
     this.createdPivotFunc.on('beforeMoveConfigField', this.onBeforeAddConfigField.bind(this));
     this.createdPivotFunc.on('showConfigFieldSettings', this.onShowFieldSettings.bind(this));
     this.createdPivotFunc.on('showConfigPanel', this.onShowConfigPanel.bind(this));
+    const configurator = this.createdPivotFunc.getConfigurator();
+    configurator.getFields().items[6].setLabelRenderer((value) => Ext.Date.monthNames[value]);
+
   }
 
   showConfigurator() {
