@@ -1,7 +1,7 @@
 {
-  "name": "@sencha/ext-components-boilerplate",
+  "name": "@sencha/ext-components-conference-app",
   "version": "7.0.0",
-  "description": "ext-components-boilerplate",
+  "description": "ext-components-conference-app",
   "scripts": {
     "start": "npm run dev",
     "clean": "rimraf build",
