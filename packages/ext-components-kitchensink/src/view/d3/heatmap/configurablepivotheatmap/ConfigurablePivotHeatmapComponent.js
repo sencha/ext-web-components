@@ -17,7 +17,6 @@ export default class ConfigurablePivotHeatmapComponent {
       "Australia": 'Australia'
     };
 
-    debugger;
     const matrixVar = {
       store: data,
       aggregate: [{
