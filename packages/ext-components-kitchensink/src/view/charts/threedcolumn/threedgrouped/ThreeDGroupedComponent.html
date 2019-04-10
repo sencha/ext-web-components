@@ -1,5 +1,28 @@
-<ext-button 
-  text="threedgrouped"
-  onready="threedgrouped.readyButton1(event)"
-  ontap="threedgrouped.tapButton1(event)">
-</ext-button>
+<ext-container
+  padding="10"
+  layout="fit"
+  fitToParent="true"
+  height="100%"
+  width="100%">
+  <ext-toolbar
+    maxHeight="50"
+    docked="top"
+    ui="app-transparent-toolbar"
+    shadow="false"
+    padding="0 10 0 10">
+    <chart-toolbar
+      onDownloadButtonReady="threedgrouped.onDownloadButtonReady(event)">
+    </chart-toolbar>
+  </ext-toolbar>
+  <ext-cartesian
+    onready="threedgrouped.cartesianready(event)"
+    downloadServerUrl="http://svg.sencha.io"
+    shadow="true"
+    flex="2"
+    insetPadding="70 40 0 10"
+    interactions="itemhighlight"
+    animation='{ "duration": "200" }'
+    legend='{ "type": "sprite" }'>
+  </ext-cartesian>
+</ext-container>
+

@@ -1,5 +1,28 @@
-<ext-button 
-  text="3dstacked"
-  onready="3dstacked.readyButton1(event)"
-  ontap="3dstacked.tapButton1(event)">
-</ext-button>
+<ext-container
+  padding="10"
+  layout="fit"
+  fitToParent="true"
+  height="100%"
+  width="100%">
+  <ext-toolbar
+    docked="top"
+    ui="app-transparent-toolbar"
+    shadow="false"
+    padding="0 10 0 10">
+    <chart-toolbar
+    onItemReady="threedstacked.onMenuItemReady(event)"
+    onStackButtonReady="threedstacked.onStackButtonReady(event)"
+    onGroupButtonReady="threedstacked.onGroupButtonReady(event)"
+    onThemeChange="threedstacked.onThemeChange(event)"
+      theme="default">
+    </chart-toolbar>
+  </ext-toolbar>
+  <ext-cartesian
+  onready="threedstacked.cartesianready(event)"
+    downloadServerUrl="http://svg.sencha.io"
+    shadow="true"
+    interactions="itemhighlight"
+    insetPadding="40 20 10 10"
+    legend='{ "type": "sprite" }'>
+  </ext-cartesian>
+</ext-container>
