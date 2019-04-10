@@ -1,11 +1,13 @@
 import './ConfigurablePivotHeatmapComponent.html';
 import data from './salesData';
+
 Ext.require('Ext.pivot.d3.HeatMap');
 
 export default class ConfigurablePivotHeatmapComponent {
   constructor () {}
+
   containerReady(event) {
-    debugger;
+    this.pivotD3ContainerCmp = event.detail.cmp;
     const regions = {
       "Belgium": 'Europe',
       "Netherlands": 'Europe',
@@ -70,7 +72,8 @@ export default class ConfigurablePivotHeatmapComponent {
           count: '10'
         }
       },
-
+      minHeight: 300,
+      height: window.innerHeight-210,
       platformConfig: {
         phone: {
           tiles: {
@@ -157,16 +160,21 @@ export default class ConfigurablePivotHeatmapComponent {
         }]
     };
 
-    this.pivotD3ContainerCmp = event.detail.cmp;
     const pivotElement = document.createElement("ext-pivotd3container");
     pivotElement.setAttribute('matrix', JSON.stringify(matrixVar));
     pivotElement.setAttribute('configurator', JSON.stringify(configuratorVar));
     pivotElement.setAttribute('drawing', JSON.stringify(drawingVar));
-    this.pivotD3ContainerCmp.el.dom.append(pivotElement);
+    pivotElement.setAttribute('layout', 'fit');
+
+    this.pivotD3ContainerCmp.el.dom.appendChild(pivotElement)
+    this.createdPivotFunc = pivotElement.ext;
+    this.createdPivotFunc.on('beforeMoveConfigField', this.onBeforeAddConfigField.bind(this));
+    this.createdPivotFunc.on('showConfigFieldSettings', this.onShowFieldSettings.bind(this));
+    this.createdPivotFunc.innerItems[0].setTooltip({ renderer: this.onTooltip.bind(this) })
   }
 
   showConfigurator() {
-    this.mainCtn.showConfigurator();
+    this.createdPivotFunc.showConfigurator();
   }
 
   onBeforeAddConfigField(panel, config) {
@@ -197,10 +205,5 @@ export default class ConfigurablePivotHeatmapComponent {
       '<div>Z: ' + d[z] + '</div>' +
       '<div>Records: ' + d.records + '</div>'
     );
-  }
-
-  onButtonReady(event) {
-    this.btn = event.detail.cmp;
-    this.btn.setHandler(this.showConfigurator.bind(this));
   }
 }
