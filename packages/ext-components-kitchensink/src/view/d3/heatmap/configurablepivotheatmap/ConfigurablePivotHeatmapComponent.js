@@ -1,12 +1,10 @@
 import './ConfigurablePivotHeatmapComponent.html';
 import data from './salesData';
 Ext.require('Ext.pivot.d3.HeatMap');
+
 export default class ConfigurablePivotHeatmapComponent {
-  constructor () {
-
-  }
-
-  mainPivotReady(event) {
+  constructor () {}
+  containerReady(event) {
     debugger;
     const regions = {
       "Belgium": 'Europe',
@@ -46,54 +44,125 @@ export default class ConfigurablePivotHeatmapComponent {
       data
     });
 
-    // const matrixVar = {
-    //   store: store,
-    //   aggregate: [{
-    //       dataIndex: 'value',
-    //       header: 'Value',
-    //       aggregator: 'avg'
-    //   }],
-    //
-    //   leftAxis: [{
-    //       dataIndex: 'person',
-    //       header: 'Person',
-    //   }],
-    //
-    //   topAxis: [{
-    //       dataIndex: 'year',
-    //       header: 'Year',
-    //   }]
-    // };
-    //
-    // const drawingVar = {
-    //   xtype: 'pivotheatmap',
-    //
-    //   legend: {
-    //     items: {
-    //       count: '10'
-    //     }
-    //   },
-    //
-    //   platformConfig: {
-    //     phone: {
-    //       tiles: {
-    //         cls: 'phone-tiles'
-    //       }
-    //     },
-    //     tablet: {
-    //       tiles: {
-    //         cls: 'tablet-tiles'
-    //       }
-    //     }
-    //   }
-    // };
+    const matrixVar = {
+      store: data,
+      aggregate: [{
+          dataIndex: 'value',
+          header: 'Value',
+          aggregator: 'avg'
+      }],
+
+      leftAxis: [{
+          dataIndex: 'person',
+          header: 'Person',
+      }],
+
+      topAxis: [{
+          dataIndex: 'year',
+          header: 'Year',
+      }]
+    };
+
+    const drawingVar = {
+      xtype: 'pivotheatmap',
+      legend: {
+        items: {
+          count: '10'
+        }
+      },
+
+      platformConfig: {
+        phone: {
+          tiles: {
+            cls: 'phone-tiles'
+          }
+        },
+        tablet: {
+          tiles: {
+            cls: 'tablet-tiles'
+          }
+        }
+      }
+    };
+    const configuratorVar =  {
+        fields: [{
+            dataIndex:  'quantity',
+            header:     'Qty',
+            aggregator: 'sum',
+            formatter: 'number("0")',
+
+            settings: {
+                allowed: ['aggregate'],
+                style: {
+                    fontWeight: 'bold'
+                },
+                formatters: {
+                    '0': 'number("0")',
+                    '0%': 'number("0%")'
+                }
+            }
+        }, {
+            dataIndex:  'value',
+            header:     'Value',
+            settings: {
+                allowed: 'aggregate',
+                aggregators: ['sum', 'avg', 'count'],
+                style: {
+                    fontWeight: 'bold'
+                },
+                formatters: {
+                    '0': 'number("0")',
+                    '0.00': 'number("0.00")',
+                    '0,000.00': 'number("0,000.00")',
+                    '0%': 'number("0%")',
+                    '0.00%': 'number("0.00%")'
+                }
+            }
+        }, {
+            dataIndex:  'company',
+            header:     'Company',
+
+            settings: {
+                aggregators: ['count']
+            }
+        }, {
+            dataIndex:  'country',
+            header:     'Country',
+
+            settings: {
+                aggregators: ['count']
+            }
+        }, {
+            dataIndex: 'person',
+            header: 'Person',
+
+            settings: {
+                aggregators: 'count'
+            }
+        }, {
+            dataIndex:  'year',
+            header:     'Year',
+
+            settings: {
+                allowed: ['leftAxis', 'topAxis']
+            }
+        }, {
+            dataIndex:      'month',
+            header:         'Month',
+            labelRenderer:  'monthLabelRenderer',
+
+            settings: {
+                allowed: ['leftAxis', 'topAxis']
+            }
+        }]
+    };
 
     this.pivotD3ContainerCmp = event.detail.cmp;
-    const currentMatrix = this.pivotD3ContainerCmp.getMatrix();
-    currentMatrix.store = store;
-    debugger;
-    // this.pivotD3ContainerCmp.setDrawing(drawingVar);
-    this.pivotD3ContainerCmp.setMatrix(currentMatrix);
+    const pivotElement = document.createElement("ext-pivotd3container");
+    pivotElement.setAttribute('matrix', JSON.stringify(matrixVar));
+    pivotElement.setAttribute('configurator', JSON.stringify(configuratorVar));
+    pivotElement.setAttribute('drawing', JSON.stringify(drawingVar));
+    this.pivotD3ContainerCmp.el.dom.append(pivotElement);
   }
 
   showConfigurator() {
