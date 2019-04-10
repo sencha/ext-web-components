@@ -45,7 +45,7 @@ export default class DonutComponent {
 
   onThemeChange(event) {
     this.theme = event.config.text.toLowerCase();
-    this.menuCmpArray.forEach((cmp, index) => {
+    this.menuCmpArray.forEach(function(cmp, index) {
       if (index == parseInt(event.config.itemId)) {
         cmp.setIconCls('x-font-icon md-icon-done');
         return;
