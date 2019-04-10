@@ -1,3 +1,4 @@
+// import './SpeakerComponent.js';
 import "./SpeakersComponent.html";
 Ext.define('User', {
   extend: 'Ext.data.Model',
@@ -26,6 +27,7 @@ export default class SpeakersComponent {
     });
 
     this.record = null;
+    this.speakerId = null;
   }
 
   containerready(event) {
@@ -34,6 +36,34 @@ export default class SpeakersComponent {
 
   itemTap(location, eopts) {
     this.record = eopts.record.data;
+    this.speakerId = eopts.record.id;
+    if (this.sideContainer) {
+    this.sideContainer.remove(this.speakerChild);
+    this.containerCmp.remove(this.sideContainer);
+    }
+
+    this.sideContainer = Ext.create({
+      xtype: 'panel',
+      flex: '1',
+      layout: 'vbox',
+      padding: '20',
+    });
+    this.speakerChild = Ext.create({
+      xtype: 'container',
+      html: `
+                <div class="app-speaker-ct">
+                            <img class="app-speaker-image" src=${this.record.avatar_url}></img>
+                            <div class="app-speaker-text">
+                                <div class="app-speaker-name">${this.record.name}</div>
+                                <div class="app-speaker-title">${this.record.title}</div>
+                                <div class="app-speaker-company">${this.record.company}</div>
+                                <div class="app-speaker-bio">${this.record.bio}</div>
+                            </div>
+                        </div>
+                    `,
+    });
+    this.sideContainer.add(this.speakerChild);
+    this.containerCmp.add(this.sideContainer);
   }
 
   listready(event) {
@@ -48,7 +78,7 @@ export default class SpeakersComponent {
             <div class="app-list-item-details">{title} - {company}</div>
           </div>
       </div>
-        `)
+        `);
     this.listCmp.setStore(this.store);
     this.listCmp.on('childtap', this.itemTap.bind(this));
   }
