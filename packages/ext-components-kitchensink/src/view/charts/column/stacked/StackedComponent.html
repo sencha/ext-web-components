@@ -11,12 +11,14 @@
   shadow="false"
   padding="0 10 0 10">
   <chart-toolbar
-  onThemeChange="stacked.onThemeChange(event)"  
-  onRefreshButtonReady="stacked.onRefreshButtonReady(event)"
-  onZoomButtonReady="stacked.onZoomButtonReady(event)"
-  onPanButtonReady="stacked.onPanButtonReady(event)"
-  onGroupButtonReady="stacked.onGroupButtonReady(event)"
-  onStackButtonReady="stacked.onStackButtonReady(event)">
+    onThemeChange="stacked.onThemeChange(event)" 
+    onItemReady ="stacked.onMenuItemReady(event)"
+    onRefreshButtonReady="stacked.onRefreshButtonReady(event)"
+    onZoomButtonReady="stacked.onZoomButtonReady(event)"
+    onPanButtonReady="stacked.onPanButtonReady(event)"
+    onGroupButtonReady="stacked.onGroupButtonReady(event)"
+    style="width: 100%;"
+    onStackButtonReady="stacked.onStackButtonReady(event)">
   </chart-toolbar>
 </ext-toolbar>
 

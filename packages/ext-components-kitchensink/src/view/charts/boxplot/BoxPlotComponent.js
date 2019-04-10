@@ -1,3 +1,4 @@
+import '../charttoolbar/ChartToolbar.js';
 import './BoxPlotComponent.html';
 import data from './BoxPlotComponentData.js'; 
 

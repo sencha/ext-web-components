@@ -1,5 +1,28 @@
-<ext-button 
-  text="candlestick"
-  onready="candlestick.readyButton1(event)"
-  ontap="candlestick.tapButton1(event)">
-</ext-button>
+<ext-container
+  padding="10"
+  layout="fit"
+  fitToParent="true"
+  height="100%"
+  width="100%">
+  <ext-toolbar
+    docked="top"
+    ui="app-transparent-toolbar"
+    shadow="false"
+    padding="0 10 0 10">
+    <chart-toolbar
+      onItemReady="candlestick.onMenuItemReady(event)"
+      theme="default"
+      onRefreshButtonReady="candlestick.onRefreshButtonReady(event)"
+      onZoomButtonReady="candlestick.onZoomButtonReady(event)"
+      onPanButtonReady="candlestick.onPanButtonReady(event)"
+      onCrosshairButtonReady="candlestick.onCrosshairButtonReady(event)"
+      style="width: 100%;"
+      onlyMidnight="true">
+    </chart-toolbar>
+  </ext-toolbar>
+  <ext-cartesian
+    onready="candlestick.cartesianready(event)"
+    downloadServerUrl="http://svg.sencha.io"
+    shadow="true">
+  </ext-cartesian>
+</ext-container>
