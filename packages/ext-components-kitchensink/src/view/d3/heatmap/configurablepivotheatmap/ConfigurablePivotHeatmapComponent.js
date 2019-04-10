@@ -3,80 +3,48 @@ import data from './salesData';
 
 Ext.require('Ext.pivot.d3.HeatMap');
 
-const regions = {
-  "Belgium": 'Europe',
-  "Netherlands": 'Europe',
-  "United Kingdom": 'Europe',
-  "Canada": 'North America',
-  "United States": 'North America',
-  "Australia": 'Australia'
-};
-
 export default class ConfigurablePivotHeatmapComponent {
-  constructor () {
-    this.store = Ext.create('Ext.data.Store', {
-      fields: [
-          {name: 'id',        type: 'string'},
-          {name: 'company',   type: 'string'},
-          {name: 'country',   type: 'string'},
-          {name: 'person',    type: 'string'},
-          {name: 'date',      type: 'date', dateFormat: 'c'},
-          {name: 'value',     type: 'float'},
-          {name: 'quantity',  type: 'float'},
-          {
-            name: 'year',
-            calculate: function(data){
-              return parseInt(Ext.Date.format(data.date, "Y"), 10);
-            }
-          },{
-            name: 'month',
-            calculate: function(data){
-              return parseInt(Ext.Date.format(data.date, "m"), 10) - 1;
-            }
-          },{
-            name: 'continent',
-            calculate: function(data){
-              return regions[data.country];
-            }
-          }
-      ],
-      data: data
-    });
-  }
+  constructor () {}
 
-  mainContainerReady(event) {
-    this.mainCtn = event.detail.cmp;
+  containerReady(event) {
+    this.pivotD3ContainerCmp = event.detail.cmp;
+    const regions = {
+      "Belgium": 'Europe',
+      "Netherlands": 'Europe',
+      "United Kingdom": 'Europe',
+      "Canada": 'North America',
+      "United States": 'North America',
+      "Australia": 'Australia'
+    };
+
     const matrixVar = {
-      store: this.store,
+      store: data,
       aggregate: [{
-        dataIndex: 'value',
-        header: 'Value',
-        aggregator: 'avg'
+          dataIndex: 'value',
+          header: 'Value',
+          aggregator: 'avg'
       }],
-  
+
       leftAxis: [{
-        dataIndex: 'person',
-        header: 'Person'
+          dataIndex: 'person',
+          header: 'Person',
       }],
-  
+
       topAxis: [{
-        dataIndex: 'year',
-        header: 'Year'
+          dataIndex: 'year',
+          header: 'Year',
       }]
     };
+
     const drawingVar = {
       xtype: 'pivotheatmap',
-  
       legend: {
         items: {
-          count: 10
+          count: '10'
         }
       },
-  
-      tooltip: {
-        renderer: this.onTooltip.bind(this)
-      },
-  
+      minHeight: 300,
+      height: window.innerHeight-210,
       platformConfig: {
         phone: {
           tiles: {
@@ -90,96 +58,90 @@ export default class ConfigurablePivotHeatmapComponent {
         }
       }
     };
-    const configuratorVar = {
-      fields: [{
-        dataIndex:  'quantity',
-        header:     'Qty',
-        aggregator: 'sum',
-        formatter: 'number("0")',
-  
-        settings: {
-          allowed: ['aggregate'],
-          style: {
-            fontWeight: 'bold'
-          },
-          formatters: {
-            '0': 'number("0")',
-            '0%': 'number("0%")'
-          }
-        }
-      }, {
-          dataIndex:  'value',
-          header:     'Value',
-  
-          settings: {
-            allowed: 'aggregate',
-            aggregators: ['sum', 'avg', 'count'],
-            style: {
-              fontWeight: 'bold'
-            },
-            formatters: {
-              '0': 'number("0")',
-              '0.00': 'number("0.00")',
-              '0,000.00': 'number("0,000.00")',
-              '0%': 'number("0%")',
-              '0.00%': 'number("0.00%")'
+    const configuratorVar =  {
+        fields: [{
+            dataIndex:  'quantity',
+            header:     'Qty',
+            aggregator: 'sum',
+            formatter: 'number("0")',
+
+            settings: {
+                allowed: ['aggregate'],
+                style: {
+                    fontWeight: 'bold'
+                },
+                formatters: {
+                    '0': 'number("0")',
+                    '0%': 'number("0%")'
+                }
             }
-          }
-      }, {
-        dataIndex:  'company',
-        header:     'Company',
-  
-        settings: {
-          aggregators: ['count']
-        }
-      }, {
-        dataIndex:  'country',
-        header:     'Country',
-  
-        settings: {
-          aggregators: ['count']
-        }
-      }, {
-        dataIndex: 'person',
-        header: 'Person',
-  
-        settings: {
-          aggregators: 'count'
-        }
-      }, {
-        dataIndex:  'year',
-        header:     'Year',
-  
-        settings: {
-          allowed: ['leftAxis', 'topAxis']
-        }
-      }, {
-        dataIndex:      'month',
-        header:         'Month',
-        labelRenderer:  'monthLabelRenderer',
-  
-        settings: {
-          allowed: ['leftAxis', 'topAxis']
-        }
-      }]
+        }, {
+            dataIndex:  'value',
+            header:     'Value',
+            settings: {
+                allowed: 'aggregate',
+                aggregators: ['sum', 'avg', 'count'],
+                style: {
+                    fontWeight: 'bold'
+                },
+                formatters: {
+                    '0': 'number("0")',
+                    '0.00': 'number("0.00")',
+                    '0,000.00': 'number("0,000.00")',
+                    '0%': 'number("0%")',
+                    '0.00%': 'number("0.00%")'
+                }
+            }
+        }, {
+            dataIndex:  'company',
+            header:     'Company',
+            settings: {
+                aggregators: ['count']
+            }
+        }, {
+            dataIndex:  'country',
+            header:     'Country',
+            settings: {
+                aggregators: ['count']
+            }
+        }, {
+            dataIndex: 'person',
+            header: 'Person',
+            settings: {
+                aggregators: 'count'
+            }
+        }, {
+            dataIndex:  'year',
+            header:     'Year',
+            settings: {
+                allowed: ['leftAxis', 'topAxis']
+            }
+        }, {
+            dataIndex:      'month',
+            header:         'Month',
+            settings: {
+                allowed: ['leftAxis', 'topAxis']
+            }
+        }]
     };
 
-    const pivotD3Container = document.createElement('ext-pivotd3container');
-    pivotD3Container.setAttribute('configurator', configuratorVar);
-    pivotD3Container.setAttribute('matrix', matrixVar);
-    pivotD3Container.setAttribute('drawing', drawingVar);
-    pivotD3Container.setAttribute('shadow', true);
-    pivotD3Container.setAttribute('layout', "fit");
-    pivotD3Container.setAttribute('onBeforeMoveConfigField', this.onBeforeAddConfigField.bind(this));
-    pivotD3Container.setAttribute('onShowConfigFieldSettings', this.onShowFieldSettings.bind(this));
+    const pivotElement = document.createElement("ext-pivotd3container");
+    pivotElement.setAttribute('matrix', JSON.stringify(matrixVar));
+    pivotElement.setAttribute('configurator', JSON.stringify(configuratorVar));
+    pivotElement.setAttribute('drawing', JSON.stringify(drawingVar));
+    pivotElement.setAttribute('layout', 'fit');
 
-    this.mainCtn.el.dom.appendChild(pivotD3Container);
-    // this.mainCtn.on('onBeforeMoveConfigField', this.onBeforeAddConfigField.bind(this));
-    // this.mainCtn.on('onShowConfigFieldSettings', this.onShowFieldSettings.bind(this));
+    this.pivotD3ContainerCmp.el.dom.appendChild(pivotElement)
+    this.createdPivotFunc = pivotElement.ext;
+    this.createdPivotFunc.on('beforeMoveConfigField', this.onBeforeAddConfigField.bind(this));
+    this.createdPivotFunc.on('showConfigFieldSettings', this.onShowFieldSettings.bind(this));
+    this.createdPivotFunc.innerItems[0].setTooltip({ renderer: this.onTooltip.bind(this) });
+    const configurator = this.createdPivotFunc.getConfigurator();
+    configurator.getFields().items[6].setLabelRenderer((value) => Ext.Date.monthNames[value]);
   }
 
   showConfigurator() {
-    this.mainCtn.showConfigurator();
+    this.createdPivotFunc.showConfigurator();
   }
 
   onBeforeAddConfigField(panel, config) {
@@ -210,10 +172,5 @@ export default class ConfigurablePivotHeatmapComponent {
       '<div>Z: ' + d[z] + '</div>' +
       '<div>Records: ' + d.records + '</div>'
     );
-  }
-
-  onButtonReady(event) {
-    this.btn = event.detail.cmp;
-    this.btn.setHandler(this.showConfigurator.bind(this));
   }
 }

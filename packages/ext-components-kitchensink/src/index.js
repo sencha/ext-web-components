@@ -1,7 +1,6 @@
 //import { Route } from '@sencha/ext-components';
 import  { getRoutes } from '@sencha/ext-components/lib/aa-router.component';
 import '@sencha/ext-components/lib/ext-audio.component';
-import '@sencha/ext-components/lib/ext-container.component';
 import '@sencha/ext-components/lib/ext-menu.component';
 import '@sencha/ext-components/lib/ext-menuitem.component';
 import '@sencha/ext-components/lib/ext-carousel.component';
@@ -120,4 +119,3 @@ import * as d3 from 'd3'
   }
 
 }());
-  
