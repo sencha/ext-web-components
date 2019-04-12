@@ -1,4 +1,5 @@
 <ext-container layout="fit" height="100%" 
+      onready="schedule.containerready(event)"
   platformConfig='{
     "!phone": {
         "layout": "hbox"
@@ -19,8 +20,6 @@
   <span>ExtWC Conference</span>
   </ext-container>
   <ext-tabpanel
-      onready="schedule.containerready(event)"
-
       flex="1"
       tabBar='{"shadow": "true"}'
       activeItem="0"

@@ -22,6 +22,7 @@ export default class ScheduleComponent {
         sortProperty: 'startDate'
       }
     };
+    this.record = null;
 
     // this.itemTpl = createTpl({ 
     //   getQuery: this.getQuery, 
@@ -64,14 +65,11 @@ export default class ScheduleComponent {
   // }
 
   containerready(event) {
-    alert('m here')
     this.containerCmp = event.detail.cmp;
   }
 
-  onItemTap(location, eopts) {
-    console.log(eopts);
-    this.record = eopts.record.data;
-    this.speakerId = eopts.record.id;
+  onItemTap(event) {
+    this.record = event.detail.record.data;
     if (this.sideContainer) {
       this.sideContainer.remove(this.speakerChild);
       this.containerCmp.remove(this.sideContainer);
@@ -80,25 +78,47 @@ export default class ScheduleComponent {
     this.sideContainer = Ext.create({
       xtype: 'panel',
       flex: '1',
-      layout: 'vbox',
       padding: '20',
+      header: 'true'
     });
+    this.speakerName = this.record.speakerNames ? `by ${this.record.speakerNames}` : this.record.category;
     this.speakerChild = Ext.create({
       xtype: 'container',
       html: `
-                <div class="app-speaker-ct">
-                            <img class="app-speaker-image" src=${this.record.avatar_url}></img>
-                            <div class="app-speaker-text">
-                                <div class="app-speaker-name">${this.record.name}</div>
-                                <div class="app-speaker-title">${this.record.title}</div>
-                                <div class="app-speaker-company">${this.record.company}</div>
-                                <div class="app-speaker-bio">${this.record.bio}</div>
-                            </div>
-                        </div>
+              <div>
+                <div class="app-event-name">${this.record.title}</div>
+                <div class="app-event-speaker">${this.speakerName}</div>
+                <div class="app-event-time">{day} ${this.record.start_time} - ${this.record.end_time}</div>
+                <div class="app-event-location">${this.record.location.name}</div>
+                { data.description && <hr/> }
+                <div className="app-event-abstract" dangerouslySetInnerHTML={{ __html: data.description }}/>
+              </div>
                     `,
     });
     this.sideContainer.add(this.speakerChild);
     this.containerCmp.add(this.sideContainer);
+  }
+
+  onFavoriteClick(id) {
+    const record = this.store.findRecord('id', id);
+    let favorites;
+
+    if (this.state.favorites.indexOf(id) === -1) {
+      record.set('favorite', true);
+      favorites = [...this.state.favorites, id];
+    } else {
+      record.set('favorite', false);
+      favorites = this.state.favorites.filter(e => e !== id);
+    }
+
+    this.state.favorites = favorites;
+
+    localStorage.setItem('favoriteEvents', JSON.stringify(favorites));
+  }
+
+  myfunc(event) {
+    Ext.get(e.target).ripple(e, { bound: false, color: '#999' });
+    this.onFavoriteClick();
   }
 
   firstListReady(event) {
@@ -117,6 +137,8 @@ export default class ScheduleComponent {
                       {start_time}
                    </div>
                    <div
+                      onclick="schedule.myfunc(event)"
+                      data-id=""
                       data-favorite="on"
                       class="x-item-no-tap x-font-icon md-icon-star app-list-tool app-favorite"
                     />
