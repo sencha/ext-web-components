@@ -41,17 +41,19 @@ export default class ScheduleComponent {
       padding: '20',
       header: 'true'
     });
-    this.speakerName = this.record.speakerNames ? `by ${this.record.speakerNames}` : this.record.category;
+    const day = this.record && this.record.date && this.record.date.match(/(Monday|Tuesday|Wednesday)/)[1];
+    const description = this.record.description ? `<hr/>
+    <div class="app-event-abstract" >${this.record.description}</div>` : '';
+    const speakerName = this.record.speakerNames ? `by ${this.record.speakerNames}` : '';
     this.speakerChild = Ext.create({
       xtype: 'container',
       html: `
               <div>
                 <div class="app-event-name">${this.record.title}</div>
-                <div class="app-event-speaker">${this.speakerName}</div>
-                <div class="app-event-time">{day} ${this.record.start_time} - ${this.record.end_time}</div>
+                <div class="app-event-speaker">${speakerName}</div>
+                <div class="app-event-time">${day} ${this.record.start_time} - ${this.record.end_time}</div>
                 <div class="app-event-location">${this.record.location.name}</div>
-                { data.description && <hr/> }
-                <div className="app-event-abstract" dangerouslySetInnerHTML={{ __html: data.description }}/>
+                ${description}
               </div>
                     `,
     });
@@ -91,9 +93,9 @@ export default class ScheduleComponent {
     const itemTpl = `<div class="app-list-content">
                    <div class="app-list-text">
                       <div class="app-list-item-title">{title}</div>
-                      <div class="app-list-item-details">{detail}</div> 
+                      <div class="app-list-item-details">{speakerNames}</div> 
                       <div class="app-list-item-details">{categoryName} - {location.name}</div>
-                      {start_time}
+                      <div class="app-list-item-details">{date} {start_time}</div> 
                    </div>
                    <div
                       onclick="schedule.onFavoriteClick(event)"
@@ -105,7 +107,6 @@ export default class ScheduleComponent {
     this.list1 = event.detail.cmp;
     this.list1.setItemTpl(itemTpl);
     this.list1.setStore(store);
-    this.list1.on('childtap', this.onItemTap.bind(this));
   }
 
   secondListReady(event) {
