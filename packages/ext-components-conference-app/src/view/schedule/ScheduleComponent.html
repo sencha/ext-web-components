@@ -15,12 +15,12 @@
   <ext-container
   docked="top"
   cls="app-banner"
+  onready="schedule.containerready(event)"
+
   >
   <span>ExtWC Conference</span>
   </ext-container>
   <ext-tabpanel
-      onready="schedule.containerready(event)"
-
       flex="1"
       tabBar='{"shadow": "true"}'
       activeItem="0"
@@ -42,7 +42,6 @@
         pinHeaders="true"
         infinite="true"
         variableHeights="true"
-        onItemTap="schedule.onItemTap(event)"
         emptyText="No events found."
       >
       </ext-list>

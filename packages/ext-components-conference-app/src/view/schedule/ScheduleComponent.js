@@ -52,24 +52,11 @@ export default class ScheduleComponent {
   //       `)
   //   }
   // }
-
-  // onItemTap = (list, index, target, record) => {
-  //   if (record) {
-  //       self.location.hash = `/schedule/${record.id}`;
-  //   }
-
-  //   if (this.props.onSelect) {
-  //       this.props.onSelect(record);
-  //   }
-  // }
-
   containerready(event) {
-    alert('m here')
     this.containerCmp = event.detail.cmp;
   }
 
   onItemTap(location, eopts) {
-    console.log(eopts);
     this.record = eopts.record.data;
     this.speakerId = eopts.record.id;
     if (this.sideContainer) {
@@ -101,6 +88,10 @@ export default class ScheduleComponent {
     this.containerCmp.add(this.sideContainer);
   }
 
+  myFunc(event) {
+    console.log(event);
+  }
+
   firstListReady(event) {
     const store = Ext.create(
       'Ext.data.ChainedStore',
@@ -109,6 +100,8 @@ export default class ScheduleComponent {
         filters: [{ property: 'date', value: 'Monday, November 7' }]
       }
     );
+
+    // const fav = `${favorite}` ? `"on"` : `"off"`;
     const itemTpl = `<div class="app-list-content">
                    <div class="app-list-text">
                       <div class="app-list-item-title">{title}</div>
@@ -117,6 +110,7 @@ export default class ScheduleComponent {
                       {start_time}
                    </div>
                    <div
+                      onClick="schedule.myFunc(event)"
                       data-favorite="on"
                       class="x-item-no-tap x-font-icon md-icon-star app-list-tool app-favorite"
                     />
@@ -124,6 +118,7 @@ export default class ScheduleComponent {
     this.list1 = event.detail.cmp;
     this.list1.setItemTpl(itemTpl);
     this.list1.setStore(store);
+    this.list1.on('childtap', this.onItemTap.bind(this));
   }
 
   secondListReady(event) {
