@@ -16,40 +16,45 @@
   docked="top"
   cls="app-banner"
   >
-  <span>ExtReact Conference</span>
+  <span>ExtWC Conference</span>
   </ext-container>
   <ext-tabpanel
+      onready="schedule.containerready(event)"
+
       flex="1"
       tabBar='{"shadow": "true"}'
       activeItem="0"
       platformConfig='{"!phone": { "flex": "1" } }'
+      height="100%"
   >
     <ext-panel
       title="MONDAY"
+      height="100%"
     >
       <ext-list
+        height="100%"
         onready="schedule.firstListReady(event)"
         hideMode="offsets"
-        title="MONDAY"
         grouped="true"
         rowLines="true"
-        itemTpl="<div>ABCD</div>"
         itemCls="app-list-item"
         cls="app-list"
         pinHeaders="true"
         infinite="true"
         variableHeights="true"
+        onItemTap="schedule.onItemTap(event)"
         emptyText="No events found."
       >
       </ext-list>
     </ext-panel>
     <ext-panel
       title="TUESDAY"
+      height="100%"
     >
       <ext-list
+        height="100%" 
         onready="schedule.secondListReady(event)"
         hideMode="offsets"
-        title="TUESDAY"
         grouped="true"
         rowLines="true"
         itemCls="app-list-item"
@@ -62,12 +67,13 @@
       </ext-list>
     </ext-panel>
     <ext-panel
+    height="100%"
       title="WEDNESDAY"
     >
       <ext-list
+      height="100%"
         onready="schedule.thirdListReady(event)"
         hideMode="offsets"
-        title="WEDNESDAY"
         grouped="true"
         rowLines="true"
         itemCls="app-list-item"
@@ -81,8 +87,10 @@
     </ext-panel>
     <ext-panel
     iconCls="md-icon-star"
+    height="100%"
     >
       <ext-list
+      height="100%"
         onready="schedule.starListReady(event)"
         hideMode="offsets"
         grouped="true"
