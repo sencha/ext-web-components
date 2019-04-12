@@ -133,7 +133,7 @@ import SplineMarkersComponent from './view/charts/line/splinemarkers/SplineMarke
 import PlotComponent from './view/charts/line/plot/PlotComponent.js';
 import WithRendererComponent from './view/charts/line/withrenderer/WithRendererComponent.js';
 import RealtimeComponent from './view/charts/line/realtime/RealtimeComponent.js';
-import NavigatorComponent from './view/charts/navigator/NavigatorComponent.js';
+import NavigationComponent from './view/charts/navigation/NavigationComponent.js';
 import BasicPieComponent from './view/charts/pie/basicpie/BasicPieComponent.js';
 import SpieComponent from './view/charts/pie/spie/SpieComponent.js';
 import DonutComponent from './view/charts/pie/donut/DonutComponent.js';
@@ -360,7 +360,7 @@ export default function getMenu() {
         { text: 'With Renderer', component: WithRendererComponent, iconCls: 'icon-line-renderer' },
         { text: 'Realtime', component: RealtimeComponent, iconCls: 'icon-line-real-time' }
       ] },
-      { text: 'Navigator', component: NavigatorComponent, iconCls: 'icon-navigator-charts' },
+      { text: 'Navigation', component: NavigationComponent, iconCls: 'icon-navigator-charts' },
       { text: 'Pie', iconCls: 'icon-pie-basic', children: [
         { text: 'Basic Pie', component: BasicPieComponent, iconCls: 'icon-pie-basic' },
         { text: 'Spie', component: SpieComponent, iconCls: 'icon-pie-custom' },
