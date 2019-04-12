@@ -2,18 +2,17 @@ import "./ScheduleComponent.html";
 
 export default class ScheduleComponent {
   constructor() {
-    this.favorites = localStorage.getItem('favoriteEvents') || [];
+    if (!localStorage.getItem('favoriteEvents')) {
+      localStorage.setItem('favoriteEvents', JSON.stringify([]));
+    }
+    this.favorites = JSON.parse(localStorage.getItem('favoriteEvents'));
     this.store = Ext.create('Ext.data.Store', {
       autoLoad: true,
       proxy: {
         type: 'ajax',
         url: 'resources/schedule.json'
-      },
-      listeners: {
-        load: store => store.each(record => record.set('favorite', this.favorites.indexOf(record.getId()) !== -1))
       }
     });
-
     this.storeDefaults = {
       source: this.store,
       autoDestroy: true,
@@ -22,43 +21,15 @@ export default class ScheduleComponent {
         sortProperty: 'startDate'
       }
     };
-
-    // this.itemTpl = createTpl({ 
-    //   getQuery: this.getQuery, 
-    //   showTime
-    // });
+    this.record = null;
   }
 
-  // createTpl({ getQuery, showTime=true }) {
-  //   return data => {
-  //       const mark = (text) => {
-  //           const query = getQuery();
-  //           return query ? highlight(query, text) : { __html: text};
-  //       }
-
-  //       const day = data.date && data.date.match(/(Monday|Tuesday|Wednesday)/)[1];
-  //       const detail = data.speakerNames ? `<span>by <span dangerouslySetInnerHTML=${mark(data.speakerNames)}/></span>` : '';
-  //       const showTimeDiv = showTime && `<div className="app-list-item-details">${day} ${data.start_time}</div>`;
-  //       return (`
-  //           <div className="app-list-content">
-  //               <div className="app-list-text">
-  //                   <div className="app-list-item-title" dangerouslySetInnerHTML=${mark(data.title)}/>
-  //                   <div className="app-list-item-details">${detail}</div> 
-  //                   <div className="app-list-item-details">${data.categoryName} - ${data.location.name}</div>
-  //                   ${showTimeDiv}
-  //               </div>
-                
-  //           </div>
-  //       `)
-  //   }
-  // }
   containerready(event) {
     this.containerCmp = event.detail.cmp;
   }
 
-  onItemTap(location, eopts) {
-    this.record = eopts.record.data;
-    this.speakerId = eopts.record.id;
+  onItemTap(event) {
+    this.record = event.detail.record.data;
     if (this.sideContainer) {
       this.sideContainer.remove(this.speakerChild);
       this.containerCmp.remove(this.sideContainer);
@@ -67,29 +38,45 @@ export default class ScheduleComponent {
     this.sideContainer = Ext.create({
       xtype: 'panel',
       flex: '1',
-      layout: 'vbox',
       padding: '20',
+      header: 'true'
     });
+    this.speakerName = this.record.speakerNames ? `by ${this.record.speakerNames}` : this.record.category;
     this.speakerChild = Ext.create({
       xtype: 'container',
       html: `
-                <div class="app-speaker-ct">
-                            <img class="app-speaker-image" src=${this.record.avatar_url}></img>
-                            <div class="app-speaker-text">
-                                <div class="app-speaker-name">${this.record.name}</div>
-                                <div class="app-speaker-title">${this.record.title}</div>
-                                <div class="app-speaker-company">${this.record.company}</div>
-                                <div class="app-speaker-bio">${this.record.bio}</div>
-                            </div>
-                        </div>
+              <div>
+                <div class="app-event-name">${this.record.title}</div>
+                <div class="app-event-speaker">${this.speakerName}</div>
+                <div class="app-event-time">{day} ${this.record.start_time} - ${this.record.end_time}</div>
+                <div class="app-event-location">${this.record.location.name}</div>
+                { data.description && <hr/> }
+                <div className="app-event-abstract" dangerouslySetInnerHTML={{ __html: data.description }}/>
+              </div>
                     `,
     });
     this.sideContainer.add(this.speakerChild);
     this.containerCmp.add(this.sideContainer);
   }
 
-  myFunc(event) {
-    console.log(event);
+  onFavoriteClick(event) {
+    const data_id = event.currentTarget.dataset.id;
+    Ext.get(event.target).ripple(event, { bound: false, color: '#999' });
+    const record = this.store.findRecord('id', data_id);
+    let favorites = [];
+    const favoritesSet = JSON.parse(JSON.stringify(this.favorites));
+
+    if (this.favorites.indexOf(data_id) === -1) {
+      favorites = [...favoritesSet, data_id];
+      event.target.setAttribute('data-favorite', "on");
+      // record.set('favorite', true);
+    } else {
+      favorites = favoritesSet.filter(event => event !== data_id);
+      event.target.setAttribute('data-favorite', "off");
+      // record.set('favorite', false);
+    }
+    localStorage.setItem('favoriteEvents', JSON.stringify(favorites));
+    this.favorites = favorites;
   }
 
   firstListReady(event) {
@@ -101,7 +88,6 @@ export default class ScheduleComponent {
       }
     );
 
-    // const fav = `${favorite}` ? `"on"` : `"off"`;
     const itemTpl = `<div class="app-list-content">
                    <div class="app-list-text">
                       <div class="app-list-item-title">{title}</div>
@@ -110,8 +96,9 @@ export default class ScheduleComponent {
                       {start_time}
                    </div>
                    <div
-                      onClick="schedule.myFunc(event)"
-                      data-favorite="on"
+                      onclick="schedule.onFavoriteClick(event)"
+                      data-id="{id}"
+                      data-favorite="{[ JSON.parse(localStorage.getItem('favoriteEvents')).indexOf(values.id) > -1 ? "on" : "off" ]}"
                       class="x-item-no-tap x-font-icon md-icon-star app-list-tool app-favorite"
                     />
                </div>`
@@ -130,13 +117,19 @@ export default class ScheduleComponent {
       }
     );
     const itemTpl = `<div class="app-list-content">
-                   <div class="app-list-text">
-                      <div class="app-list-item-title">{title}</div>
-                      <div class="app-list-item-details">{detail}</div> 
-                      <div class="app-list-item-details">{categoryName} - {location.name}</div>
-                      {start_time}
-                   </div>
-               </div>`
+                  <div class="app-list-text">
+                    <div class="app-list-item-title">{title}</div>
+                    <div class="app-list-item-details">{detail}</div> 
+                    <div class="app-list-item-details">{categoryName} - {location.name}</div>
+                    {start_time}
+                  </div>
+                  <div
+                    onclick="schedule.onFavoriteClick(event)"
+                    data-id="{id}"
+                    data-favorite="{[ JSON.parse(localStorage.getItem('favoriteEvents')).indexOf(values.id) > -1 ? "on" : "off" ]}"
+                    class="x-item-no-tap x-font-icon md-icon-star app-list-tool app-favorite"
+                  />
+              </div>`
     this.list2 = event.detail.cmp;
     this.list2.setItemTpl(itemTpl);
     this.list2.setStore(store);
@@ -151,17 +144,19 @@ export default class ScheduleComponent {
       }
     );
     const itemTpl = `<div class="app-list-content">
-                   <div class="app-list-text">
-                      <div class="app-list-item-title">{title}</div>
-                      <div class="app-list-item-details">{detail}</div> 
-                      <div class="app-list-item-details">{categoryName} - {location.name}</div>
-                      {start_time}
-                   </div>
-                   <div 
-                        
-                        class="x-item-no-tap x-font-icon md-icon-star app-list-tool app-favorite"
-                    />
-               </div>`
+                  <div class="app-list-text">
+                    <div class="app-list-item-title">{title}</div>
+                    <div class="app-list-item-details">{detail}</div> 
+                    <div class="app-list-item-details">{categoryName} - {location.name}</div>
+                    {start_time}
+                  </div>
+                  <div
+                    onclick="schedule.onFavoriteClick(event)"
+                    data-id="{id}"
+                    data-favorite="{[ JSON.parse(localStorage.getItem('favoriteEvents')).indexOf(values.id) > -1 ? "on" : "off" ]}"
+                    class="x-item-no-tap x-font-icon md-icon-star app-list-tool app-favorite"
+                  />
+              </div>`
     this.list3 = event.detail.cmp;
     this.list3.setItemTpl(itemTpl);
     this.list3.setStore(store);
