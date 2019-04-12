@@ -1,6 +1,5 @@
-    <ext-container
-        onready= "calendar.containerReady(event)"
-        activeItem="1"
+    <ext-panel
+        activeItem="0"
         platformConfig='{
             "!phone": {
                 "layout": "hbox"
@@ -30,13 +29,17 @@
             resizeEvents="false"
             gestureNavigation="false"
             allowSelection="false"
-            flex="1"
             onEventTap="calendar.onTap(event)"
+            flex="1"
         >
         </ext-calendar-days>
-        <custom-event
-            flex="1" 
-            header="false"
+        <ext-panel
+            hidden="true"
+            padding="20"
+            scrollable="true"
+            width="100%"
+            height="100%"
+            onready="calendar.sidePanelReady(event)"
         >
-        </custom-event>
-    </ext-container>
+        </ext-panel>
+    </ext-panel>
