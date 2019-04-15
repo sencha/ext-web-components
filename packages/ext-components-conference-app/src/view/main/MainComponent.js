@@ -29,7 +29,7 @@ export default class MainComponent {
       let hash = window.location.hash.substr(1);
 
       if (hash == '') {
-        hash = 'home';
+        hash = 'schedule';
       }
 
       const node = this.navTreelistCmp.getStore().findNode('hash',hash);
@@ -114,5 +114,9 @@ export default class MainComponent {
     } else {
       navButton.setHidden(true);
     }
+  }
+
+  comboboxReady(event) {
+    this.searchComboBox = event.detail.cmp;
   }
 }

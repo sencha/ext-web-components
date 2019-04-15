@@ -1,0 +1,101 @@
+<ext-container layout="fit" height="100%" 
+  platformConfig='{
+    "!phone": {
+        "layout": "hbox"
+    },
+    "phone": {
+        "layout": {
+            "type": "card",
+            "animation": "slide"
+        }
+    }
+  }'
+  activeItem="0"
+>
+  <ext-container
+  docked="top"
+  cls="app-banner"
+  >
+  <span>ExtReact Conference</span>
+  </ext-container>
+  <ext-tabpanel
+      flex="1"
+      tabBar='{"shadow": "true"}'
+      activeItem="0"
+      platformConfig='{"!phone": { "flex": "1" } }'
+  >
+    <ext-panel
+      title="MONDAY"
+    >
+      <ext-list
+        onready="schedule.firstListReady(event)"
+        hideMode="offsets"
+        title="MONDAY"
+        grouped="true"
+        rowLines="true"
+        itemTpl="<div>ABCD</div>"
+        itemCls="app-list-item"
+        cls="app-list"
+        pinHeaders="true"
+        infinite="true"
+        variableHeights="true"
+        emptyText="No events found."
+      >
+      </ext-list>
+    </ext-panel>
+    <ext-panel
+      title="TUESDAY"
+    >
+      <ext-list
+        onready="schedule.secondListReady(event)"
+        hideMode="offsets"
+        title="TUESDAY"
+        grouped="true"
+        rowLines="true"
+        itemCls="app-list-item"
+        cls="app-list"
+        pinHeaders="true"
+        infinite="true"
+        variableHeights="true"
+        emptyText="No events found."
+      >
+      </ext-list>
+    </ext-panel>
+    <ext-panel
+      title="WEDNESDAY"
+    >
+      <ext-list
+        onready="schedule.thirdListReady(event)"
+        hideMode="offsets"
+        title="WEDNESDAY"
+        grouped="true"
+        rowLines="true"
+        itemCls="app-list-item"
+        cls="app-list"
+        pinHeaders="true"
+        infinite="true"
+        variableHeights="true"
+        emptyText="No events found."
+      >
+      </ext-list>
+    </ext-panel>
+    <ext-panel
+    iconCls="md-icon-star"
+    >
+      <ext-list
+        onready="schedule.starListReady(event)"
+        hideMode="offsets"
+        grouped="true"
+        rowLines="true"
+        itemCls="app-list-item"
+        cls="app-list"
+        pinHeaders="true"
+        infinite="true"
+        variableHeights="true"
+        emptyText="No events found."
+        tab='{ "maxWidth": "60" }'
+      >
+      </ext-list>
+    </ext-panel>
+  </ext-tabpanel>
+</ext-container>
