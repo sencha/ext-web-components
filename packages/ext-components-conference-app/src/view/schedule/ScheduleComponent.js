@@ -91,19 +91,19 @@ export default class ScheduleComponent {
     );
 
     const itemTpl = `<div class="app-list-content">
-                   <div class="app-list-text">
-                      <div class="app-list-item-title">{title}</div>
-                      <div class="app-list-item-details">{speakerNames}</div> 
-                      <div class="app-list-item-details">{categoryName} - {location.name}</div>
-                      <div class="app-list-item-details">{date} {start_time}</div> 
-                   </div>
-                   <div
-                      onclick="schedule.onFavoriteClick(event)"
-                      data-id="{id}"
-                      data-favorite="{[ JSON.parse(localStorage.getItem('favoriteEvents')).indexOf(values.id) > -1 ? "on" : "off" ]}"
-                      class="x-item-no-tap x-font-icon md-icon-star app-list-tool app-favorite"
-                    />
-               </div>`
+                      <div class="app-list-text">
+                          <div class="app-list-item-title">{title}</div>
+                          <div class="app-list-item-details">{[values.speakerNames ? '<span>by ' + values.speakerNames + '</span>' : '']}</div> 
+                          <div class="app-list-item-details">{categoryName} - {location.name}</div>
+                          <div class="app-list-item-details">{[(values.date).match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time}</div> 
+                      </div>
+                      <div
+                          onclick="schedule.onFavoriteClick(event)"
+                          data-id="{id}"
+                          data-favorite="{[ JSON.parse(localStorage.getItem('favoriteEvents')).indexOf(values.id) > -1 ? "on" : "off" ]}"
+                          class="x-item-no-tap x-font-icon md-icon-star app-list-tool app-favorite"
+                        />
+                    </div>`
     this.list1 = event.detail.cmp;
     this.list1.setItemTpl(itemTpl);
     this.list1.setStore(store);
