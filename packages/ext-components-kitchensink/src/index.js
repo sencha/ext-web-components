@@ -96,7 +96,7 @@ import '@sencha/ext-components/lib/ext-d3-sunburst.component';
 import '@sencha/ext-components/lib/ext-d3-tree.component';
 import '@sencha/ext-components/lib/ext-d3-treemap.component';
 import '@sencha/ext-components/lib/ext-pivotd3container.component';
-
+import '@sencha/ext-components/lib/ext-chartnavigator.component';
 import '@sencha/ext-components/lib/ext-d3-heatmap.component';
 import '@sencha/ext-components/lib/ext-pivotheatmap.component';
 
