@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { BaseHrefWebpackPlugin } = require('base-href-webpack-plugin');
 const ExtWebpackPlugin = require('@sencha/ext-webpack-plugin')
 const portfinder = require('portfinder')
+const Visualizer = require('webpack-visualizer-plugin');
 
 module.exports = function (env) {
   function get(it, val) {if(env == undefined) {return val} else if(env[it] == undefined) {return val} else {return env[it]}}
@@ -23,6 +24,7 @@ module.exports = function (env) {
     const plugins = [
       new HtmlWebpackPlugin({template: "index.html",hash: true,inject: "body"}),
       new BaseHrefWebpackPlugin({ baseHref: basehref }),
+      new Visualizer(),
       new ExtWebpackPlugin({
         framework: 'components',
         toolkit: 'modern',
@@ -31,7 +33,7 @@ module.exports = function (env) {
         script: './extract-code.js',
         port: port,
         packages: [],
-        profile: profile, 
+        profile: profile,
         environment: environment,
         treeshake: treeshake,
         browser: browser,
