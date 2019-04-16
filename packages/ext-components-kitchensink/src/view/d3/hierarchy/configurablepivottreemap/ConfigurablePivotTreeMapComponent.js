@@ -1,193 +1,147 @@
-import './ConfigurablePivotTreeMapComponent.html';
+import './ConfigurablePivotTreemapComponent.html';
 import createData from './createData';
 
 Ext.require(['Ext.pivot.d3.TreeMap']);
-const regions = {
-  "Belgium": 'Europe',
-  "Netherlands": 'Europe',
-  "United Kingdom": 'Europe',
-  "Canada": 'North America',
-  "United States": 'North America',
-  "Australia": 'Australia'
-};
 
-export default class ConfigurablePivotTreeMapComponent {
+export default class ConfigurablePivotTreemapComponent {
+  constructor () {}
 
-  constructor() {
-    this.store = Ext.create('Ext.data.TreeStore', {
-      fields: [
-        {name: 'id',        type: 'string'},
-        {name: 'company',   type: 'string'},
-        {name: 'country',   type: 'string'},
-        {name: 'person',    type: 'string'},
-        {name: 'date',      type: 'date', dateFormat: 'c'},
-        {name: 'value',     type: 'float'},
-        {name: 'quantity',  type: 'float'},
-        {
-          name: 'year',
-          calculate: function(data){
-              return parseInt(Ext.Date.format(data.date, "Y"), 10);
-          }
-        },{
-          name: 'month',
-          calculate: function(data){
-              return parseInt(Ext.Date.format(data.date, "m"), 10) - 1;
-          }
-        },{
-          name: 'continent',
-          calculate: function(data){
-              return regions[data.country];
-          }
-        }
-      ],
-      data: createData()
-    });
-   }
+  containerReady(event) {
+    this.pivotD3ContainerCmp = event.detail.cmp;
+    const regions = {
+      "Belgium": 'Europe',
+      "Netherlands": 'Europe',
+      "United Kingdom": 'Europe',
+      "Canada": 'North America',
+      "United States": 'North America',
+      "Australia": 'Australia'
+    };
 
-  pivotReady(event) {
-    const cmp = event.detail.cmp;
     const matrixVar = {
-      store: this.store,
+      store: createData(),
       aggregate: [{
-        dataIndex: 'value',
-        header: 'Value',
-        aggregator: 'sum'
+          dataIndex: 'value',
+          header: 'Value',
+          aggregator: 'sum'
       }],
       leftAxis: [{
-        dataIndex: 'person',
-        header: 'Person'
+          dataIndex: 'person',
+          header: 'Person'
       }]
     };
-    const drawingVar = {xtype: 'pivottreemap'};
-    const configuratorVar = {
-      // It is possible to configure a list of fields that can be used to configure the pivot matrix
-          // If no fields list is supplied then all fields from the Store model are fetched automatically
-          fields: [{
-              dataIndex:  'quantity',
-              header:     'Qty',
-              // You can even provide a default aggregator function to be used when this field is dropped
-              // on the agg dimensions
-              aggregator: 'sum',
-              formatter: 'number("0")',
-  
-              settings: {
-                  // Define here in which areas this field could be used
-                  allowed: ['aggregate'],
-                  // Set a custom style for this field to inform the user that it can be dragged only to "Values"
-                  style: {
-                      fontWeight: 'bold'
-                  },
-                  // Define here custom formatters that ca be used on this dimension
-                  formatters: {
-                      '0': 'number("0")',
-                      '0%': 'number("0%")'
-                  }
-              }
-          }, {
-              dataIndex:  'value',
-              header:     'Value',
-  
-              settings: {
-                  // Define here in which areas this field could be used
-                  allowed: 'aggregate',
-                  // Define here what aggregator functions can be used when this field is
-                  // used as an aggregate dimension
-                  aggregators: ['sum', 'avg', 'count'],
-                  // Set a custom style for this field to inform the user that it can be dragged only to "Values"
-                  style: {
-                      fontWeight: 'bold'
-                  },
-                  // Define here custom formatters that ca be used on this dimension
-                  formatters: {
-                      '0': 'number("0")',
-                      '0.00': 'number("0.00")',
-                      '0,000.00': 'number("0,000.00")',
-                      '0%': 'number("0%")',
-                      '0.00%': 'number("0.00%")'
-                  }
-              }
-          }, {
-              dataIndex:  'company',
-              header:     'Company',
-  
-              settings: {
-                  // Define here what aggregator functions can be used when this field is
-                  // used as an aggregate dimension
-                  aggregators: ['count']
-              }
-          }, {
-              dataIndex:  'country',
-              header:     'Country',
-  
-              settings: {
-                  // Define here what aggregator functions can be used when this field is
-                  // used as an aggregate dimension
-                  aggregators: ['count']
-              }
-          }, {
-              dataIndex: 'person',
-              header: 'Person',
-  
-              settings: {
-                  // Define here what aggregator functions can be used when this field is
-                  // used as an aggregate dimension
-                  aggregators: 'count'
-              }
-          }, {
-              dataIndex:  'year',
-              header:     'Year',
-  
-              settings: {
-                  // Define here in which areas this field could be used
-                  allowed: ['leftAxis', 'topAxis']
-              }
-          }, {
-              dataIndex:      'month',
-              header:         'Month',
-              labelRenderer:  'monthLabelRenderer',
-  
-              settings: {
-                  // Define here in which areas this field could be used
-                  allowed: ['leftAxis', 'topAxis']
-              }
-          }]
-      };
-    cmp.setDrawing(drawingVar);
-    cmp.setConfigurator(configuratorVar);
-    cmp.setMatrix(matrixVar);
-    cmp.on('onShowConfigPanel', this.onShowConfigPanel.bind(this));
-    cmp.on('onBeforeMoveConfigField', this.onBeforeAddConfigField.bind(this));
-    cmp.on('onShowConfigFieldSettings', this.onShowFieldSettings.bind(this));
+
+    const drawingVar = {
+      xtype: 'pivottreemap',
+      minHeight: 300,
+      height: window.innerHeight-250
+    };
+
+    const configuratorVar =  {
+        fields: [{
+            dataIndex:  'quantity',
+            header:     'Qty',
+            aggregator: 'sum',
+            formatter: 'number("0")',
+
+            settings: {
+                allowed: ['aggregate'],
+                style: {
+                    fontWeight: 'bold'
+                },
+                formatters: {
+                    '0': 'number("0")',
+                    '0%': 'number("0%")'
+                }
+            }
+        }, {
+            dataIndex:  'value',
+            header:     'Value',
+            settings: {
+                allowed: 'aggregate',
+                aggregators: ['sum', 'avg', 'count'],
+                style: {
+                    fontWeight: 'bold'
+                },
+                formatters: {
+                    '0': 'number("0")',
+                    '0.00': 'number("0.00")',
+                    '0,000.00': 'number("0,000.00")',
+                    '0%': 'number("0%")',
+                    '0.00%': 'number("0.00%")'
+                }
+            }
+        }, {
+            dataIndex:  'company',
+            header:     'Company',
+            settings: {
+                aggregators: ['count']
+            }
+        }, {
+            dataIndex:  'country',
+            header:     'Country',
+            settings: {
+                aggregators: ['count']
+            }
+        }, {
+            dataIndex: 'person',
+            header: 'Person',
+            settings: {
+                aggregators: 'count'
+            }
+        }, {
+            dataIndex:  'year',
+            header:     'Year',
+            settings: {
+                allowed: ['leftAxis', 'topAxis']
+            }
+        }, {
+            dataIndex:      'month',
+            header:         'Month',
+            settings: {
+                allowed: ['leftAxis', 'topAxis']
+            }
+        }]
+    };
+
+    const pivotElement = document.createElement("ext-pivotd3container");
+    pivotElement.setAttribute('matrix', JSON.stringify(matrixVar));
+    pivotElement.setAttribute('configurator', JSON.stringify(configuratorVar));
+    pivotElement.setAttribute('drawing', JSON.stringify(drawingVar));
+    pivotElement.setAttribute('layout', 'fit');
+    pivotElement.setAttribute('height', '100%');
+
+    this.pivotD3ContainerCmp.el.dom.appendChild(pivotElement)
+    this.createdPivotFunc = pivotElement.ext;
+    this.createdPivotFunc.on('beforeMoveConfigField', this.onBeforeAddConfigField.bind(this));
+    this.createdPivotFunc.on('showConfigFieldSettings', this.onShowFieldSettings.bind(this));
+    this.createdPivotFunc.on('showConfigPanel', this.onShowConfigPanel.bind(this));
+    const configurator = this.createdPivotFunc.getConfigurator();
+    configurator.getFields().items[6].setLabelRenderer((value) => Ext.Date.monthNames[value]);
 
   }
 
-  showConfigurator(event) {
+  showConfigurator() {
+    this.createdPivotFunc.showConfigurator();
+  }
+
+  onBeforeAddConfigField(panel, config) {
+    const dest = config.toContainer,
+    store = dest.getStore()
+
+    if(dest.getFieldType() !== 'all' && store.getCount() >= 1) {
+      store.removeAll();
+    }
+  }
+
+  onShowFieldSettings(panel, config) {
+    const align = config.container.down('[name=align]');
+    if(align) {
+      align.hide();
+    }
   }
 
   onShowConfigPanel(panel) {
       panel.getLeftAxisHeader().getTitle().setText('Tree labels');
       panel.setTopAxisContainerVisible(false);
   }
-
-  onBeforeAddConfigField (panel, config) {
-      console.log(',,,,,,,', panel, config);
-      const dest = config.toContainer,
-          store = dest.getStore();
-
-      if (dest.getFieldType() !== 'all' && store.getCount() >= 1) {
-          // this will force single fields on both axis and aggregate
-          store.removeAll();
-      }
-  }
-
-  onShowFieldSettings (panel, config) {
-      console.log('################', panel, config);
-      const align = config.container.down('[name=align]');
-
-      // hide the alignment field in settings since it's useless
-      if(align) {
-          align.hide();
-      }
-  }
-
 }

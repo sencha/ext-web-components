@@ -5,17 +5,15 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   styles: [``],
   template: `
-  <ext-button text="hi"></ext-button>
   
   <ext-grid fitToParent=true
-    [title]="gridTitle"
     (ready)="readyGrid($event)">
 
    <!-- Titlebar starts-->
    <ext-titlebar docked="top" weight="10">
      <ext-button iconCls="x-fa fa-bars" onTap="main.toggleTree()"></ext-button>
      <span class="ext ext-sencha" style="margin: '0 5px 0 7px;'; font-size: '20px'; width: '20px'"></span>
-     <span extjs href="#" class="app-title">Sencha ExtComponents 7.0 Kitchen Sink</span>
+     <span extjs href="#" class="app-title">Sencha Ext Web Components in Angular</span>
    </ext-titlebar>
    <!-- Titlebar ends-->
 
@@ -34,7 +32,7 @@ import { Component } from '@angular/core';
       tab="{ui: 'app-code-tab', flex: 0, minWidth: 120}"
       [userSelectable]="{element: true, bodyElement: true}"
       [html]="'file.code'">
-      <ext-button text="hi"></ext-button>
+      <ext-button text="tab detail"></ext-button>
     </ext-panel>
   </ext-tabpanel>
 
@@ -42,13 +40,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  //  <ext-button text="hi"></ext-button>
+
   files = [
-    { name: 'n', code: "123" },
-    { name: 'n', code: "123" },
-    { name: 'n', code: "123" }
+    { name: 'tab 1', code: "123" },
+    { name: 'tab 2', code: "123" },
+    { name: 'tab 3', code: "123" }
   ]
 
   gridTitle = "my grid title"
+    // [title]="gridTitle"
+
 
   readyGrid($event) {
     console.log($event)

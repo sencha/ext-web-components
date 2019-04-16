@@ -1,5 +1,28 @@
-<ext-button 
-  text="customicons"
-  onready="customicons.readyButton1(event)"
-  ontap="customicons.tapButton1(event)">
-</ext-button>
+<ext-container
+  onready="customicons.containerready(event)"
+  layout="fit"
+  fitToParent="true"
+  height="100%"
+  width="100%">
+  <ext-toolbar
+    docked="top"
+    ui="app-transparent-toolbar"
+    shadow="false"
+    padding="0 10 0 10">
+    <chart-toolbar
+      theme="default"
+      onItemReady="customicons.onMenuItemReady(event)"
+      onRefreshButtonReady="customicons.onRefreshButtonReady(event)"
+    >
+    </chart-toolbar>
+  </ext-toolbar>
+  <ext-cartesian
+    onready="customicons.cartesianready(event)"
+    downloadServerUrl="http://svg.sencha.io"
+    width="800"
+    shadow="true"
+    insetPadding="20 20 10 10"
+    legend='{ "type": "sprite" }'
+    interactions='[{ "type": "itemedit", "style": { "strokeStyle": "gray" }}]'>
+  </ext-cartesian>
+</ext-container>

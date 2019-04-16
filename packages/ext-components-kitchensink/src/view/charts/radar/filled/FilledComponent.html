@@ -1,5 +1,20 @@
-<ext-button 
-  text="filled"
-  onready="filled.readyButton1(event)"
-  ontap="filled.tapButton1(event)">
-</ext-button>
+<ext-container padding="15" layout="fit" fitToParent="true" height="100%">
+  <ext-container padding="15" docked="top">
+    <chart-toolbar
+      onItemReady="filled.onMenuItemReady(event)"
+      onThemeChange="filled.changeTheme"
+      onRefreshButtonReady="filled.onRefreshButtonReady(event)"
+      theme="default">
+    </chart-toolbar>
+  </ext-container>
+
+  <ext-polar downloadServerUrl ="http://svg.sencha.io"
+    onready="filled.onPolarReady(event)"
+    width="800px"
+    shadow="true"
+    interactions="rotate"
+    legend='{ "type": "sprite" }'
+    theme="default"
+  >
+  </ext-polar>
+</ext-container>

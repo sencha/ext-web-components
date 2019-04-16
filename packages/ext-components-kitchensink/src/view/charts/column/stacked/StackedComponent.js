@@ -1,3 +1,4 @@
+import '../../charttoolbar/ChartToolbar.js';
 import './StackedComponent.html';
 import createData from './StackedComponentData.js';
 

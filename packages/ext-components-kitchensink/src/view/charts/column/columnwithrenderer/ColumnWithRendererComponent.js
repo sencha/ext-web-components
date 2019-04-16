@@ -1,3 +1,4 @@
+import '../../charttoolbar/ChartToolbar.js';
 import './ColumnWithRendererComponent.html';
 import { createData } from './ColumnWithRendererComponentData.js';
 import { seriesG1Renderer, seriesG2Renderer } from './ColumnWithRendererComponentRenderer.js';

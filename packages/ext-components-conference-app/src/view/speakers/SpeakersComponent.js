@@ -169,6 +169,7 @@ export default class SpeakersComponent {
       </div>
         `);
     this.listCmp.setStore(this.speakerStore);
+
     this.listCmp.on('childtap', this.itemTap.bind(this));
   }
 }

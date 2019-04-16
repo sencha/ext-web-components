@@ -192,6 +192,7 @@ export default class ScheduleComponent {
                   </div>`
     this.listStar = event.detail.cmp;
     this.listStar.setItemTpl(itemTpl);
+
     this.listStar.setStore(store);
   }
 }

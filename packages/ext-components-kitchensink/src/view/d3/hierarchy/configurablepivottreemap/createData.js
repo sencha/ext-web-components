@@ -15,12 +15,18 @@ export default function(items=500) {
     const data = [];
     for(let i=0; i<items; i++) {
         let j = rand % companies;
+        const date = randomDate(new Date(2012, 0, 1), new Date());
+        const month = parseInt(Ext.Date.format(date, "m"), 10) - 1;
+        const year = parseInt(Ext.Date.format(date, "Y"), 10);;
+
         data.push({
             id: i,
             company: randomItem(companies),
             country: randomItem(countries),
             person: randomItem(persons),
-            date: randomDate(new Date(2012, 0, 1), new Date()),
+            date: date,
+            month: month,
+            year: year,
             value: Math.random() * 1000 + 1,
             quantity: Math.floor(Math.random() * 30 + 1)
         });

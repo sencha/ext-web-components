@@ -1,12 +1,15 @@
-<ext-container  layout="fit" fitToParent="true" height="100%" >
-  <ext-pivotd3container 
-      shadow="true"
-      layout="fit"
-      onready="configurablepivottreemap.pivotReady(event)"
+<ext-panel>
+  <ext-panel
+    height="100%"
+    onready="configurablepivottreemap.containerReady(event)"
   >
-      <ext-toolbar  docked="top">
-          <spacer ></spacer>
-          <ext-button  text="Show configurator" ontap="configurablepivottreemap.showConfigurator(event)"></ext-button>
-      </ext-toolbar>
-  </ext-pivotd3container>
-</ext-container>
+    <ext-toolbar docked="top">
+        <ext-spacer></ext-spacer>
+        <ext-button
+          text="Show configurator"
+          onTap="configurablepivottreemap.showConfigurator()"
+        >
+      </ext-button>
+    </ext-toolbar>
+  </ext-panel>
+</ext-panel>

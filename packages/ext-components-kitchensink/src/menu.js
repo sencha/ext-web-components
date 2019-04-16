@@ -125,7 +125,7 @@ import NegativeValuesComponent from './view/charts/threedcolumn/negativevalues/N
 import ThreeDColumnWithRendererComponent from './view/charts/threedcolumn/threedcolumnwithrenderer/ThreeDColumnWithRendererComponent.js';
 import CandlestickComponent from './view/charts/financial/candlestick/CandlestickComponent.js';
 import OHLCComponent from './view/charts/financial/ohlc/OHLCComponent.js';
-import BasicGaugeChartComponent from './view/charts/gauges/basicgaugechart/BasicGaugeChartComponent.js';
+import BasicGaugeChartComponent from './view/charts/chartgauges/basicgaugechart/BasicGaugeChartComponent.js';
 import BasicLineComponent from './view/charts/line/basicline/BasicLineComponent.js';
 import BasicMarkersComponent from './view/charts/line/basicmarkers/BasicMarkersComponent.js';
 import SplineComponent from './view/charts/line/spline/SplineComponent.js';
@@ -339,8 +339,8 @@ export default function getMenu() {
       ] },
       { text: 'Three D Column', iconCls: 'icon-column-3d', children: [
         { text: 'Basic 3D Column', component: Basic3DColumnComponent, iconCls: 'icon-column-basic-3d' },
-        { text: '3D Grouped', component: ThreeDGroupedComponent, iconCls: 'icon-column-grouped-3d' },
-        { text: '3D Stacked', component: ThreeDStackedComponent, iconCls: 'icon-column-stacked-3d' },
+        { text: 'Three D Grouped', component: ThreeDGroupedComponent, iconCls: 'icon-column-grouped-3d' },
+        { text: 'Three D Stacked', component: ThreeDStackedComponent, iconCls: 'icon-column-stacked-3d' },
         { text: 'Negative Values', component: NegativeValuesComponent, iconCls: 'icon-column-negative-3d' },
         { text: 'Three D Column With Renderer', component: ThreeDColumnWithRendererComponent, iconCls: 'icon-column-renderer-3d' }
       ]},
@@ -348,8 +348,8 @@ export default function getMenu() {
         { text: 'Candlestick', component: CandlestickComponent, iconCls: 'icon-financial-candlestick' },
         { text: 'OHLC', component: OHLCComponent, iconCls: 'icon-financial-ohlc' }
       ] },
-      { text: 'Gauges', iconCls: 'icon-gauge-charts', children: [
-        { text: 'Basic Gauge', component: BasicGaugeChartComponent, iconCls: 'icon-gauge-basic' }
+      { text: 'Chart Gauges', iconCls: 'icon-gauge-charts', children: [
+        { text: 'Basic Gauge Chart', component: BasicGaugeChartComponent, iconCls: 'icon-gauge-basic' }
       ] },
       { text: 'Line', iconCls: 'icon-line-charts', children: [
         { text: 'Basic Line', component: BasicLineComponent, iconCls: 'icon-line-basic' },
