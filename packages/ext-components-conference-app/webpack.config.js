@@ -31,7 +31,8 @@ module.exports = function (env) {
         script: './extract-code.js',
         port: port,
         packages: [
-          'calendar'
+          'calendar',
+          'd3'
         ],
         profile: profile,
         environment: environment,
