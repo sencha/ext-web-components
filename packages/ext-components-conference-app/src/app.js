@@ -1,3 +1,5 @@
+import * as d3 from 'd3';
+
 import '@sencha/ext-components/lib/ext-button.component';
 import '@sencha/ext-components/lib/ext-dataview.component';
 import '@sencha/ext-components/lib/ext-searchfield.component';
@@ -19,6 +21,7 @@ import { getRoutes } from '@sencha/ext-components/lib/aa-router.component';
 import MainComponent from './view/main/MainComponent.js';
 
 function init() {
+  window.d3 = d3
   window.menu = getMenu();
   window.routes = getRoutes(window.menu);
   window.main = new MainComponent();
