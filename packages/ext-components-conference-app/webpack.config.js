@@ -30,7 +30,9 @@ module.exports = function (env) {
         emit: 'yes',
         script: './extract-code.js',
         port: port,
-        packages: [],
+        packages: [
+          'calendar'
+        ],
         profile: profile,
         environment: environment,
         treeshake: treeshake,

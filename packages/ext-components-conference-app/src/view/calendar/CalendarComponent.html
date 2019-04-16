@@ -1,1 +1,45 @@
-Calendar
+    <ext-panel
+        activeItem="0"
+        platformConfig='{
+            "!phone": {
+                "layout": "hbox"
+            },
+            "phone": {
+                "layout": { 
+                    "type": "card", 
+                    "animation": "slide" 
+                }
+            }
+        }'
+        height="100%"
+    >
+        <ext-calendar-days
+            onready= "calendar.calendarReady(event)"
+            visibleDays="3"
+            startTime="7"
+            endTime="22"
+            dayHeader='{
+                "format": "D",
+                "compactOptions": {
+                    "format": "D"
+                }
+            }'
+            editForm="null"
+            draggable="false"
+            resizeEvents="false"
+            gestureNavigation="false"
+            allowSelection="false"
+            onEventTap="calendar.onTap(event)"
+            flex="1"
+        >
+        </ext-calendar-days>
+        <ext-panel
+            hidden="true"
+            padding="20"
+            scrollable="true"
+            width="100%"
+            height="100%"
+            onready="calendar.sidePanelReady(event)"
+        >
+        </ext-panel>
+    </ext-panel>
