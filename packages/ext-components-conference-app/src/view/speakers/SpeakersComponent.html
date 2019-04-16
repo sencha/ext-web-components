@@ -23,4 +23,30 @@
         rowLines="true"
         cls="app-list"
     ></ext-list>
+    <ext-panel
+        height="100%"
+        flex="1"
+        layout="vbox"
+        padding="20"
+        hidden="true"
+        onready="speakers.panelready(event)"
+    >
+        <ext-container onready="speakers.containerready2(event)">
+        </ext-container>
+            <ext-list
+                onready="speakers.listready2(event)"
+                height="100%"
+                hideMode="offsets"
+                grouped="true"
+                rowLines="true"
+                itemCls="app-list-item"
+                cls="app-list"
+                pinHeaders="true"
+                infinite="true"
+                variableHeights="true"
+                emptyText="No events found."
+                shadow="true"
+            >
+            </ext-list>
+    </ext-panel>
 </ext-container>

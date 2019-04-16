@@ -1,4 +1,3 @@
-// import './SpeakerComponent.js';
 import "./SpeakersComponent.html";
 Ext.define('User', {
   extend: 'Ext.data.Model',
@@ -14,7 +13,31 @@ Ext.define('User', {
 });
 export default class SpeakersComponent {
   constructor() {
-    this.store = Ext.create('Ext.data.Store', {
+    if (!localStorage.getItem('favoriteEvents')) {
+      localStorage.setItem('favoriteEvents', JSON.stringify([]));
+    }
+    this.favorites = JSON.parse(localStorage.getItem('favoriteEvents'));
+    this.schedulestore = Ext.create('Ext.data.Store', {
+      autoLoad: true,
+      proxy: {
+        type: 'ajax',
+        url: 'resources/schedule.json'
+      },
+      listeners: {
+        load: store => store.each(record => record.set(
+          'favorite', this.favorites.indexOf(record.getId()) !== -1
+        )),
+      }
+    });
+    this.storeDefaults = {
+      source: this.schedulestore,
+      autoDestroy: true,
+      grouper: {
+        property: 'start_time',
+        sortProperty: 'startDate'
+      }
+    };
+    this.speakerStore = Ext.create('Ext.data.Store', {
       model: 'User',
       proxy: {
         type: 'ajax',
@@ -26,45 +49,111 @@ export default class SpeakersComponent {
       autoLoad: true,
     });
 
+    this.scheduleChainedStore = Ext.create('Ext.data.ChainedStore', {
+      autoDestroy: true,
+      source: this.schedulestore
+    });
+  
     this.record = null;
     this.speakerId = null;
+
+    if (this.record && this.record.sessions) {
+      this.scheduleChainedStore.filter({
+        value: this.record.sessions,
+        property: 'id',
+        operator: 'in'
+      });
+    }
   }
 
   containerready(event) {
     this.containerCmp = event.detail.cmp;
   }
 
-  itemTap(location, eopts) {
-    this.record = eopts.record.data;
-    this.speakerId = eopts.record.id;
-    if (this.sideContainer) {
-    this.sideContainer.remove(this.speakerChild);
-    this.containerCmp.remove(this.sideContainer);
-    }
+  panelready(event) {
+    this.panelCmp = event.detail.cmp;
+  }
 
-    this.sideContainer = Ext.create({
-      xtype: 'panel',
-      flex: '1',
-      layout: 'vbox',
-      padding: '20',
-    });
-    this.speakerChild = Ext.create({
-      xtype: 'container',
-      html: `
-                <div class="app-speaker-ct">
-                            <img class="app-speaker-image" src=${this.record.avatar_url}></img>
+  containerready2(event) {
+    this.containerCmp2 = event.detail.cmp;
+    const tpl = `<div class="app-speaker-ct">
+                            <img class="app-speaker-image" src={avatar_url}></img>
                             <div class="app-speaker-text">
-                                <div class="app-speaker-name">${this.record.name}</div>
-                                <div class="app-speaker-title">${this.record.title}</div>
-                                <div class="app-speaker-company">${this.record.company}</div>
-                                <div class="app-speaker-bio">${this.record.bio}</div>
+                                <div class="app-speaker-name">{name}</div>
+                                <div class="app-speaker-title">{title}</div>
+                                <div class="app-speaker-company">{company}</div>
+                                <div class="app-speaker-bio">{bio}</div>
                             </div>
                         </div>
-                    `,
-    });
-    this.sideContainer.add(this.speakerChild);
-    this.containerCmp.add(this.sideContainer);
+                        <h2 style={{marginTop: '40px', color: '#999' }}>Events</h2>
+                    `;
+    this.containerCmp2.setTpl(tpl);
   }
+
+  onFavoriteClick(event) {
+    const data_id = event.currentTarget.dataset.id;
+    Ext.get(event.target).ripple(event, { bound: false, color: '#999' });
+    const record = this.scheduleChainedStore.findRecord('id', data_id);
+    let favorites = [];
+    const favoritesSet = JSON.parse(JSON.stringify(this.favorites));
+
+    if (this.favorites.indexOf(data_id) === -1) {
+      favorites = [...favoritesSet, data_id];
+      record.set('favorite', true);
+    } else {
+      favorites = favoritesSet.filter(event => event !== data_id);
+      record.set('favorite', false);
+    }
+    localStorage.setItem('favoriteEvents', JSON.stringify(favorites));
+    this.favorites = favorites;
+
+  }
+
+  listready2(event) {
+    this.listCmp2 = event.detail.cmp;
+    const itemTpl = `<div class="app-list-content">
+                      <div class="app-list-text">
+                          <div class="app-list-item-title">{title}</div>
+                          <div class="app-list-item-details">{[values.speakerNames ? '<span>by ' + values.speakerNames + '</span>' : '']}</div> 
+                          <div class="app-list-item-details">{categoryName} - {location.name}</div>
+                          <div class="app-list-item-details">{[(values.date).match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time}</div> 
+                      </div>
+                      <div
+                          onclick="speakers.onFavoriteClick(event)"
+                          data-id="{id}"
+                          data-favorite={[ values.favorite ? "on" : "off" ]}
+                          class="x-item-no-tap x-font-icon md-icon-star app-list-tool app-favorite"
+                        />
+                    </div>`;
+    this.listCmp2.setItemTpl(itemTpl);
+    this.listCmp2.on('childtap', this.itemTap2.bind(this));
+
+  }
+
+ 
+  itemTap2(location, eopts) {
+    localStorage.setItem('record', JSON.stringify(eopts.record.data));
+    const scheduleNode = main.navTreelistCmp.getStore().findNode('hash', 'schedule');
+    window.main.navigate(scheduleNode)
+    window.main.navTreelistCmp.setSelection(scheduleNode);
+  }
+
+  itemTap(location, eopts) {
+    this.record = eopts.record.data;
+    this.containerCmp2.setData(this.record);
+
+    this.speakerId = eopts.record.id;
+
+    if (this.record && this.record.sessions) {
+      this.scheduleChainedStore.filter('id', this.record.sessions);
+    }
+    this.listCmp2.setStore(this.scheduleChainedStore);
+
+    if (this.panelCmp.getHidden()) {
+    this.panelCmp.setHidden(false);
+    }
+  }
+  
 
   listready(event) {
     this.listCmp = event.detail.cmp;
@@ -79,7 +168,7 @@ export default class SpeakersComponent {
           </div>
       </div>
         `);
-    this.listCmp.setStore(this.store);
+    this.listCmp.setStore(this.speakerStore);
     this.listCmp.on('childtap', this.itemTap.bind(this));
   }
 }
