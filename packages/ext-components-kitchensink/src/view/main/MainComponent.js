@@ -2,7 +2,6 @@ import hljs from 'highlightjs';
 import 'highlightjs/styles/atom-one-dark.css';
 import './MainComponent.css';
 import './MainComponent.html';
-import {version_full} from '../../../package.json'
 
 Ext.require([
   'Ext.data.TreeStore'
