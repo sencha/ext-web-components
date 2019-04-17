@@ -1,37 +1,16 @@
 import data from './data.js';
-import "./HomeComponent.html";
+import './HomeComponent.html';
 import { xsmall, small } from '../../helper/responsiveFormulas';
 
 export default class HomeComponent {
   readyGrid(event) {
     this.gridCmp = event.detail.cmp;
-  }
-
-  readyGridColumn(event) {
     const store = Ext.create('Ext.data.Store', {
         fields: ['name', 'email', 'phone', 'hoursTaken', 'hoursRemaining'],
         data,
     });
+
     this.gridCmp.setStore(store);
-  }
-
-  emailGridColumnReady(event) {
-    this.emailGridColumn = event.detail.cmp;
-    if (Ext.os.is.Phone) {
-      this.emailGridColumn.setHidden(true);
-    } else {
-      this.emailGridColumn.setHidden(false);
-    }
-  }
-
-  readySearchField(event) {
-    this.SearchField = event.detail.cmp;
-
-    if (Ext.os.is.Phone) {
-      this.SearchField.setFlex(1);
-    } else {
-      this.SearchField.setFlex(undefined);
-    }
   }
 
   onSearch(event) {

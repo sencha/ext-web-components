@@ -1,3 +1,4 @@
+import '../../charttoolbar/ChartToolbar.js';
 import './MultiaxisColumnComponent.html';
 import createData from './MultiaxisColumnComponentData.js';
 

@@ -1,4 +1,3 @@
-import './SheetComponent.css';
 import './SheetComponent.html';
 
 export default class SheetComponent {

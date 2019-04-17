@@ -1,5 +1,18 @@
-<ext-button 
-  text="configurablepivotheatmap"
-  onready="configurablepivotheatmap.readyButton1(event)"
-  ontap="configurablepivotheatmap.tapButton1(event)">
-</ext-button>
+<ext-panel
+  height="100%"
+>
+  <ext-panel
+    padding="10"
+    height="100%"
+    onready="configurablepivotheatmap.containerReady(event)"
+  >
+    <ext-toolbar docked="top">
+        <ext-spacer></ext-spacer>
+        <ext-button
+          text="Show configurator"
+          onTap="configurablepivotheatmap.showConfigurator()"
+        >
+        </ext-button>
+    </ext-toolbar>
+  </ext-panel>
+</ext-panel>

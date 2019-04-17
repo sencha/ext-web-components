@@ -20,7 +20,7 @@ npm login --registry=http://npm.sencha.com --scope=@sencha
 Then, to create a new ext-components-gen app, run:
 
 ```bash
-ext-w-gen MyCoolExtAngularApp
+ext-components-gen app MyCoolExtComponentsApp
 ```
 
 ## Development

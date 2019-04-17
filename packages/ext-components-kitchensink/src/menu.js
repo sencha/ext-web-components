@@ -118,14 +118,14 @@ import BasicColumnComponent from './view/charts/column/basiccolumn/BasicColumnCo
 import StackedComponent from './view/charts/column/stacked/StackedComponent.js';
 import ColumnWithRendererComponent from './view/charts/column/columnwithrenderer/ColumnWithRendererComponent.js';
 import MultiaxisColumnComponent from './view/charts/column/multiaxiscolumn/MultiaxisColumnComponent.js';
-import Basic3DColumnComponent from './view/charts/3dcolumn/basic3dcolumn/Basic3DColumnComponent.js';
-import ThreeDGroupedComponent from './view/charts/3dcolumn/3dgrouped/ThreeDGroupedComponent.js';
-import ThreeDStackedComponent from './view/charts/3dcolumn/3dstacked/ThreeDStackedComponent.js';
-import NegativeValuesComponent from './view/charts/3dcolumn/negativevalues/NegativeValuesComponent.js';
-import ThreeDColumnWithRendererComponent from './view/charts/3dcolumn/3dcolumnwithrenderer/ThreeDColumnWithRendererComponent.js';
+import Basic3DColumnComponent from './view/charts/threedcolumn/basic3dcolumn/Basic3DColumnComponent.js';
+import ThreeDGroupedComponent from './view/charts/threedcolumn/threedgrouped/ThreeDGroupedComponent.js';
+import ThreeDStackedComponent from './view/charts/threedcolumn/threedstacked/ThreeDStackedComponent.js';
+import NegativeValuesComponent from './view/charts/threedcolumn/negativevalues/NegativeValuesComponent.js';
+import ThreeDColumnWithRendererComponent from './view/charts/threedcolumn/threedcolumnwithrenderer/ThreeDColumnWithRendererComponent.js';
 import CandlestickComponent from './view/charts/financial/candlestick/CandlestickComponent.js';
 import OHLCComponent from './view/charts/financial/ohlc/OHLCComponent.js';
-import BasicGaugeChartComponent from './view/charts/gauges/basicgaugechart/BasicGaugeChartComponent.js';
+import BasicGaugeChartComponent from './view/charts/chartgauges/basicgaugechart/BasicGaugeChartComponent.js';
 import BasicLineComponent from './view/charts/line/basicline/BasicLineComponent.js';
 import BasicMarkersComponent from './view/charts/line/basicmarkers/BasicMarkersComponent.js';
 import SplineComponent from './view/charts/line/spline/SplineComponent.js';
@@ -133,12 +133,12 @@ import SplineMarkersComponent from './view/charts/line/splinemarkers/SplineMarke
 import PlotComponent from './view/charts/line/plot/PlotComponent.js';
 import WithRendererComponent from './view/charts/line/withrenderer/WithRendererComponent.js';
 import RealtimeComponent from './view/charts/line/realtime/RealtimeComponent.js';
-import NavigatorComponent from './view/charts/navigator/NavigatorComponent.js';
+import NavigationComponent from './view/charts/navigation/NavigationComponent.js';
 import BasicPieComponent from './view/charts/pie/basicpie/BasicPieComponent.js';
 import SpieComponent from './view/charts/pie/spie/SpieComponent.js';
 import DonutComponent from './view/charts/pie/donut/DonutComponent.js';
 import DoubleDonutComponent from './view/charts/pie/doubledonut/DoubleDonutComponent.js';
-import ThreeDPieComponent from './view/charts/pie/3dpie/ThreeDPieComponent.js';
+import ThreeDPieComponent from './view/charts/pie/threedpie/ThreeDPieComponent.js';
 import BasicRadarComponent from './view/charts/radar/basicradar/BasicRadarComponent.js';
 import FilledComponent from './view/charts/radar/filled/FilledComponent.js';
 import MarkedComponent from './view/charts/radar/marked/MarkedComponent.js';
@@ -337,19 +337,19 @@ export default function getMenu() {
         { text: 'Column With Renderer', component: ColumnWithRendererComponent, iconCls: 'icon-column-renderer' },
         { text: 'Multiaxis Column', component: MultiaxisColumnComponent, iconCls: 'icon-column-multi-axis' }
       ] },
-      { text: '3D Column', iconCls: 'icon-column-3d', children: [
+      { text: 'Three D Column', iconCls: 'icon-column-3d', children: [
         { text: 'Basic 3D Column', component: Basic3DColumnComponent, iconCls: 'icon-column-basic-3d' },
-        { text: '3D Grouped', component: ThreeDGroupedComponent, iconCls: 'icon-column-grouped-3d' },
-        { text: '3D Stacked', component: ThreeDStackedComponent, iconCls: 'icon-column-stacked-3d' },
+        { text: 'Three D Grouped', component: ThreeDGroupedComponent, iconCls: 'icon-column-grouped-3d' },
+        { text: 'Three D Stacked', component: ThreeDStackedComponent, iconCls: 'icon-column-stacked-3d' },
         { text: 'Negative Values', component: NegativeValuesComponent, iconCls: 'icon-column-negative-3d' },
-        { text: '3D Column With Renderer', component: ThreeDColumnWithRendererComponent, iconCls: 'icon-column-renderer-3d' }
+        { text: 'Three D Column With Renderer', component: ThreeDColumnWithRendererComponent, iconCls: 'icon-column-renderer-3d' }
       ]},
       { text: 'Financial', iconCls: 'icon-financial-charts', children: [
         { text: 'Candlestick', component: CandlestickComponent, iconCls: 'icon-financial-candlestick' },
         { text: 'OHLC', component: OHLCComponent, iconCls: 'icon-financial-ohlc' }
       ] },
-      { text: 'Gauges', iconCls: 'icon-gauge-charts', children: [
-        { text: 'Basic Gauge', component: BasicGaugeChartComponent, iconCls: 'icon-gauge-basic' }
+      { text: 'Chart Gauges', iconCls: 'icon-gauge-charts', children: [
+        { text: 'Basic Gauge Chart', component: BasicGaugeChartComponent, iconCls: 'icon-gauge-basic' }
       ] },
       { text: 'Line', iconCls: 'icon-line-charts', children: [
         { text: 'Basic Line', component: BasicLineComponent, iconCls: 'icon-line-basic' },
@@ -360,13 +360,13 @@ export default function getMenu() {
         { text: 'With Renderer', component: WithRendererComponent, iconCls: 'icon-line-renderer' },
         { text: 'Realtime', component: RealtimeComponent, iconCls: 'icon-line-real-time' }
       ] },
-      { text: 'Navigator', component: NavigatorComponent, iconCls: 'icon-navigator-charts' },
+      { text: 'Navigation', component: NavigationComponent, iconCls: 'icon-navigator-charts' },
       { text: 'Pie', iconCls: 'icon-pie-basic', children: [
         { text: 'Basic Pie', component: BasicPieComponent, iconCls: 'icon-pie-basic' },
         { text: 'Spie', component: SpieComponent, iconCls: 'icon-pie-custom' },
         { text: 'Donut', component: DonutComponent, iconCls: 'icon-pie-donut' },
         { text: 'Double Donut', component: DoubleDonutComponent, iconCls: 'icon-pie-double-donut' },
-        { text: '3D Pie', component: ThreeDPieComponent, iconCls: 'icon-pie-3d' }
+        { text: 'Three D Pie', component: ThreeDPieComponent, iconCls: 'icon-pie-3d' }
       ] },
       { text: 'Radar', iconCls: 'icon-radar-charts', children: [
         { text: 'Basic Radar', component: BasicRadarComponent, iconCls: 'icon-radar-basic' },
@@ -395,7 +395,7 @@ export default function getMenu() {
         { text: 'Zoomable Sunburst', component: ZoomableSunburstComponent, iconCls: 'icon-d3-view-sunburst-zoom' },
         { text: 'Tree Hierarchy', component: TreeHierarchyComponent, iconCls: 'icon-d3-view-tree' },
         { text: 'Tree Map', component: TreeMapComponent, iconCls: 'icon-d3-view-treemap' },
-        { text: 'Tree Map Tooltip', component: TreeMapToolTipComponent, iconCls: 'icon-d3-view-treemap-tooltip' },
+        { text: 'Tree Map ToolTip', component: TreeMapToolTipComponent, iconCls: 'icon-d3-view-treemap-tooltip' },
         { text: 'Configurable Pivot TreeMap', component: ConfigurablePivotTreeMapComponent, iconCls: 'icon-d3-view-treemap-pivot-configurator' }
       ]}
     ]},

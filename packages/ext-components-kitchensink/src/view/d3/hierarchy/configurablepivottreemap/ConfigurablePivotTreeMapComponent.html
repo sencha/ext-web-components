@@ -1,5 +1,15 @@
-<ext-button 
-  text="configurablepivottreemap"
-  onready="configurablepivottreemap.readyButton1(event)"
-  ontap="configurablepivottreemap.tapButton1(event)">
-</ext-button>
+<ext-panel>
+  <ext-panel
+    height="100%"
+    onready="configurablepivottreemap.containerReady(event)"
+  >
+    <ext-toolbar docked="top">
+        <ext-spacer></ext-spacer>
+        <ext-button
+          text="Show configurator"
+          onTap="configurablepivottreemap.showConfigurator()"
+        >
+      </ext-button>
+    </ext-toolbar>
+  </ext-panel>
+</ext-panel>

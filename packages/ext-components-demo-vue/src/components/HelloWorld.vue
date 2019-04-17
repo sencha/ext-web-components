@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
 
-  <ext-panel :title="'gus'">
+  <ext-panel :title="'panel title'">
     <ext-button :text="'mjg'"></ext-button>
   </ext-panel>
 

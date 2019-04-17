@@ -10,7 +10,7 @@ export default class CollapsiblePanelComponent {
   }
 
   readyContainer1(event) {
-    var containerCmp = event.detail.cmp;
+    this.containerCmp = event.detail.cmp;
     this.containerCmp.setLayout(Ext.os.is.Phone ? 'fit' : 'auto');
     this.containerCmp.setPadding(Ext.os.is.Phone ? 0 : 10);
   }
