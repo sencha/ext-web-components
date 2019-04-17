@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BaseHrefWebpackPlugin } = require('base-href-webpack-plugin');
 const ExtWebpackPlugin = require('@sencha/ext-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 
 const portfinder = require('portfinder')
 
@@ -16,6 +17,7 @@ module.exports = function (env) {
   var watch       = get('watch',       'yes')
   var verbose     = get('verbose',     'no')
   var basehref    = get('basehref',    '/')
+  var build_v     = get('build_v', '7.0.0.0')
 
   const isProd = environment === 'production'
   const outputFolder = 'build'
@@ -54,7 +56,11 @@ module.exports = function (env) {
       new CopyWebpackPlugin([{
         from: '../node_modules/@sencha/ext-ux/modern/resources',
         to: './ext/ux'
-      }])
+      }]),
+      // Debug purposes only, injected via script: npm run-script buildexample -- --env.build_v=<full version here in format maj.min.patch.build>
+      new webpack.DefinePlugin({
+        BUILD_VERSION: JSON.stringify(build_v)
+      })
     ]
     return {
       mode: environment,

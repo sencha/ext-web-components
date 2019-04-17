@@ -24,13 +24,12 @@ export default class MainComponent {
     });
 //    this.wait = 9;
     this.wait = 5;
-    this.VERSION_FULL = version_full;
   }
 
   //DEBUG:
   readyTitleBar(event) {
     this.titleBarCmp = event.detail.cmp;
-    this.titleBarCmp.updateTitle("Debug v"+this.VERSION_FULL); 
+    this.titleBarCmp.updateTitle("Build: " + BUILD_VERSION); 
   }
 
   afterAllLoaded(f) {
