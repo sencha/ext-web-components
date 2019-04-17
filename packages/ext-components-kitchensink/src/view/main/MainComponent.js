@@ -2,6 +2,7 @@ import hljs from 'highlightjs';
 import 'highlightjs/styles/atom-one-dark.css';
 import './MainComponent.css';
 import './MainComponent.html';
+import {version_full} from '../../../package.json'
 
 Ext.require([
   'Ext.data.TreeStore'
@@ -23,11 +24,18 @@ export default class MainComponent {
     });
 //    this.wait = 9;
     this.wait = 5;
+    this.VERSION_FULL = version_full;
+  }
+
+  //DEBUG:
+  readyTitleBar(event) {
+    this.titleBarCmp = event.detail.cmp;
+    this.titleBarCmp.updateTitle("Debug v"+this.VERSION_FULL); 
   }
 
   afterAllLoaded(f) {
     this.wait = this.wait - 1
-    //console.log('***wait*** ' + this.wait )
+    //console.log('***wait*** ' + this.wait ) 
     
     if (this.wait == 0) {
       var hash = window.location.hash.substr(1)
