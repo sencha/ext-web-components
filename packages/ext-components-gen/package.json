@@ -1,6 +1,6 @@
 {
   "name": "@sencha/ext-components-gen",
-  "version": "6.7.0",
+  "version": "7.0.0",
   "description": "Sencha Ext Component code generator",
   "bin": {
     "ext-components-gen": "ext-components-gen.js",
