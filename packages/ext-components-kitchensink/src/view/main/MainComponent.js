@@ -25,9 +25,15 @@ export default class MainComponent {
     this.wait = 5;
   }
 
+  //DEBUG:
+  readyTitleBar(event) {
+    this.titleBarCmp = event.detail.cmp;
+    this.titleBarCmp.updateTitle("Build: " + BUILD_VERSION); 
+  }
+
   afterAllLoaded(f) {
     this.wait = this.wait - 1
-    //console.log('***wait*** ' + this.wait )
+    //console.log('***wait*** ' + this.wait ) 
     
     if (this.wait == 0) {
       var hash = window.location.hash.substr(1)
