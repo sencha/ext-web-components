@@ -1,7 +1,7 @@
 {
-  "name": "@sencha/ext-components-boilerplate",
+  "name": "@sencha/ext-web-components-boilerplate",
   "version": "7.0.0",
-  "description": "ext-components-boilerplate",
+  "description": "ext-web-components-boilerplate",
   "scripts": {
     "start": "npm run dev",
     "clean": "rimraf build",
@@ -9,7 +9,7 @@
     "build": "npm run clean && cross-env webpack --env.environment='production' --env.treeshake='yes' && cross-env webpack --env.environment='production'  --env.treeshake='no'"
   },
   "devDependencies": {
-    "@sencha/ext-components": "~7.0.0",
+    "@sencha/ext-web-components": "~7.0.0",
     "@sencha/ext-webpack-plugin": "^7.0.0",
 
     "@sencha/ext": "~6.7.0",

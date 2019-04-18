@@ -1,9 +1,9 @@
 {
-  "name": "@sencha/ext-components",
+  "name": "@sencha/ext-web-components",
   "version": "7.0.0",
   "main": "lib/index.js",
   "bin": {
-    "ext-components": "./bin/ext-components.js"
+    "ext-web-components": "./bin/ext-web-components.js"
   },
   "peerDependencies": {
 
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sencha/ext-components"
+    "url": "git+https://github.com/sencha/ext-web-components"
   },
   "keywords": [],
   "author": "Sencha",
