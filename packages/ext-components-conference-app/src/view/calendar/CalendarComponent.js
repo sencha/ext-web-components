@@ -2,7 +2,6 @@ import "./CalendarComponent.html";
 
 export default class CalendarComponent {
   constructor(props) {
-    localStorage.setItem('favoriteEvents', JSON.stringify(['57f6ddc31ff4d', '57ee3b237afcb']));
     this.showEvent = false;
     const favs = localStorage.getItem('favoriteEvents');
     this.favorites = favs ? JSON.parse(favs) : [];
