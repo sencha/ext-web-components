@@ -3,7 +3,7 @@
   "version": "7.0.0",
   "description": "Sencha Ext Web Component code generator",
   "bin": {
-    "ext-components-gen": "ext-web-components-gen.js",
+    "ext-web-components-gen": "ext-web-components-gen.js",
     "xcg": "ext-web-components-gen.js"
   },
   "scripts": {

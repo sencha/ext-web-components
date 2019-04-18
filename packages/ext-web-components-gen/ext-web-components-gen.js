@@ -31,7 +31,7 @@ function getPrefix () {
   return prefix
 }
 
-var app =(`${boldGreen(getPrefix())} ext-components-gen:`)
+var app =(`${boldGreen(getPrefix())} ext-web-components-gen:`)
 
 var answers = {
   'seeDefaults': null,
@@ -72,7 +72,7 @@ function stepStart() {
   var dataConfig = fs.readFileSync(nodeDir + '/config.json')
   config = JSON.parse(dataConfig)
 
-  console.log(boldGreen(`\ext-components-gen - Sencha ExtComponents Code Generator v${version}`))
+  console.log(boldGreen(`\ext-web-components-gen - Sencha ExtComponents Code Generator v${version}`))
   console.log('')
 
   let mainDefinitions = [{ name: 'command', defaultOption: true }]
@@ -373,7 +373,7 @@ async function stepCreate() {
   console.log(`${app} ${destDir} created`)
 
   var boilerplate = ''
-  boilerplate = nodeDir + '/node_modules/@sencha/ext-components-boilerplate'
+  boilerplate = nodeDir + '/node_modules/@sencha/ext-web-components-boilerplate'
 
   //copy in files from boilerplate
   glob.sync('**/*', { cwd: boilerplate, ignore: ['build/**', 'node_modules/**', 'index.js'], dot: true })
@@ -466,9 +466,9 @@ function stepHelpGeneral() {
 
 function stepHelpApp() {
 
-  var message = `${boldGreen('Quick Start:')} ext-components-gen -a
+  var message = `${boldGreen('Quick Start:')} ext-web-components-gen -a
 
-ext-components-gen app (-h) (-d) (-i) (-n 'name')
+ext-web-components-gen app (-h) (-d) (-i) (-n 'name')
 
 -h --help          show help (no parameters also shows help)
 -d --defaults      show defaults for package.json
@@ -477,9 +477,9 @@ ext-components-gen app (-h) (-d) (-i) (-n 'name')
 -v --verbose       verbose npm messages (for problems only)
 
 ${boldGreen('Examples:')}
-ext-components-gen app  --name CoolExtComponentsApp
-ext-components-gen app --interactive
-ext-components-gen app -a -n CoolExtComponentsApp
+ext-web-components-gen app  --name CoolExtComponentsApp
+ext-web-components-gen app --interactive
+ext-web-components-gen app -a -n CoolExtComponentsApp
 
 `
   console.log(message)
@@ -487,13 +487,13 @@ ext-components-gen app -a -n CoolExtComponentsApp
 
 function stepShortHelp() {
   var message = `${boldGreen('Quick Start:')}
-ext-components-gen app CoolExtComponentsApp
-ext-components-gen app -i
+ext-web-components-gen app CoolExtComponentsApp
+ext-web-components-gen app -i
 
 ${boldGreen('Examples:')}
-ext-components-gen app --name CoolExtComponentsApp
+ext-web-components-gen app --name CoolExtComponentsApp
 
-Run ${boldGreen('ext-components-gen --help')} to see all options
+Run ${boldGreen('ext-web-components-gen --help')} to see all options
 `
   console.log(message)
 }
