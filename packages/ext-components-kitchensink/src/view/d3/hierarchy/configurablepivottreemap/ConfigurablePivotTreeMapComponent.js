@@ -1,4 +1,4 @@
-import './ConfigurablePivotTreemapComponent.html';
+import './ConfigurablePivotTreeMapComponent.html';
 import createData from './createData';
 
 Ext.require(['Ext.pivot.d3.TreeMap']);
