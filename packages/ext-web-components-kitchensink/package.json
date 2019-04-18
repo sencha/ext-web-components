@@ -1,7 +1,7 @@
 {
-  "name": "@sencha/ext-components-kitchensink",
+  "name": "@sencha/ext-web-components-kitchensink",
   "version": "7.0.0",
-  "description": "ext-components-kitchensink",
+  "description": "ext-web-components-kitchensink",
   "scripts": {
     "start": "npm run dev",
     "clean": "rimraf build",
@@ -15,7 +15,7 @@
     "d3": "4.5.0",
     "highlight.js": "^9.14.2",
     "highlightjs": "~9.12.0",
-    "@sencha/ext-components": "~7.0.0",
+    "@sencha/ext-web-components": "~7.0.0",
     "@sencha/ext-webpack-plugin": "^7.0.0",
     "@sencha/ext": "~6.7.0",
     "@sencha/ext-modern": "~6.7.0",

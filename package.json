@@ -1,5 +1,5 @@
 {
-  "name": "ext-components",
+  "name": "ext-web-components",
   "version": "7.0.0",
   "description": "Use Ext JS with Web Components",
   "main": "index.js",
@@ -8,9 +8,9 @@
     "increment": "npx lerna publish --skip-git --skip-npm --force-publish",
     "clean": "npx lerna clean",
     "install:clean": "npm cache clear --force && npx lerna clean && npm install",
-    "kitchensink": "cd packages/ext-components-kitchensink && npm start",
-    "boilerplate": "cd packages/ext-components-boilerplate && npm start",
-    "serve-tests": "cd packages/ext-components-tests && npm start"
+    "kitchensink": "cd packages/ext-web-components-kitchensink && npm start",
+    "boilerplate": "cd packages/ext-web-components-boilerplate && npm start",
+    "serve-tests": "cd packages/ext-web-components-tests && npm start"
   },
   "keywords": [
     "Ext",
