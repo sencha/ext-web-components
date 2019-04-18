@@ -11,14 +11,14 @@ var nodeDir = path.resolve(__dirname)
 var pkg = (fs.existsSync(nodeDir + '/package.json') && JSON.parse(fs.readFileSync(nodeDir + '/package.json', 'utf-8')) || {});
 version = pkg.version
 
-console.log (`Welcome to ${boldGreen('Sencha ext-components-gen')} v${version} - The ExtComponents code generator
+console.log (`Welcome to ${boldGreen('Sencha ext-web-components-gen')} v${version} - The ExtWebComponents code generator
 
 ${boldGreen('Quick Start:')}
-ext-components-gen app CoolExtComponentsApp
-ext-components-gen app -i
+ext-web-components-gen app CoolExtWebComponentsApp
+ext-web-components-gen app -i
 
 ${boldGreen('Examples:')}
-ext-components-gen app --name CoolExtComponentsApp
+ext-web-components-gen app --name CoolExtWebComponentsApp
 
-Run ${boldGreen('ext-components-gen --help')} to see all options
+Run ${boldGreen('ext-web-components-gen --help')} to see all options
 `)
