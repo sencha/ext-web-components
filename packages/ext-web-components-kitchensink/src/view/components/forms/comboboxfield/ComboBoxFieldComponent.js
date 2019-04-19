@@ -13,5 +13,4 @@ export default class ComboBoxFieldComponent {
     this.cmp = event.detail.cmp;
     this.cmp.setStore(this.store);
   }
-
 }
