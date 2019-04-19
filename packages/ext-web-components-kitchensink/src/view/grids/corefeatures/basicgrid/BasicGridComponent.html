@@ -1,3 +1,4 @@
+<ext-panel width="100%" height="100%">
   <ext-grid width="100%" height="100%"
     onready="basicgrid.readyGrid(event)"
     shadow=true
@@ -17,6 +18,7 @@
       {"text":"noticePeriod","dataIndex":"noticePeriod"}
     ]'>
   </ext-grid>
+</ext-panel>
 
 
 
@@ -39,7 +41,7 @@
     </ext-column>
     <ext-column
       text="% Change"
-      dataIndex="priceChangePct" 
+      dataIndex="priceChangePct"
       cell={encodeHtml:false}
       renderer="this.renderSign.bind(this,'0.00')">
     </ext-column>

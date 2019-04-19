@@ -7,5 +7,4 @@ export default class BasicGridComponent {
     this.gridCmp = event.detail.cmp
     this.gridCmp.setData(new BasicGridComponentData(50).data)
   }
-
 }
