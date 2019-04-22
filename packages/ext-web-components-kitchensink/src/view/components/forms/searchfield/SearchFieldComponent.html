@@ -2,11 +2,8 @@
   width="600"
   layout="vbox"
   padding="20"
-  platformConfig='{
-                    "phone": {
-                        "width": "100%"
-                    }
-                }'>
+  platformConfig='{ "phone": { "width": "100%" } }'
+>
   <ext-container html="alt" cls="heading">
   </ext-container>
   <ext-titleBar title="TitleBar" maxWidth="600" margin="0 0 30 0">
@@ -17,7 +14,6 @@
       placeholder="Search" >
     </ext-searchfield>
   </ext-titleBar>
-
   <ext-container html="faded" cls="heading" >
   </ext-container>
   <ext-container layout="vbox" style="background-color: white" cls="fadedContainer" padding="20 20" margin="0 0 30 0" shadow="true">
@@ -26,7 +22,6 @@
       placeholder="Search" >
     </ext-searchfield>
   </ext-container>
-
   <ext-container html="solo" cls="heading">
   </ext-container>
   <ext-container style="background-color: #F0F0F0" layout="hbox" cls="soloContainer" padding="20 20" shadow="true">
@@ -36,25 +31,17 @@
       placeholder="Search"
       margin="0 10 0 0"
       triggerAlign="right"
-      triggers='{
-                     "search": {
-                         "type": "search",
-                         "side": "right"
-                         }
-                 }'
-      flex="1" >
-      </ext-searchfield>
+      triggers='{ "search": { "type": "search", "side": "right" } }'
+      flex="1"
+    >
+    </ext-searchfield>
     <ext-button
       iconCls="x-fa fa-arrow-right"
       ui="action round raised"
       height="36"
       width="36"
-      platformConfig='{
-                        "phone": {
-                          "height": "40",
-                          "width": "40"
-                        }
-                      }' >
+      platformConfig='{ "phone": { "height": "40", "width": "40" } }'
+    >
     </ext-button>
   </ext-container>
 </ext-container>

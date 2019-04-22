@@ -1,20 +1,18 @@
 <ext-panel
-    shadow="true"
-    onready="colorpicker.onPanelReady(event)"
-    layout="vbox"
-    resizable="true" bodyPadding="10"
-    autoSize="true">
-
-    <ext-colorselector 
-      color="#00ff00"
-      onready="colorpicker.mainColorPickerReady(event)"
-      onchange="colorpicker.OnSelChange(event)">
-    </ext-colorselector>
-
-    <ext-panel
-      onready="colorpicker.onTitleReady(event)"
-      title="Selected color: #00ff00"
-      ui="light">
-    </ext-panel>
-    
+  shadow="true"
+  onready="colorpicker.onPanelReady(event)"
+  layout="vbox"
+  resizable="true" bodyPadding="10"
+  autoSize="true"
+>
+  <ext-colorselector
+    color="#00ff00"
+    onready="colorpicker.mainColorPickerReady(event)"
+    onchange="colorpicker.OnSelChange(event)">
+  </ext-colorselector>
+  <ext-panel
+    onready="colorpicker.onTitleReady(event)"
+    title="Selected color: #00ff00"
+    ui="light">
+  </ext-panel>
   </ext-panel>

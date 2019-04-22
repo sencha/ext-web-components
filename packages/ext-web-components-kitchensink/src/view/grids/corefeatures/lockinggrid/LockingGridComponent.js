@@ -22,6 +22,4 @@ export default class LockingGridComponent {
     const lockedGrid = event.detail.cmp;
     lockedGrid.setStore(store);
   }
-
-  greenClick(event) {}
 }

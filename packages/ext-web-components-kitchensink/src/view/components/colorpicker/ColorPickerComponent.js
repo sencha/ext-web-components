@@ -22,7 +22,7 @@ export default class ColorPickerComponent {
   onTitleReady(event) {
     this.titlePanel = event.detail.cmp;
     const colorTitle = this.getcolorTitle();
-    const he = this.titlePanel.setTitle(colorTitle);
+    this.titlePanel.setTitle(colorTitle);
   }
 
   mainColorPickerReady(event) {
@@ -31,10 +31,11 @@ export default class ColorPickerComponent {
 
   OnSelChange(event) {
     this.color = event.detail.color;
-
     if(this.titlePanel) {
       let colorTitle = this.getcolorTitle();
       this.titlePanel.setTitle(colorTitle);
+      this.selButton = Ext.getCmp("colorSelectorButton");
+      this.selButton.setColor(this.color);
     }
   }
 
@@ -48,9 +49,10 @@ export default class ColorPickerComponent {
         {
           xtype: 'component',
           html: 'colorbutton &#8680;'
-        }, 
+        },
         {
           xtype: 'colorbutton',
+          id: 'colorSelectorButton',
           width: Ext.platformTags.phone ? 25 : 15,
           height: Ext.platformTags.phone ? 25 : 15,
           listeners: {
