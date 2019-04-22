@@ -1,14 +1,7 @@
 <ext-panel layout="fit" bodyPadding="0">
 
   <!-- code button starts-->
-  <ext-button weight="5" hidden=true onready="main.readyCodeButton(event)"
-    ui="fab"
-    iconCls="x-font-icon md-icon-code"
-    top="20"
-    right="15"
-    zIndex="10000"
-    ontap="main.toggleCode()">
-  </ext-button>
+
   <!-- code button ends-->
 
   <!-- Titlebar starts-->
@@ -22,9 +15,16 @@
   <!-- Breadcrumb starts-->
   <ext-toolbar docked="top" weight="10">
     <ext-dataview inline=true itemCls="div.app-toolbar" id="hide-overflow"
-      onchildtap="main.dataviewBreadcrumbClick(event)" 
+      onchildtap="main.dataviewBreadcrumbClick(event)"
       onready="main.readyDataviewBreadcrumb(event)">
     </ext-dataview>
+    <ext-button weight="5" hidden=true onready="main.readyCodeButton(event)"
+      ui="fab"
+      iconCls="x-font-icon md-icon-code"
+      right="15"
+      zIndex="10000"
+      ontap="main.toggleCode()">
+    </ext-button>
   </ext-toolbar>
   <!-- Breadcrumb ends-->
 
@@ -52,7 +52,8 @@
     <ext-treelist
       ui="nav"
       expanderFirst="false"
-      expanderOnly="false"
+      expanderOnly="true"
+      selectOnExpander="false"
       onready="main.readyNavTreelist(event)"
       onselectionchange="main.navTreelistSelectionChange(event)">
     </ext-treelist>
@@ -63,7 +64,7 @@
 
 
   <!-- selections starts-->
-  <ext-panel scrollable="y" hidden=true onready="main.readySelection(event)">
+  <ext-panel scrollable="y" hidden="true" onready="main.readySelection(event)">
     <ext-dataview
       inline="true"
       centered="true"
@@ -100,7 +101,7 @@
     onready="main.readyCodePanel(event)"
     hidden=true
     collapsed=false>
-    <ext-tabpanel 
+    <ext-tabpanel
       shadow="true"
       height="100%"
       tabConfig='{

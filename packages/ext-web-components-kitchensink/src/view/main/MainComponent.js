@@ -21,20 +21,23 @@ export default class MainComponent {
       rootVisible: true,
       root: navTreeRoot
     });
-//    this.wait = 9;
     this.wait = 5;
+
+    if (Ext.os.is.Phone) {
+      this.collapsed = true;
+    }
   }
 
   //DEBUG:
   readyTitleBar(event) {
     this.titleBarCmp = event.detail.cmp;
-    this.titleBarCmp.updateTitle("Build: " + BUILD_VERSION); 
+    this.titleBarCmp.updateTitle("Build: " + BUILD_VERSION);
   }
 
   afterAllLoaded(f) {
     this.wait = this.wait - 1
-    //console.log('***wait*** ' + this.wait ) 
-    
+    //console.log('***wait*** ' + this.wait )
+
     if (this.wait == 0) {
       var hash = window.location.hash.substr(1)
       if (hash == '') {hash = 'all'}
@@ -63,7 +66,11 @@ export default class MainComponent {
 
   readyNavTreePanel(event) {
     //console.log('readyNavTreePanel')
-    this.navTreePanelCmp = event.detail.cmp
+    this.navTreePanelCmp = event.detail.cmp;
+
+    if(Ext.os.is.Phone) {
+      this.navTreePanelCmp.setWidth('100%');
+    }
     //this.afterAllLoaded('readyNavTreePanel')
   }
 
@@ -81,8 +88,8 @@ export default class MainComponent {
     backgroundSize: 20px 20px;
     borderWidth: 0px;
     backgroundColor: #e8e8e8;
-    backgroundImage: 
-      linear-gradient(0deg, #f5f5f5 1.1px, transparent 0), 
+    backgroundImage:
+      linear-gradient(0deg, #f5f5f5 1.1px, transparent 0),
       linear-gradient(90deg, #f5f5f5 1.1px, transparent 0)`
     this.selectionCmp.setBodyStyle(bodyStyle)
     //this.afterAllLoaded('readySelection');
@@ -92,6 +99,11 @@ export default class MainComponent {
     //console.log('readyDataviewNav')
     this.dataviewNavCmp = event.detail.cmp
     this.dataviewNavCmp.setStyle({'background':'top','display':'block','text-align':'center'})
+
+    if(Ext.os.is.Phone) {
+      this.dataviewNavCmp.setCentered(false);
+    }
+
     var tpl = `
     <div class="app-thumbnail">
       <div class="app-thumbnail-icon-wrap">
@@ -180,6 +192,10 @@ export default class MainComponent {
       this.dataviewNavCmp.setData(node.childNodes)
       this.showSelection();
     }
+
+    if(Ext.os.is.Phone) {
+      this.navTreePanelCmp.setCollapsed(true);
+    }
   }
 
   showSelection() {
@@ -192,6 +208,11 @@ export default class MainComponent {
     this.selectionCmp.setHidden(true);
     this.router.hidden = false;
     this.codeButtonCmp.setHidden(false);
+
+    if(Ext.os.is.Phone) {
+      this.navTreePanelCmp.setCollapsed(true)
+    }
+
     this.setCodeTabs()
   }
 
@@ -222,12 +243,14 @@ export default class MainComponent {
   }
 
   toggleTree() {
-    var t = document.getElementById('theTitle');
-    // console.log(t)
-    // t.innerHTML = "change"
-    var collapsed = this.navTreePanelCmp.getCollapsed()
-    if (collapsed == true){collapsed = false} else{collapsed = true}
-    this.navTreePanelCmp.setCollapsed(collapsed)
+    let collapsed = this.navTreePanelCmp.getCollapsed();
+
+    if (collapsed == true) {
+      collapsed = false;
+    } else {
+      collapsed = true;
+    }
+    this.navTreePanelCmp.setCollapsed(collapsed);
   }
 
   setCodeTabs() {
@@ -261,7 +284,7 @@ export default class MainComponent {
     var codeMapFile = codeMap[file]
     if (codeMapFile != undefined ) {
       this.tabPanelCmp.add(
-        { 
+        {
           xtype: 'panel', title: file, ui: 'code-panel', layout: 'fit', userSelectable: true, scrollable: true,
           tab: {ui: 'app-code-tab', flex: 0, padding: '0 5 0 0', minWidth: 220, maxWidth: 250},
           html: `<pre><code class='code'>${codeMapFile.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
