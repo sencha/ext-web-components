@@ -33,7 +33,7 @@ in public/index.html
     <link href="<%= BASE_URL %>copy/extjs/ext.css" rel='stylesheet'>
     <script src="<%= BASE_URL %>copy/extjs/ext.js"></script>
 in package.json
-    "@sencha/ext-components": "^7.0.0",
+    "@sencha/ext-web-components": "~7.0.0",
     "@sencha/ext-webpack-plugin": "^7.0.0",
 in src/main.js
   import '@sencha/ext-components';

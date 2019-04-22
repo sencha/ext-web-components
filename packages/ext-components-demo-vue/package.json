@@ -10,7 +10,7 @@
     "vue": "^2.6.6"
   },
   "devDependencies": {
-    "@sencha/ext-components": "^7.0.0",
+    "@sencha/ext-web-components": "~7.0.0",
     "@sencha/ext-webpack-plugin": "^7.0.0",
     
     "@vue/cli-plugin-babel": "^3.4.0",
