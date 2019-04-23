@@ -4,6 +4,21 @@ export default class ExtBase extends HTMLElement {
     super()
   }
 
+  filterProperty(propertyValue) {
+    try {
+      const parsedProp = JSON.parse(propertyValue);
+
+      if (parsedProp === null || parsedProp === undefined || parsedProp === true || parsedProp === false || parsedProp === Object(parsedProp)) {
+        return parsedProp;
+      } else {
+        return propertyValue;
+      }
+    }
+    catch(e) {
+      return propertyValue;
+    }
+  }
+
   connectedCallback() {
     if (this.extChildren == undefined) {
       this.extChildren = [];
@@ -22,7 +37,7 @@ export default class ExtBase extends HTMLElement {
     this.rawChildren = Array.from(this.children)
 
     //console.dir(`connectedCallback: ${this.nodeName} parent: ${this.nodeParentName} extParentDefined: ${this.extParentDefined} extChildrenDefined: ${this.extChildrenDefined} this.children.length: ${this.children.length}`)
-    
+
     if (this.extChildrenDefined == false && this.children.length > 0) {
       this.childrenCounter = this.children.length
     }
@@ -35,21 +50,15 @@ export default class ExtBase extends HTMLElement {
     //mjg fitToParent not working
     if (true === this.fitToParent) {
       console.log('here')
-      this.props.top=0, 
-      this.props.left=0, 
-      this.props.width='100%', 
+      this.props.top=0,
+      this.props.left=0,
+      this.props.width='100%',
       this.props.height='100%'
     }
     for (var property in this.PROPERTIESOBJECT) {
       if (this.PROPERTIESOBJECT.hasOwnProperty(property)) {
         if(this.getAttribute(property) !== null) {
-          try {
-            this.props[property] = JSON.parse(this[property])
-            //this.props[property] = this[property]
-          }
-          catch(e) {
-            this.props[property] =  this[property]
-          }
+          this.props[property] = this.filterProperty(this[property]);
         }
       }
     }
@@ -215,17 +224,17 @@ export default class ExtBase extends HTMLElement {
         console.log(parentxtype)
         console.log(childxtype)
       }
-    } 
+    }
     if (childxtype === 'tooltip') {
       parentCmp.setTooltip(childCmp)
 //      console.log('**')
       return
-    } 
+    }
     if (childxtype === 'plugin') {
       parentCmp.setPlugin(childCmp)
 //      console.log('**')
       return
-    } 
+    }
     else if (parentxtype === 'button') {
       if (childxtype === 'menu') {
         parentCmp.setMenu(childCmp)
@@ -236,12 +245,12 @@ export default class ExtBase extends HTMLElement {
         console.log(childCmp)
         console.log(parentCmp)
       }
-    } 
+    }
     if (childxtype === 'toolbar' && Ext.isClassic === true) {
       parentCmp.addDockedItems(childCmp)
       //console.log('**')
       return
-    } 
+    }
     else if ((childxtype === 'toolbar' || childxtype === 'titlebar') && parentCmp.getHideHeaders != undefined) {
       if (parentCmp.getHideHeaders() === false) {
         parentCmp.insert(1, childCmp)
@@ -252,7 +261,7 @@ export default class ExtBase extends HTMLElement {
 //        console.log(`${parentCmp.xtype}.add(${childCmp.xtype})`)
         return
       }
-    } 
+    }
       if (parentCmp.add != undefined) {
 
         if(location == null) {
