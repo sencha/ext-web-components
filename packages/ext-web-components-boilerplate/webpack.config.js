@@ -31,7 +31,7 @@ module.exports = function (env) {
         script: './extract-code.js',
         port: port,
         packages: [],
-        profile: profile, 
+        profile: profile,
         environment: environment,
         treeshake: treeshake,
         browser: browser,
