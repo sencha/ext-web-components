@@ -1,5 +1,5 @@
 describe("SimpleAttributeUpdate.js", function () {
-    beforeEach(() => ST.navigate('#simpleattributeupdate'));
+    beforeEach(() => ST.navigate('#SimpleAttributeUpdate'));
     
     it("Should find the created button component", () => {
         ST.component('#simpleUpdateButton').visible();

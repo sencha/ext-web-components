@@ -1,5 +1,5 @@
 describe("ClassNameUpdate.js", function () {
-    beforeEach(() => ST.navigate('#classnameupdate'));
+    beforeEach(() => ST.navigate('#ClassNameUpdate'));
     
     it("Should find the created button component", () => {
         ST.component('#classUpdateButton').visible();

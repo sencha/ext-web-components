@@ -1,5 +1,5 @@
 describe('Sencha Test Hooks', () => {
-    beforeEach(() => ST.navigate('#senchatesthooks'));
+    beforeEach(() => ST.navigate('#SenchaTestHooks'));
     
     it('should support selector by item id attribute', () => {
         ST.element('//ext-button[@itemid]').visible();
