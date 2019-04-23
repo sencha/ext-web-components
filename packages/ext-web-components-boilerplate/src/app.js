@@ -13,6 +13,11 @@ import getMenu from './menu';
 import { getRoutes } from '@sencha/ext-web-components/lib/aa-router.component';
 import MainComponent from './view/main/MainComponent.js';
 
+Ext.require([
+  'Ext.layout.*',
+  'Ext.data.TreeStore'
+]);
+
 function init() {
   window.menu = getMenu();
   window.routes = getRoutes(window.menu);
