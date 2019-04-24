@@ -24,7 +24,7 @@ module.exports = function (env) {
       new HtmlWebpackPlugin({template: "index.html",hash: true,inject: "body"}),
       new BaseHrefWebpackPlugin({ baseHref: basehref }),
       new ExtWebpackPlugin({
-        framework: 'components',
+        framework: 'webcomponents',
         theme: 'theme-conference-app',
         toolkit: 'modern',
         emit: 'yes',
