@@ -11,7 +11,7 @@ export default class ElementInsertEndComponent {
   buttonClick() {
     const buttonDomNode = document.getElementById('element-insert-end-button');
     const div = document.createElement("div");
-    div.id = "inserted";
+    div.id = "insertedEnd";
     div.innerHTML = "Inserted";
     buttonDomNode.insertAdjacentElement('afterend', div);
   }

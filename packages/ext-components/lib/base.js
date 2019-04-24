@@ -40,6 +40,7 @@ export default class ExtBase extends HTMLElement {
       this.props.width='100%', 
       this.props.height='100%'
     }
+
     for (var property in this.PROPERTIESOBJECT) {
       if (this.PROPERTIESOBJECT.hasOwnProperty(property)) {
         if(this.getAttribute(property) !== null) {
