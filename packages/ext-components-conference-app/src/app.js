@@ -20,6 +20,11 @@ import getMenu from './menu';
 import { getRoutes } from '@sencha/ext-components/lib/aa-router.component';
 import MainComponent from './view/main/MainComponent.js';
 
+Ext.require([
+  'Ext.layout.*',
+  'Ext.data.TreeStore'
+])
+
 function init() {
   window.d3 = d3
   window.menu = getMenu();
