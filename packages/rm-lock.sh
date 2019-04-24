@@ -1,8 +1,9 @@
-rm ext-components/package-lock.json
-rm ext-components-demo-angular/package-lock.json
-rm ext-components-demo-vue/package-lock.json
-rm ext-components-gen/package-lock.json
-rm ext-components-boilerplate/package-lock.json
-rm ext-components-demo/package-lock.json
-rm ext-components-kitchensink/package-lock.json
-rm ext-components-tests/package-lock.json
+rm ext-web-components/package-lock.json
+rm ext-web-components-boilerplate/package-lock.json
+rm ext-web-components-conference-app/package-lock.json
+rm ext-web-components-demo/package-lock.json
+rm ext-web-components-demo-angular/package-lock.json
+rm ext-web-components-demo-vue/package-lock.json
+rm ext-web-components-gen/package-lock.json
+rm ext-web-components-kitchensink/package-lock.json
+rm ext-web-components-tests/package-lock.json
