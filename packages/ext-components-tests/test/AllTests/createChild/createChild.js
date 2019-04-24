@@ -9,17 +9,16 @@ describe("CreateChild", function() {
         ST.button('#insertElementBetween').click();
         ST.element('>> .insertedElement1').visible();
         ST.element('>> .insertedElement1').content('Inserted1');
-        ST.panel('#elemInsertBetTopParent').visible();
-        ST.panel('#elemInsertBetTopParent').child('#insertElementBetween').and(function (element) {
-            element.text('Insert');
-        });
-        ST.element('>> .insertedElement1').and(function(inserted) {
-            inserted = Ext.Component.from(inserted);
-            expect(inserted.getParent().indexOf(inserted)).toBe(0);
-            // element.content('top');
-            // inserted = Ext.Component.from(inserted)
-            // expect(inserted.getParent().indexOf(inserted)).toBe(1);
-        })
+        ST.element('>> .insertedElement1').up('#elemInsertBetTopParent').visible();
+        ST.element('>> .insertedElement2').up('#elemInsertBetTopParent').visible();
+
+        // ST.element('>> .insertedElement1').and(function(inserted) {
+        //     inserted = Ext.Component.from(inserted);
+        //     expect(inserted.getParent().indexOf(inserted)).toBe(0);
+        //     // element.content('top');
+        //     // inserted = Ext.Component.from(inserted)
+        //     // expect(inserted.getParent().indexOf(inserted)).toBe(1);
+        // })
         // ST.panel('#elemInsertBetTopParent').gotoComponent('#IAMACONTAINER').and(function (element) {
         //     element.content('top')
         // });
@@ -29,12 +28,12 @@ describe("CreateChild", function() {
         // expect(ST.element('>> .insertedElement').items.length).toBe(1);
         // ST.button('#insertElementBetween').click();
         // expect(ST.element('>> .insertedElement').items.length).toBe(2);
-        
+
         // var text = ST.element.is('div.insertedElement');
         // text.visible();
         // expect(text).toEqual('ínserted');
         //     .and(function (element) {
-        //         expect(element).toBe('abc'); 
+        //         expect(element).toBe('abc');
         //     }
         // );
         // items
