@@ -105,17 +105,17 @@ import getMenu from './menu';
 import MainComponent from './view/main/MainComponent.js';
 import * as d3 from 'd3'
 
-(function () {
+Ext.require([
+  'Ext.layout.*',
+  'Ext.data.TreeStore'
+]);
 
-  init();
+function init() {
+  window.d3 = d3;
+  window.menu = getMenu();
+  window.routes = getRoutes(window.menu);
+  window.main = new MainComponent()
+  document.body.innerHTML = window._code['main']['MainComponent.html']
+}
 
-  function init() {
-
-    window.d3 = d3;
-    window.menu = getMenu();
-    window.routes = getRoutes(window.menu);
-    window.main = new MainComponent()
-    document.body.innerHTML = window._code['main']['MainComponent.html']
-  }
-
-}());
+init();

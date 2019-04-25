@@ -42,7 +42,7 @@ export default class ButtonComponent {
     this.style = value._text;
     this.styleButtons.forEach(menuItem => {
       const menuItemText = menuItem._text;
-      
+
       if (menuItemText === this.style) {
         menuItem.setIconCls('x-font-icon md-icon-check');
       } else {
@@ -94,7 +94,7 @@ export default class ButtonComponent {
     this.type = value._text;
     this.iconButtons.forEach(menuItem => {
       const menuItemText = menuItem._text;
-      
+
       if (menuItemText === this.type) {
         menuItem.setIconCls('x-font-icon md-icon-check');
       } else {
