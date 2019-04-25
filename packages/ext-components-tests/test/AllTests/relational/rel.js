@@ -2,10 +2,11 @@ describe('rel', () => {
     it('should assign an element to a config when a rel prop is present', () => {
         ST.navigate('#Rel')
         ST.component('#relButtonMenu1').click()
-        ST.component('#menuRel1').visible();
-        ST.component('menuitem[text="Option 1"]').visible();
-        ST.component('menuitem[text="Option 2"]').visible();
-        ST.component('menuitem[text="Option 3"]').visible();
+        ST.component('#menuRel1').visible().and(function (menu) {
+          expect(Ext.ComponentQuery.query('menuitem[text="Option 1"]')[0].isVisible()).toEqual(true)
+          expect(Ext.ComponentQuery.query('menuitem[text="Option 2"]')[0].isVisible()).toEqual(true)
+          expect(Ext.ComponentQuery.query('menuitem[text="Option 3"]')[0].isVisible()).toEqual(true)
+        });
     });
 
     describe("Dialog.buttons", () => {
@@ -38,7 +39,7 @@ describe('rel', () => {
     describe("Component.tooltip", () => {
         it("should auto-assign tooltip from children", () => {
             ST.navigate('#RelTooltip')
-            
+
             ST.play([
                 {target: '#buttonTooltip', type: 'pointermove', x: 46, y: 100 },
                 {target: '#buttonTooltip', type: 'mouseenter'},
@@ -47,5 +48,5 @@ describe('rel', () => {
             // ST.component('#tooltip').visible();
         });
     });
-    
+
 });

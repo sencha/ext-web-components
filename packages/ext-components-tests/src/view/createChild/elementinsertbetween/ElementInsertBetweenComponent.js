@@ -11,7 +11,6 @@ export default class ElementInsertBetweenComponent {
   }
 
   buttonClick() {
-    const buttonDomNode = document.getElementById('element-insert-between-button');
     const div = document.createElement("div");
     div.className = "insertedElement" + this.counter;
     div.innerHTML = "Inserted" + this.counter;

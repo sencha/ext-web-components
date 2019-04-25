@@ -6,8 +6,7 @@
         {
             "libs": [],
             "coverageFilters": [],
-            "webdriverContext": "webdriver",
-            "sandbox": true,
+            "sandbox": false,
             "globals": "*",
             "directory": "AllTests",
             "name": "AllTests"
