@@ -8,7 +8,7 @@ export default class ExtBase extends HTMLElement {
     try {
       const parsedProp = JSON.parse(propertyValue);
 
-      if (parsedProp === null || parsedProp === undefined || parsedProp === true || parsedProp === false || parsedProp === Object(parsedProp)) {
+      if (parsedProp === null || parsedProp === undefined || parsedProp === true || parsedProp === false || parsedProp === Object(parsedProp) || !isNaN(parsedProp) ) {
         return parsedProp;
       } else {
         return propertyValue;

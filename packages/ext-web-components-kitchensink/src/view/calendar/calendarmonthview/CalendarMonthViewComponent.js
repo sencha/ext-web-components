@@ -3,6 +3,12 @@ import './CalendarMonthViewComponent.html';
 export default class CalendarMonthViewComponent {
 
   constructor() { }
+
+  panelReady(event){
+    this.panel = event.detail.cmp;
+    this.panel.setTitle(Ext.Date.format(new Date(),'F Y'))
+    this.panel.setTitleAlign('center');
+  }
  
   calendarListReady(event) {
     this.store = Ext.create('Ext.calendar.store.Calendars', {
