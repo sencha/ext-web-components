@@ -112,7 +112,6 @@ export default class OrgChartComponent {
 
     const targetPanel = event.detail.cmp;
     const targetPanelDom = targetPanel.getRenderTarget().el.dom;
-    debugger;
     orgChart.setRenderTo(targetPanelDom);
   }
 }
