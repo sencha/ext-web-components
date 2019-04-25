@@ -21,6 +21,7 @@ export default class GridFilteringComponent {
 
     this.grid = event.detail.cmp;
     this.grid.setStore(store);
+    // this.grid.setRowNumbers(true);
     // let columns = Object.assign([], this.grid.getColumns());
     // // let columns = JSON.parse(JSON.stringify(this.grid.getColumns());
     // const lastColumn = columns[columns.length - 1];

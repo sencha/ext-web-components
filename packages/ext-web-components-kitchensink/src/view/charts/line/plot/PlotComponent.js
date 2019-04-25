@@ -61,6 +61,20 @@ export default class PlotComponent {
     );
   }
 
+  onZoomButtonReady(event) {
+    this.zoomButtonCmp = event.detail.cmp;
+    this.zoomButtonCmp.on('tap', this.toggleZoomOnPan.bind(this, true));
+  }
+
+  onPanButtonReady(event) {
+    this.panButtonCmp = event.detail.cmp;
+    this.panButtonCmp.on('tap', this.toggleZoomOnPan.bind(this, false));
+  }
+
+  toggleZoomOnPan(zoomOnPan) {
+    this.cartesianCmp.getInteraction('panzoom').setZoomOnPan(zoomOnPan);
+  };
+
   onMenuItemReady(event) {
     this.menuCmpArray.push(event.detail.cmp);
     event.detail.cmp.on('click', this.onThemeChange.bind(this));

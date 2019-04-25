@@ -96,15 +96,16 @@ export default class ConfiguratorPluginComponent {
       }, {
           dataIndex: 'month',
           header: 'Month',
-          labelRenderer: this.monthRenderer,
+          labelRenderer: this.monthRenderer.bind(this),
           settings: {
             aggregators: ['count'],
             allowed: ['leftAxis', 'topAxis']
           }
       }]
     }];
-    this.monthRenderer = function(value) {return Ext.Date.monthNames[value]} ;
   }
+
+  monthRenderer(value) { return Ext.Date.monthNames[value] };
 
   coloredRenderer(v, record, dataIndex, cell, column) {
     cell.setStyle( Ext.String.format('color: {0};', v > 500 ? 'green' : 'red') );

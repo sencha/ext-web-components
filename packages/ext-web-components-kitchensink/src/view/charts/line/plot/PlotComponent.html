@@ -3,9 +3,11 @@
   <ext-container docked="top"><div #extitem>
     <chart-toolbar
       onItemReady="plot.onMenuItemReady(event)"
-      onThemeChange="plot.onThemeChange(event)"
       theme="default"
       onRefreshButtonReady="plot.onRefreshButtonReady(event)"
+      onZoomButtonReady="plot.onZoomButtonReady(event)"
+      onPanButtonReady="plot.onPanButtonReady(event)"
+      style="width: 100%;"
       onlyMidnight=true>
     </chart-toolbar>
   </div></ext-container>

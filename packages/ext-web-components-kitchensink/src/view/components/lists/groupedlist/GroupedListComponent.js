@@ -23,6 +23,7 @@ export default class GroupedListComponent {
     });
     this.theListview.setItemTpl(tpl);
     this.theListview.setStore(this.store);
+    this.theListview.setIndexBar({ autoHide: false });
   }
 
   groupFn(record) {

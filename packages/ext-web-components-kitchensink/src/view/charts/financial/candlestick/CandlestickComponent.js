@@ -58,7 +58,6 @@ export default class CandlestickComponent {
   }
 
   toggleZoomOnPan(zoomOnPan) {
-    //Added cmp to access component attributes in ext-react16 [revisit]
     this.toggleCrosshair(false);
     this.cartesianCmp.getInteraction('panzoom').setZoomOnPan(zoomOnPan);
   };
