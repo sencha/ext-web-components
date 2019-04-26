@@ -8,11 +8,6 @@ export default class CalendarTimezoneSupportComponent {
     this.isPhone = Ext.os.is.Phone;
   }
 
-  changeOptions = () => {
-    const selectorValue = Ext.getCmp('selector').getSelection().data.value;
-    this.timezoneOffset = selectorValue;
-  }
-
   calendarDayReady(event) {
     this.calendarDay = event.detail.cmp;
     const store = Ext.create('Ext.calendar.store.Calendars', {
@@ -23,6 +18,12 @@ export default class CalendarTimezoneSupportComponent {
       }
     })
     this.calendarDay.setStore(store);
+  }
+
+  changeOptions() {
+    const selectorValue = Ext.getCmp('selector').getSelection().data.value;
+    this.timezoneOffset = selectorValue;
+    this.calendarDay.setTimezoneOffset(this.timezoneOffset);
   }
 
   panelReady(event) {
@@ -41,7 +42,7 @@ export default class CalendarTimezoneSupportComponent {
           width: this.isPhone ? 150 : 200,
           value: 0,
           listeners: {
-            change: this.changeOptions
+            change: this.changeOptions.bind(this)
           },
           options: [{
             text: this.isPhone ? 'New York -5' : 'New York (UTC-05:00)',

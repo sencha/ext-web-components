@@ -36,9 +36,11 @@ export default class SunburstComponent {
     });
   }
 
-  onSelectionChange(field, selection) {
-    if (Ext.isArray(selection)) selection = selection[0];
-    this.selection = selection;
+  onSelectionChange({ detail }) {
+    if (Ext.isArray(detail.selected)) {
+      this.selection = detail.selected[0];
+      this.sunburst.setSelection(this.selection);
+    }
   }
 
   onTooltip(component, tooltip, node) {
@@ -70,7 +72,7 @@ export default class SunburstComponent {
     }
 
     treeList.setStore(this.store);
-    treeList.on('click', this.onSelectionChange.bind(this));
+    treeList.on('tap', this.onSelectionChange.bind(this));
     treeList.setSelection(this.selection);
   }
 
@@ -84,12 +86,12 @@ export default class SunburstComponent {
   }
 
   ond3Ready(event) {
-    let cmp = event.detail.cmp;
-    cmp.setSelection(this.selection);
-    cmp.setStore(this.store);
-    cmp.setTooltip({
+    this.sunburst = event.detail.cmp;
+    this.sunburst.setStore(this.store);
+    this.sunburst.setTooltip({
       renderer:this.onTooltip.bind(this),
-    })
+    });
+    this.sunburst.setSelection(this.selection);
   }
 
 }
