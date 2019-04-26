@@ -11,7 +11,7 @@
       </ext-container>
       <ext-segmentedbutton>
         <ext-button text="Off" pressed="bufferZone === false" ontap="paginglist.setBufferZone(false)" flex="1"></ext-button>
-        <ext-button text="0" pressed="bufferZone === 0" ontap="paginglist.setBufferZone(0)" flex="1"></ext-button>
+        <ext-button onready="paginglist.buttonready1(event)" pressed="bufferZone === 0" ontap="paginglist.setBufferZone(0)" flex="1"></ext-button> 
         <ext-button text="8" pressed="bufferZone === 0" ontap="paginglist.setBufferZone(8)" flex="1"></ext-button>
         <ext-button text="16" pressed="bufferZone === 0" ontap="paginglist.setBufferZone(16)" flex="1"></ext-button>
         <ext-button text="32" pressed="bufferZone === 0" ontap="paginglist.setBufferZone(32)" flex="1"></ext-button>

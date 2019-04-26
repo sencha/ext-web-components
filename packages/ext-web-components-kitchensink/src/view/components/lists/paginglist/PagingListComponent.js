@@ -12,6 +12,11 @@ export default class PagingListComponent {
     this.list1 = event.detail.cmp;
   }
 
+  buttonready1(event) {
+    this.buttonCmp1 = event.detail.cmp;
+    this.buttonCmp1.setText("0");
+  }
+
   setBufferZone(value) {
     this.bufferZone = value;
     let labelText;

@@ -5,14 +5,14 @@
       The default behavior is to size all labels to the width of the label with the longest 
       text, but the width of the labels can also be configured."
   ></ext-panel>
-  <ext-container>
+  <ext-container margin="10 0 10 0" onready="formlayout.containerready1(event)">
   </ext-container>
   <ext-formpanel layout="form" shadow="true" margin="0 0 30 0" defaults='{"labelAlign": "left"}'>
       <ext-textfield label="First Name" labelTextAlign="left"></ext-textfield>
       <ext-textfield label="Last Name" labelTextAlign="left"></ext-textfield>
       <ext-textfield label="Bank Account Number" labelTextAlign="left"></ext-textfield>
   </ext-formpanel>       
-  <ext-container>
+  <ext-container margin="10 0 10 0" onready="formlayout.containerready2(event)">
   </ext-container>
   <ext-formpanel layout="form" shadow="true" defaults='{"labelAlign": "left"}'>
       <ext-textfield label="First Name" labelTextAlign="right"></ext-textfield>

@@ -27,6 +27,24 @@ export default class EditableGridComponent {
     editableGrid.setStore(store);
   }
 
+  columnready1(event) {
+    this.columnCmp1 = event.detail.cmp;
+    this.columnCmp1.setRenderer(this.renderSign.bind(this, "0.00"));
+  }
+
+  columnready2(event) {
+    this.columnCmp2 = event.detail.cmp;
+    this.columnCmp2.setRenderer(this.renderSign.bind(this, "0.00"));
+  }
+
+  renderSign(format, value) {
+    debugger;
+    return `<span style={{ color: ${value} > 0 ? 'green' : ${value} < 0 ? 'red' : '' }}>
+      ${Ext.util.Format.number(value, format)}
+    </span>` ;
+  }
+
+
   changeColumnReady(event) {
     this.changeColumn = event.detail.cmp;
     this.changeColumn.setRenderer(this.renderSign.bind(this, '0.00'));
@@ -46,4 +64,5 @@ export default class EditableGridComponent {
 
     return Ext.util.Format.number(value, format)
   }
+
 }

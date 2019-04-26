@@ -36,16 +36,20 @@
     </ext-numberfield>
   </ext-column>
   <ext-column
+    onready="editablegrid.columnready1(event)"
     text="% Change"
     width="130"
     dataIndex="pctChange"
+    xtype="numbercolumn"
     onready="editablegrid.percentChangeColumnReady(event)"
   >
   </ext-column>
   <ext-column
+    onready="editablegrid.columnready2(event)"
     text="Change"
     width="130"
     dataIndex="change"
+    xtype="numbercolumn"
     onready="editablegrid.changeColumnReady(event)"
   >
   </ext-column>
