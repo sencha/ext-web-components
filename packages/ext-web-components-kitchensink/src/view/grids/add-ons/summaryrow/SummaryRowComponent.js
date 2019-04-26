@@ -38,10 +38,25 @@ export default class SummaryRowComponent {
   changeColumnReady(event) {
     this.changeColumn = event.detail.cmp;
     this.changeColumn.setRenderer(this.renderSign.bind(this, '0.00'));
+    this.changeColumn.setSummaryRenderer(this.renderPercentChangeSummary.bind(this, '0.00'));
+
   }
   percentChangeColumnReady(event) {
     this.pctChangeColumn = event.detail.cmp;
     this.pctChangeColumn.setRenderer(this.renderSign.bind(this, '0.00%'));
+    this.pctChangeColumn.setSummaryRenderer(this.renderPercentChangeSummary.bind(this, '0.00%'));
+  }
+
+  renderPercentChangeSummary(format, value, context) {
+    debugger;
+    if(value>0) {
+      context.cell.setCls('greenClass');
+    }
+    else if(value<0){
+      context.cell.setCls('redClass');
+    }
+
+    return Ext.util.Format.number(value, format)
   }
 
   renderSign(format, value, record, dataIndex, cell, column) {
