@@ -10,7 +10,7 @@ import Defaults from  './view/defaults/DefaultsComponent.js';
 import BasicEventComponent from  './view/event/basicevent/BasicEventComponent.js';
 import SingleEventComponent from './view/event/singleevent/SingleEventComponent.js';
 
-import HTMLInExtComponent from './view/htmlinextcomponent/HTMLInExtComponent.js';
+import HTMLComponent from './view/html/HtmlComponent.js';
 
 import SimpleAttributeUpdateComponent from './view/attributeupdate/simpleattributeupdate/SimpleAttributeUpdateComponent.js';
 import ClassNameUpdateComponent from './view/attributeupdate/classnameupdate/ClassNameUpdateComponent.js';
@@ -59,7 +59,7 @@ export default function getMenu() {
       { text: 'Rel Dialog', component: RelDialogComponent },
     ]},
     { text: 'Defaults', component: Defaults },
-    { text: 'HTML in Ext Component', component: HTMLInExtComponent },
+    { text: 'Html', component: HTMLComponent  },
     { text: 'Update Functions', component: UpdateFunctionsComponent },
     { text: 'Simple', component: SimpleComponent },
     { text: 'Sencha Test Hooks', component: SenchaTestHooksComponent },

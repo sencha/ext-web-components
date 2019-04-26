@@ -1,10 +1,14 @@
-<ext-panel onready="insertstart.panelReady(event)">
-  <ext-container>top</ext-container>
+<ext-panel id="insertStartTopParent" onready="insertstart.panelReady(event)">
+  <ext-container>
+    <span>top</span>
+  </ext-container>
   <ext-button
     onready="insertstart.buttonReady(event)"
     text="Insert"
-    itemId="insert"
+    id="insert-start-button"
   >
   </ext-button>
-  <ext-container>bottom</ext-container>
+  <ext-container>
+    <span>button</span>
+  </ext-container>
 </ext-panel>

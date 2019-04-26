@@ -3,12 +3,12 @@ import "./BasicEventComponent.html";
 export default class BasicEventComponent {
   constructor() {}
 
-  onButtonTap(evt) {
-    this.container.setHtml('Tapped');
-    evt.currentTarget.text = 'Tapped';
+  panelReady() {
+    this.panel = event.detail.cmp
   }
 
-  containerReady() {
-    this.container = event.detail.cmp
+  onButtonTap(event) {
+    this.panel.setHtml('Tapped');
+    event.currentTarget.text = 'Tapped';
   }
 }

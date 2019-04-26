@@ -90,6 +90,16 @@ export default class PlotComponent {
     // this.cartesianCmp.setStore(this.store);
   }
 
+  onZoomButtonReady(event) {
+    this.zoomButtonCmp = event.detail.cmp;
+    this.zoomButtonCmp.on('tap', this.toggleZoomOnPan.bind(this, true));
+  }
+
+  onPanButtonReady(event) {
+    this.panButtonCmp = event.detail.cmp;
+    this.panButtonCmp.on('tap', this.toggleZoomOnPan.bind(this, false));
+  }
+
   onThemeChange(event) {
     this.theme = event.config.text.toLowerCase();
     this.menuCmpArray.forEach((cmp, index) => {
