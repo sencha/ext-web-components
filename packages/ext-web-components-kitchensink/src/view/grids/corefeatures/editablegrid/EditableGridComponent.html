@@ -39,16 +39,14 @@
     text="% Change"
     width="130"
     dataIndex="pctChange"
-    xtype="numbercolumn"
-    format="0.00%"
+    onready="editablegrid.percentChangeColumnReady(event)"
   >
   </ext-column>
   <ext-column
     text="Change"
     width="130"
     dataIndex="change"
-    xtype="numbercolumn"
-    format="0.00"
+    onready="editablegrid.changeColumnReady(event)"
   >
   </ext-column>
   <ext-column
