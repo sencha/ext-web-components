@@ -21,14 +21,13 @@ describe("CreateChild ElementInsertBetween", function() {
       ST.element('>> .insertedElement1').up('#elemInsertBetTopParent').visible();
     });
 
-    it("should check the psoition of the divs inside the parent", function() {
+    it("should check the position of the divs inside the parent", function() {
+        var parentPanel = Ext.ComponentQuery.query('panel[itemId = elemInsertBetTopParent]')[0];
         ST.element('>> .insertedElement0').and(function(inserted0) {
-          var parentPanel = Ext.ComponentQuery.query('panel[itemId = elemInsertBetTopParent]')[0];
           expect(parentPanel.innerElement.dom.childNodes[1].className).toEqual("insertedElement0");
         });
 
         ST.element('>> .insertedElement1').and(function(inserted1) {
-          var parentPanel = Ext.ComponentQuery.query('panel[itemId = elemInsertBetTopParent]')[0];
           expect(parentPanel.innerElement.dom.childNodes[2].className).toEqual("insertedElement1");
         });
     });

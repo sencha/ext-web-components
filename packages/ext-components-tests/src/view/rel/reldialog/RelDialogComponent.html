@@ -1,13 +1,15 @@
-<ext-dialog
-  id="dialogComponent"
-  displayed="true"
-  title="Dialog"
-  onready="reldialog.onDialogReady(event)"
->
-    <ext-button
-      text="Button"
-      id="dialogButton"
-      onTap="reldialog.onClick(event)"
-    >
-    </ext-button>
-</ext-dialog>
+<ext-container>
+  <ext-dialog
+    itemId="dialogComponent"
+    displayed="true"
+    title="Dialog"
+    onready="reldialog.onDialogReady(event)"
+  >
+      <ext-button
+        text="Button"
+        id="dialogButton"
+        onTap="reldialog.onClick(event)"
+      >
+      </ext-button>
+  </ext-dialog>
+</ext-container>

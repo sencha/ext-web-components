@@ -21,14 +21,14 @@ describe("CreateChild ElementInsertEnd", function() {
       ST.element('>> .insertedElement1').up('#elemInsertEndTopParent').visible();
     });
 
-    it("should check the psoition of the divs is in the end of the parent", function() {
+    it("should check the position of the divs is in the end of the parent", function() {
+        var parentPanel = Ext.ComponentQuery.query('panel[itemId = elemInsertEndTopParent]')[0];
+
         ST.element('>> .insertedElement0').and(function(inserted0) {
-          var parentPanel = Ext.ComponentQuery.query('panel[itemId = elemInsertEndTopParent]')[0];
           expect(parentPanel.innerElement.dom.childNodes[2].className).toEqual("insertedElement1");
         });
 
         ST.element('>> .insertedElement1').and(function(inserted1) {
-          var parentPanel = Ext.ComponentQuery.query('panel[itemId = elemInsertEndTopParent]')[0];
           expect(parentPanel.innerElement.dom.childNodes[3].className).toEqual("insertedElement0");
         });
     });
