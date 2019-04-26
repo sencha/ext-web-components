@@ -4,16 +4,9 @@
     "coverageFilters": [],
     "scenarios": [
         {
-            "libs": [
-                {
-                    "disabled": false,
-                    "path": "/test/AllTests/lib",
-                    "type": "directory"
-                }
-            ],
+            "libs": [],
             "coverageFilters": [],
-            "webdriverContext": "webdriver",
-            "sandbox": true,
+            "sandbox": false,
             "globals": "*",
             "directory": "AllTests",
             "name": "AllTests"

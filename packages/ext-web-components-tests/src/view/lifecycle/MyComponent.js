@@ -1,7 +1,6 @@
 export default class MyComponent extends HTMLElement {
   constructor() {
     super();
-
   }
 
   connectedCallback() {

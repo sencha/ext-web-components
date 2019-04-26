@@ -44,11 +44,11 @@ export default class BigDataComponent {
       this.exportToXlsx();
     } else if (value==='Excel xml') {
       this.exportToXml();
-    } else if (value==='Excel CSV') {
+    } else if (value==='CSV') {
       this.exportToCSV();
-    } else if (value==='Excel TSV') {
+    } else if (value==='TSV') {
       this.exportToTSV();
-    } else if (value==='Excel HTML') {
+    } else if (value==='HTML') {
       this.exportToHtml();
     }
   }
