@@ -5,6 +5,6 @@ export default class DefaultsComponent {
 
   containerReady(event) {
     const parentContainer = event.detail.cmp;
-    parentContainer.setDefaults({ text: 'Button' });
+    parentContainer.setDefaults({ text: 'Button123' });
   }
 }

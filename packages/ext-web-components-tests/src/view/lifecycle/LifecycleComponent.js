@@ -7,7 +7,5 @@ export default class LifecycleComponent {
   deleteChild(event) {
     let myComp = document.getElementById('my-component-id');
     myComp.parentNode.removeChild(myComp);
-    myComp = document.getElementById('my-component-id');
-    myComp.parentNode.removeChild(myComp);
   }
 }
