@@ -1,7 +1,9 @@
 import "./ElementInsertEndComponent.html";
 
 export default class ElementInsertEndComponent {
-  constructor() {}
+  constructor() {
+    this.counter = 0;
+  }
 
   insert(event) {
     this.buttonComp = event.detail.cmp;
@@ -9,10 +11,10 @@ export default class ElementInsertEndComponent {
   }
 
   buttonClick() {
-    const buttonDomNode = document.getElementById('element-insert-end-button');
     const div = document.createElement("div");
-    div.id = "inserted";
-    div.innerHTML = "Inserted";
-    buttonDomNode.insertAdjacentElement('afterend', div);
+    div.className = "insertedElement" + this.counter;
+    div.innerHTML = "Inserted" + this.counter;
+    this.counter++;
+    this.buttonComp.el.dom.insertAdjacentElement('afterend', div);
   }
 }

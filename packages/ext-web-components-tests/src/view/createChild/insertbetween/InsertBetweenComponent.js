@@ -1,7 +1,9 @@
 import "./InsertBetweenComponent.html";
 
 export default class InsertBetweenComponent {
-  constructor() {}
+  constructor() {
+    this.counter = 0;
+  }
 
   insert(event) {
     this.buttonComp = event.detail.cmp;
@@ -9,10 +11,10 @@ export default class InsertBetweenComponent {
   }
 
   buttonClick() {
-    const buttonDomNode = document.getElementById('insert-between-button');
     const container = document.createElement("ext-container");
-    container.itemId = "inserted";
-    container.html = "Inserted";
-    buttonDomNode.insertAdjacentElement('beforebegin', container);
+    container.html = "Inserted" + this.counter;
+    container.cls = "insertedComp" + this.counter;
+    this.buttonComp.el.dom.insertAdjacentElement('beforebegin', container);
+    this.counter++;
   }
 }

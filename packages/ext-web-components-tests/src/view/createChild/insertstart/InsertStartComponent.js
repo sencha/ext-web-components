@@ -1,7 +1,9 @@
 import "./InsertStartComponent.html";
 
 export default class InsertStartComponent {
-  constructor() {}
+  constructor() {
+    this.counter = 0;
+  }
 
   panelReady(event) {
     this.panelComp = event.detail.cmp;
@@ -15,8 +17,9 @@ export default class InsertStartComponent {
   buttonClick() {
     const panelDomNode = this.panelComp.getRenderTarget().dom;
     const container = document.createElement("ext-container");
-    container.itemId = "inserted";
-    container.html = "Inserted";
+    container.cls = "insertedComp" + this.counter;
+    container.html = "Inserted" + this.counter;
     panelDomNode.prepend(container);
+    this.counter++;
   }
 }
