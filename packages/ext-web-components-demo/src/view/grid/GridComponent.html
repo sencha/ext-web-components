@@ -1,0 +1,36 @@
+<ext-grid
+  left="10"
+  top="10"
+  width="700"
+  height="400"
+  shadow="true"
+  onready="grid.onGridReady(event)"
+  columns='[
+    {"text":"employeeNo","dataIndex":"employeeNo","cell": {"xtype": "renderercell", "renderer":"grid.renderer"}},
+    {"text":"rating","dataIndex":"rating"},
+    {"text":"salary","dataIndex":"salary"},
+    {"text":"forename","dataIndex":"forename"},
+    {"text":"surname","dataIndex":"surname"},
+    {"text":"email","dataIndex":"email"},
+    {"text":"department","dataIndex":"department"},
+    {"text":"dob","dataIndex":"dob","width":200},
+    {"text":"joinDate","dataIndex":"joinDate"},
+    {"text":"sickDays","dataIndex":"sickDays"},
+    {"text":"holidayDays","dataIndex":"holidayDays"},
+    {"text":"holidayAllowance","dataIndex":"holidayAllowance"},
+    {"text":"noticePeriod","dataIndex":"noticePeriod"}
+  ]'
+>
+
+
+  </ext-grid>
+<!-- 
+      {"text":"employeeNo","dataIndex":"employeeNo","renderer":"window.grid.renderer"},
+
+      {"text":"employeeNo","dataIndex":"employeeNo","renderer": "function(value, record) {console.log("here");return value}"},
+
+    {"text":"employeeNo","dataIndex":"employeeNo", "renderer":"grid.renderer"},
+
+  <ext-columnm text="Department" width="150" dataIndex="department"
+  >
+  </ext-column> -->

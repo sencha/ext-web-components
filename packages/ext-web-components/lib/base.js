@@ -5,16 +5,23 @@ export default class ExtBase extends HTMLElement {
   }
 
   filterProperty(propertyValue) {
+    //console.log(propertyValue)
     try {
       const parsedProp = JSON.parse(propertyValue);
+      //console.dir(parsedProp)
 
       if (parsedProp === null || parsedProp === undefined || parsedProp === true || parsedProp === false || parsedProp === Object(parsedProp) || !isNaN(parsedProp) ) {
+//console.log('parsed')
         return parsedProp;
       } else {
+        //console.log('NOT parsed')
         return propertyValue;
       }
     }
     catch(e) {
+      console.log('here??')
+      console.log(e)
+      console.dir (propertyValue)
       return propertyValue;
     }
   }
@@ -62,7 +69,12 @@ export default class ExtBase extends HTMLElement {
             this.props[property] = eval(this[property])
           }
           else {
+
             this.props[property] = this.filterProperty(this[property]);
+            if (property == 'columns') {
+              console.dir(this.props[property])
+              console.dir(this.props)
+            }
           }
         }
       }
