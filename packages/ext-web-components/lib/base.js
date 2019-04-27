@@ -19,9 +19,9 @@ export default class ExtBase extends HTMLElement {
       }
     }
     catch(e) {
-      console.log('here??')
-      console.log(e)
-      console.dir (propertyValue)
+      //console.log('here??')
+      //console.log(e)
+      //console.dir (propertyValue)
       return propertyValue;
     }
   }
@@ -69,12 +69,11 @@ export default class ExtBase extends HTMLElement {
             this.props[property] = eval(this[property])
           }
           else {
-
             this.props[property] = this.filterProperty(this[property]);
-            if (property == 'columns') {
-              console.dir(this.props[property])
-              console.dir(this.props)
-            }
+            // if (property == 'columns') {
+            //   console.dir(this.props[property])
+            //   console.dir(this.props)
+            // }
           }
         }
       }
@@ -190,7 +189,7 @@ export default class ExtBase extends HTMLElement {
   }
 
   doCreate() {
-    console.dir(this.props)
+    //console.dir(this.props)
     this.ext = Ext.create(this.props)
     if (this.parentNode.childrenCounter != undefined) {
       this.parentNode.childrenCounter--
