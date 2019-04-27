@@ -4,6 +4,7 @@
   width="700"
   height="400"
   shadow="true"
+  title="the grid"
   onready="grid.onGridReady(event)"
   columns='[
     {"text":"employeeNo","dataIndex":"employeeNo","cell": {"xtype": "renderercell", "renderer":"grid.renderer"}},
@@ -25,6 +26,8 @@
 
   </ext-grid>
 <!-- 
+      {"text":"employeeNo","dataIndex":"employeeNo","cell": {"encodeHtml": true, "xtype": "renderercell", "renderer":"grid.renderer"}},
+
       {"text":"employeeNo","dataIndex":"employeeNo","renderer":"window.grid.renderer"},
 
       {"text":"employeeNo","dataIndex":"employeeNo","renderer": "function(value, record) {console.log("here");return value}"},

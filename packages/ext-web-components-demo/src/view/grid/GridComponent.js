@@ -5,39 +5,25 @@ import { GridComponentData } from './GridComponentData';
 export default class GridComponent {
 
   constructor () {
-    console.log('in GridComponent constructor');
+    //console.log('in GridComponent constructor');
   }
 
   onGridReady(event) {
-    console.log('in ready event')
+    //console.log('in ready event')
     this.gridCmp = event.detail.cmp
-    this.gridCmp.setData(new GridComponentData(1).data)
+    this.gridCmp.setData(new GridComponentData(10).data)
   }
 
-  renderer() {
-   // console.log('in renderer')
-    return '<span>hello</span>'
-
-  //   return (
-
-  //     <Grid title="Grid title" store={this.store}>
-
-
-
-
-
-  //     <Column
-  //       text="Fname"
-  //       dataIndex="fName"
-  //       flex={1}
-  //     >
-  //       <RendererCell renderer={this.renderer}/>
-  //     </Column>
-
-  // </Grid>
-
-  //  )
+  renderer(value, record, dataIndex, cell, column) {
+    // console.dir('start')
+    // console.dir(value)
+    // console.dir(record)
+    // console.dir(dataIndex)
+    // console.dir(cell)
+    // console.dir(column)
+    // console.dir('end')
+//    return '<ext-panel title="hi"><div>' + value + '</div></ext-panel>'
+    return '<ext-button text="' + value + '"></ext-button>'
   }
-
 
 }
