@@ -110,6 +110,7 @@ Ext.require([
   'Ext.data.TreeStore'
 ]);
 
+
 function init() {
   window.d3 = d3;
   window.menu = getMenu();

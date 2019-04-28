@@ -1,35 +1,33 @@
-Ext.define('KitchenSink.data.calendar.Validation', {
-}, function () {
-  var U = KitchenSink.data.calendar.Util,
-    D = Ext.Date,
-    data = {
-      work: (function () {
-        var today = D.clearTime(new Date(), true),
-          tomorrow = D.add(today, D.DAY, 1),
-          ret = [];
+import './calendarUtil.js';
 
-        ret.push({
-          title: 'Not draggable',
-          startDate: U.setHours(today, 9),
-          endDate: U.setHours(today, 10)
-        }, {
+Ext.define('KitchenSink.data.calendar.Validation', {}, function () {
+  var U = KitchenSink.data.calendar.Util,
+      D = Ext.Date,
+      data = {
+        work: (function () {
+          var today = D.clearTime(new Date(), true),
+            tomorrow = D.add(today, D.DAY, 1),
+            ret = [];
+          ret.push({
+            title: 'Not draggable',
+            startDate: U.setHours(today, 9),
+            endDate: U.setHours(today, 10)
+          }, {
             title: 'Not draggable/resizable',
             startDate: U.setHours(today, 13),
             endDate: U.setHours(today, 14)
-          }, {
+            }, {
             title: 'Not resizable',
             startDate: U.setHours(tomorrow, 9),
             endDate: U.setHours(tomorrow, 10)
-          }, {
+            }, {
             title: 'Unrestricted',
             startDate: U.setHours(tomorrow, 13),
             endDate: U.setHours(tomorrow, 14)
-          });
-
-        return U.generateIds(ret, 0);
-      })()
-    };
-
+            });
+          return U.generateIds(ret, 0);
+        })()
+      };
   Ext.ux.ajax.SimManager.register({
     '/KitchenSink/CalendarValidation': {
       type: 'json',
@@ -51,4 +49,4 @@ Ext.define('KitchenSink.data.calendar.Validation', {
       }
     }
   });
-})
+});

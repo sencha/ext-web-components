@@ -1,4 +1,5 @@
 import './CalendarMonthViewComponent.html';
+import '../data/calendarFull.js';
 
 export default class CalendarMonthViewComponent {
 

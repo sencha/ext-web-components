@@ -1,5 +1,5 @@
 import './TimezoneSupportComponent.html';
-import './data.js';
+import '../data/calendarTimezone.js';
 
 export default class CalendarTimezoneSupportComponent {
 

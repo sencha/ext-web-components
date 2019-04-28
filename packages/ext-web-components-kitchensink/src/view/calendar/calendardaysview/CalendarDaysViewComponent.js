@@ -1,5 +1,5 @@
 import './CalendarDaysViewComponent.html';
-import './data.js';
+import '../data/calendarDay.js';
 
 export default class CalendarDaysViewComponent {
 

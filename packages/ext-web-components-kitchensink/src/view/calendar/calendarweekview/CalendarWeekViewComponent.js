@@ -1,6 +1,5 @@
 import './CalendarWeekViewComponent.html';
-import './data.js';
-import '../calendardaysview/data.js';
+import '../data/calendarWeek.js';
 
 export default class CalendarWeekViewComponent {
 
