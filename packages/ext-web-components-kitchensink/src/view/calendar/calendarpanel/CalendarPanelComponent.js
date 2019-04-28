@@ -1,5 +1,5 @@
 import './CalendarPanelComponent.html';
-import '../data.js';
+import '../data/calendarFull.js';
 
 export default class CalendarPanelComponent {
   constructor() {}

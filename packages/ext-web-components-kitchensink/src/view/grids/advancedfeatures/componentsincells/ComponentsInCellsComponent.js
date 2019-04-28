@@ -29,16 +29,20 @@ export default class ComponentsInCellsComponent {
         xtype: "segmentedbutton",
         maxWidth: "300",
         allowDepress: "true",
-        items: [{
-          text: "Buy",
-          handler: this.buttonClick.bind(this),
-        }, {
-          text: "Sell",
-          handler: this.buttonClick.bind(this),
-        }, {
-          text: "Watch",
-          handler: this.buttonClick.bind(this),
-        }]
+        items: [
+          {
+            text: "Buy",
+            handler: this.buttonClick.bind(this),
+          },
+          {
+            text: "Sell",
+            handler: this.buttonClick.bind(this),
+          },
+          {
+            text: "Watch",
+            handler: this.buttonClick.bind(this),
+          }
+        ]
       }
     });
   }

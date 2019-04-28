@@ -18,6 +18,7 @@ import '@sencha/ext-web-components/lib/ext-column.component';
 import GridComponent from './view/grid/GridComponent.js';
 
 
+
 (function () {
 
   init();
