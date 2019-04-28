@@ -29,9 +29,9 @@ export default class MainComponent {
   }
 
   //DEBUG:
-  readyTitleBar(event) {
-    this.titleBarCmp = event.detail.cmp;
-    this.titleBarCmp.updateTitle("Build: " + BUILD_VERSION);
+  readyRightContainer(event) {
+    this.rightContainerCmp = event.detail.cmp;
+    this.rightContainerCmp.updateHtml("Build: " + BUILD_VERSION);
   }
 
   afterAllLoaded(f) {
