@@ -9,7 +9,7 @@ export default class ComboBoxFieldComponent {
     });
   }
 
-  comboboxfieldready(event) {
+  comboboxfieldReady(event) {
     this.cmp = event.detail.cmp;
     this.cmp.setStore(this.store);
   }

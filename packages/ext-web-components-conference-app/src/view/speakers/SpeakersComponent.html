@@ -1,5 +1,5 @@
 <ext-container
-    onready="speakers.containerready(event)"
+    onready="speakers.containerready"
     activeItem="1"
     platformConfig='{
                     "!phone": {
@@ -17,7 +17,7 @@
 >
     <ext-list
         shadow="true"
-        onready="speakers.listready(event)"
+        onready="speakers.listready"
         itemCls="app-list-item"
         flex="1"
         rowLines="true"
@@ -29,12 +29,12 @@
         layout="vbox"
         padding="20"
         hidden="true"
-        onready="speakers.panelready(event)"
+        onready="speakers.panelready"
     >
-        <ext-container onready="speakers.containerready2(event)">
+        <ext-container onready="speakers.containerready2">
         </ext-container>
         <ext-list
-            onready="speakers.listready2(event)"
+            onready="speakers.listready2"
             hideMode="offsets"
             rowLines="true"
             maxHeight="100%"

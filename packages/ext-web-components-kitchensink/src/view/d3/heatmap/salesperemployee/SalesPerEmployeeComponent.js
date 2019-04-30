@@ -15,7 +15,7 @@ export default class SalesPerEmployeeComponent {
     this.store.loadData(refreshData());
   }
 
-  onHeatMapReady(event){
+  onHeatMapReady(event) {
     this.heatmap = event.detail.cmp;
     const platformConfigVar = {
       padding: {

@@ -16,9 +16,9 @@ import '@sencha/ext-web-components/lib/ext-grid.component';
 import '@sencha/ext-web-components/lib/ext-column.component';
 
 //import CarouselComponent from './view/carousel/CarouselComponent.js';
-//import ButtonComponent from './view/button/ButtonComponent.js';
+import ButtonComponent from './view/button/ButtonComponent.js';
 //import GridComponent from './view/grid/GridComponent.js';
-import ColumnsComponent from './view/columns/ColumnsComponent.js';
+//import ColumnsComponent from './view/columns/ColumnsComponent.js';
 
 (function () {
 
@@ -34,9 +34,9 @@ import ColumnsComponent from './view/columns/ColumnsComponent.js';
 
   function init() {
 //    doIt(GridComponent)
-//    doIt(ButtonComponent)
+    doIt(ButtonComponent)
 //    doIt(CarouselComponent)
-    doIt(ColumnsComponent)
+//    doIt(ColumnsComponent)
 
   }
 

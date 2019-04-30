@@ -1,8 +1,29 @@
-<ext-button 
-  text=01
-  onready=button.readyButton
-  ontap=button.sayHello
+<ext-container>
+
+  <ext-button
+  id="updatebutton1"
+  onready="button.buttonReady1"
+  text="Counter 1"
+  onTap="button.handler"
+  >
+  </ext-button>
+
+  <ext-button
+  id="updatebutton2"
+  onready="button.buttonReady2"
+  text="Counter 2"
+  handler="button.onClick"
+  >
+  </ext-button>
+
+</ext-container>
+
+
+<!-- <ext-button 
+text=01
+onready=button.readyButton
+ontap=button.sayHello
 >
-</ext-button>
+</ext-button> -->
 
 <!-- handler="button.sayHello.bind(this)" -->

@@ -42,11 +42,11 @@ export default class FullStackedAreaComponent {
     this.cartesianCmp.setTheme(event.config.text.toLowerCase());
   }
 
-  containerready(event) {
+  containerReady(event) {
     this.containerCmp = event.detail.cmp;
   }
 
-  cartesianready(event) {
+  cartesianReady(event) {
     this.cartesianCmp = event.detail.cmp;
     this.cartesianCmp.setStore(this.store);
     this.cartesianCmp.setTheme(this.theme);

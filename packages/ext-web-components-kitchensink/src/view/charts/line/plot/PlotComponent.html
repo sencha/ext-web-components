@@ -2,18 +2,18 @@
 
   <ext-container docked="top"><div #extitem>
     <chart-toolbar
-      onItemReady="plot.onMenuItemReady(event)"
+      onItemReady="plot.onMenuItemReady"
       theme="default"
-      onRefreshButtonReady="plot.onRefreshButtonReady(event)"
-      onZoomButtonReady="plot.onZoomButtonReady(event)"
-      onPanButtonReady="plot.onPanButtonReady(event)"
+      onRefreshButtonReady="plot.onRefreshButtonReady"
+      onZoomButtonReady="plot.onZoomButtonReady"
+      onPanButtonReady="plot.onPanButtonReady"
       style="width: 100%;"
       onlyMidnight=true>
     </chart-toolbar>
   </div></ext-container>
 
   <ext-cartesian downloadServerUrl ="http://svg.sencha.io"
-    onready="plot.chartNavReady(event)"
+    onready="plot.chartNavReady"
     width="800px"
     shadow="true"
     theme="default"

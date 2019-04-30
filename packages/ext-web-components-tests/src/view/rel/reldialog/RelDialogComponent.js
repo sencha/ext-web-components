@@ -7,7 +7,7 @@ export default class RelDialogComponent {
     this.dialogCmp = event.detail.cmp;
   }
 
-  onClick(event) {
+  onClick {
     this.dialogCmp.setDisplayed(false);
   }
 }

@@ -2,9 +2,9 @@
   <ext-tree 
     shadow="true"
     rootVisible="false"
-    onready="heterogeneoustree.onTreeReady(event)"
-    onselect="heterogeneoustree.onSelectionChange(event)"
-    onselectionchange="heterogeneoustree.onSelectionChange(event)"
+    onready="heterogeneoustree.onTreeReady"
+    onselect="heterogeneoustree.onSelectionChange"
+    onselectionchange="heterogeneoustree.onSelectionChange"
     columns='[{
       "xtype":"treecolumn",
       "text":"Name",
@@ -14,13 +14,13 @@
   >
     <ext-toolbar docked="bottom">
       <ext-textfield
-        onaction="heterogeneoustree.onFieldAction(event)"
-        onready="heterogeneoustree.onTextFieldReady(event)">
+        onaction="heterogeneoustree.onFieldAction"
+        onready="heterogeneoustree.onTextFieldReady">
       </ext-textfield>
       <ext-button  
         text="Add Territory"
-        ontap="heterogeneoustree.addItem(event)"
-        onready="heterogeneoustree.onButtonReady(event)">
+        ontap="heterogeneoustree.addItem"
+        onready="heterogeneoustree.onButtonReady">
       </ext-button>
     </ext-toolbar>
   </ext-tree>

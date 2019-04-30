@@ -1,5 +1,5 @@
 <ext-container
-  onready="customicons.containerready(event)"
+  onready="customicons.containerready"
   layout="fit"
   fitToParent="true"
   height="100%"
@@ -11,13 +11,13 @@
     padding="0 10 0 10">
     <chart-toolbar
       theme="default"
-      onItemReady="customicons.onMenuItemReady(event)"
-      onRefreshButtonReady="customicons.onRefreshButtonReady(event)"
+      onItemReady="customicons.onMenuItemReady"
+      onRefreshButtonReady="customicons.onRefreshButtonReady"
     >
     </chart-toolbar>
   </ext-toolbar>
   <ext-cartesian
-    onready="customicons.cartesianready(event)"
+    onready="customicons.cartesianready"
     downloadServerUrl="http://svg.sencha.io"
     width="800"
     shadow="true"

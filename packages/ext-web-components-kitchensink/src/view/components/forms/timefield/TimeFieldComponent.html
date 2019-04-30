@@ -12,7 +12,7 @@
       label="Time Field"
       value="3:42 PM"
       name="time"
-      onready="timefield.timefieldready(event)">
+      onready="timefield.timefieldready">
     </ext-timefield>
   </ext-fieldset>
   <ext-toolbar
@@ -20,7 +20,7 @@
     docked="bottom"
     layout='{ "type": "hbox", "pack": "right" }'>
     <ext-button
-      onready="timefield.buttonready(event)"
+      onready="timefield.buttonready"
       text="Disable All"
       margin="0 10 0 0"
       onTap="timefield.toggleDisable()">

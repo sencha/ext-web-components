@@ -53,7 +53,7 @@ export default class Basic3DColumnComponent {
   }
 
 
-  cartesianready(event) {
+  cartesianReady(event) {
     this.cartesianCmp = event.detail.cmp;
     this.cartesianCmp.setStore(this.store);
     this.cartesianCmp.setTheme(this.theme);

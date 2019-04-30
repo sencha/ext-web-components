@@ -13,12 +13,12 @@
       "shadow": true,
       "ui": "action"
     }'>
-    <ext-button text="Expand All" onready="compactlayout.onReadyButton1(event)"> </ext-button>
-    <ext-button text="Collapse All" onready="compactlayout.onReadyButton2(event)"> </ext-button>
+    <ext-button text="Expand All" onready="compactlayout.onReadyButton1"> </ext-button>
+    <ext-button text="Collapse All" onready="compactlayout.onReadyButton2"> </ext-button>
   </ext-toolbar>
 
   <ext-pivotgrid 
-    onready="compactlayout.onPivotGridReady(event)"
+    onready="compactlayout.onPivotGridReady"
     shadow="true"
     [matrix]="pivotgridMatrix">
   </ext-pivotgrid>

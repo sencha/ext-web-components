@@ -70,7 +70,7 @@ export default class BubbleComponent {
     config.stroke = Ext.util.Color.fromString(config.fill).createDarker(0.15).toString();
   };
 
-  cartesianready(event) {
+  cartesianReady(event) {
     this.cartesianCmp = event.detail.cmp;
     this.cartesianCmp.setStore(this.store);
     this.cartesianCmp.setTheme(this.theme);

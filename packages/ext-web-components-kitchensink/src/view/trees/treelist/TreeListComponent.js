@@ -41,7 +41,7 @@ export default class TreeListComponent {
     this.button2.setPressed(false);
   }
 
-  toggleNav(event) {
+   toggleNav(event) {
     if (this.tree) {
       this.nav = event.detail.value;
       if (this.nav) {
@@ -55,7 +55,7 @@ export default class TreeListComponent {
     this.button2.setPressed(false);
   }
 
-  toggleMicro(event) {
+   toggleMicro(event) {
     this.micro = event.detail.value;
     if (this.micro) {
       this.tree.setMicro(true);

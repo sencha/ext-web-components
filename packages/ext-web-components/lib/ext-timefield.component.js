@@ -568,7 +568,7 @@ export class ExtTimefieldComponent extends ExtBase {
 		{ name:'isHidden',function: function(deep) { return this.ext.isHidden(deep) } },
 		{ name:'isPainted',function: function() { return this.ext.isPainted() } },
 		{ name:'isRendered',function: function() { return this.ext.isRendered() } },
-		{ name:'isSuspended',function: function(event) { return this.ext.isSuspended(event) } },
+		{ name:'isSuspended',function: function() { return this.ext.isSuspended } },
 		{ name:'isSyncing',function: function(name) { return this.ext.isSyncing(name) } },
 		{ name:'isValid',function: function() { return this.ext.isValid() } },
 		{ name:'isVisible',function: function(deep) { return this.ext.isVisible(deep) } },

@@ -2,14 +2,14 @@
 <ext-container padding="10" layout="fit" height="100%">
   <ext-container docked="top">
     <chart-toolbar
-    onItemReady="basicmarkers.onMenuItemReady(event)"
+    onItemReady="basicmarkers.onMenuItemReady"
     theme="default"
-    onRefreshButtonReady="basicmarkers.onRefreshButtonReady(event)"
+    onRefreshButtonReady="basicmarkers.onRefreshButtonReady"
     >
     </chart-toolbar>
   </ext-container>
   <ext-cartesian
-      onready="basicmarkers.cartesianReady(event)"
+      onready="basicmarkers.cartesianReady"
       shadow="true"
       insetPadding="20 20 0 10"
       theme="default"

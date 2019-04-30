@@ -5,7 +5,7 @@
   height="400"
   title="Stock Prices"
   shadow="true"
-  onready="editablegrid.onReady(event)"
+  onready="editablegrid.onReady"
   plugins='{
     "gridcellediting": "true"
   }'
@@ -36,21 +36,21 @@
     </ext-numberfield>
   </ext-column>
   <ext-column
-    onready="editablegrid.columnready1(event)"
+    onready="editablegrid.columnready1"
     text="% Change"
     width="130"
     dataIndex="pctChange"
     xtype="numbercolumn"
-    onready="editablegrid.percentChangeColumnReady(event)"
+    onready="editablegrid.percentChangeColumnReady"
   >
   </ext-column>
   <ext-column
-    onready="editablegrid.columnready2(event)"
+    onready="editablegrid.columnready2"
     text="Change"
     width="130"
     dataIndex="change"
     xtype="numbercolumn"
-    onready="editablegrid.changeColumnReady(event)"
+    onready="editablegrid.changeColumnReady"
   >
   </ext-column>
   <ext-column

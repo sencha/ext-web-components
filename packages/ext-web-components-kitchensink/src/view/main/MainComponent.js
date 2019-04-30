@@ -55,6 +55,7 @@ export default class MainComponent {
 
   readyDataviewBreadcrumb(event) {
     //console.log('readyDataviewBreadcrumb')
+    //console.dir(event)
     this.dataviewBreadcrumbCmp = event.detail.cmp
     var tpl = `
     <div class="app-toolbar">

@@ -66,11 +66,11 @@ export default class SpeakersComponent {
     }
   }
 
-  containerready(event) {
+  containerReady(event) {
     this.containerCmp = event.detail.cmp;
   }
 
-  panelready(event) {
+  panelReady(event) {
     this.panelCmp = event.detail.cmp;
   }
 
@@ -90,7 +90,7 @@ export default class SpeakersComponent {
     this.containerCmp2.setTpl(tpl);
   }
 
-  onFavoriteClick(event) {
+  onFavoriteClick {
     const data_id = event.currentTarget.dataset.id;
     Ext.get(event.target).ripple(event, { bound: false, color: '#999' });
     const record = this.scheduleChainedStore.findRecord('id', data_id);
@@ -109,7 +109,7 @@ export default class SpeakersComponent {
 
   }
 
-  listready2(event) {
+  listready2 {
     this.listCmp2 = event.detail.cmp;
     const itemTpl = `<div class="app-list-content">
                       <div class="app-list-text">
@@ -119,7 +119,7 @@ export default class SpeakersComponent {
                           <div class="app-list-item-details">{[(values.date).match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time}</div> 
                       </div>
                       <div
-                          onclick="speakers.onFavoriteClick(event)"
+                          onclick="speakers.onFavoriteClick"
                           data-id="{id}"
                           data-favorite={[ values.favorite ? "on" : "off" ]}
                           class="x-item-no-tap x-font-icon md-icon-star app-list-tool app-favorite"
@@ -155,7 +155,7 @@ export default class SpeakersComponent {
   }
   
 
-  listready(event) {
+  listReady(event) {
     this.listCmp = event.detail.cmp;
     const maxWidth = !Ext.os.is.Phone && this.record && 500;
     this.listCmp.setMaxWidth(maxWidth);

@@ -18,7 +18,7 @@ export default class CustomIconsComponent {
 
   }
 
-  containerready(event) {
+  containerReady(event) {
     this.containerCmp = event.detail.cmp;
     const padding = !Ext.os.is.Phone? '15' : '';
     this.containerCmp.setPadding(padding);
@@ -51,7 +51,7 @@ export default class CustomIconsComponent {
     this.cartesianCmp.setTheme(event.config.text.toLowerCase());
   }
    
-  cartesianready(event) {
+  cartesianReady(event) {
     this.cartesianCmp = event.detail.cmp;
     this.cartesianCmp.setStore(this.store);
     this.cartesianCmp.setTheme(this.theme);

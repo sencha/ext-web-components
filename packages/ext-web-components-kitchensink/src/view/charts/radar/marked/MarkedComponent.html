@@ -1,13 +1,13 @@
 <ext-container padding="15" layout="fit" fitToParent="true" height="100%">
   <ext-container docked="top" padding="15"  >
     <chart-toolbar
-      onItemReady="marked.onMenuItemReady(event)"
+      onItemReady="marked.onMenuItemReady"
       theme="default">
     </chart-toolbar>
   </ext-container>
 
   <ext-polar downloadServerUrl ="http://svg.sencha.io"
-    onready="marked.onPolarReady(event)"
+    onready="marked.onPolarReady"
     shadow="true"
     insetPadding="25"
     legend='{ "type": "sprite" }'

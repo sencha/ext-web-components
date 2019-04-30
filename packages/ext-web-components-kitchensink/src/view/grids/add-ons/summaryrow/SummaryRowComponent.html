@@ -3,13 +3,13 @@
   plugins='{"gridsummaryrow": "true"}'
   shadow="true"
   height="100%"
-  onready="summaryrow.gridReady(event)"
+  onready="summaryrow.gridReady"
 >
   <ext-column
     text="Company"
     dataIndex="name"
     width="150"
-    onready="summaryrow.companyColumnReady(event)"
+    onready="summaryrow.companyColumnReady"
   >
   </ext-column>
   <ext-column
@@ -25,14 +25,14 @@
     text="Change"
     width="100"
     dataIndex="priceChange"
-    onready="summaryrow.changeColumnReady(event)"
+    onready="summaryrow.changeColumnReady"
     summary="max"
   >
   </ext-column>
   <ext-column
     text="% Change"
     dataIndex="priceChangePct"
-    onready="summaryrow.percentChangeColumnReady(event)"
+    onready="summaryrow.percentChangeColumnReady"
     summary="average"
   >
   </ext-column>

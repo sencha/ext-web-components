@@ -22,11 +22,11 @@ export default class FormPanelComponent {
     });
   }
 
-  buttonready(event) {
+  buttonReady(event) {
     this.buttonCmp = event.detail.cmp;
   }
 
-  formpanelready(event) {
+  formpanelReady(event) {
     this.formcmp = event.detail.cmp;
   }
 
@@ -34,7 +34,7 @@ export default class FormPanelComponent {
     this.formcmp.reset(true);
   }
 
-  componentready(event) {
+  componentReady(event) {
     this.componentArray.push(event.detail.cmp);
   }
   

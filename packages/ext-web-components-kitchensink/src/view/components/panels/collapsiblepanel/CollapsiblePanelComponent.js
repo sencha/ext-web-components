@@ -9,20 +9,20 @@ export default class CollapsiblePanelComponent {
     console.log('in CollapsiblePanelComponent constructor');
   }
 
-  readyContainer1(event) {
+  readycontainer1(event) {
     this.containerCmp = event.detail.cmp;
     this.containerCmp.setLayout(Ext.os.is.Phone ? 'fit' : 'auto');
     this.containerCmp.setPadding(Ext.os.is.Phone ? 0 : 10);
   }
 
-  readyPanel1(event) {
+  readypanel1(event) {
     this. panelCmp1 = event.detail.cmp;
     this.panelCmp1.setHeight(Ext.os.is.Phone ? undefined : 400);
     this.panelCmp1.setWidth(Ext.os.is.Phone ? undefined : 400);
     this.panelCmp1.setHtml(`<div>${mediumText}</div>`);
   }
 
-  readyPanel2(event) {
+  readypanel2(event) {
     this.panelCmp2 = event.detail.cmp;
     this.panelCmp2.setHtml(`<div>${mediumText}</div>`);
   }

@@ -5,7 +5,7 @@ export default class ContainerFieldComponent {
   constructor () {
   }
 
-  containerfieldcomponentready(event) {
+  containerfieldcomponentReady(event) {
     const isPhone = Ext.os.is.Phone;
     this.cmp = event.detail.cmp;
     const layout = isPhone ? "vbox" : "hbox";

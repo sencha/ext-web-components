@@ -19,11 +19,11 @@ export default class TimeFieldComponent {
     this.timefieldCmp.setDisabled(this.disabled);
   }
 
-  timefieldready(event) {
+  timefieldReady(event) {
     this.timefieldCmp = event.detail.cmp;
   }
 
-  buttonready(event) {
+  buttonReady(event) {
     this.buttonCmp = event.detail.cmp;
   }
 

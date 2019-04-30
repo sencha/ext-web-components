@@ -92,7 +92,7 @@ export default class CardLayoutComponent {
       buttonElement.text = buttonItem.text;
       buttonElement.ui = 'alt';
       buttonElement.width = '100%';
-      buttonElement.setAttribute('onTap', "cardlayout.switchCards(event)");
+      buttonElement.setAttribute('onTap', "cardlayout.switchCards");
       buttonElement.setAttribute('animation', buttonItem.animation);
       buttonElement.animation = buttonItem.animation;
       this.cont2.el.dom.append(buttonElement);
@@ -111,7 +111,7 @@ export default class CardLayoutComponent {
 
       buttonElement.text = buttonItem.text;
       buttonElement.ui = 'alt';
-      buttonElement.setAttribute('onTap', "cardlayout.switchCards(event)");
+      buttonElement.setAttribute('onTap', "cardlayout.switchCards");
       this.cont3.el.dom.append(buttonElement);
     }
   }

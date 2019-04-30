@@ -27,7 +27,7 @@ export default class MultiaxisColumnComponent {
     });
   }
 
-  cartesianready(event) {
+  cartesianReady(event) {
     this.cartesianCmp = event.detail.cmp;
     this.cartesianCmp.setAxes([
       {

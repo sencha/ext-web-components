@@ -7,15 +7,15 @@
               ui="toolbar-default"
               text="ON"
               pressed="true"
-              onready="groupedgrid.onButtonReady(event)"
-              onTap="groupedgrid.onGroupClick(event)"
+              onready="groupedgrid.onButtonReady"
+              onTap="groupedgrid.onGroupClick"
             >
             </ext-button>
             <ext-button
               ui="toolbar-default"
               text="OFF"
-              onready="groupedgrid.offButtonReady(event)"
-              onTap="groupedgrid.offGroupClick(event)"
+              onready="groupedgrid.offButtonReady"
+              onTap="groupedgrid.offGroupClick"
             >
             </ext-button>
         </ext-segmentedbutton>
@@ -25,7 +25,7 @@
         width="100%"
         title="Restaurants"
         shadow="true"
-        onready="groupedgrid.onReady(event)"
+        onready="groupedgrid.onReady"
         grouped="true"
         groupFooter='{"xtype": "gridsummaryrow"}'
       >

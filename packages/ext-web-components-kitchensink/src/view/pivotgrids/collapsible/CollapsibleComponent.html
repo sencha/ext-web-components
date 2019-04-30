@@ -14,17 +14,17 @@
       "ui": "action"
     }'>
     <ext-button ui="action raised" text="Collapsible">
-      <ext-menu onready="collapsible.onReadyMenu(event)" >
-        <ext-menuitem onready="collapsible.onReadyMenuItem(event)" iconCls="x-font-icon md-icon-check" text="None" value="none"></ext-menuitem>
-        <ext-menuitem onready="collapsible.onReadyMenuItem(event)" text="Rows Only" value="rows"></ext-menuitem>
-        <ext-menuitem onready="collapsible.onReadyMenuItem(event)" text="Columns Only" value="cols"></ext-menuitem>
-        <ext-menuitem onready="collapsible.onReadyMenuItem(event)" text="Rows & Columns" value="both"></ext-menuitem>
+      <ext-menu onready="collapsible.onReadyMenu" >
+        <ext-menuitem onready="collapsible.onReadyMenuItem" iconCls="x-font-icon md-icon-check" text="None" value="none"></ext-menuitem>
+        <ext-menuitem onready="collapsible.onReadyMenuItem" text="Rows Only" value="rows"></ext-menuitem>
+        <ext-menuitem onready="collapsible.onReadyMenuItem" text="Columns Only" value="cols"></ext-menuitem>
+        <ext-menuitem onready="collapsible.onReadyMenuItem" text="Rows & Columns" value="both"></ext-menuitem>
       </ext-menu>
     </ext-button>
   </ext-toolbar>
 
   <ext-pivotgrid 
     shadow="true"
-    onready="collapsible.onReady(event)">
+    onready="collapsible.onReady">
   </ext-pivotgrid>
 </ext-container>

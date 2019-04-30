@@ -1,6 +1,6 @@
 <ext-container  padding="10" maxWidth="500">
   <ext-sheet
-    onready = "sheet.sheetReady(event)"
+    onready = "sheet.sheetReady"
     onHide="sheet.onHide()"
     layout="vbox"
     padding="15 0"
@@ -8,9 +8,9 @@
     modal="true"
     displayed="false"
   >
-    <ext-button text="Settings" iconCls="x-fa fa-gear" ontap="sheet.toggleMenu()" onready="sheet.buttonReady(event)"></ext-button>
-    <ext-button text="New Item" iconCls="x-fa fa-pencil" ontap="sheet.toggleMenu()" onready="sheet.buttonReady(event)" ></ext-button>
-    <ext-button text="Star" iconCls="x-fa fa-star" ontap="sheet.toggleMenu()" onready="sheet.buttonReady(event)"></ext-button>
+    <ext-button text="Settings" iconCls="x-fa fa-gear" ontap="sheet.toggleMenu()" onready="sheet.buttonReady"></ext-button>
+    <ext-button text="New Item" iconCls="x-fa fa-pencil" ontap="sheet.toggleMenu()" onready="sheet.buttonReady" ></ext-button>
+    <ext-button text="Star" iconCls="x-fa fa-star" ontap="sheet.toggleMenu()" onready="sheet.buttonReady"></ext-button>
   </ext-sheet>
 
   <ext-panel  shadow="true" ui="instructions" layout='{"type": "vbox", "align": "left"}'>
@@ -23,7 +23,7 @@
 
   <ext-panel layout='{"type": "vbox", "align": "left"}' shadow margin="20 0 0 0" padding="15" shadow="true">
     <ext-button
-      onready = "sheet.buttonReady1(event)"
+      onready = "sheet.buttonReady1"
       ui="action"
       enableToggle="true"
       ontap="sheet.toggleMenu()"
@@ -36,10 +36,10 @@
     </ext-container>
 
     <ext-segmentedbutton  margin= "0 0 10 0">
-      <ext-button text="left" ontap="sheet.directLeft()" onready="sheet.buttonReady2(event)"></ext-button>
-      <ext-button text="right" ontap="sheet.directRight()" onready="sheet.buttonReady2(event)"></ext-button>
-      <ext-button text="top" ontap="sheet.directTop()" onready="sheet.buttonReady2(event)"></ext-button>
-      <ext-button text="bottom" ontap="sheet.directBottom()" onready="sheet.buttonReady2(event)"></ext-button>
+      <ext-button text="left" ontap="sheet.directLeft()" onready="sheet.buttonReady2"></ext-button>
+      <ext-button text="right" ontap="sheet.directRight()" onready="sheet.buttonReady2"></ext-button>
+      <ext-button text="top" ontap="sheet.directTop()" onready="sheet.buttonReady2"></ext-button>
+      <ext-button text="bottom" ontap="sheet.directBottom()" onready="sheet.buttonReady2"></ext-button>
     </ext-segmentedbutton>
 
     <ext-container>
@@ -47,17 +47,17 @@
     </ext-container>
 
     <ext-segmentedbutton  margin= "0 0 10 0">
-      <ext-button text="yes" ontap="sheet.setReveal()" onready="sheet.buttonRevealY(event)"></ext-button>
-      <ext-button text="no" ontap="sheet.unsetReveal()" onready="sheet.buttonRevealN(event)"></ext-button>
+      <ext-button text="yes" ontap="sheet.setReveal()" onready="sheet.buttonRevealY"></ext-button>
+      <ext-button text="no" ontap="sheet.unsetReveal()" onready="sheet.buttonRevealN"></ext-button>
     </ext-segmentedbutton>
 
     <ext-container>
         <div>modal</div>
     </ext-container>
 
-    <ext-segmentedbutton onready="sheet.segmentedbuttonReady(event)">
-      <ext-button text="yes" ontap="sheet.setModal()" onready="sheet.buttonModalY(event)"></ext-button>
-      <ext-button text="no" ontap="sheet.unsetModal()" onready="sheet.buttonModalN(event)"></ext-button>
+    <ext-segmentedbutton onready="sheet.segmentedbuttonReady">
+      <ext-button text="yes" ontap="sheet.setModal()" onready="sheet.buttonModalY"></ext-button>
+      <ext-button text="no" ontap="sheet.unsetModal()" onready="sheet.buttonModalN"></ext-button>
     </ext-segmentedbutton>
 
   </ext-panel>

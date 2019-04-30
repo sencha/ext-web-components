@@ -15,17 +15,17 @@
     }'>
     <ext-button text="Change data">
       <ext-menu>
-        <ext-menuitem text="Add" iconCls="x-fa fa-plus" onready="datachanges.onButtonReady1(event)"></ext-menuitem>
-        <ext-menuitem text="Update" iconCls="x-fa fa-edit" onready="datachanges.onButtonReady2(event)"></ext-menuitem>
-        <ext-menuitem text="Remove" iconCls="x-fa fa-minus" onready="datachanges.onButtonReady3(event)"></ext-menuitem>
-        <ext-menuitem text="Clear all" iconCls="x-fa fa-trash" onready="datachanges.onButtonReady4(event)"></ext-menuitem>
+        <ext-menuitem text="Add" iconCls="x-fa fa-plus" onready="datachanges.onButtonReady1"></ext-menuitem>
+        <ext-menuitem text="Update" iconCls="x-fa fa-edit" onready="datachanges.onButtonReady2"></ext-menuitem>
+        <ext-menuitem text="Remove" iconCls="x-fa fa-minus" onready="datachanges.onButtonReady3"></ext-menuitem>
+        <ext-menuitem text="Clear all" iconCls="x-fa fa-trash" onready="datachanges.onButtonReady4"></ext-menuitem>
       </menu>
     </ext-button>
   </ext-toolbar>
 
   <ext-pivotgrid 
     shadow="true"
-    onready="datachanges.onPivotGridReady(event)"
+    onready="datachanges.onPivotGridReady"
   >
   </ext-pivotgrid>
 </ext-container>

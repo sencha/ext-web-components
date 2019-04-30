@@ -265,7 +265,7 @@ export class ExtSpinuptriggerComponent extends ExtBase {
 		{ name:'isFocusing',function: function(e) { return this.ext.isFocusing(e) } },
 		{ name:'isHeighted',function: function() { return this.ext.isHeighted() } },
 		{ name:'isHidden',function: function(deep) { return this.ext.isHidden(deep) } },
-		{ name:'isSuspended',function: function(event) { return this.ext.isSuspended(event) } },
+		{ name:'isSuspended',function: function() { return this.ext.isSuspended } },
 		{ name:'isSyncing',function: function(name) { return this.ext.isSyncing(name) } },
 		{ name:'isVisible',function: function(deep) { return this.ext.isVisible(deep) } },
 		{ name:'isWidthed',function: function() { return this.ext.isWidthed() } },

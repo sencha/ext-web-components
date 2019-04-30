@@ -17,7 +17,7 @@ export default class ResizableHandleComponent {
     });
   }
 
-  checkboxfieldready(event) {
+  checkboxfieldReady(event) {
     this.checkboxfieldCmp = event.detail.cmp;
     this.checkboxfieldCmp.setChecked(false);
   }
@@ -30,7 +30,7 @@ export default class ResizableHandleComponent {
     });
   }
 
-  containerready(event) {
+  containerReady(event) {
     this.containerCmp = event.detail.cmp;
     this.containerCmp.setHtml(mediumText);
   }

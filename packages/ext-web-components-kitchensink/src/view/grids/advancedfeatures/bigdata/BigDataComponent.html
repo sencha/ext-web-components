@@ -1,17 +1,17 @@
 <!-- <ext-container padding="10px" layout="vbox" fitToParent="true" width="100%" height="100%"> -->
 <ext-container height="100%">
   <ext-actionsheet displayed="false">
-    <ext-button onTap="bigdata.exportToXlsx(event)" text="Excel xlsx"></ext-button>
-    <ext-button onTap="bigdata.exportToXml(event)" text="Excel xml"></ext-button>
-    <ext-button onTap="bigdata.exportToCSV(event)" text="CSV"></ext-button>
-    <ext-button onTap="bigdata.exportToTSV(event)" text="TSV"></ext-button>
-    <ext-button onTap="bigdata.exportToHtml(event)" text="HTML"></ext-button>
-    <ext-button onTap="bigdata.onCancelExport(event)" text="Cancel"></ext-button>
+    <ext-button onTap="bigdata.exportToXlsx" text="Excel xlsx"></ext-button>
+    <ext-button onTap="bigdata.exportToXml" text="Excel xml"></ext-button>
+    <ext-button onTap="bigdata.exportToCSV" text="CSV"></ext-button>
+    <ext-button onTap="bigdata.exportToTSV" text="TSV"></ext-button>
+    <ext-button onTap="bigdata.exportToHtml" text="HTML"></ext-button>
+    <ext-button onTap="bigdata.onCancelExport" text="Cancel"></ext-button>
   </ext-actionsheet>
   <ext-grid
     width="100%"
     height="100%"
-    onready="bigdata.readyGrid(event)"
+    onready="bigdata.readyGrid"
     flex="1"
     title="Big Data Grid"
     shadow="true"
@@ -28,8 +28,8 @@
     groupFooter='{
       "xtype": "gridsummaryrow"
     }'
-    onBeforeDocumentSave="bigdata.onBeforeDocumentSave(event)"
-    onDocumentSave="bigdata.onDocumentSave(event)"
+    onBeforeDocumentSave="bigdata.onBeforeDocumentSave"
+    onDocumentSave="bigdata.onDocumentSave"
     titleBar='{
       "shadow": "false",
       "items": [{
@@ -67,7 +67,7 @@
       text="Name"
       dataIndex="fullName"
       minWidth="150"
-      onready="bigdata.nameColumnReady(event)"
+      onready="bigdata.nameColumnReady"
     >
     </ext-textcolumn>
     <ext-checkcolumn
@@ -134,7 +134,7 @@
       width="100"
       ignoreExport="true"
       align="center"
-      onready="bigdata.emptyColumnReady(event)"
+      onready="bigdata.emptyColumnReady"
     >
     </ext-column>
     <ext-datecolumn

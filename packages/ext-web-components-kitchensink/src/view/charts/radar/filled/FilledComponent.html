@@ -1,14 +1,14 @@
 <ext-container padding="15" layout="fit" fitToParent="true" height="100%">
   <ext-container padding="15" docked="top">
     <chart-toolbar
-      onItemReady="filled.onMenuItemReady(event)"
-      onRefreshButtonReady="filled.onRefreshButtonReady(event)"
+      onItemReady="filled.onMenuItemReady"
+      onRefreshButtonReady="filled.onRefreshButtonReady"
       theme="default">
     </chart-toolbar>
   </ext-container>
 
   <ext-polar downloadServerUrl ="http://svg.sencha.io"
-    onready="filled.onPolarReady(event)"
+    onready="filled.onPolarReady"
     width="800px"
     shadow="true"
     interactions="rotate"

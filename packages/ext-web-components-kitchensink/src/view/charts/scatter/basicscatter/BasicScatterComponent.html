@@ -11,15 +11,15 @@
     padding="0 10 0 10">
     <chart-toolbar
       theme="default"
-      onItemReady="basicscatter.onMenuItemReady(event)"
-      onRefreshButtonReady="basicscatter.onRefreshButtonReady(event)"
-      onZoomButtonReady="basicscatter.onZoomButtonReady(event)"
-      onPanButtonReady="basicscatter.onPanButtonReady(event)"
+      onItemReady="basicscatter.onMenuItemReady"
+      onRefreshButtonReady="basicscatter.onRefreshButtonReady"
+      onZoomButtonReady="basicscatter.onZoomButtonReady"
+      onPanButtonReady="basicscatter.onPanButtonReady"
       style="width: 100%;">
     </chart-toolbar>
   </ext-toolbar>
   <ext-cartesian
-    onready="basicscatter.cartesianready(event)"
+    onready="basicscatter.cartesianready"
     downloadServerUrl="http://svg.sencha.io"
     width="800"
     shadow="true"

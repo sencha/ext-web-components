@@ -8,7 +8,7 @@ export default class ProgressBarComponent {
     this.updateLoop;
   }
 
-  progressReady(event){
+  progressReady(event) {
     this.progressText = "1%";
     this.progressBar = event.detail.cmp;
     this.updateLoop = setInterval(() => { 
@@ -23,12 +23,12 @@ export default class ProgressBarComponent {
     }, 100)
   } 
 
-  progressReady1(event){
+  progressReady1(event) {
     this.progressBar1 = event.detail.cmp;
     
   }
   
-  containerReady(event){
+  containerReady(event) {
     this.container = event.detail.cmp;
   }
 

@@ -3,7 +3,7 @@
   plugins='{"rowexpander": "true"}'
   shadow="true"
   height="100%"
-  onready="rowexpander.gridReady(event)"
+  onready="rowexpander.gridReady"
 >
   <ext-column
     text="Company"
@@ -12,7 +12,6 @@
   >
   </ext-column>
   <ext-column
-    id="price"
     text="Price"
     dataIndex="price"
     width="75"
@@ -23,13 +22,13 @@
     text="Change"
     width="100"
     dataIndex="priceChange"
-    onready="rowexpander.changeColumnReady(event)"
+    onready="rowexpander.changeColumnReady"
   >
   </ext-column>
   <ext-column
     text="% Change"
     dataIndex="priceChangePct"
-    onready="rowexpander.percentChangeColumnReady(event)"
+    onready="rowexpander.percentChangeColumnReady"
   >
   </ext-column>
   <ext-column

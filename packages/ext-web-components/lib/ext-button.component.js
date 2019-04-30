@@ -482,7 +482,7 @@ export class ExtButtonComponent extends ExtBase {
 		{ name:'isPainted',function: function() { return this.ext.isPainted() } },
 		{ name:'isPressed',function: function() { return this.ext.isPressed() } },
 		{ name:'isRendered',function: function() { return this.ext.isRendered() } },
-		{ name:'isSuspended',function: function(event) { return this.ext.isSuspended(event) } },
+		{ name:'isSuspended',function: function() { return this.ext.isSuspended } },
 		{ name:'isSyncing',function: function(name) { return this.ext.isSyncing(name) } },
 		{ name:'isVisible',function: function(deep) { return this.ext.isVisible(deep) } },
 		{ name:'isWidthed',function: function() { return this.ext.isWidthed() } },

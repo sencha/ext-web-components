@@ -1,9 +1,9 @@
 <ext-container layout="fit" padding="10" fitToParent="true" height="100%">
   <ext-toolbar docked="top" ui="app-transparent-toolbar" shadow="false" margin="10 0 0 10" padding="0 10 0 10"
     defaults='{"margin": "0 10 0 0","shadow": true,"ui": "action"}'>
-    <ext-button text="Configurator" onready="exporterplugin.onButtonReady(event)"></ext-button>
+    <ext-button text="Configurator" onready="exporterplugin.onButtonReady"></ext-button>
     <ext-button text="Export to ...">
-      <ext-menu onready="exporterplugin.onMenuReady(event)"> 
+      <ext-menu onready="exporterplugin.onMenuReady"> 
         <ext-menuitem
           text="Excel xlsx (pivot table definition)" 
           iconCls="x-fa fa-file-excel-o"
@@ -65,7 +65,7 @@
 
   <ext-pivotgrid 
     shadow="true"
-    onready="exporterplugin.onPivotGridReady(event)"
+    onready="exporterplugin.onPivotGridReady"
     onDocumentSave="exporterplugin.onDocumentSave"
     onBeforeDocumentSave="exporterplugin.onBeforeDocumentSave">
   </ext-pivotgrid>

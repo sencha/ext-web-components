@@ -3,18 +3,18 @@
   width="100%"
   layout="fit"
   height="100%"
-  onready="negativevaluesarea.containerready(event)">
+  onready="negativevaluesarea.containerready">
   <ext-toolbar
     docked="top" ui="app-transparent-toolbar"
     shadow="false"
     padding="0 10 0 10">
     <chart-toolbar
-      onItemReady="negativevaluesarea.onMenuItemReady(event)"
+      onItemReady="negativevaluesarea.onMenuItemReady"
       theme="default">
     </chart-toolbar>
   </ext-toolbar>
   <ext-cartesian
-    onready="negativevaluesarea.cartesianready(event)"
+    onready="negativevaluesarea.cartesianready"
     downloadServerUrl="http://svg.sencha.io"
     shadow="true"
     insetPadding="20 20 10 10"

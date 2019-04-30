@@ -2,22 +2,22 @@
   <ext-panel
     shadow="true"
     layout="hbox"
-    onready="calendarweekview.panelReady(event)"
+    onready="calendarweekview.panelReady"
    >
       <ext-panel
         title="Calendars"
         ui="light"
         width="150"
         bodyPadding="5"
-        onready="calendarweekview.innnerPanelReady(event)"
+        onready="calendarweekview.innnerPanelReady"
       >
-          <ext-calendar-list onready="calendarweekview.calendarListReady(event)"></ext-calendar-list>
+          <ext-calendar-list onready="calendarweekview.calendarListReady"></ext-calendar-list>
       </ext-panel>
       <ext-calendar-week
         flex="1"
         timezoneOffset="0"
         gestureNavigation="false"
-        onready="calendarweekview.calendarWeekReady(event)"  
+        onready="calendarweekview.calendarWeekReady"  
         height="100%"
       >
       </ext-calendar-week>

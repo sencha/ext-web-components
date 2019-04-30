@@ -50,7 +50,7 @@ export default class TreeMapComponent {
     return record.isLeaf() ? scale(record.get(field)) : '#ececec';
   }
 
-  onready(event) {
+  onReady(event) {
    const  store = Ext.create('Ext.data.TreeStore', {
       autoLoad: true,
       fields: [

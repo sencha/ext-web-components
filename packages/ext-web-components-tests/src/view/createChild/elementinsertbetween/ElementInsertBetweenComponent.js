@@ -5,7 +5,7 @@ export default class ElementInsertBetweenComponent {
     this.counter = 0;
   }
 
-  insert(event) {
+  insert {
     this.buttonComp = event.detail.cmp;
     this.buttonComp.setHandler(this.buttonClick.bind(this));
   }
