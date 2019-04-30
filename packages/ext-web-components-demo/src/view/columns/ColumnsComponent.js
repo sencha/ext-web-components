@@ -8,13 +8,13 @@ export default class ColumnsComponent {
     //console.log('in ColumnsComponent constructor');
   }
 
-  onGridReady(event) {
+  onGridReady = event => {
     console.log('in ready event')
     this.gridCmp = event.detail.cmp
     this.gridCmp.setData(new ColumnsComponentData(10).data)
   }
 
-  onSurNameReady(event) {
+  onSurNameReady = event => {
     console.log('in onSurNameReady event')
     //this.gridCmp = event.detail.cmp
     //this.gridCmp.setData(new ColumnsComponentData(10).data)
