@@ -1,10 +1,9 @@
 function process (data) {
   return data.map((d) => {
-      d.ratingLastYear = Math.max(Math.round(d.rating[0] / 2), 1);
-      d.ratingThisYear = Math.max(Math.round(d.rating[d.rating.length - 1] / 2), 1);
-      d.fullName = d.forename + " " + d.surname;
-
-      return d;
+    d.ratingLastYear = Math.max(Math.round(d.rating[0] / 2), 1);
+    d.ratingThisYear = Math.max(Math.round(d.rating[d.rating.length - 1] / 2), 1);
+    d.fullName = d.forename + " " + d.surname;
+    return d;
   });
 }
 

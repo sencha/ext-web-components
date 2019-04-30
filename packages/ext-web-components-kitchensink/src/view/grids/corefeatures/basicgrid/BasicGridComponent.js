@@ -14,7 +14,6 @@ export default class BasicGridComponent {
     } 
   });
 
-
   readyGrid(event) {
     this.gridCmp = event.detail.cmp
     this.gridCmp.setStore(this.store)
@@ -26,12 +25,6 @@ export default class BasicGridComponent {
     if(value > 0) {col = 'green'}
     else if(value < 0 ) {col = 'red'}
     return `<span style='color:${col}'>${formattedValue}</span>`
-
-
-    // var formattedValue = Ext.util.Format.number(value, format);
-    // var col = ''
-    // if(value > 0) {col = 'green'}
-    // else if(value < 0 ) {col = 'red'}
-    // return `<span style='color:${col}'>${formattedValue}</span>`
   }
+  
 }
