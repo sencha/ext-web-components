@@ -1,6 +1,6 @@
 import './ComponentsInCellsComponent.html';
 import './ComponentsInCellsComponent.scss';
-import model from '../../CompanyModel';
+import model from '../../data/CompanyModel';
 
 export default class ComponentsInCellsComponent {
   constructor () {}

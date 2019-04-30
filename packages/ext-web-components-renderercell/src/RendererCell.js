@@ -1,37 +1,34 @@
 /**
  * Use this component to render a React element inside of a grid cell.  
  *
- *      <Grid>
- *          <Column text="Actions" dataIndex="name">
- *              <RendererCell
+ *      <ext-grid>
+ *          <ext-column text="Actions" dataIndex="name">
+ *              <ext-renderercell
  *                  renderer={(value, record) => (
- *                      <Button text={`Call ${value}`} handler={this.onCallClick.bind(this, record)}/>
+ *                      <ext-button text={`Call ${value}`} handler={this.onCallClick.bind(this, record)}/>
  *                  )}
  *              />
- *          </Column>
- *      </Grid>
+ *          </ext-column>
+ *      </ext-rid>
  *
  * RendererCell is automatically used when a Column contains a renderer prop. The following
  * is equivalent to the example above:
  * 
- *      <Grid>
- *          <Column 
+ *      <ext-grid>
+ *          <ext-column 
  *              text="Actions" 
  *              dataIndex="name"
  *              renderer={(value, record) => (
  *                  <Button text={`Call ${value}`} handler={this.onCallClick.bind(this, record)}/>
  *              )}
  *          />
- *      </Grid>
- * @since 6.5.1
+ *      </ext-grid>
+ * @since 7.0.0
  */
-
-
 
 Ext.define('Ext.webcomponents.RendererCell', {
     extend: 'Ext.grid.cell.Base',
     xtype: 'renderercell',
-
     config: {
         /**
          * @cfg {Function} renderer
@@ -46,7 +43,6 @@ Ext.define('Ext.webcomponents.RendererCell', {
          * rendered.
          */
         renderer: null,
-
         /**
          * @cfg {Function} summaryRenderer
          * A function that returns a React element or text to render in the summary 
@@ -56,7 +52,6 @@ Ext.define('Ext.webcomponents.RendererCell', {
          * rendered.
          */
         summaryRenderer: null,
-
         /**
          * @cfg {Boolean} forceWidth
          * `true` to measure the available width of the cell and set that
@@ -65,7 +60,6 @@ Ext.define('Ext.webcomponents.RendererCell', {
          */
         forceWidth: false
     },
-
 //https://docs.sencha.com/extjs/6.7.0/modern/src/Text.js-2.html
 //https://docs.sencha.com/extjs/6.7.0/modern/src/Widget.js-3.html
     setValue: function (value) {
@@ -85,40 +79,16 @@ Ext.define('Ext.webcomponents.RendererCell', {
         var r
         if (typeof renderer == 'string') {
           r = eval(renderer)
-          //markup = Ext.callback(renderer, window, [ value, context ], 0, column);
-          //console.log('it is a string')
         }
         else {
           r = renderer
-          //markup = renderer.call(scope, value, context.record, context.dataIndex, me, column);
-          //console.log('NOT a string')
         }
-        //markup = renderer.call(scope, value, context.record, context.dataIndex, me, column);
         markup = r.call(scope, value, context.record, context.dataIndex, me, column);
         if (markup == null) { markup = ''; }
-        //console.dir(markup)
         if (typeof markup === 'object') {
           console.log('in RendererCell - markup is an object, not doing anything...')
-          // result = Ext.react.ReactDOM.render(markup, me.bodyElement.dom); 
-          // console.log('ext-react-renderercell')
-          // console.log('value: ' + value)
-          // console.dir(result.cmp)
-
-          // //added
-          // result.cmp.setRenderTo(me.bodyElement.dom);
-
-          // if (result.isWidget) {
-          //   console.log('is widget')
-          //     needsSizing = result !== me.widget;
-          //     me.widget = result;
-          // }
         } 
         else {
-          //console.log('markup is a string')
-          //console.log(me)
-          //var h = Ext.htmlEncode(markup.toString())
-          //console.dir(h)
-          //Ext.dom.Helper.overwrite(me.bodyElement, Ext.htmlEncode(markup.toString()));
           Ext.dom.Helper.overwrite(me.bodyElement, markup.toString());
           me.widget = null;
           }

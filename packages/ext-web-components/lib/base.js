@@ -5,23 +5,16 @@ export default class ExtBase extends HTMLElement {
   }
 
   filterProperty(propertyValue) {
-    //console.log(propertyValue)
     try {
       const parsedProp = JSON.parse(propertyValue);
-      //console.dir(parsedProp)
 
       if (parsedProp === null || parsedProp === undefined || parsedProp === true || parsedProp === false || parsedProp === Object(parsedProp) || !isNaN(parsedProp) ) {
-//console.log('parsed')
         return parsedProp;
       } else {
-        //console.log('NOT parsed')
         return propertyValue;
       }
     }
     catch(e) {
-      //console.log('here??')
-      //console.log(e)
-      //console.dir (propertyValue)
       return propertyValue;
     }
   }
@@ -54,9 +47,17 @@ export default class ExtBase extends HTMLElement {
 
     this.props = {};
     this.props.xtype = this.XTYPE;
+
+    if (this.props.xtype == 'column') {
+      if(this.renderer != undefined) {
+        this.props.cell = this.cell || {}
+        this.props.cell.xtype = 'renderercell'
+        this.props.cell.renderer = this.renderer
+      }
+    }
+
     //mjg fitToParent not working
     if (true === this.fitToParent) {
-      console.log('here')
       this.props.top=0,
       this.props.left=0,
       this.props.width='100%',
@@ -70,10 +71,6 @@ export default class ExtBase extends HTMLElement {
           }
           else {
             this.props[property] = this.filterProperty(this[property]);
-            // if (property == 'columns') {
-            //   console.dir(this.props[property])
-            //   console.dir(this.props)
-            // }
           }
         }
       }
@@ -93,7 +90,7 @@ export default class ExtBase extends HTMLElement {
       var me = this
       me.doCreate()
       Ext.application({
-        name: 'MyExtWCApp',
+        name: 'MyEWCApp',
         launch: function () {
           Ext.Viewport.add([me.ext])
         }
@@ -201,7 +198,7 @@ export default class ExtBase extends HTMLElement {
   }
 
   addTheChild(parentCmp, childCmp, location) {
-    var childxtype = childCmp.xtype
+     var childxtype = childCmp.xtype
     var parentxtype = parentCmp.xtype
 
     if (this.ext.initialConfig.align != undefined) {
@@ -210,6 +207,13 @@ export default class ExtBase extends HTMLElement {
         return
       }
     }
+
+    if (parentxtype === 'column' || childxtype === 'renderercell') {
+      console.dir(parentCmp)
+      console.dir(childCmp)
+      parentCmp.setCell(childCmp)
+    }
+
     if (parentxtype === 'grid' || parentxtype === 'lockedgrid') {
       if (childxtype === 'column' || childxtype === 'treecolumn' || childxtype === 'textcolumn' || childxtype === 'checkcolumn' || childxtype === 'datecolumn' || childxtype === 'rownumberer' || childxtype === 'numbercolumn' || childxtype === 'booleancolumn' ) {
 
@@ -298,13 +302,13 @@ export default class ExtBase extends HTMLElement {
   }
 
   attributeChangedCallback(attr, oldVal, newVal) {
-    //console.log('attributeChangedCallback')
-    //console.log(attr)
     if (/^on/.test(attr)) {
-      //console.log(attr)
       if (newVal) {
         //mjg check if this event exists for this component
-        this.addEventListener(attr.slice(2), function() {eval(newVal)});
+        this.addEventListener(attr.slice(2), function(event) {
+          //eval(newVal + '(event)')
+          eval(newVal)
+        });
       } else {
         //delete this[attr];
         //this.removeEventListener(attr.slice(2), this);
