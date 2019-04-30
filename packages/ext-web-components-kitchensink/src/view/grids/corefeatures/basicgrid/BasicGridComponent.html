@@ -29,7 +29,10 @@
       dataIndex="priceChangePct"
       renderer="basicgrid.renderSign.bind(this)"
     >
-      <ext-renderercell renderer="basicgrid.renderSign.bind(this,'0.00')"></ext-renderercell>
+      <ext-renderercell
+        renderer="basicgrid.renderSign.bind(this,'0.00')"
+      >
+      </ext-renderercell>
     </ext-column>
     <ext-column
       text="Last Updated"
@@ -40,20 +43,3 @@
     </ext-column>
   </ext-grid>
 </ext-panel>
-
-
-    <!-- columns='[
-      {"text":"employeeNo","dataIndex":"employeeNo"},
-      {"text":"rating","dataIndex":"rating"},
-      {"text":"salary","dataIndex":"salary"},
-      {"text":"forename","dataIndex":"forename"},
-      {"text":"surname","dataIndex":"surname"},
-      {"text":"email","dataIndex":"email"},
-      {"text":"department","dataIndex":"department"},
-      {"text":"dob","dataIndex":"dob","width":200},
-      {"text":"joinDate","dataIndex":"joinDate"},
-      {"text":"sickDays","dataIndex":"sickDays"},
-      {"text":"holidayDays","dataIndex":"holidayDays"},
-      {"text":"holidayAllowance","dataIndex":"holidayAllowance"},
-      {"text":"noticePeriod","dataIndex":"noticePeriod"}
-    ]'-->
