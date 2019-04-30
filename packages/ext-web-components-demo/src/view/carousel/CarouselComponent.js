@@ -13,7 +13,7 @@ export default class CarouselComponent {
     this.carouselHorizontalCmp.setActiveItem(0)
   }
 
-  readyCarouselHorizontalChild {
+  readyCarouselHorizontalChild(event) {
 //    this.carouselHorizontalCmp.setActiveItem(0)
   }
 
@@ -21,7 +21,7 @@ export default class CarouselComponent {
     this.carouselHorizontalCmp = event.detail.cmp
   }
 
-  readyCarouselVerticalChild {
+  readyCarouselVerticalChild(event) {
 //    this.carouselHorizontalCmp.setActiveItem(0)
   }
 }
