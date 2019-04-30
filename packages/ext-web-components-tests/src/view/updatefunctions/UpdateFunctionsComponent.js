@@ -14,13 +14,13 @@ export default class UpdateFunctionsComponent {
     this.buttonComp2 = event.detail.cmp;
   }
 
-  handler(event) {
+  onClick(event) {
     this.counter1++;
-    this.buttonComp1.setText(this.counter1);
+    this.buttonComp1.setText(this.counter1)
   }
 
-  onClick(event) {
+  onHandler(event) {
     this.counter2++;
-    this.buttonComp2.setText(this.counter2)
+    this.buttonComp2.setText(this.counter2);
   }
 }
