@@ -11,14 +11,14 @@
     padding="0 10 0 10">
     <chart-toolbar
       theme="default"
-      onItemReady="bubble.onMenuItemReady(event)"
-      onRefreshButtonReady="bubble.onRefreshButtonReady(event)"
+      onItemReady="bubble.onMenuItemReady"
+      onRefreshButtonReady="bubble.onRefreshButtonReady"
       onlyMidnight="true"
       style="width: 100%;">
     </chart-toolbar>
   </ext-toolbar>
   <ext-cartesian
-    onready="bubble.cartesianready(event)"
+    onready="bubble.cartesianready"
     downloadServerUrl="http://svg.sencha.io"
     width="800"
     shadow="true"

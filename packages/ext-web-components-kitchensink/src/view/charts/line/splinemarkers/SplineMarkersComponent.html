@@ -2,13 +2,13 @@
 
   <ext-container docked="top"><div #extitem>
     <chart-toolbar
-      onItemReady="splinemarkers.onMenuItemReady(event)"
+      onItemReady="splinemarkers.onMenuItemReady"
       theme="default">
     </chart-toolbar>
   </div></ext-container>
 
   <ext-cartesian downloadServerUrl ="http://svg.sencha.io"
-    onready="splinemarkers.onReady(event)"
+    onready="splinemarkers.onReady"
     width="800px"
     shadow="true" 
     theme="default"

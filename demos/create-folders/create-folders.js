@@ -18,8 +18,8 @@ function createFolders(items, folderPath) {
       var htmlData = 
 `<ext-button 
   text="${item.hash}"
-  onready="${item.hash}.readyButton1(event)"
-  ontap="${item.hash}.tapButton1(event)">
+  onready="${item.hash}.readyButton1"
+  ontap="${item.hash}.tapButton1">
 </ext-button>
 `
       var htmlFile = path.join(__dirname, item.folderPath + item.component.name + '.html')

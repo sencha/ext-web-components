@@ -60,7 +60,7 @@ export class ExtInteractionComponent extends ExtBase {
 		{ name:'hasConfig',function: function(name) { return this.ext.hasConfig(name) } },
 		{ name:'hasListener',function: function(eventName) { return this.ext.hasListener(eventName) } },
 		{ name:'initConfig',function: function(instanceConfig) { return this.ext.initConfig(instanceConfig) } },
-		{ name:'isSuspended',function: function(event) { return this.ext.isSuspended(event) } },
+		{ name:'isSuspended',function: function() { return this.ext.isSuspended } },
 		{ name:'link',function: function(name,value) { return this.ext.link(name,value) } },
 		{ name:'mon',function: function(item,ename,fn,scope,options,noDestroy) { return this.ext.mon(item,ename,fn,scope,options,noDestroy) } },
 		{ name:'mun',function: function(item,ename,fn,scope) { return this.ext.mun(item,ename,fn,scope) } },

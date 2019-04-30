@@ -1,16 +1,16 @@
 <ext-container padding="10" layout="fit" fitToParent="true" height="100%">
 
   <ext-formpanel layout="vbox" shadow="true">
-    <ext-sliderfield label="Value" onchange="defaultgauge.updateGauges(event)" value="40"></ext-sliderfield>
+    <ext-sliderfield label="Value" onchange="defaultgauge.updateGauges" value="40"></ext-sliderfield>
     <ext-gauge
       flex="1"
-      onready="defaultgauge.item1Ready(event)"
+      onready="defaultgauge.item1Ready"
       value="40"
     >
   </ext-gauge>
     <ext-gauge
       flex="1"
-      onready="defaultgauge.item2Ready(event)"
+      onready="defaultgauge.item2Ready"
       value="40"
       ui="green"
       trackStart="180"

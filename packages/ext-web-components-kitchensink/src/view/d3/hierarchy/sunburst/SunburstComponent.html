@@ -1,5 +1,5 @@
     <ext-panel 
-        onready="sunburst.onPanelReady(event)" 
+        onready="sunburst.onPanelReady" 
         shadow="true"
         plugins="responsive" 
         layout="hbox"
@@ -7,16 +7,16 @@
         height="100%"
     >
         <ext-tree 
-            onready="sunburst.onTreeReady(event)"
+            onready="sunburst.onTreeReady"
             plugins="responsive"
             title="Folders"
             shadow="true"
             selection=""
-            onSelect="sunburst.onSelectionChange(event)"
+            onSelect="sunburst.onSelectionChange"
         >
         </ext-tree>
         <ext-d3-sunburst 
-            onready= "sunburst.ond3Ready(event)"
+            onready= "sunburst.ond3Ready"
             flex="1"
             padding="20"
         ></ext-d3-sunburst>

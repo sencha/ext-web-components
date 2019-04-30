@@ -95,7 +95,7 @@ export default class CandlestickComponent {
     this.cartesianCmp.setTheme(event.config.text.toLowerCase());
   }
 
-  cartesianready(event) {
+  cartesianReady(event) {
     this.cartesianCmp = event.detail.cmp;
     this.cartesianCmp.setStore(this.store);
     this.cartesianCmp.setTheme(this.theme);

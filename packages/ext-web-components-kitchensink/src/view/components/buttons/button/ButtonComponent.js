@@ -16,7 +16,7 @@ export default class ButtonComponent {
     this.menuButtons.push(event.detail.cmp);
   }
 
-  toggleReady(event){
+  toggleReady(event) {
     this.toggleButton = event.detail.cmp;
   }
 

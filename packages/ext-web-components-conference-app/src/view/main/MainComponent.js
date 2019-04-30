@@ -54,7 +54,7 @@ export default class MainComponent {
     this.afterAllLoaded('readyRouter')
   }
 
-  navTreelistSelectionChange(event) {
+  navTreelistSelectionChange {
     const record = event.detail.record;
     this.navigate(record);
   }

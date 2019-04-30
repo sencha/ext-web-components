@@ -5,40 +5,40 @@
                 <ext-menucheckitem
                   text="rows"
                   checked="true"
-                  oncheckchange="selectandcopy.onSelectableChange(event)"
+                  oncheckchange="selectandcopy.onSelectableChange"
                 >
                 </ext-menucheckitem>
                 <ext-menucheckitem
                   text="cells"
                   checked="true"
-                  oncheckchange="selectandcopy.onSelectableChange(event)"
+                  oncheckchange="selectandcopy.onSelectableChange"
                 >
                 </ext-menucheckitem>
                 <ext-menucheckitem
                   text="columns"
                   checked="true"
-                  oncheckchange="selectandcopy.onSelectableChange(event)"
+                  oncheckchange="selectandcopy.onSelectableChange"
                 >
                 </ext-menucheckitem>
                 <ext-menucheckitem
                   text="drag"
                   checked="true"
-                  oncheckchange="selectandcopy.onSelectableChange(event)"
+                  oncheckchange="selectandcopy.onSelectableChange"
                 >
                 </ext-menucheckitem>
                 <ext-menucheckitem
                   text="checkbox"
                   checked="true"
-                  oncheckchange="selectandcopy.onSelectableChange(event)"
+                  oncheckchange="selectandcopy.onSelectableChange"
                 >
                 </ext-menucheckitem>
             </ext-menu>
         </ext-button>
         <ext-button text="Extensible" ui="action">
-            <ext-menu onready="selectandcopy.extensibleMenuReady(event)">
-                <ext-menuitem text="x" onready="selectandcopy.menuItemReady(event)"></ext-menuitem>
-                <ext-menuitem text="y" onready="selectandcopy.menuItemReady(event)"/></ext-menuitem>
-                <ext-menuitem text="both" onready="selectandcopy.menuItemReady(event)" iconCls="x-font-icon md-icon-check"/></ext-menuitem>
+            <ext-menu onready="selectandcopy.extensibleMenuReady">
+                <ext-menuitem text="x" onready="selectandcopy.menuItemReady"></ext-menuitem>
+                <ext-menuitem text="y" onready="selectandcopy.menuItemReady"/></ext-menuitem>
+                <ext-menuitem text="both" onready="selectandcopy.menuItemReady" iconCls="x-font-icon md-icon-check"/></ext-menuitem>
             </ext-menu>
         </ext-button>
     </ext-toolbar>
@@ -47,7 +47,7 @@
         selectable='{ "extensible": "both", "rows": true, "cells": true, "columns": true, "drag": true, "checkbox":true }'
         shadow="true"
         columnLines="true"
-        onready="selectandcopy.gridReady(event)"
+        onready="selectandcopy.gridReady"
       >
         <ext-column text="Year" dataIndex="year" flex="1" minWidth="75"></ext-column>
         <ext-column text="Jan" dataIndex="jan" width="75"></ext-column>
@@ -65,7 +65,7 @@
         <ext-panel docked="bottom" bodyPadding="15" height="35">
           <ext-container
             height="25"
-            onready="selectandcopy.infoContainerReady(event)"
+            onready="selectandcopy.infoContainerReady"
             style="fontSize:14px;font-weight:normal"
           >
           </ext-container>

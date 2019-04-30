@@ -1,17 +1,17 @@
 <ext-panel
   shadow="true"
-  onready="colorpicker.onPanelReady(event)"
+  onready="colorpicker.onPanelReady"
   layout="vbox"
   resizable="true" bodyPadding="10"
   autoSize="true"
 >
   <ext-colorselector
     color="#00ff00"
-    onready="colorpicker.mainColorPickerReady(event)"
-    onchange="colorpicker.OnSelChange(event)">
+    onready="colorpicker.mainColorPickerReady"
+    onchange="colorpicker.OnSelChange">
   </ext-colorselector>
   <ext-panel
-    onready="colorpicker.onTitleReady(event)"
+    onready="colorpicker.onTitleReady"
     title="Selected color: #00ff00"
     ui="light">
   </ext-panel>

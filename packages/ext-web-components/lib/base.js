@@ -306,8 +306,9 @@ export default class ExtBase extends HTMLElement {
       if (newVal) {
         //mjg check if this event exists for this component
         this.addEventListener(attr.slice(2), function(event) {
-          //eval(newVal + '(event)')
-          eval(newVal)
+          //console.dir(newVal)
+          eval(newVal + '(event)')
+          //eval(newVal)
         });
       } else {
         //delete this[attr];

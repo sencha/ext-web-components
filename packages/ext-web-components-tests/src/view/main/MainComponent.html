@@ -1,7 +1,7 @@
 <ext-panel layout="fit" bodyPadding="0">
 
   <ext-titlebar docked="top" weight="10">
-    <ext-button iconCls="x-fa fa-bars" onReady="main.toggleButtonReady(event)" onTap="main.toggleTree()"></ext-button>
+    <ext-button iconCls="x-fa fa-bars" onReady="main.toggleButtonReady" onTap="main.toggleTree()"></ext-button>
     <span extjs href="#" class="app-title">Sencha Ext Components 7.0 Test Suite</span>
   </ext-titlebar>
 
@@ -15,16 +15,16 @@
     collapsible='{"direction": "left"}'
     collapsed="false"
     width="300px"
-    onready="main.readyNavTreePanel(event)">
+    onready="main.readyNavTreePanel">
     <ext-treelist
       ui="nav"
       expanderFirst="false"
       expanderOnly="false"
-      onready="main.readyNavTreelist(event)"
-      onselectionchange="main.navTreelistSelectionChange(event)">
+      onready="main.readyNavTreelist"
+      onselectionchange="main.navTreelistSelectionChange">
     </ext-treelist>
   </ext-panel>
 
-  <ext-router hidden=false onready="main.readyRouter(event)" padding="2" style="overflow:scroll;"></ext-router>
+  <ext-router hidden=false onready="main.readyRouter" padding="2" style="overflow:scroll;"></ext-router>
   
 </ext-panel>

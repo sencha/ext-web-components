@@ -1,8 +1,8 @@
 <ext-grid
   title="the grid"
-  onready="columns.onGridReady(event)"
+  onready="columns.onGridReady"
 >
-  <ext-column text="Price" width="85" dataIndex="salary" formatter="usMoney" renderer="columns.renderer" onready="columns.onSurNameReady(event)">
+  <ext-column text="Price" width="85" dataIndex="salary" formatter="usMoney" renderer="columns.renderer" onready="columns.onSurNameReady">
   </ext-column>
 
 </ext-grid>
@@ -19,9 +19,9 @@
   width="700"
   height="400"
   shadow="true"
-      onready="columns.onGridReady(event)"
+      onready="columns.onGridReady"
 
-        <ext-column text="Name" width="150" dataIndex="surname" onready="columns.onSurNameReady(event)"></ext-column>
+        <ext-column text="Name" width="150" dataIndex="surname" onready="columns.onSurNameReady"></ext-column>
 
     
     <ext-column

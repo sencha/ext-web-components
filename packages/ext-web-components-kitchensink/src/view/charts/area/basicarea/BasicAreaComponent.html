@@ -2,7 +2,7 @@
   padding="10"
   height="100%"
   width="100%"
-  onready="basicarea.containerready(event)"
+  onready="basicarea.containerready"
   layout="fit">
   <ext-toolbar
     docked="top"
@@ -11,13 +11,13 @@
     padding="0 10 0 10"
   >
     <chart-toolbar
-      onItemReady="basicarea.onMenuItemReady(event)"
+      onItemReady="basicarea.onMenuItemReady"
       theme="default"
-      onRefreshButtonReady="basicarea.onRefreshButtonReady(event)" >
+      onRefreshButtonReady="basicarea.onRefreshButtonReady" >
     </chart-toolbar>
   </ext-toolbar>
   <ext-cartesian
-    onready="basicarea.cartesianready(event)"
+    onready="basicarea.cartesianready"
     downloadServerUrl="http://svg.sencha.io"
     shadow="true"
     insetPadding="25 35 0 10"

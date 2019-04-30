@@ -1,7 +1,7 @@
 <ext-container padding="10" layout="fit" fitToParent="true" height="100%">
     <ext-container padding="10" docked="top">
       <chart-toolbar
-        onItemReady="spie.onMenuItemReady(event)"
+        onItemReady="spie.onMenuItemReady"
         theme="default"
       >
       </chart-toolbar>
@@ -10,7 +10,7 @@
     <ext-polar downloadServerUrl ="http://svg.sencha.io"
       shadow="true"
       innerPadding="30"
-      onready="spie.onPolarReady(event)"
+      onready="spie.onPolarReady"
       legend='{ "type": "sprite", "docked": "bottom", "marker": { "size": "16" }}'
       interactions='["rotate", "itemhighlight"]'
       theme="default"

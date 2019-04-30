@@ -67,7 +67,7 @@ export default class ThreeDStackedComponent {
     tooltip.setHtml(sector + ': ' + value);
   }
 
-  cartesianready(event) {
+  cartesianReady(event) {
     this.cartesianCmp = event.detail.cmp;
     this.cartesianCmp.setStore(this.store);
     this.cartesianCmp.setTheme(this.theme);

@@ -1,7 +1,7 @@
 <ext-grid
     title="Ticker Grid"
     shadow="true"
-    onready="stockticker.onGridReady(event)"
+    onready="stockticker.onGridReady"
     height="100%"
 >
     <ext-column
@@ -43,7 +43,7 @@
       dataIndex="change"
       cell='{ "bodyStyle": { "padding": 0 } }'
       sortable="true"
-      onready="stockticker.changeColumnReady(event)"
+      onready="stockticker.changeColumnReady"
     >
     </ext-column>
     <ext-column
@@ -52,7 +52,7 @@
       dataIndex="pctChange"
       cell='{ "bodyStyle": { "padding": 0 } }'
       sortable="true"
-      onready="stockticker.percentChangeColumnReady(event)"
+      onready="stockticker.percentChangeColumnReady"
     >
     </ext-column>
     <ext-toolbar
@@ -65,20 +65,20 @@
         minValue="25"
         maxValue="2000"
         increment="10"
-        onChange="stockticker.onTickDelayChange(event)"
+        onChange="stockticker.onTickDelayChange"
         value="1000"
         flex="1"
       >
       </ext-sliderfield>
       <ext-container
         html="1000ms"
-        onready="stockticker.infoContainerReady(event)"
+        onready="stockticker.infoContainerReady"
       >
       </ext-container>
       <ext-checkboxfield
           margin="0"
           boxLabel="Flash background color on change"
-          onChange="stockticker.toggleFlashBackground(event)"
+          onChange="stockticker.toggleFlashBackground"
       >
       </ext-checkboxfield>
     </ext-toolbar>

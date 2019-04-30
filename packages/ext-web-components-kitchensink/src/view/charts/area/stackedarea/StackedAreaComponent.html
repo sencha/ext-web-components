@@ -2,19 +2,19 @@
   padding="10"
   width="100%"
   layout="fit"
-  onready="stackedarea.containerready(event)"
+  onready="stackedarea.containerready"
   height="100%">
   <ext-toolbar
     docked="top" ui="app-transparent-toolbar"
     shadow="false"
     padding="0 10 0 10">
   <chart-toolbar
-    onItemReady="stackedarea.onMenuItemReady(event)"
+    onItemReady="stackedarea.onMenuItemReady"
     theme="default">
   </chart-toolbar>
   </ext-toolbar>
   <ext-cartesian
-    onready="stackedarea.cartesianready(event)"
+    onready="stackedarea.cartesianready"
     downloadServerUrl="http://svg.sencha.io"
     shadow="true"
     insetPadding="20 20 10 10"

@@ -17,7 +17,7 @@
     </div>
     <ext-button
       iconCls="x-fa fa-bars"
-      onReady="main.toggleButtonReady(event)"
+      onReady="main.toggleButtonReady"
       onTap="main.toggleTree()"
     >
     </ext-button>
@@ -31,7 +31,7 @@
         valueField="id"
         matchFieldWidth="false"
         floatedPicker='{ "width": "500" }'
-        onready="main.comboboxReady(event)"
+        onready="main.comboboxReady"
         triggers='{
             "search": {
                 "type": "search",
@@ -50,15 +50,15 @@
     header="false"
     collapsible='{"direction": "left"}'
     width="200px"
-    onready="main.readyNavTreePanel(event)"
+    onready="main.readyNavTreePanel"
   >
     <ext-treelist
       ui="nav"
       expanderFirst="false"
       expanderOnly="false"
-      onready="main.readyNavTreelist(event)"
-      onselectionchange="main.navTreelistSelectionChange(event)">
+      onready="main.readyNavTreelist"
+      onselectionchange="main.navTreelistSelectionChange">
     </ext-treelist>
   </ext-panel>
-  <ext-router hidden=false onready="main.readyRouter(event)" padding="2"></ext-router>
+  <ext-router hidden=false onready="main.readyRouter" padding="2"></ext-router>
 </ext-panel>

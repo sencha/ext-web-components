@@ -160,7 +160,7 @@ export default class ExporterPluginComponent {
     this.pivotgrid.setPlugins(this.pivotgridPlugins);
     this.pivotgrid.setMatrix(this.pivotGridMatrix);
   }
-  onButtonReady(event){
+  onButtonReady(event) {
     this.button = event.detail.cmp;
     this.button.setHandler(this.showConfigurator.bind(this));
   }

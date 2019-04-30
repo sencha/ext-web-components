@@ -2,16 +2,16 @@
 
   <ext-container docked="top"><div #extitem>
     <chart-toolbar
-    onItemReady="withrenderer.onMenuItemReady(event)"
+    onItemReady="withrenderer.onMenuItemReady"
     theme="default"
-    onRefreshButtonReady="withrenderer.onRefreshButtonReady(event)"
+    onRefreshButtonReady="withrenderer.onRefreshButtonReady"
     onlyMidnight="true">
     </chart-toolbar>
   </div></ext-container>
 
   <ext-cartesian 
     downloadServerUrl ="http://svg.sencha.io"
-    onready="withrenderer.cartesianReady(event)"
+    onready="withrenderer.cartesianReady"
     width="800px"
     shadow="true"
     theme="default"

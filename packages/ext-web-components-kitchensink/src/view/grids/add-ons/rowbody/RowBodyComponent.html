@@ -2,7 +2,7 @@
   title="Row Body Grid"
   shadow="true"
   height="100%"
-  onready="rowbody.gridReady(event)"
+  onready="rowbody.gridReady"
 >
   <ext-column
     text="Company"
@@ -11,7 +11,6 @@
   >
   </ext-column>
   <ext-column
-    id="price"
     text="Price"
     dataIndex="price"
     width="75"
@@ -22,13 +21,13 @@
     text="Change"
     width="100"
     dataIndex="priceChange"
-    onready="rowbody.changeColumnReady(event)"
+    onready="rowbody.changeColumnReady"
   >
   </ext-column>
   <ext-column
     text="% Change"
     dataIndex="priceChangePct"
-    onready="rowbody.percentChangeColumnReady(event)"
+    onready="rowbody.percentChangeColumnReady"
   >
   </ext-column>
   <ext-column

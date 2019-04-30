@@ -58,7 +58,7 @@ export default class WizardComponent {
       `);
   }
 
-  segmentedbuttonready(event) {
+  segmentedbuttonReady(event) {
     this.segmentedbuttonCmp = event.detail.cmp;
     this.segmentedbuttonCmp.setValue(this.tapMode);
   }
@@ -80,7 +80,7 @@ export default class WizardComponent {
     this.indicatorCmp.setActiveIndex(0);
   }
 
-  panelready(event) {
+  panelReady(event) {
     this.panelCmp = event.detail.cmp;
   }
 

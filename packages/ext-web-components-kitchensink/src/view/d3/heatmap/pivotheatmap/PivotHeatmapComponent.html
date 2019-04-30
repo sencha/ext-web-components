@@ -2,10 +2,10 @@
   <ext-panel layout="fit" height="100%">
     <ext-toolbar docked="top">
       <ext-spacer></ext-spacer>
-      <ext-button iconCls="x-fa fa-refresh" onready="pivotheatmap.onRefreshButtonReady(event)" text="Refresh Data"></ext-button>
+      <ext-button iconCls="x-fa fa-refresh" onready="pivotheatmap.onRefreshButtonReady" text="Refresh Data"></ext-button>
     </ext-toolbar>
     <ext-pivotheatmap 
-      onready="pivotheatmap.onPivotReady(event)"
+      onready="pivotheatmap.onPivotReady"
       padding="20 30 70 120"
       xAxis='{
         "title": {

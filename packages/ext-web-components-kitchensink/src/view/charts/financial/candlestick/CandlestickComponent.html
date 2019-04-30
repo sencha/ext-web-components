@@ -10,18 +10,18 @@
     shadow="false"
     padding="0 10 0 10">
     <chart-toolbar
-      onItemReady="candlestick.onMenuItemReady(event)"
+      onItemReady="candlestick.onMenuItemReady"
       theme="default"
-      onRefreshButtonReady="candlestick.onRefreshButtonReady(event)"
-      onZoomButtonReady="candlestick.onZoomButtonReady(event)"
-      onPanButtonReady="candlestick.onPanButtonReady(event)"
-      onCrosshairButtonReady="candlestick.onCrosshairButtonReady(event)"
+      onRefreshButtonReady="candlestick.onRefreshButtonReady"
+      onZoomButtonReady="candlestick.onZoomButtonReady"
+      onPanButtonReady="candlestick.onPanButtonReady"
+      onCrosshairButtonReady="candlestick.onCrosshairButtonReady"
       style="width: 100%;"
       onlyMidnight="true">
     </chart-toolbar>
   </ext-toolbar>
   <ext-cartesian
-    onready="candlestick.cartesianready(event)"
+    onready="candlestick.cartesianready"
     downloadServerUrl="http://svg.sencha.io"
     shadow="true">
   </ext-cartesian>

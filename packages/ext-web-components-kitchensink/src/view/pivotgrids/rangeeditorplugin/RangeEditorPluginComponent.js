@@ -45,12 +45,12 @@ export default class RangeEditorPluginComponent {
 
   }
 
-  onButtonReady1(event){
+   onButtonReady1(event) {
     this.button1 = event.detail.cmp;
     this.button1.setHandler(this.expandAll.bind(this));
   }
 
-  onButtonReady2(event){
+   onButtonReady2(event) {
     this.button2 = event.detail.cmp;
     this.button2.setHandler(this.collapseAll.bind(this));
   }

@@ -31,7 +31,7 @@
     >
       <ext-list
         height="100%"
-        onready="schedule.firstListReady(event)"
+        onready="schedule.firstListReady"
         hideMode="offsets"
         grouped="true"
         rowLines="true"
@@ -42,7 +42,7 @@
         infinite="true"
         variableHeights="true"
         emptyText="No events found."
-        onItemTap="schedule.onItemTap(event)"
+        onItemTap="schedule.onItemTap"
       >
       </ext-list>
     </ext-panel>
@@ -52,7 +52,7 @@
     >
       <ext-list
         height="100%" 
-        onready="schedule.secondListReady(event)"
+        onready="schedule.secondListReady"
         hideMode="offsets"
         grouped="true"
         rowLines="true"
@@ -62,7 +62,7 @@
         infinite="true"
         variableHeights="true"
         emptyText="No events found."
-        onItemTap="schedule.onItemTap(event)"
+        onItemTap="schedule.onItemTap"
       >
       </ext-list>
     </ext-panel>
@@ -72,7 +72,7 @@
     >
       <ext-list
       height="100%"
-        onready="schedule.thirdListReady(event)"
+        onready="schedule.thirdListReady"
         hideMode="offsets"
         grouped="true"
         rowLines="true"
@@ -82,7 +82,7 @@
         infinite="true"
         variableHeights="true"
         emptyText="No events found."
-        onItemTap="schedule.onItemTap(event)"
+        onItemTap="schedule.onItemTap"
       >
       </ext-list>
     </ext-panel>
@@ -92,7 +92,7 @@
     >
       <ext-list
       height="100%"
-        onready="schedule.starListReady(event)"
+        onready="schedule.starListReady"
         hideMode="offsets"
         grouped="true"
         rowLines="true"
@@ -103,7 +103,7 @@
         variableHeights="true"
         emptyText="No events found."
         tab='{ "maxWidth": "60" }'
-        onItemTap="schedule.onItemTap(event)"
+        onItemTap="schedule.onItemTap"
       >
       </ext-list>
     </ext-panel>
@@ -113,8 +113,8 @@
       padding="20",
       header="true"
       hidden="true"
-      onready="schedule.panelready(event)"
+      onready="schedule.panelready"
   >
-    <ext-container onready="schedule.containerready2(event)"></ext-container>
+    <ext-container onready="schedule.containerready2"></ext-container>
 </ext-panel>
 </ext-container>

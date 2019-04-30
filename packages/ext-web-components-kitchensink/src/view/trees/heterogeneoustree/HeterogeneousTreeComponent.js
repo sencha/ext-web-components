@@ -116,13 +116,13 @@ export default class HeterogeneousTreeComponent {
     }
   };
 
-  onFieldAction(event) {
+   onFieldAction(event) {
     if (event.e.ENTER === event.e.getKey()) {
       this.addItem();
     }
   };
 
-  onSelectionChange(event) {
+   onSelectionChange(event) {
     var button = this.buttonField;
     var selection = event.detail.selected;
     if (selection.length) {

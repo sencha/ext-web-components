@@ -10,13 +10,13 @@
     shadow="false"
     padding="0 10 0 10">
     <chart-toolbar
-      onItemReady="boxplot.onMenuItemReady(event)"
+      onItemReady="boxplot.onMenuItemReady"
       onlyMidnight="true"
       theme="default">
     </chart-toolbar>
   </ext-toolbar>
   <ext-cartesian
-    onready="boxplot.cartesianready(event)"
+    onready="boxplot.cartesianready"
     downloadServerUrl="http://svg.sencha.io"
     shadow="true"
     captions='{ "title": { "text": "Age of Nobel Prize winners by field\n1901 to 2014" } }'

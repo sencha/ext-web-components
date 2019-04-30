@@ -6,9 +6,9 @@
       padding="0 10 0 10"
     >
     <chart-toolbar
-      onItemReady="navigation.onMenuItemReady(event)"
-      onZoomButtonReady="navigation.onZoomButtonReady(event)"
-      onPanButtonReady="navigation.onPanButtonReady(event)"
+      onItemReady="navigation.onMenuItemReady"
+      onZoomButtonReady="navigation.onZoomButtonReady"
+      onPanButtonReady="navigation.onPanButtonReady"
       theme="default"
       style="width: 100%;"
     >
@@ -19,7 +19,7 @@
     ref="navigator"
     navigator='{"axis": "bottom"}'
     height="100%"
-    onready="navigation.onNavigatorReady(event)"
+    onready="navigation.onNavigatorReady"
     chart='{
       "xtype": "cartesian",
       "reference": "chart",

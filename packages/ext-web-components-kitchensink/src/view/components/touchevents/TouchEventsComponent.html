@@ -27,17 +27,17 @@
         scrollable="true"
         bodyPadding="10"
         shadow="true"
-        onready="touchevents.panelReady(event)"
+        onready="touchevents.panelReady"
       >
         <ext-dataview
           centered="false"
-          onready="touchevents.dataviewReady(event)">
+          onready="touchevents.dataviewReady">
         </ext-dataview>
       </ext-panel>
     </ext-container>
     <ext-container
       html="Touch Here"
-      onready="touchevents.touchpadReady(event)"
+      onready="touchevents.touchpadReady"
       flex="1"
       layout='{"type":"vbox", "pack":"center", "align":"stretch"}'
     >

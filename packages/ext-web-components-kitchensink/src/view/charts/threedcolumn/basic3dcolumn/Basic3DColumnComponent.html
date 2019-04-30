@@ -10,14 +10,14 @@
     shadow="false"
     padding="0 10 0 10">
     <chart-toolbar
-      onItemReady="basic3dcolumn.onMenuItemReady(event)"
-      onThemeChange="basic3dcolumn.onThemeChange(event)"
+      onItemReady="basic3dcolumn.onMenuItemReady"
+      onThemeChange="basic3dcolumn.onThemeChange"
       theme="default"
-      onRefreshButtonReady="basic3dcolumn.onRefreshButtonReady(event)">
+      onRefreshButtonReady="basic3dcolumn.onRefreshButtonReady">
     </chart-toolbar>
   </ext-toolbar>
   <ext-cartesian
-    onready="basic3dcolumn.cartesianready(event)"
+    onready="basic3dcolumn.cartesianready"
     downloadServerUrl="http://svg.sencha.io"
     shadow="true">
   </ext-cartesian>

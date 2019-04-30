@@ -59,7 +59,7 @@ export class ExtCalendar_form_addComponent extends ExtBase {
 	get enctype(){return this.getAttribute('enctype')};set enctype(enctype){this.setAttribute('enctype',enctype)}
 	get endDateField(){return this.getAttribute('endDateField')};set endDateField(endDateField){this.setAttribute('endDateField',endDateField)}
 	get endTimeField(){return this.getAttribute('endTimeField')};set endTimeField(endTimeField){this.setAttribute('endTimeField',endTimeField)}
-	get event(){return this.getAttribute('event')};set event(event){this.setAttribute('event',event)}
+	get event(){return this.getAttribute('event')};set event{this.setAttribute('event',event)}
 	get fieldSeparators(){return this.getAttribute('fieldSeparators')};set fieldSeparators(fieldSeparators){this.setAttribute('fieldSeparators',fieldSeparators)}
 	get flex(){return this.getAttribute('flex')};set flex(flex){this.setAttribute('flex',flex)}
 	get floated(){return this.getAttribute('floated')};set floated(floated){this.setAttribute('floated',floated)}
@@ -694,7 +694,7 @@ export class ExtCalendar_form_addComponent extends ExtBase {
 		{ name:'isHidden',function: function(deep) { return this.ext.isHidden(deep) } },
 		{ name:'isPainted',function: function() { return this.ext.isPainted() } },
 		{ name:'isRendered',function: function() { return this.ext.isRendered() } },
-		{ name:'isSuspended',function: function(event) { return this.ext.isSuspended(event) } },
+		{ name:'isSuspended',function: function() { return this.ext.isSuspended } },
 		{ name:'isSyncing',function: function(name) { return this.ext.isSyncing(name) } },
 		{ name:'isValid',function: function() { return this.ext.isValid() } },
 		{ name:'isVisible',function: function(deep) { return this.ext.isVisible(deep) } },
@@ -738,7 +738,7 @@ export class ExtCalendar_form_addComponent extends ExtBase {
 		{ name:'onScrollMove',function: function(x,y) { return this.ext.onScrollMove(x,y) } },
 		{ name:'onScrollStart',function: function(x,y) { return this.ext.onScrollStart(x,y) } },
 		{ name:'onStatefulChange',function: function() { return this.ext.onStatefulChange() } },
-		{ name:'onSubmit',function: function(event) { return this.ext.onSubmit(event) } },
+		{ name:'onSubmit',function: function() { return this.ext.onSubmit } },
 		{ name:'owns',function: function(element) { return this.ext.owns(element) } },
 		{ name:'persistState',function: function() { return this.ext.persistState() } },
 		{ name:'preprocessShow',function: function(component,alignment,options) { return this.ext.preprocessShow(component,alignment,options) } },

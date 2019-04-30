@@ -286,7 +286,7 @@ export class ExtTreelistitemComponent extends ExtBase {
 		{ name:'isHeighted',function: function() { return this.ext.isHeighted() } },
 		{ name:'isHidden',function: function(deep) { return this.ext.isHidden(deep) } },
 		{ name:'isSelectionEvent',function: function(e) { return this.ext.isSelectionEvent(e) } },
-		{ name:'isSuspended',function: function(event) { return this.ext.isSuspended(event) } },
+		{ name:'isSuspended',function: function() { return this.ext.isSuspended } },
 		{ name:'isSyncing',function: function(name) { return this.ext.isSyncing(name) } },
 		{ name:'isToggleEvent',function: function(e) { return this.ext.isToggleEvent(e) } },
 		{ name:'isVisible',function: function(deep) { return this.ext.isVisible(deep) } },

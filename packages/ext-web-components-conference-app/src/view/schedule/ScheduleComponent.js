@@ -30,7 +30,7 @@ export default class ScheduleComponent {
     this.record = null;
   }
 
-  panelready(event) {
+  panelReady(event) {
     this.containerCmp = event.detail.cmp;
     
   }
@@ -53,7 +53,7 @@ export default class ScheduleComponent {
     }
   }
 
-  onItemTap(event) {
+  onItemTap {
     this.record = event.detail.record.data;
 
     if (this.containerCmp.getHidden()) {
@@ -63,7 +63,7 @@ export default class ScheduleComponent {
     this.containerCmp2.setData(this.record);
   }
 
-  onFavoriteClick(event) {
+  onFavoriteClick {
     const data_id = event.currentTarget.dataset.id;
     Ext.get(event.target).ripple(event, { bound: false, color: '#999' });
     const record = this.store.findRecord('id', data_id);
@@ -99,7 +99,7 @@ export default class ScheduleComponent {
                           <div class="app-list-item-details">{[(values.date).match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time}</div> 
                       </div>
                       <div
-                          onclick="schedule.onFavoriteClick(event)"
+                          onclick="schedule.onFavoriteClick"
                           data-favorite={[ values.favorite ? "on" : "off" ]}
                           data-id="{id}"
                           class="x-item-no-tap x-font-icon md-icon-star app-list-tool app-favorite"
@@ -126,7 +126,7 @@ export default class ScheduleComponent {
                           <div class="app-list-item-details">{[(values.date).match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time}</div> 
                       </div>
                       <div
-                        onclick="schedule.onFavoriteClick(event)"
+                        onclick="schedule.onFavoriteClick"
                         data-id="{id}"
                         data-favorite={[ values.favorite ? "on" : "off" ]}
                     class="x-item-no-tap x-font-icon md-icon-star app-list-tool app-favorite"
@@ -153,7 +153,7 @@ export default class ScheduleComponent {
                           <div class="app-list-item-details">{[(values.date).match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time}</div> 
                     </div>
                     <div
-                      onclick="schedule.onFavoriteClick(event)"
+                      onclick="schedule.onFavoriteClick"
                       data-id="{id}"
                       data-favorite={[ values.favorite ? "on" : "off" ]}
                       class="x-item-no-tap x-font-icon md-icon-star app-list-tool app-favorite"
@@ -184,7 +184,7 @@ export default class ScheduleComponent {
                           <div class="app-list-item-details">{[(values.date).match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time}</div> 
                     </div>
                     <div
-                      onclick="schedule.onFavoriteClick(event)"
+                      onclick="schedule.onFavoriteClick"
                       data-id="{id}"
                       data-favorite={[ values.favorite ? "on" : "off" ]}
                       class="x-item-no-tap x-font-icon md-icon-star app-list-tool app-favorite"

@@ -3,12 +3,12 @@
   grouped="true"
   shadow="true"
   height="100%"
-  onready="gridtools.onGridReady(event)"
+  onready="gridtools.onGridReady"
   itemConfig='{
     "header":{
       "tools":{
         "refresh":  {
-          "handler": "gridtools.groupRefresh(event)"
+          "handler": "gridtools.groupRefresh"
         },
         "print": {
           "handler": "this.onGroupPrint",
@@ -28,7 +28,7 @@
     dataIndex="name"
     flex="1"
     maxWidth="200"
-    onready="gridtools.firstColumnReady(event)"
+    onready="gridtools.firstColumnReady"
   >
   </ext-column>
   <ext-column
@@ -36,13 +36,13 @@
     dataIndex="cuisine"
     flex="1"
     maxWidth="150"
-    onready="gridtools.secondColumnReady(event)"
+    onready="gridtools.secondColumnReady"
   >
   </ext-column>
   <ext-column
     text="Actions"
     width="80"
-    onready="gridtools.thirdColumnReady(event)"
+    onready="gridtools.thirdColumnReady"
   >
   </ext-column>
 </ext-grid>

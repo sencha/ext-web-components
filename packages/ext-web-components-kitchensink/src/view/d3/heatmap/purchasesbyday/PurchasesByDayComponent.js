@@ -28,7 +28,7 @@ export default class PurchasesByDayComponent {
     };
   }
 
-  onHeatMapReady(event){
+  onHeatMapReady(event) {
     this.heatmap = event.detail.cmp;
     const tooltip = {
         "renderer": this.onTooltip.bind(this)

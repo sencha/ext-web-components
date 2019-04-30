@@ -3,7 +3,7 @@ import './RowBodyComponent.html';
 import model from '../../data/CompanyModel';
 
 export default class RowBodyComponent {
-  constructor () {}
+//  constructor () {};
 
   gridReady(event) {
     const store = Ext.create('Ext.data.Store', {

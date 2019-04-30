@@ -3,7 +3,7 @@
   shadow="true"
   height="100%"
   plugins="gridviewoptions"
-  onready="viewoptions.gridReady(event)"
+  onready="viewoptions.gridReady"
 >
   <ext-toolbar docked="top">
     <div style="fontSize: '14px', fontWeight: 'normal'">
@@ -41,13 +41,13 @@
     text="Change"
     width="100"
     dataIndex="priceChange"
-    onready="viewoptions.changeColumnReady(event)"
+    onready="viewoptions.changeColumnReady"
   >
   </ext-column>
   <ext-column
     text="% Change"
     dataIndex="priceChangePct"
-    onready="viewoptions.percentChangeColumnReady(event)"
+    onready="viewoptions.percentChangeColumnReady"
   >
   </ext-column>
   <ext-column

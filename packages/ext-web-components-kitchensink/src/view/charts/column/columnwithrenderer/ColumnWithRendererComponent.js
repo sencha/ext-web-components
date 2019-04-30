@@ -25,7 +25,7 @@ export default class ColumnWithRendererComponent {
 
   }
 
-  cartesianready(event) {
+  cartesianReady(event) {
     this.cartesianCmp = event.detail.cmp;
     this.cartesianCmp.setStore(this.store);
     this.cartesianCmp.setAxes([{

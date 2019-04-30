@@ -74,7 +74,7 @@ export default class CollapsibleComponent {
     this.menu.on('click',this.onCollapsibleChange.bind(this));
   }
 
-  onReadyMenuItem(event){
+  onReadyMenuItem(event) {
     this.menuItem = event.detail.cmp;
     this.menuItems.push(this.menuItem);
   }

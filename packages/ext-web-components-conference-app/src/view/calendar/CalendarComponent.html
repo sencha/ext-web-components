@@ -14,7 +14,7 @@
         height="100%"
     >
         <ext-calendar-days
-            onready= "calendar.calendarReady(event)"
+            onready= "calendar.calendarReady"
             visibleDays="3"
             startTime="7"
             endTime="22"
@@ -29,7 +29,7 @@
             resizeEvents="false"
             gestureNavigation="false"
             allowSelection="false"
-            onEventTap="calendar.onTap(event)"
+            onEventTap="calendar.onTap"
             flex="1"
         >
         </ext-calendar-days>
@@ -39,7 +39,7 @@
             scrollable="true"
             width="100%"
             height="100%"
-            onready="calendar.sidePanelReady(event)"
+            onready="calendar.sidePanelReady"
         >
         </ext-panel>
     </ext-panel>

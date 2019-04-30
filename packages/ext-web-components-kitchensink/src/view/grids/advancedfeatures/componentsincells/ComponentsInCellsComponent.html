@@ -2,7 +2,7 @@
   title="Stock Prices"
   shadow="true"
   grouped="true"
-  onready="componentsincells.onGridReady(event)"
+  onready="componentsincells.onGridReady"
   height="100%"
 >
   <ext-column
@@ -22,20 +22,20 @@
     text="Change"
     width="100"
     dataIndex="priceChange"
-    onready="componentsincells.changeColumnReady(event)"
+    onready="componentsincells.changeColumnReady"
   >
   </ext-column>
   <ext-column
     text="% Change"
     dataIndex="priceChangePct"
-    onready="componentsincells.percentChangeColumnReady(event)"
+    onready="componentsincells.percentChangeColumnReady"
   >
   </ext-column>
   <ext-column
     text="Actions"
     flex="1"
     minWidth="210"
-    onready="componentsincells.onLastGrid(event)"
+    onready="componentsincells.onLastGrid"
   >
   </ext-column>
 </ext-grid>

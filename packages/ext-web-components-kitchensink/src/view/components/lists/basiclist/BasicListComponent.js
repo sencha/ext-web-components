@@ -3,7 +3,7 @@ import './BasicListComponent.html';
 export default class BasicListComponent {
   constructor () {}
 
-  onItemReady(event){
+  onItemReady(event) {
     this.theListview = event.detail.cmp;
     const tpl =
     `<div>

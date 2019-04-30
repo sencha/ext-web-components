@@ -146,7 +146,15 @@ export class ExtRouterComponent extends HTMLElement {
     if (attr == 'onready') {
       if (newVal) {
 //mjg check if this event exists for this component
-        this.addEventListener(attr.slice(2), function() {eval(newVal)});
+        //this.addEventListener(attr.slice(2), function() {eval(newVal)});
+
+        this.addEventListener(attr.slice(2), function(event) {
+          //console.dir(newVal)
+          eval(newVal + '(event)')
+          //eval(newVal)
+        });
+
+
       } else {
         //delete this[attr];
         //this.removeEventListener(attr.slice(2), this);

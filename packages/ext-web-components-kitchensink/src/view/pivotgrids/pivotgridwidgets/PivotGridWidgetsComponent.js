@@ -73,7 +73,7 @@ export default class PivotGridWidgetsComponent {
     this.button3.setHandler(this.removeData.bind(this));
   }
 
-  onButtonReady4(event) {
+   onButtonReady4(event) {
     this.button4 = event.detail.cmp;
     this.button4.setHandler(this.clearData.bind(this));
   }

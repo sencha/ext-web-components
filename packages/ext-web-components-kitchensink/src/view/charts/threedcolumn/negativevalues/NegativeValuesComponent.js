@@ -45,7 +45,7 @@ export default class NegativeValuesComponent {
     }
   }
 
-  cartesianready(event) {
+  cartesianReady(event) {
     this.cartesianCmp = event.detail.cmp;
     this.cartesianCmp.setAxes([{
       type: 'numeric3d',

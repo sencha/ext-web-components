@@ -1,8 +1,8 @@
 <ext-container padding="10" layout="fit" fitToParent="true" height="100%">
   <ext-container padding="10" docked="top">
     <chart-toolbar
-      onItemReady="threedpie.onMenuItemReady(event)"
-      onRefreshButtonReady="threedpie.onRefreshButtonReady(event)"
+      onItemReady="threedpie.onMenuItemReady"
+      onRefreshButtonReady="threedpie.onRefreshButtonReady"
       theme="default"
     >
     </chart-toolbar>
@@ -11,7 +11,7 @@
   <ext-polar downloadServerUrl ="http://svg.sencha.io"
     shadow="true"
     innerPadding="60"
-    onready="threedpie.onPolarReady(event)"
+    onready="threedpie.onPolarReady"
     interactions="rotatePie3d"
     animation='{ "duration": "500", "easing": "easeIn"}'
     theme="default"

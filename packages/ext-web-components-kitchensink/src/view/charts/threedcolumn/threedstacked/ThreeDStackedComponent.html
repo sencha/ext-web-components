@@ -10,15 +10,15 @@
     shadow="false"
     padding="0 10 0 10">
     <chart-toolbar
-    onItemReady="threedstacked.onMenuItemReady(event)"
-    onStackButtonReady="threedstacked.onStackButtonReady(event)"
-    onGroupButtonReady="threedstacked.onGroupButtonReady(event)"
+    onItemReady="threedstacked.onMenuItemReady"
+    onStackButtonReady="threedstacked.onStackButtonReady"
+    onGroupButtonReady="threedstacked.onGroupButtonReady"
     style="width: 100%;"
     theme="default">
     </chart-toolbar>
   </ext-toolbar>
   <ext-cartesian
-  onready="threedstacked.cartesianready(event)"
+  onready="threedstacked.cartesianready"
     downloadServerUrl="http://svg.sencha.io"
     shadow="true"
     interactions="itemhighlight"
