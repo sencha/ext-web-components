@@ -1,5 +1,5 @@
 import './ReconfigureGridComponent.html';
-import model from './GridModel';
+import model from '../../data/GridModel';
 
 export default class ReconfigureGridComponent {
   constructor () {

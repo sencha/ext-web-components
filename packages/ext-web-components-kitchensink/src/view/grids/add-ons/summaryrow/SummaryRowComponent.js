@@ -1,6 +1,6 @@
 import './SummaryRowComponent.html';
 import './SummaryRowComponent.scss';
-import model from '../../CompanyModel.js';
+import model from '../../data/CompanyModel';
 
 Ext.require([
     'Ext.grid.plugin.SummaryRow',

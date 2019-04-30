@@ -1,4 +1,4 @@
-export default Ext.define('KitchenSink.model.Company', {
+export default Ext.define('KitchenSink.data.CompanyModel', {
     extend: 'Ext.data.Model',
     requires: [
         'Ext.data.proxy.Rest'

@@ -1,5 +1,5 @@
 import './SelectAndCopyComponent.html';
-import createStore from './createStore.js';
+import createStore from './SelectAndCopyComponentData.js';
 
 Ext.require([ 'Ext.grid.plugin.Clipboard']);
 

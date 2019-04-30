@@ -1,6 +1,6 @@
 import './RowBodyComponent.scss';
 import './RowBodyComponent.html';
-import model from '../../CompanyModel';
+import model from '../../data/CompanyModel';
 
 export default class RowBodyComponent {
   constructor () {}

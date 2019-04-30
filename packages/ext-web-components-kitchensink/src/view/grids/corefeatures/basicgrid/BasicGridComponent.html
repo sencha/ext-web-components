@@ -1,8 +1,48 @@
 <ext-panel width="100%" height="100%">
   <ext-grid width="100%" height="100%"
+    multiColumnSort=true
     onready="basicgrid.readyGrid(event)"
     shadow=true
-    columns='[
+  >
+    <ext-column
+      text="Company"
+      flex="1"
+      dataIndex="name"
+    >
+    </ext-column>
+    <ext-column
+      text="Price"
+      width="85"
+      dataIndex="price"
+      formatter="usMoney"
+    >
+    </ext-column>
+    <ext-column
+      text="Change"
+      width="100"
+      dataIndex="priceChange"
+      renderer="basicgrid.renderSign"
+    >
+    </ext-column>
+    <ext-column
+      text="% Change"
+      dataIndex="priceChangePct"
+      renderer="basicgrid.renderSign.bind(this)"
+    >
+      <ext-renderercell renderer="basicgrid.renderSign.bind(this,'0.00')"></ext-renderercell>
+    </ext-column>
+    <ext-column
+      text="Last Updated"
+      width="125"
+      dataIndex="lastChange"
+      formatter='date("m/d/Y")'
+    >
+    </ext-column>
+  </ext-grid>
+</ext-panel>
+
+
+    <!-- columns='[
       {"text":"employeeNo","dataIndex":"employeeNo"},
       {"text":"rating","dataIndex":"rating"},
       {"text":"salary","dataIndex":"salary"},
@@ -16,6 +56,4 @@
       {"text":"holidayDays","dataIndex":"holidayDays"},
       {"text":"holidayAllowance","dataIndex":"holidayAllowance"},
       {"text":"noticePeriod","dataIndex":"noticePeriod"}
-    ]'>
-  </ext-grid>
-</ext-panel>
+    ]'-->

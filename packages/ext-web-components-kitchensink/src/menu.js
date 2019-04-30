@@ -318,7 +318,7 @@ export default function getMenu() {
       { text: 'Drag Resize Validation', component: CalendarDragResizeValidationComponent, iconCls: 'icon-calendar-validation' }
     ]},
 
-    { text: 'Charts', premium: true, premiumClass: 'x-fa fa-star app-premium-indicator', iconCls: 'icon-charts', children: [
+    { text: 'Charts', premium: false, iconCls: 'icon-charts', children: [
       { text: 'Area', iconCls: 'icon-area-basic', children: [
         { text: 'Basic Area', component: BasicAreaComponent, iconCls: 'icon-area-basic' },
         { text: 'Stacked Area', component: StackedAreaComponent, iconCls: 'icon-area-stacked'},
@@ -381,7 +381,7 @@ export default function getMenu() {
       ] }
     ]},
 
-    { text: 'D3', premium: true, premiumClass: 'x-fa fa-star app-premium-indicator', iconCls: 'icon-d3', children: [
+    { text: 'D3', premium: false,iconCls: 'icon-d3', children: [
       { text: 'Heatmap', iconCls: 'icon-d3-heatmap', children: [
         { text: 'Purchases By Day', component: PurchasesByDayComponent, iconCls: 'icon-d3-view-heatmap-purchases' },
         { text: 'Sales Per Employee', component: SalesPerEmployeeComponent, iconCls: 'icon-d3-view-heatmap-sales' },
@@ -400,7 +400,7 @@ export default function getMenu() {
       ]}
     ]},
 
-    { text: 'Pivot Grids', premium: true, premiumClass: 'x-fa fa-star app-premium-indicator', iconCls: 'icon-pivot-grids', children: [
+    { text: 'Pivot Grids', premium: false, iconCls: 'icon-pivot-grids', children: [
       { text: 'Outline Layout', component: OutlineLayoutComponent, iconCls: 'icon-outline-pivot-grid' },
       { text: 'Compact Layout', component: CompactLayoutComponent, iconCls: 'icon-compact-pivot-grid' },
       { text: 'Tabular Layout', component: TabularLayoutComponent, iconCls: 'icon-tabular-pivot-grid' },

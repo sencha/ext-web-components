@@ -1,6 +1,6 @@
 import './ViewOptionsComponent.scss';
 import './ViewOptionsComponent.html';
-import model from '../../CompanyModel';
+import model from '../../data/CompanyModel';
 
 Ext.require(['Ext.grid.plugin.ViewOptions']);
 

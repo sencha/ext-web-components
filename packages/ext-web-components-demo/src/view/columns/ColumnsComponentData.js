@@ -1,4 +1,4 @@
-export class BasicGridComponentData {
+export class ColumnsComponentData {
 
   data = []
 

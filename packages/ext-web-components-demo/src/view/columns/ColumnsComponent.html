@@ -1,0 +1,57 @@
+<ext-grid
+  title="the grid"
+  onready="columns.onGridReady(event)"
+>
+  <ext-column text="Price" width="85" dataIndex="salary" formatter="usMoney" renderer="columns.renderer" onready="columns.onSurNameReady(event)">
+  </ext-column>
+
+</ext-grid>
+
+  <!-- 
+    <ext-renderercell renderer="columns.renderer"></ext-renderercell>
+
+
+        <ext-column text="Price" width="85" dataIndex="salary" formatter="usMoney"></ext-column>
+    <ext-column text="DOB" width="125" dataIndex="dob" formatter='date("m/d/Y")'></ext-column>
+
+      left="10"
+  top="10"
+  width="700"
+  height="400"
+  shadow="true"
+      onready="columns.onGridReady(event)"
+
+        <ext-column text="Name" width="150" dataIndex="surname" onready="columns.onSurNameReady(event)"></ext-column>
+
+    
+    <ext-column
+  text="Change"
+  width="100"
+  dataIndex="priceChange"
+  cell={encodeHtml:false}
+  renderer="this.renderSign.bind(this,'0.00')">
+</ext-column>
+<ext-column
+  text="% Change"
+  dataIndex="priceChangePct"
+  cell={encodeHtml:false}
+  renderer="this.renderSign.bind(this,'0.00')">
+</ext-column> -->
+
+
+
+  <!-- columns='[
+  {"text":"employeeNo","dataIndex":"employeeNo","cell": {"xtype": "renderercell", "renderer":"columns.renderer"}},
+  {"text":"rating","dataIndex":"rating"},
+  {"text":"salary","dataIndex":"salary"},
+  {"text":"forename","dataIndex":"forename"},
+  {"text":"surname","dataIndex":"surname"},
+  {"text":"email","dataIndex":"email"},
+  {"text":"department","dataIndex":"department"},
+  {"text":"dob","dataIndex":"dob","width":200},
+  {"text":"joinDate","dataIndex":"joinDate"},
+  {"text":"sickDays","dataIndex":"sickDays"},
+  {"text":"holidayDays","dataIndex":"holidayDays"},
+  {"text":"holidayAllowance","dataIndex":"holidayAllowance"},
+  {"text":"noticePeriod","dataIndex":"noticePeriod"}
+]' -->

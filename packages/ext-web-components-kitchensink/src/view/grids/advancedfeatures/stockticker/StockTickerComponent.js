@@ -1,6 +1,6 @@
 import './Ticker.scss';
 import './StockTickerComponent.html';
-import model from '../../CompanyModel';
+import model from '../../data/CompanyModel';
 
 export default class StockTickerComponent {
   constructor () {

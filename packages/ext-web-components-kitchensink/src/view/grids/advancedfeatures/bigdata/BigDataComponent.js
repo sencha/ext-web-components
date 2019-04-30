@@ -1,7 +1,7 @@
 import './BigDataComponent.scss';
 import './BigDataComponent.html';
-import model from './GridModel';
-import './BigDataService.js';
+import model from '../../data/GridModel';
+import '../../data/BigData';
 
 Ext.require([
   'Ext.grid.plugin.*',

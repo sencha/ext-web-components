@@ -1,3 +1,4 @@
+
 export default Ext.define('ReconfigureGridModel', {
     extend: 'Ext.data.Model',
     fields: [{

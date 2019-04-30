@@ -1,5 +1,6 @@
 import './GridFilteringComponent.html';
-import model from '../../CompanyModel';
+import model from '../../data/CompanyModel';
+import '../../data/BigData';
 
 Ext.require([
     'Ext.grid.filters.*'

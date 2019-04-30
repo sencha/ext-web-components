@@ -1025,7 +1025,8 @@ function shuffle (array) {
 Ext.ux.ajax.SimManager.register({
     type: 'json',
     delay: 300,
-    url: /\/KitchenSink\/Company(\/\d+)?/,
+    url: '/KitchenSink/Stocks',
+    //url: /\/KitchenSink\/Stocks(\/\d+)?/,
 
     data: function(ctx) {
         var idPart = ctx.url.match(this.url)[1],

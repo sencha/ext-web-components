@@ -1,6 +1,6 @@
 import './RowExpanderComponent.html';
 import './RowExpanderComponent.scss';
-import model from '../../CompanyModel.js';
+import model from '../../data/CompanyModel';
 
 Ext.require(['Ext.grid.plugin.RowExpander']);
 

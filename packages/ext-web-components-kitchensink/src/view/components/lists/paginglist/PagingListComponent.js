@@ -1,5 +1,5 @@
 import './PagingListComponent.html';
-import '../stocks.js';
+//import '../stocks.js';
 
 Ext.require('Ext.plugin.ListPaging');
 
