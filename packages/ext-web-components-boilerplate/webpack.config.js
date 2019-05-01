@@ -8,6 +8,7 @@ module.exports = function (env) {
   function get(it, val) {if(env == undefined) {return val} else if(env[it] == undefined) {return val} else {return env[it]}}
 
   var profile     = get('profile',     '')
+  var emit        = get('emit',     'yes')
   var environment = get('environment', 'development')
   var treeshake   = get('treeshake',   'no')
   var browser     = get('browser',     'yes')
@@ -27,7 +28,7 @@ module.exports = function (env) {
         framework: 'webcomponents',
         toolkit: 'modern',
         theme: 'theme-material',
-        emit: 'yes',
+        emit: emit,
         script: './extract-code.js',
         port: port,
         packages: [],
@@ -43,7 +44,7 @@ module.exports = function (env) {
       mode: environment,
       devtool: (environment === 'development') ? 'inline-source-map' : false,
       context: path.join(__dirname, './src'),
-      entry: './app.js',
+      entry: './index.js',
       output: {
         path: path.join(__dirname, outputFolder),
         filename: "[name].js"
