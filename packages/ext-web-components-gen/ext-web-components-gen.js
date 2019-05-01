@@ -72,7 +72,7 @@ function stepStart() {
   var dataConfig = fs.readFileSync(nodeDir + '/config.json')
   config = JSON.parse(dataConfig)
 
-  console.log(boldGreen(`\ext-web-components-gen - Sencha ExtComponents Code Generator v${version}`))
+  console.log(boldGreen(`\ext-web-components-gen - Sencha ExtWebComponents Code Generator v${version}`))
   console.log('')
 
   let mainDefinitions = [{ name: 'command', defaultOption: true }]
@@ -145,10 +145,10 @@ function stepCheckCmdLine() {
   //console.log('stepCheckCmdLine');console.log(`cmdLine: ${JSON.stringify(cmdLine)}, length: ${Object.keys(cmdLine).length}, process.argv.length: ${process.argv.length}`)
   setDefaults()
   if (cmdLine.verbose == true) {
-    process.env.EXTCOMPONENTSGEN_VERBOSE = 'true'
+    process.env.EXTWEBCOMPONENTSGEN_VERBOSE = 'true'
   }
   else {
-    process.env.EXTCOMPONENTSGEN_VERBOSE = 'false'
+    process.env.EXTWEBCOMPONENTSGEN_VERBOSE = 'false'
   }
   if (cmdLine.help == true) {
     stepHelpGeneral()
@@ -219,7 +219,7 @@ function stepCreateWithDefaults() {
 
 function stepNameYourApp() {
   new Input({
-    message: 'What would you like to name your ExtComponents app?',
+    message: 'What would you like to name your ExtWebComponents app?',
     default:  config.appName
   }).run().then(answer => {
     answers['appName'] = answer
@@ -240,7 +240,7 @@ function stepPackageName() {
 
 function stepVersion() {
   new Input({
-    message: 'What version is your ExtComponents application?',
+    message: 'What version is your ExtWebComponents application?',
     default: config.version
   }).run().then(answer => {
     if (semver.valid(answer) == null) {
@@ -335,10 +335,10 @@ function stepGo() {
 
   var message
   if (cmdLine.defaults == true) {
-    message = 'Generate the ExtComponents npm project?'
+    message = 'Generate the ExtWebComponents npm project?'
   }
   else {
-    message = 'Would you like to generate the ExtComponents npm project with above config now?'
+    message = 'Would you like to generate the ExtWebComponents npm project with above config now?'
   }
 
   new Confirm({
@@ -399,7 +399,7 @@ async function stepCreate() {
     const substrings = ['[ERR]', '[WRN]', '[INF] Processing', "[INF] Server", "[INF] Writing content", "[INF] Loading Build", "[INF] Waiting", "[LOG] Fashion waiting"];
     var command = `npm${/^win/.test(require('os').platform()) ? ".cmd" : ""}`
     var args = []
-    if (process.env.EXTCOMPONENTSGEN_VERBOSE == 'true') {
+    if (process.env.EXTWEBCOMPONENTSGEN_VERBOSE == 'true') {
       args = ['install']
     }
     else {
@@ -419,7 +419,7 @@ async function stepCreate() {
   } catch(err) {
     console.log(boldRed('Error in npm install: ' + err));
   }
-  console.log(`${app} Your ExtComponents project is ready`)
+  console.log(`${app} Your ExtWebComponents project is ready`)
   console.log(boldGreen(`\ntype "cd ${answers['packageName']}" then "npm start" to run the development build and open your new application in a web browser\n`))
  }
 
@@ -427,7 +427,7 @@ async function stepCreate() {
   if (cmdLine.name != undefined) {
     answers['appName'] = cmdLine.name
     answers['packageName'] = kebabCase(answers['appName'])
-    answers['description'] = `${answers['packageName']} description for ExtComponents app ${answers['appName']}`
+    answers['description'] = `${answers['packageName']} description for ExtWebComponents app ${answers['appName']}`
   }
   else {
     answers['appName'] = config.appName
@@ -444,7 +444,7 @@ async function stepCreate() {
 }
 
 function displayDefaults() {
-  console.log(boldGreen(`Defaults for ExtComponents app:`))
+  console.log(boldGreen(`Defaults for ExtWebComponents app:`))
   console.log(`appName:\t${answers['appName']}`)
   console.log('')
   console.log(boldGreen(`Defaults for package.json:`))
@@ -477,9 +477,9 @@ ext-web-components-gen app (-h) (-d) (-i) (-n 'name')
 -v --verbose       verbose npm messages (for problems only)
 
 ${boldGreen('Examples:')}
-ext-web-components-gen app  --name CoolExtComponentsApp
+ext-web-components-gen app  --name CoolExtWebComponentsApp
 ext-web-components-gen app --interactive
-ext-web-components-gen app -a -n CoolExtComponentsApp
+ext-web-components-gen app -a -n CoolExtWebComponentsApp
 
 `
   console.log(message)
@@ -487,11 +487,11 @@ ext-web-components-gen app -a -n CoolExtComponentsApp
 
 function stepShortHelp() {
   var message = `${boldGreen('Quick Start:')}
-ext-web-components-gen app CoolExtComponentsApp
+ext-web-components-gen app CoolExtWebComponentsApp
 ext-web-components-gen app -i
 
 ${boldGreen('Examples:')}
-ext-web-components-gen app --name CoolExtComponentsApp
+ext-web-components-gen app --name CoolExtWebComponentsApp
 
 Run ${boldGreen('ext-web-components-gen --help')} to see all options
 `

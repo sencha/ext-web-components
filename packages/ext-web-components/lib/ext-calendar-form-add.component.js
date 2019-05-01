@@ -59,7 +59,7 @@ export class ExtCalendar_form_addComponent extends ExtBase {
 	get enctype(){return this.getAttribute('enctype')};set enctype(enctype){this.setAttribute('enctype',enctype)}
 	get endDateField(){return this.getAttribute('endDateField')};set endDateField(endDateField){this.setAttribute('endDateField',endDateField)}
 	get endTimeField(){return this.getAttribute('endTimeField')};set endTimeField(endTimeField){this.setAttribute('endTimeField',endTimeField)}
-	get event(){return this.getAttribute('event')};set event{this.setAttribute('event',event)}
+	get event(){return this.getAttribute('event')};set event(event){this.setAttribute('event',event)}
 	get fieldSeparators(){return this.getAttribute('fieldSeparators')};set fieldSeparators(fieldSeparators){this.setAttribute('fieldSeparators',fieldSeparators)}
 	get flex(){return this.getAttribute('flex')};set flex(flex){this.setAttribute('flex',flex)}
 	get floated(){return this.getAttribute('floated')};set floated(floated){this.setAttribute('floated',floated)}
