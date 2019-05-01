@@ -13,7 +13,7 @@ export default class HomeComponent {
     this.gridCmp.setStore(store);
   }
 
-  onSearch {
+  onSearch(event) {
     this.gridCmp.getStore().clearFilter();
     const newValue = event.detail.newValue;
 

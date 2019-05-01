@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<base href="/">
+<html manifest="">
+  <head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
+  <title>ExtWebComponent Example</title>
+
+  <script src="ext/ext.js"></script>
+  <script src="RendererCell.js"></script>
+
+
+  <link  href="ext/ext.css" rel='stylesheet'/>
+  <script src="ewc/base.js"></script>
+  <script src="ewc/ext-container.component.js"></script>
+  <script src="ewc/ext-button.component.js"></script>
+  <script src="ewc/ext-grid.component.js"></script>
+  <script src="ewc/ext-column.component.js"></script>
+  <script src="BigData.js"></script>
+
+  <script>
+
+      window.app = {}
+      console.log('app')
+      console.log(app)
+      app.counter1 = 0
+  
+      app.readyGrid = function(event) {
+        app.gridCmp = event.detail.cmp
+  
+        app.store = Ext.create('Ext.data.Store', {
+          data:new BigData(100).data
+        })
+        app.gridCmp.setStore(app.store)
+  
+  
+  //      app.gridCmp.setData(new BigData(5).data)
+  //      this.gridCmp.setStore(this.store)
+      }
+  
+      app.readyButton = function(event) {
+        app.button1 = event.target
+      };
+  
+      app.onTap = function(event) {
+        //app.gridCmp.setData(new BigData(5).data);
+//        app.gridCmp.setStore(app.store)
+  
+        app.counter1++;
+        app.button1.text = 'Button Text ' + app.counter1
+      };
+  
+    </script>
+
+</head>
+<body>
+
+  <ext-container layout="hbox" padding="10">
+
+    <!-- <ext-button
+      text="Initial Button Text"
+      onready="app.readyButton"
+      onTap="app.onTap"
+    >
+    </ext-button> -->
+
+    <!-- employeeNo=me.getEmployeeNo(),
+    rating=rating,
+    salary=salary,
+    forename=firstName,
+    surname=lastName,
+    email=email,
+    department=department,
+    dob=dob,
+    joinDate=joinDate,
+    sickDays=sickDays,
+    holidayDays=holidayDays,
+    holidayAllowance=holidayAllowance,
+    noticePeriod=noticePeriods[me.random(0, noticePeriods.length - 1)] -->
+
+
+    <ext-grid title="hi" flex="1" shadow="true" onready="app.readyGrid">
+      <ext-column text='Id'    dataIndex='employeeNo' sortable=true groupable=false width=80></ext-column>
+      <ext-column text="First" dataIndex="forename" flex="1"></ext-column>
+      <ext-column text="Last"  dataIndex="surname" flex="1"></ext-column>
+
+
+    <ext-column
+        text='Date of birth'
+        dataIndex='dob'
+        xtype='datecolumn'
+        groupable=false
+        width=110
+        ></ext-column>
+    <ext-column
+        text='Join date'
+        dataIndex='joinDate'
+        xtype='datecolumn'
+        groupable=false
+        width=110
+        ></ext-column> 
+    <ext-column
+        text='Notice period'
+        dataIndex='noticePeriod'
+        width=120
+        ></ext-column>
+    <ext-column
+        text='Department'
+        dataIndex='department'
+        hidden=true
+        ></ext-column> 
+    <ext-column
+        text='Absences'
+        columns="[{
+            text='Illness',
+            dataIndex='sickDays',
+            width=60,
+            groupable=false
+        }, {
+            text='Holidays',
+            dataIndex='holidayDays',
+            width=70,
+            groupable=false
+        }, {
+            text='Holday Allowance',
+            dataIndex='holidayAllowance',
+            width=125,
+            groupable=false
+        }]"
+        ></ext-column>
+    <ext-column
+        text='Rating'
+        width=80
+        sortable=true
+        dataIndex='rating'
+        groupable=false
+        ></ext-column>
+
+
+
+    <ext-column
+        text='Salary'
+        flex=1
+        sortable=true
+        dataIndex='salary'
+        align='right'
+        renderer='Ext.util.Format.usMoney'
+        ></ext-column>
+
+
+
+
+        <!-- <ext-column
+        text='Email address'
+        dataIndex='email'
+        width=200
+        groupable=false
+        renderer='function (v) {
+            //return '<a href="mailto:' + v + '">' + v + '</a>';
+        }' 
+        ></ext-column> -->
+
+    <!-- <ext-column
+      text="Price"
+      width="85"
+      dataIndex="price"
+      formatter="usMoney"
+    >
+    </ext-column> -->
+    <!-- <ext-column
+      text="Change"
+      width="100"
+      dataIndex="priceChange"
+      renderer="basicgrid.renderSign"
+    >
+    </ext-column>
+    <ext-column
+      text="% Change"
+      dataIndex="priceChangePct"
+      renderer="basicgrid.renderSign.bind(this)"
+    >
+      <ext-renderercell
+        renderer="basicgrid.renderSign.bind(this,'0.00')"
+      >
+      </ext-renderercell>
+    </ext-column> -->
+    <!-- <ext-column
+      text="Last Updated"
+      width="125"
+      dataIndex="lastChange"
+      formatter='date("m/d/Y")'
+    >
+    </ext-column> -->
+  </ext-grid>
+
+
+
+
+  </ext-container>
+
+
+
+</body>
+</html>

@@ -54,7 +54,17 @@ export default class MainComponent {
     this.afterAllLoaded('readyRouter')
   }
 
-  navTreelistSelectionChange {
+  readyToggleButton(event) {
+    const navButton = event.detail.cmp;
+
+    if (Ext.os.is.Phone) {
+      navButton.setHidden(false);
+    } else {
+      navButton.setHidden(true);
+    }
+  }
+
+  navTreelistSelectionChange(event) {
     const record = event.detail.record;
     this.navigate(record);
   }
@@ -106,13 +116,4 @@ export default class MainComponent {
     this.navTreePanelCmp.setCollapsed(collapsed);
   }
 
-  toggleButtonReady(event) {
-    const navButton = event.detail.cmp;
-
-    if (Ext.os.is.Phone) {
-      navButton.setHidden(false);
-    } else {
-      navButton.setHidden(true);
-    }
-  }
 }
