@@ -186,8 +186,6 @@ class ExtBase extends HTMLElement {
   }
 
   doCreate() {
-    console.log('doCreate: ' + this.props.xtype)
-    console.dir(this.props)
     this.ext = Ext.create(this.props)
     if (this.parentNode.childrenCounter != undefined) {
       this.parentNode.childrenCounter--
@@ -307,7 +305,7 @@ class ExtBase extends HTMLElement {
       if (newVal) {
         //mjg check if this event exists for this component
         this.addEventListener(attr.slice(2), function(event) {
-          console.dir(newVal)
+          //check to see if newVal already has a ()
           eval(newVal + '(event)')
           //eval(newVal)
         });
