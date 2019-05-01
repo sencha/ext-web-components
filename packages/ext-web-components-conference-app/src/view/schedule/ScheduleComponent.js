@@ -13,9 +13,11 @@ export default class ScheduleComponent {
         url: 'resources/schedule.json'
       },
       listeners: {
-        load: store => store.each(record => record.set(
-          'favorite', this.favorites.indexOf(record.getId()) !== -1
-        )),
+        load: store => store.each(record => {
+          record.set('favorite', this.favorites.indexOf(record.getId()) !== -1)
+//          console.dir(record.data)
+        }
+      ),
       }
     });
     this.storeDefaults = {
@@ -35,15 +37,23 @@ export default class ScheduleComponent {
     
   }
 
-  containerready2(event) {
+  containerReady2(event) {
     this.containerCmp2 = event.detail.cmp;
-    const tpl = `<div>
-                <div class="app-event-name">{title}</div>
-                <div class="app-event-speaker">{[values.speakerName ? 'by ' + values.speakerName : '']}</div>
-                <div class="app-event-time">{[values && values.date && values.date.match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time} - {end_time}</div>
-                <div class="app-event-location">{location.name}</div>
-                {[values.description ? '<hr/><div class="app-event-abstract" >' + values.description + '</div>' : '']}
-              </div>`;
+    const tpl = `
+    <div>
+      <div class="app-event-name">{title}</div>
+      <div class="app-event-speaker">{[values.speakerName ? 'by ' + values.speakerName : '']}</div>
+      <div class="app-event-time">{[values && values.date && values.date.match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time} - {end_time}</div>
+      <div class="app-event-location">{location.name}</div>
+      {[values.description ? '<hr/><div class="app-event-abstract" >' + values.description + '</div>' : '']}
+    </div>
+    `;
+    const tpl2 = `
+    <div>
+      <div class="app-event-name">{title}</div>
+      <div class="app-event-location">{location.name}</div>
+    </div>
+    `;
 
     this.containerCmp2.setTpl(tpl);
 
@@ -53,7 +63,7 @@ export default class ScheduleComponent {
     }
   }
 
-  onItemTap {
+  onItemTap(event) {
     this.record = event.detail.record.data;
 
     if (this.containerCmp.getHidden()) {
@@ -63,7 +73,7 @@ export default class ScheduleComponent {
     this.containerCmp2.setData(this.record);
   }
 
-  onFavoriteClick {
+  onFavoriteClick(event) {
     const data_id = event.currentTarget.dataset.id;
     Ext.get(event.target).ripple(event, { bound: false, color: '#999' });
     const record = this.store.findRecord('id', data_id);
@@ -91,20 +101,22 @@ export default class ScheduleComponent {
       }
     );
 
-    const itemTpl = `<div class="app-list-content">
-                      <div class="app-list-text">
-                          <div class="app-list-item-title">{title}</div>
-                          <div class="app-list-item-details">{[values.speakerNames ? '<span>by ' + values.speakerNames + '</span>' : '']}</div> 
-                          <div class="app-list-item-details">{categoryName} - {location.name}</div>
-                          <div class="app-list-item-details">{[(values.date).match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time}</div> 
-                      </div>
-                      <div
-                          onclick="schedule.onFavoriteClick"
-                          data-favorite={[ values.favorite ? "on" : "off" ]}
-                          data-id="{id}"
-                          class="x-item-no-tap x-font-icon md-icon-star app-list-tool app-favorite"
-                        />
-                    </div>`
+    const itemTpl = `
+    <div class="app-list-content">
+      <div class="app-list-text">
+        <div class="app-list-item-title">{title}</div>
+        <div class="app-list-item-details">{[values.speakerNames ? '<span>by ' + values.speakerNames + '</span>' : '']}</div> 
+        <div class="app-list-item-details">{categoryName} - {location.name}</div>
+        <div class="app-list-item-details">{[(values.date).match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time}</div> 
+      </div>
+      <div
+        onclick="schedule.onFavoriteClick"
+        data-favorite={[ values.favorite ? "on" : "off" ]}
+        data-id="{id}"
+        class="x-item-no-tap x-font-icon md-icon-star app-list-tool app-favorite"
+      />
+    </div>
+    `
     this.list1 = event.detail.cmp;
     this.list1.setItemTpl(itemTpl);
     this.list1.setStore(store);

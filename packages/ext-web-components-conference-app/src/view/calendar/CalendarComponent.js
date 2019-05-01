@@ -26,7 +26,7 @@ export default class CalendarComponent {
     this.calendar.setStore(store);
   }
 
-  onTap {
+  onTap(event) {
     let data = event.detail.context.event.data;
     const day = data && data.date && data.date.match(/(Monday|Tuesday|Wednesday)/)[1];
     this.sidePanel.setHidden(false);

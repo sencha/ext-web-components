@@ -74,7 +74,7 @@ export default class SpeakersComponent {
     this.panelCmp = event.detail.cmp;
   }
 
-  containerready2(event) {
+  containerReady2(event) {
     this.containerCmp2 = event.detail.cmp;
     const tpl = `<div class="app-speaker-ct">
                             <img class="app-speaker-image" src={avatar_url}></img>
@@ -90,7 +90,7 @@ export default class SpeakersComponent {
     this.containerCmp2.setTpl(tpl);
   }
 
-  onFavoriteClick {
+  onFavoriteClick(event) {
     const data_id = event.currentTarget.dataset.id;
     Ext.get(event.target).ripple(event, { bound: false, color: '#999' });
     const record = this.scheduleChainedStore.findRecord('id', data_id);
@@ -109,7 +109,7 @@ export default class SpeakersComponent {
 
   }
 
-  listready2 {
+  listReady2(event) {
     this.listCmp2 = event.detail.cmp;
     const itemTpl = `<div class="app-list-content">
                       <div class="app-list-text">
