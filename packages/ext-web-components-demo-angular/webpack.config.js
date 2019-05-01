@@ -1,20 +1,24 @@
 const path = require('path');
-const AngularCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const AngularCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BaseHrefWebpackPlugin } = require('base-href-webpack-plugin');
-const ExtWebpackPlugin = require('@sencha/ext-webpack-plugin')
-const portfinder = require('portfinder')
+const ExtWebpackPlugin = require('@sencha/ext-webpack-plugin');
+const portfinder = require('portfinder');
+const webpack = require("webpack");
+const FilterWarningsPlugin = require('webpack-filter-warnings-plugin');
 
 module.exports = function (env) {
   function get(it, val) {if(env == undefined) {return val} else if(env[it] == undefined) {return val} else {return env[it]}}
 
   var profile     = get('profile',     '')
+  var emit        = get('emit',     'yes')
   var environment = get('environment', 'development')
   var treeshake   = get('treeshake',   'no')
   var browser     = get('browser',     'yes')
   var watch       = get('watch',       'yes')
   var verbose     = get('verbose',     'no')
   var basehref    = get('basehref',    '/')
+  var build_v     = get('build_v', '7.0.0.0')
 
   const isProd = environment === 'production'
   const outputFolder = 'build'
@@ -33,7 +37,7 @@ module.exports = function (env) {
         framework: 'webcomponents',
         toolkit: 'modern',
         theme: 'theme-material',
-        emit: 'yes',
+        emit: emit,
         script: '',
         port: port,
         packages: [],
@@ -43,7 +47,15 @@ module.exports = function (env) {
         browser: browser,
         watch: watch,
         verbose: verbose
-      })
+      }),
+      new webpack.ContextReplacementPlugin(
+        /\@angular(\\|\/)core(\\|\/)fesm5/,
+        path.resolve(__dirname, 'src'),{}
+      ),
+      new FilterWarningsPlugin({
+        exclude: /System.import/
+      }),
+      new webpack.HotModuleReplacementPlugin()
     ]
     return {
       mode: environment,
