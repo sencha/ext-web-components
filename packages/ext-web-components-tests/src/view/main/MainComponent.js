@@ -32,6 +32,7 @@ export default class MainComponent {
   }
 
   readyNavTreePanel(event) {
+    debugger;
     this.navTreePanelCmp = event.detail.cmp
     this.afterAllLoaded('readyNavTreePanel')
 
@@ -43,6 +44,7 @@ export default class MainComponent {
   }
 
   readyNavTreelist(event) {
+    debugger;
     this.navTreelistCmp = event.detail.cmp
     this.navTreelistCmp.setStore(this.treeStore)
     this.afterAllLoaded('readyNavTreelist')
@@ -53,7 +55,7 @@ export default class MainComponent {
     this.afterAllLoaded('readyRouter')
   }
 
-  navTreelistSelectionChange {
+  navTreelistSelectionChange(event) {
     var record = event.detail.record;
     this.navigate(record);
   }
