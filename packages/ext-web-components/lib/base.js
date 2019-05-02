@@ -82,9 +82,17 @@ export default class ExtBase extends HTMLElement {
     })
 
     //mjg this should not be hard-coded to APP-ROOT
-    if (this.nodeParentName == 'APP-ROOT') {
-      this.props.renderTo = this.parentNode
-      this.doCreate()
+    if (this.nodeParentName == 'APP-ROOT' || this.parentElement.id == 'root') {
+      //this.props.renderTo = this.parentNode
+      //this.doCreate()
+      var me = this
+      me.doCreate()
+      Ext.application({
+        name: 'MyEWCApp',
+        launch: function () {
+          Ext.Viewport.add([me.ext])
+        }
+      });
     }
     else if (this.nodeParentName == 'BODY') {
       var me = this

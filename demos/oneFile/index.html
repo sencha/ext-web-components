@@ -10,6 +10,7 @@
   <script src="RendererCell.js"></script>
   <link  href="ext/ext.css" rel='stylesheet'/>
   <script src="ewc/base.js"></script>
+  <script src="ewc/ext-panel.component.js"></script>
   <script src="ewc/ext-container.component.js"></script>
   <script src="ewc/ext-button.component.js"></script>
   <script src="ewc/ext-grid.component.js"></script>
@@ -43,8 +44,13 @@
   </script>
 </head>
 <body>
-  <ext-container padding="10" layout="fit" [fitToParent]="true">
-    <ext-grid title="Sencha ExtWebComponents 7.0 in JavaScript" flex="1" shadow="true" onready="app.readyGrid">
+  <ext-panel title="Sencha ExtWebComponents 7.0 in JavaScript" padding="10" layout="vbox" [fitToParent]="true">
+    <div style="text-align:center;margin-top:20px;margin-bottom:25px;font-size:24px;">
+        <img width="400" src="./js.png">
+        <div>"Vanilla.JS"</div>
+    </div>
+
+    <ext-grid title="Employees" flex="1" shadow="true" onready="app.readyGrid">
         <ext-toolbar docked="top">
           <ext-searchfield ui="faded" placeholder="Search..." onchange="app.onSearch" [responsiveConfig]="searchresponsiveConfig"></ext-searchfield>
         </ext-toolbar>
@@ -53,6 +59,6 @@
         <ext-column text="Email" dataIndex="email" flex="3" resizable="true" [responsiveConfig]="emailresponsiveConfig"></ext-column>
         <ext-column text="Phone" dataIndex="phone" flex="2" resizable="true"></ext-column>
     </ext-grid>
-  </ext-container>
+  </ext-panel>
 </body>
 </html>

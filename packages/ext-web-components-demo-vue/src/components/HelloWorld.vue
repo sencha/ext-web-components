@@ -1,63 +1,50 @@
 <template>
-  <div class="hello">
-
-  <ext-panel :title="'panel title'">
-    <ext-button :text="'mjg'"></ext-button>
-  </ext-panel>
-
-
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
-  </div>
+    <ext-container flex="1" :padding="'10'" :layout="'fit'" :fitToParent="true">
+      <ext-grid :title="msg" shadow="true" v-on:ready="readyGrid($event)">
+        <ext-toolbar docked="top">
+          <ext-searchfield ui="faded" placeholder="Search..." v-on:change="onSearch($event)"></ext-searchfield>
+        </ext-toolbar>
+        <ext-column text="ID"    dataIndex="id"    width="50"></ext-column>
+        <ext-column text="Name"  dataIndex="name"  flex="2">  </ext-column>
+        <ext-column text="Email" dataIndex="email" flex="3">  </ext-column>
+        <ext-column text="Phone" dataIndex="phone" flex="2">  </ext-column>
+      </ext-grid>
+    </ext-container>
 </template>
 
 <script>
+import { SampleData } from './SampleData';
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data() {
+    return {
+      gridCmp: {},
+      store: null
+    }
+  },
+  methods: {
+    readyGrid: function (event) {
+      this.gridCmp = event.detail.cmp
+      this.store = Ext.create('Ext.data.Store', {
+        fields: ['name', 'email', 'phone', 'hoursTaken', 'hoursRemaining'],
+        data: new SampleData(50).data
+      });
+      this.gridCmp.setStore(this.store)
+    },
+    onSearch: function(event) {
+      const query = event.detail.newValue.toLowerCase();
+      this.store.clearFilter();
+      if (query.length) this.store.filterBy(record => {
+        const { name, email, phone } = record.data;
+        return name.toLowerCase().indexOf(query) !== -1 ||
+          email.toLowerCase().indexOf(query) !== -1 ||
+          phone.toLowerCase().indexOf(query) !== -1;
+      });
+    }
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>

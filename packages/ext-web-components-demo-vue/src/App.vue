@@ -1,8 +1,11 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <ext-panel title="Sencha ExtWebComponents 7.0 in Vue.js" layout="vbox" fitToParent="true">
+    <div id="center">
+      <img alt="Vue logo" src="./assets/logo.png">
+      <div>Vue.JS</div>
+    </div>
+    <HelloWorld msg="Employees"/>
+  </ext-panel>
 </template>
 
 <script>
@@ -17,12 +20,10 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#center {
+  margin-top: 20px;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin-bottom:15px;
+  font-size:24px;
 }
 </style>
