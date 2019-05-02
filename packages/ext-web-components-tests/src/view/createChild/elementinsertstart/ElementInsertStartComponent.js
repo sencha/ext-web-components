@@ -5,16 +5,16 @@ export default class ElementInsertStartComponent {
     this.counter = 0;
   }
 
-  panelReady(event) {
+  panelReady = (event) => {
     this.panelComp = event.detail.cmp;
   }
 
-  buttonReady(event) {
+  buttonReady = (event) => {
     this.buttonComp = event.detail.cmp;
     this.buttonComp.setHandler(this.buttonClick.bind(this));
   }
 
-  buttonClick() {
+  buttonClick = () => {
     const div = document.createElement("div");
     div.id = "inserted";
     div.className = "insertedElement" + this.counter;

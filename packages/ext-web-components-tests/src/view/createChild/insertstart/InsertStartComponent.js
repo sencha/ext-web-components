@@ -5,16 +5,16 @@ export default class InsertStartComponent {
     this.counter = 0;
   }
 
-  panelReady(event) {
+  panelReady = (event) => {
     this.panelComp = event.detail.cmp;
   }
 
-  buttonReady(event) {
+  buttonReady = (event) => {
     this.buttonComp = event.detail.cmp;
     this.buttonComp.setHandler(this.buttonClick.bind(this));
   }
 
-  buttonClick() {
+  buttonClick = () => {
     const panelDomNode = this.panelComp.getRenderTarget().dom;
     const container = document.createElement("ext-container");
     container.cls = "insertedComp" + this.counter;
