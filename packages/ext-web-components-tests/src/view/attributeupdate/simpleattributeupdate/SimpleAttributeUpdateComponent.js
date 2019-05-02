@@ -9,7 +9,7 @@ export default class SimpleAttributeUpdateComponent {
     this.buttonComp = event.detail.cmp;
   }
 
-  onClick {
+  onClick() {
     this.count++;
     this.buttonComp.setText(this.count)
   }

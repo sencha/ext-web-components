@@ -9,7 +9,7 @@ export default class ClassNameUpdateComponent {
     this.buttonComp = event.detail.cmp;
   }
 
-  toggleClass {
+  toggleClass() {
     if (this.className === 'Red') {
       this.className = 'Blue';
     } else {
