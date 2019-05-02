@@ -5,11 +5,11 @@ export default class SimpleAttributeUpdateComponent {
     this.count = 0;
   }
 
-  buttonReady(event) {
+  buttonReady = (event) => {
     this.buttonComp = event.detail.cmp;
   }
 
-  onClick() {
+  onClick = () => {
     this.count++;
     this.buttonComp.setText(this.count)
   }

@@ -5,11 +5,11 @@ export default class ClassNameUpdateComponent {
     this.className = 'Red';
   }
 
-  buttonReady(event) {
+  buttonReady = (event) => {
     this.buttonComp = event.detail.cmp;
   }
 
-  toggleClass() {
+  toggleClass = () => {
     if (this.className === 'Red') {
       this.className = 'Blue';
     } else {
