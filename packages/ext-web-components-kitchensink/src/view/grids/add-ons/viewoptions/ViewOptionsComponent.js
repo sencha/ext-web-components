@@ -30,7 +30,7 @@ export default class ViewOptionsComponent {
     this.pctChangeColumn.setRenderer(this.renderSign.bind(this, '0.00%'));
   }
 
-  renderSign(format, value, record, dataIndex, cell, column) {
+  renderSign = (format, value, record, dataIndex, cell, column) => {
     if(value>0) {
       cell.setCls('greenClass');
     }

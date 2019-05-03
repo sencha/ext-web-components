@@ -11,7 +11,7 @@ export default class BasicGridComponent {
     proxy: {
       type: 'ajax',
       url: '/KitchenSink/Companies'
-    } 
+    }
   });
 
   readyGrid = (event) => {
@@ -26,5 +26,4 @@ export default class BasicGridComponent {
     else if(value < 0 ) {col = 'red'}
     return `<span style='color:${col}'>${formattedValue}</span>`
   }
-  
 }

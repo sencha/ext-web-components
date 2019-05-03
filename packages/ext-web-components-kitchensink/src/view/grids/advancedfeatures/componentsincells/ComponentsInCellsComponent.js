@@ -56,7 +56,7 @@ export default class ComponentsInCellsComponent {
     this.pctChangeColumn.setRenderer(this.renderSign.bind(this, '0.00%'));
   }
 
-  renderSign(format, value, record, dataIndex, cell, column) {
+  renderSign = (format, value, record, dataIndex, cell, column) => {
     if(value>0) {
       cell.setCls('greenClass');
     }
@@ -67,7 +67,7 @@ export default class ComponentsInCellsComponent {
     return Ext.util.Format.number(value, format)
   }
 
-  buttonClick(button) {
+  buttonClick = (button) => {
     const gridrow = button.up('gridrow'),
         record = gridrow.getRecord();
     Ext.toast(`${button._text} ${record.get('name')}`)

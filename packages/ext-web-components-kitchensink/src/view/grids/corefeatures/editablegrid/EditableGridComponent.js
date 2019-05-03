@@ -37,7 +37,7 @@ export default class EditableGridComponent {
     this.columnCmp2.setRenderer(this.renderSign.bind(this, "0.00"));
   }
 
-  renderSign(format, value) {
+  renderSign = (format, value) => {
     debugger;
     return `<span style={{ color: ${value} > 0 ? 'green' : ${value} < 0 ? 'red' : '' }}>
       ${Ext.util.Format.number(value, format)}
@@ -54,7 +54,7 @@ export default class EditableGridComponent {
     this.pctChangeColumn.setRenderer(this.renderSign.bind(this, '0.00%'));
   }
 
-  renderSign(format, value, record, dataIndex, cell, column) {
+  renderSign = (format, value, record, dataIndex, cell, column) => {
     if(value>0) {
       cell.setCls('greenClass');
     }
@@ -64,5 +64,4 @@ export default class EditableGridComponent {
 
     return Ext.util.Format.number(value, format)
   }
-
 }

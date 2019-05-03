@@ -37,15 +37,15 @@ export default class GridToolsComponent {
     searchColumn.setCell({ tools:{ search: { handler: this.onSearchClick.bind(this) } } });
   }
 
-  onPinClick(grid, info) {
+  onPinClick = (grid, info) => {
     Ext.Msg.alert('Pin', `Pinned item ${info.record.data.name}`);
   }
 
-  onGearClick(grid, info) {
+  onGearClick = (grid, info) => {
     Ext.Msg.alert('Settings', `Change settings for ${info.record.data.name}`);
   }
 
-  onSearchClick(grid, info) {
+  onSearchClick = (grid, info) => {
     Ext.Msg.alert('Search', `Search for item ${info.record.data.name}`);
   }
 }

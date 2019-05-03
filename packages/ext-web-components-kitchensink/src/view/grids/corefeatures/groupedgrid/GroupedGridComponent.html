@@ -1,62 +1,61 @@
 <ext-container layout="vbox" padding="10" height="95%">
-    <ext-toolbar margin="0 0 20 0" shadow="true">
-        <ext-container key="1" html="Grouping:" style='{"marginRight": "10px"}'>
-        </ext-container>
-        <ext-segmentedbutton key="2" label="Grouping" >
-            <ext-button
-              ui="toolbar-default"
-              text="ON"
-              pressed="true"
-              onready="groupedgrid.onButtonReady"
-              onTap="groupedgrid.onGroupClick"
-            >
-            </ext-button>
-            <ext-button
-              ui="toolbar-default"
-              text="OFF"
-              onready="groupedgrid.offButtonReady"
-              onTap="groupedgrid.offGroupClick"
-            >
-            </ext-button>
-        </ext-segmentedbutton>
-    </ext-toolbar>
-    <ext-grid
-        height="95%"
-        width="100%"
-        title="Restaurants"
-        shadow="true"
-        onready="groupedgrid.onReady"
-        grouped="true"
-        groupFooter='{"xtype": "gridsummaryrow"}'
+  <ext-toolbar margin="0 0 20 0" shadow="true">
+    <ext-container key="1" html="Grouping:" style='{"marginRight": "10px"}'>
+    </ext-container>
+    <ext-segmentedbutton key="2" label="Grouping" >
+      <ext-button
+        ui="toolbar-default"
+        text="ON"
+        pressed="true"
+        onready="groupedgrid.onButtonReady"
+        onTap="groupedgrid.onGroupClick"
       >
-        <ext-column
-          text="Name"
-          dataIndex="name"
-          flex="1"
-          groupHeaderTpl="{columnName}: {value:htmlEncode}"
-        >
-        </ext-column>
-        <ext-column
-          text="Cuisine"
-          dataIndex="cuisine"
-          flex="1"
-        >
-        </ext-column>
-        <ext-column
-          text="Rating"
-          dataIndex="rating"
-          flex="1"
-          summaryCell="numbercell"
-          groupHeaderTpl='{value:repeat("★")} ({value:plural("Star")})'
-          cell='{
-            "xtype": "widgetcell",
-            "widget": {
-              "xtype": "rating",
-              "tip": "Set to {tracking:plural(`Star`)}"
-            }
-          }'
-        >
-        </ext-column>
-
-    </ext-grid>
+      </ext-button>
+      <ext-button
+        ui="toolbar-default"
+        text="OFF"
+        onready="groupedgrid.offButtonReady"
+        onTap="groupedgrid.offGroupClick"
+      >
+      </ext-button>
+    </ext-segmentedbutton>
+  </ext-toolbar>
+  <ext-grid
+    height="95%"
+    width="100%"
+    title="Restaurants"
+    shadow="true"
+    onready="groupedgrid.onReady"
+    grouped="true"
+    groupFooter='{"xtype": "gridsummaryrow"}'
+  >
+    <ext-column
+      text="Name"
+      dataIndex="name"
+      flex="1"
+      groupHeaderTpl="{columnName}: {value:htmlEncode}"
+    >
+    </ext-column>
+    <ext-column
+      text="Cuisine"
+      dataIndex="cuisine"
+      flex="1"
+    >
+    </ext-column>
+    <ext-column
+      text="Rating"
+      dataIndex="rating"
+      flex="1"
+      summaryCell="numbercell"
+      groupHeaderTpl='{value:repeat("★")} ({value:plural("Star")})'
+      cell='{
+        "xtype": "widgetcell",
+        "widget": {
+          "xtype": "rating",
+          "tip": "Set to {tracking:plural(`Star`)}"
+        }
+      }'
+    >
+    </ext-column>
+  </ext-grid>
 </ext-container>

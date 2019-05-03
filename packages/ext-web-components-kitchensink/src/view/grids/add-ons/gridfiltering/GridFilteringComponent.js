@@ -40,18 +40,12 @@ export default class GridFilteringComponent {
     });
   }
 
-  nameSorter(rec1, rec2) {
+  nameSorter = (rec1, rec2) => {
     let rec1Name = rec1.get('surname') + rec1.get('forename'),
         rec2Name = rec2.get('surname') + rec2.get('forename');
 
-    if (rec1Name > rec2Name) {
-        return 1;
-    }
-
-    if (rec1Name < rec2Name) {
-        return -1;
-    }
-
+    if (rec1Name > rec2Name) { return 1; }
+    if (rec1Name < rec2Name) { return -1; }
     return 0;
   }
 }

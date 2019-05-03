@@ -40,7 +40,7 @@ export default class StockTickerComponent {
     }
   }
 
-  onStoreLoad(store) {
+  onStoreLoad = (store) => {
     store.removeAt(15, 70);
     let count = store.getCount(),
         i, j, rec;
@@ -57,7 +57,7 @@ export default class StockTickerComponent {
     this.startTicker();
   }
 
-  startTicker() {
+  startTicker = () => {
     const { store } = this;
 
     if (this.timer) {
@@ -85,7 +85,7 @@ export default class StockTickerComponent {
     this.pctChangeColumn.setRenderer(this.renderSign.bind(this, '0.00%'));
   }
 
-  renderSign(format, value, record, dataIndex, cell, column) {
+  renderSign = (format, value, record, dataIndex, cell, column) => {
     let cls = '';
     if (this.flashBackground) {
       if (value > 0) {

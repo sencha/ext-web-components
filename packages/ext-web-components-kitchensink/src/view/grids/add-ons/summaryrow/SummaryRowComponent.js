@@ -31,7 +31,7 @@ export default class SummaryRowComponent {
     this.companyColumn.setSummaryRenderer(this.summarizeCompanies.bind(this));
   }
 
-  summarizeCompanies(grid, context) {
+  summarizeCompanies = (grid, context) => {
     return context.records.length + ' Companies';
   }
 
@@ -47,7 +47,7 @@ export default class SummaryRowComponent {
     this.pctChangeColumn.setSummaryRenderer(this.renderPercentChangeSummary.bind(this, '0.00%'));
   }
 
-  renderPercentChangeSummary(format, value, context) {
+  renderPercentChangeSummary = (format, value, context) => {
     debugger;
     if(value>0) {
       context.cell.setCls('greenClass');
@@ -59,7 +59,7 @@ export default class SummaryRowComponent {
     return Ext.util.Format.number(value, format)
   }
 
-  renderSign(format, value, record, dataIndex, cell, column) {
+  renderSign = (format, value, record, dataIndex, cell, column) => {
     if(value>0) {
       cell.setCls('greenClass');
     }

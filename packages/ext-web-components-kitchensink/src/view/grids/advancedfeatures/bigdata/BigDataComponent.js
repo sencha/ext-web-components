@@ -11,7 +11,7 @@ Ext.require([
 ]);
 
 export default class BigDataComponent {
-  constructor() {
+  constructor = () => {
     this.showExportSheet = false;
   }
 
@@ -38,7 +38,7 @@ export default class BigDataComponent {
     this.ratingAvgColumn.setSummaryRenderer(this.renderSummaryRating.bind(this));
   }
 
-  exportOptionChanged(sender, item) {
+  exportOptionChanged = (sender, item) => {
     const value = item._text;
     if (value==='Excel xlsx') {
       this.exportToXlsx();
@@ -53,7 +53,7 @@ export default class BigDataComponent {
     }
   }
 
-  setItemConfig() {
+  setItemConfig = () => {
     const rowBodyTpl = `
       <div>
         <img src={avatar} height="100px" style="float:left;margin:0px 10px 5px 0px;"/>
@@ -65,7 +65,7 @@ export default class BigDataComponent {
     this.gridCmp.setItemConfig({ viewModel: {}, body: { tpl: rowBodyTpl }});
   }
 
-  exportToXlsx() {
+  exportToXlsx = () => {
     this.doExport({
       type: 'excel07',
       title: 'Grid Export Demo',
@@ -75,7 +75,7 @@ export default class BigDataComponent {
     });
   }
 
-  exportToXml() {
+  exportToXml = () => {
     this.doExport({
       type: 'excel03',
       title: 'Grid Export Demo',
@@ -85,7 +85,7 @@ export default class BigDataComponent {
     });
   }
 
-  exportToCSV() {
+  exportToCSV = () => {
     this.doExport({
       type: 'csv',
       title: 'Grid Export Demo',
@@ -93,7 +93,7 @@ export default class BigDataComponent {
     });
   }
 
-  exportToTSV() {
+  exportToTSV = () => {
     this.doExport({
       type: 'tsv',
       title: 'Grid Export Demo',
@@ -101,7 +101,7 @@ export default class BigDataComponent {
     });
   }
 
-  exportToHtml() {
+  exportToHtml = () => {
     this.doExport({
       type: 'html',
       title: 'Grid Export Demo',
@@ -109,16 +109,16 @@ export default class BigDataComponent {
     });
   }
 
-  doExport(config) {
+  doExport = (config) => {
     this.showExportSheet = false;
     this.gridCmp.saveDocumentAs(config);
   }
 
-  onCancelExport() {
+  onCancelExport = () => {
     this.showExportSheet = false;
   }
 
-  onExportClick() {
+  onExportClick = () => {
     this.showExportSheet = true;
   }
 
@@ -129,33 +129,28 @@ export default class BigDataComponent {
     });
   }
 
-  nameSorter(rec1, rec2) {
+  nameSorter = (rec1, rec2) => {
     let rec1Name = rec1.get('surname') + rec1.get('forename'),
         rec2Name = rec2.get('surname') + rec2.get('forename');
 
-    if (rec1Name > rec2Name) {
-        return 1;
-    }
-
-    if (rec1Name < rec2Name) {
-        return -1;
-    }
+    if (rec1Name > rec2Name) { return 1; }
+    if (rec1Name < rec2Name) { return -1; }
 
     return 0;
   }
 
-  onBeforeDocumentSave(view) {
+  onBeforeDocumentSave = (view) => {
     view.mask({
       xtype: 'loadmask',
       message: 'Document is prepared for export. Please wait ...'
     })
   }
 
-  onDocumentSave(view) {
+  onDocumentSave = (view) => {
     view.unmask();
   }
 
-  renderRating(value, record, column, cell) {
+  renderRating = (value, record, column, cell) => {
     const age = record.get('averageRating');
     let group = "over6";
     if (age < 4) {
@@ -170,7 +165,7 @@ export default class BigDataComponent {
     return value;
   }
 
-  renderSummaryRating(value, record, column, cell) {
+  renderSummaryRating = (value, record, column, cell) => {
     const age = value;
     let group = "over6";
     if (age < 4) {
@@ -211,13 +206,13 @@ export default class BigDataComponent {
     });
   }
 
-  onVerify(button) {
+  onVerify = (button) => {
     let cell = button.up('widgetcell'),
         record = cell.getRecord();
     record.set('verified', !record.get('verified'));
   }
 
-  onVerifyAll(cell) {
+  onVerifyAll = (cell) => {
     let row = cell.up('gridrow'),
         group = row.getGroup(),
         grid = cell.up('grid'),
