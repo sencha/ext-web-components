@@ -143,7 +143,7 @@ export class ExtRouterComponent extends HTMLElement {
       }
     }
     else {
-      console.log('route null: ' + attr + ' - ' + newVal)
+      //console.log('route null: ' + attr + ' - ' + newVal)
     }
 
     if (attr == 'onready') {

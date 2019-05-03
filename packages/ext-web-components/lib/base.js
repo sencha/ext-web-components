@@ -110,7 +110,7 @@ export default class ExtBase extends HTMLElement {
           Ext.Viewport.add([me.ext])
 
           if (window.router) {
-            console.log('router.init called')
+            //console.log('router.init called')
             window.router.init()
           }
 
