@@ -48,41 +48,42 @@ export class Route {
 export class Router {
 
   constructor(routes) {
+    window.router = this
     try {
       if (!routes) {
         throw 'error: routes param is mandatory';
       }
       this.routes = routes;
-      this.rootElem = document.getElementById('route');
-      this.init();
     } catch (e) {
       console.error(e);   
     }
   }
 
   init() {
-    var r = this.routes;
-    (function(scope, r) { 
+    this.rootElem = document.getElementById('route');
+    var routes = this.routes;
+    (function(scope, routes) { 
       window.addEventListener('hashchange', function (e) {
-        scope.hasChanged(scope, r);
+        scope.hasChanged(scope, routes);
       });
-    })(this, r);
-    this.hasChanged(this, r);
+    })(this, routes);
+    this.hasChanged(this, routes);
   }
 
-  hasChanged(scope, r) {
+  hasChanged(scope, routes) {
     if (window.location.hash.length > 0) {
       var currentHash = ''
       var currentHashLower = ''
       var currentComponent = null
-      for (var i = 0, length = r.length; i < length; i++) {
-        var route = r[i];
+      for (var i = 0, length = routes.length; i < length; i++) {
+        var route = routes[i];
         if(route.isActiveRoute(window.location.hash.substr(1))) {
           currentHash = route.hash
           currentHashLower = route.hashlower
           currentComponent = route.component
         }
       }
+      scope.rootElem.style.display = "block"
       window[currentHashLower] = new currentComponent()
       var componentHtml = currentHash + 'Component.html'
       scope.rootElem.innerHTML = window._code[currentHashLower][componentHtml]
@@ -91,8 +92,8 @@ export class Router {
       var currentHash = ''
       var currentHashLower = ''
       var currentComponent = null
-      for (var i = 0, length = r.length; i < length; i++) {
-        var route = r[i];
+      for (var i = 0, length = routes.length; i < length; i++) {
+        var route = routes[i];
         if(route.default == true) {
           currentHash = route.hash
           currentHashLower = route.hashlower
@@ -100,9 +101,10 @@ export class Router {
         }
       }
       if (currentHash == ''){
-        //console.log('no default route specified')
+        console.log('no default route specified')
       }
       else {
+        scope.rootElem.style.display = "block"
         window[currentHashLower] = new currentComponent()
         var componentHtml = currentHash + 'Component.html'
         scope.rootElem.innerHTML = window._code[currentHashLower][componentHtml]
@@ -129,37 +131,35 @@ export class ExtRouterComponent extends HTMLElement {
   }
 
   attributeChangedCallback(attr, oldVal, newVal) {
-    if (attr == 'hidden') {
-      let timerId = setInterval(() => {
-        var route = document.getElementById("route");
-        if (route != null) {
-          clearInterval(timerId);
-          if (newVal == 'true') {
-            route.style.display = "none"
-          }
-          else {
-            route.style.display = "block"
-          }
+    console.log('attributeChangedCallback: ' + attr)
+
+    var route = document.getElementById("route");
+    if (route != null) {
+      if (attr == 'hidden') {
+        if (newVal == 'true') {
+          route.style.display = "none"
         }
-      }, 50);
+        else {
+          route.style.display = "block"
+        }
+      }
     }
+    else {
+      console.log('route null: ' + attr + ' - ' + newVal)
+    }
+
     if (attr == 'onready') {
       if (newVal) {
-//mjg check if this event exists for this component
-        //this.addEventListener(attr.slice(2), function() {eval(newVal)});
-
+        //mjg check if this event exists for this component
         this.addEventListener(attr.slice(2), function(event) {
-          //console.dir(newVal)
           eval(newVal + '(event)')
-          //eval(newVal)
         });
-
-
-      } else {
+      } 
+      else {
         //delete this[attr];
         //this.removeEventListener(attr.slice(2), this);
       }
-    } 
+    }
   }
 
   setEvent(eventparameters,o,me) {
@@ -179,48 +179,44 @@ export class ExtRouterComponent extends HTMLElement {
   connectedCallback() {
     var me = this;
     Ext.onReady(function(){
-      setTimeout(function() { 
-        var div = document.createElement("DIV");
-        div.setAttribute("id", "route");
-        div.style.width="100%";
-        div.style.height="100%";
-        div.style.padding=me.padding;
-        div.style.display = 'none'
+      var div = document.createElement("DIV");
+      div.setAttribute("id", "route");
+      div.style.width="100%";
+      div.style.height="100%";
+      div.style.padding=me.padding;
+      div.style.display = 'none'
 //mjg should not be hard coded
-        div.style.backgroundSize='20px 20px';
-        div.style.borderWidth='0px';
-        div.style.backgroundColor='#e8e8e8';
-        div.style.backgroundImage=
-        'linear-gradient( 0deg, #f5f5f5 1.1px, transparent 0),' +
-        'linear-gradient(90deg, #f5f5f5 1.1px, transparent 0)';
+      div.style.backgroundSize='20px 20px';
+      div.style.borderWidth='0px';
+      div.style.backgroundColor='#e8e8e8';
+      div.style.backgroundImage=
+      'linear-gradient( 0deg, #f5f5f5 1.1px, transparent 0),' +
+      'linear-gradient(90deg, #f5f5f5 1.1px, transparent 0)';
 
-        var el = Ext.get(div);
-        var props = {};
+      var el = Ext.get(div);
+      var props = {};
 
-        props['hidden'] =  me['hidden']
-        props.listeners = {}
-        me.setEvent('onready',props,me)
+      props['hidden'] =  me['hidden']
+      props.listeners = {}
 
-        props.xtype = 'widget'
-        props.element = el;
-        me.ext = Ext.create(props)
-        me.dispatchEvent(new CustomEvent('ready',{detail:{cmp: me.ext}}))
-        var nodeParentName = me.parentNode.nodeName
-        if (nodeParentName.substring(0, 3) == 'EXT') {
-          var parentCmp = me.parentNode['ext'];
-          var childCmp = me.ext;
-          parentCmp.add(childCmp)
-        }
-        setTimeout(function() { 
-          new Router(window.routes);
-        }, 50);
-      }, 50);
+      me.setEvent('onready',props,me)
+
+      props.xtype = 'widget'
+      props.element = el;
+      me.ext = Ext.create(props)
+      me.dispatchEvent(new CustomEvent('ready',{detail:{cmp: me.ext}}))
+      var nodeParentName = me.parentNode.nodeName
+      if (nodeParentName.substring(0, 3) == 'EXT') {
+        var parentCmp = me.parentNode['ext'];
+        var childCmp = me.ext;
+        parentCmp.add(childCmp)
+      }
+      me.router = new Router(window.routes);
     })
   }
 
   disconnectedCallback() {
     delete this.ext
-    //console.log('ExtBase disconnectedCallback')
   }
 }
 (function () {

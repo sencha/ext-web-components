@@ -2,7 +2,7 @@
 
 Ext.require('Ext.*')
 
-import  { getRoutes } from '@sencha/ext-components/lib/aa-router.component';
+import  { getRoutes } from '@sencha/ext-components-router/lib/ext-router.component';
 import '@sencha/ext-components/lib/ext-button.component';
 import '@sencha/ext-components/lib/ext-dialog.component';
 import '@sencha/ext-components/lib/ext-dataview.component';

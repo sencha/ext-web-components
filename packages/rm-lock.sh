@@ -6,4 +6,6 @@ rm ext-web-components-demo-angular/package-lock.json
 rm ext-web-components-demo-vue/package-lock.json
 rm ext-web-components-gen/package-lock.json
 rm ext-web-components-kitchensink/package-lock.json
+rm ext-web-components-renderercell/package-lock.json
+rm ext-web-components-router/package-lock.json
 rm ext-web-components-tests/package-lock.json
