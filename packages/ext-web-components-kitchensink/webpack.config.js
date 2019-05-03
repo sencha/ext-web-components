@@ -59,6 +59,10 @@ module.exports = function (env) {
         from: '../node_modules/@sencha/ext-ux/modern/resources',
         to: './ext/ux'
       }]),
+      new CopyWebpackPlugin([{
+        from: '../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js',
+        to: './webcomponents-bundle.js'
+      }]),
       // Debug purposes only, injected via script: npm run-script buildexample -- --env.build_v=<full version here in format maj.min.patch.build>
       new webpack.DefinePlugin({
         BUILD_VERSION: JSON.stringify(build_v)

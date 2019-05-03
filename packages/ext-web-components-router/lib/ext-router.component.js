@@ -101,7 +101,7 @@ export class Router {
         }
       }
       if (currentHash == ''){
-        console.log('no default route specified')
+        //console.log('no default route specified')
       }
       else {
         scope.rootElem.style.display = "block"
