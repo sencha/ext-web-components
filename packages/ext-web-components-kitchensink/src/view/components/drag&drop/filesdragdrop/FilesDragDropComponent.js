@@ -2,23 +2,22 @@ import './FilesDragDropComponent.scss';
 import './FilesDragDropComponent.html';
 
 export default class FilesDragDropComponent {
-
-  constructor () {}
+  constructor() {}
 
   iconCls = 'drag-file-icon';
   labelText = 'Drag a file from your computer here.';
 
-  parentReady(ele) {
+  parentReady = (ele) => {
     this.parentRef = ele.detail.cmp.el;
     this.target.setElement(this.parentRef);
     this.parentRef.destroy = this.doDestroy.bind(this);
   }
 
-  onDragEnter() {
+  onDragEnter = () => {
     this.iconContainer.setCls('drag-file-icon active');
   }
 
-  onDragLeave() {
+  onDragLeave = () => {
     this.iconContainer.setCls('drag-file-icon');
   }
 
@@ -30,7 +29,7 @@ export default class FilesDragDropComponent {
     this.iconContainer = event.detail.cmp.el;
   }
 
-  onDrop(target, info) {
+  onDrop = (target, info) => {
     const files = info.files;
     this.iconContainer.setCls('drag-file-icon dropped fa-spin');
 
@@ -55,9 +54,8 @@ export default class FilesDragDropComponent {
     }
   });
 
-  doDestroy() {
+  doDestroy = () => {
     clearInterval(this.timer);
     Ext.destroy(this.target);
   }
-
 }

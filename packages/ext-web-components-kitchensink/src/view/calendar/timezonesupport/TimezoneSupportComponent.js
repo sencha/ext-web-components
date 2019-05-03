@@ -20,7 +20,7 @@ export default class CalendarTimezoneSupportComponent {
     this.calendarDay.setStore(store);
   }
 
-  changeOptions() {
+  changeOptions = () => {
     const selectorValue = Ext.getCmp('selector').getSelection().data.value;
     this.timezoneOffset = selectorValue;
     this.calendarDay.setTimezoneOffset(this.timezoneOffset);
@@ -60,9 +60,8 @@ export default class CalendarTimezoneSupportComponent {
             text: this.isPhone ? 'Sydney +10' : 'Sydney (UTC+10:00)',
             value: -600
           }
-          ]
-        }]
-      })
-
+        ]
+      }]
+    });
   }
 }

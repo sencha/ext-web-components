@@ -5,11 +5,11 @@ export default class ColorPickerComponent {
     this.color = '#00ff00';
   }
 
-  getcolorTitle() {
+  getcolorTitle = () => {
     return `<p style="color: #${this.color}">Selected Color: #${this.color}</p>`;
   }
 
-  onChange(picker) {
+  onChange = (picker) => {
     this.color = picker.getValue();
 
     if(this.titlePanel) {

@@ -30,7 +30,7 @@ export default class SplitButtonComponent {
     this.toggleButton = event.detail.cmp;
   }
 
-  toggleRound() {
+  toggleRound = () => {
     this.round = !this.round;
 
     if (this.round) {
@@ -48,7 +48,7 @@ export default class SplitButtonComponent {
     }
   };
 
-  onTypeChange(sender, value) {
+  onTypeChange = (sender, value) => {
     this.type = value._text;
     this.iconButtons.forEach(menuItem => {
       const menuItemText = menuItem._text;
@@ -96,7 +96,7 @@ export default class SplitButtonComponent {
     };
   }
 
-  styleMenuItemChange(sender, value) {
+  styleMenuItemChange = (sender, value) => {
     this.style = value._text;
     this.styleButtons.forEach(menuItem => {
       const menuItemText = menuItem._text;
@@ -148,5 +148,4 @@ export default class SplitButtonComponent {
 
     this.styleButtons.push(menuItem);
   }
-
 }

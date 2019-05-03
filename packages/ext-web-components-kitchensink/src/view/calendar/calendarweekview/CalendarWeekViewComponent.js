@@ -9,7 +9,7 @@ export default class CalendarWeekViewComponent {
     this.firstDayOfWeek = 0;
   }
 
-  changeCalendarView(button, value) {
+  changeCalendarView = (button, value) => {
     let buttVal = button._value;
     if (buttVal == 'fullweek') {
       this.calendarview = value;

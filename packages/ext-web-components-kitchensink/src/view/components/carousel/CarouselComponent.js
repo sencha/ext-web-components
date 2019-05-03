@@ -12,5 +12,4 @@ export default class CarouselComponent {
     this.carouselVerticalCmp = event.detail.cmp
     this.carouselVerticalCmp.setActiveItem(0)
   }
-
 }

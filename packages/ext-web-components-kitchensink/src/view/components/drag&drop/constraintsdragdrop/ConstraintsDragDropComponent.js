@@ -2,10 +2,9 @@ import './ConstraintsDragDropComponent.scss';
 import './ConstraintsDragDropComponent.html';
 
 export default class ConstraintsDragDropComponent {
-
   constructor () {}
 
-  doDestroy() {
+  doDestroy = () => {
     this.sources.forEach(Ext.destroy.bind(Ext));
   }
 
@@ -24,26 +23,26 @@ export default class ConstraintsDragDropComponent {
     this.parentRef.destroy = this.doDestroy.bind(this);
   }
 
-  elementReady(ele) {
+  elementReady = (ele) => {
     this.elementRef = ele.detail.cmp.el;
   }
 
-  toParentReady(ele) {
+  toParentReady = (ele) => {
     this.toParentRef = ele.detail.cmp.el;
     this.sources[0].setElement(this.toParentRef);
   }
 
-  horizontalReady(ele) {
+  horizontalReady = (ele) => {
     this.horizontalRef = ele.detail.cmp.el;
     this.sources[2].setElement(this.horizontalRef);
   }
 
-  verticalReady(ele) {
+  verticalReady = (ele) => {
     this.verticalRef = ele.detail.cmp.el;
     this.sources[1].setElement(this.verticalRef);
   }
 
-  snapReady(ele) {
+  snapReady = (ele) => {
     this.snapRef = ele.detail.cmp.el;
     this.sources[3].setElement(this.snapRef);
   }
