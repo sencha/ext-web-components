@@ -55,6 +55,6 @@ export default class DrilldownPluginComponent {
     this.button2.setHandler(this.collapseAll.bind(this));
   }
 
-  collapseAll() { this.pivotgrid.collapseAll(); }
-  expandAll() { this.pivotgrid.expandAll(); }
+  collapseAll = () => { this.pivotgrid.collapseAll(); }
+  expandAll = () => { this.pivotgrid.expandAll(); }
 }

@@ -3,8 +3,7 @@ import { generateData, randomItem } from '../generateSaleData';
 import saleModel from '../saleModel';
 
 export default class PivotGridWidgetsComponent {
-  constructor () {
-
+  constructor  = () => {
     this.store = Ext.create('Ext.data.Store', {
       model: saleModel,
       data: generateData()
@@ -78,7 +77,7 @@ export default class PivotGridWidgetsComponent {
     this.button4.setHandler(this.clearData.bind(this));
   }
 
-  addData() {
+  addData = () => {
     const data = generateData(6);
     for(let i=0; i<data.length; i++) {
       const record = data[i];
@@ -88,20 +87,20 @@ export default class PivotGridWidgetsComponent {
     this.store.add(data);
   }
 
-  updateData() {
+  updateData = () => {
     const data = generateData(1)[0],
     record = randomItem(this.store.data.items);
     if(record) record.set(data);
   }
 
-  removeData() {
+  removeData = () => {
     const record = randomItem(this.store.data.items);
     if(record) this.store.remove(record);
   }
 
-  clearData() { this.store.removeAll(); }
+  clearData = () => { this.store.removeAll(); }
 
-  getPerformance(records, dataIndex) {
+  getPerformance = (records, dataIndex) => {
     const ret = records.map(function(r) {return r.get(dataIndex)});
     return ret.length ? ret : null;
   }

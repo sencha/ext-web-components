@@ -1,12 +1,12 @@
 <ext-container layout="fit" padding="10" fitToParent="true" height="100%">
-  <ext-pivotgrid 
+  <ext-pivotgrid
     shadow="true"
     onready="tabularlayout.onPivotGridReady"
     startRowGroupsCollapsed="false"
-    startColGroupsCollapsed="false">
+    startColGroupsCollapsed="false"
+  >
   </ext-pivotgrid>
-
-  <ext-toolbar 
+  <ext-toolbar
     shadow="false"
     docked="top"
     ui="app-transparent-toolbar"
@@ -19,7 +19,8 @@
       "margin": "0 10 0 0",
       "shadow": "true",
       "ui": "action"
-    }'>
+    }'
+  >
     <ext-button text="Expand All" onready="tabularlayout.onButtonReady1"></ext-button>
     <ext-button text="Collapse All" onready="tabularlayout.onButtonReady2"></ext-button>
   </ext-toolbar>

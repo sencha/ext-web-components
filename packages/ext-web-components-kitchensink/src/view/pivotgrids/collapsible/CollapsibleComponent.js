@@ -27,11 +27,11 @@ export default class CollapsibleComponent {
         {
           "dataIndex": "person",
           "header": "Person"
-        }, 
+        },
         {
           "dataIndex": "company",
           "header": "Company"
-        }, 
+        },
         {
           "dataIndex": "year",
           "header": "Year"
@@ -41,7 +41,7 @@ export default class CollapsibleComponent {
         {
           "dataIndex": "country",
           "header": "Country"
-        }, 
+        },
         {
           "dataIndex": "month",
           "labelRenderer": this.monthLabelRenderer,
@@ -55,7 +55,7 @@ export default class CollapsibleComponent {
     this.menuItems = [];
   }
 
-  loadData() {
+  loadData = () => {
     const data = generateData(20);
     for(let i=0; i<data.length; i++) {
       data[i].company = 'Dell';
@@ -79,11 +79,11 @@ export default class CollapsibleComponent {
     this.menuItems.push(this.menuItem);
   }
 
-  onCollapsibleChange(sender, item) {
+  onCollapsibleChange = (sender, item) => {
     const text = item._text;
     this.menuItems.forEach(function(menuItem) {
       const menuItemText = menuItem._text;
-      
+
       if (menuItemText === text) {
         menuItem.setIconCls('x-font-icon md-icon-check');
       } else {

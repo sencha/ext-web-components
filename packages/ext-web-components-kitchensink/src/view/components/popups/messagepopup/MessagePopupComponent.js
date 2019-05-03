@@ -1,7 +1,7 @@
 import './MessagePopupComponent.html';
 
 export default class MessagePopupComponent {
-  constructor() }
+  constructor() {}
 
   onAlertTap = () => {
     Ext.Msg.alert('Title', 'The quick brown fox jumped over the lazy dog.')

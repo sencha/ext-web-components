@@ -1,5 +1,5 @@
 <ext-container  layout="fit" padding="10" fitToParent="true" height="100%">
-  <ext-toolbar 
+  <ext-toolbar
     shadow="false"
     docked="top"
     ui="app-transparent-toolbar"
@@ -12,7 +12,8 @@
       "margin": "0 10 0 0",
       "shadow": true,
       "ui": "action"
-    }'>
+    }'
+  >
     <ext-button ui="action raised" text="Collapsible">
       <ext-menu onready="collapsible.onReadyMenu" >
         <ext-menuitem onready="collapsible.onReadyMenuItem" iconCls="x-font-icon md-icon-check" text="None" value="none"></ext-menuitem>
@@ -22,9 +23,9 @@
       </ext-menu>
     </ext-button>
   </ext-toolbar>
-
-  <ext-pivotgrid 
+  <ext-pivotgrid
     shadow="true"
-    onready="collapsible.onReady">
+    onready="collapsible.onReady"
+  >
   </ext-pivotgrid>
 </ext-container>

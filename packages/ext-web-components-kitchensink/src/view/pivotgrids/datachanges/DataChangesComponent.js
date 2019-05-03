@@ -19,7 +19,7 @@ export default class DataChangesComponent {
           dataIndex: 'value',
           header: 'Total',
           aggregator: 'sum'
-        }, 
+        },
         {
           dataIndex: 'value',
           header: 'Count',
@@ -30,7 +30,7 @@ export default class DataChangesComponent {
         {
           dataIndex: 'year',
           header: 'Year'
-        }, 
+        },
         {
           dataIndex: 'person',
           header: 'Person'
@@ -70,11 +70,11 @@ export default class DataChangesComponent {
     this.button4.setHandler(this.clearData.bind(this));
   }
 
-  addData() { 
-    this.store.add(generateData(1)); 
+  addData = () => {
+    this.store.add(generateData(1));
   }
 
-  updateData() { 
+  updateData = () => {
     const data = generateData(1)[0],
     record = randomItem(this.store.data.items);
     if(record) {
@@ -82,14 +82,14 @@ export default class DataChangesComponent {
     }
   }
 
-  removeData() {
+  removeData = () => {
     const record = randomItem(this.store.data.items);
     if(record) {
       this.store.remove(record);
     }
   }
 
-  clearData() { 
-    this.store.removeAll(); 
+  clearData = () => { 
+    this.store.removeAll();
   }
 }

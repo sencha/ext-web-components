@@ -1,5 +1,5 @@
 <ext-container  layout="fit" padding="10" fitToParent="true" height="100%">
-  <ext-toolbar 
+  <ext-toolbar
     docked="top"
     ui="app-transparent-toolbar"
     padding="5 8"
@@ -12,14 +12,16 @@
       "margin": "0 10 0 0",
       "shadow": true,
       "ui": "action"
-    }'>
-    <ext-button text="Expand All" onready="compactlayout.onReadyButton1"> </ext-button>
-    <ext-button text="Collapse All" onready="compactlayout.onReadyButton2"> </ext-button>
+    }'
+  >
+    <ext-button text="Expand All" onready="compactlayout.onReadyButton1"></ext-button>
+    <ext-button text="Collapse All" onready="compactlayout.onReadyButton2"></ext-button>
   </ext-toolbar>
 
-  <ext-pivotgrid 
+  <ext-pivotgrid
     onready="compactlayout.onPivotGridReady"
     shadow="true"
-    [matrix]="pivotgridMatrix">
+    matrix="pivotgridMatrix"
+  >
   </ext-pivotgrid>
 </ext-container>

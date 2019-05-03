@@ -9,7 +9,6 @@ Ext.require([
 
 export default class ExporterPluginComponent {
   constructor () {
-
     this.store = Ext.create('Ext.data.Store', {
       model: saleModel,
       data: generateData()
@@ -95,7 +94,7 @@ export default class ExporterPluginComponent {
           }
       }]
     }];
-  
+
     this.pivotGridMatrix = {
       type: 'local',
       calculateAsExcel: true,
@@ -170,20 +169,20 @@ export default class ExporterPluginComponent {
     this.menu.on('click', this.exportDocument.bind(this));
   }
 
-  showConfigurator() { this.pivotgrid.showConfigurator(); }
+  showConfigurator = () => { this.pivotgrid.showConfigurator(); }
 
-  onBeforeDocumentSave(view) {
+  onBeforeDocumentSave = (view) => {
     return view.mask({
         xtype: 'loadmask',
         message: 'Document is prepared for export. Please wait ...'
     });
   }
 
-  onDocumentSave(view) { 
-    return view.unmask(); 
+  onDocumentSave = (view) => {
+    return view.unmask();
   }
 
-  exportDocument(menu, menuItem) {
+  exportDocument = (menu, menuItem) => {
     const text = menuItem._text;
     const cfg = this.configurationArray.filter(function(item){return item.text === text})[0];
     if(cfg.matrix && cfg.matrix === true) {
@@ -195,10 +194,12 @@ export default class ExporterPluginComponent {
     this.pivotgrid.saveDocumentAs(cfg).then(null, this.onError);
   }
 
-  onError(error) { return Ext.Msg.alert('Error', typeof error === 'string' ? error : 'Unknown error'); }
+  onError = (error) => {
+    return Ext.Msg.alert('Error', typeof error === 'string' ? error : 'Unknown error');
+  }
 
-  coloredRenderer(v, record, dataIndex, cell, column) {
-    cell.setStyle( Ext.String.format('color: {0};', v > 500 ? 'green' : 'red') );
-    return Ext.util.Format.number(v, '0,000.00');
+  coloredRenderer = (value, record, dataIndex, cell, column) => {
+    cell.setStyle( Ext.String.format('color: {0};', value > 500 ? 'green' : 'red') );
+    return Ext.util.Format.number(value, '0,000.00');
   }
 }

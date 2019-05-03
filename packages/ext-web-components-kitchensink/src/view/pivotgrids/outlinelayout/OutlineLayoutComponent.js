@@ -4,7 +4,6 @@ import saleModel from '../saleModel';
 
 export default class OutlineLayoutComponent {
   constructor () {
-
     this.store = Ext.create('Ext.data.Store', {
       model: saleModel,
       data: generateData()
@@ -43,7 +42,6 @@ export default class OutlineLayoutComponent {
   onPivotGridReady = (event) => {
     this.pivotgrid = event.detail.cmp;
     this.pivotgrid.setMatrix(this.pivotgridMatrix);
-
   }
 
    onButtonReady1 = (event) => {
@@ -56,6 +54,6 @@ export default class OutlineLayoutComponent {
     this.button2.setHandler(this.collapseAll.bind(this));
   }
 
-  expandAll() { this.pivotgrid.expandAll() }
-  collapseAll() { this.pivotgrid.collapseAll() }
+  expandAll = () => { this.pivotgrid.expandAll() }
+  collapseAll = () => { this.pivotgrid.collapseAll() }
 }

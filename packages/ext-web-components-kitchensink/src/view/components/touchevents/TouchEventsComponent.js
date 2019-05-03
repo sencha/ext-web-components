@@ -1,10 +1,9 @@
 import './TouchEventsComponent.html';
 
 export default class TouchEventsComponent {
-
-  constructor () {}
-
-  events = [{type:'drag'}, {type:'touchmove'}];
+  constructor () {
+    this.events = [{type:'drag'}, {type:'touchmove'}];
+  }
 
   touchpadReady = (event) => {
     const element = event.detail.cmp.el;
@@ -37,7 +36,7 @@ export default class TouchEventsComponent {
   onTouchEvent = (e, target, options) => {
     this.events = [{type:e.type} , ...this.events];
     this.theDataview.setData(this.events);
-
+  }
 
   clearEventLog = () => {
     this.events = [];
