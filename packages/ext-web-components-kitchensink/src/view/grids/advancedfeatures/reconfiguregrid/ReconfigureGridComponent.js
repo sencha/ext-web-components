@@ -2,7 +2,7 @@ import './ReconfigureGridComponent.html';
 import model from '../../data/GridModel';
 
 export default class ReconfigureGridComponent {
-  constructor  = () => {
+  constructor() {
     this.lastNames= ['Jones', 'Smith', 'Lee', 'Wilson', 'Black', 'Williams', 'Lewis', 'Johnson', 'Foot', 'Little', 'Vee', 'Train', 'Hot', 'Mutt'];
     this.firstNames= ['Fred', 'Julie', 'Bill', 'Ted', 'Jack', 'John', 'Mark', 'Mike', 'Chris', 'Bob', 'Travis', 'Kelly', 'Sara'];
     this.cities= ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Philadelphia', 'Phoenix', 'San Antonio', 'San Diego', 'Dallas', 'San Jose'];

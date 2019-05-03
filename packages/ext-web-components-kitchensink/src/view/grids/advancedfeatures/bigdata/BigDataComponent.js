@@ -11,7 +11,7 @@ Ext.require([
 ]);
 
 export default class BigDataComponent {
-  constructor = () => {
+  constructor() {
     this.showExportSheet = false;
   }
 

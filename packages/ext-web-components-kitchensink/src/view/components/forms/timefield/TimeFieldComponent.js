@@ -18,7 +18,7 @@ export default class TimeFieldComponent {
     this.timefieldCmp.setDisabled(this.disabled);
   }
 
-  timefieldReady = (event) => {
+  timeFieldReady = (event) => {
     this.timefieldCmp = event.detail.cmp;
   }
 
@@ -26,8 +26,7 @@ export default class TimeFieldComponent {
     this.buttonCmp = event.detail.cmp;
   }
 
-  resettimefield = () => {
+  resetTimeField = () => {
     this.timefieldCmp.reset(true);
   }
-
 }

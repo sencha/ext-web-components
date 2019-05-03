@@ -5,7 +5,7 @@ export default class FileFieldComponent {
     this.filefield = null;
   }
 
-  onfilefieldchange = (event, value) => {
+  onFileFieldChange = (event, value) => {
     this.filefield = event.detail.newValue;
     this.cmp.setHtml(`You selected ${this.filefield}`);
   }

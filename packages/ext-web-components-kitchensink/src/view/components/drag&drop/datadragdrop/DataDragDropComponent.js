@@ -19,7 +19,7 @@ export default class DataDragDropComponent {
       }
     });
 
-    target = new Ext.drag.Target({
+    this.target = new Ext.drag.Target({
       validCls: 'data-target-valid',
       listeners: {
           drop(target, info) {

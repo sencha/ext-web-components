@@ -2,7 +2,6 @@ import './FormPanelComponent.html';
 Ext.require('Ext.field.InputMask');
 
 export default class FormPanelComponent {
-
   constructor () {
     this.disabled = false;
     this.componentArray = [];
@@ -26,11 +25,11 @@ export default class FormPanelComponent {
     this.buttonCmp = event.detail.cmp;
   }
 
-  formpanelReady = (event) => {
+  formPanelReady = (event) => {
     this.formcmp = event.detail.cmp;
   }
 
-  resetform = () => {
+  resetForm = () => {
     this.formcmp.reset(true);
   }
 

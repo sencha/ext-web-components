@@ -3,7 +3,7 @@ import { generateData, randomItem } from '../generateSaleData';
 import saleModel from '../saleModel';
 
 export default class PivotGridWidgetsComponent {
-  constructor  = () => {
+  constructor() {
     this.store = Ext.create('Ext.data.Store', {
       model: saleModel,
       data: generateData()

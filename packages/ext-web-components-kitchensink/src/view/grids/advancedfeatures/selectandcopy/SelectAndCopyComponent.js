@@ -4,7 +4,7 @@ import createStore from './SelectAndCopyComponentData.js';
 Ext.require([ 'Ext.grid.plugin.Clipboard']);
 
 export default class SelectAndCopyComponent {
-  constructor  = () => {
+  constructor() {
     this.extensibleOptions = [];
 
     this.gridSelectable = {
