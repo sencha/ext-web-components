@@ -9,7 +9,31 @@ export default class PullRefreshListComponent {
 
   listReady = (event) => {
     this.list = event.detail.cmp;
-    const tpl = `<div>{name}</div>`;
+    this.list.setItemTpl('<div>{name}</div>');
+
+    this.store = Ext.create('Ext.data.Store', {
+      fields: ['name'],
+      autoLoad: true,
+      proxy: {
+          type: 'ajax',
+          url: '/KitchenSink/Companies',
+          reader: {
+              type: 'json',
+              rootProperty: 'data',
+              implicitIncludes: false
+          },
+          extraParams: {
+              shuffle: true
+          }
+      }
+    });
+
+    const plugin = this.list.findPlugin('pullrefresh');
+    this.list.setStore(this.store);
+  }
+
+  rewriteStore = () => {
+    debugger;
     this.store = Ext.create('Ext.data.Store', {
       fields: ['name'],
       autoLoad: true,
@@ -27,6 +51,5 @@ export default class PullRefreshListComponent {
       }
     });
     this.list.setStore(this.store);
-    this.list.setItemTpl(tpl);
   }
 }
