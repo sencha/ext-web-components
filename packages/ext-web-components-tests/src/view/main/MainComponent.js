@@ -32,7 +32,6 @@ export default class MainComponent {
   }
 
   readyNavTreePanel = (event) => {
-    debugger;
     this.navTreePanelCmp = event.detail.cmp
     this.afterAllLoaded('readyNavTreePanel')
 
