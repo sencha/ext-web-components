@@ -55,7 +55,7 @@ export class Router {
       }
       this.routes = routes;
     } catch (e) {
-      console.error(e);   
+      console.error(e);
     }
   }
 
@@ -131,8 +131,6 @@ export class ExtRouterComponent extends HTMLElement {
   }
 
   attributeChangedCallback(attr, oldVal, newVal) {
-    console.log('attributeChangedCallback: ' + attr)
-
     var route = document.getElementById("route");
     if (route != null) {
       if (attr == 'hidden') {
