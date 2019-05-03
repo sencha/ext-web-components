@@ -1,0 +1,12 @@
+{
+  "name": "@sencha/ext-web-components-router",
+  "version": "7.0.0",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sencha/ext-web-components"
+  },
+  "keywords": [],
+  "author": "Sencha",
+  "license": "ISC"
+}

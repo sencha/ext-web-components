@@ -1,6 +1,6 @@
 //import { Route } from '@sencha/ext-web-components';
 
-import  { getRoutes } from '@sencha/ext-web-components/lib/aa-router.component';
+import  { getRoutes } from '@sencha/ext-web-components-router/lib/ext-router.component';
 import '@sencha/ext-web-components/lib/ext-audio.component';
 import '@sencha/ext-web-components/lib/ext-container.component';
 import '@sencha/ext-web-components/lib/ext-menu.component';

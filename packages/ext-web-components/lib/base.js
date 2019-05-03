@@ -81,7 +81,7 @@ export default class ExtBase extends HTMLElement {
       me.setEvent(eventparameter,me.props,me)
     })
 
-    //mjg this should not be hard-coded to APP-ROOT
+    //mjg this should not be hard-coded to APP-ROOT or root
     if (this.nodeParentName == 'APP-ROOT' || this.parentElement.id == 'root') {
       //this.props.renderTo = this.parentNode
       //this.doCreate()
@@ -91,6 +91,13 @@ export default class ExtBase extends HTMLElement {
         name: 'MyEWCApp',
         launch: function () {
           Ext.Viewport.add([me.ext])
+
+          // if (window.router) {
+          //   console.log('router.init called')
+          //   window.router.init()
+          //   //new Router(window.routes);
+          // }
+
         }
       });
     }
@@ -101,6 +108,12 @@ export default class ExtBase extends HTMLElement {
         name: 'MyEWCApp',
         launch: function () {
           Ext.Viewport.add([me.ext])
+
+          if (window.router) {
+            console.log('router.init called')
+            window.router.init()
+          }
+
         }
       });
     }

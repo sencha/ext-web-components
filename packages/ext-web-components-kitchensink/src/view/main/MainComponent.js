@@ -119,7 +119,7 @@ export default class MainComponent {
   }
 
   readyRouter(event) {
-    //console.log('readyRouter')
+    console.log('readyRouter')
     this.router = event.target;
     this.afterAllLoaded('readyRouter')
   }
