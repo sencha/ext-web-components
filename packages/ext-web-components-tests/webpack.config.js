@@ -25,7 +25,7 @@ module.exports = function (env) {
     const plugins = [
       new HtmlWebpackPlugin({template: "./src/index.html",hash: true,inject: "body"}),
       new ExtWebpackPlugin({
-        framework: 'components',
+        framework: 'webcomponents',
         toolkit: 'modern',
         theme: 'theme-material',
         emit: 'yes',

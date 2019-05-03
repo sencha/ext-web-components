@@ -5,12 +5,12 @@ export default class InsertEndComponent {
     this.counter = 0;
   }
 
-  insert {
+  insert = (event) => {
     this.buttonComp = event.detail.cmp;
     this.buttonComp.setHandler(this.buttonClick.bind(this));
   }
 
-  buttonClick() {
+  buttonClick = () => {
     const container = document.createElement("ext-container");
     container.html = "Inserted" + this.counter;
     container.cls = "insertedComp" + this.counter;

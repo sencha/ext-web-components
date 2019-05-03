@@ -5,7 +5,7 @@ export default class SingleEventComponent {
     this.count = 0;
   }
 
-  onButtonTap(evt) {
+  onButtonTap = (evt) => {
     this.count++;
     const allResultDivs = document.getElementsByClassName('result-div-single-event');
 

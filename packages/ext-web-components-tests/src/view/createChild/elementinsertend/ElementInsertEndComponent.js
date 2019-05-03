@@ -5,12 +5,12 @@ export default class ElementInsertEndComponent {
     this.counter = 0;
   }
 
-  insert {
+  insert = (event) => {
     this.buttonComp = event.detail.cmp;
     this.buttonComp.setHandler(this.buttonClick.bind(this));
   }
 
-  buttonClick() {
+  buttonClick = () => {
     const div = document.createElement("div");
     div.className = "insertedElement" + this.counter;
     div.innerHTML = "Inserted" + this.counter;

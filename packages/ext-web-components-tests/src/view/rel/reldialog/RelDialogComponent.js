@@ -3,11 +3,11 @@ import "./RelDialogComponent.html";
 export default class RelDialogComponent {
   constructor() {}
 
-  onDialogReady(event) {
+  onDialogReady = (event) => {
     this.dialogCmp = event.detail.cmp;
   }
 
-  onClick {
+  onClick = () => {
     this.dialogCmp.setDisplayed(false);
   }
 }

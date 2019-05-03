@@ -18,7 +18,7 @@ export default class MainComponent {
     this.wait = 3;
   }
 
-  afterAllLoaded(f) {
+  afterAllLoaded = (f) => {
     this.wait = this.wait - 1;
     console.log(this.wait)
 
@@ -31,7 +31,8 @@ export default class MainComponent {
     }
   }
 
-  readyNavTreePanel(event) {
+  readyNavTreePanel = (event) => {
+    debugger;
     this.navTreePanelCmp = event.detail.cmp
     this.afterAllLoaded('readyNavTreePanel')
 
@@ -42,23 +43,24 @@ export default class MainComponent {
     }
   }
 
-  readyNavTreelist(event) {
+  readyNavTreelist = (event) => {
+    debugger;
     this.navTreelistCmp = event.detail.cmp
     this.navTreelistCmp.setStore(this.treeStore)
     this.afterAllLoaded('readyNavTreelist')
   }
 
-  readyRouter(event) {
+  readyRouter = (event) => {
     this.router = event.target;
     this.afterAllLoaded('readyRouter')
   }
 
-  navTreelistSelectionChange {
+  navTreelistSelectionChange = (event) =>  {
     var record = event.detail.record;
     this.navigate(record);
   }
 
-  navigate(record) {
+  navigate = (record) => {
     if (record == null) {
       console.log('it was null')
       return
@@ -79,20 +81,20 @@ export default class MainComponent {
     }
   }
 
-  containsMatches(node) {
+  containsMatches = (node) => {
     const found = node.data.name.match(this.filterRegex) || node.childNodes.some(child => this.containsMatches(child));
     if (found) node.expand();
     node.data.text = node.data.name.replace(this.filterRegex, '<span style="color:#2196F3;font-weight:bold">$1</span>')
     return found;
   }
 
-  toggleTree() {
+  toggleTree = () => {
     var collapsed = this.navTreePanelCmp.getCollapsed()
     if (collapsed == true){collapsed = false} else{collapsed = true}
     this.navTreePanelCmp.setCollapsed(collapsed)
   }
 
-  toggleButtonReady(event) {
+  toggleButtonReady = (event) => {
     const navButton = event.detail.cmp;
 
     if (Ext.os.is.Phone) {
