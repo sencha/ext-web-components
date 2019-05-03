@@ -10,11 +10,11 @@ export default class SheetComponent {
     this.text = 'Show Menu';
   }
 
-  sheetReady(event) {
+  sheetReady = (event) => {
     this.sheet = event.detail.cmp;
   }
 
-  buttonReady(event) {
+  buttonReady = (event) => {
     this.button = event.detail.cmp;
 
     if(this.direct === 'left' || this.direct === 'right'){
@@ -26,13 +26,13 @@ export default class SheetComponent {
     this.button.setWidth(this.width);
   }
 
-  buttonReady1(event) {
+  buttonReady1 = (event) => {
     this.button1 = event.detail.cmp;
     this.button1.setText(this.text);
     this.button1.setPressed(this.displayed);
   }
 
-  buttonReady2(event) {
+  buttonReady2 = (event) => {
     this.cmp = event.detail.cmp._text;
     this.button2 = event.detail.cmp;
 
@@ -43,27 +43,27 @@ export default class SheetComponent {
     }
   }
 
-  buttonRevealY(event) {
+  buttonRevealY = (event) => {
     this.buttonRevealY = event.detail.cmp;
     this.buttonRevealY.setPressed(false);
   }
 
-  buttonRevealN(event) {
+  buttonRevealN = (event) => {
     this.buttonRevealN = event.detail.cmp;
     this.buttonRevealN.setPressed(true);
   }
 
-  buttonModalY(event) {
+  buttonModalY = (event) => {
     this.buttonModalY = event.detail.cmp;
     this.buttonModalY.setPressed(true);
   }
 
-  buttonModalN(event) {
+  buttonModalN = (event) => {
     this.buttonModalN = event.detail.cmp;
     this.buttonModalN.setPressed(false);
   }
 
-  segmentedbuttonReady(event) {
+  segmentedbuttonReady = (event) => {
     this.segmentedbutton = event.detail.cmp;
     this.segmentedbutton.setDisabled(this.reveal);
   }

@@ -36,21 +36,21 @@ export default class SunburstComponent {
     });
   }
 
-  onSelectionChange({ detail }) {
+  onSelectionChange = ({ detail }) => {
     if (Ext.isArray(detail.selected)) {
       this.selection = detail.selected[0];
       this.sunburst.setSelection(this.selection);
     }
   }
 
-  onTooltip(component, tooltip, node) {
+  onTooltip = (component, tooltip, node) => {
     try {
       const record = node.data,
           size = record.get('size'),
           length = record.childNodes.length;
 
       tooltip.setTitle(record.get('text'));
-      tooltip.setHtml(size ? 
+      tooltip.setHtml(size ?
           Ext.util.Format.fileSize(size) :
           length + ' file' + (length === 1 ? '' : 's') + ' inside.'
       );
@@ -59,8 +59,8 @@ export default class SunburstComponent {
       console.error(e)
     }
   }
-  
-  onTreeReady(event) {
+
+  onTreeReady = (event) => {
     const treeList = event.detail.cmp;
 
     if (Ext.os.is.Phone) {
@@ -76,7 +76,7 @@ export default class SunburstComponent {
     treeList.setSelection(this.selection);
   }
 
-  onPanelReady(event) {
+  onPanelReady = (event) => {
     let cmp = event.detail.cmp;
     cmp.setResponsiveConfig(
       {
@@ -85,7 +85,7 @@ export default class SunburstComponent {
     )
   }
 
-  ond3Ready(event) {
+  ond3Ready = (event) => {
     this.sunburst = event.detail.cmp;
     this.sunburst.setStore(this.store);
     this.sunburst.setTooltip({
@@ -93,5 +93,4 @@ export default class SunburstComponent {
     });
     this.sunburst.setSelection(this.selection);
   }
-
 }

@@ -1,6 +1,6 @@
 <ext-panel  shadow layout="fit" fitToParent="true" height="100%">
-  <ext-d3-treemap 
-      onready="treemap.onready"
+  <ext-d3-treemap
+      onready="treemap.onReady"
       interactions='{
           "type": "panzoom",
           "zoom": {
@@ -15,5 +15,6 @@
       nodeValue="cap"
       noParentValue="true"
       scaleLabels="true"
-  ></ext-d3-treemap>
+  >
+  </ext-d3-treemap>
 </ext-panel>

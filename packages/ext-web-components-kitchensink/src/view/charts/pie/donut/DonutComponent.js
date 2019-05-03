@@ -32,18 +32,18 @@ export default class DonutComponent {
     this.menuCmpArray = [];
   }
 
-  onPolarReady(event) {
+  onPolarReady = (event) => {
     this.polar = event.detail.cmp;
     this.polar.setStore(this.store);
     this.polar.setSeries(this.polarSeries);
   }
 
-  onMenuItemReady(event) {
+  onMenuItemReady = (event) => {
     this.menuCmpArray.push(event.detail.cmp);
     event.detail.cmp.on('click', this.onThemeChange.bind(this));
   }
 
-  onThemeChange(event) {
+  onThemeChange = (event) => {
     this.theme = event.config.text.toLowerCase();
     this.menuCmpArray.forEach(function(cmp, index) {
       if (index == parseInt(event.config.itemId)) {

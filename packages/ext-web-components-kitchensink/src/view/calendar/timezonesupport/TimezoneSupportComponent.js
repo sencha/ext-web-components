@@ -8,7 +8,7 @@ export default class CalendarTimezoneSupportComponent {
     this.isPhone = Ext.os.is.Phone;
   }
 
-  calendarDayReady(event) {
+  calendarDayReady = (event) => {
     this.calendarDay = event.detail.cmp;
     const store = Ext.create('Ext.calendar.store.Calendars', {
       autoLoad: true,
@@ -26,7 +26,7 @@ export default class CalendarTimezoneSupportComponent {
     this.calendarDay.setTimezoneOffset(this.timezoneOffset);
   }
 
-  panelReady(event) {
+  panelReady = (event) => {
     this.panel = event.detail.cmp;
     this.panel.setTitle(this.panelTitle);
     this.panel.setHeader(

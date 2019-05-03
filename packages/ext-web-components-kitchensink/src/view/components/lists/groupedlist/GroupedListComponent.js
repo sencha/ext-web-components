@@ -3,7 +3,7 @@ import './GroupedListComponent.html';
 export default class GroupedListComponent {
   constructor () {}
 
-  onItemReady(event) {
+  onItemReady = (event) => {
     this.theListview = event.detail.cmp;
     const tpl =
     `<div>
@@ -30,7 +30,7 @@ export default class GroupedListComponent {
     return record.get('last_name')[0];
   }
 
-  onSelect(event) {
+  onSelect = (event) => {
     const selected = event.detail.selected.data;
     Ext.toast(`You selected ${selected.first_name} ${selected.last_name}.`);
   }

@@ -6,7 +6,7 @@ export default class AdvancedDatePanelComponent {
 
   constructor () {
   }
-  containerready1(event) {
+  containerready1 = (event) => {
     this.containerCmp = event.detail.cmp;
     const padding = Ext.os.is.Phone ? 0 : 10;
     this.containerCmp.setPadding(padding);

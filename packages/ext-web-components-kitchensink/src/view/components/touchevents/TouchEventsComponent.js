@@ -6,7 +6,7 @@ export default class TouchEventsComponent {
 
   events = [{type:'drag'}, {type:'touchmove'}];
 
-  touchpadReady(event) {
+  touchpadReady = (event) => {
     const element = event.detail.cmp.el;
     this.touchpadRef = element;
     this.touchpadRef.on({
@@ -29,7 +29,7 @@ export default class TouchEventsComponent {
     element.dom.style.cssText += "border: 8px dashed #d6d6d6; border-radius: 30px; text-align: center; font-size: 48px; color: #ccc;";
   }
 
-  dataviewReady(event) {
+  dataviewReady = (event) => {
     this.theDataview = event.detail.cmp;
     this.theDataview.setItemTpl('<p style="margin: 4px;">{type}</p>');
   }
@@ -44,7 +44,7 @@ export default class TouchEventsComponent {
     this.theDataview.setData(null);
   }
 
-  panelReady(event) {
+  panelReady = (event) => {
     this.panel = event.detail.cmp;
     const panelHeader =  {
       items: [

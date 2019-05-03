@@ -15,7 +15,7 @@ export default class BigDataComponent {
     this.showExportSheet = false;
   }
 
-  readyGrid(event) {
+  readyGrid = (event) => {
     this.gridCmp = event.detail.cmp;
     this.store = Ext.create('Ext.data.Store', {
       model,
@@ -122,7 +122,7 @@ export default class BigDataComponent {
     this.showExportSheet = true;
   }
 
-  nameColumnReady(event) {
+  nameColumnReady = (event) => {
     this.nameColumn = event.detail.cmp;
     this.nameColumn.setSorter({
       sorterFn: this.nameSorter.bind(this)
@@ -185,7 +185,7 @@ export default class BigDataComponent {
     return age;
   }
 
-  emptyColumnReady(event) {
+  emptyColumnReady = (event) => {
     const emptyColumn = event.detail.cmp;
     emptyColumn.setCell({
       xtype: 'widgetcell',

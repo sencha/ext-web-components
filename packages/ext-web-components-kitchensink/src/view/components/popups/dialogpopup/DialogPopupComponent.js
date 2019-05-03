@@ -6,7 +6,7 @@ export default class DialogPopupComponent {
     this.isDialogShowing = false;
   }
 
-  dialogReady(event) {
+  dialogReady = (event) => {
     this.dialog = event.detail.cmp;
   }
 

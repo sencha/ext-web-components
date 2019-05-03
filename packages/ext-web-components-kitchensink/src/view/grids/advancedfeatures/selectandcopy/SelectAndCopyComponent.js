@@ -17,27 +17,27 @@ export default class SelectAndCopyComponent {
     };
   }
 
-  gridReady(event) {
+  gridReady = (event) => {
     this.grid = event.detail.cmp;
     this.store = createStore();
     this.grid.setStore(this.store);
     this.grid.on('selectionchange', this.onSelectionChange.bind(this));
   }
 
-  infoContainerReady(event) {
+  infoContainerReady = (event) => {
     this.infoContainer = event.detail.cmp;
   }
 
-  menuItemReady(event) {
+  menuItemReady = (event) => {
     this.extensibleOptions.push(event.detail.cmp);
   }
 
-  extensibleMenuReady(event) {
+  extensibleMenuReady = (event) => {
     this.extensibleMenu = event.detail.cmp;
     this.extensibleMenu.on('click', this.onExtensibleChange.bind(this));
   }
 
-  onSelectableChange(event) {
+  onSelectableChange = (event) => {
     const currentCheckValue = event.detail.checked;
     const changedItem = event.detail.menucheckitem._text;
     this.gridSelectable.extensible = currentCheckValue

@@ -3,7 +3,7 @@ import './DisclosureListComponent.html';
 export default class DisclosureListComponent {
   constructor () {}
 
-  onItemReady(event) {
+  onItemReady = (event) => {
     this.theListview = event.detail.cmp;
     const tpl = `<div>{first_name} {last_name}</div>`;
     this.store = Ext.create('Ext.data.Store', { 

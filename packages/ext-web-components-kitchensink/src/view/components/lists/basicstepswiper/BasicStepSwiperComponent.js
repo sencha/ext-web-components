@@ -4,7 +4,7 @@ export default class BasicStepSwiperComponent {
 
   constructor () {}
 
-  onItemReady(event) {
+  onItemReady = (event) => {
     this.theListview = event.detail.cmp;
     const tpl =`<div>
     <div style="font-size:16px;margin-bottom:5px;">{first_name} {last_name}</div>
@@ -50,7 +50,7 @@ export default class BasicStepSwiperComponent {
     this.theListview.setPlugins(plugins);
   }
 
-  onSelect(event) {
+  onSelect = (event) => {
     const selected = event.detail.selected.data;
     Ext.toast(`You selected ${selected.first_name} ${selected.last_name}.`);
   }

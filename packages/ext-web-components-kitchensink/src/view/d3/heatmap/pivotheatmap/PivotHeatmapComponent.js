@@ -45,11 +45,11 @@ export default class PivotHeatmapComponent {
                 y: 30
             }
         }
-      } 
+      }
     }
   }
 
-  onPivotReady(event) {
+  onPivotReady = (event) => {
     this.pivot = event.detail.cmp;
     const tooltip = {
       renderer: this.onTooltip.bind(this)
@@ -58,7 +58,7 @@ export default class PivotHeatmapComponent {
     this.pivot.setTooltip(tooltip);
   }
 
-  onTooltip (component, tooltip, datum) {
+  onTooltip = (component, tooltip, datum) => {
     const d = datum.data,
       x = component.getXAxis().getField(),
       y = component.getYAxis().getField(),
@@ -72,12 +72,12 @@ export default class PivotHeatmapComponent {
     );
   }
 
-  onRefreshButtonReady(event) {
+  onRefreshButtonReady = (event) => {
     this.refreshButtonCmp = event.detail.cmp;
     this.refreshButtonCmp.on('tap', this.onRefreshClick.bind(this));
   }
 
-  onRefreshClick(event) {
+  onRefreshClick = (event) => {
     this.store.loadData(refreshRandomData());
   }
 }

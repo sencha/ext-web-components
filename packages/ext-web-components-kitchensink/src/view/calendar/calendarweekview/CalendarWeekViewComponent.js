@@ -24,7 +24,7 @@ export default class CalendarWeekViewComponent {
     this.calendarWeek.setFirstDayOfWeek(this.firstDayOfWeek);
     this.calendarWeek.setVisibleDays(this.visibleDays);  }
 
-  panelReady(event) {
+  panelReady = (event) => {
     this.panel = event.detail.cmp;
     this.panel.setTitle(this.panelTitle);
     this.panel.setHeader(
@@ -51,12 +51,12 @@ export default class CalendarWeekViewComponent {
     )
   }
 
-  innnerPanelReady(event) {
+  innnerPanelReady = (event) => {
     this.innerPanel = event.detail.cmp;
     this.innerPanel.setHidden(this.isPhone);
   }
 
-  calendarListReady(event) {
+  calendarListReady = (event) => {
     this.calendarList = event.detail.cmp;
     this.store = Ext.create('Ext.calendar.store.Calendars', {
       autoLoad: true,
@@ -68,7 +68,7 @@ export default class CalendarWeekViewComponent {
     this.calendarList.setStore(this.store);
   }
 
-  calendarWeekReady(event) {
+  calendarWeekReady = (event) => {
     this.calendarWeek = event.detail.cmp;
     this.calendarWeek.setStore(this.store);
     this.calendarWeek.setValue(new Date());

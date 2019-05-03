@@ -4,7 +4,7 @@ export default class CheckBoxFieldComponent {
   constructor () {
   }
 
-  checkboxfieldready1(event) {
+  checkboxfieldready1 = (event) => {
     const isPhone = Ext.os.is.Phone;
     this.cmp = event.detail.cmp;
 

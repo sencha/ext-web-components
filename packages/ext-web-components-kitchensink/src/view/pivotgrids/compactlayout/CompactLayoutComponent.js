@@ -43,17 +43,17 @@ export default class CompactLayoutComponent {
      }
   }
 
-  onPivotGridReady(event) {
+  onPivotGridReady = (event) => {
     this.pivotgrid = event.detail.cmp;
     this.pivotgrid.setMatrix(this.pivotgridMatrix);
   }
 
-  onReadyButton1(event) {
+  onReadyButton1 = (event) => {
     this.Button1 = event.detail.cmp;
     this.Button1.setHandler(this.expandAll.bind(this));
   }
  
-  onReadyButton2(event) {
+  onReadyButton2 = (event) => {
     this.Button2 = event.detail.cmp;
     this.Button2.setHandler(this.collapseAll.bind(this));
   }

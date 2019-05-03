@@ -14,18 +14,18 @@ export default class ColumnWithRendererComponent {
     this.store.loadData(createData(this.numRecords));
   }
 
-  onRefreshButtonReady(event) {
+  onRefreshButtonReady = (event) => {
     this.refreshButtonCmp = event.detail.cmp;
     this.refreshButtonCmp.on('tap', this.onRefreshClick.bind(this));
   }
 
-  onRefreshClick(event) {
+  onRefreshClick = (event) => {
     this.store.loadData(createData(this.numRecords));
     this.cartesianCmp.setStore(this.store);
 
   }
 
-  cartesianReady(event) {
+  cartesianReady = (event) => {
     this.cartesianCmp = event.detail.cmp;
     this.cartesianCmp.setStore(this.store);
     this.cartesianCmp.setAxes([{

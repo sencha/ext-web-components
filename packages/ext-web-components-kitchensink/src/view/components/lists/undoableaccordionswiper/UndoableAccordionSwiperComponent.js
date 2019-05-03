@@ -3,7 +3,7 @@ import './UndoableAccordionSwiperComponent.html';
 export default class UndoableAccordionSwiperComponent {
   constructor () {}
 
-  listReady(event) {
+  listReady = (event) => {
     this.list = event.detail.cmp;
     const tpl =
     `<div>
@@ -48,7 +48,7 @@ export default class UndoableAccordionSwiperComponent {
     this.list.setPlugins(plugins);
   }
 
-  onSelect(event) {
+  onSelect = (event) => {
     const selected = event.detail.selected.data;
     Ext.toast(`You selected ${selected.first_name} ${selected.last_name}.`);
   }

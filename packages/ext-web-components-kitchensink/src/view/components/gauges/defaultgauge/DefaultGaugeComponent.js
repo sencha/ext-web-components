@@ -5,7 +5,7 @@ export default class DefaultGaugeComponent {
     this.value = 40;
   }
 
-  updateGauges(event) {
+  updateGauges = (event) => {
     if(this.value === event.detail.oldValue[0]){
       this.value = event.detail.newValue;
       this.gauge1.setValue(this.value);
@@ -13,11 +13,11 @@ export default class DefaultGaugeComponent {
     }
   }
 
-  item1Ready(event) {
+  item1Ready = (event) => {
     this.gauge1 = event.detail.cmp;
   }
 
-  item2Ready(event) {
+  item2Ready = (event) => {
     this.gauge2 = event.detail.cmp;
   }
 }

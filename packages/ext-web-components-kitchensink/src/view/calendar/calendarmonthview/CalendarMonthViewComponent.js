@@ -5,13 +5,13 @@ export default class CalendarMonthViewComponent {
 
   constructor() { }
 
-  panelReady(event) {
+  panelReady = (event) => {
     this.panel = event.detail.cmp;
     this.panel.setTitle(Ext.Date.format(new Date(),'F Y'))
     this.panel.setTitleAlign('center');
   }
  
-  calendarListReady(event) {
+  calendarListReady = (event) => {
     this.store = Ext.create('Ext.calendar.store.Calendars', {
       autoLoad: true,
       proxy:{
@@ -23,7 +23,7 @@ export default class CalendarMonthViewComponent {
     this.calendarListReady.setStore(this.store);
   }
 
-  calendarMonthReady(event) {
+  calendarMonthReady = (event) => {
     this.calendarMonthReady = event.detail.cmp;
     this.calendarMonthReady.setStore(this.store);
   }

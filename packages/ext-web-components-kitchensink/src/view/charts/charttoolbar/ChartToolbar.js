@@ -12,7 +12,7 @@ export default class ChartToolbar extends HTMLElement {
         super()
         this.theme = "default";
     }
- 
+
     connectedCallback() {
         const theme = this.getAttribute('theme');
         const show = this.getAttribute('show');
@@ -26,8 +26,7 @@ export default class ChartToolbar extends HTMLElement {
         const onCrosshair = this.getAttribute('onCrosshairButtonReady') || false;
         const supportsTouch = this.getAttribute('supportsTouch');
         const onMenuItemReady = this.getAttribute('onItemReady')
-
-     this.innerHTML = `
+        this.innerHTML = `
             <ext-container layout="hbox">
                 <ext-button
                     hidden=${!(theme || show)}

@@ -8,17 +8,17 @@ export default class AudioComponent {
     this.isAndroid = Ext.os.is.Android;
   }
 
-  audioReady(event) {
+  audioReady = (event) => {
     this.audio = event.deatail.cmp;
     this.audio.setControls(!this.isAndroid);
   }
 
-  containerReady(event) {
+  containerReady = (event) => {
     this.container = event.detail.cmp;
     this.container.setHidden(!this.isAndroid);
   }
 
-  buttonReady(event) {
+  buttonReady = (event) => {
     this.button = event.detail.cmp;
     let text;
     if (this.playing) {

@@ -147,11 +147,11 @@ export default class ReconfigureGridComponent {
       return departments[Ext.Number.randomInt(0, len - 1)];
   }
 
-  onGridReady(event) {
+  onGridReady = (event) => {
     this.grid = event.detail.cmp;
   }
 
-  onSegmentedButtonChange(event) {
+  onSegmentedButtonChange = (event) => {
     const selectedConfig = event.detail.value;
 
     this.grid.setColumns(this.configs[selectedConfig].columns);

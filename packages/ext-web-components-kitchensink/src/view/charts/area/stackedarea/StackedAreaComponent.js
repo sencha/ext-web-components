@@ -26,12 +26,12 @@ export default class StackedAreaComponent {
     this.menuCmpArray = [];
   }
 
-  onMenuItemReady(event) {
+  onMenuItemReady = (event) => {
     this.menuCmpArray.push(event.detail.cmp);
     event.detail.cmp.on('click', this.onThemeChange.bind(this));
   }
 
-  onThemeChange(event) {
+  onThemeChange = (event) => {
     this.theme = event.config.text.toLowerCase();
     this.menuCmpArray.forEach((cmp, index) => {
       if (index == parseInt(event.config.itemId)) {
@@ -43,12 +43,12 @@ export default class StackedAreaComponent {
     this.cartesianCmp.setTheme(event.config.text.toLowerCase());
   }
 
-  containerReady(event) {
+  containerReady = (event) => {
     this.containerCmp = event.detail.cmp;
     this.button1Cmp = event.detail.cmp;
   }
 
-  cartesianReady(event) {
+  cartesianReady = (event) => {
     this.cartesianCmp = event.detail.cmp;
     this.cartesianCmp.setStore(this.store);
     this.cartesianCmp.setTheme(this.theme);
@@ -87,11 +87,11 @@ export default class StackedAreaComponent {
     }]);
   }
 
-  onAxisLabelRender(axis, label) {
+  onAxisLabelRender = (axis, label) => {
     return label.toFixed(label < 10 ? 1 : 0) + '%';
   }
 
-  onSeriesTooltipRender(tooltip, record, item) {
+  onSeriesTooltipRender = (tooltip, record, item) => {
     let fieldIndex = Ext.Array.indexOf(item.series.getYField(), item.field),
       browser = item.series.getTitle()[fieldIndex];
     tooltip.setHtml(`${browser} on ${record.get('month')}: ${record.get(item.field)}%`)

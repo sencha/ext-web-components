@@ -5,19 +5,22 @@
     >
     </chart-toolbar>
   </ext-container>
-
   <ext-panel shadow="true" layout="vbox">
-    <ext-polar downloadServerUrl ="http://svg.sencha.io"
+    <ext-polar
+      downloadServerUrl ="http://svg.sencha.io"
       onready="basicgaugechart.onPolarReady1"
       innerPadding="20"
       flex="1"
-      animation='{ "easing": "elasticIn", "duration": "1000"}'>
+      animation='{ "easing": "elasticIn", "duration": "1000"}'
+    >
     </ext-polar>
-    <ext-polar downloadServerUrl ="http://svg.sencha.io"
-    onready="basicgaugechart.onPolarReady2"
+    <ext-polar
+      downloadServerUrl ="http://svg.sencha.io"
+      onready="basicgaugechart.onPolarReady2"
       innerPadding="20"
       flex="1"
-      animation='{ "easing": "elasticIn", "duration": "1000"}'>
+      animation='{ "easing": "elasticIn", "duration": "1000"}'
+    >
     </ext-polar>
-  </ext-panel>  
+  </ext-panel>
 </ext-container>

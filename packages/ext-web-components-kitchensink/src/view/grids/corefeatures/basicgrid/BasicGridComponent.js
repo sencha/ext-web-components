@@ -14,7 +14,7 @@ export default class BasicGridComponent {
     } 
   });
 
-  readyGrid(event) {
+  readyGrid = (event) => {
     this.gridCmp = event.detail.cmp
     this.gridCmp.setStore(this.store)
   }

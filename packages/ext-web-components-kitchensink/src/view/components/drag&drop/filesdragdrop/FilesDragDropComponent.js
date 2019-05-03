@@ -22,11 +22,11 @@ export default class FilesDragDropComponent {
     this.iconContainer.setCls('drag-file-icon');
   }
 
-  fileContainerReady(event) {
+  fileContainerReady = (event) => {
     this.textContainer = event.detail.cmp.el;
   }
 
-  iconContainerReady(event) {
+  iconContainerReady = (event) => {
     this.iconContainer = event.detail.cmp.el;
   }
 

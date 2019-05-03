@@ -6,7 +6,7 @@ Ext.require(['Ext.pivot.d3.TreeMap']);
 export default class ConfigurablePivotTreemapComponent {
   constructor () {}
 
-  containerReady(event) {
+  containerReady = (event) => {
     this.pivotD3ContainerCmp = event.detail.cmp;
     const regions = {
       "Belgium": 'Europe',
@@ -120,11 +120,11 @@ export default class ConfigurablePivotTreemapComponent {
 
   }
 
-  showConfigurator() {
+  showConfigurator = () => {
     this.createdPivotFunc.showConfigurator();
   }
 
-  onBeforeAddConfigField(panel, config) {
+  onBeforeAddConfigField = (panel, config) => {
     const dest = config.toContainer,
     store = dest.getStore()
 
@@ -133,14 +133,14 @@ export default class ConfigurablePivotTreemapComponent {
     }
   }
 
-  onShowFieldSettings(panel, config) {
+  onShowFieldSettings = (panel, config) => {
     const align = config.container.down('[name=align]');
     if(align) {
       align.hide();
     }
   }
 
-  onShowConfigPanel(panel) {
+  onShowConfigPanel = (panel) => {
       panel.getLeftAxisHeader().getTitle().setText('Tree labels');
       panel.setTopAxisContainerVisible(false);
   }

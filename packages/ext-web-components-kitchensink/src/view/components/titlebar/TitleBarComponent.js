@@ -5,27 +5,27 @@ export default class TitleBarComponent {
     this.isPhone = Ext.os.is.Phone;
   }
 
-  menuReady(event) {
+  menuReady = (event) => {
     this.menuCmp = event.detail.cmp;
     this.menuCmp.setHidden(!this.isPhone);
   }
 
-  buttonReady(event) {
+  buttonReady = (event) => {
     this.btnCmp = event.detail.cmp;
     this.btnCmp.setHidden(this.isPhone);
   }
 
-  buttonReady1(event) {
+  buttonReady1 = (event) => {
     this.btnCmp1 = event.detail.cmp;
     this.btnCmp1.setHidden(this.isPhone);
   }
   
-  searchReady(event) {
+  searchReady = (event) => {
     this.search = event.detail.cmp;
     this.search.setHidden(this.isPhone);
   }
 
-  searchReady1(event) {
+  searchReady1 = (event) => {
     this.search1 = event.detail.cmp;
     this.search1.setHidden(!this.isPhone);
   }

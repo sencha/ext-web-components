@@ -8,7 +8,7 @@ Ext.require([
 export default class LockingGridComponent {
   constructor () {}
 
-  gridReady(event) {
+  gridReady = (event) => {
     const store = Ext.create('Ext.data.Store', {
       model,
       autoLoad: true,

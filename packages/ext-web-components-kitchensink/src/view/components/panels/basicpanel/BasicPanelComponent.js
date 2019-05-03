@@ -9,35 +9,35 @@ export default class BasicPanelComponent {
     this.text = Ext.os.is.Phone ? shortText : mediumText;
   }
 
-  readypanel1(event) {
+  readypanel1 = (event) => {
     this.panelCmp1 = event.detail.cmp;
     this.panelCmp1.setHtml(this.text);
   }
 
-  readycontainer1(event) {
+  readycontainer1 = (event) => {
     this.containerCmp1 = event.detail.cmp;
     const width = !Ext.os.is.Phone && 700;
     this.containerCmp1.setWidth(width);
   }
 
-  readycontainer2(event) {
+  readycontainer2 = (event) => {
     this.containerCmp2 = event.detail.cmp;
     const type = Ext.os.is.Phone ? 'vbox' : 'hbox';
     this.containerCmp2.setLayout({ type, pack: 'center', align: 'stretch' });
   }
 
-  readycontainer3(event) {
+  readycontainer3 = (event) => {
     this.containerCmp3 = event.detail.cmp;
     const type = Ext.os.is.Phone ? 'vbox' : 'hbox';
     this.containerCmp3.setLayout({ type, pack: 'center', align: 'stretch' });
   }
 
-  readypanel2(event) {
+  readypanel2 = (event) => {
     this.panelCmp2 = event.detail.cmp;
     this.panelCmp2.setHtml(this.text);
   }
 
-  readypanel3(event) {
+  readypanel3 = (event) => {
     this.panelCmp3 = event.detail.cmp;
     this.panelCmp3.setHtml(this.text);
     this.panelCmp3.setTools([
@@ -53,7 +53,7 @@ export default class BasicPanelComponent {
       Ext.toast(`You clicked ${tool.config.type || 'a custom tool'}.`);
     }
 
-  readypanel4(event) {
+  readypanel4 = (event) => {
     this.panelCmp4 = event.detail.cmp;
     this.panelCmp4.setHtml(this.text);
     this.panelCmp4.setTools([

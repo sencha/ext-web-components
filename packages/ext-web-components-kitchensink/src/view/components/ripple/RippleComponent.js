@@ -5,14 +5,14 @@ export default class RippleComponent {
 
   constructor() {
   }
-  containerReady(event) {
+  containerReady = (event) => {
     this.container = event.detail.cmp;
     this.container.setDefaults({
       handler: this.clickHandler.bind(this),
     })
   }
 
-  clickHandler(event) {
+  clickHandler = (event) => {
     Ext.get(event.target).ripple(event, {})
   }
 

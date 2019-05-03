@@ -5,7 +5,7 @@ export default class TreeDecorationsComponent {
 
   constructor () {}
 
-  onTreeReady(event) {
+  onTreeReady = (event) => {
     this.tree = event.detail.cmp;
     const isPhone = Ext.os.is.Phone;
     const width = !isPhone ? '400' : null

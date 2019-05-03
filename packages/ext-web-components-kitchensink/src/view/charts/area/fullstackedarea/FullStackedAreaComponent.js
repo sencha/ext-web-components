@@ -2,7 +2,6 @@ import '../../charttoolbar/ChartToolbar.js';
 import './FullStackedAreaComponent.html';
 
 export default class FullStackedAreaComponent {
-
   constructor () {
     this.store = Ext.create('Ext.data.Store', {
       fields: ['month', 'data1', 'data2', 'data3', 'data4', 'other'],
@@ -25,12 +24,12 @@ export default class FullStackedAreaComponent {
     this.menuCmpArray = [];
   }
 
-  onMenuItemReady(event) {
+  onMenuItemReady = (event) => {
     this.menuCmpArray.push(event.detail.cmp);
     event.detail.cmp.on('click', this.onThemeChange.bind(this));
   }
 
-  onThemeChange(event) {
+  onThemeChange = (event) => {
     this.theme = event.config.text.toLowerCase();
     this.menuCmpArray.forEach((cmp, index) => {
       if (index == parseInt(event.config.itemId)) {
@@ -42,11 +41,11 @@ export default class FullStackedAreaComponent {
     this.cartesianCmp.setTheme(event.config.text.toLowerCase());
   }
 
-  containerReady(event) {
+  containerReady = (event) => {
     this.containerCmp = event.detail.cmp;
   }
 
-  cartesianReady(event) {
+  cartesianReady = (event) => {
     this.cartesianCmp = event.detail.cmp;
     this.cartesianCmp.setStore(this.store);
     this.cartesianCmp.setTheme(this.theme);
@@ -97,20 +96,13 @@ export default class FullStackedAreaComponent {
       }]);
   }
 
-  onSeriesTooltipRender(tooltip, record, item) {
+  onSeriesTooltipRender = (tooltip, record, item) => {
     let fieldIndex = Ext.Array.indexOf(item.series.getYField(), item.field),
       browser = item.series.getTitle()[fieldIndex];
     tooltip.setHtml(`${browser} on ${record.get('month')}: ${record.get(item.field)}%`)
   }
 
   onAxisLabelRender = (axis, label, layoutContext) => {
-    // Custom renderer overrides the native axis label renderer.
-    // Since we don't want to do anything fancy with the value
-    // ourselves except appending a '%' sign, but at the same time
-    // don't want to loose the formatting done by the native renderer,
-    // we let the native renderer process the value first.
     return layoutContext.renderer(label) + '%';
   };
-
-
 }

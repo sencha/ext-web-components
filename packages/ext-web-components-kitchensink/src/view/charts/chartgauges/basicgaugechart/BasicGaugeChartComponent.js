@@ -14,16 +14,16 @@ export default class BasicGaugeChartComponent {
     this.store.loadData(createData(5));
   }
 
-  onRefreshButtonReady(event) {
+  onRefreshButtonReady = (event) => {
     this.refreshButtonCmp = event.detail.cmp;
     this.refreshButtonCmp.on('tap', this.onRefreshClick.bind(this));
   }
 
-  onRefreshClick(event) {
+  onRefreshClick = (event) => {
     this.store.loadData(createData(5));
   }
 
-  chartRenderer(sprite, config, rendererData, spriteIndex) {
+  chartRenderer = (sprite, config, rendererData, spriteIndex) => {
     let surface = sprite.getParent(),
     chart = rendererData.series.getChart(),
     mainRect = chart.getMainRect(),
@@ -67,7 +67,7 @@ export default class BasicGaugeChartComponent {
     }
   };
 
-  onPolarReady1(event) {
+  onPolarReady1 = (event) => {
     const polar1 = event.detail.cmp;
     const polarSeries1 = [{
       type: 'gauge',
@@ -81,7 +81,7 @@ export default class BasicGaugeChartComponent {
     polar1.setSeries(polarSeries1);
   }
 
-  onPolarReady2(event) {
+  onPolarReady2 = (event) => {
     const polar2 = event.detail.cmp;
     const polarSeries2 = [{
       type: 'gauge',

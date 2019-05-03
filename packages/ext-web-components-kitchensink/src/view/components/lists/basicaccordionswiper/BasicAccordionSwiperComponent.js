@@ -3,7 +3,7 @@ import './BasicAccordionSwiperComponent.html';
 export default class BasicAccordionSwiperComponent {
   constructor () {}
 
-  onItemReady(event) {
+  onItemReady = (event) => {
     this.theListview = event.detail.cmp;
     const tpl =`<div>
               <div style={{fontSize: '16px', marginBottom: '5px'}}>{first_name} {last_name}</div>
@@ -42,7 +42,7 @@ export default class BasicAccordionSwiperComponent {
     this.theListview.setPlugins(plugins);
   }
 
-  onSelect(event) {
+  onSelect = (event) => {
     const selected = event.detail.selected.data;
     Ext.toast(`You selected ${selected.first_name} ${selected.last_name}.`);
   }

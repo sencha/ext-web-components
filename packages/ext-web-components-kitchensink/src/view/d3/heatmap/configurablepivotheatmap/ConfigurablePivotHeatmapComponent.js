@@ -6,7 +6,7 @@ Ext.require('Ext.pivot.d3.HeatMap');
 export default class ConfigurablePivotHeatmapComponent {
   constructor () {}
 
-  containerReady(event) {
+  containerReady = (event) => {
     this.pivotD3ContainerCmp = event.detail.cmp;
     const regions = {
       "Belgium": 'Europe',
@@ -140,11 +140,11 @@ export default class ConfigurablePivotHeatmapComponent {
     configurator.getFields().items[6].setLabelRenderer((value) => Ext.Date.monthNames[value]);
   }
 
-  showConfigurator() {
+  showConfigurator = () => {
     this.createdPivotFunc.showConfigurator();
   }
 
-  onBeforeAddConfigField(panel, config) {
+  onBeforeAddConfigField = (panel, config) => {
     const dest = config.toContainer,
     store = dest.getStore()
 
@@ -153,14 +153,14 @@ export default class ConfigurablePivotHeatmapComponent {
     }
   }
 
-  onShowFieldSettings(panel, config) {
+  onShowFieldSettings = (panel, config) => {
     const align = config.container.down('[name=align]');
     if(align) {
       align.hide();
     }
   }
 
-  onTooltip(component, tooltip, datum) {
+  onTooltip = (component, tooltip, datum) => {
     const d = datum.data,
           x = component.getXAxis().getField(),
           y = component.getYAxis().getField(),

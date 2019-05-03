@@ -8,11 +8,11 @@ export default class PagingListComponent {
     this.bufferZone = false;
   }
 
-  onContainerReady(event) {
+  onContainerReady = (event) => {
     this.list1 = event.detail.cmp;
   }
 
-  buttonready1(event) {
+  buttonready1 = (event) => {
     this.buttonCmp1 = event.detail.cmp;
     this.buttonCmp1.setText("0");
   }

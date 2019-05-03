@@ -3,7 +3,7 @@ import './BasicListComponent.html';
 export default class BasicListComponent {
   constructor () {}
 
-  onItemReady(event) {
+  onItemReady = (event) => {
     this.theListview = event.detail.cmp;
     const tpl =
     `<div>
@@ -24,7 +24,7 @@ export default class BasicListComponent {
     this.theListview.setStore(this.store);
   }
 
-  onSelect(event) {
+  onSelect = (event) => {
     const selected = event.detail.selected.data;
     Ext.toast(`You selected ${selected.first_name} ${selected.last_name}.`);
   }

@@ -9,7 +9,7 @@ Ext.require([
 export default class GridFilteringComponent {
   constructor () {}
 
-  gridReady(event) {
+  gridReady = (event) => {
     const store = Ext.create('Ext.data.Store', {
       model,
       autoLoad: true,
@@ -33,7 +33,7 @@ export default class GridFilteringComponent {
     // debugger;
   }
 
-  nameColumnReady(event) {
+  nameColumnReady = (event) => {
     this.nameColumn = event.detail.cmp;
     this.nameColumn.setSorter({
       sorterFn: this.nameSorter.bind(this)

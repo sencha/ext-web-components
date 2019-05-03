@@ -155,17 +155,17 @@ export default class ExporterPluginComponent {
 
   }
 
-  onPivotGridReady(event) {
+  onPivotGridReady = (event) => {
     this.pivotgrid = event.detail.cmp;
     this.pivotgrid.setPlugins(this.pivotgridPlugins);
     this.pivotgrid.setMatrix(this.pivotGridMatrix);
   }
-  onButtonReady(event) {
+  onButtonReady = (event) => {
     this.button = event.detail.cmp;
     this.button.setHandler(this.showConfigurator.bind(this));
   }
 
-  onMenuReady(event) {
+  onMenuReady = (event) => {
     this.menu = event.detail.cmp;
     this.menu.on('click', this.exportDocument.bind(this));
   }

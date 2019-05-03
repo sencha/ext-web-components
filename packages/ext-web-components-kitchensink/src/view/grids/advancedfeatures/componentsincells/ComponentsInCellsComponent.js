@@ -5,7 +5,7 @@ import model from '../../data/CompanyModel';
 export default class ComponentsInCellsComponent {
   constructor () {}
 
-  onGridReady(event) {
+  onGridReady = (event) => {
     const store = Ext.create('Ext.data.Store', {
       model,
       autoLoad: true,
@@ -20,7 +20,7 @@ export default class ComponentsInCellsComponent {
     this.grid.setStore(store);
   }
 
-  onLastGrid(event) {
+  onLastGrid = (event) => {
     this.lastGridColumn = event.detail.cmp;
     this.lastGridColumn.setCell({
       xtype: "widgetcell",
@@ -47,11 +47,11 @@ export default class ComponentsInCellsComponent {
     });
   }
 
-  changeColumnReady(event) {
+  changeColumnReady = (event) => {
     this.changeColumn = event.detail.cmp;
     this.changeColumn.setRenderer(this.renderSign.bind(this, '0.00'));
   }
-  percentChangeColumnReady(event) {
+  percentChangeColumnReady = (event) => {
     this.pctChangeColumn = event.detail.cmp;
     this.pctChangeColumn.setRenderer(this.renderSign.bind(this, '0.00%'));
   }

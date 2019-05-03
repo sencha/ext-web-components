@@ -13,7 +13,7 @@ export default class SplitButtonComponent {
     this.menuItem = '';
   }
 
-  menu(event) {
+  menu = (event) => {
     this.splitButton = event.detail.cmp;
     const menuProp = [{
       text: 'Menu Item 1'
@@ -26,7 +26,7 @@ export default class SplitButtonComponent {
     this.menuButtons.push(this.splitButton);
   }
 
-  toggleReady(event) {
+  toggleReady = (event) => {
     this.toggleButton = event.detail.cmp;
   }
 
@@ -114,17 +114,17 @@ export default class SplitButtonComponent {
 
   }
 
-  setDefaultsForStyle(event) {
+  setDefaultsForStyle = (event) => {
     this.styleMenu = event.detail.cmp;
     this.styleMenu.on('click', this.styleMenuItemChange.bind(this));
   }
 
-  setTypeForStyle(event) {
+  setTypeForStyle = (event) => {
     this.typeMenu = event.detail.cmp;
     this.typeMenu.on('click', this.onTypeChange.bind(this));
   }
 
-  setIcon(event) {
+  setIcon = (event) => {
     const menuItem = event.detail.cmp;
     const menuItemText = menuItem._text;
 
@@ -137,7 +137,7 @@ export default class SplitButtonComponent {
     this.iconButtons.push(menuItem);
   }
 
-  setStyle(event) {
+  setStyle = (event) => {
     const menuItem = event.detail.cmp;
     const menuItemText = menuItem._text;
     if (menuItemText === this.style) {

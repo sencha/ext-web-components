@@ -37,18 +37,18 @@ export default class ThreeDPieComponent {
     this.store.loadData(generateData(this.numRecords));
   }
 
-  onPolarReady(event) {
+  onPolarReady = (event) => {
     this.polar = event.detail.cmp;
     this.polar.setStore(this.store);
     this.polar.setSeries(this.polarSeries);
   }
 
-  onMenuItemReady(event) {
+  onMenuItemReady = (event) => {
     this.menuCmpArray.push(event.detail.cmp);
     event.detail.cmp.on('click', this.onThemeChange.bind(this));
   }
 
-  onThemeChange(event) {
+  onThemeChange = (event) => {
     this.theme = event.config.text.toLowerCase();
     this.menuCmpArray.forEach(function(cmp, index) {
       if (index == parseInt(event.config.itemId)) {
@@ -60,12 +60,12 @@ export default class ThreeDPieComponent {
     this.polar.setTheme(event.config.text.toLowerCase());
   }
 
-  onRefreshButtonReady(event) {
+  onRefreshButtonReady = (event) => {
     this.refreshButtonCmp = event.detail.cmp;
     this.refreshButtonCmp.on('tap', this.onRefreshClick.bind(this));
   }
 
-  onRefreshClick(event) {
+  onRefreshClick = (event) => {
     this.store.loadData(generateData(this.numRecords));
     this.polar.setStore(this.store);
   }

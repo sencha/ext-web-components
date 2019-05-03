@@ -5,7 +5,7 @@ export default class TreeComponent {
 
   constructor () {}
 
-  onTreeReady(event) {
+  onTreeReady = (event) => {
     this.tree = event.detail.cmp;
     const isPhone = Ext.os.is.Phone;
     const top = !isPhone ? '10' : null

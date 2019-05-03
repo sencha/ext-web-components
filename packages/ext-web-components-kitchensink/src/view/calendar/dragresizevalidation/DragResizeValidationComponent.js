@@ -5,7 +5,7 @@ export default class CalendarDragResizeValidationComponent {
 
   constructor() { }
 
-  calendarDayReady(event) {
+  calendarDayReady = (event) => {
     this.calendarDay = event.detail.cmp;
     this.calendarDay.setValue(new Date());
     const store = Ext.create('Ext.calendar.store.Calendars', {

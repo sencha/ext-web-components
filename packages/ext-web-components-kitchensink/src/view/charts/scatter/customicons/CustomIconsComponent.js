@@ -18,28 +18,28 @@ export default class CustomIconsComponent {
 
   }
 
-  containerReady(event) {
+  containerReady = (event) => {
     this.containerCmp = event.detail.cmp;
     const padding = !Ext.os.is.Phone? '15' : '';
     this.containerCmp.setPadding(padding);
   }
 
-  onMenuItemReady(event) {
+  onMenuItemReady = (event) => {
     this.menuCmpArray.push(event.detail.cmp);
     event.detail.cmp.on('click', this.onThemeChange.bind(this));
   }
 
-  onRefreshButtonReady(event) {
+  onRefreshButtonReady = (event) => {
     this.refreshButtonCmp = event.detail.cmp;
     this.refreshButtonCmp.on('tap', this.onRefreshClick.bind(this));
   }
 
-  onRefreshClick(event) {
+  onRefreshClick = (event) => {
     this.store.loadData(generateData(25));
     this.cartesianCmp.setStore(this.store);
   }
 
-  onThemeChange(event) {
+  onThemeChange = (event) => {
     this.theme = event.config.text.toLowerCase();
     this.menuCmpArray.forEach((cmp, index) => {
       if (index == parseInt(event.config.itemId)) {
@@ -51,7 +51,7 @@ export default class CustomIconsComponent {
     this.cartesianCmp.setTheme(event.config.text.toLowerCase());
   }
    
-  cartesianReady(event) {
+  cartesianReady = (event) => {
     this.cartesianCmp = event.detail.cmp;
     this.cartesianCmp.setStore(this.store);
     this.cartesianCmp.setTheme(this.theme);

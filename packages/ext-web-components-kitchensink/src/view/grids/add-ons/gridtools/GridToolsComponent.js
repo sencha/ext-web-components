@@ -3,7 +3,7 @@ import './GridToolsComponent.html';
 export default class GridToolsComponent {
   constructor () {}
 
-  onGridReady(event) {
+  onGridReady = (event) => {
     this.grid = event.detail.cmp;
 
     const store =  Ext.create('Ext.data.Store', {
@@ -22,17 +22,17 @@ export default class GridToolsComponent {
     this.grid.setStore(store);
   }
 
-  firstColumnReady(event) {
+  firstColumnReady = (event) => {
     const nameColumn = event.detail.cmp;
     nameColumn.setCell({ tools:{ pin: { handler: this.onPinClick.bind(this) } } });
   }
 
-  secondColumnReady(event) {
+  secondColumnReady = (event) => {
     const cuisineColumn = event.detail.cmp;
     cuisineColumn.setCell({ tools:{ gear: { handler: this.onGearClick.bind(this) } } });
   }
 
-  thirdColumnReady(event) {
+  thirdColumnReady = (event) => {
     const searchColumn = event.detail.cmp;
     searchColumn.setCell({ tools:{ search: { handler: this.onSearchClick.bind(this) } } });
   }

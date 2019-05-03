@@ -8,7 +8,7 @@ Ext.require([
 export default class PullRefreshListComponent {
   constructor () {}
 
-  listReady(event) {
+  listReady = (event) => {
     this.list = event.detail.cmp;
     const tpl = `<div>{name}</div>`;
     this.store = Ext.create('Ext.data.Store', {

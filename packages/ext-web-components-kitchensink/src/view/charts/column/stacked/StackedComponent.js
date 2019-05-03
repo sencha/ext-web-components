@@ -18,37 +18,37 @@ export default class StackedComponent {
 
   }
 
-  onMenuItemReady(event) {
+  onMenuItemReady = (event) => {
     this.menuCmpArray.push(event.detail.cmp);
     event.detail.cmp.on('click', this.onThemeChange.bind(this));
   }
 
-  onRefreshButtonReady(event) {
+  onRefreshButtonReady = (event) => {
     this.refreshButtonCmp = event.detail.cmp;
     this.refreshButtonCmp.on('tap', this.onRefreshClick.bind(this));
   }
 
-  onRefreshClick(event) {
+  onRefreshClick = (event) => {
     this.store.loadData(createData(this.numRecords));
     this.cartesianCmp.setStore(this.store);
   }
 
-  onStackButtonReady(event) {
+  onStackButtonReady = (event) => {
     this.stackButtonCmp = event.detail.cmp;
     this.stackButtonCmp.on('tap', this.onStackedToggle.bind(this, { value: 0}));
   }
 
-  onGroupButtonReady(event) {
+  onGroupButtonReady = (event) => {
     this.groupButtonCmp = event.detail.cmp;
     this.groupButtonCmp.on('tap', this.onStackedToggle.bind(this, { value: 1 }));
   }
 
-  onZoomButtonReady(event) {
+  onZoomButtonReady = (event) => {
     this.zoomButtonCmp = event.detail.cmp;
     this.zoomButtonCmp.on('tap', this.toggleZoomOnPan.bind(this, true));
   }
 
-  onPanButtonReady(event) {
+  onPanButtonReady = (event) => {
     this.panButtonCmp = event.detail.cmp;
     this.panButtonCmp.on('tap', this.toggleZoomOnPan.bind(this, false));
   }
@@ -59,7 +59,7 @@ export default class StackedComponent {
     this.zoom = zoomOnPan;
   };
 
-  onStackedToggle(event) {
+  onStackedToggle = (event) => {
     if (event.value == 0) {
       this.stacked = 1;
     } else {
@@ -70,7 +70,7 @@ export default class StackedComponent {
     this.cartesianCmp.redraw();
   };
 
-  onThemeChange(event) {
+  onThemeChange = (event) => {
     this.theme = event.config.text.toLowerCase();
     this.menuCmpArray.forEach((cmp, index) => {
       if (index == parseInt(event.config.itemId)) {
@@ -82,7 +82,7 @@ export default class StackedComponent {
     this.cartesianCmp.setTheme(event.config.text.toLowerCase());
   }
 
-  cartesianReady(event) {
+  cartesianReady = (event) => {
     this.cartesianCmp = event.detail.cmp;
     this.cartesianCmp.setStore(this.store);
     this.cartesianCmp.setTheme(this.theme);

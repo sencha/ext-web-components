@@ -112,13 +112,13 @@ export default class ConfiguratorPluginComponent {
     return Ext.util.Format.number(v, '0,000.00');
   }
 
-  onPivotGridReady(event) {
+  onPivotGridReady = (event) => {
     this.pivotgrid = event.detail.cmp;
     this.pivotgrid.setMatrix(this.pivotgridMatrix);
     this.pivotgrid.setPlugins(this.pivotgridPlugins);
   }
 
-  onButtonReady(event) {
+  onButtonReady = (event) => {
     this.button = event.detail.cmp;
     this.button.setHandler(this.showConfigurator.bind(this));
   }

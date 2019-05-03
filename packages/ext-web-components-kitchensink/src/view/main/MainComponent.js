@@ -29,7 +29,7 @@ export default class MainComponent {
   }
 
   //DEBUG:
-  readyRightContainer(event) {
+  readyRightContainer = (event) => {
     this.rightContainerCmp = event.detail.cmp;
     this.rightContainerCmp.updateHtml("Build: " + BUILD_VERSION);
   }
@@ -47,13 +47,13 @@ export default class MainComponent {
     }
   }
 
-  readyCodeButton(event) {
+  readyCodeButton = (event) => {
     //console.log('readyCodeButton')
     this.codeButtonCmp = event.detail.cmp
     //this.afterAllLoaded()
   }
 
-  readyDataviewBreadcrumb(event) {
+  readyDataviewBreadcrumb = (event) => {
     //console.log('readyDataviewBreadcrumb')
     //console.dir(event)
     this.dataviewBreadcrumbCmp = event.detail.cmp
@@ -65,7 +65,7 @@ export default class MainComponent {
     this.afterAllLoaded('readyDataviewBreadcrumb')
   }
 
-  readyNavTreePanel(event) {
+  readyNavTreePanel = (event) => {
     //console.log('readyNavTreePanel')
     this.navTreePanelCmp = event.detail.cmp;
 
@@ -75,14 +75,14 @@ export default class MainComponent {
     //this.afterAllLoaded('readyNavTreePanel')
   }
 
-  readyNavTreelist(event) {
+  readyNavTreelist = (event) => {
     //console.log('readyNavTreelist')
     this.navTreelistCmp = event.detail.cmp
     this.navTreelistCmp.setStore(this.treeStore)
     this.afterAllLoaded('readyNavTreelist')
   }
 
-  readySelection(event) {
+  readySelection = (event) => {
     //console.log('readySelection')
     this.selectionCmp = event.detail.cmp
     var bodyStyle = `
@@ -96,7 +96,7 @@ export default class MainComponent {
     //this.afterAllLoaded('readySelection');
   }
 
-  readyDataviewNav(event) {
+  readyDataviewNav = (event) => {
     //console.log('readyDataviewNav')
     this.dataviewNavCmp = event.detail.cmp
     this.dataviewNavCmp.setStyle({'background':'top','display':'block','text-align':'center'})
@@ -118,19 +118,19 @@ export default class MainComponent {
     this.afterAllLoaded('readyDataviewNav')
   }
 
-  readyRouter(event) {
+  readyRouter = (event) => {
     //console.log('readyRouter')
     this.router = event.target;
     this.afterAllLoaded('readyRouter')
   }
 
-  readyCodePanel(event) {
+  readyCodePanel = (event) => {
     //console.log('readyCodePanel')
     this.codePanelCmp = event.detail.cmp
     //this.afterAllLoaded('readyCodePanel')
   }
 
-  readyTabPanel(event) {
+  readyTabPanel = (event) => {
     //console.log('readyTabPanel')
     this.tabPanelCmp = event.detail.cmp
     this.afterAllLoaded('readyTabPanel')
@@ -167,7 +167,7 @@ export default class MainComponent {
     this.navigate(record);
   }
 
-  navTreelistSelectionChange(event) {
+  navTreelistSelectionChange = (event) => {
     var record = event.detail.record;
     this.navigate(record);
   }
@@ -217,7 +217,7 @@ export default class MainComponent {
     this.setCodeTabs()
   }
 
-  doClickToolbar(event) {
+  doClickToolbar = (event) => {
     var collapsed = this.navTreePanelCmp.getCollapsed()
     if (collapsed == true){collapsed = false} else {collapsed = true}
     this.navTreePanelCmp.setCollapsed(collapsed)

@@ -6,7 +6,7 @@ export default class ToolTipComponent {
     console.log('in ToolTipComponent constructor');
   }
 
-  readycontainer1(event) {
+  readycontainer1 = (event) => {
     const layoutType = Ext.platformTags.phone ? 'vbox' : 'hbox';
     this.containerCmp1 = event.detail.cmp;
     // this.containerCmp1.setLayout({
@@ -16,7 +16,7 @@ export default class ToolTipComponent {
     // });
   }
 
-  readycontainer2(event) {
+  readycontainer2 = (event) => {
     const layoutType = Ext.platformTags.phone ? 'vbox' : 'hbox';
     this.containerCmp2 = event.detail.cmp;
     // this.containerCmp2.setLayout({
@@ -26,7 +26,7 @@ export default class ToolTipComponent {
     // });
   }
 
-  readycontainer3(event) {
+  readycontainer3 = (event) => {
     const layoutType = Ext.platformTags.phone ? 'vbox' : 'hbox';
     this.containerCmp3 = event.detail.cmp;
     // this.containerCmp3.setLayout({
@@ -36,22 +36,22 @@ export default class ToolTipComponent {
     // });
   }
 
-  readytooltip1(event) {
+  readytooltip1 = (event) => {
     this.tooltipCmp1 = event.detail.cmp;
     this.tooltipCmp1.setHtml(`A simple tooltip`);
   }
 
-  readytooltip2(event) {
+  readytooltip2 = (event) => {
     this.tooltipCmp2 = event.detail.cmp;
     this.tooltipCmp2.setHtml(`A simple tooltip`);
   }
 
-  readytooltip3(event) {
+  readytooltip3 = (event) => {
     this.tooltipCmp3 = event.detail.cmp;
     this.tooltipCmp3.setHtml(`This tip will follow the mouse while it is over the element`);
   }
 
-  readytooltip4(event) {
+  readytooltip4 = (event) => {
     this.tooltipCmp4 = event.detail.cmp;
     this.tooltipCmp4.setHtml(`<ul style="margin-bottom: 15px">
           <li>5 bedrooms</li>
@@ -61,12 +61,12 @@ export default class ToolTipComponent {
         <img style="width: 400px; height: 300px;" src="resources/images/house.jpg" />`);
   }
 
-  readytooltip5(event) {
+  readytooltip5 = (event) => {
     this.tooltipCmp5 = event.detail.cmp;
     this.tooltipCmp5.setHtml(`The anchor is centered`);
   }
 
-  readytooltip6(event) {
+  readytooltip6 = (event) => {
     this.tooltipCmp6 = event.detail.cmp;
     this.tooltipCmp6.setHtml(`Following the mouse with an anchor`);
   }

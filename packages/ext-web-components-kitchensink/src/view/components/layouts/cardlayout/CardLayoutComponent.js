@@ -50,7 +50,7 @@ export default class CardLayoutComponent {
     ];
   }
 
-  switchCards(event) {
+  switchCards = (event) => {
     const buttonText = event.srcElement.text;
     const targetItem = this.contents.filter(function(button) {return button.text === buttonText})[0];
     console.log(targetItem);
@@ -66,21 +66,21 @@ export default class CardLayoutComponent {
     this.contParent.setActiveItem(this.activeCard);
   }
 
-  onItem1Ready(event) {
+  onItem1Ready = (event) => {
     this.displayPanel1 = event.detail.cmp;
     this.displayPanel1.setBodyStyle(this.card.blue);
   }
 
-  onItem2Ready(event) {
+  onItem2Ready = (event) => {
     this.displayPanel2 = event.detail.cmp;
     this.displayPanel2.setBodyStyle(this.card.green);
   }
 
-  onContainer1Ready(event) {
+  onContainer1Ready = (event) => {
     this.contParent = event.detail.cmp;
   }
 
-  onContainer2Ready(event) {
+  onContainer2Ready = (event) => {
     this.cont2 = event.detail.cmp;
 
     for (let buttonItem of this.contents) {
@@ -99,7 +99,7 @@ export default class CardLayoutComponent {
     }
   }
 
-  onContainer3Ready(event) {
+  onContainer3Ready = (event) => {
     this.cont3 = event.detail.cmp;
 
     for (let buttonItem of this.contents) {

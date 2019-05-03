@@ -1,6 +1,6 @@
 import '../charttoolbar/ChartToolbar.js';
 import './BoxPlotComponent.html';
-import data from './BoxPlotComponentData.js'; 
+import data from './BoxPlotComponentData.js';
 
 Ext.require([
   'Ext.chart.CartesianChart',
@@ -11,7 +11,6 @@ Ext.require([
 ]);
 
 export default class BoxPlotComponent {
-
   constructor () {
     this.colors = [
       {
@@ -45,15 +44,14 @@ export default class BoxPlotComponent {
 
     this.theme = 'default';
     this.menuCmpArray = [];
-
   }
 
-  onMenuItemReady(event) {
+  onMenuItemReady = (event) => {
     this.menuCmpArray.push(event.detail.cmp);
     event.detail.cmp.on('click', this.onThemeChange.bind(this));
   }
 
-  onThemeChange(event) {
+  onThemeChange = (event) => {
     this.theme = event.config.text.toLowerCase();
     this.menuCmpArray.forEach((cmp, index) => {
       if (index == parseInt(event.config.itemId)) {
@@ -65,7 +63,7 @@ export default class BoxPlotComponent {
     this.cartesianCmp.setTheme(event.config.text.toLowerCase());
   }
 
-  cartesianReady(event) {
+  cartesianReady = (event) => {
     this.cartesianCmp = event.detail.cmp;
     this.cartesianCmp.setStore(this.store);
     this.cartesianCmp.setTheme(this.theme);
@@ -114,11 +112,11 @@ export default class BoxPlotComponent {
     }]);
   }
 
-  onBoxPlotRender(sprite, config, data, index) {
+  onBoxPlotRender = (sprite, config, data, index) => {
     return this.colors[index % this.colors.length];
   };
 
-  onBoxPlotTooltip(tooltip, record, item) {
+  onBoxPlotTooltip = (tooltip, record, item) => {
     const category = record.get('field'),
       high = record.get('high'),
       q3 = record.get('q3'),

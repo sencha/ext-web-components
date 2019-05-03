@@ -52,28 +52,28 @@ export default class PivotGridWidgetsComponent {
     };
   }
 
-  onPivotGridReady(event) {
+  onPivotGridReady = (event) => {
     this.pivotgrid = event.detail.cmp;
     this.pivotgrid.setMatrix(this.pivotgridMatrix);
   }
 
-  onButtonReady1(event) {
+  onButtonReady1 = (event) => {
     this.button1 = event.detail.cmp;
     this.button1.setHandler(this.addData.bind(this));
   }
 
-  onButtonReady2(event) {
+  onButtonReady2 = (event) => {
     this.button2 = event.detail.cmp;
     this.button2.setHandler(this.updateData.bind(this));
 
   }
 
-  onButtonReady3(event) {
+  onButtonReady3 = (event) => {
     this.button3 = event.detail.cmp;
     this.button3.setHandler(this.removeData.bind(this));
   }
 
-   onButtonReady4(event) {
+   onButtonReady4 = (event) => {
     this.button4 = event.detail.cmp;
     this.button4.setHandler(this.clearData.bind(this));
   }

@@ -8,7 +8,7 @@ export default class TreeListComponent {
     this.nav=true;
   }
 
-  onPanelReady(event) {
+  onPanelReady = (event) => {
     this.panel = event.detail.cmp;
     const isPhone = Ext.os.is.Phone;
     const top = !isPhone ? '10' : null
@@ -22,7 +22,7 @@ export default class TreeListComponent {
     this.panel.setHeight(height);
   }
 
-  onTreeListReady(event) {
+  onTreeListReady = (event) => {
     this.tree = event.detail.cmp;
     this.store = Ext.create('Ext.data.TreeStore', {
       rootVisible: true,
@@ -31,17 +31,17 @@ export default class TreeListComponent {
     this.tree.setStore(this.store);
   }
 
-  onButtonReady1(event) {
+  onButtonReady1 = (event) => {
     this.button1 = event.detail.cmp;
     this.button1.setPressed(true);
   }
 
-  onButtonReady2(event) {
+  onButtonReady2 = (event) => {
     this.button2 = event.detail.cmp;
     this.button2.setPressed(false);
   }
 
-   toggleNav(event) {
+   toggleNav = (event) => {
     if (this.tree) {
       this.nav = event.detail.value;
       if (this.nav) {
@@ -55,7 +55,7 @@ export default class TreeListComponent {
     this.button2.setPressed(false);
   }
 
-   toggleMicro(event) {
+   toggleMicro = (event) => {
     this.micro = event.detail.value;
     if (this.micro) {
       this.tree.setMicro(true);

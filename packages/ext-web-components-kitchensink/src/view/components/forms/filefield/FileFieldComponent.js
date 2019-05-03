@@ -10,7 +10,7 @@ export default class FileFieldComponent {
     this.cmp.setHtml(`You selected ${this.filefield}`);
   }
 
-  containerReady(event) {
+  containerReady = (event) => {
     this.cmp = event.detail.cmp;
   }
 }

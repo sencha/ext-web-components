@@ -8,32 +8,32 @@ export default class SliderFieldComponent {
     this.multipleValue = [10, 70];
   }
 
-  oncontainerready1(event) {
+  oncontainerready1 = (event) => {
     this.containercmp1 = event.detail.cmp;
     this.containercmp1.setHtml(`Value: ${this.singleValue}`);
   }
 
-  oncontainerready2(event) {
+  oncontainerready2 = (event) => {
     this.containercmp2 = event.detail.cmp;
     this.containercmp2.setHtml(`Value: ${this.liveUpdateValue}`);
   }
 
-  oncontainerready3(event) {
+  oncontainerready3 = (event) => {
     this.containercmp3 = event.detail.cmp;
     this.containercmp3.setHtml(`Value: ${this.multipleValue}`);
   }
 
-  onsinglechange(event) {
+  onsinglechange = (event) => {
     this.singleValue = event.detail.newValue;
     this.containercmp1.setHtml(`Value: ${event.detail.newValue}`);
   }
 
-  onliveupdatechange(event) {
+  onliveupdatechange = (event) => {
     this.liveUpdateValue = event.detail.newValue;
     this.containercmp2.setHtml(`Value: ${event.detail.newValue}`);
   }
 
-  onmultiplechange(event) {
+  onmultiplechange = (event) => {
     this.multipleValue = event.detail.newValue;
     this.containercmp3.setHtml(`Value: ${event.detail.newValue}`);
   }

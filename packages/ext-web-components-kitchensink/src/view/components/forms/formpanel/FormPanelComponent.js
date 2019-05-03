@@ -8,7 +8,7 @@ export default class FormPanelComponent {
     this.componentArray = [];
   }
 
-  toggleDisable(event) {
+  toggleDisable = (event) => {
     this.disabled = !this.disabled;
     let buttonText = "Disable All";
 
@@ -22,11 +22,11 @@ export default class FormPanelComponent {
     });
   }
 
-  buttonReady(event) {
+  buttonReady = (event) => {
     this.buttonCmp = event.detail.cmp;
   }
 
-  formpanelReady(event) {
+  formpanelReady = (event) => {
     this.formcmp = event.detail.cmp;
   }
 
@@ -34,7 +34,7 @@ export default class FormPanelComponent {
     this.formcmp.reset(true);
   }
 
-  componentReady(event) {
+  componentReady = (event) => {
     this.componentArray.push(event.detail.cmp);
   }
   

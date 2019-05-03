@@ -15,7 +15,7 @@ export default class ThreeDGroupedComponent {
     });
   }
 
-  onDownloadButtonReady(event) {
+  onDownloadButtonReady = (event) => {
     this.downloadButtonCmp = event.detail.cmp;
     this.downloadButtonCmp.on('tap', this.downloadChart.bind(this));
   }
@@ -39,7 +39,7 @@ export default class ThreeDGroupedComponent {
   }
 
 
-  cartesianReady(event) {
+  cartesianReady = (event) => {
     this.cartesianCmp = event.detail.cmp;
     this.cartesianCmp.setAxes([{
       type: 'numeric3d',

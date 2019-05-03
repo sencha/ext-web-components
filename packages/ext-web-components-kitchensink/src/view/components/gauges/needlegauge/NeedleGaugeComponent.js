@@ -8,7 +8,7 @@ export default class NeedleGaugeComponent {
     this.innerradius = {type:'arrow'};
   }
 
-  updateGauges(event) {
+  updateGauges = (event) => {
     if(this.value === event.detail.oldValue[0]){
       this.value = event.detail.newValue;
       this.gauge1.setValue(this.value);
@@ -18,20 +18,20 @@ export default class NeedleGaugeComponent {
     }
   }
 
-  item1Ready(event) {
+  item1Ready = (event) => {
     this.gauge1 = event.detail.cmp;
     this.gauge1.setNeedle(this.outerradius);
   }
 
-  item2Ready(event) {
+  item2Ready = (event) => {
     this.gauge2 = event.detail.cmp;
   }
 
-  item3Ready(event) {
+  item3Ready = (event) => {
     this.gauge3 = event.detail.cmp;
   }
 
-  item4Ready(event) {
+  item4Ready = (event) => {
     this.gauge4 = event.detail.cmp;
     this.gauge4.setNeedle(this.innerradius);
   }

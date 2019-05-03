@@ -7,7 +7,7 @@ export default class TimeFieldComponent {
     this.disabled = false;
   }
 
-  toggleDisable(event) {
+  toggleDisable = (event) => {
     this.disabled = !this.disabled;
     let buttonText = "Disable All";
 
@@ -19,11 +19,11 @@ export default class TimeFieldComponent {
     this.timefieldCmp.setDisabled(this.disabled);
   }
 
-  timefieldReady(event) {
+  timefieldReady = (event) => {
     this.timefieldCmp = event.detail.cmp;
   }
 
-  buttonReady(event) {
+  buttonReady = (event) => {
     this.buttonCmp = event.detail.cmp;
   }
 
