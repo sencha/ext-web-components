@@ -3,12 +3,10 @@ import './TreeMapComponent.html';
 Ext.require(['Ext.d3.interaction.PanZoom']);
 
 export default class TreeMapComponent {
-
   constructor() { }
 
-  onTooltip (component, tooltip, node) {
+  onTooltip = (component, tooltip, node) => {
     const record = node.data;
-
     component.setSelection(record);
 
     if (record.isLeaf()) {
@@ -18,9 +16,8 @@ export default class TreeMapComponent {
     }
   }
 
-  getParentHtml(record) {
+  getParentHtml = (record) => {
     let template = this.parentTemplate;
-
     if (!template) {
       template = this.parentTemplate = new Ext.XTemplate(
         '<div class="tip-title">{data.name}</div>',
@@ -33,7 +30,7 @@ export default class TreeMapComponent {
     return template.apply(record);
   }
 
-  getLeafHtml(record) {
+  getLeafHtml = (record) => {
     let template = this.leafTemplate;
 
     if (!template) {
@@ -45,12 +42,12 @@ export default class TreeMapComponent {
     return template.apply(record);
   }
 
-  colorAxisProcessor(axis, scale, node, field) {
+  colorAxisProcessor = (axis, scale, node, field) => {
     const record = node.data;
     return record.isLeaf() ? scale(record.get(field)) : '#ececec';
   }
 
-  onReady(event) {
+  onReady = (event) => {
    const  store = Ext.create('Ext.data.TreeStore', {
       autoLoad: true,
       fields: [
@@ -99,5 +96,4 @@ export default class TreeMapComponent {
     });
     cmp.setColorAxis(colorAxis);
   }
-
 }

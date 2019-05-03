@@ -2,7 +2,7 @@ import './ReconfigureGridComponent.html';
 import model from '../../data/GridModel';
 
 export default class ReconfigureGridComponent {
-  constructor () {
+  constructor() {
     this.lastNames= ['Jones', 'Smith', 'Lee', 'Wilson', 'Black', 'Williams', 'Lewis', 'Johnson', 'Foot', 'Little', 'Vee', 'Train', 'Hot', 'Mutt'];
     this.firstNames= ['Fred', 'Julie', 'Bill', 'Ted', 'Jack', 'John', 'Mark', 'Mike', 'Chris', 'Bob', 'Travis', 'Kelly', 'Sara'];
     this.cities= ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Philadelphia', 'Phoenix', 'San Antonio', 'San Diego', 'Dallas', 'San Jose'];
@@ -52,7 +52,7 @@ export default class ReconfigureGridComponent {
     };
   }
 
-  createEmployeeStore() {
+  createEmployeeStore = () => {
       var data = [],
           usedNames = {},
           i, name;
@@ -74,7 +74,7 @@ export default class ReconfigureGridComponent {
       });
   }
 
-  createOfficeStore() {
+  createOfficeStore = () => {
        var data = [],
           usedNames = {},
           usedCities = {},
@@ -94,7 +94,7 @@ export default class ReconfigureGridComponent {
       });
   }
 
-  generateName() {
+  generateName = () => {
        const lasts = this.lastNames,
           firsts = this.firstNames,
           lastLen = lasts.length,
@@ -105,7 +105,7 @@ export default class ReconfigureGridComponent {
       return [first, last];
   }
 
-  getUniqueName(used) {
+  getUniqueName = (used) => {
       const name = this.generateName(), key = name[0] + name[1];
 
       if (used[key]) {
@@ -116,12 +116,12 @@ export default class ReconfigureGridComponent {
       return name;
   }
 
-  getCity() {
+  getCity = () => {
       const cities = this.cities, len = cities.length;
       return cities[Ext.Number.randomInt(0, len - 1)];
   }
 
-  getUniqueCity(used) {
+  getUniqueCity = (used) => {
       const city = this.getCity();
 
       if (used[city]) {
@@ -132,7 +132,7 @@ export default class ReconfigureGridComponent {
       return city;
   }
 
-  getEmployeeNo() {
+  getEmployeeNo = () => {
       let out = '', i;
 
       for (i = 0; i < 6; ++i) {
@@ -141,17 +141,17 @@ export default class ReconfigureGridComponent {
       return out;
   }
 
-  getDepartment() {
+  getDepartment = () => {
       const departments = this.departments,
           len = departments.length;
       return departments[Ext.Number.randomInt(0, len - 1)];
   }
 
-  onGridReady(event) {
+  onGridReady = (event) => {
     this.grid = event.detail.cmp;
   }
 
-  onSegmentedButtonChange(event) {
+  onSegmentedButtonChange = (event) => {
     const selectedConfig = event.detail.value;
 
     this.grid.setColumns(this.configs[selectedConfig].columns);

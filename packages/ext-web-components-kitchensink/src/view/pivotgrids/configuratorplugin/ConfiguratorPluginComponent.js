@@ -107,21 +107,21 @@ export default class ConfiguratorPluginComponent {
 
   monthRenderer(value) { return Ext.Date.monthNames[value] };
 
-  coloredRenderer(v, record, dataIndex, cell, column) {
-    cell.setStyle( Ext.String.format('color: {0};', v > 500 ? 'green' : 'red') );
-    return Ext.util.Format.number(v, '0,000.00');
+  coloredRenderer = (value, record, dataIndex, cell, column) => {
+    cell.setStyle(Ext.String.format('color: {0};', value > 500 ? 'green' : 'red'));
+    return Ext.util.Format.number(value, '0,000.00');
   }
 
-  onPivotGridReady(event) {
+  onPivotGridReady = (event) => {
     this.pivotgrid = event.detail.cmp;
     this.pivotgrid.setMatrix(this.pivotgridMatrix);
     this.pivotgrid.setPlugins(this.pivotgridPlugins);
   }
 
-  onButtonReady(event) {
+  onButtonReady = (event) => {
     this.button = event.detail.cmp;
     this.button.setHandler(this.showConfigurator.bind(this));
   }
 
-  showConfigurator() { this.pivotgrid.showConfigurator() }
+  showConfigurator = () => { this.pivotgrid.showConfigurator() }
 }

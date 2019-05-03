@@ -1,24 +1,24 @@
 <ext-container padding="15" layout="fit" fitToParent="true" height="100%">
-
-  <ext-container docked="top"><div #extitem>
-    <chart-toolbar
-      onItemReady="plot.onMenuItemReady"
-      theme="default"
-      onRefreshButtonReady="plot.onRefreshButtonReady"
-      onZoomButtonReady="plot.onZoomButtonReady"
-      onPanButtonReady="plot.onPanButtonReady"
-      style="width: 100%;"
-      onlyMidnight=true>
-    </chart-toolbar>
-  </div></ext-container>
-
-  <ext-cartesian downloadServerUrl ="http://svg.sencha.io"
+  <ext-container docked="top">
+    <div #extitem>
+      <chart-toolbar
+        onItemReady="plot.onMenuItemReady"
+        theme="default"
+        onRefreshButtonReady="plot.onRefreshButtonReady"
+        onZoomButtonReady="plot.onZoomButtonReady"
+        onPanButtonReady="plot.onPanButtonReady"
+        style="width: 100%;"
+        onlyMidnight=true>
+      </chart-toolbar>
+    </div>
+  </ext-container>
+  <ext-cartesian
+    downloadServerUrl ="http://svg.sencha.io"
     onready="plot.chartNavReady"
     width="800px"
     shadow="true"
     theme="default"
     interactions="panzoom"
-    >
+  >
   </ext-cartesian>
-
 </ext-container>

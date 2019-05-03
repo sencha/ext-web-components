@@ -8,7 +8,7 @@ export default class CalendarTimezoneSupportComponent {
     this.isPhone = Ext.os.is.Phone;
   }
 
-  calendarDayReady(event) {
+  calendarDayReady = (event) => {
     this.calendarDay = event.detail.cmp;
     const store = Ext.create('Ext.calendar.store.Calendars', {
       autoLoad: true,
@@ -20,13 +20,13 @@ export default class CalendarTimezoneSupportComponent {
     this.calendarDay.setStore(store);
   }
 
-  changeOptions() {
+  changeOptions = () => {
     const selectorValue = Ext.getCmp('selector').getSelection().data.value;
     this.timezoneOffset = selectorValue;
     this.calendarDay.setTimezoneOffset(this.timezoneOffset);
   }
 
-  panelReady(event) {
+  panelReady = (event) => {
     this.panel = event.detail.cmp;
     this.panel.setTitle(this.panelTitle);
     this.panel.setHeader(
@@ -60,9 +60,8 @@ export default class CalendarTimezoneSupportComponent {
             text: this.isPhone ? 'Sydney +10' : 'Sydney (UTC+10:00)',
             value: -600
           }
-          ]
-        }]
-      })
-
+        ]
+      }]
+    });
   }
 }

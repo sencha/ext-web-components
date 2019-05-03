@@ -1,6 +1,6 @@
 <ext-container padding="10" layout="fit" fitToParent="true"  width="100%" height="100%" >
   <ext-panel
-    onready= "calendarmonthview.panelReady" 
+    onready= "calendarmonthview.panelReady"
     shadow="true"
     layout="hbox"
   >
@@ -11,8 +11,10 @@
     width="150"
     height="100%"
     bodyPadding="5"
-    hidden="false">
-    <ext-calendar-list onready="calendarmonthview.calendarListReady"></ext-calendar-list>
+    hidden="false"
+  >
+    <ext-calendar-list onready="calendarmonthview.calendarListReady">
+    </ext-calendar-list>
   </ext-panel>
   <ext-calendar-month
     flex= "1"
@@ -21,6 +23,7 @@
     height="100%"
     gestureNavigation="false"
     height="100%"
-    onready= "calendarmonthview.calendarMonthReady">
+    onready= "calendarmonthview.calendarMonthReady"
+  >
   </ext-calendar-month>
 </ext-container>

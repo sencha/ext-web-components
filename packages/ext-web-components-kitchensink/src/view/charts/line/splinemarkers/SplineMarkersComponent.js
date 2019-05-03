@@ -8,7 +8,7 @@ export default class SplineMarkersComponent {
     this.menuCmpArray = []
   }
 
-  onReady(event) {
+  onReady = (event) => {
     this.cartesianCmp = event.detail.cmp;
     const store = Ext.create('Ext.data.Store', {
       fields: ['theta', 'sin', 'cos', 'tan'],
@@ -94,12 +94,12 @@ export default class SplineMarkersComponent {
     );
   }
 
-  onMenuItemReady(event) {
+  onMenuItemReady = (event) => {
     this.menuCmpArray.push(event.detail.cmp);
     event.detail.cmp.on('click', this.onThemeChange.bind(this));
   }
 
-  onThemeChange(event) {
+  onThemeChange = (event) => {
     this.theme = event.config.text.toLowerCase();
     this.menuCmpArray.forEach((cmp, index) => {
       if (index == parseInt(event.config.itemId)) {

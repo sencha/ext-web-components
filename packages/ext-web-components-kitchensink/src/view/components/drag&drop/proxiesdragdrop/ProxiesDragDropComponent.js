@@ -2,16 +2,15 @@ import './ProxiesDragDropComponent.scss';
 import './ProxiesDragDropComponent.html';
 
 export default class ProxiesDragDropComponent {
-
   constructor () {
     this.noneText = 'No Proxy';
   }
 
-  doDestroy() {
+  doDestroy = () => {
     Ext.destroy(this.sources.forEach(Ext.destroy.bind(Ext)));
   }
 
-  parentReady (ele) {
+  parentReady  = (ele) => {
     this.parentRef = ele.detail.cmp.el;
     this.sources[0].setConstrain(this.parentRef);
     this.sources[1].setConstrain(this.parentRef);
@@ -19,31 +18,31 @@ export default class ProxiesDragDropComponent {
     this.parentRef.destroy = this.doDestroy.bind(this);
   }
 
-  noneEleReady(ele) {
+  noneEleReady = (ele) => {
     this.noneRef = ele.detail.cmp.el;
     this.sources[0].setElement(this.noneRef);
   }
 
-  originalEleReady(ele) {
+  originalEleReady = (ele) => {
     this.originalRef = ele.detail.cmp.el;
     this.sources[1].setElement(this.originalRef);
   }
 
-  placeholderEleReady(ele) {
+  placeholderEleReady = (ele) => {
     this.placeholderRef = ele.detail.cmp.el;
     this.sources[2].setElement(this.placeholderRef);
   }
 
-  dragMove(source, info) {
+  dragMove = (source, info) => {
     const pos = info.proxy.current;
     this.noneText = Ext.String.format('X: {0}, Y: {1}', Math.round(pos.x), Math.round(pos.y));
     this.noneRef.setHtml(this.noneText);
   }
 
-  dragEnd() {
+  dragEnd = () => {
     this.noneRef.setHtml('No Proxy');
   }
-  
+
   sources = [
     new Ext.drag.Source({
       proxy: 'none',

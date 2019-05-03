@@ -348,9 +348,7 @@ export default function getMenu() {
         { text: 'Candlestick', component: CandlestickComponent, iconCls: 'icon-financial-candlestick' },
         { text: 'OHLC', component: OHLCComponent, iconCls: 'icon-financial-ohlc' }
       ] },
-      { text: 'Chart Gauges', iconCls: 'icon-gauge-charts', children: [
-        { text: 'Basic Gauge Chart', component: BasicGaugeChartComponent, iconCls: 'icon-gauge-basic' }
-      ] },
+      { text: 'Basic Gauge Chart', iconCls: 'icon-gauge-basic', component: BasicGaugeChartComponent },
       { text: 'Line', iconCls: 'icon-line-charts', children: [
         { text: 'Basic Line', component: BasicLineComponent, iconCls: 'icon-line-basic' },
         { text: 'Basic Markers', component: BasicMarkersComponent, iconCls: 'icon-line-markers' },

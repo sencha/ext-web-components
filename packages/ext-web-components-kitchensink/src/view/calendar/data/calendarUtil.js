@@ -3,7 +3,7 @@ Ext.define('KitchenSink.data.calendar.Util', {
   filter: function(data, start, end) {
     var R = Ext.calendar.date.Range,
         range = new R(start, end);
-    return Ext.Array.filter(data, function(event) {
+    return Ext.Array.filter(data, (event) => {
       return range.overlaps(R.fly(event.startDate, event.endDate));
     });
   },
@@ -33,7 +33,7 @@ Ext.define('KitchenSink.data.calendar.Util', {
   },
   prepare: function(data, calendarId) {
     var D = Ext.Date;
-    return Ext.Array.map(data, function(event) {
+    return Ext.Array.map(data, (event) => {
       event = Ext.apply({}, event);
       event.calendarId = calendarId;
       event.startDate = D.format(D.localToUtc(event.startDate), 'C');

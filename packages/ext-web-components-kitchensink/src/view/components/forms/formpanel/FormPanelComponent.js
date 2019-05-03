@@ -2,13 +2,12 @@ import './FormPanelComponent.html';
 Ext.require('Ext.field.InputMask');
 
 export default class FormPanelComponent {
-
   constructor () {
     this.disabled = false;
     this.componentArray = [];
   }
 
-  toggleDisable(event) {
+  toggleDisable = (event) => {
     this.disabled = !this.disabled;
     let buttonText = "Disable All";
 
@@ -22,20 +21,20 @@ export default class FormPanelComponent {
     });
   }
 
-  buttonReady(event) {
+  buttonReady = (event) => {
     this.buttonCmp = event.detail.cmp;
   }
 
-  formpanelReady(event) {
+  formPanelReady = (event) => {
     this.formcmp = event.detail.cmp;
   }
 
-  resetform() {
+  resetForm = () => {
     this.formcmp.reset(true);
   }
 
-  componentReady(event) {
+  componentReady = (event) => {
     this.componentArray.push(event.detail.cmp);
   }
-  
+
 }

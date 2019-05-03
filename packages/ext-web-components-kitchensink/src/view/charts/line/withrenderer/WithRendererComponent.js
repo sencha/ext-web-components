@@ -2,7 +2,6 @@ import './WithRendererComponent.html';
 import { createData } from './createData';
 
 export default class WithRendererComponent {
-
   constructor () {
     this.menuCmpArray = [],
     this.store = Ext.create('Ext.data.Store', {
@@ -11,7 +10,7 @@ export default class WithRendererComponent {
     this.onRefreshClick()
   }
 
-  cartesianReady(event) {
+  cartesianReady = (event) => {
     const cartesianAxes = [{
       type: 'numeric',
       position: 'left',
@@ -45,22 +44,21 @@ export default class WithRendererComponent {
     this.cartesianCmp.setSeries(cartesianSeries);
   }
 
-  onMenuItemReady(event) {
+  onMenuItemReady = (event) => {
     this.menuCmpArray.push(event.detail.cmp);
     event.detail.cmp.on('click', this.onThemeChange.bind(this));
   }
 
-  onRefreshButtonReady(event) {
+  onRefreshButtonReady = (event) => {
     this.refreshButtonCmp = event.detail.cmp;
     this.refreshButtonCmp.on('tap', this.onRefreshClick.bind(this));
   }
 
-  onRefreshClick(event) {
+  onRefreshClick = (event) => {
     this.store.loadData(createData());
-    // this.cartesianCmp.setStore(this.store);
   }
 
-  onThemeChange(event) {
+  onThemeChange = (event) => {
     this.theme = event.config.text.toLowerCase();
     this.menuCmpArray.forEach((cmp, index) => {
       if (index == parseInt(event.config.itemId)) {
@@ -71,5 +69,4 @@ export default class WithRendererComponent {
     });
     this.cartesianCmp.setTheme(event.config.text.toLowerCase());
   }
-
 }

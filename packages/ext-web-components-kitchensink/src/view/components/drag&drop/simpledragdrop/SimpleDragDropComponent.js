@@ -3,25 +3,25 @@ import './SimpleDragDropComponent.html';
 export default class SimpleDragDropComponent {
   constructor () {}
 
-  onDragMove(source, info) {
+  onDragMove = (source, info) => {
     const pos = info.element.current;
     const html = Ext.String.format('X: {0}, Y: {1}', Math.round(pos.x), Math.round(pos.y));
     this.item.setHtml(html);
   }
 
-  onDragEnd(source, info) {
+  onDragEnd = (source, info) => {
     this.item.setHtml('Drag Me!');
   }
 
-  doDestroy() {
+  doDestroy = () => {
     Ext.destroy(this.source);
   }
 
-  onParentReady(ele) {
+  onParentReady = (ele) => {
     this.parent = ele.detail.cmp.el;
   }
 
-  onItemReady(ele) {
+  onItemReady = (ele) => {
     this.item = ele.detail.cmp.el;
     this.source = new Ext.drag.Source({
       element: this.item,

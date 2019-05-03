@@ -1,17 +1,14 @@
 import './VideoComponent.html';
 
 export default class VideoComponent {
+  constructor () {}
 
-  constructor () {
-  }
-
-  readyButton1(event) {
+  readyButton1 = (event) => {
     var cmp = event.detail.cmp;
     this.button1Cmp = event.detail.cmp;
   }
 
-  tapButton1(event) {
+  tapButton1 = (event) => {
     this.button1Cmp.setText(new Date())
   }
-
 }

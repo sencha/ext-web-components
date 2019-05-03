@@ -3,79 +3,79 @@
   height="400"
 >
   <ext-lockedgrid
-      left="0"
-      top="0"
-      width="1000"
-      height="400"
-      title="Locking Grid"
-      shadow="true"
-      onready="lockinggrid.gridReady"
-      columns='[
-        {
-          "text": "Company",
-          "width": "200",
-          "dataIndex": "name",
-          "minWidth": "100",
-          "locked": true
-        },
-        {
-          "text": "Price",
-          "width": "75",
-          "dataIndex": "price",
-          "formatter": "usMoney",
-          "locked": true
-        },
-        {
-          "text": "Action",
-          "locked": "left",
-          "width": "130",
-          "cell": {
-            "tools": {
-              "approve": {
-                "iconCls": "x-fa fa-check green"
-              },
-              "decline": {
-                "iconCls": "x-fa fa-ban red",
-                "weight": "1"
-              }
+    left="0"
+    top="0"
+    width="1000"
+    height="400"
+    title="Locking Grid"
+    shadow="true"
+    onready="lockinggrid.gridReady"
+    columns='[
+      {
+        "text": "Company",
+        "width": "200",
+        "dataIndex": "name",
+        "minWidth": "100",
+        "locked": true
+      },
+      {
+        "text": "Price",
+        "width": "75",
+        "dataIndex": "price",
+        "formatter": "usMoney",
+        "locked": true
+      },
+      {
+        "text": "Action",
+        "locked": "left",
+        "width": "130",
+        "cell": {
+          "tools": {
+            "approve": {
+              "iconCls": "x-fa fa-check green"
+            },
+            "decline": {
+              "iconCls": "x-fa fa-ban red",
+              "weight": "1"
             }
           }
-        },
-        {
-          "locked": "right",
-          "text": "Change",
-          "width": "130",
-          "align": "right",
-          "dataIndex": "change",
-          "cell": {
-            "encodeHtml": "false"
-          },
-          "xtype": "numbercolumn",
-          "format": "0.00"
-        },
-        {
-          "text": "% Change",
-          "width": "130",
-          "align": "right",
-          "dataIndex": "pctChange",
-          "cell": {
-            "encodeHtml": "false"
-          },
-          "xtype": "numbercolumn",
-          "format": "0.00%"
-        },
-        {
-          "text": "Last Updated",
-          "width": "150",
-          "dataIndex": "lastChange",
-          "formatter": "date(\"m/d/Y\")"
-        },
-        {
-          "text": "Industry",
-          "width": "150",
-          "dataIndex": "industry"
         }
-      ]'
+      },
+      {
+        "locked": "right",
+        "text": "Change",
+        "width": "130",
+        "align": "right",
+        "dataIndex": "change",
+        "cell": {
+          "encodeHtml": "false"
+        },
+        "xtype": "numbercolumn",
+        "format": "0.00"
+      },
+      {
+        "text": "% Change",
+        "width": "130",
+        "align": "right",
+        "dataIndex": "pctChange",
+        "cell": {
+          "encodeHtml": "false"
+        },
+        "xtype": "numbercolumn",
+        "format": "0.00%"
+      },
+      {
+        "text": "Last Updated",
+        "width": "150",
+        "dataIndex": "lastChange",
+        "formatter": "date(\"m/d/Y\")"
+      },
+      {
+        "text": "Industry",
+        "width": "150",
+        "dataIndex": "industry"
+      }
+    ]'
   >
   </ext-lockedgrid>
 </ext-panel>

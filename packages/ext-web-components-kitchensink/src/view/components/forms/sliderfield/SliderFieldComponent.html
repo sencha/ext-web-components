@@ -3,35 +3,42 @@
   width="300"
   height="320"
   bodyPadding="10"
-  shadow="true">
+  shadow="true"
+>
   <ext-sliderfield
-    onChange="sliderfield.onsinglechange"
+    onChange="sliderfield.onSingleChange"
     value="20"
     label="Single Thumb"
-    padding="5" >
+    padding="5"
+  >
   </ext-sliderfield>
   <ext-container
-    onready="sliderfield.oncontainerready1"
-    style="margin-bottom: '20px';" >
+    onready="sliderfield.onContainerReady1"
+    style="margin-bottom: '20px';"
+  >
   </ext-container>
   <ext-sliderfield
-    onChange="sliderfield.onliveupdatechange"
+    onChange="sliderfield.onLiveUpdateChange"
     value="60"
     label="Live Update"
     liveUpdate="true"
-    padding="5" >
+    padding="5"
+  >
   </ext-sliderfield>
   <ext-container
-    onready="sliderfield.oncontainerready2"
-    style="margin-bottom: '20px';" >
+    onready="sliderfield.onContainerReady2"
+    style="margin-bottom: '20px';"
+  >
   </ext-container>
   <ext-sliderfield
-    onChange="sliderfield.onmultiplechange"
+    onChange="sliderfield.onMultipleChange"
     value='[10, 70]'
     label="Multiple Thumbs"
-    padding="5" >
+    padding="5"
+  >
   </ext-sliderfield>
   <ext-container
-    onready="sliderfield.oncontainerready3" >
+    onready="sliderfield.onContainerReady3"
+  >
   </ext-container>
 </ext-formpanel>

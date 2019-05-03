@@ -11,10 +11,10 @@ export default class BasicGridComponent {
     proxy: {
       type: 'ajax',
       url: '/KitchenSink/Companies'
-    } 
+    }
   });
 
-  readyGrid(event) {
+  readyGrid = (event) => {
     this.gridCmp = event.detail.cmp
     this.gridCmp.setStore(this.store)
   }
@@ -26,5 +26,4 @@ export default class BasicGridComponent {
     else if(value < 0 ) {col = 'red'}
     return `<span style='color:${col}'>${formattedValue}</span>`
   }
-  
 }

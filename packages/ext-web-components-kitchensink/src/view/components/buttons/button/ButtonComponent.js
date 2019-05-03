@@ -12,15 +12,15 @@ export default class ButtonComponent {
     this.menuItem = '';
   }
 
-  buttonReady(event) {
+  buttonReady = (event) => {
     this.menuButtons.push(event.detail.cmp);
   }
 
-  toggleReady(event) {
+  toggleReady = (event) => {
     this.toggleButton = event.detail.cmp;
   }
 
-  toggleRound() {
+  toggleRound = () => {
     this.round = !this.round;
 
     if (this.round) {
@@ -38,7 +38,7 @@ export default class ButtonComponent {
     }
   };
 
-  styleMenuItemChange(sender, value) {
+  styleMenuItemChange = (sender, value) => {
     this.style = value._text;
     this.styleButtons.forEach(menuItem => {
       const menuItemText = menuItem._text;
@@ -90,7 +90,7 @@ export default class ButtonComponent {
     }
   }
 
-  onTypeChange(sender, value) {
+  onTypeChange = (sender, value) => {
     this.type = value._text;
     this.iconButtons.forEach(menuItem => {
       const menuItemText = menuItem._text;
@@ -138,17 +138,17 @@ export default class ButtonComponent {
     };
   }
 
-  setDefaultsForStyle(event) {
+  setDefaultsForStyle = (event) => {
     this.styleMenu = event.detail.cmp;
     this.styleMenu.on('click', this.styleMenuItemChange.bind(this));
   }
 
-  setTypeForStyle(event) {
+  setTypeForStyle = (event) => {
     this.typeMenu = event.detail.cmp;
     this.typeMenu.on('click', this.onTypeChange.bind(this));
   }
 
-  setIcon(event) {
+  setIcon = (event) => {
     const menuItem = event.detail.cmp;
     const menuItemText = menuItem._text;
 
@@ -161,7 +161,7 @@ export default class ButtonComponent {
     this.iconButtons.push(menuItem);
   }
 
-  setStyle(event) {
+  setStyle = (event) => {
     const menuItem = event.detail.cmp;
     const menuItemText = menuItem._text;
 

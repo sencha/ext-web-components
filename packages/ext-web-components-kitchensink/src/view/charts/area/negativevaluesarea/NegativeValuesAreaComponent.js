@@ -25,12 +25,12 @@ export default class NegativeValuesAreaComponent {
     this.menuCmpArray = [];
   }
 
-  onMenuItemReady(event) {
+  onMenuItemReady = (event) => {
     this.menuCmpArray.push(event.detail.cmp);
     event.detail.cmp.on('click', this.onThemeChange.bind(this));
   }
 
-  onThemeChange(event) {
+  onThemeChange = (event) => {
     this.theme = event.config.text.toLowerCase();
     this.menuCmpArray.forEach((cmp, index) => {
       if (index == parseInt(event.config.itemId)) {
@@ -43,11 +43,11 @@ export default class NegativeValuesAreaComponent {
   }
 
 
-  containerReady(event) {
+  containerReady = (event) => {
     this.containerCmp = event.detail.cmp;
   }
 
-  cartesianReady(event) {
+  cartesianReady = (event) => {
     this.cartesianCmp = event.detail.cmp;
     this.cartesianCmp.setStore(this.store);
     this.cartesianCmp.setTheme(this.theme);
@@ -81,7 +81,7 @@ export default class NegativeValuesAreaComponent {
     }]);
   }
 
-  tooltipRenderer(tooltip, record, item) {
+  tooltipRenderer = (tooltip, record, item) => {
     let name = '';
     switch (item.field) {
       case 'consumer':
@@ -100,5 +100,4 @@ export default class NegativeValuesAreaComponent {
     tooltip.setTitle(name);
     tooltip.setHtml(`${record.get('quarter')}: ${record.get(item.field)}`);
   }
-
 }

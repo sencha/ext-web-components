@@ -7,7 +7,7 @@ Ext.require(['Ext.grid.plugin.RowExpander']);
 export default class RowExpanderComponent {
   constructor () {}
 
-  gridReady(event) {
+  gridReady = (event) => {
     const store = Ext.create('Ext.data.Store', {
       model,
       autoLoad: true,
@@ -29,16 +29,16 @@ export default class RowExpanderComponent {
     this.grid.setStore(store);
   }
 
-  changeColumnReady(event) {
+  changeColumnReady = (event) => {
     this.changeColumn = event.detail.cmp;
     this.changeColumn.setRenderer(this.renderSign.bind(this, '0.00'));
   }
-  percentChangeColumnReady(event) {
+  percentChangeColumnReady = (event) => {
     this.pctChangeColumn = event.detail.cmp;
     this.pctChangeColumn.setRenderer(this.renderSign.bind(this, '0.00%'));
   }
 
-  renderSign(format, value, record, dataIndex, cell, column) {
+  renderSign = (format, value, record, dataIndex, cell, column) => {
     if(value>0) {
       cell.setCls('greenClass');
     }

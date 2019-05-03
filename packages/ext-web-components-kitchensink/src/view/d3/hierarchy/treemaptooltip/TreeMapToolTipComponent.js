@@ -5,7 +5,7 @@ export default class TreeMapToolTipComponent {
 
   constructor() { }
 
-  d3Ready(event) {
+  d3Ready = (event) => {
     const cmp = event.detail.cmp;
     const store = Ext.create('Ext.data.TreeStore', {
       autoLoad: true,
@@ -62,10 +62,11 @@ export default class TreeMapToolTipComponent {
     cmp.setColorAxis(colorAxis);
   }
 
-  nodeValue(node) {
+  nodeValue = (node) => {
     return node.data.cap;
   }
-  tooltipRenderer(component, tooltip, node) {
+
+  tooltipRenderer = (component, tooltip, node) => {
       const parentTpl = new Ext.XTemplate([
         '<div class="treemaptooltip-tip-title">{data.name}</div>',
         '<tpl for="childNodes">',
@@ -81,8 +82,6 @@ export default class TreeMapToolTipComponent {
         tpl = record.isLeaf() ? leafTpl : parentTpl;
 
       component.setSelection(record);
-
       tooltip.setHtml(tpl.apply(record));
   }
-
 }

@@ -24,7 +24,7 @@ export default class MarkedComponent {
     this.menuCmpArray = [];
   }
 
-  onPolarReady(event) {
+  onPolarReady = (event) => {
     this.polar = event.detail.cmp;
     const polarSeries = [{
       type: 'radar',
@@ -110,12 +110,12 @@ export default class MarkedComponent {
     tooltip.setHtml(record.get('month') + ': ' + record.get(item.field) + '%');
   };
 
-  onMenuItemReady(event) {
+  onMenuItemReady = (event) => {
     this.menuCmpArray.push(event.detail.cmp);
     event.detail.cmp.on('click', this.onThemeChange.bind(this));
   }
 
-  onThemeChange(event) {
+  onThemeChange = (event) => {
     this.theme = event.config.text.toLowerCase();
     this.menuCmpArray.forEach(function(cmp, index) {
       if (index == parseInt(event.config.itemId)) {

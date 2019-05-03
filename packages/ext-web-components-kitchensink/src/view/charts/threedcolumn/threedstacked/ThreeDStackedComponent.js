@@ -20,22 +20,22 @@ export default class ThreeDStackedComponent {
 
   }
 
-  onMenuItemReady(event) {
+  onMenuItemReady = (event) => {
     this.menuCmpArray.push(event.detail.cmp);
     event.detail.cmp.on('click', this.onThemeChange.bind(this));
   }
 
-  onStackButtonReady(event) {
+  onStackButtonReady = (event) => {
     this.stackButtonCmp = event.detail.cmp;
     this.stackButtonCmp.on('tap', this.onStackedToggle.bind(this, { value: 0 }));
   }
 
-  onGroupButtonReady(event) {
+  onGroupButtonReady = (event) => {
     this.groupButtonCmp = event.detail.cmp;
     this.groupButtonCmp.on('tap', this.onStackedToggle.bind(this, { value: 1 }));
   }
 
-  onStackedToggle(event) {
+  onStackedToggle = (event) => {
     if (event.value == 0) {
       this.stacked = 1;
     } else {
@@ -46,7 +46,7 @@ export default class ThreeDStackedComponent {
     this.cartesianCmp.redraw();
   };
 
-  onThemeChange(event) {
+  onThemeChange = (event) => {
     this.theme = event.config.text.toLowerCase();
     this.menuCmpArray.forEach((cmp, index) => {
       if (index == parseInt(event.config.itemId)) {
@@ -67,7 +67,7 @@ export default class ThreeDStackedComponent {
     tooltip.setHtml(sector + ': ' + value);
   }
 
-  cartesianReady(event) {
+  cartesianReady = (event) => {
     this.cartesianCmp = event.detail.cmp;
     this.cartesianCmp.setStore(this.store);
     this.cartesianCmp.setTheme(this.theme);

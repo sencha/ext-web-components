@@ -8,7 +8,6 @@ Ext.require([
 ]);
 
 export default class BasicBarComponent {
-
   constructor () {
     this.store = Ext.create('Ext.data.Store', {
       fields: ['country', 'agr', 'ind', 'ser'],
@@ -22,23 +21,22 @@ export default class BasicBarComponent {
     });
     this.theme = 'default';
     this.menuCmpArray = [];
-
   }
 
-  onAxisLabelRender(axis, label, layoutContext) {
+  onAxisLabelRender = (axis, label, layoutContext) => {
     return Ext.util.Format.number(layoutContext.renderer(label) / 1000, '0,000');
   }
 
-  onSeriesLabelRender(v) {
-    return Ext.util.Format.number(v / 1000, '0,000');
+  onSeriesLabelRender = (value) => {
+    return Ext.util.Format.number(value/1000, '0,000');
   }
 
-  onMenuItemReady(event) {
+  onMenuItemReady = (event) => {
     this.menuCmpArray.push(event.detail.cmp);
     event.detail.cmp.on('click', this.onThemeChange.bind(this));
   }
 
-  onThemeChange(event) {
+  onThemeChange = (event) => {
     this.theme = event.config.text.toLowerCase();
     this.menuCmpArray.forEach((cmp, index) => {
       if (index == parseInt(event.config.itemId)) {
@@ -50,7 +48,7 @@ export default class BasicBarComponent {
     this.cartesianCmp.setTheme(event.config.text.toLowerCase());
   }
 
-  cartesianReady(event) {
+  cartesianReady = (event) => {
     this.cartesianCmp = event.detail.cmp;
     this.cartesianCmp.setStore(this.store);
     this.cartesianCmp.setTheme(this.theme);

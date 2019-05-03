@@ -27,7 +27,7 @@ export default class MultiaxisComponent {
     this.store.loadData(generateData());
   }
 
-  onPolarReady(event) {
+  onPolarReady = (event) => {
     this.polar = event.detail.cmp;
     const polarSeries = [{
       type: 'radar',
@@ -72,12 +72,12 @@ export default class MultiaxisComponent {
     this.polar.setStore(this.store);
   }
 
-  onMenuItemReady(event) {
+  onMenuItemReady = (event) => {
     this.menuCmpArray.push(event.detail.cmp);
     event.detail.cmp.on('click', this.onThemeChange.bind(this));
   }
 
-  onThemeChange(event) {
+  onThemeChange = (event) => {
     this.theme = event.config.text.toLowerCase();
     this.menuCmpArray.forEach(function(cmp, index) {
       if (index == parseInt(event.config.itemId)) {
@@ -89,12 +89,12 @@ export default class MultiaxisComponent {
     this.polar.setTheme(event.config.text.toLowerCase());
   }
 
-  onRefreshButtonReady(event) {
+  onRefreshButtonReady = (event) => {
     this.refreshButtonCmp = event.detail.cmp;
     this.refreshButtonCmp.on('tap', this.onRefreshClick.bind(this));
   }
 
-  onRefreshClick(event) {
+  onRefreshClick = (event) => {
     this.store.loadData(generateData());
   }
 }

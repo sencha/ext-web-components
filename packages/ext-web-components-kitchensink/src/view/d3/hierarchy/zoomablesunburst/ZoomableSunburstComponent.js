@@ -36,7 +36,7 @@ export default class ZoomableSunburstComponent {
     });
   }
 
-  onTooltip(component, tooltip, node) {
+  onTooltip = (component, tooltip, node) => {
     try {
       const record = node.data,
         size = record.get('size'),
@@ -51,10 +51,9 @@ export default class ZoomableSunburstComponent {
       console.log('onTooltip')
       console.error(e)
     }
-
   };
 
-  onSubBurstReady(event) {
+  onSubBurstReady = (event) => {
     this.sunburst = event.detail.cmp;
     this.sunburst.onNodeSelect = (record, selection) => {
       this.sunburst.zoomInNode(record)
@@ -63,8 +62,5 @@ export default class ZoomableSunburstComponent {
     this.sunburst.setTooltip({
       renderer: this.onTooltip.bind(this),
     });
-    
   }
-
-
 }

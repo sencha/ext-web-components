@@ -4,7 +4,7 @@ import '../data/calendarFull.js';
 export default class CalendarPanelComponent {
   constructor() {}
 
-  onReady(event) {
+  onReady = (event) => {
     const store = Ext.create('Ext.calendar.store.Calendars', {
       autoLoad: true,
       proxy: {

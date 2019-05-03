@@ -28,7 +28,7 @@ export default class PurchasesByDayComponent {
     };
   }
 
-  onHeatMapReady(event) {
+  onHeatMapReady = (event) => {
     this.heatmap = event.detail.cmp;
     const tooltip = {
         "renderer": this.onTooltip.bind(this)
@@ -93,7 +93,7 @@ export default class PurchasesByDayComponent {
     this.heatmap.setStore(this.store);
   }
 
-  onTooltip(component, tooltip, datum) {
+  onTooltip = (component, tooltip, datum) => {
     var d = datum.data,
     field = component.getColorAxis().getField(),
     date = Ext.Date.monthNames[d.date.getMonth()] + ' ' + d.date.getDate();

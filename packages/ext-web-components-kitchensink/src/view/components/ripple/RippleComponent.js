@@ -3,17 +3,16 @@ import './RippleComponent.scss';
 
 export default class RippleComponent {
 
-  constructor() {
-  }
-  containerReady(event) {
+  constructor() {}
+
+  containerReady = (event) => {
     this.container = event.detail.cmp;
     this.container.setDefaults({
       handler: this.clickHandler.bind(this),
     })
   }
 
-  clickHandler(event) {
+  clickHandler = (event) => {
     Ext.get(event.target).ripple(event, {})
   }
-
 }

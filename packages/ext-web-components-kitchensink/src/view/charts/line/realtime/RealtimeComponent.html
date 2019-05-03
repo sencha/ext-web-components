@@ -1,11 +1,12 @@
 <ext-container padding="10px" layout="fit" fitToParent="true" height="100%">
-  <ext-cartesian downloadServerUrl ="http://svg.sencha.io"
+  <ext-cartesian
+    downloadServerUrl ="http://svg.sencha.io"
     onready="realtime.chartNavReady"
     ondestroy="realtime.stopTask()"
     shadow="true"
     ref="chart"
     title="Time Axis"
     insetPadding="30 30 10 10"
-    >
+  >
   </ext-cartesian>
 </ext-container>

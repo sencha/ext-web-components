@@ -19,7 +19,7 @@ export default class DataChangesComponent {
           dataIndex: 'value',
           header: 'Total',
           aggregator: 'sum'
-        }, 
+        },
         {
           dataIndex: 'value',
           header: 'Count',
@@ -30,7 +30,7 @@ export default class DataChangesComponent {
         {
           dataIndex: 'year',
           header: 'Year'
-        }, 
+        },
         {
           dataIndex: 'person',
           header: 'Person'
@@ -45,36 +45,36 @@ export default class DataChangesComponent {
     }
   }
 
-  onPivotGridReady(event) {
+  onPivotGridReady = (event) => {
     this.pivotgrid = event.detail.cmp;
     this.pivotgrid.setMatrix(this.pivotMatrix);
   }
 
-  onButtonReady1(event) {
+  onButtonReady1 = (event) => {
     this.button1 = event.detail.cmp;
     this.button1.setHandler(this.addData.bind(this));
   }
 
-  onButtonReady2(event) {
+  onButtonReady2 = (event) => {
     this.button2 = event.detail.cmp;
     this.button2.setHandler(this.updateData.bind(this));
   }
 
-  onButtonReady3(event) {
+  onButtonReady3 = (event) => {
     this.button3 = event.detail.cmp;
     this.button3.setHandler(this.removeData.bind(this));
   }
 
-   onButtonReady4(event) {
+   onButtonReady4 = (event) => {
     this.button4 = event.detail.cmp;
     this.button4.setHandler(this.clearData.bind(this));
   }
 
-  addData() { 
-    this.store.add(generateData(1)); 
+  addData = () => {
+    this.store.add(generateData(1));
   }
 
-  updateData() { 
+  updateData = () => {
     const data = generateData(1)[0],
     record = randomItem(this.store.data.items);
     if(record) {
@@ -82,14 +82,14 @@ export default class DataChangesComponent {
     }
   }
 
-  removeData() {
+  removeData = () => {
     const record = randomItem(this.store.data.items);
     if(record) {
       this.store.remove(record);
     }
   }
 
-  clearData() { 
-    this.store.removeAll(); 
+  clearData = () => { 
+    this.store.removeAll();
   }
 }

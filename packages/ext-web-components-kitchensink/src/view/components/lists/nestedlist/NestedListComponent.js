@@ -13,12 +13,12 @@ export default class NestedListComponent {
     });
   }
 
-  onItemReady(event) {
+  onItemReady = (event) => {
     this.theListview = event.detail.cmp;
     this.theListview.setStore(this.store);
   }
 
-  onLeafItemTap(event) {
+  onLeafItemTap = (event) => {
     Ext.toast(`You selected ${event.detail.record.get('text')}`)
   }
 }

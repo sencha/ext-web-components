@@ -2,8 +2,9 @@
   padding="10"
   height="100%"
   width="100%"
-  onready="basicarea.containerready"
-  layout="fit">
+  onready="basicarea.containerReady"
+  layout="fit"
+>
   <ext-toolbar
     docked="top"
     ui="app-transparent-toolbar"
@@ -13,11 +14,12 @@
     <chart-toolbar
       onItemReady="basicarea.onMenuItemReady"
       theme="default"
-      onRefreshButtonReady="basicarea.onRefreshButtonReady" >
+      onRefreshButtonReady="basicarea.onRefreshButtonReady"
+    >
     </chart-toolbar>
   </ext-toolbar>
   <ext-cartesian
-    onready="basicarea.cartesianready"
+    onready="basicarea.cartesianReady"
     downloadServerUrl="http://svg.sencha.io"
     shadow="true"
     insetPadding="25 35 0 10"
@@ -30,7 +32,7 @@
             "title": { "text": "Summation of Data" , "fontSize": "20" }
             }, {
             "type": "category",
-            "position": "bottom", 
+            "position": "bottom",
             "fields": "name",
             "grid": "true",
             "visibleRange": ["0", "0.25"],
@@ -57,6 +59,6 @@
                               "bottom": { "allowPan": "true", "allowZoom": "true" }
                             }
                   }]'
-     >
+  >
   </ext-cartesian>
 </ext-container>

@@ -2,12 +2,11 @@ import './TimeFieldComponent.html';
 Ext.require('Ext.field.InputMask'); // need to require this specifically for inputMask props to work
 
 export default class TimeFieldComponent {
-
   constructor () {
     this.disabled = false;
   }
 
-  toggleDisable(event) {
+  toggleDisable = (event) => {
     this.disabled = !this.disabled;
     let buttonText = "Disable All";
 
@@ -19,16 +18,15 @@ export default class TimeFieldComponent {
     this.timefieldCmp.setDisabled(this.disabled);
   }
 
-  timefieldReady(event) {
+  timeFieldReady = (event) => {
     this.timefieldCmp = event.detail.cmp;
   }
 
-  buttonReady(event) {
+  buttonReady = (event) => {
     this.buttonCmp = event.detail.cmp;
   }
 
-  resettimefield() {
+  resetTimeField = () => {
     this.timefieldCmp.reset(true);
   }
-  
 }

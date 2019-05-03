@@ -12,7 +12,7 @@ Ext.require([
 export default class EditableGridComponent {
   constructor () {}
 
-  onReady(event) {
+  onReady = (event) => {
     const store = Ext.create('Ext.data.Store', {
       model,
       autoLoad: true,
@@ -27,17 +27,17 @@ export default class EditableGridComponent {
     editableGrid.setStore(store);
   }
 
-  columnready1(event) {
+  columnready1 = (event) => {
     this.columnCmp1 = event.detail.cmp;
     this.columnCmp1.setRenderer(this.renderSign.bind(this, "0.00"));
   }
 
-  columnready2(event) {
+  columnready2 = (event) => {
     this.columnCmp2 = event.detail.cmp;
     this.columnCmp2.setRenderer(this.renderSign.bind(this, "0.00"));
   }
 
-  renderSign(format, value) {
+  renderSign = (format, value) => {
     debugger;
     return `<span style={{ color: ${value} > 0 ? 'green' : ${value} < 0 ? 'red' : '' }}>
       ${Ext.util.Format.number(value, format)}
@@ -45,16 +45,16 @@ export default class EditableGridComponent {
   }
 
 
-  changeColumnReady(event) {
+  changeColumnReady = (event) => {
     this.changeColumn = event.detail.cmp;
     this.changeColumn.setRenderer(this.renderSign.bind(this, '0.00'));
   }
-  percentChangeColumnReady(event) {
+  percentChangeColumnReady = (event) => {
     this.pctChangeColumn = event.detail.cmp;
     this.pctChangeColumn.setRenderer(this.renderSign.bind(this, '0.00%'));
   }
 
-  renderSign(format, value, record, dataIndex, cell, column) {
+  renderSign = (format, value, record, dataIndex, cell, column) => {
     if(value>0) {
       cell.setCls('greenClass');
     }
@@ -64,5 +64,4 @@ export default class EditableGridComponent {
 
     return Ext.util.Format.number(value, format)
   }
-
 }

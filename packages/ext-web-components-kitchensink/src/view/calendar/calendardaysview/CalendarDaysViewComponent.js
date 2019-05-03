@@ -7,12 +7,12 @@ export default class CalendarDaysViewComponent {
     this.panelTitle = Ext.Date.format(new Date(), 'F Y');
   }
 
-  panelReady(event) {
+  panelReady = (event) => {
     this.panel = event.detail.cmp;
     this.panel.setTitle(this.panelTitle);
   }
 
-  calendarListReady(event) {
+  calendarListReady = (event) => {
     this.calendarList = event.detail.cmp;
     this.store = Ext.create('Ext.calendar.store.Calendars', {
       autoLoad: true,
@@ -25,7 +25,7 @@ export default class CalendarDaysViewComponent {
     this.calendarList.setStore(this.store);
   }
 
-  calendarDayReady(event) {
+  calendarDayReady = (event) => {
     this.calendarDay = event.detail.cmp;
     this.calendarDay.setValue(new Date());
     this.calendarDay.setStore(this.store);

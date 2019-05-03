@@ -4,7 +4,7 @@ import createStore from './SelectAndCopyComponentData.js';
 Ext.require([ 'Ext.grid.plugin.Clipboard']);
 
 export default class SelectAndCopyComponent {
-  constructor () {
+  constructor() {
     this.extensibleOptions = [];
 
     this.gridSelectable = {
@@ -17,27 +17,27 @@ export default class SelectAndCopyComponent {
     };
   }
 
-  gridReady(event) {
+  gridReady = (event) => {
     this.grid = event.detail.cmp;
     this.store = createStore();
     this.grid.setStore(this.store);
     this.grid.on('selectionchange', this.onSelectionChange.bind(this));
   }
 
-  infoContainerReady(event) {
+  infoContainerReady = (event) => {
     this.infoContainer = event.detail.cmp;
   }
 
-  menuItemReady(event) {
+  menuItemReady = (event) => {
     this.extensibleOptions.push(event.detail.cmp);
   }
 
-  extensibleMenuReady(event) {
+  extensibleMenuReady = (event) => {
     this.extensibleMenu = event.detail.cmp;
     this.extensibleMenu.on('click', this.onExtensibleChange.bind(this));
   }
 
-  onSelectableChange(event) {
+  onSelectableChange = (event) => {
     const currentCheckValue = event.detail.checked;
     const changedItem = event.detail.menucheckitem._text;
     this.gridSelectable.extensible = currentCheckValue
@@ -45,7 +45,7 @@ export default class SelectAndCopyComponent {
     this.grid.setSelectable(this.gridSelectable);
   }
 
-  onExtensibleChange(sender, value) {
+  onExtensibleChange = (sender, value) => {
     this.gridSelectable.extensible = value._text;
     this.grid.setSelectable(this.gridSelectable);
 
@@ -58,7 +58,7 @@ export default class SelectAndCopyComponent {
     }
   }
 
-  onSelectionChange(grid, records, selecting, selection) {
+  onSelectionChange = (grid, records, selecting, selection) => {
     let message = '??',
         firstRowIndex,
         firstColumnIndex,

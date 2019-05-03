@@ -8,7 +8,7 @@ export default class StockTickerComponent {
     this.flashBackground = false;
   }
 
-  onGridReady(event) {
+  onGridReady = (event) => {
     this.grid = event.detail.cmp;
     this.store = Ext.create('Ext.data.Store', {
         model,
@@ -40,7 +40,7 @@ export default class StockTickerComponent {
     }
   }
 
-  onStoreLoad(store) {
+  onStoreLoad = (store) => {
     store.removeAt(15, 70);
     let count = store.getCount(),
         i, j, rec;
@@ -57,7 +57,7 @@ export default class StockTickerComponent {
     this.startTicker();
   }
 
-  startTicker() {
+  startTicker = () => {
     const { store } = this;
 
     if (this.timer) {
@@ -72,20 +72,20 @@ export default class StockTickerComponent {
     }, this.tickDelay);
   }
 
-  toggleFlashBackground(event) {
+  toggleFlashBackground = (event) => {
     this.flashBackground = event.detail.newValue;
   }
 
-  changeColumnReady(event) {
+  changeColumnReady = (event) => {
     this.changeColumn = event.detail.cmp;
     this.changeColumn.setRenderer(this.renderSign.bind(this, '0.00'));
   }
-  percentChangeColumnReady(event) {
+  percentChangeColumnReady = (event) => {
     this.pctChangeColumn = event.detail.cmp;
     this.pctChangeColumn.setRenderer(this.renderSign.bind(this, '0.00%'));
   }
 
-  renderSign(format, value, record, dataIndex, cell, column) {
+  renderSign = (format, value, record, dataIndex, cell, column) => {
     let cls = '';
     if (this.flashBackground) {
       if (value > 0) {
@@ -106,11 +106,11 @@ export default class StockTickerComponent {
     return Ext.util.Format.number(value, format)
   }
 
-  infoContainerReady(event) {
+  infoContainerReady = (event) => {
     this.infoContainer = event.detail.cmp;
   }
 
-  onTickDelayChange(event) {
+  onTickDelayChange = (event) => {
     this.tickDelay = event.detail.newValue;
     this.startTicker();
     this.infoContainer.setHtml(`${this.tickDelay}ms`);

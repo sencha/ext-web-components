@@ -1,15 +1,16 @@
 <ext-container padding='15' layout="fit" fitToParent="true" height="100%">
-
-  <ext-container docked="top"><div #extitem>
-    <chart-toolbar
-    onItemReady="withrenderer.onMenuItemReady"
-    theme="default"
-    onRefreshButtonReady="withrenderer.onRefreshButtonReady"
-    onlyMidnight="true">
-    </chart-toolbar>
-  </div></ext-container>
-
-  <ext-cartesian 
+  <ext-container docked="top">
+    <div #extitem>
+      <chart-toolbar
+        onItemReady="withrenderer.onMenuItemReady"
+        theme="default"
+        onRefreshButtonReady="withrenderer.onRefreshButtonReady"
+        onlyMidnight="true"
+      >
+      </chart-toolbar>
+    </div>
+  </ext-container>
+  <ext-cartesian
     downloadServerUrl ="http://svg.sencha.io"
     onready="withrenderer.cartesianReady"
     width="800px"
@@ -17,5 +18,4 @@
     theme="default"
   >
   </ext-cartesian>
-
 </ext-container>

@@ -11,7 +11,7 @@ Ext.require([
 export default class SummaryRowComponent {
   constructor () {}
 
-  gridReady(event) {
+  gridReady = (event) => {
     const store = Ext.create('Ext.data.Store', {
       model,
       autoLoad: true,
@@ -26,28 +26,28 @@ export default class SummaryRowComponent {
     this.grid.setStore(store);
   }
 
-  companyColumnReady(event) {
+  companyColumnReady = (event) => {
     this.companyColumn = event.detail.cmp;
     this.companyColumn.setSummaryRenderer(this.summarizeCompanies.bind(this));
   }
 
-  summarizeCompanies(grid, context) {
+  summarizeCompanies = (grid, context) => {
     return context.records.length + ' Companies';
   }
 
-  changeColumnReady(event) {
+  changeColumnReady = (event) => {
     this.changeColumn = event.detail.cmp;
     this.changeColumn.setRenderer(this.renderSign.bind(this, '0.00'));
     this.changeColumn.setSummaryRenderer(this.renderPercentChangeSummary.bind(this, '0.00'));
 
   }
-  percentChangeColumnReady(event) {
+  percentChangeColumnReady = (event) => {
     this.pctChangeColumn = event.detail.cmp;
     this.pctChangeColumn.setRenderer(this.renderSign.bind(this, '0.00%'));
     this.pctChangeColumn.setSummaryRenderer(this.renderPercentChangeSummary.bind(this, '0.00%'));
   }
 
-  renderPercentChangeSummary(format, value, context) {
+  renderPercentChangeSummary = (format, value, context) => {
     debugger;
     if(value>0) {
       context.cell.setCls('greenClass');
@@ -59,7 +59,7 @@ export default class SummaryRowComponent {
     return Ext.util.Format.number(value, format)
   }
 
-  renderSign(format, value, record, dataIndex, cell, column) {
+  renderSign = (format, value, record, dataIndex, cell, column) => {
     if(value>0) {
       cell.setCls('greenClass');
     }

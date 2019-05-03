@@ -8,35 +8,37 @@ export default class PagingListComponent {
     this.bufferZone = false;
   }
 
-  onContainerReady(event) {
-    this.list1 = event.detail.cmp;
+  onContainerReady = (event) => {
+    this.container = event.detail.cmp;
   }
 
-  buttonready1(event) {
-    this.buttonCmp1 = event.detail.cmp;
-    this.buttonCmp1.setText("0");
+  segmentButtonReady = (event) => {
+    this.segmentButton = event.detail.cmp;
   }
 
-  setBufferZone(value) {
-    this.bufferZone = value;
+  setBufferZone = (event) => {
     let labelText;
+    this.bufferZone = event.detail.button.getText();
 
-    if (this.bufferZone === false) {
+    if (this.bufferZone === 'OFF') {
       labelText = '<b>Auto Paging</b>: OFF';
-    }
-    else{
+    } else{
       labelText = `<b>Auto Paging</b>: ON (buffer zone: ${this.bufferZone})`;
     }
 
-    this.list1.setHtml(labelText);
     const plugin = this.list.findPlugin('listpaging');
+    plugin.setAutoPaging(this.bufferZone !== 'OFF');
+    plugin.setBufferZone(parseInt(this.bufferZone, 10) || 0);
+
     this.store.removeAll();
-    plugin.setAutoPaging(value !== false);
-    plugin.setBufferZone(value || 0);
     this.store.loadPage(1);
+    this.container.setHtml(labelText);
+
+    this.segmentButton.items.items.forEach(items => items.setPressed(false));
+    event.detail.button.setPressed(true);
   }
 
-  listReady(ele) {
+  listReady = (ele) => {
     this.list = ele.detail.cmp;
     const tpl = `<div>{name}</div>`;
 
@@ -45,7 +47,7 @@ export default class PagingListComponent {
       autoLoad: true,
       proxy: {
         type: 'ajax',
-        url: '/KitchenSink/Company',
+        url: '/KitchenSink/Companies',
         reader: {
           type: 'json',
           rootProperty: 'data',

@@ -1,10 +1,9 @@
 import './PackComponent.html';
 
 export default class PackComponent {
-
   constructor() { }
 
-  onTooltip(component, tooltip, node) {
+  onTooltip = (component, tooltip, node) => {
     const record = node.data,
       size = record.get('size'),
       n = record.childNodes.length;
@@ -19,8 +18,7 @@ export default class PackComponent {
     tooltip.setHtml(html);
   }
 
-
-  d3onReady(event) {
+  d3onReady = (event) => {
     const store = Ext.create('Ext.data.TreeStore', {
       autoLoad: true,
       defaultRootText: 'd3',
@@ -47,11 +45,9 @@ export default class PackComponent {
       },
       idProperty: 'path'
     })
-    let cmp = event.detail.cmp;
-    cmp.setStore(store);
-    cmp.setTooltip({
-      renderer: this.onTooltip.bind(this),
-    })
-  }
 
+    let d3Cmp = event.detail.cmp;
+    d3Cmp.setStore(store);
+    d3Cmp.setTooltip({ renderer: this.onTooltip.bind(this) });
+  }
 }

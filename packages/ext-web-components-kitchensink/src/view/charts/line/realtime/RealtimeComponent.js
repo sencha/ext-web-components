@@ -10,7 +10,7 @@ export default class RealtimeComponent {
     });
   }
 
-  chartNavReady(event) {
+  chartNavReady = (event) => {
    const cartesianAxes = [{
       type: 'numeric',
       minimum: 0,
@@ -70,7 +70,7 @@ export default class RealtimeComponent {
     this.startTask();
   }
 
-  startTask() {
+  startTask = () => {
     let callCount = 1;
     this.timeChartTask = setInterval(() => {
       if (callCount >= 120) {
@@ -82,8 +82,7 @@ export default class RealtimeComponent {
     }, interval);
   };
 
-  stopTask() {
+  stopTask = () => {
     clearInterval(this.timeChartTask);
   };
-
 }

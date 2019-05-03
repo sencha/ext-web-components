@@ -13,7 +13,7 @@ export default class SplitButtonComponent {
     this.menuItem = '';
   }
 
-  menu(event) {
+  menu = (event) => {
     this.splitButton = event.detail.cmp;
     const menuProp = [{
       text: 'Menu Item 1'
@@ -26,11 +26,11 @@ export default class SplitButtonComponent {
     this.menuButtons.push(this.splitButton);
   }
 
-  toggleReady(event) {
+  toggleReady = (event) => {
     this.toggleButton = event.detail.cmp;
   }
 
-  toggleRound() {
+  toggleRound = () => {
     this.round = !this.round;
 
     if (this.round) {
@@ -48,7 +48,7 @@ export default class SplitButtonComponent {
     }
   };
 
-  onTypeChange(sender, value) {
+  onTypeChange = (sender, value) => {
     this.type = value._text;
     this.iconButtons.forEach(menuItem => {
       const menuItemText = menuItem._text;
@@ -96,7 +96,7 @@ export default class SplitButtonComponent {
     };
   }
 
-  styleMenuItemChange(sender, value) {
+  styleMenuItemChange = (sender, value) => {
     this.style = value._text;
     this.styleButtons.forEach(menuItem => {
       const menuItemText = menuItem._text;
@@ -114,17 +114,17 @@ export default class SplitButtonComponent {
 
   }
 
-  setDefaultsForStyle(event) {
+  setDefaultsForStyle = (event) => {
     this.styleMenu = event.detail.cmp;
     this.styleMenu.on('click', this.styleMenuItemChange.bind(this));
   }
 
-  setTypeForStyle(event) {
+  setTypeForStyle = (event) => {
     this.typeMenu = event.detail.cmp;
     this.typeMenu.on('click', this.onTypeChange.bind(this));
   }
 
-  setIcon(event) {
+  setIcon = (event) => {
     const menuItem = event.detail.cmp;
     const menuItemText = menuItem._text;
 
@@ -137,7 +137,7 @@ export default class SplitButtonComponent {
     this.iconButtons.push(menuItem);
   }
 
-  setStyle(event) {
+  setStyle = (event) => {
     const menuItem = event.detail.cmp;
     const menuItemText = menuItem._text;
     if (menuItemText === this.style) {
@@ -148,5 +148,4 @@ export default class SplitButtonComponent {
 
     this.styleButtons.push(menuItem);
   }
-
 }

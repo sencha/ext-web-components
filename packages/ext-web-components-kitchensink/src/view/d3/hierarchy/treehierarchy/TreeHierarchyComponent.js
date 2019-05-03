@@ -48,11 +48,9 @@ Ext.define('KitchenSink.reader.Salary', {
 });
 
 export default class TreeHierarchyComponent {
-
-
   constructor() { }
 
-  getNodeText(tree, node) {
+  getNodeText = (tree, node) => {
     const record = node.data;
     let text = record.data.text;
     if (node.depth > 1) {
@@ -61,12 +59,12 @@ export default class TreeHierarchyComponent {
     return text;
   }
 
-  onTooltip(component, tooltip, node) {
+  onTooltip = (component, tooltip, node) => {
     const n = node.data.childNodes.length;
     tooltip.setHtml(n + ' item' + (n === 1 ? '' : 's') + ' inside.');
   }
 
-  treeReady(event) {
+  treeReady = (event) => {
     const store = Ext.create('Ext.data.TreeStore', {
       autoLoad: true,
       fields: ['state', 'text', 'salary'],
@@ -84,7 +82,6 @@ export default class TreeHierarchyComponent {
     cmp.setNodeText(this.getNodeText.bind(this));
     cmp.setTooltip({
       renderer:this.onTooltip.bind(this),
-    })    
+    })
   }
-
 }

@@ -15,7 +15,7 @@ export default class SalesPerEmployeeComponent {
     this.store.loadData(refreshData());
   }
 
-  onHeatMapReady(event) {
+  onHeatMapReady = (event) => {
     this.heatmap = event.detail.cmp;
     const platformConfigVar = {
       padding: {
@@ -93,21 +93,21 @@ export default class SalesPerEmployeeComponent {
     this.heatmap.setStore(this.store);
   }
 
-  onRefreshDataButtonReady(event) {
+  onRefreshDataButtonReady = (event) => {
     this.refreshDataCmp = event.detail.cmp;
     this.refreshDataCmp.setHandler(this.refreshData.bind(this));
   }
 
-  onRefreshSizeButtonReady(event) {
+  onRefreshSizeButtonReady = (event) => {
     this.refreshSizeCmp = event.detail.cmp;
     this.refreshSizeCmp.setHandler(this.refreshSize.bind(this));
   }
 
-  refreshData() {
+  refreshData = () => {
     this.store.loadData(refreshData());
   }
 
-  refreshSize() {
+  refreshSize = () => {
     this.store.loadData(refreshSize());
   }
 }

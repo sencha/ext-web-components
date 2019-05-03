@@ -6,7 +6,7 @@ export default class ScrollingTabComponent {
     console.log('in ScrollingTabsComponent constructor');
   }
 
-  tabPanelReady(event) {
+  tabPanelReady = (event) => {
     const tabPanel = event.detail.cmp;
     tabPanel.setTabBar({
       layout: {
@@ -20,6 +20,5 @@ export default class ScrollingTabComponent {
       ...tabPanel.getDefaults(),
       tab: { minWidth: "130px" }
     });
-
   }
 }

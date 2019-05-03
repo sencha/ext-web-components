@@ -4,7 +4,7 @@ import data from "./data";
 export default class TreeGridComponent {
   constructor () {}
 
-  treeReady(event) {
+  treeReady = (event) => {
     this.tree = event.detail.cmp;
     const isPhone = Ext.os.is.Phone;
     const top = !isPhone ? '10' : null

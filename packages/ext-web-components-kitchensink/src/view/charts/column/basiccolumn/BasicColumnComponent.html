@@ -3,22 +3,26 @@
   padding="8"
   fitToParent="true"
   height="100%"
-  width="100%">
+  width="100%"
+>
   <ext-toolbar
     docked="top"
     ui="app-transparent-toolbar"
     shadow="false"
-    padding="0 10 0 10">
+    padding="0 10 0 10"
+  >
     <chart-toolbar
       onItemReady="basiccolumn.onMenuItemReady"
       theme="default"
-      onRefreshButtonReady="basiccolumn.onRefreshButtonReady">
+      onRefreshButtonReady="basiccolumn.onRefreshButtonReady"
+    >
     </chart-toolbar>
   </ext-toolbar>
   <ext-cartesian
-    onready="basiccolumn.cartesianready"
+    onready="basiccolumn.cartesianReady"
     downloadServerUrl="http://svg.sencha.io"
     shadow="true"
-    insetPadding="20 10">
-</ext-cartesian>
+    insetPadding="20 10"
+  >
+  </ext-cartesian>
 </ext-container>

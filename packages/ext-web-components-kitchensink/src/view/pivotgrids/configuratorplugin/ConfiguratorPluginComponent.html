@@ -1,5 +1,5 @@
 <ext-container  layout="fit" padding="10" fitToParent="true" height="100%">
-  <ext-toolbar 
+  <ext-toolbar
     shadow="false"
     docked="top"
     ui="app-transparent-toolbar"
@@ -7,12 +7,14 @@
     layout='{
       "type": "hbox",
       "align": "stretch"
-    }'>
-    <ext-button shadow="true" ui="action" text="Configurator" onready="configuratorplugin.onButtonReady"></ext-button>
+    }'
+  >
+    <ext-button shadow="true" ui="action" text="Configurator" onready="configuratorplugin.onButtonReady">
+    </ext-button>
   </ext-toolbar>
-
-  <ext-pivotgrid 
+  <ext-pivotgrid
     shadow="true"
-    onready="configuratorplugin.onPivotGridReady">
+    onready="configuratorplugin.onPivotGridReady"
+  >
   </ext-pivotgrid>
 </ext-container>

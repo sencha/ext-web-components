@@ -1,34 +1,32 @@
-<ext-panel 
+<ext-panel
   height="100%"
   padding="10"
   shadow="true"
   onready="constraintsdragdrop.parentReady">
 
   <ext-container onready="constraintsdragdrop.elementReady" cls="dand-constraints-dragCt">
-    <ext-container 
+    <ext-container
       onready="constraintsdragdrop.toParentReady"
       cls="dand-constraints-item dand-constraints-to-parent"
       html="To parent">
     </ext-container>
   </ext-container>
 
-  <ext-container 
+  <ext-container
     onready="constraintsdragdrop.verticalReady"
     cls="dand-constraints-item dand-constraints-vertical"
     html="Vertical">
   </ext-container>
 
-  <ext-container 
+  <ext-container
     onready="constraintsdragdrop.horizontalReady"
     cls="dand-constraints-item dand-constraints-horizontal"
     html="Horizontal">
   </ext-container>
 
-  <ext-container 
+  <ext-container
     onready="constraintsdragdrop.snapReady"
     cls="dand-constraints-item dand-constraints-snap"
     html="snap: 60,50">
   </ext-container>
-
 </ext-panel>
-

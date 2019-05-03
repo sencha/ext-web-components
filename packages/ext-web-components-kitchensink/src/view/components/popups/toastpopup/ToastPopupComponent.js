@@ -1,12 +1,9 @@
 import './ToastPopupComponent.html';
 
 export default class ToastPopupComponent {
-
-  constructor() {
-  }
+  constructor() {}
 
   onTap() {
     Ext.toast('Hello World!');
   }
-
 }

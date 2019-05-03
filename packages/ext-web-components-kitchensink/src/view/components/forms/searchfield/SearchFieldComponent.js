@@ -1,8 +1,5 @@
 import './SearchFieldComponent.html';
 
 export default class SearchFieldComponent {
-
-  constructor () {
-  }
-  
+  constructor () {}
 }

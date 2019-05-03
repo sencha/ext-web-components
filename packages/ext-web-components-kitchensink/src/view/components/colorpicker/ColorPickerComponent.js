@@ -5,11 +5,11 @@ export default class ColorPickerComponent {
     this.color = '#00ff00';
   }
 
-  getcolorTitle() {
+  getcolorTitle = () => {
     return `<p style="color: #${this.color}">Selected Color: #${this.color}</p>`;
   }
 
-  onChange(picker) {
+  onChange = (picker) => {
     this.color = picker.getValue();
 
     if(this.titlePanel) {
@@ -19,17 +19,17 @@ export default class ColorPickerComponent {
     }
   }
 
-  onTitleReady(event) {
+  onTitleReady = (event) => {
     this.titlePanel = event.detail.cmp;
     const colorTitle = this.getcolorTitle();
     this.titlePanel.setTitle(colorTitle);
   }
 
-  mainColorPickerReady(event) {
+  mainColorPickerReady = (event) => {
     this.mainColorSelector = event.detail.cmp;
   }
 
-  OnSelChange(event) {
+  OnSelChange = (event) => {
     this.color = event.detail.color;
     if(this.titlePanel) {
       let colorTitle = this.getcolorTitle();
@@ -39,7 +39,7 @@ export default class ColorPickerComponent {
     }
   }
 
-  onPanelReady(event) {
+  onPanelReady = (event) => {
     this.panel = event.detail.cmp;
     const isPhone = Ext.os.is.Phone;
 

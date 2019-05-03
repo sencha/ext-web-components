@@ -8,7 +8,6 @@ Ext.require([
 ])
 
 export default class MainComponent {
-
   constructor() {
     var navTreeRoot = {
       hash: 'all',
@@ -29,12 +28,12 @@ export default class MainComponent {
   }
 
   //DEBUG:
-  readyRightContainer(event) {
+  readyRightContainer = (event) => {
     this.rightContainerCmp = event.detail.cmp;
     this.rightContainerCmp.updateHtml("Build: " + BUILD_VERSION);
   }
 
-  afterAllLoaded(f) {
+  afterAllLoaded = (f) => {
     this.wait = this.wait - 1
     //console.log('***wait*** ' + this.wait )
 
@@ -47,13 +46,13 @@ export default class MainComponent {
     }
   }
 
-  readyCodeButton(event) {
+  readyCodeButton = (event) => {
     //console.log('readyCodeButton')
     this.codeButtonCmp = event.detail.cmp
     //this.afterAllLoaded()
   }
 
-  readyDataviewBreadcrumb(event) {
+  readyDataviewBreadcrumb = (event) => {
     //console.log('readyDataviewBreadcrumb')
     //console.dir(event)
     this.dataviewBreadcrumbCmp = event.detail.cmp
@@ -65,7 +64,7 @@ export default class MainComponent {
     this.afterAllLoaded('readyDataviewBreadcrumb')
   }
 
-  readyNavTreePanel(event) {
+  readyNavTreePanel = (event) => {
     //console.log('readyNavTreePanel')
     this.navTreePanelCmp = event.detail.cmp;
 
@@ -75,14 +74,14 @@ export default class MainComponent {
     //this.afterAllLoaded('readyNavTreePanel')
   }
 
-  readyNavTreelist(event) {
+  readyNavTreelist = (event) => {
     //console.log('readyNavTreelist')
     this.navTreelistCmp = event.detail.cmp
     this.navTreelistCmp.setStore(this.treeStore)
     this.afterAllLoaded('readyNavTreelist')
   }
 
-  readySelection(event) {
+  readySelection = (event) => {
     //console.log('readySelection')
     this.selectionCmp = event.detail.cmp
     var bodyStyle = `
@@ -96,7 +95,7 @@ export default class MainComponent {
     //this.afterAllLoaded('readySelection');
   }
 
-  readyDataviewNav(event) {
+  readyDataviewNav = (event) => {
     //console.log('readyDataviewNav')
     this.dataviewNavCmp = event.detail.cmp
     this.dataviewNavCmp.setStyle({'background':'top','display':'block','text-align':'center'})
@@ -118,19 +117,19 @@ export default class MainComponent {
     this.afterAllLoaded('readyDataviewNav')
   }
 
-  readyRouter(event) {
-    console.log('readyRouter')
+  readyRouter = (event) => {
+    //console.log('readyRouter')
     this.router = event.target;
     this.afterAllLoaded('readyRouter')
   }
 
-  readyCodePanel(event) {
+  readyCodePanel = (event) => {
     //console.log('readyCodePanel')
     this.codePanelCmp = event.detail.cmp
     //this.afterAllLoaded('readyCodePanel')
   }
 
-  readyTabPanel(event) {
+  readyTabPanel = (event) => {
     //console.log('readyTabPanel')
     this.tabPanelCmp = event.detail.cmp
     this.afterAllLoaded('readyTabPanel')
@@ -167,12 +166,12 @@ export default class MainComponent {
     this.navigate(record);
   }
 
-  navTreelistSelectionChange(event) {
+  navTreelistSelectionChange = (event) => {
     var record = event.detail.record;
     this.navigate(record);
   }
 
-  navigate(record) {
+  navigate = (record) => {
     if (record == null) {
       //console.log('it was null')
       return
@@ -199,13 +198,13 @@ export default class MainComponent {
     }
   }
 
-  showSelection() {
+  showSelection = () => {
     this.selectionCmp.setHidden(false);
     this.router.hidden = true;
     this.codeButtonCmp.setHidden(true);
   }
 
-  showRouter() {
+  showRouter = () => {
     this.selectionCmp.setHidden(true);
     this.router.hidden = false;
     this.codeButtonCmp.setHidden(false);
@@ -217,13 +216,13 @@ export default class MainComponent {
     this.setCodeTabs()
   }
 
-  doClickToolbar(event) {
+  doClickToolbar = (event) => {
     var collapsed = this.navTreePanelCmp.getCollapsed()
     if (collapsed == true){collapsed = false} else {collapsed = true}
     this.navTreePanelCmp.setCollapsed(collapsed)
   }
 
-  containsMatches(node) {
+  containsMatches = (node) => {
     const found = node.data.name.match(this.filterRegex) || node.childNodes.some(child => this.containsMatches(child));
     if (found) node.expand();
     node.data.text = node.data.name.replace(this.filterRegex, '<span style="color:#2196F3;font-weight:bold">$1</span>')
@@ -236,14 +235,14 @@ export default class MainComponent {
     this.navTreelistCmp.getStore().filterBy(record => this.containsMatches(record));
   }
 
-  toggleCode() {
+  toggleCode = () => {
     var collapsed = this.codePanelCmp.getHidden()
     if(collapsed == true) { collapsed = false }
     else { collapsed = true }
     this.codePanelCmp.setHidden(collapsed)
   }
 
-  toggleTree() {
+  toggleTree = () => {
     let collapsed = this.navTreePanelCmp.getCollapsed();
 
     if (collapsed == true) {
@@ -254,7 +253,7 @@ export default class MainComponent {
     this.navTreePanelCmp.setCollapsed(collapsed);
   }
 
-  setCodeTabs() {
+  setCodeTabs = () => {
     var hash = window.location.hash.substr(1)
     var currentRoute = {}
     window.routes.forEach((route) => {
@@ -281,7 +280,7 @@ export default class MainComponent {
     });
   }
 
-  setTab(codeMap, file) {
+  setTab = (codeMap, file) => {
     var codeMapFile = codeMap[file]
     if (codeMapFile != undefined ) {
       this.tabPanelCmp.add(
@@ -293,5 +292,4 @@ export default class MainComponent {
       )
     }
   }
-
 }

@@ -9,7 +9,7 @@ Ext.require([
 export default class GridFilteringComponent {
   constructor () {}
 
-  gridReady(event) {
+  gridReady = (event) => {
     const store = Ext.create('Ext.data.Store', {
       model,
       autoLoad: true,
@@ -33,25 +33,19 @@ export default class GridFilteringComponent {
     // debugger;
   }
 
-  nameColumnReady(event) {
+  nameColumnReady = (event) => {
     this.nameColumn = event.detail.cmp;
     this.nameColumn.setSorter({
       sorterFn: this.nameSorter.bind(this)
     });
   }
 
-  nameSorter(rec1, rec2) {
+  nameSorter = (rec1, rec2) => {
     let rec1Name = rec1.get('surname') + rec1.get('forename'),
         rec2Name = rec2.get('surname') + rec2.get('forename');
 
-    if (rec1Name > rec2Name) {
-        return 1;
-    }
-
-    if (rec1Name < rec2Name) {
-        return -1;
-    }
-
+    if (rec1Name > rec2Name) { return 1; }
+    if (rec1Name < rec2Name) { return -1; }
     return 0;
   }
 }

@@ -10,6 +10,7 @@ export default class OrgChartComponent {
         doubleTap: false
       },
     };
+
     this.store = Ext.create('Ext.data.TreeStore', {
       root: {
         name: 'Cliff Capote',
@@ -96,13 +97,13 @@ export default class OrgChartComponent {
     });
   }
 
-  onTooltip (component, tooltip, node, element, event){
+  onTooltip = (component, tooltip, node, element, event) => {
     const record = node.data;
     const name = record.get('name'), title = record.get('title');
     tooltip.setHtml(`<span style="font-weight: bold">${name}</span><br>${title}`);
   };
 
-  horizontalTreePanelReady(event) {
+  horizontalTreePanelReady = (event) => {
     const orgChart = new Components.Kitchensink.Orgchart();
     orgChart.setInteractions(this.interactionsVar);
     orgChart.setStore(this.store);

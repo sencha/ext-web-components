@@ -4,11 +4,9 @@ import {mediumText} from './ResizableHandleComponentDummy.js';
 Ext.require('Ext.panel.Resizer');
 
 export default class ResizableHandleComponent {
+  constructor () {}
 
-  constructor () {
-  }
-
-  readypanel(event) {
+  readypanel = (event) => {
     this.panelCmp = event.detail.cmp;
     this.panelCmp.center();
     this.panelCmp.setResizable({
@@ -17,12 +15,12 @@ export default class ResizableHandleComponent {
     });
   }
 
-  checkboxfieldReady(event) {
+  checkboxfieldReady = (event) => {
     this.checkboxfieldCmp = event.detail.cmp;
     this.checkboxfieldCmp.setChecked(false);
   }
 
-  onCheckboxChange(event) {
+  onCheckboxChange = (event) => {
     this.checkboxfieldCmp.setChecked(event.detail.newValue);
     this.panelCmp.setResizable({
       edges: 'all',
@@ -30,7 +28,7 @@ export default class ResizableHandleComponent {
     });
   }
 
-  containerReady(event) {
+  containerReady = (event) => {
     this.containerCmp = event.detail.cmp;
     this.containerCmp.setHtml(mediumText);
   }

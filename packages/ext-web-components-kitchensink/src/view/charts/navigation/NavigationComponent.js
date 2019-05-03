@@ -14,7 +14,7 @@ export default class NavigationComponent {
     const data = createData();
     this.store = Ext.create('Ext.data.Store', {
       fields: ['x', 'sin', 'cos'],
-      data, 
+      data,
     });
     this.theme = 'default';
     this.zoom = false;
@@ -22,18 +22,18 @@ export default class NavigationComponent {
     this.menuCmpArray = [];
   }
 
-  onNavigatorReady(event) {
+  onNavigatorReady = (event) => {
     this.navigatorComp = event.detail.cmp;
     this.navigatorComp.getChart().getAxes()[1].setRenderer(this.categoryRenderer.bind(this));
     this.navigatorComp.getChart().setStore(this.store);
   }
 
-  onZoomButtonReady(event) {
+  onZoomButtonReady = (event) => {
     this.zoomButtonCmp = event.detail.cmp;
     this.zoomButtonCmp.on('tap', this.toggleZoomOnPan.bind(this, true));
   }
 
-  onPanButtonReady(event) {
+  onPanButtonReady = (event) => {
     this.panButtonCmp = event.detail.cmp;
     this.panButtonCmp.on('tap', this.toggleZoomOnPan.bind(this, false));
   }
@@ -42,12 +42,12 @@ export default class NavigationComponent {
     this.navigatorComp.getChart().getInteraction('panzoom').setZoomOnPan(zoomOnPan);
   };
 
-  onMenuItemReady(event) {
+  onMenuItemReady = (event) => {
     this.menuCmpArray.push(event.detail.cmp);
     event.detail.cmp.on('click', this.onThemeChange.bind(this));
   }
 
-  onThemeChange(event) {
+  onThemeChange = (event) => {
     this.theme = event.config.text.toLowerCase();
     this.menuCmpArray.forEach((cmp, index) => {
       if (index == parseInt(event.config.itemId)) {
@@ -59,7 +59,7 @@ export default class NavigationComponent {
     this.navigatorComp.getChart().setTheme(event.config.text.toLowerCase());
   }
 
-  categoryRenderer(axis, value) {
+  categoryRenderer = (axis, value) => {
     return Math.round(value * 180 / Math.PI);
   };
 }
