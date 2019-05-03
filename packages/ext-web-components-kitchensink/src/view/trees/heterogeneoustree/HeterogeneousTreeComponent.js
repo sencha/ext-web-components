@@ -15,7 +15,7 @@ export default class HeterogeneousTreeComponent {
           name: 'iconCls',
           defaultValue: 'x-fa fa-bank'
       }]
-    }); 
+    });
 
     const countryModel = Ext.define('KitchenSink.model.tree.Country', {
       extend: 'Ext.data.TreeModel',
@@ -77,7 +77,7 @@ export default class HeterogeneousTreeComponent {
       lazyFill: false,
       rootVisible: false
     });
-  
+
     this.treeField.setTop(top);
     this.treeField.setLeft(left);
     this.treeField.setWidth(width);
@@ -85,13 +85,13 @@ export default class HeterogeneousTreeComponent {
     this.treeField.setStore(this.store);
   }
 
-  addItem() {
+  addItem = () => {
     const target = this.treeField.getSelections()[0] || this.store.getRoot();
 
     const value = this.textField.getValue()
     if (value != null && value != '') {
       if (this.store.getNodeById(value)) {
-        return Ext.Msg.alert('Error', 'A node with this name already exists.'); 
+        return Ext.Msg.alert('Error', 'A node with this name already exists.');
       }
       let node = {name : value};
       if (target.isRoot()) {
@@ -104,7 +104,7 @@ export default class HeterogeneousTreeComponent {
         node.leaf = true;
         node.mtype = 'City';
       }
-      
+
       target.appendChild(node);
       if (!target.isExpanded()) {
         target.expand(false);

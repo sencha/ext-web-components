@@ -2,7 +2,6 @@ import './EditableTreeComponent.html';
 import data from "./data";
 
 export default class EditableTreeComponent {
-
   constructor () {}
 
   onTreeReady = (event) => {
