@@ -17,7 +17,7 @@ import '@sencha/ext-web-components/lib/ext-calendar-days.component';
 
 
 import getMenu from './menu';
-import { getRoutes } from '@sencha/ext-web-components/lib/aa-router.component';
+import { getRoutes } from '@sencha/ext-web-components-router/lib/ext-router.component';
 import MainComponent from './view/main/MainComponent.js';
 
 Ext.require([

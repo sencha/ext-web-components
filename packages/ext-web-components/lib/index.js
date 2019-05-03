@@ -1,5 +1,3 @@
-import { ExtRouterComponent } from './aa-router.component';
-import { Route } from './aa-router.component';
 import { ExtActionsheetComponent } from './ext-actionsheet.component';
 import { ExtAudioComponent } from './ext-audio.component';
 import { ExtButtonComponent } from './ext-button.component';
@@ -227,8 +225,6 @@ import { ExtWidgetComponent } from './ext-widget.component';
 
 
 export {
-    ExtRouterComponent,
-    Route,
     ExtActionsheetComponent,
     ExtAudioComponent,
     ExtButtonComponent,
