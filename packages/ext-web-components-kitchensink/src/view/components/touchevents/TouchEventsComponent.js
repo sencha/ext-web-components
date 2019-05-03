@@ -34,12 +34,12 @@ export default class TouchEventsComponent {
     this.theDataview.setItemTpl('<p style="margin: 4px;">{type}</p>');
   }
 
-  onTouchEvent(e, target, options) {
+  onTouchEvent = (e, target, options) => {
     this.events = [{type:e.type} , ...this.events];
     this.theDataview.setData(this.events);
-  }
 
-  clearEventLog() {
+
+  clearEventLog = () => {
     this.events = [];
     this.theDataview.setData(null);
   }

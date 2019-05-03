@@ -10,7 +10,7 @@ export default class GroupedListComponent {
         <div style="font-size:16px;margin-bottom:5px;">{first_name} {last_name}</div>
         <div style="font-size:12px;color:#666;">{title}</div>
     </div>`;
-    this.store = Ext.create('Ext.data.Store', { 
+    this.store = Ext.create('Ext.data.Store', {
       autoLoad: true,
       proxy: {
         type: 'rest',
@@ -26,7 +26,7 @@ export default class GroupedListComponent {
     this.theListview.setIndexBar({ autoHide: false });
   }
 
-  groupFn(record) {
+  groupFn = (record) => {
     return record.get('last_name')[0];
   }
 

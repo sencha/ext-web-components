@@ -68,7 +68,7 @@ export default class SheetComponent {
     this.segmentedbutton.setDisabled(this.reveal);
   }
 
-  toggleMenu() {
+  toggleMenu = () => {
     this.displayed = !this.displayed;
 
     if(this.displayed) {
@@ -93,7 +93,7 @@ export default class SheetComponent {
     this.sheet.setDisplayed(this.displayed);
   }
 
-  onHide() {
+  onHide = () => {
     this.displayed = false;
     this.text = 'Show Menu'
     this.button1.setText(this.text);
@@ -101,37 +101,37 @@ export default class SheetComponent {
     this.sheet.setDisplayed(this.displayed);
   }
 
-  directLeft() {
+  directLeft = () => {
     this.direct='left';
   }
 
-  directRight() {
+  directRight = () => {
     this.direct='right';
   }
 
-  directTop() {
+  directTop = () => {
     this.direct='top';
   }
 
-  directBottom() {
+  directBottom = () => {
     this.direct='bottom';
   }
 
-  setReveal() {
+  setReveal = () => {
     this.reveal = true;
     this.segmentedbutton.setDisabled(this.reveal);
   }
 
-  unsetReveal() {
+  unsetReveal = () => {
     this.reveal = false;
     this.segmentedbutton.setDisabled(this.reveal);
   }
 
-  setModal() {
+  setModal = () => {
     this.modal = true;
   }
 
-  unsetModal() {
+  unsetModal = () => {
     this.modal = false;
   }
 }

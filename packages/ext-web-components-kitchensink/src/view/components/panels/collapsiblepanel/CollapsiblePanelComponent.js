@@ -26,5 +26,4 @@ export default class CollapsiblePanelComponent {
     this.panelCmp2 = event.detail.cmp;
     this.panelCmp2.setHtml(`<div>${mediumText}</div>`);
   }
-
 }

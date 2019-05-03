@@ -11,7 +11,7 @@ export default class TabBarComponent {
     this.tabbar.on('activeTabChange', this.onTabChange.bind(this));
   }
 
-  onTabChange(sender, value) {
+  onTabChange = (sender, value) => {
     this.activeTab = value._text;
     this.container.setHtml(`Active Tab: ${this.activeTab}`);
   }

@@ -3,8 +3,8 @@ import './RippleComponent.scss';
 
 export default class RippleComponent {
 
-  constructor() {
-  }
+  constructor() {}
+
   containerReady = (event) => {
     this.container = event.detail.cmp;
     this.container.setDefaults({
@@ -15,5 +15,4 @@ export default class RippleComponent {
   clickHandler = (event) => {
     Ext.get(event.target).ripple(event, {})
   }
-
 }

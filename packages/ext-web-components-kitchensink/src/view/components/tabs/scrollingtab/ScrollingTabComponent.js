@@ -20,6 +20,5 @@ export default class ScrollingTabComponent {
       ...tabPanel.getDefaults(),
       tab: { minWidth: "130px" }
     });
-
   }
 }

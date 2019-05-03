@@ -4,9 +4,7 @@ import {mediumText} from './ResizableHandleComponentDummy.js';
 Ext.require('Ext.panel.Resizer');
 
 export default class ResizableHandleComponent {
-
-  constructor () {
-  }
+  constructor () {}
 
   readypanel = (event) => {
     this.panelCmp = event.detail.cmp;

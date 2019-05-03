@@ -24,7 +24,7 @@ export default class ClosableTabComponent {
     }
   }
 
-  addNewTab(index) {
+  addNewTab = (index) => {
     return Ext.create({
       xtype: "panel",
       title: `Tab ${index}`,
@@ -35,7 +35,7 @@ export default class ClosableTabComponent {
     });
   }
 
-  addTab() {
+  addTab = () => {
     const key = this.nextKey++;
     this.tabs = [...this.tabs, key];
     this.tabPanel.add(this.addNewTab(key));
@@ -43,7 +43,7 @@ export default class ClosableTabComponent {
     return false;
   }
 
-  tabPanelAdded(){
+  tabPanelAdded = () => {
     if (this.tabPanel != undefined) {
       this.tabPanel.setActiveItem(this.tabs.indexOf(this.tabs.length-1))
     }

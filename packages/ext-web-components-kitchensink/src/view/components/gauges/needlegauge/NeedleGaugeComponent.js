@@ -1,7 +1,6 @@
 import './NeedleGaugeComponent.html';
 
 export default class NeedleGaugeComponent {
-
   constructor () {
     this.value = 30;
     this.outerradius = {outerRadius:'100%'};

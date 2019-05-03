@@ -6,7 +6,7 @@ export default class DisclosureListComponent {
   onItemReady = (event) => {
     this.theListview = event.detail.cmp;
     const tpl = `<div>{first_name} {last_name}</div>`;
-    this.store = Ext.create('Ext.data.Store', { 
+    this.store = Ext.create('Ext.data.Store', {
       autoLoad: true,
       proxy: {
         type: 'rest',
@@ -20,7 +20,7 @@ export default class DisclosureListComponent {
     this.theListview.setStore(this.store);
   }
 
-  msgAlert(param) {
+  msgAlert = (param) => {
     Ext.Msg.alert('Tap', 'Disclose more info for ' + param.get('first_name'), Ext.emptyFn);
   };
 }

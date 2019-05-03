@@ -1,8 +1,7 @@
 import './CheckBoxFieldComponent.html';
 
 export default class CheckBoxFieldComponent {
-  constructor () {
-  }
+  constructor () {}
 
   checkboxfieldready1 = (event) => {
     const isPhone = Ext.os.is.Phone;

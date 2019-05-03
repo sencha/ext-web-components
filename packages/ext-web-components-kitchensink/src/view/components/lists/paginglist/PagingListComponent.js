@@ -17,7 +17,7 @@ export default class PagingListComponent {
     this.buttonCmp1.setText("0");
   }
 
-  setBufferZone(value) {
+  setBufferZone = (value) => {
     this.bufferZone = value;
     let labelText;
 
@@ -36,7 +36,7 @@ export default class PagingListComponent {
     this.store.loadPage(1);
   }
 
-  listReady(ele) {
+  listReady = (ele) => {
     this.list = ele.detail.cmp;
     const tpl = `<div>{name}</div>`;
 

@@ -2,8 +2,7 @@ import './ContainerFieldComponent.html';
 
 export default class ContainerFieldComponent {
 
-  constructor () {
-  }
+  constructor () {}
 
   containerfieldcomponentReady = (event) => {
     const isPhone = Ext.os.is.Phone;
@@ -11,5 +10,4 @@ export default class ContainerFieldComponent {
     const layout = isPhone ? "vbox" : "hbox";
     this.cmp.setLayout(layout);
   }
-  
 }

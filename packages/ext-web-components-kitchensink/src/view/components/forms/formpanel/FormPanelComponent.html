@@ -4,27 +4,32 @@
   width="300"
   height="600"
   bodyPadding="10"
-  shadow="true">
+  shadow="true"
+>
   <ext-fieldset
     ref="personal"
     title="Personal Info"
-    defaults='{"labelAlign": "placeholder"}'>
+    defaults='{"labelAlign": "placeholder"}'
+  >
     <ext-textfield
       onready="formpanel.componentready"
       label="Name"
       required="true"
-      placeholder="This field is required">
+      placeholder="This field is required"
+    >
     </ext-textfield>
     <ext-passwordfield
       onready="formpanel.componentready"
       label="Password"
       required="true"
-      revealable="true" >
+      revealable="true"
+    >
     </ext-passwordfield>
     <ext-emailfield
       onready="formpanel.componentready"
       label="Email"
-      placeholder="me@sencha.com">
+      placeholder="me@sencha.com"
+    >
     </ext-emailfield>
     <ext-textfield
       onready="formpanel.componentready"
@@ -34,7 +39,8 @@
     </ext-textfield>
     <ext-urlfield
       onready="formpanel.componentready"
-      label="URL" placeholder="http://sencha.com">
+      label="URL" placeholder="http://sencha.com"
+    >
     </ext-urlfield>
     <ext-spinnerfield
       onready="formpanel.componentready"
@@ -44,7 +50,8 @@
       stepValue="1"
       cycle="true"
       margin="15 0 0 0"
-      labelAlign="top">
+      labelAlign="top"
+    >
     </ext-spinnerfield>
     <ext-datepickerfield
       onready="formpanel.componentready"
@@ -61,40 +68,48 @@
         { "text": "Master" , "value": "master" },
         { "text":"Journeyman" , "value": "journeyman" },
         { "text": "Apprentice" , "value": "apprentice" }
-      ]'>
-      </ext-selectfield>
+      ]'
+    >
+    </ext-selectfield>
     <ext-textfield
       onready="formpanel.componentready"
       label="With Error"
       errorMessage="This field is invalid"
-      errorTarget="under">
+      errorTarget="under"
+    >
     </ext-textfield>
     <ext-sliderfield
       onready="formpanel.componentready"
-      label="Slider" >
+      label="Slider"
+    >
     </ext-sliderfield>
     <ext-togglefield
       onready="formpanel.componentready"
-      label="Toggle">
+      label="Toggle"
+    >
     </ext-togglefield>
     <ext-textareafield
       onready="formpanel.componentready"
       label="Bio"
-      maxRows="5">
+      maxRows="5"
+    >
     </ext-textareafield>
   </ext-fieldset>
   <ext-fieldset
     title="Roles"
     layout='{"type": "vbox", "align": "left"}'
     margin="15 0"
-    defaults='{"labelAlign": "placeholder"}'>
+    defaults='{"labelAlign": "placeholder"}'
+  >
     <ext-checkboxfield
       onready="formpanel.componentready"
-      boxLabel="Admin">
+      boxLabel="Admin"
+    >
     </ext-checkboxfield>
     <ext-checkboxfield
       onready="formpanel.componentready"
-      boxLabel="Power User">
+      boxLabel="Power User"
+    >
     </ext-checkboxfield>
   </ext-fieldset>
   <ext-fieldset
@@ -106,30 +121,35 @@
                 "labelAlign": "right",
                 "labelWidth": "auto",
                 "padding": "0"
-              }'>
+              }'
+  >
     <ext-radiofield
       onready="formpanel.componentready"
       name="color"
       boxLabel="Red"
-      value="red">
+      value="red"
+    >
     </ext-radiofield>
     <ext-radiofield
       onready="formpanel.componentready"
       name="color"
       boxLabel="Blue"
-      value="blue">
+      value="blue"
+    >
     </ext-radiofield>
     <ext-radiofield
       onready="formpanel.componentready"
       name="color"
       boxLabel="Green"
-      value="green">
+      value="green"
+    >
     </ext-radiofield>
     <ext-radiofield
       onready="formpanel.componentready"
       name="color"
       boxLabel="Purple"
-      value="purple">
+      value="purple"
+    >
     </ext-radiofield>
     </ext-fieldset>
     <ext-toolbar
@@ -137,16 +157,19 @@
       docked="bottom"
       layout='{
         "type": "hbox", "pack": "right"
-      }'>
+      }'
+    >
     <ext-button
       onready="formpanel.buttonready"
       text="Disable All"
       margin="0 10 0 0"
-      onTap="formpanel.toggleDisable()" >
+      onTap="formpanel.toggleDisable()"
+    >
     </ext-button>
     <ext-button
       text="Reset"
-      onTap="formpanel.resetform()">
+      onTap="formpanel.resetform()"
+    >
     </ext-button>
   </ext-toolbar>
 </ext-formpanel>

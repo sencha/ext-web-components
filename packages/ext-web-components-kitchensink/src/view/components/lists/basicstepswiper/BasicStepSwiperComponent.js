@@ -1,7 +1,6 @@
 import './BasicStepSwiperComponent.html';
 
 export default class BasicStepSwiperComponent {
-
   constructor () {}
 
   onItemReady = (event) => {
@@ -11,7 +10,7 @@ export default class BasicStepSwiperComponent {
       <div style="font-size:12px;color:#666;">{title}</div>
     </div>`;
 
-    this.store = Ext.create('Ext.data.Store', { 
+    this.store = Ext.create('Ext.data.Store', {
       autoLoad: true,
       proxy: {
         type: 'rest',
@@ -55,15 +54,15 @@ export default class BasicStepSwiperComponent {
     Ext.toast(`You selected ${selected.first_name} ${selected.last_name}.`);
   }
 
-  onCall(list, {record}) {
+  onCall = (list, {record}) => {
     Ext.toast(`Call ${record.get('first_name')} ${record.get('last_name')}`)
   }
 
-  onMessage(list, {record}) {
+  onMessage = (list, {record}) => {
     Ext.toast(`Message ${record.get('first_name')} ${record.get('last_name')}`)
   }
 
-  onEdit(list, {record}) {
+  onEdit = (list, {record}) => {
     Ext.toast(`Edit ${record.get('first_name')} ${record.get('last_name')}`)
   }
 

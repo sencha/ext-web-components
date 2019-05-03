@@ -30,7 +30,7 @@ export default class AudioComponent {
     this.button.setHandler(this.toggleAudioAndroid);
   }
 
-  toggleAudioAndroid() {
+  toggleAudioAndroid = () => {
     if (this.playing) {
       this.audio.pause();
     } else {
@@ -38,5 +38,4 @@ export default class AudioComponent {
     }
     this.playing = !this.playing;
   }
-
 }

@@ -14,11 +14,12 @@ export default class WizardComponent {
     this.buttonCmp3.setTooltip({
       maxWidth: "300",
       html: `
-                              <div style="font-weight:bold;font-size:14px;font-family:courier;">&lt;Indicator tapMode="direction" /&gt;</div>
-                              <p>
-                                Clicking on a dot in the indicator will move the wizard one step forward or backward depending on the side that was clicked.
-                              </p>
-                            `
+      <div style="font-weight:bold;font-size:14px;font-family:courier;">
+        &lt;Indicator tapMode="direction" /&gt;
+      </div>
+      <p>
+        Clicking on a dot in the indicator will move the wizard one step forward or backward depending on the side that was clicked.
+      </p>`
     });
   }
 
@@ -27,21 +28,23 @@ export default class WizardComponent {
     this.buttonCmp4.setTooltip({
       maxWidth: "300",
       html: `
-                              <div style="font-weight:bold;font-size:14px;font-family:courier;">&lt;Indicator tapMode="item" /&gt;</div>
-                              <p>
-                                Clicking on a dot in the indicator will move the wizard to the corresponding step.
-                              </p>
-                            `
+        <div style="font-weight:bold;font-size:14px;font-family:courier;">
+          &lt;Indicator tapMode="item" /&gt;
+        </div>
+        <p>
+          Clicking on a dot in the indicator will move the wizard to the corresponding step.
+        </p>
+      `
     });
   }
 
   containerready1 = (event) => {
     this.containerCmp1 = event.detail.cmp;
-    this.containerCmp1.setHtml(`<h1>Welcome to the Demo Wizard!</h1>
-
+    this.containerCmp1.setHtml(`
+      <h1>Welcome to the Demo Wizard!</h1>
       Step 1 of 3
-
-      Please click the "Next" button to continue...`);
+      Please click the "Next" button to continue...`
+    );
   }
 
   containerready2 = (event) => {
@@ -84,7 +87,7 @@ export default class WizardComponent {
     this.panelCmp = event.detail.cmp;
   }
 
-  setDisabled() {
+  setDisabled = () => {
     if (this.step === 0) {
       this.buttonCmp1.setDisabled(true);
     } else this.buttonCmp1.setDisabled(false);
@@ -94,14 +97,14 @@ export default class WizardComponent {
     } else this.buttonCmp2.setDisabled(false);
   }
 
-  previous() {
+  previous = () => {
     this.step = this.step - 1;
     this.indicatorCmp.setActiveIndex(this.step);
     this.panelCmp.setActiveItem(this.step);
     this.setDisabled();
   }
 
-  next() {
+  next = () => {
     this.step = this.step + 1;
     this.indicatorCmp.setActiveIndex(this.step);
     this.panelCmp.setActiveItem(this.step);

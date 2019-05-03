@@ -3,9 +3,7 @@ import './TimePanelComponent.html';
 Ext.require('Ext.panel.Time');
 
 export default class TimePanelComponent {
-
-  constructor () {
-  }
+  constructor () {}
 
   containerReady = (event) => {
     this.containerCmp = event.detail.cmp;

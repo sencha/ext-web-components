@@ -1,5 +1,4 @@
 import './PullRefreshListComponent.html';
-//import '../stocks.js';
 
 Ext.require([
   'Ext.plugin.PullRefresh'
@@ -30,5 +29,4 @@ export default class PullRefreshListComponent {
     this.list.setStore(this.store);
     this.list.setItemTpl(tpl);
   }
-
 }

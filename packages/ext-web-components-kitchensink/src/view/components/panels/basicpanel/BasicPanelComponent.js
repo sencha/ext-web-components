@@ -49,7 +49,7 @@ export default class BasicPanelComponent {
     ]);
   }
 
-  toolHandler(owner, tool) {
+  toolHandler = (owner, tool) => {
       Ext.toast(`You clicked ${tool.config.type || 'a custom tool'}.`);
     }
 

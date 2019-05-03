@@ -37,5 +37,4 @@ export default class SliderFieldComponent {
     this.multipleValue = event.detail.newValue;
     this.containercmp3.setHtml(`Value: ${event.detail.newValue}`);
   }
-  
 }
