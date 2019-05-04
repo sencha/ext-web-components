@@ -72,23 +72,16 @@ import '@sencha/ext-web-components/lib/ext-calendar-week.component';
 import '@sencha/ext-web-components/lib/ext-cartesian.component';
 import '@sencha/ext-web-components/lib/ext-indicator.component';
 import '@sencha/ext-web-components/lib/ext-lockedgrid.component';
-
 import '@sencha/ext-web-components/lib/ext-tooltip.component';
-
 import '@sencha/ext-web-components/lib/ext-polar.component';
 import '@sencha/ext-web-components/lib/ext-chart.component';
-
 import '@sencha/ext-web-components/lib/ext-widgetcell.component';
 import '@sencha/ext-web-components/lib/ext-datecolumn.component';
 import '@sencha/ext-web-components/lib/ext-textcolumn.component';
 import '@sencha/ext-web-components/lib/ext-checkcolumn.component';
-
 import '@sencha/ext-web-components/lib/ext-menucheckitem.component';
 import '@sencha/ext-web-components/lib/ext-numbercolumn.component';
-
-
 import '@sencha/ext-web-components/lib/ext-d3.component';
-
 import '@sencha/ext-web-components/lib/ext-d3-horizontal-tree.component';
 import '@sencha/ext-web-components/lib/ext-d3-pack.component';
 import '@sencha/ext-web-components/lib/ext-d3-sunburst.component';
@@ -98,24 +91,22 @@ import '@sencha/ext-web-components/lib/ext-pivotd3container.component';
 import '@sencha/ext-web-components/lib/ext-chartnavigator.component';
 import '@sencha/ext-web-components/lib/ext-d3-heatmap.component';
 import '@sencha/ext-web-components/lib/ext-pivotheatmap.component';
-
 import './Data.js';
 import getMenu from './menu';
 import MainComponent from './view/main/MainComponent.js';
-import * as d3 from 'd3'
+import * as d3 from 'd3';
 
 Ext.require([
   'Ext.layout.*',
   'Ext.data.TreeStore'
 ]);
 
-
 function init() {
   window.d3 = d3;
   window.menu = getMenu();
   window.routes = getRoutes(window.menu);
-  window.main = new MainComponent()
-  document.body.innerHTML = window._code['main']['MainComponent.html']
+  window.main = new MainComponent();
+  document.body.innerHTML = window._code['main']['MainComponent.html'];
 }
 
 init();
