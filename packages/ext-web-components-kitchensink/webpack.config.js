@@ -4,7 +4,6 @@ const { BaseHrefWebpackPlugin } = require('base-href-webpack-plugin');
 const ExtWebpackPlugin = require('@sencha/ext-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
-
 const portfinder = require('portfinder')
 
 module.exports = function (env) {
