@@ -20,11 +20,14 @@ export default class ButtonComponent {
   };
 
   onTap = event => {
+    console.log(event)
     this.counter1++;
     this.button1.text = this.counter1 + ' (target)'
   };
 
-  handler = event => {
+  handler = (button, e) => {
+    console.dir(button)
+    console.dir(e)
     this.counter2++;
     this.buttonComp2.setText(this.counter2 + ' (cmp)');
   };

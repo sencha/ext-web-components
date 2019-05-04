@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Events</title>
+    <meta charset="UTF-8">
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
+    <style>
+    </style>
+
+</head>
+  <script>
+
+window.button = {}
+window.button.onClick = function(num) {
+  console.log('onClick')
+  console.log(num)
+}
+
+
+
+function callIt(s) {
+  console.log(s)
+
+}
+
+
+function anotherFunction() {
+  console.log('anotherFunction')
+}
+
+
+function myFunction() {
+//  console.log('myFunction')
+//  callIt('button.onClick')
+
+var event = 2
+
+ var newVal = 'button.onClick'
+ var r = newVal.split('.');
+ var prop = r[0];
+ var func = r[1];
+window[prop][func](event);
+
+  //eval("button.onClick('2')")
+}
+
+
+//    console.log(eval)
+
+//    window.eval = function() {console.log('eval')}
+  </script>
+<body>
+    <button onclick="myFunction()">Click me</button>
+</body>
+</html>

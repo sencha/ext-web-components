@@ -20,6 +20,16 @@ import ButtonComponent from './view/button/ButtonComponent.js';
 //import GridComponent from './view/grid/GridComponent.js';
 //import ColumnsComponent from './view/columns/ColumnsComponent.js';
 
+// var globalOne = function(event) {
+//   console.log('globalOne')
+// }
+
+function globalOne(event) {
+  console.log('globalOne')
+}
+
+
+
 (function () {
 
   init();
