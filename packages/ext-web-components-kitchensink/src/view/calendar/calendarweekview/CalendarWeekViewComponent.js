@@ -1,17 +1,17 @@
-import './CalendarWeekViewComponent.html';
-import '../data/calendarWeek.js';
+import "./CalendarWeekViewComponent.html";
+import "../data/calendarWeek.js";
 
 export default class CalendarWeekViewComponent {
 
   constructor() {
-    this.panelTitle = Ext.Date.format(new Date(), 'F Y');
+    this.panelTitle = Ext.Date.format(new Date(), "F Y");
     this.visibleDays = 7;
     this.firstDayOfWeek = 0;
   }
 
   changeCalendarView = (button, value) => {
     let buttVal = button._value;
-    if (buttVal == 'fullweek') {
+    if (buttVal == "fullweek") {
       this.calendarview = value;
       this.visibleDays = 7;
       this.firstDayOfWeek = 1;
@@ -22,33 +22,34 @@ export default class CalendarWeekViewComponent {
       this.firstDayOfWeek = 1;
     }
     this.calendarWeek.setFirstDayOfWeek(this.firstDayOfWeek);
-    this.calendarWeek.setVisibleDays(this.visibleDays);  }
+    this.calendarWeek.setVisibleDays(this.visibleDays);
+  }
 
   panelReady = (event) => {
     this.panel = event.detail.cmp;
     this.panel.setTitle(this.panelTitle);
     this.panel.setHeader(
       {
-        layout: 'hbox',
+        layout: "hbox",
         items: [{
-          xtype: 'component',
+          xtype: "component",
           flex: 1
         }, {
-          xtype: 'segmentedbutton',
+          xtype: "segmentedbutton",
           items: [{
-            text: this.isPhone ? null : 'Full Week',
-            iconCls: this.isPhone ? 'x-fa fa-calendar-check-o' : null,
-            value: 'fullweek',
+            text: this.isPhone ? null : "Full Week",
+            iconCls: this.isPhone ? "x-fa fa-calendar-check-o" : null,
+            value: "fullweek",
             handler: this.changeCalendarView.bind(this)
           }, {
-            text: this.isPhone ? null : 'Work Week',
-            iconCls: this.isPhone ? 'x-fa fa-briefcase' : null,
-            value: 'workweek',
+            text: this.isPhone ? null : "Work Week",
+            iconCls: this.isPhone ? "x-fa fa-briefcase" : null,
+            value: "workweek",
             handler: this.changeCalendarView.bind(this)
           }]
         }]
       }
-    )
+    );
   }
 
   innnerPanelReady = (event) => {
@@ -58,13 +59,13 @@ export default class CalendarWeekViewComponent {
 
   calendarListReady = (event) => {
     this.calendarList = event.detail.cmp;
-    this.store = Ext.create('Ext.calendar.store.Calendars', {
+    this.store = Ext.create("Ext.calendar.store.Calendars", {
       autoLoad: true,
       proxy: {
-        type: 'ajax',
-        url: '/KitchenSink/CalendarWeek'
+        type: "ajax",
+        url: "/KitchenSink/CalendarWeek"
       }
-    })
+    });
     this.calendarList.setStore(this.store);
   }
 
