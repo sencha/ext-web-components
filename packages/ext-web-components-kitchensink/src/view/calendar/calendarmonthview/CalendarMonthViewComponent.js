@@ -1,5 +1,5 @@
-import './CalendarMonthViewComponent.html';
-import '../data/calendarFull.js';
+import "./CalendarMonthViewComponent.html";
+import "../data/calendarFull.js";
 
 export default class CalendarMonthViewComponent {
 
@@ -7,18 +7,18 @@ export default class CalendarMonthViewComponent {
 
   panelReady = (event) => {
     this.panel = event.detail.cmp;
-    this.panel.setTitle(Ext.Date.format(new Date(),'F Y'))
-    this.panel.setTitleAlign('center');
+    this.panel.setTitle(Ext.Date.format(new Date(), "F Y"));
+    this.panel.setTitleAlign("center");
   }
  
   calendarListReady = (event) => {
-    this.store = Ext.create('Ext.calendar.store.Calendars', {
+    this.store = Ext.create("Ext.calendar.store.Calendars", {
       autoLoad: true,
       proxy:{
-        type: 'ajax',
-        url: '/KitchenSink/CalendarFull'
+        type: "ajax",
+        url: "/KitchenSink/CalendarFull"
       }
-    })
+    });
     this.calendarListReady = event.detail.cmp;
     this.calendarListReady.setStore(this.store);
   }
