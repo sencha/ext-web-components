@@ -9,6 +9,7 @@ export default class CompactLayoutComponent {
       data: generateData()
     });
     this.monthLabelRenderer = function(value) {return Ext.Date.monthNames[value];}
+    
     this.pivotgridMatrix = {
       type: 'local',
       textRowLabels: 'Custom header',

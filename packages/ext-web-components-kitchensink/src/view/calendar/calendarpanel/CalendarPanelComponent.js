@@ -12,7 +12,7 @@ export default class CalendarPanelComponent {
         url: '/KitchenSink/CalendarFull'
       }
     });
-    this.panel = event.detail.cmp;
-    this.panel.setStore(store);
+    this.calendarPanel = event.detail.cmp;
+    this.calendarPanel.setStore(store);
   }
 }
