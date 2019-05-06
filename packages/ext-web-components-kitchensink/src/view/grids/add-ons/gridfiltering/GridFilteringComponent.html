@@ -23,14 +23,15 @@
     onready="gridfiltering.nameColumnReady"
   >
   </ext-column>
-  <ext-datecolumn
+  <ext-column
     dataIndex="dob"
     editable="true"
-    format="Y-m-d"
+    formatter='date("m/d/y")'
+    format="d-m-Y"
     text="Date of Birth"
     width="115"
   >
-  </ext-datecolumn>
+  </ext-column>
   <ext-column
     dataIndex="noticePeriod"
     editable="true"

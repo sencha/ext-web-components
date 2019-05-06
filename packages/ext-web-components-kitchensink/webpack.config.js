@@ -36,18 +36,18 @@ module.exports = function (env) {
         port: port,
         packages: [
           'renderercell',
-          'font-ext', 
-          'ux', 
+          'font-ext',
+          'ux',
           'd3',
           'pivot-d3',
-          'font-awesome', 
+          'font-awesome',
           'exporter',
-          'pivot', 
-          'calendar', 
+          'pivot',
+          'calendar',
           'charts',
           'treegrid'
         ],
-        profile: profile, 
+        profile: profile,
         environment: environment,
         treeshake: treeshake,
         browser: browser,
@@ -80,10 +80,10 @@ module.exports = function (env) {
       plugins: plugins,
       module: {
         rules: [
-          { test: /\.(js)$/, exclude: /node_modules/, 
+          { test: /\.(js)$/, exclude: /node_modules/,
             use: [
-            'babel-loader', 
-//            'eslint-loader'
+            'babel-loader',
+           // 'eslint-loader'
             ]
           },
           { test: /\.(html)$/,use: { loader: 'html-loader' } },

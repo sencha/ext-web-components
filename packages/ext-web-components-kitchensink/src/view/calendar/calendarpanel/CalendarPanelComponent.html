@@ -5,11 +5,16 @@
     shadow="true"
     onready="calendarpanel.onReady"
     views='{
+      "day": {
+        "startTime": 6,
+        "endTime": 22
+      },
       "workweek": {
         "xtype": "calendar-week",
-        "controlStoreRange": "false",
+        "controlStoreRange": false,
         "label": "Work Week",
-        "weight": "15",
+        "titleTpl": "{start:date(\"j M\")} - {end:date(\"j M Y\")}",
+        "weight": 15,
         "dayHeaderFormat": "D d",
         "firstDayOfWeek": 1,
         "visibleDays": 5

@@ -21,11 +21,14 @@ export default class ExtBase extends HTMLElement {
   filterProperty(propertyValue) {
     try {
       const parsedProp = JSON.parse(propertyValue);
+
       if (parsedProp === null ||
           parsedProp === undefined ||
           parsedProp === true ||
           parsedProp === false ||
-          parsedProp === Object(parsedProp)) {
+          parsedProp === Object(parsedProp) ||
+          (!isNaN(parsedProp) && parsedProp !== 0)
+        ) {
         return parsedProp;
       } else {
         return propertyValue;
@@ -355,7 +358,10 @@ export default class ExtBase extends HTMLElement {
           var r = functionString.split('.');
           var obj = r[0];
           var func = r[1];
-          window[obj][func](event);
+
+          if (obj && func) {
+            window[obj][func](event);
+          }
           //eval(newVal + '(event)')
         });
       } else {
