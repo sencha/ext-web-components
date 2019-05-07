@@ -2,16 +2,17 @@ let rand = 37;
 const companies = ['Google', 'Apple', 'Dell', 'Microsoft', 'Adobe'],
     countries = ['Belgium', 'Netherlands', 'United Kingdom', 'Canada', 'United States', 'Australia'],
     persons = ['John', 'Michael', 'Mary', 'Anne', 'Robert'];
-    
+
 export function randomItem(data) {
     const k = rand % data.length;
 
     rand = rand * 1664525 + 1013904223;
     rand &= 0x7FFFFFFF;
     return data[k];
-};
+}
+
 export function randomDate(start, end) {
-    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime() ));   
+    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 }
 
 export function generateData(items=500) {
