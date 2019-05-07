@@ -1,5 +1,3 @@
 import './NumberFieldComponent.html';
 
-export default class NumberFieldComponent {
-  constructor () {}
-}
+export default class NumberFieldComponent {}

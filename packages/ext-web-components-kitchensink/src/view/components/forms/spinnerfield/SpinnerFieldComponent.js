@@ -1,5 +1,3 @@
 import './SpinnerFieldComponent.html';
 
-export default class SpinnerFieldComponent {
-  constructor () {}
-}
+export default class SpinnerFieldComponent {}

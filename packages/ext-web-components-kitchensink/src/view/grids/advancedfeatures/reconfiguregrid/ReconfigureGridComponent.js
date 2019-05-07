@@ -2,159 +2,159 @@ import './ReconfigureGridComponent.html';
 import model from '../../data/GridModel';
 
 export default class ReconfigureGridComponent {
-  constructor() {
-    this.lastNames= ['Jones', 'Smith', 'Lee', 'Wilson', 'Black', 'Williams', 'Lewis', 'Johnson', 'Foot', 'Little', 'Vee', 'Train', 'Hot', 'Mutt'];
-    this.firstNames= ['Fred', 'Julie', 'Bill', 'Ted', 'Jack', 'John', 'Mark', 'Mike', 'Chris', 'Bob', 'Travis', 'Kelly', 'Sara'];
-    this.cities= ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Philadelphia', 'Phoenix', 'San Antonio', 'San Diego', 'Dallas', 'San Jose'];
-    this.departments= ['Development', 'QA', 'Marketing', 'Accounting', 'Sales'];
+    constructor() {
+        this.lastNames= ['Jones', 'Smith', 'Lee', 'Wilson', 'Black', 'Williams', 'Lewis', 'Johnson', 'Foot', 'Little', 'Vee', 'Train', 'Hot', 'Mutt'];
+        this.firstNames= ['Fred', 'Julie', 'Bill', 'Ted', 'Jack', 'John', 'Mark', 'Mike', 'Chris', 'Bob', 'Travis', 'Kelly', 'Sara'];
+        this.cities= ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Philadelphia', 'Phoenix', 'San Antonio', 'San Diego', 'Dallas', 'San Jose'];
+        this.departments= ['Development', 'QA', 'Marketing', 'Accounting', 'Sales'];
 
-    this.configs = {
-        Employees: {
-            store: this.createEmployeeStore(),
-            columns: [{
-                text: 'First Name',
-                dataIndex: 'forename',
-                flex: 1
-            }, {
-                text: 'Last Name',
-                dataIndex: 'surname',
-                flex: 1
-            }, {
-                text: 'Employee No.',
-                dataIndex: 'employeeNo',
-                flex: 1
-            }, {
-                text: 'Department',
-                dataIndex: 'department',
-                flex: 1
-            },{
-                text:'Name',
-                dataIndex: 'name',
-                flex: 1
-            }]
-        },
-        Offices: {
-            store: this.createOfficeStore(),
-            columns: [{
-                text: 'City',
-                dataIndex: 'city',
-                flex: 1
-            }, {
-                text: 'Total Employees',
-                dataIndex: 'totalEmployees',
-                flex: 1
-            }, {
-                text: 'Manager',
-                dataIndex: 'manager',
-                flex: 1
-            }]
+        this.configs = {
+            Employees: {
+                store: this.createEmployeeStore(),
+                columns: [{
+                    text: 'First Name',
+                    dataIndex: 'forename',
+                    flex: 1
+                }, {
+                    text: 'Last Name',
+                    dataIndex: 'surname',
+                    flex: 1
+                }, {
+                    text: 'Employee No.',
+                    dataIndex: 'employeeNo',
+                    flex: 1
+                }, {
+                    text: 'Department',
+                    dataIndex: 'department',
+                    flex: 1
+                }, {
+                    text:'Name',
+                    dataIndex: 'name',
+                    flex: 1
+                }]
+            },
+            Offices: {
+                store: this.createOfficeStore(),
+                columns: [{
+                    text: 'City',
+                    dataIndex: 'city',
+                    flex: 1
+                }, {
+                    text: 'Total Employees',
+                    dataIndex: 'totalEmployees',
+                    flex: 1
+                }, {
+                    text: 'Manager',
+                    dataIndex: 'manager',
+                    flex: 1
+                }]
+            }
+        };
+    }
+
+    createEmployeeStore = () => {
+        var data = [],
+            usedNames = {},
+            i, name;
+
+        for (i = 0; i < 20; ++i) {
+            name = this.getUniqueName(usedNames);
+
+            data.push({
+                forename: name[0],
+                surname: name[1],
+                employeeNo: this.getEmployeeNo(),
+                department: this.getDepartment()
+            });
         }
-    };
-  }
 
-  createEmployeeStore = () => {
-      var data = [],
-          usedNames = {},
-          i, name;
+        return new Ext.data.Store({
+            model,
+            data: data
+        });
+    }
 
-      for (i = 0; i < 20; ++i) {
-          name = this.getUniqueName(usedNames);
+    createOfficeStore = () => {
+        var data = [],
+            usedNames = {},
+            usedCities = {},
+            i;
 
-          data.push({
-              forename: name[0],
-              surname: name[1],
-              employeeNo: this.getEmployeeNo(),
-              department: this.getDepartment()
-          });
-      }
+        for (i = 0; i < 7; ++i) {
+            data.push({
+                city: this.getUniqueCity(usedCities),
+                manager: this.getUniqueName(usedNames).join(' '),
+                totalEmployees: Ext.Number.randomInt(10, 25)
+            });
+        }
 
-      return new Ext.data.Store({
-          model,
-          data: data
-      });
-  }
+        return new Ext.data.Store({
+            model,
+            data: data
+        });
+    }
 
-  createOfficeStore = () => {
-       var data = [],
-          usedNames = {},
-          usedCities = {},
-          i;
+    generateName = () => {
+        const lasts = this.lastNames,
+            firsts = this.firstNames,
+            lastLen = lasts.length,
+            firstLen = firsts.length,
+            getRandomInt = Ext.Number.randomInt,
+            first = firsts[getRandomInt(0, firstLen - 1)],
+            last = lasts[getRandomInt(0, lastLen - 1)];
+        return [first, last];
+    }
 
-      for (i = 0; i < 7; ++i) {
-          data.push({
-              city: this.getUniqueCity(usedCities),
-              manager: this.getUniqueName(usedNames).join(' '),
-              totalEmployees: Ext.Number.randomInt(10, 25)
-          });
-      }
+    getUniqueName = (used) => {
+        const name = this.generateName(), key = name[0] + name[1];
 
-      return new Ext.data.Store({
-          model,
-          data: data
-      });
-  }
+        if (used[key]) {
+            return this.getUniqueName(used);
+        }
 
-  generateName = () => {
-       const lasts = this.lastNames,
-          firsts = this.firstNames,
-          lastLen = lasts.length,
-          firstLen = firsts.length,
-          getRandomInt = Ext.Number.randomInt,
-          first = firsts[getRandomInt(0, firstLen - 1)],
-          last = lasts[getRandomInt(0, lastLen - 1)];
-      return [first, last];
-  }
+        used[key] = true;
+        return name;
+    }
 
-  getUniqueName = (used) => {
-      const name = this.generateName(), key = name[0] + name[1];
+    getCity = () => {
+        const cities = this.cities, len = cities.length;
+        return cities[Ext.Number.randomInt(0, len - 1)];
+    }
 
-      if (used[key]) {
-          return this.getUniqueName(used);
-      }
+    getUniqueCity = (used) => {
+        const city = this.getCity();
 
-      used[key] = true;
-      return name;
-  }
+        if (used[city]) {
+            return this.getUniqueCity(used);
+        }
+        used[city] = true;
 
-  getCity = () => {
-      const cities = this.cities, len = cities.length;
-      return cities[Ext.Number.randomInt(0, len - 1)];
-  }
+        return city;
+    }
 
-  getUniqueCity = (used) => {
-      const city = this.getCity();
+    getEmployeeNo = () => {
+        let out = '', i;
 
-      if (used[city]) {
-          return this.getUniqueCity(used);
-      }
-      used[city] = true;
+        for (i = 0; i < 6; ++i) {
+            out += Ext.Number.randomInt(0, 7);
+        }
+        return out;
+    }
 
-      return city;
-  }
+    getDepartment = () => {
+        const departments = this.departments,
+            len = departments.length;
+        return departments[Ext.Number.randomInt(0, len - 1)];
+    }
 
-  getEmployeeNo = () => {
-      let out = '', i;
+    onGridReady = (event) => {
+        this.grid = event.detail.cmp;
+    }
 
-      for (i = 0; i < 6; ++i) {
-          out += Ext.Number.randomInt(0, 7);
-      }
-      return out;
-  }
+    onSegmentedButtonChange = (event) => {
+        const selectedConfig = event.detail.value;
 
-  getDepartment = () => {
-      const departments = this.departments,
-          len = departments.length;
-      return departments[Ext.Number.randomInt(0, len - 1)];
-  }
-
-  onGridReady = (event) => {
-    this.grid = event.detail.cmp;
-  }
-
-  onSegmentedButtonChange = (event) => {
-    const selectedConfig = event.detail.value;
-
-    this.grid.setColumns(this.configs[selectedConfig].columns);
-    this.grid.setStore(this.configs[selectedConfig].store);
-  }
+        this.grid.setColumns(this.configs[selectedConfig].columns);
+        this.grid.setStore(this.configs[selectedConfig].store);
+    }
 }

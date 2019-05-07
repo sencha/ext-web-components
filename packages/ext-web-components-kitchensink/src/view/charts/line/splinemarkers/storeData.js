@@ -36,4 +36,4 @@ export const storeData = [
     {theta: 340, sin: -0.34, cos: 0.94, tan: -0.36},
     {theta: 350, sin: -0.17, cos: 0.98, tan: -0.18},
     {theta: 360, sin: 0.00, cos: 1.00, tan: 0.00}
-  ];
+];

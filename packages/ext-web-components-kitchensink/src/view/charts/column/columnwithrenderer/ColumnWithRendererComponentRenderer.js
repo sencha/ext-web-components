@@ -1,4 +1,4 @@
-export const seriesG1Renderer = function (sprite, config, rendererData, index) {
+function seriesG1Renderer(sprite, config, rendererData, index) {
     const store = rendererData.store,
         storeItems = store.getData().items,
         record = storeItems[index],
@@ -56,11 +56,11 @@ export const seriesG1Renderer = function (sprite, config, rendererData, index) {
                 stroke: 'blue',
                 zIndex: 10000,
                 opacity: 0.4,
-                path: "M" + x2 + " " + y2 + " L" + x1 + " " + y1 + " L" + x2 + " " + y1 + (lastData < firstData ? " L" : " M") + x2 + " " + y2 + " Z"
+                path: 'M' + x2 + ' ' + y2 + ' L' + x1 + ' ' + y1 + ' L' + x2 + ' ' + y1 + (lastData < firstData ? ' L' : ' M') + x2 + ' ' + y2 + ' Z'
             });
 
             const growth = Math.round(100 * (lastData - firstData) / (firstData || 1)),
-                string = (growth > 0 ? "+ " : "- ") + Math.abs(growth) + " %";
+                string = (growth > 0 ? '+ ' : '- ') + Math.abs(growth) + ' %';
 
             lineSprites[1].setAttributes({
                 text: string,
@@ -71,7 +71,7 @@ export const seriesG1Renderer = function (sprite, config, rendererData, index) {
                 zIndex: 10000,
                 opacity: 0.6,
                 scalingY: -1,
-                textAlign: "center",
+                textAlign: 'center',
                 rotate: -90
             });
         }
@@ -80,9 +80,9 @@ export const seriesG1Renderer = function (sprite, config, rendererData, index) {
     }
 
     return changes;
-};
+}
 
-export const seriesG2Renderer = function (sprite, config, rendererData, index) {
+function seriesG2Renderer(sprite, config, rendererData, index) {
     const store = rendererData.store,
         storeItems = store.getData().items,
         last = storeItems.length - 1,
@@ -135,7 +135,7 @@ export const seriesG2Renderer = function (sprite, config, rendererData, index) {
         });
 
         textSprite.setAttributes({
-            text: "+ " + diff,
+            text: '+ ' + diff,
             x: config.x + (index == last ? -12 : 28),
             y: config.y - 20,
             fill: 'black',
@@ -155,6 +155,7 @@ export const seriesG2Renderer = function (sprite, config, rendererData, index) {
             }
         }
     }
-
     return null;
-};
+}
+
+export { seriesG2Renderer, seriesG1Renderer };

@@ -3,116 +3,116 @@ import './StockTickerComponent.html';
 import model from '../../data/CompanyModel';
 
 export default class StockTickerComponent {
-  constructor () {
-    this.tickDelay = 1000;
-    this.flashBackground = false;
-  }
+    constructor() {
+        this.tickDelay = 1000;
+        this.flashBackground = false;
+    }
 
   onGridReady = (event) => {
-    this.grid = event.detail.cmp;
-    this.store = Ext.create('Ext.data.Store', {
-        model,
-        autoLoad: true,
-        pageSize: null,
-        proxy: {
-            type: 'ajax',
-            url: 'resources/data/CompanyData.json',
-            reader: {
-                type: 'json',
-                rootProperty: 'data'
-            }
-        }
-    });
+      this.grid = event.detail.cmp;
+      this.store = Ext.create('Ext.data.Store', {
+          model,
+          autoLoad: true,
+          pageSize: null,
+          proxy: {
+              type: 'ajax',
+              url: 'resources/data/CompanyData.json',
+              reader: {
+                  type: 'json',
+                  rootProperty: 'data'
+              }
+          }
+      });
 
-    this.grid.setItemConfig({
-        viewModel : {},
-        body: {
-            tpl: this.rowBodyTpl
-        }
-    });
+      this.grid.setItemConfig({
+          viewModel : {},
+          body: {
+              tpl: this.rowBodyTpl
+          }
+      });
 
-    this.grid.setStore(this.store);
+      this.grid.setStore(this.store);
 
-    if (this.store.isLoaded() && this.store.getCount()) {
-        this.onStoreLoad();
-    } else {
-        this.store.on('load', 'onStoreLoad', this);
-    }
+      if (this.store.isLoaded() && this.store.getCount()) {
+          this.onStoreLoad();
+      } else {
+          this.store.on('load', 'onStoreLoad', this);
+      }
   }
 
   onStoreLoad = (store) => {
-    store.removeAt(15, 70);
-    let count = store.getCount(),
-        i, j, rec;
+      store.removeAt(15, 70);
+      let count = store.getCount(),
+          i, j, rec;
 
-    for (i = 0; i < count; i++) {
-        rec = store.getAt(i);
-        rec.beginEdit();
-        for (j = 0; j < 10; j++) {
-            rec.addPriceTick();
-        }
-        rec.endEdit(true);
-    }
+      for (i = 0; i < count; i++) {
+          rec = store.getAt(i);
+          rec.beginEdit();
+          for (j = 0; j < 10; j++) {
+              rec.addPriceTick();
+          }
+          rec.endEdit(true);
+      }
 
-    this.startTicker();
+      this.startTicker();
   }
 
   startTicker = () => {
-    const { store } = this;
+      const { store } = this;
 
-    if (this.timer) {
-        clearInterval(this.timer);
-    }
+      if (this.timer) {
+          clearInterval(this.timer);
+      }
 
-    this.timer = setInterval(() => {
-        for (let i=0; i<10; i++) {
-            const rec = store.getAt(Ext.Number.randomInt(0, store.getCount() - 1));
-            rec.addPriceTick();
-        }
-    }, this.tickDelay);
+      this.timer = setInterval(() => {
+          for (let i=0; i<10; i++) {
+              const rec = store.getAt(Ext.Number.randomInt(0, store.getCount() - 1));
+              rec.addPriceTick();
+          }
+      }, this.tickDelay);
   }
 
   toggleFlashBackground = (event) => {
-    this.flashBackground = event.detail.newValue;
+      this.flashBackground = event.detail.newValue;
   }
 
   changeColumnReady = (event) => {
-    this.changeColumn = event.detail.cmp;
-    this.changeColumn.setRenderer(this.renderSign.bind(this, '0.00'));
+      this.changeColumn = event.detail.cmp;
+      this.changeColumn.setRenderer(this.renderSign.bind(this, '0.00'));
   }
   percentChangeColumnReady = (event) => {
-    this.pctChangeColumn = event.detail.cmp;
-    this.pctChangeColumn.setRenderer(this.renderSign.bind(this, '0.00%'));
+      this.pctChangeColumn = event.detail.cmp;
+      this.pctChangeColumn.setRenderer(this.renderSign.bind(this, '0.00%'));
   }
 
-  renderSign = (format, value, record, dataIndex, cell, column) => {
-    let cls = '';
-    if (this.flashBackground) {
-      if (value > 0) {
-        cls += 'ticker-cell-gain ';
-      } else if (value < 0) {
-        cls += 'ticker-cell-loss ';
+  renderSign = (format, value, record, dataIndex, cell) => {
+      let cls = '';
+      if (this.flashBackground) {
+          if (value > 0) {
+              cls += 'ticker-cell-gain ';
+          } else if (value < 0) {
+              cls += 'ticker-cell-loss ';
+          }
       }
-    }
 
-    if(value>0) {
-      cls += 'greenClass';
-    }
-    else if(value<0){
-      cls += 'redClass';
-    }
+      if(value>0) {
+          cls += 'greenClass';
+      }
+      else if(value<0){
+          cls += 'redClass';
+      }
 
-    cell.setCls(cls);
-    return Ext.util.Format.number(value, format)
+      cell.setCls(cls);
+      return Ext.util.Format.number(value, format);
   }
 
   infoContainerReady = (event) => {
-    this.infoContainer = event.detail.cmp;
+      this.infoContainer = event.detail.cmp;
   }
 
   onTickDelayChange = (event) => {
-    this.tickDelay = event.detail.newValue;
-    this.startTicker();
-    this.infoContainer.setHtml(`${this.tickDelay}ms`);
+      this.tickDelay = event.detail.newValue;
+      this.startTicker();
+      this.infoContainer.setHtml(`${this.tickDelay}ms`);
   }
 }
