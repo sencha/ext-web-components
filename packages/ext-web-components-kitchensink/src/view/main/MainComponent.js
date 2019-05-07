@@ -20,6 +20,12 @@ export default class MainComponent {
             rootVisible: true,
             root: navTreeRoot
         });
+
+        this.navTreeView = Ext.create('Ext.data.TreeStore', {
+            rootVisible: true,
+            root: navTreeRoot
+        });
+
         this.wait = 5;
 
         if (Ext.os.is.Phone) {
@@ -34,7 +40,6 @@ export default class MainComponent {
 
     afterAllLoaded = () => {
         this.wait = this.wait - 1;
-        //console.log('***wait*** ' + this.wait )
 
         if (this.wait == 0) {
             var hash = window.location.hash.substr(1);
@@ -46,37 +51,31 @@ export default class MainComponent {
     }
 
     readyCodeButton = (event) => {
-        //console.log('readyCodeButton')
         this.codeButtonCmp = event.detail.cmp;
-        //this.afterAllLoaded()
     }
 
     readyDataviewBreadcrumb = (event) => {
-        //console.log('readyDataviewBreadcrumb')
-        //console.dir(event)
         this.dataviewBreadcrumbCmp = event.detail.cmp;
         var tpl = `
-      <div class="app-toolbar">
-        {text} <span>{divider}</span>
-      </div>`;
+            <div class="app-toolbar">
+              {text} <span>{divider}</span>
+            </div>
+        `;
         this.dataviewBreadcrumbCmp.setItemTpl(tpl);
         this.afterAllLoaded('readyDataviewBreadcrumb');
     }
 
     readyNavTreePanel = (event) => {
-        //console.log('readyNavTreePanel')
         this.navTreePanelCmp = event.detail.cmp;
 
         if(Ext.os.is.Phone) {
             this.navTreePanelCmp.setWidth('100%');
         }
-        //this.afterAllLoaded('readyNavTreePanel')
     }
 
     readyNavTreelist = (event) => {
-        //console.log('readyNavTreelist')
         this.navTreelistCmp = event.detail.cmp;
-        this.navTreelistCmp.setStore(this.treeStore);
+        this.navTreelistCmp.setStore(this.navTreeView);
         this.afterAllLoaded('readyNavTreelist');
     }
 
@@ -84,18 +83,17 @@ export default class MainComponent {
         //console.log('readySelection')
         this.selectionCmp = event.detail.cmp;
         var bodyStyle = `
-      backgroundSize: 20px 20px;
-      borderWidth: 0px;
-      backgroundColor: #e8e8e8;
-      backgroundImage:
-        linear-gradient(0deg, #f5f5f5 1.1px, transparent 0),
-        linear-gradient(90deg, #f5f5f5 1.1px, transparent 0)`;
+            backgroundSize: 20px 20px;
+            borderWidth: 0px;
+            backgroundColor: #e8e8e8;
+            backgroundImage:
+            linear-gradient(0deg, #f5f5f5 1.1px, transparent 0),
+            linear-gradient(90deg, #f5f5f5 1.1px, transparent 0)
+        `;
         this.selectionCmp.setBodyStyle(bodyStyle);
-        //this.afterAllLoaded('readySelection');
     }
 
     readyDataviewNav = (event) => {
-        //console.log('readyDataviewNav')
         this.dataviewNavCmp = event.detail.cmp;
         this.dataviewNavCmp.setStyle({'background':'top', 'display':'block', 'text-align':'center'});
 
@@ -170,12 +168,13 @@ export default class MainComponent {
 
     navigate = (record) => {
         if (record == null) {
-        //console.log('it was null')
             return;
         }
+
         var hash = record.data.hash;
         var childNum = record.childNodes.length;
         var node = this.dataviewNavCmp.getStore().findNode('hash', hash);
+
         if (childNum == 0 && hash != undefined) {
             this.dataviewBreadcrumbCmp.setData(this.generateBreadcrumb(node));
 
