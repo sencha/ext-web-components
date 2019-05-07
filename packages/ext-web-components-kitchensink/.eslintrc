@@ -5,7 +5,7 @@
     "window": true,
     "document": true,
     "HTMLElement": true,
-    "d3": true,
+    "d3": true
   },
   "env": {
     "browser": true,
@@ -28,7 +28,7 @@
     "comma-spacing": ["error", { "before": false, "after": true }],
     "func-style": ["error", "declaration", { "allowArrowFunctions": true }],
     "indent": ["error", 4],
-    "no-console":["error", { allow: ["log", "warn", "error"] }],
+    "no-console":["error", { "allow": ["log", "warn", "error"] }],
     "semi": ["error", "always"],
     "quotes": ["warn", "single"],
     "max-len": [1, 200, 2, {"ignoreComments": true}]

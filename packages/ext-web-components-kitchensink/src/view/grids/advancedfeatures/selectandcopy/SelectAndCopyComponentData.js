@@ -1,4 +1,8 @@
+let mod = 0x7fffFFFF;
+let seed = 13;
+
 export default function createStore() {
+    const data = createData();
     return Ext.create('Ext.data.Store', {
         fields: [
             { name: 'year', type: 'int' },
@@ -15,21 +19,20 @@ export default function createStore() {
             { name: 'nov', type: 'int', allowNull: true },
             { name: 'dec', type: 'int', allowNull: true }
         ],
-        data: createData()
+        data
     });
 }
 
-function rand(min, max) {
-    let seed = 13,
-        mod = 0x7fffFFFF;
-
+function randomDataC(min, max) {
     var r = (seed = ((seed * 214013) + 2531011) % mod) / mod; // [0, 1)
     return Math.floor(r * (max - min)) + min;
 }
 
 function createData() {
     let data = [],
-        thisYear = new Date().getYear() + 1900;
+        thisYear = new Date().getYear() + 1900,
+        // return integer [min,max)
+        rand = randomDataC;
 
     for (var year = 1900; year <= thisYear; ++year) {
         data.push([
