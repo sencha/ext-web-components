@@ -1,6 +1,6 @@
 import './BigDataComponent.scss';
 import './BigDataComponent.html';
-import model from '../../data/GridModel';
+import model from './GridModel';
 import '../../data/BigData';
 
 Ext.require([
