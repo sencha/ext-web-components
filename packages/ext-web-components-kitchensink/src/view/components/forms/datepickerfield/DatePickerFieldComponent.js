@@ -1,10 +1,10 @@
 import './DatePickerFieldComponent.html';
 
 export default class DatePickerFieldComponent {
-  constructor () {}
+    constructor() {}
 
-  datePickerFieldReady = (event) => {
-    this.cmp = event.detail.cmp;
-    this.cmp.setValue(new Date());
-  }
+    datePickerFieldReady = (event) => {
+        this.cmp = event.detail.cmp;
+        this.cmp.setValue(new Date());
+    }
 }

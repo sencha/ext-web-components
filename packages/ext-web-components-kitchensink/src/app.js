@@ -1,6 +1,6 @@
 //import { Route } from '@sencha/ext-web-components';
 
-import  { getRoutes } from '@sencha/ext-web-components-router/lib/ext-router.component';
+import {getRoutes} from '@sencha/ext-web-components-router/lib/ext-router.component';
 import '@sencha/ext-web-components/lib/ext-audio.component';
 import '@sencha/ext-web-components/lib/ext-container.component';
 import '@sencha/ext-web-components/lib/ext-menu.component';
@@ -85,16 +85,16 @@ import getMenu from './menu';
 import MainComponent from './view/main/MainComponent.js';
 
 Ext.require([
-  'Ext.layout.*',
-  'Ext.data.TreeStore'
+    'Ext.layout.*',
+    'Ext.data.TreeStore'
 ]);
 
 function init() {
-  window.d3 = d3;
-  window.menu = getMenu();
-  window.routes = getRoutes(window.menu);
-  window.main = new MainComponent()
-  document.body.innerHTML = window._code['main']['MainComponent.html']
+    window.d3 = d3;
+    window.menu = getMenu();
+    window.routes = getRoutes(window.menu);
+    window.main = new MainComponent();
+    document.body.innerHTML = window._code['main']['MainComponent.html'];
 }
 
 init();

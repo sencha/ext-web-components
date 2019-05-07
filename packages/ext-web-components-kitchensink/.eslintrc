@@ -5,6 +5,7 @@
     "window": true,
     "document": true,
     "HTMLElement": true,
+    "d3": true,
   },
   "env": {
     "browser": true,
