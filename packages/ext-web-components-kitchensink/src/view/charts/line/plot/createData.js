@@ -8,17 +8,17 @@ const fns = [
     x => Math.pow(x, -2),
     x => Math.pow(x, -3),
     x => Math.tan(5 * x)
-  ];
-  
-  let count = -1;
-  
-  export const createData = function () {
+];
+
+let count = -1;
+
+export default function createData() {
     const data = [],
-      fn = fns[++count % fns.length];
-  
+        fn = fns[++count % fns.length];
+
     for (let x = -2; x <= 2; x += 0.02) {
-      data.push({x, y: fn(x)});
+        data.push({x, y: fn(x)});
     }
-  
+
     return data;
-  };
+}

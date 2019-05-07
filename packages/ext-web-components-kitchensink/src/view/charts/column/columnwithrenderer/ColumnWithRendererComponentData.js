@@ -6,7 +6,7 @@ const random = () => {
     return seed;
 };
 
-export const createData = function (count = 9) {
+export default function createData(count = 9) {
     let record = {
         id: 0,
         g1: 700 * random() + 100,
@@ -31,6 +31,5 @@ export const createData = function (count = 9) {
             name: String.fromCharCode(65 + i)
         });
     }
-
     return data;
-};
+}
