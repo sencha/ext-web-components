@@ -52,13 +52,6 @@ export default class ScheduleComponent {
       {[values.description ? '<hr/><div class="app-event-abstract" >' + values.description + '</div>' : '']}
     </div>
     `;
-    const tpl2 = `
-    <div>
-      <div class="app-event-name">{title}</div>
-      <div class="app-event-location">{location.name}</div>
-    </div>
-    `;
-
     this.containerCmp2.setTpl(tpl);
   }
 

@@ -159,33 +159,27 @@ export default class MainComponent {
   }
 
   onSelectItem(combo, newValue) {
-    if (newValue) {
-      localStorage.setItem('record', JSON.stringify(newValue.data));
       if (newValue.data.date) {
+        localStorage.setItem('record', JSON.stringify(newValue.data));
         switch(newValue.data.date.match(/(Monday|Tuesday|Wednesday)/)[1])
         {
           case 'Monday' :
             schedule.tabpanelCmp.setActiveItem(0);
-            schedule.containerCmp.setHidden(false);
             break;
           case 'Tuesday' :
             schedule.tabpanelCmp.setActiveItem(1);
-            schedule.containerCmp.setHidden(false);
             break;
           case 'Wednesday' :
             schedule.tabpanelCmp.setActiveItem(2);
-            schedule.containerCmp.setHidden(false);
             break;
           default :
             schedule.tabpanelCmp.setActiveItem(0);
-            schedule.containerCmp.setHidden(false);
         }
-      }
       const scheduleNode = this.navTreelistCmp.getStore().findNode('hash', 'schedule');
-      this.navigate(scheduleNode)
-      this.navTreelistCmp.setSelection(scheduleNode);
       schedule.containerCmp2.setHidden(false);
       schedule.containerCmp2.setData(JSON.parse(localStorage.getItem('record')));
+      this.navigate(scheduleNode)
+      this.navTreelistCmp.setSelection(scheduleNode);
     }
   }
 
@@ -218,7 +212,6 @@ export default class MainComponent {
       <div class="app-event-speaker">{[values.speakerName ? 'by ' + values.speakerName : '']}</div>
       <div class="app-event-time">{[values && values.date && values.date.match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time} - {end_time}</div>
       <div class="app-event-location">{location.name}</div>
-      {[values.description ? '<hr/><div class="app-event-abstract" >' + values.description + '</div>' : '']}
     </div>
     `;
     this.searchComboBox = event.detail.cmp;
