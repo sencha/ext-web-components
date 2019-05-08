@@ -60,13 +60,6 @@ export default class ScheduleComponent {
     `;
 
     this.containerCmp2.setTpl(tpl);
-
-    if (localStorage.getItem('record')) {
-      debugger;
-      console.log(localStorage.getItem('record'));
-      this.containerCmp.setHidden(false);
-      this.containerCmp2.setData(JSON.parse(localStorage.getItem('record')));
-    }
   }
 
   containerReady(event){
