@@ -1,5 +1,5 @@
 import './MainComponent.html';
-import ScheduleComponent from '../schedule/ScheduleComponent.js';
+
 export default class MainComponent {
 
   constructor() {
@@ -219,12 +219,10 @@ export default class MainComponent {
     </div>
     `;
     this.searchComboBox = event.detail.cmp;
-<<<<<<< HEAD
     this.searchComboBox.setStore(this.store);
     this.searchComboBox.setItemTpl(tpl);
     this.searchComboBox.on('beforequery', this.onSearch.bind(this));
     this.searchComboBox.on('select', this.onSelectItem.bind(this));
-=======
 
     if (Ext.os.is.Phone) {
       this.searchComboBox.setHidden(true);
@@ -241,6 +239,5 @@ export default class MainComponent {
       this.searchIcon.setHidden(true);
     }
 
->>>>>>> 2d407b2195ee11d8c3baec02af17773ae6786bdc
   }
 }

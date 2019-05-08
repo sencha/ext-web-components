@@ -1,5 +1,4 @@
 import "./ScheduleComponent.html";
-import MainComponent from "../main/MainComponent";
 
 export default class ScheduleComponent {
   constructor() {
@@ -33,14 +32,9 @@ export default class ScheduleComponent {
     this.record = null;
   }
 
-<<<<<<< HEAD
   panelReady(event) {
     this.containerCmp = event.detail.cmp;
     
-=======
-  panelready(event) {
-    this.containerCmp = event.detail.cmp;    
->>>>>>> 2d407b2195ee11d8c3baec02af17773ae6786bdc
   }
 
   tabpanelReady(event) {
