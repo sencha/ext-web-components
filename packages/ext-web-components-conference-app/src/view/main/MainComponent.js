@@ -117,6 +117,7 @@ export default class MainComponent {
   }
 
   toggleTree(event) {
+
     if (this.back == false) {
       let collapsed = this.navTreePanelCmp.getCollapsed();
 
@@ -127,8 +128,12 @@ export default class MainComponent {
       }
       this.navTreePanelCmp.setCollapsed(collapsed);
     }
-    else {
+    else if (this.back == true && window.title == 'Schedule') {
       schedule.resetSchedule();
+      this.back = false;
+    }
+    else if (this.back == true && window.title == 'Calendar') {
+      calendar.resetSchedule();
       this.back = false;
     }
   }
