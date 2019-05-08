@@ -166,21 +166,19 @@ export default class MainComponent {
         {
           case 'Monday' :
             schedule.tabpanelCmp.setActiveItem(0);
-            schedule.list1.setDefaultFocus(newValue.data.location.id);
-            schedule.list1.focus();
+            schedule.containerCmp.setHidden(false);
             break;
           case 'Tuesday' :
             schedule.tabpanelCmp.setActiveItem(1);
-            schedule.list2.setDefaultFocus(newValue.data.location.id);
-            schedule.list1.focus();
+            schedule.containerCmp.setHidden(false);
             break;
           case 'Wednesday' :
             schedule.tabpanelCmp.setActiveItem(2);
-            schedule.list3.setDefaultFocus(newValue.data.location.id);
-            schedule.list1.focus();
+            schedule.containerCmp.setHidden(false);
             break;
           default :
             schedule.tabpanelCmp.setActiveItem(0);
+            schedule.containerCmp.setHidden(false);
         }
       }
       const scheduleNode = this.navTreelistCmp.getStore().findNode('hash', 'schedule');

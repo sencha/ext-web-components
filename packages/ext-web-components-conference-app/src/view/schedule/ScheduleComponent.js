@@ -67,7 +67,7 @@ export default class ScheduleComponent {
   }
 
   tabpanelReady(event){
-    this.tabPanel = event.detail.cmp;
+    this.tabpanelCmp = event.detail.cmp;
   }
 
   onItemTap(event) {
