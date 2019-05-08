@@ -19,6 +19,7 @@
   <span>Sencha Ext Web Components Conference App</span>
   </ext-container>
   <ext-tabpanel
+      onready="schedule.tabpanelReady"
       flex="1"
       tabBar='{"shadow": "true"}'
       activeItem="0"
@@ -35,7 +36,6 @@
         hideMode="offsets"
         grouped="true"
         rowLines="true"
-        itemTpl="<div>ABCD</div>"
         itemCls="app-list-item"
         cls="app-list"
         pinHeaders="true"

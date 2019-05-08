@@ -20,6 +20,14 @@ export default class MainComponent {
     if (Ext.os.is.Phone) {
       this.collapsed = true;
     }
+
+    this.store = Ext.create('Ext.data.Store', {
+      autoLoad: true,
+      proxy: {
+        type: 'ajax',
+        url: 'resources/schedule.json'
+      }
+    });
   }
 
   afterAllLoaded() {
@@ -116,7 +124,75 @@ export default class MainComponent {
     }
   }
 
+  onSelectItem(combo, newValue) {
+    if (newValue) {
+      localStorage.setItem('record', JSON.stringify(newValue.data));
+      if (newValue.data.date) {
+        switch(newValue.data.date.match(/(Monday|Tuesday|Wednesday)/)[1])
+        {
+          case 'Monday' :
+            schedule.tabpanelCmp.setActiveItem(0);
+            schedule.list1.setDefaultFocus(newValue.data.location.id);
+            schedule.list1.focus();
+            break;
+          case 'Tuesday' :
+            schedule.tabpanelCmp.setActiveItem(1);
+            schedule.list2.setDefaultFocus(newValue.data.location.id);
+            schedule.list1.focus();
+            break;
+          case 'Wednesday' :
+            schedule.tabpanelCmp.setActiveItem(2);
+            schedule.list3.setDefaultFocus(newValue.data.location.id);
+            schedule.list1.focus();
+            break;
+          default :
+            schedule.tabpanelCmp.setActiveItem(0);
+        }
+      }
+      const scheduleNode = this.navTreelistCmp.getStore().findNode('hash', 'schedule');
+      this.navigate(scheduleNode)
+      this.navTreelistCmp.setSelection(scheduleNode);
+      schedule.containerCmp2.setHidden(false);
+      schedule.containerCmp2.setData(JSON.parse(localStorage.getItem('record')));
+    }
+  }
+
+  onSearch(queryPlan) {
+    let { query } = queryPlan;
+    query = (query || '').toLowerCase();
+
+    this.query = query;
+    this.store.clearFilter();
+    this.store.filterBy(record => {
+      const { title, speakers } = record.data;
+
+      return query.trim().split(/\s+/).some(token => {
+        return title.toLowerCase().indexOf(token) >= 0 ||
+          (speakers && speakers.some(speaker => speaker.name.toLowerCase().indexOf(token) >= 0));
+      })
+    });
+
+    this.searchComboBox.setStore(this.store);
+
+
+    this.searchComboBox.expand();
+    return false;
+  }
+
   comboboxReady(event) {
+    const tpl = `
+    <div>
+      <div class="app-event-name">{title}</div>
+      <div class="app-event-speaker">{[values.speakerName ? 'by ' + values.speakerName : '']}</div>
+      <div class="app-event-time">{[values && values.date && values.date.match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time} - {end_time}</div>
+      <div class="app-event-location">{location.name}</div>
+      {[values.description ? '<hr/><div class="app-event-abstract" >' + values.description + '</div>' : '']}
+    </div>
+    `;
     this.searchComboBox = event.detail.cmp;
+    this.searchComboBox.setStore(this.store);
+    this.searchComboBox.setItemTpl(tpl);
+    this.searchComboBox.on('beforequery', this.onSearch.bind(this));
+    this.searchComboBox.on('select', this.onSelectItem.bind(this));
   }
 }

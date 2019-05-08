@@ -37,6 +37,10 @@ export default class ScheduleComponent {
     
   }
 
+  tabpanelReady(event) {
+    this.tabpanelCmp = event.detail.cmp;
+  }
+
   containerReady2(event) {
     this.containerCmp2 = event.detail.cmp;
     const tpl = `
@@ -58,13 +62,19 @@ export default class ScheduleComponent {
     this.containerCmp2.setTpl(tpl);
 
     if (localStorage.getItem('record')) {
+      debugger;
+      console.log(localStorage.getItem('record'));
       this.containerCmp.setHidden(false);
       this.containerCmp2.setData(JSON.parse(localStorage.getItem('record')));
     }
   }
 
   onItemTap(event) {
+    if (!event) {
+      this.record = JSON.parse(localStorage.getItem('record'))
+    } else {
     this.record = event.detail.record.data;
+    }
 
     if (this.containerCmp.getHidden()) {
       this.containerCmp.setHidden(false);
