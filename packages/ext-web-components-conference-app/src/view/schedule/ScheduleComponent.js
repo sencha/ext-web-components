@@ -1,4 +1,5 @@
 import "./ScheduleComponent.html";
+import MainComponent from "../main/MainComponent";
 
 export default class ScheduleComponent {
   constructor() {
@@ -32,9 +33,14 @@ export default class ScheduleComponent {
     this.record = null;
   }
 
+<<<<<<< HEAD
   panelReady(event) {
     this.containerCmp = event.detail.cmp;
     
+=======
+  panelready(event) {
+    this.containerCmp = event.detail.cmp;    
+>>>>>>> 2d407b2195ee11d8c3baec02af17773ae6786bdc
   }
 
   tabpanelReady(event) {
@@ -69,6 +75,14 @@ export default class ScheduleComponent {
     }
   }
 
+  containerReady(event){
+    this.container = event.detail.cmp;
+  }
+
+  tabpanelReady(event){
+    this.tabPanel = event.detail.cmp;
+  }
+
   onItemTap(event) {
     if (!event) {
       this.record = JSON.parse(localStorage.getItem('record'))
@@ -81,6 +95,21 @@ export default class ScheduleComponent {
     }
 
     this.containerCmp2.setData(this.record);
+  
+    if(Ext.os.is.Phone){
+      this.container.setHidden(true);
+      this.tabPanel.setHidden(true);
+      main.scheduleTitle(event.detail.record.data.title);
+      main.backButton();
+    }
+  }
+
+  resetSchedule() {
+    this.container.setHidden(false);
+    this.tabPanel.setHidden(false);
+    this.containerCmp.setHidden(true);
+    main.scheduleTitle('Schedule');
+    main.navButton.setIconCls('x-fa fa-bars');
   }
 
   onFavoriteClick(event) {

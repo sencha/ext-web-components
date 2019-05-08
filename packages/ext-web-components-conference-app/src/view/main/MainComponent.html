@@ -1,24 +1,28 @@
 <ext-panel layout="fit" bodyPadding="0">
   <ext-titlebar
+    onready="main.titleReady(event)"
     docked="top"
     titleAlign="left"
     shadow="true"
     style="z-index: 100;"
     weight="10"
-    platformConfig='{
-      "!desktop": {
-          "titleAlign": "center"
-      }
-    }'
+    title='<div>
+      <div class="sencha-logo"></div>
+      <a href="#" class="app-title">Sencha Ext Components 7.0 Conference App</a>
+  </div>'
   >
-    <div>
-        <div class="sencha-logo"></div>
-        <a href="#" class="app-title">Sencha ExtWebComponents 7.0 Conference App</a>
-    </div>
+   
     <ext-button
+      align="left"
       iconCls="x-fa fa-bars"
-      onReady="main.toggleButtonReady"
-      onTap="main.toggleTree"
+      onReady="main.toggleButtonReady(event)"
+      onTap="main.toggleTree(event)"
+    >
+    </ext-button>
+    <ext-button
+      align="right" 
+      iconCls="md-icon-search"
+      onReady="main.searchReady(event)"
     >
     </ext-button>
     <ext-combobox
@@ -41,6 +45,7 @@
     >
     </ext-combobox>
   </ext-titlebar>
+   
   <ext-panel
     docked="left"
     border="true"
