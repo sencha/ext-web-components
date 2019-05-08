@@ -3,6 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtWebpackPlugin = require('@sencha/ext-webpack-plugin')
 //const CopyWebpackPlugin = require('copy-webpack-plugin')
 const portfinder = require('portfinder')
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = function (env) {
   function get(it, val) {if(env == undefined) {return val} else if(env[it] == undefined) {return val} else {return env[it]}}
@@ -13,6 +15,7 @@ module.exports = function (env) {
   var browser     = get('browser',     'yes')
   var watch       = get('watch',       'yes')
   var verbose     = get('verbose',     'no')
+  var build_v= get('build_v', '7.0.0.0');
   if (environment == 'production') {
     browser = 'no'
     watch = 'no'
@@ -50,6 +53,13 @@ module.exports = function (env) {
         watch: watch,
         verbose: verbose
       }),
+      new CopyWebpackPlugin([{
+        from: '../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js',
+        to: './webcomponents-bundle.js'
+      }]),
+      new webpack.DefinePlugin({
+        BUILD_VERSION: JSON.stringify(build_v)
+      })
       // new CopyWebpackPlugin([
       //   {from: 'copy/extjs',to: 'extjs'},
       //   {from: 'copy/resources',to: 'resources'},

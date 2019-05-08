@@ -21,14 +21,6 @@ export default class MainComponent {
   afterAllLoaded = (f) => {
     this.wait = this.wait - 1;
     console.log(this.wait)
-
-    if (this.wait == 0) {
-      var hash = window.location.hash.substr(1)
-      if (hash == '') {hash = 'elementinsertbetween'}
-      var node = this.navTreelistCmp.getStore().findNode('hash',hash);
-      this.navTreelistCmp.setSelection(node);
-      this.navigate(node);
-    }
   }
 
   readyNavTreePanel = (event) => {
@@ -43,7 +35,6 @@ export default class MainComponent {
   }
 
   readyNavTreelist = (event) => {
-    debugger;
     this.navTreelistCmp = event.detail.cmp
     this.navTreelistCmp.setStore(this.treeStore)
     this.afterAllLoaded('readyNavTreelist')
