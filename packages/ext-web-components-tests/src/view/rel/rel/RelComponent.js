@@ -1,5 +1,5 @@
-import "./RelComponent.html";
+import './RelComponent.html';
 
 export default class RelComponent {
-  constructor() {}
+    constructor() {}
 }

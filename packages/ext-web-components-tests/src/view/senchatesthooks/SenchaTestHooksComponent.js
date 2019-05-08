@@ -1,5 +1,5 @@
-import "./SenchaTestHooksComponent.html";
+import './SenchaTestHooksComponent.html';
 
 export default class SenchaTestHooksComponent {
-  constructor() {}
+    constructor() {}
 }

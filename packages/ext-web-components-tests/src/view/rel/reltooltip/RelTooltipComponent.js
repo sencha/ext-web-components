@@ -1,5 +1,5 @@
-import "./RelTooltipComponent.html";
+import './RelTooltipComponent.html';
 
 export default class RelTooltipComponent {
-  constructor() {}
+    constructor() {}
 }
