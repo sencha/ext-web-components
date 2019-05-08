@@ -1,5 +1,3 @@
-import "./AboutComponent.html";
+import './AboutComponent.html';
 
-export default class AboutComponent {
-  constructor() {}
-}
+export default class AboutComponent {}
