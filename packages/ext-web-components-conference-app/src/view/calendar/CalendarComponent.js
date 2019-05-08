@@ -45,9 +45,19 @@ export default class CalendarComponent {
                     <div class="app-event-abstract">${data.description}</div>
                 </div>`
     )
+    if (Ext.os.is.Phone) {
+      main.scheduleTitle(event.detail.context.event.data.title);
+      main.backButton();
+    }
   }
 
   sidePanelReady(event) {
     this.sidePanel = event.detail.cmp;
+  }
+
+  resetSchedule() {
+    this.sidePanel.setHidden(true);
+    main.scheduleTitle('Calendar');
+    main.navButton.setIconCls('x-fa fa-bars');
   }
 }

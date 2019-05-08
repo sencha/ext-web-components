@@ -37,6 +37,10 @@ export default class ScheduleComponent {
     
   }
 
+  tabpanelReady(event) {
+    this.tabpanelCmp = event.detail.cmp;
+  }
+
   containerReady2(event) {
     this.containerCmp2 = event.detail.cmp;
     const tpl = `
@@ -48,29 +52,44 @@ export default class ScheduleComponent {
       {[values.description ? '<hr/><div class="app-event-abstract" >' + values.description + '</div>' : '']}
     </div>
     `;
-    const tpl2 = `
-    <div>
-      <div class="app-event-name">{title}</div>
-      <div class="app-event-location">{location.name}</div>
-    </div>
-    `;
-
     this.containerCmp2.setTpl(tpl);
+  }
 
-    if (localStorage.getItem('record')) {
-      this.containerCmp.setHidden(false);
-      this.containerCmp2.setData(JSON.parse(localStorage.getItem('record')));
-    }
+  containerReady(event){
+    this.container = event.detail.cmp;
+  }
+
+  tabpanelReady(event){
+    this.tabpanelCmp = event.detail.cmp;
   }
 
   onItemTap(event) {
+    if (!event) {
+      this.record = JSON.parse(localStorage.getItem('record'))
+    } else {
     this.record = event.detail.record.data;
+    }
 
     if (this.containerCmp.getHidden()) {
       this.containerCmp.setHidden(false);
     }
 
     this.containerCmp2.setData(this.record);
+  
+    if(Ext.os.is.Phone){
+      this.container.setHidden(true);
+      this.tabPanel.setHidden(true);
+      main.scheduleTitle(event.detail.record.data.title);
+      main.backButton();
+    }
+  }
+
+  resetSchedule() {
+    this.container.setHidden(false);
+    this.tabPanel.setHidden(false);
+    this.containerCmp.setHidden(true);
+    main.scheduleTitle('Schedule');
+    main.navButton.setIconCls('x-fa fa-bars');
   }
 
   onFavoriteClick(event) {

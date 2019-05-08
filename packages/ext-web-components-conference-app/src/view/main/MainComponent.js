@@ -1,4 +1,5 @@
 import './MainComponent.html';
+
 export default class MainComponent {
 
   constructor() {
@@ -14,12 +15,21 @@ export default class MainComponent {
       root: navTreeRoot
     });
     this.wait = 3;
+    this.back = false;
     this.collapsed = false;
     this.isInitial = true;
 
     if (Ext.os.is.Phone) {
       this.collapsed = true;
     }
+
+    this.store = Ext.create('Ext.data.Store', {
+      autoLoad: true,
+      proxy: {
+        type: 'ajax',
+        url: 'resources/schedule.json'
+      }
+    });
   }
 
   afterAllLoaded() {
@@ -32,7 +42,7 @@ export default class MainComponent {
         hash = 'schedule';
       }
 
-      const node = this.navTreelistCmp.getStore().findNode('hash',hash);
+      const node = this.navTreelistCmp.getStore().findNode('hash', hash);
       this.navTreelistCmp.setSelection(node);
       this.navigate(node);
     }
@@ -59,11 +69,26 @@ export default class MainComponent {
     this.navigate(record);
   }
 
+  titleReady(event) {
+    this.title = event.detail.cmp;
+  }
+
+  scheduleTitle(title) {
+    this.title.setTitle(title);
+    this.title.setTitleAlign('center');
+  }
+
+  backButton() {
+    this.back = true;
+    this.navButton.setIconCls('md-icon-arrow-back');
+  }
+
   navigate(record) {
     if (record == null) {
       console.log('it was null')
       return
     }
+    window.title = record.data.text;
     const hash = record.data.hash
     const childNum = record.childNodes.length
 
@@ -73,7 +98,11 @@ export default class MainComponent {
       this.dataviewNavCmp.setData(node.childNodes)
     }
 
-    if(Ext.os.is.Phone) {
+    if (Ext.os.is.Phone) {
+      console.log(window.title);
+      this.title.setTitle(window.title);
+      this.title.setTitleAlign('center');
+
       let collapsed = this.navTreePanelCmp.getCollapsed();
 
       if (collapsed === true) {
@@ -95,28 +124,116 @@ export default class MainComponent {
     return found;
   }
 
-  toggleTree() {
-    let collapsed = this.navTreePanelCmp.getCollapsed();
+  toggleTree(event) {
 
-    if (collapsed == true) {
-      collapsed = false;
-    } else {
-      collapsed = true;
+    if (this.back == false) {
+      let collapsed = this.navTreePanelCmp.getCollapsed();
+
+      if (collapsed == true) {
+        collapsed = false;
+      } else {
+        collapsed = true;
+      }
+      this.navTreePanelCmp.setCollapsed(collapsed);
     }
-    this.navTreePanelCmp.setCollapsed(collapsed);
+    else if (this.back == true && window.title == 'Schedule') {
+      schedule.resetSchedule();
+      this.back = false;
+    }
+    else if (this.back == true && window.title == 'Calendar') {
+      calendar.resetSchedule();
+      this.back = false;
+    }
   }
 
   toggleButtonReady(event) {
-    const navButton = event.detail.cmp;
+    this.navButton = event.detail.cmp;
+    this.navButtonIcon = event.detail.cmp.initialConfig.iconCls;
+    console.log(this.navButtonIcon);
 
     if (Ext.os.is.Phone) {
-      navButton.setHidden(false);
+      this.navButton.setHidden(false);
     } else {
-      navButton.setHidden(true);
+      this.navButton.setHidden(true);
     }
   }
 
+  onSelectItem(combo, newValue) {
+      if (newValue.data.date) {
+        localStorage.setItem('record', JSON.stringify(newValue.data));
+        switch(newValue.data.date.match(/(Monday|Tuesday|Wednesday)/)[1])
+        {
+          case 'Monday' :
+            schedule.tabpanelCmp.setActiveItem(0);
+            break;
+          case 'Tuesday' :
+            schedule.tabpanelCmp.setActiveItem(1);
+            break;
+          case 'Wednesday' :
+            schedule.tabpanelCmp.setActiveItem(2);
+            break;
+          default :
+            schedule.tabpanelCmp.setActiveItem(0);
+        }
+      const scheduleNode = this.navTreelistCmp.getStore().findNode('hash', 'schedule');
+      schedule.containerCmp2.setHidden(false);
+      schedule.containerCmp2.setData(JSON.parse(localStorage.getItem('record')));
+      this.navigate(scheduleNode)
+      this.navTreelistCmp.setSelection(scheduleNode);
+    }
+  }
+
+  onSearch(queryPlan) {
+    let { query } = queryPlan;
+    query = (query || '').toLowerCase();
+
+    this.query = query;
+    this.store.clearFilter();
+    this.store.filterBy(record => {
+      const { title, speakers } = record.data;
+
+      return query.trim().split(/\s+/).some(token => {
+        return title.toLowerCase().indexOf(token) >= 0 ||
+          (speakers && speakers.some(speaker => speaker.name.toLowerCase().indexOf(token) >= 0));
+      })
+    });
+
+    this.searchComboBox.setStore(this.store);
+
+
+    this.searchComboBox.expand();
+    return false;
+  }
+
   comboboxReady(event) {
+    const tpl = `
+    <div>
+      <div class="app-event-name">{title}</div>
+      <div class="app-event-speaker">{[values.speakerName ? 'by ' + values.speakerName : '']}</div>
+      <div class="app-event-time">{[values && values.date && values.date.match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time} - {end_time}</div>
+      <div class="app-event-location">{location.name}</div>
+    </div>
+    `;
     this.searchComboBox = event.detail.cmp;
+    this.searchComboBox.setStore(this.store);
+    this.searchComboBox.setItemTpl(tpl);
+    this.searchComboBox.on('beforequery', this.onSearch.bind(this));
+    this.searchComboBox.on('select', this.onSelectItem.bind(this));
+
+    if (Ext.os.is.Phone) {
+      this.searchComboBox.setHidden(true);
+    } else {
+      this.searchComboBox.setHidden(false);
+    }
+  }
+  searchReady(event) {
+    this.searchIcon = event.detail.cmp;
+
+    if (Ext.os.is.Phone) {
+      this.searchIcon.setHidden(false);
+    } else {
+      this.searchIcon.setHidden(true);
+    }
+
   }
 }
