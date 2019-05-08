@@ -1,13 +1,13 @@
 import ElementInsertBetween from './view/createChild/elementinsertbetween/ElementInsertBetweenComponent.js';
 import ElementInsertEnd from './view/createChild/elementinsertend/ElementInsertEndComponent.js';
 import ElementInsertStart from './view/createChild/elementinsertstart/ElementInsertStartComponent.js';
-import InsertBetween from  './view/createChild/insertbetween/InsertBetweenComponent.js';
-import InsertEnd from  './view/createChild/insertend/InsertEndComponent.js';
-import InsertStart from  './view/createChild/insertstart/InsertStartComponent.js';
+import InsertBetween from './view/createChild/insertbetween/InsertBetweenComponent.js';
+import InsertEnd from './view/createChild/insertend/InsertEndComponent.js';
+import InsertStart from './view/createChild/insertstart/InsertStartComponent.js';
 
-import Defaults from  './view/defaults/DefaultsComponent.js';
+import Defaults from './view/defaults/DefaultsComponent.js';
 
-import BasicEventComponent from  './view/event/basicevent/BasicEventComponent.js';
+import BasicEventComponent from './view/event/basicevent/BasicEventComponent.js';
 import SingleEventComponent from './view/event/singleevent/SingleEventComponent.js';
 
 import HTMLComponent from './view/html/HtmlComponent.js';
@@ -31,38 +31,38 @@ import RelComponent from './view/rel/rel/RelComponent.js';
 import LifecycleComponent from './view/lifecycle/LifecycleComponent.js';
 
 export default function getMenu() {
-  return [
-    { text: 'Create Child', children: [
-      { text: 'Element Insert Between', component: ElementInsertBetween },
-      { text: 'Element Insert End', component: ElementInsertEnd },
-      { text: 'Element Insert Start', component: ElementInsertStart },
-      { text: 'Insert Between', component: InsertBetween },
-      { text: 'Insert End', component: InsertEnd },
-      { text: 'Insert Start', component: InsertStart },
-    ]},
-    { text: 'Event', children: [
-        { text: 'Basic Event', component: BasicEventComponent },
-        { text: 'Single Event', component: SingleEventComponent },
-      ]
-    },
-    { text: 'Updates', children: [
-        { text: 'Simple Attribute Update', component: SimpleAttributeUpdateComponent },
-        { text: 'Class Name Update', component: ClassNameUpdateComponent },
-      ]
-    },
-    { text: 'Relational', children: [
-      { text: 'Rel', component: RelComponent },
-      { text: 'Rel Tooltip', component: RelTooltipComponent },
-      { text: 'Rel Menu', component: RelMenuComponent },
-      { text: 'Rel Grid Column', component: RelGridColumnComponent },
-      { text: 'Rel Editor', component: RelEditorComponent },
-      { text: 'Rel Dialog', component: RelDialogComponent },
-    ]},
-    { text: 'Defaults', component: Defaults },
-    { text: 'Html', component: HTMLComponent  },
-    { text: 'Update Functions', component: UpdateFunctionsComponent },
-    { text: 'Simple', component: SimpleComponent },
-    { text: 'Sencha Test Hooks', component: SenchaTestHooksComponent },
-    { text: 'Lifecycle', component: LifecycleComponent },
-  ]
-};
+    return [
+        { text: 'Create Child', children: [
+            { text: 'Element Insert Between', component: ElementInsertBetween },
+            { text: 'Element Insert End', component: ElementInsertEnd },
+            { text: 'Element Insert Start', component: ElementInsertStart },
+            { text: 'Insert Between', component: InsertBetween },
+            { text: 'Insert End', component: InsertEnd },
+            { text: 'Insert Start', component: InsertStart },
+        ]},
+        { text: 'Event', children: [
+            { text: 'Basic Event', component: BasicEventComponent },
+            { text: 'Single Event', component: SingleEventComponent },
+        ]
+        },
+        { text: 'Updates', children: [
+            { text: 'Simple Attribute Update', component: SimpleAttributeUpdateComponent },
+            { text: 'Class Name Update', component: ClassNameUpdateComponent },
+        ]
+        },
+        { text: 'Relational', children: [
+            { text: 'Rel', component: RelComponent },
+            { text: 'Rel Tooltip', component: RelTooltipComponent },
+            { text: 'Rel Menu', component: RelMenuComponent },
+            { text: 'Rel Grid Column', component: RelGridColumnComponent },
+            { text: 'Rel Editor', component: RelEditorComponent },
+            { text: 'Rel Dialog', component: RelDialogComponent },
+        ]},
+        { text: 'Defaults', component: Defaults },
+        { text: 'Html', component: HTMLComponent },
+        { text: 'Update Functions', component: UpdateFunctionsComponent },
+        { text: 'Simple', component: SimpleComponent },
+        { text: 'Sencha Test Hooks', component: SenchaTestHooksComponent },
+        { text: 'Lifecycle', component: LifecycleComponent },
+    ];
+}
