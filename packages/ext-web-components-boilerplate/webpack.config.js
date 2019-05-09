@@ -43,7 +43,7 @@ module.exports = function(env) {
                 verbose: verbose
             }),
             new CopyWebpackPlugin([{
-                from: '../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js',
+                from: './node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js',
                 to: './webcomponents-bundle.js'
             }]),
             // Debug purposes only, injected via script: npm run-script buildexample -- --env.build_v=<full version here in format maj.min.patch.build>
@@ -66,7 +66,7 @@ module.exports = function(env) {
                     { test: /\.(js)$/, exclude: /node_modules/,
                         use: [
                             'babel-loader',
-                            'eslint-loader'
+                            // 'eslint-loader'
                         ]
                     },
                     { test: /\.(html)$/, use: { loader: 'html-loader' } },
