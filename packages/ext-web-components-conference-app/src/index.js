@@ -1,6 +1,7 @@
 import * as d3 from 'd3';
 
 import '@sencha/ext-web-components/lib/ext-button.component';
+import '@sencha/ext-web-components/lib/ext-sheet.component';
 import '@sencha/ext-web-components/lib/ext-dataview.component';
 import '@sencha/ext-web-components/lib/ext-searchfield.component';
 import '@sencha/ext-web-components/lib/ext-treelist.component';

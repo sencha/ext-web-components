@@ -176,7 +176,7 @@ export default class MainComponent {
             schedule.tabpanelCmp.setActiveItem(0);
         }
       const scheduleNode = this.navTreelistCmp.getStore().findNode('hash', 'schedule');
-      schedule.containerCmp2.setHidden(false);
+      schedule.containerCmp.setHidden(false);
       schedule.containerCmp2.setData(JSON.parse(localStorage.getItem('record')));
       this.navigate(scheduleNode)
       this.navTreelistCmp.setSelection(scheduleNode);
@@ -226,8 +226,37 @@ export default class MainComponent {
       this.searchComboBox.setHidden(false);
     }
   }
+
+  comboboxReady1(event) {
+    const tpl = `
+    <div>
+      <div class="app-event-name">{title}</div>
+      <div class="app-event-speaker">{[values.speakerName ? 'by ' + values.speakerName : '']}</div>
+      <div class="app-event-time">{[values && values.date && values.date.match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time} - {end_time}</div>
+      <div class="app-event-location">{location.name}</div>
+    </div>
+    `;
+    this.searchComboBox1 = event.detail.cmp;
+    this.searchComboBox1.setStore(this.store);
+    this.searchComboBox1.setItemTpl(tpl);
+    // this.searchComboBox1.on('beforequery', this.onSearch1.bind(this));
+    // this.searchComboBox1.on('select', this.onSelectItem1.bind(this));
+
+  }
+
+  onShow = () => setTimeout(() => {
+    this.searchComboBox1.focus();
+    this.searchComboBox1.select();
+  }, 250);
+
+  onSearchIconClick() {
+    this.sheetCmp.setDisplayed(true);
+
+  }
+
   searchReady(event) {
     this.searchIcon = event.detail.cmp;
+    this.searchIcon.on('tap', this.onSearchIconClick.bind(this));
 
     if (Ext.os.is.Phone) {
       this.searchIcon.setHidden(false);
@@ -235,5 +264,20 @@ export default class MainComponent {
       this.searchIcon.setHidden(true);
     }
 
+  }
+testReady(event) {
+  debugger;
+}
+
+  sheetReady(event) {
+    debugger;
+    this.sheetCmp = event.detail.cmp;
+    this.sheetCmp.setHeight(Ext.Viewport.getHeight());
+    this.sheetCmp.setDisplayed(false);
+    this.sheetCmp.on('show', this.onShow.bind(this));
+  }
+
+  closebuttonHandler() {
+    this.sheetCmp.setDisplayed(true);
   }
 }

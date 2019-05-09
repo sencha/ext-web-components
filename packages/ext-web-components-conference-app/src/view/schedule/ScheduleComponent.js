@@ -34,7 +34,10 @@ export default class ScheduleComponent {
 
   panelReady(event) {
     this.containerCmp = event.detail.cmp;
-    
+
+    if (JSON.parse(localStorage.getItem('record'))) {
+      this.containerCmp.setHidden(false);
+    }
   }
 
   tabpanelReady(event) {
@@ -53,6 +56,10 @@ export default class ScheduleComponent {
     </div>
     `;
     this.containerCmp2.setTpl(tpl);
+
+    if (localStorage.getItem('record')) {
+      this.containerCmp2.setData(JSON.parse(localStorage.getItem('record')));
+    }
   }
 
   containerReady(event){
