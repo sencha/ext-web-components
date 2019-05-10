@@ -11,11 +11,13 @@ Ext.define('User', {
     { name: 'sessions', type: 'string' },
   ],
 });
+
 export default class SpeakersComponent {
   constructor() {
     if (!localStorage.getItem('favoriteEvents')) {
       localStorage.setItem('favoriteEvents', JSON.stringify([]));
     }
+
     this.favorites = JSON.parse(localStorage.getItem('favoriteEvents'));
     this.schedulestore = Ext.create('Ext.data.Store', {
       autoLoad: true,
@@ -29,6 +31,7 @@ export default class SpeakersComponent {
         )),
       }
     });
+
     this.storeDefaults = {
       source: this.schedulestore,
       autoDestroy: true,
@@ -37,6 +40,7 @@ export default class SpeakersComponent {
         sortProperty: 'startDate'
       }
     };
+
     this.speakerStore = Ext.create('Ext.data.Store', {
       model: 'User',
       proxy: {
@@ -53,7 +57,7 @@ export default class SpeakersComponent {
       autoDestroy: true,
       source: this.schedulestore
     });
-  
+
     this.record = null;
     this.speakerId = null;
 
@@ -76,23 +80,24 @@ export default class SpeakersComponent {
 
   containerReady2(event) {
     this.containerCmp2 = event.detail.cmp;
-    const tpl = `<div class="app-speaker-ct">
-                            <img class="app-speaker-image" src={avatar_url}></img>
-                            <div class="app-speaker-text">
-                                <div class="app-speaker-name">{name}</div>
-                                <div class="app-speaker-title">{title}</div>
-                                <div class="app-speaker-company">{company}</div>
-                                <div class="app-speaker-bio">{bio}</div>
-                            </div>
-                        </div>
-                        <h2 style={{marginTop: '40px', color: '#999' }}>Events</h2>
-                    `;
+    const tpl = `
+        <div class="app-speaker-ct">
+          <img class="app-speaker-image" src={avatar_url}></img>
+          <div class="app-speaker-text">
+              <div class="app-speaker-name">{name}</div>
+              <div class="app-speaker-title">{title}</div>
+              <div class="app-speaker-company">{company}</div>
+              <div class="app-speaker-bio">{bio}</div>
+          </div>
+      </div>
+      <h2 style={{marginTop: '40px', color: '#999' }}>Events</h2>
+    `;
     this.containerCmp2.setTpl(tpl);
   }
 
-  onFavoriteClick(event) {
-    const data_id = event.currentTarget.dataset.id;
-    Ext.get(event.target).ripple(event, { bound: false, color: '#999' });
+  onFavoriteClick(currentTarget) {
+    const data_id = currentTarget.dataset.id;
+    Ext.get(currentTarget).ripple(event, { bound: false, color: '#999' });
     const record = this.scheduleChainedStore.findRecord('id', data_id);
     let favorites = [];
     const favoritesSet = JSON.parse(JSON.stringify(this.favorites));
@@ -104,33 +109,34 @@ export default class SpeakersComponent {
       favorites = favoritesSet.filter(event => event !== data_id);
       record.set('favorite', false);
     }
+
     localStorage.setItem('favoriteEvents', JSON.stringify(favorites));
     this.favorites = favorites;
-
   }
 
-  listReady2(event) {
+  listReady2 (event) {
     this.listCmp2 = event.detail.cmp;
-    const itemTpl = `<div class="app-list-content">
-                      <div class="app-list-text">
-                          <div class="app-list-item-title">{title}</div>
-                          <div class="app-list-item-details">{[values.speakerNames ? '<span>by ' + values.speakerNames + '</span>' : '']}</div> 
-                          <div class="app-list-item-details">{categoryName} - {location.name}</div>
-                          <div class="app-list-item-details">{[(values.date).match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time}</div> 
-                      </div>
-                      <div
-                          onclick="speakers.onFavoriteClick"
-                          data-id="{id}"
-                          data-favorite={[ values.favorite ? "on" : "off" ]}
-                          class="x-item-no-tap x-font-icon md-icon-star app-list-tool app-favorite"
-                        />
-                    </div>`;
+    const itemTpl = `
+      <div class="app-list-content">
+        <div class="app-list-text">
+            <div class="app-list-item-title">{title}</div>
+            <div class="app-list-item-details">{[values.speakerNames ? '<span>by ' + values.speakerNames + '</span>' : '']}</div>
+            <div class="app-list-item-details">{categoryName} - {location.name}</div>
+            <div class="app-list-item-details">{[(values.date).match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time}</div>
+        </div>
+        <div
+            onclick="speakers.onFavoriteClick(this)"
+            data-id="{id}"
+            data-favorite={[ values.favorite ? "on" : "off" ]}
+            class="x-item-no-tap x-font-icon md-icon-star app-list-tool app-favorite"
+          />
+      </div>
+    `;
     this.listCmp2.setItemTpl(itemTpl);
     this.listCmp2.on('childtap', this.itemTap2.bind(this));
 
   }
 
- 
   itemTap2(location, eopts) {
     localStorage.setItem('record', JSON.stringify(eopts.record.data));
     const scheduleNode = main.navTreelistCmp.getStore().findNode('hash', 'schedule');
@@ -167,7 +173,7 @@ export default class SpeakersComponent {
     main.scheduleTitle('Speakers');
     main.navButton.setIconCls('x-fa fa-bars');
   }
-  
+
 
   listReady(event) {
     this.listCmp = event.detail.cmp;
@@ -181,9 +187,8 @@ export default class SpeakersComponent {
             <div class="app-list-item-details">{title} - {company}</div>
           </div>
       </div>
-        `);
+    `);
     this.listCmp.setStore(this.speakerStore);
-
     this.listCmp.on('childtap', this.itemTap.bind(this));
   }
 }

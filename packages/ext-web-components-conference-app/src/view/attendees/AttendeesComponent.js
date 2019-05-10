@@ -56,10 +56,9 @@ export default class AttendeesComponent {
     worldMap.setColorAxis(colorAxis);
     worldMap.setMapAxis(mapAxis);
     worldMap.setInteractions(interactions);
-    worldMap.setLegend(legend);
     const targetPanel = event.detail.cmp;
     const targetPanelDom = targetPanel.el.dom;
     worldMap.setRenderTo(targetPanelDom);
+    worldMap.setLegend(legend);
   }
 }
-

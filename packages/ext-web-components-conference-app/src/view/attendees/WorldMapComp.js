@@ -1,12 +1,14 @@
 import topoData from './WorldTopoData';
 import Legend from './Legend';
+import { reactify } from '@sencha/ext-react';
 import * as topojson from 'topojson-client';
 
 Ext.require('Ext.d3.mixin.ToolTip');
 Ext.require('Ext.d3.interaction.PanZoom');
+
 Ext.require('Ext.d3.*');
 
-Ext.define('ConferenceApp.WorldMap', {
+const WorldMap = Ext.define('ConferenceApp.WorldMap', {
     extend: 'Ext.d3.svg.Svg',
     mixins: ['Ext.d3.mixin.ToolTip'],
     xtype: 'worldmap',
@@ -226,3 +228,4 @@ Ext.define('ConferenceApp.WorldMap', {
     }
 })
 
+export default reactify(WorldMap);

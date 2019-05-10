@@ -1,5 +1,4 @@
 import './MainComponent.html';
-import './MainComponent.scss';
 
 export default class MainComponent {
 
@@ -20,10 +19,6 @@ export default class MainComponent {
     this.collapsed = false;
     this.isInitial = true;
 
-    if (Ext.os.is.Phone) {
-      this.collapsed = true;
-    }
-
     this.store = Ext.create('Ext.data.Store', {
       autoLoad: true,
       proxy: {
@@ -35,11 +30,10 @@ export default class MainComponent {
 
   afterAllLoaded() {
     this.wait = this.wait - 1;
-
-    if (this.wait == 0) {
+    if (this.wait === 0) {
       let hash = window.location.hash.substr(1);
 
-      if (hash == '') {
+      if (hash === '') {
         hash = 'schedule';
       }
 
@@ -56,14 +50,14 @@ export default class MainComponent {
     if (Ext.os.is.Phone) {
       let collapsed = this.navTreePanelCmp.getCollapsed();
 
-      if (collapsed == true) {
+      if (collapsed) {
         collapsed = false;
       } else {
         collapsed = true;
       }
+
       this.navTreePanelCmp.setCollapsed(collapsed);
     }
-
   }
 
   readyNavTreelist(event) {
@@ -97,69 +91,64 @@ export default class MainComponent {
   }
 
   navigate(record) {
-    if (record == null) {
+    if (record === null) {
       console.log('it was null')
       return
     }
-    window.title = record.data.text;
+
     const hash = record.data.hash
     const childNum = record.childNodes.length
 
-    if (childNum == 0 && hash != undefined) {
+    if (childNum === 0 && hash != undefined) {
       window.location.hash = '#' + hash;
     } else {
       this.dataviewNavCmp.setData(node.childNodes)
     }
 
     if (Ext.os.is.Phone) {
-      console.log(window.title);
-      this.title.setTitle(window.title);
+      this.title.setTitle(record.data.text);
       this.title.setTitleAlign('center');
-
-      let collapsed = this.navTreePanelCmp.getCollapsed();
-
-      if (collapsed === true) {
-        collapsed = false;
-      } else {
-        collapsed = true;
-      }
-      this.navTreePanelCmp.setCollapsed(collapsed)
+      this.navTreePanelCmp.setCollapsed(true);
     }
   }
 
   containsMatches(node) {
     const found = node.data.name.match(this.filterRegex) || node.childNodes.some(child => this.containsMatches(child));
-    if (found) {
-      node.expand();
-    }
+    if (found) { node.expand(); }
 
     node.data.text = node.data.name.replace(this.filterRegex, '<span style="color:#2196F3;font-weight:bold">$1</span>')
     return found;
   }
 
-  toggleTree(event) {
+  toggleTree() {
+    const title = this.title.getTitle();
 
-    if (this.back == false) {
+    if (this.back === false) {
       let collapsed = this.navTreePanelCmp.getCollapsed();
 
-      if (collapsed == true) {
+      if (collapsed) {
         collapsed = false;
       } else {
         collapsed = true;
       }
+
       this.navTreePanelCmp.setCollapsed(collapsed);
-    }
-    else if (this.back == true && window.title == 'Schedule') {
-      schedule.resetSchedule();
-      this.back = false;
-    }
-    else if (this.back == true && window.title == 'Speakers') {
-      speakers.resetSpeakers();
-      this.back = false;
-    }
-    else if (this.back == true && window.title == 'Calendar') {
-      calendar.resetCalendar();
-      this.back = false;
+    } else {
+      if (title ==='Schedule') {
+        schedule.resetSchedule();
+        this.back = false;
+      } else if (title === 'Speakers') {
+        speakers.resetSpeakers();
+        this.back = false;
+      } else if (title === 'Calendar') {
+        calendar.resetCalendar();
+        this.back = false;
+      } else if (title === 'Info') {
+        const speakersNode = main.navTreelistCmp.getStore().findNode('hash', 'speakers');
+        window.main.navigate(speakersNode)
+        window.main.navTreelistCmp.setSelection(speakersNode);
+        speakers.resetSpeakers();
+      }
     }
   }
 
@@ -178,25 +167,34 @@ export default class MainComponent {
   onSelectItem(combo, newValue) {
       if (newValue.data.date) {
         localStorage.setItem('record', JSON.stringify(newValue.data));
-        switch(newValue.data.date.match(/(Monday|Tuesday|Wednesday)/)[1])
-        {
-          case 'Monday' :
-            schedule.tabpanelCmp.setActiveItem(0);
-            break;
-          case 'Tuesday' :
-            schedule.tabpanelCmp.setActiveItem(1);
-            break;
-          case 'Wednesday' :
-            schedule.tabpanelCmp.setActiveItem(2);
-            break;
-          default :
-            schedule.tabpanelCmp.setActiveItem(0);
+
+        if (window.schedule) {
+          switch(newValue.data.date.match(/(Monday|Tuesday|Wednesday)/)[1])
+          {
+            case 'Monday' :
+              schedule.tabpanelCmp.setActiveItem(0);
+              break;
+            case 'Tuesday' :
+              schedule.tabpanelCmp.setActiveItem(1);
+              break;
+            case 'Wednesday' :
+              schedule.tabpanelCmp.setActiveItem(2);
+              break;
+            default :
+              schedule.tabpanelCmp.setActiveItem(0);
+          }
+
+          const scheduleNode = this.navTreelistCmp.getStore().findNode('hash', 'schedule');
+          this.navigate(scheduleNode)
+          this.navTreelistCmp.setSelection(scheduleNode);
+
+          schedule.sidePanel.setHidden(false);
+          schedule.sideContainer.setData(JSON.parse(localStorage.getItem('record')));
+        } else {
+          const scheduleNode = this.navTreelistCmp.getStore().findNode('hash', 'schedule');
+          this.navigate(scheduleNode)
+          this.navTreelistCmp.setSelection(scheduleNode);
         }
-      const scheduleNode = this.navTreelistCmp.getStore().findNode('hash', 'schedule');
-      schedule.containerCmp.setHidden(false);
-      schedule.containerCmp2.setData(JSON.parse(localStorage.getItem('record')));
-      this.navigate(scheduleNode)
-      this.navTreelistCmp.setSelection(scheduleNode);
     }
   }
 
@@ -212,24 +210,22 @@ export default class MainComponent {
       return query.trim().split(/\s+/).some(token => {
         return title.toLowerCase().indexOf(token) >= 0 ||
           (speakers && speakers.some(speaker => speaker.name.toLowerCase().indexOf(token) >= 0));
-      })
+      });
     });
 
     this.searchComboBox.setStore(this.store);
-
-
     this.searchComboBox.expand();
     return false;
   }
 
   comboboxReady(event) {
     const tpl = `
-    <div>
-      <div class="app-event-name">{title}</div>
-      <div class="app-event-speaker">{[values.speakerName ? 'by ' + values.speakerName : '']}</div>
-      <div class="app-event-time">{[values && values.date && values.date.match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time} - {end_time}</div>
-      <div class="app-event-location">{location.name}</div>
-    </div>
+      <div>
+        <div class="app-event-name">{title}</div>
+        <div class="app-event-speaker">{[values.speakerName ? 'by ' + values.speakerName : '']}</div>
+        <div class="app-event-time">{[values && values.date && values.date.match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time} - {end_time}</div>
+        <div class="app-event-location">{location.name}</div>
+      </div>
     `;
     this.searchComboBox = event.detail.cmp;
     this.searchComboBox.setStore(this.store);
@@ -246,12 +242,12 @@ export default class MainComponent {
 
   comboboxReady1(event) {
     const tpl = `
-    <div>
-      <div class="app-event-name">{title}</div>
-      <div class="app-event-speaker">{[values.speakerName ? 'by ' + values.speakerName : '']}</div>
-      <div class="app-event-time">{[values && values.date && values.date.match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time} - {end_time}</div>
-      <div class="app-event-location">{location.name}</div>
-    </div>
+      <div>
+        <div class="app-event-name">{title}</div>
+        <div class="app-event-speaker">{[values.speakerName ? 'by ' + values.speakerName : '']}</div>
+        <div class="app-event-time">{[values && values.date && values.date.match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time} - {end_time}</div>
+        <div class="app-event-location">{location.name}</div>
+      </div>
     `;
     this.searchComboBox1 = event.detail.cmp;
     this.searchComboBox1.setStore(this.store);
@@ -260,7 +256,6 @@ export default class MainComponent {
     this.searchComboBox1.setCls('styled-placeholder');
     // this.searchComboBox1.on('beforequery', this.onSearch1.bind(this));
     // this.searchComboBox1.on('select', this.onSelectItem1.bind(this));
-
   }
 
   onShow = () => setTimeout(() => {
@@ -270,7 +265,6 @@ export default class MainComponent {
 
   onSearchIconClick() {
     this.sheetCmp.setDisplayed(true);
-
   }
 
   searchReady(event) {
@@ -282,7 +276,6 @@ export default class MainComponent {
     } else {
       this.searchIcon.setHidden(true);
     }
-
   }
 
   sheetReady(event) {
@@ -302,27 +295,27 @@ export default class MainComponent {
     this.listCmp.setStore(this.store);
 
     const itemTpl = `
-    <div class="app-list-content">
-      <div class="app-list-text">
-        <div class="app-list-item-title">{title}</div>
-        <div class="app-list-item-details">{[values.speakerNames ? '<span>by ' + values.speakerNames + '</span>' : '']}</div> 
-        <div class="app-list-item-details">{categoryName} - {location.name}</div>
-        <div class="app-list-item-details">{[(values.date).match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time}</div> 
+      <div class="app-list-content">
+        <div class="app-list-text">
+          <div class="app-list-item-title">{title}</div>
+          <div class="app-list-item-details">{[values.speakerNames ? '<span>by ' + values.speakerNames + '</span>' : '']}</div>
+          <div class="app-list-item-details">{categoryName} - {location.name}</div>
+          <div class="app-list-item-details">{[(values.date).match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time}</div>
+        </div>
+        <div
+          onclick="schedule.onFavoriteClick(this)"
+          data-favorite={[ values.favorite ? "on" : "off" ]}
+          data-id="{id}"
+          class="x-item-no-tap x-font-icon md-icon-star app-list-tool app-favorite"
+        />
       </div>
-      <div
-        onclick="schedule.onFavoriteClick(this)"
-        data-favorite={[ values.favorite ? "on" : "off" ]}
-        data-id="{id}"
-        class="x-item-no-tap x-font-icon md-icon-star app-list-tool app-favorite"
-      />
-    </div>
-    `
+    `;
     this.listCmp.setItemTpl(itemTpl);
   }
 
   onItemTap(event) {
     this.sheetCmp.setDisplayed(false);
-    schedule.container.setHidden(true);
+    schedule.banner.setHidden(true);
     schedule.tabPanelCmp.setHidden(true);
     this.scheduleTitle(event.detail.record.data.title);
     this.backButton();

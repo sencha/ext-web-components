@@ -15,12 +15,7 @@
       matchFieldWidth="false"
       floatedPicker='{ "width": "500" }'
       onready="main.comboboxReady1"
-      triggers='{
-                    "search": {
-                        "type": "search",
-                        "side": "left"
-                    }
-                }'
+      triggers='{ "search": { "type": "search", "side": "left" }}'
     >
     </ext-combobox>
     <ext-button
@@ -49,9 +44,9 @@
     onready="main.titleReady"
     platformConfig='{
       "!desktop": {
-      "titleAlign": "center"
+        "titleAlign": "center"
       }
-      }'
+    }'
     docked="top"
     titleAlign="left"
     shadow="true"
@@ -60,7 +55,7 @@
     title='<div>
       <div class="sencha-logo"></div>
       <a href="#" class="app-title">Sencha Ext Components 7.0 Conference App</a>
-  </div>'
+    </div>'
   >
     <ext-button
       align="left"
@@ -70,7 +65,7 @@
     >
     </ext-button>
     <ext-button
-      align="right" 
+      align="right"
       iconCls="md-icon-search"
       onReady="main.searchReady"
     >
@@ -86,16 +81,11 @@
         matchFieldWidth="false"
         floatedPicker='{ "width": "500" }'
         onready="main.comboboxReady"
-        triggers='{
-            "search": {
-                "type": "search",
-                "side": "left"
-            }
-        }'
+        triggers='{ "search": { "type": "search", "side": "left" }}'
     >
     </ext-combobox>
   </ext-titlebar>
-   
+
   <ext-panel
     docked="left"
     border="true"
@@ -105,6 +95,7 @@
     header="false"
     collapsible='{"direction": "left"}'
     width="200px"
+    collapsed="false"
     onready="main.readyNavTreePanel"
   >
     <ext-treelist
