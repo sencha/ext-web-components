@@ -78,8 +78,8 @@ export default class SpeakersComponent {
     this.panelCmp = event.detail.cmp;
   }
 
-  containerReady2(event) {
-    this.containerCmp2 = event.detail.cmp;
+  sideContainer(event) {
+    this.sideContainerCmp = event.detail.cmp;
     const tpl = `
         <div class="app-speaker-ct">
           <img class="app-speaker-image" src={avatar_url}></img>
@@ -92,7 +92,7 @@ export default class SpeakersComponent {
       </div>
       <h2 style={{marginTop: '40px', color: '#999' }}>Events</h2>
     `;
-    this.containerCmp2.setTpl(tpl);
+    this.sideContainerCmp.setTpl(tpl);
   }
 
   onFavoriteClick(currentTarget) {
@@ -133,20 +133,20 @@ export default class SpeakersComponent {
       </div>
     `;
     this.listCmp2.setItemTpl(itemTpl);
-    this.listCmp2.on('childtap', this.itemTap2.bind(this));
+    this.listCmp2.on('childtap', this.onSpeakerScheduleClick.bind(this));
 
   }
 
-  itemTap2(location, eopts) {
+  onSpeakerScheduleClick(location, eopts) {
     localStorage.setItem('record', JSON.stringify(eopts.record.data));
     const scheduleNode = main.navTreelistCmp.getStore().findNode('hash', 'schedule');
     window.main.navigate(scheduleNode)
     window.main.navTreelistCmp.setSelection(scheduleNode);
   }
 
-  itemTap(location, eopts) {
+  speakerTap(location, eopts) {
     this.record = eopts.record.data;
-    this.containerCmp2.setData(this.record);
+    this.sideContainerCmp.setData(this.record);
 
     this.speakerId = eopts.record.id;
 
@@ -162,7 +162,7 @@ export default class SpeakersComponent {
     if (Ext.os.is.Phone) {
       this.listCmp.setHidden(true);
       this.panelCmp.setHidden(false);
-      main.scheduleTitle(this.record.name);
+      main.scheduleTitle(this.record.name, 'Speakers');
       main.backButton();
     }
   }
@@ -170,7 +170,7 @@ export default class SpeakersComponent {
   resetSpeakers() {
     this.listCmp.setHidden(false);
     this.panelCmp.setHidden(true);
-    main.scheduleTitle('Speakers');
+    main.scheduleTitle('Speakers', 'Speakers');
     main.navButton.setIconCls('x-fa fa-bars');
   }
 
@@ -189,6 +189,6 @@ export default class SpeakersComponent {
       </div>
     `);
     this.listCmp.setStore(this.speakerStore);
-    this.listCmp.on('childtap', this.itemTap.bind(this));
+    this.listCmp.on('childtap', this.speakerTap.bind(this));
   }
 }

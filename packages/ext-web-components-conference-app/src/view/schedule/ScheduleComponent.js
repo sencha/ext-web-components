@@ -43,7 +43,7 @@ export default class ScheduleComponent {
     if (JSON.parse(localStorage.getItem('record'))) {
       if(Ext.os.is.Phone) {
         this.banner.setHidden(true);
-        main.title.setTitle('Info');
+        main.title.setTitle(JSON.parse(localStorage.getItem('record')).title, 'Speakers');
         main.backButton();
         this.tabpanelCmp.setHidden(true);
         this.sidePanel.setHeader(false);
@@ -121,7 +121,7 @@ export default class ScheduleComponent {
       this.banner.setHidden(true);
       this.tabpanelCmp.setHidden(true);
       this.sidePanel.setHeader(false);
-      main.scheduleTitle(event.detail.record.data.title);
+      main.scheduleTitle(event.detail.record.data.title, 'Schedule');
       main.backButton();
     }
   }
@@ -130,7 +130,7 @@ export default class ScheduleComponent {
     this.banner.setHidden(false);
     this.tabpanelCmp.setHidden(false);
     this.sidePanel.setHidden(true);
-    main.scheduleTitle('Schedule');
+    main.scheduleTitle('Schedule', 'Schedule');
     main.navButton.setIconCls('x-fa fa-bars');
   }
 

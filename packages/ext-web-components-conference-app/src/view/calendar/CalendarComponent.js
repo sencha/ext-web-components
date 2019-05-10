@@ -46,7 +46,7 @@ export default class CalendarComponent {
                 </div>`
     )
     if (Ext.os.is.Phone) {
-      main.scheduleTitle(event.detail.context.event.data.title);
+      main.scheduleTitle(event.detail.context.event.data.title, 'Calendar');
       main.backButton();
     }
   }
@@ -57,7 +57,7 @@ export default class CalendarComponent {
 
   resetCalendar() {
     this.sidePanel.setHidden(true);
-    main.scheduleTitle('Calendar');
+    main.scheduleTitle('Calendar', 'Calendar');
     main.navButton.setIconCls('x-fa fa-bars');
   }
 }

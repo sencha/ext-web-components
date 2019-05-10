@@ -80,9 +80,11 @@ export default class MainComponent {
     this.title = event.detail.cmp;
   }
 
-  scheduleTitle(title) {
+  scheduleTitle(title, titleOriginator) {
     this.title.setTitle(title);
     this.title.setTitleAlign('center');
+
+    window.titleOriginator = titleOriginator;
   }
 
   backButton() {
@@ -121,7 +123,7 @@ export default class MainComponent {
   }
 
   toggleTree() {
-    const title = this.title.getTitle();
+    let title = this.title.getTitle();
 
     if (this.back === false) {
       let collapsed = this.navTreePanelCmp.getCollapsed();
@@ -143,11 +145,28 @@ export default class MainComponent {
       } else if (title === 'Calendar') {
         calendar.resetCalendar();
         this.back = false;
-      } else if (title === 'Info') {
-        const speakersNode = main.navTreelistCmp.getStore().findNode('hash', 'speakers');
-        window.main.navigate(speakersNode)
-        window.main.navTreelistCmp.setSelection(speakersNode);
-        speakers.resetSpeakers();
+      } else {
+        const tempTitle = window.titleOriginator;
+
+        if (tempTitle ==='Schedule') {
+          const scheduleNode = main.navTreelistCmp.getStore().findNode('hash', 'schedule');
+          window.main.navigate(scheduleNode)
+          window.main.navTreelistCmp.setSelection(scheduleNode);
+          schedule.resetSchedule();
+          this.back = false;
+        } else if (tempTitle === 'Speakers') {
+          const speakersNode = main.navTreelistCmp.getStore().findNode('hash', 'speakers');
+          window.main.navigate(speakersNode)
+          window.main.navTreelistCmp.setSelection(speakersNode);
+          speakers.resetSpeakers();
+          this.back = false;
+        } else if (tempTitle === 'Calendar') {
+          const calendarNode = main.navTreelistCmp.getStore().findNode('hash', 'calendar');
+          window.main.navigate(calendarNode)
+          window.main.navTreelistCmp.setSelection(calendarNode);
+          calendar.resetCalendar();
+          this.back = false;
+        }
       }
     }
   }
@@ -280,10 +299,10 @@ export default class MainComponent {
 
   sheetReady(event) {
     this.sheetCmp = event.detail.cmp;
-    this.sheetCmp.setHeight(window.outerHeight);
-    this.sheetCmp.setWidth(window.innerWidth);
-    this.sheetCmp.setDisplayed(false);
-    this.sheetCmp.on('show', this.onShow.bind(this));
+    // this.sheetCmp.setDisplayed(false);
+    this.sheetCmp.setHeight('100%');
+    this.sheetCmp.setWidth('100%');
+    // this.sheetCmp.on('show', this.onShow.bind(this));
   }
 
   closebuttonHandler() {
@@ -314,10 +333,20 @@ export default class MainComponent {
   }
 
   onItemTap(event) {
-    this.sheetCmp.setDisplayed(false);
+    this.scheduleTitle('Schedule', 'Schedule');
     schedule.banner.setHidden(true);
-    schedule.tabPanelCmp.setHidden(true);
-    this.scheduleTitle(event.detail.record.data.title);
     this.backButton();
+    schedule.tabpanelCmp.setHidden(true);
+    schedule.sidePanel.setHeader(false);
+    this.sheetCmp.setDisplayed(false);
+    this.sheetCmp.setHidden(true);
+    schedule.sidePanel.setHidden(false);
+
+    localStorage.setItem('record', JSON.stringify(event.detail.record.data));
+    const scheduleNode = main.navTreelistCmp.getStore().findNode('hash', 'schedule');
+    window.main.navigate(scheduleNode)
+    window.main.navTreelistCmp.setSelection(scheduleNode);
+
+    this.title.setTitle('Schedule');
   }
 }
