@@ -51,6 +51,16 @@ export default class MainComponent {
   readyNavTreePanel(event) {
     this.navTreePanelCmp = event.detail.cmp;
     this.afterAllLoaded('readyNavTreePanel');
+    if (Ext.os.is.Phone) {
+      let collapsed = this.navTreePanelCmp.getCollapsed();
+
+      if (collapsed == true) {
+        collapsed = false;
+      } else {
+        collapsed = true;
+      }
+      this.navTreePanelCmp.setCollapsed(collapsed);
+    }
   }
 
   readyNavTreelist(event) {
@@ -99,7 +109,6 @@ export default class MainComponent {
     }
 
     if (Ext.os.is.Phone) {
-      console.log(window.title);
       this.title.setTitle(window.title);
       this.title.setTitleAlign('center');
 
@@ -266,11 +275,11 @@ export default class MainComponent {
 
   }
 testReady(event) {
-  debugger;
+  // debugger;
 }
 
   sheetReady(event) {
-    debugger;
+    // debugger;
     this.sheetCmp = event.detail.cmp;
     this.sheetCmp.setHeight(window.innerHeight);
     this.sheetCmp.setWidth(window.innerWidth);

@@ -3,6 +3,7 @@
     onready="main.sheetReady"
     layout="vbox"
     padding="0"
+    title='<div class="app-menu-header">Sencha Ext Components 7.0 Conference App</div>'
   >
   <ext-toolbar>
     <ext-combobox ui="alt" placeholder="Search" queryMode="local" clearable="true" hideTrigger="true" valueField="id"
@@ -24,6 +25,11 @@
     shadow="true"
     style="z-index: 100;"
     weight="10"
+    platformConfig='{
+      "!desktop": {
+          "titleAlign": "center"
+      }
+    }'
     title='<div>
       <div class="sencha-logo"></div>
       <a href="#" class="app-title">Sencha Ext Components 7.0 Conference App</a>
