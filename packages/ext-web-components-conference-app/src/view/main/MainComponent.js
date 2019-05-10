@@ -1,4 +1,5 @@
 import './MainComponent.html';
+import './MainComponent.scss';
 
 export default class MainComponent {
 
@@ -51,6 +52,18 @@ export default class MainComponent {
   readyNavTreePanel(event) {
     this.navTreePanelCmp = event.detail.cmp;
     this.afterAllLoaded('readyNavTreePanel');
+
+    if (Ext.os.is.Phone) {
+      let collapsed = this.navTreePanelCmp.getCollapsed();
+
+      if (collapsed == true) {
+        collapsed = false;
+      } else {
+        collapsed = true;
+      }
+      this.navTreePanelCmp.setCollapsed(collapsed);
+    }
+
   }
 
   readyNavTreelist(event) {
@@ -140,8 +153,12 @@ export default class MainComponent {
       schedule.resetSchedule();
       this.back = false;
     }
+    else if (this.back == true && window.title == 'Speakers') {
+      speakers.resetSpeakers();
+      this.back = false;
+    }
     else if (this.back == true && window.title == 'Calendar') {
-      calendar.resetSchedule();
+      calendar.resetCalendar();
       this.back = false;
     }
   }
@@ -239,6 +256,8 @@ export default class MainComponent {
     this.searchComboBox1 = event.detail.cmp;
     this.searchComboBox1.setStore(this.store);
     this.searchComboBox1.setItemTpl(tpl);
+    this.searchComboBox1.setStyle({ 'border-bottom': '1px solid #767676' });
+    this.searchComboBox1.setCls('styled-placeholder');
     // this.searchComboBox1.on('beforequery', this.onSearch1.bind(this));
     // this.searchComboBox1.on('select', this.onSelectItem1.bind(this));
 
@@ -265,20 +284,47 @@ export default class MainComponent {
     }
 
   }
-testReady(event) {
-  debugger;
-}
 
   sheetReady(event) {
-    debugger;
     this.sheetCmp = event.detail.cmp;
-    this.sheetCmp.setHeight(window.innerHeight);
+    this.sheetCmp.setHeight(window.outerHeight);
     this.sheetCmp.setWidth(window.innerWidth);
     this.sheetCmp.setDisplayed(false);
     this.sheetCmp.on('show', this.onShow.bind(this));
   }
 
   closebuttonHandler() {
-    this.sheetCmp.setDisplayed(true);
+    this.sheetCmp.setDisplayed(false);
+  }
+
+  listReady(event) {
+    this.listCmp = event.detail.cmp;
+    this.listCmp.setStore(this.store);
+
+    const itemTpl = `
+    <div class="app-list-content">
+      <div class="app-list-text">
+        <div class="app-list-item-title">{title}</div>
+        <div class="app-list-item-details">{[values.speakerNames ? '<span>by ' + values.speakerNames + '</span>' : '']}</div> 
+        <div class="app-list-item-details">{categoryName} - {location.name}</div>
+        <div class="app-list-item-details">{[(values.date).match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time}</div> 
+      </div>
+      <div
+        onclick="schedule.onFavoriteClick(this)"
+        data-favorite={[ values.favorite ? "on" : "off" ]}
+        data-id="{id}"
+        class="x-item-no-tap x-font-icon md-icon-star app-list-tool app-favorite"
+      />
+    </div>
+    `
+    this.listCmp.setItemTpl(itemTpl);
+  }
+
+  onItemTap(event) {
+    this.sheetCmp.setDisplayed(false);
+    schedule.container.setHidden(true);
+    schedule.tabPanelCmp.setHidden(true);
+    this.scheduleTitle(event.detail.record.data.title);
+    this.backButton();
   }
 }

@@ -5,20 +5,53 @@
     padding="0"
   >
   <ext-toolbar>
-    <ext-combobox ui="alt" placeholder="Search" queryMode="local" clearable="true" hideTrigger="true" valueField="id"
-      matchFieldWidth="false" floatedPicker='{ "width": "500" }' onready="main.comboboxReady1" triggers='{
+    <ext-combobox
+      ui="alt"
+      placeholder="Search"
+      queryMode="local"
+      clearable="true"
+      hideTrigger="true"
+      valueField="id"
+      matchFieldWidth="false"
+      floatedPicker='{ "width": "500" }'
+      onready="main.comboboxReady1"
+      triggers='{
                     "search": {
                         "type": "search",
                         "side": "left"
                     }
-                }'>
+                }'
+    >
     </ext-combobox>
-    <ext-button text="CLOSE" onTap="main.closebuttonHandler" margin="0 0 0 10">
+    <ext-button
+      text="CLOSE"
+      onTap="main.closebuttonHandler"
+      margin="0 0 0 10"
+    >
     </ext-button>
   </ext-toolbar>
+  <ext-list
+    height="100%"
+    onready="main.listReady"
+    hideMode="offsets"
+    rowLines="true"
+    itemCls="app-list-item"
+    cls="app-list"
+    pinHeaders="true"
+    infinite="true"
+    variableHeights="true"
+    emptyText="No events found."
+    onItemTap="main.onItemTap"
+  >
+  </ext-list>
   </ext-sheet>
   <ext-titlebar
     onready="main.titleReady"
+    platformConfig='{
+      "!desktop": {
+      "titleAlign": "center"
+      }
+      }'
     docked="top"
     titleAlign="left"
     shadow="true"

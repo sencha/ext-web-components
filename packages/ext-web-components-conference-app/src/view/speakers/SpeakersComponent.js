@@ -150,8 +150,22 @@ export default class SpeakersComponent {
     this.listCmp2.setStore(this.scheduleChainedStore);
 
     if (this.panelCmp.getHidden()) {
-    this.panelCmp.setHidden(false);
+      this.panelCmp.setHidden(false);
     }
+
+    if (Ext.os.is.Phone) {
+      this.listCmp.setHidden(true);
+      this.panelCmp.setHidden(false);
+      main.scheduleTitle(this.record.name);
+      main.backButton();
+    }
+  }
+
+  resetSpeakers() {
+    this.listCmp.setHidden(false);
+    this.panelCmp.setHidden(true);
+    main.scheduleTitle('Speakers');
+    main.navButton.setIconCls('x-fa fa-bars');
   }
   
 

@@ -55,7 +55,7 @@ export default class CalendarComponent {
     this.sidePanel = event.detail.cmp;
   }
 
-  resetSchedule() {
+  resetCalendar() {
     this.sidePanel.setHidden(true);
     main.scheduleTitle('Calendar');
     main.navButton.setIconCls('x-fa fa-bars');

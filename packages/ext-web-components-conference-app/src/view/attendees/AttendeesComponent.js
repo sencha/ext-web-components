@@ -1,4 +1,5 @@
 import './WorldMapComp.js';
+import './AttendeesComponent.html';
 
 export default class AttendeesComponent {
   constructor() {}
