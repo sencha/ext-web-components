@@ -1,37 +1,22 @@
 <ext-panel layout="fit" bodyPadding="0">
-    <ext-sheet
-      onready="main.sheetReady"
-      layout="vbox"
-      side="bottom"
-      modal="false"
-      padding="0"
-    >
-      <ext-toolbar>
-        <ext-combobox
-          ui="alt"
-          placeholder="Search"
-          queryMode="local"
-          clearable="true"
-          hideTrigger="true"
-          valueField="id"
-          matchFieldWidth="false"
-          floatedPicker='{ "width": "500" }'
-          onready="main.comboboxReady1"
-          triggers='{
+  <ext-sheet
+    onready="main.sheetReady"
+    layout="vbox"
+    padding="0"
+  >
+  <ext-toolbar>
+    <ext-combobox ui="alt" placeholder="Search" queryMode="local" clearable="true" hideTrigger="true" valueField="id"
+      matchFieldWidth="false" floatedPicker='{ "width": "500" }' onready="main.comboboxReady1" triggers='{
                     "search": {
                         "type": "search",
                         "side": "left"
                     }
                 }'>
-        </ext-combobox>
-        <ext-button
-          text="CLOSE"
-          onTap="main.closebuttonHandler"
-          margin="0 0 0 10"
-        >
-        </ext-button>
-      </ext-toolbar>
-    </ext-sheet>
+    </ext-combobox>
+    <ext-button text="CLOSE" onTap="main.closebuttonHandler" margin="0 0 0 10">
+    </ext-button>
+  </ext-toolbar>
+  </ext-sheet>
   <ext-titlebar
     onready="main.titleReady"
     docked="top"

@@ -272,7 +272,8 @@ testReady(event) {
   sheetReady(event) {
     debugger;
     this.sheetCmp = event.detail.cmp;
-    this.sheetCmp.setHeight(Ext.Viewport.getHeight());
+    this.sheetCmp.setHeight(window.innerHeight);
+    this.sheetCmp.setWidth(window.innerWidth);
     this.sheetCmp.setDisplayed(false);
     this.sheetCmp.on('show', this.onShow.bind(this));
   }
