@@ -31,6 +31,7 @@
     "@sencha/ext-web-components": "~7.0.0",
     "@sencha/ext-web-components-router": "~7.0.0",
     "@sencha/ext-webpack-plugin": "~7.0.0",
+    "@webcomponents/webcomponentsjs": "^2.2.10",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "base-href-webpack-plugin": "~2.0.0",

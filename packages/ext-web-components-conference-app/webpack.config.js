@@ -3,6 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BaseHrefWebpackPlugin } = require('base-href-webpack-plugin');
 const ExtWebpackPlugin = require('@sencha/ext-webpack-plugin');
 const portfinder = require('portfinder');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = function(env) {
     function get(it, val) {
@@ -48,7 +50,11 @@ module.exports = function(env) {
                 browser: browser,
                 watch: watch,
                 verbose: verbose
-            })
+            }),
+            new CopyWebpackPlugin([{
+                from: '../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js',
+                to: './webcomponents-bundle.js'
+            }]),
         ];
         return {
             mode: environment,
