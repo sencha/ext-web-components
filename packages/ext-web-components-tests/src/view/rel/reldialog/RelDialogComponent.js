@@ -1,13 +1,13 @@
-import "./RelDialogComponent.html";
+import './RelDialogComponent.html';
 
 export default class RelDialogComponent {
-  constructor() {}
+    constructor() {}
 
   onDialogReady = (event) => {
-    this.dialogCmp = event.detail.cmp;
+      this.dialogCmp = event.detail.cmp;
   }
 
   onClick = () => {
-    this.dialogCmp.setDisplayed(false);
+      this.dialogCmp.setDisplayed(false);
   }
 }

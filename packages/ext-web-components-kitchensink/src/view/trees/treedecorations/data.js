@@ -55,4 +55,4 @@ export default Ext.create('Ext.data.TreeStore', {
             { leaf: true, text: 'Sheet.js', className: 'Ext.Sheet' }
         ]
     }
-})
+});

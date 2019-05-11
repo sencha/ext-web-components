@@ -17,29 +17,115 @@
   <script src="ewc/ext-column.component.js"></script>
   <script src="ewc/ext-toolbar.component.js"></script>
   <script src="ewc/ext-searchfield.component.js"></script>
-  <script src="SampleData.js"></script>
-  <script>
+  <script src="xSampleData.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
 
-      window.app = {}
+  var s = document.createElement('script');
+  var code
+
+  s.type = 'text/javascript';
   
-      app.readyGrid = function(event) {
-        app.gridCmp = event.detail.cmp
-        app.store = Ext.create('Ext.data.Store', {
-          data: new SampleData(100).data
-        })
-        app.gridCmp.setStore(app.store)
-      }
+  code = `
+  class SampleData {
+  data = []
+  numRecords
+  constructor(numRecords) {
+    this.numRecords = numRecords
+    this.createFakeData(this.numRecords, this.data);
+  }
+  random(start, end) {
+    return Math.floor(Math.random() * (end - start + 1) + start);
+  }
+  createFakeData(count, data) {
+    var me = this;
+    var firstNames   = ['Nikki', 'Marc', 'Nick', 'Andy', 'Daniel'],
+        lastNames    = ['Jones', 'Smith', 'Johnson', 'Williams', 'Brown', 'Miller'],
+        i;
+    for (i = 0; i < (count || 25); i++) {
+      var id          = i + 1,
+          firstName   = firstNames[me.random(0, firstNames.length - 1)],
+          lastName    = lastNames[me.random(0, lastNames.length - 1)],
+          name        = Ext.String.format("{0} {1}", firstName, lastName),
+          email       = firstName.toLowerCase() + '.' + lastName.toLowerCase() + '@sentcha.com',
+          phone       = '(' + me.random(300, 600) + ')' + me.random(300, 600) + '-' + me.random(3000, 6000)
+      data.push({
+        id: id,
+        name: name,
+        email: email,
+        phone: phone
+      });
+    }
+  }
+}
 
-      app.onSearch = function(event) {
-        const query = event.detail.newValue.toLowerCase();
-        app.store.clearFilter();
-        if (query.length) app.store.filterBy(record => {
-          const { name, email, phone } = record.data;
-          return name.toLowerCase().indexOf(query) !== -1 ||
-            email.toLowerCase().indexOf(query) !== -1 ||
-            phone.toLowerCase().indexOf(query) !== -1;
-        });
-      }
+window.app = {}
+class BasicGridComponent {
+  readyGrid = (event) => {
+    app.gridCmp = event.detail.cmp
+    app.store = Ext.create('Ext.data.Store', {
+      data: new SampleData(100).data
+    })
+    app.gridCmp.setStore(app.store)
+  }
+}
+window.app = new BasicGridComponent
+
+
+`
+  try {
+    s.appendChild(document.createTextNode(code));
+    document.body.appendChild(s);
+  } catch (e) {
+    s.text = code;
+    document.body.appendChild(s);
+  }
+
+//   code = `
+//   window.app = {}
+//       class BasicGridComponent {
+//         readyGrid = (event) => {
+//           app.gridCmp = event.detail.cmp
+//           app.store = Ext.create('Ext.data.Store', {
+//             data: new SampleData(100).data
+//           })
+//           app.gridCmp.setStore(app.store)
+//         }
+//       }
+//       window.app = new BasicGridComponent
+// `
+//   try {
+//     s.appendChild(document.createTextNode(code));
+//     document.body.appendChild(s);
+//   } catch (e) {
+//     s.text = code;
+//     document.body.appendChild(s);
+//   }
+
+
+
+
+
+  
+      // //app.readyGrid = function(event) {
+      // app.readyGrid = (event) => {
+      //   app.gridCmp = event.detail.cmp
+      //   app.store = Ext.create('Ext.data.Store', {
+      //     data: new SampleData(100).data
+      //   })
+      //   app.gridCmp.setStore(app.store)
+      // }
+
+      // app.onSearch = function(event) {
+      //   const query = event.detail.newValue.toLowerCase();
+      //   app.store.clearFilter();
+      //   if (query.length) app.store.filterBy(record => {
+      //     const { name, email, phone } = record.data;
+      //     return name.toLowerCase().indexOf(query) !== -1 ||
+      //       email.toLowerCase().indexOf(query) !== -1 ||
+      //       phone.toLowerCase().indexOf(query) !== -1;
+      //   });
+      // }
 
   </script>
 </head>

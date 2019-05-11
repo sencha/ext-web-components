@@ -4,7 +4,7 @@ const random = () => {
     seed *= 7.3;
     seed -= Math.floor(seed);
     return seed;
-}
+};
 
 export default function generateData(count) {
     let record = {
@@ -33,4 +33,4 @@ export default function generateData(count) {
     }
 
     return data;
-} 
+}

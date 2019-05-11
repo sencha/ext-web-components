@@ -9,13 +9,13 @@ Ext.define('Components.Kitchensink.Orgchart', {
         imageField: 'url',
         imagePath: ''
     },
-    height: "100%",
+    height: '100%',
 
     /**
      * First, we create a `clipPath` element that will act as a clip mask
      * for employee images, where the clip shape is a circle.
      */
-    setupScene: function () {
+    setupScene: function() {
         this.superclass.setupScene.apply(this, arguments);
 
         this.getDefs().append('clipPath')
@@ -34,14 +34,14 @@ Ext.define('Components.Kitchensink.Orgchart', {
      * the `clip-path` attribute to the `id` of the clip path we defined
      * in the `setupScene` method.
      */
-    addNodes: function (selection) {
+    addNodes: function(selection) {
         var imagePath = this.getImagePath(),
             imageField = this.getImageField();
 
         selection
             .attr('opacity', 0)
             .append('image')
-            .attr('xlink:href', function (node) {
+            .attr('xlink:href', function(node) {
                 return imagePath + node.data.get(imageField);
             })
             .attr('x', '-45px')
@@ -56,7 +56,7 @@ Ext.define('Components.Kitchensink.Orgchart', {
      * nodes in the tree by calling the `nodeTransform` function on the selection
      * of said nodes.
      */
-    updateNodes: function (update, enter) {
+    updateNodes: function(update, enter) {
         var me = this,
             nodeTransform = me.getNodeTransform(),
             selection = update.merge(enter);

@@ -1,5 +1,3 @@
 import './FieldSetComponent.html';
 
-export default class FieldSetComponent {
-  constructor () {}
-}
+export default class FieldSetComponent {}

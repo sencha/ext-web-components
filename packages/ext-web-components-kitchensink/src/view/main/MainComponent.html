@@ -1,9 +1,4 @@
 <ext-panel layout="fit" bodyPadding="0">
-
-  <!-- code button starts-->
-
-  <!-- code button ends-->
-
   <!-- Titlebar starts-->
   <ext-titlebar docked="top" weight="10">
     <ext-button iconCls="x-fa fa-bars" onTap="main.toggleTree"></ext-button>
@@ -17,20 +12,19 @@
   <ext-toolbar docked="top" weight="10">
     <ext-dataview inline=true itemCls="div.app-toolbar" id="hide-overflow"
       onchildtap="main.dataviewBreadcrumbClick"
-      onready="main.readyDataviewBreadcrumb">
+      onready="main.readyDataviewBreadcrumb"
+    >
     </ext-dataview>
     <ext-button weight="5" hidden=true onready="main.readyCodeButton"
       ui="fab"
       iconCls="x-font-icon md-icon-code"
       right="15"
       zIndex="10000"
-      ontap="main.toggleCode">
+      ontap="main.toggleCode"
+    >
     </ext-button>
   </ext-toolbar>
   <!-- Breadcrumb ends-->
-
-  <!-- onchange="this.filterNav" -->
-
   <!-- Navtree starts-->
   <ext-panel
     docked="left"
@@ -42,28 +36,27 @@
     collapsible='{"direction": "left"}'
     collapsed="false"
     width="375px"
-    onready="main.readyNavTreePanel">
+    onready="main.readyNavTreePanel"
+  >
     <ext-searchfield
       flex="1"
       docked="top"
       ui="faded"
       margin="7px"
-      onchange="main.filterNav">
+      onchange="main.filterNav"
+    >
     </ext-searchfield>
     <ext-treelist
       ui="nav"
       expanderFirst="false"
       expanderOnly="true"
-      selectOnExpander="false"
+      selectOnExpander="true"
       onready="main.readyNavTreelist"
-      onselectionchange="main.navTreelistSelectionChange">
+      onselectionchange="main.navTreelistSelectionChange"
+    >
     </ext-treelist>
   </ext-panel>
   <!-- Navtree ends-->
-
-  <!-- style="{'background':'top','display':'block','text-align':'center'}" -->
-
-
   <!-- selections starts-->
   <ext-panel scrollable="y" hidden="false" onready="main.readySelection">
     <ext-dataview
@@ -71,20 +64,20 @@
       centered="true"
       itemCls="div.app-thumbnail"
       onchildtap="main.dataviewNavClick"
-      onready="main.readyDataviewNav">
+      onready="main.readyDataviewNav"
+    >
     </ext-dataview>
   </ext-panel>
   <!-- selections ends-->
-
   <!-- Router starts-->
   <ext-router
     hidden=true
     onready="main.readyRouter"
     style="overflow:scroll;"
-    padding="10px">
+    padding="10px"
+  >
   </ext-router>
   <!-- Router ends-->
-
   <!-- code window starts-->
   <ext-panel
     docked="right"
@@ -101,7 +94,8 @@
     collapsible='{"direction": "right"}'
     onready="main.readyCodePanel"
     hidden=true
-    collapsed=false>
+    collapsed=false
+  >
     <ext-tabpanel
       shadow="true"
       height="100%"
@@ -112,9 +106,9 @@
     }'
       tabBarPosition="top"
       tabBar='{"layout": {"pack": "start"}}'
-      onready="main.readyTabPanel">
+      onready="main.readyTabPanel"
+    >
     </ext-tabpanel>
   </ext-panel>
   <!-- code window ends-->
-
 </ext-panel>

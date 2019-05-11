@@ -1,5 +1,3 @@
 import './ResizableLayoutComponent.html';
 
-export default class ResizableLayoutComponent {
-  constructor () {}
-}
+export default class ResizableLayoutComponent {}

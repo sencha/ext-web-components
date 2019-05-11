@@ -1,5 +1,5 @@
-import "./RelMenuComponent.html";
+import './RelMenuComponent.html';
 
 export default class RelMenuComponent {
-  constructor() {}
+    constructor() {}
 }

@@ -1,14 +1,14 @@
-import "./BasicEventComponent.html";
+import './BasicEventComponent.html';
 
 export default class BasicEventComponent {
-  constructor() {}
+    constructor() {}
 
   panelReady = () => {
-    this.panel = event.detail.cmp
+      this.panel = event.detail.cmp;
   }
 
   onButtonTap = (event) => {
-    this.panel.setHtml('Tapped');
-    event.currentTarget.text = 'Tapped';
+      this.panel.setHtml('Tapped');
+      event.currentTarget.text = 'Tapped';
   }
 }
