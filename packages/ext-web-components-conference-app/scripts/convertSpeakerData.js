@@ -1,7 +1,5 @@
 const fs = require('fs'),
     path = require('path'),
-    https = require('https'),
-    avatarPath = path.join('..', 'resources', 'avatars'),
     speakerFile = path.join('..', 'resources', 'speakers.json'),
     speakerData = JSON.parse(fs.readFileSync(speakerFile, 'utf-8'));
 
