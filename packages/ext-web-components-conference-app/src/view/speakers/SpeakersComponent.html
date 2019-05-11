@@ -1,4 +1,4 @@
-<ext-container
+speakersSideContainerReady<ext-container
     onready="speakers.containerReady"
     activeItem="1"
     platformConfig='{ "!phone": { "layout": "hbox" }}'
@@ -23,7 +23,7 @@
         hidden="true"
         onready="speakers.panelReady"
     >
-        <ext-container onready="speakers.sideContainer">
+        <ext-container onready="speakers.speakersSideContainerReady">
         </ext-container>
         <ext-list
             onready="speakers.listReady2"

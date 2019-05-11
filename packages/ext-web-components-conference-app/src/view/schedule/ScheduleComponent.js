@@ -57,7 +57,7 @@ export default class ScheduleComponent {
         this.tabpanelCmp = event.detail.cmp;
     }
 
-    sideContainerReady(event) {
+    scheduleSideContainerReady(event) {
         this.sideContainer = event.detail.cmp;
         const tpl = `
             <div>

@@ -78,7 +78,7 @@ export default class SpeakersComponent {
         this.panelCmp = event.detail.cmp;
     }
 
-    sideContainer(event) {
+    speakersSideContainerReady(event) {
         this.sideContainerCmp = event.detail.cmp;
         const tpl = `
             <div class="app-speaker-ct">
@@ -146,7 +146,6 @@ export default class SpeakersComponent {
     speakerTap(location, eopts) {
         this.record = eopts.record.data;
         this.sideContainerCmp.setData(this.record);
-
         this.speakerId = eopts.record.id;
 
         if (this.record && this.record.sessions) {
