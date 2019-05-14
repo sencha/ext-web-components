@@ -5,12 +5,12 @@ export default class SingleEventComponent {
         this.count = 0;
     }
 
-  onButtonTap = () => {
-      this.count++;
-      const allResultDivs = document.getElementsByClassName('result-div-single-event');
+    onButtonTap = () => {
+        this.count++;
+        const allResultDivs = document.getElementsByClassName('result-div-single-event');
 
-      for (const resutDiv of allResultDivs) {
-          resutDiv.innerHTML = this.count;
-      }
-  }
+        for (const resutDiv of allResultDivs) {
+            resutDiv.innerHTML = this.count;
+        }
+    }
 }
