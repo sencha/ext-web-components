@@ -1,0 +1,72 @@
+Ext.define('KitchenSink.view.charts.column3d.StackedController', {
+    extend: 'KitchenSink.view.chart.ChartController',
+    alias: 'controller.column-stacked-3d',
+
+    onStackedToggle: function (segmentedButton, button, pressed) {
+        var chart = this.lookup('chart'),
+            series = chart.getSeries()[0],
+            value = segmentedButton.getValue();
+        series.setStacked(value === 0);
+        chart.redraw();
+    },
+
+    onSaturationChange: function (slider, value) {
+        this.setBarStyle({
+            saturationFactor: value
+        });
+    },
+
+    onBrightnessChange: function (slider, value) {
+        this.setBarStyle({
+            brightnessFactor: value
+        });
+    },
+
+    onColorSpreadChange: function (slider, value) {
+        this.setBarStyle({
+            colorSpread: value
+        });
+    },
+
+    setBarStyle: function (style) {
+        var chart = this.lookup('chart'),
+            series = chart.getSeries()[0];
+
+        series.setStyle(style);
+        chart.redraw();
+    },
+
+    onSliderDragStart: function () {
+        var chart = this.lookup('chart');
+        chart.suspendAnimation();
+    },
+
+    onSliderDragEnd: function () {
+        var chart = this.lookup('chart');
+        chart.resumeAnimation();
+    },
+
+    onTooltipRender: function (tooltip, record, item) {
+        var formatString = '0,000 (millions of USD)',
+            fieldIndex = Ext.Array.indexOf(item.series.getYField(), item.field),
+            sector = item.series.getTitle()[fieldIndex],
+            value = Ext.util.Format.number(record.get(item.field), formatString);
+
+        tooltip.setHtml(sector + ': ' + value);
+    },
+
+    onAxisLabelRender: function (axis, label, layoutContext) {
+        return Ext.util.Format.number(layoutContext.renderer(label) / 1000, '0,000');
+    },
+
+    onAxisRangeChange: function (axis, range) {
+        if (!range) {
+            return;
+        }
+        // expand the range slightly to make sure markers aren't clipped
+        if (range[1] > 15000000) {
+            range[1] = 18000000;
+        }
+    }
+
+});

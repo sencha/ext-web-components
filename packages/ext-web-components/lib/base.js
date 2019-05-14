@@ -158,6 +158,9 @@ export default class ExtBase extends HTMLElement {
         parentCmp = this.parentNode['ext'];
         childCmp = this.ext;
         var location = null
+
+        console.log(parentCmp.xtype)
+
         // console.log('this.parentNode.rawChildren')
         // console.dir(this.parentNode)
         // console.dir(this.parentNode.rawChildren)
@@ -263,16 +266,19 @@ export default class ExtBase extends HTMLElement {
 
     if (parentxtype === 'grid' || parentxtype === 'lockedgrid') {
       if (childxtype === 'column' || childxtype === 'treecolumn' || childxtype === 'textcolumn' || childxtype === 'checkcolumn' || childxtype === 'datecolumn' || childxtype === 'rownumberer' || childxtype === 'numbercolumn' || childxtype === 'booleancolumn' ) {
-
         if(location == null) {
           parentCmp.addColumn(childCmp)
 //          console.log(`${parentCmp.xtype}.add(${childCmp.xtype})`)
           return
         }
         else {
-          parentCmp.insertColumn(location, childCmp)
-          //mjgComment console.log(`${parentCmp.xtype}.insert(${location}, ${childCmp.xtype})`)
-          return
+            var regCols = 0;
+            if(parentCmp.registeredColumns != undefined) {
+                regCols = parentCmp.registeredColumns.length;
+            }
+            parentCmp.insertColumn(location + regCols, childCmp)
+            //mjgComment console.log(`${parentCmp.xtype}.insert(${location}, ${childCmp.xtype})`)
+            return
         }
       }
       else if ((childxtype === 'toolbar' || childxtype === 'titlebar') && parentCmp.getHideHeaders != undefined) {

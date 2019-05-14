@@ -14,6 +14,7 @@ import '@sencha/ext-web-components/lib/ext-titlebar.component';
 import '@sencha/ext-web-components/lib/ext-toolbar.component';
 import '@sencha/ext-web-components/lib/ext-grid.component';
 import '@sencha/ext-web-components/lib/ext-column.component';
+import '@sencha/ext-web-components/lib/ext-widget.component';
 
 //import CarouselComponent from './view/carousel/CarouselComponent.js';
 import ButtonComponent from './view/button/ButtonComponent.js';

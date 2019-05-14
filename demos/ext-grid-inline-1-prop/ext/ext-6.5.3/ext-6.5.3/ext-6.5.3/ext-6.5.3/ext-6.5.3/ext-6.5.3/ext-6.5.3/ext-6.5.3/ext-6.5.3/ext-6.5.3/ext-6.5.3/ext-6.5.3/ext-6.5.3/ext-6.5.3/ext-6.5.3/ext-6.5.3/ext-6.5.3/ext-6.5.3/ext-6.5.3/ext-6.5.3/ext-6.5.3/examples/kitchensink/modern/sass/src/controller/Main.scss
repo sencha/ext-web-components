@@ -1,0 +1,61 @@
+// These variables may or may not have already been defined by the theme.
+$app-background-color: dynamic(if($theme-name == 'theme-material', $background-color, #fff));
+$app-primary-text-color: dynamic($color);
+$app-secondary-text-color: dynamic(if($theme-name == 'theme-neptune', gray, $color));
+
+.menu {
+    @if($theme-name == 'theme-material') {
+        @include icon('menu');
+    } @else if($theme-name == 'theme-ios') {
+        @include icon($ios-menu);
+    } @else {
+        @include icon($fa-var-bars);
+    }
+}
+
+.palette {
+    @if($theme-name == 'theme-material') {
+        @include icon('palette');
+    }
+}
+
+.card {
+    .#{$prefix}innerhtml {
+        text-align: center;
+        font-size: 18px;
+        line-height: 24px;
+        padding: 10px;
+        width: 75%;
+
+        .#{$prefix}phone & {
+            width: auto;
+            padding: 20px;
+        }
+    }
+
+    .action {
+        display: inline-block;
+        background-color: rgba(#000, .06);
+        border: 1px solid rgba(#fff, .1);
+        padding: 1px 5px;
+        @include border-radius(4px);
+        color: #657b83;
+    }
+
+    code {
+        color: #859900;
+    }
+}
+
+@include toolbar-ui(
+    $ui: 'transparent',
+    $background-color: transparent,
+    $box-shadow: none,
+    $padding: 8px
+);
+
+//make shadow on the blue buttons smaller
+.x-phone .x-button.x-shadow {
+    -webkit-box-shadow: 1px 1px $shadow-blur-radius $shadow-width $shadow-color;
+    box-shadow: 1px 1px $shadow-blur-radius $shadow-width $shadow-color;
+}

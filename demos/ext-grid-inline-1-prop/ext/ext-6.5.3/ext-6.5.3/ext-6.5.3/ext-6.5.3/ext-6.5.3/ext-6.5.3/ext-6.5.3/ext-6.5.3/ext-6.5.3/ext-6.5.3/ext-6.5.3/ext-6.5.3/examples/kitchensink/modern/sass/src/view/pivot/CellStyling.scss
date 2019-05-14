@@ -1,0 +1,23 @@
+.pivotCellGroupFooter {
+    .x-body-el {
+        font-weight: bold;
+    }
+}
+
+.pivotCellGroupHeader {
+    .x-body-el {
+        color: blue;
+    }
+}
+
+.pivotCellAbove500 {
+    .x-body-el {
+        color: green;
+    }
+}
+
+.pivotCellUnder500 {
+    .x-body-el {
+        color: red;
+    }
+}

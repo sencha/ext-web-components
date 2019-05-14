@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
+    <script src="ewc.js"></script>
+</head>
+
+<script src="SampleData.js"></script>
+<script type="module">
+window.app = {};
+
+app.readyGrid = function(event) {
+    app.gridCmp = event.detail.cmp;
+    app.store = Ext.create('Ext.data.Store', {
+        data: new SampleData(100).data
+    });
+    app.gridCmp.setStore(app.store);
+}
+
+app.onSearch = function(event) {
+    const query = event.detail.newValue.toLowerCase();
+    app.store.clearFilter();
+    if (query.length) app.store.filterBy(record => {
+    const { name, email, phone } = record.data;
+    return name.toLowerCase().indexOf(query) !== -1 ||
+        email.toLowerCase().indexOf(query) !== -1 ||
+        phone.toLowerCase().indexOf(query) !== -1;
+    });
+}
+</script>
+<body>
+  <ext-panel title="Sencha ExtWebComponents 7.0 in JavaScript" padding="10" layout="vbox" [fitToParent]="true">
+    <div style="text-align:center;margin-top:20px;margin-bottom:25px;font-size:24px;">
+        <div>"Vanilla.JS"</div>
+    </div>
+    <ext-grid title="Employees" flex="1" shadow="true" onready="app.readyGrid">
+        <ext-toolbar docked="top">
+          <ext-searchfield ui="faded" placeholder="Search..." onchange="app.onSearch"></ext-searchfield>
+        </ext-toolbar>
+        <ext-column text="ID" dataIndex="id" width="50px" resizable="true"></ext-column>
+        <ext-column text="Name" dataIndex="name" flex="2" resizable="true"></ext-column>
+        <ext-column text="Email" dataIndex="email" flex="3" resizable="true"></ext-column>
+        <ext-column text="Phone" dataIndex="phone" flex="2" resizable="true"></ext-column>
+    </ext-grid>
+  </ext-panel>
+</body>
+</html>

@@ -1,0 +1,28 @@
+#sourceoverlay {
+    z-index: 2;
+
+    pre {
+        font-size: 13px;
+    }
+}
+
+pre.prettyprint {
+    border: none !important;
+}
+
+.tier {
+    background-color: #ffefbb;
+    color: #404040;
+    border-radius: 8px;
+    padding: 0 6px;
+    font-size: 60%;
+}
+
+.x-rotate-vertical {
+    .tier {
+        -ms-writing-mode: tb-lr;
+        -webkit-writing-mode: vertical-lr;
+        writing-mode: vertical-lr;
+        padding: 6px 0;
+    }
+}
