@@ -138,7 +138,7 @@ export default class SpeakersComponent {
 
     onSpeakerScheduleClick(location, eopts) {
         localStorage.setItem('record', JSON.stringify(eopts.record.data));
-        const scheduleNode = main.navTreelistCmp.getStore().findNode('hash', 'schedule');
+        const scheduleNode = window.main.navTreelistCmp.getStore().findNode('hash', 'schedule');
         window.main.navigate(scheduleNode);
         window.main.navTreelistCmp.setSelection(scheduleNode);
     }
@@ -160,16 +160,16 @@ export default class SpeakersComponent {
         if (Ext.os.is.Phone) {
             this.listCmp.setHidden(true);
             this.panelCmp.setHidden(false);
-            main.scheduleTitle(this.record.name, 'Speakers');
-            main.backButton();
+            window.main.scheduleTitle(this.record.name, 'Speakers');
+            window.main.backButton();
         }
     }
 
     resetSpeakers() {
         this.listCmp.setHidden(false);
         this.panelCmp.setHidden(true);
-        main.scheduleTitle('Speakers', 'Speakers');
-        main.navButton.setIconCls('x-fa fa-bars');
+        window.main.scheduleTitle('Speakers', 'Speakers');
+        window.main.navButton.setIconCls('x-fa fa-bars');
     }
 
 

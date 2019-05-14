@@ -1,7 +1,7 @@
 import './CalendarComponent.html';
 
 export default class CalendarComponent {
-    constructor(props) {
+    constructor() {
         this.showEvent = false;
         const favs = localStorage.getItem('favoriteEvents');
         this.favorites = favs ? JSON.parse(favs) : [];
@@ -46,8 +46,8 @@ export default class CalendarComponent {
             </div>`
         );
         if (Ext.os.is.Phone) {
-            main.scheduleTitle(event.detail.context.event.data.title, 'Calendar');
-            main.backButton();
+            window.main.scheduleTitle(event.detail.context.event.data.title, 'Calendar');
+            window.main.backButton();
         }
     }
 
@@ -57,7 +57,7 @@ export default class CalendarComponent {
 
     resetCalendar() {
         this.sidePanel.setHidden(true);
-        main.scheduleTitle('Calendar', 'Calendar');
-        main.navButton.setIconCls('x-fa fa-bars');
+        window.main.scheduleTitle('Calendar', 'Calendar');
+        window.main.navButton.setIconCls('x-fa fa-bars');
     }
 }

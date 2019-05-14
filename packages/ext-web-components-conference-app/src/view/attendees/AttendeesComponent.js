@@ -51,7 +51,7 @@ export default class AttendeesComponent {
             }
         };
 
-        const worldMap = new ConferenceApp.WorldMap();
+        const worldMap = new ConferenceApp.WorldMap(); // eslint-disable-line no-undef
         worldMap.setStore(store);
         worldMap.setColorAxis(colorAxis);
         worldMap.setMapAxis(mapAxis);

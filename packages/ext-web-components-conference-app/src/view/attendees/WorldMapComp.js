@@ -34,7 +34,7 @@ const WorldMap = Ext.define('ConferenceApp.WorldMap', {
         mapAxis: {},
         store: null,
         tooltip: {
-            renderer: function(component, tooltip, datum, element, event) {
+            renderer: function(component, tooltip, datum) {
                 tooltip.setHtml(component.getTooltip(datum));
             }
         },
@@ -185,7 +185,6 @@ const WorldMap = Ext.define('ConferenceApp.WorldMap', {
             graticule = d3.geoGraticule(),
             countriesData = topoData,
             data = topojson.feature(countriesData, countriesData.objects.countries).features,
-            countries,
             legend,
             legendBox;
 

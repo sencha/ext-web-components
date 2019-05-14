@@ -103,8 +103,6 @@ export default class MainComponent {
 
         if (childNum === 0 && hash != undefined) {
             window.location.hash = '#' + hash;
-        } else {
-            this.dataviewNavCmp.setData(node.childNodes);
         }
 
         if (Ext.os.is.Phone) {
@@ -137,34 +135,34 @@ export default class MainComponent {
             this.navTreePanelCmp.setCollapsed(collapsed);
         } else {
             if (title ==='Schedule') {
-                schedule.resetSchedule();
+                window.schedule.resetSchedule();
                 this.back = false;
             } else if (title === 'Speakers') {
-                speakers.resetSpeakers();
+                window.speakers.resetSpeakers();
                 this.back = false;
             } else if (title === 'Calendar') {
-                calendar.resetCalendar();
+                window.calendar.resetCalendar();
                 this.back = false;
             } else {
                 const tempTitle = window.titleOriginator;
 
                 if (tempTitle ==='Schedule') {
-                    const scheduleNode = main.navTreelistCmp.getStore().findNode('hash', 'schedule');
+                    const scheduleNode = this.navTreelistCmp.getStore().findNode('hash', 'schedule');
                     window.main.navigate(scheduleNode);
                     window.main.navTreelistCmp.setSelection(scheduleNode);
-                    schedule.resetSchedule();
+                    window.schedule.resetSchedule();
                     this.back = false;
                 } else if (tempTitle === 'Speakers') {
-                    const speakersNode = main.navTreelistCmp.getStore().findNode('hash', 'speakers');
+                    const speakersNode = this.navTreelistCmp.getStore().findNode('hash', 'speakers');
                     window.main.navigate(speakersNode);
                     window.main.navTreelistCmp.setSelection(speakersNode);
-                    speakers.resetSpeakers();
+                    window.speakers.resetSpeakers();
                     this.back = false;
                 } else if (tempTitle === 'Calendar') {
-                    const calendarNode = main.navTreelistCmp.getStore().findNode('hash', 'calendar');
+                    const calendarNode = this.main.navTreelistCmp.getStore().findNode('hash', 'calendar');
                     window.main.navigate(calendarNode);
                     window.main.navTreelistCmp.setSelection(calendarNode);
-                    calendar.resetCalendar();
+                    window.calendar.resetCalendar();
                     this.back = false;
                 }
             }
@@ -191,24 +189,24 @@ export default class MainComponent {
                 switch(newValue.data.date.match(/(Monday|Tuesday|Wednesday)/)[1])
                 {
                 case 'Monday' :
-                    schedule.tabpanelCmp.setActiveItem(0);
+                    window.schedule.tabpanelCmp.setActiveItem(0);
                     break;
                 case 'Tuesday' :
-                    schedule.tabpanelCmp.setActiveItem(1);
+                    window.schedule.tabpanelCmp.setActiveItem(1);
                     break;
                 case 'Wednesday' :
-                    schedule.tabpanelCmp.setActiveItem(2);
+                    window.schedule.tabpanelCmp.setActiveItem(2);
                     break;
                 default :
-                    schedule.tabpanelCmp.setActiveItem(0);
+                    window.schedule.tabpanelCmp.setActiveItem(0);
                 }
 
                 const scheduleNode = this.navTreelistCmp.getStore().findNode('hash', 'schedule');
                 this.navigate(scheduleNode);
                 this.navTreelistCmp.setSelection(scheduleNode);
 
-                schedule.sidePanel.setHidden(false);
-                schedule.sideContainer.setData(JSON.parse(localStorage.getItem('record')));
+                window.schedule.sidePanel.setHidden(false);
+                window.schedule.sideContainer.setData(JSON.parse(localStorage.getItem('record')));
             } else {
                 const scheduleNode = this.navTreelistCmp.getStore().findNode('hash', 'schedule');
                 this.navigate(scheduleNode);
@@ -331,16 +329,16 @@ export default class MainComponent {
 
   onItemTap(event) {
       this.scheduleTitle('Schedule', 'Schedule');
-      schedule.banner.setHidden(true);
+      window.schedule.banner.setHidden(true);
       this.backButton();
-      schedule.tabpanelCmp.setHidden(true);
-      schedule.sidePanel.setHeader(false);
+      window.schedule.tabpanelCmp.setHidden(true);
+      window.schedule.sidePanel.setHeader(false);
       this.sheetCmp.setDisplayed(false);
       this.sheetCmp.setHidden(true);
-      schedule.sidePanel.setHidden(false);
+      window.schedule.sidePanel.setHidden(false);
 
       localStorage.setItem('record', JSON.stringify(event.detail.record.data));
-      const scheduleNode = main.navTreelistCmp.getStore().findNode('hash', 'schedule');
+      const scheduleNode = this.navTreelistCmp.getStore().findNode('hash', 'schedule');
       window.main.navigate(scheduleNode);
       window.main.navTreelistCmp.setSelection(scheduleNode);
 
