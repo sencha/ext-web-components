@@ -1,2 +1,0 @@
-# kitchensink-google - Read Me
-
