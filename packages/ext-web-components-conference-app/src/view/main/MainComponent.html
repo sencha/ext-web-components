@@ -3,32 +3,26 @@
     onready="main.sheetReady"
     layout="vbox"
     padding="0"
+    width="100%"
+    height="100%"
   >
     <ext-toolbar>
-      <ext-combobox
-        ui="alt"
+      <ext-searchfield
+        flex="1"
         placeholder="Search"
-        queryMode="local"
-        clearable="true"
-        hideTrigger="true"
-        valueField="id"
-        matchFieldWidth="false"
-        floatedPicker='{ "width": "500" }'
-        onready="main.comboboxReady1"
-        triggers='{ "search": { "type": "search", "side": "left" }}'
+        onChange="main.mobileSearchChange"
       >
-      </ext-combobox>
+      </ext-searchfield>
       <ext-button
         text="CLOSE"
-        onTap="main.closebuttonHandler"
+        onTap="main.closeButtonHandler"
         margin="0 0 0 10"
       >
       </ext-button>
     </ext-toolbar>
-    
     <ext-list
       height="100%"
-      onready="main.listReady"
+      onready="main.mobileListReady"
       hideMode="offsets"
       rowLines="true"
       itemCls="app-list-item"
@@ -41,6 +35,7 @@
     >
     </ext-list>
   </ext-sheet>
+
   <ext-titlebar
     onready="main.titleReady"
     platformConfig='{

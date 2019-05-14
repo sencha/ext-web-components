@@ -219,31 +219,28 @@ export default class MainComponent {
         let { query } = queryPlan;
         query = (query || '').toLowerCase();
 
-        this.query = query;
         this.store.clearFilter();
         this.store.filterBy(record => {
             const { title, speakers } = record.data;
 
             return query.trim().split(/\s+/).some(token => {
                 return title.toLowerCase().indexOf(token) >= 0 ||
-          (speakers && speakers.some(speaker => speaker.name.toLowerCase().indexOf(token) >= 0));
+                  (speakers && speakers.some(speaker => speaker.name.toLowerCase().indexOf(token) >= 0));
             });
         });
 
-        this.searchComboBox.setStore(this.store);
-        this.searchComboBox.expand();
-        return false;
+        this.mobileListCmp.setStore(this.store);
     }
 
     comboboxReady(event) {
         const tpl = `
-      <div>
-        <div class="app-event-name">{title}</div>
-        <div class="app-event-speaker">{[values.speakerName ? 'by ' + values.speakerName : '']}</div>
-        <div class="app-event-time">{[values && values.date && values.date.match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time} - {end_time}</div>
-        <div class="app-event-location">{location.name}</div>
-      </div>
-    `;
+            <div>
+              <div class="app-event-name">{title}</div>
+              <div class="app-event-speaker">{[values.speakerName ? 'by ' + values.speakerName : '']}</div>
+              <div class="app-event-time">{[values && values.date && values.date.match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time} - {end_time}</div>
+              <div class="app-event-location">{location.name}</div>
+            </div>
+        `;
         this.searchComboBox = event.detail.cmp;
         this.searchComboBox.setStore(this.store);
         this.searchComboBox.setItemTpl(tpl);
@@ -257,91 +254,86 @@ export default class MainComponent {
         }
     }
 
-    comboboxReady1(event) {
-        const tpl = `
-            <div>
-              <div class="app-event-name">{title}</div>
-              <div class="app-event-speaker">{[values.speakerName ? 'by ' + values.speakerName : '']}</div>
-              <div class="app-event-time">{[values && values.date && values.date.match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time} - {end_time}</div>
-              <div class="app-event-location">{location.name}</div>
-            </div>
-        `;
-        this.searchComboBox1 = event.detail.cmp;
-        this.searchComboBox1.setStore(this.store);
-        this.searchComboBox1.setItemTpl(tpl);
-        this.searchComboBox1.setStyle({ 'border-bottom': '1px solid #767676' });
-        this.searchComboBox1.setCls('styled-placeholder');
+    mobileSearchChange({ detail }) {
+        const value = detail.newValue;
+        let query = (value || '').toLowerCase();
+
+        this.store.clearFilter();
+        this.store.filterBy(record => {
+            const { title, speakers } = record.data;
+
+            return query.trim().split(/\s+/).some(token => {
+                return title.toLowerCase().indexOf(token) >= 0 ||
+                  (speakers && speakers.some(speaker => speaker.name.toLowerCase().indexOf(token) >= 0));
+            });
+        });
+
+        this.searchComboBox.setStore(this.store);
     }
 
-  onShow = () => setTimeout(() => {
-      this.searchComboBox1.focus();
-      this.searchComboBox1.select();
-  }, 250);
+    onSearchIconClick() {
+        this.sheetCmp.setDisplayed(true);
+        this.sheetCmp.setHidden(false);
+    }
 
-  onSearchIconClick() {
-      this.sheetCmp.setDisplayed(true);
-  }
+    searchReady(event) {
+        this.searchIcon = event.detail.cmp;
+        this.searchIcon.on('tap', this.onSearchIconClick.bind(this));
 
-  searchReady(event) {
-      this.searchIcon = event.detail.cmp;
-      this.searchIcon.on('tap', this.onSearchIconClick.bind(this));
+        if (Ext.os.is.Phone) {
+            this.searchIcon.setHidden(false);
+        } else {
+            this.searchIcon.setHidden(true);
+        }
+    }
 
-      if (Ext.os.is.Phone) {
-          this.searchIcon.setHidden(false);
-      } else {
-          this.searchIcon.setHidden(true);
-      }
-  }
+    sheetReady(event) {
+        this.sheetCmp = event.detail.cmp;
+    }
 
-  sheetReady(event) {
-      this.sheetCmp = event.detail.cmp;
-      this.sheetCmp.setHeight('100%');
-      this.sheetCmp.setWidth('100%');
-  }
+    closeButtonHandler() {
+        this.sheetCmp.setDisplayed(false);
+    }
 
-  closebuttonHandler() {
-      this.sheetCmp.setDisplayed(false);
-  }
+    mobileListReady(event) {
+        this.mobileListCmp = event.detail.cmp;
+        this.mobileListCmp.setStore(this.store);
 
-  listReady(event) {
-      this.listCmp = event.detail.cmp;
-      this.listCmp.setStore(this.store);
+        const itemTpl = `
+            <div class="app-list-content">
+                <div class="app-list-text">
+                    <div class="app-list-item-title">{title}</div>
+                    <div class="app-list-item-details">{[values.speakerNames ? '<span>by ' + values.speakerNames + '</span>' : '']}</div>
+                    <div class="app-list-item-details">{categoryName} - {location.name}</div>
+                    <div class="app-list-item-details">{[(values.date).match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time}</div>
+                </div>
+                <div
+                    onclick="schedule.onFavoriteClick(this)"
+                    data-favorite={[ values.favorite ? "on" : "off" ]}
+                    data-id="{id}"
+                    class="x-item-no-tap x-font-icon md-icon-star app-list-tool app-favorite"
+                >
+                </div>
+            </div>
+        `;
+        this.mobileListCmp.setItemTpl(itemTpl);
+    }
 
-      const itemTpl = `
-          <div class="app-list-content">
-              <div class="app-list-text">
-                  <div class="app-list-item-title">{title}</div>
-                  <div class="app-list-item-details">{[values.speakerNames ? '<span>by ' + values.speakerNames + '</span>' : '']}</div>
-                  <div class="app-list-item-details">{categoryName} - {location.name}</div>
-                  <div class="app-list-item-details">{[(values.date).match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time}</div>
-              </div>
-              <div
-                  onclick="schedule.onFavoriteClick(this)"
-                  data-favorite={[ values.favorite ? "on" : "off" ]}
-                  data-id="{id}"
-                  class="x-item-no-tap x-font-icon md-icon-star app-list-tool app-favorite"
-              >
-              </div>
-          </div>
-      `;
-      this.listCmp.setItemTpl(itemTpl);
-  }
+    onItemTap(event) {
+        this.scheduleTitle('Schedule', 'Schedule');
+        window.schedule.banner.setHidden(true);
+        this.backButton();
+        window.schedule.tabpanelCmp.setHidden(true);
+        window.schedule.sidePanel.setHeader(false);
+        this.sheetCmp.setDisplayed(false);
+        this.sheetCmp.setHidden(true);
+        window.schedule.sidePanel.setHidden(false);
 
-  onItemTap(event) {
-      this.scheduleTitle('Schedule', 'Schedule');
-      window.schedule.banner.setHidden(true);
-      this.backButton();
-      window.schedule.tabpanelCmp.setHidden(true);
-      window.schedule.sidePanel.setHeader(false);
-      this.sheetCmp.setDisplayed(false);
-      this.sheetCmp.setHidden(true);
-      window.schedule.sidePanel.setHidden(false);
+        localStorage.setItem('record', JSON.stringify(event.detail.record.data));
+        const scheduleNode = this.navTreelistCmp.getStore().findNode('hash', 'schedule');
+        window.main.navigate(scheduleNode);
+        window.main.navTreelistCmp.setSelection(scheduleNode);
 
-      localStorage.setItem('record', JSON.stringify(event.detail.record.data));
-      const scheduleNode = this.navTreelistCmp.getStore().findNode('hash', 'schedule');
-      window.main.navigate(scheduleNode);
-      window.main.navTreelistCmp.setSelection(scheduleNode);
-
-      this.title.setTitle('Schedule');
-  }
+        this.title.setTitle('Schedule');
+    }
 }
