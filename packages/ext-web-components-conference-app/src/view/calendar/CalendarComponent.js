@@ -7,7 +7,7 @@ export default class CalendarComponent {
         this.favorites = favs ? JSON.parse(favs) : [];
     }
 
-    calendarReady(event) {
+    calendarReady = (event) => {
         const store = Ext.create('Ext.calendar.store.Calendars', {
             eventStoreDefaults: {
                 proxy: {
@@ -26,7 +26,7 @@ export default class CalendarComponent {
         this.calendar.setStore(store);
     }
 
-    onTap(event) {
+    onTap = (event) => {
         let data = event.detail.context.event.data;
         const day = data && data.date && data.date.match(/(Monday|Tuesday|Wednesday)/)[1];
         this.sidePanel.setHidden(false);
@@ -51,11 +51,11 @@ export default class CalendarComponent {
         }
     }
 
-    sidePanelReady(event) {
+    sidePanelReady = (event) => {
         this.sidePanel = event.detail.cmp;
     }
 
-    resetCalendar() {
+    resetCalendar = () => {
         this.sidePanel.setHidden(true);
         window.main.scheduleTitle('Calendar', 'Calendar');
         window.main.navButton.setIconCls('x-fa fa-bars');
