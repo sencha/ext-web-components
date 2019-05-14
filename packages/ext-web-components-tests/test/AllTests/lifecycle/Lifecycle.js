@@ -9,11 +9,11 @@ describe('Lifecycle', () => {
 
     describe('componentWillUnmount', () => {
         it('should be called when a component is removed', () => {
-            // ST.component('#my-component-id').visible();
+            ST.component('#my-component-id').visible();
             ST.component('#lifeCycleButton').click();
-            // ST.component('#lifeCycleContainer').and(function(parent) {
-            //     expect(parent.getRenderTarget().dom.childElementCount).toBe(1);
-            // });
+            ST.component('#lifeCycleContainer').and(function(parent) {
+                expect(parent.getRenderTarget().dom.childElementCount).toBe(1);
+            });
         });
     });
 });

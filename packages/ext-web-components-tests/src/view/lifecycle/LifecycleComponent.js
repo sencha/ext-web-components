@@ -1,3 +1,4 @@
+import './MyComponent.js';
 import './LifecycleComponent.html';
 
 export default class LifecycleComponent {
