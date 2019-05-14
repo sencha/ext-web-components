@@ -66,7 +66,7 @@ module.exports = function(env) {
                     { test: /\.(js)$/, exclude: /node_modules/,
                         use: [
                             'babel-loader',
-                            'eslint-loader'
+                            // 'eslint-loader'
                         ]
                     },
                     { test: /\.(html)$/, use: { loader: 'html-loader' } },
