@@ -1,6 +1,7 @@
 import * as d3 from 'd3';
 
 import '@sencha/ext-web-components/lib/ext-button.component';
+import '@sencha/ext-web-components/lib/ext-sheet.component';
 import '@sencha/ext-web-components/lib/ext-dataview.component';
 import '@sencha/ext-web-components/lib/ext-searchfield.component';
 import '@sencha/ext-web-components/lib/ext-treelist.component';
@@ -21,16 +22,16 @@ import { getRoutes } from '@sencha/ext-web-components-router/lib/ext-router.comp
 import MainComponent from './view/main/MainComponent.js';
 
 Ext.require([
-  'Ext.layout.*',
-  'Ext.data.TreeStore'
-])
+    'Ext.layout.*',
+    'Ext.data.TreeStore'
+]);
 
 function init() {
-  window.d3 = d3
-  window.menu = getMenu();
-  window.routes = getRoutes(window.menu);
-  window.main = new MainComponent();
-  document.body.innerHTML = window._code['main']['MainComponent.html'];
+    window.d3 = d3;
+    window.menu = getMenu();
+    window.routes = getRoutes(window.menu);
+    window.main = new MainComponent();
+    document.body.innerHTML = window._code['main']['MainComponent.html'];
 }
 
 init();

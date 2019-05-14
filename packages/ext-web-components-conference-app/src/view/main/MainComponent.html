@@ -1,6 +1,48 @@
 <ext-panel layout="fit" bodyPadding="0">
+  <ext-sheet
+    onready="main.sheetReady"
+    layout="vbox"
+    padding="0"
+    width="100%"
+    height="100%"
+  >
+    <ext-toolbar>
+      <ext-searchfield
+        flex="1"
+        placeholder="Search"
+        onChange="main.mobileSearchChange"
+      >
+      </ext-searchfield>
+      <ext-button
+        text="CLOSE"
+        onTap="main.closeButtonHandler"
+        margin="0 0 0 10"
+      >
+      </ext-button>
+    </ext-toolbar>
+    <ext-list
+      height="100%"
+      onready="main.mobileListReady"
+      hideMode="offsets"
+      rowLines="true"
+      itemCls="app-list-item"
+      cls="app-list"
+      pinHeaders="true"
+      infinite="true"
+      variableHeights="true"
+      emptyText="No events found."
+      onItemTap="main.onItemTap"
+    >
+    </ext-list>
+  </ext-sheet>
+
   <ext-titlebar
     onready="main.titleReady"
+    platformConfig='{
+      "!desktop": {
+        "titleAlign": "center"
+      }
+    }'
     docked="top"
     titleAlign="left"
     shadow="true"
@@ -9,9 +51,8 @@
     title='<div>
       <div class="sencha-logo"></div>
       <a href="#" class="app-title">Sencha Ext Components 7.0 Conference App</a>
-  </div>'
+    </div>'
   >
-   
     <ext-button
       align="left"
       iconCls="x-fa fa-bars"
@@ -20,7 +61,7 @@
     >
     </ext-button>
     <ext-button
-      align="right" 
+      align="right"
       iconCls="md-icon-search"
       onReady="main.searchReady"
     >
@@ -36,16 +77,11 @@
         matchFieldWidth="false"
         floatedPicker='{ "width": "500" }'
         onready="main.comboboxReady"
-        triggers='{
-            "search": {
-                "type": "search",
-                "side": "left"
-            }
-        }'
+        triggers='{ "search": { "type": "search", "side": "left" }}'
     >
     </ext-combobox>
   </ext-titlebar>
-   
+
   <ext-panel
     docked="left"
     border="true"
@@ -55,6 +91,7 @@
     header="false"
     collapsible='{"direction": "left"}'
     width="200px"
+    collapsed="false"
     onready="main.readyNavTreePanel"
   >
     <ext-treelist

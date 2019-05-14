@@ -1,35 +1,35 @@
 export default {
-    "type": "Topology",
-    "transform": {
-        "scale": [0.002906483881124809, 0.0016008570112434413],
-        "translate": [-180, -89.99892578124998]
+    'type': 'Topology',
+    'transform': {
+        'scale': [0.002906483881124809, 0.0016008570112434413],
+        'translate': [-180, -89.99892578124998]
     },
-    "objects": {
-        "countries": {
-            "type": "GeometryCollection",
-            "geometries": [{
-                "type": "Polygon",
-                "arcs": [
+    'objects': {
+        'countries': {
+            'type': 'GeometryCollection',
+            'geometries': [{
+                'type': 'Polygon',
+                'arcs': [
                     [0]
                 ],
-                "id": 0,
-                "properties": {
-                    "name": "Aruba",
-                    "color": "#1f77b4"
+                'id': 0,
+                'properties': {
+                    'name': 'Aruba',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1, 2, 3, 4, 5, 6]
                 ],
-                "id": 1,
-                "properties": {
-                    "name": "Afghanistan",
-                    "color": "#1f77b4"
+                'id': 1,
+                'properties': {
+                    'name': 'Afghanistan',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [7, 8, 9, 10]
                     ],
@@ -37,34 +37,34 @@ export default {
                         [11, 12, 13]
                     ]
                 ],
-                "id": 2,
-                "properties": {
-                    "name": "Angola",
-                    "color": "#1f77b4"
+                'id': 2,
+                'properties': {
+                    'name': 'Angola',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [14]
                 ],
-                "id": 3,
-                "properties": {
-                    "name": "Anguilla",
-                    "color": "#1f77b4"
+                'id': 3,
+                'properties': {
+                    'name': 'Anguilla',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [15, 16, 17, 18, 19]
                 ],
-                "id": 4,
-                "properties": {
-                    "name": "Albania",
-                    "color": "#1f77b4"
+                'id': 4,
+                'properties': {
+                    'name': 'Albania',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [20]
                     ],
@@ -75,24 +75,24 @@ export default {
                         [22]
                     ]
                 ],
-                "id": 5,
-                "properties": {
-                    "name": "Åland Islands",
-                    "color": "#1f77b4"
+                'id': 5,
+                'properties': {
+                    'name': 'Åland Islands',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [23, 24]
                 ],
-                "id": 6,
-                "properties": {
-                    "name": "Andorra",
-                    "color": "#1f77b4"
+                'id': 6,
+                'properties': {
+                    'name': 'Andorra',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [25]
                     ],
@@ -110,14 +110,14 @@ export default {
                         [34]
                     ]
                 ],
-                "id": 7,
-                "properties": {
-                    "name": "United Arab Emirates",
-                    "color": "#1f77b4"
+                'id': 7,
+                'properties': {
+                    'name': 'United Arab Emirates',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [35]
                     ],
@@ -131,14 +131,14 @@ export default {
                         [39, 40, 41, 42, 43, 44]
                     ]
                 ],
-                "id": 8,
-                "properties": {
-                    "name": "Argentina",
-                    "color": "#1f77b4"
+                'id': 8,
+                'properties': {
+                    'name': 'Argentina',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [45]
                     ],
@@ -147,24 +147,24 @@ export default {
                         [51]
                     ]
                 ],
-                "id": 9,
-                "properties": {
-                    "name": "Armenia",
-                    "color": "#1f77b4"
+                'id': 9,
+                'properties': {
+                    'name': 'Armenia',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [52]
                 ],
-                "id": 10,
-                "properties": {
-                    "name": "American Samoa",
-                    "color": "#1f77b4"
+                'id': 10,
+                'properties': {
+                    'name': 'American Samoa',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [53]
                     ],
@@ -484,21 +484,21 @@ export default {
                         [158]
                     ]
                 ],
-                "id": 11,
-                "properties": {
-                    "name": "Antarctica",
-                    "color": "#1f77b4"
+                'id': 11,
+                'properties': {
+                    'name': 'Antarctica',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": null,
-                "id": 12,
-                "properties": {
-                    "name": "Australia",
-                    "color": "#1f77b4"
+                'type': null,
+                'id': 12,
+                'properties': {
+                    'name': 'Australia',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [159]
                     ],
@@ -509,14 +509,14 @@ export default {
                         [161]
                     ]
                 ],
-                "id": 13,
-                "properties": {
-                    "name": "French Southern Territories",
-                    "color": "#1f77b4"
+                'id': 13,
+                'properties': {
+                    'name': 'French Southern Territories',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [162]
                     ],
@@ -524,14 +524,14 @@ export default {
                         [163]
                     ]
                 ],
-                "id": 14,
-                "properties": {
-                    "name": "Antigua and Barbuda",
-                    "color": "#1f77b4"
+                'id': 14,
+                'properties': {
+                    'name': 'Antigua and Barbuda',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [164]
                     ],
@@ -650,24 +650,24 @@ export default {
                         [202]
                     ]
                 ],
-                "id": 15,
-                "properties": {
-                    "name": "Australia",
-                    "color": "#1f77b4"
+                'id': 15,
+                'properties': {
+                    'name': 'Australia',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [203, 204, 205, 206, 207, 208, 209, 210, 211]
                 ],
-                "id": 16,
-                "properties": {
-                    "name": "Austria",
-                    "color": "#1f77b4"
+                'id': 16,
+                'properties': {
+                    'name': 'Austria',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [212, 213, -48]
                     ],
@@ -679,54 +679,54 @@ export default {
                         [219]
                     ]
                 ],
-                "id": 17,
-                "properties": {
-                    "name": "Azerbaijan",
-                    "color": "#aec7e8"
+                'id': 17,
+                'properties': {
+                    'name': 'Azerbaijan',
+                    'color': '#aec7e8'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [220, 221, 222]
                 ],
-                "id": 18,
-                "properties": {
-                    "name": "Burundi",
-                    "color": "#1f77b4"
+                'id': 18,
+                'properties': {
+                    'name': 'Burundi',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [223, 224, 225, 226, 227, 228, 229]
                 ],
-                "id": 19,
-                "properties": {
-                    "name": "Belgium",
-                    "color": "#1f77b4"
+                'id': 19,
+                'properties': {
+                    'name': 'Belgium',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [230, 231, 232, 233, 234]
                 ],
-                "id": 20,
-                "properties": {
-                    "name": "Benin",
-                    "color": "#1f77b4"
+                'id': 20,
+                'properties': {
+                    'name': 'Benin',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-232, 235, 236, 237, 238, 239]
                 ],
-                "id": 21,
-                "properties": {
-                    "name": "Burkina Faso",
-                    "color": "#aec7e8"
+                'id': 21,
+                'properties': {
+                    'name': 'Burkina Faso',
+                    'color': '#aec7e8'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [240]
                     ],
@@ -749,34 +749,34 @@ export default {
                         [246, 247, 248]
                     ]
                 ],
-                "id": 22,
-                "properties": {
-                    "name": "Bangladesh",
-                    "color": "#1f77b4"
+                'id': 22,
+                'properties': {
+                    'name': 'Bangladesh',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [249, 250, 251, 252, 253, 254]
                 ],
-                "id": 23,
-                "properties": {
-                    "name": "Bulgaria",
-                    "color": "#1f77b4"
+                'id': 23,
+                'properties': {
+                    'name': 'Bulgaria',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [255]
                 ],
-                "id": 24,
-                "properties": {
-                    "name": "Bahrain",
-                    "color": "#1f77b4"
+                'id': 24,
+                'properties': {
+                    'name': 'Bahrain',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [256]
                     ],
@@ -823,41 +823,41 @@ export default {
                         [270]
                     ]
                 ],
-                "id": 25,
-                "properties": {
-                    "name": "Bahamas",
-                    "color": "#1f77b4"
+                'id': 25,
+                'properties': {
+                    'name': 'Bahamas',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [271, 272, 273, 274, 275]
                 ],
-                "id": 26,
-                "properties": {
-                    "name": "Bosnia and Herzegovina",
-                    "color": "#1f77b4"
+                'id': 26,
+                'properties': {
+                    'name': 'Bosnia and Herzegovina',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": null,
-                "id": 27,
-                "properties": {
-                    "name": "Saint Barthélemy",
-                    "color": "#1f77b4"
+                'type': null,
+                'id': 27,
+                'properties': {
+                    'name': 'Saint Barthélemy',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [276, 277, 278, 279, 280]
                 ],
-                "id": 28,
-                "properties": {
-                    "name": "Belarus",
-                    "color": "#1f77b4"
+                'id': 28,
+                'properties': {
+                    'name': 'Belarus',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [281]
                     ],
@@ -868,34 +868,34 @@ export default {
                         [283, 284, 285]
                     ]
                 ],
-                "id": 29,
-                "properties": {
-                    "name": "Belize",
-                    "color": "#1f77b4"
+                'id': 29,
+                'properties': {
+                    'name': 'Belize',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [286]
                 ],
-                "id": 30,
-                "properties": {
-                    "name": "Bermuda",
-                    "color": "#1f77b4"
+                'id': 30,
+                'properties': {
+                    'name': 'Bermuda',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-45, 287, 288, 289, 290]
                 ],
-                "id": 31,
-                "properties": {
-                    "name": "Bolivia, Plurinational State of",
-                    "color": "#aec7e8"
+                'id': 31,
+                'properties': {
+                    'name': 'Bolivia, Plurinational State of',
+                    'color': '#aec7e8'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [291]
                     ],
@@ -948,24 +948,24 @@ export default {
                         [307, 308, 309, 310, -41, 311, -290, 312, 313, 314, 315]
                     ]
                 ],
-                "id": 32,
-                "properties": {
-                    "name": "Brazil",
-                    "color": "#ff7f0e"
+                'id': 32,
+                'properties': {
+                    'name': 'Brazil',
+                    'color': '#ff7f0e'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [316]
                 ],
-                "id": 33,
-                "properties": {
-                    "name": "Barbados",
-                    "color": "#1f77b4"
+                'id': 33,
+                'properties': {
+                    'name': 'Barbados',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [317]
                     ],
@@ -973,44 +973,44 @@ export default {
                         [318, 319]
                     ]
                 ],
-                "id": 34,
-                "properties": {
-                    "name": "Brunei Darussalam",
-                    "color": "#1f77b4"
+                'id': 34,
+                'properties': {
+                    'name': 'Brunei Darussalam',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [320, 321]
                 ],
-                "id": 35,
-                "properties": {
-                    "name": "Bhutan",
-                    "color": "#1f77b4"
+                'id': 35,
+                'properties': {
+                    'name': 'Bhutan',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [322, 323, 324]
                 ],
-                "id": 36,
-                "properties": {
-                    "name": "Botswana",
-                    "color": "#1f77b4"
+                'id': 36,
+                'properties': {
+                    'name': 'Botswana',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [325, 326, 327, 328, 329, 330]
                 ],
-                "id": 37,
-                "properties": {
-                    "name": "Central African Republic",
-                    "color": "#1f77b4"
+                'id': 37,
+                'properties': {
+                    'name': 'Central African Republic',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [331]
                     ],
@@ -1414,24 +1414,24 @@ export default {
                         [469]
                     ]
                 ],
-                "id": 38,
-                "properties": {
-                    "name": "Canada",
-                    "color": "#1f77b4"
+                'id': 38,
+                'properties': {
+                    'name': 'Canada',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [470, -207, 471, 472, 473, -209]
                 ],
-                "id": 39,
-                "properties": {
-                    "name": "Switzerland",
-                    "color": "#aec7e8"
+                'id': 39,
+                'properties': {
+                    'name': 'Switzerland',
+                    'color': '#aec7e8'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [474]
                     ],
@@ -1526,14 +1526,14 @@ export default {
                         [-44, 504, 505, -288]
                     ]
                 ],
-                "id": 40,
-                "properties": {
-                    "name": "Chile",
-                    "color": "#ff7f0e"
+                'id': 40,
+                'properties': {
+                    'name': 'Chile',
+                    'color': '#ff7f0e'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [506]
                     ],
@@ -1574,14 +1574,14 @@ export default {
                         [518, 519, 520, 521, 522, 523, 524, 525, 526, 527, -321, 528, 529, 530, 531, 532, 533, 534, -7, 535, 536, 537, 538, 539, 540]
                     ]
                 ],
-                "id": 41,
-                "properties": {
-                    "name": "China",
-                    "color": "#aec7e8"
+                'id': 41,
+                'properties': {
+                    'name': 'China',
+                    'color': '#aec7e8'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [541, 542]
                     ],
@@ -1589,54 +1589,54 @@ export default {
                         [-238, 543, 544, 545, 546, 547]
                     ]
                 ],
-                "id": 42,
-                "properties": {
-                    "name": "Côte d'Ivoire",
-                    "color": "#ff7f0e"
+                'id': 42,
+                'properties': {
+                    'name': 'Côte d\'Ivoire',
+                    'color': '#ff7f0e'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [548, 549, 550, 551, 552, 553, -329]
                 ],
-                "id": 43,
-                "properties": {
-                    "name": "Cameroon",
-                    "color": "#aec7e8"
+                'id': 43,
+                'properties': {
+                    'name': 'Cameroon',
+                    'color': '#aec7e8'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [554, 555, -221, 556, 557, -11, 558, -13, 559, -327, 560]
                 ],
-                "id": 44,
-                "properties": {
-                    "name": "Democratic Republic of Congo",
-                    "color": "#aec7e8"
+                'id': 44,
+                'properties': {
+                    'name': 'Democratic Republic of Congo',
+                    'color': '#aec7e8'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-12, 561, 562, -549, -328, -560]
                 ],
-                "id": 45,
-                "properties": {
-                    "name": "Congo",
-                    "color": "#ff7f0e"
+                'id': 45,
+                'properties': {
+                    'name': 'Congo',
+                    'color': '#ff7f0e'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [563]
                 ],
-                "id": 46,
-                "properties": {
-                    "name": "Cook Islands",
-                    "color": "#1f77b4"
+                'id': 46,
+                'properties': {
+                    'name': 'Cook Islands',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [564]
                     ],
@@ -1644,14 +1644,14 @@ export default {
                         [565, -314, 566, 567, 568, 569, 570]
                     ]
                 ],
-                "id": 47,
-                "properties": {
-                    "name": "Colombia",
-                    "color": "#ffbb78"
+                'id': 47,
+                'properties': {
+                    'name': 'Colombia',
+                    'color': '#ffbb78'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [571]
                     ],
@@ -1662,14 +1662,14 @@ export default {
                         [573]
                     ]
                 ],
-                "id": 48,
-                "properties": {
-                    "name": "Comoros",
-                    "color": "#1f77b4"
+                'id': 48,
+                'properties': {
+                    'name': 'Comoros',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [574]
                     ],
@@ -1695,24 +1695,24 @@ export default {
                         [581]
                     ]
                 ],
-                "id": 49,
-                "properties": {
-                    "name": "Cape Verde",
-                    "color": "#1f77b4"
+                'id': 49,
+                'properties': {
+                    'name': 'Cape Verde',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [582, 583, 584, 585]
                 ],
-                "id": 50,
-                "properties": {
-                    "name": "Costa Rica",
-                    "color": "#1f77b4"
+                'id': 50,
+                'properties': {
+                    'name': 'Costa Rica',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [586]
                     ],
@@ -1735,24 +1735,24 @@ export default {
                         [592]
                     ]
                 ],
-                "id": 51,
-                "properties": {
-                    "name": "Cuba",
-                    "color": "#1f77b4"
+                'id': 51,
+                'properties': {
+                    'name': 'Cuba',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [593]
                 ],
-                "id": 52,
-                "properties": {
-                    "name": "Curaçao",
-                    "color": "#1f77b4"
+                'id': 52,
+                'properties': {
+                    'name': 'Curaçao',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [594]
                     ],
@@ -1760,44 +1760,44 @@ export default {
                         [595]
                     ]
                 ],
-                "id": 53,
-                "properties": {
-                    "name": "Cayman Islands",
-                    "color": "#1f77b4"
+                'id': 53,
+                'properties': {
+                    'name': 'Cayman Islands',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [596, 597]
                 ],
-                "id": 54,
-                "properties": {
-                    "name": "Northern Cyprus",
-                    "color": "#1f77b4"
+                'id': 54,
+                'properties': {
+                    'name': 'Northern Cyprus',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-597, 598]
                 ],
-                "id": 55,
-                "properties": {
-                    "name": "Cyprus",
-                    "color": "#aec7e8"
+                'id': 55,
+                'properties': {
+                    'name': 'Cyprus',
+                    'color': '#aec7e8'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [599, -211, 600, 601]
                 ],
-                "id": 56,
-                "properties": {
-                    "name": "Czech Republic",
-                    "color": "#aec7e8"
+                'id': 56,
+                'properties': {
+                    'name': 'Czech Republic',
+                    'color': '#aec7e8'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [602, 603]
                     ],
@@ -1817,34 +1817,34 @@ export default {
                         [614]
                     ]
                 ],
-                "id": 57,
-                "properties": {
-                    "name": "Germany",
-                    "color": "#ff7f0e"
+                'id': 57,
+                'properties': {
+                    'name': 'Germany',
+                    'color': '#ff7f0e'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [615, 616, 617, 618]
                 ],
-                "id": 58,
-                "properties": {
-                    "name": "Djibouti",
-                    "color": "#1f77b4"
+                'id': 58,
+                'properties': {
+                    'name': 'Djibouti',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [619]
                 ],
-                "id": 59,
-                "properties": {
-                    "name": "Dominica",
-                    "color": "#1f77b4"
+                'id': 59,
+                'properties': {
+                    'name': 'Dominica',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [620]
                     ],
@@ -1882,34 +1882,34 @@ export default {
                         [-613, 631]
                     ]
                 ],
-                "id": 60,
-                "properties": {
-                    "name": "Denmark",
-                    "color": "#ffbb78"
+                'id': 60,
+                'properties': {
+                    'name': 'Denmark',
+                    'color': '#ffbb78'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [632, 633]
                 ],
-                "id": 61,
-                "properties": {
-                    "name": "Dominican Republic",
-                    "color": "#1f77b4"
+                'id': 61,
+                'properties': {
+                    'name': 'Dominican Republic',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [634, 635, 636, 637, 638, 639, 640, 641]
                 ],
-                "id": 62,
-                "properties": {
-                    "name": "Algeria",
-                    "color": "#1f77b4"
+                'id': 62,
+                'properties': {
+                    'name': 'Algeria',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [642]
                     ],
@@ -1938,24 +1938,24 @@ export default {
                         [650, 651, -568]
                     ]
                 ],
-                "id": 63,
-                "properties": {
-                    "name": "Ecuador",
-                    "color": "#2ca02c"
+                'id': 63,
+                'properties': {
+                    'name': 'Ecuador',
+                    'color': '#2ca02c'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [652, 653, 654, 655, 656, 657]
                 ],
-                "id": 64,
-                "properties": {
-                    "name": "Egypt",
-                    "color": "#1f77b4"
+                'id': 64,
+                'properties': {
+                    'name': 'Egypt',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [658]
                     ],
@@ -1966,14 +1966,14 @@ export default {
                         [-617, 660, 661, 662]
                     ]
                 ],
-                "id": 65,
-                "properties": {
-                    "name": "Eritrea",
-                    "color": "#aec7e8"
+                'id': 65,
+                'properties': {
+                    'name': 'Eritrea',
+                    'color': '#aec7e8'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [663]
                     ],
@@ -2011,14 +2011,14 @@ export default {
                         [674, -25, 675, 676, 677, 678]
                     ]
                 ],
-                "id": 66,
-                "properties": {
-                    "name": "Spain",
-                    "color": "#aec7e8"
+                'id': 66,
+                'properties': {
+                    'name': 'Spain',
+                    'color': '#aec7e8'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [679]
                     ],
@@ -2032,24 +2032,24 @@ export default {
                         [682, 683, 684]
                     ]
                 ],
-                "id": 67,
-                "properties": {
-                    "name": "Estonia",
-                    "color": "#1f77b4"
+                'id': 67,
+                'properties': {
+                    'name': 'Estonia',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-616, 685, 686, 687, 688, 689, -661]
                 ],
-                "id": 68,
-                "properties": {
-                    "name": "Ethiopia",
-                    "color": "#ff7f0e"
+                'id': 68,
+                'properties': {
+                    'name': 'Ethiopia',
+                    'color': '#ff7f0e'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [690]
                     ],
@@ -2075,14 +2075,14 @@ export default {
                         [697, 698, 699, 700]
                     ]
                 ],
-                "id": 69,
-                "properties": {
-                    "name": "Finland",
-                    "color": "#1f77b4"
+                'id': 69,
+                'properties': {
+                    'name': 'Finland',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [701]
                     ],
@@ -2129,14 +2129,14 @@ export default {
                         [715]
                     ]
                 ],
-                "id": 70,
-                "properties": {
-                    "name": "Fiji",
-                    "color": "#1f77b4"
+                'id': 70,
+                'properties': {
+                    'name': 'Fiji',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [716]
                     ],
@@ -2156,14 +2156,14 @@ export default {
                         [721]
                     ]
                 ],
-                "id": 71,
-                "properties": {
-                    "name": "Falkland Islands (Malvinas)",
-                    "color": "#1f77b4"
+                'id': 71,
+                'properties': {
+                    'name': 'Falkland Islands (Malvinas)',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [722]
                     ],
@@ -2192,24 +2192,24 @@ export default {
                         [732, -609, -473, 733, 734, 735, 736, -676, -24, -675, 737, -226]
                     ]
                 ],
-                "id": 72,
-                "properties": {
-                    "name": "France",
-                    "color": "#ffbb78"
+                'id': 72,
+                'properties': {
+                    'name': 'France',
+                    'color': '#ffbb78'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-309, 724, 725]
                 ],
-                "id": 73,
-                "properties": {
-                    "name": "Franch Guyana",
-                    "color": "#d62728"
+                'id': 73,
+                'properties': {
+                    'name': 'Franch Guyana',
+                    'color': '#d62728'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [738]
                     ],
@@ -2226,14 +2226,14 @@ export default {
                         [742]
                     ]
                 ],
-                "id": 74,
-                "properties": {
-                    "name": "Faroe Islands",
-                    "color": "#1f77b4"
+                'id': 74,
+                'properties': {
+                    'name': 'Faroe Islands',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [743]
                     ],
@@ -2250,24 +2250,24 @@ export default {
                         [747]
                     ]
                 ],
-                "id": 75,
-                "properties": {
-                    "name": "Micronesia, Federated States of",
-                    "color": "#1f77b4"
+                'id': 75,
+                'properties': {
+                    'name': 'Micronesia, Federated States of',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [748, -550, -563, 749]
                 ],
-                "id": 76,
-                "properties": {
-                    "name": "Gabon",
-                    "color": "#ffbb78"
+                'id': 76,
+                'properties': {
+                    'name': 'Gabon',
+                    'color': '#ffbb78'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [750]
                     ],
@@ -2332,64 +2332,64 @@ export default {
                         [771]
                     ]
                 ],
-                "id": 77,
-                "properties": {
-                    "name": "United Kingdom",
-                    "color": "#1f77b4"
+                'id': 77,
+                'properties': {
+                    'name': 'United Kingdom',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-50, 772, 773, 774, -217]
                 ],
-                "id": 78,
-                "properties": {
-                    "name": "Georgia",
-                    "color": "#ff7f0e"
+                'id': 78,
+                'properties': {
+                    'name': 'Georgia',
+                    'color': '#ff7f0e'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [775]
                 ],
-                "id": 79,
-                "properties": {
-                    "name": "Guernsey",
-                    "color": "#1f77b4"
+                'id': 79,
+                'properties': {
+                    'name': 'Guernsey',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-542, 776, -544, -237, 777, 778]
                 ],
-                "id": 80,
-                "properties": {
-                    "name": "Ghana",
-                    "color": "#ffbb78"
+                'id': 80,
+                'properties': {
+                    'name': 'Ghana',
+                    'color': '#ffbb78'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-547, 779, 780, 781, 782, 783, 784]
                 ],
-                "id": 81,
-                "properties": {
-                    "name": "Guinea",
-                    "color": "#ffbb78"
+                'id': 81,
+                'properties': {
+                    'name': 'Guinea',
+                    'color': '#ffbb78'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [785, 786]
                 ],
-                "id": 82,
-                "properties": {
-                    "name": "Gambia",
-                    "color": "#1f77b4"
+                'id': 82,
+                'properties': {
+                    'name': 'Gambia',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [787]
                     ],
@@ -2412,14 +2412,14 @@ export default {
                         [793, -783, 794]
                     ]
                 ],
-                "id": 83,
-                "properties": {
-                    "name": "Guinea-Bissau",
-                    "color": "#2ca02c"
+                'id': 83,
+                'properties': {
+                    'name': 'Guinea-Bissau',
+                    'color': '#2ca02c'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [-551, -749, 795]
                     ],
@@ -2427,14 +2427,14 @@ export default {
                         [796]
                     ]
                 ],
-                "id": 84,
-                "properties": {
-                    "name": "Equatorial Guinea",
-                    "color": "#2ca02c"
+                'id': 84,
+                'properties': {
+                    'name': 'Equatorial Guinea',
+                    'color': '#2ca02c'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [797]
                     ],
@@ -2553,24 +2553,24 @@ export default {
                         [-17, 835, -251, 836, 837]
                     ]
                 ],
-                "id": 85,
-                "properties": {
-                    "name": "Greece",
-                    "color": "#aec7e8"
+                'id': 85,
+                'properties': {
+                    'name': 'Greece',
+                    'color': '#aec7e8'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [838]
                 ],
-                "id": 86,
-                "properties": {
-                    "name": "Grenada",
-                    "color": "#1f77b4"
+                'id': 86,
+                'properties': {
+                    'name': 'Grenada',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [839]
                     ],
@@ -2623,44 +2623,44 @@ export default {
                         [855]
                     ]
                 ],
-                "id": 87,
-                "properties": {
-                    "name": "Greenland",
-                    "color": "#1f77b4"
+                'id': 87,
+                'properties': {
+                    'name': 'Greenland',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [856, 857, 858, 859, -284, 860]
                 ],
-                "id": 88,
-                "properties": {
-                    "name": "Guatemala",
-                    "color": "#aec7e8"
+                'id': 88,
+                'properties': {
+                    'name': 'Guatemala',
+                    'color': '#aec7e8'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [861]
                 ],
-                "id": 89,
-                "properties": {
-                    "name": "Guam",
-                    "color": "#1f77b4"
+                'id': 89,
+                'properties': {
+                    'name': 'Guam',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-316, 862, 863, 864]
                 ],
-                "id": 90,
-                "properties": {
-                    "name": "Guyana",
-                    "color": "#ffbb78"
+                'id': 90,
+                'properties': {
+                    'name': 'Guyana',
+                    'color': '#ffbb78'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [865]
                     ],
@@ -2671,24 +2671,24 @@ export default {
                         [-521, 867]
                     ]
                 ],
-                "id": 91,
-                "properties": {
-                    "name": "Hong Kong",
-                    "color": "#ff7f0e"
+                'id': 91,
+                'properties': {
+                    'name': 'Hong Kong',
+                    'color': '#ff7f0e'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [868]
                 ],
-                "id": 92,
-                "properties": {
-                    "name": "Heard Island and McDonald Islands",
-                    "color": "#1f77b4"
+                'id': 92,
+                'properties': {
+                    'name': 'Heard Island and McDonald Islands',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [869, 870, 871, -857, 872]
                     ],
@@ -2699,14 +2699,14 @@ export default {
                         [874]
                     ]
                 ],
-                "id": 93,
-                "properties": {
-                    "name": "Honduras",
-                    "color": "#ff7f0e"
+                'id': 93,
+                'properties': {
+                    'name': 'Honduras',
+                    'color': '#ff7f0e'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [875]
                     ],
@@ -2735,14 +2735,14 @@ export default {
                         [884, -276, 885, 886, 887]
                     ]
                 ],
-                "id": 94,
-                "properties": {
-                    "name": "Croatia",
-                    "color": "#aec7e8"
+                'id': 94,
+                'properties': {
+                    'name': 'Croatia',
+                    'color': '#aec7e8'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [888]
                     ],
@@ -2753,24 +2753,24 @@ export default {
                         [890]
                     ]
                 ],
-                "id": 95,
-                "properties": {
-                    "name": "Haiti",
-                    "color": "#aec7e8"
+                'id': 95,
+                'properties': {
+                    'name': 'Haiti',
+                    'color': '#aec7e8'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [891, 892, -888, 893, -204, 894, 895]
                 ],
-                "id": 96,
-                "properties": {
-                    "name": "Hungary",
-                    "color": "#ff7f0e"
+                'id': 96,
+                'properties': {
+                    'name': 'Hungary',
+                    'color': '#ff7f0e'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [896]
                     ],
@@ -3168,24 +3168,24 @@ export default {
                         [1033]
                     ]
                 ],
-                "id": 97,
-                "properties": {
-                    "name": "Indonesia",
-                    "color": "#1f77b4"
+                'id': 97,
+                'properties': {
+                    'name': 'Indonesia',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1034]
                 ],
-                "id": 98,
-                "properties": {
-                    "name": "Isle of Man",
-                    "color": "#1f77b4"
+                'id': 98,
+                'properties': {
+                    'name': 'Isle of Man',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1035]
                     ],
@@ -3220,44 +3220,44 @@ export default {
                         [1045, 1046, 1047, 1048, -529, -322, -528, 1049, -249, 1050, 1051, 1052, 1053]
                     ]
                 ],
-                "id": 99,
-                "properties": {
-                    "name": "India",
-                    "color": "#ff7f0e"
+                'id': 99,
+                'properties': {
+                    'name': 'India',
+                    'color': '#ff7f0e'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1054]
                 ],
-                "id": 100,
-                "properties": {
-                    "name": "Cocos Islands",
-                    "color": "#d62728"
+                'id': 100,
+                'properties': {
+                    'name': 'Cocos Islands',
+                    'color': '#d62728'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1055]
                 ],
-                "id": 101,
-                "properties": {
-                    "name": "Christmas Island",
-                    "color": "#d62728"
+                'id': 101,
+                'properties': {
+                    'name': 'Christmas Island',
+                    'color': '#d62728'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1056]
                 ],
-                "id": 102,
-                "properties": {
-                    "name": "British Indian Ocean Territory",
-                    "color": "#1f77b4"
+                'id': 102,
+                'properties': {
+                    'name': 'British Indian Ocean Territory',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1057]
                     ],
@@ -3265,14 +3265,14 @@ export default {
                         [-753, 1058]
                     ]
                 ],
-                "id": 103,
-                "properties": {
-                    "name": "Ireland",
-                    "color": "#aec7e8"
+                'id': 103,
+                'properties': {
+                    'name': 'Ireland',
+                    'color': '#aec7e8'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1059]
                     ],
@@ -3280,44 +3280,44 @@ export default {
                         [-47, -216, 1060, 1061, 1062, 1063, 1064, 1065, 1066, 1067, -213]
                     ]
                 ],
-                "id": 104,
-                "properties": {
-                    "name": "Iran",
-                    "color": "#ff7f0e"
+                'id': 104,
+                'properties': {
+                    'name': 'Iran',
+                    'color': '#ff7f0e'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1068, 1069, 1070, 1071, 1072, -1067, 1073]
                 ],
-                "id": 105,
-                "properties": {
-                    "name": "Iraq",
-                    "color": "#ffbb78"
+                'id': 105,
+                'properties': {
+                    'name': 'Iraq',
+                    'color': '#ffbb78'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1074]
                 ],
-                "id": 106,
-                "properties": {
-                    "name": "Iceland",
-                    "color": "#1f77b4"
+                'id': 106,
+                'properties': {
+                    'name': 'Iceland',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1075, 1076, 1077, -653, 1078, 1079, 1080, 1081, 1082]
                 ],
-                "id": 107,
-                "properties": {
-                    "name": "Israel",
-                    "color": "#aec7e8"
+                'id': 107,
+                'properties': {
+                    'name': 'Israel',
+                    'color': '#aec7e8'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1083]
                     ],
@@ -3344,44 +3344,44 @@ export default {
                         [1092]
                     ]
                 ],
-                "id": 108,
-                "properties": {
-                    "name": "Italy",
-                    "color": "#2ca02c"
+                'id': 108,
+                'properties': {
+                    'name': 'Italy',
+                    'color': '#2ca02c'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1093]
                 ],
-                "id": 109,
-                "properties": {
-                    "name": "Jamaica",
-                    "color": "#1f77b4"
+                'id': 109,
+                'properties': {
+                    'name': 'Jamaica',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1094]
                 ],
-                "id": 110,
-                "properties": {
-                    "name": "Jersey",
-                    "color": "#1f77b4"
+                'id': 110,
+                'properties': {
+                    'name': 'Jersey',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-1077, 1095, -1083, 1096, -1071, 1097, 1098]
                 ],
-                "id": 111,
-                "properties": {
-                    "name": "Jordan",
-                    "color": "#2ca02c"
+                'id': 111,
+                'properties': {
+                    'name': 'Jordan',
+                    'color': '#2ca02c'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1099]
                     ],
@@ -3482,24 +3482,24 @@ export default {
                         [1131]
                     ]
                 ],
-                "id": 112,
-                "properties": {
-                    "name": "Japan",
-                    "color": "#1f77b4"
+                'id': 112,
+                'properties': {
+                    'name': 'Japan',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1132, -534, -1053]
                 ],
-                "id": 113,
-                "properties": {
-                    "name": "Siachen Glacier",
-                    "color": "#d62728"
+                'id': 113,
+                'properties': {
+                    'name': 'Siachen Glacier',
+                    'color': '#d62728'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1133]
                     ],
@@ -3513,14 +3513,14 @@ export default {
                         [-538, 1136, 1137, 1138, 1139, 1140]
                     ]
                 ],
-                "id": 114,
-                "properties": {
-                    "name": "Kazakhstan",
-                    "color": "#ff7f0e"
+                'id': 114,
+                'properties': {
+                    'name': 'Kazakhstan',
+                    'color': '#ff7f0e'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1141]
                     ],
@@ -3528,27 +3528,27 @@ export default {
                         [1142, 1143, 1144, 1145, 1146, -688]
                     ]
                 ],
-                "id": 115,
-                "properties": {
-                    "name": "Kenya",
-                    "color": "#ffbb78"
+                'id': 115,
+                'properties': {
+                    'name': 'Kenya',
+                    'color': '#ffbb78'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1147, 1148, -1137, -537],
                     [1149],
                     [1150],
                     [1151]
                 ],
-                "id": 116,
-                "properties": {
-                    "name": "Kyrgyzstan",
-                    "color": "#ffbb78"
+                'id': 116,
+                'properties': {
+                    'name': 'Kyrgyzstan',
+                    'color': '#ffbb78'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1152]
                     ],
@@ -3556,14 +3556,14 @@ export default {
                         [1153, 1154, 1155, 1156]
                     ]
                 ],
-                "id": 117,
-                "properties": {
-                    "name": "Cambodia",
-                    "color": "#1f77b4"
+                'id': 117,
+                'properties': {
+                    'name': 'Cambodia',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1157]
                     ],
@@ -3586,14 +3586,14 @@ export default {
                         [1163]
                     ]
                 ],
-                "id": 118,
-                "properties": {
-                    "name": "Kiribati",
-                    "color": "#1f77b4"
+                'id': 118,
+                'properties': {
+                    'name': 'Kiribati',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1164]
                     ],
@@ -3601,14 +3601,14 @@ export default {
                         [1165]
                     ]
                 ],
-                "id": 119,
-                "properties": {
-                    "name": "Saint Kitts and Nevis",
-                    "color": "#1f77b4"
+                'id': 119,
+                'properties': {
+                    'name': 'Saint Kitts and Nevis',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1166]
                     ],
@@ -3643,24 +3643,24 @@ export default {
                         [1176, 1177]
                     ]
                 ],
-                "id": 120,
-                "properties": {
-                    "name": "South Korea",
-                    "color": "#1f77b4"
+                'id': 120,
+                'properties': {
+                    'name': 'South Korea',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-20, 1178, 1179, 1180]
                 ],
-                "id": 121,
-                "properties": {
-                    "name": "Kosovo",
-                    "color": "#d62728"
+                'id': 121,
+                'properties': {
+                    'name': 'Kosovo',
+                    'color': '#d62728'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1181]
                     ],
@@ -3668,74 +3668,74 @@ export default {
                         [1182, -1069, 1183]
                     ]
                 ],
-                "id": 122,
-                "properties": {
-                    "name": "Kuwait",
-                    "color": "#2ca02c"
+                'id': 122,
+                'properties': {
+                    'name': 'Kuwait',
+                    'color': '#2ca02c'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-1155, 1184, 1185, -526, 1186]
                 ],
-                "id": 123,
-                "properties": {
-                    "name": "Lao People's Democratic Republic",
-                    "color": "#ff7f0e"
+                'id': 123,
+                'properties': {
+                    'name': 'Lao People\'s Democratic Republic',
+                    'color': '#ff7f0e'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1187, -1081, 1188]
                 ],
-                "id": 124,
-                "properties": {
-                    "name": "Lebanon",
-                    "color": "#ff7f0e"
+                'id': 124,
+                'properties': {
+                    'name': 'Lebanon',
+                    'color': '#ff7f0e'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1189, -780, -546, 1190]
                 ],
-                "id": 125,
-                "properties": {
-                    "name": "Liberia",
-                    "color": "#2ca02c"
+                'id': 125,
+                'properties': {
+                    'name': 'Liberia',
+                    'color': '#2ca02c'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1191, 1192, 1193, -635, 1194, 1195, -656]
                 ],
-                "id": 126,
-                "properties": {
-                    "name": "Libya",
-                    "color": "#aec7e8"
+                'id': 126,
+                'properties': {
+                    'name': 'Libya',
+                    'color': '#aec7e8'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1196]
                 ],
-                "id": 127,
-                "properties": {
-                    "name": "Saint Lucia",
-                    "color": "#1f77b4"
+                'id': 127,
+                'properties': {
+                    'name': 'Saint Lucia',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-208, -471]
                 ],
-                "id": 128,
-                "properties": {
-                    "name": "Liechtenstein",
-                    "color": "#ff7f0e"
+                'id': 128,
+                'properties': {
+                    'name': 'Liechtenstein',
+                    'color': '#ff7f0e'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1197]
                     ],
@@ -3746,24 +3746,24 @@ export default {
                         [1199]
                     ]
                 ],
-                "id": 129,
-                "properties": {
-                    "name": "Sri Lanka",
-                    "color": "#1f77b4"
+                'id': 129,
+                'properties': {
+                    'name': 'Sri Lanka',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1200]
                 ],
-                "id": 130,
-                "properties": {
-                    "name": "Lesotho",
-                    "color": "#1f77b4"
+                'id': 130,
+                'properties': {
+                    'name': 'Lesotho',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1201, 1202]
                     ],
@@ -3771,84 +3771,84 @@ export default {
                         [-279, 1203, 1204, 1205, 1206]
                     ]
                 ],
-                "id": 131,
-                "properties": {
-                    "name": "Lithuania",
-                    "color": "#aec7e8"
+                'id': 131,
+                'properties': {
+                    'name': 'Lithuania',
+                    'color': '#aec7e8'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-733, -225, -610]
                 ],
-                "id": 132,
-                "properties": {
-                    "name": "Luxembourg",
-                    "color": "#2ca02c"
+                'id': 132,
+                'properties': {
+                    'name': 'Luxembourg',
+                    'color': '#2ca02c'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-280, -1207, 1207, -684, 1208]
                 ],
-                "id": 133,
-                "properties": {
-                    "name": "Latvia",
-                    "color": "#ff7f0e"
+                'id': 133,
+                'properties': {
+                    'name': 'Latvia',
+                    'color': '#ff7f0e'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1209]
                 ],
-                "id": 134,
-                "properties": {
-                    "name": "Macao",
-                    "color": "#1f77b4"
+                'id': 134,
+                'properties': {
+                    'name': 'Macao',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1210, 1211]
                 ],
-                "id": 135,
-                "properties": {
-                    "name": "Saint Martin (French part)",
-                    "color": "#1f77b4"
+                'id': 135,
+                'properties': {
+                    'name': 'Saint Martin (French part)',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-640, 1212, 1213]
                 ],
-                "id": 136,
-                "properties": {
-                    "name": "Morocco",
-                    "color": "#aec7e8"
+                'id': 136,
+                'properties': {
+                    'name': 'Morocco',
+                    'color': '#aec7e8'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1214]
                 ],
-                "id": 137,
-                "properties": {
-                    "name": "Monaco",
-                    "color": "#1f77b4"
+                'id': 137,
+                'properties': {
+                    'name': 'Monaco',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1215, 1216]
                 ],
-                "id": 138,
-                "properties": {
-                    "name": "Moldova",
-                    "color": "#1f77b4"
+                'id': 138,
+                'properties': {
+                    'name': 'Moldova',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1217]
                     ],
@@ -3859,14 +3859,14 @@ export default {
                         [1219]
                     ]
                 ],
-                "id": 139,
-                "properties": {
-                    "name": "Madagascar",
-                    "color": "#1f77b4"
+                'id': 139,
+                'properties': {
+                    'name': 'Madagascar',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1220]
                     ],
@@ -3874,14 +3874,14 @@ export default {
                         [1221]
                     ]
                 ],
-                "id": 140,
-                "properties": {
-                    "name": "Maldives",
-                    "color": "#1f77b4"
+                'id': 140,
+                'properties': {
+                    'name': 'Maldives',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1222]
                     ],
@@ -3925,14 +3925,14 @@ export default {
                         [-285, -860, 1235, 1236, 1237]
                     ]
                 ],
-                "id": 141,
-                "properties": {
-                    "name": "Mexico",
-                    "color": "#ff7f0e"
+                'id': 141,
+                'properties': {
+                    'name': 'Mexico',
+                    'color': '#ff7f0e'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1238]
                     ],
@@ -3940,44 +3940,44 @@ export default {
                         [1239]
                     ]
                 ],
-                "id": 142,
-                "properties": {
-                    "name": "Marshall Islands",
-                    "color": "#1f77b4"
+                'id': 142,
+                'properties': {
+                    'name': 'Marshall Islands',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-836, -16, -1181, 1240, -252]
                 ],
-                "id": 143,
-                "properties": {
-                    "name": "Macedonia",
-                    "color": "#ff7f0e"
+                'id': 143,
+                'properties': {
+                    'name': 'Macedonia',
+                    'color': '#ff7f0e'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-239, -548, -785, 1241, 1242, -637, 1243]
                 ],
-                "id": 144,
-                "properties": {
-                    "name": "Mali",
-                    "color": "#2ca02c"
+                'id': 144,
+                'properties': {
+                    'name': 'Mali',
+                    'color': '#2ca02c'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1244]
                 ],
-                "id": 145,
-                "properties": {
-                    "name": "Malta",
-                    "color": "#1f77b4"
+                'id': 145,
+                'properties': {
+                    'name': 'Malta',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1245]
                     ],
@@ -4030,34 +4030,34 @@ export default {
                         [-1186, 1261, 1262, -247, -1050, -527]
                     ]
                 ],
-                "id": 146,
-                "properties": {
-                    "name": "Myanmar",
-                    "color": "#ffbb78"
+                'id': 146,
+                'properties': {
+                    'name': 'Myanmar',
+                    'color': '#ffbb78'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-1179, -19, 1263, -877, -273, 1264]
                 ],
-                "id": 147,
-                "properties": {
-                    "name": "Montenegro",
-                    "color": "#ff7f0e"
+                'id': 147,
+                'properties': {
+                    'name': 'Montenegro',
+                    'color': '#ff7f0e'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1265, -540]
                 ],
-                "id": 148,
-                "properties": {
-                    "name": "Mongolia",
-                    "color": "#ff7f0e"
+                'id': 148,
+                'properties': {
+                    'name': 'Mongolia',
+                    'color': '#ff7f0e'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1266]
                     ],
@@ -4077,26 +4077,26 @@ export default {
                         [1271]
                     ]
                 ],
-                "id": 149,
-                "properties": {
-                    "name": "Northern Mariana Islands",
-                    "color": "#1f77b4"
+                'id': 149,
+                'properties': {
+                    'name': 'Northern Mariana Islands',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1272, 1273, 1274, 1275, 1276, 1277, 1278, 1279],
                     [1280],
                     [1281]
                 ],
-                "id": 150,
-                "properties": {
-                    "name": "Mozambique",
-                    "color": "#1f77b4"
+                'id': 150,
+                'properties': {
+                    'name': 'Mozambique',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1282]
                     ],
@@ -4104,34 +4104,34 @@ export default {
                         [1283, 1284, 1285, -638, -1243]
                     ]
                 ],
-                "id": 151,
-                "properties": {
-                    "name": "Mauritania",
-                    "color": "#98df8a"
+                'id': 151,
+                'properties': {
+                    'name': 'Mauritania',
+                    'color': '#98df8a'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1286]
                 ],
-                "id": 152,
-                "properties": {
-                    "name": "Montserrat",
-                    "color": "#1f77b4"
+                'id': 152,
+                'properties': {
+                    'name': 'Montserrat',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1287]
                 ],
-                "id": 153,
-                "properties": {
-                    "name": "Mauritius",
-                    "color": "#1f77b4"
+                'id': 153,
+                'properties': {
+                    'name': 'Mauritius',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [-1282]
                     ],
@@ -4142,14 +4142,14 @@ export default {
                         [-1277, 1288, 1289]
                     ]
                 ],
-                "id": 154,
-                "properties": {
-                    "name": "Malawi",
-                    "color": "#aec7e8"
+                'id': 154,
+                'properties': {
+                    'name': 'Malawi',
+                    'color': '#aec7e8'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1290]
                     ],
@@ -4175,24 +4175,24 @@ export default {
                         [1300]
                     ]
                 ],
-                "id": 155,
-                "properties": {
-                    "name": "Malaysia",
-                    "color": "#aec7e8"
+                'id': 155,
+                'properties': {
+                    'name': 'Malaysia',
+                    'color': '#aec7e8'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-324, 1301, 1302, -9, 1303]
                 ],
-                "id": 156,
-                "properties": {
-                    "name": "Namibia",
-                    "color": "#aec7e8"
+                'id': 156,
+                'properties': {
+                    'name': 'Namibia',
+                    'color': '#aec7e8'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1304]
                     ],
@@ -4209,34 +4209,34 @@ export default {
                         [1308]
                     ]
                 ],
-                "id": 157,
-                "properties": {
-                    "name": "New Caledonia",
-                    "color": "#1f77b4"
+                'id': 157,
+                'properties': {
+                    'name': 'New Caledonia',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1309, -233, -240, -1244, -636, -1194, 1310]
                 ],
-                "id": 158,
-                "properties": {
-                    "name": "Niger",
-                    "color": "#98df8a"
+                'id': 158,
+                'properties': {
+                    'name': 'Niger',
+                    'color': '#98df8a'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1311]
                 ],
-                "id": 159,
-                "properties": {
-                    "name": "Norfolk Island",
-                    "color": "#1f77b4"
+                'id': 159,
+                'properties': {
+                    'name': 'Norfolk Island',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1312]
                     ],
@@ -4244,34 +4244,34 @@ export default {
                         [1313, -553, 1314, -234, -1310]
                     ]
                 ],
-                "id": 160,
-                "properties": {
-                    "name": "Nigeria",
-                    "color": "#d62728"
+                'id': 160,
+                'properties': {
+                    'name': 'Nigeria',
+                    'color': '#d62728'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-585, 1315, -870, 1316]
                 ],
-                "id": 161,
-                "properties": {
-                    "name": "Nicaragua",
-                    "color": "#ffbb78"
+                'id': 161,
+                'properties': {
+                    'name': 'Nicaragua',
+                    'color': '#ffbb78'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1317]
                 ],
-                "id": 162,
-                "properties": {
-                    "name": "Niue",
-                    "color": "#1f77b4"
+                'id': 162,
+                'properties': {
+                    'name': 'Niue',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1318]
                     ],
@@ -4300,14 +4300,14 @@ export default {
                         [1327]
                     ]
                 ],
-                "id": 163,
-                "properties": {
-                    "name": "Netherlands",
-                    "color": "#ffbb78"
+                'id': 163,
+                'properties': {
+                    'name': 'Netherlands',
+                    'color': '#ffbb78'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1328]
                     ],
@@ -4405,31 +4405,31 @@ export default {
                         [1361]
                     ]
                 ],
-                "id": 164,
-                "properties": {
-                    "name": "Norway",
-                    "color": "#aec7e8"
+                'id': 164,
+                'properties': {
+                    'name': 'Norway',
+                    'color': '#aec7e8'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-530, -1049]
                 ],
-                "id": 165,
-                "properties": {
-                    "name": "Nepal",
-                    "color": "#ffbb78"
+                'id': 165,
+                'properties': {
+                    'name': 'Nepal',
+                    'color': '#ffbb78'
                 }
             }, {
-                "type": null,
-                "id": 166,
-                "properties": {
-                    "name": "Nauru",
-                    "color": "#1f77b4"
+                'type': null,
+                'id': 166,
+                'properties': {
+                    'name': 'Nauru',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1362]
                     ],
@@ -4464,14 +4464,14 @@ export default {
                         [1372]
                     ]
                 ],
-                "id": 167,
-                "properties": {
-                    "name": "New Zealand",
-                    "color": "#1f77b4"
+                'id': 167,
+                'properties': {
+                    'name': 'New Zealand',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1373]
                     ],
@@ -4485,24 +4485,24 @@ export default {
                         [-33, 1378]
                     ]
                 ],
-                "id": 168,
-                "properties": {
-                    "name": "Oman",
-                    "color": "#aec7e8"
+                'id': 168,
+                'properties': {
+                    'name': 'Oman',
+                    'color': '#aec7e8'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-1052, 1379, -1065, -2, -535, -1133]
                 ],
-                "id": 169,
-                "properties": {
-                    "name": "Pakistan",
-                    "color": "#2ca02c"
+                'id': 169,
+                'properties': {
+                    'name': 'Pakistan',
+                    'color': '#2ca02c'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1380]
                     ],
@@ -4516,34 +4516,34 @@ export default {
                         [-570, 1383, -583, 1384]
                     ]
                 ],
-                "id": 170,
-                "properties": {
-                    "name": "Panama",
-                    "color": "#2ca02c"
+                'id': 170,
+                'properties': {
+                    'name': 'Panama',
+                    'color': '#2ca02c'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1385]
                 ],
-                "id": 171,
-                "properties": {
-                    "name": "Pitcairn",
-                    "color": "#1f77b4"
+                'id': 171,
+                'properties': {
+                    'name': 'Pitcairn',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-289, -506, 1386, -651, -567, -313]
                 ],
-                "id": 172,
-                "properties": {
-                    "name": "Peru",
-                    "color": "#98df8a"
+                'id': 172,
+                'properties': {
+                    'name': 'Peru',
+                    'color': '#98df8a'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1387]
                     ],
@@ -4689,24 +4689,24 @@ export default {
                         [1434]
                     ]
                 ],
-                "id": 173,
-                "properties": {
-                    "name": "Philippines",
-                    "color": "#1f77b4"
+                'id': 173,
+                'properties': {
+                    'name': 'Philippines',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1435]
                 ],
-                "id": 174,
-                "properties": {
-                    "name": "Palau",
-                    "color": "#1f77b4"
+                'id': 174,
+                'properties': {
+                    'name': 'Palau',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1436]
                     ],
@@ -4786,24 +4786,24 @@ export default {
                         [1463]
                     ]
                 ],
-                "id": 175,
-                "properties": {
-                    "name": "Papua New Guinea",
-                    "color": "#1f77b4"
+                'id': 175,
+                'properties': {
+                    'name': 'Papua New Guinea',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-1204, -278, 1464, 1465, -602, -608, 1466, -603, 1467, 1468]
                 ],
-                "id": 176,
-                "properties": {
-                    "name": "Poland",
-                    "color": "#ffbb78"
+                'id': 176,
+                'properties': {
+                    'name': 'Poland',
+                    'color': '#ffbb78'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1469]
                     ],
@@ -4814,24 +4814,24 @@ export default {
                         [1471]
                     ]
                 ],
-                "id": 177,
-                "properties": {
-                    "name": "Puerto Rico",
-                    "color": "#1f77b4"
+                'id': 177,
+                'properties': {
+                    'name': 'Puerto Rico',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1472, 1473, -1177, 1474, -519]
                 ],
-                "id": 178,
-                "properties": {
-                    "name": "North Korea",
-                    "color": "#ff7f0e"
+                'id': 178,
+                'properties': {
+                    'name': 'North Korea',
+                    'color': '#ff7f0e'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1475]
                     ],
@@ -4857,24 +4857,24 @@ export default {
                         [-678, 1482]
                     ]
                 ],
-                "id": 179,
-                "properties": {
-                    "name": "Portugal",
-                    "color": "#ff7f0e"
+                'id': 179,
+                'properties': {
+                    'name': 'Portugal',
+                    'color': '#ff7f0e'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-40, -291, -312]
                 ],
-                "id": 180,
-                "properties": {
-                    "name": "Paraguay",
-                    "color": "#ffbb78"
+                'id': 180,
+                'properties': {
+                    'name': 'Paraguay',
+                    'color': '#ffbb78'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [-658, 1483, -1079]
                     ],
@@ -4882,14 +4882,14 @@ export default {
                         [-1076, -1096]
                     ]
                 ],
-                "id": 181,
-                "properties": {
-                    "name": "Palestine, State of",
-                    "color": "#98df8a"
+                'id': 181,
+                'properties': {
+                    'name': 'Palestine, State of',
+                    'color': '#98df8a'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1484]
                     ],
@@ -4924,34 +4924,34 @@ export default {
                         [1494]
                     ]
                 ],
-                "id": 182,
-                "properties": {
-                    "name": "French Polynesia",
-                    "color": "#1f77b4"
+                'id': 182,
+                'properties': {
+                    'name': 'French Polynesia',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1495, 1496]
                 ],
-                "id": 183,
-                "properties": {
-                    "name": "Qatar",
-                    "color": "#1f77b4"
+                'id': 183,
+                'properties': {
+                    'name': 'Qatar',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-254, 1497, -892, 1498, -1217, 1499, 1500]
                 ],
-                "id": 184,
-                "properties": {
-                    "name": "Romania",
-                    "color": "#ffbb78"
+                'id': 184,
+                'properties': {
+                    'name': 'Romania',
+                    'color': '#ffbb78'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1501]
                     ],
@@ -5241,34 +5241,34 @@ export default {
                         [1601]
                     ]
                 ],
-                "id": 185,
-                "properties": {
-                    "name": "Russian Federation",
-                    "color": "#2ca02c"
+                'id': 185,
+                'properties': {
+                    'name': 'Russian Federation',
+                    'color': '#2ca02c'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-222, -556, 1602, 1603]
                 ],
-                "id": 186,
-                "properties": {
-                    "name": "Rwanda",
-                    "color": "#ff7f0e"
+                'id': 186,
+                'properties': {
+                    'name': 'Rwanda',
+                    'color': '#ff7f0e'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-1213, -639, -1286, 1604]
                 ],
-                "id": 187,
-                "properties": {
-                    "name": "Western Sahara",
-                    "color": "#d62728"
+                'id': 187,
+                'properties': {
+                    'name': 'Western Sahara',
+                    'color': '#d62728'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1605]
                     ],
@@ -5279,54 +5279,54 @@ export default {
                         [-1183, 1607, -1496, 1608, -31, -1376, 1609, 1610, -1098, -1070]
                     ]
                 ],
-                "id": 188,
-                "properties": {
-                    "name": "Saudi Arabia",
-                    "color": "#98df8a"
+                'id': 188,
+                'properties': {
+                    'name': 'Saudi Arabia',
+                    'color': '#98df8a'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-662, -690, 1611, -331, 1612, -1192, -655, 1613]
                 ],
-                "id": 189,
-                "properties": {
-                    "name": "Sudan",
-                    "color": "#ffbb78"
+                'id': 189,
+                'properties': {
+                    'name': 'Sudan',
+                    'color': '#ffbb78'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-689, -1147, 1614, -561, -326, -1612]
                 ],
-                "id": 190,
-                "properties": {
-                    "name": "South Sudan",
-                    "color": "#2ca02c"
+                'id': 190,
+                'properties': {
+                    'name': 'South Sudan',
+                    'color': '#2ca02c'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-784, -794, 1615, -786, 1616, -1284, -1242]
                 ],
-                "id": 191,
-                "properties": {
-                    "name": "Senegal",
-                    "color": "#d62728"
+                'id': 191,
+                'properties': {
+                    'name': 'Senegal',
+                    'color': '#d62728'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1617]
                 ],
-                "id": 192,
-                "properties": {
-                    "name": "Singapore",
-                    "color": "#1f77b4"
+                'id': 192,
+                'properties': {
+                    'name': 'Singapore',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1618]
                     ],
@@ -5334,14 +5334,14 @@ export default {
                         [1619]
                     ]
                 ],
-                "id": 193,
-                "properties": {
-                    "name": "South Georgia and the South Sandwich Islands",
-                    "color": "#1f77b4"
+                'id': 193,
+                'properties': {
+                    'name': 'South Georgia and the South Sandwich Islands',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1620]
                     ],
@@ -5349,14 +5349,14 @@ export default {
                         [1621]
                     ]
                 ],
-                "id": 194,
-                "properties": {
-                    "name": "Saint Helena, Ascension and Tristan da Cunha",
-                    "color": "#1f77b4"
+                'id': 194,
+                'properties': {
+                    'name': 'Saint Helena, Ascension and Tristan da Cunha',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1622]
                     ],
@@ -5421,14 +5421,14 @@ export default {
                         [1642]
                     ]
                 ],
-                "id": 195,
-                "properties": {
-                    "name": "Solomon Islands",
-                    "color": "#1f77b4"
+                'id': 195,
+                'properties': {
+                    'name': 'Solomon Islands',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1643]
                     ],
@@ -5436,74 +5436,74 @@ export default {
                         [-1190, 1644, -781]
                     ]
                 ],
-                "id": 196,
-                "properties": {
-                    "name": "Sierra Leone",
-                    "color": "#98df8a"
+                'id': 196,
+                'properties': {
+                    'name': 'Sierra Leone',
+                    'color': '#98df8a'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-858, -872, 1645]
                 ],
-                "id": 197,
-                "properties": {
-                    "name": "El Salvador",
-                    "color": "#ffbb78"
+                'id': 197,
+                'properties': {
+                    'name': 'El Salvador',
+                    'color': '#ffbb78'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1646]
                 ],
-                "id": 198,
-                "properties": {
-                    "name": "San Marino",
-                    "color": "#1f77b4"
+                'id': 198,
+                'properties': {
+                    'name': 'San Marino',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-686, -619, 1647, 1648]
                 ],
-                "id": 199,
-                "properties": {
-                    "name": "Somaliland",
-                    "color": "#98df8a"
+                'id': 199,
+                'properties': {
+                    'name': 'Somaliland',
+                    'color': '#98df8a'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-687, -1649, 1649, -1143]
                 ],
-                "id": 200,
-                "properties": {
-                    "name": "Somalia",
-                    "color": "#2ca02c"
+                'id': 200,
+                'properties': {
+                    'name': 'Somalia',
+                    'color': '#2ca02c'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1650]
                 ],
-                "id": 201,
-                "properties": {
-                    "name": "Saint Pierre and Miquelon",
-                    "color": "#1f77b4"
+                'id': 201,
+                'properties': {
+                    'name': 'Saint Pierre and Miquelon',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-1498, -253, -1241, -1180, -1265, -272, -885, -893]
                 ],
-                "id": 202,
-                "properties": {
-                    "name": "Serbia",
-                    "color": "#2ca02c"
+                'id': 202,
+                'properties': {
+                    'name': 'Serbia',
+                    'color': '#2ca02c'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1651]
                     ],
@@ -5511,44 +5511,44 @@ export default {
                         [1652]
                     ]
                 ],
-                "id": 203,
-                "properties": {
-                    "name": "Sao Tome and Principe",
-                    "color": "#1f77b4"
+                'id': 203,
+                'properties': {
+                    'name': 'Sao Tome and Principe',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-308, -865, 1653, -725]
                 ],
-                "id": 204,
-                "properties": {
-                    "name": "Suriname",
-                    "color": "#2ca02c"
+                'id': 204,
+                'properties': {
+                    'name': 'Suriname',
+                    'color': '#2ca02c'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-895, -212, -600, -1466, 1654]
                 ],
-                "id": 205,
-                "properties": {
-                    "name": "Slovakia",
-                    "color": "#2ca02c"
+                'id': 205,
+                'properties': {
+                    'name': 'Slovakia',
+                    'color': '#2ca02c'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-1091, -205, -894, -887, 1655]
                 ],
-                "id": 206,
-                "properties": {
-                    "name": "Slovenia",
-                    "color": "#98df8a"
+                'id': 206,
+                'properties': {
+                    'name': 'Slovenia',
+                    'color': '#98df8a'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1656]
                     ],
@@ -5568,54 +5568,54 @@ export default {
                         [-1350, -700, 1661]
                     ]
                 ],
-                "id": 207,
-                "properties": {
-                    "name": "Sweden",
-                    "color": "#ff7f0e"
+                'id': 207,
+                'properties': {
+                    'name': 'Sweden',
+                    'color': '#ff7f0e'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1662, -1273]
                 ],
-                "id": 208,
-                "properties": {
-                    "name": "Swaziland",
-                    "color": "#aec7e8"
+                'id': 208,
+                'properties': {
+                    'name': 'Swaziland',
+                    'color': '#aec7e8'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-1211, 1663]
                 ],
-                "id": 209,
-                "properties": {
-                    "name": "Sint Maarten (Dutch part)",
-                    "color": "#aec7e8"
+                'id': 209,
+                'properties': {
+                    'name': 'Sint Maarten (Dutch part)',
+                    'color': '#aec7e8'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1664]
                 ],
-                "id": 210,
-                "properties": {
-                    "name": "Seychelles",
-                    "color": "#1f77b4"
+                'id': 210,
+                'properties': {
+                    'name': 'Seychelles',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-1097, -1082, -1188, 1665, 1666, -1072]
                 ],
-                "id": 211,
-                "properties": {
-                    "name": "Syrian Arab Republic",
-                    "color": "#98df8a"
+                'id': 211,
+                'properties': {
+                    'name': 'Syrian Arab Republic',
+                    'color': '#98df8a'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1667]
                     ],
@@ -5626,34 +5626,34 @@ export default {
                         [1669]
                     ]
                 ],
-                "id": 212,
-                "properties": {
-                    "name": "Turks and Caicos Islands",
-                    "color": "#1f77b4"
+                'id': 212,
+                'properties': {
+                    'name': 'Turks and Caicos Islands',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-330, -554, -1314, -1311, -1193, -1613]
                 ],
-                "id": 213,
-                "properties": {
-                    "name": "Chad",
-                    "color": "#ff9896"
+                'id': 213,
+                'properties': {
+                    'name': 'Chad',
+                    'color': '#ff9896'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-778, -236, -231, 1670]
                 ],
-                "id": 214,
-                "properties": {
-                    "name": "Togo",
-                    "color": "#2ca02c"
+                'id': 214,
+                'properties': {
+                    'name': 'Togo',
+                    'color': '#2ca02c'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1671]
                     ],
@@ -5685,14 +5685,14 @@ export default {
                         [-1185, -1154, 1680, -1296, 1681, -1262]
                     ]
                 ],
-                "id": 215,
-                "properties": {
-                    "name": "Thailand",
-                    "color": "#2ca02c"
+                'id': 215,
+                'properties': {
+                    'name': 'Thailand',
+                    'color': '#2ca02c'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [-1150]
                     ],
@@ -5703,14 +5703,14 @@ export default {
                         [-1148, -536, -6, 1683]
                     ]
                 ],
-                "id": 216,
-                "properties": {
-                    "name": "Tajikistan",
-                    "color": "#2ca02c"
+                'id': 216,
+                'properties': {
+                    'name': 'Tajikistan',
+                    'color': '#2ca02c'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1684]
                     ],
@@ -5718,14 +5718,14 @@ export default {
                         [-4, -1062, 1685, -1139, 1686]
                     ]
                 ],
-                "id": 217,
-                "properties": {
-                    "name": "Turkmenistan",
-                    "color": "#ffbb78"
+                'id': 217,
+                'properties': {
+                    'name': 'Turkmenistan',
+                    'color': '#ffbb78'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [-901, 1687]
                     ],
@@ -5736,14 +5736,14 @@ export default {
                         [1689]
                     ]
                 ],
-                "id": 218,
-                "properties": {
-                    "name": "Timor-Leste",
-                    "color": "#aec7e8"
+                'id': 218,
+                'properties': {
+                    'name': 'Timor-Leste',
+                    'color': '#aec7e8'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1690]
                     ],
@@ -5754,14 +5754,14 @@ export default {
                         [1692]
                     ]
                 ],
-                "id": 219,
-                "properties": {
-                    "name": "Tonga",
-                    "color": "#1f77b4"
+                'id': 219,
+                'properties': {
+                    'name': 'Tonga',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1693]
                     ],
@@ -5769,14 +5769,14 @@ export default {
                         [1694]
                     ]
                 ],
-                "id": 220,
-                "properties": {
-                    "name": "Trinidad and Tobago",
-                    "color": "#1f77b4"
+                'id': 220,
+                'properties': {
+                    'name': 'Trinidad and Tobago',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1695]
                     ],
@@ -5787,14 +5787,14 @@ export default {
                         [-1195, -642, 1697]
                     ]
                 ],
-                "id": 221,
-                "properties": {
-                    "name": "Tunisia",
-                    "color": "#ff7f0e"
+                'id': 221,
+                'properties': {
+                    'name': 'Tunisia',
+                    'color': '#ff7f0e'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1698]
                     ],
@@ -5805,14 +5805,14 @@ export default {
                         [-837, -250, 1700]
                     ]
                 ],
-                "id": 222,
-                "properties": {
-                    "name": "Turkey",
-                    "color": "#d62728"
+                'id': 222,
+                'properties': {
+                    'name': 'Turkey',
+                    'color': '#d62728'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1701]
                     ],
@@ -5820,14 +5820,14 @@ export default {
                         [1702]
                     ]
                 ],
-                "id": 223,
-                "properties": {
-                    "name": "Taiwan",
-                    "color": "#1f77b4"
+                'id': 223,
+                'properties': {
+                    'name': 'Taiwan',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1703]
                     ],
@@ -5841,24 +5841,24 @@ export default {
                         [-1145, 1706, -1278, -1290, 1707, -557, -223, -1604, 1708]
                     ]
                 ],
-                "id": 224,
-                "properties": {
-                    "name": "Tanzania",
-                    "color": "#2ca02c"
+                'id': 224,
+                'properties': {
+                    'name': 'Tanzania',
+                    'color': '#2ca02c'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-1603, -555, -1615, -1146, -1709]
                 ],
-                "id": 225,
-                "properties": {
-                    "name": "Uganda",
-                    "color": "#98df8a"
+                'id': 225,
+                'properties': {
+                    'name': 'Uganda',
+                    'color': '#98df8a'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1709]
                     ],
@@ -5866,24 +5866,24 @@ export default {
                         [-1500, -1216, -1499, -896, -1655, -1465, -277, -1570, 1710]
                     ]
                 ],
-                "id": 226,
-                "properties": {
-                    "name": "Ukraine",
-                    "color": "#98df8a"
+                'id': 226,
+                'properties': {
+                    'name': 'Ukraine',
+                    'color': '#98df8a'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-42, -311, 1711]
                 ],
-                "id": 227,
-                "properties": {
-                    "name": "Uruguay",
-                    "color": "#ffbb78"
+                'id': 227,
+                'properties': {
+                    'name': 'Uruguay',
+                    'color': '#ffbb78'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1712]
                     ],
@@ -6188,14 +6188,14 @@ export default {
                         [-427, 1813, -372, 1814]
                     ]
                 ],
-                "id": 228,
-                "properties": {
-                    "name": "United States",
-                    "color": "#ffbb78"
+                'id': 228,
+                'properties': {
+                    'name': 'United States',
+                    'color': '#ffbb78'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [-1151]
                     ],
@@ -6206,24 +6206,24 @@ export default {
                         [-1149, -1684, -5, -1687, -1138]
                     ]
                 ],
-                "id": 229,
-                "properties": {
-                    "name": "Uzbekistan",
-                    "color": "#98df8a"
+                'id': 229,
+                'properties': {
+                    'name': 'Uzbekistan',
+                    'color': '#98df8a'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1815]
                 ],
-                "id": 230,
-                "properties": {
-                    "name": "Saint Vincent and the Grenadines",
-                    "color": "#1f77b4"
+                'id': 230,
+                'properties': {
+                    'name': 'Saint Vincent and the Grenadines',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1816]
                     ],
@@ -6240,24 +6240,24 @@ export default {
                         [-863, -315, -566, 1820]
                     ]
                 ],
-                "id": 231,
-                "properties": {
-                    "name": "Venezuela",
-                    "color": "#2ca02c"
+                'id': 231,
+                'properties': {
+                    'name': 'Venezuela',
+                    'color': '#2ca02c'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [1821]
                 ],
-                "id": 232,
-                "properties": {
-                    "name": "Virgin Islands, British",
-                    "color": "#1f77b4"
+                'id': 232,
+                'properties': {
+                    'name': 'Virgin Islands, British',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1822]
                     ],
@@ -6268,14 +6268,14 @@ export default {
                         [1824]
                     ]
                 ],
-                "id": 233,
-                "properties": {
-                    "name": "Virgin Islands, U.S.",
-                    "color": "#1f77b4"
+                'id': 233,
+                'properties': {
+                    'name': 'Virgin Islands, U.S.',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1825]
                     ],
@@ -6301,14 +6301,14 @@ export default {
                         [-1156, -1187, -525, 1832]
                     ]
                 ],
-                "id": 234,
-                "properties": {
-                    "name": "Viet Nam",
-                    "color": "#ffbb78"
+                'id': 234,
+                'properties': {
+                    'name': 'Viet Nam',
+                    'color': '#ffbb78'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1833]
                     ],
@@ -6352,14 +6352,14 @@ export default {
                         [1846]
                     ]
                 ],
-                "id": 235,
-                "properties": {
-                    "name": "Vanuatu",
-                    "color": "#1f77b4"
+                'id': 235,
+                'properties': {
+                    'name': 'Vanuatu',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1847]
                     ],
@@ -6367,14 +6367,14 @@ export default {
                         [1848]
                     ]
                 ],
-                "id": 236,
-                "properties": {
-                    "name": "Wallis and Futuna",
-                    "color": "#1f77b4"
+                'id': 236,
+                'properties': {
+                    'name': 'Wallis and Futuna',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1849]
                     ],
@@ -6382,14 +6382,14 @@ export default {
                         [1850]
                     ]
                 ],
-                "id": 237,
-                "properties": {
-                    "name": "Samoa",
-                    "color": "#1f77b4"
+                'id': 237,
+                'properties': {
+                    'name': 'Samoa',
+                    'color': '#1f77b4'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1851]
                     ],
@@ -6403,14 +6403,14 @@ export default {
                         [-1610, -1375, 1854]
                     ]
                 ],
-                "id": 238,
-                "properties": {
-                    "name": "Yemen",
-                    "color": "#d62728"
+                'id': 238,
+                'properties': {
+                    'name': 'Yemen',
+                    'color': '#d62728'
                 }
             }, {
-                "type": "MultiPolygon",
-                "arcs": [
+                'type': 'MultiPolygon',
+                'arcs': [
                     [
                         [1855]
                     ],
@@ -6419,36 +6419,36 @@ export default {
                         [1858]
                     ]
                 ],
-                "id": 239,
-                "properties": {
-                    "name": "South Africa",
-                    "color": "#ff7f0e"
+                'id': 239,
+                'properties': {
+                    'name': 'South Africa',
+                    'color': '#ff7f0e'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-1276, 1859, -1304, -8, -558, -1708, -1289]
                 ],
-                "id": 240,
-                "properties": {
-                    "name": "Zambia",
-                    "color": "#98df8a"
+                'id': 240,
+                'properties': {
+                    'name': 'Zambia',
+                    'color': '#98df8a'
                 }
             }, {
-                "type": "Polygon",
-                "arcs": [
+                'type': 'Polygon',
+                'arcs': [
                     [-325, -1860, -1275, -1858]
                 ],
-                "id": 241,
-                "properties": {
-                    "name": "Zimbabwe",
-                    "color": "#d62728"
+                'id': 241,
+                'properties': {
+                    'name': 'Zimbabwe',
+                    'color': '#d62728'
                 }
             }],
-            "bbox": [-180, -89.99892578124998, 180, 83.59960937500004]
+            'bbox': [-180, -89.99892578124998, 180, 83.59960937500004]
         }
     },
-    "arcs": [
+    'arcs': [
         [
             [37880, 63997],
             [0, -21],
@@ -68598,5 +68598,5 @@ export default {
             [-62, 32]
         ]
     ],
-    "bbox": [-180, -89.99892578124998, 180, 83.59960937500004]
+    'bbox': [-180, -89.99892578124998, 180, 83.59960937500004]
 };
