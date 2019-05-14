@@ -39,7 +39,7 @@ export default class SelectAndCopyComponent {
 
     onSelectableChange = (event) => {
         const currentCheckValue = event.detail.checked;
-        this.gridSelectable.extensible = currentCheckValue;
+        this.gridSelectable[event.detail.menucheckitem.getText()] = currentCheckValue;
         this.grid.setSelectable(this.gridSelectable);
     }
 
