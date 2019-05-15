@@ -4,7 +4,7 @@ import './AttendeesComponent.html';
 export default class AttendeesComponent {
     constructor() {}
 
-    panelReady(event) {
+    panelReady = (event) => {
         const store = Ext.create('Ext.data.Store', {
             autoLoad: true,
             fields: [{ name: 'cnt', type: 'number'}, 'Work_Country'],

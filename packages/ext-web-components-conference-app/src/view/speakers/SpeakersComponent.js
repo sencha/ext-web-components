@@ -70,15 +70,15 @@ export default class SpeakersComponent {
         }
     }
 
-    containerReady(event) {
+    containerReady = (event) => {
         this.containerCmp = event.detail.cmp;
     }
 
-    panelReady(event) {
+    panelReady = (event) => {
         this.panelCmp = event.detail.cmp;
     }
 
-    speakersSideContainerReady(event) {
+    speakersSideContainerReady = (event) => {
         this.sideContainerCmp = event.detail.cmp;
         const tpl = `
             <div class="app-speaker-ct">
@@ -95,7 +95,7 @@ export default class SpeakersComponent {
         this.sideContainerCmp.setTpl(tpl);
     }
 
-    onFavoriteClick(currentTarget) {
+    onFavoriteClick = (currentTarget) => {
         const data_id = currentTarget.dataset.id;
         Ext.get(currentTarget).ripple(event, { bound: false, color: '#999' });
         const record = this.scheduleChainedStore.findRecord('id', data_id);
@@ -114,7 +114,7 @@ export default class SpeakersComponent {
         this.favorites = favorites;
     }
 
-    listReady2(event) {
+    listReady2 = (event) => {
         this.listCmp2 = event.detail.cmp;
         const itemTpl = `
             <div class="app-list-content">
@@ -136,14 +136,14 @@ export default class SpeakersComponent {
         this.listCmp2.on('childtap', this.onSpeakerScheduleClick.bind(this));
     }
 
-    onSpeakerScheduleClick(location, eopts) {
+    onSpeakerScheduleClick = (location, eopts) => {
         localStorage.setItem('record', JSON.stringify(eopts.record.data));
         const scheduleNode = window.main.navTreelistCmp.getStore().findNode('hash', 'schedule');
         window.main.navigate(scheduleNode);
         window.main.navTreelistCmp.setSelection(scheduleNode);
     }
 
-    speakerTap(location, eopts) {
+    speakerTap = (location, eopts) => {
         this.record = eopts.record.data;
         this.sideContainerCmp.setData(this.record);
         this.speakerId = eopts.record.id;
@@ -165,7 +165,7 @@ export default class SpeakersComponent {
         }
     }
 
-    resetSpeakers() {
+    resetSpeakers = () => {
         this.listCmp.setHidden(false);
         this.panelCmp.setHidden(true);
         window.main.scheduleTitle('Speakers', 'Speakers');
@@ -173,7 +173,7 @@ export default class SpeakersComponent {
     }
 
 
-    listReady(event) {
+    listReady = (event) => {
         this.listCmp = event.detail.cmp;
         const maxWidth = !Ext.os.is.Phone && this.record && 500;
         this.listCmp.setMaxWidth(maxWidth);

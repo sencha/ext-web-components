@@ -1,7 +1,6 @@
 import './MainComponent.html';
 
 export default class MainComponent {
-
     constructor() {
         const navTreeRoot = {
             hash: 'all',
@@ -28,7 +27,7 @@ export default class MainComponent {
         });
     }
 
-    afterAllLoaded() {
+    afterAllLoaded = () => {
         this.wait = this.wait - 1;
         if (this.wait === 0) {
             let hash = window.location.hash.substr(1);
@@ -43,7 +42,7 @@ export default class MainComponent {
         }
     }
 
-    readyNavTreePanel(event) {
+    readyNavTreePanel = (event) => {
         this.navTreePanelCmp = event.detail.cmp;
         this.afterAllLoaded('readyNavTreePanel');
 
@@ -60,39 +59,39 @@ export default class MainComponent {
         }
     }
 
-    readyNavTreelist(event) {
+    readyNavTreelist = (event) => {
         this.navTreelistCmp = event.detail.cmp;
         this.navTreelistCmp.setStore(this.treeStore);
         this.afterAllLoaded('readyNavTreelist');
     }
 
-    readyRouter(event) {
+    readyRouter = (event) => {
         this.router = event.target;
         this.afterAllLoaded('readyRouter');
     }
 
-    navTreelistSelectionChange(event) {
+    navTreelistSelectionChange = (event) => {
         const record = event.detail.record;
         this.navigate(record);
     }
 
-    titleReady(event) {
+    titleReady = (event) => {
         this.title = event.detail.cmp;
     }
 
-    scheduleTitle(title, titleOriginator) {
+    scheduleTitle = (title, titleOriginator) => {
         this.title.setTitle(title);
         this.title.setTitleAlign('center');
 
         window.titleOriginator = titleOriginator;
     }
 
-    backButton() {
+    backButton = () => {
         this.back = true;
         this.navButton.setIconCls('md-icon-arrow-back');
     }
 
-    navigate(record) {
+    navigate = (record) => {
         if (record === null) {
             console.log('it was null');
             return;
@@ -112,7 +111,7 @@ export default class MainComponent {
         }
     }
 
-    containsMatches(node) {
+    containsMatches = (node) => {
         const found = node.data.name.match(this.filterRegex) || node.childNodes.some(child => this.containsMatches(child));
         if (found) {node.expand();}
 
@@ -120,7 +119,7 @@ export default class MainComponent {
         return found;
     }
 
-    toggleTree() {
+    toggleTree = () => {
         let title = this.title.getTitle();
 
         if (this.back === false) {
@@ -148,20 +147,20 @@ export default class MainComponent {
 
                 if (tempTitle ==='Schedule') {
                     const scheduleNode = this.navTreelistCmp.getStore().findNode('hash', 'schedule');
-                    window.main.navigate(scheduleNode);
-                    window.main.navTreelistCmp.setSelection(scheduleNode);
+                    this.navigate(scheduleNode);
+                    this.navTreelistCmp.setSelection(scheduleNode);
                     window.schedule.resetSchedule();
                     this.back = false;
                 } else if (tempTitle === 'Speakers') {
                     const speakersNode = this.navTreelistCmp.getStore().findNode('hash', 'speakers');
-                    window.main.navigate(speakersNode);
-                    window.main.navTreelistCmp.setSelection(speakersNode);
+                    this.navigate(speakersNode);
+                    this.navTreelistCmp.setSelection(speakersNode);
                     window.speakers.resetSpeakers();
                     this.back = false;
                 } else if (tempTitle === 'Calendar') {
-                    const calendarNode = this.main.navTreelistCmp.getStore().findNode('hash', 'calendar');
-                    window.main.navigate(calendarNode);
-                    window.main.navTreelistCmp.setSelection(calendarNode);
+                    const calendarNode = this.navTreelistCmp.getStore().findNode('hash', 'calendar');
+                    this.navigate(calendarNode);
+                    this.navTreelistCmp.setSelection(calendarNode);
                     window.calendar.resetCalendar();
                     this.back = false;
                 }
@@ -169,7 +168,7 @@ export default class MainComponent {
         }
     }
 
-    toggleButtonReady(event) {
+    toggleButtonReady = (event) => {
         this.navButton = event.detail.cmp;
         this.navButtonIcon = event.detail.cmp.initialConfig.iconCls;
         console.log(this.navButtonIcon);
@@ -181,7 +180,7 @@ export default class MainComponent {
         }
     }
 
-    onSelectItem(combo, newValue) {
+    onSelectItem = (combo, newValue) => {
         if (newValue.data.date) {
             localStorage.setItem('record', JSON.stringify(newValue.data));
 
@@ -215,24 +214,27 @@ export default class MainComponent {
         }
     }
 
-    onSearch(queryPlan) {
+    onSearch = (queryPlan) => {
         let { query } = queryPlan;
         query = (query || '').toLowerCase();
 
+        this.query = query;
         this.store.clearFilter();
         this.store.filterBy(record => {
-            const { title, speakers } = record.data;
+          const { title, speakers } = record.data;
 
-            return query.trim().split(/\s+/).some(token => {
-                return title.toLowerCase().indexOf(token) >= 0 ||
-                  (speakers && speakers.some(speaker => speaker.name.toLowerCase().indexOf(token) >= 0));
-            });
+          return query.trim().split(/\s+/).some(token => {
+            return title.toLowerCase().indexOf(token) >= 0 ||
+              (speakers && speakers.some(speaker => speaker.name.toLowerCase().indexOf(token) >= 0));
+          })
         });
 
-        this.mobileListCmp.setStore(this.store);
+        this.searchComboBox.setStore(this.store);
+        this.searchComboBox.expand();
+        return false;
     }
 
-    comboboxReady(event) {
+    comboboxReady = (event) => {
         const tpl = `
             <div>
               <div class="app-event-name">{title}</div>
@@ -254,7 +256,7 @@ export default class MainComponent {
         }
     }
 
-    mobileSearchChange({ detail }) {
+    mobileSearchChange = ({ detail }) => {
         const value = detail.newValue;
         let query = (value || '').toLowerCase();
 
@@ -271,12 +273,12 @@ export default class MainComponent {
         this.searchComboBox.setStore(this.store);
     }
 
-    onSearchIconClick() {
+    onSearchIconClick = () => {
         this.sheetCmp.setDisplayed(true);
-        this.sheetCmp.setHidden(false);
+        // this.sheetCmp.setHidden(false);
     }
 
-    searchReady(event) {
+    searchReady = (event) => {
         this.searchIcon = event.detail.cmp;
         this.searchIcon.on('tap', this.onSearchIconClick.bind(this));
 
@@ -287,15 +289,15 @@ export default class MainComponent {
         }
     }
 
-    sheetReady(event) {
+    sheetReady = (event) => {
         this.sheetCmp = event.detail.cmp;
     }
 
-    closeButtonHandler() {
+    closeButtonHandler = () => {
         this.sheetCmp.setDisplayed(false);
     }
 
-    mobileListReady(event) {
+    mobileListReady = (event) => {
         this.mobileListCmp = event.detail.cmp;
         this.mobileListCmp.setStore(this.store);
 
@@ -319,21 +321,21 @@ export default class MainComponent {
         this.mobileListCmp.setItemTpl(itemTpl);
     }
 
-    onItemTap(event) {
+    onItemTap = (event) => {
         this.scheduleTitle('Schedule', 'Schedule');
         window.schedule.banner.setHidden(true);
         this.backButton();
         window.schedule.tabpanelCmp.setHidden(true);
         window.schedule.sidePanel.setHeader(false);
         this.sheetCmp.setDisplayed(false);
-        this.sheetCmp.setHidden(true);
+        // this.sheetCmp.setHidden(true);
         window.schedule.sidePanel.setHidden(false);
 
         localStorage.setItem('record', JSON.stringify(event.detail.record.data));
         const scheduleNode = this.navTreelistCmp.getStore().findNode('hash', 'schedule');
-        window.main.navigate(scheduleNode);
-        window.main.navTreelistCmp.setSelection(scheduleNode);
-
+        this.navigate(scheduleNode);
+        this.navTreelistCmp.setSelection(scheduleNode);
+        window.schedule.sideContainer.setData(JSON.parse(localStorage.getItem('record')));
         this.title.setTitle('Schedule');
     }
 }
