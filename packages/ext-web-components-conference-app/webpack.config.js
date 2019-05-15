@@ -37,7 +37,7 @@ module.exports = function(env) {
                 theme: 'theme-conference-app',
                 toolkit: 'modern',
                 emit: 'yes',
-                script: './extract-code.js',
+                script: '',
                 port: port,
                 packages: [
                     'calendar',

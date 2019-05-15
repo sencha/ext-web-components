@@ -1,6 +1,5 @@
 import topoData from './WorldTopoData';
 import Legend from './Legend';
-import { reactify } from '@sencha/ext-react';
 import * as topojson from 'topojson-client';
 
 Ext.require('Ext.d3.mixin.ToolTip');
@@ -226,5 +225,3 @@ const WorldMap = Ext.define('ConferenceApp.WorldMap', {
         }
     }
 });
-
-export default reactify(WorldMap);

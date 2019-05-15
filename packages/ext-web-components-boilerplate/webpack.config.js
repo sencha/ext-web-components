@@ -32,7 +32,7 @@ module.exports = function(env) {
                 toolkit: 'modern',
                 theme: 'theme-material',
                 emit: emit,
-                script: './extract-code.js',
+                script: '',
                 port: port,
                 packages: [],
                 profile: profile,

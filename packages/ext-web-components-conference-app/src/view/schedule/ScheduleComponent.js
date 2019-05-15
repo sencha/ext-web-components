@@ -32,7 +32,7 @@ export default class ScheduleComponent {
         this.favorites = JSON.parse(localStorage.getItem('favoriteEvents'));
     }
 
-    scheduleSidePanelReady(event) {
+    scheduleSidePanelReady = (event) => {
         this.sidePanel = event.detail.cmp;
 
         this.sidePanel.setTools([{
@@ -53,7 +53,7 @@ export default class ScheduleComponent {
         }
     }
 
-    scheduleSideContainerReady(event) {
+    scheduleSideContainerReady = (event) => {
         this.sideContainer = event.detail.cmp;
         const tpl = `
             <div>
@@ -72,11 +72,11 @@ export default class ScheduleComponent {
         }
     }
 
-    bannerReady(event){
+    bannerReady = (event) => {
         this.banner = event.detail.cmp;
     }
 
-    tabpanelReady(event){
+    tabpanelReady = (event) => {
         this.tabpanelCmp = event.detail.cmp;
 
         if (localStorage.getItem('record')) {
@@ -101,7 +101,7 @@ export default class ScheduleComponent {
         }
     }
 
-    onItemTap(event) {
+    onItemTap = (event) => {
         if (!event) {
             this.record = JSON.parse(localStorage.getItem('record'));
         } else {
@@ -123,7 +123,7 @@ export default class ScheduleComponent {
         }
     }
 
-    resetSchedule() {
+    resetSchedule = () => {
         this.banner.setHidden(false);
         this.tabpanelCmp.setHidden(false);
         this.sidePanel.setHidden(true);
@@ -131,7 +131,7 @@ export default class ScheduleComponent {
         window.main.navButton.setIconCls('x-fa fa-bars');
     }
 
-    onFavoriteClick(currentTarget) {
+    onFavoriteClick = (currentTarget) => {
         const data_id = currentTarget.dataset.id;
         Ext.get(currentTarget).ripple(event, { bound: false, color: '#999' });
         const record = this.store.findRecord('id', data_id);
@@ -149,7 +149,7 @@ export default class ScheduleComponent {
         this.favorites = favorites;
     }
 
-    firstListReady(event) {
+    firstListReady = (event) => {
         const store = Ext.create(
             'Ext.data.ChainedStore',
             {
@@ -179,7 +179,7 @@ export default class ScheduleComponent {
         this.list1.setStore(store);
     }
 
-    secondListReady(event) {
+    secondListReady = (event) => {
         const store = Ext.create('Ext.data.ChainedStore', {
             ...this.storeDefaults,
             filters: [{ property: 'date', value: 'Tuesday, November 8' }]
@@ -207,7 +207,7 @@ export default class ScheduleComponent {
         this.list2.setStore(store);
     }
 
-    thirdListReady(event) {
+    thirdListReady = (event) => {
         const store = Ext.create('Ext.data.ChainedStore', {
             ...this.storeDefaults,
             filters: [{ property: 'date', value: 'Wednesday, November 9' }]
@@ -235,7 +235,7 @@ export default class ScheduleComponent {
         this.list3.setStore(store);
     }
 
-    starListReady(event) {
+    starListReady = (event) => {
         const store = Ext.create(
             'Ext.data.ChainedStore',
             {
