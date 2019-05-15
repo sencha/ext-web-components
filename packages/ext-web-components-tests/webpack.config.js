@@ -40,7 +40,7 @@ module.exports = function(env) {
                 toolkit: 'modern',
                 theme: 'theme-material',
                 emit: 'yes',
-                script: './extract-code.js',
+                script: '',
                 port: port,
                 packages: [
                     'font-ext',
