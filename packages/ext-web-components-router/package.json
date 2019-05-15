@@ -13,7 +13,7 @@
   "scripts": {
     "watch": "npx babel ./lib --out-dir ./dist --source-maps --watch",
     "build": "npx babel ./lib --out-dir ./dist --source-maps",
-    "prepublish": "npm run build"
+    "prepare": "npm run build"
   },
   "homepage": "https://github.com/sencha/ext-web-components#readme",
   "dependencies": {

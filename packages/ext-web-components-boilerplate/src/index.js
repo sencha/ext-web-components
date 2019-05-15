@@ -1,13 +1,13 @@
-import '@sencha/ext-web-components/lib/ext-button.component';
-import '@sencha/ext-web-components/lib/ext-dataview.component';
-import '@sencha/ext-web-components/lib/ext-searchfield.component';
-import '@sencha/ext-web-components/lib/ext-treelist.component';
-import '@sencha/ext-web-components/lib/ext-panel.component';
-import '@sencha/ext-web-components/lib/ext-tabpanel.component';
-import '@sencha/ext-web-components/lib/ext-titlebar.component';
-import '@sencha/ext-web-components/lib/ext-toolbar.component';
-import '@sencha/ext-web-components/lib/ext-column.component';
-import '@sencha/ext-web-components/lib/ext-grid.component';
+import '@sencha/ext-web-components/dist/ext-button.component';
+import '@sencha/ext-web-components/dist/ext-dataview.component';
+import '@sencha/ext-web-components/dist/ext-searchfield.component';
+import '@sencha/ext-web-components/dist/ext-treelist.component';
+import '@sencha/ext-web-components/dist/ext-panel.component';
+import '@sencha/ext-web-components/dist/ext-tabpanel.component';
+import '@sencha/ext-web-components/dist/ext-titlebar.component';
+import '@sencha/ext-web-components/dist/ext-toolbar.component';
+import '@sencha/ext-web-components/dist/ext-column.component';
+import '@sencha/ext-web-components/dist/ext-grid.component';
 
 import getMenu from './menu';
 import { getRoutes } from '@sencha/ext-web-components-router/dist/ext-router.component';
