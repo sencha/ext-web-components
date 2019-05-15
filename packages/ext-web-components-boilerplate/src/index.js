@@ -10,7 +10,7 @@ import '@sencha/ext-web-components/lib/ext-column.component';
 import '@sencha/ext-web-components/lib/ext-grid.component';
 
 import getMenu from './menu';
-import { getRoutes } from '@sencha/ext-web-components-router/lib/ext-router.component';
+import { getRoutes } from '@sencha/ext-web-components-router/dist/ext-router.component';
 import MainComponent from './view/main/MainComponent.js';
 
 Ext.require([
