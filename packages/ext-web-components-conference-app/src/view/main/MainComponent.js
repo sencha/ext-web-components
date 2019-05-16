@@ -221,12 +221,12 @@ export default class MainComponent {
         this.query = query;
         this.store.clearFilter();
         this.store.filterBy(record => {
-          const { title, speakers } = record.data;
+            const { title, speakers } = record.data;
 
-          return query.trim().split(/\s+/).some(token => {
-            return title.toLowerCase().indexOf(token) >= 0 ||
-              (speakers && speakers.some(speaker => speaker.name.toLowerCase().indexOf(token) >= 0));
-          })
+            return query.trim().split(/\s+/).some(token => {
+                return title.toLowerCase().indexOf(token) >= 0 ||
+                  (speakers && speakers.some(speaker => speaker.name.toLowerCase().indexOf(token) >= 0));
+            });
         });
 
         this.searchComboBox.setStore(this.store);
@@ -275,7 +275,6 @@ export default class MainComponent {
 
     onSearchIconClick = () => {
         this.sheetCmp.setDisplayed(true);
-        // this.sheetCmp.setHidden(false);
     }
 
     searchReady = (event) => {
@@ -328,7 +327,6 @@ export default class MainComponent {
         window.schedule.tabpanelCmp.setHidden(true);
         window.schedule.sidePanel.setHeader(false);
         this.sheetCmp.setDisplayed(false);
-        // this.sheetCmp.setHidden(true);
         window.schedule.sidePanel.setHidden(false);
 
         localStorage.setItem('record', JSON.stringify(event.detail.record.data));
