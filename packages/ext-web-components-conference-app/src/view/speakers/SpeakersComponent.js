@@ -1,4 +1,5 @@
 import './SpeakersComponent.html';
+
 Ext.define('User', {
     extend: 'Ext.data.Model',
     fields: [
