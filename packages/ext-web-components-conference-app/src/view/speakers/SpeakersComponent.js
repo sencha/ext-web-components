@@ -20,27 +20,6 @@ export default class SpeakersComponent {
         }
 
         this.favorites = JSON.parse(localStorage.getItem('favoriteEvents'));
-        this.schedulestore = Ext.create('Ext.data.Store', {
-            autoLoad: true,
-            proxy: {
-                type: 'ajax',
-                url: 'resources/schedule.json'
-            },
-            listeners: {
-                load: store => store.each(record => record.set(
-                    'favorite', this.favorites.indexOf(record.getId()) !== -1
-                )),
-            }
-        });
-
-        this.storeDefaults = {
-            source: this.schedulestore,
-            autoDestroy: true,
-            grouper: {
-                property: 'start_time',
-                sortProperty: 'startDate'
-            }
-        };
 
         this.speakerStore = Ext.create('Ext.data.Store', {
             model: 'User',
@@ -56,7 +35,7 @@ export default class SpeakersComponent {
 
         this.scheduleChainedStore = Ext.create('Ext.data.ChainedStore', {
             autoDestroy: true,
-            source: this.schedulestore
+            source: window.main.store
         });
 
         this.record = null;

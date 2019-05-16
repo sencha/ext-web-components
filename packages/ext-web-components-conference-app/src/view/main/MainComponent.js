@@ -18,11 +18,30 @@ export default class MainComponent {
         this.collapsed = false;
         this.isInitial = true;
 
+        this.favorites = JSON.parse(localStorage.getItem('favoriteEvents'));
         this.store = Ext.create('Ext.data.Store', {
             autoLoad: true,
             proxy: {
                 type: 'ajax',
                 url: 'resources/schedule.json'
+            },
+            listeners: {
+                load: store => store.each(record => {
+                    record.set('favorite', this.favorites.indexOf(record.getId()) !== -1);
+                })
+            }
+        });
+
+        this.searchStore = Ext.create('Ext.data.Store', {
+            autoLoad: true,
+            proxy: {
+                type: 'ajax',
+                url: 'resources/schedule.json'
+            },
+            listeners: {
+                load: store => store.each(record => {
+                    record.set('favorite', this.favorites.indexOf(record.getId()) !== -1);
+                })
             }
         });
     }
@@ -219,8 +238,9 @@ export default class MainComponent {
         query = (query || '').toLowerCase();
 
         this.query = query;
-        this.store.clearFilter();
-        this.store.filterBy(record => {
+        this.searchStore.clearFilter();
+
+        this.searchStore.filterBy(record => {
             const { title, speakers } = record.data;
 
             return query.trim().split(/\s+/).some(token => {
@@ -229,7 +249,7 @@ export default class MainComponent {
             });
         });
 
-        this.searchComboBox.setStore(this.store);
+        this.searchComboBox.setStore(this.searchStore);
         this.searchComboBox.expand();
         return false;
     }
@@ -244,7 +264,7 @@ export default class MainComponent {
             </div>
         `;
         this.searchComboBox = event.detail.cmp;
-        this.searchComboBox.setStore(this.store);
+        this.searchComboBox.setStore(this.searchStore);
         this.searchComboBox.setItemTpl(tpl);
         this.searchComboBox.on('beforequery', this.onSearch.bind(this));
         this.searchComboBox.on('select', this.onSelectItem.bind(this));
@@ -293,12 +313,12 @@ export default class MainComponent {
     }
 
     closeButtonHandler = () => {
+        this.store.clearFilter();
         this.sheetCmp.setDisplayed(false);
     }
 
     mobileListReady = (event) => {
         this.mobileListCmp = event.detail.cmp;
-        this.mobileListCmp.setStore(this.store);
 
         const itemTpl = `
             <div class="app-list-content">
@@ -318,9 +338,11 @@ export default class MainComponent {
             </div>
         `;
         this.mobileListCmp.setItemTpl(itemTpl);
+        this.mobileListCmp.setStore(this.store);
     }
 
     onItemTap = (event) => {
+        this.store.clearFilter();
         this.scheduleTitle('Schedule', 'Schedule');
         window.schedule.banner.setHidden(true);
         this.backButton();
