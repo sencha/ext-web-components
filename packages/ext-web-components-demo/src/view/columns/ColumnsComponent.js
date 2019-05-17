@@ -9,9 +9,21 @@ export default class ColumnsComponent {
   }
 
   onGridReady = event => {
-    console.log('in ready event')
+    
     this.gridCmp = event.detail.cmp
-    this.gridCmp.setData(new ColumnsComponentData(10).data)
+
+    var data = [
+        { name: 'Lisa', email: 'lisa@simpsons.com', phone: '555-111-1224' },
+        { name: 'Bart', email: 'bart@simpsons.com', phone: '555-222-1234' },
+        { name: 'Homer', email: 'homer@simpsons.com', phone: '555-222-1244' },
+        { name: 'Marge', email: 'marge@simpsons.com', phone: '555-222-1254' }
+    ]
+    this.gridCmp.setData(data)
+    console.log('setData')
+    console.dir(data)
+
+
+//    this.gridCmp.setData(new ColumnsComponentData(10).data)
   }
 
   onSurNameReady = event => {
