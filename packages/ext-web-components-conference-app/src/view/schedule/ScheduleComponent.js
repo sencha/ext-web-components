@@ -2,20 +2,8 @@ import './ScheduleComponent.html';
 
 export default class ScheduleComponent {
     constructor() {
-        this.store = Ext.create('Ext.data.Store', {
-            autoLoad: true,
-            proxy: {
-                type: 'ajax',
-                url: 'resources/schedule.json'
-            },
-            listeners: {
-                load: store => store.each(record => {
-                    record.set('favorite', this.favorites.indexOf(record.getId()) !== -1);
-                }
-                )}
-        });
         this.storeDefaults = {
-            source: this.store,
+            source: window.main.store,
             autoDestroy: true,
             grouper: {
                 property: 'start_time',
@@ -121,6 +109,8 @@ export default class ScheduleComponent {
             window.main.scheduleTitle(event.detail.record.data.title, 'Schedule');
             window.main.backButton();
         }
+
+        window.main.store.clearFilter();
     }
 
     resetSchedule = () => {
@@ -134,7 +124,7 @@ export default class ScheduleComponent {
     onFavoriteClick = (currentTarget) => {
         const data_id = currentTarget.dataset.id;
         Ext.get(currentTarget).ripple(event, { bound: false, color: '#999' });
-        const record = this.store.findRecord('id', data_id);
+        const record = window.main.store.findRecord('id', data_id);
         let favorites = [];
         const favoritesSet = JSON.parse(JSON.stringify(this.favorites));
 
