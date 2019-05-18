@@ -1,0 +1,1 @@
+{"version":3,"sources":["../lib/index.js"],"names":["ExtRouterComponent","Route"],"mappings":"AAAA,SAASA,kBAAT,QAAmC,wBAAnC;AACA,SAASC,KAAT,QAAsB,wBAAtB;AAEA,SACED,kBADF,EAEEC,KAFF","sourcesContent":["import { ExtRouterComponent } from './ext-router.component';\nimport { Route } from './ext-router.component';\n\nexport {\n  ExtRouterComponent,\n  Route\n}"],"file":"index.js"}
