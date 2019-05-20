@@ -18,11 +18,30 @@ export default class MainComponent {
         this.collapsed = false;
         this.isInitial = true;
 
+        this.favorites = JSON.parse(localStorage.getItem('favoriteEvents'));
         this.store = Ext.create('Ext.data.Store', {
             autoLoad: true,
             proxy: {
                 type: 'ajax',
                 url: 'resources/schedule.json'
+            },
+            listeners: {
+                load: store => store.each(record => {
+                    record.set('favorite', this.favorites.indexOf(record.getId()) !== -1);
+                })
+            }
+        });
+
+        this.searchStore = Ext.create('Ext.data.Store', {
+            autoLoad: true,
+            proxy: {
+                type: 'ajax',
+                url: 'resources/schedule.json'
+            },
+            listeners: {
+                load: store => store.each(record => {
+                    record.set('favorite', this.favorites.indexOf(record.getId()) !== -1);
+                })
             }
         });
     }
@@ -219,17 +238,18 @@ export default class MainComponent {
         query = (query || '').toLowerCase();
 
         this.query = query;
-        this.store.clearFilter();
-        this.store.filterBy(record => {
-          const { title, speakers } = record.data;
+        this.searchStore.clearFilter();
 
-          return query.trim().split(/\s+/).some(token => {
-            return title.toLowerCase().indexOf(token) >= 0 ||
-              (speakers && speakers.some(speaker => speaker.name.toLowerCase().indexOf(token) >= 0));
-          })
+        this.searchStore.filterBy(record => {
+            const { title, speakers } = record.data;
+
+            return query.trim().split(/\s+/).some(token => {
+                return title.toLowerCase().indexOf(token) >= 0 ||
+                  (speakers && speakers.some(speaker => speaker.name.toLowerCase().indexOf(token) >= 0));
+            });
         });
 
-        this.searchComboBox.setStore(this.store);
+        this.searchComboBox.setStore(this.searchStore);
         this.searchComboBox.expand();
         return false;
     }
@@ -244,7 +264,7 @@ export default class MainComponent {
             </div>
         `;
         this.searchComboBox = event.detail.cmp;
-        this.searchComboBox.setStore(this.store);
+        this.searchComboBox.setStore(this.searchStore);
         this.searchComboBox.setItemTpl(tpl);
         this.searchComboBox.on('beforequery', this.onSearch.bind(this));
         this.searchComboBox.on('select', this.onSelectItem.bind(this));
@@ -275,7 +295,6 @@ export default class MainComponent {
 
     onSearchIconClick = () => {
         this.sheetCmp.setDisplayed(true);
-        // this.sheetCmp.setHidden(false);
     }
 
     searchReady = (event) => {
@@ -294,12 +313,12 @@ export default class MainComponent {
     }
 
     closeButtonHandler = () => {
+        this.store.clearFilter();
         this.sheetCmp.setDisplayed(false);
     }
 
     mobileListReady = (event) => {
         this.mobileListCmp = event.detail.cmp;
-        this.mobileListCmp.setStore(this.store);
 
         const itemTpl = `
             <div class="app-list-content">
@@ -319,16 +338,17 @@ export default class MainComponent {
             </div>
         `;
         this.mobileListCmp.setItemTpl(itemTpl);
+        this.mobileListCmp.setStore(this.store);
     }
 
     onItemTap = (event) => {
+        this.store.clearFilter();
         this.scheduleTitle('Schedule', 'Schedule');
         window.schedule.banner.setHidden(true);
         this.backButton();
         window.schedule.tabpanelCmp.setHidden(true);
         window.schedule.sidePanel.setHeader(false);
         this.sheetCmp.setDisplayed(false);
-        // this.sheetCmp.setHidden(true);
         window.schedule.sidePanel.setHidden(false);
 
         localStorage.setItem('record', JSON.stringify(event.detail.record.data));

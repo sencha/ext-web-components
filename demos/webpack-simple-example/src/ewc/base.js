@@ -78,7 +78,7 @@ export default class ExtBase extends HTMLElement {
     this.props.listeners = {}
     var me = this
     this.EVENTS.forEach(function (eventparameter, index, array) {
-      me.setEvent(eventparameter,me.props,me)
+        me.setEvent(eventparameter,me.props,me)
     })
 
     //mjg this should not be hard-coded to APP-ROOT
@@ -179,7 +179,8 @@ export default class ExtBase extends HTMLElement {
     if ( this.extChildrenDefined == true  ||
         (this.extChildrenDefined == false && this.children.length == 0)
       ) {
-      //console.log(`ready event for ${this.nodeName}`)
+      //console.log(`ready event1 for ${this.nodeName}`)
+      //console.dir(this)
       this.dispatchEvent(new CustomEvent('ready',{detail:{cmp: this.ext}}))
     }
 
@@ -190,7 +191,7 @@ export default class ExtBase extends HTMLElement {
     if (this.parentNode.childrenCounter != undefined) {
       this.parentNode.childrenCounter--
       if (this.parentNode.childrenCounter == 0) {
-        //console.log(`ready event for ${this.parentNode.nodeName}`)
+        //console.log(`ready event2 for ${this.parentNode.nodeName}`)
         this.parentNode.dispatchEvent(new CustomEvent('ready',{detail:{cmp: this.parentNode.ext}}))
       }
     }
@@ -327,7 +328,7 @@ export default class ExtBase extends HTMLElement {
   setEvent(eventparameters,o, me) {
     o.listeners[eventparameters.name] = function() {
       let eventname = eventparameters.name
-      //console.log('in event: ' + eventname + ' ' + o.xtype)
+//      console.log('in event: ' + eventname + ' ' + o.xtype)
       let parameters = eventparameters.parameters;
       let parms = parameters.split(',');
       let args = Array.prototype.slice.call(arguments);
