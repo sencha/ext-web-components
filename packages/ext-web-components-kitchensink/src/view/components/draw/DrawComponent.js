@@ -75,7 +75,7 @@ export default class DrawComponent {
             });
 
             if (Ext.os.is.Android) {
-                Ext.this.drawRef.Animator.schedule(() => surface.renderFrame(), this.drawRef);
+                Ext.drawRef.Animator.schedule(() => surface.renderFrame(), this.drawRef);
             } else {
                 surface.renderFrame();
             }

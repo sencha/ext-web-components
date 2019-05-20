@@ -9,20 +9,7 @@ function (_HTMLElement) {
 
   function ExtBase() {
     return _HTMLElement.call(this) || this;
-  } //   filterProperty2(propertyValue) {
-  //     try {
-  //       var opts = [null, undefined, true, false]
-  //       if (opts.includes(parsedProp) || parsedProp === Object(parsedProp)) {
-  //         return parsedProp;
-  //       } else {
-  //         return propertyValue;
-  //       }
-  //     }
-  //     catch(e) {
-  //       return propertyValue;
-  //     }
-  //   }
-
+  }
 
   var _proto = ExtBase.prototype;
 
@@ -155,7 +142,7 @@ function (_HTMLElement) {
       if (this.extParentDefined == true) {
         parentCmp = this.parentNode['ext'];
         childCmp = this.ext;
-        var location = null; //console.log(parentCmp.xtype)
+        var location = null; // console.log(parentCmp.xtype)
         // console.log('this.parentNode.rawChildren')
         // console.dir(this.parentNode)
         // console.dir(this.parentNode.rawChildren)
@@ -427,7 +414,8 @@ function (_HTMLElement) {
         //this.removeEventListener(attr.slice(2), this);
       }
     } else {
-      if (this.ext === undefined) {} else {
+      if (this.ext === undefined) {//mjg ??
+      } else {
         //mjg check if this method exists for this component
         var method = 'set' + attr[0].toUpperCase() + attr.substring(1);
         this.ext[method](newVal);
