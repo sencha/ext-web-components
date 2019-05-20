@@ -138,7 +138,7 @@ export default class ExtBase extends HTMLElement {
         }
         else {
             this.doCreate()
- 
+
             //mjgComment console.log('deal with this item to attach to parent')
             //if extParentDefined is true, then this child to parent
             //if extParentDefined is false, add this child to the extChildren array of the parent
@@ -193,6 +193,7 @@ export default class ExtBase extends HTMLElement {
 
         //mjgComment console.log(`deal with this item's ${this.children.length} extChildren`)
         //mjg figure out how to make this 1 loop so items added in order
+
         for (var i = 0; i < this.extChildren.length; i++) {
             var item = this.extChildren[i]
             //mjgComment console.log(`item ${i} ext child`)
@@ -218,12 +219,10 @@ export default class ExtBase extends HTMLElement {
         }
 
         if ( this.extChildrenDefined == true  ||
-            (this.extChildrenDefined == false && this.children.length == 0)
+            (this.extChildrenDefined == false && (this.children.length == 0 || this.children.length == 1))
             ) {
-            //console.log(`ready event for ${this.nodeName}`)
             this.dispatchEvent(new CustomEvent('ready',{detail:{cmp: this.ext}}))
         }
-
     }
 
     doCreate() {
@@ -275,10 +274,10 @@ export default class ExtBase extends HTMLElement {
             console.log('column.add(column)')
 
             }
-
         if (parentxtype === 'grid' || parentxtype === 'lockedgrid') {
             if (childxtype === 'column' || childxtype === 'treecolumn' || childxtype === 'textcolumn' || childxtype === 'checkcolumn' || childxtype === 'datecolumn' || childxtype === 'rownumberer' || childxtype === 'numbercolumn' || childxtype === 'booleancolumn' ) {
             if(location == null) {
+
                 parentCmp.addColumn(childCmp)
                 console.log(`${parentCmp.xtype}.addColumn(${childCmp.xtype})`)
                 return
