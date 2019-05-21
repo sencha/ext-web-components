@@ -32,9 +32,11 @@ import ColumnsComponent from './view/columns/ColumnsComponent.js';
 
 
 (function () {
+    Ext.onReady(function() {
+        window.columns = new ColumnsComponent() 
+        document.body.innerHTML = window._code['columns']['ColumnsComponent' + '.html']
+    });
 
-    window.columns = new ColumnsComponent() 
-    document.body.innerHTML = window._code['columns']['ColumnsComponent' + '.html']
 
 //   init();
 

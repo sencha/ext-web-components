@@ -107,6 +107,8 @@ function (_HTMLElement) {
       //this.doCreate()
       var me = this;
       me.doCreate();
+      var elem = document.getElementById('theGrid'); //elem.parentNode.removeChild(elem);
+
       console.log('Ext.application');
       Ext.application({
         name: 'MyEWCApp',
@@ -119,6 +121,8 @@ function (_HTMLElement) {
       var me = this;
       me.doCreate();
       console.log('Ext.application');
+      var elem = document.getElementById('theGrid'); //elem.parentNode.removeChild(elem);
+
       Ext.application({
         name: 'MyEWCApp',
         launch: function launch() {
@@ -220,6 +224,7 @@ function (_HTMLElement) {
         var par = item.parentNode;
         var cln = par.removeChild(item);
         var el = Ext.get(cln);
+        console.log('widget');
         this.ext.insert(i, {
           xtype: 'widget',
           element: el
@@ -227,8 +232,7 @@ function (_HTMLElement) {
       }
     }
 
-    if (this.extChildrenDefined == true || this.extChildrenDefined == false && this.children.length == 0) {
-      //console.log(`ready event for ${this.nodeName}`)
+    if (this.extChildrenDefined == true || this.extChildrenDefined == false && (this.children.length == 0 || this.children.length == 1)) {
       this.dispatchEvent(new CustomEvent('ready', {
         detail: {
           cmp: this.ext
@@ -258,6 +262,7 @@ function (_HTMLElement) {
   };
 
   _proto.addTheChild = function addTheChild(parentCmp, childCmp, location) {
+    console.log('addTheChild');
     var childxtype = childCmp.xtype;
     var parentxtype = parentCmp.xtype;
 
@@ -286,6 +291,8 @@ function (_HTMLElement) {
       //parentCmp.getItems()
       parentCmp.add(childCmp);
       console.log('column.add(column)');
+      console.dir(parentCmp);
+      console.dir(childCmp);
     }
 
     if (parentxtype === 'grid' || parentxtype === 'lockedgrid') {
