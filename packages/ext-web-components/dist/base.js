@@ -232,8 +232,7 @@ function (_HTMLElement) {
       }
     }
 
-    if (this.extChildrenDefined == true || this.extChildrenDefined == false && this.children.length == 0) {
-      //console.log(`ready event for ${this.nodeName}`)
+    if (this.extChildrenDefined == true || this.extChildrenDefined == false && (this.children.length == 0 || this.children.length == 1)) {
       this.dispatchEvent(new CustomEvent('ready', {
         detail: {
           cmp: this.ext

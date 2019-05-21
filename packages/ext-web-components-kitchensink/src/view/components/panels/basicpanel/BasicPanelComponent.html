@@ -8,8 +8,9 @@
   }'
 >
   <ext-container
-    autoSize="true" 
-    defaults='{ 
+    autoSize="true"
+    layout="hbox"
+    defaults='{
                 "flex": "1",
                 "bodyPadding": "10",
                 "shadow": "true",
@@ -24,15 +25,17 @@
     </ext-panel>
   </ext-container>
   <ext-container
-    autoSize="true" 
-    defaults='{ 
+    autoSize="true"
+    layout="hbox"
+    defaults='{
                 "flex": "1",
                 "bodyPadding": "10",
                 "shadow": "true",
                 "margin": "10"
               }'
     onready="basicpanel.readycontainer3"
-    flex="1">
+    flex="1"
+  >
     <ext-panel title="Built in Tools" onready="basicpanel.readypanel3" >
     </ext-panel>
     <ext-panel title="Custom Tools w/ iconCls" onready="basicpanel.readypanel4" >

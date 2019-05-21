@@ -6,10 +6,10 @@ export default class BasicListComponent {
     onItemReady = (event) => {
         this.theListview = event.detail.cmp;
         const tpl =
-      `<div>
-          <div style="font-size:16px;margin-bottom:5px;">{first_name} {last_name}</div>
-          <div style="font-size:12px;color:#666;">{title}</div>
-      </div>`;
+            `<div>
+                <div style="font-size:16px;margin-bottom:5px;">{first_name} {last_name}</div>
+                <div style="font-size:12px;color:#666;">{title}</div>
+            </div>`;
 
         this.store = Ext.create('Ext.data.Store', {
             autoLoad: true,
