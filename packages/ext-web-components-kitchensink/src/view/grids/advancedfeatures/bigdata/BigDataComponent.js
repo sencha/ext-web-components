@@ -28,8 +28,6 @@ export default class BigDataComponent {
             }
         });
 
-        this.setItemConfig();
-
         this.gridCmp.setStore(this.store);
         this.exportMenu = Ext.getCmp('exportMenuOfBigData');
         this.exportMenu.getMenu().on('click', this.exportOptionChanged.bind(this));
@@ -51,18 +49,6 @@ export default class BigDataComponent {
         } else if (value==='HTML') {
             this.exportToHtml();
         }
-    }
-
-    setItemConfig = () => {
-        const rowBodyTpl = `
-        <div>
-          <img src={avatar} height="100px" style="float:left;margin:0px 10px 5px 0px;"/>
-          <br><b>{fullName}</b>
-          <br>{dob:date}
-        </div>
-      `;
-
-        this.gridCmp.setItemConfig({ viewModel: {}, body: { tpl: rowBodyTpl }});
     }
 
     exportToXlsx = () => {
@@ -182,6 +168,16 @@ export default class BigDataComponent {
 
     emptyColumnReady = (event) => {
         const emptyColumn = event.detail.cmp;
+        emptyColumn.setSummaryCell({
+            xtype: 'widgetcell',
+            widget: {
+                xtype: 'button',
+                ui: 'action',
+                text: 'All',
+                handler: this.onVerifyAll
+            }
+        });
+
         emptyColumn.setCell({
             xtype: 'widgetcell',
             widget: {
@@ -191,17 +187,7 @@ export default class BigDataComponent {
                 },
                 ui: 'action',
                 text: 'VERIFY',
-                handler: this.onVerify.bind(this)
-            }
-        });
-
-        emptyColumn.setSummaryCell({
-            xtype: 'widgetcell',
-            widget: {
-                xtype: 'button',
-                ui: 'action',
-                text: 'All',
-                handler: this.onVerifyAll.bind(this)
+                handler: this.onVerify
             }
         });
     }
