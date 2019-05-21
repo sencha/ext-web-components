@@ -179,8 +179,8 @@ export default class ExtBase extends HTMLElement {
     if ( this.extChildrenDefined == true  ||
         (this.extChildrenDefined == false && this.children.length == 0)
       ) {
-      console.log(`ready event1 for ${this.nodeName}`)
-      console.dir(this)
+      //console.log(`ready event1 for ${this.nodeName}`)
+      //console.dir(this)
       this.dispatchEvent(new CustomEvent('ready',{detail:{cmp: this.ext}}))
     }
 
@@ -191,7 +191,7 @@ export default class ExtBase extends HTMLElement {
     if (this.parentNode.childrenCounter != undefined) {
       this.parentNode.childrenCounter--
       if (this.parentNode.childrenCounter == 0) {
-        console.log(`ready event2 for ${this.parentNode.nodeName}`)
+        //console.log(`ready event2 for ${this.parentNode.nodeName}`)
         this.parentNode.dispatchEvent(new CustomEvent('ready',{detail:{cmp: this.parentNode.ext}}))
       }
     }
