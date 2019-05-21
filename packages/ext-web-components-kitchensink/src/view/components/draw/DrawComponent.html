@@ -1,9 +1,7 @@
 <ext-container padding="10" layout="fit" fitToParent="true" height="100%">
   <ext-panel shadow="true" layout="fit">
     <ext-toolbar docked="top">
-      <ext-container>
-        <div style="width:100%;">Use your finger or mouse to paint on the surface below.</div>
-      </ext-container>
+      <ext-container onready="draw.headingContainerReady"></ext-container>
       <ext-spacer ></ext-spacer>
       <ext-button ontap="draw.clear" text="Clear"></ext-button>
     </ext-toolbar>

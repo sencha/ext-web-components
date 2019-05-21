@@ -14,6 +14,16 @@ export default class DrawComponent {
         });
     }
 
+    headingContainerReady = (event) => {
+        this.headingContainerCmp = event.detail.cmp;
+
+        if (Ext.os.is.phone) {
+            this.headingContainerCmp.setHtml('<div style="font-size:12px">Use your finger to paint on the surface below.</div>');
+        } else {
+            this.headingContainerCmp.setHtml('<div>Use your finger or mouse to paint on the surface below.</div>');
+        }
+    }
+
     clear = () => {
         this.drawRef.getSurface().destroy();
         this.drawRef.getSurface('overlay').destroy();
@@ -75,7 +85,7 @@ export default class DrawComponent {
             });
 
             if (Ext.os.is.Android) {
-                Ext.drawRef.Animator.schedule(() => surface.renderFrame(), this.drawRef);
+                Ext.draw.Animator.schedule(() => surface.renderFrame(), this.drawRef);
             } else {
                 surface.renderFrame();
             }
