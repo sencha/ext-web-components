@@ -6,7 +6,6 @@ export default class CalendarDragResizeValidationComponent {
 
     calendarDayReady = (event) => {
         this.calendarDay = event.detail.cmp;
-        this.calendarDay.setValue(new Date());
         const store = Ext.create('Ext.calendar.store.Calendars', {
             autoLoad: true,
             proxy: {
@@ -14,16 +13,17 @@ export default class CalendarDragResizeValidationComponent {
                 url: '/KitchenSink/CalendarValidation'
             }
         });
+
+        this.calendarDay.setTimezoneOffset(0);
         this.calendarDay.setStore(store);
-        this.calendarDay.setListeners(
-            this.myCalListeners = {
-                beforeeventdragstart: this.onBeforeDragStart,
-                beforeeventresizestart: this.onBeforeResizeStart,
-                validateeventdrop: this.confirmAction,
-                validateeventresize: this.confirmAction,
-                validateeventerase: this.confirmAction
-            }
-        );
+        this.calendarDay.setValue(new Date());
+        this.calendarDay.setListeners({
+            beforeeventdragstart: this.onBeforeDragStart,
+            beforeeventresizestart: this.onBeforeResizeStart,
+            validateeventdrop: this.confirmAction,
+            validateeventresize: this.confirmAction,
+            validateeventerase: this.confirmAction
+        });
     }
 
     onBeforeDragStart = (calendarday, context) => {
@@ -39,6 +39,7 @@ export default class CalendarDragResizeValidationComponent {
     }
 
     confirmAction = (calendarday, context) => {
+        debugger;
         context.validate = context.validate.then(function() {
             return new Ext.Promise(function(resolve) {
                 Ext.Msg.confirm('Are you sure', 'Allow the action to go ahead?', function(btn) {

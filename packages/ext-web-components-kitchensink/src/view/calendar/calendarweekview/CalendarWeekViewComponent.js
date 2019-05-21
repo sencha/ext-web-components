@@ -13,7 +13,7 @@ export default class CalendarWeekViewComponent {
         if (buttVal == 'fullweek') {
             this.calendarview = value;
             this.visibleDays = 7;
-            this.firstDayOfWeek = 1;
+            this.firstDayOfWeek = 0;
         }
         else {
             this.calendarview = value;
