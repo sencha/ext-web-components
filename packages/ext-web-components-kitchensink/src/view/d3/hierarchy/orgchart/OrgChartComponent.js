@@ -104,15 +104,15 @@ export default class OrgChartComponent {
     };
 
     horizontalTreePanelReady = (event) => {
-        const orgChart = new Components.Kitchensink.Orgchart(); // eslint-disable-line no-undef
-        orgChart.setInteractions(this.interactionsVar);
-        orgChart.setStore(this.store);
-        orgChart.setTooltip({
+        this.orgChartCmp = new Components.Kitchensink.Orgchart(); // eslint-disable-line no-undef
+        this.orgChartCmp.setInteractions(this.interactionsVar);
+        this.orgChartCmp.setStore(this.store);
+        this.orgChartCmp.setTooltip({
             renderer: this.onTooltip.bind(this),
         });
 
         const targetPanelCmp = event.detail.cmp;
         const targetPanelDom = targetPanelCmp.getRenderTarget().el.dom;
-        orgChart.setRenderTo(targetPanelDom);
+        this.orgChartCmp.setRenderTo(targetPanelDom);
     }
 }
