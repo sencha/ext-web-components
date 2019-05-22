@@ -8,7 +8,7 @@ Ext.require([
 import './GroupedGridComponent.html';
 
 export default class GroupedGridComponent {
-    onReady = (event) => {
+    onGridReady = (event) => {
         const store = Ext.create('Ext.data.Store', {
             autoLoad: true,
             proxy: {
@@ -19,27 +19,27 @@ export default class GroupedGridComponent {
             groupField: 'cuisine'
         });
 
-        this.grid = event.detail.cmp;
-        this.grid.setStore(store);
+        this.gridCmp = event.detail.cmp;
+        this.gridCmp.setStore(store);
     }
 
     onButtonReady = (event) => {
-        this.onButton = event.detail.cmp;
+        this.onButtonCmp = event.detail.cmp;
     }
 
     offButtonReady = (event) => {
-        this.offButton = event.detail.cmp;
+        this.offButtonCmp = event.detail.cmp;
     }
 
     onGroupClick = () => {
-        this.grid.setGrouped(true);
-        this.onButton.setPressed(true);
-        this.offButton.setPressed(false);
+        this.gridCmp.setGrouped(true);
+        this.onButtonCmp.setPressed(true);
+        this.offButtonCmp.setPressed(false);
     }
 
     offGroupClick = () => {
-        this.grid.setGrouped(false);
-        this.offButton.setPressed(true);
-        this.onButton.setPressed(false);
+        this.gridCmp.setGrouped(false);
+        this.offButtonCmp.setPressed(true);
+        this.onButtonCmp.setPressed(false);
     }
 }

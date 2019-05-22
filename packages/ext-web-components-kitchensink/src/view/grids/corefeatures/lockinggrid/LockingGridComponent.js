@@ -6,7 +6,7 @@ Ext.require([
 ]);
 
 export default class LockingGridComponent {
-    gridReady = (event) => {
+    onGridReady = (event) => {
         const store = Ext.create('Ext.data.Store', {
             model,
             autoLoad: true,
@@ -87,9 +87,9 @@ export default class LockingGridComponent {
             }
         ];
 
-        const lockedGrid = event.detail.cmp;
-        lockedGrid.setStore(store);
-        lockedGrid.setColumns(columns);
+        const lockedGridCmp = event.detail.cmp;
+        lockedGridCmp.setStore(store);
+        lockedGridCmp.setColumns(columns);
     }
     onApprove = (grid, info) => {
         Ext.Msg.alert('Approve', info.record.get('name'));
