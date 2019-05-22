@@ -50,15 +50,15 @@ export default class HeterogeneousTreeComponent {
     }
 
     onTextFieldReady = (event) => {
-        this.textField = event.detail.cmp;
+        this.textFieldCmp = event.detail.cmp;
     }
 
     onButtonReady = (event) => {
-        this.buttonField = event.detail.cmp;
+        this.buttonFieldCmp = event.detail.cmp;
     }
 
     onTreeReady = (event) => {
-        this.treeField = event.detail.cmp;
+        this.treeFieldCmp = event.detail.cmp;
         const isPhone = Ext.os.is.Phone;
         const top = !isPhone ? '10' : null;
         const left = !isPhone ? '10' : null;
@@ -78,17 +78,17 @@ export default class HeterogeneousTreeComponent {
             rootVisible: false
         });
 
-        this.treeField.setTop(top);
-        this.treeField.setLeft(left);
-        this.treeField.setWidth(width);
-        this.treeField.setHeight(height);
-        this.treeField.setStore(this.store);
+        this.treeFieldCmp.setTop(top);
+        this.treeFieldCmp.setLeft(left);
+        this.treeFieldCmp.setWidth(width);
+        this.treeFieldCmp.setHeight(height);
+        this.treeFieldCmp.setStore(this.store);
     }
 
     addItem = () => {
-        const target = this.treeField.getSelections()[0] || this.store.getRoot();
+        const target = this.treeFieldCmp.getSelections()[0] || this.store.getRoot();
 
-        const value = this.textField.getValue();
+        const value = this.textFieldCmp.getValue();
         if (value != null && value != '') {
             if (this.store.getNodeById(value)) {
                 return Ext.Msg.alert('Error', 'A node with this name already exists.');

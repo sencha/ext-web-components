@@ -139,12 +139,21 @@ export default class ButtonComponent {
 
     setDefaultsForStyle = (event) => {
         this.styleMenu = event.detail.cmp;
-        this.styleMenu.on('click', this.styleMenuItemChange.bind(this));
+
+        if (Ext.isEdge) {
+            this.styleMenu.on('activeItemchange', this.styleMenuItemChange.bind(this));
+        } else {
+            this.styleMenu.on('click', this.styleMenuItemChange.bind(this));
+        }
     }
 
     setTypeForStyle = (event) => {
         this.typeMenu = event.detail.cmp;
-        this.typeMenu.on('click', this.onTypeChange.bind(this));
+        if (Ext.isEdge) {
+            this.typeMenu.on('activeItemchange', this.onTypeChange.bind(this));
+        } else {
+            this.typeMenu.on('click', this.onTypeChange.bind(this));
+        }
     }
 
     setIcon = (event) => {

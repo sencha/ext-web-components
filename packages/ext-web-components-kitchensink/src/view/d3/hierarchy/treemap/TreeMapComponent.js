@@ -45,7 +45,7 @@ export default class TreeMapComponent {
         return record.isLeaf() ? scale(record.get(field)) : '#ececec';
     }
 
-    onReady = (event) => {
+    d3TreeOnReady = (event) => {
         const store = Ext.create('Ext.data.TreeStore', {
             autoLoad: true,
             fields: [
@@ -86,12 +86,12 @@ export default class TreeMapComponent {
             processor: this.colorAxisProcessor
         });
 
-        const cmp = event.detail.cmp;
-        cmp.setStore(store);
-        cmp.setTooltip({
+        this.d3TreeCmp = event.detail.cmp;
+        this.d3TreeCmp.setStore(store);
+        this.d3TreeCmp.setTooltip({
             cls: 'tip',
             renderer: this.onTooltip.bind(this),
         });
-        cmp.setColorAxis(colorAxis);
+        this.d3TreeCmp.setColorAxis(colorAxis);
     }
 }

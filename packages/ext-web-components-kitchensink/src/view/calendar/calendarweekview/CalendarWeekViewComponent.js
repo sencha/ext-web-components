@@ -25,9 +25,9 @@ export default class CalendarWeekViewComponent {
     }
 
     panelReady = (event) => {
-        this.panel = event.detail.cmp;
-        this.panel.setTitle(this.panelTitle);
-        this.panel.setHeader({
+        this.panelCmp = event.detail.cmp;
+        this.panelCmp.setTitle(this.panelTitle);
+        this.panelCmp.setHeader({
             layout: 'hbox',
             items: [{
                 xtype: 'component',
@@ -50,12 +50,12 @@ export default class CalendarWeekViewComponent {
     }
 
     innnerPanelReady = (event) => {
-        this.innerPanel = event.detail.cmp;
-        this.innerPanel.setHidden(this.isPhone);
+        this.innerPanelCmp = event.detail.cmp;
+        this.innerPanelCmp.setHidden(this.isPhone);
     }
 
     calendarListReady = (event) => {
-        this.calendarList = event.detail.cmp;
+        this.calendarListCmp = event.detail.cmp;
         this.store = Ext.create('Ext.calendar.store.Calendars', {
             autoLoad: true,
             proxy: {
@@ -63,14 +63,14 @@ export default class CalendarWeekViewComponent {
                 url: '/KitchenSink/CalendarWeek'
             }
         });
-        this.calendarList.setStore(this.store);
+        this.calendarListCmp.setStore(this.store);
     }
 
     calendarWeekReady = (event) => {
-        this.calendarWeek = event.detail.cmp;
-        this.calendarWeek.setStore(this.store);
-        this.calendarWeek.setValue(new Date());
-        this.calendarWeek.setFirstDayOfWeek(this.firstDayOfWeek);
-        this.calendarWeek.setVisibleDays(this.visibleDays);
+        this.calendarWeekCmp = event.detail.cmp;
+        this.calendarWeekCmp.setStore(this.store);
+        this.calendarWeekCmp.setValue(new Date());
+        this.calendarWeekCmp.setFirstDayOfWeek(this.firstDayOfWeek);
+        this.calendarWeekCmp.setVisibleDays(this.visibleDays);
     }
 }

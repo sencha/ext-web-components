@@ -29,25 +29,6 @@ export default class PullRefreshListComponent {
         });
 
         this.list.setStore(this.store);
-    }
-
-    rewriteStore = () => {
-        this.store = Ext.create('Ext.data.Store', {
-            fields: ['name'],
-            autoLoad: true,
-            proxy: {
-                type: 'ajax',
-                url: '/KitchenSink/Companies',
-                reader: {
-                    type: 'json',
-                    rootProperty: 'data',
-                    implicitIncludes: false
-                },
-                extraParams: {
-                    shuffle: true
-                }
-            }
-        });
-        this.list.setStore(this.store);
+        this.list.setPlugins({ type: 'pullrefresh', mergeData: false });
     }
 }

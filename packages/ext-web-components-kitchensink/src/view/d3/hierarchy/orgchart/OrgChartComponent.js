@@ -111,8 +111,8 @@ export default class OrgChartComponent {
             renderer: this.onTooltip.bind(this),
         });
 
-        const targetPanel = event.detail.cmp;
-        const targetPanelDom = targetPanel.getRenderTarget().el.dom;
+        const targetPanelCmp = event.detail.cmp;
+        const targetPanelDom = targetPanelCmp.getRenderTarget().el.dom;
         orgChart.setRenderTo(targetPanelDom);
     }
 }

@@ -29,7 +29,7 @@ export default class PurchasesByDayComponent {
     }
 
     onHeatMapReady = (event) => {
-        this.heatmap = event.detail.cmp;
+        this.heatmapCmp = event.detail.cmp;
         const tooltip = {
             'renderer': this.onTooltip.bind(this)
         };
@@ -84,13 +84,13 @@ export default class PurchasesByDayComponent {
                 'stroke-width': 1
             }
         };
-        this.heatmap.setTiles(tiles);
-        this.heatmap.setColorAxis(color);
-        this.heatmap.setConfig(this.platformConfigVar);
-        this.heatmap.setXAxis(xAxisVar);
-        this.heatmap.setYAxis(yAxisVar);
-        this.heatmap.setTooltip(tooltip);
-        this.heatmap.setStore(this.store);
+        this.heatmapCmp.setTiles(tiles);
+        this.heatmapCmp.setColorAxis(color);
+        this.heatmapCmp.setConfig(this.platformConfigVar);
+        this.heatmapCmp.setXAxis(xAxisVar);
+        this.heatmapCmp.setYAxis(yAxisVar);
+        this.heatmapCmp.setTooltip(tooltip);
+        this.heatmapCmp.setStore(this.store);
     }
 
     onTooltip = (component, tooltip, datum) => {

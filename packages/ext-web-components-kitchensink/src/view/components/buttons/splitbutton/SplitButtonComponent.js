@@ -68,7 +68,7 @@ export default class SplitButtonComponent {
             });
         }
 
-        if(this.type.indexOf('Text & Icon') !== -1){
+        if (this.type.indexOf('Text & Icon') !== -1) {
             for (let index = 0; index < this.menuButtons.length; index++) {
                 if (index % 3 === 0) {
                     this.menuButtons[index].setText('Normal');
@@ -115,12 +115,23 @@ export default class SplitButtonComponent {
 
     setDefaultsForStyle = (event) => {
         this.styleMenu = event.detail.cmp;
-        this.styleMenu.on('click', this.styleMenuItemChange.bind(this));
+
+        if (Ext.isEdge) {
+            this.styleMenu.on('activeItemchange', this.styleMenuItemChange.bind(this));
+        } else {
+            this.styleMenu.on('click', this.styleMenuItemChange.bind(this));
+        }
     }
 
     setTypeForStyle = (event) => {
         this.typeMenu = event.detail.cmp;
-        this.typeMenu.on('click', this.onTypeChange.bind(this));
+    
+        if (Ext.isEdge) {
+            this.typeMenu.on('activeItemchange', this.onTypeChange.bind(this));
+        } else {
+            this.typeMenu.on('click', this.onTypeChange.bind(this));
+        }
+
     }
 
     setIcon = (event) => {

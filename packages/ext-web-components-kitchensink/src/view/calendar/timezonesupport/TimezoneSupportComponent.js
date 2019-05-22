@@ -9,7 +9,7 @@ export default class CalendarTimezoneSupportComponent {
     }
 
     calendarDayReady = (event) => {
-        this.calendarDay = event.detail.cmp;
+        this.calendarDayCmp = event.detail.cmp;
         const store = Ext.create('Ext.calendar.store.Calendars', {
             autoLoad: true,
             proxy: {
@@ -17,19 +17,19 @@ export default class CalendarTimezoneSupportComponent {
                 url: '/KitchenSink/CalendarTimezone'
             }
         });
-        this.calendarDay.setStore(store);
+        this.calendarDayCmp.setStore(store);
     }
 
     changeOptions = () => {
         const selectorValue = Ext.getCmp('selector').getSelection().data.value;
         this.timezoneOffset = selectorValue;
-        this.calendarDay.setTimezoneOffset(this.timezoneOffset);
+        this.calendarDayCmp.setTimezoneOffset(this.timezoneOffset);
     }
 
     panelReady = (event) => {
-        this.panel = event.detail.cmp;
-        this.panel.setTitle(this.panelTitle);
-        this.panel.setHeader(
+        this.panelCmp = event.detail.cmp;
+        this.panelCmp.setTitle(this.panelTitle);
+        this.panelCmp.setHeader(
             {
                 layout: 'hbox',
                 items: [{

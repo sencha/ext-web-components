@@ -16,7 +16,7 @@ export default class SalesPerEmployeeComponent {
     }
 
     onHeatMapReady = (event) => {
-        this.heatmap = event.detail.cmp;
+        this.heatmapCmp = event.detail.cmp;
         const platformConfigVar = {
             padding: {
                 top: 40,
@@ -85,12 +85,12 @@ export default class SalesPerEmployeeComponent {
                 'stroke-width': 2
             }
         };
-        this.heatmap.setTiles(tiles);
-        this.heatmap.setColorAxis(color);
-        this.heatmap.setConfig(platformConfigVar);
-        this.heatmap.setXAxis(xAxisVar);
-        this.heatmap.setYAxis(yAxisVar);
-        this.heatmap.setStore(this.store);
+        this.heatmapCmp.setTiles(tiles);
+        this.heatmapCmp.setColorAxis(color);
+        this.heatmapCmp.setConfig(platformConfigVar);
+        this.heatmapCmp.setXAxis(xAxisVar);
+        this.heatmapCmp.setYAxis(yAxisVar);
+        this.heatmapCmp.setStore(this.store);
     }
 
     onRefreshDataButtonReady = (event) => {

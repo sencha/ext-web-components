@@ -44,8 +44,8 @@ export default class PackComponent {
             idProperty: 'path'
         });
 
-        let d3Cmp = event.detail.cmp;
-        d3Cmp.setStore(store);
-        d3Cmp.setTooltip({ renderer: this.onTooltip.bind(this) });
+        this.d3Cmp = event.detail.cmp;
+        this.d3Cmp.setStore(store);
+        this.d3Cmp.setTooltip({ renderer: this.onTooltip.bind(this) });
     }
 }

@@ -53,12 +53,12 @@ export default class ZoomableSunburstComponent {
     };
 
     onSubBurstReady = (event) => {
-        this.sunburst = event.detail.cmp;
-        this.sunburst.onNodeSelect = (record) => {
-            this.sunburst.zoomInNode(record);
+        this.sunburstCmp = event.detail.cmp;
+        this.sunburstCmp.onNodeSelect = (record) => {
+            this.sunburstCmp.zoomInNode(record);
         };
-        this.sunburst.setStore(this.store);
-        this.sunburst.setTooltip({
+        this.sunburstCmp.setStore(this.store);
+        this.sunburstCmp.setTooltip({
             renderer: this.onTooltip.bind(this),
         });
     }

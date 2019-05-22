@@ -50,12 +50,12 @@ export default class PivotHeatmapComponent {
     }
 
   onPivotReady = (event) => {
-      this.pivot = event.detail.cmp;
+      this.pivotCmp = event.detail.cmp;
       const tooltip = {
           renderer: this.onTooltip.bind(this)
       };
-      this.pivot.setMatrix(this.matrixVar);
-      this.pivot.setTooltip(tooltip);
+      this.pivotCmp.setMatrix(this.matrixVar);
+      this.pivotCmp.setTooltip(tooltip);
   }
 
   onTooltip = (component, tooltip, datum) => {

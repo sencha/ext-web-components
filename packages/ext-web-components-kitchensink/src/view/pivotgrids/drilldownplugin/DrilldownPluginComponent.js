@@ -38,22 +38,22 @@ export default class DrilldownPluginComponent {
     }
 
     onPivotGridReady = (event) => {
-        this.pivotgrid = event.detail.cmp;
+        this.pivotgridCmp = event.detail.cmp;
         const plugin = [{ type: 'pivotdrilldown' }];
-        this.pivotgrid.setMatrix(this.pivotgridMatrix);
-        this.pivotgrid.setPlugins(plugin);
+        this.pivotgridCmp.setMatrix(this.pivotgridMatrix);
+        this.pivotgridCmp.setPlugins(plugin);
     }
 
      onButtonReady1 = (event) => {
-         this.button1 = event.detail.cmp;
-         this.button1.setHandler(this.expandAll.bind(this));
+         this.button1Cmp = event.detail.cmp;
+         this.button1Cmp.setHandler(this.expandAll.bind(this));
      }
 
      onButtonReady2 = (event) => {
-         this.button2 = event.detail.cmp;
-         this.button2.setHandler(this.collapseAll.bind(this));
+         this.button2Cmp = event.detail.cmp;
+         this.button2Cmp.setHandler(this.collapseAll.bind(this));
      }
 
-     collapseAll = () => {this.pivotgrid.collapseAll();}
-     expandAll = () => {this.pivotgrid.expandAll();}
+     collapseAll = () => {this.pivotgridCmp.collapseAll();}
+     expandAll = () => {this.pivotgridCmp.expandAll();}
 }
