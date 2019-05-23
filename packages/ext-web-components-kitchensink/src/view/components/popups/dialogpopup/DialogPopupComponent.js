@@ -7,22 +7,22 @@ export default class DialogPopupComponent {
     }
 
     dialogReady = (event) => {
-        this.dialog = event.detail.cmp;
+        this.dialogCmp = event.detail.cmp;
     }
 
     showDialog = () => {
-        this.dialog.setDisplayed(!this.isDialogShowing);
+        this.dialogCmp.setDisplayed(!this.isDialogShowing);
     }
 
     onHide = () => {
-        this.dialog.setDisplayed(this.isDialogShowing);
+        this.dialogCmp.setDisplayed(this.isDialogShowing);
     }
 
     onCancel = () => {
-        this.dialog.setDisplayed(this.isDialogShowing);
+        this.dialogCmp.setDisplayed(this.isDialogShowing);
     }
 
     onOk = () => {
-        this.dialog.setDisplayed(this.isDialogShowing);
+        this.dialogCmp.setDisplayed(this.isDialogShowing);
     }
 }

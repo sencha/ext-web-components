@@ -29,22 +29,22 @@ export default class TouchEventsComponent {
     }
 
     dataviewReady = (event) => {
-        this.theDataview = event.detail.cmp;
-        this.theDataview.setItemTpl('<p style="margin: 4px;">{type}</p>');
+        this.theDataviewCmp = event.detail.cmp;
+        this.theDataviewCmp.setItemTpl('<p style="margin: 4px;">{type}</p>');
     }
 
     onTouchEvent = (e) => {
         this.events = [{type:e.type}, ...this.events];
-        this.theDataview.setData(this.events);
+        this.theDataviewCmp.setData(this.events);
     }
 
     clearEventLog = () => {
         this.events = [];
-        this.theDataview.setData(null);
+        this.theDataviewCmp.setData(null);
     }
 
     panelReady = (event) => {
-        this.panel = event.detail.cmp;
+        this.panelCmp = event.detail.cmp;
         const panelHeader = {
             items: [
                 {
@@ -55,7 +55,7 @@ export default class TouchEventsComponent {
                     handler: this.clearEventLog.bind(this)
                 }]
         };
-        this.panel.setHeader(panelHeader);
-        this.panel.setTitle('Event Log');
+        this.panelCmp.setHeader(panelHeader);
+        this.panelCmp.setTitle('Event Log');
     }
 }

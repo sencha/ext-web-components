@@ -11,11 +11,11 @@ export default class SheetComponent {
     }
 
     sheetReady = (event) => {
-        this.sheet = event.detail.cmp;
+        this.sheetCmp = event.detail.cmp;
     }
 
     buttonReady = (event) => {
-        this.button = event.detail.cmp;
+        this.buttonCmp = event.detail.cmp;
 
         if(this.direct === 'left' || this.direct === 'right'){
             this.width = '250';
@@ -23,23 +23,23 @@ export default class SheetComponent {
             this.width = 'undefined';
         }
 
-        this.button.setWidth(this.width);
+        this.buttonCmp.setWidth(this.width);
     }
 
-    buttonReady1 = (event) => {
-        this.button1 = event.detail.cmp;
-        this.button1.setText(this.text);
-        this.button1.setPressed(this.displayed);
+    panelButtonReady = (event) => {
+        this.panelButtonCmp = event.detail.cmp;
+        this.panelButtonCmp.setText(this.text);
+        this.panelButtonCmp.setPressed(this.displayed);
     }
 
-    buttonReady2 = (event) => {
+    segmentedbuttonReady1 = (event) => {
         this.cmp = event.detail.cmp._text;
-        this.button2 = event.detail.cmp;
+        this.segmentedbuttonCmp1 = event.detail.cmp;
 
         if(this.direct == this.cmp) {
-            this.button2.setPressed(true);
+            this.segmentedbuttonCmp1.setPressed(true);
         } else {
-            this.button2.setPressed(false);
+            this.segmentedbuttonCmp1.setPressed(false);
         }
     }
 
@@ -63,9 +63,9 @@ export default class SheetComponent {
         this.buttonModalN.setPressed(false);
     }
 
-    segmentedbuttonReady = (event) => {
-        this.segmentedbutton = event.detail.cmp;
-        this.segmentedbutton.setDisabled(this.reveal);
+    segmentedbuttonReady2 = (event) => {
+        this.segmentedbuttonCmp2 = event.detail.cmp;
+        this.segmentedbuttonCmp2.setDisabled(this.reveal);
     }
 
     toggleMenu = () => {
@@ -83,22 +83,22 @@ export default class SheetComponent {
             this.width = 'undefined';
         }
 
-        this.button.setWidth(this.width);
-        this.button1.setText(this.text);
-        this.button1.setPressed(this.displayed);
-        this.sheet.setSide(this.direct);
-        this.sheet.setModal(this.modal);
-        this.sheet.setReveal(this.reveal);
+        this.buttonCmp.setWidth(this.width);
+        this.panelButtonCmp.setText(this.text);
+        this.panelButtonCmp.setPressed(this.displayed);
+        this.sheetCmp.setSide(this.direct);
+        this.sheetCmp.setModal(this.modal);
+        this.sheetCmp.setReveal(this.reveal);
 
-        this.sheet.setDisplayed(this.displayed);
+        this.sheetCmp.setDisplayed(this.displayed);
     }
 
     onHide = () => {
         this.displayed = false;
         this.text = 'Show Menu';
-        this.button1.setText(this.text);
-        this.button1.setPressed(false);
-        this.sheet.setDisplayed(this.displayed);
+        this.panelButtonCmp.setText(this.text);
+        this.panelButtonCmp.setPressed(false);
+        this.sheetCmp.setDisplayed(this.displayed);
     }
 
     directLeft = () => {

@@ -11,16 +11,16 @@ export default class ClosableTabComponent {
         ];
     }
 
-    tabPanelReady = (event) => {
-        this.tabPanel = event.detail.cmp;
-        this.tabPanel.setTabBar({
+    tabanelReady = (event) => {
+        this.tabpanelCmp = event.detail.cmp;
+        this.tabpanelCmp.setTabBar({
             height: 48,
             layout: { pack: 'left' },
             style: { paddingRight: '52px' }
         });
 
         for (let i=0; i<this.tabs.length; i++) {
-            this.tabPanel.add(this.addNewTab(i));
+            this.tabpanelCmp.add(this.addNewTab(i));
         }
     }
 
@@ -38,14 +38,14 @@ export default class ClosableTabComponent {
     addTab = () => {
         const key = this.nextKey++;
         this.tabs = [...this.tabs, key];
-        this.tabPanel.add(this.addNewTab(key));
+        this.tabpanelCmp.add(this.addNewTab(key));
         this.tabPanelAdded();
         return false;
     }
 
     tabPanelAdded = () => {
-        if (this.tabPanel != undefined) {
-            this.tabPanel.setActiveItem(this.tabs.indexOf(this.tabs.length-1));
+        if (this.tabpanelCmp != undefined) {
+            this.tabpanelCmp.setActiveItem(this.tabs.indexOf(this.tabs.length-1));
         }
     }
 }
