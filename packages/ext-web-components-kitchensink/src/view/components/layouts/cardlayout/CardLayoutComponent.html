@@ -14,18 +14,18 @@
     flex="1"
     layout="card"
     shadow="true"
-    onready="cardlayout.onContainer1Ready"
+    onready="cardlayout.onParentContainerReady"
     scrollable="true"
   >
-    <ext-panel onready="cardlayout.onItem1Ready" shadow="true" scrollable="true">
+    <ext-panel onready="cardlayout.onPanel1Ready" shadow="true" scrollable="true">
       <ext-container
-        onready="cardlayout.onContainer2Ready"
+        onready="cardlayout.onChildContainer1Ready"
         scrollable="true"
       >
       </ext-container>
     </ext-panel>
-      <ext-panel onready="cardlayout.onItem2Ready" shadow="true" scrollable="true">
-        <ext-container onready="cardlayout.onContainer3Ready" scrollable="true">
+      <ext-panel onready="cardlayout.onPanel22Ready" shadow="true" scrollable="true">
+        <ext-container onready="cardlayout.onChildContainer2Ready" scrollable="true">
         </ext-container>
     </ext-panel>
   </ext-container>

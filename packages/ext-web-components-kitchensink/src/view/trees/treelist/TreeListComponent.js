@@ -3,7 +3,7 @@ import data from './data';
 
 export default class TreeListComponent {
     constructor() {
-        this.micro = false;
+        this.microCmp = false;
         this.ui='nav';
         this.nav=true;
     }

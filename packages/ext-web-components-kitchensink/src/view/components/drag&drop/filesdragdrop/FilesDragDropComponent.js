@@ -8,39 +8,39 @@ export default class FilesDragDropComponent {
     labelText = 'Drag a file from your computer here.';
 
     parentReady = (ele) => {
-        this.parentRef = ele.detail.cmp.el;
-        this.target.setElement(this.parentRef);
-        this.parentRef.destroy = this.doDestroy.bind(this);
+        this.parentRefCmp = ele.detail.cmp.el;
+        this.target.setElement(this.parentRefCmp);
+        this.parentRefCmp.destroy = this.doDestroy.bind(this);
     }
 
     onDragEnter = () => {
-        this.iconContainer.setCls('drag-file-icon active');
+        this.iconContainerCmp.setCls('drag-file-icon active');
     }
 
     onDragLeave = () => {
-        this.iconContainer.setCls('drag-file-icon');
+        this.iconContainerCmp.setCls('drag-file-icon');
     }
 
     fileContainerReady = (event) => {
-        this.textContainer = event.detail.cmp.el;
+        this.textContainerCmp = event.detail.cmp.el;
     }
 
     iconContainerReady = (event) => {
-        this.iconContainer = event.detail.cmp.el;
+        this.iconContainerCmp = event.detail.cmp.el;
     }
 
     onDrop = (target, info) => {
         const files = info.files;
-        this.iconContainer.setCls('drag-file-icon dropped fa-spin');
+        this.iconContainerCmp.setCls('drag-file-icon dropped fa-spin');
 
         const labelText = files.length > 1 ? `Dropped ${files.length} files.` : `Dropped ${files[0].name}`;
-        this.textContainer.setHtml(labelText);
+        this.textContainerCmp.setHtml(labelText);
 
         const comp = this;
         this.timer = setTimeout(function(){
-            if(!comp.parentRef.destroyed) {
-                comp.iconContainer.setCls('drag-file-icon drag-file-fadeout');
-                comp.textContainer.setHtml('Drag a file from your computer here.');
+            if(!comp.parentRefCmp.destroyed) {
+                comp.iconContainerCmp.setCls('drag-file-icon drag-file-fadeout');
+                comp.textContainerCmp.setHtml('Drag a file from your computer here.');
             }
             comp.timer = null;
         }, 2000);

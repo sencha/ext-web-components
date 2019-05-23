@@ -61,26 +61,26 @@ export default class CardLayoutComponent {
         } else {
             this.activeCard = 0;
         }
-        this.contParent.setLayout({ animation: this.animation });
-        this.contParent.setActiveItem(this.activeCard);
+        this.contParentCmp.setLayout({ animation: this.animation });
+        this.contParentCmp.setActiveItem(this.activeCard);
     }
 
-    onItem1Ready = (event) => {
-        this.displayPanel1 = event.detail.cmp;
-        this.displayPanel1.setBodyStyle(this.card.blue);
+    onPanel1Ready = (event) => {
+        this.displayPanel1Cmp = event.detail.cmp;
+        this.displayPanel1Cmp.setBodyStyle(this.card.blue);
     }
 
-    onItem2Ready = (event) => {
-        this.displayPanel2 = event.detail.cmp;
-        this.displayPanel2.setBodyStyle(this.card.green);
+    onPanel2Ready = (event) => {
+        this.displayPanel2Cmp = event.detail.cmp;
+        this.displayPanel2Cmp.setBodyStyle(this.card.green);
     }
 
-    onContainer1Ready = (event) => {
-        this.contParent = event.detail.cmp;
+    onParentContainerReady = (event) => {
+        this.contParentCmp = event.detail.cmp;
     }
 
-    onContainer2Ready = (event) => {
-        this.cont2 = event.detail.cmp;
+    onChildContainer1Ready = (event) => {
+        this.contChildCmp1 = event.detail.cmp;
 
         for (let buttonItem of this.contents) {
             const buttonElement = document.createElement('ext-button');
@@ -94,12 +94,12 @@ export default class CardLayoutComponent {
             buttonElement.setAttribute('onTap', 'cardlayout.switchCards');
             buttonElement.setAttribute('animation', buttonItem.animation);
             buttonElement.animation = buttonItem.animation;
-            this.cont2.el.dom.append(buttonElement);
+            this.contChildCmp1.el.dom.append(buttonElement);
         }
     }
 
-    onContainer3Ready = (event) => {
-        this.cont3 = event.detail.cmp;
+    onChildContainer2Ready = (event) => {
+        this.contChildCmp2 = event.detail.cmp;
 
         for (let buttonItem of this.contents) {
             const buttonElement = document.createElement('ext-button');
@@ -111,7 +111,7 @@ export default class CardLayoutComponent {
             buttonElement.text = buttonItem.text;
             buttonElement.ui = 'alt';
             buttonElement.setAttribute('onTap', 'cardlayout.switchCards');
-            this.cont3.el.dom.append(buttonElement);
+            this.contChildCmp2.el.dom.append(buttonElement);
         }
     }
 }

@@ -109,7 +109,7 @@ export default class HeterogeneousTreeComponent {
             if (!target.isExpanded()) {
                 target.expand(false);
             }
-            this.textField.reset();
+            this.textFieldCmp.reset();
         }
         else {
             Ext.Msg.alert('Enter a Value', 'Please Enter a Value');
@@ -123,7 +123,7 @@ export default class HeterogeneousTreeComponent {
      };
 
      onSelectionChange = (event) => {
-         var button = this.buttonField;
+         var button = this.buttonFieldCmp;
          var selection = event.detail.selected;
          if (selection.length) {
              const selectedNode = selection[0];

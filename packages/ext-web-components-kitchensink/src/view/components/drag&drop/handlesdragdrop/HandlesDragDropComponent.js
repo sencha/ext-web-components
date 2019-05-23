@@ -5,19 +5,19 @@ export default class HandlesDragDropComponent {
     constructor() {}
 
     parentReady = (ele) => {
-        this.parentRef = ele.detail.cmp.el;
-        this.sources[0].setConstrain(this.parentRef);
-        this.sources[1].setConstrain(this.parentRef);
+        this.parentRefCmp = ele.detail.cmp.el;
+        this.sources[0].setConstrain(this.parentRefCmp);
+        this.sources[1].setConstrain(this.parentRefCmp);
     }
 
     handleRepeatReady = (ele) => {
-        this.handleRepeatRef = ele.detail.cmp.el;
-        this.sources[0].setElement(this.handleRepeatRef);
+        this.handleRepeatRefCmp = ele.detail.cmp.el;
+        this.sources[0].setElement(this.handleRepeatRefCmp);
     }
 
     dragReady = (ele) => {
-        this.dragRef = ele.detail.cmp.el;
-        this.sources[1].setElement(this.dragRef);
+        this.dragRefCmp = ele.detail.cmp.el;
+        this.sources[1].setElement(this.dragRefCmp);
     }
 
     sources = [

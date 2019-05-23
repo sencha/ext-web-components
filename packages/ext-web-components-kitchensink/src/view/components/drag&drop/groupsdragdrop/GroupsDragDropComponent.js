@@ -10,41 +10,41 @@ export default class GroupsDragDropComponent {
 
     parentReady = (ele) => {
         const comp = this;
-        this.parentRef = ele.detail.cmp.el;
+        this.parentRefCmp = ele.detail.cmp.el;
         this.sources.slice(0, 3).forEach(function(source){
-            source.setConstrain(comp.parentRef);
+            source.setConstrain(comp.parentRefCmp);
         });
-        this.parentRef.destroy = this.doDestroy.bind(this);
+        this.parentRefCmp.destroy = this.doDestroy.bind(this);
     }
 
     src1Ready = (ele) => {
-        this.src1Ref = ele.detail.cmp.el;
-        this.sources[0].setElement(this.src1Ref);
+        this.src1RefCmp = ele.detail.cmp.el;
+        this.sources[0].setElement(this.src1RefCmp);
     }
 
     src2Ready = (ele) => {
-        this.src2Ref = ele.detail.cmp.el;
-        this.sources[1].setElement(this.src2Ref);
+        this.src2RefCmp = ele.detail.cmp.el;
+        this.sources[1].setElement(this.src2RefCmp);
     }
 
     srcbReady = (ele) => {
-        this.srcbRef = ele.detail.cmp.el;
-        this.sources[2].setElement(this.srcbRef);
+        this.srcbRefCmp = ele.detail.cmp.el;
+        this.sources[2].setElement(this.srcbRefCmp);
     }
 
     tar1Ready = (ele) => {
-        this.tar1Ref = ele.detail.cmp.el;
-        this.sources[3].setElement(this.tar1Ref);
+        this.tar1RefCmp = ele.detail.cmp.el;
+        this.sources[3].setElement(this.tar1RefCmp);
     }
 
     tar2Ready = (ele) => {
-        this.tar2Ref = ele.detail.cmp.el;
-        this.sources[4].setElement(this.tar2Ref);
+        this.tar2RefCmp = ele.detail.cmp.el;
+        this.sources[4].setElement(this.tar2RefCmp);
     }
 
     tarbReady = (ele) => {
-        this.tarbRef = ele.detail.cmp.el;
-        this.sources[5].setElement(this.tarbRef);
+        this.tarbRefCmp = ele.detail.cmp.el;
+        this.sources[5].setElement(this.tarbRefCmp);
     }
 
     createSource = (cfg) => {

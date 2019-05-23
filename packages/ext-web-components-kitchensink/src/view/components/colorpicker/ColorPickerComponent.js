@@ -14,33 +14,33 @@ export default class ColorPickerComponent {
 
         if(this.titlePanel) {
             const colorTitle = this.getcolorTitle();
-            this.titlePanel.setTitle(colorTitle);
-            this.mainColorSelector.setColor(this.color);
+            this.titlePanelCmp.setTitle(colorTitle);
+            this.mainColorSelectorCmp.setColor(this.color);
         }
     }
 
     onTitleReady = (event) => {
-        this.titlePanel = event.detail.cmp;
+        this.titlePanelCmp = event.detail.cmp;
         const colorTitle = this.getcolorTitle();
-        this.titlePanel.setTitle(colorTitle);
+        this.titlePanelCmp.setTitle(colorTitle);
     }
 
     mainColorPickerReady = (event) => {
-        this.mainColorSelector = event.detail.cmp;
+        this.mainColorSelectorCmp = event.detail.cmp;
     }
 
     OnSelChange = (event) => {
         this.color = event.detail.color;
         if(this.titlePanel) {
             let colorTitle = this.getcolorTitle();
-            this.titlePanel.setTitle(colorTitle);
-            this.selButton = Ext.getCmp('colorSelectorButton');
-            this.selButton.setColor(this.color);
+            this.titlePanelCmp.setTitle(colorTitle);
+            this.selButtonCmp = Ext.getCmp('colorSelectorButton');
+            this.selButtonCmp.setColor(this.color);
         }
     }
 
     onPanelReady = (event) => {
-        this.panel = event.detail.cmp;
+        this.panelCmp = event.detail.cmp;
         const isPhone = Ext.os.is.Phone;
 
         const panelHeader = {
@@ -62,8 +62,8 @@ export default class ColorPickerComponent {
                 }
             ]
         };
-        this.panel.setHeader(panelHeader);
-        this.panel.setTitle('Color Picker Components');
+        this.panelCmp.setHeader(panelHeader);
+        this.panelCmp.setTitle('Color Picker Components');
 
 
         const top = !isPhone ? '10' : null;
@@ -71,9 +71,9 @@ export default class ColorPickerComponent {
         const width = !isPhone ? '600' : null;
         const height = !isPhone ? '475' : null;
 
-        this.panel.setTop(top);
-        this.panel.setLeft(left);
-        this.panel.setWidth(width);
-        this.panel.setHeight(height);
+        this.panelCmp.setTop(top);
+        this.panelCmp.setLeft(left);
+        this.panelCmp.setWidth(width);
+        this.panelCmp.setHeight(height);
     }
 }
