@@ -34,6 +34,9 @@ export default class BigDataComponent {
         this.ratingAvgColumn = Ext.getCmp('ratingAverageColumn');
         this.ratingAvgColumn.setRenderer(this.renderRating.bind(this));
         this.ratingAvgColumn.setSummaryRenderer(this.renderSummaryRating.bind(this));
+
+        this.gridCmp.on('documentsave', this.onDocumentSave.bind(this));
+        this.gridCmp.on('beforedocumentsave', this.onBeforeDocumentSave.bind(this));
     }
 
     exportOptionChanged = (sender, item) => {
