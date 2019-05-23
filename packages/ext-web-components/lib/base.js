@@ -89,7 +89,8 @@ export default class ExtBase extends HTMLElement {
         this.props.listeners = {}
         for (var i = 0; i < this.attributes.length; i++) {
             var attr = this.attributes.item(i).nodeName;
-            if (/^on/.test(attr)) {
+
+            if (/^on/.test(attr) && attr!='onitemdisclosure') {
                 var name = attr.slice(2);
                 var result = this.EVENTS.filter(obj => {return obj.name === name});
                 this.setEvent(result[0],this.props,this)
