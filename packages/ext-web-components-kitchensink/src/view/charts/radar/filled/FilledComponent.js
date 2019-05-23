@@ -13,7 +13,7 @@ export default class FilledComponent {
     }
 
     onPolarReady = (event) => {
-        this.polar = event.detail.cmp;
+        this.polarCmp = event.detail.cmp;
         const polarSeries = [{
             type: 'radar',
             title: 'G1',
@@ -79,9 +79,9 @@ export default class FilledComponent {
                 }
             }]
         }];
-        this.polar.setAxes(polarAxes);
-        this.polar.setSeries(polarSeries);
-        this.polar.setStore(this.store);
+        this.polarCmp.setAxes(polarAxes);
+        this.polarCmp.setSeries(polarSeries);
+        this.polarCmp.setStore(this.store);
     }
 
     onMenuItemReady = (event) => {
@@ -98,7 +98,7 @@ export default class FilledComponent {
             }
             cmp.setIconCls('');
         });
-        this.polar.setTheme(event.config.text.toLowerCase());
+        this.polarCmp.setTheme(event.config.text.toLowerCase());
     }
 
     onRefreshButtonReady = (event) => {
