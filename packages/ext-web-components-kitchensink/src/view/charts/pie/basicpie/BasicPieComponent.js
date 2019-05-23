@@ -17,10 +17,10 @@ export default class BasicPieComponent {
     }
 
     onPolarReady = (event) => {
-        this.polar = event.detail.cmp;
+        this.polarCmp = event.detail.cmp;
         const series = [{ 'type': 'pie', 'xField': 'g1', 'label': { 'field': 'name'} }];
-        this.polar.setSeries(series);
-        this.polar.setStore(this.store);
+        this.polarCmp.setSeries(series);
+        this.polarCmp.setStore(this.store);
     }
 
     onMenuItemReady = (event) => {
@@ -47,6 +47,6 @@ export default class BasicPieComponent {
 
     onRefreshClick = () => {
         this.store.loadData(createData(5));
-        this.polar.setStore(this.store);
+        this.polarCmp.setStore(this.store);
     }
 }
