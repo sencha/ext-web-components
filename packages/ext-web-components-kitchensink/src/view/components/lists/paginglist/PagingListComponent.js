@@ -1,5 +1,4 @@
 import './PagingListComponent.html';
-//import '../stocks.js';
 
 Ext.require('Ext.plugin.ListPaging');
 
@@ -9,11 +8,11 @@ export default class PagingListComponent {
     }
 
     onContainerReady = (event) => {
-        this.container = event.detail.cmp;
+        this.containerCmp = event.detail.cmp;
     }
 
     segmentButtonReady = (event) => {
-        this.segmentButton = event.detail.cmp;
+        this.segmentButtonCmp = event.detail.cmp;
     }
 
     setBufferZone = (event) => {
@@ -32,14 +31,14 @@ export default class PagingListComponent {
 
         this.store.removeAll();
         this.store.loadPage(1);
-        this.container.setHtml(labelText);
+        this.containerCmp.setHtml(labelText);
 
-        this.segmentButton.items.items.forEach(items => items.setPressed(false));
+        this.segmentButtonCmp.items.items.forEach(items => items.setPressed(false));
         event.detail.button.setPressed(true);
     }
 
     listReady = (ele) => {
-        this.list = ele.detail.cmp;
+        this.listCmp = ele.detail.cmp;
         const tpl = '<div>{name}</div>';
 
         this.store = Ext.create('Ext.data.Store', {
@@ -58,7 +57,7 @@ export default class PagingListComponent {
                 }
             }
         });
-        this.list.setItemTpl(tpl);
-        this.list.setStore(this.store);
+        this.listCmp.setItemTpl(tpl);
+        this.listCmp.setStore(this.store);
     }
 }

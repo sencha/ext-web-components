@@ -3,8 +3,8 @@ import './GroupedListComponent.html';
 export default class GroupedListComponent {
     constructor() {}
 
-    onItemReady = (event) => {
-        this.theListview = event.detail.cmp;
+    onListReady = (event) => {
+        this.listCmp = event.detail.cmp;
         const tpl =
       `<div>
           <div style="font-size:16px;margin-bottom:5px;">{first_name} {last_name}</div>
@@ -21,9 +21,9 @@ export default class GroupedListComponent {
             },
             sorters: ['last_name', 'first_name']
         });
-        this.theListview.setItemTpl(tpl);
-        this.theListview.setStore(this.store);
-        this.theListview.setIndexBar({ autoHide: false });
+        this.listCmp.setItemTpl(tpl);
+        this.listCmp.setStore(this.store);
+        this.listCmp.setIndexBar({ autoHide: false });
     }
 
     groupFn = (record) => {

@@ -8,8 +8,8 @@ export default class PullRefreshListComponent {
     constructor() {}
 
     listReady = (event) => {
-        this.list = event.detail.cmp;
-        this.list.setItemTpl('<div>{name}</div>');
+        this.listCmp = event.detail.cmp;
+        this.listCmp.setItemTpl('<div>{name}</div>');
 
         this.store = Ext.create('Ext.data.Store', {
             fields: ['name'],
@@ -28,7 +28,7 @@ export default class PullRefreshListComponent {
             }
         });
 
-        this.list.setStore(this.store);
+        this.listCmp.setStore(this.store);
     }
 
     rewriteStore = () => {
@@ -48,6 +48,6 @@ export default class PullRefreshListComponent {
                 }
             }
         });
-        this.list.setStore(this.store);
+        this.listCmp.setStore(this.store);
     }
 }

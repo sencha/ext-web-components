@@ -26,11 +26,11 @@ export default class FormPanelComponent {
     }
 
     formPanelReady = (event) => {
-        this.formcmp = event.detail.cmp;
+        this.formCmp = event.detail.cmp;
     }
 
     resetForm = () => {
-        this.formcmp.reset(true);
+        this.formCmp.reset(true);
     }
 
     componentReady = (event) => {
