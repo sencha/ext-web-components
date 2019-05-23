@@ -14,9 +14,10 @@ export default class CalendarDragResizeValidationComponent {
             }
         });
 
+
         this.calendarDay.setStore(store);
         this.calendarDay.setValue(new Date());
-        this.calendarDay.setTimezoneOffset(0);
+      
         this.calendarDay.setListeners({
             beforeeventdragstart: this.onBeforeDragStart,
             beforeeventresizestart: this.onBeforeResizeStart,
