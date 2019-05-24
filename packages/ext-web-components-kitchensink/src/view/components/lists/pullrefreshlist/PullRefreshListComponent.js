@@ -9,8 +9,7 @@ export default class PullRefreshListComponent {
     constructor() {}
 
     listReady = (event) => {
-        this.list = event.detail.cmp;
-
+        this.listCmp = event.detail.cmp;
         this.store = Ext.create('Ext.data.Store', {
             fields: ['name'],
             autoLoad: true,
@@ -28,6 +27,6 @@ export default class PullRefreshListComponent {
             }
         });
 
-        this.list.setStore(this.store);
+        this.listCmp.setStore(this.store);
     }
 }

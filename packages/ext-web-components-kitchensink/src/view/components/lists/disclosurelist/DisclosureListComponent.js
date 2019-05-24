@@ -3,8 +3,8 @@ import './DisclosureListComponent.html';
 export default class DisclosureListComponent {
     constructor() {}
 
-    onItemReady = (event) => {
-        this.theListview = event.detail.cmp;
+    onListReady = (event) => {
+        this.listCmp = event.detail.cmp;
         this.store = Ext.create('Ext.data.Store', {
             autoLoad: true,
             proxy: {
@@ -14,7 +14,7 @@ export default class DisclosureListComponent {
             sorters: ['last_name', 'first_name']
         });
 
-        this.theListview.setStore(this.store);
+        this.listCmp.setStore(this.store);
     }
 
     msgAlert = ({ detail: { record }}) => {

@@ -4,7 +4,7 @@ export default class DatePickerFieldComponent {
     constructor() {}
 
     datePickerFieldReady = (event) => {
-        this.cmp = event.detail.cmp;
-        this.cmp.setValue(new Date());
+        this.datePickerCmp = event.detail.cmp;
+        this.datePickerCmp.setValue(new Date());
     }
 }

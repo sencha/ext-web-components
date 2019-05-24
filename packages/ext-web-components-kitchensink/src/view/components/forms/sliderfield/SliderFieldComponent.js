@@ -7,33 +7,33 @@ export default class SliderFieldComponent {
         this.multipleValue = [10, 70];
     }
 
-    onContainerReady1 = (event) => {
-        this.containercmp1 = event.detail.cmp;
-        this.containercmp1.setHtml(`Value: ${this.singleValue}`);
+    onSingleContainerReady = (event) => {
+        this.singleContainerCmp = event.detail.cmp;
+        this.singleContainerCmp.setHtml(`Value: ${this.singleValue}`);
     }
 
-    onContainerReady2 = (event) => {
-        this.containercmp2 = event.detail.cmp;
-        this.containercmp2.setHtml(`Value: ${this.liveUpdateValue}`);
+    onLiveUpdateContainerReady = (event) => {
+        this.liveupdateContainerCmp = event.detail.cmp;
+        this.liveupdateContainerCmp.setHtml(`Value: ${this.liveUpdateValue}`);
     }
 
-    onContainerReady3 = (event) => {
-        this.containercmp3 = event.detail.cmp;
-        this.containercmp3.setHtml(`Value: ${this.multipleValue}`);
+    onMultipleContainerReady = (event) => {
+        this.multipleContainerCmp = event.detail.cmp;
+        this.multipleContainerCmp.setHtml(`Value: ${this.multipleValue}`);
     }
 
     onSingleChange = (event) => {
         this.singleValue = event.detail.newValue;
-        this.containercmp1.setHtml(`Value: ${event.detail.newValue}`);
+        this.singleContainerCmp.setHtml(`Value: ${event.detail.newValue}`);
     }
 
     onLiveUpdateChange = (event) => {
         this.liveUpdateValue = event.detail.newValue;
-        this.containercmp2.setHtml(`Value: ${event.detail.newValue}`);
+        this.liveupdateContainerCmp.setHtml(`Value: ${event.detail.newValue}`);
     }
 
     onMultipleChange = (event) => {
         this.multipleValue = event.detail.newValue;
-        this.containercmp3.setHtml(`Value: ${event.detail.newValue}`);
+        this.multipleContainerCmp.setHtml(`Value: ${event.detail.newValue}`);
     }
 }
