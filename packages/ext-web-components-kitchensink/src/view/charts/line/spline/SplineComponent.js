@@ -8,7 +8,7 @@ export default class SplineComponent {
         this.menuCmpArray = [];
     }
 
-    onReady = (event) => {
+    cartesianReady = (event) => {
         this.cartesianCmp = event.detail.cmp;
         const store = Ext.create('Ext.data.Store', {
             fields: ['theta', 'sin', 'cos', 'tan'],

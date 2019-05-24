@@ -67,7 +67,7 @@ export default class BasicGaugeChartComponent {
     };
 
     onPolarReady1 = (event) => {
-        const polar1 = event.detail.cmp;
+        const polarCmp1 = event.detail.cmp;
         const polarSeries1 = [{
             type: 'gauge',
             angleField: 'g1',
@@ -76,12 +76,12 @@ export default class BasicGaugeChartComponent {
             donut: 30,
             colors: ['#115fa6', 'lightgrey']
         }];
-        polar1.setStore(this.store);
-        polar1.setSeries(polarSeries1);
+        polarCmp1.setStore(this.store);
+        polarCmp1.setSeries(polarSeries1);
     }
 
     onPolarReady2 = (event) => {
-        const polar2 = event.detail.cmp;
+        const polarCmp2 = event.detail.cmp;
         const polarSeries2 = [{
             type: 'gauge',
             angleField: 'g1',
@@ -135,7 +135,7 @@ export default class BasicGaugeChartComponent {
             }],
             renderer: this.chartRenderer.bind(this)
         }];
-        polar2.setStore(this.store);
-        polar2.setSeries(polarSeries2);
+        polarCmp2.setStore(this.store);
+        polarCmp2.setSeries(polarSeries2);
     }
 }

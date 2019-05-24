@@ -64,10 +64,6 @@ export default class BasicColumnComponent {
       this.cartesianCmp.setTheme(event.config.text.toLowerCase());
   }
 
-  containerReady = (event) => {
-      this.cmp = event.detail.cmp;
-  }
-
   cartesianReady = (event) => {
       this.cartesianCmp = event.detail.cmp;
       this.cartesianCmp.setStore(this.store);

@@ -23,9 +23,9 @@ export default class NavigationComponent {
     }
 
     onNavigatorReady = (event) => {
-        this.navigatorComp = event.detail.cmp;
-        this.navigatorComp.getChart().getAxes()[1].setRenderer(this.categoryRenderer.bind(this));
-        this.navigatorComp.getChart().setStore(this.store);
+        this.navigatorCmp = event.detail.cmp;
+        this.navigatorCmp.getChart().getAxes()[1].setRenderer(this.categoryRenderer.bind(this));
+        this.navigatorCmp.getChart().setStore(this.store);
     }
 
     onZoomButtonReady = (event) => {
@@ -39,7 +39,7 @@ export default class NavigationComponent {
     }
 
     toggleZoomOnPan(zoomOnPan) {
-        this.navigatorComp.getChart().getInteraction('panzoom').setZoomOnPan(zoomOnPan);
+        this.navigatorCmp.getChart().getInteraction('panzoom').setZoomOnPan(zoomOnPan);
     }
 
     onMenuItemReady = (event) => {
@@ -56,7 +56,7 @@ export default class NavigationComponent {
             }
             cmp.setIconCls('');
         });
-        this.navigatorComp.getChart().setTheme(event.config.text.toLowerCase());
+        this.navigatorCmp.getChart().setTheme(event.config.text.toLowerCase());
     }
 
     categoryRenderer = (axis, value) => {

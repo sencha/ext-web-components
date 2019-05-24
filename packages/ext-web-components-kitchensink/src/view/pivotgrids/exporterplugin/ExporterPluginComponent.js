@@ -157,6 +157,9 @@ export default class ExporterPluginComponent {
         this.pivotgrid = event.detail.cmp;
         this.pivotgrid.setPlugins(this.pivotgridPlugins);
         this.pivotgrid.setMatrix(this.pivotGridMatrix);
+
+        this.pivotgrid.on('documentsave', this.onDocumentSave.bind(this));
+        this.pivotgrid.on('beforedocumentsave', this.onBeforeDocumentSave.bind(this));
     }
     onButtonReady = (event) => {
         this.button = event.detail.cmp;

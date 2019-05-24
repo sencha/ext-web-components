@@ -44,9 +44,9 @@ export default class DoubleDonutComponent {
     }
 
     onPolarReady = (event) => {
-        this.polar = event.detail.cmp;
-        this.polar.setStore(this.outerStore);
-        this.polar.setSeries(this.polarSeries);
+        this.polarCmp = event.detail.cmp;
+        this.polarCmp.setStore(this.outerStore);
+        this.polarCmp.setSeries(this.polarSeries);
     }
 
     onMenuItemReady = (event) => {
@@ -63,6 +63,6 @@ export default class DoubleDonutComponent {
             }
             cmp.setIconCls('');
         });
-        this.polar.setTheme(event.config.text.toLowerCase());
+        this.polarCmp.setTheme(event.config.text.toLowerCase());
     }
 }

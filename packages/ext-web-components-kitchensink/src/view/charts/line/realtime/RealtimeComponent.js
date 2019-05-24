@@ -10,7 +10,7 @@ export default class RealtimeComponent {
         });
     }
 
-    chartNavReady = (event) => {
+    cartesianReady = (event) => {
         const cartesianAxes = [{
             type: 'numeric',
             minimum: 0,
