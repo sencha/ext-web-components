@@ -7,10 +7,10 @@ export default class FileFieldComponent {
 
     onFileFieldChange = (event) => {
         this.filefield = event.detail.newValue;
-        this.cmp.setHtml(`You selected ${this.filefield}`);
+        this.containeCmp.setHtml(`You selected ${this.filefield}`);
     }
 
     containerReady = (event) => {
-        this.cmp = event.detail.cmp;
+        this.containeCmp = event.detail.cmp;
     }
 }

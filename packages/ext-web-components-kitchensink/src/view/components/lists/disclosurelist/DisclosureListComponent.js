@@ -2,7 +2,6 @@ import './DisclosureListComponent.html';
 
 export default class DisclosureListComponent {
     constructor() {}
-
     listReady = (event) => {
         this.listCmp = event.detail.cmp;
         this.store = Ext.create('Ext.data.Store', {

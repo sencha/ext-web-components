@@ -14,6 +14,16 @@ export default class DrawComponent {
         });
     }
 
+    headingContainerReady = (event) => {
+        this.headingContainerCmp = event.detail.cmp;
+
+        if (Ext.os.is.phone) {
+            this.headingContainerCmp.setHtml('<div style="font-size:12px">Use your finger to paint on the surface below.</div>');
+        } else {
+            this.headingContainerCmp.setHtml('<div>Use your finger or mouse to paint on the surface below.</div>');
+        }
+    }
+
     clear = () => {
         this.drawRefCmp.getSurface().destroy();
         this.drawRefCmp.getSurface('overlay').destroy();

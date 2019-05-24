@@ -10,7 +10,7 @@ export default class MultiSelectComboBoxFieldComponent {
     }
 
     multiselectComboboxFieldReady = (event) => {
-        this.cmp = event.detail.cmp;
-        this.cmp.setStore(this.store);
+        this.multiselectComboBoxCmp = event.detail.cmp;
+        this.multiselectComboBoxCmp.setStore(this.store);
     }
 }

@@ -10,7 +10,6 @@ export default class PullRefreshListComponent {
 
     listReady = (event) => {
         this.listCmp = event.detail.cmp;
-
         this.store = Ext.create('Ext.data.Store', {
             fields: ['name'],
             autoLoad: true,

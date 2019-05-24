@@ -4,7 +4,7 @@ export default class UndoableStepSwiperComponent {
     constructor() {}
 
     listReady = (event) => {
-        this.list = event.detail.cmp;
+        this.listCmp = event.detail.cmp;
         const tpl = `<div>
             <div style="font-size:16px;margin-bottom:5px;">{first_name} {last_name}</div>
             <div style="font-size:12px;color:#666;">{title}</div>
@@ -44,9 +44,9 @@ export default class UndoableStepSwiperComponent {
                 undoable: true
             }]
         }];
-        this.list.setItemTpl(tpl);
-        this.list.setStore(this.store);
-        this.list.setPlugins(plugins);
+        this.listCmp.setItemTpl(tpl);
+        this.listCmp.setStore(this.store);
+        this.listCmp.setPlugins(plugins);
     }
 
     onSelect = (event) => {

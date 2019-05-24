@@ -13,24 +13,24 @@ export default class RowBodyComponent {
             }
         });
 
-        this.grid = event.detail.cmp;
+        this.gridCmp = event.detail.cmp;
         const tpl = `<div>
         <div>Industry: {industry}</div>
         <div>Last Updated: {[Ext.util.Format.date(values.lastChange, "Y-m-d g:ia")]}</div>
         <div style="margin-top:1em">{desc}</div>
       </div>`;
 
-        this.grid.setItemConfig({ body: { tpl }});
-        this.grid.setStore(store);
+        this.gridCmp.setItemConfig({ body: { tpl }});
+        this.gridCmp.setStore(store);
     }
 
     changeColumnReady = (event) => {
-        this.changeColumn = event.detail.cmp;
-        this.changeColumn.setRenderer(this.renderSign.bind(this, '0.00'));
+        this.changeColumnCmp = event.detail.cmp;
+        this.changeColumnCmp.setRenderer(this.renderSign.bind(this, '0.00'));
     }
     percentChangeColumnReady = (event) => {
-        this.pctChangeColumn = event.detail.cmp;
-        this.pctChangeColumn.setRenderer(this.renderSign.bind(this, '0.00%'));
+        this.pctChangeColumnCmp = event.detail.cmp;
+        this.pctChangeColumnCmp.setRenderer(this.renderSign.bind(this, '0.00%'));
     }
 
     renderSign = (format, value, record, dataIndex, cell) => {

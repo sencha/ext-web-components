@@ -17,15 +17,15 @@ export default class SelectAndCopyComponent {
         };
     }
 
-    gridReady = (event) => {
-        this.grid = event.detail.cmp;
+    onGridReady = (event) => {
+        this.gridCmp = event.detail.cmp;
         this.store = createStore();
-        this.grid.setStore(this.store);
-        this.grid.on('selectionchange', this.onSelectionChange.bind(this));
+        this.gridCmp.setStore(this.store);
+        this.gridCmp.on('selectionchange', this.onSelectionChange.bind(this));
     }
 
     infoContainerReady = (event) => {
-        this.infoContainer = event.detail.cmp;
+        this.infoContainerCmp = event.detail.cmp;
     }
 
     menuItemReady = (event) => {
@@ -33,8 +33,8 @@ export default class SelectAndCopyComponent {
     }
 
     extensibleMenuReady = (event) => {
-        this.extensibleMenu = event.detail.cmp;
-        this.extensibleMenu.on('click', this.onExtensibleChange.bind(this));
+        this.extensibleMenuCmp = event.detail.cmp;
+        this.extensibleMenuCmp.on('click', this.onExtensibleChange.bind(this));
     }
 
     onSelectableChange = (event) => {
@@ -83,6 +83,6 @@ export default class SelectAndCopyComponent {
             message = 'Selected columns: ' + selection.getCount();
         }
 
-        this.infoContainer.setHtml(message);
+        this.infoContainerCmp.setHtml(message);
     }
 }
