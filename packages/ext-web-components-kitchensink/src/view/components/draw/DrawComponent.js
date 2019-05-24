@@ -7,10 +7,10 @@ export default class DrawComponent {
         this.drawRefCmp = ele.detail.cmp;
         this.drawRefCmp.on({
             element: 'element',
-            mousedown: this.onMouseDown.bind(this),
-            mousemove: this.onMouseMove.bind(this),
-            mouseup: this.onMouseUp.bind(this),
-            mouseleave: this.onMouseUp.bind(this)
+            mousedown: this.onMouseDown,
+            mousemove: this.onMouseMove,
+            mouseup: this.onMouseUp,
+            mouseleave: this.onMouseUp
         });
     }
 

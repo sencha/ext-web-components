@@ -24,7 +24,7 @@ export default class MarkedComponent {
     }
 
     onPolarReady = (event) => {
-        this.polar = event.detail.cmp;
+        this.polarCmp = event.detail.cmp;
         const polarSeries = [{
             type: 'radar',
             title: 'IE',
@@ -100,9 +100,9 @@ export default class MarkedComponent {
             position: 'angular',
             grid: true
         }];
-        this.polar.setAxes(polarAxes);
-        this.polar.setSeries(polarSeries);
-        this.polar.setStore(this.store);
+        this.polarCmp.setAxes(polarAxes);
+        this.polarCmp.setSeries(polarSeries);
+        this.polarCmp.setStore(this.store);
     }
 
     onSeriesLabelRender(tooltip, record, item) {
@@ -123,6 +123,6 @@ export default class MarkedComponent {
             }
             cmp.setIconCls('');
         });
-        this.polar.setTheme(event.config.text.toLowerCase());
+        this.polarCmp.setTheme(event.config.text.toLowerCase());
     }
 }

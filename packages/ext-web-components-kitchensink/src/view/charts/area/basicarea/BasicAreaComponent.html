@@ -2,7 +2,6 @@
   padding="10"
   height="100%"
   width="100%"
-  onready="basicarea.containerReady"
   layout="fit"
 >
   <ext-toolbar
@@ -52,13 +51,6 @@
     platformConfig='{
                       "phone": { "insetPadding": "15 5 0 0" }
                     }'
-    interactions='[{
-                    "type": "panzoom" ,
-                    "axes": {
-                              "left": { "allowPan": "false", "allowZoom": "false" },
-                              "bottom": { "allowPan": "true", "allowZoom": "true" }
-                            }
-                  }]'
   >
   </ext-cartesian>
 </ext-container>

@@ -9,20 +9,7 @@ function (_HTMLElement) {
 
   function ExtBase() {
     return _HTMLElement.call(this) || this;
-  } //   filterProperty2(propertyValue) {
-  //     try {
-  //       var opts = [null, undefined, true, false]
-  //       if (opts.includes(parsedProp) || parsedProp === Object(parsedProp)) {
-  //         return parsedProp;
-  //       } else {
-  //         return propertyValue;
-  //       }
-  //     }
-  //     catch(e) {
-  //       return propertyValue;
-  //     }
-  //   }
-
+  }
 
   var _proto = ExtBase.prototype;
 
@@ -120,6 +107,8 @@ function (_HTMLElement) {
       //this.doCreate()
       var me = this;
       me.doCreate();
+      var elem = document.getElementById('theGrid'); //elem.parentNode.removeChild(elem);
+
       console.log('Ext.application');
       Ext.application({
         name: 'MyEWCApp',
@@ -132,6 +121,8 @@ function (_HTMLElement) {
       var me = this;
       me.doCreate();
       console.log('Ext.application');
+      var elem = document.getElementById('theGrid'); //elem.parentNode.removeChild(elem);
+
       Ext.application({
         name: 'MyEWCApp',
         launch: function launch() {
@@ -155,7 +146,7 @@ function (_HTMLElement) {
       if (this.extParentDefined == true) {
         parentCmp = this.parentNode['ext'];
         childCmp = this.ext;
-        var location = null; //console.log(parentCmp.xtype)
+        var location = null; // console.log(parentCmp.xtype)
         // console.log('this.parentNode.rawChildren')
         // console.dir(this.parentNode)
         // console.dir(this.parentNode.rawChildren)
@@ -233,6 +224,7 @@ function (_HTMLElement) {
         var par = item.parentNode;
         var cln = par.removeChild(item);
         var el = Ext.get(cln);
+        console.log('widget');
         this.ext.insert(i, {
           xtype: 'widget',
           element: el
@@ -240,8 +232,7 @@ function (_HTMLElement) {
       }
     }
 
-    if (this.extChildrenDefined == true || this.extChildrenDefined == false && this.children.length == 0) {
-      //console.log(`ready event for ${this.nodeName}`)
+    if (this.extChildrenDefined == true || this.extChildrenDefined == false && (this.children.length == 0 || this.children.length == 1)) {
       this.dispatchEvent(new CustomEvent('ready', {
         detail: {
           cmp: this.ext
@@ -271,6 +262,7 @@ function (_HTMLElement) {
   };
 
   _proto.addTheChild = function addTheChild(parentCmp, childCmp, location) {
+    console.log('addTheChild');
     var childxtype = childCmp.xtype;
     var parentxtype = parentCmp.xtype;
 
@@ -299,6 +291,8 @@ function (_HTMLElement) {
       //parentCmp.getItems()
       parentCmp.add(childCmp);
       console.log('column.add(column)');
+      console.dir(parentCmp);
+      console.dir(childCmp);
     }
 
     if (parentxtype === 'grid' || parentxtype === 'lockedgrid') {
@@ -428,7 +422,8 @@ function (_HTMLElement) {
         //this.removeEventListener(attr.slice(2), this);
       }
     } else {
-      if (this.ext === undefined) {} else {
+      if (this.ext === undefined) {//mjg ??
+      } else {
         //mjg check if this method exists for this component
         var method = 'set' + attr[0].toUpperCase() + attr.substring(1);
         this.ext[method](newVal);

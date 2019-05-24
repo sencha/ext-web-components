@@ -1,3 +1,4 @@
+/* eslint-disable */
 const companies = [{
     'id': 1,
     'name': 'Roodel',
@@ -6,8 +7,7 @@ const companies = [{
     'priceChange': 1.23,
     'priceLastChange': '10/8',
     'industry': 'Manufacturing',
-    'desc': `In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.\n\nNulla ut erat id mauris vulputate elementum.
-      Nullam varius. Nulla facilisi.\n\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.`,
+    'desc': 'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.\n\nNulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\n\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.',
     'priceChangePct': 2.11
 }, {
     'id': 2,
@@ -67,9 +67,7 @@ const companies = [{
     'priceChange': -1.58,
     'priceLastChange': '10/9',
     'industry': 'Retail',
-    'desc': `Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna
-      at nunc commodo placerat.\n\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget,
-      tincidunt eget, tempus vel, pede.\n\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.`,
+    'desc': 'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\n\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.',
     'priceChangePct': -3.64
 }, {
     'id': 8,
@@ -99,8 +97,7 @@ const companies = [{
     'priceChange': 2.94,
     'priceLastChange': '10/14',
     'industry': 'Food',
-    'desc': `Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.
-    Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.`,
+    'desc': 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.',
     'priceChangePct': 9.37
 }, {
     'id': 11,
@@ -110,8 +107,7 @@ const companies = [{
     'priceChange': 0.77,
     'priceLastChange': '10/2',
     'industry': 'Food',
-    'desc': `Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\n\nCurabitur in libero ut massa volutpat convallis.
-    Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.`,
+    'desc': 'Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\n\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.',
     'priceChangePct': 3.06
 }, {
     'id': 12,
@@ -131,7 +127,7 @@ const companies = [{
     'priceChange': -2.91,
     'priceLastChange': '10/1',
     'industry': 'Finance',
-    'desc': 'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.',
+    'desc': 'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.\n\nMauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.',
     'priceChangePct': -4.33
 }, {
     'id': 14,
@@ -141,7 +137,7 @@ const companies = [{
     'priceChange': -1.09,
     'priceLastChange': '10/14',
     'industry': 'Computer',
-    'desc': 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\n\nCras non velit nec nisi vulputate nonummy.',
+    'desc': 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\n\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.\n\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.',
     'priceChangePct': -2.85
 }, {
     'id': 15,
@@ -151,7 +147,7 @@ const companies = [{
     'priceChange': -3.68,
     'priceLastChange': '10/12',
     'industry': 'Food',
-    'desc': 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.\n\nPhasellus in felis.',
+    'desc': 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.\n\nPhasellus in felis. Donec semper sapien a libero. Nam dui.\n\nProin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.',
     'priceChangePct': -4.36
 }, {
     'id': 16,
@@ -181,7 +177,7 @@ const companies = [{
     'priceChange': -2.77,
     'priceLastChange': '10/18',
     'industry': 'Automotive',
-    'desc': 'Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\n\nDonec diam neque, vestibulum eget. ',
+    'desc': 'Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\n\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.\n\nDuis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.',
     'priceChangePct': -3.33
 }, {
     'id': 19,
@@ -211,7 +207,7 @@ const companies = [{
     'priceChange': -0.83,
     'priceLastChange': '10/2',
     'industry': 'Computer',
-    'desc': 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.',
+    'desc': 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.\n\nIn hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.',
     'priceChangePct': -1.14
 }, {
     'id': 22,
@@ -221,7 +217,7 @@ const companies = [{
     'priceChange': 3.79,
     'priceLastChange': '10/17',
     'industry': 'Food',
-    'desc': 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.',
+    'desc': 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.\n\nIn hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.',
     'priceChangePct': 7.77
 }, {
     'id': 23,
@@ -231,7 +227,7 @@ const companies = [{
     'priceChange': 1.18,
     'priceLastChange': '10/1',
     'industry': 'Manufacturing',
-    'desc': 'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis.',
+    'desc': 'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.',
     'priceChangePct': 1.77
 }, {
     'id': 24,
@@ -251,7 +247,7 @@ const companies = [{
     'priceChange': -2.96,
     'priceLastChange': '10/10',
     'industry': 'Manufacturing',
-    'desc': 'In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti.',
+    'desc': 'In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.',
     'priceChangePct': -7.37
 }, {
     'id': 26,
@@ -261,7 +257,7 @@ const companies = [{
     'priceChange': -3.47,
     'priceLastChange': '10/1',
     'industry': 'Finance',
-    'desc': 'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.',
+    'desc': 'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.\n\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.',
     'priceChangePct': -14.11
 }, {
     'id': 27,
@@ -271,7 +267,7 @@ const companies = [{
     'priceChange': -2.25,
     'priceLastChange': '10/18',
     'industry': 'Services',
-    'desc': 'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.',
+    'desc': 'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.',
     'priceChangePct': -8.23
 }, {
     'id': 28,
@@ -281,7 +277,7 @@ const companies = [{
     'priceChange': 4.5,
     'priceLastChange': '10/12',
     'industry': 'Medical',
-    'desc': 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien.',
+    'desc': 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.',
     'priceChangePct': 13.29
 }, {
     'id': 29,
@@ -291,7 +287,7 @@ const companies = [{
     'priceChange': -1.73,
     'priceLastChange': '10/18',
     'industry': 'Manufacturing',
-    'desc': 'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\n\nCras mi pede, malesuada in, imperdiet et.',
+    'desc': 'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\n\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
     'priceChangePct': -2.6
 }, {
     'id': 30,
@@ -311,7 +307,7 @@ const companies = [{
     'priceChange': -2.05,
     'priceLastChange': '10/16',
     'industry': 'Retail',
-    'desc': 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.\n\nPhasellus in felis.',
+    'desc': 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.\n\nPhasellus in felis. Donec semper sapien a libero. Nam dui.\n\nProin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.',
     'priceChangePct': -2.36
 }, {
     'id': 32,
@@ -321,7 +317,7 @@ const companies = [{
     'priceChange': 4.44,
     'priceLastChange': '10/12',
     'industry': 'Automotive',
-    'desc': 'Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. ',
+    'desc': 'Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.',
     'priceChangePct': 9.43
 }, {
     'id': 33,
@@ -331,7 +327,7 @@ const companies = [{
     'priceChange': 0.59,
     'priceLastChange': '10/1',
     'industry': 'Food',
-    'desc': 'In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante.',
+    'desc': 'In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.',
     'priceChangePct': 0.95
 }, {
     'id': 34,
@@ -341,7 +337,7 @@ const companies = [{
     'priceChange': -2.66,
     'priceLastChange': '10/7',
     'industry': 'Retail',
-    'desc': 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. Nulla nisl.',
+    'desc': 'Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. Nulla nisl. Nunc nisl.\n\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.',
     'priceChangePct': -5.24
 }, {
     'id': 35,
@@ -351,7 +347,7 @@ const companies = [{
     'priceChange': -0.72,
     'priceLastChange': '10/11',
     'industry': 'Services',
-    'desc': 'Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.',
+    'desc': 'Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.\n\nQuisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.',
     'priceChangePct': -3.28
 }, {
     'id': 36,
@@ -361,7 +357,7 @@ const companies = [{
     'priceChange': 3.56,
     'priceLastChange': '10/16',
     'industry': 'Services',
-    'desc': 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+    'desc': 'Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\n\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.',
     'priceChangePct': 5.46
 }, {
     'id': 37,
@@ -371,7 +367,7 @@ const companies = [{
     'priceChange': 3.45,
     'priceLastChange': '10/18',
     'industry': 'Automotive',
-    'desc': 'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.\n\nNulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.',
+    'desc': 'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.\n\nNulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\n\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.',
     'priceChangePct': 8
 }, {
     'id': 38,
@@ -421,7 +417,7 @@ const companies = [{
     'priceChange': 0.11,
     'priceLastChange': '10/12',
     'industry': 'Services',
-    'desc': 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien.',
+    'desc': 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.',
     'priceChangePct': 0.24
 }, {
     'id': 43,
@@ -461,7 +457,7 @@ const companies = [{
     'priceChange': 0.07,
     'priceLastChange': '10/18',
     'industry': 'Computer',
-    'desc': 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.',
+    'desc': 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\n\nPhasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.\n\nProin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.',
     'priceChangePct': 0.1
 }, {
     'id': 47,
@@ -471,7 +467,7 @@ const companies = [{
     'priceChange': -4.43,
     'priceLastChange': '10/13',
     'industry': 'Medical',
-    'desc': 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.\n\nCurabitur gravida nisi at nibh. In hac habitasse platea dictumst.',
+    'desc': 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.\n\nCurabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.',
     'priceChangePct': -14.13
 }, {
     'id': 48,
@@ -491,7 +487,7 @@ const companies = [{
     'priceChange': -2.11,
     'priceLastChange': '10/6',
     'industry': 'Manufacturing',
-    'desc': 'Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus.',
+    'desc': 'Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.',
     'priceChangePct': -3.16
 }, {
     'id': 50,
@@ -511,7 +507,7 @@ const companies = [{
     'priceChange': 2.54,
     'priceLastChange': '10/10',
     'industry': 'Services',
-    'desc': 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.',
+    'desc': 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.\n\nIn hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.',
     'priceChangePct': 3.17
 }, {
     'id': 52,
@@ -521,7 +517,7 @@ const companies = [{
     'priceChange': -0.43,
     'priceLastChange': '10/16',
     'industry': 'Computer',
-    'desc': 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\n\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.',
+    'desc': 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\n\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.',
     'priceChangePct': -0.76
 }, {
     'id': 53,
@@ -541,7 +537,7 @@ const companies = [{
     'priceChange': -1.99,
     'priceLastChange': '10/9',
     'industry': 'Manufacturing',
-    'desc': 'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.',
+    'desc': 'Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.\n\nMauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\n\nNullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.',
     'priceChangePct': -3.24
 }, {
     'id': 55,
@@ -561,7 +557,7 @@ const companies = [{
     'priceChange': 2.28,
     'priceLastChange': '10/15',
     'industry': 'Services',
-    'desc': 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue.',
+    'desc': 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\n\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\n\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.',
     'priceChangePct': 3.89
 }, {
     'id': 57,
@@ -571,7 +567,7 @@ const companies = [{
     'priceChange': 2.7,
     'priceLastChange': '10/12',
     'industry': 'Computer',
-    'desc': 'In hac habitasse platea dictumst.',
+    'desc': 'In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.',
     'priceChangePct': 5.16
 }, {
     'id': 58,
@@ -581,7 +577,7 @@ const companies = [{
     'priceChange': -4.92,
     'priceLastChange': '10/18',
     'industry': 'Food',
-    'desc': 'Maecenas tristique, est et tempus semper, est quam pharetra magna.',
+    'desc': 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\n\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.',
     'priceChangePct': -7.93
 }, {
     'id': 59,
@@ -591,7 +587,7 @@ const companies = [{
     'priceChange': -2.92,
     'priceLastChange': '10/17',
     'industry': 'Manufacturing',
-    'desc': 'Sed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum.',
+    'desc': 'Sed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.\n\nQuisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.',
     'priceChangePct': -9
 }, {
     'id': 60,
@@ -601,7 +597,7 @@ const companies = [{
     'priceChange': 0.94,
     'priceLastChange': '10/3',
     'industry': 'Retail',
-    'desc': 'Vestibulum ac est lacinia nisi venenatis tristique.',
+    'desc': 'Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.',
     'priceChangePct': 1.54
 }, {
     'id': 61,
@@ -611,7 +607,7 @@ const companies = [{
     'priceChange': 0.4,
     'priceLastChange': '10/15',
     'industry': 'Finance',
-    'desc': 'Sed ante. Vivamus tortor. Duis mattis egestas metus.',
+    'desc': 'Sed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.\n\nQuisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.',
     'priceChangePct': 0.71
 }, {
     'id': 62,
@@ -621,7 +617,7 @@ const companies = [{
     'priceChange': 0.17,
     'priceLastChange': '10/6',
     'industry': 'Medical',
-    'desc': 'Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.',
+    'desc': 'Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.',
     'priceChangePct': 0.75
 }, {
     'id': 63,
@@ -631,7 +627,7 @@ const companies = [{
     'priceChange': 2.38,
     'priceLastChange': '10/14',
     'industry': 'Retail',
-    'desc': 'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.',
+    'desc': 'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.',
     'priceChangePct': 9.85
 }, {
     'id': 64,
@@ -641,7 +637,7 @@ const companies = [{
     'priceChange': 2.63,
     'priceLastChange': '10/16',
     'industry': 'Medical',
-    'desc': 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien.',
+    'desc': 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
     'priceChangePct': 3.39
 }, {
     'id': 65,
@@ -651,7 +647,7 @@ const companies = [{
     'priceChange': 4.18,
     'priceLastChange': '10/5',
     'industry': 'Retail',
-    'desc': 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.',
+    'desc': 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\n\nPhasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.\n\nProin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.',
     'priceChangePct': 5.19
 }, {
     'id': 66,
@@ -661,7 +657,7 @@ const companies = [{
     'priceChange': 4.28,
     'priceLastChange': '10/5',
     'industry': 'Food',
-    'desc': 'Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio.',
+    'desc': 'Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.',
     'priceChangePct': 7.16
 }, {
     'id': 67,
@@ -681,7 +677,7 @@ const companies = [{
     'priceChange': -4.44,
     'priceLastChange': '10/14',
     'industry': 'Manufacturing',
-    'desc': 'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\n\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus.',
+    'desc': 'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\n\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.',
     'priceChangePct': -13.84
 }, {
     'id': 69,
@@ -691,7 +687,7 @@ const companies = [{
     'priceChange': -2.65,
     'priceLastChange': '10/4',
     'industry': 'Food',
-    'desc': 'Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.\n\nInteger ac leo. Pellentesque ultrices mattis odio.',
+    'desc': 'Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.\n\nInteger ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.',
     'priceChangePct': -4.39
 }, {
     'id': 70,
@@ -701,7 +697,7 @@ const companies = [{
     'priceChange': 0.31,
     'priceLastChange': '10/13',
     'industry': 'Services',
-    'desc': 'Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\n\nDuis aliquam convallis nunc.',
+    'desc': 'Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\n\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\n\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.',
     'priceChangePct': 0.39
 }, {
     'id': 71,
@@ -711,7 +707,7 @@ const companies = [{
     'priceChange': -0.2,
     'priceLastChange': '10/2',
     'industry': 'Services',
-    'desc': 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\n\nPhasellus sit amet erat.',
+    'desc': 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\n\nPhasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.\n\nProin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.',
     'priceChangePct': -0.37
 }, {
     'id': 72,
@@ -741,7 +737,7 @@ const companies = [{
     'priceChange': 4.06,
     'priceLastChange': '10/11',
     'industry': 'Manufacturing',
-    'desc': 'Fusce consequat. Nulla nisl. Nunc nisl.\n\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus.',
+    'desc': 'Fusce consequat. Nulla nisl. Nunc nisl.\n\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.',
     'priceChangePct': 4.75
 }, {
     'id': 75,
@@ -751,7 +747,7 @@ const companies = [{
     'priceChange': -4.55,
     'priceLastChange': '10/18',
     'industry': 'Finance',
-    'desc': 'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis.',
+    'desc': 'Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.',
     'priceChangePct': -6.01
 }, {
     'id': 76,
@@ -771,7 +767,7 @@ const companies = [{
     'priceChange': -3.41,
     'priceLastChange': '10/12',
     'industry': 'Manufacturing',
-    'desc': 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc.',
+    'desc': 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\n\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.',
     'priceChangePct': -5.64
 }, {
     'id': 78,
@@ -781,7 +777,7 @@ const companies = [{
     'priceChange': -4.22,
     'priceLastChange': '10/6',
     'industry': 'Food',
-    'desc': 'Fusce consequat. Nulla nisl. Nunc nisl.\n\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. ',
+    'desc': 'Fusce consequat. Nulla nisl. Nunc nisl.\n\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.',
     'priceChangePct': -10.75
 }, {
     'id': 79,
@@ -811,7 +807,7 @@ const companies = [{
     'priceChange': -4.68,
     'priceLastChange': '10/10',
     'industry': 'Automotive',
-    'desc': 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at.',
+    'desc': 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\n\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\n\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.',
     'priceChangePct': -9.93
 }, {
     'id': 82,
@@ -821,7 +817,7 @@ const companies = [{
     'priceChange': -1.62,
     'priceLastChange': '10/14',
     'industry': 'Services',
-    'desc': 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\n\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet.',
+    'desc': 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\n\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.',
     'priceChangePct': -3.51
 }, {
     'id': 83,
@@ -831,7 +827,7 @@ const companies = [{
     'priceChange': 0.21,
     'priceLastChange': '10/5',
     'industry': 'Manufacturing',
-    'desc': 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.',
+    'desc': 'Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\n\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.',
     'priceChangePct': 0.29
 }, {
     'id': 84,
@@ -841,7 +837,7 @@ const companies = [{
     'priceChange': 3.11,
     'priceLastChange': '10/15',
     'industry': 'Food',
-    'desc': 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla.',
+    'desc': 'Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.',
     'priceChangePct': 8.44
 }, {
     'id': 85,
@@ -851,7 +847,7 @@ const companies = [{
     'priceChange': 0.16,
     'priceLastChange': '10/3',
     'industry': 'Retail',
-    'desc': 'In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti. In eleifend quam a odio.',
+    'desc': 'In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.\n\nMaecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.',
     'priceChangePct': 0.2
 }, {
     'id': 86,
@@ -881,7 +877,7 @@ const companies = [{
     'priceChange': 0.14,
     'priceLastChange': '10/7',
     'industry': 'Retail',
-    'desc': 'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.\n\nQuisque porta volutpat erat.',
+    'desc': 'Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.\n\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.',
     'priceChangePct': 0.48
 }, {
     'id': 89,
@@ -891,7 +887,7 @@ const companies = [{
     'priceChange': 2.56,
     'priceLastChange': '10/13',
     'industry': 'Automotive',
-    'desc': 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\n\nPhasellus sit amet erat.',
+    'desc': 'Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\n\nPhasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.',
     'priceChangePct': 3.2
 }, {
     'id': 90,
@@ -901,7 +897,7 @@ const companies = [{
     'priceChange': 1.45,
     'priceLastChange': '10/17',
     'industry': 'Retail',
-    'desc': 'Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus.',
+    'desc': 'Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.',
     'priceChangePct': 7.75
 }, {
     'id': 91,
@@ -931,7 +927,7 @@ const companies = [{
     'priceChange': -0.48,
     'priceLastChange': '10/2',
     'industry': 'Computer',
-    'desc': 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.\n\nPhasellus in felis. Donec semper sapien a libero. Nam dui.',
+    'desc': 'Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.\n\nPhasellus in felis. Donec semper sapien a libero. Nam dui.\n\nProin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.',
     'priceChangePct': -1.59
 }, {
     'id': 94,
@@ -961,7 +957,7 @@ const companies = [{
     'priceChange': -2.67,
     'priceLastChange': '10/18',
     'industry': 'Medical',
-    'desc': 'In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo.',
+    'desc': 'In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.',
     'priceChangePct': -4.2
 }, {
     'id': 97,
@@ -971,7 +967,7 @@ const companies = [{
     'priceChange': 1.86,
     'priceLastChange': '10/6',
     'industry': 'Food',
-    'desc': 'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.\n\nInteger tincidunt ante vel ipsum.',
+    'desc': 'Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.\n\nInteger tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.',
     'priceChangePct': 5.42
 }, {
     'id': 98,
@@ -1030,8 +1026,7 @@ function shuffle(array) {
 Ext.ux.ajax.SimManager.register({
     type: 'json',
     delay: 300,
-    url: '/KitchenSink/Stocks',
-    //url: /\/KitchenSink\/Stocks(\/\d+)?/,
+    url: /\/KitchenSink\/Company(\/\d+)?/,
 
     data: function(ctx) {
         var idPart = ctx.url.match(this.url)[1],

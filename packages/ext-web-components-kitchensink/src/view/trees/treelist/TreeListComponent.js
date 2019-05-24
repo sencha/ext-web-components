@@ -51,8 +51,9 @@ export default class TreeListComponent {
                  this.treeCmp.setUi(null);
                  this.treeCmp.setExpanderFirst(true);
              }
+
+             this.button2.setPressed(false);
          }
-         this.button2Cmp.setPressed(false);
      }
 
      toggleMicro = (event) => {
