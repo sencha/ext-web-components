@@ -9,7 +9,7 @@ export default class StockTickerComponent {
     }
 
   onGridReady = (event) => {
-      this.grid = event.detail.cmp;
+      this.gridCmp = event.detail.cmp;
       this.store = Ext.create('Ext.data.Store', {
           model,
           autoLoad: true,
@@ -24,14 +24,14 @@ export default class StockTickerComponent {
           }
       });
 
-      this.grid.setItemConfig({
+      this.gridCmp.setItemConfig({
           viewModel : {},
           body: {
               tpl: this.rowBodyTpl
           }
       });
 
-      this.grid.setStore(this.store);
+      this.grigridCmpd.setStore(this.store);
 
       if (this.store.isLoaded() && this.store.getCount()) {
           this.onStoreLoad();
@@ -77,12 +77,12 @@ export default class StockTickerComponent {
   }
 
   changeColumnReady = (event) => {
-      this.changeColumn = event.detail.cmp;
-      this.changeColumn.setRenderer(this.renderSign.bind(this, '0.00'));
+      this.changeColumnCmp = event.detail.cmp;
+      this.changeColumnCmp.setRenderer(this.renderSign.bind(this, '0.00'));
   }
   percentChangeColumnReady = (event) => {
-      this.pctChangeColumn = event.detail.cmp;
-      this.pctChangeColumn.setRenderer(this.renderSign.bind(this, '0.00%'));
+      this.pctChangeColumnCmp = event.detail.cmp;
+      this.pctChangeColumnCmp.setRenderer(this.renderSign.bind(this, '0.00%'));
   }
 
   renderSign = (format, value, record, dataIndex, cell) => {
@@ -107,12 +107,12 @@ export default class StockTickerComponent {
   }
 
   infoContainerReady = (event) => {
-      this.infoContainer = event.detail.cmp;
+      this.infoContainerCmp = event.detail.cmp;
   }
 
   onTickDelayChange = (event) => {
       this.tickDelay = event.detail.newValue;
       this.startTicker();
-      this.infoContainer.setHtml(`${this.tickDelay}ms`);
+      this.infoContainerCmp.setHtml(`${this.tickDelay}ms`);
   }
 }

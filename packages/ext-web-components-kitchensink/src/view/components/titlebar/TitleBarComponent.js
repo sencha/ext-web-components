@@ -15,9 +15,9 @@ export default class TitleBarComponent {
         this.btnCmp.setHidden(this.isPhone);
     }
 
-    buttonReady1 = (event) => {
-        this.btnCmp1 = event.detail.cmp;
-        this.btnCmp1.setHidden(this.isPhone);
+    profileButtonReady = (event) => {
+        this.profileBtnCmp = event.detail.cmp;
+        this.profileBtnCmp.setHidden(this.isPhone);
     }
 
     searchReady = (event) => {

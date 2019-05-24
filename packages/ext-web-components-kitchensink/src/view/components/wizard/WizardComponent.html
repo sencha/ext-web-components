@@ -15,13 +15,13 @@
       <ext-button
         text="direction"
         value="direction"
-        onready="wizard.buttonReady3"
+        onready="wizard.directionButtonReady"
       >
       </ext-button>
       <ext-button
         text="item"
         value="item"
-        onready="wizard.buttonReady4"
+        onready="wizard.itemButtonReady"
       >
       </ext-button>
     </ext-segmentedbutton>
@@ -56,7 +56,7 @@
       layout='{ "type": "hbox", "align": "center", "pack": "space-between" }'
     >
       <ext-button
-        onready="wizard.buttonReady1"
+        onready="wizard.leftButtonReady"
         text="Previous"
         onTap="wizard.previous"
         iconCls="x-fa fa-chevron-left"
@@ -64,7 +64,7 @@
       </ext-button>
       <ext-indicator
         count="3"
-        onready="wizard.indicatorReady1"
+        onready="wizard.indicatorReady"
         onNext="wizard.next"
         onPrevious="wizard.previous"
         tapMode="direction"
@@ -72,7 +72,7 @@
       >
       </ext-indicator>
       <ext-button
-        onready="wizard.buttonReady2"
+        onready="wizard.rightButtonReady"
         text="Next"
         onTap="wizard.next"
         iconCls="x-fa fa-chevron-right"

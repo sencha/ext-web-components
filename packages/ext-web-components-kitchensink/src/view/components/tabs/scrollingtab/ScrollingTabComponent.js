@@ -2,9 +2,9 @@ Ext.require('Ext.layout.overflow.Scroller');
 import './ScrollingTabComponent.html';
 
 export default class ScrollingTabComponent {
-    tabPanelReady = (event) => {
-        const tabPanel = event.detail.cmp;
-        tabPanel.setTabBar({
+    tabpanelReady = (event) => {
+        const tabpanelCmp = event.detail.cmp;
+        tabpanelCmp.setTabBar({
             layout: {
                 pack: 'start',
                 overflow: 'scroller',
@@ -12,8 +12,8 @@ export default class ScrollingTabComponent {
             }
         });
 
-        tabPanel.setDefaults({
-            ...tabPanel.getDefaults(),
+        tabpanelCmp.setDefaults({
+            ...tabpanelCmp.getDefaults(),
             tab: { minWidth: '130px' }
         });
     }

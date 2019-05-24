@@ -9,9 +9,9 @@ export default class WizardComponent {
         this.tapMode = 'direction';
     }
 
-    buttonReady3 = (event) => {
-        this.buttonCmp3 = event.detail.cmp;
-        this.buttonCmp3.setTooltip({
+    directionButtonReady = (event) => {
+        this.directionButtonCmp = event.detail.cmp;
+        this.directionButtonCmp.setTooltip({
             maxWidth: '300',
             html: `
               <div style="font-weight:bold;font-size:14px;font-family:courier;">
@@ -24,9 +24,9 @@ export default class WizardComponent {
         });
     }
 
-    buttonReady4 = (event) => {
-        this.buttonCmp4 = event.detail.cmp;
-        this.buttonCmp4.setTooltip({
+    itemButtonReady = (event) => {
+        this.itemButtonCmp = event.detail.cmp;
+        this.itemButtonCmp.setTooltip({
             maxWidth: '300',
             html: `
           <div style="font-weight:bold;font-size:14px;font-family:courier;">
@@ -67,17 +67,17 @@ export default class WizardComponent {
         this.segmentedbuttonCmp.setValue(this.tapMode);
     }
 
-    buttonReady1 = (event) => {
-        this.buttonCmp1 = event.detail.cmp;
-        this.buttonCmp1.setDisabled(true);
+    leftButtonReady = (event) => {
+        this.leftButtonCmp = event.detail.cmp;
+        this.leftButtonCmp.setDisabled(true);
     }
 
-    buttonReady2 = (event) => {
-        this.buttonCmp2 = event.detail.cmp;
-        this.buttonCmp2.setDisabled(false);
+    rightButtonReady = (event) => {
+        this.rightButtonCmp = event.detail.cmp;
+        this.rightButtonCmp.setDisabled(false);
     }
 
-    indicatorReady1 = (event) => {
+    indicatorReady = (event) => {
         this.indicatorCmp = event.detail.cmp;
         this.indicatorCmp.setActiveIndex(0);
     }
@@ -88,12 +88,12 @@ export default class WizardComponent {
 
     setDisabled = () => {
         if (this.step === 0) {
-            this.buttonCmp1.setDisabled(true);
-        } else this.buttonCmp1.setDisabled(false);
+            this.leftButtonCmp.setDisabled(true);
+        } else this.leftButtonCmp.setDisabled(false);
 
         if (this.step === 2) {
-            this.buttonCmp2.setDisabled(true);
-        } else this.buttonCmp2.setDisabled(false);
+            this.rightButtonCmp.setDisabled(true);
+        } else this.rightButtonCmp.setDisabled(false);
     }
 
     previous = () => {

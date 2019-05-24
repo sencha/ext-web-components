@@ -3,8 +3,8 @@ import './BasicListComponent.html';
 export default class BasicListComponent {
     constructor() {}
 
-    onItemReady = (event) => {
-        this.theListview = event.detail.cmp;
+    onListReady = (event) => {
+        this.listCmp = event.detail.cmp;
         const tpl =
             `<div>
                 <div style="font-size:16px;margin-bottom:5px;">{first_name} {last_name}</div>
@@ -20,8 +20,8 @@ export default class BasicListComponent {
             sorters: ['last_name', 'first_name']
         });
 
-        this.theListview.setItemTpl(tpl);
-        this.theListview.setStore(this.store);
+        this.listCmp.setItemTpl(tpl);
+        this.listCmp.setStore(this.store);
     }
 
     onSelect = (event) => {

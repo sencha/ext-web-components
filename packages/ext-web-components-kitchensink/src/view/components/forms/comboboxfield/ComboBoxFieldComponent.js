@@ -10,7 +10,7 @@ export default class ComboBoxFieldComponent {
     }
 
     comboboxFieldReady = (event) => {
-        this.cmp = event.detail.cmp;
-        this.cmp.setStore(this.store);
+        this.comboboxCmp = event.detail.cmp;
+        this.comboboxCmp.setStore(this.store);
     }
 }

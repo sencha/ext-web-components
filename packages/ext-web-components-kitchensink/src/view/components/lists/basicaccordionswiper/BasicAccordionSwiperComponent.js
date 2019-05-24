@@ -3,8 +3,8 @@ import './BasicAccordionSwiperComponent.html';
 export default class BasicAccordionSwiperComponent {
     constructor() {}
 
-    onItemReady = (event) => {
-        this.theListview = event.detail.cmp;
+    onListReady = (event) => {
+        this.listCmp = event.detail.cmp;
         const tpl =`<div>
                 <div style={{fontSize: '16px', marginBottom: '5px'}}>{first_name} {last_name}</div>
                 <div style={{fontSize: '12px', color: '#666'}}>{title}</div>
@@ -37,9 +37,9 @@ export default class BasicAccordionSwiperComponent {
             }]
         }];
 
-        this.theListview.setItemTpl(tpl);
-        this.theListview.setStore(this.store);
-        this.theListview.setPlugins(plugins);
+        this.listCmp.setItemTpl(tpl);
+        this.listCmp.setStore(this.store);
+        this.listCmp.setPlugins(plugins);
     }
 
     onSelect = (event) => {

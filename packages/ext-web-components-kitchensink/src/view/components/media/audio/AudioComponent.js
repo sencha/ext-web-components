@@ -3,37 +3,37 @@ import './AudioComponent.html';
 export default class AudioComponent {
     constructor() {
         this.playing = '';
-        this.audio = '';
+        this.audioCmp = '';
         this.isAndroid = Ext.os.is.Android;
     }
 
     audioReady = (event) => {
-        this.audio = event.deatail.cmp;
-        this.audio.setControls(!this.isAndroid);
+        this.audioCmp = event.deatail.cmp;
+        this.audioCmp.setControls(!this.isAndroid);
     }
 
     containerReady = (event) => {
-        this.container = event.detail.cmp;
-        this.container.setHidden(!this.isAndroid);
+        this.containerCmp = event.detail.cmp;
+        this.containerCmp.setHidden(!this.isAndroid);
     }
 
     buttonReady = (event) => {
-        this.button = event.detail.cmp;
+        this.buttonCmp = event.detail.cmp;
         let text;
         if (this.playing) {
             text = 'Play Audio';
         } else {
             text = 'Pause Audio';
         }
-        this.button.setText(text);
-        this.button.setHandler(this.toggleAudioAndroid);
+        this.buttonCmp.setText(text);
+        this.buttonCmp.setHandler(this.toggleAudioAndroid);
     }
 
     toggleAudioAndroid = () => {
         if (this.playing) {
-            this.audio.pause();
+            this.audioCmp.pause();
         } else {
-            this.audio.play();
+            this.audioCmp.play();
         }
         this.playing = !this.playing;
     }

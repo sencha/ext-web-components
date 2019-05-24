@@ -3,8 +3,8 @@ import './BasicStepSwiperComponent.html';
 export default class BasicStepSwiperComponent {
     constructor() {}
 
-    onItemReady = (event) => {
-        this.theListview = event.detail.cmp;
+    onListReady = (event) => {
+        this.listCmp = event.detail.cmp;
         const tpl =`<div>
       <div style="font-size:16px;margin-bottom:5px;">{first_name} {last_name}</div>
         <div style="font-size:12px;color:#666;">{title}</div>
@@ -44,9 +44,9 @@ export default class BasicStepSwiperComponent {
             }]
         }];
 
-        this.theListview.setStore(this.store);
-        this.theListview.setItemTpl(tpl);
-        this.theListview.setPlugins(plugins);
+        this.listCmp.setStore(this.store);
+        this.listCmp.setItemTpl(tpl);
+        this.listCmp.setPlugins(plugins);
     }
 
     onSelect = (event) => {

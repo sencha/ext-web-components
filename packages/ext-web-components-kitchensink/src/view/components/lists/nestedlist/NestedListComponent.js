@@ -13,9 +13,9 @@ export default class NestedListComponent {
         });
     }
 
-    onItemReady = (event) => {
-        this.theListview = event.detail.cmp;
-        this.theListview.setStore(this.store);
+    onListReady = (event) => {
+        this.listCmp = event.detail.cmp;
+        this.listCmp.setStore(this.store);
     }
 
     onLeafItemTap = (event) => {
