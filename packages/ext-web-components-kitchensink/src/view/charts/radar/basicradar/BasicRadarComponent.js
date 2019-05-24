@@ -17,7 +17,7 @@ export default class BasicRadarComponent {
     }
 
     onPolarReady = (event) => {
-        this.polar = event.detail.cmp;
+        this.polarCmp = event.detail.cmp;
         const polarSeries = [{
             type: 'radar',
             angleField: 'month',
@@ -45,9 +45,9 @@ export default class BasicRadarComponent {
             position: 'angular',
             grid: true
         }];
-        this.polar.setAxes(polarAxes);
-        this.polar.setSeries(polarSeries);
-        this.polar.setStore(this.store);
+        this.polarCmp.setAxes(polarAxes);
+        this.polarCmp.setSeries(polarSeries);
+        this.polarCmp.setStore(this.store);
     }
 
     onMenuItemReady = (event) => {
@@ -64,6 +64,6 @@ export default class BasicRadarComponent {
             }
             cmp.setIconCls('');
         });
-        this.polar.setTheme(event.config.text.toLowerCase());
+        this.polarCmp.setTheme(event.config.text.toLowerCase());
     }
 }

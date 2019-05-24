@@ -54,28 +54,23 @@ export default class ButtonComponent {
                 buttons.setHidden(false);
             });
 
-            const tempMenu = Ext.create('Ext.menu.Menu');
-            const item1 = {
-                indented: false,
-                text: 'Item 1',
-                xtype: 'menuitem'
+            const tempMenu = {
+                xtype: 'menu',
+                items: [{
+                    indented: false,
+                    text: 'Item 1',
+                    xtype: 'menuitem'
+                }, {
+                    indented: false,
+                    text: 'Item 2',
+                    xtype: 'menuitem'
+                }, {
+                    indented: false,
+                    text: 'Item 3',
+                    xtype: 'menuitem'
+                }]
             };
 
-            const item2 = {
-                indented: false,
-                text: 'Item 2',
-                xtype: 'menuitem'
-            };
-
-            const item3 = {
-                indented: false,
-                text: 'Item 3',
-                xtype: 'menuitem'
-            };
-
-            tempMenu.add(item1);
-            tempMenu.add(item2);
-            tempMenu.add(item3);
             this.menuButtons.forEach(button => {
                 button.setMenu(tempMenu);
             });
