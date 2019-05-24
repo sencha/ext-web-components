@@ -12,7 +12,7 @@ export default class PlotComponent {
         this.onRefreshClick();
     }
 
-    chartNavReady = (event) => {
+    cartesianReady = (event) => {
         this.cartesianCmp = event.detail.cmp;
         this.cartesianCmp.setStore(this.store);
         this.cartesianCmp.setAxes(

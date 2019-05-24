@@ -3,9 +3,9 @@
     defaults='{"margin": "0 10 0 0","shadow": true,"ui": "action"}'>
     <ext-button text="Configurator" onready="exporterplugin.onButtonReady"></ext-button>
     <ext-button text="Export to ...">
-      <ext-menu onready="exporterplugin.onMenuReady"> 
+      <ext-menu onready="exporterplugin.onMenuReady">
         <ext-menuitem
-          text="Excel xlsx (pivot table definition)" 
+          text="Excel xlsx (pivot table definition)"
           iconCls="x-fa fa-file-excel-o"
         >
         </ext-menuitem>
@@ -39,22 +39,22 @@
           iconCls="x-fa fa-file-text-o"
         >
         </ext-menuitem>
-        <ext-menuitem 
+        <ext-menuitem
           text="TSV (all items)"
           iconCls="x-fa fa-file-text-o"
         >
         </ext-menuitem>
-        <ext-menuitem 
+        <ext-menuitem
           text="TSV (visible items)"
           iconCls="x-fa fa-file-text-o"
         >
         </ext-menuitem>
-        <ext-menuitem 
+        <ext-menuitem
           text="HTML (all items)"
           iconCls="x-fa fa-html5"
         >
         </ext-menuitem>
-        <ext-menuitem 
+        <ext-menuitem
           text="HTML (visible items)"
           iconCls="x-fa fa-html5"
         >
@@ -62,11 +62,9 @@
       </ext-menu>
     </ext-button>
   </ext-toolbar>
-
-  <ext-pivotgrid 
+  <ext-pivotgrid
     shadow="true"
     onready="exporterplugin.onPivotGridReady"
-    onDocumentSave="exporterplugin.onDocumentSave"
-    onBeforeDocumentSave="exporterplugin.onBeforeDocumentSave">
+  >
   </ext-pivotgrid>
 </container>

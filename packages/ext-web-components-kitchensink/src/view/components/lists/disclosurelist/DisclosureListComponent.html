@@ -3,9 +3,11 @@
     shadow="true"
     scrollable="true"
     onready="disclosurelist.onItemReady"
-    onItemDisclosure="disclosurelist.msgAlert"
     height="450"
     width="300"
+    onItemDisclosure="true"
+    ondisclose="disclosurelist.msgAlert"
+    itemTpl="<div>{first_name} {last_name}</div>"
   >
   </ext-list>
 </ext-container>

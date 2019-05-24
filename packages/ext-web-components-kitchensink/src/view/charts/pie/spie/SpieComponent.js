@@ -45,9 +45,9 @@ export default class SpieComponent {
     }
 
     onPolarReady = (event) => {
-        this.polar = event.detail.cmp;
-        this.polar.setStore(this.store);
-        this.polar.setSeries(this.polarSeries);
+        this.polarCmp = event.detail.cmp;
+        this.polarCmp.setStore(this.store);
+        this.polarCmp.setSeries(this.polarSeries);
     }
 
     onMenuItemReady = (event) => {
@@ -64,6 +64,6 @@ export default class SpieComponent {
             }
             cmp.setIconCls('');
         });
-        this.polar.setTheme(event.config.text.toLowerCase());
+        this.polarCmp.setTheme(event.config.text.toLowerCase());
     }
 }

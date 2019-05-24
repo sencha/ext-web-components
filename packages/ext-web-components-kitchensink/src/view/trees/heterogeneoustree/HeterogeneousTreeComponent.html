@@ -1,10 +1,9 @@
 <ext-container scrollable="true" layout="fit" fitToParent="true" height="100%">
-  <ext-tree 
+  <ext-tree
     shadow="true"
     rootVisible="false"
     onready="heterogeneoustree.onTreeReady"
     onselect="heterogeneoustree.onSelectionChange"
-    onselectionchange="heterogeneoustree.onSelectionChange"
     columns='[{
       "xtype":"treecolumn",
       "text":"Name",
@@ -17,7 +16,7 @@
         onaction="heterogeneoustree.onFieldAction"
         onready="heterogeneoustree.onTextFieldReady">
       </ext-textfield>
-      <ext-button  
+      <ext-button
         text="Add Territory"
         ontap="heterogeneoustree.addItem"
         onready="heterogeneoustree.onButtonReady">
