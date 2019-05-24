@@ -10,7 +10,7 @@ Ext.require([
 ]);
 
 export default class EditableGridComponent {
-    onReady = (event) => {
+    onGirdReady = (event) => {
         const store = Ext.create('Ext.data.Store', {
             model,
             autoLoad: true,

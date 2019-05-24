@@ -3,8 +3,8 @@ import './RippleComponent.scss';
 
 export default class RippleComponent {
   containerReady = (event) => {
-      this.container = event.detail.cmp;
-      this.container.setDefaults({
+      this.containerCmp = event.detail.cmp;
+      this.containerCmp.setDefaults({
           handler: this.clickHandler.bind(this),
       });
   }

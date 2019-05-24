@@ -8,38 +8,38 @@ export default class BasicPanelComponent {
         this.text = Ext.os.is.Phone ? shortText : mediumText;
     }
 
-    readypanel1 = (event) => {
-        this.panelCmp1 = event.detail.cmp;
-        this.panelCmp1.setHtml(this.text);
+    panelReady = (event) => {
+        this.panelCmp = event.detail.cmp;
+        this.panelCmp.setHtml(this.text);
     }
 
-    readycontainer1 = (event) => {
-        this.containerCmp1 = event.detail.cmp;
+    parentContainerReady = (event) => {
+        this.parentContainerCmp = event.detail.cmp;
         const width = !Ext.os.is.Phone && 700;
-        this.containerCmp1.setWidth(width);
+        this.parentContainerCmp.setWidth(width);
     }
 
-    readycontainer2 = (event) => {
-        this.containerCmp2 = event.detail.cmp;
+    containerReady = (event) => {
+        this.containerCmp = event.detail.cmp;
         const type = Ext.os.is.Phone ? 'vbox' : 'hbox';
-        this.containerCmp2.setLayout({ type, pack: 'center', align: 'stretch' });
+        this.containerCmp.setLayout({ type, pack: 'center', align: 'stretch' });
     }
 
-    readycontainer3 = (event) => {
-        this.containerCmp3 = event.detail.cmp;
+    panelContainerReady = (event) => {
+        this.panelContainerCmp = event.detail.cmp;
         const type = Ext.os.is.Phone ? 'vbox' : 'hbox';
-        this.containerCmp3.setLayout({ type, pack: 'center', align: 'stretch' });
+        this.panelContainerCmp.setLayout({ type, pack: 'center', align: 'stretch' });
     }
 
-    readypanel2 = (event) => {
-        this.panelCmp2 = event.detail.cmp;
-        this.panelCmp2.setHtml(this.text);
+    titlePanelReady = (event) => {
+        this.titlePanelCmp = event.detail.cmp;
+        this.titlePanelCmp.setHtml(this.text);
     }
 
-    readypanel3 = (event) => {
-        this.panelCmp3 = event.detail.cmp;
-        this.panelCmp3.setHtml(this.text);
-        this.panelCmp3.setTools([
+    builtinPanelReady = (event) => {
+        this.builtinPanelCmp = event.detail.cmp;
+        this.builtinPanelCmp.setHtml(this.text);
+        this.builtinPanelCmp.setTools([
             { type: 'minimize', handler: this.toolHandler.bind(this) },
             { type: 'refresh', handler: this.toolHandler.bind(this) },
             { type: 'search', handler: this.toolHandler.bind(this) },
@@ -52,10 +52,10 @@ export default class BasicPanelComponent {
         Ext.toast(`You clicked ${tool.config.type || 'a custom tool'}.`);
     }
 
-    readypanel4 = (event) => {
-        this.panelCmp4 = event.detail.cmp;
-        this.panelCmp4.setHtml(this.text);
-        this.panelCmp4.setTools([
+    customtoolsPanelReady = (event) => {
+        this.customtoolsPanelCmp = event.detail.cmp;
+        this.customtoolsPanelCmp.setHtml(this.text);
+        this.customtoolsPanelCmp.setTools([
             { iconCls: 'x-fa fa-wrench', handler: this.toolHandler.bind(this) },
             { iconCls: 'x-fa fa-reply', handler: this.toolHandler.bind(this) },
             { iconCls: 'x-fa fa-reply-all', handler: this.toolHandler.bind(this) }

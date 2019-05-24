@@ -1,8 +1,8 @@
 import './XMLGridComponent.html';
 
 export default class XMLGridComponent {
-    ready = (event) => {
-        const grid = event.detail.cmp;
+    onGridReady = (event) => {
+        const gridCmp = event.detail.cmp;
         const store = Ext.create('Ext.data.Store', {
             autoLoad: true,
             fields:[
@@ -25,6 +25,6 @@ export default class XMLGridComponent {
             }
         });
 
-        grid.setStore(store);
+        gridCmp.setStore(store);
     }
 }

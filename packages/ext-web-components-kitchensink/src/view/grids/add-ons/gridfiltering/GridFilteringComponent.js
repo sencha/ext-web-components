@@ -18,8 +18,8 @@ export default class GridFilteringComponent {
             }
         });
 
-        this.grid = event.detail.cmp;
-        this.grid.setStore(store);
+        this.gridCmp = event.detail.cmp;
+        this.gridCmp.setStore(store);
         // this.grid.setRowNumbers(true);
         // let columns = Object.assign([], this.grid.getColumns());
         // // let columns = JSON.parse(JSON.stringify(this.grid.getColumns());
@@ -32,8 +32,8 @@ export default class GridFilteringComponent {
     }
 
     nameColumnReady = (event) => {
-        this.nameColumn = event.detail.cmp;
-        this.nameColumn.setSorter({
+        this.nameColumnCmp = event.detail.cmp;
+        this.nameColumnCmp.setSorter({
             sorterFn: this.nameSorter.bind(this)
         });
     }

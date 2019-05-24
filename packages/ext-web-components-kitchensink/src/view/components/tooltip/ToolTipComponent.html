@@ -4,33 +4,33 @@
   bodyPadding="20"
   defaults='{"margin": "0 0 50 0"}'>
   <ext-container
-    onready="tooltip.readycontainer1"
+    onready="tooltip.onReadyContainer1"
     defaults='{"margin": "0 0 50 0"}'
   >
     <ext-button text="Basic Tip" height="30" width="100">
-      <ext-tooltip onready="tooltip.readytooltip1"></ext-tooltip>
+      <ext-tooltip onready="tooltip.readyTooltip1"></ext-tooltip>
     </ext-button>
     <ext-button text="autoHide: false">
-      <ext-tooltip onready="tooltip.readytooltip2" showOnTap="true" autoHide="false" title="Tip Title" closable="true"></ext-tooltip>
+      <ext-tooltip onready="tooltip.readyTooltip2" showOnTap="true" autoHide="false" title="Tip Title" closable="true"></ext-tooltip>
     </ext-button>
     <ext-button text="Mouse Track">
-      <ext-tooltip onready="tooltip.readytooltip3" showOnTap="true" title="Mouse Track" trackMouse="true"></ext-tooltip>
+      <ext-tooltip onready="tooltip.readyTooltip3" showOnTap="true" title="Mouse Track" trackMouse="true"></ext-tooltip>
     </ext-button>
   </ext-container>
-  <ext-container onready="tooltip.readycontainer2" defaults='{"margin": "0 0 50 0"}'>
+  <ext-container onready="tooltip.onReadyContainer2" defaults='{"margin": "0 0 50 0"}'>
     <ext-button text="Anchor Right, Rich Content">
-      <ext-tooltip onready="tooltip.readytooltip4" showOnTap="true" align="tl-tr" anchorToTarget="true" anchor="true">
+      <ext-tooltip onready="tooltip.readyTooltip4" showOnTap="true" align="tl-tr" anchorToTarget="true" anchor="true">
       </ext-tooltip>
     </ext-button>
     <ext-button text="Anchor Below">
-      <ext-tooltip onready="tooltip.readytooltip5" showOnTap="true" align="tc-bc" anchor="true" anchorToTarget></ext-tooltip>
+      <ext-tooltip onready="tooltip.readyTooltip5" showOnTap="true" align="tc-bc" anchor="true" anchorToTarget></ext-tooltip>
     </ext-button>
     <ext-button text="Anchor with Tracking">
-      <ext-tooltip onready="tooltip.readytooltip6" showOnTap="true" trackMouse="true" anchor="true" align="l-r"></ext-tooltip>
+      <ext-tooltip onready="tooltip.readyTooltip6" showOnTap="true" trackMouse="true" anchor="true" align="l-r"></ext-tooltip>
     </ext-button>
   </ext-container>
   <ext-container
-    onready="tooltip.readycontainer3"
+    onready="tooltip.onReadyContainer3"
     default='{"margin": "0 0 50 0"}'>
     <div
       style="width: 150px; margin: 0 15px 0 0; color: white; cursor: default;

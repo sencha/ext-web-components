@@ -1,34 +1,34 @@
 import './ToolTipComponent.html';
 
 export default class ToolTipComponent {
-    readycontainer1 = (event) => {
+    onReadyContainer1 = (event) => {
         this.containerCmp1 = event.detail.cmp;
     }
 
-    readycontainer2 = (event) => {
+    onreadyContainer2 = (event) => {
         this.containerCmp2 = event.detail.cmp;
     }
 
-    readycontainer3 = (event) => {
+    onReadyContainer3 = (event) => {
         this.containerCmp3 = event.detail.cmp;
     }
 
-    readytooltip1 = (event) => {
+    readyTooltip1 = (event) => {
         this.tooltipCmp1 = event.detail.cmp;
         this.tooltipCmp1.setHtml('A simple tooltip');
     }
 
-    readytooltip2 = (event) => {
+    readyTooltip2 = (event) => {
         this.tooltipCmp2 = event.detail.cmp;
         this.tooltipCmp2.setHtml('A simple tooltip');
     }
 
-    readytooltip3 = (event) => {
+    readyTooltip3 = (event) => {
         this.tooltipCmp3 = event.detail.cmp;
         this.tooltipCmp3.setHtml('This tip will follow the mouse while it is over the element');
     }
 
-    readytooltip4 = (event) => {
+    readyTooltip4 = (event) => {
         this.tooltipCmp4 = event.detail.cmp;
         this.tooltipCmp4.setHtml(`
           <ul style="margin-bottom: 15px">
@@ -41,12 +41,12 @@ export default class ToolTipComponent {
       `);
     }
 
-    readytooltip5 = (event) => {
+    readyTooltip5 = (event) => {
         this.tooltipCmp5 = event.detail.cmp;
         this.tooltipCmp5.setHtml('The anchor is centered');
     }
 
-    readytooltip6 = (event) => {
+    readyTooltip6 = (event) => {
         this.tooltipCmp6 = event.detail.cmp;
         this.tooltipCmp6.setHtml('Following the mouse with an anchor');
     }

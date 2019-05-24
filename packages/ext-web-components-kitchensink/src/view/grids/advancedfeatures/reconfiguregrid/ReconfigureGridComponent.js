@@ -148,13 +148,13 @@ export default class ReconfigureGridComponent {
     }
 
     onGridReady = (event) => {
-        this.grid = event.detail.cmp;
+        this.gridCmp = event.detail.cmp;
     }
 
     onSegmentedButtonChange = (event) => {
         const selectedConfig = event.detail.value;
 
-        this.grid.setColumns(this.configs[selectedConfig].columns);
-        this.grid.setStore(this.configs[selectedConfig].store);
+        this.gridCmp.setColumns(this.configs[selectedConfig].columns);
+        this.gridCmp.setStore(this.configs[selectedConfig].store);
     }
 }

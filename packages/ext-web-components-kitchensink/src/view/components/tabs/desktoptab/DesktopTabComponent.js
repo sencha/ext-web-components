@@ -4,7 +4,7 @@ export default class DesktopTabComponent {
     constructor() {}
 
     tabpanelReady = (event) => {
-        this.tabpanel = event.detail.cmp;
-        this.tabpanel.setTabBar({ layout: { pack: 'left' } });
+        this.tabpanelCmp = event.detail.cmp;
+        this.tabpanelCmp.setTabBar({ layout: { pack: 'left' } });
     }
 }

@@ -14,13 +14,13 @@ export default class ComponentsInCellsComponent {
             }
         });
 
-        this.grid = event.detail.cmp;
-        this.grid.setStore(store);
+        this.gridCmp = event.detail.cmp;
+        this.gridCmp.setStore(store);
     }
 
     onLastGrid = (event) => {
-        this.lastGridColumn = event.detail.cmp;
-        this.lastGridColumn.setCell({
+        this.lastGridColumnCmp = event.detail.cmp;
+        this.lastGridColumnCmp.setCell({
             xtype: 'widgetcell',
             forceWidth: 'true',
             widget: {
@@ -46,12 +46,12 @@ export default class ComponentsInCellsComponent {
     }
 
     changeColumnReady = (event) => {
-        this.changeColumn = event.detail.cmp;
-        this.changeColumn.setRenderer(this.renderSign.bind(this, '0.00'));
+        this.changeColumnCmp = event.detail.cmp;
+        this.changeColumnCmp.setRenderer(this.renderSign.bind(this, '0.00'));
     }
     percentChangeColumnReady = (event) => {
-        this.pctChangeColumn = event.detail.cmp;
-        this.pctChangeColumn.setRenderer(this.renderSign.bind(this, '0.00%'));
+        this.pctChangeColumnCmp = event.detail.cmp;
+        this.pctChangeColumnCmp.setRenderer(this.renderSign.bind(this, '0.00%'));
     }
 
     renderSign = (format, value, record, dataIndex, cell) => {

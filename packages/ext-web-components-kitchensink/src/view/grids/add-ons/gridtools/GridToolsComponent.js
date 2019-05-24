@@ -4,7 +4,7 @@ export default class GridToolsComponent {
     constructor() {}
 
     onGridReady = (event) => {
-        this.grid = event.detail.cmp;
+        this.gridCmp = event.detail.cmp;
 
         const store = Ext.create('Ext.data.Store', {
             autoLoad: true,
@@ -19,22 +19,22 @@ export default class GridToolsComponent {
             }
         });
 
-        this.grid.setStore(store);
+        this.gridCmp.setStore(store);
     }
 
     firstColumnReady = (event) => {
-        const nameColumn = event.detail.cmp;
-        nameColumn.setCell({ tools:{ pin: { handler: this.onPinClick.bind(this) } } });
+        const nameColumnCmp = event.detail.cmp;
+        nameColumnCmp.setCell({ tools:{ pin: { handler: this.onPinClick.bind(this) } } });
     }
 
     secondColumnReady = (event) => {
-        const cuisineColumn = event.detail.cmp;
-        cuisineColumn.setCell({ tools:{ gear: { handler: this.onGearClick.bind(this) } } });
+        const cuisineColumnCmp = event.detail.cmp;
+        cuisineColumnCmp.setCell({ tools:{ gear: { handler: this.onGearClick.bind(this) } } });
     }
 
     thirdColumnReady = (event) => {
-        const searchColumn = event.detail.cmp;
-        searchColumn.setCell({ tools:{ search: { handler: this.onSearchClick.bind(this) } } });
+        const searchColumnCmp = event.detail.cmp;
+        searchColumnCmp.setCell({ tools:{ search: { handler: this.onSearchClick.bind(this) } } });
     }
 
     onPinClick = (grid, info) => {
