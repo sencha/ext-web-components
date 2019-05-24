@@ -64,13 +64,13 @@ export default class CollapsibleComponent {
     }
 
     onReady = (event) => {
-        this.pivotgrid = event.detail.cmp;
-        this.pivotgrid.setMatrix(this.pivotgridMatrix);
+        this.pivotgridCmp = event.detail.cmp;
+        this.pivotgridCmp.setMatrix(this.pivotgridMatrix);
     }
 
     onReadyMenu = (event) => {
-        this.menu = event.detail.cmp;
-        this.menu.on('click', this.onCollapsibleChange.bind(this));
+        this.menuCmp = event.detail.cmp;
+        this.menuCmp.on('click', this.onCollapsibleChange.bind(this));
     }
 
     onReadyMenuItem = (event) => {
@@ -117,6 +117,6 @@ export default class CollapsibleComponent {
         this.collapsibleRows = collapsibleRows;
         this.pivotgridMatrix.collapsibleColumns = this.collapsibleColumns ;
         this.pivotgridMatrix.collapsibleRows = this.collapsibleRows ;
-        this.pivotgrid.setMatrix(this.pivotgridMatrix);
+        this.pivotgridCmp.setMatrix(this.pivotgridMatrix);
     }
 }

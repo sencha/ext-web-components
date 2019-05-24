@@ -113,15 +113,15 @@ export default class ConfiguratorPluginComponent {
     }
 
     onPivotGridReady = (event) => {
-        this.pivotgrid = event.detail.cmp;
-        this.pivotgrid.setMatrix(this.pivotgridMatrix);
-        this.pivotgrid.setPlugins(this.pivotgridPlugins);
+        this.pivotgridCmp = event.detail.cmp;
+        this.pivotgridCmp.setMatrix(this.pivotgridMatrix);
+        this.pivotgridCmp.setPlugins(this.pivotgridPlugins);
     }
 
     onButtonReady = (event) => {
-        this.button = event.detail.cmp;
-        this.button.setHandler(this.showConfigurator.bind(this));
+        this.buttonCmp = event.detail.cmp;
+        this.buttonCmp.setHandler(this.showConfigurator.bind(this));
     }
 
-    showConfigurator = () => {this.pivotgrid.showConfigurator();}
+    showConfigurator = () => {this.pivotgridCmp.showConfigurator();}
 }

@@ -25,18 +25,18 @@ export default class hboxLayoutComponent {
         };
     }
 
-    item1Ready = (event) => {
-        this.cont = event.detail.cmp;
-        this.cont.setStyle(this.card.red);
+    container1Ready = (event) => {
+        this.contCmp1 = event.detail.cmp;
+        this.contCmp1.setStyle(this.card.red);
     }
 
-    item2Ready = (event) => {
-        this.cont = event.detail.cmp;
-        this.cont.setStyle(this.card.blue);
+    container2Ready = (event) => {
+        this.contCmp2 = event.detail.cmp;
+        this.contCmp2.setStyle(this.card.blue);
     }
 
-    item3Ready = (event) => {
-        this.cont = event.detail.cmp;
-        this.cont.setStyle(this.card.green);
+    container3Ready = (event) => {
+        this.contCmp3 = event.detail.cmp;
+        this.contCmp3.setStyle(this.card.green);
     }
 }

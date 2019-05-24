@@ -2,8 +2,8 @@ import './TreeMapToolTipComponent.html';
 import './TreeMapToolTipComponent.scss';
 
 export default class TreeMapToolTipComponent {
-    d3Ready = (event) => {
-        const cmp = event.detail.cmp;
+    d3TreeMapReady = (event) => {
+        this.d3TreeMap = event.detail.cmp;
         const store = Ext.create('Ext.data.TreeStore', {
             autoLoad: true,
             fields: [
@@ -48,15 +48,15 @@ export default class TreeMapToolTipComponent {
             }
         });
 
-        cmp.setStore(store);
-        cmp.setNodeValue(this.nodeValue.bind(this));
-        cmp.setTooltip({
+        this.d3TreeMap.setStore(store);
+        this.d3TreeMap.setNodeValue(this.nodeValue.bind(this));
+        this.d3TreeMap.setTooltip({
             cls: 'treemaptooltip-tip',
             ui: 'd3-treemap',
             trackMouse: true,
             renderer: this.tooltipRenderer.bind(this),
         });
-        cmp.setColorAxis(colorAxis);
+        this.d3TreeMap.setColorAxis(colorAxis);
     }
 
     nodeValue = (node) => {

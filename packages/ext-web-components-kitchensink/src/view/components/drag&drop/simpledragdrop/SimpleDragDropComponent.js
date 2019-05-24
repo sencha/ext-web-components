@@ -6,11 +6,11 @@ export default class SimpleDragDropComponent {
     onDragMove = (source, info) => {
         const pos = info.element.current;
         const html = Ext.String.format('X: {0}, Y: {1}', Math.round(pos.x), Math.round(pos.y));
-        this.item.setHtml(html);
+        this.itemCmp.setHtml(html);
     }
 
     onDragEnd = () => {
-        this.item.setHtml('Drag Me!');
+        this.itemCmp.setHtml('Drag Me!');
     }
 
     doDestroy = () => {
@@ -18,14 +18,14 @@ export default class SimpleDragDropComponent {
     }
 
     onParentReady = (ele) => {
-        this.parent = ele.detail.cmp.el;
+        this.parentCmp = ele.detail.cmp.el;
     }
 
     onItemReady = (ele) => {
-        this.item = ele.detail.cmp.el;
+        this.itemCmp = ele.detail.cmp.el;
         this.source = new Ext.drag.Source({
-            element: this.item,
-            constrain: this.parent,
+            element: this.itemCmp,
+            constrain: this.parentCmp,
             listeners: {
                 dragMove: this.onDragMove.bind(this),
                 dragEnd: this.onDragEnd.bind(this),

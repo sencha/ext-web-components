@@ -6,9 +6,9 @@ export default class CalendarMonthViewComponent {
     constructor() { }
 
     panelReady = (event) => {
-        this.panel = event.detail.cmp;
-        this.panel.setTitle(Ext.Date.format(new Date(), 'F Y'));
-        this.panel.setTitleAlign('center');
+        this.panelCmp = event.detail.cmp;
+        this.panelCmp.setTitle(Ext.Date.format(new Date(), 'F Y'));
+        this.panelCmp.setTitleAlign('center');
     }
 
     calendarListReady = (event) => {
@@ -19,12 +19,12 @@ export default class CalendarMonthViewComponent {
                 url: '/KitchenSink/CalendarFull'
             }
         });
-        this.calendarListReady = event.detail.cmp;
-        this.calendarListReady.setStore(this.store);
+        this.calendarListReadyCmp = event.detail.cmp;
+        this.calendarListReadyCmp.setStore(this.store);
     }
 
     calendarMonthReady = (event) => {
-        this.calendarMonthReady = event.detail.cmp;
-        this.calendarMonthReady.setStore(this.store);
+        this.calendarMonthReadyCmp = event.detail.cmp;
+        this.calendarMonthReadyCmp.setStore(this.store);
     }
 }

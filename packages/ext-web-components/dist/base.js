@@ -385,6 +385,7 @@ function (_HTMLElement) {
   };
 
   _proto.setEvent = function setEvent(eventparameters, o, me) {
+    console.log(eventparameters,'eventparameters');
     o.listeners[eventparameters.name] = function () {
       var eventname = eventparameters.name; //console.log('in event: ' + eventname + ' ' + o.xtype)
 

@@ -3,14 +3,14 @@ import data from './data';
 
 export default class TreeDecorationsComponent {
     onTreeReady = (event) => {
-        this.tree = event.detail.cmp;
+        this.treeCmp = event.detail.cmp;
         const isPhone = Ext.os.is.Phone;
         const width = !isPhone ? '400' : null;
         const height = !isPhone ? '600' : null;
 
         this.store = data;
-        this.tree.setWidth(width);
-        this.tree.setHeight(height);
-        this.tree.setStore(this.store);
+        this.treeCmp.setWidth(width);
+        this.treeCmp.setHeight(height);
+        this.treeCmp.setStore(this.store);
     }
 }

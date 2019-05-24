@@ -7,12 +7,12 @@ export default class CalendarDaysViewComponent {
     }
 
     panelReady = (event) => {
-        this.panel = event.detail.cmp;
-        this.panel.setTitle(this.panelTitle);
+        this.panelCmp = event.detail.cmp;
+        this.panelCmp.setTitle(this.panelTitle);
     }
 
     calendarListReady = (event) => {
-        this.calendarList = event.detail.cmp;
+        this.calendarListCmp = event.detail.cmp;
         this.store = Ext.create('Ext.calendar.store.Calendars', {
             autoLoad: true,
             proxy: {
@@ -20,12 +20,12 @@ export default class CalendarDaysViewComponent {
                 url: '/KitchenSink/CalendarDays'
             }
         });
-        this.calendarList.setStore(this.store);
+        this.calendarListCmp.setStore(this.store);
     }
 
     calendarDayReady = (event) => {
-        this.calendarDay = event.detail.cmp;
-        this.calendarDay.setValue(new Date());
-        this.calendarDay.setStore(this.store);
+        this.calendarDayCmp = event.detail.cmp;
+        this.calendarDayCmp.setValue(new Date());
+        this.calendarDayCmp.setStore(this.store);
     }
 }

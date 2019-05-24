@@ -25,18 +25,18 @@ export default class vboxLayoutComponent {
         };
     }
 
-    item1Ready = (event) => {
-        this.cont = event.detail.cmp;
-        this.cont.setStyle(this.card.red);
+    container1Ready = (event) => {
+        this.cont1Cmp = event.detail.cmp;
+        this.cont1Cmp.setStyle(this.card.red);
     }
 
-    item2Ready = (event) => {
-        this.cont = event.detail.cmp;
-        this.cont.setStyle(this.card.blue);
+    container2Ready = (event) => {
+        this.cont2Cmp = event.detail.cmp;
+        this.cont2Cmp.setStyle(this.card.blue);
     }
 
-    item3Ready = (event) => {
-        this.cont = event.detail.cmp;
-        this.cont.setStyle(this.card.green);
+    container3Ready = (event) => {
+        this.cont3Cmp = event.detail.cmp;
+        this.cont3Cmp.setStyle(this.card.green);
     }
 }

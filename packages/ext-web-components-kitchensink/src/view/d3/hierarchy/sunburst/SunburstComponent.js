@@ -39,7 +39,7 @@ export default class SunburstComponent {
     onSelectionChange = ({ detail }) => {
         if (Ext.isArray(detail.selected)) {
             this.selection = detail.selected[0];
-            this.sunburst.setSelection(this.selection);
+            this.sunburstCmp.setSelection(this.selection);
         }
     }
 
@@ -61,24 +61,24 @@ export default class SunburstComponent {
     }
 
     onTreeReady = (event) => {
-        const treeList = event.detail.cmp;
+        this.treeListCmp = event.detail.cmp;
 
         if (Ext.os.is.Phone) {
-            treeList.setWidth(undefined);
-            treeList.setHeight(200);
+            this.treeListCmp.setWidth(undefined);
+            this.treeListCmp.setHeight(200);
         } else {
-            treeList.setWidth(230);
-            treeList.setHeight(undefined);
+            this.treeListCmp.setWidth(230);
+            this.treeListCmp.setHeight(undefined);
         }
 
-        treeList.setStore(this.store);
-        treeList.on('tap', this.onSelectionChange.bind(this));
-        treeList.setSelection(this.selection);
+        this.treeListCmp.setStore(this.store);
+        this.treeListCmp.on('tap', this.onSelectionChange.bind(this));
+        this.treeListCmp.setSelection(this.selection);
     }
 
     onPanelReady = (event) => {
-        let cmp = event.detail.cmp;
-        cmp.setResponsiveConfig(
+        this.panelCmp = event.detail.cmp;
+        this.panelCmp.setResponsiveConfig(
             {
                 'width > 600': { layout: 'hbox' }
             }
@@ -86,11 +86,11 @@ export default class SunburstComponent {
     }
 
     ond3Ready = (event) => {
-        this.sunburst = event.detail.cmp;
-        this.sunburst.setStore(this.store);
-        this.sunburst.setTooltip({
+        this.sunburstCmp = event.detail.cmp;
+        this.sunburstCmp.setStore(this.store);
+        this.sunburstCmp.setTooltip({
             renderer:this.onTooltip.bind(this),
         });
-        this.sunburst.setSelection(this.selection);
+        this.sunburstCmp.setSelection(this.selection);
     }
 }

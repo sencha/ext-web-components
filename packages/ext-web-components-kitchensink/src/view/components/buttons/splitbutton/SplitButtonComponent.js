@@ -13,7 +13,7 @@ export default class SplitButtonComponent {
     }
 
     menu = (event) => {
-        this.splitButton = event.detail.cmp;
+        this.splitButtonCmp = event.detail.cmp;
         const menuProp = [{
             text: 'Menu Item 1'
         }, {
@@ -21,26 +21,26 @@ export default class SplitButtonComponent {
         }, {
             text: 'Menu Item 3'
         }];
-        this.splitButton.setMenu(menuProp);
-        this.menuButtons.push(this.splitButton);
+        this.splitButtonCmp.setMenu(menuProp);
+        this.menuButtons.push(this.splitButtonCmp);
     }
 
     toggleReady = (event) => {
-        this.toggleButton = event.detail.cmp;
+        this.toggleButtonCmp = event.detail.cmp;
     }
 
     toggleRound = () => {
         this.round = !this.round;
 
         if (this.round) {
-            this.toggleButton.setIconCls('x-font-icon md-icon-check');
+            this.toggleButtonCmp.setIconCls('x-font-icon md-icon-check');
             this.menuButtons.forEach(buttons => {
                 buttons.setUi('round');
             });
 
         }
         else {
-            this.toggleButton.setIconCls(null);
+            this.toggleButtonCmp.setIconCls(null);
             this.menuButtons.forEach(buttons => {
                 buttons.setUi('');
             });
@@ -68,7 +68,7 @@ export default class SplitButtonComponent {
             });
         }
 
-        if(this.type.indexOf('Text & Icon') !== -1){
+        if (this.type.indexOf('Text & Icon') !== -1) {
             for (let index = 0; index < this.menuButtons.length; index++) {
                 if (index % 3 === 0) {
                     this.menuButtons[index].setText('Normal');
@@ -114,37 +114,48 @@ export default class SplitButtonComponent {
     }
 
     setDefaultsForStyle = (event) => {
-        this.styleMenu = event.detail.cmp;
-        this.styleMenu.on('click', this.styleMenuItemChange.bind(this));
+        this.styleMenuCmp = event.detail.cmp;
+
+        if (Ext.isEdge) {
+            this.styleMenuCmp.on('activeItemchange', this.styleMenuItemChange.bind(this));
+        } else {
+            this.styleMenuCmp.on('click', this.styleMenuItemChange.bind(this));
+        }
     }
 
     setTypeForStyle = (event) => {
-        this.typeMenu = event.detail.cmp;
-        this.typeMenu.on('click', this.onTypeChange.bind(this));
+        this.typeMenuCmp = event.detail.cmp;
+    
+        if (Ext.isEdge) {
+            this.typeMenuCmp.on('activeItemchange', this.onTypeChange.bind(this));
+        } else {
+            this.typeMenuCmp.on('click', this.onTypeChange.bind(this));
+        }
+
     }
 
     setIcon = (event) => {
-        const menuItem = event.detail.cmp;
-        const menuItemText = menuItem._text;
+        const menuItemCmp = event.detail.cmp;
+        const menuItemText = menuItemCmp._text;
 
         if (menuItemText === this.type) {
-            menuItem.setIconCls('x-font-icon md-icon-check');
+            menuItemCmp.setIconCls('x-font-icon md-icon-check');
         } else {
-            menuItem.setIconCls(null);
+            menuItemCmp.setIconCls(null);
         }
 
-        this.iconButtons.push(menuItem);
+        this.iconButtons.push(menuItemCmp);
     }
 
     setStyle = (event) => {
-        const menuItem = event.detail.cmp;
-        const menuItemText = menuItem._text;
+        const menuItemCmp = event.detail.cmp;
+        const menuItemText = menuItemCmp._text;
         if (menuItemText === this.style) {
-            menuItem.setIconCls('x-font-icon md-icon-check');
+            menuItemCmp.setIconCls('x-font-icon md-icon-check');
         } else {
-            menuItem.setIconCls(null);
+            menuItemCmp.setIconCls(null);
         }
 
-        this.styleButtons.push(menuItem);
+        this.styleButtons.push(menuItemCmp);
     }
 }

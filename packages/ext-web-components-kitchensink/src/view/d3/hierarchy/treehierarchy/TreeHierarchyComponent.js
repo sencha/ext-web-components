@@ -73,10 +73,10 @@ export default class TreeHierarchyComponent {
                 }
             }
         });
-        const cmp = event.detail.cmp;
-        cmp.setStore(store);
-        cmp.setNodeText(this.getNodeText.bind(this));
-        cmp.setTooltip({
+        this.treeCmp = event.detail.cmp;
+        this.treeCmp.setStore(store);
+        this.treeCmp.setNodeText(this.getNodeText.bind(this));
+        this.treeCmp.setTooltip({
             renderer:this.onTooltip.bind(this),
         });
     }

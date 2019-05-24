@@ -25,8 +25,8 @@ export default class FitLayoutComponent {
         };
     }
 
-    itemReady = (event) => {
-        this.cont = event.detail.cmp;
-        this.cont.setStyle(this.card.red);
+    containerReady = (event) => {
+        this.contCmp = event.detail.cmp;
+        this.contCmp.setStyle(this.card.red);
     }
 }

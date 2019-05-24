@@ -37,18 +37,18 @@ export default class DataDragDropComponent {
     }
 
     parentReady = (ele) => {
-        this.parentRef = ele.detail.cmp.el;
-        this.source.setConstrain(this.parentRef);
-        this.parentRef.destroy = this.doDestroy.bind(this);
+        this.parentRefCmp = ele.detail.cmp.el;
+        this.source.setConstrain(this.parentRefCmp);
+        this.parentRefCmp.destroy = this.doDestroy.bind(this);
     }
 
     targetReady = (ele) => {
-        this.targetRef = ele.detail.cmp.el;
-        this.target.setElement(this.targetRef);
+        this.targetRefCmp = ele.detail.cmp.el;
+        this.target.setElement(this.targetRefCmp);
     }
 
     sourceReady = (ele) => {
-        this.sourceRef = ele.detail.cmp.el;
-        this.source.setElement(this.sourceRef);
+        this.sourceRefCmp = ele.detail.cmp.el;
+        this.source.setElement(this.sourceRefCmp);
     }
 }
