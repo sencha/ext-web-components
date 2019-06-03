@@ -33,6 +33,12 @@ export default class FormPanelComponent {
         this.formCmp.reset(true);
     }
 
+    spinnerReady = () => {
+      this.spinnerCmp = event.detail.cmp;
+      this.spinnerCmp.setMinValue(0);
+      this.componentArray.push(event.detail.cmp);
+    }
+
     componentReady = (event) => {
         this.componentArray.push(event.detail.cmp);
     }

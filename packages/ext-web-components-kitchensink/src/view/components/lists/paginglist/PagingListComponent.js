@@ -25,7 +25,7 @@ export default class PagingListComponent {
             labelText = `<b>Auto Paging</b>: ON (buffer zone: ${this.bufferZone})`;
         }
 
-        const plugin = this.list.findPlugin('listpaging');
+        const plugin = this.listCmp.findPlugin('listpaging');
         plugin.setAutoPaging(this.bufferZone !== 'OFF');
         plugin.setBufferZone(parseInt(this.bufferZone, 10) || 0);
 
