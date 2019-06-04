@@ -11,7 +11,7 @@ export default class ClosableTabComponent {
         ];
     }
 
-    tabanelReady = (event) => {
+    tabpanelReady = (event) => {
         this.tabpanelCmp = event.detail.cmp;
         this.tabpanelCmp.setTabBar({
             height: 48,

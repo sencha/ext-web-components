@@ -10,6 +10,25 @@ export default class WithRendererComponent {
         this.onRefreshClick();
     }
 
+    onSeriesRender = (sprite, config, rendererData, index) => {
+        const currentRecord = this.store.getAt(index),
+            previousRecord = this.store.getAt(index-1) || currentRecord,
+            isUp = currentRecord.get('g1') >= previousRecord.get('g1');
+
+        switch (config.type) {
+        case 'marker':
+            return {
+                strokeStyle: isUp ? 'cornflowerblue' : 'tomato',
+                fillStyle: isUp ? 'aliceblue' : 'lightpink'
+            };
+        case 'line':
+            return {
+                strokeStyle: isUp ? 'cornflowerblue' : 'tomato',
+                fillStyle: isUp ? 'rgba(100, 149, 237, 0.4)' : 'rgba(255, 99, 71, 0.4)'
+            };
+        }
+    }
+
     cartesianReady = (event) => {
         const cartesianAxes = [{
             type: 'numeric',
@@ -36,7 +55,7 @@ export default class WithRendererComponent {
                 radius: 10,
                 lineWidth: 2
             },
-            renderer: this.onSeriesRender
+            renderer: this.onSeriesRender.bind(this)
         }];
         this.cartesianCmp = event.detail.cmp;
         this.cartesianCmp.setStore(this.store);
