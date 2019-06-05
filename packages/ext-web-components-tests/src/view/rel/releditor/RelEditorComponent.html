@@ -1,12 +1,13 @@
-<ext-container layout="vbox">
+<ext-container layout="vbox" height="100%">
   <div>This tests that fields within columns are automatically assigned as editors.</div>
   <ext-grid
-      itemId="grid"
+      id="gridComponentEditor"
       flex="1"
       onready="releditor.onGridReady"
+      height="100%"
   >
       <ext-column text="Value" dataIndex="value" editable="true">
-          <ext-numberfield cls="editor"></ext-numberfield>
+        <ext-numberfield cls="editor"></ext-numberfield>
       </ext-column>
   </ext-grid>
 </ext-container>
