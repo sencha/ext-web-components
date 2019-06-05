@@ -37,7 +37,7 @@ export default class BasicPieComponent {
             }
             cmp.setIconCls('');
         });
-        this.polar.setTheme(event.config.text.toLowerCase());
+        this.polarCmp.setTheme(event.config.text.toLowerCase());
     }
 
     onRefreshButtonReady = (event) => {
