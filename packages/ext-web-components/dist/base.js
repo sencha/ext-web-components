@@ -89,7 +89,7 @@ function (_HTMLElement) {
     for (var i = 0; i < this.attributes.length; i++) {
       var attr = this.attributes.item(i).nodeName;
 
-      if (/^on/.test(attr)) {
+      if (/^on/.test(attr) && attr != 'onitemdisclosure') {
         var name = attr.slice(2);
         var result = this.EVENTS.filter(function (obj) {
           return obj.name === name;
@@ -385,7 +385,6 @@ function (_HTMLElement) {
   };
 
   _proto.setEvent = function setEvent(eventparameters, o, me) {
-    console.log(eventparameters,'eventparameters');
     o.listeners[eventparameters.name] = function () {
       var eventname = eventparameters.name; //console.log('in event: ' + eventname + ' ' + o.xtype)
 
