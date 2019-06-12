@@ -1,0 +1,94 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ext-grid</title>
+    <script src="ext/build/ext-modern-all.js"></script>
+    <!-- <link  href="resources/app1-all.css" rel='stylesheet'/> -->
+
+<style>
+body {
+    text-align: center;
+}
+</style>
+
+<script>
+
+class ExtGrid extends HTMLElement {
+ 
+    get config() {return this.getAttribute('config')}; set config(val) {if (val) {this.setAttribute('config', val)} else {this.removeAttribute('config')}}
+
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+        const template = document.createElement('template');
+        template.innerHTML = `${this.html}${this.style}${this.host}`;
+        this.shadowRoot.appendChild(template.content.cloneNode(true));
+
+
+        let link = document.createElement('link');
+        link.setAttribute('rel', 'stylesheet');
+        link.setAttribute('href', 'resources/app1-all_1.css');
+        this.shadowRoot.appendChild(link);
+
+        let link2 = document.createElement('link');
+        link2.setAttribute('rel', 'stylesheet');
+        link2.setAttribute('href', 'resources/app1-all_2.css');
+        this.shadowRoot.appendChild(link2);
+
+
+
+
+
+
+    }
+
+    get html() { return ``}
+
+
+    get style() { return `
+         <style>
+        // @import "ext/build/modern/theme-material/resources/theme-material-all.css";
+         </style>
+    `}
+
+    get host() { return `
+<style>
+</style>
+        
+        `}
+
+    connectedCallback() {
+        var o = JSON.parse(this.config)
+        o.xtype = 'grid'
+        o.renderTo = this.shadowRoot
+        this.ext = Ext.create(o)
+    }
+
+}
+window.customElements.define('ext-grid', ExtGrid)
+
+</script>
+</head>
+<body>
+    <div style="height:400px;width:400px;">
+    <ext-grid 
+        config='{
+            "title":"Grid with a single config",
+            "height":"100%",
+            "columns": [
+                {"text": "Name", "width": "250", "dataIndex": "name"},
+                {"text": "Email Address", "flex": "1", "dataIndex": "email"},
+                {"text": "Phone Number", "width": "250", "dataIndex": "phone"}
+            ],
+            "data": [
+                {"name": "Lisa", "email": "lisa@simpsons.com", "phone": "555-111-1224"},
+                {"name": "Bart", "email": "bart@simpsons.com", "phone": "555-222-1234"},
+                {"name": "Homer", "email": "homer@simpsons.com", "phone": "555-222-1244"},
+                {"name": "Marge", "email": "marge@simpsons.com", "phone": "555-222-1254"}
+            ]
+        }'
+    >
+    </ext-grid>
+    </div>
+</body>
+</html>

@@ -31,7 +31,7 @@ export default class StockTickerComponent {
           }
       });
 
-      this.grigridCmpd.setStore(this.store);
+      this.gridCmp.setStore(this.store);
 
       if (this.store.isLoaded() && this.store.getCount()) {
           this.onStoreLoad();
