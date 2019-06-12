@@ -84,23 +84,20 @@ function (_HTMLElement) {
       }
     }
 
-    this.props.listeners = {};
+    this.props.listeners = {}; // for (var i = 0; i < this.attributes.length; i++) {
+    //     var attr = this.attributes.item(i).nodeName;
+    //     if (/^on/.test(attr)) {
+    //     //if (/^on/.test(attr) && attr!='onitemdisclosure') {
+    //         var name = attr.slice(2);
+    //         var result = this.EVENTS.filter(obj => {return obj.name === name});
+    //         this.setEvent(result[0],this.props,this)
+    //     }
+    // }
 
-    for (var i = 0; i < this.attributes.length; i++) {
-      var attr = this.attributes.item(i).nodeName;
-
-      if (/^on/.test(attr) && attr != 'onitemdisclosure') {
-        var name = attr.slice(2);
-        var result = this.EVENTS.filter(function (obj) {
-          return obj.name === name;
-        });
-        this.setEvent(result[0], this.props, this);
-      }
-    } // this.EVENTS.forEach(function (eventparameter, index, array) {
-    //         me.setEvent(eventparameter,me.props,me)
-    // })
-    //mjg this should not be hard-coded to APP-ROOT or root
-
+    var me = this;
+    this.EVENTS.forEach(function (eventparameter, index, array) {
+      me.setEvent(eventparameter, me.props, me);
+    }); //mjg this should not be hard-coded to APP-ROOT or root
 
     if (this.nodeParentName == 'APP-ROOT' || this.parentElement.id == 'root') {
       //this.props.renderTo = this.parentNode
@@ -119,14 +116,14 @@ function (_HTMLElement) {
       });
     } else if (this.nodeParentName == 'BODY') {
       var me = this;
-      me.doCreate();
-      console.log('Ext.application');
-      var elem = document.getElementById('theGrid'); //elem.parentNode.removeChild(elem);
+      me.doCreate(); //console.log('Ext.application')
+      //var elem = document.getElementById('theGrid');
+      //elem.parentNode.removeChild(elem);
 
       Ext.application({
         name: 'MyEWCApp',
         launch: function launch() {
-          console.log('Ext.Viewport.add(' + me.ext.xtype + ')');
+          //console.log('Ext.Viewport.add(' + me.ext.xtype + ')')
           Ext.Viewport.add([me.ext]);
 
           if (window.router) {
@@ -183,8 +180,8 @@ function (_HTMLElement) {
           } else {
             var par = item.parentNode;
             var cln = par.removeChild(item);
-            var el = Ext.get(cln);
-            console.log('Ext.create(' + 'widget' + ')');
+            var el = Ext.get(cln); //console.log('Ext.create(' + 'widget' + ')')
+
             var ext = Ext.create({
               xtype: 'widget',
               element: el
@@ -242,10 +239,9 @@ function (_HTMLElement) {
   };
 
   _proto.doCreate = function doCreate() {
-    this.ext = Ext.create(this.props);
-    console.log('Ext.create(' + this.ext.xtype + ')');
-    console.dir(this.props);
-    console.dir(this.ext);
+    this.ext = Ext.create(this.props); //console.log('Ext.create(' + this.ext.xtype + ')')
+    //console.dir(this.props)
+    //console.dir(this.ext)
 
     if (this.parentNode.childrenCounter != undefined) {
       this.parentNode.childrenCounter--;
@@ -262,7 +258,7 @@ function (_HTMLElement) {
   };
 
   _proto.addTheChild = function addTheChild(parentCmp, childCmp, location) {
-    console.log('addTheChild');
+    //console.log('addTheChild')
     var childxtype = childCmp.xtype;
     var parentxtype = parentCmp.xtype;
 
@@ -308,8 +304,8 @@ function (_HTMLElement) {
             regCols = parentCmp.registeredColumns.length;
           }
 
-          parentCmp.insertColumn(location + regCols, childCmp);
-          console.log(parentCmp.xtype + ".insertColumn(" + location + ", " + childCmp.xtype + ")");
+          parentCmp.insertColumn(location + regCols, childCmp); //console.log(`${parentCmp.xtype}.insertColumn(${location}, ${childCmp.xtype})`)
+
           return;
         }
       } else if ((childxtype === 'toolbar' || childxtype === 'titlebar') && parentCmp.getHideHeaders != undefined) {
