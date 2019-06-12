@@ -86,21 +86,24 @@ export default class ExtBase extends HTMLElement {
                 }
             }
         }
+
         this.props.listeners = {}
-        for (var i = 0; i < this.attributes.length; i++) {
-            var attr = this.attributes.item(i).nodeName;
 
-            if (/^on/.test(attr)) {
-            //if (/^on/.test(attr) && attr!='onitemdisclosure') {
-                var name = attr.slice(2);
-                var result = this.EVENTS.filter(obj => {return obj.name === name});
-                this.setEvent(result[0],this.props,this)
-            }
-        }
+        // for (var i = 0; i < this.attributes.length; i++) {
+        //     var attr = this.attributes.item(i).nodeName;
 
-        // this.EVENTS.forEach(function (eventparameter, index, array) {
-        //         me.setEvent(eventparameter,me.props,me)
-        // })
+        //     if (/^on/.test(attr)) {
+        //     //if (/^on/.test(attr) && attr!='onitemdisclosure') {
+        //         var name = attr.slice(2);
+        //         var result = this.EVENTS.filter(obj => {return obj.name === name});
+        //         this.setEvent(result[0],this.props,this)
+        //     }
+        // }
+
+        var me = this;
+        this.EVENTS.forEach(function (eventparameter, index, array) {
+            me.setEvent(eventparameter,me.props,me)
+        })
 
         //mjg this should not be hard-coded to APP-ROOT or root
         if (this.nodeParentName == 'APP-ROOT' || this.parentElement.id == 'root') {
@@ -126,7 +129,7 @@ export default class ExtBase extends HTMLElement {
             me.doCreate()
             //console.log('Ext.application')
 
-            var elem = document.getElementById('theGrid');
+            //var elem = document.getElementById('theGrid');
             //elem.parentNode.removeChild(elem);
 
             Ext.application({
@@ -141,7 +144,7 @@ export default class ExtBase extends HTMLElement {
                 }
             });
         }
-        else if(this.nodeParentName.substring(0, 3) != 'EXT') {
+        else if (this.nodeParentName.substring(0, 3) != 'EXT') {
             this.props.renderTo = this
             this.doCreate()
         }
@@ -151,7 +154,7 @@ export default class ExtBase extends HTMLElement {
             //mjgComment console.log('deal with this item to attach to parent')
             //if extParentDefined is true, then this child to parent
             //if extParentDefined is false, add this child to the extChildren array of the parent
-            if(this.extParentDefined == true) {
+            if (this.extParentDefined == true) {
                 parentCmp = this.parentNode['ext'];
                 childCmp = this.ext;
                 var location = null
