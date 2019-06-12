@@ -3,7 +3,7 @@ import './DrawComponent.html';
 export default class DrawComponent {
     constructor() {}
 
-    drawReady = (ele) => {
+    onReady = (ele) => {
         this.drawRefCmp = ele.detail.cmp;
         this.drawRefCmp.on({
             element: 'element',

@@ -12,7 +12,7 @@ export default class ColorPickerComponent {
     onChange = (picker) => {
         this.color = picker.getValue();
 
-        if(this.titlePanel) {
+        if(this.titlePanelCmp) {
             const colorTitle = this.getcolorTitle();
             this.titlePanelCmp.setTitle(colorTitle);
             this.mainColorSelectorCmp.setColor(this.color);
@@ -29,9 +29,9 @@ export default class ColorPickerComponent {
         this.mainColorSelectorCmp = event.detail.cmp;
     }
 
-    OnSelChange = (event) => {
+    onSelChange = (event) => {
         this.color = event.detail.color;
-        if(this.titlePanel) {
+        if(this.titlePanelCmp) {
             let colorTitle = this.getcolorTitle();
             this.titlePanelCmp.setTitle(colorTitle);
             this.selButtonCmp = Ext.getCmp('colorSelectorButton');
