@@ -1,0 +1,84 @@
+sencha web start
+https://vuematerial.io/components/app
+
+sencha web -port 8075 start
+
+
+ng new ext-angular-app --inline-style --inline-template --skip-tests
+ng g component Ext --inline-style --inline-template --flat --selector ext-component
+
+in assets folder:
+cp -r /Users/marcgusmano/aaExt/ext-6.6.0.216/build/modern/ modern
+cp /Users/marcgusmano/aaExt/ext-6.6.0.216/build/ext-modern-all.js ./
+cp /Users/marcgusmano/aaExt/ext-6.6.0.216/build/ext-modern-all-debug.js ./
+
+index.html
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
+
+angular.json
+"styles": [
+  "src/assets/modern/theme-material/resources/theme-material-all.css"
+],
+"scripts": [
+  "src/assets/ext-modern-all.js"
+]
+
+
+
+declare var Ext: any;
+import {ElementRef,Input,Output,Component} from '@angular/core';
+@Component({
+  selector: 'ext-component',
+  template: '<ng-template #dynamic></ng-template>'
+})
+export class ExtComponent{
+  public ext: any
+  @Input() xtype = ''
+  @Input() config = ''
+  private _nativeElement: any
+
+  constructor(elementDef: ElementRef) {
+    this._nativeElement = elementDef.nativeElement
+  }
+  ngOnInit(dynamicTarget: any,metadata?: any) {
+    let o: any = {}
+    o = this.config
+    o.renderTo = this._nativeElement
+    o.xtype = this.xtype
+    let me: any = this
+    Ext.onReady(function(){
+      me.ext = Ext.create(o)
+    })
+  }
+}
+
+import { Component } from '@angular/core';
+import { ExtComponent } from './ext.component'
+@Component({
+  selector: 'app-root',
+  template: `
+    <ext-component 
+      [xtype]="'grid'"
+      [config]="configVal">
+    </ext-component>
+  `
+})
+export class AppComponent {
+  configVal = {
+    title: 'Personnel',
+    height: 300,
+    width: '100%',
+    columns: [
+      {text: 'Name',dataIndex: 'name',width: 100},
+      {text: 'Email',dataIndex: 'email',flex: 1},
+      {text: 'Phone',dataIndex: 'phone',width: 150}
+    ],
+    data: [
+      { name: 'Jean Luc',   email: 'jeanluc.picard@enterprise.com', phone: '555-111-1111' },
+      { name: 'ModernWorf', email: 'worf.moghsson@enterprise.com',  phone: '555-222-2222' },
+      { name: 'Deanna',     email: 'deanna.troi@enterprise.com',    phone: '555-333-3333' },
+      { name: 'Data',       email: 'mr.data@enterprise.com',        phone: '555-444-4444' }
+    ],
+  }
+}
+
