@@ -1,0 +1,192 @@
+<ext-formpanel 
+  bodyPadding=10
+  scrollable='y'
+  cls='form-checkboxgroup'
+  onready="checkboxgroup.formpanelReady"
+>
+  
+  <ext-container
+    layout='{"type": "box", "vertical": false}'
+  >
+    <ext-fieldset
+      title="Individual Checkboxes"
+      defaultType="checkbox"
+      layout="form"
+      padding="0"
+      flex="1"
+    >
+      <ext-textfield name="txt-test1" label="Alignment Test:"></ext-textfield>
+      <ext-checkboxfield
+        boxLabel="Dog"
+        checked="true"
+        label="Favorite Animals"
+        name="fav-animal-dog"
+        inputValue="dog"
+      >
+      </ext-checkboxfield>
+      <ext-checkboxfield
+        boxLabel="Cat"
+        checked="true"
+        disabled="true"
+        name="fav-animal-cat"
+        inputValue="cat"
+      >
+      </ext-checkboxfield>
+      <ext-checkboxfield
+        boxLabel="Monkey"
+        name="fav-animal-monkey"
+        inputValue="monkey"
+      >
+      </ext-checkboxfield>
+    </ext-fieldset>
+    <ext-fieldset
+      title="Individual Radios"
+      defaultType="radio"
+      layout="form"
+      padding="0"
+      flex="1"
+    >
+      <ext-textfield name="txt-test2" label="Alignment Test 2:"></ext-textfield>
+      <ext-checkboxfield
+        boxLabel="Red"
+        checked="true"
+        label="Favorite Color"
+        name="fav-color"
+        inputValue="red"
+      >
+      </ext-checkboxfield>
+      <ext-checkboxfield
+        boxLabel="Blue"
+        checked="true"
+        disabled="true"
+        name="fav-color"
+        inputValue="red"
+      >
+      </ext-checkboxfield>
+      <ext-checkboxfield
+        boxLabel="Green"
+        name="fav-color"
+        inputValue="green"
+      >
+      </ext-checkboxfield>
+    </ext-fieldset>
+    <ext-fieldset
+      title="Checkbox Groups"
+      defaults='{ "labelAlign": "left", "labelWidth": "120", "margin": "10" }'
+    >
+      <ext-textfield name="txt-test3" label="Alignment Test 3:"></ext-textfield>
+      <ext-checkboxgroup
+        label="Auto Layout:"
+        cls="x-check-group-alt"
+        items='[
+          { "label": "Item 1", "name": "cb-auto-1" },
+          { "label": "Item 2", "name": "cb-auto-2" },
+          { "label": "Item 3", "name": "cb-auto-3" },
+          { "label": "Item 4", "name": "cb-auto-4" }
+        ]'
+      >
+      </ext-checkboxgroup>
+      <ext-checkboxgroup
+        label="Single Column:"
+        width="250"
+        items='[
+          { "label": "Item 1", "name": "cb-auto-1" },
+          { "label": "Item 2", "name": "cb-auto-2" },
+          { "label": "Item 3", "name": "cb-auto-3" }
+        ]'
+      >
+      </ext-checkboxgroup>
+      <ext-checkboxgroup
+        label="Multi-Column<br />(horizontal):"
+        cls="x-check-group-alt"
+        width="250"
+        items='[
+          { "label": "Item 1", "name": "cb-horiz-1" },
+          { "label": "Item 2", "name": "cb-horiz-2" },
+          { "label": "Item 3", "name": "cb-horiz-3" },
+          { "label": "Item 4", "name": "cb-horiz-4" },
+          { "label": "Item 5", "name": "cb-horiz-5" },
+          { "label": "Item 6", "name": "cb-horiz-6" }
+        ]'
+      >
+      </ext-checkboxgroup>
+      <ext-checkboxgroup
+        label="Multi-Column<br />(vertical):"
+        vertical=true
+        items='[
+          { "label": "Item 1", "name": "cb-vert-1" },
+          { "label": "Item 2", "name": "cb-vert-2" },
+          { "label": "Item 3", "name": "cb-vert-3" },
+          { "label": "Item 4", "name": "cb-vert-4" },
+          { "label": "Item 5", "name": "cb-vert-5" },
+          { "label": "Item 6", "name": "cb-vert-6" }
+        ]'
+      >
+      </ext-checkboxgroup>
+      <ext-checkboxgroup
+        label="Multi-Column<br />(custom widths):"
+        cls="x-check-group-alt",
+        vertical=true
+        items='[
+          { "label": "Item 1", "name": "cb-custwidth", "inputValue": 1 },
+          { "label": "Item 2", "name": "cb-custwidth", "inputValue": 2 },
+          { "label": "Item 3", "name": "cb-custwidth", "inputValue": 3 },
+          { "label": "Item 4", "name": "cb-custwidth", "inputValue": 4, "width": 100 },
+          { "label": "Item 5", "name": "cb-custwidth", "inputValue": 5, "width": 100 }
+        ]'
+      >
+      </ext-checkboxgroup>
+      <ext-checkboxgroup
+        label="Multi-Column<br />(custom widths):"
+        cls="x-check-group-alt",
+        vertical=true
+        errorTarget="side",
+        required=true
+        defaults='{
+          "width": "120",
+          "height": "120"
+        }'
+      >
+      <ext-container 
+        width="120", 
+        height="120"
+        defaults='{
+          "labelAlign":"right"
+        }'
+      >
+        <ext-checkboxfield>
+          <ext-component html='Heading 1', padding='0 2'>
+          </ext-component>
+          <ext-label html="Item 1" name="cb-cust-1">
+          </ext-label>
+          <ext-label html="Item 2" name="cb-cust-2">
+          </ext-label>
+        </ext-checkboxfield>
+        <ext-checkboxfield>
+          <ext-component html='Heading 2', padding='0 2'>
+          </ext-component>
+          <ext-label html="A long item just for fun" name="cb-cust-3">
+          </ext-label>
+        </ext-checkboxfield>
+        <ext-checkboxfield>
+          <ext-component html='Heading 1', padding='0 2'>
+          </ext-component>
+          <ext-label html="Item 4" name="cb-cust-4">
+          </ext-label>
+          <ext-label html="Item 5" name="cb-cust-5">
+          </ext-label>
+        </ext-checkboxfield> 
+      </ext-container>
+      </ext-checkboxgroup>
+    </ext-fieldset>
+  </ext-container>
+  <ext-container>
+    <ext-panel>
+      <ext-button text="Save" ontap="checkboxgroup.onSaveFormClick">
+      </ext-button>
+      <ext-button text="Reset" ontap="checkboxgroup.onResetFormClick">
+      </ext-button>
+    </ext-panel>
+  </ext-container>
+</ext-formpanel>
+            
