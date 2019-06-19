@@ -20,18 +20,20 @@
  *     ```HTML
  *      @example({tab: 1})
  *      <ext-panel shadow bodyPadding=0>
- *                         <ext-toolbar docked="top">
- *                             <ext-button text="Default" badgeText="2"/>
- *                             <ext-spacer/>
- *                             <ext-segmentedbutton>
- *                                 <ext-button text="Option 1" pressed/>
- *                                 <ext-button text="Option 2"/>
- *                             </ext-segmentedbutton>
- *                             <ext-spacer/>
- *                             <ext-button ui="action" text="Action"/>
- *                         </ext-toolbar>
- *                        Some Text!
- *                     </ext-panel>
+ *          <ext-toolbar docked="top">
+ *              <ext-button text="Default" badgeText="2">
+ *              </ext-button>
+ *              <ext-spacer>
+ *                  <ext-segmentedbutton>
+ *                      <ext-button text="Option 1" pressed></ext-button>
+ *                       <ext-button text="Option 2"></ext-button>
+ *                  </ext-segmentedbutton>
+ *              </ext-spacer>
+ *              <ext-button ui="action" text="Action">
+ *              </ext-button>
+ *          </ext-toolbar>
+ *          Some Text!
+ *      </ext-panel>
  *     ```
  *       JS
  *     ```javascript
@@ -45,9 +47,7 @@
  * 
  *     export default class ToolbarComponent {}
  *     ```
- *
  */
-
 /**
  * @cfg {String/Ext.Title} [title=null]
  * The title of the toolbar.

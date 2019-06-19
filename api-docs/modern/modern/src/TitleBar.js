@@ -15,9 +15,9 @@
  *      @example({tab: 1})
  *      <ext-container>
  *          <ext-titlebar title="App Title" docked="top">
- *              <ext-button align="left" iconCls="x-fa fa-bars"/>
- *              <ext-button align="right" iconCls="x-fa fa-inbox" text="Inbox"/>
- *              <ext-button align="right" iconCls="x-fa fa-user" text="Profile"/>
+ *              <ext-button align="left" iconCls="x-fa fa-bars"></ext-button>
+ *              <ext-button align="right" iconCls="x-fa fa-inbox" text="Inbox"></ext-button>
+ *              <ext-button align="right" iconCls="x-fa fa-user" text="Profile"></ext-button>
  *          </ext-titlebar>
  *       </ext-container>
  *      

@@ -18,16 +18,9 @@
  *              ui="action alt" 
  *              iconCls="x-fa fa-heart" 
  *              margin="10"
- *              menu='[{
- *              "text": "Menu Item 1",
- *              "handler": "function(){ alert("Item 1 clicked"); }"  
- *              },{
- *               "text": "Menu Item 2",
- *               "handler": "function(){alert("Item 2 clicked");}"
- *               }]'
- *           />
+ *           >
+ *           </ext-splitbutton>
  *      </ext-container>
- *      
  *     ```
  *       JS
  *     ```javascript
@@ -37,6 +30,16 @@
  *     import '@sencha/ext-web-components/dist/ext-splitbutton.component';
  * 
  *     export default class SplitButtonComponent {
+ *          splitButtonReady = (event) => {
+ *              const splitButtonCmp = event.detail.cmp;
+ *              splitButtonCmp.setMenu([{
+ *                  text: "Menu Item 1",
+ *                   handler: () => { alert("Item 1 clicked"); }  
+ *              }, {
+ *                  text: "Menu Item 2",
+ *                  handler: () => {alert("Item 2 clicked"); }
+ *              }]);  
+ *          }
  * 
  *          sayHello = () => {
  *              alert("Hello! The button was clicked");

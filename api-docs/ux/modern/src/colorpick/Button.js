@@ -20,14 +20,11 @@
  * 
  *     export default class ButtonComponent {
  *      showMessage = (event) => {
-    *          const color = event.detail.color;
-    *          Ext.Msg.alert('Color', color);
-    *       }
- * 
+ *          const color = event.detail.color;
+ *          Ext.Msg.alert('Color', color);
+ *       }
  *     }
  *     ```
- *
- *    
  */
 
 /**
