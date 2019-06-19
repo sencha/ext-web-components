@@ -2,6 +2,11 @@ import './BasicGridComponent.scss';
 import './BasicGridComponent.html';
 import model from '../../data/CompanyModel';
 import '../../data/Companies.js';
+
+Ext.require([
+    'Ext.grid.plugin.HeaderReorder'
+]);
+
 export default class BasicGridComponent {
     constructor() {
         this.store = Ext.create('Ext.data.Store', {
