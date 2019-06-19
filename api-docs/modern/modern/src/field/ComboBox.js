@@ -37,7 +37,8 @@
  *              labelAlign="placeholder"
  *              typeAhead="true"
  *              onready="comboboxfield.comboboxFieldReady"
- *           />
+ *           >
+ *           </ext-combobox>
  *      </ext-formpanel>
  *      ```
  *      JS
@@ -49,12 +50,12 @@
  *      export default class ComboBoxFieldComponent {
  *          constructor() {
  *               this.data = [
- *               {"name":"Alabama","abbrev":"AL"},
- *               {"name":"Alaska","abbrev":"AK"},
- *               {"name":"Arizona","abbrev":"AZ"}
- *          ]
+ *                   {"name":"Alabama","abbrev":"AL"},
+ *                   {"name":"Alaska","abbrev":"AK"},
+ *                   {"name":"Arizona","abbrev":"AZ"}
+ *               ]
  *         }
- *          comboboxFieldReady() {
+ *         comboboxFieldReady() {
  *             this.combobox = event.detail.cmp;
  *             this.combobox.setOptions(this.data);
  *         }

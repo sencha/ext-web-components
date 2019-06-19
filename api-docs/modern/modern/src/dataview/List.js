@@ -9,7 +9,8 @@
  *      @example({tab: 1})
  *      <ext-list
  *          onready="basiclist.readylistView"
- *      />
+ *      >
+ *      </ext-list>
  *      ```
  *      JS
  *      ```javascript
