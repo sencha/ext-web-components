@@ -6,15 +6,29 @@
  * The default selected color is configurable via {@link #value} prop
  * and The Format is configurable via {@link #format}. Usually used in
  * forms via {@link Ext.ux.colorpick.Button} or {@link Ext.ux.colorpick.Field}.
- *
- *     @example packages=[reactor]
- *     <ColorSelector
- *         onChange={(picker, color, previousColor) => {
- *             Ext.Msg.alert('Color', color);
- *         }}
- *         format="hex6" // default is hex6, possible values: hex6, rgb, rgba
- *         value="00f" // initial color
- *     />
+ *     HTML
+ *     ```HTML
+ *      @example({tab: 1})
+ *     <ext-colorselector
+ *         onchange="selector.showMessage"
+ *         format="hex6"
+ *         value="00f"
+ *      >
+ *     </ext-colorselector>
+ *     ```
+ *       JS
+ *     ```javascript
+ *     @example({tab: 2, packages: ['ext-web-components']})
+ *     import '@sencha/ext-web-components/dist/ext-colorselector.component';
+ * 
+ *     export default class SelectorComponent {
+ *       showMessage = (event) => {
+ *          const color = event.detail.color;
+ *          Ext.Msg.alert('Color', color);
+ *       }
+ *     }
+ *     ```
+ * 
  */
 
 /**
