@@ -4,123 +4,145 @@
  * @xtype list
  *
  * List is a custom styled DataView which allows Grouping, Indexing, Icons, and a Disclosure.
- *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react'
- *     import { ExtReact, List } from '@extjs/ext-react';
- *
- *     export default class MyExample extends Component {
- *
- *         store = new Ext.data.Store({
- *             data: [
- *                 {title: 'Item 1'},
- *                 {title: 'Item 2'},
- *                 {title: 'Item 3'},
- *                 {title: 'Item 4'}
- *             ]
- *         });
- *
- *         render() {
- *             return (
- *                 <ExtReact>
- *                     <List
- *                         itemTpl="{title}"
- *                         store={this.store}
- *                     />
- *                 </ExtReact>
- *             )
+ *      HTML
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-list
+ *          onready="basiclist.readylistView"
+ *      />
+ *      ```
+ *      JS
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-list.component';
+ * 
+ *      export default class BasicListComponent {
+ *          constructor() {
+ *              this.store = new Ext.data.Store({
+ *                  data: [
+ *                     {title: 'Item 1'},
+ *                     {title: 'Item 2'},
+ *                     {title: 'Item 3'},
+ *                     {title: 'Item 4'}
+ *                 ] 
+ *             });
+ *         }
+ *         readylistView() {
+ *             this.listView = event.detail.cmp;
+ *             this.listView.setStore(this.store);
+ *             this.listView.setItemTpl(`{title}`);
  *         }
  *     }
+ *      ```
+ */
+
+ /**   A more advanced example showing a list of people grouped by last name:
  *
- * A more advanced example showing a list of people grouped by last name:
+ *      HTML
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-list
+ *          grouped="true"
+ *          onready="groupedlist.readyGroupedListView"
+ *      >
+ *      </ext-list>
+ *      ```
+ *      JS
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-list.component';
+ * 
+ *      export default class GroupedListComponent {
+ *          constructor() {
+ *              this.store = new Ext.data.Store({
+ *                  data: [{
+ *                     firstName: 'Peter',
+ *                     lastName: 'Venkman'
+ *                  }, {
+ *                     firstName: 'Raymond',
+ *                     lastName: 'Stantz'
+ *                  }, {
+ *                     firstName: 'Egon',
+ *                     lastName: 'Spengler'
+ *                  }, {
+ *                     firstName: 'Winston',
+ *                     lastName: 'Zeddemore'
+ *                 }],
  *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react'
- *     import { ExtReact, List, Button } from '@extjs/ext-react';
+ *                 sorters: 'lastName',
  *
- *     export default class MyExample extends Component {
- *
- *         store = new Ext.data.Store({
- *             data: [{
- *                 firstName: 'Peter',
- *                 lastName: 'Venkman'
- *             }, {
- *                 firstName: 'Raymond',
- *                 lastName: 'Stantz'
- *             }, {
- *                 firstName: 'Egon',
- *                 lastName: 'Spengler'
- *             }, {
- *                 firstName: 'Winston',
- *                 lastName: 'Zeddemore'
- *             }],
- *
- *             sorters: 'lastName',
- *
- *             grouper: {
- *                 groupFn: function(record) {
- *                     return record.get('lastName')[0];
+ *                 grouper: {
+ *                     groupFn: function(record) {
+ *                         return record.get('lastName')[0];
+ *                     }
  *                 }
- *             }
- *         });
- *
- *         render() {
- *             return (
- *                 <ExtReact>
- *                     <List
- *                         itemTpl="{firstName} {lastName}"
- *                         store={this.store}
- *                         grouped
- *                     />
- *                 </ExtReact>
- *             )
+ *             });
  *         }
- *     }
- *
+ * 
+ *          readyGroupedListView() {
+ *             this.groupedlistView = event.detail.cmp;
+ *             this.groupedlistView.setStore(this.store);
+ *             this.groupedlistView.setItemTpl(`{firstName} {lastName}`);
+ *          }
+ *      }
+ *      ```
+ */
+
+ /**
  * If you want to dock items to the bottom or top of a List, you can use the scrollDock configuration on child items in this List. The following example adds a button to the bottom of the List.
- *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react'
- *     import { ExtReact, List, Button } from '@extjs/ext-react';
- *
- *     export default class MyExample extends Component {
- *
- *         store = new Ext.data.Store({
- *             data: [{
- *                 firstName: 'Peter',
- *                 lastName: 'Venkman'
- *             },
- *             {
- *                 firstName: 'Raymond',
- *                 lastName: 'Stantz'
- *             },
- *             {
- *                 firstName: 'Egon',
- *                 lastName: 'Spengler'
- *             },
- *             {
- *                 firstName: 'Winston',
- *                 lastName: 'Zeddemore'
- *             }]
- *         });
- *
- *         render() {
- *             return (
- *                 <ExtReact>
- *                     <List
- *                         itemTpl="{firstName} {lastName}"
- *                         store={this.store}
- *                     >
- *                         <Button
- *                             scrollDock="bottom"
- *                             docked="bottom"
- *                             text="load more..."
- *                         />
- *                     </List>
- *                 </ExtReact>
- *             )
+ * 
+ *      HTML
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-list
+ *          onready="positionlistitem.readyPositionedListView"
+ *      >
+ *          <ext-button
+ *             scrollDock="bottom"
+ *             docked="bottom"
+ *             text="load more..."
+ *          >
+ *          </ext-button>
+ *      </ext-list>
+ *      ```
+ *      JS
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-list.component';
+ *      import '@sencha/ext-web-components/dist/ext-button.component';
+ * 
+ *      export default class PositionedListItemComponent {
+ * 
+ *          constructor() {
+ *              this.store = new Ext.data.store({
+ *                  data: [{
+ *                      firstName: 'Peter',
+ *                      lastName: 'Venkman'
+ *                   },    
+ *                   {
+ *                      firstName: 'Raymond',
+ *                      lastName: 'Stantz'
+ *                   },
+ *                   {
+ *                      firstName: 'Egon',
+ *                      lastName: 'Spengler'
+ *                   },
+ *                   {
+ *                      firstName: 'Winston',
+ *                      lastName: 'Zeddemore'
+ *                 }]
+ *             })
+ * 
+ *         }
+ * 
+ *         readyPositionedListView() {
+ *              this.positionedListView = event.detail.cmp;
+ *              this.positionedListView.setStore(this.store);
+ *              this.positionedListView.setItemTpl(`{firstName} {lastName}`);
  *         }
  *     }
+ *      ```
+ * 
  */
 
 /**

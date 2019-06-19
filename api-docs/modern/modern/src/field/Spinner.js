@@ -4,31 +4,31 @@
  * @xtype spinnerfield
  *
  * Wraps an HTML5 number field. Example usage:
- *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react';
- *     import { ExtReact, Container, SpinnerField, FormPanel } from '@extjs/ext-react';
- *
- *     export default class MyExample extends Component {
- *         render() {
- *             return (
- *                 <ExtReact>
- *                     <Container layout="center">
- *                         <FormPanel shadow>
- *                             <SpinnerField
- *                                 label="Spinner"
- *                                 width="150"
- *                                 minValue={0}
- *                                 maxValue={10}
- *                                 stepValue={1}
- *                             />
- *                         </FormPanel>
- *                     </Container>
- *                 </ExtReact>
- *             )
- *         }
- *     }
- *
+ *      HTML
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-container layout="center">
+ *          <ext-formpanel shadow="true">
+ *              <ext-spinnerfield
+ *                  label="Spinner"
+ *                  width="150"
+ *                  minValue="1"
+ *                  maxValue="10"
+ *                  stepValue="1"
+ *              >
+ *              <ext-spinnerfield>
+ *          <ext-formpanel>
+ *      </ext-container>
+ *      ```
+ *      JS
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-container.component';
+ *      import '@sencha/ext-web-components/dist/ext-formpanel.component';
+ *      import '@sencha/ext-web-components/dist/ext-spinnerfield.component';
+ * 
+ *      export default class SpinnerFieldComponent {}
+ *      ```
  */
 
 /**
