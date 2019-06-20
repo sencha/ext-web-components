@@ -55,7 +55,7 @@
  *                   {"name":"Arizona","abbrev":"AZ"}
  *               ]
  *         }
- *         comboboxFieldReady() {
+ *         comboboxFieldReady(event) {
  *             this.combobox = event.detail.cmp;
  *             this.combobox.setOptions(this.data);
  *         }

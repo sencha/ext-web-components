@@ -58,7 +58,7 @@
  *                 }
  *              });
  *         }
- *         readyNestedList() {
+ *         readyNestedList(event) {
  *             this.nestedListView = event.detail.cmp;
  *             this.nestedListView.setStore(this.store);
  *         }  

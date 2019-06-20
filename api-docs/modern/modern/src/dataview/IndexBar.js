@@ -59,7 +59,7 @@
  *              })
  *          }
  *          
- *          readyIndexBarView() {
+ *          readyIndexBarView(event) {
  *              this.indexBarView = event.detail.cmp;
  *              this.indexBarView.setStore(this.store);
  *              this.indexBarView.setItemTpl(`<div class='contact'>{firstName} <strong>{lastName}</strong></div>`);

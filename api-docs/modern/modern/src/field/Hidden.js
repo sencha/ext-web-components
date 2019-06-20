@@ -8,28 +8,31 @@
  * dynamic or previously collected data back to the server in the same request as the
  * normal form submission. For example, here is how we might set up a form to send
  * back a hidden userId field:
+ *      HTML
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-container layout="center">
+ *          <ext-formpanel shadow="true">
+ *              <ext-hiddenfield
+ *                   value="123"
+ *                   name="hide"
+ *               >
+ *              </ext-hiddenfield>
+ *          <ext-formpanel>
+ *      </ext-container>
+ *      ```
+ *      JS
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-container.component';
+ *      import '@sencha/ext-web-components/dist/ext-formpanel.component';
+ *      import '@sencha/ext-web-components/dist/ext-hiddenfield.component';
+ * 
+ *      export default class HiddenFieldComponent {}
+ *      ```
  *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react';
- *     import { ExtReact, Container, FormPanel, HiddenField } from '@extjs/ext-react';
- *
- *     export default class MyExample extends Component {
- *         render() {
- *             return (
- *                 <ExtReact>
- *                     <Container layout="center">
- *                         <FormPanel shadow>
- *                             <HiddenField
- *                                 value="123"
- *                                 name="hide"
- *                             />
- *                         </FormPanel>
- *                     </Container>
- *                 <ExtReact>
- *             )
- *         }
- *     }
- *
+ */
+/*
  * In the form above we created two fields - a hidden field and a
  * {@link Ext.field.Checkbox check box field}. Only the check box will be visible, but
  * both fields will be submitted. Hidden fields cannot be tabbed to - they are removed

@@ -28,7 +28,7 @@
  *                 ] 
  *             });
  *         }
- *         readylistView() {
+ *         readylistView(event) {
  *             this.listView = event.detail.cmp;
  *             this.listView.setStore(this.store);
  *             this.listView.setItemTpl(`{title}`);
@@ -80,7 +80,7 @@
  *             });
  *         }
  * 
- *          readyGroupedListView() {
+ *          readyGroupedListView(event) {
  *             this.groupedlistView = event.detail.cmp;
  *             this.groupedlistView.setStore(this.store);
  *             this.groupedlistView.setItemTpl(`{firstName} {lastName}`);
@@ -136,7 +136,7 @@
  * 
  *         }
  * 
- *         readyPositionedListView() {
+ *         readyPositionedListView(event) {
  *              this.positionedListView = event.detail.cmp;
  *              this.positionedListView.setStore(this.store);
  *              this.positionedListView.setItemTpl(`{firstName} {lastName}`);
