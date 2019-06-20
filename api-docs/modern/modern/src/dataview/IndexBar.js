@@ -9,55 +9,64 @@
  *
  * Here is an example of the usage in a {@link Ext.List}:
  *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react'
- *     import { ExtReact, List } from '@extjs/ext-react';
- *
- *     export default class MyExample extends Component {
- *
- *         store = new Ext.data.Store({
- *             data: [{
- *                 firstName: 'Screech',
- *                 lastName: 'Powers'
- *             },
- *             {
- *                 firstName: 'Kelly',
- *                 lastName: 'Kapowski'
- *             },
- *             {
- *                 firstName: 'Zach',
- *                 lastName: 'Morris'
- *             },
- *             {
- *                 firstName: 'Jessie',
- *                 lastName: 'Spano'
- *             },
- *             {
- *                 firstName: 'Lisa',
- *                 lastName: 'Turtle'
- *             },
- *             {
- *                 firstName: 'A.C.',
- *                 lastName: 'Slater'
- *             },
- *             {
- *                 firstName: 'Richard',
- *                 lastName: 'Belding'
- *             }]
- *         });
- *
- *         render() {
- *             return (
- *                 <ExtReact>
- *                     <List
- *                         itemTpl="<div class='contact'>{firstName} <strong>{lastName}</strong></div>"
- *                         store={this.store}
- *                         indexBar
- *                     />
- *                 </ExtReact>
- *             )
- *         }
- *     }
+ *      HTML
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-list
+ *          onready="indexbar.readyIndexBarView"
+ *          indexBar="true"
+ *      >
+ *      </ext-list>
+ *      ```
+ *      JS
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-container.component';
+ *      import '@sencha/ext-web-components/dist/ext-formpanel.component';
+ *      import '@sencha/ext-web-components/dist/ext-spinnerfield.component';
+ * 
+ *      export default class IndexBarComponent {
+ *          constructor() {
+ *              this.store = new Ext.data.Store({
+ *                  data: [{
+ *                      firstName: 'Screech',
+ *                      lastName: 'Powers'
+ *                  },
+ *                  {
+ *                      firstName: 'Kelly',
+ *                      lastName: 'Kapowski'
+ *                  },
+ *                  {
+ *                      firstName: 'Zach',
+ *                      lastName: 'Morris'
+ *                  },
+ *                  {
+ *                      firstName: 'Jessie',
+ *                      lastName: 'Spano'
+ *                  },
+ *                  {
+ *                      firstName: 'Lisa',
+ *                      lastName: 'Turtle'
+ *                  },
+ *                  {
+ *                      firstName: 'A.C.',
+ *                      lastName: 'Slater'
+ *                  },
+ *                  {
+ *                      firstName: 'Richard',
+ *                      lastName: 'Belding'
+ *                  }]
+ *              })
+ *          }
+ *          
+ *          readyIndexBarView() {
+ *              this.indexBarView = event.detail.cmp;
+ *              this.indexBarView.setStore(this.store);
+ *              this.indexBarView.setItemTpl(`<div class='contact'>{firstName} <strong>{lastName}</strong></div>`);
+ *          }
+ *      }
+ *      ```
+ * 
  */
 
 /**

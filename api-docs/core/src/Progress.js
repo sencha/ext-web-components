@@ -12,41 +12,68 @@
  * want to show progress throughout an operation that has predictable points of interest
  * at which you can update the control.
  *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react'
- *     import { ExtReact, Panel, Progress } from '@extjs/ext-react';
+ *      HTML
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-panel layout='{ "type": "vbox", "align": "center" }'>
+ *          <ext-progress
+ *            value="0"
+ *            text="Loading: 0"
+ *            width="75%"
+ *            onready="progress.progressBar1Ready"
+ *          >
+ *            <ext-container
+ *              style='{"marginTop": "20"}'
+ *              html="<span>Loading: 0%</span>"
+ *              onready="progress.innnerContainerReady"
+ *            >
+ *            </ext-container>
+ *          </ext-progress>
+ *          <ext-progress
+ *            value="0"
+ *            width="75%"
+ *            onready="progress.progressBar2Ready"
+ *          >
+ *          </ext-progress>
+ *      <ext-panel>
+ *      ```
+ *      JS
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-panel.component';
+ *      import '@sencha/ext-web-components/dist/ext-progress.component';
  *
- *     export default class MyExample extends Component {
+ *      export default class ProgressComponent {
+ *        constructor() {
+ *          this.progress = 0;
+ *        }
  *
- *         state = {
- *             progress: 0
- *         }
+ *        progressBar1Ready = (event) => {
+ *          this.progressBar1Cmp = event.detail.cmp;
+ *        }
  *
- *         componentDidMount() {
- *             this.updateLoop = setInterval(() => {
- *                 let { progress } = this.state;
- *                 progress += 1;
- *                 if (progress > 100) progress = 0;
- *                 this.setState({ progress });
- *             }, 100)
- *         }
+ *        progressBar2Ready = (event) => {
+ *          this.progressBar2Cmp = event.detail.cmp;
  *
- *         render() {
- *             const { progress } = this.state;
+ *          setInterval(() => {
+ *            this.progress += 1;
  *
- *             return (
- *                 <ExtReact>
- *                     <Panel layout={{ type: 'vbox', align: 'center' }}>
- *                         <Progress value={progress/100.0} text={`Loading: ${progress}%`} width="75%"/>
- *                         <div style={{marginTop: '20px'}}>Loading: {progress}%</div>
- *                         <Progress value={progress/100.0} width="75%"/>
- *                     </Panel>
- *                 </ExtReact>
- *             )
- *         }
+ *            if (this.progress > 100) {
+ *              this.progress = 0;
+ *            }
  *
- *     }
+ *            this.progressBar1Cmp.setValue(this.progress);
+ *            this.progressBar1Cmp.setText(`Loading: ${this.progress}`);
+ *            this.innnerContainerCmp.setHtml(`Loading: ${this.progress}`);
+ *            this.progressBar2Cmp.setValue(this.progress);
+ *          }, 100);
+ *        }
  *
+ *        innnerContainerReady = (event) => {
+ *          this.innnerContainerCmp = event.detail.cmp;
+ *        }
+ *      }
+ *      ```
  */
 
 /**

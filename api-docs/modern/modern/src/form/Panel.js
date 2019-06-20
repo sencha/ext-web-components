@@ -5,25 +5,27 @@
  *
  * The Form panel presents a set of form fields and provides convenient ways to load and save data. Usually a form
  * panel just contains the set of fields you want to display.
+ *HTML
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-container layout="center" width="100%" height="100%">
+ *          <ext-formpanel title="Form Panel">
+ *              <ext-textfield label="First Name"></ext-textfield>
+ *              <ext-textfield label="Last Name"></ext-textfield>
+ *              <ext-textfield label="Account Number"></ext-textfield>
+ *              <ext-button text="Submit"></ext-button>
+ *          </ext-formpanel>
+ *      </ext-container>
+ *      ```
+ *      JS
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-textfield.component';
+ *      import '@sencha/ext-web-components/dist/ext-formpanel.component';
+ *      import '@sencha/ext-web-components/dist/ext-button.component';
  *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react';
- *     import { ExtReact, Button, FormPanel, TextField } from '@extjs/ext-react';
- *
- *     export default class myExample extends Component {
- *         render() {
- *             return (
- *                 <ExtReact>
- *                     <FormPanel title="Form Panel">
- *                         <TextField label="First Name"/>
- *                         <TextField label="Last Name"/>
- *                         <TextField label="Account Number"/>
- *                         <Button text="Submit"/>
- *                     </FormPanel>
- *                 </ExtReact>
- *             )
- *         }
- *     }
+ *      export default class PanelComponent {}
+ *      ```
  *
  * ##Loading data
  *
@@ -57,7 +59,7 @@
  *
  * ##Setting multiple errors on fields
  *
- * While you can call {@link Ext.field.Field#markInvalid} and {@link Ext.field.Field#clearInvalid} on each field, 
+ * While you can call {@link Ext.field.Field#markInvalid} and {@link Ext.field.Field#clearInvalid} on each field,
  * in your form, FormPanel provides a {@link #setErrors} method that will apply an Object of error states to multiple
  * fields with one call:
  *
@@ -69,7 +71,7 @@
  *          ...
  *      });
  *
- * While you can call {@link Ext.field.Field#getActiveErrors} on each field in the form to query the form for errors, 
+ * While you can call {@link Ext.field.Field#getActiveErrors} on each field in the form to query the form for errors,
  * you can call {@link #getErrors} on the form to get an array of error states, suitable to pass into {@link #setErrors}.
  *
  * NOTE: these methods will only work on fields that are named.

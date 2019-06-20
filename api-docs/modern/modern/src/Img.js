@@ -8,25 +8,26 @@
  * like any other component. This component typically takes between 1 and 3 props - a {@link #src}, and
  * optionally a {@link #height} and a {@link #width}:
  *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react'
- *     import { ExtReact, Panel, Image } from '@extjs/ext-react';
+ *     HTML
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-panel shadow="true" layout="fit">
+ *          <ext-image
+ *              width="64"
+ *              height="64"
+ *              src="http://www.sencha.com/assets/images/sencha-avatar-64x64.png"
+ *          >
+ *          </ext-image>
+ *      </ext-panel>
+ *      ```
+ *      JS
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-panel.component';
+ *      import '@sencha/ext-web-components/dist/ext-image.component';
  *
- *     export default class MyExample extends Component {
- *         render() {
- *             return (
- *                 <ExtReact>
- *                     <Panel shadow layout="fit">
- *                         <Image
- *                             height="64"
- *                             width="64"
- *                             src="http://www.sencha.com/assets/images/sencha-avatar-64x64.png"
- *                         />
- *                     </Panel>
- *                 </ExtReact>
- *             );
- *         }
- *     }
+ *      export default class ImageFieldComponent {}
+ *      ``
  */
 
 /**

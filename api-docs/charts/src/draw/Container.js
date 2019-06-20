@@ -3,146 +3,165 @@
  * @extend Ext.draw.ContainerBase
  * @xtype draw
  * The container that holds and manages instances of the {@link Ext.draw.Surface}
- * in which {@link Ext.draw.sprite.Sprite sprites} are rendered.  Draw containers are 
- * used as the foundation for all of the chart classes but may also be created directly 
+ * in which {@link Ext.draw.sprite.Sprite sprites} are rendered.  Draw containers are
+ * used as the foundation for all of the chart classes but may also be created directly
  * in order to create custom drawings.
- * 
- *     @example packages=[reactor]
- *     import React, { Component } from 'react';
- *     import { ExtReact, Panel, Draw, Toolbar, Button, Spacer, Label } from '@extjs/ext-react';
  *
- *     export default class DrawExample extends Component {
+ *     HTML
+ *      ```HTML
+ *      @example({tab: 1})
+ *        <ext-container padding="10" layout="fit" fitToParent="true" height="100%">
+ *            <ext-panel shadow="true" layout="fit">
+ *              <ext-toolbar docked="top">
+ *              <ext-container>
+ *                <span>Use your finger or mouse to paint on the surface below.</span>
+ *              </ext-container>
+ *              <ext-spacer ></ext-spacer>
+ *              <ext-button ontap="draw.clear" text="Clear"></ext-button>
+ *            </ext-toolbar>
+ *            <ext-draw onready="draw.onReady"></ext-draw>
+ *          </ext-panel>
+ *        </ext-container>
+ *      ```
+ *      JS
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-container.component';
+ *      import '@sencha/ext-web-components/dist/ext-panel.component';
+ *      import '@sencha/ext-web-components/dist/ext-draw.component';
+ *      import '@sencha/ext-web-components/dist/ext-toolbar.component';
+ *      import '@sencha/ext-web-components/dist/ext-spacer.component';
+ *      import '@sencha/ext-web-components/dist/ext-button.component';
  *
- *         componentDidMount() {
- *             this.refs.draw.on({
- *                 element: 'element',
- *                 mousedown: this.onMouseDown,
- *                 mousemove: this.onMouseMove,
- *                 mouseup: this.onMouseUp,
- *                 mouseleave: this.onMouseUp
- *             });
- *         }
+ *        export default class DrawComponent {
+ *            constructor () {}
+ *            onReady = (ele) => {
+ *                this.drawRef = ele.detail.cmp;
+ *                this.drawRef.on({
+ *                  element: 'element',
+ *                  mousedown: this.onMouseDown.bind(this),
+ *                  mousemove: this.onMouseMove.bind(this),
+ *                  mouseup: this.onMouseUp.bind(this),
+ *                  mouseleave: this.onMouseUp.bind(this)
+ *                });
+ *             }
  *
- *         clear = () => {
- *             const { draw } = this.refs;
- *             draw.getSurface().destroy();
- *             draw.getSurface('overlay').destroy();
- *             draw.renderFrame();
- *         }
+ *             clear = () => {
+ *               this.drawRef.getSurface().destroy();
+ *               this.drawRef.getSurface('overlay').destroy();
+ *               this.drawRef.renderFrame();
+ *             }
  *
- *         onMouseDown = (e) => {
- *             let { draw } = this.refs,
- *                 surface = draw.getSurface(),
- *                 xy, x, y;
+ *             onMouseDown = (e) => {
+ *               let surface = this.drawRef.getSurface(), xy, x, y;
  *
- *             if (!draw.sprite) {
+ *               if (!this.drawRef.sprite) {
  *                 xy = surface.getEventXY(e);
  *                 x = xy[0];
  *                 y = xy[1];
  *
- *                 draw.list = [x, y, x, y];
- *                 draw.lastEventX = x;
- *                 draw.lastEventY = y;
+ *                 this.drawRef.list = [x, y, x, y];
+ *                 this.drawRef.lastEventX = x;
+ *                 this.drawRef.lastEventY = y;
  *
- *                 draw.sprite = surface.add({
- *                     type: 'path',
- *                     path: ['M', draw.list[0], draw.list[1], 'L', draw.list[0] + 1e-1, draw.list[1] + 1e-1],
- *                     lineWidth: 30 * Math.random() + 10,
+ *                 this.drawRef.sprite = surface.add({
+ *                   type: 'path',
+ *                   path: [
+ *                     'M', this.drawRef.list[0], this.drawRef.list[1], 'L', this.drawRef.list[0] + 1e-1, this.drawRef.list[1] + 1e-1
+ *                   ],
+ *                   lineWidth: 30 * Math.random() + 10,
  *                     lineCap: 'round',
  *                     lineJoin: 'round',
- *                     strokeStyle: new Ext.util.Color(Math.random() * 127 + 128, Math.random() * 127 + 128, Math.random() * 127 + 128)
+ *                     strokeStyle: new Ext.util.Color(
+ *                       Math.random() * 127 + 128, Math.random() * 127 + 128, Math.random() * 127 + 128
+ *                     )
  *                 });
- *
- *                 surface.renderFrame();
+ *               surface.renderFrame();
  *             }
- *         }
+ *            }
  *
- *         onMouseMove = (e) => {
- *             let { draw } = this.refs,
- *                 surface = draw.getSurface(),
- *                 path, xy, x, y, dx, dy, D;
- *
- *             if (draw.sprite) {
+ *            onMouseMove = (e) => {
+ *              let surface = this.drawRef.getSurface(), path, xy, x, y, dx, dy, D;
+ *              if (this.drawRef.sprite) {
  *                 xy = surface.getEventXY(e);
  *                 x = xy[0];
  *                 y = xy[1];
- *                 dx = draw.lastEventX - x;
- *                 dy = draw.lastEventY - y;
+ *                 dx = this.drawRef.lastEventX - x;
+ *                 dy = this.drawRef.lastEventY - y;
  *                 D = 10;
  *
  *                 if (dx * dx + dy * dy < D * D) {
- *                     draw.list.length -= 2;
- *                     draw.list.push(x, y);
+ *                   this.drawRef.list.length -= 2;
+ *                   this.drawRef.list.push(x, y);
  *                 } else {
- *                     draw.list.length -= 2;
- *                     draw.list.push(draw.lastEventX = x, draw.lastEventY = y);
- *                     draw.list.push(draw.lastEventX + 1, draw.lastEventY + 1);
+ *                   this.drawRef.list.length -= 2;
+ *                   this.drawRef.list.push(this.drawRef.lastEventX = x, this.drawRef.lastEventY = y);
+ *                   this.drawRef.list.push(this.drawRef.lastEventX + 1, this.drawRef.lastEventY + 1);
  *                 }
  *
- *                 path = smoothList(draw.list);
+ *                 path = this.smoothList(this.drawRef.list);
  *
- *                 draw.sprite.setAttributes({
- *                     path: path
+ *                 this.drawRef.sprite.setAttributes({
+ *                   path: path
  *                 });
  *
  *                 if (Ext.os.is.Android) {
- *                     Ext.draw.Animator.schedule(() => surface.renderFrame(), draw);
+ *                   Ext.this.drawRef.Animator.schedule(() => surface.renderFrame(), this.drawRef);
  *                 } else {
- *                     surface.renderFrame();
+ *                   surface.renderFrame();
  *                 }
+ *              }
+ *            }
+ *
+ *            onMouseUp = (e) => {
+ *              this.drawRef.sprite = null;
+ *            }
+ *
+ *            onResize = () => {
+ *               const size = this.drawRef.element.getSize();
+ *               this.drawRef.getSurface().setRect([0, 0, size.width, size.height]);
+ *               this.drawRef.renderFrame();
+ *            }
+ *
+ *            smoothList = (points) => {
+ *               if (points.length < 3) {
+ *                   return ['M', points[0], points[1]];
+ *               }
+ *
+ *               var dx = [], dy = [], result = ['M'], i, ln = points.length;
+ *
+ *               for (i = 0; i < ln; i += 2) {
+ *                   dx.push(points[i]);
+ *                   dy.push(points[i + 1]);
  *             }
- *         }
  *
- *         onMouseUp = (e) => {
- *             this.refs.draw.sprite = null;
- *         }
+ *               dx = Ext.draw.Draw.spline(dx);
+ *               dy = Ext.draw.Draw.spline(dy);
+ *               result.push(dx[0], dy[0], 'C');
  *
- *         onResize = () => {
- *             const { draw } = this.refs;
- *             const size = draw.element.getSize();
- *             draw.getSurface().setRect([0, 0, size.width, size.height]);
- *             draw.renderFrame();
- *         }
+ *               for (i = 1, ln = dx.length; i < ln; i++) {
+ *                  result.push(dx[i], dy[i]);
+ *               }
  *
- *         render() {
- *             return (
- *                 <ExtReact>
- *                     <Panel shadow layout="fit">
- *                         <Toolbar docked="top">
- *                             <div style={{fontSize: Ext.os.is.Phone ? '12px' : '14px'}}>Use your {Ext.supports.Touch ? 'finger' : 'mouse'} to paint on the surface below.</div>
- *                             <Spacer/>
- *                             <Button handler={this.clear} text="Clear"/>
- *                         </Toolbar>
- *                         <Draw ref="draw"/>
- *                     </Panel>
- *                 </ExtReact>
- *             )
- *         }
- *     }
+ *               return result;
+ *              }
+ *          }
  *
- *     function smoothList(points) {
- *         if (points.length < 3) {
- *             return ['M', points[0], points[1]];
- *         }
  *
- *         var dx = [], dy = [], result = ['M'],
- *             i, ln = points.length;
  *
- *         for (i = 0; i < ln; i += 2) {
- *             dx.push(points[i]);
- *             dy.push(points[i + 1]);
- *         }
  *
- *         dx = Ext.draw.Draw.spline(dx);
- *         dy = Ext.draw.Draw.spline(dy);
- *         result.push(dx[0], dy[0], 'C');
  *
- *         for (i = 1, ln = dx.length; i < ln; i++) {
- *             result.push(dx[i], dy[i]);
- *         }
  *
- *         return result;
- *     }
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *      export default class SpinnerFieldComponent {}
+ *      ```
  */
 
 /**
