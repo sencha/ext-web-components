@@ -9,19 +9,20 @@
  * @since 6.6.0
  *
  * Example usage:
- *
- *      @example packages=[reactor]
- *      import { ExtReact, Container, TimePanel } from '@extjs/ext-react';
- *      import React, { Component } from 'react';
- *      export default class TimeExample extends Component {
- *          render() {
- *              return (
- *                  <ExtReact>
- *                      <Container padding={10} layout={'auto'}>
- *                          <TimePanel shadow/>
- *                      </Container>
- *                  </ExtReact>
- *              )
- *          }
- *      }
+ * 
+ *      HTML
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-container padding={10} layout='{"auto"}'>
+ *          <ext-timepanel shadow/>
+ *      </ext-container>
+ *      ```
+ *      JS
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-container.component';
+ *      import '@sencha/ext-web-components/dist/ext-timepanel.component';
+ * 
+ *      export default class TimeComponent {}
+ *      ```
  */

@@ -247,35 +247,44 @@
  * Allows for simple creation of various different alerts and notifications.
  *
  * ## Examples
+ * 
+ *      HTML
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-panel shadow layout='{"type": "vbox", "align": "stretch"}'>
+ *          <ext-button handler="messagebox.alertBoxHandler" text="Alert"/>
+ *          <ext-button handler="messagebox.promptHandler" text="Prompt"/>
+ *          <ext-button handler="messagebox.confirmHandler" text="Confirm"/>
+ *      </ext-panel>
+ *      ```
+ *      JS
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-panel.component';
+ *      import '@sencha/ext-web-components/dist/ext-button.component';
+ *      
+ *      Ext.require('Ext.MessageBox');
+ * 
+ *      export default class MessageBoxComponent {
+ *          alertBoxHandler = () => {
+ *              Ext.Msg.alert('Title', 'The quick brown fox jumped over the lazy dog.');
+ *          }
  *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react';
- *     import { ExtReact, Panel, Button } from '@extjs/ext-react';
+ *          promptHandler = () => {
+ *             Ext.Msg.prompt('Welcome!', 'What\'s your first name?', this.onPromptResult.bind(this));
+ *          }
+ * 
+ *          confirmHandler = () => {
+ *             Ext.Msg.confirm('Confirmation', 'Are you sure you want to do that?', this.onConfirmResult.bind(this));
+ *          }
+ * 
+ *          onConfirmResult = (buttonId, value, opt) => {
+ *              Ext.toast(`User clicked ${buttonId} button.`);
+ *          }
  *
- *     Ext.require('Ext.MessageBox');
- *
- *     export default class MyExample extends Component {
- *
- *         onConfirmResult(buttonId, value, opt) {
- *             Ext.toast(`User clicked ${buttonId} button.`);
- *         }
- *
- *         onPromptResult(buttonId, value) {
+ *          onPromptResult = (buttonId, value) => {
  *             Ext.toast(`User clicked ${buttonId} and entered value "${value}".`);
- *         }
- *
- *         render() {
- *             return (
- *                 <ExtReact>
- *                     <Panel shadow layout={{type: 'vbox', align: 'stretch'}}>
- *                         <Button handler={() => Ext.Msg.alert('Title', 'The quick brown fox jumped over the lazy dog.')} text="Alert"/>
- *                         <Button handler={() => Ext.Msg.prompt('Welcome!', "What's your first name?", this.onPromptResult.bind(this))} text="Prompt"/>
- *                         <Button handler={() => Ext.Msg.confirm("Confirmation", "Are you sure you want to do that?", this.onConfirmResult.bind(this))} text="Confirm"/>
- *                     </Panel>
- *                 </ExtReact>
- *             )
- *         }
- *
- *     }
- *
+ *          }
+ *      }
+ *      ```
  */

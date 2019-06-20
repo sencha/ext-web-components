@@ -4,27 +4,29 @@
  * @xtype menucheckitem
  *
  * A menu item that contains a togglable checkbox by default, but that can also be a part of a radio group.
- *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react';
- *     import { ExtReact, Button, Container, Menu, MenuCheckItem } from '@extjs/ext-react';
- *
- *     export default class MyExample extends Component {
- *         render() {
- *             return (
- *                <ExtReact>
- *                    <Container>
- *                        <Button text="Menu">
- *                            <Menu rel="menu" >
- *                                <MenuCheckItem text="Mobile" name="ui-type" />
- *                                <MenuCheckItem text="Desktop" name="ui-type"/>
- *                            </Menu>
- *                        </Button>
- *                    </Container>
- *                </ExtReact>
- *             )
- *         }
- *     }
+ * 
+ *      HTML
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-container>
+ *          <ext-button text="Menu">
+ *              <ext-menu rel="menu" >
+ *                  <ext-menucheckitem text="Mobile" name="ui-type" />
+ *                  <ext-menucheckitem text="Desktop" name="ui-type"/>
+ *              </ext-menu>
+ *          </ext-button>
+ *      </ext-container>
+ *      ```
+ *      JS
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-container.component';
+ *      import '@sencha/ext-web-components/dist/ext-button.component';
+ *      import '@sencha/ext-web-components/dist/ext-menu.component';
+ *      import '@sencha/ext-web-components/dist/ext-menucheckitem.component';
+ * 
+ *      export default class CheckItemComponent {}
+ *      ```
  */
 
 /**
