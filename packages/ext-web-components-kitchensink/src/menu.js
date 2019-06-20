@@ -78,6 +78,7 @@ import ToolBarComponent from './view/components/toolbar/ToolBarComponent.js';
 import ToolTipComponent from './view/components/tooltip/ToolTipComponent.js';
 import TouchEventsComponent from './view/components/touchevents/TouchEventsComponent.js';
 import WizardComponent from './view/components/wizard/WizardComponent.js';
+import FroalaEditorComponent from './view/components/froalaeditor/FroalaEditorComponent.js';
 import BasicGridComponent from './view/grids/corefeatures/basicgrid/BasicGridComponent.js';
 import GroupedGridComponent from './view/grids/corefeatures/groupedgrid/GroupedGridComponent.js';
 import LockingGridComponent from './view/grids/corefeatures/lockinggrid/LockingGridComponent.js';
@@ -273,6 +274,7 @@ export default function getMenu() {
             { text: 'Touch Events', component: TouchEventsComponent, iconCls: 'icon-touch-events' },
             //{ text: "Transition", component: Transition, iconCls: "icon-Transition" },
             { text: 'Wizard', component: WizardComponent, iconCls: 'icon-layout-card-indicator', layout: Ext.os.is.Phone ? 'fit': 'center' },
+            { text: 'Froala Editor', component: FroalaEditorComponent, layout: 'center', iconCls: 'icon-editor' }
         ]},
 
         { text: 'Grids', iconCls: 'icon-grids', children: [
