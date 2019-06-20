@@ -18,6 +18,66 @@
  * Panels are also useful as Overlays - containers that float over your application.
  * If configured with `{@link #cfg-anchor: true}`, when you {@link #showBy} another
  * component, there will be an anchor arrow pointing to the reference component.
+ * 
+ *      HTML
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-container>
+ *          <ext-panel
+ *              shadow
+ *              title="Panel"
+ *              height={300}
+ *              width={500}
+ *              tools='{[
+ *                  { "type": "minimize", "handler": "toolHandler" },
+ *                  { "type": "refresh, "handler": "toolHandler" },
+ *                  { "type": "save", "handler": "toolHandler" },
+ *                  { "type": "search", "handler": "toolHandler" },
+ *                  { "type": "close", "handler": "toolHandler" }
+ *              ]}'
+ *          >
+ *              <p>Panel Body</p>
+ *          </ext-panel>
+ *          <ext-button ui="action" handler={() => this.refs.modal.show()} margin="20 0 0 0" text="Show Modal"/>
+ *          <ext-panel
+ *              ref="modal"
+ *              title="Floated Panel"
+ *              modal
+ *              floated
+ *              centered
+ *              hideOnMaskTap
+ *              width={Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 260 : 400}
+ *              maxHeight={Ext.filterPlatform('ie10') ? '30%' : (Ext.os.deviceType == 'Phone') ? 220 : 400}
+ *              showAnimation='{{
+ *                   "type": "popIn",
+ *                   "duration": 250,
+ *                   "easing": "ease-out"
+ *              }}'
+ *              hideAnimation='{{
+ *                   "type": "popOut",
+ *                   "duration": 250,
+ *                   "easing": "ease-out"
+ *              }}'
+ *          >
+ *              <p>This is a modal, centered and floated panel. hideOnMaskTap is true by default so we can tap anywhere outside the overlay to hide it.</p>
+ *          </ext-panel>
+ *      </ext-container>
+ *      ```
+ *      JS
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-container.component';
+ *      import '@sencha/ext-web-components/dist/ext-button.component';
+ *      import '@sencha/ext-web-components/dist/ext-panel.component';
+ * 
+ *      Ext.require('Ext.Toast');
+ * 
+ *      export default class PanelComponent {
+ *         toolHandler = (owner, tool) => {
+ *            Ext.toast(`You clicked ${tool.config.type}`);
+ *         }
+ *      }
+ *      ```
  *
  *     @example packages=[reactor]
  *     import React, { Component } from 'react';

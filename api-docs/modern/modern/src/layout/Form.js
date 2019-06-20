@@ -9,25 +9,26 @@
  *
  * The following example uses label-auto-widthing to size all labels to the width of the
  * largest label.
- *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react';
- *     import { ExtReact, Button, FormPanel, TextField } from '@extjs/ext-react';
- *
- *     export default class myExample extends Component {
- *         render() {
- *             return (
- *                 <ExtReact>
- *                     <FormPanel title="Form Panel">
- *                         <TextField label="First Name"/>
- *                         <TextField label="Last Name"/>
- *                         <TextField label="Account Number"/>
- *                         <Button text="Submit">
- *                     </FormPanel>
- *                 </ExtReact>
- *             )
- *         }
- *     }
+ * 
+ *      HTML
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-formpanel title="Form Panel">
+ *          <ext-textfield label="First Name"/>
+ *          <ext-textfield label="Last Name"/>
+ *          <ext-textfield label="Account Number"/>
+ *          <ext-button text="Submit">
+ *      </ext-formpanel>
+ *      ```
+ *      JS
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-button.component';
+ *      import '@sencha/ext-web-components/dist/ext-formpanel.component';
+ *      import '@sencha/ext-web-components/dist/ext-textfield.component';
+ * 
+ *      export default class FormComponent {}
+ *      ```
  */
 
 /**
