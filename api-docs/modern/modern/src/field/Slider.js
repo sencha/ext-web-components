@@ -8,6 +8,79 @@
  * color. Each slider contains a single 'thumb' that can be dragged along the slider's length to change the value.
  * Sliders are equally useful inside {@link Ext.form.Panel forms} and standalone. Here's how to quickly create a
  * slider in form, in this case enabling a user to choose a percentage:
+ *      HTML
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-container layout="center">
+ *          <ext-formpanel
+ *               shadow="true"
+ *               width="300"
+ *          >
+ *              <ext-sliderfield
+ *                   onChange="sliderfield.onSingleChange"
+ *                   label="Single Thumb"
+ *                   onready="sliderfield.readySingleChangeSliderField"
+ *              >
+ *              </ext-sliderfield>
+ *              <ext-container
+ *                  style='{marginBottom: "20px"}'
+ *                  onready="readySingleValueMessage"
+ *              >
+ *              </ext-container>
+ *              <ext-sliderfield
+ *                   onChange="sliderfield.onMultipleChange"
+ *                   label="Multiple Thumbs"
+ *                   onready="sliderfield.readyMultipleChangeSliderField"
+ *              >
+ *              </ext-sliderfield>
+ *              <ext-container
+ *                   onready="sliderfield.readyMultipleValueMessage"
+ *              >
+ *              </ext-container>
+ *          <ext-formpanel>
+ *      </ext-container>
+ *      ```
+ *      JS
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-container.component';
+ *      import '@sencha/ext-web-components/dist/ext-formpanel.component';
+ *      import '@sencha/ext-web-components/dist/ext-sliderfield.component';
+ * 
+ *      export default class SliderFieldComponent {
+ * 
+ *         constructor() {
+ *             this.multipleValue = [10, 70];
+ *         }
+ *          
+ *         onSingleChange = (field, value) => {
+ *             this.singleValueSliderFieldView.setValue(value);
+ *             this.singleValueMessaageView.setHTML(`Values: ${value}`)
+ *         }
+ *
+ *         readySingleChangeSliderField = (event) => {
+ *             this.singleValueSliderFieldView = event.detail.cmp;
+ *         }
+ *  
+ *         readyMultipleChangeSliderField = (event) => {
+ *             this.multipleValueSliderFieldView = event.detail.cmp;
+ *         }
+ * 
+ *         onMultipleChange = (field, value) => {
+ *             this.multipleValue.push(value);
+ *             this.multipleValueSliderFieldView.setValue(value);
+ *             this.multipleValueMessaageView.setHTML(`Values: ${this.multipleValue.join(',')}`)
+ *         }
+ * 
+ *         readyMultipleValueMessage = (event) => {
+ *              this.singleValueMessaageView = event.detail.cmp;
+ *         }
+ * 
+ *         readySingleValueMessage = (event) => {
+ *              this.multipleValueMessaageView = event.detail.cmp;
+ *         }
+ *      }
+ *      ```
  *
  *     @example packages=[reactor]
  *     import React, { Component } from 'react';
