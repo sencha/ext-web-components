@@ -5,27 +5,27 @@
  *
  * Specialized {@link Ext.field.Slider} with a single thumb which only supports two
  * {@link #value values}.
+ *      HTML
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-container layout="center">
+ *          <ext-formpanel shadow="true">
+ *              <ext-togglefield boxLabel="On" value="true"></ext-togglefield>
+ *              <ext-togglefield boxLabel="Off" value="false"></ext-togglefield>
+ *              <ext-togglefield boxLabel="Disabled" disabled="true"></ext-togglefield>
+ *              <ext-togglefield boxLabel="Disabled (On)" disabled="true" value="true"></ext-togglefield>
+ *          </ext-formpanel>
+ *      </ext-container>
+ *      ```
+ *      JS
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-container.component';
+ *      import '@sencha/ext-web-components/dist/ext-formpanel.component';
+ *      import '@sencha/ext-web-components/dist/ext-togglefield.component';
  *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react';
- *     import { ExtReact, Container, FormPanel, ToggleField } from '@extjs/ext-react';
- *
- *     export default class MyExample extends Component {
- *         render() {
- *             return (
- *                 <ExtReact>
- *                     <Container layout="center">
- *                         <FormPanel shadow>
- *                             <ToggleField boxLabel="On" value={true}/>
- *                             <ToggleField boxLabel="Off" value={false}/>
- *                             <ToggleField boxLabel="Disabled" disabled />
- *                             <ToggleField boxLabel="Disabled (On)" disabled value={true} />
- *                         </FormPanel>
- *                     </Container>
- *                 </ExtReact>
- *             )
- *         }
- *     }
+ *      export default class ToggleFieldComponent {}
+ *      ```
  */
 
 /**

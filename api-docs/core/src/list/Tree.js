@@ -7,52 +7,62 @@
  *
  * Simple Treelist using inline data:
  *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react';
- *     import { Panel, TreeList } from '@extjs/ext-react';
+ *     HTML
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-panel shadow="true" layout="fit">
+ *          <ext-treelist
+ *              ref="tree"
+ *              onready="treelist.onTreeListReady"
+ *              store={this.store}
+ *          >
+ *          </ext-treelist>
+ *      </ext-panel>
+ *      ```
+ *      JS
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-treelist.component';
+ *      import '@sencha/ext-web-components/dist/ext-panel.component';
  *
- *     export default class MyExample extends Component {
- *
- *         store = Ext.create('Ext.data.TreeStore', {
- *             rootVisible: true,
- *             root: {
- *                 expanded: true,
- *                 children: [{
- *                     text: 'detention',
- *                     leaf: true,
- *                     iconCls: 'x-fa fa-frown-o'
- *                 }, {
- *                     text: 'homework',
- *                     expanded: true,
- *                     iconCls: 'x-fa fa-folder',
- *                     children: [{
+ *      export default class TreeListComponent {
+ *          constructor() {
+ *              this.store = Ext.create('Ext.data.TreeStore', {
+ *                rootVisible: true,
+ *                root: {
+ *                    expanded: true,
+ *                    children: [{
+ *                      text: 'detention',
+ *                      leaf: true,
+ *                      iconCls: 'x-fa fa-frown-o'
+ *                    }, {
+ *                      text: 'homework',
+ *                      expanded: true,
+ *                      iconCls: 'x-fa fa-folder',
+ *                      children: [{
  *                         text: 'book report',
  *                         leaf: true,
  *                         iconCls: 'x-fa fa-book'
- *                     }, {
+ *                      }, {
  *                         text: 'algebra',
  *                         leaf: true,
  *                         iconCls: 'x-fa fa-graduation-cap'
- *                     }]
- *                 }, {
- *                     text: 'buy lottery tickets',
- *                     leaf: true,
- *                     iconCls: 'x-fa fa-usd'
- *                 }]
- *             }
- *         });
- *
- *         render() {
- *             return (
- *                 <Panel shadow layout="fit">
- *                     <TreeList
- *                         ref="tree"
- *                         store={this.store}
- *                     />
- *                 </Panel>
- *             )
+ *                      }]
+ *                    }, {
+ *                      text: 'buy lottery tickets',
+ *                      leaf: true,
+ *                      iconCls: 'x-fa fa-usd'
+ *                    }]
+ *                 }
+ *             });
  *         }
- *     }
+ *
+ *         onTreeListReady(event) {
+ *              this.treeListCmp = event.detail.cmp;
+ *              this.treeListCmp.setStore(this.store);
+ *         }
+ *      }
+ *      ```
  *
  * To collapse the Treelist for use in a smaller navigation view see {@link #micro}.
  * Parent Treelist node expansion may be refined using the {@link #singleExpand} and
