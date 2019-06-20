@@ -3,15 +3,28 @@
  *
  * The selected color is configurable via {@link #value} and
  * The Format is configurable via {@link #format}.
- *
- *     @example packages=[reactor]
- *     <ColorButton
- *         onChange={(picker, color, previousColor) => {
- *             Ext.Msg.alert('Color', color);
- *         }}
- *         format="hex6" // default is hex6, possible values: hex6, rgb, rgba
- *         value="00f" // initial color
- *     />
+ *    HTML
+ *     ```HTML
+ *      @example({tab: 1})
+ *      <ext-colorbutton
+ *         onchange="button.showMessage"
+ *         format="hex6"
+ *         value="00f"
+ *      >
+ *     </ext-colorbutton>
+ *     ```
+ *       JS
+ *     ```javascript
+ *     @example({tab: 2, packages: ['ext-web-components']})
+ *     import '@sencha/ext-web-components/dist/ext-colorbutton.component';
+ * 
+ *     export default class ButtonComponent {
+ *      showMessage = (event) => {
+ *          const color = event.detail.color;
+ *          Ext.Msg.alert('Color', color);
+ *       }
+ *     }
+ *     ```
  */
 
 /**

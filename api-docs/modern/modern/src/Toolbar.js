@@ -16,33 +16,38 @@
  *
  * ## Example
  *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react';
- *     import { ExtReact, Toolbar, Panel, Button, SegmentedButton, Spacer, SearchField } from '@extjs/ext-react';
+ *     HTML
+ *     ```HTML
+ *      @example({tab: 1})
+ *      <ext-panel shadow bodyPadding=0>
+ *          <ext-toolbar docked="top">
+ *              <ext-button text="Default" badgeText="2">
+ *              </ext-button>
+ *              <ext-spacer>
+ *                  <ext-segmentedbutton>
+ *                      <ext-button text="Option 1" pressed></ext-button>
+ *                       <ext-button text="Option 2"></ext-button>
+ *                  </ext-segmentedbutton>
+ *              </ext-spacer>
+ *              <ext-button ui="action" text="Action">
+ *              </ext-button>
+ *          </ext-toolbar>
+ *          Some Text!
+ *      </ext-panel>
+ *     ```
+ *       JS
+ *     ```javascript
+ *     @example({tab: 2, packages: ['ext-web-components']})
  *
- *     export default class MyExample extends Component {
- *         render() {
- *             return (
- *                 <ExtReact>
- *                     <Panel shadow bodyPadding={0}>
- *                         <Toolbar docked="top">
- *                             <Button text="Default" badgeText="2"/>
- *                             <Spacer/>
- *                             <SegmentedButton>
- *                                 <Button text="Option 1" pressed/>
- *                                 <Button text="Option 2"/>
- *                             </SegmentedButton>
- *                             <Spacer/>
- *                             <Button ui="action" text="Action"/>
- *                         </Toolbar>
- *                        Some Text!
- *                     </Panel>
- *                 </ExtReact>
- *             )
- *         }
- *     }
+ *     import '@sencha/ext-web-components/dist/ext-toolbar.component';
+ *     import '@sencha/ext-web-components/dist/ext-button.component';
+ *     import '@sencha/ext-web-components/dist/ext-spacer.component';
+ *     import '@sencha/ext-web-components/dist/ext-segmentedbutton.component';
+ *     import '@sencha/ext-web-components/dist/ext-panel.component';
+ * 
+ *     export default class ToolbarComponent {}
+ *     ```
  */
-
 /**
  * @cfg {String/Ext.Title} [title=null]
  * The title of the toolbar.
