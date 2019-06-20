@@ -11,34 +11,42 @@
  * a set of columns to render.
  *
  * ## A Basic Grid
+ *      HTML
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-container width="100%" height="100%">
+ *          <ext-grid shadow="true" height="100%" onready="basicgrid.onGridReady">
+ *              <ext-column text="Name" dataIndex="name" flex="1"></ext-column>
+ *              <ext-column text="Email" dataIndex="email" flex="1"></ext-column>
+ *              <ext-column text="Phone" dataIndex="phone" flex="1"></ext-column>
+ *          </ext-grid>
+ *      </ext-container>
+ *      ```
+ *      JS
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-container.component';
+ *      import '@sencha/ext-web-components/dist/ext-grid.component';
+ *      import '@sencha/ext-web-components/dist/ext-column.component';
  *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react'
- *     import { ExtReact, Grid, Column } from '@extjs/ext-react';
+ *      export default class BasicGridComponent {
+ *          constructor() {
+ *             this.store = new Ext.data.Store({
+ *                data: [
+ *                    { "name": "Lisa", "email": "lisa@simpsons.com", "phone": "555-111-1224" },
+ *                    { "name": "Bart", "email": "bart@simpsons.com", "phone": "555-222-1234" },
+ *                    { "name": "Homer", "email": "home@simpsons.com", "phone": "555-222-1244" },
+ *                    { "name": "Marge", "email": "marge@simpsons.com", "phone": "555-222-1254" }
+ *                ]
+ *             });
+ *          }
  *
- *     export default class MyExample extends Component {
- *
- *         store = new Ext.data.Store({
- *             data: [
- *                 { "name": "Lisa", "email": "lisa@simpsons.com", "phone": "555-111-1224" },
- *                 { "name": "Bart", "email": "bart@simpsons.com", "phone": "555-222-1234" },
- *                 { "name": "Homer", "email": "home@simpsons.com", "phone": "555-222-1244" },
- *                 { "name": "Marge", "email": "marge@simpsons.com", "phone": "555-222-1254" }
- *             ]
- *         });
- *
- *         render() {
- *             return (
- *                 <ExtReact>
- *                     <Grid store={this.store}>
- *                         <Column text="Name" dataIndex="name" flex="1"/>
- *                         <Column text="Email" dataIndex="email" flex="1"/>
- *                         <Column text="Phone" dataIndex="phone" flex="1"/>
- *                     </Grid>
- *                 </ExtReact>
- *             )
- *         }
- *     }
+ *          onGridReady(event) {
+ *              this.basicGridCmp = event.detail.cmp;
+ *              this.basicGridCmp.setStore(this.store);
+ *          }
+ *      }
+ *      ```
  *
  * The code above produces a simple grid with three columns. We specified a Store which will
  * load JSON data inline.
@@ -55,33 +63,42 @@
  * A top-level column definition may contain a `columns` configuration. This means that the
  * resulting header will be a group header, and will contain the child columns.
  *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react'
- *     import { ExtReact, Grid, Column } from '@extjs/ext-react';
+ *      HTML
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-container width="100%" height="100%">
+ *          <ext-grid shadow="true" height="100%" onready="basicgrid.onGridReady">
+ *              <ext-column text="Name" dataIndex="name" flex="1"></ext-column>
+ *              <ext-column text="Email" dataIndex="email" flex="1" hidden="true"></ext-column>
+ *              <ext-column text="Phone" dataIndex="phone" flex="1"></ext-column>
+ *          </ext-grid>
+ *      </ext-container>
+ *      ```
+ *      JS
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-container.component';
+ *      import '@sencha/ext-web-components/dist/ext-grid.component';
+ *      import '@sencha/ext-web-components/dist/ext-column.component';
  *
- *     export default class MyExample extends Component {
+ *      export default class BasicGridComponent {
+ *          constructor() {
+ *             this.store = new Ext.data.Store({
+ *                data: [
+ *                    { "name": "Lisa", "email": "lisa@simpsons.com", "phone": "555-111-1224" },
+ *                    { "name": "Bart", "email": "bart@simpsons.com", "phone": "555-222-1234" },
+ *                    { "name": "Homer", "email": "home@simpsons.com", "phone": "555-222-1244" },
+ *                    { "name": "Marge", "email": "marge@simpsons.com", "phone": "555-222-1254" }
+ *                ]
+ *             });
+ *          }
  *
- *         store = new Ext.data.Store({
- *             data: [
- *                 { "name": "Lisa", "email": "lisa@simpsons.com", "phone": "555-111-1224" },
- *                 { "name": "Bart", "email": "bart@simpsons.com", "phone": "555-222-1234" },
- *                 { "name": "Homer", "email": "home@simpsons.com", "phone": "555-222-1244" },
- *                 { "name": "Marge", "email": "marge@simpsons.com", "phone": "555-222-1254" }
- *             ]
- *         });
- *
- *         render() {
- *             return (
- *                 <ExtReact>
- *                     <Grid store={this.store}>
- *                         <Column text="Name" dataIndex="name" flex="1"/>
- *                         <Column text="Email" dataIndex="email" flex="1" hidden="true"/>
- *                         <Column text="Phone" dataIndex="phone" flex="1"/>
- *                     </Grid>
- *                 </ExtReact>
- *             )
- *         }
- *     }
+ *          onGridReady(event) {
+ *              this.basicGridCmp = event.detail.cmp;
+ *              this.basicGridCmp.setStore(this.store);
+ *          }
+ *      }
+ *      ```
  *
  * ## Rows and Cells
  *
@@ -230,20 +247,20 @@
  *     </Grid>
  *
  * NOTE: The Column component or any column sub-component may be used.  i.e.:
- * {@link Ext.grid.column.Column GridColumn}  
- * 
- * {@link Ext.grid.column.Boolean BooleanColumn}  
- * 
- * {@link Ext.grid.column.Check CheckColumn}  
- * 
- * {@link Ext.grid.column.Date DateColumn}  
- * 
- * {@link Ext.grid.column.Number NumberColumn}  
- * 
- * {@link Ext.grid.column.RowNumberer RowNumberer}  
- * 
- * {@link Ext.grid.column.Text}  
- * 
+ * {@link Ext.grid.column.Column GridColumn}
+ *
+ * {@link Ext.grid.column.Boolean BooleanColumn}
+ *
+ * {@link Ext.grid.column.Check CheckColumn}
+ *
+ * {@link Ext.grid.column.Date DateColumn}
+ *
+ * {@link Ext.grid.column.Number NumberColumn}
+ *
+ * {@link Ext.grid.column.RowNumberer RowNumberer}
+ *
+ * {@link Ext.grid.column.Text}
+ *
  * {@link Ext.grid.column.Tree TreeColumn}
  *
  * @accessor
@@ -320,19 +337,19 @@
  * @cfg {Object[]} [data=null]
  * An array of records to display. Use in place of {@link #store} when fetching data directly
  * or using static data rather than fetching data with an ExtReact proxy.
- * 
- *      <Grid 
- *          data={[
- *              { name: 'Apple', symbol: 'AAPL' },
- *              { name: 'Microsoft', symbol: 'MSFT' },
- *              { name: 'Oracle', symbol: 'ORCL' }
- *          ]}
+ *
+ *      <ext-grid
+ *          data='[
+ *              { "name": "Apple", "symbol": "AAPL" },
+ *              { "name": "Microsoft", "symbol": "MSFT" },
+ *              { "name": "Oracle", "symbol": "ORCL" }
+ *          ]'
  *      >
- *          <Column text="Name" dataIndex="name"/>
- *          <Column text="Symbol" dataIndex="symbol"/>
- *      </Grid>
+ *          <ext-column text="Name" dataIndex="name"></ext-column>
+ *          <ext-column text="Symbol" dataIndex="symbol"></ext-column>
+ *      </ext-grid >
  */
- 
+
 /**
  * @event columnadd
  * Fires whenever a column is added to the Grid.

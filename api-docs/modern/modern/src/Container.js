@@ -55,17 +55,18 @@
  * item's height and width are both set to `'50%'` so the child should render
  * exactly 100px by 100px in size.
  *
- *     <Container
- *         height={200}
- *         width={200}
+ *     <ext-container
+ *         height="200"
+ *         width="200"
  *         style="background: green"
  *     >
- *         <Component
+ *         <ext-panel
  *             style="background: yellow"
  *             height="50%"
  *             width="50%"
- *         />
- *     </Container>
+ *         >
+ *         </ext-panel>
+ *     </ext-container>
  *
  * All browsers except for Safari render the previous example correctly, but
  * Safari does not assign a height to the component.  To make percentage-sized
@@ -86,15 +87,13 @@
  * example here we can specify that each child has a height of 20px and avoid repeating the declaration for each
  * one:
  *
- *     <Container
- *         fullscreen
- *         defaults={{
- *             height: 20
- *         }}
+ *     <ext-container
+ *         fullscreen="true"
+ *         defaults='{ "height": "20" }
  *     >
- *         <Panel>Panel 1</Panel>
- *         <Panel>Panel 2</Panel>
- *     </Container>
+ *         <ext-panel>Panel 1</ext-panel>
+ *         <ext-panel>Panel 2</ext-panel>
+ *     </ext-container>
  *
  * @accessor
  */
@@ -146,23 +145,23 @@
  * A configuration to allow you to mask this container.
  *
  * If the value is a boolean, a plain mask will be displayed without a message.
- * 
+ *
  *     <Container masked>
  *         Hello World
- *     </Container> 
- * 
+ *     </Container>
+ *
  * If the value is a string, it will be used as the message config for an {@link Ext.LoadMask}.
- * 
+ *
  *     <Container masked="Please wait...">
  *         Hello World
- *     </Container> 
+ *     </Container>
  *
  * For more precise control over the mask, you add a `<LoadMask/>` as a child of the container.
  * Please refer to the {@link Ext.LoadMask} component to see the props it supports.
  *
  *     <Container>
  *         <LoadMask message="Please wait..."/>
- *     </Container> 
+ *     </Container>
  *
  * There are also two convenient methods, {@link #method-mask} and {@link #unmask}, to allow you to mask and unmask
  * this container at any time.
@@ -174,29 +173,31 @@
  * @cfg {Object/String} [layout=auto]
  * Configuration for this Container's layout. Example:
  *
- *     <Container
+ *     <ext-container
  *         layout={{
  *             type: "hbox",
  *             align: "middle"
  *         }}
  *     >
- *         <Panel
+ *         <ext-panel>
  *             html="hello"
- *             flex={1}
- *             bodyStyle={{
- *                 background: "#000",
- *                 color: "#fff"
- *             }}
- *         />
- *         <Panel
+ *             flex="1"
+ *             bodyStyle='{
+ *                 "background": "#000",
+ *                 "color": "#fff"
+ *             }'
+ *         </ext-panel>
+ *         </ext-panel>
+ *         <ext-panel
  *             html="world"
- *             flex={2}
- *             bodyStyle={{
- *                 background: "#f00",
- *                 color: "#fff"
- *             }}
- *         />
- *     </Container>
+ *             flex="2"
+ *             bodyStyle='{
+ *                 "background": "#f00",
+ *                 "color": "#fff"
+ *             }'
+ *         >
+ *         </ext-panel>
+ *     </ext-container>
  *
  * @accessor
  */

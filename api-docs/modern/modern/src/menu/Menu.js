@@ -15,27 +15,29 @@
  * By default, Menus are absolutely positioned, floated Components. By configuring a 
  * Menu with `{@link #cfg-floated}: false`, a Menu may be used as a child of a 
  * {@link Ext.Container Container}.
- *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react';
- *     import { ExtReact, Button, Container, Menu, MenuItem } from '@extjs/ext-react';
- *
- *     export default class MyExample extends Component {
- *         render() {
- *             return (
- *                 <ExtReact>
- *                    <Container>
- *                        <Button text="Menu">
- *                            <Menu rel="menu" >
- *                                <MenuItem text="Mobile" name="ui-type" />
- *                                <MenuItem text="Desktop" name="ui-type"/>
- *                            </Menu>
- *                        </Button>
- *                    </Container>
- *                 </ExtReact>
- *             )
- *         }
- *     }
+ * 
+ *      HTML
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-container>
+ *          <ext-button text="Menu">
+ *              <ext-menu rel="menu" >
+ *                  <ext-menuitem text="Mobile" name="ui-type" />
+ *                  <ext-menuitem text="Desktop" name="ui-type"/>
+ *              </ext-menu>
+ *          </ext-button>
+ *      </ext-container>
+ *      ```
+ *      JS
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-container.component';
+ *      import '@sencha/ext-web-components/dist/ext-button.component';
+ *      import '@sencha/ext-web-components/dist/ext-menu.component';
+ *      import '@sencha/ext-web-components/dist/ext-menuitem.component';
+ * 
+ *      export default class MenuComponent {}
+ *      ```
  */
 
 /**

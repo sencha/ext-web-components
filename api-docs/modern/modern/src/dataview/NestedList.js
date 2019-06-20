@@ -5,57 +5,65 @@
  *
  * NestedList provides a miller column interface to navigate between nested sets
  * and provide a clean interface with limited screen real-estate.
- *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react'
- *     import { ExtReact, NestedList } from '@extjs/ext-react';
- *
- *     export default class MyExample extends Component {
- *
- *         store = Ext.create('Ext.data.TreeStore', {
- *             defaultRootProperty: 'items',
- *             root: {
- *                 text: 'Groceries',
- *                 items: [{
- *                     text: 'Drinks',
- *                     items: [{
- *                         text: 'Water',
- *                         items: [{
- *                             text: 'Sparkling',
- *                             leaf: true
- *                         }, {
- *                             text: 'Still',
- *                             leaf: true
- *                         }]
+ * 
+ *      HTML
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-container layout="center">
+ *          <ext-nestedlist
+ *              displayField="text"
+ *              title="Groceries"
+ *              onready="nestedlist.readyNestedList"
+ *          >
+ *          </ext-nestedlist>
+ *      </ext-container>
+ *      ```
+ *      JS
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-container.component';
+ *      import '@sencha/ext-web-components/dist/ext-nestedlist.component';
+ * 
+ *      export default class NestedListComponent {
+ *          constructor() {
+ *              this.store = Ext.create('Ext.data.TreeStore', {
+ *                  defaultRootProperty: 'items',
+ *                  root: {
+ *                      text: 'Groceries',
+ *                      items: [{
+ *                          text: 'Drinks',
+ *                          items: [{
+ *                              text: 'Water',
+ *                              items: [{
+ *                                  text: 'Sparkling',
+ *                                  leaf: true
+ *                              }, {
+ *                                  text: 'Still',
+ *                                  leaf: true
+ *                              }]
+ *                          }]
+ *                      },{
+ *                      text: 'Snacks',
+ *                      items: [{
+ *                          text: 'Nuts',
+ *                          leaf: true
+ *                       }, {
+ *                          text: 'Pretzels',
+ *                          leaf: true
+ *                       }, {
+ *                          text: 'Wasabi Peas',
+ *                          leaf: true
+ *                       }]
  *                     }]
- *                 },{
- *                     text: 'Snacks',
- *                     items: [{
- *                         text: 'Nuts',
- *                         leaf: true
- *                     }, {
- *                         text: 'Pretzels',
- *                         leaf: true
- *                     }, {
- *                         text: 'Wasabi Peas',
- *                         leaf: true
- *                     }]
- *                 }]
- *             }
- *         });
- *
- *         render() {
- *             return (
- *                 <ExtReact>
- *                      <NestedList
- *                          displayField="text"
- *                          store={this.store}
- *                          title="Groceries"
- *                      />
- *                 <ExtReact>
- *             )
+ *                 }
+ *              });
  *         }
- *     }
+ *         readyNestedList(event) {
+ *             this.nestedListView = event.detail.cmp;
+ *             this.nestedListView.setStore(this.store);
+ *         }  
+ *      }
+ *      ```
  *
  */
 

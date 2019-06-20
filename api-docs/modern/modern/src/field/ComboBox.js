@@ -22,36 +22,46 @@
  * set the {@link #queryMode} to `'local'`.
  *
  * # Example usage:
+ *      HTML
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-formpanel
+ *          shadow="true"
+ *      >
+ *          <ext-combobox
+ *              width="200"
+ *              label="State"
+ *              displayField="name"
+ *              valueField="code"
+ *              queryMode="local"
+ *              labelAlign="placeholder"
+ *              typeAhead="true"
+ *              onready="comboboxfield.comboboxFieldReady"
+ *           >
+ *           </ext-combobox>
+ *      </ext-formpanel>
+ *      ```
+ *      JS
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-formpanel.component';
+ *      import '@sencha/ext-web-components/dist/ext-combobox.component';
  *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react';
- *     import { FormPanel, ComboBox } from '@sencha/ext-react';
+ *      export default class ComboBoxFieldComponent {
+ *          constructor() {
+ *               this.data = [
+ *                   {"name":"Alabama","abbrev":"AL"},
+ *                   {"name":"Alaska","abbrev":"AK"},
+ *                   {"name":"Arizona","abbrev":"AZ"}
+ *               ]
+ *         }
+ *         comboboxFieldReady(event) {
+ *             this.combobox = event.detail.cmp;
+ *             this.combobox.setOptions(this.data);
+ *         }
+ *      }
+ *      ```
  *
- *     export default class MyExample extends Component {
- *
- *     render() {
- *          const data = [
- *               {"name":"Alabama","abbrev":"AL"},
- *               {"name":"Alaska","abbrev":"AK"},
- *               {"name":"Arizona","abbrev":"AZ"}
- *          ]
- *
- *          return (
- *              <FormPanel shadow>
- *                  <ComboBox
- *                      width={200}
- *                      label="State"
- *                      options={data}
- *                      displayField="name"
- *                      valueField="code"
- *                      queryMode="local"
- *                      labelAlign="placeholder"
- *                      typeAhead
- *                  />
- *              </FormPanel>
- *          )
- *       }
- *     }
  */
 
 /**
@@ -95,7 +105,7 @@
  *     @example packages=[reactor]
  *     import React, { Component } from "react";
  *     import { FormPanel, ComboBox } from "@sencha/ext-react";
- *     
+ *
  *     export default class ComboBoxExample extends Component {
  *         render() {
  *             return (
