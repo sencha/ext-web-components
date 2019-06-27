@@ -9,7 +9,6 @@
  * popup windows, but provide similar modal experiences.
  *
  * 
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-container>
@@ -49,7 +48,6 @@
  *          </ext-dialog>
  *      </ext-container>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-container.component';

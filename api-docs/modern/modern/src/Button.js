@@ -9,7 +9,6 @@
  *
  * Here is an example showing multiple button presentations.
  *
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-container padding="10">
@@ -28,7 +27,6 @@
  *          <ext-container onready="button.resultContainerReady"></ext-container>
  *      </ext-container>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-button.component';

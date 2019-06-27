@@ -7,7 +7,6 @@
  * The radio field is an enhanced version of the native browser radio controls and is a
  * good way of allowing your user to choose one option out of a selection of several
  * (for example, choosing a favorite color):
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-container layout="center">
@@ -38,7 +37,6 @@
  *          </ext-formpanel>
  *      </ext-container>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-container.component';

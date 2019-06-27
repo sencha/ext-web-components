@@ -4,7 +4,6 @@
  * @xtype list
  *
  * List is a custom styled DataView which allows Grouping, Indexing, Icons, and a Disclosure.
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-list
@@ -12,7 +11,6 @@
  *      >
  *      </ext-list>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-list.component';
@@ -39,7 +37,6 @@
 
  /**   A more advanced example showing a list of people grouped by last name:
  *
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-list
@@ -48,7 +45,6 @@
  *      >
  *      </ext-list>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-list.component';
@@ -92,7 +88,6 @@
  /**
  * If you want to dock items to the bottom or top of a List, you can use the scrollDock configuration on child items in this List. The following example adds a button to the bottom of the List.
  * 
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-list
@@ -106,7 +101,6 @@
  *          </ext-button>
  *      </ext-list>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-list.component';
