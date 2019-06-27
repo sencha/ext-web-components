@@ -1,4 +1,4 @@
-# ext-components-modern-boilerplate
+# ext-web-components-boilerplate
 
 
 AT THE ROOT of the repo
