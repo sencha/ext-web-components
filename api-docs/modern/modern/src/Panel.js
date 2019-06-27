@@ -19,7 +19,6 @@
  * If configured with `{@link #cfg-anchor: true}`, when you {@link #showBy} another
  * component, there will be an anchor arrow pointing to the reference component.
  * 
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-container>
@@ -63,7 +62,6 @@
  *          </ext-panel>
  *      </ext-container>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-container.component';

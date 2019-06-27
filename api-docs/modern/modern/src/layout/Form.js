@@ -10,7 +10,6 @@
  * The following example uses label-auto-widthing to size all labels to the width of the
  * largest label.
  * 
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-formpanel title="Form Panel">
@@ -20,7 +19,6 @@
  *          <ext-button text="Submit">
  *      </ext-formpanel>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-button.component';

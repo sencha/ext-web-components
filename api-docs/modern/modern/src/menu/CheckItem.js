@@ -5,7 +5,6 @@
  *
  * A menu item that contains a togglable checkbox by default, but that can also be a part of a radio group.
  * 
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-container>
@@ -17,7 +16,6 @@
  *          </ext-button>
  *      </ext-container>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-container.component';

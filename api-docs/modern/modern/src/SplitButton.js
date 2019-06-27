@@ -8,7 +8,6 @@
  * primary button action, but any custom handler can provide the arrowclick implementation.
  *
  * ## Example usage:
- * HTML
  *     ```HTML
  *      @example({tab: 1})
  *      <ext-container padding="10" layout="vbox">
@@ -22,7 +21,6 @@
  *           </ext-splitbutton>
  *      </ext-container>
  *     ```
- *       JS
  *     ```javascript
  *     @example({tab: 2, packages: ['ext-web-components']})
  *

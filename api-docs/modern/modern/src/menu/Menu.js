@@ -16,7 +16,6 @@
  * Menu with `{@link #cfg-floated}: false`, a Menu may be used as a child of a 
  * {@link Ext.Container Container}.
  * 
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-container>
@@ -28,7 +27,6 @@
  *          </ext-button>
  *      </ext-container>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-container.component';

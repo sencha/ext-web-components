@@ -6,7 +6,6 @@
  * The Row Expander plugin provides an "expander" column to give the user the ability to show
  * or hide the {@link Ext.grid.Row#cfg!body body} of each row.
  *
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-container width="100%" height="100%">
@@ -24,7 +23,6 @@
  *          </ext-grid>
  *      </ext-container>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-container.component';

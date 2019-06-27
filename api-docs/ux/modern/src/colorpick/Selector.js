@@ -6,7 +6,6 @@
  * The default selected color is configurable via {@link #value} prop
  * and The Format is configurable via {@link #format}. Usually used in
  * forms via {@link Ext.ux.colorpick.Button} or {@link Ext.ux.colorpick.Field}.
- *     HTML
  *     ```HTML
  *      @example({tab: 1})
  *     <ext-colorselector
@@ -16,7 +15,6 @@
  *      >
  *     </ext-colorselector>
  *     ```
- *       JS
  *     ```javascript
  *     @example({tab: 2, packages: ['ext-web-components']})
  *     import '@sencha/ext-web-components/dist/ext-colorselector.component';

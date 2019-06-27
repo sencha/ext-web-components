@@ -5,7 +5,6 @@
  *
  * Specialized {@link Ext.field.Slider} with a single thumb which only supports two
  * {@link #value values}.
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-container layout="center">
@@ -17,7 +16,6 @@
  *          </ext-formpanel>
  *      </ext-container>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-container.component';

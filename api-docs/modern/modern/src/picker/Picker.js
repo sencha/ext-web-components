@@ -13,7 +13,6 @@
  * - `data`/`store`: The data or store to use for this slot.
  *
  * ## Example
- * HTML
  *     ```HTML
  *      @example({tab: 1})
  *      <ext-container>
@@ -34,7 +33,6 @@
  *      </ext-picker>
  *    </ext-container>
  *     ```
- *       JS
  *     ```javascript
  *     @example({tab: 2, packages: ['ext-web-components']})
  *

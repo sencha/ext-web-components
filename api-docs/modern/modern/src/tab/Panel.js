@@ -8,7 +8,6 @@
  * the top or the bottom of the Tab Panel, and can optionally accept title and icon
  * configurations (see {@link Ext.Button#iconCls iconCls} for additional information).
  * 
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-tabpanel>
@@ -23,7 +22,6 @@
  *          </ext-container>
  *      </ext-tabpanel>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-container.component';

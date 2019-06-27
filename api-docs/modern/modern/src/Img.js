@@ -8,7 +8,6 @@
  * like any other component. This component typically takes between 1 and 3 props - a {@link #src}, and
  * optionally a {@link #height} and a {@link #width}:
  *
- *     HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-panel shadow="true" layout="fit">
@@ -20,7 +19,6 @@
  *          </ext-image>
  *      </ext-panel>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-panel.component';

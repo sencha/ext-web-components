@@ -9,7 +9,6 @@
  * This component has no required configurations.
  *
  * ## Examples
- * HTML
  *     ```HTML
  *      @example({tab: 1})
  *      <ext-container>
@@ -20,7 +19,6 @@
  *          </ext-datepicker>     
  *      </ext-container>
  *     ```
- *       JS
  *     ```javascript
  *     @example({tab: 2, packages: ['ext-web-components']})
  *

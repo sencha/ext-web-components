@@ -11,7 +11,6 @@
  * an information panel in the rest of the screen. We can achieve this with vbox layout's
  * *flex* config:
  * 
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-container layout="vbox">
@@ -23,7 +22,6 @@
  *          </ext-panel>
  *      </ext-container>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-container.component';
@@ -39,7 +37,6 @@
  * example, here we have 3 items - one at the top and bottom with flex: 1, and one in the
  * center with a fixed width of 100px:
  *
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-container layout="vbox">
@@ -54,7 +51,6 @@
  *          </ext-panel>
  *      </ext-container>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-container.component';

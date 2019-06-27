@@ -5,7 +5,6 @@
  *
  * The Form panel presents a set of form fields and provides convenient ways to load and save data. Usually a form
  * panel just contains the set of fields you want to display.
- *HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-container layout="center" width="100%" height="100%">
@@ -17,7 +16,6 @@
  *          </ext-formpanel>
  *      </ext-container>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-textfield.component';

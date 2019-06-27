@@ -5,7 +5,6 @@
  *
  * A base class for all menu items that require menu-related functionality such as click handling,
  * sub-menus, icons, etc.
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-container>
@@ -17,7 +16,6 @@
  *          </ext-button>
  *      </ext-container>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-container.component';

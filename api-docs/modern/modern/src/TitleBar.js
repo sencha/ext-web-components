@@ -10,7 +10,6 @@
  *
  * You can also give items of a {@link Ext.TitleBar} an `align` prop of `left` or `right`,
  * which will dock them to the `left` or `right` of the bar.
- * HTML
  *     ```HTML
  *      @example({tab: 1})
  *      <ext-container>
@@ -22,7 +21,6 @@
  *       </ext-container>
  *      
  *     ```
- *       JS
  *     ```javascript
  *     @example({tab: 2, packages: ['ext-web-components']})
  *

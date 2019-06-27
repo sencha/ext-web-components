@@ -9,7 +9,6 @@
  * Carousels can be oriented either horizontally or vertically and are easy to configure - they just work like any other
  * Container.
  *
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-container layout="fit">
@@ -23,7 +22,6 @@
  *          <ext-carousel>
  *      </ext-container>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-container.component';

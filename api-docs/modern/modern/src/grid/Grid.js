@@ -11,7 +11,6 @@
  * a set of columns to render.
  *
  * ## A Basic Grid
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-container width="100%" height="100%">
@@ -22,7 +21,6 @@
  *          </ext-grid>
  *      </ext-container>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-container.component';
@@ -63,7 +61,6 @@
  * A top-level column definition may contain a `columns` configuration. This means that the
  * resulting header will be a group header, and will contain the child columns.
  *
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-container width="100%" height="100%">
@@ -74,7 +71,6 @@
  *          </ext-grid>
  *      </ext-container>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-container.component';

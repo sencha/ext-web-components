@@ -7,7 +7,6 @@
  *
  * Simple Treelist using inline data:
  *
- *     HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-panel shadow="true" layout="fit">
@@ -19,7 +18,6 @@
  *          </ext-treelist>
  *      </ext-panel>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-treelist.component';
