@@ -2,23 +2,19 @@ Ext.require('Ext.layout.overflow.Scroller');
 import './ScrollingTabComponent.html';
 
 export default class ScrollingTabComponent {
-  constructor() {
-    console.log('in ScrollingTabsComponent constructor');
-  }
+    tabpanelReady = (event) => {
+        const tabpanelCmp = event.detail.cmp;
+        tabpanelCmp.setTabBar({
+            layout: {
+                pack: 'start',
+                overflow: 'scroller',
+                position: 'center',
+            }
+        });
 
-  tabPanelReady = (event) => {
-    const tabPanel = event.detail.cmp;
-    tabPanel.setTabBar({
-      layout: {
-        pack: 'start',
-        overflow: 'scroller',
-        position: 'center',
-      }
-    });
-
-    tabPanel.setDefaults({
-      ...tabPanel.getDefaults(),
-      tab: { minWidth: "130px" }
-    });
-  }
+        tabpanelCmp.setDefaults({
+            ...tabpanelCmp.getDefaults(),
+            tab: { minWidth: '130px' }
+        });
+    }
 }

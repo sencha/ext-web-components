@@ -2,39 +2,44 @@ import './FormPanelComponent.html';
 Ext.require('Ext.field.InputMask');
 
 export default class FormPanelComponent {
-  constructor () {
-    this.disabled = false;
-    this.componentArray = [];
-  }
-
-  toggleDisable = (event) => {
-    this.disabled = !this.disabled;
-    let buttonText = "Disable All";
-
-    if(this.disabled) {
-      buttonText = "Enable All";
+    constructor() {
+        this.disabled = false;
+        this.componentArray = [];
     }
 
-    this.buttonCmp.setText(buttonText);
-    this.componentArray.forEach(cmp => {
-      cmp.setDisabled(this.disabled);
-    });
-  }
+    toggleDisable = () => {
+        this.disabled = !this.disabled;
+        let buttonText = 'Disable All';
 
-  buttonReady = (event) => {
-    this.buttonCmp = event.detail.cmp;
-  }
+        if(this.disabled) {
+            buttonText = 'Enable All';
+        }
 
-  formPanelReady = (event) => {
-    this.formcmp = event.detail.cmp;
-  }
+        this.buttonCmp.setText(buttonText);
+        this.componentArray.forEach(cmp => {
+            cmp.setDisabled(this.disabled);
+        });
+    }
 
-  resetForm = () => {
-    this.formcmp.reset(true);
-  }
+    buttonReady = (event) => {
+        this.buttonCmp = event.detail.cmp;
+    }
 
-  componentReady = (event) => {
-    this.componentArray.push(event.detail.cmp);
-  }
+    formPanelReady = (event) => {
+        this.formCmp = event.detail.cmp;
+    }
 
+    resetForm = () => {
+        this.formCmp.reset(true);
+    }
+
+    spinnerReady = () => {
+      this.spinnerCmp = event.detail.cmp;
+      this.spinnerCmp.setMinValue(0);
+      this.componentArray.push(event.detail.cmp);
+    }
+
+    componentReady = (event) => {
+        this.componentArray.push(event.detail.cmp);
+    }
 }

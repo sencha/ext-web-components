@@ -1,5 +1,3 @@
 import './TextAreaFieldComponent.html';
 
-export default class TextAreaFieldComponent {
-  constructor () {}
-}
+export default class TextAreaFieldComponent {}

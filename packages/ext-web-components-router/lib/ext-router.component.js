@@ -185,6 +185,7 @@ export class ExtRouterComponent extends HTMLElement {
       div.style.display = 'none'
 //mjg should not be hard coded
       div.style.backgroundSize='20px 20px';
+      div.style.overflow='scroll';
       div.style.borderWidth='0px';
       div.style.backgroundColor='#e8e8e8';
       div.style.backgroundImage=

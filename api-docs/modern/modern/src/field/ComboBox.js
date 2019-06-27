@@ -25,7 +25,7 @@
  *      HTML
  *      ```HTML
  *      @example({tab: 1})
- *      <ext-formpanel 
+ *      <ext-formpanel
  *          shadow="true"
  *      >
  *          <ext-combobox
@@ -45,7 +45,7 @@
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-formpanel.component';
  *      import '@sencha/ext-web-components/dist/ext-combobox.component';
- * 
+ *
  *      export default class ComboBoxFieldComponent {
  *          constructor() {
  *               this.data = [
@@ -104,7 +104,7 @@
  *     @example packages=[reactor]
  *     import React, { Component } from "react";
  *     import { FormPanel, ComboBox } from "@sencha/ext-react";
- *     
+ *
  *     export default class ComboBoxExample extends Component {
  *         render() {
  *             return (

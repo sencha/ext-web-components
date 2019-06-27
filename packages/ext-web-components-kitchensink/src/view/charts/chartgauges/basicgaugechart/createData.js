@@ -8,7 +8,7 @@ function random() {
 }
 
 export default function createData(numRecords) {
-    let data = [], 
+    let data = [],
         record = {
             id: 0,
             g1: 700 * random() + 100,

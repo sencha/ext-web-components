@@ -1,0 +1,30 @@
+{
+  "presets": [
+    "@babel/preset-env",
+    // [
+    //   "@babel/preset-env",
+    //   {
+    //     //'commonjs', 'amd', 'umd', 'systemjs' - 'auto'
+    //     "modules": "umd"
+    //   }
+    // ]
+  ],
+  "plugins": [
+    ["@babel/plugin-proposal-decorators",{"legacy": false,"decoratorsBeforeExport": false}],
+    ["@babel/plugin-proposal-class-properties",{"loose": false}],
+
+    // ["@babel/plugin-proposal-decorators",{"legacy": true}],
+    // ["@babel/plugin-proposal-class-properties",{"loose": true}],
+
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-syntax-dynamic-import",
+
+//    "@babel/plugin-transform-modules-commonjs"
+
+
+
+  ],
+  "ignore": [
+    "build"
+  ]
+}

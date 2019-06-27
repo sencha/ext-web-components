@@ -2,62 +2,7 @@
  * A specialized `Ext.dataview.DataView` to display items based upon the structure of
  * the `Ext.Chip` component with the configurations of the "chips" drawn from named
  * fields in the DataView's records.
- *
  * This handles selection and deletion of chips.
- *     @example packages=[reactor]
- *     Ext.define('Contact', {
- *         extend: 'Ext.data.Model',
- *         fields: [{
- *             name: 'emailAddress'
- *         }, {
- *             name: 'picture'
- *         }, {
- *             name: 'role',
- *             type: 'int'
- *         }, {
- *             name: 'closable',
- *             calculate: function(data) {
- *                 return data.role > 2 ? false: true;
- *             }
- *         }, {
- *             name: 'iconCls',
- *             calculate: function(data) {
- *                 return data.role > 2 ? 'x-manager-icon' : 'x-employee-icon';
- *             }
- *         }]
- *     });
- *
- *     var store = new Ext.data.Store({
- *        model: 'Contact',
- *         data: [{
- *             emailAddress: 'frederick.bloggs@sentcha.com',
- *             picture: 'https://www.sencha.com/assets/images/sencha-avatar-64x64.png',
- *             role: 1
- *         }, {
- *             emailAddress: 'joe.poe@sentcha.com',
- *             picture: 'https://www.sencha.com/assets/images/sencha-avatar-64x64.png',
- *             role: 2
- *         }, {
- *             emailAddress: 'mike.jones@sentcha.com',
- *             picture: 'https://www.sencha.com/assets/images/sencha-avatar-64x64.png',
- *             role: 3
- *         }]
- *     });
- *
- *     <ChipView
- *         store={store}
- *         displayField={'emailAddress'}
- *         iconField='picture'
- *         closeHandler={(chipview, location) => {
- *             store.remove(location.record);
- *
- *              // Stop the event, otherwise the NavigationModel
- *              // will try to click on the nonexistent Chip
- *              return false;
- *          }}
- *      />
- *
- * @since 6.7.0
  */
 
 /**

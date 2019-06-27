@@ -15,8 +15,8 @@
  *                  maxValue="10"
  *                  stepValue="1"
  *              >
- *              <ext-spinnerfield>
- *          <ext-formpanel>
+ *              </ext-spinnerfield>
+ *          </ext-formpanel>
  *      </ext-container>
  *      ```
  *      ```javascript
@@ -24,7 +24,7 @@
  *      import '@sencha/ext-web-components/dist/ext-container.component';
  *      import '@sencha/ext-web-components/dist/ext-formpanel.component';
  *      import '@sencha/ext-web-components/dist/ext-spinnerfield.component';
- * 
+ *
  *      export default class SpinnerFieldComponent {}
  *      ```
  */

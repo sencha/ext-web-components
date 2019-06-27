@@ -1,10 +1,8 @@
 import './BottomTabComponent.html';
 
 export default class BottomTabComponent {
-  constructor() {}
-
-  tabpanelReady = (event) => {
-    this.tabpanel = event.detail.cmp;
-    this.tabpanel.setTabBar({docked:'bottom'});
-  }
+    tabpanelReady = (event) => {
+        this.tabpanelCmp = event.detail.cmp;
+        this.tabpanelCmp.setTabBar({docked:'bottom'});
+    }
 }

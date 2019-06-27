@@ -1,16 +1,18 @@
-<ext-container padding="10" layout="fit" fitToParent="true" height="100%">
-  <ext-panel  
+<ext-container padding="10" height="100%" scrollable="true">
+  <ext-panel
       title="Dock Left"
-      docked="left" 
+      docked="left"
       width="200"
-      shadow="false" 
+      height="100%"
+      scrollable="true"
+      shadow="false"
       layout="center"
       resizable='{"split": "true", "edges": "east", "dynamic": "true"}'
       html="<code>dynamic: true</code>"
   ></ext-panel>
-  <ext-panel title="Unresizable region" flex="1"></ext-panel>
-  <ext-panel  
-      docked="right" 
+  <ext-panel title="Unresizable region" flex="1" height="100%"></ext-panel>
+  <ext-panel
+      docked="right"
       title="Dock Right"
       width="200"
       collapsible="right"
@@ -18,14 +20,14 @@
       resizable='{"split": "true", "edges": "west"}'
       html="<code>collapsible</code>"
   ></ext-panel>
-  <ext-panel  
-      docked="top" 
+  <ext-panel
+      docked="top"
       title="Dock Top"
       height="150"
-      resizable='{"split": "true", "edges": "south"}' 
+      resizable='{"split": "true", "edges": "south"}'
   ></ext-panel>
-  <ext-panel  
-      docked="bottom" 
+  <ext-panel
+      docked="bottom"
       title="Dock Bottom"
       height="150"
       layout="center"

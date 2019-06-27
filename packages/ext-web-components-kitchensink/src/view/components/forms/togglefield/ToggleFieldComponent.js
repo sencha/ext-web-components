@@ -1,5 +1,3 @@
 import './ToggleFieldComponent.html';
 
-export default class ToggleFieldComponent {
-  constructor () {}
-}
+export default class ToggleFieldComponent {}

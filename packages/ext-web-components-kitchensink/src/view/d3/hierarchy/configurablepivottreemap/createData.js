@@ -9,15 +9,14 @@ const companies = ['Google', 'Apple', 'Dell', 'Microsoft', 'Adobe'],
         rand &= 0x7FFFFFFF;
         return data[k];
     },
-    randomDate = (start, end) => new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime() ));
+    randomDate = (start, end) => new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 
 export default function(items=500) {
     const data = [];
     for(let i=0; i<items; i++) {
-        let j = rand % companies;
         const date = randomDate(new Date(2012, 0, 1), new Date());
-        const month = parseInt(Ext.Date.format(date, "m"), 10) - 1;
-        const year = parseInt(Ext.Date.format(date, "Y"), 10);;
+        const month = parseInt(Ext.Date.format(date, 'm'), 10) - 1;
+        const year = parseInt(Ext.Date.format(date, 'Y'), 10);
 
         data.push({
             id: i,

@@ -1,0 +1,76 @@
+create-react-app react-ext-app
+cd react-ext
+
+in public folder:
+cp -r /Users/marcgusmano/aaExt/ext-6.6.0.258/build/modern/ modern
+cp /Users/marcgusmano/aaExt/ext-6.6.0.258/build/ext-modern-all.js ./
+if needed
+cp /Users/marcgusmano/aaExt/ext-6.6.0.258/build/ext-modern-all-debug.js ./
+
+index.html
+    <script src="ext-modern-all.js"></script>
+    <link href="modern/theme-triton/resources/theme-triton-all.css" rel='stylesheet'/>
+
+in src
+
+ExtComponent.js
+
+/* global Ext */
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+class ExtComponent extends Component {
+  render() {return (<div></div>)}
+  componentDidMount() {
+    var parent = ReactDOM.findDOMNode(this)
+    var me = this
+    let o = {}
+    o = me.props.config
+    o.xtype = me.props.xtype
+    o.renderTo = parent
+    Ext.onReady(function(){
+      me.ext = Ext.create(o)
+    })
+  }
+}
+export default ExtComponent
+
+App.js
+
+import React, { Component } from 'react'
+import logo from './logo.svg'
+import ExtComponent from './ExtComponent'
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to React</h1>
+        </header>
+        <ExtComponent 
+          xtype={'grid'}
+          config={{
+            title: 'Personnel',
+            height: 300,
+            width: '100%',
+            columns: [
+              {text: 'Name',dataIndex: 'name',width: 100},
+              {text: 'Email',dataIndex: 'email',flex: 1},
+              {text: 'Phone',dataIndex: 'phone',width: 150}
+            ],
+            data: [
+              { name: 'Jean Luc',   email: 'jeanluc.picard@enterprise.com', phone: '555-111-1111' },
+              { name: 'ModernWorf', email: 'worf.moghsson@enterprise.com',  phone: '555-222-2222' },
+              { name: 'Deanna',     email: 'deanna.troi@enterprise.com',    phone: '555-333-3333' },
+              { name: 'Data',       email: 'mr.data@enterprise.com',        phone: '555-444-4444' }
+            ],
+          }}
+        ></ExtComponent>
+      </div>
+    );
+  }
+}
+export default App
+
+
+

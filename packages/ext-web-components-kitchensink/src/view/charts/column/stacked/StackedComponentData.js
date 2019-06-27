@@ -6,7 +6,7 @@ const random = () => {
     return seed;
 };
 
-export default function createData (count = 50) {
+export default function createData(count = 50) {
     let record = {
         id: 0,
         g0: 300,
@@ -35,4 +35,4 @@ export default function createData (count = 50) {
     }
 
     return data;
-};
+}

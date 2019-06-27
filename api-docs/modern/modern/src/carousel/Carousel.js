@@ -9,31 +9,29 @@
  * Carousels can be oriented either horizontally or vertically and are easy to configure - they just work like any other
  * Container.
  *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react'
- *     import { ExtReact, Carousel, Container } from '@extjs/ext-react';
+ *      HTML
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-container layout="fit">
+ *          <ext-carousel>
+ *              <ext-container html="<div>Slide 1!</div>">
+ *              </ext-container>
+ *              <ext-container html="<div>Slide 2!</div>">
+ *              </ext-container>
+ *              <ext-container html="<div>Slide 3!</div>">
+ *              </ext-container>
+ *          <ext-carousel>
+ *      </ext-container>
+ *      ```
+ *      JS
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-container.component';
+ *      import '@sencha/ext-web-components/dist/ext-carousel.component';
+ *      import '@sencha/ext-web-components/dist/ext-spinnerfield.component';
  *
- *     export default class MyExample extends Component {
- *         render() {
- *             return (
- *                 <ExtReact>
- *                     <Container layout="fit">
- *                         <Carousel>
- *                             <Container>
- *                                 <div>Slide 1!</div>
- *                             </Container>
- *                             <Container>
- *                                 <div>Slide 2!</div>
- *                             </Container>
- *                             <Container>
- *                                 <div>Slide 3!</div>
- *                             </Container>
- *                         </Carousel>
- *                     </Container>
- *                 </ExtReact>
- *             )
- *         }
- *     }
+ *      export default class CarouselComponent {}
+ *      ```
  *
  * ### Common Props
  * * {@link #ui} defines the style of the carousel

@@ -1,80 +1,76 @@
-import "./CalendarWeekViewComponent.html";
-import "../data/calendarWeek.js";
+import './CalendarWeekViewComponent.html';
+import '../data/calendarWeek.js';
 
 export default class CalendarWeekViewComponent {
-
-  constructor() {
-    this.panelTitle = Ext.Date.format(new Date(), "F Y");
-    this.visibleDays = 7;
-    this.firstDayOfWeek = 0;
-  }
-
-  changeCalendarView = (button, value) => {
-    let buttVal = button._value;
-    if (buttVal == "fullweek") {
-      this.calendarview = value;
-      this.visibleDays = 7;
-      this.firstDayOfWeek = 1;
+    constructor() {
+        this.panelTitle = Ext.Date.format(new Date(), 'F Y');
+        this.visibleDays = 7;
+        this.firstDayOfWeek = 0;
     }
-    else {
-      this.calendarview = value;
-      this.visibleDays = 5;
-      this.firstDayOfWeek = 1;
+
+    changeCalendarView = (button, value) => {
+        let buttVal = button._value;
+        if (buttVal == 'fullweek') {
+            this.calendarview = value;
+            this.visibleDays = 7;
+            this.firstDayOfWeek = 0;
+        }
+        else {
+            this.calendarview = value;
+            this.visibleDays = 5;
+            this.firstDayOfWeek = 1;
+        }
+        this.calendarWeek.setFirstDayOfWeek(this.firstDayOfWeek);
+        this.calendarWeek.setVisibleDays(this.visibleDays);
     }
-    this.calendarWeek.setFirstDayOfWeek(this.firstDayOfWeek);
-    this.calendarWeek.setVisibleDays(this.visibleDays);
-  }
 
-  panelReady = (event) => {
-    this.panel = event.detail.cmp;
-    this.panel.setTitle(this.panelTitle);
-    this.panel.setHeader(
-      {
-        layout: "hbox",
-        items: [{
-          xtype: "component",
-          flex: 1
-        }, {
-          xtype: "segmentedbutton",
-          items: [{
-            text: this.isPhone ? null : "Full Week",
-            iconCls: this.isPhone ? "x-fa fa-calendar-check-o" : null,
-            value: "fullweek",
-            handler: this.changeCalendarView.bind(this)
-          }, {
-            text: this.isPhone ? null : "Work Week",
-            iconCls: this.isPhone ? "x-fa fa-briefcase" : null,
-            value: "workweek",
-            handler: this.changeCalendarView.bind(this)
-          }]
-        }]
-      }
-    );
-  }
+    panelReady = (event) => {
+        this.panelCmp = event.detail.cmp;
+        this.panelCmp.setTitle(this.panelTitle);
+        this.panelCmp.setHeader({
+            layout: 'hbox',
+            items: [{
+                xtype: 'component',
+                flex: 1
+            }, {
+                xtype: 'segmentedbutton',
+                items: [{
+                    text: this.isPhone ? null : 'Full Week',
+                    iconCls: this.isPhone ? 'x-fa fa-calendar-check-o' : null,
+                    value: 'fullweek',
+                    handler: this.changeCalendarView.bind(this)
+                }, {
+                    text: this.isPhone ? null : 'Work Week',
+                    iconCls: this.isPhone ? 'x-fa fa-briefcase' : null,
+                    value: 'workweek',
+                    handler: this.changeCalendarView.bind(this)
+                }]
+            }]
+        });
+    }
 
-  innnerPanelReady = (event) => {
-    this.innerPanel = event.detail.cmp;
-    this.innerPanel.setHidden(this.isPhone);
-  }
+    innnerPanelReady = (event) => {
+        this.innerPanelCmp = event.detail.cmp;
+        this.innerPanelCmp.setHidden(this.isPhone);
+    }
 
-  calendarListReady = (event) => {
-    this.calendarList = event.detail.cmp;
-    this.store = Ext.create("Ext.calendar.store.Calendars", {
-      autoLoad: true,
-      proxy: {
-        type: "ajax",
-        url: "/KitchenSink/CalendarWeek"
-      }
-    });
-    this.calendarList.setStore(this.store);
-  }
+    calendarListReady = (event) => {
+        this.calendarListCmp = event.detail.cmp;
+        this.store = Ext.create('Ext.calendar.store.Calendars', {
+            autoLoad: true,
+            proxy: {
+                type: 'ajax',
+                url: '/KitchenSink/CalendarWeek'
+            }
+        });
+        this.calendarListCmp.setStore(this.store);
+    }
 
-  calendarWeekReady = (event) => {
-    this.calendarWeek = event.detail.cmp;
-    this.calendarWeek.setStore(this.store);
-    this.calendarWeek.setValue(new Date());
-    this.calendarWeek.setFirstDayOfWeek(this.firstDayOfWeek);
-    this.calendarWeek.setVisibleDays(this.visibleDays);
-  }
-
+    calendarWeekReady = (event) => {
+        this.calendarWeekCmp = event.detail.cmp;
+        this.calendarWeekCmp.setStore(this.store);
+        this.calendarWeekCmp.setValue(new Date());
+        this.calendarWeekCmp.setFirstDayOfWeek(this.firstDayOfWeek);
+        this.calendarWeekCmp.setVisibleDays(this.visibleDays);
+    }
 }

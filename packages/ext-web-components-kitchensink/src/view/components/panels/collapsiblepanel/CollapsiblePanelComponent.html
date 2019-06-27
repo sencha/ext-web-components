@@ -1,7 +1,7 @@
-<ext-container onready="collapsiblepanel.readyContainer1">
+<ext-container onready="collapsiblepanel.readyContainer" height="100%">
   <ext-panel
     title="Top Collapsible Panel"
-    onready="collapsiblepanel.readyPanel1"
+    onready="collapsiblepanel.topPanelReady"
     shadow="true"
     bodyPadding="20"
     collapsible='{
@@ -11,7 +11,7 @@
   >
     <ext-panel
       docked="right"
-      onready="collapsiblepanel.readyPanel2"
+      onready="collapsiblepanel.rightPanelReady"
       width="50%"
       bodyPadding="20"
       title="Right Collapsible"

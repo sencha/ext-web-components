@@ -1,11 +1,11 @@
-import MyComponent from './MyComponent.js';
-import "./LifecycleComponent.html";
+import './MyComponent.js';
+import './LifecycleComponent.html';
 
 export default class LifecycleComponent {
-  constructor() {}
+    constructor() {}
 
-  deleteChild = () => {
-    let myComp = document.getElementById('my-component-id');
-    myComp.parentNode.removeChild(myComp);
-  }
+    deleteChild = () => {
+        let myComp = document.getElementById('my-component-id');
+        myComp.parentNode.removeChild(myComp);
+    }
 }

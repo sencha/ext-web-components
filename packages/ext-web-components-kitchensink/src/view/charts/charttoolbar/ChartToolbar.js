@@ -9,8 +9,8 @@ Ext.require([
 
 export default class ChartToolbar extends HTMLElement {
     constructor() {
-        super()
-        this.theme = "default";
+        super();
+        this.theme = 'default';
     }
 
     connectedCallback() {
@@ -25,7 +25,7 @@ export default class ChartToolbar extends HTMLElement {
         const onZoom = this.getAttribute('onZoomButtonReady') || false;
         const onCrosshair = this.getAttribute('onCrosshairButtonReady') || false;
         const supportsTouch = this.getAttribute('supportsTouch');
-        const onMenuItemReady = this.getAttribute('onItemReady')
+        const onMenuItemReady = this.getAttribute('onItemReady');
         this.innerHTML = `
             <ext-container layout="hbox">
                 <ext-button

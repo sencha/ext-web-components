@@ -9,31 +9,36 @@
  * This component has no required configurations.
  *
  * ## Examples
+ * HTML
+ *     ```HTML
+ *      @example({tab: 1})
+ *      <ext-container>
+ *          <ext-button ui="action" ontap="datepicker.showPicker" text="Show Picker"></ext-button>
+ *          <ext-datepicker
+ *              onready="date.datepickerReady"
+ *          >
+ *          </ext-datepicker>     
+ *      </ext-container>
+ *     ```
+ *       JS
+ *     ```javascript
+ *     @example({tab: 2, packages: ['ext-web-components']})
  *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react';
- *     import { ExtReact, Container, DatePicker, Button } from '@extjs/ext-react';
- *
- *     export default class MyExample extends Component {
- *
- *         showPicker = () => this.picker.show();
- *
- *         render() {
- *             return (
- *                 <ExtReact>
- *                     <Container>
- *                         <Button ui="action" handler={this.showPicker} text="Show Picker"/>
- *                         <DatePicker
- *                             ref={picker => this.picker = picker}
- *                         />
- *                     </Container>
- *                 </ExtReact>
- *             )
- *         }
- *
+ *     import '@sencha/ext-web-components/dist/ext-container.component';
+ *     import '@sencha/ext-web-components/dist/ext-datepicker.component';
+ *     import '@sencha/ext-web-components/dist/ext-button.component'; 
+ * 
+ *     export default class DatePickerComponent {
+ *          datepickerReady = (event) => {
+ *              this.pickerCmp = event.detail.cmp;
+ *          }
+ * 
+ *          showPicker = () => {
+ *              this.pickerCmp.show();
+ *          }
  *     }
+ *     ```
  */
-
 /**
  * @event change
  * Fired when the value of this picker has changed and the done button is pressed.

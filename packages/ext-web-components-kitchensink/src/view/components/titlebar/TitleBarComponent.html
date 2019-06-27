@@ -1,22 +1,20 @@
-<ext-container padding="10" layout="fit" fitToParent="true">
-  <ext-titlebar title="App Title" docked="top" platformConfig="{phone: {titleAlign: 'center'}}">
-    <ext-button align="left" iconCls="x-fa fa-bars" arrow="false">
-      <ext-menu onready="titlebar.menuReady">
-        <ext-menuitem text="Inbox" iconCls="x-fa fa-inbox"></ext-menuitem>
-        <ext-menuitem text="Profile" iconCls="x-fa fa-user"></ext-menuitem>
-      </ext-menu>
-    </ext-button>
-    <ext-button onready="titlebar.buttonReady" align="right" style='{"float":"right"}' iconCls="x-fa fa-inbox"
-      text="Inbox">
-    </ext-button>
-    <ext-button onready="titlebar.buttonReady1" align="right" iconCls="x-fa fa-user" text="Profile"></ext-button>
-    <ext-searchfield onready="titlebar.searchReady" align="right" ui="alt" placeholder="Search" margin="0 10"></ext-searchfield>
-    <ext-button align="right" iconCls="x-fa fa-ellipsis-v" arrow="false">
-      <ext-menu>
-        <ext-menuitem text="Settings" iconCls="x-fa fa-cog"></ext-menuitem>
-        <ext-menuitem text="Help" iconCls="x-fa fa-question-circle"></ext-menuitem>
-      </ext-menu>
-    </ext-button>
-  </ext-titlebar>
-  <ext-searchfield onready="titlebar.searchReady1" ui="faded" placeholder="Search" margin="20"></ext-searchfield>
-</ext-container>
+<ext-titlebar title="App Title" docked="top" platformConfig="{phone: {titleAlign: 'center'}}">
+  <ext-button align="left" iconCls="x-fa fa-bars" arrow="false">
+    <ext-menu onready="titlebar.menuReady">
+      <ext-menuitem text="Inbox" iconCls="x-fa fa-inbox"></ext-menuitem>
+      <ext-menuitem text="Profile" iconCls="x-fa fa-user"></ext-menuitem>
+    </ext-menu>
+  </ext-button>
+  <ext-button onready="titlebar.buttonReady" align="right" style="float:'right';" iconCls="x-fa fa-inbox"
+    text="Inbox">
+  </ext-button>
+  <ext-button onready="titlebar.profileButtonReady" align="right" iconCls="x-fa fa-user" text="Profile"></ext-button>
+  <ext-searchfield onready="titlebar.searchReady" align="right" ui="alt" placeholder="Search" margin="0 10"></ext-searchfield>
+  <ext-button align="right" iconCls="x-fa fa-ellipsis-v" arrow="false">
+    <ext-menu>
+      <ext-menuitem text="Settings" iconCls="x-fa fa-cog"></ext-menuitem>
+      <ext-menuitem text="Help" iconCls="x-fa fa-question-circle"></ext-menuitem>
+    </ext-menu>
+  </ext-button>
+</ext-titlebar>
+<ext-searchfield onready="titlebar.searchReady1" ui="faded" placeholder="Search" margin="20"></ext-searchfield>

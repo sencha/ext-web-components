@@ -1,55 +1,32 @@
 import './PullRefreshListComponent.html';
+import '../stocks.js';
 
 Ext.require([
-  'Ext.plugin.PullRefresh'
+    'Ext.plugin.PullRefresh'
 ]);
 
 export default class PullRefreshListComponent {
-  constructor () {}
+    constructor() {}
 
-  listReady = (event) => {
-    this.list = event.detail.cmp;
-    this.list.setItemTpl('<div>{name}</div>');
+    listReady = (event) => {
+        this.listCmp = event.detail.cmp;
+        this.store = Ext.create('Ext.data.Store', {
+            fields: ['name'],
+            autoLoad: true,
+            proxy: {
+                type: 'ajax',
+                url: '/KitchenSink/Company',
+                reader: {
+                    type: 'json',
+                    rootProperty: 'data',
+                    implicitIncludes: false
+                },
+                extraParams: {
+                    shuffle: true
+                }
+            }
+        });
 
-    this.store = Ext.create('Ext.data.Store', {
-      fields: ['name'],
-      autoLoad: true,
-      proxy: {
-          type: 'ajax',
-          url: '/KitchenSink/Companies',
-          reader: {
-              type: 'json',
-              rootProperty: 'data',
-              implicitIncludes: false
-          },
-          extraParams: {
-              shuffle: true
-          }
-      }
-    });
-
-    const plugin = this.list.findPlugin('pullrefresh');
-    this.list.setStore(this.store);
-  }
-
-  rewriteStore = () => {
-    debugger;
-    this.store = Ext.create('Ext.data.Store', {
-      fields: ['name'],
-      autoLoad: true,
-      proxy: {
-          type: 'ajax',
-          url: '/KitchenSink/Companies',
-          reader: {
-              type: 'json',
-              rootProperty: 'data',
-              implicitIncludes: false
-          },
-          extraParams: {
-              shuffle: true
-          }
-      }
-    });
-    this.list.setStore(this.store);
-  }
+        this.listCmp.setStore(this.store);
+    }
 }

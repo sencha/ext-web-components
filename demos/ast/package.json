@@ -1,0 +1,20 @@
+{
+  "name": "ast",
+  "version": "1.0.0",
+  "description": "ast",
+  "scripts": {
+    "dev": "webpack --mode=development",
+    "prod": "webpack --mode=production"
+  },
+  "private": false,
+  "repository": "https://github.com/",
+  "author": "mjg",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/parser": "^7.4.4",
+    "@babel/types": "^7.4.4",
+    "@babel/traverse": "^7.4.4",
+    "@babel/generator": "^7.4.4"
+  }
+}

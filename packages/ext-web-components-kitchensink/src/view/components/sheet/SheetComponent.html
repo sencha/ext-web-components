@@ -23,7 +23,7 @@
 
   <ext-panel layout='{"type": "vbox", "align": "left"}' shadow margin="20 0 0 0" padding="15" shadow="true">
     <ext-button
-      onready = "sheet.buttonReady1"
+      onready = "sheet.panelButtonReady"
       ui="action"
       enableToggle="true"
       ontap="sheet.toggleMenu"
@@ -36,10 +36,10 @@
     </ext-container>
 
     <ext-segmentedbutton  margin= "0 0 10 0">
-      <ext-button text="left" ontap="sheet.directLeft" onready="sheet.buttonReady2"></ext-button>
-      <ext-button text="right" ontap="sheet.directRight" onready="sheet.buttonReady2"></ext-button>
-      <ext-button text="top" ontap="sheet.directTop" onready="sheet.buttonReady2"></ext-button>
-      <ext-button text="bottom" ontap="sheet.directBottom" onready="sheet.buttonReady2"></ext-button>
+      <ext-button text="left" ontap="sheet.directLeft" onready="sheet.segmentedbuttonReady1"></ext-button>
+      <ext-button text="right" ontap="sheet.directRight" onready="sheet.segmentedbuttonReady1"></ext-button>
+      <ext-button text="top" ontap="sheet.directTop" onready="sheet.segmentedbuttonReady1"></ext-button>
+      <ext-button text="bottom" ontap="sheet.directBottom" onready="sheet.segmentedbuttonReady1"></ext-button>
     </ext-segmentedbutton>
 
     <ext-container>
@@ -55,7 +55,7 @@
         <div>modal</div>
     </ext-container>
 
-    <ext-segmentedbutton onready="sheet.segmentedbuttonReady">
+    <ext-segmentedbutton onready="sheet.segmentedbuttonReady2">
       <ext-button text="yes" ontap="sheet.setModal" onready="sheet.buttonModalY"></ext-button>
       <ext-button text="no" ontap="sheet.unsetModal" onready="sheet.buttonModalN"></ext-button>
     </ext-segmentedbutton>

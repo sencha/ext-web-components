@@ -31,4 +31,4 @@ export default function createData() {
 
     counter++;
     return result;
-};
+}

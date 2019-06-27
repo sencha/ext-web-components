@@ -8,40 +8,38 @@ Ext.require([
 import './GroupedGridComponent.html';
 
 export default class GroupedGridComponent {
-  constructor () {}
+    onGridReady = (event) => {
+        const store = Ext.create('Ext.data.Store', {
+            autoLoad: true,
+            proxy: {
+                type: 'ajax',
+                url: 'resources/data/restaurants.json',
+            },
+            sorters: ['cuisine', 'name'],
+            groupField: 'cuisine'
+        });
 
-  onReady = (event) => {
-    const store = Ext.create('Ext.data.Store', {
-        autoLoad: true,
-        proxy: {
-          type: 'ajax',
-          url: 'resources/data/restaurants.json',
-        },
-        sorters: ['cuisine', 'name'],
-        groupField: 'cuisine'
-    });
+        this.gridCmp = event.detail.cmp;
+        this.gridCmp.setStore(store);
+    }
 
-    this.grid = event.detail.cmp;
-    this.grid.setStore(store);
-  }
+    onButtonReady = (event) => {
+        this.onButtonCmp = event.detail.cmp;
+    }
 
-  onButtonReady = (event) => {
-    this.onButton = event.detail.cmp;
-  }
+    offButtonReady = (event) => {
+        this.offButtonCmp = event.detail.cmp;
+    }
 
-  offButtonReady = (event) => {
-    this.offButton = event.detail.cmp;
-  }
+    onGroupClick = () => {
+        this.gridCmp.setGrouped(true);
+        this.onButtonCmp.setPressed(true);
+        this.offButtonCmp.setPressed(false);
+    }
 
-  onGroupClick = (event) => {
-    this.grid.setGrouped(true);
-    this.onButton.setPressed(true);
-    this.offButton.setPressed(false);
-  }
-
-  offGroupClick = (event) => {
-    this.grid.setGrouped(false);
-    this.offButton.setPressed(true);
-    this.onButton.setPressed(false);
-  }
+    offGroupClick = () => {
+        this.gridCmp.setGrouped(false);
+        this.offButtonCmp.setPressed(true);
+        this.onButtonCmp.setPressed(false);
+    }
 }

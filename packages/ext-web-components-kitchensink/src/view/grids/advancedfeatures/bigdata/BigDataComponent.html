@@ -1,4 +1,3 @@
-<!-- <ext-container padding="10px" layout="vbox" fitToParent="true" width="100%" height="100%"> -->
 <ext-container height="100%">
   <ext-actionsheet displayed="false">
     <ext-button onTap="bigdata.exportToXlsx" text="Excel xlsx"></ext-button>
@@ -11,25 +10,31 @@
   <ext-grid
     width="100%"
     height="100%"
-    onready="bigdata.readyGrid"
+    onready="bigdata.onGridReady"
     flex="1"
     title="Big Data Grid"
     shadow="true"
     grouped="true"
-    rowNumbers="true"
-    plugins='{
-      "grideditable": "true",
-      "gridviewoptions": "true",
-      "summaryrow": "true",
-      "rowexpander": "true",
-      "gridexporter": "true",
-      "rowoperations": "true"
-    }'
+    rowNumbers='{"text":"Row"}'
+    plugins='[
+      "grideditable",
+      "gridviewoptions",
+      "summaryrow",
+      "rowexpander",
+      {
+        "type": "gridexporter",
+        "onBeforeDocumentSave": "bigdata.onBeforeDocumentSave",
+        "onDocumentSave": "bigdata.onDocumentSave"
+      },
+      "gridexporter",
+      "rowoperations"
+    ]'
     groupFooter='{
       "xtype": "gridsummaryrow"
     }'
-    onBeforeDocumentSave="bigdata.onBeforeDocumentSave"
-    onDocumentSave="bigdata.onDocumentSave"
+    itemConfig='{
+      "viewModel": {}, "body": { "tpl": "<div><img src={avatar} height=\"100px\" style=\"float:left;margin:0px 10px 5px 0px;\" /><br><b>{fullName}</b><br>{dob:date}</div>"}
+    }'
     titleBar='{
       "shadow": "false",
       "items": [{
@@ -218,8 +223,6 @@
     </ext-textcolumn>
   </ext-grid>
 </ext-container>
-
-<!-- </ext-container> -->
 
 <!--
     TODO: future release

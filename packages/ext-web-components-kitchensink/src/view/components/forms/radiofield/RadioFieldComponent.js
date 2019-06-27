@@ -1,5 +1,3 @@
 import './RadioFieldComponent.html';
 
-export default class RadioFieldComponent {
-  constructor () {}
-}
+export default class RadioFieldComponent {}

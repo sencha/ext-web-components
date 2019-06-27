@@ -1,5 +1,5 @@
-import "./HtmlComponent.html";
+import './HtmlComponent.html';
 
 export default class HTMLComponent {
-  constructor() {}
+    constructor() {}
 }

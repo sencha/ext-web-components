@@ -1,4 +1,4 @@
-<ext-container layout="fit" height="100%" 
+<ext-container layout="fit" height="100%"
   platformConfig='{
     "!phone": {
         "layout": "hbox"
@@ -13,12 +13,14 @@
   activeItem="0"
 >
   <ext-container
-  docked="top"
-  cls="app-banner"
+    onready="schedule.bannerReady"
+    docked="top"
+    cls="app-banner"
   >
-  <span>Sencha Ext Web Components Conference App</span>
+    <span>Sencha Ext Web Components Conference App</span>
   </ext-container>
   <ext-tabpanel
+      onready="schedule.tabpanelReady"
       flex="1"
       tabBar='{"shadow": "true"}'
       activeItem="0"
@@ -26,8 +28,8 @@
       height="100%"
   >
     <ext-panel
-      title="MONDAY"
-      height="100%"
+        platformConfig='{"!phone": { "title": "MONDAY" },"phone": {"title": "MON" } }'
+        height="100%"
     >
       <ext-list
         height="100%"
@@ -35,7 +37,6 @@
         hideMode="offsets"
         grouped="true"
         rowLines="true"
-        itemTpl="<div>ABCD</div>"
         itemCls="app-list-item"
         cls="app-list"
         pinHeaders="true"
@@ -47,11 +48,11 @@
       </ext-list>
     </ext-panel>
     <ext-panel
-      title="TUESDAY"
+    platformConfig='{"!phone": { "title": "TUESDAY" },"phone": {"title": "TUE" } }'
       height="100%"
     >
       <ext-list
-        height="100%" 
+        height="100%"
         onready="schedule.secondListReady"
         hideMode="offsets"
         grouped="true"
@@ -67,8 +68,8 @@
       </ext-list>
     </ext-panel>
     <ext-panel
-    height="100%"
-      title="WEDNESDAY"
+      height="100%"
+      platformConfig='{"!phone": { "title": "WEDNESDAY" },"phone": {"title": "WED" } }'
     >
       <ext-list
         height="100%"
@@ -109,12 +110,12 @@
     </ext-panel>
   </ext-tabpanel>
   <ext-panel
-    flex="1",
-      padding="20",
+      flex="1"
+      padding="20"
       header="true"
       hidden="true"
-      onready="schedule.panelReady"
+      onready="schedule.scheduleSidePanelReady"
   >
-    <ext-container onready="schedule.containerReady2"></ext-container>
-</ext-panel>
+    <ext-container onready="schedule.scheduleSideContainerReady"></ext-container>
+  </ext-panel>
 </ext-container>
