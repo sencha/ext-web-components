@@ -10,14 +10,12 @@
  *
  * Example usage:
  * 
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-container padding={10} layout='{"auto"}'>
  *          <ext-timepanel shadow/>
  *      </ext-container>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-container.component';

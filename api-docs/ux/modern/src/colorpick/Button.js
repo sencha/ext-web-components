@@ -3,7 +3,6 @@
  *
  * The selected color is configurable via {@link #value} and
  * The Format is configurable via {@link #format}.
- *    HTML
  *     ```HTML
  *      @example({tab: 1})
  *      <ext-colorbutton
@@ -13,7 +12,6 @@
  *      >
  *     </ext-colorbutton>
  *     ```
- *       JS
  *     ```javascript
  *     @example({tab: 2, packages: ['ext-web-components']})
  *     import '@sencha/ext-web-components/dist/ext-colorbutton.component';

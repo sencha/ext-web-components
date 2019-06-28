@@ -3,7 +3,6 @@
  * @since 6.7.0
  *
  * In general an gridfilters plugin will be passed to the grid:
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-grid
@@ -20,7 +19,6 @@
  *        <ext-column bind='{record.department} ({record.seniority})' text='Department' width="200"></ext-column>
  *      </ext-grid>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-grid.component';

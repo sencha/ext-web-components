@@ -10,7 +10,6 @@
  * panel to a container using Fit layout, simply set `layout: 'fit'` on the container and
  * add a single panel to it.
  * 
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-container width="300" height="150" layout="fit">
@@ -19,7 +18,6 @@
  *          </ext-panel>
  *      </ext-container>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-container.component';

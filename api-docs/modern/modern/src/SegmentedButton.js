@@ -7,7 +7,6 @@
  * a child of a {@link Ext.Toolbar} and would be used to switch between different views.
  *
  * ## Example usage:
- * HTML
  *     ```HTML
  *      @example({tab: 1})
  *      <ext-container>
@@ -29,7 +28,6 @@
  *              </ext-toolbar>
  *      </ext-container>
  *     ```
- *       JS
  *     ```javascript
  *     @example({tab: 2, packages: ['ext-web-components']})
  *

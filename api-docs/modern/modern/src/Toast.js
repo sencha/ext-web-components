@@ -9,7 +9,6 @@
  *
  * This will create one reusable toast container and content will be swapped out as
  * toast messages are queued or displayed.
- *  HTML
  *     ```HTML
  *      @example({tab: 1})
  *      <ext-container layout='{"type": "vbox", "align": "left"}'>
@@ -21,7 +20,6 @@
  *                     </ext-container>
  *      
  *     ```
- *       JS
  *     ```javascript
  *     @example({tab: 2, packages: ['ext-web-components']})
  *

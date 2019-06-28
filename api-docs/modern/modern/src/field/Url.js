@@ -7,7 +7,6 @@
  * field, most browsers will show a specialized virtual keyboard for web address input. Aside from that, the url field
  * is just a normal text field. Here's an example of how to use it in a form:
  *
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-container layout="center">
@@ -16,7 +15,6 @@
  *          </ext-formpanel>
  *      </ext-container>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-container.component';

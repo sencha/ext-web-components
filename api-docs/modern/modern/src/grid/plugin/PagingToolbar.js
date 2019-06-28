@@ -7,7 +7,6 @@
  * The Paging Toolbar is a specialized toolbar that is
  * bound to a `Ext.data.Store` and provides automatic paging control.
  *
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-container width="100%" height="100%">
@@ -18,7 +17,6 @@
  *          </ext-grid>
  *      </ext-container>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-container.component';

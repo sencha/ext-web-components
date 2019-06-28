@@ -9,7 +9,6 @@
  *
  * Here is an example of the usage in a {@link Ext.List}:
  *
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-list
@@ -18,7 +17,6 @@
  *      >
  *      </ext-list>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-container.component';

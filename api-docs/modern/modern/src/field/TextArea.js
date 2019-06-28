@@ -10,7 +10,6 @@
  * input methods like select boxes or radio buttons are not possible. Text Areas are
  * usually created inside forms, like this:
  *
- *     HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-container layout="center">
@@ -24,7 +23,6 @@
  *          </ext-formpanel>
  *      </ext-container>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-container.component';

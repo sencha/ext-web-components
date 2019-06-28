@@ -6,7 +6,6 @@
  * A menu item that contains a radio button item which can participate in a group of
  * mutually exclusive radio items.
  * 
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-container>
@@ -18,7 +17,6 @@
  *          </ext-button>
  *      </ext-container>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-container.component';

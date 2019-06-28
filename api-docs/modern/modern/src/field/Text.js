@@ -7,7 +7,6 @@
  * functionality such as input validation, standard events, state management and look
  * and feel. Typically we create text fields inside a form, like this:
  *
- *     HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-container layout="center">
@@ -32,7 +31,6 @@
  *          </ext-formpanel>
  *      </ext-container>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-container.component';

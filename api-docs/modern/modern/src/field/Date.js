@@ -17,7 +17,6 @@
  * the current date. You can also use the {@link #setValue} method to update the value
  * at any time.
  *
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *     <ext-container layout="center">
@@ -37,7 +36,6 @@
  *         </ext-formpanel>
  *     </ext-container>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-container.component';

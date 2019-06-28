@@ -248,7 +248,6 @@
  *
  * ## Examples
  * 
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-panel shadow layout='{"type": "vbox", "align": "stretch"}'>
@@ -257,7 +256,6 @@
  *          <ext-button handler="messagebox.confirmHandler" text="Confirm"/>
  *      </ext-panel>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-panel.component';

@@ -12,7 +12,6 @@
  * want to show progress throughout an operation that has predictable points of interest
  * at which you can update the control.
  *
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-panel layout='{ "type": "vbox", "align": "center" }'>
@@ -37,7 +36,6 @@
  *          </ext-progress>
  *      <ext-panel>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-panel.component';

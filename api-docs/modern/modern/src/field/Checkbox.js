@@ -9,7 +9,6 @@
  * {@link Ext.field.Field field} and is usually found in the context of a form:
  *
  * ## Example
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-container layout="center">
@@ -24,7 +23,6 @@
  *          </ext-formpanel>
  *      </ext-container>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-container.component';

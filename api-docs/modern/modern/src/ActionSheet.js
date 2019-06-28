@@ -5,7 +5,6 @@
  *
  * ActionSheet is a `Sheet` that is docked at the bottom of the screen by default.
  *
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-container layout="center">
@@ -16,7 +15,6 @@
  *          <ext-actionsheet>
  *      </ext-container>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-container.component';

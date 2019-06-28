@@ -5,7 +5,6 @@
  *
  * Creates an HTML file input field on the page. This is usually used to upload files to remote server. File fields are usually
  * created inside a form like this:
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-container layout="center">
@@ -19,7 +18,6 @@
  *          <ext-formpanel>
  *      </ext-container>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-container.component';

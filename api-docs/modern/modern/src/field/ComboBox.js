@@ -41,7 +41,6 @@
  *           </ext-combobox>
  *      </ext-formpanel>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-formpanel.component';

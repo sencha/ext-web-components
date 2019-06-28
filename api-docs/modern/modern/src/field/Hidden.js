@@ -8,7 +8,6 @@
  * dynamic or previously collected data back to the server in the same request as the
  * normal form submission. For example, here is how we might set up a form to send
  * back a hidden userId field:
- *      HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-container layout="center">
@@ -21,7 +20,6 @@
  *          <ext-formpanel>
  *      </ext-container>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-container.component';

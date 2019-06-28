@@ -12,7 +12,6 @@
  * Once the columns are ordered to your liking, you may then close the menu by tapping the
  * "Done" button.
  *
- *     HTML
  *      ```HTML
  *      @example({tab: 1})
  *      <ext-container width="100%" height="100%">
@@ -23,7 +22,6 @@
  *          </ext-grid>
  *      </ext-container>
  *      ```
- *      JS
  *      ```javascript
  *      @example({tab: 2, packages: ['ext-web-components']})
  *      import '@sencha/ext-web-components/dist/ext-container.component';

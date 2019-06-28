@@ -16,7 +16,6 @@
  *
  * ## Example
  *
- *     HTML
  *     ```HTML
  *      @example({tab: 1})
  *      <ext-panel shadow bodyPadding=0>
@@ -35,7 +34,6 @@
  *          Some Text!
  *      </ext-panel>
  *     ```
- *       JS
  *     ```javascript
  *     @example({tab: 2, packages: ['ext-web-components']})
  *
