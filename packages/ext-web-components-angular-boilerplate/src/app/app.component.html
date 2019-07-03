@@ -1,0 +1,33 @@
+<ext-container layout="fit" bodyPadding="0">
+  <ext-titlebar docked="top">
+    <ext-button
+        align="left"
+        iconCls="x-fa fa-bars"
+        (ready)="readyToggleButton($event)"
+      >
+      </ext-button>
+    <span style="height:18px;" href="#" class="app-title">Sencha ExtWebComponents 7.0 Boilerplate App in Angular</span>
+  </ext-titlebar>
+  <ext-panel
+    docked="left"
+    border="true"
+    shadow="true"
+    scrollable="y"
+    resizable='{"edges": "east", "dynamic": "true"}'
+    header="false"
+    collapsible='{"direction": "left"}'
+    width="200px"
+    (ready)="readyNavTreePanel($event)"
+  >
+    <ext-treelist
+      ui="nav"
+      expanderFirst="false"
+      expanderOnly="false"
+      (ready)="readyNavTreelist($event)"
+      (itemclick)="navTreelistSelectionChange($event)">
+    </ext-treelist>
+  </ext-panel>
+  <ext-container width="100%">
+    <router-outlet></router-outlet>
+  </ext-container>
+</ext-container>
