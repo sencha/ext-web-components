@@ -40,6 +40,16 @@ export default class MainComponent {
     readyNavTreePanel = (event) => {
         this.navTreePanelCmp = event.detail.cmp;
         this.afterAllLoaded('readyNavTreePanel');
+        if(Ext.os.is.Phone) {
+            let collapsed = this.navTreePanelCmp.getCollapsed();
+    
+            if (collapsed === true) {
+                collapsed = false;
+            } else {
+                collapsed = true;
+            }
+            this.navTreePanelCmp.setCollapsed(collapsed);
+        }
     }
 
     readyNavTreelist = (event) => {
