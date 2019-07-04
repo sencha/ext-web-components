@@ -355,7 +355,6 @@ import '@sencha/ext-web-components/dist/ext-panel.component';
 ```
 
 
-### run npm start 
-in the root of your directory.
+- run ***npm start*** in the root of your directory.
 
 - If you don’t want to follow the above mentioned steps, then you can consume the boilerplate code [ext-web-components-boilerplate-angular](https://github.com/sencha/ext-web-components/tree/ext-components-7.0.x/packages/ext-web-components-angular-boilerplate) and start creating your application by consuming ext-web-components directly.
