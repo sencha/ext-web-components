@@ -1,7 +1,7 @@
 import './TreeReorderComponent.html';
 import data from './data';
 
-// Ext.require([ 'Ext.grid.plugin.TreeDragDrop']);
+Ext.require([ 'Ext.grid.plugin.TreeDragDrop']);
 
 export default class TreeComponent {
     onTreeReady = (event) => {
@@ -17,13 +17,7 @@ export default class TreeComponent {
                 direction: 'ASC'
             }]
         });
-
-        // this.plugins={
-        //     treedragdrop:true
-        // };
-
         this.treeCmp.setStore(this.treeStore);
-        // this.treeCmp.setPlugins(this.plugins);
     }
 
     toolbarReady = (event) => {
