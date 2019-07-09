@@ -6,7 +6,7 @@ export default class CalendarDragResizeValidationComponent {
 
     calendarDayReady = (event) => {
         this.calendarDayCmp = event.detail.cmp;
-      
+
         const store = Ext.create('Ext.calendar.store.Calendars', {
             autoLoad: true,
             proxy: {
@@ -17,7 +17,7 @@ export default class CalendarDragResizeValidationComponent {
 
         this.calendarDayCmp.setStore(store);
         this.calendarDayCmp.setValue(new Date());
-      
+
         this.calendarDayCmp.setListeners({
             beforeeventdragstart: this.onBeforeDragStart,
             beforeeventresizestart: this.onBeforeResizeStart,
@@ -26,17 +26,17 @@ export default class CalendarDragResizeValidationComponent {
         });
     }
 
-    onBeforeDragStart = ({ detail: { context } }) => {
+    onBeforeDragStart = (calendarComp, context) => {
         const notAllowed = ['Not draggable', 'Not draggable/resizable'];
         return !Ext.Array.contains(notAllowed, context.event.data.title);
     }
 
-    onBeforeResizeStart = ({ detail: { context } }) => {
+    onBeforeResizeStart = (calendarComp, context) => {
         const notAllowed = ['Not resizable', 'Not draggable/resizable'];
         return !Ext.Array.contains(notAllowed, context.event.data.title);
     }
 
-    confirmAction = ({ detail: { context } }) => {
+    confirmAction = (calendarComp, context) => {
         context.validate = context.validate.then(function() {
             return new Ext.Promise(function(resolve) {
                 Ext.Msg.confirm('Are you sure', 'Allow the action to go ahead?', function(btn) {

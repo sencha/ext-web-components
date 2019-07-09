@@ -45,5 +45,16 @@
         columnGroup.add(columnChild)
         console.log('column.add(column)' + ' ' + columnGroup.initialConfig.text + ', ' + columnChild.initialConfig.text)
 
+        var columnChild2Props =  {xtype: 'column', text: 'name', dataIndex: 'name',listeners: {}}
+        var columnChild2 = Ext.create(columnChild2Props)
+        console.log('Ext.create(' + columnChild2.xtype + ') ' + columnChild2.initialConfig.text)
+        console.dir(columnChild2Props)
+        console.dir(columnChild2)
+
+        columnGroup.add(columnChild2)
+        console.log('column.add(column)' + ' ' + columnGroup.initialConfig.text + ', ' + columnChild2.initialConfig.text)
+
+
+
     })
 //}

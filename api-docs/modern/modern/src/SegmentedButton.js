@@ -7,37 +7,38 @@
  * a child of a {@link Ext.Toolbar} and would be used to switch between different views.
  *
  * ## Example usage:
+ *     ```HTML
+ *      @example({tab: 1})
+ *      <ext-container>
+ *          <ext-toolbar>
+ *              <div style="margin-right: 10px;">Default UI:</div>
+ *              <ext-segmentedbutton>
+ *                             <ext-button pressed text="Low"></ext-button>
+ *                             <ext-button text="Medium"></ext-button>
+ *                             <ext-button text="High"></ext-button>
+ *              </ext-segmentedbutton>
+*           </ext-toolbar>
+ *              <ext-toolbar margin="0 0 20 0">
+ *                  <div style="margin-right: 10px;">Toolbar UI:</div>
+ *                      <ext-segmentedbutton>
+ *                             <ext-button ui="default-toolbar" pressed text="Low"></ext-button>
+ *                             <ext-button ui="default-toolbar" text="Medium"></ext-button>
+ *                             <ext-button ui="default-toolbar" text="High"></ext-button>
+ *                      </ext-segmentedbutton>
+ *              </ext-toolbar>
+ *      </ext-container>
+ *     ```
+ *     ```javascript
+ *     @example({tab: 2, packages: ['ext-web-components']})
  *
- *     @example packages=[reactor]
- *     import React from 'react';
- *     import { ExtReact, SegmentedButton, Button, Container, Toolbar } from '@extjs/ext-react';
- *
- *     export default function SegementedButtonExample() {
- *         return (
- *             <ExtReact>
- *                 <Container>
- *                     <Toolbar>
- *                         <div style={{marginRight: '10px'}}>Default UI:</div>
- *                         <SegmentedButton>
- *                             <Button pressed text="Low"/>
- *                             <Button text="Medium"/>
- *                             <Button text="High"/>
- *                         </SegmentedButton>
- *                     </Toolbar>
- *                     <Toolbar margin="0 0 20 0">
- *                         <div style={{marginRight: '10px'}}>Toolbar UI:</div>
- *                         <SegmentedButton>
- *                             <Button ui="default-toolbar" pressed text="Low"/>
- *                             <Button ui="default-toolbar" text="Medium"/>
- *                             <Button ui="default-toolbar" text="High"/>
- *                         </SegmentedButton>
- *                     </Toolbar>
- *                 </Container>
- *             </ExtReact>
- *         )
- *     }
+ *     import '@sencha/ext-web-components/dist/ext-container.component';
+ *     import '@sencha/ext-web-components/dist/ext-toolbar.component';
+ *     import '@sencha/ext-web-components/dist/ext-segmentedbutton.component';
+ *     import '@sencha/ext-web-components/dist/ext-button.component'; 
+ * 
+ *     export default class SegmentedButtonComponent {}
+ *     ```
  */
-
 /**
  * @cfg {Boolean} [allowMultiple=false]
  * Allow multiple pressed buttons.

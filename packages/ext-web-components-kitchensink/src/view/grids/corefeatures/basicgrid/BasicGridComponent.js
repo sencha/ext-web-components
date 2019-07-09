@@ -2,6 +2,7 @@ import './BasicGridComponent.scss';
 import './BasicGridComponent.html';
 import model from '../../data/CompanyModel';
 import '../../data/Companies.js';
+
 export default class BasicGridComponent {
     constructor() {
         this.store = Ext.create('Ext.data.Store', {

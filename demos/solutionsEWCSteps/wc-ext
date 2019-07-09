@@ -1,0 +1,58 @@
+mkdir wc-ext-app
+
+
+in folder:
+cp -r /Users/marcgusmano/aaExt/ext-6.6.0.258/build/modern/ modern
+cp /Users/marcgusmano/aaExt/ext-6.6.0.258/build/ext-modern-all.js ./
+if needed
+cp /Users/marcgusmano/aaExt/ext-6.6.0.258/build/ext-modern-all-debug.js ./
+
+index.html
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ext-grid</title>
+  <script src="ext-modern-all.js"></script>
+  <link href="modern/theme-material/resources/theme-material-all.css" rel='stylesheet'/>
+
+<script>
+
+class ExtComponent extends HTMLElement {
+
+  get xtype() {return this.getAttribute('xtype')}; set config(val) {if (val) {this.setAttribute('xtype', val)} else {this.removeAttribute('xtype')}}
+  get config() {return this.getAttribute('config')}; set config(val) {if (val) {this.setAttribute('config', val)} else {this.removeAttribute('config')}}
+
+  connectedCallback() {
+    var o = JSON.parse(this.config)
+    o.xtype = this.xtype
+    o.renderTo = this
+    this.ext = Ext.create(o)
+  }
+
+}
+window.customElements.define('ext-component', ExtComponent)
+
+</script>
+</head>
+<body>
+  <ext-component 
+    xtype='grid'
+    config='
+    {
+      "title":"Grid with a single config",
+      "height":"300px",
+      "columns": [
+        {"text": "Name", "width": "250", "dataIndex": "name"},
+        {"text": "Email Address", "flex": "1", "dataIndex": "email"},
+        {"text": "Phone Number", "width": "250", "dataIndex": "phone"}
+      ],
+      "data": [
+        {"name": "Lisa", "email": "lisa@simpsons.com", "phone": "555-111-1224"},
+        {"name": "Bart", "email": "bart@simpsons.com", "phone": "555-222-1234"},
+        {"name": "Homer", "email": "homer@simpsons.com", "phone": "555-222-1244"},
+        {"name": "Marge", "email": "marge@simpsons.com", "phone": "555-222-1254"}
+      ]
+    }'></ext-component>
+</body>
+</html>

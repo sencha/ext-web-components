@@ -5,28 +5,28 @@
  *
  * Creates an HTML file input field on the page. This is usually used to upload files to remote server. File fields are usually
  * created inside a form like this:
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-container layout="center">
+ *          <ext-formpanel shadow="true">
+ *              <ext-filefield
+ *                   label="Select a File"
+ *                   name="photo"
+ *                   accept="image"
+ *               >
+ *               </ext-filefield>
+ *          <ext-formpanel>
+ *      </ext-container>
+ *      ```
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-container.component';
+ *      import '@sencha/ext-web-components/dist/ext-formpanel.component';
+ *      import '@sencha/ext-web-components/dist/ext-filefield.component';
+ * 
+ *      export default class FileFieldComponent {}
+ *      ```
  *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react';
- *     import { ExtReact, Container, FormPanel, FileField } from '@extjs/ext-react';
- *
- *     export default class MyExample extends Component {
- *         render() {
- *             return (
- *                 <ExtReact>
- *                     <Container layout="center">
- *                         <FormPanel shadow>
- *                             <FileField
- *                                 label="Select a File"
- *                                 name="photo"
- *                                 accept="image"
- *                             />
- *                         </FormPanel>
- *                     </Container>
- *                 </ExtReact>
- *             )
- *         }
- *     }
  */
 
 /**

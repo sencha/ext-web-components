@@ -101,6 +101,7 @@ import EditableTreeComponent from './view/trees/editabletree/EditableTreeCompone
 import TreeGridComponent from './view/trees/treegrid/TreeGridComponent.js';
 import TreeDecorationsComponent from './view/trees/treedecorations/TreeDecorationsComponent.js';
 import HeterogeneousTreeComponent from './view/trees/heterogeneoustree/HeterogeneousTreeComponent.js';
+import TreeReorderComponent from './view/trees/treereorder/TreeReorderComponent.js';
 import CalendarPanelComponent from './view/calendar/calendarpanel/CalendarPanelComponent.js';
 import CalendarMonthViewComponent from './view/calendar/calendarmonthview/CalendarMonthViewComponent.js';
 import CalendarWeekViewComponent from './view/calendar/calendarweekview/CalendarWeekViewComponent.js';
@@ -308,7 +309,8 @@ export default function getMenu() {
             { text: 'Editable Tree', premium: true, premiumClass: 'x-fa fa-star app-premium-indicator', component: EditableTreeComponent, iconCls: 'icon-tree-editable'},
             { text: 'Tree Grid', premium: true, premiumClass: 'x-fa fa-star app-premium-indicator', component: TreeGridComponent, iconCls: 'icon-tree-grid' },
             { text: 'Tree Decorations', premium: true, premiumClass: 'x-fa fa-star app-premium-indicator', component:TreeDecorationsComponent, iconCls: 'icon-tree-decorations'},
-            { text: 'Heterogeneous Tree', premium: true, premiumClass: 'x-fa fa-star app-premium-indicator', component: HeterogeneousTreeComponent, iconCls: 'icon-heterogeneous-tree'}
+            { text: 'Heterogeneous Tree', premium: true, premiumClass: 'x-fa fa-star app-premium-indicator', component: HeterogeneousTreeComponent, iconCls: 'icon-heterogeneous-tree'},
+            { text: 'Tree Reorder', component: TreeReorderComponent, iconCls: 'icon-tree-reorder'}
         ]},
 
         { text: 'Calendar', premium: false, iconCls: 'icon-calendar', children:[

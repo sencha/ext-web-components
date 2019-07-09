@@ -9,22 +9,21 @@
  * Fit layout does not have any direct config options (other than inherited ones). To fit a
  * panel to a container using Fit layout, simply set `layout: 'fit'` on the container and
  * add a single panel to it.
- *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react';
- *     import { ExtReact, Container, Panel } from '@extjs/ext-react';
- *
- *     export default class myExample extends Component {
- *         render() {
- *             return (
- *                 <ExtReact>
- *                     <Container width="300" height="150" layout="fit">
- *                         <Panel title="Inner Panel" bodyPadding="20" border="false">
- *                             This is the inner panel content
- *                         </Panel>
- *                     </Container>
- *                 </ExtReact>
- *             )
- *         }
- *     }
+ * 
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-container width="300" height="150" layout="fit">
+ *          <ext-panel title="Inner Panel" bodyPadding="20" border="false">
+ *               This is the inner panel content
+ *          </ext-panel>
+ *      </ext-container>
+ *      ```
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-container.component';
+ *      import '@sencha/ext-web-components/dist/ext-formpanel.component';
+ *      import '@sencha/ext-web-components/dist/ext-spinnerfield.component';
+ * 
+ *      export default class FitComponent {}
+ *      ```
  */

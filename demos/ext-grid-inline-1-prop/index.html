@@ -1,14 +1,16 @@
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
     <title>ext-grid</title>
-    <script src="ext/build/ext-modern-all.js"></script>
-    <link  href="ext/build/modern/theme-material/resources/theme-material-all.css" rel='stylesheet'/>
-<script>
+    <link rel="icon" type="image/x-icon" href="public/resources/favicon.ico">
+    <script src="public/ext.js"></script>
+    <link href="public/ext.css" rel='stylesheet'/>
 
+<script>
 class ExtGrid extends HTMLElement {
- 
-    get config() {return this.getAttribute('config')}; set config(val) {if (val) {this.setAttribute('config', val)} else {this.removeAttribute('config')}}
+    get config() {return this.getAttribute('config')}; 
+    set config(val) {if (val) {this.setAttribute('config', val)} else {this.removeAttribute('config')}}
+    static get observedAttributes() {return ['config']};
 
     connectedCallback() {
         var o = JSON.parse(this.config)
@@ -16,15 +18,17 @@ class ExtGrid extends HTMLElement {
         o.renderTo = this
         this.ext = Ext.create(o)
     }
-
 }
-window.customElements.define('ext-grid', ExtGrid)
-
+Ext.onReady(function() {
+    window.customElements.define('ext-grid', ExtGrid)
+})
 </script>
+
 </head>
 <body>
-    <ext-grid 
-        config='{
+    <ext-grid
+        config='
+        {
             "title":"Grid with a single config",
             "height":"300px",
             "columns": [
@@ -38,8 +42,7 @@ window.customElements.define('ext-grid', ExtGrid)
                 {"name": "Homer", "email": "homer@simpsons.com", "phone": "555-222-1244"},
                 {"name": "Marge", "email": "marge@simpsons.com", "phone": "555-222-1254"}
             ]
-        }'
-    >
+        }'>
     </ext-grid>
 </body>
 </html>

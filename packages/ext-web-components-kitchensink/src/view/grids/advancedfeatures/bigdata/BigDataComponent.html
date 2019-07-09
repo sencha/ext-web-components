@@ -1,4 +1,3 @@
-<!-- <ext-container padding="10px" layout="vbox" fitToParent="true" width="100%" height="100%"> -->
 <ext-container height="100%">
   <ext-actionsheet displayed="false">
     <ext-button onTap="bigdata.exportToXlsx" text="Excel xlsx"></ext-button>
@@ -16,7 +15,7 @@
     title="Big Data Grid"
     shadow="true"
     grouped="true"
-    rowNumbers="true"
+    rowNumbers='{"text":"Row"}'
     plugins='[
       "grideditable",
       "gridviewoptions",
@@ -224,8 +223,6 @@
     </ext-textcolumn>
   </ext-grid>
 </ext-container>
-
-<!-- </ext-container> -->
 
 <!--
     TODO: future release

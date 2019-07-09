@@ -86,20 +86,24 @@ export default class ExtBase extends HTMLElement {
                 }
             }
         }
+
         this.props.listeners = {}
-        for (var i = 0; i < this.attributes.length; i++) {
-            var attr = this.attributes.item(i).nodeName;
 
-            if (/^on/.test(attr) && attr!='onitemdisclosure') {
-                var name = attr.slice(2);
-                var result = this.EVENTS.filter(obj => {return obj.name === name});
-                this.setEvent(result[0],this.props,this)
-            }
-        }
+        // for (var i = 0; i < this.attributes.length; i++) {
+        //     var attr = this.attributes.item(i).nodeName;
 
-        // this.EVENTS.forEach(function (eventparameter, index, array) {
-        //         me.setEvent(eventparameter,me.props,me)
-        // })
+        //     if (/^on/.test(attr)) {
+        //     //if (/^on/.test(attr) && attr!='onitemdisclosure') {
+        //         var name = attr.slice(2);
+        //         var result = this.EVENTS.filter(obj => {return obj.name === name});
+        //         this.setEvent(result[0],this.props,this)
+        //     }
+        // }
+
+        var me = this;
+        this.EVENTS.forEach(function (eventparameter, index, array) {
+            me.setEvent(eventparameter,me.props,me)
+        })
 
         //mjg this should not be hard-coded to APP-ROOT or root
         if (this.nodeParentName == 'APP-ROOT' || this.parentElement.id == 'root') {
@@ -123,15 +127,15 @@ export default class ExtBase extends HTMLElement {
         else if (this.nodeParentName == 'BODY') {
             var me = this
             me.doCreate()
-            console.log('Ext.application')
+            //console.log('Ext.application')
 
-            var elem = document.getElementById('theGrid');
+            //var elem = document.getElementById('theGrid');
             //elem.parentNode.removeChild(elem);
 
             Ext.application({
                 name: 'MyEWCApp',
                 launch: function () {
-                    console.log('Ext.Viewport.add(' + me.ext.xtype + ')')
+                    //console.log('Ext.Viewport.add(' + me.ext.xtype + ')')
                     Ext.Viewport.add([me.ext])
                     if (window.router) {
                         //console.log('router.init called')
@@ -140,7 +144,7 @@ export default class ExtBase extends HTMLElement {
                 }
             });
         }
-        else if(this.nodeParentName.substring(0, 3) != 'EXT') {
+        else if (this.nodeParentName.substring(0, 3) != 'EXT') {
             this.props.renderTo = this
             this.doCreate()
         }
@@ -150,7 +154,7 @@ export default class ExtBase extends HTMLElement {
             //mjgComment console.log('deal with this item to attach to parent')
             //if extParentDefined is true, then this child to parent
             //if extParentDefined is false, add this child to the extChildren array of the parent
-            if(this.extParentDefined == true) {
+            if (this.extParentDefined == true) {
                 parentCmp = this.parentNode['ext'];
                 childCmp = this.ext;
                 var location = null
@@ -189,7 +193,7 @@ export default class ExtBase extends HTMLElement {
                         var par = item.parentNode
                         var cln = par.removeChild(item);
                         var el = Ext.get(cln);
-                        console.log('Ext.create(' + 'widget' + ')')
+                        //console.log('Ext.create(' + 'widget' + ')')
                         var ext = Ext.create({xtype:'widget', element:el})
                         this.parentNode.extChildren.push({ADDORDER:i,XTYPE:'widget',EXT:ext})
                     }
@@ -237,9 +241,9 @@ export default class ExtBase extends HTMLElement {
     doCreate() {
         this.ext = Ext.create(this.props)
 
-        console.log('Ext.create(' + this.ext.xtype + ')')
-        console.dir(this.props)
-        console.dir(this.ext)
+        //console.log('Ext.create(' + this.ext.xtype + ')')
+        //console.dir(this.props)
+        //console.dir(this.ext)
 
         if (this.parentNode.childrenCounter != undefined) {
             this.parentNode.childrenCounter--
@@ -251,7 +255,7 @@ export default class ExtBase extends HTMLElement {
     }
 
     addTheChild(parentCmp, childCmp, location) {
-        console.log('addTheChild')
+        //console.log('addTheChild')
         var childxtype = childCmp.xtype
         var parentxtype = parentCmp.xtype
 
@@ -301,7 +305,7 @@ export default class ExtBase extends HTMLElement {
                     regCols = parentCmp.registeredColumns.length;
                 }
                 parentCmp.insertColumn(location + regCols, childCmp)
-                console.log(`${parentCmp.xtype}.insertColumn(${location}, ${childCmp.xtype})`)
+                //console.log(`${parentCmp.xtype}.insertColumn(${location}, ${childCmp.xtype})`)
                 return
             }
             }

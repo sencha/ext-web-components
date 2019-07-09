@@ -5,27 +5,27 @@
  *
  * A menu item that contains a radio button item which can participate in a group of
  * mutually exclusive radio items.
- *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react';
- *     import { ExtReact, Button, Container, Menu, MenuRadioItem } from '@extjs/ext-react';
- *
- *     export default class MyExample extends Component {
- *         render() {
- *             return (
- *                 <ExtReact>
- *                    <Container>
- *                        <Button text="Menu">
- *                            <Menu rel="menu" >
- *                                <MenuRadioItem text="Mobile" name="ui-type" />
- *                                <MenuRadioItem text="Desktop" name="ui-type"/>
- *                            </Menu>
- *                        </Button>
- *                    </Container>
- *                 </ExtReact>
- *             )
- *         }
- *     }
+ * 
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-container>
+ *          <ext-button text="Menu">
+ *              <ext-menu rel="menu" >
+ *                  <ext-menuradioitem text="Mobile" name="ui-type" />
+ *                  <ext-menuradioitem text="Desktop" name="ui-type"/>
+ *              </ext-menu>
+ *          </ext-button>
+ *      </ext-container>
+ *      ```
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-container.component';
+ *      import '@sencha/ext-web-components/dist/ext-button.component';
+ *      import '@sencha/ext-web-components/dist/ext-menu.component';
+ *      import '@sencha/ext-web-components/dist/ext-menuradioitem.component';
+ * 
+ *      export default class RadioItemComponent {}
+ *      ```
  */
 
 /**

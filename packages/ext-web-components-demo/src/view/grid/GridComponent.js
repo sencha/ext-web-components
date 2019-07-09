@@ -9,10 +9,23 @@ export default class GridComponent {
   }
 
   onGridReady(event) {
-    //console.log('in ready event')
+    console.log('in ready event')
     this.gridCmp = event.detail.cmp
     this.gridCmp.setData(new GridComponentData(10).data)
+
+    this.title = "grid.onGridSelect2"
+    this.onselect = "grid.onGridSelect2"
+    console.dir(this)
   }
+
+  onGridSelect(event) {
+    console.log('in select event')
+  }
+
+  onGridSelect2(event) {
+    console.log('in select2 event')
+  }
+
 
   renderer(value, record, dataIndex, cell, column) {
     // console.dir('start')

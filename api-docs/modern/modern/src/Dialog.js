@@ -8,59 +8,75 @@
  * draggable, and closable.  Dialogs are not subject to the restrictions of browser
  * popup windows, but provide similar modal experiences.
  *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react';
- *     import { ExtReact, Dialog, Container, Button } from '@extjs/ext-react';
+ * 
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-container>
+ *          <ext-button
+ *              text="Show Dialog"
+ *              handler="dialogpopup.showDialog"
+ *              ui="action raised"
+ *          >
+ *          </ext-button>
+ *          <ext-dialog
+ *              displayed="false"
+ *              title="Dialog"
+ *              closable="true"
+ *              maximizable="true"
+ *              closeAction="hide"
+ *              maskTapHandler="dialogpopup.onCancel"
+ *              bodyPadding="20"
+ *              maxWidth="200"
+ *              defaultFocus="#ok"
+ *              onHide="dialogpopup.onHide"
+ *              onready="dialogpopup.dialogReady"
+ *           >
+ *                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+ *                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+ *                commodo consequat.'
+ *               <ext-button
+ *                   text="Cancel"
+ *                   handler="dialogpopup.onCancel"
+ *               >
+ *               </ext-button>
+ *               <ext-button
+ *                   itemId="ok"
+ *                   text="OK"
+ *                  handler="dialogpopup.onOk"
+ *               >
+ *               </ext-button>
+ *          </ext-dialog>
+ *      </ext-container>
+ *      ```
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-container.component';
+ *      import '@sencha/ext-web-components/dist/ext-dialog.component';
+ *      import '@sencha/ext-web-components/dist/ext-button.component';
+ * 
+ *      export default class DialogPopupComponent {
+ *        dialogReady = (event) => {
+ *            this.dialog = event.detail.cmp
+ *        }
+ * 
+ *        showDialog = () => {
+ *            this.dialog.setDisplayed(true);
+ *        }
  *
- *     export default class DialogExample extends Component {
+ *        onOk = () => {
+ *            this.dialog.setDisplayed(false);
+ *        }
  *
- *         state = {
- *             showDialog: false
- *         }
+ *        onCancel = () => {
+ *            this.dialog.setDisplayed(false);
+ *        }
  *
- *         render() {
- *             const { showDialog } = this.state;
- *
- *             return (
- *                 <ExtReact>
- *                     <Container>
- *                         <Button text="Show Dialog" handler={this.showDialog} ui="action raised"/>
- *                         <Dialog
- *                             displayed={showDialog}
- *                             title="Dialog"
- *                             closable
- *                             maximizable
- *                             closeAction="hide"
- *                             maskTapHandler={this.onCancel}
- *                             bodyPadding="20"
- *                             maxWidth="200"
- *                             defaultFocus="#ok"
- *                             onHide={() => this.setState({ showDialog: false })}
- *                         >
- *                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
- *                             magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
- *                             commodo consequat.'
- *                             <Button text="Cancel" handler={this.onCancel}/>
- *                             <Button itemId="ok" text="OK" handler={this.onOk}/>
- *                         </Dialog>
- *                     </Container>
- *                 </ExtReact>
- *             )
- *         }
- *
- *         showDialog = () => {
- *             this.setState({ showDialog: true });
- *         }
- *
- *         onOk = () => {
- *             this.setState({ showDialog: false });
- *         }
- *
- *         onCancel = () => {
- *             this.setState({ showDialog: false });
- *         }
- *
- *     }
+ *        onHide = () => {
+ *            this.dialog.setDisplayed(false);
+ *        }
+ *      }
+ *      ```
+ * 
  *
  * ## Buttons
  *

@@ -8,41 +8,42 @@
  * primary button action, but any custom handler can provide the arrowclick implementation.
  *
  * ## Example usage:
+ *     ```HTML
+ *      @example({tab: 1})
+ *      <ext-container padding="10" layout="vbox">
+ *          <ext-splitbutton 
+ *              text="SplitButton" 
+ *              ontap="splitbutton.sayHello" 
+ *              ui="action alt" 
+ *              iconCls="x-fa fa-heart" 
+ *              margin="10"
+ *           >
+ *           </ext-splitbutton>
+ *      </ext-container>
+ *     ```
+ *     ```javascript
+ *     @example({tab: 2, packages: ['ext-web-components']})
  *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react';
- *     import { ExtReact, Container, SplitButton } from '@extjs/ext-react';
- *
- *      export default class SplitButtonExample extends Component {
- *
- *          render() {
- *              return (
- *                  <ExtReact>
- *                      <Container padding="10" layout="vbox">
- *                          <SplitButton 
- *                              text="SplitButton" 
- *                              handler={this.sayHello} 
- *                              ui="action alt" 
- *                              iconCls="x-fa fa-heart"
- *                              {...menuProps} margin="10"
- *                          />
- *                      </Container>
- *                  </ExtReact>
- *              )
+ *     import '@sencha/ext-web-components/dist/ext-container.component';
+ *     import '@sencha/ext-web-components/dist/ext-splitbutton.component';
+ * 
+ *     export default class SplitButtonComponent {
+ *          splitButtonReady = (event) => {
+ *              const splitButtonCmp = event.detail.cmp;
+ *              splitButtonCmp.setMenu([{
+ *                  text: "Menu Item 1",
+ *                   handler: () => { alert("Item 1 clicked"); }  
+ *              }, {
+ *                  text: "Menu Item 2",
+ *                  handler: () => {alert("Item 2 clicked"); }
+ *              }]);  
  *          }
+ * 
  *          sayHello = () => {
  *              alert("Hello! The button was clicked");
  *          }
  *     }
- *     const menuProps ={
- *         menu: [{
- *             text: 'Menu Item 1',
- *             handler: function(){ alert("Item 1 clicked"); }
- *         }, {
- *             text: 'Menu Item 2',
- *             handler: function(){ alert("Item 2 clicked"); }
- *         }]
- *     }
+ *     ```
  */
 
 /**

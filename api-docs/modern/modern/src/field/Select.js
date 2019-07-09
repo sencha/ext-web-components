@@ -4,35 +4,42 @@
  * @xtype selectfield
  *
  * Simple Select field wrapper. Example usage:
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-container layout="center">
+ *          <ext-formpanel shadow="true">
+ *              <ext-selectfield
+ *                   label="Select"
+ *                   width="200"
+ *                   onChange="selectfield.onchangeselectfield"
+ *              >
+ *              <ext-selectfield>
+ *          <ext-formpanel>
+ *      </ext-container>
+ *      ```
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-container.component';
+ *      import '@sencha/ext-web-components/dist/ext-formpanel.component';
+ *      import '@sencha/ext-web-components/dist/ext-selectfield.component';
+ * 
+ *      export default class SelectFieldComponent {
+ *      
+ *          selectFieldReady(event) {
+ *              this.selectFieldView = event.detail.cmp;
+ *              this.selectFieldView.setOptions([  
+ *                      { text: "Option 1", value: 1 },
+ *                      { text: "Option 2", value: 2 },
+ *                      { text: "Option 3", value: 3 }
+ *                  ]);
+ *          }
+ * 
+ *          onchangeselectfield = (event) => {
+ *               return Ext.toast(`You selected the item with value ${event.detail.newValue}`);
+ *          }
+ *      }
+ *      ```
  *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react';
- *     import { ExtReact, FormPanel, SelectField, Container } from '@sencha/ext-react';
- *
- *     Ext.require('Ext.Toast');
- *
- *     export default class MyExample extends Component {
- *         render() {
- *             return (
- *                 <ExtReact>
- *                     <Container layout="center">
- *                         <FormPanel shadow>
- *                             <SelectField
- *                                 label="Select"
- *                                 width="200"
- *                                 onChange={(field, newValue) => Ext.toast(`You selected ${newValue.get('value')}`)}
- *                                 options={[
- *                                     { text: 'Option 1', value: 1 },
- *                                     { text: 'Option 2', value: 2 },
- *                                     { text: 'Option 3', value: 3 }
- *                                 ]}
- *                             />
- *                         </FormPanel>
- *                     </Container>
- *                 </ExtReact>
- *             )
- *         }
- *     }
  */
 
 /**
