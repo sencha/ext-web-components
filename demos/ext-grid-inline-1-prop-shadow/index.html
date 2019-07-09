@@ -4,6 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>ext-grid</title>
     <script src="public/ext.js"></script>
+    <link href="public/ext.css" rel='stylesheet'/>
 
 <script>
 
@@ -15,19 +16,24 @@ class ExtGrid extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
-        const template = document.createElement('template');
-        template.innerHTML = `${this.html}${this.style}${this.host}`;
-        this.shadowRoot.appendChild(template.content.cloneNode(true));
+        // const template = document.createElement('template');
+        // template.innerHTML = `${this.html}${this.style}${this.host}`;
+        // this.shadowRoot.appendChild(template.content.cloneNode(true));
 
         let link = document.createElement('link');
         link.setAttribute('rel', 'stylesheet');
-        link.setAttribute('href', 'public/ext_1.css');
+        link.setAttribute('href', 'public/ext.css');
         this.shadowRoot.appendChild(link);
 
-        let link2 = document.createElement('link');
-        link2.setAttribute('rel', 'stylesheet');
-        link2.setAttribute('href', 'public/ext_2.css');
-        this.shadowRoot.appendChild(link2);
+        // let link = document.createElement('link');
+        // link.setAttribute('rel', 'stylesheet');
+        // link.setAttribute('href', 'public/ext_1.css');
+        // this.shadowRoot.appendChild(link);
+
+        // let link2 = document.createElement('link');
+        // link2.setAttribute('rel', 'stylesheet');
+        // link2.setAttribute('href', 'public/ext_2.css');
+        // this.shadowRoot.appendChild(link2);
     }
 
     get html() { return ``}

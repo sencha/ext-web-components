@@ -12,117 +12,119 @@ function (_ExtBase) {
 
   ExtFieldComponent.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
     return {
-      "alwaysOnTop": "Boolean/Number",
-      "ariaAttributes": "Object",
-      "ariaDescribedBy": "String",
-      "ariaLabel": "String",
-      "ariaLabelledBy": "String",
-      "autoFitErrors": "Boolean",
-      "axisLock": "Boolean",
-      "bind": "Object/String",
-      "bodyAlign": "'start'/'center'/'end'/'stretch'",
-      "border": "Boolean",
-      "bottom": "Number/String",
-      "centered": "Boolean",
-      "cls": "String/String[]",
-      "constrainAlign": "String/Ext.util.Region/Ext.dom.Element",
-      "contentEl": "Ext.dom.Element/HTMLElement/String",
-      "controller": "String/Object/Ext.app.ViewController",
-      "data": "Object",
-      "defaultListenerScope": "Boolean",
-      "disabled": "Boolean",
-      "displayed": "Boolean",
-      "docked": "String",
-      "draggable": "Boolean/Object/Ext.drag.Source",
-      "error": "String/String[]",
-      "errorMessage": "String",
-      "errorTarget": "String",
-      "errorTip": "Object",
-      "errorTpl": "String/String[]/Ext.XTemplate",
-      "flex": "Number/String/Object",
-      "floated": "Boolean",
-      "focusCls": "String",
-      "fullscreen": "Boolean",
-      "height": "Number/String",
-      "hidden": "Boolean",
-      "hideAnimation": "String/Mixed",
-      "hideMode": "'clip'/'display'/'offsets'/'opacity'/'visibility'",
-      "hideOnMaskTap": "Boolean",
-      "html": "String/Ext.dom.Element/HTMLElement",
-      "id": "String",
-      "inline": "Boolean",
-      "instanceCls": "String/String[]",
-      "itemId": "String",
-      "keyMap": "Object",
-      "keyMapEnabled": "Boolean",
-      "keyMapTarget": "String",
-      "label": "String",
-      "labelAlign": "'top'/'left'/'bottom'/'right'",
-      "labelCls": "String",
-      "labelMinWidth": "Number/String",
-      "labelTextAlign": "'top'/'right'/'bottom'/'left'",
-      "labelWidth": "Number/String",
-      "labelWrap": "Boolean",
-      "left": "Number/String",
-      "listeners": "Object",
-      "margin": "Number/String",
-      "maxHeight": "Number/String",
-      "maxWidth": "Number/String",
-      "minHeight": "Number/String",
-      "minWidth": "Number/String",
-      "modal": "Boolean",
-      "modelValidation": "Boolean",
-      "name": "String",
-      "nameable": "Boolean",
-      "padding": "Number/String",
-      "plugins": "Array/Ext.enums.Plugin/Object/Ext.plugin.Abstract",
-      "publishes": "String/String[]/Object",
-      "record": "Ext.data.Model",
-      "reference": "String",
-      "relative": "Boolean",
-      "renderTo": "Ext.dom.Element",
-      "required": "Boolean",
-      "requiredMessage": "String",
-      "right": "Number/String",
-      "ripple": "Boolean/Object/String",
-      "scrollable": "Boolean/String/Object",
-      "selfAlign": "String",
-      "session": "Boolean/Object/Ext.data.Session",
-      "shadow": "Boolean",
-      "shareableName": "Boolean",
-      "shim": "Boolean",
-      "showAnimation": "String/Mixed",
-      "sideError": "String",
-      "stateful": "Boolean/Object/String[]",
-      "statefulDefaults": "Object/String[]",
-      "stateId": "String",
-      "style": "String/Object",
-      "tabIndex": "Number",
-      "tipError": "String",
-      "titleError": "String",
-      "toFrontOnShow": "Boolean",
-      "tooltip": "String/Object",
-      "top": "Number/String",
-      "touchAction": "Object",
-      "tpl": "String/String[]/Ext.Template/Ext.XTemplate[]",
-      "tplWriteMode": "String",
-      "translatable": "Object",
-      "twoWayBindable": "String/String[]/Object",
-      "ui": "String/String[]",
-      "underError": "String",
-      "userCls": "String/String[]",
-      "userSelectable": "Boolean/String/Object",
-      "validateDisabled": "Boolean",
-      "validationMessage": "String",
-      "validators": "Mixed",
-      "value": "Mixed",
-      "viewModel": "String/Object/Ext.app.ViewModel",
-      "weight": "Number",
-      "width": "Number/String",
-      "x": "Number",
-      "xtype": "String",
-      "y": "Number",
-      "zIndex": "Number",
+      "alignSelf": ["string"],
+      "alwaysOnTop": ["boolean", "number"],
+      "ariaAttributes": ["object"],
+      "ariaDescribedBy": ["string"],
+      "ariaLabel": ["string"],
+      "ariaLabelledBy": ["string"],
+      "autoFitErrors": ["boolean"],
+      "axisLock": ["boolean"],
+      "bind": ["object", "string"],
+      "bodyAlign": ["'start'", "'center'", "'end'", "'stretch'"],
+      "border": ["boolean"],
+      "bottom": ["number", "string"],
+      "bubbleDirty": ["boolean"],
+      "centered": ["boolean"],
+      "cls": ["string", "string[]"],
+      "constrainAlign": ["string", "Ext.util.Region", "Ext.dom.Element"],
+      "contentEl": ["Ext.dom.Element", "htmlelement", "string"],
+      "controller": ["string", "object", "Ext.app.ViewController"],
+      "data": ["object"],
+      "defaultListenerScope": ["boolean"],
+      "dirty": ["boolean"],
+      "disabled": ["boolean"],
+      "displayed": ["boolean"],
+      "docked": ["string"],
+      "draggable": ["boolean", "object", "Ext.drag.Source"],
+      "error": ["string", "string[]"],
+      "errorMessage": ["string"],
+      "errorTarget": ["string"],
+      "errorTip": ["object"],
+      "errorTpl": ["string", "string[]", "Ext.XTemplate"],
+      "flex": ["number", "string", "object"],
+      "floated": ["boolean"],
+      "focusCls": ["string"],
+      "fullscreen": ["boolean"],
+      "height": ["number", "string"],
+      "hidden": ["boolean"],
+      "hideAnimation": ["string", "mixed"],
+      "hideMode": ["'clip'", "'display'", "'offsets'", "'opacity'", "'visibility'"],
+      "hideOnMaskTap": ["boolean"],
+      "html": ["string", "Ext.dom.Element", "htmlelement"],
+      "id": ["string"],
+      "inline": ["boolean"],
+      "instanceCls": ["string", "string[]"],
+      "itemId": ["string"],
+      "keyMap": ["object"],
+      "keyMapEnabled": ["boolean"],
+      "keyMapTarget": ["string"],
+      "label": ["string"],
+      "labelAlign": ["'top'", "'left'", "'bottom'", "'right'"],
+      "labelCls": ["string"],
+      "labelMinWidth": ["number", "string"],
+      "labelTextAlign": ["'top'", "'right'", "'bottom'", "'left'"],
+      "labelWidth": ["number", "string"],
+      "labelWrap": ["boolean"],
+      "left": ["number", "string"],
+      "listeners": ["object"],
+      "margin": ["number", "string"],
+      "maxHeight": ["number", "string"],
+      "maxWidth": ["number", "string"],
+      "minHeight": ["number", "string"],
+      "minWidth": ["number", "string"],
+      "modal": ["boolean"],
+      "modelValidation": ["boolean"],
+      "name": ["string"],
+      "nameable": ["boolean"],
+      "padding": ["number", "string"],
+      "plugins": ["array", "Ext.enums.Plugin", "object", "Ext.plugin.Abstract"],
+      "publishes": ["string", "string[]", "object"],
+      "record": ["Ext.data.Model"],
+      "reference": ["string"],
+      "relative": ["boolean"],
+      "renderTo": ["Ext.dom.Element"],
+      "required": ["boolean"],
+      "requiredMessage": ["string"],
+      "right": ["number", "string"],
+      "ripple": ["boolean", "object", "string"],
+      "scrollable": ["boolean", "string", "object"],
+      "session": ["boolean", "object", "Ext.data.Session"],
+      "shadow": ["boolean"],
+      "shareableName": ["boolean"],
+      "shim": ["boolean"],
+      "showAnimation": ["string", "mixed"],
+      "sideError": ["string"],
+      "stateful": ["boolean", "object", "string[]"],
+      "statefulDefaults": ["object", "string[]"],
+      "stateId": ["string"],
+      "style": ["string", "object"],
+      "tabIndex": ["number"],
+      "tipError": ["string"],
+      "titleError": ["string"],
+      "toFrontOnShow": ["boolean"],
+      "tooltip": ["string", "object"],
+      "top": ["number", "string"],
+      "touchAction": ["object"],
+      "tpl": ["string", "string[]", "Ext.Template", "Ext.XTemplate[]"],
+      "tplWriteMode": ["string"],
+      "translatable": ["object"],
+      "twoWayBindable": ["string", "string[]", "object"],
+      "ui": ["string", "string[]"],
+      "underError": ["string"],
+      "userCls": ["string", "string[]"],
+      "userSelectable": ["boolean", "string", "object"],
+      "validateDisabled": ["boolean"],
+      "validationMessage": ["string"],
+      "validators": ["mixed"],
+      "value": ["mixed"],
+      "viewModel": ["string", "object", "Ext.app.ViewModel"],
+      "weight": ["number"],
+      "width": ["number", "string"],
+      "x": ["number"],
+      "xtype": ["string"],
+      "y": ["number"],
+      "zIndex": ["number"],
       "platformConfig": "Object",
       "responsiveConfig": "Object",
       "align": "Obyect",
@@ -210,6 +212,9 @@ function (_ExtBase) {
     }, {
       name: 'destroy',
       parameters: ''
+    }, {
+      name: 'dirtychange',
+      parameters: 'field,dirty'
     }, {
       name: 'disabledchange',
       parameters: 'sender,value,oldValue'
@@ -395,6 +400,11 @@ function (_ExtBase) {
         return this.ext.addPlugin(plugin);
       }
     }, {
+      name: 'adjustChildDirtyCount',
+      "function": function _function(dirty) {
+        return this.ext.adjustChildDirtyCount(dirty);
+      }
+    }, {
       name: 'afterEdit',
       "function": function _function() {
         return this.ext.afterEdit();
@@ -458,6 +468,11 @@ function (_ExtBase) {
       name: 'beforeInitialize',
       "function": function _function() {
         return this.ext.beforeInitialize();
+      }
+    }, {
+      name: 'beginSyncChildDirty',
+      "function": function _function() {
+        return this.ext.beginSyncChildDirty();
       }
     }, {
       name: 'blur',
@@ -615,9 +630,19 @@ function (_ExtBase) {
         return this.ext.findPlugin(type);
       }
     }, {
+      name: 'finishSyncChildDirty',
+      "function": function _function() {
+        return this.ext.finishSyncChildDirty();
+      }
+    }, {
       name: 'fireAction',
       "function": function _function(eventName, args, fn, scope, options, order) {
         return this.ext.fireAction(eventName, args, fn, scope, options, order);
+      }
+    }, {
+      name: 'fireDirtyChange',
+      "function": function _function() {
+        return this.ext.fireDirtyChange();
       }
     }, {
       name: 'fireEvent',
@@ -633,6 +658,11 @@ function (_ExtBase) {
       name: 'fireEventedAction',
       "function": function _function(eventName, args, fn, scope, fnArgs) {
         return this.ext.fireEventedAction(eventName, args, fn, scope, fnArgs);
+      }
+    }, {
+      name: 'fixDirtyState',
+      "function": function _function() {
+        return this.ext.fixDirtyState();
       }
     }, {
       name: 'focus',
@@ -745,6 +775,11 @@ function (_ExtBase) {
         return this.ext.getPlugin(id);
       }
     }, {
+      name: 'getRawValue',
+      "function": function _function() {
+        return this.ext.getRawValue();
+      }
+    }, {
       name: 'getRefOwner',
       "function": function _function() {
         return this.ext.getRefOwner();
@@ -788,6 +823,11 @@ function (_ExtBase) {
       name: 'handleBlurEvent',
       "function": function _function(info) {
         return this.ext.handleBlurEvent(info);
+      }
+    }, {
+      name: 'handleFieldDefaults',
+      "function": function _function() {
+        return this.ext.handleFieldDefaults();
       }
     }, {
       name: 'handleFocusEvent',
@@ -966,8 +1006,8 @@ function (_ExtBase) {
       }
     }, {
       name: 'isSuspended',
-      "function": function _function() {
-        return this.ext.isSuspended;
+      "function": function _function(event) {
+        return this.ext.isSuspended(event);
       }
     }, {
       name: 'isSyncing',
@@ -1160,9 +1200,19 @@ function (_ExtBase) {
         return this.ext.processElementConfig();
       }
     }, {
+      name: 'processRawValue',
+      "function": function _function(value) {
+        return this.ext.processRawValue(value);
+      }
+    }, {
       name: 'publishState',
       "function": function _function(property, value) {
         return this.ext.publishState(property, value);
+      }
+    }, {
+      name: 'rawToValue',
+      "function": function _function(rawValue) {
+        return this.ext.rawToValue(rawValue);
       }
     }, {
       name: 'readStateObject',
@@ -1375,6 +1425,11 @@ function (_ExtBase) {
         return this.ext.toggleInvalidCls(hasError);
       }
     }, {
+      name: 'transformRawValue',
+      "function": function _function(value) {
+        return this.ext.transformRawValue(value);
+      }
+    }, {
       name: 'transformStatefulConfig',
       "function": function _function(instanceConfig, configurator) {
         return this.ext.transformStatefulConfig(instanceConfig, configurator);
@@ -1458,6 +1513,14 @@ function (_ExtBase) {
   };
 
   _createClass(ExtFieldComponent, [{
+    key: "alignSelf",
+    get: function get() {
+      return this.getAttribute('alignSelf');
+    },
+    set: function set(alignSelf) {
+      this.setAttribute('alignSelf', alignSelf);
+    }
+  }, {
     key: "alwaysOnTop",
     get: function get() {
       return this.getAttribute('alwaysOnTop');
@@ -1546,6 +1609,14 @@ function (_ExtBase) {
       this.setAttribute('bottom', bottom);
     }
   }, {
+    key: "bubbleDirty",
+    get: function get() {
+      return this.getAttribute('bubbleDirty');
+    },
+    set: function set(bubbleDirty) {
+      this.setAttribute('bubbleDirty', bubbleDirty);
+    }
+  }, {
     key: "centered",
     get: function get() {
       return this.getAttribute('centered');
@@ -1600,6 +1671,14 @@ function (_ExtBase) {
     },
     set: function set(defaultListenerScope) {
       this.setAttribute('defaultListenerScope', defaultListenerScope);
+    }
+  }, {
+    key: "dirty",
+    get: function get() {
+      return this.getAttribute('dirty');
+    },
+    set: function set(dirty) {
+      this.setAttribute('dirty', dirty);
     }
   }, {
     key: "disabled",
@@ -2048,14 +2127,6 @@ function (_ExtBase) {
     },
     set: function set(scrollable) {
       this.setAttribute('scrollable', scrollable);
-    }
-  }, {
-    key: "selfAlign",
-    get: function get() {
-      return this.getAttribute('selfAlign');
-    },
-    set: function set(selfAlign) {
-      this.setAttribute('selfAlign', selfAlign);
     }
   }, {
     key: "session",
@@ -2592,6 +2663,14 @@ function (_ExtBase) {
     },
     set: function set(ondestroy) {
       this.setAttribute('ondestroy', ondestroy);
+    }
+  }, {
+    key: "ondirtychange",
+    get: function get() {
+      return this.getAttribute('ondirtychange');
+    },
+    set: function set(ondirtychange) {
+      this.setAttribute('ondirtychange', ondirtychange);
     }
   }, {
     key: "ondisabledchange",

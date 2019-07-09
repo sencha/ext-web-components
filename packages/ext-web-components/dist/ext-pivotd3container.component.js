@@ -12,9 +12,9 @@ function (_ExtBase) {
 
   ExtPivotd3containerComponent.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
     return {
-      "configurator": "Ext.pivot.plugin.Configurator",
-      "drawing": "Ext.Component",
-      "matrix": "Ext.pivot.matrix.Base",
+      "configurator": ["Ext.pivot.plugin.Configurator"],
+      "drawing": ["Ext.Component"],
+      "matrix": ["Ext.pivot.matrix.Base"],
       "platformConfig": "Object",
       "responsiveConfig": "Object",
       "align": "Obyect",

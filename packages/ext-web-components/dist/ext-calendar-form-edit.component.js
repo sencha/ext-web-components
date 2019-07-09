@@ -12,173 +12,179 @@ function (_ExtBase) {
 
   ExtCalendar_form_editComponent.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
     return {
-      "activeChildTabIndex": "Number",
-      "activeItem": "Ext.Component/Object/String/Number",
-      "allDayField": "Object",
-      "allowFocusingDisabledChildren": "Boolean",
-      "alwaysOnTop": "Boolean/Number",
-      "anchor": "Boolean",
-      "anchorPosition": "String",
-      "api": "Object",
-      "ariaAttributes": "Object",
-      "ariaDescribedBy": "String",
-      "ariaLabel": "String",
-      "ariaLabelledBy": "String",
-      "autoDestroy": "Boolean",
-      "autoSize": "Boolean",
-      "axisLock": "Boolean",
-      "baseParams": "Object",
-      "bbar": "Object/Object[]",
-      "bind": "Object/String",
-      "bodyBorder": "Boolean",
-      "bodyPadding": "Number/Boolean/String",
-      "bodyStyle": "String/Object",
-      "border": "Boolean",
-      "bottom": "Number/String",
-      "buttonAlign": "String",
-      "buttons": "Object/Ext.Button[]",
-      "buttonToolbar": "Object/Ext.Toolbar",
-      "calendarField": "Object",
-      "cancelButton": "Object",
-      "cardSwitchAnimation": "String/Object/Boolean",
-      "centered": "Boolean",
-      "closable": "Boolean",
-      "closeAction": "String",
-      "closeToolText": "String",
-      "cls": "String/String[]",
-      "collapsed": "Boolean",
-      "collapsible": "'top'/'right'/'bottom'/'left'/Boolean/Object",
-      "constrainAlign": "String/Ext.util.Region/Ext.dom.Element",
-      "contentEl": "Ext.dom.Element/HTMLElement/String",
-      "control": "Object",
-      "controller": "String/Object/Ext.app.ViewController",
-      "data": "Object",
-      "defaultEndTime": "Number[]",
-      "defaultFocus": "String",
-      "defaultListenerScope": "Boolean",
-      "defaults": "Object",
-      "defaultStartTime": "Number[]",
-      "defaultToolWeights": "Object",
-      "defaultType": "String",
-      "descriptionField": "Object",
-      "disabled": "Boolean",
-      "displayed": "Boolean",
-      "docked": "String",
-      "draggable": "Boolean/Object/Ext.drag.Source",
-      "dropButton": "Object",
-      "enableSubmissionForm": "Boolean",
-      "enctype": "String",
-      "endDateField": "Object",
-      "endTimeField": "Object",
-      "event": "Ext.calendar.model.EventBase",
-      "fieldSeparators": "Boolean",
-      "flex": "Number/String/Object",
-      "floated": "Boolean",
-      "focusableContainer": "Boolean",
-      "focusCls": "String",
-      "fullscreen": "Boolean",
-      "header": "Boolean/Object",
-      "headerPosition": "'top'/'right'/'bottom'/'left'",
-      "height": "Number/String",
-      "hidden": "Boolean",
-      "hideAnimation": "String/Mixed",
-      "hideMode": "'clip'/'display'/'offsets'/'opacity'/'visibility'",
-      "hideOnMaskTap": "Boolean",
-      "html": "String/Ext.dom.Element/HTMLElement",
-      "icon": "String",
-      "iconAlign": "'top'/'right'/'bottom'/'left'",
-      "iconCls": "String",
-      "id": "String",
-      "inactiveChildTabIndex": "Number",
-      "innerCls": "String",
-      "inputBorders": "Boolean",
-      "instanceCls": "String/String[]",
-      "itemId": "String",
-      "items": "Array/Object",
-      "keyMap": "Object",
-      "keyMapEnabled": "Boolean",
-      "keyMapTarget": "String",
-      "layout": "Object/String",
-      "lbar": "Object/Object[]",
-      "left": "Number/String",
-      "listeners": "Object",
-      "manageBorders": "Boolean",
-      "margin": "Number/String",
-      "masked": "Boolean/String/Object/Ext.Mask/Ext.LoadMask",
-      "maxHeight": "Number/String",
-      "maxWidth": "Number/String",
-      "method": "String",
-      "minButtonWidth": "Number",
-      "minHeight": "Number/String",
-      "minWidth": "Number/String",
-      "modal": "Boolean",
-      "modelValidation": "Boolean",
-      "multipartDetection": "Boolean",
-      "name": "String",
-      "nameable": "Boolean",
-      "nameHolder": "Boolean",
-      "padding": "Number/String",
-      "paramOrder": "String/String[]",
-      "paramsAsHash": "Boolean",
-      "plugins": "Array/Ext.enums.Plugin/Object/Ext.plugin.Abstract",
-      "publishes": "String/String[]/Object",
-      "rbar": "Object/Object[]",
-      "record": "Ext.data.Model",
-      "reference": "String",
-      "referenceHolder": "Boolean",
-      "relative": "Boolean",
-      "renderTo": "Ext.dom.Element",
-      "resetFocusPosition": "Boolean",
-      "resizable": "Object",
-      "right": "Number/String",
-      "ripple": "Boolean/Object/String",
-      "saveButton": "Object",
-      "scrollable": "Boolean/String/Object",
-      "selfAlign": "String",
-      "session": "Boolean/Object/Ext.data.Session",
-      "shadow": "Boolean",
-      "shareableName": "Boolean",
-      "shim": "Boolean",
-      "showAnimation": "String/Mixed",
-      "standardButtons": "Object",
-      "standardSubmit": "Boolean",
-      "startDateField": "Object",
-      "startTimeField": "Object",
-      "stateful": "Boolean/Object/String[]",
-      "statefulDefaults": "Object/String[]",
-      "stateId": "String",
-      "style": "String/Object",
-      "submitOnAction": "Object",
-      "tabIndex": "Number",
-      "tbar": "Object/Object[]",
-      "timeout": "Number",
-      "title": "String",
-      "titleAlign": "'left'/'center'/'right'",
-      "titleField": "Object",
-      "toFrontOnShow": "Boolean",
-      "toolDefaults": "Object",
-      "tools": "Ext.Tool[]/Object/Object[]",
-      "tooltip": "String/Object",
-      "top": "Number/String",
-      "touchAction": "Object",
-      "tpl": "String/String[]/Ext.Template/Ext.XTemplate[]",
-      "tplWriteMode": "String",
-      "trackResetOnLoad": "Boolean",
-      "translatable": "Object",
-      "twoWayBindable": "String/String[]/Object",
-      "ui": "String/String[]",
-      "url": "String",
-      "userCls": "String/String[]",
-      "userSelectable": "Boolean/String/Object",
-      "view": "Ext.calendar.view.Base",
-      "viewModel": "String/Object/Ext.app.ViewModel",
-      "weight": "Number",
-      "weighted": "Boolean",
-      "width": "Number/String",
-      "x": "Number",
-      "xtype": "String",
-      "y": "Number",
-      "zIndex": "Number",
+      "activeChildTabIndex": ["number"],
+      "activeItem": ["Ext.Component", "object", "string", "number"],
+      "alignSelf": ["string"],
+      "allDayField": ["object"],
+      "allowFocusingDisabledChildren": ["boolean"],
+      "alwaysOnTop": ["boolean", "number"],
+      "anchor": ["boolean"],
+      "anchorPosition": ["string"],
+      "api": ["object"],
+      "ariaAttributes": ["object"],
+      "ariaDescribedBy": ["string"],
+      "ariaLabel": ["string"],
+      "ariaLabelledBy": ["string"],
+      "autoDestroy": ["boolean"],
+      "autoSize": ["boolean"],
+      "axisLock": ["boolean"],
+      "baseParams": ["object"],
+      "bbar": ["object", "object[]"],
+      "bind": ["object", "string"],
+      "bodyBorder": ["boolean"],
+      "bodyCls": ["string", "string[]"],
+      "bodyPadding": ["number", "boolean", "string"],
+      "bodyStyle": ["string", "object"],
+      "border": ["boolean"],
+      "bottom": ["number", "string"],
+      "bubbleDirty": ["boolean"],
+      "buttonAlign": ["string"],
+      "buttons": ["object", "Ext.Button[]"],
+      "buttonToolbar": ["object", "Ext.Toolbar"],
+      "calendarField": ["object"],
+      "cancelButton": ["object"],
+      "cardSwitchAnimation": ["string", "object", "boolean"],
+      "centered": ["boolean"],
+      "closable": ["boolean"],
+      "closeAction": ["string"],
+      "closeToolText": ["string"],
+      "cls": ["string", "string[]"],
+      "collapsed": ["boolean"],
+      "collapsible": ["'top'", "'right'", "'bottom'", "'left'", "boolean", "object"],
+      "constrainAlign": ["string", "Ext.util.Region", "Ext.dom.Element"],
+      "contentEl": ["Ext.dom.Element", "htmlelement", "string"],
+      "control": ["object"],
+      "controller": ["string", "object", "Ext.app.ViewController"],
+      "data": ["object"],
+      "defaultEndTime": ["number[]"],
+      "defaultFocus": ["string"],
+      "defaultListenerScope": ["boolean"],
+      "defaults": ["object"],
+      "defaultStartTime": ["number[]"],
+      "defaultToolWeights": ["object"],
+      "defaultType": ["string"],
+      "descriptionField": ["object"],
+      "dirty": ["boolean"],
+      "disabled": ["boolean"],
+      "displayed": ["boolean"],
+      "docked": ["string"],
+      "draggable": ["boolean", "object", "Ext.drag.Source"],
+      "dropButton": ["object"],
+      "enableSubmissionForm": ["boolean"],
+      "enctype": ["string"],
+      "endDateField": ["object"],
+      "endTimeField": ["object"],
+      "event": ["Ext.calendar.model.EventBase"],
+      "fieldDefaults": ["object"],
+      "fieldSeparators": ["boolean"],
+      "flex": ["number", "string", "object"],
+      "floated": ["boolean"],
+      "focusableContainer": ["boolean"],
+      "focusCls": ["string"],
+      "fullscreen": ["boolean"],
+      "header": ["boolean", "object"],
+      "headerPosition": ["'top'", "'right'", "'bottom'", "'left'"],
+      "height": ["number", "string"],
+      "hidden": ["boolean"],
+      "hideAnimation": ["string", "mixed"],
+      "hideMode": ["'clip'", "'display'", "'offsets'", "'opacity'", "'visibility'"],
+      "hideOnMaskTap": ["boolean"],
+      "html": ["string", "Ext.dom.Element", "htmlelement"],
+      "icon": ["string"],
+      "iconAlign": ["'top'", "'right'", "'bottom'", "'left'"],
+      "iconCls": ["string"],
+      "id": ["string"],
+      "inactiveChildTabIndex": ["number"],
+      "innerCls": ["string"],
+      "inputBorders": ["boolean"],
+      "instanceCls": ["string", "string[]"],
+      "itemId": ["string"],
+      "items": ["array", "object"],
+      "jsonSubmit": ["boolean"],
+      "keyMap": ["object"],
+      "keyMapEnabled": ["boolean"],
+      "keyMapTarget": ["string"],
+      "layout": ["object", "string"],
+      "lbar": ["object", "object[]"],
+      "left": ["number", "string"],
+      "listeners": ["object"],
+      "manageBorders": ["boolean"],
+      "margin": ["number", "string"],
+      "masked": ["boolean", "string", "object", "Ext.Mask", "Ext.LoadMask"],
+      "maxHeight": ["number", "string"],
+      "maxWidth": ["number", "string"],
+      "method": ["string"],
+      "minButtonWidth": ["number"],
+      "minHeight": ["number", "string"],
+      "minWidth": ["number", "string"],
+      "modal": ["boolean"],
+      "modelValidation": ["boolean"],
+      "multipartDetection": ["boolean"],
+      "name": ["string"],
+      "nameable": ["boolean"],
+      "nameHolder": ["boolean"],
+      "padding": ["number", "string"],
+      "paramOrder": ["string", "string[]"],
+      "paramsAsHash": ["boolean"],
+      "plugins": ["array", "Ext.enums.Plugin", "object", "Ext.plugin.Abstract"],
+      "publishes": ["string", "string[]", "object"],
+      "rbar": ["object", "object[]"],
+      "record": ["Ext.data.Model"],
+      "reference": ["string"],
+      "referenceHolder": ["boolean"],
+      "relative": ["boolean"],
+      "renderTo": ["Ext.dom.Element"],
+      "resetFocusPosition": ["boolean"],
+      "resizable": ["object"],
+      "right": ["number", "string"],
+      "ripple": ["boolean", "object", "string"],
+      "saveButton": ["object"],
+      "scrollable": ["boolean", "string", "object"],
+      "session": ["boolean", "object", "Ext.data.Session"],
+      "shadow": ["boolean"],
+      "shareableName": ["boolean"],
+      "shim": ["boolean"],
+      "showAnimation": ["string", "mixed"],
+      "standardButtons": ["object"],
+      "standardSubmit": ["boolean"],
+      "startDateField": ["object"],
+      "startTimeField": ["object"],
+      "stateful": ["boolean", "object", "string[]"],
+      "statefulDefaults": ["object", "string[]"],
+      "stateId": ["string"],
+      "style": ["string", "object"],
+      "submitOnAction": ["object"],
+      "tabIndex": ["number"],
+      "tbar": ["object", "object[]"],
+      "timeout": ["number"],
+      "title": ["string"],
+      "titleAlign": ["'left'", "'center'", "'right'"],
+      "titleCollapse": ["boolean"],
+      "titleField": ["object"],
+      "toFrontOnShow": ["boolean"],
+      "toolDefaults": ["object"],
+      "tools": ["Ext.Tool[]", "object", "object[]"],
+      "tooltip": ["string", "object"],
+      "top": ["number", "string"],
+      "touchAction": ["object"],
+      "tpl": ["string", "string[]", "Ext.Template", "Ext.XTemplate[]"],
+      "tplWriteMode": ["string"],
+      "trackResetOnLoad": ["boolean"],
+      "translatable": ["object"],
+      "twoWayBindable": ["string", "string[]", "object"],
+      "ui": ["string", "string[]"],
+      "url": ["string"],
+      "userCls": ["string", "string[]"],
+      "userSelectable": ["boolean", "string", "object"],
+      "view": ["Ext.calendar.view.Base"],
+      "viewModel": ["string", "object", "Ext.app.ViewModel"],
+      "weight": ["number"],
+      "weighted": ["boolean"],
+      "width": ["number", "string"],
+      "x": ["number"],
+      "xtype": ["string"],
+      "y": ["number"],
+      "zIndex": ["number"],
       "platformConfig": "Object",
       "responsiveConfig": "Object",
       "align": "Obyect",
@@ -293,6 +299,9 @@ function (_ExtBase) {
     }, {
       name: 'destroy',
       parameters: ''
+    }, {
+      name: 'dirtychange',
+      parameters: 'calendar-form-edit,dirty'
     }, {
       name: 'disabledchange',
       parameters: 'sender,value,oldValue'
@@ -523,6 +532,11 @@ function (_ExtBase) {
         return this.ext.addTool(tool);
       }
     }, {
+      name: 'adjustChildDirtyCount',
+      "function": function _function(dirty) {
+        return this.ext.adjustChildDirtyCount(dirty);
+      }
+    }, {
       name: 'afterEdit',
       "function": function _function() {
         return this.ext.afterEdit();
@@ -636,6 +650,11 @@ function (_ExtBase) {
       name: 'beforeStandardSubmit',
       "function": function _function(form, options) {
         return this.ext.beforeStandardSubmit(form, options);
+      }
+    }, {
+      name: 'beginSyncChildDirty',
+      "function": function _function() {
+        return this.ext.beginSyncChildDirty();
       }
     }, {
       name: 'blur',
@@ -838,6 +857,11 @@ function (_ExtBase) {
         return this.ext.findPlugin(type);
       }
     }, {
+      name: 'finishSyncChildDirty',
+      "function": function _function() {
+        return this.ext.finishSyncChildDirty();
+      }
+    }, {
       name: 'fireAction',
       "function": function _function(eventName, args, fn, scope, options, order) {
         return this.ext.fireAction(eventName, args, fn, scope, options, order);
@@ -846,6 +870,11 @@ function (_ExtBase) {
       name: 'fireCancel',
       "function": function _function() {
         return this.ext.fireCancel();
+      }
+    }, {
+      name: 'fireDirtyChange',
+      "function": function _function() {
+        return this.ext.fireDirtyChange();
       }
     }, {
       name: 'fireDrop',
@@ -871,6 +900,11 @@ function (_ExtBase) {
       name: 'fireSave',
       "function": function _function(data) {
         return this.ext.fireSave(data);
+      }
+    }, {
+      name: 'fixDirtyState',
+      "function": function _function() {
+        return this.ext.fixDirtyState();
       }
     }, {
       name: 'focus',
@@ -1339,8 +1373,8 @@ function (_ExtBase) {
       }
     }, {
       name: 'isSuspended',
-      "function": function _function() {
-        return this.ext.isSuspended;
+      "function": function _function(event) {
+        return this.ext.isSuspended(event);
       }
     }, {
       name: 'isSyncing',
@@ -1559,8 +1593,8 @@ function (_ExtBase) {
       }
     }, {
       name: 'onSubmit',
-      "function": function _function() {
-        return this.ext.onSubmit;
+      "function": function _function(event) {
+        return this.ext.onSubmit(event);
       }
     }, {
       name: 'owns',
@@ -1982,6 +2016,14 @@ function (_ExtBase) {
       this.setAttribute('activeItem', activeItem);
     }
   }, {
+    key: "alignSelf",
+    get: function get() {
+      return this.getAttribute('alignSelf');
+    },
+    set: function set(alignSelf) {
+      this.setAttribute('alignSelf', alignSelf);
+    }
+  }, {
     key: "allDayField",
     get: function get() {
       return this.getAttribute('allDayField');
@@ -2118,6 +2160,14 @@ function (_ExtBase) {
       this.setAttribute('bodyBorder', bodyBorder);
     }
   }, {
+    key: "bodyCls",
+    get: function get() {
+      return this.getAttribute('bodyCls');
+    },
+    set: function set(bodyCls) {
+      this.setAttribute('bodyCls', bodyCls);
+    }
+  }, {
     key: "bodyPadding",
     get: function get() {
       return this.getAttribute('bodyPadding');
@@ -2148,6 +2198,14 @@ function (_ExtBase) {
     },
     set: function set(bottom) {
       this.setAttribute('bottom', bottom);
+    }
+  }, {
+    key: "bubbleDirty",
+    get: function get() {
+      return this.getAttribute('bubbleDirty');
+    },
+    set: function set(bubbleDirty) {
+      this.setAttribute('bubbleDirty', bubbleDirty);
     }
   }, {
     key: "buttonAlign",
@@ -2358,6 +2416,14 @@ function (_ExtBase) {
       this.setAttribute('descriptionField', descriptionField);
     }
   }, {
+    key: "dirty",
+    get: function get() {
+      return this.getAttribute('dirty');
+    },
+    set: function set(dirty) {
+      this.setAttribute('dirty', dirty);
+    }
+  }, {
     key: "disabled",
     get: function get() {
       return this.getAttribute('disabled');
@@ -2436,6 +2502,14 @@ function (_ExtBase) {
     },
     set: function set(event) {
       this.setAttribute('event', event);
+    }
+  }, {
+    key: "fieldDefaults",
+    get: function get() {
+      return this.getAttribute('fieldDefaults');
+    },
+    set: function set(fieldDefaults) {
+      this.setAttribute('fieldDefaults', fieldDefaults);
     }
   }, {
     key: "fieldSeparators",
@@ -2628,6 +2702,14 @@ function (_ExtBase) {
     },
     set: function set(items) {
       this.setAttribute('items', items);
+    }
+  }, {
+    key: "jsonSubmit",
+    get: function get() {
+      return this.getAttribute('jsonSubmit');
+    },
+    set: function set(jsonSubmit) {
+      this.setAttribute('jsonSubmit', jsonSubmit);
     }
   }, {
     key: "keyMap",
@@ -2942,14 +3024,6 @@ function (_ExtBase) {
       this.setAttribute('scrollable', scrollable);
     }
   }, {
-    key: "selfAlign",
-    get: function get() {
-      return this.getAttribute('selfAlign');
-    },
-    set: function set(selfAlign) {
-      this.setAttribute('selfAlign', selfAlign);
-    }
-  }, {
     key: "session",
     get: function get() {
       return this.getAttribute('session');
@@ -3100,6 +3174,14 @@ function (_ExtBase) {
     },
     set: function set(titleAlign) {
       this.setAttribute('titleAlign', titleAlign);
+    }
+  }, {
+    key: "titleCollapse",
+    get: function get() {
+      return this.getAttribute('titleCollapse');
+    },
+    set: function set(titleCollapse) {
+      this.setAttribute('titleCollapse', titleCollapse);
     }
   }, {
     key: "titleField",
@@ -3620,6 +3702,14 @@ function (_ExtBase) {
     },
     set: function set(ondestroy) {
       this.setAttribute('ondestroy', ondestroy);
+    }
+  }, {
+    key: "ondirtychange",
+    get: function get() {
+      return this.getAttribute('ondirtychange');
+    },
+    set: function set(ondirtychange) {
+      this.setAttribute('ondirtychange', ondirtychange);
     }
   }, {
     key: "ondisabledchange",

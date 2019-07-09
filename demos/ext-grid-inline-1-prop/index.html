@@ -7,6 +7,7 @@
     <link href="public/ext.css" rel='stylesheet'/>
 
 <script>
+
 class ExtGrid extends HTMLElement {
     get config() {return this.getAttribute('config')}; 
     set config(val) {if (val) {this.setAttribute('config', val)} else {this.removeAttribute('config')}}
@@ -19,6 +20,7 @@ class ExtGrid extends HTMLElement {
         this.ext = Ext.create(o)
     }
 }
+
 Ext.onReady(function() {
     window.customElements.define('ext-grid', ExtGrid)
 })

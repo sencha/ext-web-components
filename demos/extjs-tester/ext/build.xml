@@ -81,17 +81,10 @@
       fashion
           -pwd=.
           -split=4095
-          -compress
+          
               ext.scss
           ext.css
       
-      then 
-      fs 
-      minify 
-        -yui 
-        -from=ext.js 
-        -to=ext.js
-    
       ]]>
     </x-sencha-command>
   </target>
@@ -101,7 +94,7 @@
       inputFile="ext.scss"
       outputFile="ext.css"
       split="4095"
-      compress="true"
+      compress="false"
       configFile="app.json"
       fork="true"/>
     <x-watch compilerRef="theCompiler" targets="rebuild"/>
