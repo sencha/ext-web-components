@@ -13,26 +13,12 @@ function (_HTMLElement) {
 
   var _proto = ExtBase.prototype;
 
-  _proto.filterProperty2 = function filterProperty2(propertyValue) {
-    try {
-      var opts = [null, undefined, true, false];
-
-      if (opts.includes(parsedProp) || parsedProp === Object(parsedProp)) {
-        return parsedProp;
-      } else {
-        return propertyValue;
-      }
-    } catch (e) {
-      return propertyValue;
-    }
-  };
-
   _proto.filterProperty = function filterProperty(propertyValue) {
     try {
-      var _parsedProp = JSON.parse(propertyValue);
+      var parsedProp = JSON.parse(propertyValue);
 
-      if (_parsedProp === null || _parsedProp === undefined || _parsedProp === true || _parsedProp === false || _parsedProp === Object(_parsedProp)) {
-        return _parsedProp;
+      if (parsedProp === null || parsedProp === undefined || parsedProp === true || parsedProp === false || parsedProp === Object(parsedProp) || !isNaN(parsedProp) && parsedProp !== 0) {
+        return parsedProp;
       } else {
         return propertyValue;
       }
@@ -74,7 +60,7 @@ function (_HTMLElement) {
         this.props.cell.xtype = 'renderercell';
         this.props.cell.renderer = this.renderer;
       }
-    } //mjg fitToParent not working
+    } //mjg fitToParent not working??
 
 
     if (true === this.fitToParent) {
@@ -90,7 +76,7 @@ function (_HTMLElement) {
             var r = functionString.split('.');
             var obj = r[0];
             var func = r[1];
-            this.props[property] = window[obj][func]; //this.props[property] = eval(this[property])
+            this.props[property] = window[obj][func];
           } else {
             this.props[property] = this.filterProperty(this[property]);
           }
@@ -98,7 +84,16 @@ function (_HTMLElement) {
       }
     }
 
-    this.props.listeners = {};
+    this.props.listeners = {}; // for (var i = 0; i < this.attributes.length; i++) {
+    //     var attr = this.attributes.item(i).nodeName;
+    //     if (/^on/.test(attr)) {
+    //     //if (/^on/.test(attr) && attr!='onitemdisclosure') {
+    //         var name = attr.slice(2);
+    //         var result = this.EVENTS.filter(obj => {return obj.name === name});
+    //         this.setEvent(result[0],this.props,this)
+    //     }
+    // }
+
     var me = this;
     this.EVENTS.forEach(function (eventparameter, index, array) {
       me.setEvent(eventparameter, me.props, me);
@@ -109,22 +104,26 @@ function (_HTMLElement) {
       //this.doCreate()
       var me = this;
       me.doCreate();
+      var elem = document.getElementById('theGrid'); //elem.parentNode.removeChild(elem);
+
+      console.log('Ext.application');
       Ext.application({
         name: 'MyEWCApp',
         launch: function launch() {
-          Ext.Viewport.add([me.ext]); // if (window.router) {
-          //   console.log('router.init called')
-          //   window.router.init()
-          //   //new Router(window.routes);
-          // }
+          console.log('Ext.Viewport.add(' + me.ext.xtype + ')');
+          Ext.Viewport.add([me.ext]);
         }
       });
     } else if (this.nodeParentName == 'BODY') {
       var me = this;
-      me.doCreate();
+      me.doCreate(); //console.log('Ext.application')
+      //var elem = document.getElementById('theGrid');
+      //elem.parentNode.removeChild(elem);
+
       Ext.application({
         name: 'MyEWCApp',
         launch: function launch() {
+          //console.log('Ext.Viewport.add(' + me.ext.xtype + ')')
           Ext.Viewport.add([me.ext]);
 
           if (window.router) {
@@ -137,15 +136,15 @@ function (_HTMLElement) {
       this.props.renderTo = this;
       this.doCreate();
     } else {
-      this.doCreate(); //deal with parent
-      //mjgComment console.log('deal with this item to attach to parent')
+      this.doCreate(); //mjgComment console.log('deal with this item to attach to parent')
       //if extParentDefined is true, then this child to parent
       //if extParentDefined is false, add this child to the extChildren array of the parent
 
       if (this.extParentDefined == true) {
         parentCmp = this.parentNode['ext'];
         childCmp = this.ext;
-        var location = null; // console.log('this.parentNode.rawChildren')
+        var location = null; // console.log(parentCmp.xtype)
+        // console.log('this.parentNode.rawChildren')
         // console.dir(this.parentNode)
         // console.dir(this.parentNode.rawChildren)
 
@@ -181,7 +180,8 @@ function (_HTMLElement) {
           } else {
             var par = item.parentNode;
             var cln = par.removeChild(item);
-            var el = Ext.get(cln);
+            var el = Ext.get(cln); //console.log('Ext.create(' + 'widget' + ')')
+
             var ext = Ext.create({
               xtype: 'widget',
               element: el
@@ -221,6 +221,7 @@ function (_HTMLElement) {
         var par = item.parentNode;
         var cln = par.removeChild(item);
         var el = Ext.get(cln);
+        console.log('widget');
         this.ext.insert(i, {
           xtype: 'widget',
           element: el
@@ -228,8 +229,7 @@ function (_HTMLElement) {
       }
     }
 
-    if (this.extChildrenDefined == true || this.extChildrenDefined == false && this.children.length == 0) {
-      //console.log(`ready event for ${this.nodeName}`)
+    if (this.extChildrenDefined == true || this.extChildrenDefined == false && (this.children.length == 0 || this.children.length == 1)) {
       this.dispatchEvent(new CustomEvent('ready', {
         detail: {
           cmp: this.ext
@@ -239,8 +239,9 @@ function (_HTMLElement) {
   };
 
   _proto.doCreate = function doCreate() {
+    this.ext = Ext.create(this.props); //console.log('Ext.create(' + this.ext.xtype + ')')
     //console.dir(this.props)
-    this.ext = Ext.create(this.props);
+    //console.dir(this.ext)
 
     if (this.parentNode.childrenCounter != undefined) {
       this.parentNode.childrenCounter--;
@@ -257,6 +258,7 @@ function (_HTMLElement) {
   };
 
   _proto.addTheChild = function addTheChild(parentCmp, childCmp, location) {
+    //console.log('addTheChild')
     var childxtype = childCmp.xtype;
     var parentxtype = parentCmp.xtype;
 
@@ -268,19 +270,41 @@ function (_HTMLElement) {
     }
 
     if (parentxtype === 'column' || childxtype === 'renderercell') {
+      //      console.dir(parentCmp)
+      //      console.dir(childCmp)
+      parentCmp.setCell(childCmp);
+    } //if (parentxtype === 'column' || childxtype === 'column') {
+
+
+    if (parentCmp.xtype == 'column' && childCmp.xtype == 'column') {
+      //console.log('grouped column child')
+      //console.dir(childCmp)
+      // var cols = parentCmp.getColumns();
+      // cols.push(childCmp)
+      // parentCmp.setColumns(cols);
+      // console.log('cols val')
+      // console.dir(parentCmp.getColumns())
+      //parentCmp.getItems()
+      parentCmp.add(childCmp);
+      console.log('column.add(column)');
       console.dir(parentCmp);
       console.dir(childCmp);
-      parentCmp.setCell(childCmp);
     }
 
     if (parentxtype === 'grid' || parentxtype === 'lockedgrid') {
       if (childxtype === 'column' || childxtype === 'treecolumn' || childxtype === 'textcolumn' || childxtype === 'checkcolumn' || childxtype === 'datecolumn' || childxtype === 'rownumberer' || childxtype === 'numbercolumn' || childxtype === 'booleancolumn') {
         if (location == null) {
-          parentCmp.addColumn(childCmp); //          console.log(`${parentCmp.xtype}.add(${childCmp.xtype})`)
-
+          parentCmp.addColumn(childCmp);
+          console.log(parentCmp.xtype + ".addColumn(" + childCmp.xtype + ")");
           return;
         } else {
-          parentCmp.insertColumn(location, childCmp); //mjgComment console.log(`${parentCmp.xtype}.insert(${location}, ${childCmp.xtype})`)
+          var regCols = 0;
+
+          if (parentCmp.registeredColumns != undefined) {
+            regCols = parentCmp.registeredColumns.length;
+          }
+
+          parentCmp.insertColumn(location + regCols, childCmp); //console.log(`${parentCmp.xtype}.insertColumn(${location}, ${childCmp.xtype})`)
 
           return;
         }
@@ -356,30 +380,6 @@ function (_HTMLElement) {
     console.log(parentCmp);
   };
 
-  _proto.attributeChangedCallback = function attributeChangedCallback(attr, oldVal, newVal) {
-    if (/^on/.test(attr)) {
-      if (newVal) {
-        //mjg check if this event exists for this component
-        this.addEventListener(attr.slice(2), function (event) {
-          var functionString = newVal; //error check for only 1 dot
-
-          var r = functionString.split('.');
-          var obj = r[0];
-          var func = r[1];
-          window[obj][func](event); //eval(newVal + '(event)')
-        });
-      } else {//delete this[attr];
-        //this.removeEventListener(attr.slice(2), this);
-      }
-    } else {
-      if (this.ext === undefined) {} else {
-        //mjg check if this method exists for this component
-        var method = 'set' + attr[0].toUpperCase() + attr.substring(1);
-        this.ext[method](newVal);
-      }
-    }
-  };
-
   _proto.setEvent = function setEvent(eventparameters, o, me) {
     o.listeners[eventparameters.name] = function () {
       var eventname = eventparameters.name; //console.log('in event: ' + eventname + ' ' + o.xtype)
@@ -397,6 +397,33 @@ function (_HTMLElement) {
         detail: event
       }));
     };
+  };
+
+  _proto.attributeChangedCallback = function attributeChangedCallback(attr, oldVal, newVal) {
+    if (/^on/.test(attr)) {
+      if (newVal) {
+        this.addEventListener(attr.slice(2), function (event) {
+          var functionString = newVal; // todo: error check for only 1 dot
+
+          var r = functionString.split('.');
+          var obj = r[0];
+          var func = r[1];
+
+          if (obj && func) {
+            window[obj][func](event);
+          }
+        });
+      } else {//delete this[attr];
+        //this.removeEventListener(attr.slice(2), this);
+      }
+    } else {
+      if (this.ext === undefined) {//mjg ??
+      } else {
+        //mjg check if this method exists for this component
+        var method = 'set' + attr[0].toUpperCase() + attr.substring(1);
+        this.ext[method](newVal);
+      }
+    }
   };
 
   _proto.disconnectedCallback = function disconnectedCallback() {
