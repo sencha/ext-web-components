@@ -1,0 +1,14 @@
+<ext-container padding="10" layout="center" flex="1" height="100%">
+  <ext-tree
+    onready="treereorder.onTreeReady"
+    shadow="true"
+    title="Files"
+    height="400"
+    width="350"
+  >
+    <ext-toolbar docked="top" onready="treereorder.toolbarReady">
+      <ext-button text="Expand All" handler="treereorder.onExpandAllClick"></ext-button>
+      <ext-button text="Collapse All" handler="treereorder.onCollapseAllClick"></ext-button>
+    </ext-toolbar>
+  </ext-tree>
+</ext-container>

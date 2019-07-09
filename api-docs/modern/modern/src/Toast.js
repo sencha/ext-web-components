@@ -9,28 +9,32 @@
  *
  * This will create one reusable toast container and content will be swapped out as
  * toast messages are queued or displayed.
- *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react';
- *     import { ExtReact, Container, Button } from '@extjs/ext-react';
- *
- *     Ext.require('Ext.Toast');
- *
- *     export default class MyExample extends Component {
- *         render() {
- *             return (
- *                 <ExtReact>
- *                     <Container layout={{type: 'vbox', align: 'left'}}>
- *                         <Button
+ *     ```HTML
+ *      @example({tab: 1})
+ *      <ext-container layout='{"type": "vbox", "align": "left"}'>
+ *                         <ext-button
  *                             ui="action"
- *                             handler={() => Ext.toast('Hello World!')}
+ *                             ontap="toast.onTap"
  *                             text="Show Toast"
  *                         />
- *                     </Container>
- *                 </ExtReact>
- *             )
- *         }
- *     }
+ *                     </ext-container>
+ *      
+ *     ```
+ *     ```javascript
+ *     @example({tab: 2, packages: ['ext-web-components']})
+ *
+ *     import '@sencha/ext-web-components/dist/ext-button.component';
+ *     import '@sencha/ext-web-components/dist/ext-container.component';
+ * 
+ *     Ext.require('Ext.Toast');
+ * 
+ *     export default class ToastComponent {
+ *       onTap = () => {
+ *          Ext.toast('Hello World!')
+ *        }
+ *      }
+ *     ```
+ 
  */
 
 /**

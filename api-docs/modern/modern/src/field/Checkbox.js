@@ -9,27 +9,29 @@
  * {@link Ext.field.Field field} and is usually found in the context of a form:
  *
  * ## Example
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-container layout="center">
+ *          <ext-formpanel
+ *              shadow="true"
+ *              layout='{"type": "vbox", align: "left"}'
+ *           >  
+ *              <ext-checkboxfield boxLabel="Unchecked"></ext-checkboxfield>
+ *              <ext-checkboxfield boxLabel="Checked" checked></ext-checkboxfield>
+ *              <ext-checkboxfield boxLabel="Disabled" disabled></ext-checkboxfield>
+ *              <ext-checkboxfield boxLabel="Disabled (checked)" disabled checked></ext-checkboxfield>
+ *          </ext-formpanel>
+ *      </ext-container>
+ *      ```
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-container.component';
+ *      import '@sencha/ext-web-components/dist/ext-formpanel.component';
+ *      import '@sencha/ext-web-components/dist/ext-checkboxfield.component';
+ * 
+ *      export default class CheckBoxFieldComponent {}
+ *     ```
  *
- *     @example packages=[reactor]
- *     import React, { Component } from 'react';
- *     import { ExtReact, FormPanel, Container, CheckBoxField } from '@extjs/ext-react';
- *
- *     export default class MyExample extends Component {
- *         render() {
- *             return (
- *                 <ExtReact>
- *                     <Container layout="center">
- *                         <FormPanel shadow layout={{type: 'vbox', align: 'left'}}>
- *                             <CheckBoxField boxLabel="Unchecked"/>
- *                             <CheckBoxField boxLabel="Checked" checked/>
- *                             <CheckBoxField boxLabel="Disabled" disabled/>
- *                             <CheckBoxField boxLabel="Disabled (checked)" disabled checked/>
- *                         </FormPanel>
- *                     </Container>
- *                 </ExtReact>
- *             )
- *         }
- *     }
  */
 
 /**

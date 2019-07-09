@@ -9,42 +9,43 @@
  *
  * Here is an example showing multiple button presentations.
  *
- *      @example packages=[reactor]
- *      import React, { Component } from 'react';
- *      import { ExtReact, Container, Button } from '@extjs/ext-react';
+ *      ```HTML
+ *      @example({tab: 1})
+ *      <ext-container padding="10">
+ *          <ext-button 
+ *              text="Say Hello" 
+ *              handler="button.sayHello"
+ *              ui="action raised" 
+ *          >
+ *          <ext-button>
+ *          <ext-button 
+ *              text="Say Goodbye" 
+ *              handler="button.sayGoodbye"
+ *              ui="action raised" 
+ *          >
+ *          <ext-button>
+ *          <ext-container onready="button.resultContainerReady"></ext-container>
+ *      </ext-container>
+ *      ```
+ *      ```javascript
+ *      @example({tab: 2, packages: ['ext-web-components']})
+ *      import '@sencha/ext-web-components/dist/ext-button.component';
+ *      import '@sencha/ext-web-components/dist/ext-container.component';
  * 
- *      export default class MyExample extends Component {
- *
- *          state = { message: null }
- * 
- *          render() {
- *              return (
- *                  <ExtReact>
- *                      <Container padding="10">
- *                          <Button 
- *                              text="Say Hello" 
- *                              handler={this.sayHello}
- *                              ui="action raised" 
- *                          />
- *                          <Button 
- *                              text="Say Goodbye" 
- *                              handler={this.sayGoodbye}
- *                          />
- *                          { this.state.message }
- *                      </Container>
- *                  </ExtReact>
- *              )
+ *      export default class ButtonComponent {
+ *          resultContainerReady(event) {
+ *              this.resultContainer = event.detail.cmp;
  *          }
  * 
  *          sayHello = () => {
- *              this.setState({ message: 'Hello world!' });  
+ *              this.resultContainer.setHtml('Hello world!');
  *          }
  * 
  *          sayGoodbye = () => {
- *              this.setState({ message: 'Goodbye cruel world.' });  
+ *              this.resultContainer.setHtml('Goodbye cruel world.');
  *          }
- * 
- *     }
+ *      }
+ *      ```
  *
  * ## Icons
  *
