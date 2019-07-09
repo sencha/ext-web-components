@@ -12,196 +12,202 @@ function (_ExtBase) {
 
   ExtPivotgridComponent.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
     return {
-      "activeChildTabIndex": "Number",
-      "activeItem": "Ext.Component/Object/String/Number",
-      "allowFocusingDisabledChildren": "Boolean",
-      "alwaysOnTop": "Boolean/Number",
-      "ariaAttributes": "Object",
-      "ariaDescribedBy": "String",
-      "ariaLabel": "String",
-      "ariaLabelledBy": "String",
-      "associatedData": "Boolean/Object",
-      "autoDestroy": "Boolean",
-      "autoSize": "Boolean",
-      "axisLock": "Boolean",
-      "bind": "Object/String",
-      "border": "Boolean",
-      "bottom": "Number/String",
-      "bufferSize": "Number",
-      "cardSwitchAnimation": "String/Object/Boolean",
-      "centered": "Boolean",
-      "cls": "String/String[]",
-      "clsGrandTotal": "String",
-      "clsGroupTotal": "String",
-      "columnLines": "Boolean",
-      "columnMenu": "Object",
-      "columnResize": "Boolean",
-      "columns": "Ext.grid.column.Column[]",
-      "columnsMenuItem": "Ext.grid.menu.Columns",
-      "constrainAlign": "String/Ext.util.Region/Ext.dom.Element",
-      "contentEl": "Ext.dom.Element/HTMLElement/String",
-      "control": "Object",
-      "controller": "String/Object/Ext.app.ViewController",
-      "data": "Object",
-      "defaultFocus": "String",
-      "defaultListenerScope": "Boolean",
-      "defaults": "Object",
-      "defaultType": "Ext.enums.Widget",
-      "deferEmptyText": "Boolean",
-      "deselectOnContainerClick": "Boolean",
-      "disabled": "Boolean",
-      "disableSelection": "Boolean",
-      "disclosureProperty": "String",
-      "displayed": "Boolean",
-      "docked": "String",
-      "draggable": "Boolean/Object/Ext.drag.Source",
-      "emptyItemText": "String",
-      "emptyState": "Boolean",
-      "emptyText": "String/Boolean",
-      "emptyTextDefaults": "Object/Ext.Component",
-      "emptyTextProperty": "String",
-      "enableColumnSort": "Boolean",
-      "enableLoadMask": "Boolean",
-      "flex": "Number/String/Object",
-      "floated": "Boolean",
-      "focusableContainer": "Boolean",
-      "focusCls": "String",
-      "fullscreen": "Boolean",
-      "grouped": "Boolean",
-      "groupFooter": "Object/Ext.dataview.ItemHeader",
-      "groupHeader": "Object/Ext.dataview.ItemHeader",
-      "height": "Number/String",
-      "hidden": "Boolean",
-      "hideAnimation": "String/Mixed",
-      "hideHeaders": "Boolean",
-      "hideMode": "'clip'/'display'/'offsets'/'opacity'/'visibility'",
-      "hideOnMaskTap": "Boolean",
-      "hideScrollbar": "Boolean",
-      "horizontalOverflow": "any",
-      "html": "String/Ext.dom.Element/HTMLElement",
-      "id": "String",
-      "inactiveChildTabIndex": "Number",
-      "indexBar": "Boolean/Object/Ext.dataview.IndexBar",
-      "infinite": "Boolean",
-      "inline": "Boolean/Object",
-      "innerCls": "String",
-      "innerCtHeight": "any",
-      "innerWidth": "any",
-      "instanceCls": "String/String[]",
-      "itemButtonMode": "boolean",
-      "itemCls": "String",
-      "itemConfig": "Object/Ext.grid.Row",
-      "itemContentCls": "String",
-      "itemDataMap": "Object",
-      "itemId": "String",
-      "itemInnerCls": "String",
-      "itemRipple": "Boolean/Object",
-      "items": "Array/Object",
-      "itemsFocusable": "any",
-      "itemTpl": "String/String[]/Ext.XTemplate",
-      "keyMap": "Object",
-      "keyMapEnabled": "Boolean",
-      "keyMapTarget": "String",
-      "layout": "Object/String",
-      "left": "Number/String",
-      "leftAxisCellConfig": "Object",
-      "listeners": "Object",
-      "loadingHeight": "Number",
-      "loadingText": "String/Boolean",
-      "maintainChildNodes": "Boolean",
-      "manageBorders": "Boolean",
-      "margin": "Number/String",
-      "markDirty": "Boolean",
-      "masked": "Boolean/String/Object/Ext.Mask/Ext.LoadMask",
-      "matrix": "Ext.pivot.matrix.Base",
-      "maxHeight": "Number/String",
-      "maxItemCache": "Number",
-      "maxWidth": "Number/String",
-      "minHeight": "Number/String",
-      "minimumBufferDistance": "Number",
-      "minWidth": "Number/String",
-      "modal": "Boolean",
-      "modelValidation": "Boolean",
-      "multiColumnSort": "Boolean",
-      "name": "String",
-      "nameable": "Boolean",
-      "nameHolder": "Boolean",
-      "onItemDisclosure": "Boolean/Function/String/Object",
-      "padding": "Number/String",
-      "pinFooters": "Boolean",
-      "pinHeaders": "Boolean",
-      "pinnedFooter": "Object",
-      "pinnedFooterHeight": "any",
-      "pinnedHeader": "Object",
-      "pinnedHeaderHeight": "any",
-      "plugins": "Array/Ext.enums.Plugin/Object/Ext.plugin.Abstract",
-      "pressedDelay": "Number",
-      "preventSelectionOnDisclose": "Boolean",
-      "preventSelectionOnTool": "Boolean",
-      "publishes": "String/String[]/Object",
-      "record": "any",
-      "reference": "String",
-      "referenceHolder": "Boolean",
-      "relative": "Boolean",
-      "renderTo": "Ext.dom.Element",
-      "reserveScrollbar": "Boolean",
-      "resetFocusPosition": "Boolean",
-      "right": "Number/String",
-      "ripple": "Boolean/Object/String",
-      "rowLines": "Boolean",
-      "rowNumbers": "Boolean/Object",
-      "scrollable": "Boolean/String/Object",
-      "scrollDock": "'start'/'emd'",
-      "scrollToTopOnRefresh": "Boolean",
-      "selectable": "Ext.grid.selection.Model",
-      "selection": "Ext.data.Model",
-      "selfAlign": "String",
-      "session": "Boolean/Object/Ext.data.Session",
-      "shadow": "Boolean",
-      "shareableName": "Boolean",
-      "shim": "Boolean",
-      "showAnimation": "String/Mixed",
-      "sortable": "Boolean",
-      "startColGroupsCollapsed": "Boolean",
-      "startRowGroupsCollapsed": "Boolean",
-      "stateful": "Boolean/Object/String[]",
-      "statefulDefaults": "Object/String[]",
-      "stateId": "String",
-      "store": "Ext.data.Store/Object",
-      "striped": "Boolean",
-      "style": "String/Object",
-      "tabIndex": "Number",
-      "title": "String",
-      "titleBar": "Object",
-      "toFrontOnShow": "Boolean",
-      "tooltip": "String/Object",
-      "top": "Number/String",
-      "topAxisCellConfig": "Object",
-      "topRenderedIndex": "any",
-      "touchAction": "Object",
-      "tpl": "String/String[]/Ext.Template/Ext.XTemplate[]",
-      "tplWriteMode": "String",
-      "translatable": "Object",
-      "triggerCtEvent": "'tap'/'singletap'",
-      "triggerEvent": "'childtap'/'childsingletap'/'childdoubletap'/'childswipe'/'childtaphold'/'childlongpress'",
-      "twoWayBindable": "String/String[]/Object",
-      "ui": "String/String[]",
-      "userCls": "String/String[]",
-      "userSelectable": "Boolean/String/Object",
-      "variableHeights": "Boolean",
-      "verticalOverflow": "Boolean",
-      "viewModel": "String/Object/Ext.app.ViewModel",
-      "visibleHeight": "Number",
-      "visibleLeft": "any",
-      "visibleTop": "Number",
-      "visibleWidth": "any",
-      "weight": "Number",
-      "weighted": "Boolean",
-      "width": "Number/String",
-      "x": "Number",
-      "xtype": "String",
-      "y": "Number",
-      "zIndex": "Number",
+      "activeChildTabIndex": ["number"],
+      "activeItem": ["Ext.Component", "object", "string", "number"],
+      "alignSelf": ["string"],
+      "allowFocusingDisabledChildren": ["boolean"],
+      "alwaysOnTop": ["boolean", "number"],
+      "ariaAttributes": ["object"],
+      "ariaDescribedBy": ["string"],
+      "ariaLabel": ["string"],
+      "ariaLabelledBy": ["string"],
+      "associatedData": ["boolean", "object"],
+      "autoDestroy": ["boolean"],
+      "autoSize": ["boolean"],
+      "axisLock": ["boolean"],
+      "bind": ["object", "string"],
+      "bodyCls": ["string", "string[]"],
+      "border": ["boolean"],
+      "bottom": ["number", "string"],
+      "bufferSize": ["number"],
+      "cardSwitchAnimation": ["string", "object", "boolean"],
+      "centered": ["boolean"],
+      "cls": ["string", "string[]"],
+      "clsGrandTotal": ["string"],
+      "clsGroupTotal": ["string"],
+      "collapseDefaults": ["Ext.dataview.ListCollapser", "object"],
+      "collapsible": ["Ext.dataview.ListCollapser", "object", "boolean"],
+      "columnLines": ["boolean"],
+      "columnMenu": ["object"],
+      "columnResize": ["boolean"],
+      "columns": ["Ext.grid.column.Column[]"],
+      "columnsMenuItem": ["Ext.grid.menu.Columns"],
+      "constrainAlign": ["string", "Ext.util.Region", "Ext.dom.Element"],
+      "contentEl": ["Ext.dom.Element", "htmlelement", "string"],
+      "control": ["object"],
+      "controller": ["string", "object", "Ext.app.ViewController"],
+      "data": ["object"],
+      "defaultFocus": ["string"],
+      "defaultListenerScope": ["boolean"],
+      "defaults": ["object"],
+      "defaultType": ["Ext.enums.Widget"],
+      "deferEmptyText": ["boolean"],
+      "deselectOnContainerClick": ["boolean"],
+      "disabled": ["boolean"],
+      "disableSelection": ["boolean"],
+      "disclosureProperty": ["string"],
+      "displayed": ["boolean"],
+      "docked": ["string"],
+      "draggable": ["boolean", "object", "Ext.drag.Source"],
+      "emptyItemText": ["string"],
+      "emptyState": ["boolean"],
+      "emptyText": ["string", "boolean"],
+      "emptyTextDefaults": ["object", "Ext.Component"],
+      "emptyTextProperty": ["string"],
+      "enableColumnMove": ["boolean"],
+      "enableColumnSort": ["boolean"],
+      "enableLoadMask": ["boolean"],
+      "flex": ["number", "string", "object"],
+      "floated": ["boolean"],
+      "focusableContainer": ["boolean"],
+      "focusCls": ["string"],
+      "fullscreen": ["boolean"],
+      "grouped": ["boolean"],
+      "groupFooter": ["object", "Ext.dataview.ItemHeader"],
+      "groupHeader": ["object", "Ext.dataview.ItemHeader"],
+      "grouping": ["any"],
+      "groupPlaceholder": ["object", "Ext.dataview.ListItemPlaceholder"],
+      "height": ["number", "string"],
+      "hidden": ["boolean"],
+      "hideAnimation": ["string", "mixed"],
+      "hideHeaders": ["boolean"],
+      "hideMode": ["'clip'", "'display'", "'offsets'", "'opacity'", "'visibility'"],
+      "hideOnMaskTap": ["boolean"],
+      "hideScrollbar": ["boolean"],
+      "horizontalOverflow": ["any"],
+      "html": ["string", "Ext.dom.Element", "htmlelement"],
+      "id": ["string"],
+      "inactiveChildTabIndex": ["number"],
+      "indexBar": ["boolean", "object", "Ext.dataview.IndexBar"],
+      "infinite": ["boolean"],
+      "inline": ["boolean", "object"],
+      "innerCls": ["string"],
+      "innerCtHeight": ["any"],
+      "innerWidth": ["any"],
+      "instanceCls": ["string", "string[]"],
+      "itemButtonMode": ["boolean"],
+      "itemCls": ["string"],
+      "itemConfig": ["object", "Ext.grid.Row"],
+      "itemContentCls": ["string"],
+      "itemDataMap": ["object"],
+      "itemId": ["string"],
+      "itemInnerCls": ["string"],
+      "itemRipple": ["boolean", "object"],
+      "items": ["array", "object"],
+      "itemsFocusable": ["any"],
+      "itemTpl": ["string", "string[]", "Ext.XTemplate"],
+      "keyMap": ["object"],
+      "keyMapEnabled": ["boolean"],
+      "keyMapTarget": ["string"],
+      "layout": ["object", "string"],
+      "left": ["number", "string"],
+      "leftAxisCellConfig": ["object"],
+      "listeners": ["object"],
+      "loadingHeight": ["number"],
+      "loadingText": ["string", "boolean"],
+      "maintainChildNodes": ["boolean"],
+      "manageBorders": ["boolean"],
+      "margin": ["number", "string"],
+      "markDirty": ["boolean"],
+      "masked": ["boolean", "string", "object", "Ext.Mask", "Ext.LoadMask"],
+      "matrix": ["Ext.pivot.matrix.Base"],
+      "maxHeight": ["number", "string"],
+      "maxItemCache": ["number"],
+      "maxWidth": ["number", "string"],
+      "minHeight": ["number", "string"],
+      "minimumBufferDistance": ["number"],
+      "minWidth": ["number", "string"],
+      "modal": ["boolean"],
+      "modelValidation": ["boolean"],
+      "multiColumnSort": ["boolean"],
+      "name": ["string"],
+      "nameable": ["boolean"],
+      "nameHolder": ["boolean"],
+      "onItemDisclosure": ["boolean", "function", "string", "object"],
+      "padding": ["number", "string"],
+      "pinFooters": ["boolean"],
+      "pinHeaders": ["boolean"],
+      "pinnedFooter": ["object"],
+      "pinnedFooterHeight": ["any"],
+      "pinnedHeader": ["object"],
+      "pinnedHeaderHeight": ["any"],
+      "plugins": ["array", "Ext.enums.Plugin", "object", "Ext.plugin.Abstract"],
+      "pressedDelay": ["number"],
+      "preventSelectionOnDisclose": ["boolean"],
+      "preventSelectionOnTool": ["boolean"],
+      "publishes": ["string", "string[]", "object"],
+      "record": ["any"],
+      "reference": ["string"],
+      "referenceHolder": ["boolean"],
+      "relative": ["boolean"],
+      "renderTo": ["Ext.dom.Element"],
+      "reserveScrollbar": ["boolean"],
+      "resetFocusPosition": ["boolean"],
+      "right": ["number", "string"],
+      "ripple": ["boolean", "object", "string"],
+      "rowLines": ["boolean"],
+      "rowNumbers": ["boolean", "object"],
+      "scrollable": ["boolean", "string", "object"],
+      "scrollDock": ["'start'", "'emd'"],
+      "scrollToTopOnRefresh": ["boolean"],
+      "selectable": ["Ext.grid.selection.Model"],
+      "selection": ["Ext.data.Model"],
+      "session": ["boolean", "object", "Ext.data.Session"],
+      "shadow": ["boolean"],
+      "shareableName": ["boolean"],
+      "shim": ["boolean"],
+      "showAnimation": ["string", "mixed"],
+      "sortable": ["boolean"],
+      "startColGroupsCollapsed": ["boolean"],
+      "startRowGroupsCollapsed": ["boolean"],
+      "stateful": ["boolean", "object", "string[]"],
+      "statefulDefaults": ["object", "string[]"],
+      "stateId": ["string"],
+      "store": ["Ext.data.Store", "object"],
+      "striped": ["boolean"],
+      "style": ["string", "object"],
+      "tabIndex": ["number"],
+      "title": ["string"],
+      "titleBar": ["object"],
+      "toFrontOnShow": ["boolean"],
+      "tooltip": ["string", "object"],
+      "top": ["number", "string"],
+      "topAxisCellConfig": ["object"],
+      "topRenderedIndex": ["any"],
+      "touchAction": ["object"],
+      "tpl": ["string", "string[]", "Ext.Template", "Ext.XTemplate[]"],
+      "tplWriteMode": ["string"],
+      "translatable": ["object"],
+      "triggerCtEvent": ["'tap'", "'singletap'"],
+      "triggerEvent": ["'childtap'", "'childsingletap'", "'childdoubletap'", "'childswipe'", "'childtaphold'", "'childlongpress'"],
+      "twoWayBindable": ["string", "string[]", "object"],
+      "ui": ["string", "string[]"],
+      "userCls": ["string", "string[]"],
+      "userSelectable": ["boolean", "string", "object"],
+      "variableHeights": ["boolean"],
+      "verticalOverflow": ["boolean"],
+      "viewModel": ["string", "object", "Ext.app.ViewModel"],
+      "visibleHeight": ["number"],
+      "visibleLeft": ["any"],
+      "visibleTop": ["number"],
+      "visibleWidth": ["any"],
+      "weight": ["number"],
+      "weighted": ["boolean"],
+      "width": ["number", "string"],
+      "x": ["number"],
+      "xtype": ["string"],
+      "y": ["number"],
+      "zIndex": ["number"],
       "platformConfig": "Object",
       "responsiveConfig": "Object",
       "align": "Obyect",
@@ -233,11 +239,23 @@ function (_ExtBase) {
       name: 'beforecenteredchange',
       parameters: 'sender,value,oldValue,undefined'
     }, {
+      name: 'beforecomplete',
+      parameters: 'editor,value,startValue,The'
+    }, {
       name: 'beforedisabledchange',
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforedockedchange',
       parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeedit',
+      parameters: 'sender,location'
+    }, {
+      name: 'beforegroupcollapse',
+      parameters: 'pivotgrid,group'
+    }, {
+      name: 'beforegroupexpand',
+      parameters: 'pivotgrid,group'
     }, {
       name: 'beforeheightchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -278,6 +296,9 @@ function (_ExtBase) {
       name: 'beforeshow',
       parameters: 'sender'
     }, {
+      name: 'beforestartedit',
+      parameters: 'editor,boundEl,value,The'
+    }, {
       name: 'beforestorechange',
       parameters: 'sender,value,oldValue,undefined'
     }, {
@@ -295,6 +316,9 @@ function (_ExtBase) {
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
+    }, {
+      name: 'canceledit',
+      parameters: 'editor,value,startValue'
     }, {
       name: 'cellselection',
       parameters: 'grid,selection'
@@ -362,6 +386,9 @@ function (_ExtBase) {
       name: 'columnsort',
       parameters: 'pivotgrid,column,direction'
     }, {
+      name: 'complete',
+      parameters: 'editor,value,startValue,The'
+    }, {
       name: 'deactivate',
       parameters: 'oldActiveItem,pivotgrid,newActiveItem'
     }, {
@@ -380,6 +407,9 @@ function (_ExtBase) {
       name: 'dockedchange',
       parameters: 'sender,value,oldValue'
     }, {
+      name: 'edit',
+      parameters: 'sender,location'
+    }, {
       name: 'erased',
       parameters: 'sender'
     }, {
@@ -397,6 +427,12 @@ function (_ExtBase) {
     }, {
       name: 'fullscreen',
       parameters: 'sender'
+    }, {
+      name: 'groupcollapse',
+      parameters: 'pivotgrid,group'
+    }, {
+      name: 'groupexpand',
+      parameters: 'pivotgrid,group'
     }, {
       name: 'heightchange',
       parameters: 'sender,value,oldValue'
@@ -608,6 +644,12 @@ function (_ExtBase) {
       name: 'show',
       parameters: 'sender'
     }, {
+      name: 'specialkey',
+      parameters: 'editor,field,event'
+    }, {
+      name: 'startedit',
+      parameters: 'editor,boundEl,value,The'
+    }, {
       name: 'storechange',
       parameters: 'sender,value,oldValue'
     }, {
@@ -619,6 +661,9 @@ function (_ExtBase) {
     }, {
       name: 'updatedata',
       parameters: 'sender,newData'
+    }, {
+      name: 'validateedit',
+      parameters: 'sender,location'
     }, {
       name: 'widthchange',
       parameters: 'sender,value,oldValue'
@@ -1310,6 +1355,11 @@ function (_ExtBase) {
         return this.ext.getScrollDockedItems(which);
       }
     }, {
+      name: 'getSelection',
+      "function": function _function() {
+        return this.ext.getSelection();
+      }
+    }, {
       name: 'getSize',
       "function": function _function() {
         return this.ext.getSize();
@@ -1353,6 +1403,11 @@ function (_ExtBase) {
       name: 'getXTypes',
       "function": function _function() {
         return this.ext.getXTypes();
+      }
+    }, {
+      name: 'groupFrom',
+      "function": function _function(key) {
+        return this.ext.groupFrom(key);
       }
     }, {
       name: 'handleBlurEvent',
@@ -1581,8 +1636,8 @@ function (_ExtBase) {
       }
     }, {
       name: 'isRecordRendered',
-      "function": function _function(recordIndex) {
-        return this.ext.isRecordRendered(recordIndex);
+      "function": function _function(recordOrIndex) {
+        return this.ext.isRecordRendered(recordOrIndex);
       }
     }, {
       name: 'isRendered',
@@ -1591,8 +1646,8 @@ function (_ExtBase) {
       }
     }, {
       name: 'isSuspended',
-      "function": function _function() {
-        return this.ext.isSuspended;
+      "function": function _function(event) {
+        return this.ext.isSuspended(event);
       }
     }, {
       name: 'isSyncing',
@@ -1691,8 +1746,8 @@ function (_ExtBase) {
       }
     }, {
       name: 'mapToRecordIndex',
-      "function": function _function(value) {
-        return this.ext.mapToRecordIndex(value);
+      "function": function _function(value, uncollapsed) {
+        return this.ext.mapToRecordIndex(value, uncollapsed);
       }
     }, {
       name: 'mapToRowBody',
@@ -2329,6 +2384,14 @@ function (_ExtBase) {
       this.setAttribute('activeItem', activeItem);
     }
   }, {
+    key: "alignSelf",
+    get: function get() {
+      return this.getAttribute('alignSelf');
+    },
+    set: function set(alignSelf) {
+      this.setAttribute('alignSelf', alignSelf);
+    }
+  }, {
     key: "allowFocusingDisabledChildren",
     get: function get() {
       return this.getAttribute('allowFocusingDisabledChildren');
@@ -2417,6 +2480,14 @@ function (_ExtBase) {
       this.setAttribute('bind', bind);
     }
   }, {
+    key: "bodyCls",
+    get: function get() {
+      return this.getAttribute('bodyCls');
+    },
+    set: function set(bodyCls) {
+      this.setAttribute('bodyCls', bodyCls);
+    }
+  }, {
     key: "border",
     get: function get() {
       return this.getAttribute('border');
@@ -2479,6 +2550,22 @@ function (_ExtBase) {
     },
     set: function set(clsGroupTotal) {
       this.setAttribute('clsGroupTotal', clsGroupTotal);
+    }
+  }, {
+    key: "collapseDefaults",
+    get: function get() {
+      return this.getAttribute('collapseDefaults');
+    },
+    set: function set(collapseDefaults) {
+      this.setAttribute('collapseDefaults', collapseDefaults);
+    }
+  }, {
+    key: "collapsible",
+    get: function get() {
+      return this.getAttribute('collapsible');
+    },
+    set: function set(collapsible) {
+      this.setAttribute('collapsible', collapsible);
     }
   }, {
     key: "columnLines",
@@ -2697,6 +2784,14 @@ function (_ExtBase) {
       this.setAttribute('emptyTextProperty', emptyTextProperty);
     }
   }, {
+    key: "enableColumnMove",
+    get: function get() {
+      return this.getAttribute('enableColumnMove');
+    },
+    set: function set(enableColumnMove) {
+      this.setAttribute('enableColumnMove', enableColumnMove);
+    }
+  }, {
     key: "enableColumnSort",
     get: function get() {
       return this.getAttribute('enableColumnSort');
@@ -2775,6 +2870,22 @@ function (_ExtBase) {
     },
     set: function set(groupHeader) {
       this.setAttribute('groupHeader', groupHeader);
+    }
+  }, {
+    key: "grouping",
+    get: function get() {
+      return this.getAttribute('grouping');
+    },
+    set: function set(grouping) {
+      this.setAttribute('grouping', grouping);
+    }
+  }, {
+    key: "groupPlaceholder",
+    get: function get() {
+      return this.getAttribute('groupPlaceholder');
+    },
+    set: function set(groupPlaceholder) {
+      this.setAttribute('groupPlaceholder', groupPlaceholder);
     }
   }, {
     key: "height",
@@ -3457,14 +3568,6 @@ function (_ExtBase) {
       this.setAttribute('selection', selection);
     }
   }, {
-    key: "selfAlign",
-    get: function get() {
-      return this.getAttribute('selfAlign');
-    },
-    set: function set(selfAlign) {
-      this.setAttribute('selfAlign', selfAlign);
-    }
-  }, {
     key: "session",
     get: function get() {
       return this.getAttribute('session');
@@ -3929,6 +4032,14 @@ function (_ExtBase) {
       this.setAttribute('onbeforecenteredchange', onbeforecenteredchange);
     }
   }, {
+    key: "onbeforecomplete",
+    get: function get() {
+      return this.getAttribute('onbeforecomplete');
+    },
+    set: function set(onbeforecomplete) {
+      this.setAttribute('onbeforecomplete', onbeforecomplete);
+    }
+  }, {
     key: "onbeforedisabledchange",
     get: function get() {
       return this.getAttribute('onbeforedisabledchange');
@@ -3943,6 +4054,30 @@ function (_ExtBase) {
     },
     set: function set(onbeforedockedchange) {
       this.setAttribute('onbeforedockedchange', onbeforedockedchange);
+    }
+  }, {
+    key: "onbeforeedit",
+    get: function get() {
+      return this.getAttribute('onbeforeedit');
+    },
+    set: function set(onbeforeedit) {
+      this.setAttribute('onbeforeedit', onbeforeedit);
+    }
+  }, {
+    key: "onbeforegroupcollapse",
+    get: function get() {
+      return this.getAttribute('onbeforegroupcollapse');
+    },
+    set: function set(onbeforegroupcollapse) {
+      this.setAttribute('onbeforegroupcollapse', onbeforegroupcollapse);
+    }
+  }, {
+    key: "onbeforegroupexpand",
+    get: function get() {
+      return this.getAttribute('onbeforegroupexpand');
+    },
+    set: function set(onbeforegroupexpand) {
+      this.setAttribute('onbeforegroupexpand', onbeforegroupexpand);
     }
   }, {
     key: "onbeforeheightchange",
@@ -4049,6 +4184,14 @@ function (_ExtBase) {
       this.setAttribute('onbeforeshow', onbeforeshow);
     }
   }, {
+    key: "onbeforestartedit",
+    get: function get() {
+      return this.getAttribute('onbeforestartedit');
+    },
+    set: function set(onbeforestartedit) {
+      this.setAttribute('onbeforestartedit', onbeforestartedit);
+    }
+  }, {
     key: "onbeforestorechange",
     get: function get() {
       return this.getAttribute('onbeforestorechange');
@@ -4095,6 +4238,14 @@ function (_ExtBase) {
     },
     set: function set(onbottomchange) {
       this.setAttribute('onbottomchange', onbottomchange);
+    }
+  }, {
+    key: "oncanceledit",
+    get: function get() {
+      return this.getAttribute('oncanceledit');
+    },
+    set: function set(oncanceledit) {
+      this.setAttribute('oncanceledit', oncanceledit);
     }
   }, {
     key: "oncellselection",
@@ -4273,6 +4424,14 @@ function (_ExtBase) {
       this.setAttribute('oncolumnsort', oncolumnsort);
     }
   }, {
+    key: "oncomplete",
+    get: function get() {
+      return this.getAttribute('oncomplete');
+    },
+    set: function set(oncomplete) {
+      this.setAttribute('oncomplete', oncomplete);
+    }
+  }, {
     key: "ondeactivate",
     get: function get() {
       return this.getAttribute('ondeactivate');
@@ -4321,6 +4480,14 @@ function (_ExtBase) {
       this.setAttribute('ondockedchange', ondockedchange);
     }
   }, {
+    key: "onedit",
+    get: function get() {
+      return this.getAttribute('onedit');
+    },
+    set: function set(onedit) {
+      this.setAttribute('onedit', onedit);
+    }
+  }, {
     key: "onerased",
     get: function get() {
       return this.getAttribute('onerased');
@@ -4367,6 +4534,22 @@ function (_ExtBase) {
     },
     set: function set(onfullscreen) {
       this.setAttribute('onfullscreen', onfullscreen);
+    }
+  }, {
+    key: "ongroupcollapse",
+    get: function get() {
+      return this.getAttribute('ongroupcollapse');
+    },
+    set: function set(ongroupcollapse) {
+      this.setAttribute('ongroupcollapse', ongroupcollapse);
+    }
+  }, {
+    key: "ongroupexpand",
+    get: function get() {
+      return this.getAttribute('ongroupexpand');
+    },
+    set: function set(ongroupexpand) {
+      this.setAttribute('ongroupexpand', ongroupexpand);
     }
   }, {
     key: "onheightchange",
@@ -4929,6 +5112,22 @@ function (_ExtBase) {
       this.setAttribute('onshow', onshow);
     }
   }, {
+    key: "onspecialkey",
+    get: function get() {
+      return this.getAttribute('onspecialkey');
+    },
+    set: function set(onspecialkey) {
+      this.setAttribute('onspecialkey', onspecialkey);
+    }
+  }, {
+    key: "onstartedit",
+    get: function get() {
+      return this.getAttribute('onstartedit');
+    },
+    set: function set(onstartedit) {
+      this.setAttribute('onstartedit', onstartedit);
+    }
+  }, {
     key: "onstorechange",
     get: function get() {
       return this.getAttribute('onstorechange');
@@ -4959,6 +5158,14 @@ function (_ExtBase) {
     },
     set: function set(onupdatedata) {
       this.setAttribute('onupdatedata', onupdatedata);
+    }
+  }, {
+    key: "onvalidateedit",
+    get: function get() {
+      return this.getAttribute('onvalidateedit');
+    },
+    set: function set(onvalidateedit) {
+      this.setAttribute('onvalidateedit', onvalidateedit);
     }
   }, {
     key: "onwidthchange",
