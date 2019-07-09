@@ -12,10 +12,10 @@ function (_ExtBase) {
 
   ExtInteractionComponent.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
     return {
-      "chart": "Ext.chart.AbstractChart",
-      "enabled": "Boolean",
-      "gesture": "Object",
-      "listeners": "Object",
+      "chart": ["Ext.chart.AbstractChart"],
+      "enabled": ["boolean"],
+      "gesture": ["object"],
+      "listeners": ["object"],
       "platformConfig": "Object",
       "responsiveConfig": "Object",
       "align": "Obyect",
@@ -189,8 +189,8 @@ function (_ExtBase) {
       }
     }, {
       name: 'isSuspended',
-      "function": function _function() {
-        return this.ext.isSuspended;
+      "function": function _function(event) {
+        return this.ext.isSuspended(event);
       }
     }, {
       name: 'link',

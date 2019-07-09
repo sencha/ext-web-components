@@ -12,64 +12,65 @@ function (_ExtBase) {
 
   ExtDatetriggerComponent.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
     return {
-      "alwaysOnTop": "Boolean/Number",
-      "ariaAttributes": "Object",
-      "ariaDescribedBy": "String",
-      "ariaLabel": "String",
-      "ariaLabelledBy": "String",
-      "bind": "Object/String",
-      "border": "Boolean",
-      "cls": "String/String[]",
-      "constrainAlign": "String/Ext.util.Region/Ext.dom.Element",
-      "controller": "String/Object/Ext.app.ViewController",
-      "defaultListenerScope": "Boolean",
-      "disabled": "Boolean",
-      "field": "Ext.field.Text",
-      "flex": "Number/String/Object",
-      "floated": "Boolean",
-      "focusCls": "String",
-      "focusOnTap": "Boolean",
-      "group": "String",
-      "handler": "Function/String",
-      "height": "Number/String",
-      "hidden": "Boolean",
-      "hideMode": "'clip'/'display'/'offsets'/'opacity'/'visibility'",
-      "iconCls": "String",
-      "id": "String",
-      "instanceCls": "String/String[]",
-      "itemId": "String",
-      "keyMap": "Object",
-      "keyMapEnabled": "Boolean",
-      "keyMapTarget": "String",
-      "listeners": "Object",
-      "name": "String",
-      "nameable": "Boolean",
-      "plugins": "Array/Ext.enums.Plugin/Object/Ext.plugin.Abstract",
-      "publishes": "String/String[]/Object",
-      "reference": "String",
-      "relative": "Boolean",
-      "renderTo": "Ext.dom.Element",
-      "repeat": "Boolean/Object",
-      "ripple": "Boolean/Object/String",
-      "scope": "Object",
-      "selfAlign": "String",
-      "session": "Boolean/Object/Ext.data.Session",
-      "shadow": "Boolean",
-      "shareableName": "Boolean",
-      "shim": "Boolean",
-      "side": "'left'/'right'",
-      "style": "String/Object",
-      "toFrontOnShow": "Boolean",
-      "touchAction": "Object",
-      "translatable": "Object",
-      "triggers": "any",
-      "twoWayBindable": "String/String[]/Object",
-      "ui": "String/String[]",
-      "userCls": "String/String[]",
-      "viewModel": "String/Object/Ext.app.ViewModel",
-      "width": "Number/String",
-      "x": "Number",
-      "y": "Number",
+      "alignSelf": ["string"],
+      "alwaysOnTop": ["boolean", "number"],
+      "ariaAttributes": ["object"],
+      "ariaDescribedBy": ["string"],
+      "ariaLabel": ["string"],
+      "ariaLabelledBy": ["string"],
+      "bind": ["object", "string"],
+      "border": ["boolean"],
+      "cls": ["string", "string[]"],
+      "constrainAlign": ["string", "Ext.util.Region", "Ext.dom.Element"],
+      "controller": ["string", "object", "Ext.app.ViewController"],
+      "defaultListenerScope": ["boolean"],
+      "disabled": ["boolean"],
+      "field": ["Ext.field.Text"],
+      "flex": ["number", "string", "object"],
+      "floated": ["boolean"],
+      "focusCls": ["string"],
+      "focusOnTap": ["boolean"],
+      "group": ["string"],
+      "handler": ["function", "string"],
+      "height": ["number", "string"],
+      "hidden": ["boolean"],
+      "hideMode": ["'clip'", "'display'", "'offsets'", "'opacity'", "'visibility'"],
+      "iconCls": ["string"],
+      "id": ["string"],
+      "instanceCls": ["string", "string[]"],
+      "itemId": ["string"],
+      "keyMap": ["object"],
+      "keyMapEnabled": ["boolean"],
+      "keyMapTarget": ["string"],
+      "listeners": ["object"],
+      "margin": ["number", "string"],
+      "name": ["string"],
+      "nameable": ["boolean"],
+      "plugins": ["array", "Ext.enums.Plugin", "object", "Ext.plugin.Abstract"],
+      "publishes": ["string", "string[]", "object"],
+      "reference": ["string"],
+      "relative": ["boolean"],
+      "renderTo": ["Ext.dom.Element"],
+      "repeat": ["boolean", "object"],
+      "ripple": ["boolean", "object", "string"],
+      "scope": ["object"],
+      "session": ["boolean", "object", "Ext.data.Session"],
+      "shadow": ["boolean"],
+      "shareableName": ["boolean"],
+      "shim": ["boolean"],
+      "side": ["'left'", "'right'"],
+      "style": ["string", "object"],
+      "toFrontOnShow": ["boolean"],
+      "touchAction": ["object"],
+      "translatable": ["object"],
+      "triggers": ["any"],
+      "twoWayBindable": ["string", "string[]", "object"],
+      "ui": ["string", "string[]"],
+      "userCls": ["string", "string[]"],
+      "viewModel": ["string", "object", "Ext.app.ViewModel"],
+      "width": ["number", "string"],
+      "x": ["number"],
+      "y": ["number"],
       "platformConfig": "Object",
       "responsiveConfig": "Object",
       "align": "Obyect",
@@ -630,8 +631,8 @@ function (_ExtBase) {
       }
     }, {
       name: 'isSuspended',
-      "function": function _function() {
-        return this.ext.isSuspended;
+      "function": function _function(event) {
+        return this.ext.isSuspended(event);
       }
     }, {
       name: 'isSyncing',
@@ -982,6 +983,14 @@ function (_ExtBase) {
   };
 
   _createClass(ExtDatetriggerComponent, [{
+    key: "alignSelf",
+    get: function get() {
+      return this.getAttribute('alignSelf');
+    },
+    set: function set(alignSelf) {
+      this.setAttribute('alignSelf', alignSelf);
+    }
+  }, {
     key: "alwaysOnTop",
     get: function get() {
       return this.getAttribute('alwaysOnTop');
@@ -1222,6 +1231,14 @@ function (_ExtBase) {
       this.setAttribute('listeners', listeners);
     }
   }, {
+    key: "margin",
+    get: function get() {
+      return this.getAttribute('margin');
+    },
+    set: function set(margin) {
+      this.setAttribute('margin', margin);
+    }
+  }, {
     key: "name",
     get: function get() {
       return this.getAttribute('name');
@@ -1300,14 +1317,6 @@ function (_ExtBase) {
     },
     set: function set(scope) {
       this.setAttribute('scope', scope);
-    }
-  }, {
-    key: "selfAlign",
-    get: function get() {
-      return this.getAttribute('selfAlign');
-    },
-    set: function set(selfAlign) {
-      this.setAttribute('selfAlign', selfAlign);
     }
   }, {
     key: "session",

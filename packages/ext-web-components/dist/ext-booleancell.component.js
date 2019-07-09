@@ -14,72 +14,73 @@ function (_ExtBase) {
     var _ref;
 
     return _ref = {
-      "align": "'left'/'center'/'right'",
-      "alwaysOnTop": "Boolean/Number",
-      "ariaAttributes": "Object",
-      "ariaDescribedBy": "String",
-      "ariaLabel": "String",
-      "ariaLabelledBy": "String",
-      "bind": "Object/String",
-      "bodyCls": "String",
-      "bodyStyle": "String/Object",
-      "border": "Boolean",
-      "cellCls": "String",
-      "cls": "String",
-      "column": "Ext.grid.column.Column",
-      "constrainAlign": "String/Ext.util.Region/Ext.dom.Element",
-      "controller": "String/Object/Ext.app.ViewController",
-      "defaultListenerScope": "Boolean",
-      "defaultToolWeights": "Object",
-      "disabled": "Boolean",
-      "encodeHtml": "Boolean",
-      "falseText": "String",
-      "flex": "Number/String/Object",
-      "floated": "Boolean",
-      "focusCls": "String",
-      "height": "Number/String",
-      "hidden": "Boolean",
-      "hideMode": "'clip'/'display'/'offsets'/'opacity'/'visibility'",
-      "id": "String",
-      "instanceCls": "String/String[]",
-      "itemId": "String",
-      "keyMap": "Object",
-      "keyMapEnabled": "Boolean",
-      "keyMapTarget": "String",
-      "listeners": "Object",
-      "name": "String",
-      "nameable": "Boolean",
-      "plugins": "Array/Ext.enums.Plugin/Object/Ext.plugin.Abstract",
-      "publishes": "String/String[]/Object",
-      "rawValue": "String",
-      "record": "Ext.data.Model",
-      "reference": "String",
-      "relative": "Boolean",
-      "renderTo": "Ext.dom.Element",
-      "ripple": "Boolean/Object/String",
-      "selectable": "Boolean",
-      "selfAlign": "String",
-      "session": "Boolean/Object/Ext.data.Session",
-      "shadow": "Boolean",
-      "shareableName": "Boolean",
-      "shim": "Boolean",
-      "style": "String/Object",
-      "toFrontOnShow": "Boolean",
-      "toolDefaults": "Object",
-      "tools": "Ext.Tool[]/Object/Object[]",
-      "touchAction": "Object",
-      "translatable": "Object",
-      "trueText": "String",
-      "twoWayBindable": "String/String[]/Object",
-      "ui": "String/String[]",
-      "undefinedText": "String",
-      "userCls": "String/String[]",
-      "value": "Mixed",
-      "viewModel": "String/Object/Ext.app.ViewModel",
-      "width": "Number/String",
-      "x": "Number",
-      "y": "Number",
-      "zeroValue": "String",
+      "align": ["'left'", "'center'", "'right'"],
+      "alignSelf": ["string"],
+      "alwaysOnTop": ["boolean", "number"],
+      "ariaAttributes": ["object"],
+      "ariaDescribedBy": ["string"],
+      "ariaLabel": ["string"],
+      "ariaLabelledBy": ["string"],
+      "bind": ["object", "string"],
+      "bodyCls": ["string"],
+      "bodyStyle": ["string", "object"],
+      "border": ["boolean"],
+      "cellCls": ["string"],
+      "cls": ["string"],
+      "column": ["Ext.grid.column.Column"],
+      "constrainAlign": ["string", "Ext.util.Region", "Ext.dom.Element"],
+      "controller": ["string", "object", "Ext.app.ViewController"],
+      "defaultListenerScope": ["boolean"],
+      "defaultToolWeights": ["object"],
+      "disabled": ["boolean"],
+      "encodeHtml": ["boolean"],
+      "falseText": ["string"],
+      "flex": ["number", "string", "object"],
+      "floated": ["boolean"],
+      "focusCls": ["string"],
+      "height": ["number", "string"],
+      "hidden": ["boolean"],
+      "hideMode": ["'clip'", "'display'", "'offsets'", "'opacity'", "'visibility'"],
+      "id": ["string"],
+      "instanceCls": ["string", "string[]"],
+      "itemId": ["string"],
+      "keyMap": ["object"],
+      "keyMapEnabled": ["boolean"],
+      "keyMapTarget": ["string"],
+      "listeners": ["object"],
+      "margin": ["number", "string"],
+      "name": ["string"],
+      "nameable": ["boolean"],
+      "plugins": ["array", "Ext.enums.Plugin", "object", "Ext.plugin.Abstract"],
+      "publishes": ["string", "string[]", "object"],
+      "rawValue": ["string"],
+      "record": ["Ext.data.Model"],
+      "reference": ["string"],
+      "relative": ["boolean"],
+      "renderTo": ["Ext.dom.Element"],
+      "ripple": ["boolean", "object", "string"],
+      "selectable": ["boolean"],
+      "session": ["boolean", "object", "Ext.data.Session"],
+      "shadow": ["boolean"],
+      "shareableName": ["boolean"],
+      "shim": ["boolean"],
+      "style": ["string", "object"],
+      "toFrontOnShow": ["boolean"],
+      "toolDefaults": ["object"],
+      "tools": ["Ext.Tool[]", "object", "object[]"],
+      "touchAction": ["object"],
+      "translatable": ["object"],
+      "trueText": ["string"],
+      "twoWayBindable": ["string", "string[]", "object"],
+      "ui": ["string", "string[]"],
+      "undefinedText": ["string"],
+      "userCls": ["string", "string[]"],
+      "value": ["mixed"],
+      "viewModel": ["string", "object", "Ext.app.ViewModel"],
+      "width": ["number", "string"],
+      "x": ["number"],
+      "y": ["number"],
+      "zeroValue": ["string"],
       "platformConfig": "Object",
       "responsiveConfig": "Object"
     }, _ref["align"] = "Obyect", _ref["fitToParent"] = "Boolean", _ref["config"] = "Object", _ref;
@@ -642,8 +643,8 @@ function (_ExtBase) {
       }
     }, {
       name: 'isSuspended',
-      "function": function _function() {
-        return this.ext.isSuspended;
+      "function": function _function(event) {
+        return this.ext.isSuspended(event);
       }
     }, {
       name: 'isSyncing',
@@ -1007,6 +1008,14 @@ function (_ExtBase) {
       this.setAttribute('align', align);
     }
   }, {
+    key: "alignSelf",
+    get: function get() {
+      return this.getAttribute('alignSelf');
+    },
+    set: function set(alignSelf) {
+      this.setAttribute('alignSelf', alignSelf);
+    }
+  }, {
     key: "alwaysOnTop",
     get: function get() {
       return this.getAttribute('alwaysOnTop');
@@ -1263,6 +1272,14 @@ function (_ExtBase) {
       this.setAttribute('listeners', listeners);
     }
   }, {
+    key: "margin",
+    get: function get() {
+      return this.getAttribute('margin');
+    },
+    set: function set(margin) {
+      this.setAttribute('margin', margin);
+    }
+  }, {
     key: "name",
     get: function get() {
       return this.getAttribute('name');
@@ -1349,14 +1366,6 @@ function (_ExtBase) {
     },
     set: function set(selectable) {
       this.setAttribute('selectable', selectable);
-    }
-  }, {
-    key: "selfAlign",
-    get: function get() {
-      return this.getAttribute('selfAlign');
-    },
-    set: function set(selfAlign) {
-      this.setAttribute('selfAlign', selfAlign);
     }
   }, {
     key: "session",

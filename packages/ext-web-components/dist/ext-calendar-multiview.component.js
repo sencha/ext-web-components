@@ -12,14 +12,14 @@ function (_ExtBase) {
 
   ExtCalendar_multiviewComponent.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
     return {
-      "compact": "Boolean",
-      "compactOptions": "Object",
-      "defaultView": "String",
-      "layout": "Object/String",
-      "store": "Object/Ext.calendar.store.Calendars",
-      "timezoneOffset": "Number",
-      "value": "Date",
-      "views": "Object",
+      "compact": ["boolean"],
+      "compactOptions": ["object"],
+      "defaultView": ["string"],
+      "layout": ["object", "string"],
+      "store": ["object", "Ext.calendar.store.Calendars"],
+      "timezoneOffset": ["number"],
+      "value": ["date"],
+      "views": ["object"],
       "platformConfig": "Object",
       "responsiveConfig": "Object",
       "align": "Obyect",

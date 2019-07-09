@@ -2805,7 +2805,7 @@
     padding: 14px 0;
 }
 /* /Users/marcgusmano/_git/sencha/ext-angular/packages/ext-angular-kitchensink/node_modules/@sencha/ext-modern-theme-material/sass/src/Component.scss:5 */
-:host {
+:root {
     --dark-mode: false;
     --base-color: #2196f3;
     --base-highlight-color: #64b5f6;

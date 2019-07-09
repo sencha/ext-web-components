@@ -12,71 +12,72 @@ function (_ExtBase) {
 
   ExtTreelistitemComponent.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
     return {
-      "alwaysOnTop": "Boolean/Number",
-      "ariaAttributes": "Object",
-      "ariaDescribedBy": "String",
-      "ariaLabel": "String",
-      "ariaLabelledBy": "String",
-      "bind": "Object/String",
-      "border": "Boolean",
-      "cls": "String/String[]",
-      "constrainAlign": "String/Ext.util.Region/Ext.dom.Element",
-      "controller": "String/Object/Ext.app.ViewController",
-      "defaultListenerScope": "Boolean",
-      "disabled": "Boolean",
-      "expandable": "Boolean",
-      "expanded": "Boolean",
-      "flex": "Number/String/Object",
-      "floated": "Boolean",
-      "focusCls": "String",
-      "height": "Number/String",
-      "hidden": "Boolean",
-      "hideMode": "'clip'/'display'/'offsets'/'opacity'/'visibility'",
-      "iconCls": "String",
-      "iconClsProperty": "String",
-      "id": "String",
-      "instanceCls": "String/String[]",
-      "itemId": "String",
-      "keyMap": "Object",
-      "keyMapEnabled": "Boolean",
-      "keyMapTarget": "String",
-      "leaf": "Boolean",
-      "listeners": "Object",
-      "loading": "Boolean",
-      "name": "String",
-      "nameable": "Boolean",
-      "node": "Ext.data.TreeModel",
-      "over": "Number",
-      "owner": "Ext.list.Tree",
-      "parentItem": "Ext.list.AbstractTreeItem",
-      "plugins": "Array/Ext.enums.Plugin/Object/Ext.plugin.Abstract",
-      "publishes": "String/String[]/Object",
-      "reference": "String",
-      "relative": "Boolean",
-      "renderTo": "Ext.dom.Element",
-      "ripple": "Boolean/Object/String",
-      "rowCls": "String",
-      "rowClsProperty": "String",
-      "selected": "Boolean",
-      "selectedParent": "Boolean",
-      "selfAlign": "String",
-      "session": "Boolean/Object/Ext.data.Session",
-      "shadow": "Boolean",
-      "shareableName": "Boolean",
-      "shim": "Boolean",
-      "style": "String/Object",
-      "text": "String",
-      "textProperty": "String",
-      "toFrontOnShow": "Boolean",
-      "touchAction": "Object",
-      "translatable": "Object",
-      "twoWayBindable": "String/String[]/Object",
-      "ui": "String/String[]",
-      "userCls": "String/String[]",
-      "viewModel": "String/Object/Ext.app.ViewModel",
-      "width": "Number/String",
-      "x": "Number",
-      "y": "Number",
+      "alignSelf": ["string"],
+      "alwaysOnTop": ["boolean", "number"],
+      "ariaAttributes": ["object"],
+      "ariaDescribedBy": ["string"],
+      "ariaLabel": ["string"],
+      "ariaLabelledBy": ["string"],
+      "bind": ["object", "string"],
+      "border": ["boolean"],
+      "cls": ["string", "string[]"],
+      "constrainAlign": ["string", "Ext.util.Region", "Ext.dom.Element"],
+      "controller": ["string", "object", "Ext.app.ViewController"],
+      "defaultListenerScope": ["boolean"],
+      "disabled": ["boolean"],
+      "expandable": ["boolean"],
+      "expanded": ["boolean"],
+      "flex": ["number", "string", "object"],
+      "floated": ["boolean"],
+      "focusCls": ["string"],
+      "height": ["number", "string"],
+      "hidden": ["boolean"],
+      "hideMode": ["'clip'", "'display'", "'offsets'", "'opacity'", "'visibility'"],
+      "iconCls": ["string"],
+      "iconClsProperty": ["string"],
+      "id": ["string"],
+      "instanceCls": ["string", "string[]"],
+      "itemId": ["string"],
+      "keyMap": ["object"],
+      "keyMapEnabled": ["boolean"],
+      "keyMapTarget": ["string"],
+      "leaf": ["boolean"],
+      "listeners": ["object"],
+      "loading": ["boolean"],
+      "margin": ["number", "string"],
+      "name": ["string"],
+      "nameable": ["boolean"],
+      "node": ["Ext.data.TreeModel"],
+      "over": ["number"],
+      "owner": ["Ext.list.Tree"],
+      "parentItem": ["Ext.list.AbstractTreeItem"],
+      "plugins": ["array", "Ext.enums.Plugin", "object", "Ext.plugin.Abstract"],
+      "publishes": ["string", "string[]", "object"],
+      "reference": ["string"],
+      "relative": ["boolean"],
+      "renderTo": ["Ext.dom.Element"],
+      "ripple": ["boolean", "object", "string"],
+      "rowCls": ["string"],
+      "rowClsProperty": ["string"],
+      "selected": ["boolean"],
+      "selectedParent": ["boolean"],
+      "session": ["boolean", "object", "Ext.data.Session"],
+      "shadow": ["boolean"],
+      "shareableName": ["boolean"],
+      "shim": ["boolean"],
+      "style": ["string", "object"],
+      "text": ["string"],
+      "textProperty": ["string"],
+      "toFrontOnShow": ["boolean"],
+      "touchAction": ["object"],
+      "translatable": ["object"],
+      "twoWayBindable": ["string", "string[]", "object"],
+      "ui": ["string", "string[]"],
+      "userCls": ["string", "string[]"],
+      "viewModel": ["string", "object", "Ext.app.ViewModel"],
+      "width": ["number", "string"],
+      "x": ["number"],
+      "y": ["number"],
       "platformConfig": "Object",
       "responsiveConfig": "Object",
       "align": "Obyect",
@@ -672,8 +673,8 @@ function (_ExtBase) {
       }
     }, {
       name: 'isSuspended',
-      "function": function _function() {
-        return this.ext.isSuspended;
+      "function": function _function(event) {
+        return this.ext.isSuspended(event);
       }
     }, {
       name: 'isSyncing',
@@ -1114,6 +1115,14 @@ function (_ExtBase) {
   };
 
   _createClass(ExtTreelistitemComponent, [{
+    key: "alignSelf",
+    get: function get() {
+      return this.getAttribute('alignSelf');
+    },
+    set: function set(alignSelf) {
+      this.setAttribute('alignSelf', alignSelf);
+    }
+  }, {
     key: "alwaysOnTop",
     get: function get() {
       return this.getAttribute('alwaysOnTop');
@@ -1362,6 +1371,14 @@ function (_ExtBase) {
       this.setAttribute('loading', loading);
     }
   }, {
+    key: "margin",
+    get: function get() {
+      return this.getAttribute('margin');
+    },
+    set: function set(margin) {
+      this.setAttribute('margin', margin);
+    }
+  }, {
     key: "name",
     get: function get() {
       return this.getAttribute('name');
@@ -1488,14 +1505,6 @@ function (_ExtBase) {
     },
     set: function set(selectedParent) {
       this.setAttribute('selectedParent', selectedParent);
-    }
-  }, {
-    key: "selfAlign",
-    get: function get() {
-      return this.getAttribute('selfAlign');
-    },
-    set: function set(selfAlign) {
-      this.setAttribute('selfAlign', selfAlign);
     }
   }, {
     key: "session",

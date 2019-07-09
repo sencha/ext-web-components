@@ -1,3 +1,3 @@
-# theme-neptune/resources
+# theme-kitchensink/resources
 
 This folder contains static resources (typically an `"images"` folder as well).
