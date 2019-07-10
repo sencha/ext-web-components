@@ -12,118 +12,120 @@ function (_ExtBase) {
 
   ExtTabbarComponent.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
     return {
-      "activeChildTabIndex": "Number",
-      "activeItem": "Ext.Component/Object/String/Number",
-      "activeTab": "Number/String/Ext.Component",
-      "allowFocusingDisabledChildren": "Boolean",
-      "alwaysOnTop": "Boolean/Number",
-      "animateIndicator": "Boolean",
-      "ariaAttributes": "Object",
-      "ariaDescribedBy": "String",
-      "ariaLabel": "String",
-      "ariaLabelledBy": "String",
-      "autoDestroy": "Boolean",
-      "autoSize": "Boolean",
-      "axisLock": "Boolean",
-      "bind": "Object/String",
-      "border": "Boolean",
-      "bottom": "Number/String",
-      "cardSwitchAnimation": "String/Object/Boolean",
-      "centered": "Boolean",
-      "cls": "String/String[]",
-      "constrainAlign": "String/Ext.util.Region/Ext.dom.Element",
-      "contentEl": "Ext.dom.Element/HTMLElement/String",
-      "control": "Object",
-      "controller": "String/Object/Ext.app.ViewController",
-      "data": "Object",
-      "defaultButtonUI": "String",
-      "defaultFocus": "String",
-      "defaultListenerScope": "Boolean",
-      "defaults": "Object",
-      "defaultTabUI": "String",
-      "defaultType": "String",
-      "disabled": "Boolean",
-      "displayed": "Boolean",
-      "docked": "String",
-      "draggable": "Boolean/Object/Ext.drag.Source",
-      "flex": "Number/String/Object",
-      "floated": "Boolean",
-      "focusableContainer": "Boolean",
-      "focusCls": "String",
-      "fullscreen": "Boolean",
-      "height": "Number/String",
-      "hidden": "Boolean",
-      "hideAnimation": "String/Mixed",
-      "hideMode": "'clip'/'display'/'offsets'/'opacity'/'visibility'",
-      "hideOnMaskTap": "Boolean",
-      "html": "String/Ext.dom.Element/HTMLElement",
-      "id": "String",
-      "inactiveChildTabIndex": "Number",
-      "innerCls": "String",
-      "instanceCls": "String/String[]",
-      "itemId": "String",
-      "items": "Array/Object",
-      "keyMap": "Object",
-      "keyMapEnabled": "Boolean",
-      "keyMapTarget": "String",
-      "layout": "Object/String",
-      "left": "Number/String",
-      "listeners": "Object",
-      "manageBorders": "Boolean",
-      "margin": "Number/String",
-      "masked": "Boolean/String/Object/Ext.Mask/Ext.LoadMask",
-      "maxHeight": "Number/String",
-      "maxWidth": "Number/String",
-      "minHeight": "Number/String",
-      "minWidth": "Number/String",
-      "modal": "Boolean",
-      "modelValidation": "Boolean",
-      "name": "String",
-      "nameable": "Boolean",
-      "nameHolder": "Boolean",
-      "padding": "Number/String",
-      "plugins": "Array/Ext.enums.Plugin/Object/Ext.plugin.Abstract",
-      "publishes": "String/String[]/Object",
-      "record": "Ext.data.Model",
-      "reference": "String",
-      "referenceHolder": "Boolean",
-      "relative": "Boolean",
-      "renderTo": "Ext.dom.Element",
-      "resetFocusPosition": "Boolean",
-      "right": "Number/String",
-      "ripple": "Boolean/Object/String",
-      "scrollable": "Boolean/String/Object",
-      "selfAlign": "String",
-      "session": "Boolean/Object/Ext.data.Session",
-      "shadow": "Boolean",
-      "shareableName": "Boolean",
-      "shim": "Boolean",
-      "showAnimation": "String/Mixed",
-      "stateful": "Boolean/Object/String[]",
-      "statefulDefaults": "Object/String[]",
-      "stateId": "String",
-      "style": "String/Object",
-      "tabIndex": "Number",
-      "title": "String/Ext.Title",
-      "toFrontOnShow": "Boolean",
-      "tooltip": "String/Object",
-      "top": "Number/String",
-      "touchAction": "Object",
-      "tpl": "String/String[]/Ext.Template/Ext.XTemplate[]",
-      "tplWriteMode": "String",
-      "translatable": "Object",
-      "twoWayBindable": "String/String[]/Object",
-      "ui": "String/String[]",
-      "userCls": "String/String[]",
-      "userSelectable": "Boolean/String/Object",
-      "viewModel": "String/Object/Ext.app.ViewModel",
-      "weight": "Number",
-      "weighted": "Boolean",
-      "width": "Number/String",
-      "x": "Number",
-      "xtype": "String",
-      "y": "Number",
-      "zIndex": "Number",
+      "activeChildTabIndex": ["number"],
+      "activeItem": ["Ext.Component", "object", "string", "number"],
+      "activeTab": ["number", "string", "Ext.Component"],
+      "alignSelf": ["string"],
+      "allowFocusingDisabledChildren": ["boolean"],
+      "alwaysOnTop": ["boolean", "number"],
+      "animateIndicator": ["boolean"],
+      "ariaAttributes": ["object"],
+      "ariaDescribedBy": ["string"],
+      "ariaLabel": ["string"],
+      "ariaLabelledBy": ["string"],
+      "autoDestroy": ["boolean"],
+      "autoSize": ["boolean"],
+      "axisLock": ["boolean"],
+      "bind": ["object", "string"],
+      "bodyCls": ["string", "string[]"],
+      "border": ["boolean"],
+      "bottom": ["number", "string"],
+      "cardSwitchAnimation": ["string", "object", "boolean"],
+      "centered": ["boolean"],
+      "cls": ["string", "string[]"],
+      "constrainAlign": ["string", "Ext.util.Region", "Ext.dom.Element"],
+      "contentEl": ["Ext.dom.Element", "htmlelement", "string"],
+      "control": ["object"],
+      "controller": ["string", "object", "Ext.app.ViewController"],
+      "data": ["object"],
+      "defaultButtonUI": ["string"],
+      "defaultFocus": ["string"],
+      "defaultListenerScope": ["boolean"],
+      "defaults": ["object"],
+      "defaultTabUI": ["string"],
+      "defaultType": ["string"],
+      "disabled": ["boolean"],
+      "displayed": ["boolean"],
+      "docked": ["string"],
+      "draggable": ["boolean", "object", "Ext.drag.Source"],
+      "flex": ["number", "string", "object"],
+      "floated": ["boolean"],
+      "focusableContainer": ["boolean"],
+      "focusCls": ["string"],
+      "fullscreen": ["boolean"],
+      "height": ["number", "string"],
+      "hidden": ["boolean"],
+      "hideAnimation": ["string", "mixed"],
+      "hideMode": ["'clip'", "'display'", "'offsets'", "'opacity'", "'visibility'"],
+      "hideOnMaskTap": ["boolean"],
+      "html": ["string", "Ext.dom.Element", "htmlelement"],
+      "id": ["string"],
+      "inactiveChildTabIndex": ["number"],
+      "innerCls": ["string"],
+      "instanceCls": ["string", "string[]"],
+      "itemId": ["string"],
+      "items": ["array", "object"],
+      "keyMap": ["object"],
+      "keyMapEnabled": ["boolean"],
+      "keyMapTarget": ["string"],
+      "layout": ["object", "string"],
+      "left": ["number", "string"],
+      "listeners": ["object"],
+      "manageBorders": ["boolean"],
+      "margin": ["number", "string"],
+      "masked": ["boolean", "string", "object", "Ext.Mask", "Ext.LoadMask"],
+      "maxHeight": ["number", "string"],
+      "maxWidth": ["number", "string"],
+      "minHeight": ["number", "string"],
+      "minWidth": ["number", "string"],
+      "modal": ["boolean"],
+      "modelValidation": ["boolean"],
+      "name": ["string"],
+      "nameable": ["boolean"],
+      "nameHolder": ["boolean"],
+      "padding": ["number", "string"],
+      "plugins": ["array", "Ext.enums.Plugin", "object", "Ext.plugin.Abstract"],
+      "publishes": ["string", "string[]", "object"],
+      "record": ["Ext.data.Model"],
+      "reference": ["string"],
+      "referenceHolder": ["boolean"],
+      "relative": ["boolean"],
+      "renderTo": ["Ext.dom.Element"],
+      "resetFocusPosition": ["boolean"],
+      "right": ["number", "string"],
+      "ripple": ["boolean", "object", "string"],
+      "scrollable": ["boolean", "string", "object"],
+      "session": ["boolean", "object", "Ext.data.Session"],
+      "shadow": ["boolean"],
+      "shareableName": ["boolean"],
+      "shim": ["boolean"],
+      "showAnimation": ["string", "mixed"],
+      "stateful": ["boolean", "object", "string[]"],
+      "statefulDefaults": ["object", "string[]"],
+      "stateId": ["string"],
+      "style": ["string", "object"],
+      "tabIndex": ["number"],
+      "tabRotation": ["string"],
+      "title": ["string", "Ext.Title"],
+      "toFrontOnShow": ["boolean"],
+      "tooltip": ["string", "object"],
+      "top": ["number", "string"],
+      "touchAction": ["object"],
+      "tpl": ["string", "string[]", "Ext.Template", "Ext.XTemplate[]"],
+      "tplWriteMode": ["string"],
+      "translatable": ["object"],
+      "twoWayBindable": ["string", "string[]", "object"],
+      "ui": ["string", "string[]"],
+      "userCls": ["string", "string[]"],
+      "userSelectable": ["boolean", "string", "object"],
+      "viewModel": ["string", "object", "Ext.app.ViewModel"],
+      "weight": ["number"],
+      "weighted": ["boolean"],
+      "width": ["number", "string"],
+      "x": ["number"],
+      "xtype": ["string"],
+      "y": ["number"],
+      "zIndex": ["number"],
       "platformConfig": "Object",
       "responsiveConfig": "Object",
       "align": "Obyect",
@@ -911,6 +913,11 @@ function (_ExtBase) {
         return this.ext.getTabIndex();
       }
     }, {
+      name: 'getTabs',
+      "function": function _function() {
+        return this.ext.getTabs();
+      }
+    }, {
       name: 'getTitle',
       "function": function _function() {
         return this.ext.getTitle();
@@ -1142,8 +1149,8 @@ function (_ExtBase) {
       }
     }, {
       name: 'isSuspended',
-      "function": function _function() {
-        return this.ext.isSuspended;
+      "function": function _function(event) {
+        return this.ext.isSuspended(event);
       }
     }, {
       name: 'isSyncing',
@@ -1701,6 +1708,11 @@ function (_ExtBase) {
         return this.ext.updateSession(session);
       }
     }, {
+      name: 'updateTabRotation',
+      "function": function _function(rotation) {
+        return this.ext.updateTabRotation(rotation);
+      }
+    }, {
       name: 'updateTitle',
       "function": function _function(newTitle, oldTitle) {
         return this.ext.updateTitle(newTitle, oldTitle);
@@ -1761,6 +1773,14 @@ function (_ExtBase) {
     },
     set: function set(activeTab) {
       this.setAttribute('activeTab', activeTab);
+    }
+  }, {
+    key: "alignSelf",
+    get: function get() {
+      return this.getAttribute('alignSelf');
+    },
+    set: function set(alignSelf) {
+      this.setAttribute('alignSelf', alignSelf);
     }
   }, {
     key: "allowFocusingDisabledChildren",
@@ -1849,6 +1869,14 @@ function (_ExtBase) {
     },
     set: function set(bind) {
       this.setAttribute('bind', bind);
+    }
+  }, {
+    key: "bodyCls",
+    get: function get() {
+      return this.getAttribute('bodyCls');
+    },
+    set: function set(bodyCls) {
+      this.setAttribute('bodyCls', bodyCls);
     }
   }, {
     key: "border",
@@ -2387,14 +2415,6 @@ function (_ExtBase) {
       this.setAttribute('scrollable', scrollable);
     }
   }, {
-    key: "selfAlign",
-    get: function get() {
-      return this.getAttribute('selfAlign');
-    },
-    set: function set(selfAlign) {
-      this.setAttribute('selfAlign', selfAlign);
-    }
-  }, {
     key: "session",
     get: function get() {
       return this.getAttribute('session');
@@ -2473,6 +2493,14 @@ function (_ExtBase) {
     },
     set: function set(tabIndex) {
       this.setAttribute('tabIndex', tabIndex);
+    }
+  }, {
+    key: "tabRotation",
+    get: function get() {
+      return this.getAttribute('tabRotation');
+    },
+    set: function set(tabRotation) {
+      this.setAttribute('tabRotation', tabRotation);
     }
   }, {
     key: "title",

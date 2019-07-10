@@ -2,7 +2,17 @@
   "framework": "ext",
   "toolkit": "modern",
   "requires": [
-    "renderercell"
+    "renderercell",
+    "font-ext",
+    "ux",
+    "d3",
+    "pivot-d3",
+    "font-awesome",
+    "exporter",
+    "pivot",
+    "calendar",
+    "charts",
+    "treegrid"
   ],
   "overrides": [
     "overrides",
@@ -21,5 +31,5 @@
       "shared": "./resources"
     }
   },
-  "theme": "theme-material"
+  "theme": "theme-kitchensink"
 }

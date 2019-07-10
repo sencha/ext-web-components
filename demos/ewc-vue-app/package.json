@@ -1,0 +1,21 @@
+{
+  "name": "ewc-vue-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "install": "node ./node_modules/@sencha/ext-all/install-vue.js",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "@sencha/ext-components": "~7.0.0",
+    "@sencha/ext-all": "~7.0.0",
+    "core-js": "^2.6.5",
+    "vue": "^2.6.6"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.5.0",
+    "@vue/cli-service": "^3.5.0",
+    "vue-template-compiler": "^2.5.21"
+  }
+}

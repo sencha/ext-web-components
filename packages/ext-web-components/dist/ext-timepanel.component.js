@@ -12,152 +12,157 @@ function (_ExtBase) {
 
   ExtTimepanelComponent.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
     return {
-      "activeChildTabIndex": "Number",
-      "activeItem": "Ext.Component/Object/String/Number",
-      "allowFocusingDisabledChildren": "Boolean",
-      "alwaysOnTop": "Boolean/Number",
-      "anchor": "Boolean",
-      "anchorPosition": "String",
-      "ariaAttributes": "Object",
-      "ariaDescribedBy": "String",
-      "ariaLabel": "String",
-      "ariaLabelledBy": "String",
-      "autoAdvance": "Boolean",
-      "autoDestroy": "Boolean",
-      "autoSize": "Boolean",
-      "axisLock": "Boolean",
-      "bbar": "Object/Object[]",
-      "bind": "Object/String",
-      "bodyBorder": "Boolean",
-      "bodyPadding": "Number/Boolean/String",
-      "bodyStyle": "String/Object",
-      "border": "Boolean",
-      "bottom": "Number/String",
-      "buttonAlign": "String",
-      "buttons": "Object/Ext.Button[]",
-      "buttonToolbar": "Object/Ext.Toolbar",
-      "cardSwitchAnimation": "String/Object/Boolean",
-      "centered": "Boolean",
-      "closable": "Boolean",
-      "closeAction": "String",
-      "closeToolText": "String",
-      "cls": "String/String[]",
-      "collapsed": "Boolean",
-      "collapsible": "'top'/'right'/'bottom'/'left'/Boolean/Object",
-      "confirmable": "Boolean",
-      "constrainAlign": "String/Ext.util.Region/Ext.dom.Element",
-      "contentEl": "Ext.dom.Element/HTMLElement/String",
-      "control": "Object",
-      "controller": "String/Object/Ext.app.ViewController",
-      "data": "Object",
-      "declineHandler": "Function",
-      "defaultButtons": "Object",
-      "defaultFocus": "String",
-      "defaultListenerScope": "Boolean",
-      "defaults": "Object",
-      "defaultToolWeights": "Object",
-      "defaultType": "String",
-      "disabled": "Boolean",
-      "displayed": "Boolean",
-      "docked": "String",
-      "draggable": "Boolean/Object/Ext.drag.Source",
-      "flex": "Number/String/Object",
-      "floated": "Boolean",
-      "focusableContainer": "Boolean",
-      "focusCls": "String",
-      "fullscreen": "Boolean",
-      "handler": "Function",
-      "header": "Boolean/Object",
-      "headerPosition": "'top'/'right'/'bottom'/'left'",
-      "height": "Number/String",
-      "hidden": "Boolean",
-      "hideAnimation": "String/Mixed",
-      "hideMode": "'clip'/'display'/'offsets'/'opacity'/'visibility'",
-      "hideOnMaskTap": "Boolean",
-      "html": "String/Ext.dom.Element/HTMLElement",
-      "icon": "String",
-      "iconAlign": "'top'/'right'/'bottom'/'left'",
-      "iconCls": "String",
-      "id": "String",
-      "inactiveChildTabIndex": "Number",
-      "innerCls": "String",
-      "instanceCls": "String/String[]",
-      "itemId": "String",
-      "items": "Array/Object",
-      "keyMap": "Object",
-      "keyMapEnabled": "Boolean",
-      "keyMapTarget": "String",
-      "layout": "Object/String",
-      "lbar": "Object/Object[]",
-      "left": "Number/String",
-      "listeners": "Object",
-      "manageBorders": "Boolean",
-      "margin": "Number/String",
-      "masked": "Boolean/String/Object/Ext.Mask/Ext.LoadMask",
-      "maxHeight": "Number/String",
-      "maxWidth": "Number/String",
-      "minButtonWidth": "Number",
-      "minHeight": "Number/String",
-      "minWidth": "Number/String",
-      "modal": "Boolean",
-      "mode": "String",
-      "modelValidation": "Boolean",
-      "name": "String",
-      "nameable": "Boolean",
-      "nameHolder": "Boolean",
-      "padding": "Number/String",
-      "plugins": "Array/Ext.enums.Plugin/Object/Ext.plugin.Abstract",
-      "publishes": "String/String[]/Object",
-      "rbar": "Object/Object[]",
-      "record": "Ext.data.Model",
-      "reference": "String",
-      "referenceHolder": "Boolean",
-      "relative": "Boolean",
-      "renderTo": "Ext.dom.Element",
-      "resetFocusPosition": "Boolean",
-      "resizable": "Object",
-      "right": "Number/String",
-      "ripple": "Boolean/Object/String",
-      "scope": "Object",
-      "scrollable": "Boolean/String/Object",
-      "selfAlign": "String",
-      "session": "Boolean/Object/Ext.data.Session",
-      "shadow": "Boolean",
-      "shareableName": "Boolean",
-      "shim": "Boolean",
-      "showAnimation": "String/Mixed",
-      "standardButtons": "Object",
-      "stateful": "Boolean/Object/String[]",
-      "statefulDefaults": "Object/String[]",
-      "stateId": "String",
-      "style": "String/Object",
-      "tabIndex": "Number",
-      "tbar": "Object/Object[]",
-      "title": "String/Ext.panel.Title",
-      "titleAlign": "'left'/'center'/'right'",
-      "toFrontOnShow": "Boolean",
-      "toolDefaults": "Object",
-      "tools": "Ext.Tool[]/Object/Object[]",
-      "tooltip": "String/Object",
-      "top": "Number/String",
-      "touchAction": "Object",
-      "tpl": "String/String[]/Ext.Template/Ext.XTemplate[]",
-      "tplWriteMode": "String",
-      "translatable": "Object",
-      "twoWayBindable": "String/String[]/Object",
-      "ui": "String/String[]",
-      "userCls": "String/String[]",
-      "userSelectable": "Boolean/String/Object",
-      "value": "Date",
-      "vertical": "Boolean",
-      "viewModel": "String/Object/Ext.app.ViewModel",
-      "weight": "Number",
-      "weighted": "Boolean",
-      "width": "Number/String",
-      "x": "Number",
-      "xtype": "String",
-      "y": "Number",
-      "zIndex": "Number",
+      "activeChildTabIndex": ["number"],
+      "activeItem": ["Ext.Component", "object", "string", "number"],
+      "alignPMInside": ["boolean"],
+      "alignSelf": ["string"],
+      "allowFocusingDisabledChildren": ["boolean"],
+      "alwaysOnTop": ["boolean", "number"],
+      "anchor": ["boolean"],
+      "anchorPosition": ["string"],
+      "ariaAttributes": ["object"],
+      "ariaDescribedBy": ["string"],
+      "ariaLabel": ["string"],
+      "ariaLabelledBy": ["string"],
+      "autoAdvance": ["boolean"],
+      "autoDestroy": ["boolean"],
+      "autoSize": ["boolean"],
+      "axisLock": ["boolean"],
+      "bbar": ["object", "object[]"],
+      "bind": ["object", "string"],
+      "bodyBorder": ["boolean"],
+      "bodyCls": ["string", "string[]"],
+      "bodyPadding": ["number", "boolean", "string"],
+      "bodyStyle": ["string", "object"],
+      "border": ["boolean"],
+      "bottom": ["number", "string"],
+      "buttonAlign": ["string"],
+      "buttons": ["object", "Ext.Button[]"],
+      "buttonToolbar": ["object", "Ext.Toolbar"],
+      "cardSwitchAnimation": ["string", "object", "boolean"],
+      "centered": ["boolean"],
+      "closable": ["boolean"],
+      "closeAction": ["string"],
+      "closeToolText": ["string"],
+      "cls": ["string", "string[]"],
+      "collapsed": ["boolean"],
+      "collapsible": ["'top'", "'right'", "'bottom'", "'left'", "boolean", "object"],
+      "confirmable": ["boolean"],
+      "constrainAlign": ["string", "Ext.util.Region", "Ext.dom.Element"],
+      "contentEl": ["Ext.dom.Element", "htmlelement", "string"],
+      "control": ["object"],
+      "controller": ["string", "object", "Ext.app.ViewController"],
+      "data": ["object"],
+      "declineHandler": ["function"],
+      "defaultButtons": ["object"],
+      "defaultFocus": ["string"],
+      "defaultListenerScope": ["boolean"],
+      "defaults": ["object"],
+      "defaultToolWeights": ["object"],
+      "defaultType": ["string"],
+      "disabled": ["boolean"],
+      "displayed": ["boolean"],
+      "docked": ["string"],
+      "draggable": ["boolean", "object", "Ext.drag.Source"],
+      "flex": ["number", "string", "object"],
+      "floated": ["boolean"],
+      "focusableContainer": ["boolean"],
+      "focusCls": ["string"],
+      "fullscreen": ["boolean"],
+      "handler": ["function"],
+      "header": ["boolean", "object"],
+      "headerPosition": ["'top'", "'right'", "'bottom'", "'left'"],
+      "height": ["number", "string"],
+      "hidden": ["boolean"],
+      "hideAnimation": ["string", "mixed"],
+      "hideMode": ["'clip'", "'display'", "'offsets'", "'opacity'", "'visibility'"],
+      "hideOnMaskTap": ["boolean"],
+      "hourDisplayFormat": ["string"],
+      "html": ["string", "Ext.dom.Element", "htmlelement"],
+      "icon": ["string"],
+      "iconAlign": ["'top'", "'right'", "'bottom'", "'left'"],
+      "iconCls": ["string"],
+      "id": ["string"],
+      "inactiveChildTabIndex": ["number"],
+      "innerCls": ["string"],
+      "instanceCls": ["string", "string[]"],
+      "itemId": ["string"],
+      "items": ["array", "object"],
+      "keyMap": ["object"],
+      "keyMapEnabled": ["boolean"],
+      "keyMapTarget": ["string"],
+      "layout": ["object", "string"],
+      "lbar": ["object", "object[]"],
+      "left": ["number", "string"],
+      "listeners": ["object"],
+      "manageBorders": ["boolean"],
+      "margin": ["number", "string"],
+      "masked": ["boolean", "string", "object", "Ext.Mask", "Ext.LoadMask"],
+      "maxHeight": ["number", "string"],
+      "maxWidth": ["number", "string"],
+      "meridiem": ["boolean"],
+      "minButtonWidth": ["number"],
+      "minHeight": ["number", "string"],
+      "minWidth": ["number", "string"],
+      "modal": ["boolean"],
+      "mode": ["string"],
+      "modelValidation": ["boolean"],
+      "name": ["string"],
+      "nameable": ["boolean"],
+      "nameHolder": ["boolean"],
+      "padding": ["number", "string"],
+      "plugins": ["array", "Ext.enums.Plugin", "object", "Ext.plugin.Abstract"],
+      "publishes": ["string", "string[]", "object"],
+      "rbar": ["object", "object[]"],
+      "record": ["Ext.data.Model"],
+      "reference": ["string"],
+      "referenceHolder": ["boolean"],
+      "relative": ["boolean"],
+      "renderTo": ["Ext.dom.Element"],
+      "resetFocusPosition": ["boolean"],
+      "resizable": ["object"],
+      "right": ["number", "string"],
+      "ripple": ["boolean", "object", "string"],
+      "scope": ["object"],
+      "scrollable": ["boolean", "string", "object"],
+      "session": ["boolean", "object", "Ext.data.Session"],
+      "shadow": ["boolean"],
+      "shareableName": ["boolean"],
+      "shim": ["boolean"],
+      "showAnimation": ["string", "mixed"],
+      "standardButtons": ["object"],
+      "stateful": ["boolean", "object", "string[]"],
+      "statefulDefaults": ["object", "string[]"],
+      "stateId": ["string"],
+      "style": ["string", "object"],
+      "tabIndex": ["number"],
+      "tbar": ["object", "object[]"],
+      "title": ["string", "Ext.panel.Title"],
+      "titleAlign": ["'left'", "'center'", "'right'"],
+      "titleCollapse": ["boolean"],
+      "toFrontOnShow": ["boolean"],
+      "toolDefaults": ["object"],
+      "tools": ["Ext.Tool[]", "object", "object[]"],
+      "tooltip": ["string", "object"],
+      "top": ["number", "string"],
+      "touchAction": ["object"],
+      "tpl": ["string", "string[]", "Ext.Template", "Ext.XTemplate[]"],
+      "tplWriteMode": ["string"],
+      "translatable": ["object"],
+      "twoWayBindable": ["string", "string[]", "object"],
+      "ui": ["string", "string[]"],
+      "userCls": ["string", "string[]"],
+      "userSelectable": ["boolean", "string", "object"],
+      "value": ["date"],
+      "vertical": ["boolean"],
+      "viewModel": ["string", "object", "Ext.app.ViewModel"],
+      "weight": ["number"],
+      "weighted": ["boolean"],
+      "width": ["number", "string"],
+      "x": ["number"],
+      "xtype": ["string"],
+      "y": ["number"],
+      "zIndex": ["number"],
       "platformConfig": "Object",
       "responsiveConfig": "Object",
       "align": "Obyect",
@@ -1200,8 +1205,8 @@ function (_ExtBase) {
       }
     }, {
       name: 'isSuspended',
-      "function": function _function() {
-        return this.ext.isSuspended;
+      "function": function _function(event) {
+        return this.ext.isSuspended(event);
       }
     }, {
       name: 'isSyncing',
@@ -1798,6 +1803,22 @@ function (_ExtBase) {
       this.setAttribute('activeItem', activeItem);
     }
   }, {
+    key: "alignPMInside",
+    get: function get() {
+      return this.getAttribute('alignPMInside');
+    },
+    set: function set(alignPMInside) {
+      this.setAttribute('alignPMInside', alignPMInside);
+    }
+  }, {
+    key: "alignSelf",
+    get: function get() {
+      return this.getAttribute('alignSelf');
+    },
+    set: function set(alignSelf) {
+      this.setAttribute('alignSelf', alignSelf);
+    }
+  }, {
     key: "allowFocusingDisabledChildren",
     get: function get() {
       return this.getAttribute('allowFocusingDisabledChildren');
@@ -1916,6 +1937,14 @@ function (_ExtBase) {
     },
     set: function set(bodyBorder) {
       this.setAttribute('bodyBorder', bodyBorder);
+    }
+  }, {
+    key: "bodyCls",
+    get: function get() {
+      return this.getAttribute('bodyCls');
+    },
+    set: function set(bodyCls) {
+      this.setAttribute('bodyCls', bodyCls);
     }
   }, {
     key: "bodyPadding",
@@ -2278,6 +2307,14 @@ function (_ExtBase) {
       this.setAttribute('hideOnMaskTap', hideOnMaskTap);
     }
   }, {
+    key: "hourDisplayFormat",
+    get: function get() {
+      return this.getAttribute('hourDisplayFormat');
+    },
+    set: function set(hourDisplayFormat) {
+      this.setAttribute('hourDisplayFormat', hourDisplayFormat);
+    }
+  }, {
     key: "html",
     get: function get() {
       return this.getAttribute('html');
@@ -2452,6 +2489,14 @@ function (_ExtBase) {
     },
     set: function set(maxWidth) {
       this.setAttribute('maxWidth', maxWidth);
+    }
+  }, {
+    key: "meridiem",
+    get: function get() {
+      return this.getAttribute('meridiem');
+    },
+    set: function set(meridiem) {
+      this.setAttribute('meridiem', meridiem);
     }
   }, {
     key: "minButtonWidth",
@@ -2646,14 +2691,6 @@ function (_ExtBase) {
       this.setAttribute('scrollable', scrollable);
     }
   }, {
-    key: "selfAlign",
-    get: function get() {
-      return this.getAttribute('selfAlign');
-    },
-    set: function set(selfAlign) {
-      this.setAttribute('selfAlign', selfAlign);
-    }
-  }, {
     key: "session",
     get: function get() {
       return this.getAttribute('session');
@@ -2764,6 +2801,14 @@ function (_ExtBase) {
     },
     set: function set(titleAlign) {
       this.setAttribute('titleAlign', titleAlign);
+    }
+  }, {
+    key: "titleCollapse",
+    get: function get() {
+      return this.getAttribute('titleCollapse');
+    },
+    set: function set(titleCollapse) {
+      this.setAttribute('titleCollapse', titleCollapse);
     }
   }, {
     key: "toFrontOnShow",

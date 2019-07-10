@@ -12,181 +12,184 @@ function (_ExtBase) {
 
   ExtComboboxfieldComponent.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
     return {
-      "alignTarget": "String",
-      "allQuery": "String",
-      "alwaysOnTop": "Boolean/Number",
-      "animateUnderline": "Boolean",
-      "anyMatch": "Boolean",
-      "ariaAttributes": "Object",
-      "ariaDescribedBy": "String",
-      "ariaLabel": "String",
-      "ariaLabelledBy": "String",
-      "autoCapitalize": "Boolean",
-      "autoComplete": "Boolean",
-      "autoCorrect": "Boolean",
-      "autoFitErrors": "Boolean",
-      "autoFocus": "Boolean",
-      "autoFocusLast": "Boolean",
-      "autoHideInputMask": "Boolean",
-      "autoLoadOnValue": "Boolean",
-      "autoSelect": "Boolean",
-      "axisLock": "Boolean",
-      "badFormatMessage": "String",
-      "bind": "Object/String",
-      "bodyAlign": "any",
-      "border": "Boolean",
-      "bottom": "Number/String",
-      "caseSensitive": "Boolean",
-      "centered": "Boolean",
-      "chipView": "any",
-      "clearable": "Boolean",
-      "cls": "String/String[]",
-      "collapseOnSelect": "Boolean",
-      "constrainAlign": "String/Ext.util.Region/Ext.dom.Element",
-      "contentEl": "Ext.dom.Element/HTMLElement/String",
-      "controller": "String/Object/Ext.app.ViewController",
-      "data": "Object",
-      "defaultListenerScope": "Boolean",
-      "delimiter": "String",
-      "disabled": "Boolean",
-      "displayed": "Boolean",
-      "displayField": "String/Number",
-      "displayTpl": "String/String[]/Ext.XTemplate",
-      "docked": "String",
-      "draggable": "Boolean/Object/Ext.drag.Source",
-      "edgePicker": "Object",
-      "editable": "Boolean",
-      "enableRegEx": "Boolean",
-      "error": "String/String[]",
-      "errorMessage": "String",
-      "errorTarget": "String",
-      "errorTip": "Object",
-      "errorTpl": "String/String[]/Ext.XTemplate",
-      "flex": "Number/String/Object",
-      "floated": "Boolean",
-      "floatedPicker": "Object",
-      "floatedPickerAlign": "String",
-      "focusCls": "String",
-      "focusTrap": "any",
-      "forceSelection": "Boolean",
-      "fullscreen": "Boolean",
-      "height": "Number/String",
-      "hidden": "Boolean",
-      "hiddenName": "String",
-      "hideAnimation": "String/Mixed",
-      "hideMode": "'clip'/'display'/'offsets'/'opacity'/'visibility'",
-      "hideOnMaskTap": "Boolean",
-      "hideTrigger": "Boolean",
-      "html": "String/Ext.dom.Element/HTMLElement",
-      "id": "String",
-      "inline": "Boolean",
-      "inputMask": "String/Ext.field.InputMask",
-      "inputType": "String",
-      "inputValue": "any",
-      "instanceCls": "String/String[]",
-      "itemCls": "String",
-      "itemId": "String",
-      "itemTpl": "String/Ext.XTemplate",
-      "keyMap": "Object",
-      "keyMapEnabled": "Boolean",
-      "keyMapTarget": "String",
-      "label": "String",
-      "labelAlign": "'top'/'left'/'bottom'/'right'",
-      "labelCls": "String",
-      "labelInPlaceholder": "any",
-      "labelMinWidth": "Number/String",
-      "labelTextAlign": "'top'/'right'/'bottom'/'left'",
-      "labelWidth": "Number/String",
-      "labelWrap": "Boolean",
-      "left": "Number/String",
-      "listeners": "Object",
-      "margin": "Number/String",
-      "matchFieldWidth": "Boolean",
-      "maxHeight": "Number/String",
-      "maxLength": "Number",
-      "maxWidth": "Number/String",
-      "minChars": "Number",
-      "minHeight": "Number/String",
-      "minWidth": "Number/String",
-      "modal": "Boolean",
-      "modelValidation": "Boolean",
-      "multiSelect": "Boolean",
-      "name": "String",
-      "nameable": "Boolean",
-      "options": "Array",
-      "padding": "Number/String",
-      "parseValidator": "Ext.data.validator.Validator",
-      "pattern": "String",
-      "picker": "String/Object",
-      "pickerSlotAlign": "String",
-      "placeholder": "String",
-      "plugins": "Array/Ext.enums.Plugin/Object/Ext.plugin.Abstract",
-      "primaryFilter": "Function/String/Object/Ext.util.Filter",
-      "publishes": "String/String[]/Object",
-      "queryCaching": "Boolean",
-      "queryDelay": "Number",
-      "queryMode": "String",
-      "queryParam": "String",
-      "readOnly": "Boolean",
-      "record": "Ext.data.Model",
-      "recordCreator": "Function/String",
-      "recordCreatorScope": "Object",
-      "reference": "String",
-      "relative": "Boolean",
-      "renderTo": "Ext.dom.Element",
-      "required": "Boolean",
-      "requiredMessage": "String",
-      "right": "Number/String",
-      "ripple": "Boolean/Object/String",
-      "scrollable": "Boolean/String/Object",
-      "selection": "Ext.data.Model",
-      "selectOnTab": "Boolean",
-      "selfAlign": "String",
-      "session": "Boolean/Object/Ext.data.Session",
-      "shadow": "Boolean",
-      "shareableName": "Boolean",
-      "shim": "Boolean",
-      "showAnimation": "String/Mixed",
-      "sideError": "String",
-      "stateful": "Boolean/Object/String[]",
-      "statefulDefaults": "Object/String[]",
-      "stateId": "String",
-      "store": "Ext.data.Store/Object/String",
-      "style": "String/Object",
-      "tabIndex": "Number",
-      "textAlign": "'left'/'center'/'right'",
-      "tipError": "String",
-      "titleError": "String",
-      "toFrontOnShow": "Boolean",
-      "tooltip": "String/Object",
-      "top": "Number/String",
-      "touchAction": "Object",
-      "tpl": "String/String[]/Ext.Template/Ext.XTemplate[]",
-      "tplWriteMode": "String",
-      "translatable": "Object",
-      "triggerAction": "String",
-      "triggers": "Object",
-      "twoWayBindable": "String/String[]/Object",
-      "typeAhead": "Boolean",
-      "typeAheadDelay": "Number",
-      "ui": "String/String[]",
-      "underError": "String",
-      "userCls": "String/String[]",
-      "userSelectable": "Boolean/String/Object",
-      "validateDisabled": "Boolean",
-      "validationMessage": "String",
-      "validators": "Mixed",
-      "value": "Mixed",
-      "valueCollection": "Object/Ext.util.Collection",
-      "valueField": "String/Number",
-      "valueNotFoundText": "String",
-      "viewModel": "String/Object/Ext.app.ViewModel",
-      "weight": "Number",
-      "width": "Number/String",
-      "x": "Number",
-      "xtype": "String",
-      "y": "Number",
-      "zIndex": "Number",
+      "alignSelf": ["string"],
+      "alignTarget": ["string"],
+      "allQuery": ["string"],
+      "alwaysOnTop": ["boolean", "number"],
+      "animateUnderline": ["boolean"],
+      "anyMatch": ["boolean"],
+      "ariaAttributes": ["object"],
+      "ariaDescribedBy": ["string"],
+      "ariaLabel": ["string"],
+      "ariaLabelledBy": ["string"],
+      "autoCapitalize": ["boolean"],
+      "autoComplete": ["boolean"],
+      "autoCorrect": ["boolean"],
+      "autoFitErrors": ["boolean"],
+      "autoFocus": ["boolean"],
+      "autoFocusLast": ["boolean"],
+      "autoHideInputMask": ["boolean"],
+      "autoLoadOnValue": ["boolean"],
+      "autoSelect": ["boolean"],
+      "axisLock": ["boolean"],
+      "badFormatMessage": ["string"],
+      "bind": ["object", "string"],
+      "bodyAlign": ["any"],
+      "border": ["boolean"],
+      "bottom": ["number", "string"],
+      "bubbleDirty": ["boolean"],
+      "caseSensitive": ["boolean"],
+      "centered": ["boolean"],
+      "chipView": ["any"],
+      "clearable": ["boolean"],
+      "cls": ["string", "string[]"],
+      "collapseOnSelect": ["boolean"],
+      "constrainAlign": ["string", "Ext.util.Region", "Ext.dom.Element"],
+      "contentEl": ["Ext.dom.Element", "htmlelement", "string"],
+      "controller": ["string", "object", "Ext.app.ViewController"],
+      "data": ["object"],
+      "defaultListenerScope": ["boolean"],
+      "delimiter": ["string"],
+      "dirty": ["boolean"],
+      "disabled": ["boolean"],
+      "displayed": ["boolean"],
+      "displayField": ["string", "number"],
+      "displayTpl": ["string", "string[]", "Ext.XTemplate"],
+      "docked": ["string"],
+      "draggable": ["boolean", "object", "Ext.drag.Source"],
+      "edgePicker": ["object"],
+      "editable": ["boolean"],
+      "enableRegEx": ["boolean"],
+      "error": ["string", "string[]"],
+      "errorMessage": ["string"],
+      "errorTarget": ["string"],
+      "errorTip": ["object"],
+      "errorTpl": ["string", "string[]", "Ext.XTemplate"],
+      "flex": ["number", "string", "object"],
+      "floated": ["boolean"],
+      "floatedPicker": ["object"],
+      "floatedPickerAlign": ["string"],
+      "focusCls": ["string"],
+      "focusTrap": ["any"],
+      "forceSelection": ["boolean"],
+      "fullscreen": ["boolean"],
+      "height": ["number", "string"],
+      "hidden": ["boolean"],
+      "hiddenName": ["string"],
+      "hideAnimation": ["string", "mixed"],
+      "hideMode": ["'clip'", "'display'", "'offsets'", "'opacity'", "'visibility'"],
+      "hideOnMaskTap": ["boolean"],
+      "hideTrigger": ["boolean"],
+      "html": ["string", "Ext.dom.Element", "htmlelement"],
+      "id": ["string"],
+      "inline": ["boolean"],
+      "inputMask": ["string", "Ext.field.InputMask"],
+      "inputType": ["string"],
+      "inputValue": ["any"],
+      "instanceCls": ["string", "string[]"],
+      "itemCls": ["string"],
+      "itemId": ["string"],
+      "itemTpl": ["string", "Ext.XTemplate"],
+      "keyMap": ["object"],
+      "keyMapEnabled": ["boolean"],
+      "keyMapTarget": ["string"],
+      "label": ["string"],
+      "labelAlign": ["'top'", "'left'", "'bottom'", "'right'"],
+      "labelCls": ["string"],
+      "labelInPlaceholder": ["any"],
+      "labelMinWidth": ["number", "string"],
+      "labelTextAlign": ["'top'", "'right'", "'bottom'", "'left'"],
+      "labelWidth": ["number", "string"],
+      "labelWrap": ["boolean"],
+      "left": ["number", "string"],
+      "listeners": ["object"],
+      "margin": ["number", "string"],
+      "matchFieldWidth": ["boolean"],
+      "maxHeight": ["number", "string"],
+      "maxLength": ["number"],
+      "maxWidth": ["number", "string"],
+      "minChars": ["number"],
+      "minHeight": ["number", "string"],
+      "minWidth": ["number", "string"],
+      "modal": ["boolean"],
+      "modelValidation": ["boolean"],
+      "multiSelect": ["boolean"],
+      "name": ["string"],
+      "nameable": ["boolean"],
+      "options": ["array"],
+      "padding": ["number", "string"],
+      "parseValidator": ["Ext.data.validator.Validator"],
+      "pattern": ["string"],
+      "picker": ["string", "object"],
+      "pickerSlotAlign": ["string"],
+      "placeholder": ["string"],
+      "plugins": ["array", "Ext.enums.Plugin", "object", "Ext.plugin.Abstract"],
+      "primaryFilter": ["function", "string", "object", "Ext.util.Filter"],
+      "publishes": ["string", "string[]", "object"],
+      "queryCaching": ["boolean"],
+      "queryDelay": ["number"],
+      "queryMode": ["string"],
+      "queryParam": ["string"],
+      "readOnly": ["boolean"],
+      "record": ["Ext.data.Model"],
+      "recordCreator": ["function", "string"],
+      "recordCreatorScope": ["object"],
+      "reference": ["string"],
+      "relative": ["boolean"],
+      "renderTo": ["Ext.dom.Element"],
+      "required": ["boolean"],
+      "requiredMessage": ["string"],
+      "right": ["number", "string"],
+      "ripple": ["boolean", "object", "string"],
+      "scrollable": ["boolean", "string", "object"],
+      "selection": ["Ext.data.Model"],
+      "selectOnTab": ["boolean"],
+      "session": ["boolean", "object", "Ext.data.Session"],
+      "shadow": ["boolean"],
+      "shareableName": ["boolean"],
+      "shim": ["boolean"],
+      "showAnimation": ["string", "mixed"],
+      "sideError": ["string"],
+      "stateful": ["boolean", "object", "string[]"],
+      "statefulDefaults": ["object", "string[]"],
+      "stateId": ["string"],
+      "store": ["Ext.data.Store", "object", "string"],
+      "stripCharsRe": ["regexp"],
+      "style": ["string", "object"],
+      "tabIndex": ["number"],
+      "textAlign": ["'left'", "'center'", "'right'"],
+      "tipError": ["string"],
+      "titleError": ["string"],
+      "toFrontOnShow": ["boolean"],
+      "tooltip": ["string", "object"],
+      "top": ["number", "string"],
+      "touchAction": ["object"],
+      "tpl": ["string", "string[]", "Ext.Template", "Ext.XTemplate[]"],
+      "tplWriteMode": ["string"],
+      "translatable": ["object"],
+      "triggerAction": ["string"],
+      "triggers": ["object"],
+      "twoWayBindable": ["string", "string[]", "object"],
+      "typeAhead": ["boolean"],
+      "typeAheadDelay": ["number"],
+      "ui": ["string", "string[]"],
+      "underError": ["string"],
+      "userCls": ["string", "string[]"],
+      "userSelectable": ["boolean", "string", "object"],
+      "validateDisabled": ["boolean"],
+      "validationMessage": ["string"],
+      "validators": ["mixed"],
+      "value": ["mixed"],
+      "valueCollection": ["object", "Ext.util.Collection"],
+      "valueField": ["string", "number"],
+      "valueNotFoundText": ["string"],
+      "viewModel": ["string", "object", "Ext.app.ViewModel"],
+      "weight": ["number"],
+      "width": ["number", "string"],
+      "x": ["number"],
+      "xtype": ["string"],
+      "y": ["number"],
+      "zIndex": ["number"],
       "platformConfig": "Object",
       "responsiveConfig": "Object",
       "align": "Obyect",
@@ -290,6 +293,9 @@ function (_ExtBase) {
       name: 'destroy',
       parameters: ''
     }, {
+      name: 'dirtychange',
+      parameters: 'combobox,dirty'
+    }, {
       name: 'disabledchange',
       parameters: 'sender,value,oldValue'
     }, {
@@ -331,6 +337,9 @@ function (_ExtBase) {
     }, {
       name: 'initialize',
       parameters: 'sender'
+    }, {
+      name: 'keydown',
+      parameters: 'combobox,e'
     }, {
       name: 'keyup',
       parameters: 'combobox,e'
@@ -488,6 +497,11 @@ function (_ExtBase) {
         return this.ext.addTrigger(name, trigger);
       }
     }, {
+      name: 'adjustChildDirtyCount',
+      "function": function _function(dirty) {
+        return this.ext.adjustChildDirtyCount(dirty);
+      }
+    }, {
       name: 'afterEdit',
       "function": function _function() {
         return this.ext.afterEdit();
@@ -556,6 +570,11 @@ function (_ExtBase) {
       name: 'beforeInitialize',
       "function": function _function() {
         return this.ext.beforeInitialize();
+      }
+    }, {
+      name: 'beginSyncChildDirty',
+      "function": function _function() {
+        return this.ext.beginSyncChildDirty();
       }
     }, {
       name: 'blur',
@@ -773,9 +792,19 @@ function (_ExtBase) {
         return this.ext.findRecordByValue(value);
       }
     }, {
+      name: 'finishSyncChildDirty',
+      "function": function _function() {
+        return this.ext.finishSyncChildDirty();
+      }
+    }, {
       name: 'fireAction',
       "function": function _function(eventName, args, fn, scope, options, order) {
         return this.ext.fireAction(eventName, args, fn, scope, options, order);
+      }
+    }, {
+      name: 'fireDirtyChange',
+      "function": function _function() {
+        return this.ext.fireDirtyChange();
       }
     }, {
       name: 'fireEvent',
@@ -796,6 +825,11 @@ function (_ExtBase) {
       name: 'fireKey',
       "function": function _function(e) {
         return this.ext.fireKey(e);
+      }
+    }, {
+      name: 'fixDirtyState',
+      "function": function _function() {
+        return this.ext.fixDirtyState();
       }
     }, {
       name: 'focus',
@@ -908,6 +942,11 @@ function (_ExtBase) {
         return this.ext.getPlugin(id);
       }
     }, {
+      name: 'getRawValue',
+      "function": function _function() {
+        return this.ext.getRawValue();
+      }
+    }, {
       name: 'getRecordDisplayData',
       "function": function _function(record) {
         return this.ext.getRecordDisplayData(record);
@@ -961,6 +1000,11 @@ function (_ExtBase) {
       name: 'handleBlurEvent',
       "function": function _function(info) {
         return this.ext.handleBlurEvent(info);
+      }
+    }, {
+      name: 'handleFieldDefaults',
+      "function": function _function() {
+        return this.ext.handleFieldDefaults();
       }
     }, {
       name: 'handleFocusEvent',
@@ -1139,8 +1183,8 @@ function (_ExtBase) {
       }
     }, {
       name: 'isSuspended',
-      "function": function _function() {
-        return this.ext.isSuspended;
+      "function": function _function(event) {
+        return this.ext.isSuspended(event);
       }
     }, {
       name: 'isSyncing',
@@ -1214,8 +1258,8 @@ function (_ExtBase) {
       }
     }, {
       name: 'maybeCollapse',
-      "function": function _function() {
-        return this.ext.maybeCollapse;
+      "function": function _function(event) {
+        return this.ext.maybeCollapse(event);
       }
     }, {
       name: 'mon',
@@ -1393,9 +1437,19 @@ function (_ExtBase) {
         return this.ext.processElementConfig();
       }
     }, {
+      name: 'processRawValue',
+      "function": function _function(value) {
+        return this.ext.processRawValue(value);
+      }
+    }, {
       name: 'publishState',
       "function": function _function(property, value) {
         return this.ext.publishState(property, value);
+      }
+    }, {
+      name: 'rawToValue',
+      "function": function _function(rawValue) {
+        return this.ext.rawToValue(rawValue);
       }
     }, {
       name: 'readStateObject',
@@ -1648,6 +1702,11 @@ function (_ExtBase) {
         return this.ext.toggleInvalidCls(hasError);
       }
     }, {
+      name: 'transformRawValue',
+      "function": function _function(value) {
+        return this.ext.transformRawValue(value);
+      }
+    }, {
       name: 'transformStatefulConfig',
       "function": function _function(instanceConfig, configurator) {
         return this.ext.transformStatefulConfig(instanceConfig, configurator);
@@ -1741,6 +1800,14 @@ function (_ExtBase) {
   };
 
   _createClass(ExtComboboxfieldComponent, [{
+    key: "alignSelf",
+    get: function get() {
+      return this.getAttribute('alignSelf');
+    },
+    set: function set(alignSelf) {
+      this.setAttribute('alignSelf', alignSelf);
+    }
+  }, {
     key: "alignTarget",
     get: function get() {
       return this.getAttribute('alignTarget');
@@ -1933,6 +2000,14 @@ function (_ExtBase) {
       this.setAttribute('bottom', bottom);
     }
   }, {
+    key: "bubbleDirty",
+    get: function get() {
+      return this.getAttribute('bubbleDirty');
+    },
+    set: function set(bubbleDirty) {
+      this.setAttribute('bubbleDirty', bubbleDirty);
+    }
+  }, {
     key: "caseSensitive",
     get: function get() {
       return this.getAttribute('caseSensitive');
@@ -2027,6 +2102,14 @@ function (_ExtBase) {
     },
     set: function set(delimiter) {
       this.setAttribute('delimiter', delimiter);
+    }
+  }, {
+    key: "dirty",
+    get: function get() {
+      return this.getAttribute('dirty');
+    },
+    set: function set(dirty) {
+      this.setAttribute('dirty', dirty);
     }
   }, {
     key: "disabled",
@@ -2773,14 +2856,6 @@ function (_ExtBase) {
       this.setAttribute('selectOnTab', selectOnTab);
     }
   }, {
-    key: "selfAlign",
-    get: function get() {
-      return this.getAttribute('selfAlign');
-    },
-    set: function set(selfAlign) {
-      this.setAttribute('selfAlign', selfAlign);
-    }
-  }, {
     key: "session",
     get: function get() {
       return this.getAttribute('session');
@@ -2859,6 +2934,14 @@ function (_ExtBase) {
     },
     set: function set(store) {
       this.setAttribute('store', store);
+    }
+  }, {
+    key: "stripCharsRe",
+    get: function get() {
+      return this.getAttribute('stripCharsRe');
+    },
+    set: function set(stripCharsRe) {
+      this.setAttribute('stripCharsRe', stripCharsRe);
     }
   }, {
     key: "style",
@@ -3429,6 +3512,14 @@ function (_ExtBase) {
       this.setAttribute('ondestroy', ondestroy);
     }
   }, {
+    key: "ondirtychange",
+    get: function get() {
+      return this.getAttribute('ondirtychange');
+    },
+    set: function set(ondirtychange) {
+      this.setAttribute('ondirtychange', ondirtychange);
+    }
+  }, {
     key: "ondisabledchange",
     get: function get() {
       return this.getAttribute('ondisabledchange');
@@ -3539,6 +3630,14 @@ function (_ExtBase) {
     },
     set: function set(oninitialize) {
       this.setAttribute('oninitialize', oninitialize);
+    }
+  }, {
+    key: "onkeydown",
+    get: function get() {
+      return this.getAttribute('onkeydown');
+    },
+    set: function set(onkeydown) {
+      this.setAttribute('onkeydown', onkeydown);
     }
   }, {
     key: "onkeyup",

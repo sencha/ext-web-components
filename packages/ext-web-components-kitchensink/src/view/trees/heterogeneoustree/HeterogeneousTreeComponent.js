@@ -3,47 +3,57 @@ import './data';
 
 export default class HeterogeneousTreeComponent {
     constructor() {
-        const cityModel = Ext.define('KitchenSink.model.tree.City', {
-            extend: 'Ext.data.TreeModel',
-            entityName: 'City',
-            idProperty: 'name',
-            glyph: 'xf19c@FontAwesome',
-            fields: [{
-                name: 'name',
-                convert: undefined
-            }, {
-                name: 'iconCls',
-                defaultValue: 'x-fa fa-bank'
-            }]
-        });
 
-        const countryModel = Ext.define('KitchenSink.model.tree.Country', {
-            extend: 'Ext.data.TreeModel',
-            entityName: 'Country',
-            idProperty: 'name',
-            glyph: 'xf024@FontAwesome',
-            fields: [{
-                name: 'name',
-                convert: undefined
-            }, {
-                name: 'iconCls',
-                defaultValue: 'x-fa fa-flag'
-            }]
-        });
+        let cityModel = {};
+        let countryModel = {};
+        let territoryModel = {};
 
-        const territoryModel = Ext.define('KitchenSink.model.tree.Territory', {
-            extend: 'Ext.data.TreeModel',
-            entityName: 'Territory',
-            idProperty: 'name',
-            glyph: 'xf0ac@FontAwesome',
-            fields: [{
-                name: 'name',
-                convert: undefined
-            }, {
-                name: 'iconCls',
-                defaultValue: 'x-fa fa-globe'
-            }]
-        });
+        if(!Ext.ClassManager.isCreated('KitchenSink.model.tree.City')) {
+            cityModel = Ext.define('KitchenSink.model.tree.City', {
+                extend: 'Ext.data.TreeModel',
+                entityName: 'City',
+                idProperty: 'name',
+                glyph: 'xf19c@FontAwesome',
+                fields: [{
+                    name: 'name',
+                    convert: undefined
+                }, {
+                    name: 'iconCls',
+                    defaultValue: 'x-fa fa-bank'
+                }]
+            });
+        } 
+        if(!Ext.ClassManager.isCreated('KitchenSink.model.tree.Country')) {
+            countryModel = Ext.define('KitchenSink.model.tree.Country', {
+                extend: 'Ext.data.TreeModel',
+                entityName: 'Country',
+                idProperty: 'name',
+                glyph: 'xf024@FontAwesome',
+                fields: [{
+                    name: 'name',
+                    convert: undefined
+                }, {
+                    name: 'iconCls',
+                    defaultValue: 'x-fa fa-flag'
+                }]
+            });
+        }
+    
+        if(!Ext.ClassManager.isCreated('KitchenSink.model.tree.Territory')) {
+            territoryModel = Ext.define('KitchenSink.model.tree.Territory', {
+                extend: 'Ext.data.TreeModel',
+                entityName: 'Territory',
+                idProperty: 'name',
+                glyph: 'xf0ac@FontAwesome',
+                fields: [{
+                    name: 'name',
+                    convert: undefined
+                }, {
+                    name: 'iconCls',
+                    defaultValue: 'x-fa fa-globe'
+                }]
+            });
+        }
         this.cityModel = cityModel;
         this.countryModel = countryModel;
         this.territoryModel = territoryModel;

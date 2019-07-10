@@ -14,76 +14,83 @@ function (_ExtBase) {
     var _ref;
 
     return _ref = {
-      "align": "'left'/'center'/'right'",
-      "alwaysOnTop": "Boolean/Number",
-      "ariaAttributes": "Object",
-      "ariaDescribedBy": "String",
-      "ariaLabel": "String",
-      "ariaLabelledBy": "String",
-      "bind": "Object/String",
-      "bodyCls": "String",
-      "bodyStyle": "String/Object",
-      "border": "Boolean",
-      "cellCls": "String",
-      "cls": "String",
-      "column": "Ext.grid.column.Column",
-      "constrainAlign": "String/Ext.util.Region/Ext.dom.Element",
-      "controller": "String/Object/Ext.app.ViewController",
-      "defaultListenerScope": "Boolean",
-      "defaultToolWeights": "Object",
-      "disabled": "Boolean",
-      "encodeHtml": "Boolean",
-      "flex": "Number/String/Object",
-      "floated": "Boolean",
-      "focusCls": "String",
-      "formatter": "String",
-      "height": "Number/String",
-      "hidden": "Boolean",
-      "hideMode": "'clip'/'display'/'offsets'/'opacity'/'visibility'",
-      "iconCls": "String",
-      "iconClsProperty": "String",
-      "id": "String",
-      "instanceCls": "String/String[]",
-      "itemId": "String",
-      "keyMap": "Object",
-      "keyMapEnabled": "Boolean",
-      "keyMapTarget": "String",
-      "listeners": "Object",
-      "name": "String",
-      "nameable": "Boolean",
-      "plugins": "Array/Ext.enums.Plugin/Object/Ext.plugin.Abstract",
-      "publishes": "String/String[]/Object",
-      "rawValue": "String",
-      "record": "Ext.data.Model",
-      "reference": "String",
-      "relative": "Boolean",
-      "renderer": "Function/String",
-      "renderTo": "Ext.dom.Element",
-      "ripple": "Boolean/Object/String",
-      "scope": "Object",
-      "selectable": "Boolean",
-      "selfAlign": "String",
-      "session": "Boolean/Object/Ext.data.Session",
-      "shadow": "Boolean",
-      "shareableName": "Boolean",
-      "shim": "Boolean",
-      "style": "String/Object",
-      "text": "String",
-      "toFrontOnShow": "Boolean",
-      "toolDefaults": "Object",
-      "tools": "Ext.Tool[]/Object/Object[]",
-      "touchAction": "Object",
-      "tpl": "String/String[]/Ext.XTemplate",
-      "translatable": "Object",
-      "twoWayBindable": "String/String[]/Object",
-      "ui": "String/String[]",
-      "userCls": "String/String[]",
-      "value": "Mixed",
-      "viewModel": "String/Object/Ext.app.ViewModel",
-      "width": "Number/String",
-      "x": "Number",
-      "y": "Number",
-      "zeroValue": "String",
+      "align": ["'left'", "'center'", "'right'"],
+      "alignSelf": ["string"],
+      "alwaysOnTop": ["boolean", "number"],
+      "ariaAttributes": ["object"],
+      "ariaDescribedBy": ["string"],
+      "ariaLabel": ["string"],
+      "ariaLabelledBy": ["string"],
+      "autoCheckChildren": ["boolean"],
+      "bind": ["object", "string"],
+      "bodyCls": ["string"],
+      "bodyStyle": ["string", "object"],
+      "border": ["boolean"],
+      "cellCls": ["string"],
+      "checkable": ["boolean"],
+      "checkableField": ["string"],
+      "checkedField": ["string"],
+      "checkOnTriTap": ["boolean"],
+      "cls": ["string"],
+      "column": ["Ext.grid.column.Column"],
+      "constrainAlign": ["string", "Ext.util.Region", "Ext.dom.Element"],
+      "controller": ["string", "object", "Ext.app.ViewController"],
+      "defaultListenerScope": ["boolean"],
+      "defaultToolWeights": ["object"],
+      "disabled": ["boolean"],
+      "enableTri": ["boolean"],
+      "encodeHtml": ["boolean"],
+      "flex": ["number", "string", "object"],
+      "floated": ["boolean"],
+      "focusCls": ["string"],
+      "formatter": ["string"],
+      "height": ["number", "string"],
+      "hidden": ["boolean"],
+      "hideMode": ["'clip'", "'display'", "'offsets'", "'opacity'", "'visibility'"],
+      "iconCls": ["string"],
+      "iconClsProperty": ["string"],
+      "id": ["string"],
+      "instanceCls": ["string", "string[]"],
+      "itemId": ["string"],
+      "keyMap": ["object"],
+      "keyMapEnabled": ["boolean"],
+      "keyMapTarget": ["string"],
+      "listeners": ["object"],
+      "margin": ["number", "string"],
+      "name": ["string"],
+      "nameable": ["boolean"],
+      "plugins": ["array", "Ext.enums.Plugin", "object", "Ext.plugin.Abstract"],
+      "publishes": ["string", "string[]", "object"],
+      "rawValue": ["string"],
+      "record": ["Ext.data.Model"],
+      "reference": ["string"],
+      "relative": ["boolean"],
+      "renderer": ["function", "string"],
+      "renderTo": ["Ext.dom.Element"],
+      "ripple": ["boolean", "object", "string"],
+      "scope": ["object"],
+      "selectable": ["boolean"],
+      "session": ["boolean", "object", "Ext.data.Session"],
+      "shadow": ["boolean"],
+      "shareableName": ["boolean"],
+      "shim": ["boolean"],
+      "style": ["string", "object"],
+      "text": ["string"],
+      "toFrontOnShow": ["boolean"],
+      "toolDefaults": ["object"],
+      "tools": ["Ext.Tool[]", "object", "object[]"],
+      "touchAction": ["object"],
+      "tpl": ["string", "string[]", "Ext.XTemplate"],
+      "translatable": ["object"],
+      "twoWayBindable": ["string", "string[]", "object"],
+      "ui": ["string", "string[]"],
+      "userCls": ["string", "string[]"],
+      "value": ["mixed"],
+      "viewModel": ["string", "object", "Ext.app.ViewModel"],
+      "width": ["number", "string"],
+      "x": ["number"],
+      "y": ["number"],
+      "zeroValue": ["string"],
       "platformConfig": "Object",
       "responsiveConfig": "Object"
     }, _ref["align"] = "Obyect", _ref["fitToParent"] = "Boolean", _ref["config"] = "Object", _ref;
@@ -91,6 +98,9 @@ function (_ExtBase) {
 
   ExtTreecellComponent.EVENTS = function EVENTS() {
     return [{
+      name: 'beforecheckchange',
+      parameters: 'treecell,checked,current,record,e'
+    }, {
       name: 'beforedisabledchange',
       parameters: 'sender,value,oldValue,undefined'
     }, {
@@ -108,6 +118,9 @@ function (_ExtBase) {
     }, {
       name: 'blur',
       parameters: 'treecell,event'
+    }, {
+      name: 'checkchange',
+      parameters: 'treecell,checked,record,e'
     }, {
       name: 'disabledchange',
       parameters: 'sender,value,oldValue'
@@ -661,8 +674,8 @@ function (_ExtBase) {
       }
     }, {
       name: 'isSuspended',
-      "function": function _function() {
-        return this.ext.isSuspended;
+      "function": function _function(event) {
+        return this.ext.isSuspended(event);
       }
     }, {
       name: 'isSyncing',
@@ -1036,6 +1049,14 @@ function (_ExtBase) {
       this.setAttribute('align', align);
     }
   }, {
+    key: "alignSelf",
+    get: function get() {
+      return this.getAttribute('alignSelf');
+    },
+    set: function set(alignSelf) {
+      this.setAttribute('alignSelf', alignSelf);
+    }
+  }, {
     key: "alwaysOnTop",
     get: function get() {
       return this.getAttribute('alwaysOnTop');
@@ -1076,6 +1097,14 @@ function (_ExtBase) {
       this.setAttribute('ariaLabelledBy', ariaLabelledBy);
     }
   }, {
+    key: "autoCheckChildren",
+    get: function get() {
+      return this.getAttribute('autoCheckChildren');
+    },
+    set: function set(autoCheckChildren) {
+      this.setAttribute('autoCheckChildren', autoCheckChildren);
+    }
+  }, {
     key: "bind",
     get: function get() {
       return this.getAttribute('bind');
@@ -1114,6 +1143,38 @@ function (_ExtBase) {
     },
     set: function set(cellCls) {
       this.setAttribute('cellCls', cellCls);
+    }
+  }, {
+    key: "checkable",
+    get: function get() {
+      return this.getAttribute('checkable');
+    },
+    set: function set(checkable) {
+      this.setAttribute('checkable', checkable);
+    }
+  }, {
+    key: "checkableField",
+    get: function get() {
+      return this.getAttribute('checkableField');
+    },
+    set: function set(checkableField) {
+      this.setAttribute('checkableField', checkableField);
+    }
+  }, {
+    key: "checkedField",
+    get: function get() {
+      return this.getAttribute('checkedField');
+    },
+    set: function set(checkedField) {
+      this.setAttribute('checkedField', checkedField);
+    }
+  }, {
+    key: "checkOnTriTap",
+    get: function get() {
+      return this.getAttribute('checkOnTriTap');
+    },
+    set: function set(checkOnTriTap) {
+      this.setAttribute('checkOnTriTap', checkOnTriTap);
     }
   }, {
     key: "cls",
@@ -1170,6 +1231,14 @@ function (_ExtBase) {
     },
     set: function set(disabled) {
       this.setAttribute('disabled', disabled);
+    }
+  }, {
+    key: "enableTri",
+    get: function get() {
+      return this.getAttribute('enableTri');
+    },
+    set: function set(enableTri) {
+      this.setAttribute('enableTri', enableTri);
     }
   }, {
     key: "encodeHtml",
@@ -1308,6 +1377,14 @@ function (_ExtBase) {
       this.setAttribute('listeners', listeners);
     }
   }, {
+    key: "margin",
+    get: function get() {
+      return this.getAttribute('margin');
+    },
+    set: function set(margin) {
+      this.setAttribute('margin', margin);
+    }
+  }, {
     key: "name",
     get: function get() {
       return this.getAttribute('name');
@@ -1410,14 +1487,6 @@ function (_ExtBase) {
     },
     set: function set(selectable) {
       this.setAttribute('selectable', selectable);
-    }
-  }, {
-    key: "selfAlign",
-    get: function get() {
-      return this.getAttribute('selfAlign');
-    },
-    set: function set(selfAlign) {
-      this.setAttribute('selfAlign', selfAlign);
     }
   }, {
     key: "session",
@@ -1620,6 +1689,14 @@ function (_ExtBase) {
       this.setAttribute('config', config);
     }
   }, {
+    key: "onbeforecheckchange",
+    get: function get() {
+      return this.getAttribute('onbeforecheckchange');
+    },
+    set: function set(onbeforecheckchange) {
+      this.setAttribute('onbeforecheckchange', onbeforecheckchange);
+    }
+  }, {
     key: "onbeforedisabledchange",
     get: function get() {
       return this.getAttribute('onbeforedisabledchange');
@@ -1666,6 +1743,14 @@ function (_ExtBase) {
     },
     set: function set(onblur) {
       this.setAttribute('onblur', onblur);
+    }
+  }, {
+    key: "oncheckchange",
+    get: function get() {
+      return this.getAttribute('oncheckchange');
+    },
+    set: function set(oncheckchange) {
+      this.setAttribute('oncheckchange', oncheckchange);
     }
   }, {
     key: "ondisabledchange",
