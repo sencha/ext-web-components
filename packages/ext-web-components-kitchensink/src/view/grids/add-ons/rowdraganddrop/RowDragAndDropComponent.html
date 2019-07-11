@@ -1,0 +1,24 @@
+<ext-grid
+  shadow="true"
+  height="100%"
+  onready="rowdraganddrop.gridReady"
+  selectable='{ "checkbox": true }'
+  plugins='{ "gridrowdragdrop": true }'
+>
+  <ext-column
+    text="Name"
+    dataIndex="fullName"
+    width="150"
+    sortable="true"
+    checked="true"
+  >
+  </ext-column>
+  <ext-column
+    text="Email"
+    dataIndex="email"
+    flex="1"
+    sortable="true"
+    checked="true"
+  >
+  </ext-column>
+</ext-grid>
