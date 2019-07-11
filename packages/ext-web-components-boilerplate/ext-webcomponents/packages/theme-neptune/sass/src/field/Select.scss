@@ -1,0 +1,7 @@
+// The ChipView takes the place of the inputElement
+.#{$prefix}selectfield .#{$prefix}chipview {
+    // Chips must not touch the input field's left border.
+    .#{$prefix}chipview-body-el {
+        padding: $selectfield-chipview-padding;
+    }
+}

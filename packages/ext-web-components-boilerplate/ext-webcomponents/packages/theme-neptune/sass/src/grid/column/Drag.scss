@@ -1,0 +1,11 @@
+.#{$prefix}drag-column {
+    .#{$prefix}header-el {
+        border-right: 0;
+    }  
+}
+
+.#{$prefix}row-drag-indicator:before {
+    content: $gridcolumn-drag-icon;
+    font-family: $font-icon-font-family;
+    position: absolute;
+}
