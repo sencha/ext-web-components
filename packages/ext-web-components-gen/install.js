@@ -18,7 +18,7 @@ ext-web-components-gen app CoolExtWebComponentsApp
 ext-web-components-gen app -i
 
 ${boldGreen('Examples:')}
-ext-web-components-gen app --name CoolExtWebComponentsApp
+ext-web-components-gen app --theme material --name CoolExtWebComponentsApp
 
 Run ${boldGreen('ext-web-components-gen --help')} to see all options
 `)
