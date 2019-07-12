@@ -1,10 +1,18 @@
-<ext-panel layout="fit" height="100%">
-  <ext-froalaeditor value="Froala Editor is a lightweight WYSIWYG HTML Editor written in Javascript that enables rich text editing capabilities for your applications,' +
-    'Its complete documentation, specially designed framework plugins and tons of examples make it easy to integrate.' +
-    'We\'re continuously working to add in new features and take the Javascript web WYSIWYG editing capabilities beyond its current limits"
-    editor = '{
-      "autofocus": true
-    }'
-  >
+<ext-formpanel layout="fit" height="100%" title="Ext.froala.EditorField insde a form panel"
+  onready=froalaeditor.onReadyPanel
+>
+  <ext-froalaeditor html="<p>Four score and seven years ago.</p>" height="100%">
+    <ext-titlebar onready="froalaeditor.onTitlebarReady">
+
+    </ext-titlebar>
+    <ext-froalaeditorfield 
+      editor='{
+        "autofocus": "true",
+        "fontSize": ['10', '12', '16', '24']
+      }'
+      margin="16"
+    >
+    </ext-froalaeditorfield>
   </ext-froalaeditor>
-</ext-panel>
+</ext-formpanel>
+
