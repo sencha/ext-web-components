@@ -1,11 +1,12 @@
+import './GroupedGridComponent.html';
+
 Ext.require([
     'Ext.grid.cell.Number',
     'Ext.grid.cell.Widget',
     'Ext.grid.SummaryRow',
-    'Ext.ux.rating.Picker'
-]);
-
-import './GroupedGridComponent.html';
+    'Ext.ux.rating.Picker',
+    'Ext.grid.filters.Plugin'
+]); 
 
 export default class GroupedGridComponent {
     onGridReady = (event) => {
