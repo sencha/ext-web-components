@@ -12,113 +12,113 @@ function (_ExtBase) {
 
   ExtCalendar_weeksviewComponent.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
     return {
-      "addForm": "Object",
-      "addOnSelect": "Boolean",
-      "allowSelection": "Boolean",
-      "alwaysOnTop": "Boolean/Number",
-      "ariaAttributes": "Object",
-      "ariaDescribedBy": "String",
-      "ariaLabel": "String",
-      "ariaLabelledBy": "String",
-      "axisLock": "Boolean",
-      "bind": "Object/String",
-      "border": "Boolean",
-      "bottom": "Number/String",
-      "centered": "Boolean",
-      "cls": "String/String[]",
-      "compact": "Boolean",
-      "compactOptions": "Object",
-      "constrainAlign": "String/Ext.util.Region/Ext.dom.Element",
-      "contentEl": "Ext.dom.Element/HTMLElement/String",
-      "controller": "String/Object/Ext.app.ViewController",
-      "controlStoreRange": "Boolean",
-      "data": "Object",
-      "dayFormat": "String",
-      "defaultListenerScope": "Boolean",
-      "disabled": "Boolean",
-      "displayed": "Boolean",
-      "docked": "String",
-      "draggable": "Boolean",
-      "droppable": "Boolean",
-      "editForm": "Object",
-      "eventDefaults": "Object",
-      "firstDayOfWeek": "Number",
-      "flex": "Number/String/Object",
-      "floated": "Boolean",
-      "focusCls": "String",
-      "fullscreen": "Boolean",
-      "gestureNavigation": "Boolean",
-      "header": "Ext.calendar.header.Base",
-      "height": "Number/String",
-      "hidden": "Boolean",
-      "hideAnimation": "String/Mixed",
-      "hideMode": "'clip'/'display'/'offsets'/'opacity'/'visibility'",
-      "hideOnMaskTap": "Boolean",
-      "html": "String/Ext.dom.Element/HTMLElement",
-      "id": "String",
-      "instanceCls": "String/String[]",
-      "itemId": "String",
-      "keyMap": "Object",
-      "keyMapEnabled": "Boolean",
-      "keyMapTarget": "String",
-      "left": "Number/String",
-      "listeners": "Object",
-      "margin": "Number/String",
-      "maxHeight": "Number/String",
-      "maxWidth": "Number/String",
-      "minHeight": "Number/String",
-      "minWidth": "Number/String",
-      "modal": "Boolean",
-      "modelValidation": "Boolean",
-      "name": "String",
-      "nameable": "Boolean",
-      "overflowText": "String",
-      "padding": "Number/String",
-      "plugins": "Array/Ext.enums.Plugin/Object/Ext.plugin.Abstract",
-      "publishes": "String/String[]/Object",
-      "record": "Ext.data.Model",
-      "reference": "String",
-      "relative": "Boolean",
-      "renderTo": "Ext.dom.Element",
-      "right": "Number/String",
-      "ripple": "Boolean/Object/String",
-      "scrollable": "Boolean/String/Object",
-      "selfAlign": "String",
-      "session": "Boolean/Object/Ext.data.Session",
-      "shadow": "Boolean",
-      "shareableName": "Boolean",
-      "shim": "Boolean",
-      "showAnimation": "String/Mixed",
-      "showOverflow": "String",
-      "stateful": "Boolean/Object/String[]",
-      "statefulDefaults": "Object/String[]",
-      "stateId": "String",
-      "store": "Object/Ext.calendar.store.Calendars",
-      "style": "String/Object",
-      "tabIndex": "Number",
-      "timezoneOffset": "Number",
-      "toFrontOnShow": "Boolean",
-      "tooltip": "String/Object",
-      "top": "Number/String",
-      "touchAction": "Object",
-      "tpl": "String/String[]/Ext.Template/Ext.XTemplate[]",
-      "tplWriteMode": "String",
-      "translatable": "Object",
-      "twoWayBindable": "String/String[]/Object",
-      "ui": "String/String[]",
-      "userCls": "String/String[]",
-      "userSelectable": "Boolean/String/Object",
-      "value": "Date",
-      "viewModel": "String/Object/Ext.app.ViewModel",
-      "visibleDays": "Number",
-      "visibleWeeks": "Number",
-      "weekendDays": "Number[]",
-      "weight": "Number",
-      "width": "Number/String",
-      "x": "Number",
-      "xtype": "String",
-      "y": "Number",
-      "zIndex": "Number",
+      "addForm": ["object"],
+      "addOnSelect": ["boolean"],
+      "alignSelf": ["string"],
+      "allowSelection": ["boolean"],
+      "alwaysOnTop": ["boolean", "number"],
+      "ariaAttributes": ["object"],
+      "ariaDescribedBy": ["string"],
+      "ariaLabel": ["string"],
+      "ariaLabelledBy": ["string"],
+      "axisLock": ["boolean"],
+      "bind": ["object", "string"],
+      "border": ["boolean"],
+      "bottom": ["number", "string"],
+      "centered": ["boolean"],
+      "cls": ["string", "string[]"],
+      "compact": ["boolean"],
+      "compactOptions": ["object"],
+      "constrainAlign": ["string", "Ext.util.Region", "Ext.dom.Element"],
+      "contentEl": ["Ext.dom.Element", "htmlelement", "string"],
+      "controller": ["string", "object", "Ext.app.ViewController"],
+      "controlStoreRange": ["boolean"],
+      "data": ["object"],
+      "dayFormat": ["string"],
+      "defaultListenerScope": ["boolean"],
+      "disabled": ["boolean"],
+      "displayed": ["boolean"],
+      "docked": ["string"],
+      "draggable": ["boolean"],
+      "droppable": ["boolean"],
+      "editForm": ["object"],
+      "eventDefaults": ["object"],
+      "firstDayOfWeek": ["number"],
+      "flex": ["number", "string", "object"],
+      "floated": ["boolean"],
+      "focusCls": ["string"],
+      "fullscreen": ["boolean"],
+      "gestureNavigation": ["boolean"],
+      "header": ["Ext.calendar.header.Base"],
+      "height": ["number", "string"],
+      "hidden": ["boolean"],
+      "hideAnimation": ["string", "mixed"],
+      "hideMode": ["'clip'", "'display'", "'offsets'", "'opacity'", "'visibility'"],
+      "hideOnMaskTap": ["boolean"],
+      "html": ["string", "Ext.dom.Element", "htmlelement"],
+      "id": ["string"],
+      "instanceCls": ["string", "string[]"],
+      "itemId": ["string"],
+      "keyMap": ["object"],
+      "keyMapEnabled": ["boolean"],
+      "keyMapTarget": ["string"],
+      "left": ["number", "string"],
+      "listeners": ["object"],
+      "margin": ["number", "string"],
+      "maxHeight": ["number", "string"],
+      "maxWidth": ["number", "string"],
+      "minHeight": ["number", "string"],
+      "minWidth": ["number", "string"],
+      "modal": ["boolean"],
+      "modelValidation": ["boolean"],
+      "name": ["string"],
+      "nameable": ["boolean"],
+      "overflowText": ["string"],
+      "padding": ["number", "string"],
+      "plugins": ["array", "Ext.enums.Plugin", "object", "Ext.plugin.Abstract"],
+      "publishes": ["string", "string[]", "object"],
+      "record": ["Ext.data.Model"],
+      "reference": ["string"],
+      "relative": ["boolean"],
+      "renderTo": ["Ext.dom.Element"],
+      "right": ["number", "string"],
+      "ripple": ["boolean", "object", "string"],
+      "scrollable": ["boolean", "string", "object"],
+      "session": ["boolean", "object", "Ext.data.Session"],
+      "shadow": ["boolean"],
+      "shareableName": ["boolean"],
+      "shim": ["boolean"],
+      "showAnimation": ["string", "mixed"],
+      "showOverflow": ["string"],
+      "stateful": ["boolean", "object", "string[]"],
+      "statefulDefaults": ["object", "string[]"],
+      "stateId": ["string"],
+      "store": ["object", "Ext.calendar.store.Calendars"],
+      "style": ["string", "object"],
+      "tabIndex": ["number"],
+      "timezoneOffset": ["number"],
+      "toFrontOnShow": ["boolean"],
+      "tooltip": ["string", "object"],
+      "top": ["number", "string"],
+      "touchAction": ["object"],
+      "tpl": ["string", "string[]", "Ext.Template", "Ext.XTemplate[]"],
+      "tplWriteMode": ["string"],
+      "translatable": ["object"],
+      "twoWayBindable": ["string", "string[]", "object"],
+      "ui": ["string", "string[]"],
+      "userCls": ["string", "string[]"],
+      "userSelectable": ["boolean", "string", "object"],
+      "value": ["date"],
+      "viewModel": ["string", "object", "Ext.app.ViewModel"],
+      "visibleDays": ["number"],
+      "visibleWeeks": ["number"],
+      "weekendDays": ["number[]"],
+      "weight": ["number"],
+      "width": ["number", "string"],
+      "x": ["number"],
+      "xtype": ["string"],
+      "y": ["number"],
+      "zIndex": ["number"],
       "platformConfig": "Object",
       "responsiveConfig": "Object",
       "align": "Obyect",
@@ -553,8 +553,8 @@ function (_ExtBase) {
       }
     }, {
       name: 'createEditForm',
-      "function": function _function() {
-        return this.ext.createEditForm;
+      "function": function _function(event) {
+        return this.ext.createEditForm(event);
       }
     }, {
       name: 'createEvent',
@@ -823,13 +823,13 @@ function (_ExtBase) {
       }
     }, {
       name: 'getEventDaysSpanned',
-      "function": function _function() {
-        return this.ext.getEventDaysSpanned;
+      "function": function _function(event) {
+        return this.ext.getEventDaysSpanned(event);
       }
     }, {
       name: 'getEventPalette',
-      "function": function _function() {
-        return this.ext.getEventPalette;
+      "function": function _function(event) {
+        return this.ext.getEventPalette(event);
       }
     }, {
       name: 'getEventSource',
@@ -1143,8 +1143,8 @@ function (_ExtBase) {
       }
     }, {
       name: 'isEventHidden',
-      "function": function _function() {
-        return this.ext.isEventHidden;
+      "function": function _function(event) {
+        return this.ext.isEventHidden(event);
       }
     }, {
       name: 'isFocusable',
@@ -1178,8 +1178,8 @@ function (_ExtBase) {
       }
     }, {
       name: 'isSuspended',
-      "function": function _function() {
-        return this.ext.isSuspended;
+      "function": function _function(event) {
+        return this.ext.isSuspended(event);
       }
     }, {
       name: 'isSyncing',
@@ -1298,8 +1298,8 @@ function (_ExtBase) {
       }
     }, {
       name: 'onEventTap',
-      "function": function _function() {
-        return this.ext.onEventTap;
+      "function": function _function(event) {
+        return this.ext.onEventTap(event);
       }
     }, {
       name: 'onFocus',
@@ -1418,8 +1418,8 @@ function (_ExtBase) {
       }
     }, {
       name: 'onTouchEnd',
-      "function": function _function() {
-        return this.ext.onTouchEnd;
+      "function": function _function(event) {
+        return this.ext.onTouchEnd(event);
       }
     }, {
       name: 'onTouchMove',
@@ -1824,6 +1824,14 @@ function (_ExtBase) {
     },
     set: function set(addOnSelect) {
       this.setAttribute('addOnSelect', addOnSelect);
+    }
+  }, {
+    key: "alignSelf",
+    get: function get() {
+      return this.getAttribute('alignSelf');
+    },
+    set: function set(alignSelf) {
+      this.setAttribute('alignSelf', alignSelf);
     }
   }, {
     key: "allowSelection",
@@ -2376,14 +2384,6 @@ function (_ExtBase) {
     },
     set: function set(scrollable) {
       this.setAttribute('scrollable', scrollable);
-    }
-  }, {
-    key: "selfAlign",
-    get: function get() {
-      return this.getAttribute('selfAlign');
-    },
-    set: function set(selfAlign) {
-      this.setAttribute('selfAlign', selfAlign);
     }
   }, {
     key: "session",

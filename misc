@@ -6,6 +6,8 @@ git fetch upstream
 git merge upstream/master
 git merge upstream/ext-components-7.0.x
 
+git merge upstream/ext-7.0.x
+
 rm ~/.npmrc
 cat ~/.npmrc
 

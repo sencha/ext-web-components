@@ -12,124 +12,158 @@ function (_ExtBase) {
 
   ExtLockedgridComponent.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
     return {
-      "activeChildTabIndex": "Number",
-      "activeItem": "Ext.Component/Object/String/Number",
-      "allowFocusingDisabledChildren": "Boolean",
-      "alwaysOnTop": "Boolean/Number",
-      "ariaAttributes": "Object",
-      "ariaDescribedBy": "String",
-      "ariaLabel": "String",
-      "ariaLabelledBy": "String",
-      "autoDestroy": "Boolean",
-      "autoSize": "Boolean",
-      "axisLock": "Boolean",
-      "bind": "Object/String",
-      "border": "Boolean",
-      "bottom": "Number/String",
-      "cardSwitchAnimation": "String/Object/Boolean",
-      "centered": "Boolean",
-      "cls": "String/String[]",
-      "columnMenu": "Object",
-      "columns": "Ext.grid.column.Column[]",
-      "constrainAlign": "String/Ext.util.Region/Ext.dom.Element",
-      "contentEl": "Ext.dom.Element/HTMLElement/String",
-      "control": "Object",
-      "controller": "String/Object/Ext.app.ViewController",
-      "data": "Object",
-      "defaultFocus": "String",
-      "defaultListenerScope": "Boolean",
-      "defaultLockedRegion": "String",
-      "defaults": "Object",
-      "defaultType": "String",
-      "disabled": "Boolean",
-      "displayed": "Boolean",
-      "docked": "String",
-      "draggable": "Boolean/Object/Ext.drag.Source",
-      "flex": "Number/String/Object",
-      "floated": "Boolean",
-      "focusableContainer": "Boolean",
-      "focusCls": "String",
-      "fullscreen": "Boolean",
-      "gridDefaults": "Object",
-      "height": "Number/String",
-      "hidden": "Boolean",
-      "hideAnimation": "String/Mixed",
-      "hideHeaders": "Boolean",
-      "hideMode": "'clip'/'display'/'offsets'/'opacity'/'visibility'",
-      "hideOnMaskTap": "Boolean",
-      "html": "String/Ext.dom.Element/HTMLElement",
-      "id": "String",
-      "inactiveChildTabIndex": "Number",
-      "innerCls": "String",
-      "instanceCls": "String/String[]",
-      "itemConfig": "Object",
-      "itemId": "String",
-      "items": "Array/Object",
-      "keyMap": "Object",
-      "keyMapEnabled": "Boolean",
-      "keyMapTarget": "String",
-      "layout": "Object/String",
-      "left": "Number/String",
-      "leftGridDefaults": "Object",
-      "listeners": "Object",
-      "manageBorders": "Boolean",
-      "margin": "Number/String",
-      "masked": "Boolean/String/Object/Ext.Mask/Ext.LoadMask",
-      "maxHeight": "Number/String",
-      "maxWidth": "Number/String",
-      "minHeight": "Number/String",
-      "minWidth": "Number/String",
-      "modal": "Boolean",
-      "modelValidation": "Boolean",
-      "name": "String",
-      "nameable": "Boolean",
-      "nameHolder": "Boolean",
-      "padding": "Number/String",
-      "plugins": "Array/Ext.enums.Plugin/Object/Ext.plugin.Abstract",
-      "publishes": "String/String[]/Object",
-      "record": "Ext.data.Model",
-      "reference": "String",
-      "referenceHolder": "Boolean",
-      "regions": "Object",
-      "relative": "Boolean",
-      "renderTo": "Ext.dom.Element",
-      "resetFocusPosition": "Boolean",
-      "right": "Number/String",
-      "rightGridDefaults": "Object",
-      "ripple": "Boolean/Object/String",
-      "scrollable": "Boolean/String/Object",
-      "selfAlign": "String",
-      "session": "Boolean/Object/Ext.data.Session",
-      "shadow": "Boolean",
-      "shareableName": "Boolean",
-      "shim": "Boolean",
-      "showAnimation": "String/Mixed",
-      "stateful": "Boolean/Object/String[]",
-      "statefulDefaults": "Object/String[]",
-      "stateId": "String",
-      "store": "Ext.data.Store/Object/String",
-      "style": "String/Object",
-      "tabIndex": "Number",
-      "toFrontOnShow": "Boolean",
-      "tooltip": "String/Object",
-      "top": "Number/String",
-      "touchAction": "Object",
-      "tpl": "String/String[]/Ext.Template/Ext.XTemplate[]",
-      "tplWriteMode": "String",
-      "translatable": "Object",
-      "twoWayBindable": "String/String[]/Object",
-      "ui": "String/String[]",
-      "userCls": "String/String[]",
-      "userSelectable": "Boolean/String/Object",
-      "variableHeights": "Boolean",
-      "viewModel": "String/Object/Ext.app.ViewModel",
-      "weight": "Number",
-      "weighted": "Boolean",
-      "width": "Number/String",
-      "x": "Number",
-      "xtype": "String",
-      "y": "Number",
-      "zIndex": "Number",
+      "activeChildTabIndex": ["number"],
+      "activeItem": ["Ext.Component", "object", "string", "number"],
+      "alignSelf": ["string"],
+      "allowFocusingDisabledChildren": ["boolean"],
+      "alwaysOnTop": ["boolean", "number"],
+      "anchor": ["boolean"],
+      "anchorPosition": ["string"],
+      "ariaAttributes": ["object"],
+      "ariaDescribedBy": ["string"],
+      "ariaLabel": ["string"],
+      "ariaLabelledBy": ["string"],
+      "autoDestroy": ["boolean"],
+      "autoSize": ["boolean"],
+      "axisLock": ["boolean"],
+      "bbar": ["object", "object[]"],
+      "bind": ["object", "string"],
+      "bodyBorder": ["boolean"],
+      "bodyCls": ["string", "string[]"],
+      "bodyPadding": ["number", "boolean", "string"],
+      "bodyStyle": ["string", "object"],
+      "border": ["boolean"],
+      "bottom": ["number", "string"],
+      "buttonAlign": ["string"],
+      "buttons": ["object", "Ext.Button[]"],
+      "buttonToolbar": ["object", "Ext.Toolbar"],
+      "cardSwitchAnimation": ["string", "object", "boolean"],
+      "centered": ["boolean"],
+      "closable": ["boolean"],
+      "closeAction": ["string"],
+      "closeToolText": ["string"],
+      "cls": ["string", "string[]"],
+      "collapsed": ["boolean"],
+      "collapsible": ["'top'", "'right'", "'bottom'", "'left'", "boolean", "object"],
+      "columnMenu": ["object"],
+      "columns": ["Ext.grid.column.Column[]"],
+      "constrainAlign": ["string", "Ext.util.Region", "Ext.dom.Element"],
+      "contentEl": ["Ext.dom.Element", "htmlelement", "string"],
+      "control": ["object"],
+      "controller": ["string", "object", "Ext.app.ViewController"],
+      "data": ["object"],
+      "defaultFocus": ["string"],
+      "defaultListenerScope": ["boolean"],
+      "defaultLockedRegion": ["string"],
+      "defaults": ["object"],
+      "defaultToolWeights": ["object"],
+      "defaultType": ["string"],
+      "disabled": ["boolean"],
+      "displayed": ["boolean"],
+      "docked": ["string"],
+      "draggable": ["boolean", "object", "Ext.drag.Source"],
+      "enableColumnMove": ["boolean"],
+      "flex": ["number", "string", "object"],
+      "floated": ["boolean"],
+      "focusableContainer": ["boolean"],
+      "focusCls": ["string"],
+      "fullscreen": ["boolean"],
+      "gridDefaults": ["object"],
+      "grouped": ["boolean"],
+      "header": ["boolean", "object"],
+      "headerPosition": ["'top'", "'right'", "'bottom'", "'left'"],
+      "height": ["number", "string"],
+      "hidden": ["boolean"],
+      "hideAnimation": ["string", "mixed"],
+      "hideHeaders": ["boolean"],
+      "hideMode": ["'clip'", "'display'", "'offsets'", "'opacity'", "'visibility'"],
+      "hideOnMaskTap": ["boolean"],
+      "html": ["string", "Ext.dom.Element", "htmlelement"],
+      "icon": ["string"],
+      "iconAlign": ["'top'", "'right'", "'bottom'", "'left'"],
+      "iconCls": ["string"],
+      "id": ["string"],
+      "inactiveChildTabIndex": ["number"],
+      "innerCls": ["string"],
+      "instanceCls": ["string", "string[]"],
+      "itemConfig": ["object"],
+      "itemId": ["string"],
+      "items": ["array", "object"],
+      "keyMap": ["object"],
+      "keyMapEnabled": ["boolean"],
+      "keyMapTarget": ["string"],
+      "layout": ["object", "string"],
+      "lbar": ["object", "object[]"],
+      "left": ["number", "string"],
+      "leftGridDefaults": ["object"],
+      "listeners": ["object"],
+      "manageBorders": ["boolean"],
+      "margin": ["number", "string"],
+      "masked": ["boolean", "string", "object", "Ext.Mask", "Ext.LoadMask"],
+      "maxHeight": ["number", "string"],
+      "maxWidth": ["number", "string"],
+      "minButtonWidth": ["number"],
+      "minHeight": ["number", "string"],
+      "minWidth": ["number", "string"],
+      "modal": ["boolean"],
+      "modelValidation": ["boolean"],
+      "name": ["string"],
+      "nameable": ["boolean"],
+      "nameHolder": ["boolean"],
+      "padding": ["number", "string"],
+      "plugins": ["array", "Ext.enums.Plugin", "object", "Ext.plugin.Abstract"],
+      "publishes": ["string", "string[]", "object"],
+      "rbar": ["object", "object[]"],
+      "record": ["Ext.data.Model"],
+      "reference": ["string"],
+      "referenceHolder": ["boolean"],
+      "regions": ["object"],
+      "relative": ["boolean"],
+      "renderTo": ["Ext.dom.Element"],
+      "resetFocusPosition": ["boolean"],
+      "resizable": ["object"],
+      "right": ["number", "string"],
+      "rightGridDefaults": ["object"],
+      "ripple": ["boolean", "object", "string"],
+      "scrollable": ["boolean", "string", "object"],
+      "session": ["boolean", "object", "Ext.data.Session"],
+      "shadow": ["boolean"],
+      "shareableName": ["boolean"],
+      "shim": ["boolean"],
+      "showAnimation": ["string", "mixed"],
+      "standardButtons": ["object"],
+      "stateful": ["boolean", "object", "string[]"],
+      "statefulDefaults": ["object", "string[]"],
+      "stateId": ["string"],
+      "store": ["Ext.data.Store", "object", "string"],
+      "style": ["string", "object"],
+      "tabIndex": ["number"],
+      "tbar": ["object", "object[]"],
+      "title": ["string", "Ext.panel.Title"],
+      "titleAlign": ["'left'", "'center'", "'right'"],
+      "titleCollapse": ["boolean"],
+      "toFrontOnShow": ["boolean"],
+      "toolDefaults": ["object"],
+      "tools": ["Ext.Tool[]", "object", "object[]"],
+      "tooltip": ["string", "object"],
+      "top": ["number", "string"],
+      "touchAction": ["object"],
+      "tpl": ["string", "string[]", "Ext.Template", "Ext.XTemplate[]"],
+      "tplWriteMode": ["string"],
+      "translatable": ["object"],
+      "twoWayBindable": ["string", "string[]", "object"],
+      "ui": ["string", "string[]"],
+      "userCls": ["string", "string[]"],
+      "userSelectable": ["boolean", "string", "object"],
+      "variableHeights": ["boolean"],
+      "viewModel": ["string", "object", "Ext.app.ViewModel"],
+      "weight": ["number"],
+      "weighted": ["boolean"],
+      "width": ["number", "string"],
+      "x": ["number"],
+      "xtype": ["string"],
+      "y": ["number"],
+      "zIndex": ["number"],
       "platformConfig": "Object",
       "responsiveConfig": "Object",
       "align": "Obyect",
@@ -161,11 +195,17 @@ function (_ExtBase) {
       name: 'beforecenteredchange',
       parameters: 'sender,value,oldValue,undefined'
     }, {
+      name: 'beforecollapse',
+      parameters: 'lockedgrid'
+    }, {
       name: 'beforedisabledchange',
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforedockedchange',
       parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeexpand',
+      parameters: 'lockedgrid'
     }, {
       name: 'beforeheightchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -194,6 +234,9 @@ function (_ExtBase) {
       name: 'beforeorientationchange',
       parameters: ''
     }, {
+      name: 'beforeresizedragstart',
+      parameters: 'lockedgrid,context'
+    }, {
       name: 'beforerightchange',
       parameters: 'sender,value,oldValue,undefined'
     }, {
@@ -221,6 +264,9 @@ function (_ExtBase) {
       name: 'centeredchange',
       parameters: 'sender,value,oldValue'
     }, {
+      name: 'collapse',
+      parameters: 'lockedgrid'
+    }, {
       name: 'deactivate',
       parameters: 'oldActiveItem,lockedgrid,newActiveItem'
     }, {
@@ -233,8 +279,17 @@ function (_ExtBase) {
       name: 'dockedchange',
       parameters: 'sender,value,oldValue'
     }, {
+      name: 'drawerhide',
+      parameters: 'lockedgrid'
+    }, {
+      name: 'drawershow',
+      parameters: 'lockedgrid'
+    }, {
       name: 'erased',
       parameters: 'sender'
+    }, {
+      name: 'expand',
+      parameters: 'lockedgrid'
     }, {
       name: 'floatingchange',
       parameters: 'sender,positioned'
@@ -305,6 +360,18 @@ function (_ExtBase) {
       name: 'resize',
       parameters: 'element,info'
     }, {
+      name: 'resizedrag',
+      parameters: 'lockedgrid,context'
+    }, {
+      name: 'resizedragcancel',
+      parameters: 'lockedgrid,context'
+    }, {
+      name: 'resizedragend',
+      parameters: 'lockedgrid,context'
+    }, {
+      name: 'resizedragstart',
+      parameters: 'lockedgrid,context'
+    }, {
       name: 'rightchange',
       parameters: 'sender,value,oldValue'
     }, {
@@ -373,6 +440,11 @@ function (_ExtBase) {
         return this.ext.addBeforeListener();
       }
     }, {
+      name: 'addBodyCls',
+      "function": function _function(cls) {
+        return this.ext.addBodyCls(cls);
+      }
+    }, {
       name: 'addCls',
       "function": function _function(cls, prefix, suffix) {
         return this.ext.addCls(cls, prefix, suffix);
@@ -411,6 +483,11 @@ function (_ExtBase) {
       name: 'addPlugin',
       "function": function _function(plugin) {
         return this.ext.addPlugin(plugin);
+      }
+    }, {
+      name: 'addTool',
+      "function": function _function(tool) {
+        return this.ext.addTool(tool);
       }
     }, {
       name: 'afterEdit',
@@ -558,6 +635,16 @@ function (_ExtBase) {
         return this.ext.clearManagedListeners();
       }
     }, {
+      name: 'close',
+      "function": function _function() {
+        return this.ext.close();
+      }
+    }, {
+      name: 'collapse',
+      "function": function _function(animation) {
+        return this.ext.collapse(animation);
+      }
+    }, {
       name: 'constructor',
       "function": function _function(config) {
         return this.ext.constructor(config);
@@ -646,6 +733,11 @@ function (_ExtBase) {
       name: 'enableBubble',
       "function": function _function(eventNames) {
         return this.ext.enableBubble(eventNames);
+      }
+    }, {
+      name: 'expand',
+      "function": function _function(animation) {
+        return this.ext.expand(animation);
       }
     }, {
       name: 'factoryItem',
@@ -1109,8 +1201,8 @@ function (_ExtBase) {
       }
     }, {
       name: 'isSuspended',
-      "function": function _function() {
-        return this.ext.isSuspended;
+      "function": function _function(event) {
+        return this.ext.isSuspended(event);
       }
     }, {
       name: 'isSyncing',
@@ -1398,6 +1490,11 @@ function (_ExtBase) {
         return this.ext.removeBeforeListener();
       }
     }, {
+      name: 'removeBodyCls',
+      "function": function _function(cls) {
+        return this.ext.removeBodyCls(cls);
+      }
+    }, {
       name: 'removeCls',
       "function": function _function(cls, prefix, suffix) {
         return this.ext.removeCls(cls, prefix, suffix);
@@ -1568,6 +1665,11 @@ function (_ExtBase) {
         return this.ext.syncFloatWrap();
       }
     }, {
+      name: 'syncToolableAlign',
+      "function": function _function() {
+        return this.ext.syncToolableAlign();
+      }
+    }, {
       name: 'toFront',
       "function": function _function(fromMousedown) {
         return this.ext.toFront(fromMousedown);
@@ -1576,6 +1678,11 @@ function (_ExtBase) {
       name: 'toggleCls',
       "function": function _function(className, state) {
         return this.ext.toggleCls(className, state);
+      }
+    }, {
+      name: 'toggleCollapsed',
+      "function": function _function(collapsed, animation) {
+        return this.ext.toggleCollapsed(collapsed, animation);
       }
     }, {
       name: 'transformStatefulConfig',
@@ -1687,6 +1794,14 @@ function (_ExtBase) {
       this.setAttribute('activeItem', activeItem);
     }
   }, {
+    key: "alignSelf",
+    get: function get() {
+      return this.getAttribute('alignSelf');
+    },
+    set: function set(alignSelf) {
+      this.setAttribute('alignSelf', alignSelf);
+    }
+  }, {
     key: "allowFocusingDisabledChildren",
     get: function get() {
       return this.getAttribute('allowFocusingDisabledChildren');
@@ -1701,6 +1816,22 @@ function (_ExtBase) {
     },
     set: function set(alwaysOnTop) {
       this.setAttribute('alwaysOnTop', alwaysOnTop);
+    }
+  }, {
+    key: "anchor",
+    get: function get() {
+      return this.getAttribute('anchor');
+    },
+    set: function set(anchor) {
+      this.setAttribute('anchor', anchor);
+    }
+  }, {
+    key: "anchorPosition",
+    get: function get() {
+      return this.getAttribute('anchorPosition');
+    },
+    set: function set(anchorPosition) {
+      this.setAttribute('anchorPosition', anchorPosition);
     }
   }, {
     key: "ariaAttributes",
@@ -1759,12 +1890,52 @@ function (_ExtBase) {
       this.setAttribute('axisLock', axisLock);
     }
   }, {
+    key: "bbar",
+    get: function get() {
+      return this.getAttribute('bbar');
+    },
+    set: function set(bbar) {
+      this.setAttribute('bbar', bbar);
+    }
+  }, {
     key: "bind",
     get: function get() {
       return this.getAttribute('bind');
     },
     set: function set(bind) {
       this.setAttribute('bind', bind);
+    }
+  }, {
+    key: "bodyBorder",
+    get: function get() {
+      return this.getAttribute('bodyBorder');
+    },
+    set: function set(bodyBorder) {
+      this.setAttribute('bodyBorder', bodyBorder);
+    }
+  }, {
+    key: "bodyCls",
+    get: function get() {
+      return this.getAttribute('bodyCls');
+    },
+    set: function set(bodyCls) {
+      this.setAttribute('bodyCls', bodyCls);
+    }
+  }, {
+    key: "bodyPadding",
+    get: function get() {
+      return this.getAttribute('bodyPadding');
+    },
+    set: function set(bodyPadding) {
+      this.setAttribute('bodyPadding', bodyPadding);
+    }
+  }, {
+    key: "bodyStyle",
+    get: function get() {
+      return this.getAttribute('bodyStyle');
+    },
+    set: function set(bodyStyle) {
+      this.setAttribute('bodyStyle', bodyStyle);
     }
   }, {
     key: "border",
@@ -1783,6 +1954,30 @@ function (_ExtBase) {
       this.setAttribute('bottom', bottom);
     }
   }, {
+    key: "buttonAlign",
+    get: function get() {
+      return this.getAttribute('buttonAlign');
+    },
+    set: function set(buttonAlign) {
+      this.setAttribute('buttonAlign', buttonAlign);
+    }
+  }, {
+    key: "buttons",
+    get: function get() {
+      return this.getAttribute('buttons');
+    },
+    set: function set(buttons) {
+      this.setAttribute('buttons', buttons);
+    }
+  }, {
+    key: "buttonToolbar",
+    get: function get() {
+      return this.getAttribute('buttonToolbar');
+    },
+    set: function set(buttonToolbar) {
+      this.setAttribute('buttonToolbar', buttonToolbar);
+    }
+  }, {
     key: "cardSwitchAnimation",
     get: function get() {
       return this.getAttribute('cardSwitchAnimation');
@@ -1799,12 +1994,52 @@ function (_ExtBase) {
       this.setAttribute('centered', centered);
     }
   }, {
+    key: "closable",
+    get: function get() {
+      return this.getAttribute('closable');
+    },
+    set: function set(closable) {
+      this.setAttribute('closable', closable);
+    }
+  }, {
+    key: "closeAction",
+    get: function get() {
+      return this.getAttribute('closeAction');
+    },
+    set: function set(closeAction) {
+      this.setAttribute('closeAction', closeAction);
+    }
+  }, {
+    key: "closeToolText",
+    get: function get() {
+      return this.getAttribute('closeToolText');
+    },
+    set: function set(closeToolText) {
+      this.setAttribute('closeToolText', closeToolText);
+    }
+  }, {
     key: "cls",
     get: function get() {
       return this.getAttribute('cls');
     },
     set: function set(cls) {
       this.setAttribute('cls', cls);
+    }
+  }, {
+    key: "collapsed",
+    get: function get() {
+      return this.getAttribute('collapsed');
+    },
+    set: function set(collapsed) {
+      this.setAttribute('collapsed', collapsed);
+    }
+  }, {
+    key: "collapsible",
+    get: function get() {
+      return this.getAttribute('collapsible');
+    },
+    set: function set(collapsible) {
+      this.setAttribute('collapsible', collapsible);
     }
   }, {
     key: "columnMenu",
@@ -1895,6 +2130,14 @@ function (_ExtBase) {
       this.setAttribute('defaults', defaults);
     }
   }, {
+    key: "defaultToolWeights",
+    get: function get() {
+      return this.getAttribute('defaultToolWeights');
+    },
+    set: function set(defaultToolWeights) {
+      this.setAttribute('defaultToolWeights', defaultToolWeights);
+    }
+  }, {
     key: "defaultType",
     get: function get() {
       return this.getAttribute('defaultType');
@@ -1933,6 +2176,14 @@ function (_ExtBase) {
     },
     set: function set(draggable) {
       this.setAttribute('draggable', draggable);
+    }
+  }, {
+    key: "enableColumnMove",
+    get: function get() {
+      return this.getAttribute('enableColumnMove');
+    },
+    set: function set(enableColumnMove) {
+      this.setAttribute('enableColumnMove', enableColumnMove);
     }
   }, {
     key: "flex",
@@ -1981,6 +2232,30 @@ function (_ExtBase) {
     },
     set: function set(gridDefaults) {
       this.setAttribute('gridDefaults', gridDefaults);
+    }
+  }, {
+    key: "grouped",
+    get: function get() {
+      return this.getAttribute('grouped');
+    },
+    set: function set(grouped) {
+      this.setAttribute('grouped', grouped);
+    }
+  }, {
+    key: "header",
+    get: function get() {
+      return this.getAttribute('header');
+    },
+    set: function set(header) {
+      this.setAttribute('header', header);
+    }
+  }, {
+    key: "headerPosition",
+    get: function get() {
+      return this.getAttribute('headerPosition');
+    },
+    set: function set(headerPosition) {
+      this.setAttribute('headerPosition', headerPosition);
     }
   }, {
     key: "height",
@@ -2037,6 +2312,30 @@ function (_ExtBase) {
     },
     set: function set(html) {
       this.setAttribute('html', html);
+    }
+  }, {
+    key: "icon",
+    get: function get() {
+      return this.getAttribute('icon');
+    },
+    set: function set(icon) {
+      this.setAttribute('icon', icon);
+    }
+  }, {
+    key: "iconAlign",
+    get: function get() {
+      return this.getAttribute('iconAlign');
+    },
+    set: function set(iconAlign) {
+      this.setAttribute('iconAlign', iconAlign);
+    }
+  }, {
+    key: "iconCls",
+    get: function get() {
+      return this.getAttribute('iconCls');
+    },
+    set: function set(iconCls) {
+      this.setAttribute('iconCls', iconCls);
     }
   }, {
     key: "id",
@@ -2127,6 +2426,14 @@ function (_ExtBase) {
       this.setAttribute('layout', layout);
     }
   }, {
+    key: "lbar",
+    get: function get() {
+      return this.getAttribute('lbar');
+    },
+    set: function set(lbar) {
+      this.setAttribute('lbar', lbar);
+    }
+  }, {
     key: "left",
     get: function get() {
       return this.getAttribute('left');
@@ -2189,6 +2496,14 @@ function (_ExtBase) {
     },
     set: function set(maxWidth) {
       this.setAttribute('maxWidth', maxWidth);
+    }
+  }, {
+    key: "minButtonWidth",
+    get: function get() {
+      return this.getAttribute('minButtonWidth');
+    },
+    set: function set(minButtonWidth) {
+      this.setAttribute('minButtonWidth', minButtonWidth);
     }
   }, {
     key: "minHeight",
@@ -2271,6 +2586,14 @@ function (_ExtBase) {
       this.setAttribute('publishes', publishes);
     }
   }, {
+    key: "rbar",
+    get: function get() {
+      return this.getAttribute('rbar');
+    },
+    set: function set(rbar) {
+      this.setAttribute('rbar', rbar);
+    }
+  }, {
     key: "record",
     get: function get() {
       return this.getAttribute('record');
@@ -2327,6 +2650,14 @@ function (_ExtBase) {
       this.setAttribute('resetFocusPosition', resetFocusPosition);
     }
   }, {
+    key: "resizable",
+    get: function get() {
+      return this.getAttribute('resizable');
+    },
+    set: function set(resizable) {
+      this.setAttribute('resizable', resizable);
+    }
+  }, {
     key: "right",
     get: function get() {
       return this.getAttribute('right');
@@ -2357,14 +2688,6 @@ function (_ExtBase) {
     },
     set: function set(scrollable) {
       this.setAttribute('scrollable', scrollable);
-    }
-  }, {
-    key: "selfAlign",
-    get: function get() {
-      return this.getAttribute('selfAlign');
-    },
-    set: function set(selfAlign) {
-      this.setAttribute('selfAlign', selfAlign);
     }
   }, {
     key: "session",
@@ -2405,6 +2728,14 @@ function (_ExtBase) {
     },
     set: function set(showAnimation) {
       this.setAttribute('showAnimation', showAnimation);
+    }
+  }, {
+    key: "standardButtons",
+    get: function get() {
+      return this.getAttribute('standardButtons');
+    },
+    set: function set(standardButtons) {
+      this.setAttribute('standardButtons', standardButtons);
     }
   }, {
     key: "stateful",
@@ -2455,12 +2786,60 @@ function (_ExtBase) {
       this.setAttribute('tabIndex', tabIndex);
     }
   }, {
+    key: "tbar",
+    get: function get() {
+      return this.getAttribute('tbar');
+    },
+    set: function set(tbar) {
+      this.setAttribute('tbar', tbar);
+    }
+  }, {
+    key: "title",
+    get: function get() {
+      return this.getAttribute('title');
+    },
+    set: function set(title) {
+      this.setAttribute('title', title);
+    }
+  }, {
+    key: "titleAlign",
+    get: function get() {
+      return this.getAttribute('titleAlign');
+    },
+    set: function set(titleAlign) {
+      this.setAttribute('titleAlign', titleAlign);
+    }
+  }, {
+    key: "titleCollapse",
+    get: function get() {
+      return this.getAttribute('titleCollapse');
+    },
+    set: function set(titleCollapse) {
+      this.setAttribute('titleCollapse', titleCollapse);
+    }
+  }, {
     key: "toFrontOnShow",
     get: function get() {
       return this.getAttribute('toFrontOnShow');
     },
     set: function set(toFrontOnShow) {
       this.setAttribute('toFrontOnShow', toFrontOnShow);
+    }
+  }, {
+    key: "toolDefaults",
+    get: function get() {
+      return this.getAttribute('toolDefaults');
+    },
+    set: function set(toolDefaults) {
+      this.setAttribute('toolDefaults', toolDefaults);
+    }
+  }, {
+    key: "tools",
+    get: function get() {
+      return this.getAttribute('tools');
+    },
+    set: function set(tools) {
+      this.setAttribute('tools', tools);
     }
   }, {
     key: "tooltip",
@@ -2711,6 +3090,14 @@ function (_ExtBase) {
       this.setAttribute('onbeforecenteredchange', onbeforecenteredchange);
     }
   }, {
+    key: "onbeforecollapse",
+    get: function get() {
+      return this.getAttribute('onbeforecollapse');
+    },
+    set: function set(onbeforecollapse) {
+      this.setAttribute('onbeforecollapse', onbeforecollapse);
+    }
+  }, {
     key: "onbeforedisabledchange",
     get: function get() {
       return this.getAttribute('onbeforedisabledchange');
@@ -2725,6 +3112,14 @@ function (_ExtBase) {
     },
     set: function set(onbeforedockedchange) {
       this.setAttribute('onbeforedockedchange', onbeforedockedchange);
+    }
+  }, {
+    key: "onbeforeexpand",
+    get: function get() {
+      return this.getAttribute('onbeforeexpand');
+    },
+    set: function set(onbeforeexpand) {
+      this.setAttribute('onbeforeexpand', onbeforeexpand);
     }
   }, {
     key: "onbeforeheightchange",
@@ -2799,6 +3194,14 @@ function (_ExtBase) {
       this.setAttribute('onbeforeorientationchange', onbeforeorientationchange);
     }
   }, {
+    key: "onbeforeresizedragstart",
+    get: function get() {
+      return this.getAttribute('onbeforeresizedragstart');
+    },
+    set: function set(onbeforeresizedragstart) {
+      this.setAttribute('onbeforeresizedragstart', onbeforeresizedragstart);
+    }
+  }, {
     key: "onbeforerightchange",
     get: function get() {
       return this.getAttribute('onbeforerightchange');
@@ -2871,6 +3274,14 @@ function (_ExtBase) {
       this.setAttribute('oncenteredchange', oncenteredchange);
     }
   }, {
+    key: "oncollapse",
+    get: function get() {
+      return this.getAttribute('oncollapse');
+    },
+    set: function set(oncollapse) {
+      this.setAttribute('oncollapse', oncollapse);
+    }
+  }, {
     key: "ondeactivate",
     get: function get() {
       return this.getAttribute('ondeactivate');
@@ -2903,12 +3314,36 @@ function (_ExtBase) {
       this.setAttribute('ondockedchange', ondockedchange);
     }
   }, {
+    key: "ondrawerhide",
+    get: function get() {
+      return this.getAttribute('ondrawerhide');
+    },
+    set: function set(ondrawerhide) {
+      this.setAttribute('ondrawerhide', ondrawerhide);
+    }
+  }, {
+    key: "ondrawershow",
+    get: function get() {
+      return this.getAttribute('ondrawershow');
+    },
+    set: function set(ondrawershow) {
+      this.setAttribute('ondrawershow', ondrawershow);
+    }
+  }, {
     key: "onerased",
     get: function get() {
       return this.getAttribute('onerased');
     },
     set: function set(onerased) {
       this.setAttribute('onerased', onerased);
+    }
+  }, {
+    key: "onexpand",
+    get: function get() {
+      return this.getAttribute('onexpand');
+    },
+    set: function set(onexpand) {
+      this.setAttribute('onexpand', onexpand);
     }
   }, {
     key: "onfloatingchange",
@@ -3093,6 +3528,38 @@ function (_ExtBase) {
     },
     set: function set(onresize) {
       this.setAttribute('onresize', onresize);
+    }
+  }, {
+    key: "onresizedrag",
+    get: function get() {
+      return this.getAttribute('onresizedrag');
+    },
+    set: function set(onresizedrag) {
+      this.setAttribute('onresizedrag', onresizedrag);
+    }
+  }, {
+    key: "onresizedragcancel",
+    get: function get() {
+      return this.getAttribute('onresizedragcancel');
+    },
+    set: function set(onresizedragcancel) {
+      this.setAttribute('onresizedragcancel', onresizedragcancel);
+    }
+  }, {
+    key: "onresizedragend",
+    get: function get() {
+      return this.getAttribute('onresizedragend');
+    },
+    set: function set(onresizedragend) {
+      this.setAttribute('onresizedragend', onresizedragend);
+    }
+  }, {
+    key: "onresizedragstart",
+    get: function get() {
+      return this.getAttribute('onresizedragstart');
+    },
+    set: function set(onresizedragstart) {
+      this.setAttribute('onresizedragstart', onresizedragstart);
     }
   }, {
     key: "onrightchange",
