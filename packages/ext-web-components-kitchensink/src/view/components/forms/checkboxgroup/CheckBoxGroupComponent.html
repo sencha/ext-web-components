@@ -3,17 +3,19 @@
   scrollable='y'
   cls='form-checkboxgroup'
   onready="checkboxgroup.formpanelReady"
+  title="Checkbox Group Example"
 >
   
   <ext-container
     layout='{"type": "box", "vertical": false}'
   >
-    <ext-fieldset
+    <!-- <ext-fieldset
       title="Individual Checkboxes"
       defaultType="checkbox"
       layout="form"
       padding="0"
       flex="1"
+      width="750"
     >
       <ext-textfield name="txt-test1" label="Alignment Test:"></ext-textfield>
       <ext-checkboxfield
@@ -70,11 +72,14 @@
       >
       </ext-checkboxfield>
     </ext-fieldset>
+    <ext-component style="width: 10px;">
+
+    </ext-component> -->
     <ext-fieldset
       title="Checkbox Groups"
       defaults='{ "labelAlign": "left", "labelWidth": "120", "margin": "10" }'
     >
-      <ext-textfield name="txt-test3" label="Alignment Test 3:"></ext-textfield>
+      <ext-textfield name="txt-test3" label="Alignment Test:"></ext-textfield>
       <ext-checkboxgroup
         label="Auto Layout:"
         cls="x-check-group-alt"
@@ -99,7 +104,7 @@
       <ext-checkboxgroup
         label="Multi-Column<br />(horizontal):"
         cls="x-check-group-alt"
-        width="250"
+        width="490"
         items='[
           { "label": "Item 1", "name": "cb-horiz-1" },
           { "label": "Item 2", "name": "cb-horiz-2" },
@@ -112,7 +117,8 @@
       </ext-checkboxgroup>
       <ext-checkboxgroup
         label="Multi-Column<br />(vertical):"
-        vertical=true
+        vertical="true"
+        height="90"
         items='[
           { "label": "Item 1", "name": "cb-vert-1" },
           { "label": "Item 2", "name": "cb-vert-2" },
@@ -125,8 +131,9 @@
       </ext-checkboxgroup>
       <ext-checkboxgroup
         label="Multi-Column<br />(custom widths):"
-        cls="x-check-group-alt",
-        vertical=true
+        cls="x-check-group-alt"
+        height="110"
+        vertical="true"
         items='[
           { "label": "Item 1", "name": "cb-custwidth", "inputValue": 1 },
           { "label": "Item 2", "name": "cb-custwidth", "inputValue": 2 },
@@ -138,21 +145,15 @@
       </ext-checkboxgroup>
       <ext-checkboxgroup
         label="Multi-Column<br />(custom widths):"
-        cls="x-check-group-alt",
-        vertical=true
-        errorTarget="side",
-        required=true
-        defaults='{
-          "width": "120",
-          "height": "120"
-        }'
+        cls="x-check-group-alt"
+        vertical="true"
+        errorTarget="side"
+        required="true"
+        height="120"
       >
       <ext-container 
-        width="120", 
+        width="140", 
         height="120"
-        defaults='{
-          "labelAlign":"right"
-        }'
       >
         <ext-checkboxfield>
           <ext-component html='Heading 1', padding='0 2'>
@@ -162,13 +163,23 @@
           <ext-label html="Item 2" name="cb-cust-2">
           </ext-label>
         </ext-checkboxfield>
+      </ext-container>
+      <ext-container 
+        width="180", 
+        height="120"
+      >
         <ext-checkboxfield>
           <ext-component html='Heading 2', padding='0 2'>
           </ext-component>
           <ext-label html="A long item just for fun" name="cb-cust-3">
           </ext-label>
         </ext-checkboxfield>
-        <ext-checkboxfield>
+      </ext-container>
+      <ext-container 
+        width="140", 
+        height="120"
+      >
+        <ext-checkboxfield >
           <ext-component html='Heading 1', padding='0 2'>
           </ext-component>
           <ext-label html="Item 4" name="cb-cust-4">

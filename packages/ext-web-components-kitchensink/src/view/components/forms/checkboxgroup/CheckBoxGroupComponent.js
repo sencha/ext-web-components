@@ -1,4 +1,5 @@
 import './CheckBoxGroupComponent.html';
+Ext.require(['Ext.field.CheckboxGroup']);
 
 export default class CheckBoxFieldComponent {
     checkboxFieldReady = (event) => {
