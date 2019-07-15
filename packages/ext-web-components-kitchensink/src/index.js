@@ -91,6 +91,7 @@ import '@sencha/ext-web-components/dist/ext-pivotd3container.component';
 import '@sencha/ext-web-components/dist/ext-chartnavigator.component';
 import '@sencha/ext-web-components/dist/ext-d3-heatmap.component';
 import '@sencha/ext-web-components/dist/ext-pivotheatmap.component';
+import '@sencha/ext-web-components/dist/ext-component.component';
 import './Data.js';
 import getMenu from './menu';
 import MainComponent from './view/main/MainComponent.js';

@@ -74,7 +74,7 @@ import ClosableTabComponent from './view/components/tabs/closabletab/ClosableTab
 import ScrollingTabComponent from './view/components/tabs/scrollingtab/ScrollingTabComponent.js';
 import TabBarComponent from './view/components/tabs/tabbar/TabBarComponent.js';
 import TitleBarComponent from './view/components/titlebar/TitleBarComponent.js';
-import ToolBarComponent from './view/components/toolbar/ToolBarComponent.js';
+import ToolBarComponent from './view/components/toolbars/toolbar/ToolBarComponent.js';
 import ToolTipComponent from './view/components/tooltip/ToolTipComponent.js';
 import TouchEventsComponent from './view/components/touchevents/TouchEventsComponent.js';
 import WizardComponent from './view/components/wizard/WizardComponent.js';
@@ -170,6 +170,7 @@ import DrilldownPluginComponent from './view/pivotgrids/drilldownplugin/Drilldow
 import ConfiguratorPluginComponent from './view/pivotgrids/configuratorplugin/ConfiguratorPluginComponent.js';
 import RangeEditorPluginComponent from './view/pivotgrids/rangeeditorplugin/RangeEditorPluginComponent.js';
 import ExporterPluginComponent from './view/pivotgrids/exporterplugin/ExporterPluginComponent.js';
+import BreadcrumbToolBarComponent from './view/components/toolbars/breadcrumbtoolbar/BreadcrumbToolBarComponent.js';
 
 export default function getMenu() {
     return [
@@ -270,7 +271,10 @@ export default function getMenu() {
                 { text: 'Tab Bar', component: TabBarComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-Tab-Bar' }
             ]},
             { text: 'TitleBar', component: TitleBarComponent, iconCls: 'icon-Title-Bar' },
-            { text: 'ToolBar', component: ToolBarComponent, iconCls: 'icon-toolbar' },
+            { text: 'Toolbars', iconCls: 'icon-toolbar', children: [
+                { text: 'ToolBar', component: ToolBarComponent, iconCls: 'icon-toolbar' },
+                { text: 'BreadcrumbToolBar', component: BreadcrumbToolBarComponent, layout: 'center', iconCls: 'icon-breadcrumb-toolbar' },
+            ]},
             { text: 'ToolTip', component: ToolTipComponent, layout: 'center', iconCls: 'icon-tooltips' },
             { text: 'Touch Events', component: TouchEventsComponent, iconCls: 'icon-touch-events' },
             //{ text: "Transition", component: Transition, iconCls: "icon-Transition" },
