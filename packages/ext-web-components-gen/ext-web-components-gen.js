@@ -517,9 +517,9 @@ ext-web-components-gen app (-h) (-d) (-i) (-t 'material') (-n 'name')
 -v --verbose       verbose npm messages (for problems only)
 
 ${boldGreen('Examples:')}
-ext-web-components-gen app  --name CoolExtWebComponentsApp
+ext-web-components-gen app --theme material --name CoolExtWebComponentsApp
 ext-web-components-gen app --interactive
-ext-web-components-gen app -a -n CoolExtWebComponentsApp
+ext-web-components-gen app -a -t material -n CoolExtWebComponentsApp
 
 ${boldGreen('Theme Names:')}
 ${boldGreen('modern themes:')}  material, ios, neptune, triton
