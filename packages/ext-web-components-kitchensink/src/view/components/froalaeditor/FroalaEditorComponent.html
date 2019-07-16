@@ -1,0 +1,18 @@
+<ext-formpanel layout="fit" height="100%" title="Ext.froala.EditorField insde a form panel"
+  onready=froalaeditor.onReadyPanel
+>
+  <ext-froalaeditor html="<p>Four score and seven years ago.</p>" height="100%">
+    <ext-titlebar onready="froalaeditor.onTitlebarReady">
+
+    </ext-titlebar>
+    <ext-froalaeditorfield 
+      editor='{
+        "autofocus": "true",
+        "fontSize": ['10', '12', '16', '24']
+      }'
+      margin="16"
+    >
+    </ext-froalaeditorfield>
+  </ext-froalaeditor>
+</ext-formpanel>
+
