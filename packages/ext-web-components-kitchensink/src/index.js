@@ -13,6 +13,8 @@ import '@sencha/ext-web-components/dist/ext-splitbutton.component';
 import '@sencha/ext-web-components/dist/ext-dataview.component';
 import '@sencha/ext-web-components/dist/ext-dialog.component';
 import '@sencha/ext-web-components/dist/ext-datepanel.component';
+import '@sencha/ext-web-components/dist/ext-datecolumn.component';
+import '@sencha/ext-web-components/dist/ext-checkcolumn.component';
 import '@sencha/ext-web-components/dist/ext-datepickerfield.component';
 import '@sencha/ext-web-components/dist/ext-datepickernativefield.component';
 import '@sencha/ext-web-components/dist/ext-emailfield.component';
