@@ -93,6 +93,7 @@ import SummaryRowComponent from './view/grids/add-ons/summaryrow/SummaryRowCompo
 import GridFilteringComponent from './view/grids/add-ons/gridfiltering/GridFilteringComponent.js';
 import ViewOptionsComponent from './view/grids/add-ons/viewoptions/ViewOptionsComponent.js';
 import RowDragAndDropComponent from './view/grids/add-ons/rowdraganddrop/RowDragAndDropComponent.js';
+import DragFormToGrid from './view/grids/add-ons/dragformtogrid/DragFormToGridComponent.js';
 import BigDataComponent from './view/grids/advancedfeatures/bigdata/BigDataComponent.js';
 import SelectAndCopyComponent from './view/grids/advancedfeatures/selectandcopy/SelectAndCopyComponent.js';
 import ReconfigureGridComponent from './view/grids/advancedfeatures/reconfiguregrid/ReconfigureGridComponent.js';
@@ -302,7 +303,8 @@ export default function getMenu() {
                 { text: 'Summary Row', component: SummaryRowComponent, iconCls: 'icon-grid-summary'},
                 { text: 'Grid Filtering', component: GridFilteringComponent, iconCls: 'icon-grid-filtering'},
                 { text: 'View Options', component: ViewOptionsComponent, iconCls: 'icon-view-options-grid'},
-                { text: 'Row Drag And Drop', component: RowDragAndDropComponent, iconCls: 'icon-view-options-grid'}
+                { text: 'Row Drag And Drop', component: RowDragAndDropComponent, iconCls: 'icon-view-options-grid'},
+                { text: 'Drag Form To Grid', component: DragFormToGrid, iconCls: 'icon-dd-form-to-grid'}
             ]},
             { text: 'Advanced Features', iconCls: 'icon-grid-plugins', children:[
                 { text: 'Big Data', component: BigDataComponent, iconCls: 'icon-big-data-grid' },
