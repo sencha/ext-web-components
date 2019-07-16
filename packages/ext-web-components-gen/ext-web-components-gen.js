@@ -38,6 +38,7 @@ var answers = {
   'useDefaults': null,
   'appName': null,
   'packageName': null,
+  'theme': null,
   'version': null,
   'description': null,
   'repositoryURL': null,
@@ -225,7 +226,7 @@ function stepNameYourApp() {
   }).run().then(answer => {
     answers['appName'] = answer
     answers['packageName'] = kebabCase(answers['appName'])
-    stepPackageName()
+    stepTheme()
   })
 }
 
@@ -424,7 +425,7 @@ async function stepCreate() {
   fs.writeFileSync(packageJson, packageInfoString)
 
   const indexHtml = path.join('src', 'index.html');
-  fs.writeFileSync(indexHtml, fs.readFileSync(indexHtml, 'utf8').replace('ExtAngular Boilerplate', answers['appName']), 'utf8')
+  fs.writeFileSync(indexHtml, fs.readFileSync(indexHtml, 'utf8').replace('ExtWebComponents Boilerplate', answers['appName']), 'utf8')
 
   try {
     const substrings = ['[ERR]', '[WRN]', '[INF] Processing', "[INF] Server", "[INF] Writing content", "[INF] Loading Build", "[INF] Waiting", "[LOG] Fashion waiting"];
