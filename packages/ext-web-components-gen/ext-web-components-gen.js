@@ -292,7 +292,12 @@ function stepKeywords() {
     message: 'What are the npm keywords?',
     default: config.keywords
   }).run().then(answer => {
-    answers['keywords'] = answer
+    var theKeywords = "";
+    var keywordArray = answer.split(" ");
+     for (var i = 0; i < keywordArray.length; i++) { 
+        theKeywords += '"' + keywordArray[i] + '",'
+    }
+    answers['keywords'] = theKeywords.slice(0, -1);
     stepAuthorName()
   })
 }
