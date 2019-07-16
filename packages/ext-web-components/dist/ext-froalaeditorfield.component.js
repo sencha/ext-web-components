@@ -1,121 +1,101 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import ExtBase from './base';
-export var ExtLockedgridregionComponent =
+export var ExtFroalaeditorfieldComponent =
 /*#__PURE__*/
 function (_ExtBase) {
-  _inheritsLoose(ExtLockedgridregionComponent, _ExtBase);
+  _inheritsLoose(ExtFroalaeditorfieldComponent, _ExtBase);
 
-  ExtLockedgridregionComponent.XTYPE = function XTYPE() {
-    return 'lockedgridregion';
+  ExtFroalaeditorfieldComponent.XTYPE = function XTYPE() {
+    return 'froalaeditorfield';
   };
 
-  ExtLockedgridregionComponent.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
+  ExtFroalaeditorfieldComponent.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
     return {
-      "activeChildTabIndex": ["number"],
-      "activeItem": ["Ext.Component", "object", "string", "number"],
+      "activationKey": ["string"],
       "alignSelf": ["string"],
-      "allowFocusingDisabledChildren": ["boolean"],
       "alwaysOnTop": ["boolean", "number"],
-      "anchor": ["boolean"],
-      "anchorPosition": ["string"],
       "ariaAttributes": ["object"],
       "ariaDescribedBy": ["string"],
       "ariaLabel": ["string"],
       "ariaLabelledBy": ["string"],
-      "autoDestroy": ["boolean"],
-      "autoSize": ["boolean"],
+      "autoFitErrors": ["boolean"],
+      "autoSize": ["any"],
       "axisLock": ["boolean"],
-      "bbar": ["object", "object[]"],
       "bind": ["object", "string"],
-      "bodyBorder": ["boolean"],
-      "bodyCls": ["string", "string[]"],
-      "bodyPadding": ["number", "boolean", "string"],
-      "bodyStyle": ["string", "object"],
+      "bodyAlign": ["'start'", "'center'", "'end'", "'stretch'"],
       "border": ["boolean"],
       "bottom": ["number", "string"],
-      "buttonAlign": ["string"],
-      "buttons": ["object", "Ext.Button[]"],
-      "buttonToolbar": ["object", "Ext.Toolbar"],
-      "cardSwitchAnimation": ["string", "object", "boolean"],
+      "bubbleDirty": ["boolean"],
       "centered": ["boolean"],
-      "closable": ["boolean"],
-      "closeAction": ["string"],
-      "closeToolText": ["string"],
       "cls": ["string", "string[]"],
-      "collapsed": ["boolean"],
-      "collapsible": ["'top'", "'right'", "'bottom'", "'left'", "boolean", "object"],
       "constrainAlign": ["string", "Ext.util.Region", "Ext.dom.Element"],
+      "container": ["Ext.Container"],
       "contentEl": ["Ext.dom.Element", "htmlelement", "string"],
-      "control": ["object"],
       "controller": ["string", "object", "Ext.app.ViewController"],
       "data": ["object"],
-      "defaultFocus": ["string"],
+      "defaultEditor": ["object"],
       "defaultListenerScope": ["boolean"],
       "defaults": ["object"],
-      "defaultToolWeights": ["object"],
       "defaultType": ["string"],
+      "dirty": ["boolean"],
       "disabled": ["boolean"],
       "displayed": ["boolean"],
       "docked": ["string"],
       "draggable": ["boolean", "object", "Ext.drag.Source"],
+      "editor": ["any"],
+      "error": ["any"],
+      "errorMessage": ["string"],
+      "errorTarget": ["string"],
+      "errorTip": ["object"],
+      "errorTpl": ["string", "string[]", "Ext.XTemplate"],
+      "fieldDefaults": ["object"],
       "flex": ["number", "string", "object"],
       "floated": ["boolean"],
-      "focusableContainer": ["boolean"],
       "focusCls": ["string"],
       "fullscreen": ["boolean"],
-      "grid": ["Ext.grid.Grid"],
-      "header": ["boolean", "object"],
-      "headerPosition": ["'top'", "'right'", "'bottom'", "'left'"],
       "height": ["number", "string"],
       "hidden": ["boolean"],
       "hideAnimation": ["string", "mixed"],
       "hideMode": ["'clip'", "'display'", "'offsets'", "'opacity'", "'visibility'"],
       "hideOnMaskTap": ["boolean"],
       "html": ["string", "Ext.dom.Element", "htmlelement"],
-      "icon": ["string"],
-      "iconAlign": ["'top'", "'right'", "'bottom'", "'left'"],
-      "iconCls": ["string"],
       "id": ["string"],
-      "inactiveChildTabIndex": ["number"],
-      "innerCls": ["string"],
+      "inline": ["boolean"],
       "instanceCls": ["string", "string[]"],
       "itemId": ["string"],
       "items": ["array", "object"],
       "keyMap": ["object"],
       "keyMapEnabled": ["boolean"],
       "keyMapTarget": ["string"],
+      "label": ["string"],
+      "labelAlign": ["'top'", "'left'", "'bottom'", "'right'"],
+      "labelCls": ["string"],
+      "labelMinWidth": ["number", "string"],
+      "labelTextAlign": ["'top'", "'right'", "'bottom'", "'left'"],
+      "labelWidth": ["number", "string"],
+      "labelWrap": ["boolean"],
       "layout": ["object", "string"],
-      "lbar": ["object", "object[]"],
       "left": ["number", "string"],
       "listeners": ["object"],
-      "locked": ["boolean", "string"],
-      "manageBorders": ["boolean"],
       "margin": ["number", "string"],
-      "masked": ["boolean", "string", "object", "Ext.Mask", "Ext.LoadMask"],
       "maxHeight": ["number", "string"],
       "maxWidth": ["number", "string"],
-      "menuItem": ["string"],
-      "minButtonWidth": ["number"],
       "minHeight": ["number", "string"],
       "minWidth": ["number", "string"],
       "modal": ["boolean"],
       "modelValidation": ["boolean"],
       "name": ["string"],
       "nameable": ["boolean"],
-      "nameHolder": ["boolean"],
       "padding": ["number", "string"],
       "plugins": ["array", "Ext.enums.Plugin", "object", "Ext.plugin.Abstract"],
       "publishes": ["string", "string[]", "object"],
-      "rbar": ["object", "object[]"],
       "record": ["Ext.data.Model"],
       "reference": ["string"],
-      "referenceHolder": ["boolean"],
-      "regionKey": ["string"],
       "relative": ["boolean"],
       "renderTo": ["Ext.dom.Element"],
-      "resetFocusPosition": ["boolean"],
-      "resizable": ["object"],
+      "required": ["boolean"],
+      "requiredMessage": ["string"],
       "right": ["number", "string"],
       "ripple": ["boolean", "object", "string"],
       "scrollable": ["boolean", "string", "object"],
@@ -124,19 +104,15 @@ function (_ExtBase) {
       "shareableName": ["boolean"],
       "shim": ["boolean"],
       "showAnimation": ["string", "mixed"],
-      "standardButtons": ["object"],
+      "sideError": ["string"],
       "stateful": ["boolean", "object", "string[]"],
       "statefulDefaults": ["object", "string[]"],
       "stateId": ["string"],
       "style": ["string", "object"],
       "tabIndex": ["number"],
-      "tbar": ["object", "object[]"],
-      "title": ["string", "Ext.panel.Title"],
-      "titleAlign": ["'left'", "'center'", "'right'"],
-      "titleCollapse": ["boolean"],
+      "tipError": ["string"],
+      "titleError": ["string"],
       "toFrontOnShow": ["boolean"],
-      "toolDefaults": ["object"],
-      "tools": ["Ext.Tool[]", "object", "object[]"],
       "tooltip": ["string", "object"],
       "top": ["number", "string"],
       "touchAction": ["object"],
@@ -145,11 +121,15 @@ function (_ExtBase) {
       "translatable": ["object"],
       "twoWayBindable": ["string", "string[]", "object"],
       "ui": ["string", "string[]"],
+      "underError": ["string"],
       "userCls": ["string", "string[]"],
       "userSelectable": ["boolean", "string", "object"],
+      "validateDisabled": ["boolean"],
+      "validationMessage": ["string"],
+      "validators": ["mixed"],
+      "value": ["mixed"],
       "viewModel": ["string", "object", "Ext.app.ViewModel"],
       "weight": ["number"],
-      "weighted": ["boolean"],
       "width": ["number", "string"],
       "x": ["number"],
       "xtype": ["string"],
@@ -163,22 +143,10 @@ function (_ExtBase) {
     };
   };
 
-  ExtLockedgridregionComponent.EVENTS = function EVENTS() {
+  ExtFroalaeditorfieldComponent.EVENTS = function EVENTS() {
     return [{
-      name: 'activate',
-      parameters: 'newActiveItem,lockedgridregion,oldActiveItem'
-    }, {
-      name: 'activeItemchange',
-      parameters: 'sender,value,oldValue'
-    }, {
-      name: 'add',
-      parameters: 'lockedgridregion,item,index'
-    }, {
       name: 'added',
       parameters: 'sender,container,index'
-    }, {
-      name: 'beforeactiveItemchange',
-      parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforebottomchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -186,17 +154,11 @@ function (_ExtBase) {
       name: 'beforecenteredchange',
       parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'beforecollapse',
-      parameters: 'lockedgridregion'
-    }, {
       name: 'beforedisabledchange',
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforedockedchange',
       parameters: 'sender,value,oldValue,undefined'
-    }, {
-      name: 'beforeexpand',
-      parameters: 'lockedgridregion'
     }, {
       name: 'beforeheightchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -225,9 +187,6 @@ function (_ExtBase) {
       name: 'beforeorientationchange',
       parameters: ''
     }, {
-      name: 'beforeresizedragstart',
-      parameters: 'lockedgridregion,context'
-    }, {
       name: 'beforerightchange',
       parameters: 'sender,value,oldValue,undefined'
     }, {
@@ -238,7 +197,7 @@ function (_ExtBase) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'lockedgridregion'
+      parameters: 'froalaeditorfield'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -247,7 +206,7 @@ function (_ExtBase) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'lockedgridregion,event'
+      parameters: 'froalaeditorfield,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -255,14 +214,17 @@ function (_ExtBase) {
       name: 'centeredchange',
       parameters: 'sender,value,oldValue'
     }, {
-      name: 'collapse',
-      parameters: 'lockedgridregion'
+      name: 'change',
+      parameters: 'froalaeditorfield,the'
     }, {
-      name: 'deactivate',
-      parameters: 'oldActiveItem,lockedgridregion,newActiveItem'
+      name: 'click',
+      parameters: 'e'
     }, {
       name: 'destroy',
       parameters: ''
+    }, {
+      name: 'dirtychange',
+      parameters: 'froalaeditorfield,dirty'
     }, {
       name: 'disabledchange',
       parameters: 'sender,value,oldValue'
@@ -270,29 +232,23 @@ function (_ExtBase) {
       name: 'dockedchange',
       parameters: 'sender,value,oldValue'
     }, {
-      name: 'drawerhide',
-      parameters: 'lockedgridregion'
-    }, {
-      name: 'drawershow',
-      parameters: 'lockedgridregion'
-    }, {
       name: 'erased',
       parameters: 'sender'
     }, {
-      name: 'expand',
-      parameters: 'lockedgridregion'
+      name: 'errorchange',
+      parameters: 'froalaeditorfield,error'
     }, {
       name: 'floatingchange',
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'lockedgridregion,event'
+      parameters: 'froalaeditorfield,event'
     }, {
       name: 'focusenter',
-      parameters: 'lockedgridregion,event'
+      parameters: 'froalaeditorfield,event'
     }, {
       name: 'focusleave',
-      parameters: 'lockedgridregion,event'
+      parameters: 'froalaeditorfield,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -309,6 +265,9 @@ function (_ExtBase) {
       name: 'initialize',
       parameters: 'sender'
     }, {
+      name: 'keyup',
+      parameters: 'e'
+    }, {
       name: 'leftchange',
       parameters: 'sender,value,oldValue'
     }, {
@@ -324,8 +283,8 @@ function (_ExtBase) {
       name: 'minWidthchange',
       parameters: 'sender,value,oldValue'
     }, {
-      name: 'move',
-      parameters: 'lockedgridregion,item,toIndex,fromIndex'
+      name: 'mousedown',
+      parameters: 'e'
     }, {
       name: 'moved',
       parameters: 'sender,container,toIndex,fromIndex'
@@ -336,32 +295,20 @@ function (_ExtBase) {
       name: 'painted',
       parameters: 'sender,element'
     }, {
+      name: 'paste',
+      parameters: 'e'
+    }, {
       name: 'positionedchange',
       parameters: 'sender,positioned'
     }, {
-      name: 'remove',
-      parameters: 'lockedgridregion,item,index'
+      name: 'ready',
+      parameters: 'froalaeditorfield,the'
     }, {
       name: 'removed',
       parameters: 'sender,container,index'
     }, {
-      name: 'renderedchange',
-      parameters: 'lockedgridregion,item,rendered'
-    }, {
       name: 'resize',
       parameters: 'element,info'
-    }, {
-      name: 'resizedrag',
-      parameters: 'lockedgridregion,context'
-    }, {
-      name: 'resizedragcancel',
-      parameters: 'lockedgridregion,context'
-    }, {
-      name: 'resizedragend',
-      parameters: 'lockedgridregion,context'
-    }, {
-      name: 'resizedragstart',
-      parameters: 'lockedgridregion,context'
     }, {
       name: 'rightchange',
       parameters: 'sender,value,oldValue'
@@ -373,7 +320,7 @@ function (_ExtBase) {
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'lockedgridregion'
+      parameters: 'froalaeditorfield'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -389,7 +336,7 @@ function (_ExtBase) {
     }];
   };
 
-  ExtLockedgridregionComponent.METHODS = function METHODS() {
+  ExtFroalaeditorfieldComponent.METHODS = function METHODS() {
     return [{
       name: '_addDeclaredListeners',
       "function": function _function(listeners) {
@@ -429,11 +376,6 @@ function (_ExtBase) {
       name: 'addBeforeListener',
       "function": function _function() {
         return this.ext.addBeforeListener();
-      }
-    }, {
-      name: 'addBodyCls',
-      "function": function _function(cls) {
-        return this.ext.addBodyCls(cls);
       }
     }, {
       name: 'addCls',
@@ -476,9 +418,9 @@ function (_ExtBase) {
         return this.ext.addPlugin(plugin);
       }
     }, {
-      name: 'addTool',
-      "function": function _function(tool) {
-        return this.ext.addTool(tool);
+      name: 'adjustChildDirtyCount',
+      "function": function _function(dirty) {
+        return this.ext.adjustChildDirtyCount(dirty);
       }
     }, {
       name: 'afterEdit',
@@ -501,16 +443,6 @@ function (_ExtBase) {
         return this.ext.alignTo(component, alignment, options);
       }
     }, {
-      name: 'animateActiveItem',
-      "function": function _function(activeItem, animation) {
-        return this.ext.animateActiveItem(activeItem, animation);
-      }
-    }, {
-      name: 'applyActiveItem',
-      "function": function _function(activeItem, currentActiveItem) {
-        return this.ext.applyActiveItem(activeItem, currentActiveItem);
-      }
-    }, {
       name: 'applyBind',
       "function": function _function(binds, currentBindings) {
         return this.ext.applyBind(binds, currentBindings);
@@ -519,21 +451,6 @@ function (_ExtBase) {
       name: 'applyCentered',
       "function": function _function(centered) {
         return this.ext.applyCentered(centered);
-      }
-    }, {
-      name: 'applyControl',
-      "function": function _function(selectors) {
-        return this.ext.applyControl(selectors);
-      }
-    }, {
-      name: 'applyItemDefaults',
-      "function": function _function(item) {
-        return this.ext.applyItemDefaults(item);
-      }
-    }, {
-      name: 'applyMasked',
-      "function": function _function(masked) {
-        return this.ext.applyMasked(masked);
       }
     }, {
       name: 'applyPlugins',
@@ -556,24 +473,24 @@ function (_ExtBase) {
         return this.ext.applyTpl(tpl);
       }
     }, {
+      name: 'applyValidators',
+      "function": function _function(validators) {
+        return this.ext.applyValidators(validators);
+      }
+    }, {
       name: 'applyViewModel',
       "function": function _function(viewModel) {
         return this.ext.applyViewModel(viewModel);
       }
     }, {
-      name: 'attachNameRef',
-      "function": function _function(component) {
-        return this.ext.attachNameRef(component);
-      }
-    }, {
-      name: 'attachReference',
-      "function": function _function(component) {
-        return this.ext.attachReference(component);
-      }
-    }, {
       name: 'beforeInitialize',
       "function": function _function() {
         return this.ext.beforeInitialize();
+      }
+    }, {
+      name: 'beginSyncChildDirty',
+      "function": function _function() {
+        return this.ext.beginSyncChildDirty();
       }
     }, {
       name: 'blur',
@@ -616,6 +533,16 @@ function (_ExtBase) {
         return this.ext.clearDelegatedListeners();
       }
     }, {
+      name: 'clearErrors',
+      "function": function _function() {
+        return this.ext.clearErrors();
+      }
+    }, {
+      name: 'clearInvalid',
+      "function": function _function() {
+        return this.ext.clearInvalid();
+      }
+    }, {
       name: 'clearListeners',
       "function": function _function() {
         return this.ext.clearListeners();
@@ -626,14 +553,9 @@ function (_ExtBase) {
         return this.ext.clearManagedListeners();
       }
     }, {
-      name: 'close',
+      name: 'completeEdit',
       "function": function _function() {
-        return this.ext.close();
-      }
-    }, {
-      name: 'collapse',
-      "function": function _function(animation) {
-        return this.ext.collapse(animation);
+        return this.ext.completeEdit();
       }
     }, {
       name: 'constructor',
@@ -666,14 +588,14 @@ function (_ExtBase) {
         return this.ext.destroyPlugin(plugin);
       }
     }, {
+      name: 'didValueChange',
+      "function": function _function(newVal, oldVal) {
+        return this.ext.didValueChange(newVal, oldVal);
+      }
+    }, {
       name: 'disable',
       "function": function _function() {
         return this.ext.disable();
-      }
-    }, {
-      name: 'doAdd',
-      "function": function _function(item, instanced) {
-        return this.ext.doAdd(item, instanced);
       }
     }, {
       name: 'doAddListener',
@@ -701,14 +623,14 @@ function (_ExtBase) {
         return this.ext.doInheritUi();
       }
     }, {
-      name: 'doInsert',
-      "function": function _function(index, item, instanced) {
-        return this.ext.doInsert(index, item, instanced);
-      }
-    }, {
       name: 'doUninheritUi',
       "function": function _function() {
         return this.ext.doUninheritUi();
+      }
+    }, {
+      name: 'doValidate',
+      "function": function _function(value, errors, skipLazy) {
+        return this.ext.doValidate(value, errors, skipLazy);
       }
     }, {
       name: 'down',
@@ -726,19 +648,9 @@ function (_ExtBase) {
         return this.ext.enableBubble(eventNames);
       }
     }, {
-      name: 'expand',
-      "function": function _function(animation) {
-        return this.ext.expand(animation);
-      }
-    }, {
-      name: 'factoryItem',
-      "function": function _function(item) {
-        return this.ext.factoryItem(item);
-      }
-    }, {
-      name: 'findDefaultFocus',
-      "function": function _function() {
-        return this.ext.findDefaultFocus();
+      name: 'fillRecord',
+      "function": function _function(record) {
+        return this.ext.fillRecord(record);
       }
     }, {
       name: 'findFloatParent',
@@ -756,9 +668,19 @@ function (_ExtBase) {
         return this.ext.findPlugin(type);
       }
     }, {
+      name: 'finishSyncChildDirty',
+      "function": function _function() {
+        return this.ext.finishSyncChildDirty();
+      }
+    }, {
       name: 'fireAction',
       "function": function _function(eventName, args, fn, scope, options, order) {
         return this.ext.fireAction(eventName, args, fn, scope, options, order);
+      }
+    }, {
+      name: 'fireDirtyChange',
+      "function": function _function() {
+        return this.ext.fireDirtyChange();
       }
     }, {
       name: 'fireEvent',
@@ -776,9 +698,29 @@ function (_ExtBase) {
         return this.ext.fireEventedAction(eventName, args, fn, scope, fnArgs);
       }
     }, {
+      name: 'fixDirtyState',
+      "function": function _function() {
+        return this.ext.fixDirtyState();
+      }
+    }, {
       name: 'focus',
       "function": function _function(selectText) {
         return this.ext.focus(selectText);
+      }
+    }, {
+      name: 'focusNextField',
+      "function": function _function() {
+        return this.ext.focusNextField();
+      }
+    }, {
+      name: 'focusPreviousField',
+      "function": function _function() {
+        return this.ext.focusPreviousField();
+      }
+    }, {
+      name: 'formatErrors',
+      "function": function _function(errors) {
+        return this.ext.formatErrors(errors);
       }
     }, {
       name: 'getAlignmentInfo',
@@ -811,11 +753,6 @@ function (_ExtBase) {
         return this.ext.getClassCls();
       }
     }, {
-      name: 'getComponent',
-      "function": function _function(component) {
-        return this.ext.getComponent(component);
-      }
-    }, {
       name: 'getConfig',
       "function": function _function(name, peek, ifInitialized) {
         return this.ext.getConfig(name, peek, ifInitialized);
@@ -836,24 +773,19 @@ function (_ExtBase) {
         return this.ext.getCurrentConfig();
       }
     }, {
-      name: 'getDockedComponent',
-      "function": function _function(component) {
-        return this.ext.getDockedComponent(component);
-      }
-    }, {
-      name: 'getDockedItems',
-      "function": function _function() {
-        return this.ext.getDockedItems();
-      }
-    }, {
       name: 'getElementConfig',
       "function": function _function() {
         return this.ext.getElementConfig();
       }
     }, {
-      name: 'getFirstReferences',
+      name: 'getErrors',
       "function": function _function() {
-        return this.ext.getFirstReferences();
+        return this.ext.getErrors();
+      }
+    }, {
+      name: 'getFields',
+      "function": function _function(byName, deep) {
+        return this.ext.getFields(byName, deep);
       }
     }, {
       name: 'getFloatParent',
@@ -869,6 +801,11 @@ function (_ExtBase) {
       name: 'getFocusClsEl',
       "function": function _function(focusEl) {
         return this.ext.getFocusClsEl(focusEl);
+      }
+    }, {
+      name: 'getFocusedField',
+      "function": function _function() {
+        return this.ext.getFocusedField();
       }
     }, {
       name: 'getFocusEl',
@@ -896,24 +833,14 @@ function (_ExtBase) {
         return this.ext.getInitialConfig(name);
       }
     }, {
-      name: 'getInnerItems',
-      "function": function _function() {
-        return this.ext.getInnerItems();
-      }
-    }, {
-      name: 'getMaxHeightElement',
-      "function": function _function() {
-        return this.ext.getMaxHeightElement();
-      }
-    }, {
       name: 'getModalSibling',
       "function": function _function() {
         return this.ext.getModalSibling();
       }
     }, {
-      name: 'getNamedItems',
+      name: 'getNextField',
       "function": function _function() {
-        return this.ext.getNamedItems();
+        return this.ext.getNextField();
       }
     }, {
       name: 'getPlugin',
@@ -921,14 +848,19 @@ function (_ExtBase) {
         return this.ext.getPlugin(id);
       }
     }, {
-      name: 'getPositionedItemTarget',
-      "function": function _function(item) {
-        return this.ext.getPositionedItemTarget(item);
+      name: 'getPreviousField',
+      "function": function _function() {
+        return this.ext.getPreviousField();
       }
     }, {
-      name: 'getReferences',
+      name: 'getProxiedConfigs',
+      "function": function _function(name) {
+        return this.ext.getProxiedConfigs(name);
+      }
+    }, {
+      name: 'getRawValue',
       "function": function _function() {
-        return this.ext.getReferences();
+        return this.ext.getRawValue();
       }
     }, {
       name: 'getRefItems',
@@ -971,6 +903,11 @@ function (_ExtBase) {
         return this.ext.getTabIndex();
       }
     }, {
+      name: 'getValues',
+      "function": function _function(enabled, all) {
+        return this.ext.getValues(enabled, all);
+      }
+    }, {
       name: 'getXTypes',
       "function": function _function() {
         return this.ext.getXTypes();
@@ -981,14 +918,14 @@ function (_ExtBase) {
         return this.ext.handleBlurEvent(info);
       }
     }, {
+      name: 'handleFieldDefaults',
+      "function": function _function() {
+        return this.ext.handleFieldDefaults();
+      }
+    }, {
       name: 'handleFocusEvent',
       "function": function _function(info) {
         return this.ext.handleFocusEvent(info);
-      }
-    }, {
-      name: 'has',
-      "function": function _function(item) {
-        return this.ext.has(item);
       }
     }, {
       name: 'hasCls',
@@ -1001,11 +938,6 @@ function (_ExtBase) {
         return this.ext.hasConfig(name);
       }
     }, {
-      name: 'hasInnerItem',
-      "function": function _function(item) {
-        return this.ext.hasInnerItem(item);
-      }
-    }, {
       name: 'hasListener',
       "function": function _function(eventName) {
         return this.ext.hasListener(eventName);
@@ -1014,11 +946,6 @@ function (_ExtBase) {
       name: 'hide',
       "function": function _function(animation) {
         return this.ext.hide(animation);
-      }
-    }, {
-      name: 'indexOf',
-      "function": function _function(item) {
-        return this.ext.indexOf(item);
       }
     }, {
       name: 'initBindable',
@@ -1081,34 +1008,9 @@ function (_ExtBase) {
         return this.ext.insert(index, item);
       }
     }, {
-      name: 'insertAfter',
-      "function": function _function(item, relativeToItem) {
-        return this.ext.insertAfter(item, relativeToItem);
-      }
-    }, {
-      name: 'insertBefore',
-      "function": function _function(item, relativeToItem) {
-        return this.ext.insertBefore(item, relativeToItem);
-      }
-    }, {
-      name: 'insertFirst',
-      "function": function _function(item) {
-        return this.ext.insertFirst(item);
-      }
-    }, {
       name: 'insertFloatedDom',
       "function": function _function(needsShow) {
         return this.ext.insertFloatedDom(needsShow);
-      }
-    }, {
-      name: 'insertInner',
-      "function": function _function(item, index) {
-        return this.ext.insertInner(item, index);
-      }
-    }, {
-      name: 'insertLast',
-      "function": function _function(item) {
-        return this.ext.insertLast(item);
       }
     }, {
       name: 'invalidateInheritedState',
@@ -1151,6 +1053,11 @@ function (_ExtBase) {
         return this.ext.isDestructing();
       }
     }, {
+      name: 'isDirty',
+      "function": function _function() {
+        return this.ext.isDirty();
+      }
+    }, {
       name: 'isDisabled',
       "function": function _function() {
         return this.ext.isDisabled();
@@ -1161,6 +1068,11 @@ function (_ExtBase) {
         return this.ext.isEnabled();
       }
     }, {
+      name: 'isEqual',
+      "function": function _function(value1, value2) {
+        return this.ext.isEqual(value1, value2);
+      }
+    }, {
       name: 'isFocusable',
       "function": function _function(deep) {
         return this.ext.isFocusable(deep);
@@ -1169,6 +1081,11 @@ function (_ExtBase) {
       name: 'isFocusing',
       "function": function _function(e) {
         return this.ext.isFocusing(e);
+      }
+    }, {
+      name: 'isFroalaEvent',
+      "function": function _function(event) {
+        return this.ext.isFroalaEvent(event);
       }
     }, {
       name: 'isHeighted',
@@ -1201,6 +1118,11 @@ function (_ExtBase) {
         return this.ext.isSyncing(name);
       }
     }, {
+      name: 'isValid',
+      "function": function _function() {
+        return this.ext.isValid();
+      }
+    }, {
       name: 'isVisible',
       "function": function _function(deep) {
         return this.ext.isVisible(deep);
@@ -1226,29 +1148,14 @@ function (_ExtBase) {
         return this.ext.loadState(state, stateful);
       }
     }, {
-      name: 'lookup',
-      "function": function _function(ref) {
-        return this.ext.lookup(ref);
-      }
-    }, {
       name: 'lookupController',
       "function": function _function(skipThis) {
         return this.ext.lookupController(skipThis);
       }
     }, {
-      name: 'lookupName',
-      "function": function _function(name) {
-        return this.ext.lookupName(name);
-      }
-    }, {
       name: 'lookupNameHolder',
       "function": function _function(skipThis) {
         return this.ext.lookupNameHolder(skipThis);
-      }
-    }, {
-      name: 'lookupReference',
-      "function": function _function(ref) {
-        return this.ext.lookupReference(ref);
       }
     }, {
       name: 'lookupReferenceHolder',
@@ -1271,14 +1178,24 @@ function (_ExtBase) {
         return this.ext.lookupViewModel(skipThis);
       }
     }, {
-      name: 'mask',
-      "function": function _function(mask) {
-        return this.ext.mask(mask);
+      name: 'markInvalid',
+      "function": function _function(messages) {
+        return this.ext.markInvalid(messages);
+      }
+    }, {
+      name: 'mergeProxiedConfigs',
+      "function": function _function(name, itemConfig, alwaysClone) {
+        return this.ext.mergeProxiedConfigs(name, itemConfig, alwaysClone);
       }
     }, {
       name: 'mon',
       "function": function _function(item, ename, fn, scope, options, noDestroy) {
         return this.ext.mon(item, ename, fn, scope, options, noDestroy);
+      }
+    }, {
+      name: 'monitorConfiguredListeners',
+      "function": function _function(froalaEditor) {
+        return this.ext.monitorConfiguredListeners(froalaEditor);
       }
     }, {
       name: 'mun',
@@ -1309,11 +1226,6 @@ function (_ExtBase) {
       name: 'onBlur',
       "function": function _function(e) {
         return this.ext.onBlur(e);
-      }
-    }, {
-      name: 'onFirstItemAdd',
-      "function": function _function(item) {
-        return this.ext.onFirstItemAdd(item);
       }
     }, {
       name: 'onFocus',
@@ -1349,21 +1261,6 @@ function (_ExtBase) {
       name: 'onInitialized',
       "function": function _function(fn, scope, args) {
         return this.ext.onInitialized(fn, scope, args);
-      }
-    }, {
-      name: 'onItemAdd',
-      "function": function _function(item, index) {
-        return this.ext.onItemAdd(item, index);
-      }
-    }, {
-      name: 'onItemMove',
-      "function": function _function(item, toIndex, fromIndex) {
-        return this.ext.onItemMove(item, toIndex, fromIndex);
-      }
-    }, {
-      name: 'onItemRemove',
-      "function": function _function(item, index, destroying) {
-        return this.ext.onItemRemove(item, index, destroying);
       }
     }, {
       name: 'onRender',
@@ -1416,9 +1313,9 @@ function (_ExtBase) {
         return this.ext.processElementConfig();
       }
     }, {
-      name: 'processFocusableContainerKeyEvent',
-      "function": function _function(e) {
-        return this.ext.processFocusableContainerKeyEvent(e);
+      name: 'processRawValue',
+      "function": function _function(value) {
+        return this.ext.processRawValue(value);
       }
     }, {
       name: 'publishState',
@@ -1431,14 +1328,9 @@ function (_ExtBase) {
         return this.ext.query(selector);
       }
     }, {
-      name: 'queryBy',
-      "function": function _function(fn, scope) {
-        return this.ext.queryBy(fn, scope);
-      }
-    }, {
-      name: 'queryById',
-      "function": function _function(id) {
-        return this.ext.queryById(id);
+      name: 'rawToValue',
+      "function": function _function(rawValue) {
+        return this.ext.rawToValue(rawValue);
       }
     }, {
       name: 'readStateObject',
@@ -1471,19 +1363,9 @@ function (_ExtBase) {
         return this.ext.removeAll(destroy, everything);
       }
     }, {
-      name: 'removeAt',
-      "function": function _function(index, destroy) {
-        return this.ext.removeAt(index, destroy);
-      }
-    }, {
       name: 'removeBeforeListener',
       "function": function _function() {
         return this.ext.removeBeforeListener();
-      }
-    }, {
-      name: 'removeBodyCls',
-      "function": function _function(cls) {
-        return this.ext.removeBodyCls(cls);
       }
     }, {
       name: 'removeCls',
@@ -1494,16 +1376,6 @@ function (_ExtBase) {
       name: 'removeDelegatedListener',
       "function": function _function(eventName, fn, scope) {
         return this.ext.removeDelegatedListener(eventName, fn, scope);
-      }
-    }, {
-      name: 'removeInner',
-      "function": function _function(item) {
-        return this.ext.removeInner(item);
-      }
-    }, {
-      name: 'removeInnerAt',
-      "function": function _function(index) {
-        return this.ext.removeInnerAt(index);
       }
     }, {
       name: 'removeListener',
@@ -1531,9 +1403,19 @@ function (_ExtBase) {
         return this.ext.replaceCls(oldCls, newCls, prefix, suffix);
       }
     }, {
+      name: 'reset',
+      "function": function _function() {
+        return this.ext.reset();
+      }
+    }, {
       name: 'resetFloating',
       "function": function _function() {
         return this.ext.resetFloating();
+      }
+    }, {
+      name: 'resetOriginalValue',
+      "function": function _function() {
+        return this.ext.resetOriginalValue();
       }
     }, {
       name: 'resetPositioned',
@@ -1586,6 +1468,11 @@ function (_ExtBase) {
         return this.ext.setCurrentAlignmentInfo(alignmentInfo);
       }
     }, {
+      name: 'setErrors',
+      "function": function _function(errors) {
+        return this.ext.setErrors(errors);
+      }
+    }, {
       name: 'setListeners',
       "function": function _function(listeners) {
         return this.ext.setListeners(listeners);
@@ -1604,6 +1491,11 @@ function (_ExtBase) {
       name: 'setTabIndex',
       "function": function _function(newTabIndex, focusEl) {
         return this.ext.setTabIndex(newTabIndex, focusEl);
+      }
+    }, {
+      name: 'setValues',
+      "function": function _function(values) {
+        return this.ext.setValues(values);
       }
     }, {
       name: 'setVisibility',
@@ -1656,11 +1548,6 @@ function (_ExtBase) {
         return this.ext.syncFloatWrap();
       }
     }, {
-      name: 'syncToolableAlign',
-      "function": function _function() {
-        return this.ext.syncToolableAlign();
-      }
-    }, {
       name: 'toFront',
       "function": function _function(fromMousedown) {
         return this.ext.toFront(fromMousedown);
@@ -1671,9 +1558,14 @@ function (_ExtBase) {
         return this.ext.toggleCls(className, state);
       }
     }, {
-      name: 'toggleCollapsed',
-      "function": function _function(collapsed, animation) {
-        return this.ext.toggleCollapsed(collapsed, animation);
+      name: 'toggleInvalidCls',
+      "function": function _function(hasError) {
+        return this.ext.toggleInvalidCls(hasError);
+      }
+    }, {
+      name: 'transformRawValue',
+      "function": function _function(value) {
+        return this.ext.transformRawValue(value);
       }
     }, {
       name: 'transformStatefulConfig',
@@ -1706,11 +1598,6 @@ function (_ExtBase) {
         return this.ext.unlink(names);
       }
     }, {
-      name: 'unmask',
-      "function": function _function() {
-        return this.ext.unmask();
-      }
-    }, {
       name: 'up',
       "function": function _function(selector, limit) {
         return this.ext.up(selector, limit);
@@ -1724,6 +1611,11 @@ function (_ExtBase) {
       name: 'updateData',
       "function": function _function(newData) {
         return this.ext.updateData(newData);
+      }
+    }, {
+      name: 'updateDisabled',
+      "function": function _function(newDisabled) {
+        return this.ext.updateDisabled(newDisabled);
       }
     }, {
       name: 'updateHeight',
@@ -1746,14 +1638,9 @@ function (_ExtBase) {
         return this.ext.updateWidth(width);
       }
     }, {
-      name: 'visitPostOrder',
-      "function": function _function(selector, fn, scope, extraArgs) {
-        return this.ext.visitPostOrder(selector, fn, scope, extraArgs);
-      }
-    }, {
-      name: 'visitPreOrder',
-      "function": function _function(selector, fn, scope, extraArgs) {
-        return this.ext.visitPreOrder(selector, fn, scope, extraArgs);
+      name: 'validate',
+      "function": function _function(skipLazy) {
+        return this.ext.validate(skipLazy);
       }
     }, {
       name: 'watchConfig',
@@ -1768,21 +1655,13 @@ function (_ExtBase) {
     }];
   };
 
-  _createClass(ExtLockedgridregionComponent, [{
-    key: "activeChildTabIndex",
+  _createClass(ExtFroalaeditorfieldComponent, [{
+    key: "activationKey",
     get: function get() {
-      return this.getAttribute('activeChildTabIndex');
+      return this.getAttribute('activationKey');
     },
-    set: function set(activeChildTabIndex) {
-      this.setAttribute('activeChildTabIndex', activeChildTabIndex);
-    }
-  }, {
-    key: "activeItem",
-    get: function get() {
-      return this.getAttribute('activeItem');
-    },
-    set: function set(activeItem) {
-      this.setAttribute('activeItem', activeItem);
+    set: function set(activationKey) {
+      this.setAttribute('activationKey', activationKey);
     }
   }, {
     key: "alignSelf",
@@ -1793,36 +1672,12 @@ function (_ExtBase) {
       this.setAttribute('alignSelf', alignSelf);
     }
   }, {
-    key: "allowFocusingDisabledChildren",
-    get: function get() {
-      return this.getAttribute('allowFocusingDisabledChildren');
-    },
-    set: function set(allowFocusingDisabledChildren) {
-      this.setAttribute('allowFocusingDisabledChildren', allowFocusingDisabledChildren);
-    }
-  }, {
     key: "alwaysOnTop",
     get: function get() {
       return this.getAttribute('alwaysOnTop');
     },
     set: function set(alwaysOnTop) {
       this.setAttribute('alwaysOnTop', alwaysOnTop);
-    }
-  }, {
-    key: "anchor",
-    get: function get() {
-      return this.getAttribute('anchor');
-    },
-    set: function set(anchor) {
-      this.setAttribute('anchor', anchor);
-    }
-  }, {
-    key: "anchorPosition",
-    get: function get() {
-      return this.getAttribute('anchorPosition');
-    },
-    set: function set(anchorPosition) {
-      this.setAttribute('anchorPosition', anchorPosition);
     }
   }, {
     key: "ariaAttributes",
@@ -1857,12 +1712,12 @@ function (_ExtBase) {
       this.setAttribute('ariaLabelledBy', ariaLabelledBy);
     }
   }, {
-    key: "autoDestroy",
+    key: "autoFitErrors",
     get: function get() {
-      return this.getAttribute('autoDestroy');
+      return this.getAttribute('autoFitErrors');
     },
-    set: function set(autoDestroy) {
-      this.setAttribute('autoDestroy', autoDestroy);
+    set: function set(autoFitErrors) {
+      this.setAttribute('autoFitErrors', autoFitErrors);
     }
   }, {
     key: "autoSize",
@@ -1881,14 +1736,6 @@ function (_ExtBase) {
       this.setAttribute('axisLock', axisLock);
     }
   }, {
-    key: "bbar",
-    get: function get() {
-      return this.getAttribute('bbar');
-    },
-    set: function set(bbar) {
-      this.setAttribute('bbar', bbar);
-    }
-  }, {
     key: "bind",
     get: function get() {
       return this.getAttribute('bind');
@@ -1897,36 +1744,12 @@ function (_ExtBase) {
       this.setAttribute('bind', bind);
     }
   }, {
-    key: "bodyBorder",
+    key: "bodyAlign",
     get: function get() {
-      return this.getAttribute('bodyBorder');
+      return this.getAttribute('bodyAlign');
     },
-    set: function set(bodyBorder) {
-      this.setAttribute('bodyBorder', bodyBorder);
-    }
-  }, {
-    key: "bodyCls",
-    get: function get() {
-      return this.getAttribute('bodyCls');
-    },
-    set: function set(bodyCls) {
-      this.setAttribute('bodyCls', bodyCls);
-    }
-  }, {
-    key: "bodyPadding",
-    get: function get() {
-      return this.getAttribute('bodyPadding');
-    },
-    set: function set(bodyPadding) {
-      this.setAttribute('bodyPadding', bodyPadding);
-    }
-  }, {
-    key: "bodyStyle",
-    get: function get() {
-      return this.getAttribute('bodyStyle');
-    },
-    set: function set(bodyStyle) {
-      this.setAttribute('bodyStyle', bodyStyle);
+    set: function set(bodyAlign) {
+      this.setAttribute('bodyAlign', bodyAlign);
     }
   }, {
     key: "border",
@@ -1945,36 +1768,12 @@ function (_ExtBase) {
       this.setAttribute('bottom', bottom);
     }
   }, {
-    key: "buttonAlign",
+    key: "bubbleDirty",
     get: function get() {
-      return this.getAttribute('buttonAlign');
+      return this.getAttribute('bubbleDirty');
     },
-    set: function set(buttonAlign) {
-      this.setAttribute('buttonAlign', buttonAlign);
-    }
-  }, {
-    key: "buttons",
-    get: function get() {
-      return this.getAttribute('buttons');
-    },
-    set: function set(buttons) {
-      this.setAttribute('buttons', buttons);
-    }
-  }, {
-    key: "buttonToolbar",
-    get: function get() {
-      return this.getAttribute('buttonToolbar');
-    },
-    set: function set(buttonToolbar) {
-      this.setAttribute('buttonToolbar', buttonToolbar);
-    }
-  }, {
-    key: "cardSwitchAnimation",
-    get: function get() {
-      return this.getAttribute('cardSwitchAnimation');
-    },
-    set: function set(cardSwitchAnimation) {
-      this.setAttribute('cardSwitchAnimation', cardSwitchAnimation);
+    set: function set(bubbleDirty) {
+      this.setAttribute('bubbleDirty', bubbleDirty);
     }
   }, {
     key: "centered",
@@ -1985,52 +1784,12 @@ function (_ExtBase) {
       this.setAttribute('centered', centered);
     }
   }, {
-    key: "closable",
-    get: function get() {
-      return this.getAttribute('closable');
-    },
-    set: function set(closable) {
-      this.setAttribute('closable', closable);
-    }
-  }, {
-    key: "closeAction",
-    get: function get() {
-      return this.getAttribute('closeAction');
-    },
-    set: function set(closeAction) {
-      this.setAttribute('closeAction', closeAction);
-    }
-  }, {
-    key: "closeToolText",
-    get: function get() {
-      return this.getAttribute('closeToolText');
-    },
-    set: function set(closeToolText) {
-      this.setAttribute('closeToolText', closeToolText);
-    }
-  }, {
     key: "cls",
     get: function get() {
       return this.getAttribute('cls');
     },
     set: function set(cls) {
       this.setAttribute('cls', cls);
-    }
-  }, {
-    key: "collapsed",
-    get: function get() {
-      return this.getAttribute('collapsed');
-    },
-    set: function set(collapsed) {
-      this.setAttribute('collapsed', collapsed);
-    }
-  }, {
-    key: "collapsible",
-    get: function get() {
-      return this.getAttribute('collapsible');
-    },
-    set: function set(collapsible) {
-      this.setAttribute('collapsible', collapsible);
     }
   }, {
     key: "constrainAlign",
@@ -2041,20 +1800,20 @@ function (_ExtBase) {
       this.setAttribute('constrainAlign', constrainAlign);
     }
   }, {
+    key: "container",
+    get: function get() {
+      return this.getAttribute('container');
+    },
+    set: function set(container) {
+      this.setAttribute('container', container);
+    }
+  }, {
     key: "contentEl",
     get: function get() {
       return this.getAttribute('contentEl');
     },
     set: function set(contentEl) {
       this.setAttribute('contentEl', contentEl);
-    }
-  }, {
-    key: "control",
-    get: function get() {
-      return this.getAttribute('control');
-    },
-    set: function set(control) {
-      this.setAttribute('control', control);
     }
   }, {
     key: "controller",
@@ -2073,12 +1832,12 @@ function (_ExtBase) {
       this.setAttribute('data', data);
     }
   }, {
-    key: "defaultFocus",
+    key: "defaultEditor",
     get: function get() {
-      return this.getAttribute('defaultFocus');
+      return this.getAttribute('defaultEditor');
     },
-    set: function set(defaultFocus) {
-      this.setAttribute('defaultFocus', defaultFocus);
+    set: function set(defaultEditor) {
+      this.setAttribute('defaultEditor', defaultEditor);
     }
   }, {
     key: "defaultListenerScope",
@@ -2097,20 +1856,20 @@ function (_ExtBase) {
       this.setAttribute('defaults', defaults);
     }
   }, {
-    key: "defaultToolWeights",
-    get: function get() {
-      return this.getAttribute('defaultToolWeights');
-    },
-    set: function set(defaultToolWeights) {
-      this.setAttribute('defaultToolWeights', defaultToolWeights);
-    }
-  }, {
     key: "defaultType",
     get: function get() {
       return this.getAttribute('defaultType');
     },
     set: function set(defaultType) {
       this.setAttribute('defaultType', defaultType);
+    }
+  }, {
+    key: "dirty",
+    get: function get() {
+      return this.getAttribute('dirty');
+    },
+    set: function set(dirty) {
+      this.setAttribute('dirty', dirty);
     }
   }, {
     key: "disabled",
@@ -2145,6 +1904,62 @@ function (_ExtBase) {
       this.setAttribute('draggable', draggable);
     }
   }, {
+    key: "editor",
+    get: function get() {
+      return this.getAttribute('editor');
+    },
+    set: function set(editor) {
+      this.setAttribute('editor', editor);
+    }
+  }, {
+    key: "error",
+    get: function get() {
+      return this.getAttribute('error');
+    },
+    set: function set(error) {
+      this.setAttribute('error', error);
+    }
+  }, {
+    key: "errorMessage",
+    get: function get() {
+      return this.getAttribute('errorMessage');
+    },
+    set: function set(errorMessage) {
+      this.setAttribute('errorMessage', errorMessage);
+    }
+  }, {
+    key: "errorTarget",
+    get: function get() {
+      return this.getAttribute('errorTarget');
+    },
+    set: function set(errorTarget) {
+      this.setAttribute('errorTarget', errorTarget);
+    }
+  }, {
+    key: "errorTip",
+    get: function get() {
+      return this.getAttribute('errorTip');
+    },
+    set: function set(errorTip) {
+      this.setAttribute('errorTip', errorTip);
+    }
+  }, {
+    key: "errorTpl",
+    get: function get() {
+      return this.getAttribute('errorTpl');
+    },
+    set: function set(errorTpl) {
+      this.setAttribute('errorTpl', errorTpl);
+    }
+  }, {
+    key: "fieldDefaults",
+    get: function get() {
+      return this.getAttribute('fieldDefaults');
+    },
+    set: function set(fieldDefaults) {
+      this.setAttribute('fieldDefaults', fieldDefaults);
+    }
+  }, {
     key: "flex",
     get: function get() {
       return this.getAttribute('flex');
@@ -2161,14 +1976,6 @@ function (_ExtBase) {
       this.setAttribute('floated', floated);
     }
   }, {
-    key: "focusableContainer",
-    get: function get() {
-      return this.getAttribute('focusableContainer');
-    },
-    set: function set(focusableContainer) {
-      this.setAttribute('focusableContainer', focusableContainer);
-    }
-  }, {
     key: "focusCls",
     get: function get() {
       return this.getAttribute('focusCls');
@@ -2183,30 +1990,6 @@ function (_ExtBase) {
     },
     set: function set(fullscreen) {
       this.setAttribute('fullscreen', fullscreen);
-    }
-  }, {
-    key: "grid",
-    get: function get() {
-      return this.getAttribute('grid');
-    },
-    set: function set(grid) {
-      this.setAttribute('grid', grid);
-    }
-  }, {
-    key: "header",
-    get: function get() {
-      return this.getAttribute('header');
-    },
-    set: function set(header) {
-      this.setAttribute('header', header);
-    }
-  }, {
-    key: "headerPosition",
-    get: function get() {
-      return this.getAttribute('headerPosition');
-    },
-    set: function set(headerPosition) {
-      this.setAttribute('headerPosition', headerPosition);
     }
   }, {
     key: "height",
@@ -2257,30 +2040,6 @@ function (_ExtBase) {
       this.setAttribute('html', html);
     }
   }, {
-    key: "icon",
-    get: function get() {
-      return this.getAttribute('icon');
-    },
-    set: function set(icon) {
-      this.setAttribute('icon', icon);
-    }
-  }, {
-    key: "iconAlign",
-    get: function get() {
-      return this.getAttribute('iconAlign');
-    },
-    set: function set(iconAlign) {
-      this.setAttribute('iconAlign', iconAlign);
-    }
-  }, {
-    key: "iconCls",
-    get: function get() {
-      return this.getAttribute('iconCls');
-    },
-    set: function set(iconCls) {
-      this.setAttribute('iconCls', iconCls);
-    }
-  }, {
     key: "id",
     get: function get() {
       return this.getAttribute('id');
@@ -2289,20 +2048,12 @@ function (_ExtBase) {
       this.setAttribute('id', id);
     }
   }, {
-    key: "inactiveChildTabIndex",
+    key: "inline",
     get: function get() {
-      return this.getAttribute('inactiveChildTabIndex');
+      return this.getAttribute('inline');
     },
-    set: function set(inactiveChildTabIndex) {
-      this.setAttribute('inactiveChildTabIndex', inactiveChildTabIndex);
-    }
-  }, {
-    key: "innerCls",
-    get: function get() {
-      return this.getAttribute('innerCls');
-    },
-    set: function set(innerCls) {
-      this.setAttribute('innerCls', innerCls);
+    set: function set(inline) {
+      this.setAttribute('inline', inline);
     }
   }, {
     key: "instanceCls",
@@ -2353,20 +2104,68 @@ function (_ExtBase) {
       this.setAttribute('keyMapTarget', keyMapTarget);
     }
   }, {
+    key: "label",
+    get: function get() {
+      return this.getAttribute('label');
+    },
+    set: function set(label) {
+      this.setAttribute('label', label);
+    }
+  }, {
+    key: "labelAlign",
+    get: function get() {
+      return this.getAttribute('labelAlign');
+    },
+    set: function set(labelAlign) {
+      this.setAttribute('labelAlign', labelAlign);
+    }
+  }, {
+    key: "labelCls",
+    get: function get() {
+      return this.getAttribute('labelCls');
+    },
+    set: function set(labelCls) {
+      this.setAttribute('labelCls', labelCls);
+    }
+  }, {
+    key: "labelMinWidth",
+    get: function get() {
+      return this.getAttribute('labelMinWidth');
+    },
+    set: function set(labelMinWidth) {
+      this.setAttribute('labelMinWidth', labelMinWidth);
+    }
+  }, {
+    key: "labelTextAlign",
+    get: function get() {
+      return this.getAttribute('labelTextAlign');
+    },
+    set: function set(labelTextAlign) {
+      this.setAttribute('labelTextAlign', labelTextAlign);
+    }
+  }, {
+    key: "labelWidth",
+    get: function get() {
+      return this.getAttribute('labelWidth');
+    },
+    set: function set(labelWidth) {
+      this.setAttribute('labelWidth', labelWidth);
+    }
+  }, {
+    key: "labelWrap",
+    get: function get() {
+      return this.getAttribute('labelWrap');
+    },
+    set: function set(labelWrap) {
+      this.setAttribute('labelWrap', labelWrap);
+    }
+  }, {
     key: "layout",
     get: function get() {
       return this.getAttribute('layout');
     },
     set: function set(layout) {
       this.setAttribute('layout', layout);
-    }
-  }, {
-    key: "lbar",
-    get: function get() {
-      return this.getAttribute('lbar');
-    },
-    set: function set(lbar) {
-      this.setAttribute('lbar', lbar);
     }
   }, {
     key: "left",
@@ -2385,36 +2184,12 @@ function (_ExtBase) {
       this.setAttribute('listeners', listeners);
     }
   }, {
-    key: "locked",
-    get: function get() {
-      return this.getAttribute('locked');
-    },
-    set: function set(locked) {
-      this.setAttribute('locked', locked);
-    }
-  }, {
-    key: "manageBorders",
-    get: function get() {
-      return this.getAttribute('manageBorders');
-    },
-    set: function set(manageBorders) {
-      this.setAttribute('manageBorders', manageBorders);
-    }
-  }, {
     key: "margin",
     get: function get() {
       return this.getAttribute('margin');
     },
     set: function set(margin) {
       this.setAttribute('margin', margin);
-    }
-  }, {
-    key: "masked",
-    get: function get() {
-      return this.getAttribute('masked');
-    },
-    set: function set(masked) {
-      this.setAttribute('masked', masked);
     }
   }, {
     key: "maxHeight",
@@ -2431,22 +2206,6 @@ function (_ExtBase) {
     },
     set: function set(maxWidth) {
       this.setAttribute('maxWidth', maxWidth);
-    }
-  }, {
-    key: "menuItem",
-    get: function get() {
-      return this.getAttribute('menuItem');
-    },
-    set: function set(menuItem) {
-      this.setAttribute('menuItem', menuItem);
-    }
-  }, {
-    key: "minButtonWidth",
-    get: function get() {
-      return this.getAttribute('minButtonWidth');
-    },
-    set: function set(minButtonWidth) {
-      this.setAttribute('minButtonWidth', minButtonWidth);
     }
   }, {
     key: "minHeight",
@@ -2497,14 +2256,6 @@ function (_ExtBase) {
       this.setAttribute('nameable', nameable);
     }
   }, {
-    key: "nameHolder",
-    get: function get() {
-      return this.getAttribute('nameHolder');
-    },
-    set: function set(nameHolder) {
-      this.setAttribute('nameHolder', nameHolder);
-    }
-  }, {
     key: "padding",
     get: function get() {
       return this.getAttribute('padding');
@@ -2529,14 +2280,6 @@ function (_ExtBase) {
       this.setAttribute('publishes', publishes);
     }
   }, {
-    key: "rbar",
-    get: function get() {
-      return this.getAttribute('rbar');
-    },
-    set: function set(rbar) {
-      this.setAttribute('rbar', rbar);
-    }
-  }, {
     key: "record",
     get: function get() {
       return this.getAttribute('record');
@@ -2551,22 +2294,6 @@ function (_ExtBase) {
     },
     set: function set(reference) {
       this.setAttribute('reference', reference);
-    }
-  }, {
-    key: "referenceHolder",
-    get: function get() {
-      return this.getAttribute('referenceHolder');
-    },
-    set: function set(referenceHolder) {
-      this.setAttribute('referenceHolder', referenceHolder);
-    }
-  }, {
-    key: "regionKey",
-    get: function get() {
-      return this.getAttribute('regionKey');
-    },
-    set: function set(regionKey) {
-      this.setAttribute('regionKey', regionKey);
     }
   }, {
     key: "relative",
@@ -2585,20 +2312,20 @@ function (_ExtBase) {
       this.setAttribute('renderTo', renderTo);
     }
   }, {
-    key: "resetFocusPosition",
+    key: "required",
     get: function get() {
-      return this.getAttribute('resetFocusPosition');
+      return this.getAttribute('required');
     },
-    set: function set(resetFocusPosition) {
-      this.setAttribute('resetFocusPosition', resetFocusPosition);
+    set: function set(required) {
+      this.setAttribute('required', required);
     }
   }, {
-    key: "resizable",
+    key: "requiredMessage",
     get: function get() {
-      return this.getAttribute('resizable');
+      return this.getAttribute('requiredMessage');
     },
-    set: function set(resizable) {
-      this.setAttribute('resizable', resizable);
+    set: function set(requiredMessage) {
+      this.setAttribute('requiredMessage', requiredMessage);
     }
   }, {
     key: "right",
@@ -2665,12 +2392,12 @@ function (_ExtBase) {
       this.setAttribute('showAnimation', showAnimation);
     }
   }, {
-    key: "standardButtons",
+    key: "sideError",
     get: function get() {
-      return this.getAttribute('standardButtons');
+      return this.getAttribute('sideError');
     },
-    set: function set(standardButtons) {
-      this.setAttribute('standardButtons', standardButtons);
+    set: function set(sideError) {
+      this.setAttribute('sideError', sideError);
     }
   }, {
     key: "stateful",
@@ -2713,36 +2440,20 @@ function (_ExtBase) {
       this.setAttribute('tabIndex', tabIndex);
     }
   }, {
-    key: "tbar",
+    key: "tipError",
     get: function get() {
-      return this.getAttribute('tbar');
+      return this.getAttribute('tipError');
     },
-    set: function set(tbar) {
-      this.setAttribute('tbar', tbar);
+    set: function set(tipError) {
+      this.setAttribute('tipError', tipError);
     }
   }, {
-    key: "title",
+    key: "titleError",
     get: function get() {
-      return this.getAttribute('title');
+      return this.getAttribute('titleError');
     },
-    set: function set(title) {
-      this.setAttribute('title', title);
-    }
-  }, {
-    key: "titleAlign",
-    get: function get() {
-      return this.getAttribute('titleAlign');
-    },
-    set: function set(titleAlign) {
-      this.setAttribute('titleAlign', titleAlign);
-    }
-  }, {
-    key: "titleCollapse",
-    get: function get() {
-      return this.getAttribute('titleCollapse');
-    },
-    set: function set(titleCollapse) {
-      this.setAttribute('titleCollapse', titleCollapse);
+    set: function set(titleError) {
+      this.setAttribute('titleError', titleError);
     }
   }, {
     key: "toFrontOnShow",
@@ -2751,22 +2462,6 @@ function (_ExtBase) {
     },
     set: function set(toFrontOnShow) {
       this.setAttribute('toFrontOnShow', toFrontOnShow);
-    }
-  }, {
-    key: "toolDefaults",
-    get: function get() {
-      return this.getAttribute('toolDefaults');
-    },
-    set: function set(toolDefaults) {
-      this.setAttribute('toolDefaults', toolDefaults);
-    }
-  }, {
-    key: "tools",
-    get: function get() {
-      return this.getAttribute('tools');
-    },
-    set: function set(tools) {
-      this.setAttribute('tools', tools);
     }
   }, {
     key: "tooltip",
@@ -2833,6 +2528,14 @@ function (_ExtBase) {
       this.setAttribute('ui', ui);
     }
   }, {
+    key: "underError",
+    get: function get() {
+      return this.getAttribute('underError');
+    },
+    set: function set(underError) {
+      this.setAttribute('underError', underError);
+    }
+  }, {
     key: "userCls",
     get: function get() {
       return this.getAttribute('userCls');
@@ -2849,6 +2552,38 @@ function (_ExtBase) {
       this.setAttribute('userSelectable', userSelectable);
     }
   }, {
+    key: "validateDisabled",
+    get: function get() {
+      return this.getAttribute('validateDisabled');
+    },
+    set: function set(validateDisabled) {
+      this.setAttribute('validateDisabled', validateDisabled);
+    }
+  }, {
+    key: "validationMessage",
+    get: function get() {
+      return this.getAttribute('validationMessage');
+    },
+    set: function set(validationMessage) {
+      this.setAttribute('validationMessage', validationMessage);
+    }
+  }, {
+    key: "validators",
+    get: function get() {
+      return this.getAttribute('validators');
+    },
+    set: function set(validators) {
+      this.setAttribute('validators', validators);
+    }
+  }, {
+    key: "value",
+    get: function get() {
+      return this.getAttribute('value');
+    },
+    set: function set(value) {
+      this.setAttribute('value', value);
+    }
+  }, {
     key: "viewModel",
     get: function get() {
       return this.getAttribute('viewModel');
@@ -2863,14 +2598,6 @@ function (_ExtBase) {
     },
     set: function set(weight) {
       this.setAttribute('weight', weight);
-    }
-  }, {
-    key: "weighted",
-    get: function get() {
-      return this.getAttribute('weighted');
-    },
-    set: function set(weighted) {
-      this.setAttribute('weighted', weighted);
     }
   }, {
     key: "width",
@@ -2953,44 +2680,12 @@ function (_ExtBase) {
       this.setAttribute('config', config);
     }
   }, {
-    key: "onactivate",
-    get: function get() {
-      return this.getAttribute('onactivate');
-    },
-    set: function set(onactivate) {
-      this.setAttribute('onactivate', onactivate);
-    }
-  }, {
-    key: "onactiveItemchange",
-    get: function get() {
-      return this.getAttribute('onactiveItemchange');
-    },
-    set: function set(onactiveItemchange) {
-      this.setAttribute('onactiveItemchange', onactiveItemchange);
-    }
-  }, {
-    key: "onadd",
-    get: function get() {
-      return this.getAttribute('onadd');
-    },
-    set: function set(onadd) {
-      this.setAttribute('onadd', onadd);
-    }
-  }, {
     key: "onadded",
     get: function get() {
       return this.getAttribute('onadded');
     },
     set: function set(onadded) {
       this.setAttribute('onadded', onadded);
-    }
-  }, {
-    key: "onbeforeactiveItemchange",
-    get: function get() {
-      return this.getAttribute('onbeforeactiveItemchange');
-    },
-    set: function set(onbeforeactiveItemchange) {
-      this.setAttribute('onbeforeactiveItemchange', onbeforeactiveItemchange);
     }
   }, {
     key: "onbeforebottomchange",
@@ -3009,14 +2704,6 @@ function (_ExtBase) {
       this.setAttribute('onbeforecenteredchange', onbeforecenteredchange);
     }
   }, {
-    key: "onbeforecollapse",
-    get: function get() {
-      return this.getAttribute('onbeforecollapse');
-    },
-    set: function set(onbeforecollapse) {
-      this.setAttribute('onbeforecollapse', onbeforecollapse);
-    }
-  }, {
     key: "onbeforedisabledchange",
     get: function get() {
       return this.getAttribute('onbeforedisabledchange');
@@ -3031,14 +2718,6 @@ function (_ExtBase) {
     },
     set: function set(onbeforedockedchange) {
       this.setAttribute('onbeforedockedchange', onbeforedockedchange);
-    }
-  }, {
-    key: "onbeforeexpand",
-    get: function get() {
-      return this.getAttribute('onbeforeexpand');
-    },
-    set: function set(onbeforeexpand) {
-      this.setAttribute('onbeforeexpand', onbeforeexpand);
     }
   }, {
     key: "onbeforeheightchange",
@@ -3113,14 +2792,6 @@ function (_ExtBase) {
       this.setAttribute('onbeforeorientationchange', onbeforeorientationchange);
     }
   }, {
-    key: "onbeforeresizedragstart",
-    get: function get() {
-      return this.getAttribute('onbeforeresizedragstart');
-    },
-    set: function set(onbeforeresizedragstart) {
-      this.setAttribute('onbeforeresizedragstart', onbeforeresizedragstart);
-    }
-  }, {
     key: "onbeforerightchange",
     get: function get() {
       return this.getAttribute('onbeforerightchange');
@@ -3193,20 +2864,20 @@ function (_ExtBase) {
       this.setAttribute('oncenteredchange', oncenteredchange);
     }
   }, {
-    key: "oncollapse",
+    key: "onchange",
     get: function get() {
-      return this.getAttribute('oncollapse');
+      return this.getAttribute('onchange');
     },
-    set: function set(oncollapse) {
-      this.setAttribute('oncollapse', oncollapse);
+    set: function set(onchange) {
+      this.setAttribute('onchange', onchange);
     }
   }, {
-    key: "ondeactivate",
+    key: "onclick",
     get: function get() {
-      return this.getAttribute('ondeactivate');
+      return this.getAttribute('onclick');
     },
-    set: function set(ondeactivate) {
-      this.setAttribute('ondeactivate', ondeactivate);
+    set: function set(onclick) {
+      this.setAttribute('onclick', onclick);
     }
   }, {
     key: "ondestroy",
@@ -3215,6 +2886,14 @@ function (_ExtBase) {
     },
     set: function set(ondestroy) {
       this.setAttribute('ondestroy', ondestroy);
+    }
+  }, {
+    key: "ondirtychange",
+    get: function get() {
+      return this.getAttribute('ondirtychange');
+    },
+    set: function set(ondirtychange) {
+      this.setAttribute('ondirtychange', ondirtychange);
     }
   }, {
     key: "ondisabledchange",
@@ -3233,22 +2912,6 @@ function (_ExtBase) {
       this.setAttribute('ondockedchange', ondockedchange);
     }
   }, {
-    key: "ondrawerhide",
-    get: function get() {
-      return this.getAttribute('ondrawerhide');
-    },
-    set: function set(ondrawerhide) {
-      this.setAttribute('ondrawerhide', ondrawerhide);
-    }
-  }, {
-    key: "ondrawershow",
-    get: function get() {
-      return this.getAttribute('ondrawershow');
-    },
-    set: function set(ondrawershow) {
-      this.setAttribute('ondrawershow', ondrawershow);
-    }
-  }, {
     key: "onerased",
     get: function get() {
       return this.getAttribute('onerased');
@@ -3257,12 +2920,12 @@ function (_ExtBase) {
       this.setAttribute('onerased', onerased);
     }
   }, {
-    key: "onexpand",
+    key: "onerrorchange",
     get: function get() {
-      return this.getAttribute('onexpand');
+      return this.getAttribute('onerrorchange');
     },
-    set: function set(onexpand) {
-      this.setAttribute('onexpand', onexpand);
+    set: function set(onerrorchange) {
+      this.setAttribute('onerrorchange', onerrorchange);
     }
   }, {
     key: "onfloatingchange",
@@ -3337,6 +3000,14 @@ function (_ExtBase) {
       this.setAttribute('oninitialize', oninitialize);
     }
   }, {
+    key: "onkeyup",
+    get: function get() {
+      return this.getAttribute('onkeyup');
+    },
+    set: function set(onkeyup) {
+      this.setAttribute('onkeyup', onkeyup);
+    }
+  }, {
     key: "onleftchange",
     get: function get() {
       return this.getAttribute('onleftchange');
@@ -3377,12 +3048,12 @@ function (_ExtBase) {
       this.setAttribute('onminWidthchange', onminWidthchange);
     }
   }, {
-    key: "onmove",
+    key: "onmousedown",
     get: function get() {
-      return this.getAttribute('onmove');
+      return this.getAttribute('onmousedown');
     },
-    set: function set(onmove) {
-      this.setAttribute('onmove', onmove);
+    set: function set(onmousedown) {
+      this.setAttribute('onmousedown', onmousedown);
     }
   }, {
     key: "onmoved",
@@ -3409,6 +3080,14 @@ function (_ExtBase) {
       this.setAttribute('onpainted', onpainted);
     }
   }, {
+    key: "onpaste",
+    get: function get() {
+      return this.getAttribute('onpaste');
+    },
+    set: function set(onpaste) {
+      this.setAttribute('onpaste', onpaste);
+    }
+  }, {
     key: "onpositionedchange",
     get: function get() {
       return this.getAttribute('onpositionedchange');
@@ -3417,12 +3096,12 @@ function (_ExtBase) {
       this.setAttribute('onpositionedchange', onpositionedchange);
     }
   }, {
-    key: "onremove",
+    key: "onready",
     get: function get() {
-      return this.getAttribute('onremove');
+      return this.getAttribute('onready');
     },
-    set: function set(onremove) {
-      this.setAttribute('onremove', onremove);
+    set: function set(onready) {
+      this.setAttribute('onready', onready);
     }
   }, {
     key: "onremoved",
@@ -3433,52 +3112,12 @@ function (_ExtBase) {
       this.setAttribute('onremoved', onremoved);
     }
   }, {
-    key: "onrenderedchange",
-    get: function get() {
-      return this.getAttribute('onrenderedchange');
-    },
-    set: function set(onrenderedchange) {
-      this.setAttribute('onrenderedchange', onrenderedchange);
-    }
-  }, {
     key: "onresize",
     get: function get() {
       return this.getAttribute('onresize');
     },
     set: function set(onresize) {
       this.setAttribute('onresize', onresize);
-    }
-  }, {
-    key: "onresizedrag",
-    get: function get() {
-      return this.getAttribute('onresizedrag');
-    },
-    set: function set(onresizedrag) {
-      this.setAttribute('onresizedrag', onresizedrag);
-    }
-  }, {
-    key: "onresizedragcancel",
-    get: function get() {
-      return this.getAttribute('onresizedragcancel');
-    },
-    set: function set(onresizedragcancel) {
-      this.setAttribute('onresizedragcancel', onresizedragcancel);
-    }
-  }, {
-    key: "onresizedragend",
-    get: function get() {
-      return this.getAttribute('onresizedragend');
-    },
-    set: function set(onresizedragend) {
-      this.setAttribute('onresizedragend', onresizedragend);
-    }
-  }, {
-    key: "onresizedragstart",
-    get: function get() {
-      return this.getAttribute('onresizedragstart');
-    },
-    set: function set(onresizedragstart) {
-      this.setAttribute('onresizedragstart', onresizedragstart);
     }
   }, {
     key: "onrightchange",
@@ -3538,19 +3177,19 @@ function (_ExtBase) {
     }
   }]);
 
-  function ExtLockedgridregionComponent() {
+  function ExtFroalaeditorfieldComponent() {
     var _this;
 
     _this = _ExtBase.call(this) || this;
-    _this.METHODS = ExtLockedgridregionComponent.METHODS();
-    _this.XTYPE = ExtLockedgridregionComponent.XTYPE(); //this.PROPERTIES = ExtLockedgridregionComponent.PROPERTIES()
+    _this.METHODS = ExtFroalaeditorfieldComponent.METHODS();
+    _this.XTYPE = ExtFroalaeditorfieldComponent.XTYPE(); //this.PROPERTIES = ExtFroalaeditorfieldComponent.PROPERTIES()
 
-    _this.PROPERTIESOBJECT = ExtLockedgridregionComponent.PROPERTIESOBJECT();
-    _this.EVENTS = ExtLockedgridregionComponent.EVENTS();
+    _this.PROPERTIESOBJECT = ExtFroalaeditorfieldComponent.PROPERTIESOBJECT();
+    _this.EVENTS = ExtFroalaeditorfieldComponent.EVENTS();
     return _this;
   }
 
-  var _proto = ExtLockedgridregionComponent.prototype;
+  var _proto = ExtFroalaeditorfieldComponent.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
     _ExtBase.prototype.connectedCallback.call(this);
@@ -3560,11 +3199,11 @@ function (_ExtBase) {
     _ExtBase.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return ExtLockedgridregionComponent;
+  return ExtFroalaeditorfieldComponent;
 }(ExtBase);
 
 (function () {
   Ext.onReady(function () {
-    window.customElements.define('ext-lockedgridregion', ExtLockedgridregionComponent);
+    window.customElements.define('ext-froalaeditorfield', ExtFroalaeditorfieldComponent);
   });
 })();
