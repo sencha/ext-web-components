@@ -85,6 +85,7 @@ import GroupedGridComponent from './view/grids/corefeatures/groupedgrid/GroupedG
 import LockingGridComponent from './view/grids/corefeatures/lockinggrid/LockingGridComponent.js';
 import EditableGridComponent from './view/grids/corefeatures/editablegrid/EditableGridComponent.js';
 import XMLGridComponent from './view/grids/corefeatures/xmlgrid/XMLGridComponent.js';
+import InfiniteGridComponent from './view/grids/corefeatures/infinitegrid/InfiniteGridComponent.js';
 import EditableRowComponent from './view/grids/corefeatures/editablerow/EditableRowComponent';
 import GridToolsComponent from './view/grids/add-ons/gridtools/GridToolsComponent.js';
 import RowExpanderComponent from './view/grids/add-ons/rowexpander/RowExpanderComponent.js';
@@ -294,7 +295,8 @@ export default function getMenu() {
                 { text: 'Locking Grid', component: LockingGridComponent, iconCls: 'icon-locking-grid'},
                 { text: 'Editable Grid', component: EditableGridComponent, iconCls: 'icon-editable-grid'},
                 { text: 'XML Grid', component: XMLGridComponent, iconCls: 'icon-xml-grid'},
-                { text: 'Editable Row', component:EditableRowComponent, iconCls:'icon-row-editing'}
+                { text: 'Editable Row', component:EditableRowComponent, iconCls:'icon-row-editing'},
+                { text: 'Infinite Grid', component: InfiniteGridComponent, iconCls: 'icon-buffer-grid'}
             ]},
             { text: 'Add-ons', iconCls: 'icon-framing-buttons', children: [
                 { text: 'Grid Tools', component: GridToolsComponent, iconCls: 'icon-grid-tools'},
