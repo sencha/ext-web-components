@@ -18,7 +18,7 @@ module.exports = {
   configureWebpack: {
     plugins: [
             new ExtWebpackPlugin({
-        framework: 'webcomponents',
+        framework: 'web-components',
         toolkit: 'modern',
         emit: 'yes',
         browser: 'no',

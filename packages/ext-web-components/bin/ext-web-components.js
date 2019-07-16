@@ -9,7 +9,7 @@ const parseArgs = require('minimist'),
     mkdirp = require('mkdirp');
 
 console.log('USING sencha: ', sencha);
-// A skeleton for a ext-webcomponents workspace.json file.
+// A skeleton for a ext-web-components workspace.json file.
 const workspaceJson = {
     apps: [],
     frameworks: { ext: '../node_modules/@sencha/ext' },
@@ -39,11 +39,11 @@ printUsage = () => {
 }
 
 /**
- * Ensures a 'ext-webcomponents/packages' folder exists for the workspace and theme packages to be installed in.
+ * Ensures a 'ext-web-components/packages' folder exists for the workspace and theme packages to be installed in.
  */
 const ensurePackagesFolder = () => {
     return new Promise(resolve => {
-        const dir = path.join('.', 'ext-webcomponents', 'packages');
+        const dir = path.join('.', 'ext-web-components', 'packages');
         fs.stat(dir, (err, stats) => {
             if(err || !stats.isDirectory()) {
                 mkdirp(dir, resolve.bind(null));
@@ -62,12 +62,12 @@ const generateWorkspace = () => {
         return new Promise((resolve, reject) => {
             if(!workspaceExists()) {
                 console.log('Generating Sencha workspace...');
-                fs.writeFile(path.join('.', 'ext-webcomponents', 'workspace.json'), JSON.stringify(workspaceJson, null, 4), err => {
+                fs.writeFile(path.join('.', 'ext-web-components', 'workspace.json'), JSON.stringify(workspaceJson, null, 4), err => {
                     if(err) return reject(err);
                     return resolve();
                 });
             } else {
-                console.log('Using existing workspace at ext-webcomponents/workspace.json');
+                console.log('Using existing workspace at ext-web-components/workspace.json');
                 return resolve();
             }
         });
@@ -80,7 +80,7 @@ const generateWorkspace = () => {
  */
 const workspaceExists = () => {
     try {
-        return fs.statSync(path.join('.', 'ext-webcomponents', 'workspace.json')).isFile();
+        return fs.statSync(path.join('.', 'ext-web-components', 'workspace.json')).isFile();
     } catch(e) {
         return false;
     }
@@ -99,7 +99,7 @@ const generateTheme = config => {
             '--extend', config.baseTheme || 'theme-material',
             '--framework', 'ext',
             '--name', config.name
-        ], { cwd: path.join('.', 'ext-webcomponents'), silent: true });
+        ], { cwd: path.join('.', 'ext-web-components'), silent: true });
         proc.once('exit', code => code > 0 ? reject(`Generating package failed with code: ${code}`) : resolve());
         proc.stdout.pipe(process.stdout);
         proc.stderr.pipe(process.stderr);
@@ -111,7 +111,7 @@ const generateTheme = config => {
  * Set's the Sass Namespace to "" and toolkit to "modern" in package.json, this is to help compatiblity with Sencha Themer.
  */
 const updatePackageJson = config => {
-    const packageJsonPath = path.join('.', 'ext-webcomponents', 'packages', config.name, 'package.json');
+    const packageJsonPath = path.join('.', 'ext-web-components', 'packages', config.name, 'package.json');
 
     return new Promise((resolve, reject) => {
         fs.readFile(packageJsonPath, 'utf-8', (err, data) => {
@@ -139,7 +139,7 @@ const updatePackageJson = config => {
 const applyTheme = config => {
   console.log('Applying theme to current app...');
   return new Promise((resolve, reject) => {
-      fs.writeFile('.ext-webcomponentssrc', JSON.stringify({theme: path.join('.', 'ext-webcomponents', 'packages', config.name)}, null, 4),
+      fs.writeFile('.ext-web-componentssrc', JSON.stringify({theme: path.join('.', 'ext-web-components', 'packages', config.name)}, null, 4),
       err => {
           if(err) {
             return reject(err);
@@ -180,7 +180,7 @@ switch(args._.join(' ')) {
             .then(generateTheme.bind(null, args))
             .then((args.apply ? applyTheme.bind(null, args) : Promise.resolve([])))
             .then(() => {
-              console.log(`Theme created at: ext-webcomponents/packages/${args.name}`);
+              console.log(`Theme created at: ext-web-components/packages/${args.name}`);
               //this is done too early
               const appJsonPath = path.join('.', 'build', 'ext', 'app.json');
               if (fs.existsSync(appJsonPath)) {

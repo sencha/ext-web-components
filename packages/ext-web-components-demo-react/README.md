@@ -1,4 +1,4 @@
-# ext-components-demo-react
+# ext-components-demo-vue
 
 ## Project setup
 ```
@@ -26,4 +26,4 @@ npm run lint
 ```
 
 ### Customize configuration
-See [Configuration Reference]().
+See [Configuration Reference](https://cli.vuejs.org/config/).
