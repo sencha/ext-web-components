@@ -9,43 +9,41 @@
  *
  * Here is an example showing multiple button presentations.
  *
- *      ```HTML
- *      @example({tab: 1})
- *      <ext-container padding="10">
- *          <ext-button 
- *              text="Say Hello" 
- *              handler="button.sayHello"
- *              ui="action raised" 
- *          >
- *          <ext-button>
- *          <ext-button 
- *              text="Say Goodbye" 
- *              handler="button.sayGoodbye"
- *              ui="action raised" 
- *          >
- *          <ext-button>
- *          <ext-container onready="button.resultContainerReady"></ext-container>
- *      </ext-container>
- *      ```
- *      ```javascript
- *      @example({tab: 2, packages: ['ext-web-components']})
- *      import '@sencha/ext-web-components/dist/ext-button.component';
- *      import '@sencha/ext-web-components/dist/ext-container.component';
- * 
- *      export default class ButtonComponent {
- *          resultContainerReady(event) {
- *              this.resultContainer = event.detail.cmp;
- *          }
- * 
- *          sayHello = () => {
- *              this.resultContainer.setHtml('Hello world!');
- *          }
- * 
- *          sayGoodbye = () => {
- *              this.resultContainer.setHtml('Goodbye cruel world.');
- *          }
- *      }
- *      ```
+ * ```HTML
+ * @example({tab: 1})
+ * <ext-container padding="10">
+ *     <ext-button 
+ *         text="Say Hello" 
+ *         handler="button.sayHello"
+ *         ui="action raised" 
+ *     >
+ *     <ext-button>
+ *     <ext-button 
+ *         text="Say Goodbye" 
+ *         handler="button.sayGoodbye"
+ *         ui="action raised" 
+ *     >
+ *     <ext-button>
+ *     <ext-container onready="button.resultContainerReady"></ext-container>
+ * </ext-container>
+ * ```
+ *
+ * ```javascript
+ * @example({tab: 2, packages: ['ext-web-components']})
+ * import '@sencha/ext-web-components/dist/ext-button.component';
+ * import '@sencha/ext-web-components/dist/ext-container.component'
+ * export default class ButtonComponent {
+ *     resultContainerReady(event) {
+ *         this.resultContainer = event.detail.cmp;
+ *     
+ *     sayHello = () => {
+ *         this.resultContainer.setHtml('Hello world!');
+ *     
+ *     sayGoodbye = () => {
+ *         this.resultContainer.setHtml('Goodbye cruel world.');
+ *     }
+ * }
+ * ```
  *
  * ## Icons
  *
