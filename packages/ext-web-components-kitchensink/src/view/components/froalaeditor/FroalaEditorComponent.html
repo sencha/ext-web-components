@@ -1,18 +1,29 @@
-<ext-formpanel layout="fit" height="100%" title="Ext.froala.EditorField insde a form panel"
-  onready=froalaeditor.onReadyPanel
+<ext-formpanel
+  layout="fit"
+  height="100%"
+  title="Ext.froala.EditorField insde a form panel"
 >
-  <ext-froalaeditor html="<p>Four score and seven years ago.</p>" height="100%">
-    <ext-titlebar onready="froalaeditor.onTitlebarReady">
-
-    </ext-titlebar>
-    <ext-froalaeditorfield 
-      editor='{
-        "autofocus": "true",
-        "fontSize": ['10', '12', '16', '24']
-      }'
-      margin="16"
-    >
-    </ext-froalaeditorfield>
-  </ext-froalaeditor>
+  <ext-toolbar docked="top">
+    <ext-label html="<p>Four score and seven years ago.</p>"></ext-label>
+  </ext-toolbar>
+  <ext-froalaeditorfield
+    editor='{
+      "autofocus": true,
+      "fontSize": [10, 12, 16, 24]
+    }'
+    name="html"
+    value="<p>Four score and seven years ago.</p>"
+    margin="16"
+    onready="froalaeditor.onEditorFieldReady"
+  >
+  </ext-froalaeditorfield>
+  <ext-toolbar docked="bottom">
+    <ext-label onready="onBottomLabelReady"></ext-label>
+  </ext-toolbar>
 </ext-formpanel>
 
+<!--
+<ext-froalaeditor html="<p>Four score and seven years ago.</p>" height="100%">
+  <ext-titlebar onready="froalaeditor.onTitlebarReady"></ext-titlebar>
+
+</ext-froalaeditor> -->

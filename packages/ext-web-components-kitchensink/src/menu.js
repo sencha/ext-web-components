@@ -85,6 +85,7 @@ import GroupedGridComponent from './view/grids/corefeatures/groupedgrid/GroupedG
 import LockingGridComponent from './view/grids/corefeatures/lockinggrid/LockingGridComponent.js';
 import EditableGridComponent from './view/grids/corefeatures/editablegrid/EditableGridComponent.js';
 import XMLGridComponent from './view/grids/corefeatures/xmlgrid/XMLGridComponent.js';
+import InfiniteGridComponent from './view/grids/corefeatures/infinitegrid/InfiniteGridComponent.js';
 import EditableRowComponent from './view/grids/corefeatures/editablerow/EditableRowComponent';
 import GridToolsComponent from './view/grids/add-ons/gridtools/GridToolsComponent.js';
 import RowExpanderComponent from './view/grids/add-ons/rowexpander/RowExpanderComponent.js';
@@ -93,6 +94,7 @@ import SummaryRowComponent from './view/grids/add-ons/summaryrow/SummaryRowCompo
 import GridFilteringComponent from './view/grids/add-ons/gridfiltering/GridFilteringComponent.js';
 import ViewOptionsComponent from './view/grids/add-ons/viewoptions/ViewOptionsComponent.js';
 import RowDragAndDropComponent from './view/grids/add-ons/rowdraganddrop/RowDragAndDropComponent.js';
+import DragFormToGrid from './view/grids/add-ons/dragformtogrid/DragFormToGridComponent.js';
 import BigDataComponent from './view/grids/advancedfeatures/bigdata/BigDataComponent.js';
 import SelectAndCopyComponent from './view/grids/advancedfeatures/selectandcopy/SelectAndCopyComponent.js';
 import ReconfigureGridComponent from './view/grids/advancedfeatures/reconfiguregrid/ReconfigureGridComponent.js';
@@ -245,7 +247,7 @@ export default function getMenu() {
                 { text: 'Undoable Accordion Swiper', component: UndoableAccordionSwiperComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-undoable-accordion-swiper'},
                 { text: 'Undoable Step Swiper', component: UndoableStepSwiperComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-undoable-step-swiper'}
             ]},
-            { text: 'Media', iconCls: 'x-fa fa-video-camera', children: [
+            { text: 'Media', iconCls: 'icon-video', children: [
                 { text: 'Video', iconCls: 'icon-video', component: VideoComponent },
                 { text: 'Audio', iconCls: 'icon-audio', component: AudioComponent }
             ] },
@@ -293,7 +295,8 @@ export default function getMenu() {
                 { text: 'Locking Grid', component: LockingGridComponent, iconCls: 'icon-locking-grid'},
                 { text: 'Editable Grid', component: EditableGridComponent, iconCls: 'icon-editable-grid'},
                 { text: 'XML Grid', component: XMLGridComponent, iconCls: 'icon-xml-grid'},
-                { text: 'Editable Row', component:EditableRowComponent, iconCls:'icon-row-editing'}
+                { text: 'Editable Row', component:EditableRowComponent, iconCls:'icon-row-editing'},
+                { text: 'Infinite Grid', component: InfiniteGridComponent, iconCls: 'icon-buffer-grid'}
             ]},
             { text: 'Add-ons', iconCls: 'icon-framing-buttons', children: [
                 { text: 'Grid Tools', component: GridToolsComponent, iconCls: 'icon-grid-tools'},
@@ -302,7 +305,8 @@ export default function getMenu() {
                 { text: 'Summary Row', component: SummaryRowComponent, iconCls: 'icon-grid-summary'},
                 { text: 'Grid Filtering', component: GridFilteringComponent, iconCls: 'icon-grid-filtering'},
                 { text: 'View Options', component: ViewOptionsComponent, iconCls: 'icon-view-options-grid'},
-                { text: 'Row Drag And Drop', component: RowDragAndDropComponent, iconCls: 'icon-view-options-grid'}
+                { text: 'Row Drag And Drop', component: RowDragAndDropComponent, iconCls: 'icon-view-options-grid'},
+                { text: 'Drag Form To Grid', component: DragFormToGrid, iconCls: 'icon-dd-form-to-grid'}
             ]},
             { text: 'Advanced Features', iconCls: 'icon-grid-plugins', children:[
                 { text: 'Big Data', component: BigDataComponent, iconCls: 'icon-big-data-grid' },
