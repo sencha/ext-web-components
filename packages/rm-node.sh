@@ -1,5 +1,8 @@
 rm -r ext-web-components/node_modules
 rm -r ext-web-components-boilerplate/node_modules
+rm -r ext-web-components-boilerplate-angular/node_modules
+rm -r ext-web-components-boilerplate-react/node_modules
+rm -r ext-web-components-boilerplate-vue/node_modules
 rm -r ext-web-components-conference-app/node_modules
 rm -r ext-web-components-demo/node_modules
 rm -r ext-web-components-demo-angular/node_modules

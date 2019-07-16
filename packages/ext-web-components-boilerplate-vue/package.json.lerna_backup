@@ -1,6 +1,7 @@
 {
-	"name": "ext-web-components-vue-boilerplate",
-	"version": "0.1.0",
+	"name": "ext-web-components-boilerplate-vue",
+    "version": "7.0.0",
+    "description": "ext-web-components-boilerplate-vue",
 	"private": true,
 	"dependencies": {
 		"@babel/plugin-syntax-dynamic-import": "^7.2.0",
