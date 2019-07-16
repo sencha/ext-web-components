@@ -80,7 +80,7 @@ function run() {
     var val = `${chalk.green(prefix)}`;
 
     outputDir = outputDir.replace(process.cwd(), '').trim();
-    console.log(val + 'Writing code.js to ' + outputDir);
+    console.log(val + ' Writing code.js to ' + outputDir);
 }
 
 run();
