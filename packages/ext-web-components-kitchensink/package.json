@@ -10,10 +10,6 @@
         "buildexample": "npm run clean && cross-env webpack --env.verbose=no --env.environment=production --env.treeshake=yes --env.basehref=/ExtWebComponents/7.0.0/kitchensink/"
     },
     "devDependencies": {
-        "eslint": "^6.0.1",
-        "eslint-loader": "^2.2.1",
-        "babel-eslint": "^10.0.2",
-        "@webcomponents/webcomponentsjs": "~2.2.10",
         "@sencha/ext-web-components": "~7.0.0",
         "@sencha/ext-web-components-router": "~7.0.0",
         "@sencha/ext-web-components-renderercell": "~7.0.0",
@@ -30,13 +26,10 @@
         "@sencha/ext-froala-editor": "~7.0.0",
         "@sencha/ext-ux": "~7.0.0",
         "@sencha/ext-modern-theme-material": "~7.0.0",
-        "hammerjs": "^2.0.8",
-        "d3": "4.5.0",
-        "highlight.js": "^9.15.8",
-        "highlightjs": "~9.12.0",
-        "@babel/core": "^7.5.0",
-        "@babel/preset-env": "^7.5.3",
-        "@babel/runtime": "^7.5.3",
+
+        "@babel/core": "^7.5.4",
+        "@babel/preset-env": "^7.5.4",
+        "@babel/runtime": "^7.5.4",
         "@babel/plugin-proposal-class-properties": "^7.5.0",
         "@babel/plugin-proposal-decorators": "^7.4.4",
         "@babel/plugin-transform-runtime": "^7.5.0",
@@ -47,21 +40,32 @@
         "@babel/plugin-proposal-throw-expressions": "^7.2.0",
         "@babel/plugin-syntax-dynamic-import": "^7.2.0",
         "@babel/plugin-syntax-import-meta": "^7.2.0",
-        "rimraf": "^2.6.3",
-        "cross-env": "^5.2.0",
-        "fs-extra": "^8.1.0",
-        "portfinder": "^1.0.20",
-        "html-webpack-plugin": "^3.2.0",
+
+        "@webcomponents/webcomponentsjs": "^2.2.10",
+        "babel-eslint": "^10.0.2",
+        "babel-loader": "^8.0.6",
         "base-href-webpack-plugin": "~2.0.0",
         "copy-webpack-plugin": "^5.0.3",
-        "babel-loader": "^8.0.6",
-        "html-loader": "^0.5.5",
-        "style-loader": "^0.23.1",
+        "cross-env": "^5.2.0",
         "css-loader": "^3.0.0",
-        "sass-loader": "^7.1.0",
+        "eslint": "^6.0.1",
+        "eslint-loader": "^2.2.1",
+        "html-loader": "^0.5.5",
+        "html-webpack-plugin": "^3.2.0",
         "node-sass": "^4.12.0",
+        "portfinder": "^1.0.21",
+        "rimraf": "^2.6.3",
+        "sass-loader": "^7.1.0",
+        "style-loader": "^0.23.1",
+
         "webpack": "^4.35.3",
-        "webpack-cli": "^3.3.5",
-        "webpack-dev-server": "^3.7.2"
-    }
+        "webpack-cli": "^3.3.6",
+        "webpack-dev-server": "^3.7.2",
+
+        "hammerjs": "^2.0.8",
+        "d3": "4.5.0",
+        "highlight.js": "^9.15.8",
+        "highlightjs": "~9.12.0"
+    },
+    "dependencies": {}
 }
