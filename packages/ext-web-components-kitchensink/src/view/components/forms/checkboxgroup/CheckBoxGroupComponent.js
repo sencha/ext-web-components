@@ -1,22 +1,14 @@
+import './CheckBoxGroupComponent.scss';
 import './CheckBoxGroupComponent.html';
 Ext.require(['Ext.field.CheckboxGroup']);
 
 export default class CheckBoxFieldComponent {
-    checkboxFieldReady = (event) => {
-        const isPhone = Ext.os.is.Phone;
-        this.checkboxCmp = event.detail.cmp;
-
-        const top = !isPhone ? 10 : null;
-        const left = !isPhone ? 10 : null;
-
-        this.checkboxCmp.setTop(top);
-        this.checkboxCmp.setLeft(left);
+    onParentPanelReady = (event) => {
+        this.parentPanelCmp = event.detail.cmp;
     }
 
     onSaveFormClick = () => {
-        var form = this.getView();
-
-        if (form.isValid()) {
+        if (this.parentPanelCmp.isValid()) {
             Ext.Msg.alert(
                 'Form completed',
                 'Form values will be sent to the server'
@@ -31,6 +23,6 @@ export default class CheckBoxFieldComponent {
     }
 
     onResetFormClick = () => {
-        this.getView().reset();
+        this.parentPanelCmp.reset();
     }
 }
