@@ -33,7 +33,7 @@ module.exports = function(env) {
             new HtmlWebpackPlugin({template: 'index.html', hash: true, inject: 'body'}),
             new BaseHrefWebpackPlugin({ baseHref: basehref }),
             new ExtWebpackPlugin({
-                framework: 'webcomponents',
+                framework: 'web-components',
                 theme: 'theme-conference-app',
                 toolkit: 'modern',
                 emit: 'yes',

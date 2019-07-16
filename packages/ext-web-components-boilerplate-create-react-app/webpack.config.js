@@ -1,12 +1,10 @@
 const path = require('path');
-const AngularCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BaseHrefWebpackPlugin } = require('base-href-webpack-plugin');
 const ExtWebpackPlugin = require('@sencha/ext-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const portfinder = require('portfinder');
 const webpack = require('webpack');
-const FilterWarningsPlugin = require('webpack-filter-warnings-plugin');
 
 module.exports = function(env) {
     function get(it, val) {if(env == undefined) {return val;} else if(env[it] == undefined) {return val;} else {return env[it];}}
@@ -19,34 +17,24 @@ module.exports = function(env) {
     var watch = get('watch', 'yes');
     var verbose = get('verbose', 'no');
     var basehref = get('basehref', '/');
-    // var build_v = get('build_v', '7.0.0.0');
+    var build_v = get('build_v', '7.0.0.0');
 
     const isProd = environment === 'production';
     const outputFolder = 'build';
     portfinder.basePort = (env && env.port) || 1962;
 
-    const resolve = {
-        extensions: ['.ts', '.js', '.html']
-    };
-
     return portfinder.getPortPromise().then(port => {
         const plugins = [
-            new AngularCompilerPlugin({
-                tsConfigPath: './tsconfig.json',
-                mainPath: './src/main.ts',
-                skipCodeGeneration: true
-            }),
             new HtmlWebpackPlugin({template: 'index.html', hash: true, inject: 'body'}),
             new BaseHrefWebpackPlugin({ baseHref: basehref }),
             new ExtWebpackPlugin({
-                framework: 'webcomponents',
+                framework: 'web-components',
                 toolkit: 'modern',
                 theme: 'theme-material',
                 emit: emit,
-                script: '',
                 port: port,
                 packages: [],
-                profile: profile, 
+                profile: profile,
                 environment: environment,
                 treeshake: treeshake,
                 browser: browser,
@@ -57,33 +45,29 @@ module.exports = function(env) {
                 from: '../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js',
                 to: './webcomponents-bundle.js'
             }]),
-            new webpack.ContextReplacementPlugin(
-                /\@angular(\\|\/)core(\\|\/)fesm5/,
-                path.resolve(__dirname, 'src'), {}
-            ),
-            new FilterWarningsPlugin({
-                exclude: /System.import/
-            }),
-            new webpack.HotModuleReplacementPlugin()
+            // Debug purposes only, injected via script: npm run-script buildexample -- --env.build_v=<full version here in format maj.min.patch.build>
+            new webpack.DefinePlugin({
+                BUILD_VERSION: JSON.stringify(build_v)
+            })
         ];
         return {
             mode: environment,
             devtool: (environment === 'development') ? 'inline-source-map' : false,
             context: path.join(__dirname, './src'),
-            entry: {
-                polyfills: './polyfills.ts',
-                main: './main.ts'
-            },
+            entry: './index.js',
             output: {
                 path: path.join(__dirname, outputFolder),
                 filename: '[name].js'
             },
             plugins: plugins,
-            resolve: resolve,
             module: {
                 rules: [
-                    { test: /\.(png|svg|jpg|jpeg|gif)$/, use: ['file-loader'] },
-                    { test: /\.ts$/, loader: '@ngtools/webpack' },
+                    { test: /\.(js|jsx)$/, exclude: /node_modules/,
+                        use: [
+                            'babel-loader',
+                            // 'eslint-loader'
+                        ]
+                    },
                     { test: /\.(html)$/, use: { loader: 'html-loader' } },
                     {
                         test: /\.(css|scss)$/,

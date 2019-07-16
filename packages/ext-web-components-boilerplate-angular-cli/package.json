@@ -1,7 +1,7 @@
 {
-  "name": "@sencha/ext-web-components-boilerplate-angular",
+  "name": "@sencha/ext-web-components-boilerplate-angular-cli",
   "version": "7.0.0",
-  "description": "ext-web-components-boilerplate-angular",
+  "description": "ext-web-components-boilerplate-angular-cli",
   "scripts": {
     "start": "npm run dev",
     "clean": "rimraf build",
