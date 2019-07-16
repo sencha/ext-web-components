@@ -1,6 +1,7 @@
 {
-  "name": "ext-web-components-react-boilerplate",
+  "name": "ext-web-components-boilerplate-react",
   "version": "0.1.0",
+  "description": "ext-web-components-boilerplate-react",
   "private": true,
   "dependencies": {
     "history": "^4.9.0",
