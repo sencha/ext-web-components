@@ -53,7 +53,8 @@ module.exports = function(env) {
                     'pivot',
                     'calendar',
                     'charts',
-                    'treegrid'
+                    'treegrid',
+                    'froala-editor'
                 ],
                 profile: profile,
                 environment: environment,

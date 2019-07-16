@@ -245,7 +245,7 @@ export default function getMenu() {
                 { text: 'Undoable Accordion Swiper', component: UndoableAccordionSwiperComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-undoable-accordion-swiper'},
                 { text: 'Undoable Step Swiper', component: UndoableStepSwiperComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-undoable-step-swiper'}
             ]},
-            { text: 'Media', iconCls: 'x-fa fa-video-camera', children: [
+            { text: 'Media', iconCls: 'icon-video', children: [
                 { text: 'Video', iconCls: 'icon-video', component: VideoComponent },
                 { text: 'Audio', iconCls: 'icon-audio', component: AudioComponent }
             ] },
