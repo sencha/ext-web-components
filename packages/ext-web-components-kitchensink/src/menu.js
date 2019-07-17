@@ -175,6 +175,7 @@ import DrilldownPluginComponent from './view/pivotgrids/drilldownplugin/Drilldow
 import ConfiguratorPluginComponent from './view/pivotgrids/configuratorplugin/ConfiguratorPluginComponent.js';
 import RangeEditorPluginComponent from './view/pivotgrids/rangeeditorplugin/RangeEditorPluginComponent.js';
 import ExporterPluginComponent from './view/pivotgrids/exporterplugin/ExporterPluginComponent.js';
+import AccordionLayoutComponent from './view/components/layouts/accordionlayout/AccordionLayoutComponent.js';
 import BreadcrumbToolBarComponent from './view/components/toolbars/breadcrumbtoolbar/BreadcrumbToolBarComponent.js';
 
 export default function getMenu() {
@@ -233,7 +234,8 @@ export default function getMenu() {
                 { text: 'Form Layout', component: FormLayoutComponent, layout: 'auto', iconCls: 'icon-layout-form' },
                 { text: 'hbox Layout', component: hboxLayoutComponent, layout: 'auto', iconCls: 'icon-layout-horizontal-box' },
                 { text: 'Resizable Layout', component: ResizableLayoutComponent, iconCls: 'icon-layout-box' },
-                { text: 'vbox Layout', component: vboxLayoutComponent, layout: 'auto', iconCls: 'icon-layout-vertical-box' }
+                { text: 'vbox Layout', component: vboxLayoutComponent, layout: 'auto', iconCls: 'icon-layout-vertical-box' },
+                { text: 'Accordion Layout', component: AccordionLayoutComponent, iconCls: 'icon-layout-accordion'}
             ]},
             { text: 'Lists', iconCls: 'icon-lists', children: [
                 { text: 'Basic List', component: BasicListComponent, layout: Ext.os.is.Phone ? 'fit': 'center', iconCls: 'icon-basic-list' },
