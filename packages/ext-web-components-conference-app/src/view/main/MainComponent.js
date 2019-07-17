@@ -27,7 +27,9 @@ export default class MainComponent {
             },
             listeners: {
                 load: store => store.each(record => {
-                    record.set('favorite', this.favorites.indexOf(record.getId()) !== -1);
+                    if (this.favorites != null) {
+                        record.set('favorite', this.favorites.indexOf(record.getId()) !== -1);
+                    }
                 })
             }
         });
@@ -40,7 +42,9 @@ export default class MainComponent {
             },
             listeners: {
                 load: store => store.each(record => {
-                    record.set('favorite', this.favorites.indexOf(record.getId()) !== -1);
+                    if (this.favorites != null) {
+                        record.set('favorite', this.favorites.indexOf(record.getId()) !== -1);
+                    }
                 })
             }
         });
@@ -112,7 +116,7 @@ export default class MainComponent {
 
     navigate = (record) => {
         if (record === null) {
-            console.log('it was null');
+            //console.log('it was null');
             return;
         }
 
@@ -190,7 +194,6 @@ export default class MainComponent {
     toggleButtonReady = (event) => {
         this.navButton = event.detail.cmp;
         this.navButtonIcon = event.detail.cmp.initialConfig.iconCls;
-        console.log(this.navButtonIcon);
 
         if (Ext.os.is.Phone) {
             this.navButton.setHidden(false);

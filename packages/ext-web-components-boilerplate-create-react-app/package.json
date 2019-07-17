@@ -1,6 +1,7 @@
 {
-  "name": "ext-web-components-react-boilerplate",
-  "version": "0.1.0",
+  "name": "ext-web-components-boilerplate-create-react-app",
+  "version": "7.0.0",
+  "description": "ext-web-components-boilerplate-create-react-app",
   "private": true,
   "dependencies": {
     "history": "^4.9.0",

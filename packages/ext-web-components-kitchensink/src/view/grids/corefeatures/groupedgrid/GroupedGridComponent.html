@@ -28,6 +28,11 @@
     onready="groupedgrid.onGridReady"
     grouped="true"
     groupFooter='{"xtype": "gridsummaryrow"}'
+    stateful="true"
+    stateId="grouped-grid"
+    plugins='{
+      "gridfilters": "true"
+    }'
   >
     <ext-column
       text="Name"

@@ -84,7 +84,7 @@ get margin(){return this.getAttribute('margin')};set margin(margin){this.setAttr
 get masked(){return this.getAttribute('masked')};set masked(masked){this.setAttribute('masked',masked)}
 get maxHeight(){return this.getAttribute('maxHeight')};set maxHeight(maxHeight){this.setAttribute('maxHeight',maxHeight)}
 get maxWidth(){return this.getAttribute('maxWidth')};set maxWidth(maxWidth){this.setAttribute('maxWidth',maxWidth)}
-get menuLabel(){return this.getAttribute('menuLabel')};set menuLabel(menuLabel){this.setAttribute('menuLabel',menuLabel)}
+get menuItem(){return this.getAttribute('menuItem')};set menuItem(menuItem){this.setAttribute('menuItem',menuItem)}
 get minButtonWidth(){return this.getAttribute('minButtonWidth')};set minButtonWidth(minButtonWidth){this.setAttribute('minButtonWidth',minButtonWidth)}
 get minHeight(){return this.getAttribute('minHeight')};set minHeight(minHeight){this.setAttribute('minHeight',minHeight)}
 get minWidth(){return this.getAttribute('minWidth')};set minWidth(minWidth){this.setAttribute('minWidth',minWidth)}
@@ -308,7 +308,7 @@ get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange
 "masked":["boolean","string","object","Ext.Mask","Ext.LoadMask"],
 "maxHeight":["number","string"],
 "maxWidth":["number","string"],
-"menuLabel":["string"],
+"menuItem":["string"],
 "minButtonWidth":["number"],
 "minHeight":["number","string"],
 "minWidth":["number","string"],
@@ -648,7 +648,6 @@ get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange
 { name:'onItemAdd',function: function(item,index) { return this.ext.onItemAdd(item,index) } },
 { name:'onItemMove',function: function(item,toIndex,fromIndex) { return this.ext.onItemMove(item,toIndex,fromIndex) } },
 { name:'onItemRemove',function: function(item,index,destroying) { return this.ext.onItemRemove(item,index,destroying) } },
-{ name:'onRegionHide',function: function() { return this.ext.onRegionHide() } },
 { name:'onRender',function: function() { return this.ext.onRender() } },
 { name:'onResize',function: function(width,height,oldWidth,oldHeight) { return this.ext.onResize(width,height,oldWidth,oldHeight) } },
 { name:'onScrollEnd',function: function(x,y) { return this.ext.onScrollEnd(x,y) } },

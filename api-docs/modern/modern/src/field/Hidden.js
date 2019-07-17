@@ -8,26 +8,26 @@
  * dynamic or previously collected data back to the server in the same request as the
  * normal form submission. For example, here is how we might set up a form to send
  * back a hidden userId field:
- *      ```HTML
- *      @example({tab: 1})
- *      <ext-container layout="center">
- *          <ext-formpanel shadow="true">
- *              <ext-hiddenfield
- *                   value="123"
- *                   name="hide"
- *               >
- *              </ext-hiddenfield>
- *          <ext-formpanel>
- *      </ext-container>
- *      ```
- *      ```javascript
- *      @example({tab: 2, packages: ['ext-web-components']})
- *      import '@sencha/ext-web-components/dist/ext-container.component';
- *      import '@sencha/ext-web-components/dist/ext-formpanel.component';
- *      import '@sencha/ext-web-components/dist/ext-hiddenfield.component';
+ *```HTML
+ *@example({tab: 1})
+ *<ext-container layout="center">
+ *    <ext-formpanel shadow="true">
+ *        <ext-hiddenfield
+ *             value="123"
+ *             name="hide"
+ *         >
+ *        </ext-hiddenfield>
+ *    <ext-formpanel>
+ *</ext-container>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ *import '@sencha/ext-web-components/dist/ext-container.component';
+ *import '@sencha/ext-web-components/dist/ext-formpanel.component';
+ *import '@sencha/ext-web-components/dist/ext-hiddenfield.component';
  * 
- *      export default class HiddenFieldComponent {}
- *      ```
+ *export default class HiddenFieldComponent {}
+ *```
  *
  */
 /*

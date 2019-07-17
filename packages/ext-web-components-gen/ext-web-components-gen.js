@@ -38,6 +38,7 @@ var answers = {
   'useDefaults': null,
   'appName': null,
   'packageName': null,
+  'theme': null,
   'version': null,
   'description': null,
   'repositoryURL': null,
@@ -56,7 +57,8 @@ const optionDefinitions = [
   { name: 'help', alias: 'h', type: Boolean },
   { name: 'defaults', alias: 'd', type: Boolean },
   { name: 'auto', alias: 'a', type: Boolean },
-  { name: 'name', alias: 'n', type: String }
+  { name: 'name', alias: 'n', type: String },
+  { name: 'theme', alias: 't', type: String }
 ]
 
 var version = ''
@@ -224,6 +226,17 @@ function stepNameYourApp() {
   }).run().then(answer => {
     answers['appName'] = answer
     answers['packageName'] = kebabCase(answers['appName'])
+    stepTheme()
+  })
+}
+
+function stepTheme() {
+  new List({
+    message: 'What theme would you like to use?',
+    choices: ['material', 'triton', 'ios'],
+    default: 'material'
+  }).run().then(answer => {
+    answers['theme'] = answer
     stepPackageName()
   })
 }
@@ -279,7 +292,12 @@ function stepKeywords() {
     message: 'What are the npm keywords?',
     default: config.keywords
   }).run().then(answer => {
-    answers['keywords'] = answer
+    var theKeywords = "";
+    var keywordArray = answer.split(" ");
+     for (var i = 0; i < keywordArray.length; i++) { 
+        theKeywords += '"' + keywordArray[i] + '",'
+    }
+    answers['keywords'] = theKeywords.slice(0, -1);
     stepAuthorName()
   })
 }
@@ -381,6 +399,11 @@ async function stepCreate() {
       fs.copySync(path.join(boilerplate, file), file)
     }))
 
+    answers['theme'] = `theme-${answers['theme']}`;
+    //const theme = path.join('ext-react', 'packages', 'custom-ext-react-theme', 'package.json');
+    //const themePackageJson = fs.readFileSync(theme, 'utf8').replace('theme-material', answers['theme'])
+    //fs.writeFileSync(theme, themePackageJson, 'utf8');
+
   const packageInfo = {};
   Object.assign(packageInfo, {name: answers['packageName']})
   if (answers['version']) packageInfo.version = answers['version']
@@ -394,6 +417,20 @@ async function stepCreate() {
   if (answers['keywords']) packageInfo.keywords = answers['keywords']
   if (answers['author']) packageInfo.author = answers['author']
   if (answers['license']) packageInfo.license = answers['license']
+
+  var packageJson = path.join(destDir, 'package.json')
+  //console.log(`${app} package.json: ${destDir}/package.json`)
+
+  Object.assign(packageInfo, pick(fs.readJsonSync(packageJson), 'main', 'scripts', 'dependencies', 'devDependencies'));
+  if (answers['theme'] !== 'theme-material') {
+    packageInfo.dependencies[`@sencha/ext-modern-${answers['theme']}`] = packageInfo.dependencies['@sencha/ext-modern-theme-material'];
+  }
+
+  let packageInfoString = JSON.stringify(packageInfo,null,2)
+  fs.writeFileSync(packageJson, packageInfoString)
+
+  const indexHtml = path.join('src', 'index.html');
+  fs.writeFileSync(indexHtml, fs.readFileSync(indexHtml, 'utf8').replace('ExtWebComponents Boilerplate', answers['appName']), 'utf8')
 
   try {
     const substrings = ['[ERR]', '[WRN]', '[INF] Processing', "[INF] Server", "[INF] Writing content", "[INF] Loading Build", "[INF] Waiting", "[LOG] Fashion waiting"];
@@ -424,6 +461,13 @@ async function stepCreate() {
  }
 
  function setDefaults() {
+  if (cmdLine.theme != undefined) {
+      answers['theme'] = cmdLine.theme
+  }
+  else {
+    answers['theme'] = config.theme
+  }
+
   if (cmdLine.name != undefined) {
     answers['appName'] = cmdLine.name
     answers['packageName'] = kebabCase(answers['appName'])
@@ -447,6 +491,7 @@ function displayDefaults() {
   console.log(boldGreen(`Defaults for ExtWebComponents app:`))
   console.log(`appName:\t${answers['appName']}`)
   console.log('')
+  console.log(`theme:\t\t${answers['theme']}`)
   console.log(boldGreen(`Defaults for package.json:`))
   console.log(`packageName:\t${answers['packageName']}`)
   console.log(`version:\t${answers['version']}`)
@@ -468,18 +513,22 @@ function stepHelpApp() {
 
   var message = `${boldGreen('Quick Start:')} ext-web-components-gen -a
 
-ext-web-components-gen app (-h) (-d) (-i) (-n 'name')
+ext-web-components-gen app (-h) (-d) (-i) (-t 'material') (-n 'name')
 
 -h --help          show help (no parameters also shows help)
 -d --defaults      show defaults for package.json
 -i --interactive   run in interactive mode (question prompts will display)
+-t --theme         theme name for Ext JS modern toolkit
 -n --name          name for Ext JS generated app
 -v --verbose       verbose npm messages (for problems only)
 
 ${boldGreen('Examples:')}
-ext-web-components-gen app  --name CoolExtWebComponentsApp
+ext-web-components-gen app --theme material --name CoolExtWebComponentsApp
 ext-web-components-gen app --interactive
-ext-web-components-gen app -a -n CoolExtWebComponentsApp
+ext-web-components-gen app -a -t material -n CoolExtWebComponentsApp
+
+${boldGreen('Theme Names:')}
+${boldGreen('modern themes:')}  material, ios, neptune, triton
 
 `
   console.log(message)
@@ -491,8 +540,8 @@ ext-web-components-gen app CoolExtWebComponentsApp
 ext-web-components-gen app -i
 
 ${boldGreen('Examples:')}
-ext-web-components-gen app --name CoolExtWebComponentsApp
-
+ext-web-components-gen app --theme material --name CoolExtWebComponentsApp
+ext-web-components-gen app -t material -n CoolExtWebComponentsApp
 Run ${boldGreen('ext-web-components-gen --help')} to see all options
 `
   console.log(message)

@@ -17,38 +17,38 @@
  * the current date. You can also use the {@link #setValue} method to update the value
  * at any time.
  *
- *      ```HTML
- *      @example({tab: 1})
- *     <ext-container layout="center">
- *         <ext-formpanel
- *             shadow="true"
- *         >
- *             <ext-datepickerfield
- *                 width="150"
- *                 destroyPickerOnHide="true"
- *                 onready="datepickerfield.onReadyDatePickerField()"
- *                 label="Date"
- *                 picker='{
+ *```HTML
+ *@example({tab: 1})
+ *<ext-container layout="center">
+ *    <ext-formpanel
+ *        shadow="true"
+ *    >
+ *        <ext-datepickerfield
+ *            width="150"
+ *            destroyPickerOnHide="true"
+ *            onready="datepickerfield.onReadyDatePickerField()"
+ *            label="Date"
+ *            picker='{
  *                           yearFrom: 1990
  *                         }'
- *              >
- *             </ext-datepickerfield>
- *         </ext-formpanel>
- *     </ext-container>
- *      ```
- *      ```javascript
- *      @example({tab: 2, packages: ['ext-web-components']})
- *      import '@sencha/ext-web-components/dist/ext-container.component';
- *      import '@sencha/ext-web-components/dist/ext-datepickerfield.component';
- *      import '@sencha/ext-web-components/dist/ext-formpanel.component';
+ *         >
+ *        </ext-datepickerfield>
+ *    </ext-formpanel>
+ *</ext-container>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ *import '@sencha/ext-web-components/dist/ext-container.component';
+ *import '@sencha/ext-web-components/dist/ext-datepickerfield.component';
+ *import '@sencha/ext-web-components/dist/ext-formpanel.component';
  * 
- *      export default class DatePickerFieldComponent {
- *          onReadyDatePickerField(event) {
- *              this.datepickerfieldView = event.detail.cmp;
- *              this.datepickerfieldView.setValue(new Date());
- *          }
- *      }
- *      ```
+ *export default class DatePickerFieldComponent {
+ *    onReadyDatePickerField(event) {
+ *        this.datepickerfieldView = event.detail.cmp;
+ *        this.datepickerfieldView.setValue(new Date());
+ *    }
+ *}
+ *```
  * 
  */
 
