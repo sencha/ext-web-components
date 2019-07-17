@@ -2,15 +2,8 @@
 
 ## Adding Sencha ExtWebComponents to a Vue CLI application
 
-This document defines the steps needed to add Sencha ExtWebComponents to a Vue.js application generated with Vue CLI.  Vue CLI is described in the [Vue CLI Overview](https://cli.vuejs.org/guide/?target=_blank)
+This document defines the steps needed to add Sencha ExtWebComponents to a Vue.js application generated with Vue CLI.  Vue CLI is described in the [Vue CLI Overview](https://cli.vuejs.org/guide/)
 
-
-<a target="_blank" href="https://cli.vuejs.org/guide/" >Vue CLI Overview</a>
-
-[Google](http://www.google.com){target="_blank"}
-
- <a href="http://example.com/" target="_blank">Hello, world!</a>
- 
 If you don’t want to follow the below mentioned steps, then you can consume the boilerplate code with a sample ExtWebComponents application at [ext-web-components-boilerplate-vue-cli](https://github.com/sencha/ext-web-components/tree/ext-components-7.0.x/packages/ext-web-components-boilerplate-vue-cli).
 
 ### Install the Vue CLI
