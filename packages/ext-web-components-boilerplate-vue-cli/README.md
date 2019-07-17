@@ -86,6 +86,8 @@ npm install --save @sencha/ext-webpack-plugin
 npm install --save @webcomponents/webcomponentsjs
 ```
 
+#### Edit vue.config.js, src/main.js, src/App.vue
+
 To configure the ext-webpack-plugin for webpack in Vue, create a file named vue.config.js at the root directory (where the package.json is), and add the following:
 ```sh
 const ExtWebpackPlugin = require('@sencha/ext-webpack-plugin');
@@ -154,6 +156,8 @@ Replace src/App.vue with the following:
     }
 </script>
 ```
+
+#### Run the ExtWebComponents Vue.js application
 
 In the terminal or command window, run the application:
 
