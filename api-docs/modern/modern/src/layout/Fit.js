@@ -10,20 +10,20 @@
  * panel to a container using Fit layout, simply set `layout: 'fit'` on the container and
  * add a single panel to it.
  * 
- *      ```HTML
- *      @example({tab: 1})
- *      <ext-container width="300" height="150" layout="fit">
- *          <ext-panel title="Inner Panel" bodyPadding="20" border="false">
- *               This is the inner panel content
- *          </ext-panel>
- *      </ext-container>
- *      ```
- *      ```javascript
- *      @example({tab: 2, packages: ['ext-web-components']})
- *      import '@sencha/ext-web-components/dist/ext-container.component';
- *      import '@sencha/ext-web-components/dist/ext-formpanel.component';
- *      import '@sencha/ext-web-components/dist/ext-spinnerfield.component';
+ *```HTML
+ *@example({tab: 1})
+ *<ext-container width="300" height="150" layout="fit">
+ *    <ext-panel title="Inner Panel" bodyPadding="20" border="false">
+ *         This is the inner panel content
+ *    </ext-panel>
+ *</ext-container>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ *import '@sencha/ext-web-components/dist/ext-container.component';
+ *import '@sencha/ext-web-components/dist/ext-formpanel.component';
+ *import '@sencha/ext-web-components/dist/ext-spinnerfield.component';
  * 
- *      export default class FitComponent {}
- *      ```
+ *export default class FitComponent {}
+ *```
  */

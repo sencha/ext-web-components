@@ -7,31 +7,31 @@
  * Because it creates an HTML email input field, most browsers will show a specialized
  * virtual keyboard for email address input. Aside from that, the email field is just a
  * normal text field. Here's an example of how to use it in a form:
- *      ```HTML
- *      @example({tab: 1})
- *      <ext-container
- *          layout="center"
- *       >
- *          <ext-formpanel
- *               shadow="true"
- *           >
- *              <ext-emailfield
- *                   width="250"
- *                   placeholder="user@domain.com"
- *                   label="Email"
- *               >
- *              </ext-emailfield>
- *          </ext-formpanel>
- *      </ext-container>
- *      ```
- *      ```javascript
- *      @example({tab: 2, packages: ['ext-web-components']})
- *      import '@sencha/ext-web-components/dist/ext-container.component';
- *      import '@sencha/ext-web-components/dist/ext-formpanel.component';
- *      import '@sencha/ext-web-components/dist/ext-emailfield.component';
+ *```HTML
+ *@example({tab: 1})
+ *<ext-container
+ *    layout="center"
+ *>
+ *   <ext-formpanel
+ *         shadow="true"
+ *    >
+ *       <ext-emailfield
+ *            width="250"
+ *            placeholder="user@domain.com"
+ *            label="Email"
+ *        >
+ *       </ext-emailfield>
+ *    </ext-formpanel>
+ *</ext-container>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ *import '@sencha/ext-web-components/dist/ext-container.component';
+ *import '@sencha/ext-web-components/dist/ext-formpanel.component';
+ *import '@sencha/ext-web-components/dist/ext-emailfield.component';
  * 
- *      export default class EmailFieldComponent {}
- *      ```
+ *export default class EmailFieldComponent {}
+ *```
  *
  */
 /**

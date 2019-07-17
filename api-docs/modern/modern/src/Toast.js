@@ -9,31 +9,31 @@
  *
  * This will create one reusable toast container and content will be swapped out as
  * toast messages are queued or displayed.
- *     ```HTML
- *      @example({tab: 1})
- *      <ext-container layout='{"type": "vbox", "align": "left"}'>
- *                         <ext-button
- *                             ui="action"
- *                             ontap="toast.onTap"
- *                             text="Show Toast"
- *                         />
- *                     </ext-container>
+ *```HTML
+ *@example({tab: 1})
+ *<ext-container layout='{"type": "vbox", "align": "left"}'>
+ *    <ext-button
+ *         ui="action"
+ *         ontap="toast.onTap"
+ *         text="Show Toast"
+ *    />
+ *</ext-container>
  *      
- *     ```
- *     ```javascript
- *     @example({tab: 2, packages: ['ext-web-components']})
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
  *
- *     import '@sencha/ext-web-components/dist/ext-button.component';
- *     import '@sencha/ext-web-components/dist/ext-container.component';
+ *import '@sencha/ext-web-components/dist/ext-button.component';
+ *import '@sencha/ext-web-components/dist/ext-container.component';
  * 
- *     Ext.require('Ext.Toast');
+ *Ext.require('Ext.Toast');
  * 
- *     export default class ToastComponent {
- *       onTap = () => {
- *          Ext.toast('Hello World!')
- *        }
- *      }
- *     ```
+ *export default class ToastComponent {
+ *  onTap = () => {
+ *     Ext.toast('Hello World!')
+ *   }
+ *}
+ *```
  
  */
 

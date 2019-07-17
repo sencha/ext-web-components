@@ -7,28 +7,28 @@
  * Because it creates a password field, when the user enters text it will show up as
  * stars. Aside from that, the password field is just a normal text field. Here's an
  * example of how to use it in a form:
- *      ```HTML
- *      @example({tab: 1})
- *      <ext-container layout="center">
- *          <ext-formpanel shadow="true">
- *              <ext-passwordfield
- *                   width="200"
- *                   label="Password"
- *                   required="true"
- *                   revealable="true"
- *              >
- *              <ext-passwordfield>
- *          <ext-formpanel>
- *      </ext-container>
- *      ```
- *      ```javascript
- *      @example({tab: 2, packages: ['ext-web-components']})
- *      import '@sencha/ext-web-components/dist/ext-container.component';
- *      import '@sencha/ext-web-components/dist/ext-formpanel.component';
- *      import '@sencha/ext-web-components/dist/ext-passwordfield.component';
+ *```HTML
+ *@example({tab: 1})
+ *<ext-container layout="center">
+ *    <ext-formpanel shadow="true">
+ *        <ext-passwordfield
+ *             width="200"
+ *             label="Password"
+ *             required="true"
+ *             revealable="true"
+ *        >
+ *        <ext-passwordfield>
+ *    <ext-formpanel>
+ *</ext-container>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ *import '@sencha/ext-web-components/dist/ext-container.component';
+ *import '@sencha/ext-web-components/dist/ext-formpanel.component';
+ *import '@sencha/ext-web-components/dist/ext-passwordfield.component';
  * 
- *      export default class PasswordFieldComponent {}
- *      ```
+ *export default class PasswordFieldComponent {}
+ *```
  *
  */
 /**

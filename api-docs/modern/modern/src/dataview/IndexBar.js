@@ -9,61 +9,61 @@
  *
  * Here is an example of the usage in a {@link Ext.List}:
  *
- *      ```HTML
- *      @example({tab: 1})
- *      <ext-list
- *          onready="indexbar.readyIndexBarView"
- *          indexBar="true"
- *      >
- *      </ext-list>
- *      ```
- *      ```javascript
- *      @example({tab: 2, packages: ['ext-web-components']})
- *      import '@sencha/ext-web-components/dist/ext-container.component';
- *      import '@sencha/ext-web-components/dist/ext-formpanel.component';
- *      import '@sencha/ext-web-components/dist/ext-spinnerfield.component';
+ *```HTML
+ *@example({tab: 1})
+ *<ext-list
+ *    onready="indexbar.readyIndexBarView"
+ *    indexBar="true"
+ *>
+ *</ext-list>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ *import '@sencha/ext-web-components/dist/ext-container.component';
+ *import '@sencha/ext-web-components/dist/ext-formpanel.component';
+ *import '@sencha/ext-web-components/dist/ext-spinnerfield.component';
  * 
- *      export default class IndexBarComponent {
- *          constructor() {
- *              this.store = new Ext.data.Store({
- *                  data: [{
- *                      firstName: 'Screech',
- *                      lastName: 'Powers'
- *                  },
- *                  {
- *                      firstName: 'Kelly',
- *                      lastName: 'Kapowski'
- *                  },
- *                  {
- *                      firstName: 'Zach',
- *                      lastName: 'Morris'
- *                  },
- *                  {
- *                      firstName: 'Jessie',
- *                      lastName: 'Spano'
- *                  },
- *                  {
- *                      firstName: 'Lisa',
- *                      lastName: 'Turtle'
- *                  },
- *                  {
- *                      firstName: 'A.C.',
- *                      lastName: 'Slater'
- *                  },
- *                  {
- *                      firstName: 'Richard',
- *                      lastName: 'Belding'
- *                  }]
- *              })
- *          }
+ *export default class IndexBarComponent {
+ *    constructor() {
+ *        this.store = new Ext.data.Store({
+ *            data: [{
+ *                firstName: 'Screech',
+ *                lastName: 'Powers'
+ *            },
+ *            {
+ *                firstName: 'Kelly',
+ *                lastName: 'Kapowski'
+ *            },
+ *            {
+ *                firstName: 'Zach',
+ *                lastName: 'Morris'
+ *            },
+ *            {
+ *                firstName: 'Jessie',
+ *                lastName: 'Spano'
+ *            },
+ *            {
+ *                firstName: 'Lisa',
+ *                lastName: 'Turtle'
+ *            },
+ *            {
+ *                firstName: 'A.C.',
+ *                lastName: 'Slater'
+ *            },
+ *            {
+ *                firstName: 'Richard',
+ *                lastName: 'Belding'
+ *            }]
+ *        })
+ *    }
  *          
- *          readyIndexBarView(event) {
- *              this.indexBarView = event.detail.cmp;
- *              this.indexBarView.setStore(this.store);
- *              this.indexBarView.setItemTpl(`<div class='contact'>{firstName} <strong>{lastName}</strong></div>`);
- *          }
- *      }
- *      ```
+ *    readyIndexBarView(event) {
+ *        this.indexBarView = event.detail.cmp;
+ *        this.indexBarView.setStore(this.store);
+ *        this.indexBarView.setItemTpl(`<div class='contact'>{firstName} <strong>{lastName}</strong></div>`);
+ *    }
+ *}
+ *```
  * 
  */
 

@@ -8,24 +8,24 @@
  * like any other component. This component typically takes between 1 and 3 props - a {@link #src}, and
  * optionally a {@link #height} and a {@link #width}:
  *
- *      ```HTML
- *      @example({tab: 1})
- *      <ext-panel shadow="true" layout="fit">
- *          <ext-image
- *              width="64"
- *              height="64"
- *              src="http://www.sencha.com/assets/images/sencha-avatar-64x64.png"
- *          >
- *          </ext-image>
- *      </ext-panel>
- *      ```
- *      ```javascript
- *      @example({tab: 2, packages: ['ext-web-components']})
- *      import '@sencha/ext-web-components/dist/ext-panel.component';
- *      import '@sencha/ext-web-components/dist/ext-image.component';
+ *```HTML
+ *@example({tab: 1})
+ *<ext-panel shadow="true" layout="fit">
+ *    <ext-image
+ *        width="64"
+ *        height="64"
+ *        src="http://www.sencha.com/assets/images/sencha-avatar-64x64.png"
+ *    >
+ *    </ext-image>
+ *</ext-panel>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ *import '@sencha/ext-web-components/dist/ext-panel.component';
+ *import '@sencha/ext-web-components/dist/ext-image.component';
  *
- *      export default class ImageFieldComponent {}
- *      ``
+ *export default class ImageFieldComponent {}
+ *```
  */
 
 /**

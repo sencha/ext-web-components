@@ -13,43 +13,43 @@
  * - `data`/`store`: The data or store to use for this slot.
  *
  * ## Example
- *     ```HTML
- *      @example({tab: 1})
- *      <ext-container>
- *          <ext-button ui="action" ontap="picker.showPicker" text="Show Picker"></ext-button>
- *              <ext-picker
- *                  onready="picker.pickerReady"
- *                  slots='[{
- *                          "name": "limit_speed",
- *                          "title": "Speed",
- *                          "data": [
- *                                      {"text": "50 KB/s", "value": "50"},
- *                                      {"text": "100 KB/s", "value": "100"},
- *                                      {"text": "200 KB/s", "value": "200"},
- *                                      {"text": "300 KB/s", "value": "300"}
- *                                  ]                              
- *                      }]'
- *             >
- *      </ext-picker>
- *    </ext-container>
- *     ```
- *     ```javascript
- *     @example({tab: 2, packages: ['ext-web-components']})
+ *```HTML
+ * @example({tab: 1})
+ * <ext-container>
+ *     <ext-button ui="action" ontap="picker.showPicker" text="Show Picker"></ext-button>
+ *     <ext-picker
+ *         onready="picker.pickerReady"
+ *             slots='[{
+ *                     "name": "limit_speed",
+ *                     "title": "Speed",
+ *                     "data": [
+ *                                 {"text": "50 KB/s", "value": "50"},
+ *                                 {"text": "100 KB/s", "value": "100"},
+ *                                 {"text": "200 KB/s", "value": "200"},
+ *                                 {"text": "300 KB/s", "value": "300"}
+ *                             ]                              
+ *                     }]'
+ *      >
+ *    </ext-picker>
+ *</ext-container>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
  *
- *     import '@sencha/ext-web-components/dist/ext-container.component';
- *     import '@sencha/ext-web-components/dist/ext-button.component';
- *     import '@sencha/ext-web-components/dist/ext-picker.component';
+ *import '@sencha/ext-web-components/dist/ext-container.component';
+ *import '@sencha/ext-web-components/dist/ext-button.component';
+ *import '@sencha/ext-web-components/dist/ext-picker.component';
  * 
- *     export default class PickerComponent {
- *          pickerReady = (event) => {
- *              this.pickerCmp = event.detail.cmp;
- *          }
- * 
- *          showPicker = () => {
- *               this.pickerCmp.show();
- *          }
+ *export default class PickerComponent {
+ *     pickerReady = (event) => {
+ *         this.pickerCmp = event.detail.cmp;
  *     }
- *     ```
+ * 
+ *     showPicker = () => {
+ *          this.pickerCmp.show();
+ *     }
+ *}
+ *```
  */
 /**
  * @event pick

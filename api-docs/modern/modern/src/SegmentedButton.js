@@ -7,37 +7,37 @@
  * a child of a {@link Ext.Toolbar} and would be used to switch between different views.
  *
  * ## Example usage:
- *     ```HTML
- *      @example({tab: 1})
- *      <ext-container>
- *          <ext-toolbar>
- *              <div style="margin-right: 10px;">Default UI:</div>
- *              <ext-segmentedbutton>
- *                             <ext-button pressed text="Low"></ext-button>
- *                             <ext-button text="Medium"></ext-button>
- *                             <ext-button text="High"></ext-button>
- *              </ext-segmentedbutton>
-*           </ext-toolbar>
- *              <ext-toolbar margin="0 0 20 0">
- *                  <div style="margin-right: 10px;">Toolbar UI:</div>
- *                      <ext-segmentedbutton>
- *                             <ext-button ui="default-toolbar" pressed text="Low"></ext-button>
- *                             <ext-button ui="default-toolbar" text="Medium"></ext-button>
- *                             <ext-button ui="default-toolbar" text="High"></ext-button>
- *                      </ext-segmentedbutton>
- *              </ext-toolbar>
- *      </ext-container>
- *     ```
- *     ```javascript
- *     @example({tab: 2, packages: ['ext-web-components']})
+ *```HTML
+ *@example({tab: 1})
+ *<ext-container>
+ *    <ext-toolbar>
+ *        <div style="margin-right: 10px;">Default UI:</div>
+ *        <ext-segmentedbutton>
+ *            <ext-button pressed text="Low"></ext-button>
+ *            <ext-button text="Medium"></ext-button>
+ *            <ext-button text="High"></ext-button>
+ *        </ext-segmentedbutton>
+*     </ext-toolbar>
+ *    <ext-toolbar margin="0 0 20 0">
+ *        <div style="margin-right: 10px;">Toolbar UI:</div>
+ *        <ext-segmentedbutton>
+ *            <ext-button ui="default-toolbar" pressed text="Low"></ext-button>
+ *            <ext-button ui="default-toolbar" text="Medium"></ext-button>
+ *            <ext-button ui="default-toolbar" text="High"></ext-button>
+ *        </ext-segmentedbutton>
+ *    </ext-toolbar>
+ *</ext-container>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
  *
- *     import '@sencha/ext-web-components/dist/ext-container.component';
- *     import '@sencha/ext-web-components/dist/ext-toolbar.component';
- *     import '@sencha/ext-web-components/dist/ext-segmentedbutton.component';
- *     import '@sencha/ext-web-components/dist/ext-button.component'; 
+ *import '@sencha/ext-web-components/dist/ext-container.component';
+ *import '@sencha/ext-web-components/dist/ext-toolbar.component';
+ *import '@sencha/ext-web-components/dist/ext-segmentedbutton.component';
+ *import '@sencha/ext-web-components/dist/ext-button.component'; 
  * 
- *     export default class SegmentedButtonComponent {}
- *     ```
+ *export default class SegmentedButtonComponent {}
+ *```
  */
 /**
  * @cfg {Boolean} [allowMultiple=false]

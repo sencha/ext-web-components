@@ -4,139 +4,139 @@
  * @xtype list
  *
  * List is a custom styled DataView which allows Grouping, Indexing, Icons, and a Disclosure.
- *      ```HTML
- *      @example({tab: 1})
- *      <ext-list
- *          onready="basiclist.readylistView"
- *      >
- *      </ext-list>
- *      ```
- *      ```javascript
- *      @example({tab: 2, packages: ['ext-web-components']})
- *      import '@sencha/ext-web-components/dist/ext-list.component';
+ *```HTML
+ *@example({tab: 1})
+ *<ext-list
+ *    onready="basiclist.readylistView"
+ *>
+ *</ext-list>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ *import '@sencha/ext-web-components/dist/ext-list.component';
  * 
- *      export default class BasicListComponent {
- *          constructor() {
- *              this.store = new Ext.data.Store({
- *                  data: [
- *                     {title: 'Item 1'},
- *                     {title: 'Item 2'},
- *                     {title: 'Item 3'},
- *                     {title: 'Item 4'}
- *                 ] 
- *             });
- *         }
- *         readylistView(event) {
- *             this.listView = event.detail.cmp;
- *             this.listView.setStore(this.store);
- *             this.listView.setItemTpl(`{title}`);
- *         }
- *     }
- *      ```
+ *export default class BasicListComponent {
+ *    constructor() {
+ *        this.store = new Ext.data.Store({
+ *            data: [
+ *               {title: 'Item 1'},
+ *               {title: 'Item 2'},
+ *               {title: 'Item 3'},
+ *               {title: 'Item 4'}
+ *           ] 
+ *       });
+ *    }
+ *    readylistView(event) {
+ *        this.listView = event.detail.cmp;
+ *        this.listView.setStore(this.store);
+ *        this.listView.setItemTpl(`{title}`);
+ *    }
+ *}
+ *```
  */
 
  /**   A more advanced example showing a list of people grouped by last name:
  *
- *      ```HTML
- *      @example({tab: 1})
- *      <ext-list
- *          grouped="true"
- *          onready="groupedlist.readyGroupedListView"
- *      >
- *      </ext-list>
- *      ```
- *      ```javascript
- *      @example({tab: 2, packages: ['ext-web-components']})
- *      import '@sencha/ext-web-components/dist/ext-list.component';
+ *```HTML
+ *@example({tab: 1})
+ *<ext-list
+ *    grouped="true"
+ *    onready="groupedlist.readyGroupedListView"
+ *>
+ *</ext-list>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ *import '@sencha/ext-web-components/dist/ext-list.component';
  * 
- *      export default class GroupedListComponent {
- *          constructor() {
- *              this.store = new Ext.data.Store({
- *                  data: [{
- *                     firstName: 'Peter',
- *                     lastName: 'Venkman'
- *                  }, {
- *                     firstName: 'Raymond',
- *                     lastName: 'Stantz'
- *                  }, {
- *                     firstName: 'Egon',
- *                     lastName: 'Spengler'
- *                  }, {
- *                     firstName: 'Winston',
- *                     lastName: 'Zeddemore'
- *                 }],
+ *export default class GroupedListComponent {
+ *    constructor() {
+ *        this.store = new Ext.data.Store({
+ *            data: [{
+ *               firstName: 'Peter',
+ *               lastName: 'Venkman'
+ *            }, {
+ *               firstName: 'Raymond',
+ *               lastName: 'Stantz'
+ *            }, {
+ *               firstName: 'Egon',
+ *               lastName: 'Spengler'
+ *            }, {
+ *               firstName: 'Winston',
+ *               lastName: 'Zeddemore'
+ *           }],
  *
- *                 sorters: 'lastName',
+ *           sorters: 'lastName',
  *
- *                 grouper: {
- *                     groupFn: function(record) {
- *                         return record.get('lastName')[0];
- *                     }
- *                 }
- *             });
- *         }
+ *           grouper: {
+ *               groupFn: function(record) {
+ *                   return record.get('lastName')[0];
+ *               }
+ *           }
+ *       });
+ *   }
  * 
- *          readyGroupedListView(event) {
- *             this.groupedlistView = event.detail.cmp;
- *             this.groupedlistView.setStore(this.store);
- *             this.groupedlistView.setItemTpl(`{firstName} {lastName}`);
- *          }
- *      }
- *      ```
+ *   readyGroupedListView(event) {
+ *       this.groupedlistView = event.detail.cmp;
+ *       this.groupedlistView.setStore(this.store);
+ *       this.groupedlistView.setItemTpl(`{firstName} {lastName}`);
+ *   }
+ *}
+ *```
  */
 
  /**
  * If you want to dock items to the bottom or top of a List, you can use the scrollDock configuration on child items in this List. The following example adds a button to the bottom of the List.
  * 
- *      ```HTML
- *      @example({tab: 1})
- *      <ext-list
- *          onready="positionlistitem.readyPositionedListView"
- *      >
- *          <ext-button
- *             scrollDock="bottom"
- *             docked="bottom"
- *             text="load more..."
- *          >
- *          </ext-button>
- *      </ext-list>
- *      ```
- *      ```javascript
- *      @example({tab: 2, packages: ['ext-web-components']})
- *      import '@sencha/ext-web-components/dist/ext-list.component';
- *      import '@sencha/ext-web-components/dist/ext-button.component';
+ *```HTML
+ *@example({tab: 1})
+ *<ext-list
+ *    onready="positionlistitem.readyPositionedListView"
+ *>
+ *    <ext-button
+ *       scrollDock="bottom"
+ *       docked="bottom"
+ *       text="load more..."
+ *    >
+ *    </ext-button>
+ *</ext-list>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ *import '@sencha/ext-web-components/dist/ext-list.component';
+ *import '@sencha/ext-web-components/dist/ext-button.component';
  * 
- *      export default class PositionedListItemComponent {
+ *export default class PositionedListItemComponent {
  * 
- *          constructor() {
- *              this.store = new Ext.data.store({
- *                  data: [{
- *                      firstName: 'Peter',
- *                      lastName: 'Venkman'
- *                   },    
- *                   {
- *                      firstName: 'Raymond',
- *                      lastName: 'Stantz'
- *                   },
- *                   {
- *                      firstName: 'Egon',
- *                      lastName: 'Spengler'
- *                   },
- *                   {
- *                      firstName: 'Winston',
- *                      lastName: 'Zeddemore'
- *                 }]
- *             })
+ *    constructor() {
+ *        this.store = new Ext.data.store({
+ *            data: [{
+ *                firstName: 'Peter',
+ *                lastName: 'Venkman'
+ *             },    
+ *             {
+ *                firstName: 'Raymond',
+ *                lastName: 'Stantz'
+ *             },
+ *             {
+ *                firstName: 'Egon',
+ *                lastName: 'Spengler'
+ *             },
+ *             {
+ *                firstName: 'Winston',
+ *                lastName: 'Zeddemore'
+ *           }]
+ *       })
  * 
- *         }
+ *   }
  * 
- *         readyPositionedListView(event) {
- *              this.positionedListView = event.detail.cmp;
- *              this.positionedListView.setStore(this.store);
- *              this.positionedListView.setItemTpl(`{firstName} {lastName}`);
- *         }
- *     }
- *      ```
+ *   readyPositionedListView(event) {
+ *        this.positionedListView = event.detail.cmp;
+ *        this.positionedListView.setStore(this.store);
+ *        this.positionedListView.setItemTpl(`{firstName} {lastName}`);
+ *   }
+ *}
+ *```
  * 
  */
 

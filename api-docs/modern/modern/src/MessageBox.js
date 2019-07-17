@@ -248,41 +248,41 @@
  *
  * ## Examples
  * 
- *      ```HTML
- *      @example({tab: 1})
- *      <ext-panel shadow layout='{"type": "vbox", "align": "stretch"}'>
- *          <ext-button handler="messagebox.alertBoxHandler" text="Alert"/>
- *          <ext-button handler="messagebox.promptHandler" text="Prompt"/>
- *          <ext-button handler="messagebox.confirmHandler" text="Confirm"/>
- *      </ext-panel>
- *      ```
- *      ```javascript
- *      @example({tab: 2, packages: ['ext-web-components']})
- *      import '@sencha/ext-web-components/dist/ext-panel.component';
- *      import '@sencha/ext-web-components/dist/ext-button.component';
+ *```HTML
+ *@example({tab: 1})
+ *<ext-panel shadow layout='{"type": "vbox", "align": "stretch"}'>
+ *    <ext-button handler="messagebox.alertBoxHandler" text="Alert"/>
+ *    <ext-button handler="messagebox.promptHandler" text="Prompt"/>
+ *    <ext-button handler="messagebox.confirmHandler" text="Confirm"/>
+ *</ext-panel>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ *import '@sencha/ext-web-components/dist/ext-panel.component';
+ *import '@sencha/ext-web-components/dist/ext-button.component';
  *      
- *      Ext.require('Ext.MessageBox');
+ *Ext.require('Ext.MessageBox');
  * 
- *      export default class MessageBoxComponent {
- *          alertBoxHandler = () => {
- *              Ext.Msg.alert('Title', 'The quick brown fox jumped over the lazy dog.');
- *          }
+ *export default class MessageBoxComponent {
+ *    alertBoxHandler = () => {
+ *        Ext.Msg.alert('Title', 'The quick brown fox jumped over the lazy dog.');
+ *    }
  *
- *          promptHandler = () => {
- *             Ext.Msg.prompt('Welcome!', 'What\'s your first name?', this.onPromptResult.bind(this));
- *          }
+ *    promptHandler = () => {
+ *       Ext.Msg.prompt('Welcome!', 'What\'s your first name?', this.onPromptResult.bind(this));
+ *    }
  * 
- *          confirmHandler = () => {
- *             Ext.Msg.confirm('Confirmation', 'Are you sure you want to do that?', this.onConfirmResult.bind(this));
- *          }
+ *    confirmHandler = () => {
+ *       Ext.Msg.confirm('Confirmation', 'Are you sure you want to do that?', this.onConfirmResult.bind(this));
+ *    }
  * 
- *          onConfirmResult = (buttonId, value, opt) => {
- *              Ext.toast(`User clicked ${buttonId} button.`);
- *          }
+ *    onConfirmResult = (buttonId, value, opt) => {
+ *        Ext.toast(`User clicked ${buttonId} button.`);
+ *    }
  *
- *          onPromptResult = (buttonId, value) => {
- *             Ext.toast(`User clicked ${buttonId} and entered value "${value}".`);
- *          }
- *      }
- *      ```
+ *    onPromptResult = (buttonId, value) => {
+ *       Ext.toast(`User clicked ${buttonId} and entered value "${value}".`);
+ *    }
+ *}
+ *```
  */
