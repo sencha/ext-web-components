@@ -153,7 +153,7 @@ get ontopchange(){return this.getAttribute('ontopchange')};set ontopchange(ontop
 get onupdatedata(){return this.getAttribute('onupdatedata')};set onupdatedata(onupdatedata){this.setAttribute('onupdatedata',onupdatedata)}
 get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange(onwidthchange){this.setAttribute('onwidthchange',onwidthchange)}
 
-	static XTYPE() {return 'calendar_daysheader'}
+	static XTYPE() {return 'calendar-daysheader'}
   static PROPERTIESOBJECT() { return {
 "alignSelf":["string"],
 "alwaysOnTop":["boolean","number"],
@@ -548,6 +548,6 @@ get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange
 }
 (function () {
   Ext.onReady(function() {
-    window.customElements.define('ext-calendar_daysheader', ExtCalendar_daysheaderComponent);
+    window.customElements.define('ext-calendar-daysheader', ExtCalendar_daysheaderComponent);
   });
 })();
