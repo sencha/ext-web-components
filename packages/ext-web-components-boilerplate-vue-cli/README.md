@@ -55,6 +55,8 @@ Add the following to the dependencies section of package.json:
 "@webcomponents/webcomponentsjs": "^2.2.10"
 ```
 
+Make sure you are logged into the Sencha npm repository - for instructions, see this link: https://github.com/sencha/ext-web-components/blob/ext-components-7.0.x/README.md
+
 To install the npm dependencies, in the terminal or command window run the following:
 
 ```sh
