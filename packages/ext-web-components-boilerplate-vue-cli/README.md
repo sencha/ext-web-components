@@ -21,11 +21,22 @@ npm install -g @vue/cli
 
 more details at: https://cli.vuejs.org/guide/creating-a-project.html#vue-create
 
-To create a Vue CLI starter application, continue in the terminal or command window and 'cd' to the folder where you want to create your new application.  Then, use the following command to create your new Vue CLI application.  The 'vue create' command will ask several questions - answer them as you wish or refer to the Vue documentation noted above.
+To create a Vue CLI starter application, continue in the terminal or command window and 'cd' to the folder where you want to create your new application.  Then, use the following command to create your new Vue CLI application.
 
 ```sh
 vue create ext-web-components-boilerplate-vue-cli
 ```
+
+Vue CLI starts up and then asks a series of questions as selections - either refer to the Vue documentation noted above or answer as follows:
+
+* For 'Please pick a preset:' , select 'Manually select features'
+* For 'Check the features needed for your project:', unselect 'Linter / Formatter'
+* For 'Where do you prefer placing config for Babel, PostCSS, ESLint, etc.?', select the default (press 'enter')
+* For 'Save this as a preset for future projects?', select the default (press 'enter')
+
+
+
+
 
 Once the 'vue create' command is finished, move to the newly created folder and run the application:
 
