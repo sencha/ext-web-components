@@ -30,13 +30,11 @@ vue create ext-web-components-boilerplate-vue-cli
 Vue CLI starts up and then asks a series of questions as selections - either refer to the Vue documentation noted above or answer as follows:
 
 * For 'Please pick a preset:' , select 'Manually select features'
-* For 'Check the features needed for your project:', unselect 'Linter / Formatter'
+* For 'Check the features needed for your project:', unselect 'Linter / Formatter' and press 'enter'
 * For 'Where do you prefer placing config for Babel, PostCSS, ESLint, etc.?', select the default (press 'enter')
 * For 'Save this as a preset for future projects?', select the default (press 'enter')
 
-
-
-
+The 'vue create' command will run.
 
 Once the 'vue create' command is finished, move to the newly created folder and run the application:
 
@@ -45,7 +43,9 @@ cd  ext-web-components-boilerplate-vue-cli
 npm run serve
 ```
 
-Browse to http://localhost:8080 in your browser.  You should see the Vue.js starter application in the browser.
+Browse to http://localhost:8080 in your browser.  You should see the 'Welcome to Your Vue.js App' page in the browser.
+
+Now, stop the 'create vue' app from running in the terminal/command window (ctrl-c).  This prepares you for the next steps.
 
 ### Add Sencha ExtWebComponents to your Vue CLI starter application
 
@@ -54,6 +54,8 @@ To Add ExtWebComponents to your newly created Vue CLI starter application, bring
 ```sh
 code .
 ```
+
+For the next steps. make sure you are logged into the Sencha npm repository - for instructions, see this link: https://github.com/sencha/ext-web-components/blob/ext-components-7.0.x/README.md
 
 #### Do 1 of the next 2 steps:
 
@@ -69,6 +71,12 @@ Add the following to the dependencies section of package.json:
 "@webcomponents/webcomponentsjs": "^2.2.10"
 ```
 
+To install the npm dependencies, in the terminal or command window run the following:
+
+```sh
+npm install
+```
+
 or...
 Run the following commands in the terminal/command window:
 
@@ -76,14 +84,6 @@ Run the following commands in the terminal/command window:
 npm install --save @sencha/ext-web-components @sencha/ext @sencha/ext-modern @sencha/ext-modern-theme-material
 npm install --save @sencha/ext-webpack-plugin
 npm install --save @webcomponents/webcomponentsjs
-```
-
-Make sure you are logged into the Sencha npm repository - for instructions, see this link:https://github.com/sencha/ext-web-components/blob/ext-components-7.0.x/README.md
-
-To install the npm dependencies, in the terminal or command window run the following:
-
-```sh
-npm install
 ```
 
 To configure the ext-webpack-plugin for webpack in Vue, create a file named vue.config.js at the root directory (where the package.json is), and add the following:
@@ -162,3 +162,5 @@ npm run serve
 ```
 
 Browse to http://localhost:8080 in your browser.  You should see the Vue.js starter application with an ExtWebComponents Panel in the browser.
+
+![Vue.js with ExtWebComponents](vue.png)
