@@ -7,7 +7,7 @@ function (_ExtBase) {
   _inheritsLoose(ExtCalendar_monthComponent, _ExtBase);
 
   ExtCalendar_monthComponent.XTYPE = function XTYPE() {
-    return 'calendar_month';
+    return 'calendar-month';
   };
 
   ExtCalendar_monthComponent.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
@@ -3965,6 +3965,6 @@ function (_ExtBase) {
 
 (function () {
   Ext.onReady(function () {
-    window.customElements.define('ext-calendar_month', ExtCalendar_monthComponent);
+    window.customElements.define('ext-calendar-month', ExtCalendar_monthComponent);
   });
 })();

@@ -239,7 +239,7 @@ get ontopchange(){return this.getAttribute('ontopchange')};set ontopchange(ontop
 get onupdatedata(){return this.getAttribute('onupdatedata')};set onupdatedata(onupdatedata){this.setAttribute('onupdatedata',onupdatedata)}
 get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange(onwidthchange){this.setAttribute('onwidthchange',onwidthchange)}
 
-	static XTYPE() {return 'calendar_timefield'}
+	static XTYPE() {return 'calendar-timefield'}
   static PROPERTIESOBJECT() { return {
 "alignSelf":["string"],
 "alignTarget":["string"],
@@ -777,6 +777,6 @@ get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange
 }
 (function () {
   Ext.onReady(function() {
-    window.customElements.define('ext-calendar_timefield', ExtCalendar_timefieldComponent);
+    window.customElements.define('ext-calendar-timefield', ExtCalendar_timefieldComponent);
   });
 })();
