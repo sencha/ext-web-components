@@ -3,7 +3,16 @@ import '../data/calendarFull.js';
 
 export default class CalendarMonthViewComponent {
 
-    constructor() { }
+    constructor() { 
+        this.store = Ext.create('Ext.calendar.store.Calendars', {
+            autoLoad: true,
+            proxy:{
+                type: 'ajax',
+                url: '/KitchenSink/CalendarFull'
+            }
+        });
+    }
+    
 
     panelReady = (event) => {
         this.panelCmp = event.detail.cmp;
@@ -12,13 +21,6 @@ export default class CalendarMonthViewComponent {
     }
 
     calendarListReady = (event) => {
-        this.store = Ext.create('Ext.calendar.store.Calendars', {
-            autoLoad: true,
-            proxy:{
-                type: 'ajax',
-                url: '/KitchenSink/CalendarFull'
-            }
-        });
         this.calendarListReadyCmp = event.detail.cmp;
         this.calendarListReadyCmp.setStore(this.store);
     }

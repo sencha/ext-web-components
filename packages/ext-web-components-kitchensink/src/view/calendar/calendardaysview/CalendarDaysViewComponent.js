@@ -4,6 +4,13 @@ import '../data/calendarDay.js';
 export default class CalendarDaysViewComponent {
     constructor() {
         this.panelTitle = Ext.Date.format(new Date(), 'F Y');
+        this.store = Ext.create('Ext.calendar.store.Calendars', {
+            autoLoad: true,
+            proxy: {
+                type: 'ajax',
+                url: '/KitchenSink/CalendarDays'
+            }
+        });
     }
 
     panelReady = (event) => {
@@ -13,13 +20,6 @@ export default class CalendarDaysViewComponent {
 
     calendarListReady = (event) => {
         this.calendarListCmp = event.detail.cmp;
-        this.store = Ext.create('Ext.calendar.store.Calendars', {
-            autoLoad: true,
-            proxy: {
-                type: 'ajax',
-                url: '/KitchenSink/CalendarDays'
-            }
-        });
         this.calendarListCmp.setStore(this.store);
     }
 
