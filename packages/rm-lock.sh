@@ -1,8 +1,13 @@
 rm ext-web-components/package-lock.json
 rm ext-web-components-boilerplate/package-lock.json
+rm ext-web-components-boilerplate-angular-cli/package-lock.json
+rm ext-web-components-boilerplate-create-react-app/package-lock.json
+rm ext-web-components-boilerplate-vue-cli/package-lock.json
+rm ext-web-components-compress/package-lock.json
 rm ext-web-components-conference-app/package-lock.json
 rm ext-web-components-demo/package-lock.json
 rm ext-web-components-demo-angular/package-lock.json
+rm ext-web-components-demo-react/package-lock.json
 rm ext-web-components-demo-vue/package-lock.json
 rm ext-web-components-gen/package-lock.json
 rm ext-web-components-kitchensink/package-lock.json

@@ -28,51 +28,51 @@
  * + {@link Ext.data.summary.Min min}
  * + {@link Ext.data.summary.Sum sum}
  *
- *      ```HTML
- *      @example({tab: 1})
- *      <ext-container width="100%" height="100%">
- *          <ext-grid
- *            shadow="true"
- *            height="275"
- *            plugins='["gridsummaryrow"]'
- *            onready="summaryGrid.onGridReady"
- *            fullscreen="true"
- *            variableHeights="true"
- *          >
- *              <ext-column text="First Name" dataIndex="fname" flex="1"></ext-column>
- *              <ext-column text="Last Name" dataIndex="lname" flex="1"></ext-column>
- *              <ext-column text="Talent" dataIndex="talent" flex="1"></ext-column>
- *              <ext-column text="Wins" dataIndex="wins" flex="1" summary="sum"></ext-column>
- *          </ext-grid>
- *      </ext-container>
- *      ```
- *      ```javascript
- *      @example({tab: 2, packages: ['ext-web-components']})
- *      import '@sencha/ext-web-components/dist/ext-container.component';
- *      import '@sencha/ext-web-components/dist/ext-grid.component';
- *      import '@sencha/ext-web-components/dist/ext-column.component';
+ *```HTML
+ *@example({tab: 1})
+ *<ext-container width="100%" height="100%">
+ *    <ext-grid
+ *      shadow="true"
+ *      height="275"
+ *      plugins='["gridsummaryrow"]'
+ *      onready="summaryGrid.onGridReady"
+ *      fullscreen="true"
+ *      variableHeights="true"
+ *    >
+ *        <ext-column text="First Name" dataIndex="fname" flex="1"></ext-column>
+ *        <ext-column text="Last Name" dataIndex="lname" flex="1"></ext-column>
+ *        <ext-column text="Talent" dataIndex="talent" flex="1"></ext-column>
+ *        <ext-column text="Wins" dataIndex="wins" flex="1" summary="sum"></ext-column>
+ *    </ext-grid>
+ *</ext-container>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ *import '@sencha/ext-web-components/dist/ext-container.component';
+ *import '@sencha/ext-web-components/dist/ext-grid.component';
+ *import '@sencha/ext-web-components/dist/ext-column.component';
  *
- *      Ext.require('Ext.grid.plugin.Summary');
+ *Ext.require('Ext.grid.plugin.Summary');
  *
- *      export default class SummaryGridComponent {
- *          constructor() {
- *             this.store = new Ext.data.Store({
- *                data: [
- *                    { 'fname': 'Barry',  'lname': 'Allen', 'talent': 'Speedster', 'wins': 150 },
- *                    { 'fname': 'Oliver', 'lname': 'Queen', 'talent': 'Archery', 'wins': 120 },
- *                    { 'fname': 'Kara',   'lname': 'Zor-El', 'talent': 'All', 'wins': 90 },
- *                    { 'fname': 'Helena', 'lname': 'Bertinelli', 'talent': 'Weapons Expert', 'wins': 70 },
- *                    { 'fname': 'Hal',    'lname': 'Jordan', 'talent': 'Willpower', 'wins': 60   }
- *                ]
- *             });
- *          }
+ *export default class SummaryGridComponent {
+ *    constructor() {
+ *       this.store = new Ext.data.Store({
+ *          data: [
+ *              { 'fname': 'Barry',  'lname': 'Allen', 'talent': 'Speedster', 'wins': 150 },
+ *              { 'fname': 'Oliver', 'lname': 'Queen', 'talent': 'Archery', 'wins': 120 },
+ *              { 'fname': 'Kara',   'lname': 'Zor-El', 'talent': 'All', 'wins': 90 },
+ *              { 'fname': 'Helena', 'lname': 'Bertinelli', 'talent': 'Weapons Expert', 'wins': 70 },
+ *              { 'fname': 'Hal',    'lname': 'Jordan', 'talent': 'Willpower', 'wins': 60   }
+ *          ]
+ *       });
+ *    }
  *
- *          onGridReady(event) {
- *              this.summaryGridCmp = event.detail.cmp;
- *              this.summaryGridCmp.setStore(this.store);
- *          }
- *      }
- *      ```
+ *    onGridReady(event) {
+ *        this.summaryGridCmp = event.detail.cmp;
+ *        this.summaryGridCmp.setStore(this.store);
+ *    }
+ *}
+ *```
  */
 
 /**

@@ -95,7 +95,7 @@ function (_ExtBase) {
       "masked": ["boolean", "string", "object", "Ext.Mask", "Ext.LoadMask"],
       "maxHeight": ["number", "string"],
       "maxWidth": ["number", "string"],
-      "menuLabel": ["string"],
+      "menuItem": ["string"],
       "minButtonWidth": ["number"],
       "minHeight": ["number", "string"],
       "minWidth": ["number", "string"],
@@ -1366,11 +1366,6 @@ function (_ExtBase) {
         return this.ext.onItemRemove(item, index, destroying);
       }
     }, {
-      name: 'onRegionHide',
-      "function": function _function() {
-        return this.ext.onRegionHide();
-      }
-    }, {
       name: 'onRender',
       "function": function _function() {
         return this.ext.onRender();
@@ -2438,12 +2433,12 @@ function (_ExtBase) {
       this.setAttribute('maxWidth', maxWidth);
     }
   }, {
-    key: "menuLabel",
+    key: "menuItem",
     get: function get() {
-      return this.getAttribute('menuLabel');
+      return this.getAttribute('menuItem');
     },
-    set: function set(menuLabel) {
-      this.setAttribute('menuLabel', menuLabel);
+    set: function set(menuItem) {
+      this.setAttribute('menuItem', menuItem);
     }
   }, {
     key: "minButtonWidth",

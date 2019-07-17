@@ -1,0 +1,29 @@
+{
+	"name": "ext-web-components-boilerplate-vue-cli",
+    "version": "7.0.0",
+    "description": "ext-web-components-boilerplate-vue-cli",
+	"private": true,
+	"dependencies": {
+		"@babel/plugin-syntax-dynamic-import": "^7.2.0",
+		"@sencha/ext": "^7.0.0",
+		"@sencha/ext-calendar": "^7.0.0",
+		"@sencha/ext-d3": "^7.0.0",
+		"@sencha/ext-exporter": "^7.0.0",
+		"@sencha/ext-modern": "^7.0.0",
+		"@sencha/ext-modern-theme-material": "^7.0.0",
+		"@sencha/ext-modern-treegrid": "^7.0.0",
+		"@sencha/ext-ux": "^7.0.0",
+		"@sencha/ext-webpack-plugin": "^7.0.0",
+		"core-js": "^3.1.4",
+		"history": "^4.9.0",
+		"vue": "^2.6.10",
+		"vue-router": "^3.0.7"
+	},
+	"devDependencies": {
+		"@vue/cli-plugin-babel": "^3.9.2",
+		"@vue/cli-service": "^3.9.2",
+		"@webcomponents/webcomponentsjs": "^2.2.10",
+		"copy-webpack-plugin": "^5.0.3",
+		"vue-template-compiler": "^2.6.10"
+	}
+}

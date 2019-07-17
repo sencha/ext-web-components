@@ -7,39 +7,39 @@
  * functionality such as input validation, standard events, state management and look
  * and feel. Typically we create text fields inside a form, like this:
  *
- *      ```HTML
- *      @example({tab: 1})
- *      <ext-container layout="center">
- *          <ext-formpanel shadow="true">
- *              <ext-fieldset title="Separate Label and Placeholder" margin="0 0 20 0">
- *                  <ext-textfield placeHolder="Enter Name..." label="Name" required="true"></ext-textfield>
- *              </ext-fieldset>
- *              <ext-fieldset title="Label as Placeholder" margin="0 0 20 0">
- *                  <ext-textfield labelAlign="placeholder" label="Name" required="true"></ext-textfield>
- *              </ext-fieldset>
- *              <ext-fieldset title="With Error Message">
- *                  <ext-textfield
- *                      labelAlign="placeholder"
- *                      label="Label"
- *                      value="invalid value"
- *                      errorTarget="under"
- *                      required="true"
- *                      errorMessage="The value you entered is invalid."
- *                  >
- *                  </ext-textfield>
- *              </ext-fieldset>
- *          </ext-formpanel>
- *      </ext-container>
- *      ```
- *      ```javascript
- *      @example({tab: 2, packages: ['ext-web-components']})
- *      import '@sencha/ext-web-components/dist/ext-container.component';
- *      import '@sencha/ext-web-components/dist/ext-formpanel.component';
- *      import '@sencha/ext-web-components/dist/ext-textfield.component';
- *      import '@sencha/ext-web-components/dist/ext-fieldset.component';
+ *```HTML
+ *@example({tab: 1})
+ *<ext-container layout="center">
+ *    <ext-formpanel shadow="true">
+ *        <ext-fieldset title="Separate Label and Placeholder" margin="0 0 20 0">
+ *            <ext-textfield placeHolder="Enter Name..." label="Name" required="true"></ext-textfield>
+ *        </ext-fieldset>
+ *        <ext-fieldset title="Label as Placeholder" margin="0 0 20 0">
+ *            <ext-textfield labelAlign="placeholder" label="Name" required="true"></ext-textfield>
+ *        </ext-fieldset>
+ *        <ext-fieldset title="With Error Message">
+ *            <ext-textfield
+ *                labelAlign="placeholder"
+ *                label="Label"
+ *                value="invalid value"
+ *                errorTarget="under"
+ *                required="true"
+ *                errorMessage="The value you entered is invalid."
+ *            >
+ *            </ext-textfield>
+ *        </ext-fieldset>
+ *    </ext-formpanel>
+ *</ext-container>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ *import '@sencha/ext-web-components/dist/ext-container.component';
+ *import '@sencha/ext-web-components/dist/ext-formpanel.component';
+ *import '@sencha/ext-web-components/dist/ext-textfield.component';
+ *import '@sencha/ext-web-components/dist/ext-fieldset.component';
  *
- *      export default class TextFieldComponent {}
- *      ```
+ *export default class TextFieldComponent {}
+ *```
  */
 
 /**

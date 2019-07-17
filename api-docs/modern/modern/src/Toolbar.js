@@ -16,35 +16,35 @@
  *
  * ## Example
  *
- *     ```HTML
- *      @example({tab: 1})
- *      <ext-panel shadow bodyPadding=0>
- *          <ext-toolbar docked="top">
- *              <ext-button text="Default" badgeText="2">
- *              </ext-button>
- *              <ext-spacer>
- *                  <ext-segmentedbutton>
- *                      <ext-button text="Option 1" pressed></ext-button>
- *                       <ext-button text="Option 2"></ext-button>
- *                  </ext-segmentedbutton>
- *              </ext-spacer>
- *              <ext-button ui="action" text="Action">
- *              </ext-button>
- *          </ext-toolbar>
- *          Some Text!
- *      </ext-panel>
- *     ```
- *     ```javascript
- *     @example({tab: 2, packages: ['ext-web-components']})
+ *```HTML
+ *@example({tab: 1})
+ *<ext-panel shadow bodyPadding=0>
+ *    <ext-toolbar docked="top">
+ *        <ext-button text="Default" badgeText="2">
+ *        </ext-button>
+ *        <ext-spacer>
+ *            <ext-segmentedbutton>
+ *                <ext-button text="Option 1" pressed></ext-button>
+ *                <ext-button text="Option 2"></ext-button>
+ *            </ext-segmentedbutton>
+ *        </ext-spacer>
+ *        <ext-button ui="action" text="Action">
+ *        </ext-button>
+ *    </ext-toolbar>
+ *    Some Text!
+ *</ext-panel>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
  *
- *     import '@sencha/ext-web-components/dist/ext-toolbar.component';
- *     import '@sencha/ext-web-components/dist/ext-button.component';
- *     import '@sencha/ext-web-components/dist/ext-spacer.component';
- *     import '@sencha/ext-web-components/dist/ext-segmentedbutton.component';
- *     import '@sencha/ext-web-components/dist/ext-panel.component';
+ *import '@sencha/ext-web-components/dist/ext-toolbar.component';
+ *import '@sencha/ext-web-components/dist/ext-button.component';
+ *import '@sencha/ext-web-components/dist/ext-spacer.component';
+ *import '@sencha/ext-web-components/dist/ext-segmentedbutton.component';
+ *import '@sencha/ext-web-components/dist/ext-panel.component';
  * 
- *     export default class ToolbarComponent {}
- *     ```
+ *export default class ToolbarComponent {}
+ *```
  */
 /**
  * @cfg {String/Ext.Title} [title=null]

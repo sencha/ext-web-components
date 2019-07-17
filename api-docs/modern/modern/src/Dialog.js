@@ -9,73 +9,73 @@
  * popup windows, but provide similar modal experiences.
  *
  * 
- *      ```HTML
- *      @example({tab: 1})
- *      <ext-container>
- *          <ext-button
- *              text="Show Dialog"
- *              handler="dialogpopup.showDialog"
- *              ui="action raised"
- *          >
- *          </ext-button>
- *          <ext-dialog
- *              displayed="false"
- *              title="Dialog"
- *              closable="true"
- *              maximizable="true"
- *              closeAction="hide"
- *              maskTapHandler="dialogpopup.onCancel"
- *              bodyPadding="20"
- *              maxWidth="200"
- *              defaultFocus="#ok"
- *              onHide="dialogpopup.onHide"
- *              onready="dialogpopup.dialogReady"
- *           >
- *                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
- *                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
- *                commodo consequat.'
- *               <ext-button
- *                   text="Cancel"
- *                   handler="dialogpopup.onCancel"
- *               >
- *               </ext-button>
- *               <ext-button
- *                   itemId="ok"
- *                   text="OK"
- *                  handler="dialogpopup.onOk"
- *               >
- *               </ext-button>
- *          </ext-dialog>
- *      </ext-container>
- *      ```
- *      ```javascript
- *      @example({tab: 2, packages: ['ext-web-components']})
- *      import '@sencha/ext-web-components/dist/ext-container.component';
- *      import '@sencha/ext-web-components/dist/ext-dialog.component';
- *      import '@sencha/ext-web-components/dist/ext-button.component';
+ *```HTML
+ *@example({tab: 1})
+ *<ext-container>
+ *    <ext-button
+ *        text="Show Dialog"
+ *        handler="dialogpopup.showDialog"
+ *        ui="action raised"
+ *    >
+ *    </ext-button>
+ *    <ext-dialog
+ *        displayed="false"
+ *        title="Dialog"
+ *        closable="true"
+ *        maximizable="true"
+ *        closeAction="hide"
+ *        maskTapHandler="dialogpopup.onCancel"
+ *        bodyPadding="20"
+ *        maxWidth="200"
+ *        defaultFocus="#ok"
+ *        onHide="dialogpopup.onHide"
+ *        onready="dialogpopup.dialogReady"
+ *     >
+ *          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+ *          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+ *          commodo consequat.'
+ *         <ext-button
+ *             text="Cancel"
+ *             handler="dialogpopup.onCancel"
+ *         >
+ *         </ext-button>
+ *         <ext-button
+ *             itemId="ok"
+ *             text="OK"
+ *             handler="dialogpopup.onOk"
+ *         >
+ *         </ext-button>
+ *    </ext-dialog>
+ *</ext-container>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ *import '@sencha/ext-web-components/dist/ext-container.component';
+ *import '@sencha/ext-web-components/dist/ext-dialog.component';
+ *import '@sencha/ext-web-components/dist/ext-button.component';
  * 
- *      export default class DialogPopupComponent {
- *        dialogReady = (event) => {
- *            this.dialog = event.detail.cmp
- *        }
+ *export default class DialogPopupComponent {
+ *  dialogReady = (event) => {
+ *      this.dialog = event.detail.cmp
+ *  }
  * 
- *        showDialog = () => {
- *            this.dialog.setDisplayed(true);
- *        }
+ *  showDialog = () => {
+ *      this.dialog.setDisplayed(true);
+ *  }
  *
- *        onOk = () => {
- *            this.dialog.setDisplayed(false);
- *        }
+ *  onOk = () => {
+ *      this.dialog.setDisplayed(false);
+ *  }
  *
- *        onCancel = () => {
- *            this.dialog.setDisplayed(false);
- *        }
+ *  onCancel = () => {
+ *      this.dialog.setDisplayed(false);
+ *  }
  *
- *        onHide = () => {
- *            this.dialog.setDisplayed(false);
- *        }
- *      }
- *      ```
+ *  onHide = () => {
+ *      this.dialog.setDisplayed(false);
+ *  }
+ *}
+ *```
  * 
  *
  * ## Buttons

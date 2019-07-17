@@ -11,40 +11,40 @@
  * a set of columns to render.
  *
  * ## A Basic Grid
- *      ```HTML
- *      @example({tab: 1})
- *      <ext-container width="100%" height="100%">
- *          <ext-grid shadow="true" height="100%" onready="basicgrid.onGridReady">
- *              <ext-column text="Name" dataIndex="name" flex="1"></ext-column>
- *              <ext-column text="Email" dataIndex="email" flex="1"></ext-column>
- *              <ext-column text="Phone" dataIndex="phone" flex="1"></ext-column>
- *          </ext-grid>
- *      </ext-container>
- *      ```
- *      ```javascript
- *      @example({tab: 2, packages: ['ext-web-components']})
- *      import '@sencha/ext-web-components/dist/ext-container.component';
- *      import '@sencha/ext-web-components/dist/ext-grid.component';
- *      import '@sencha/ext-web-components/dist/ext-column.component';
+ *```HTML
+ *@example({tab: 1})
+ *<ext-container width="100%" height="100%">
+ *    <ext-grid shadow="true" height="100%" onready="basicgrid.onGridReady">
+ *        <ext-column text="Name" dataIndex="name" flex="1"></ext-column>
+ *        <ext-column text="Email" dataIndex="email" flex="1"></ext-column>
+ *        <ext-column text="Phone" dataIndex="phone" flex="1"></ext-column>
+ *    </ext-grid>
+ *</ext-container>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ *import '@sencha/ext-web-components/dist/ext-container.component';
+ *import '@sencha/ext-web-components/dist/ext-grid.component';
+ *import '@sencha/ext-web-components/dist/ext-column.component';
  *
- *      export default class BasicGridComponent {
- *          constructor() {
- *             this.store = new Ext.data.Store({
- *                data: [
- *                    { "name": "Lisa", "email": "lisa@simpsons.com", "phone": "555-111-1224" },
- *                    { "name": "Bart", "email": "bart@simpsons.com", "phone": "555-222-1234" },
- *                    { "name": "Homer", "email": "home@simpsons.com", "phone": "555-222-1244" },
- *                    { "name": "Marge", "email": "marge@simpsons.com", "phone": "555-222-1254" }
- *                ]
- *             });
- *          }
+ *export default class BasicGridComponent {
+ *    constructor() {
+ *       this.store = new Ext.data.Store({
+ *          data: [
+ *              { "name": "Lisa", "email": "lisa@simpsons.com", "phone": "555-111-1224" },
+ *              { "name": "Bart", "email": "bart@simpsons.com", "phone": "555-222-1234" },
+ *              { "name": "Homer", "email": "home@simpsons.com", "phone": "555-222-1244" },
+ *              { "name": "Marge", "email": "marge@simpsons.com", "phone": "555-222-1254" }
+ *          ]
+ *       });
+ *    }
  *
- *          onGridReady(event) {
- *              this.basicGridCmp = event.detail.cmp;
- *              this.basicGridCmp.setStore(this.store);
- *          }
- *      }
- *      ```
+ *    onGridReady(event) {
+ *        this.basicGridCmp = event.detail.cmp;
+ *        this.basicGridCmp.setStore(this.store);
+ *    }
+ *}
+ *```
  *
  * The code above produces a simple grid with three columns. We specified a Store which will
  * load JSON data inline.
@@ -61,40 +61,40 @@
  * A top-level column definition may contain a `columns` configuration. This means that the
  * resulting header will be a group header, and will contain the child columns.
  *
- *      ```HTML
- *      @example({tab: 1})
- *      <ext-container width="100%" height="100%">
- *          <ext-grid shadow="true" height="100%" onready="basicgrid.onGridReady">
- *              <ext-column text="Name" dataIndex="name" flex="1"></ext-column>
- *              <ext-column text="Email" dataIndex="email" flex="1" hidden="true"></ext-column>
- *              <ext-column text="Phone" dataIndex="phone" flex="1"></ext-column>
- *          </ext-grid>
- *      </ext-container>
- *      ```
- *      ```javascript
- *      @example({tab: 2, packages: ['ext-web-components']})
- *      import '@sencha/ext-web-components/dist/ext-container.component';
- *      import '@sencha/ext-web-components/dist/ext-grid.component';
- *      import '@sencha/ext-web-components/dist/ext-column.component';
+ *```HTML
+ *@example({tab: 1})
+ *<ext-container width="100%" height="100%">
+ *    <ext-grid shadow="true" height="100%" onready="basicgrid.onGridReady">
+ *        <ext-column text="Name" dataIndex="name" flex="1"></ext-column>
+ *        <ext-column text="Email" dataIndex="email" flex="1" hidden="true"></ext-column>
+ *        <ext-column text="Phone" dataIndex="phone" flex="1"></ext-column>
+ *    </ext-grid>
+ *</ext-container>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ *import '@sencha/ext-web-components/dist/ext-container.component';
+ *import '@sencha/ext-web-components/dist/ext-grid.component';
+ *import '@sencha/ext-web-components/dist/ext-column.component';
  *
- *      export default class BasicGridComponent {
- *          constructor() {
- *             this.store = new Ext.data.Store({
- *                data: [
- *                    { "name": "Lisa", "email": "lisa@simpsons.com", "phone": "555-111-1224" },
- *                    { "name": "Bart", "email": "bart@simpsons.com", "phone": "555-222-1234" },
- *                    { "name": "Homer", "email": "home@simpsons.com", "phone": "555-222-1244" },
- *                    { "name": "Marge", "email": "marge@simpsons.com", "phone": "555-222-1254" }
- *                ]
- *             });
- *          }
+ *export default class BasicGridComponent {
+ *    constructor() {
+ *       this.store = new Ext.data.Store({
+ *          data: [
+ *              { "name": "Lisa", "email": "lisa@simpsons.com", "phone": "555-111-1224" },
+ *              { "name": "Bart", "email": "bart@simpsons.com", "phone": "555-222-1234" },
+ *              { "name": "Homer", "email": "home@simpsons.com", "phone": "555-222-1244" },
+ *              { "name": "Marge", "email": "marge@simpsons.com", "phone": "555-222-1254" }
+ *          ]
+ *       });
+ *    }
  *
- *          onGridReady(event) {
- *              this.basicGridCmp = event.detail.cmp;
- *              this.basicGridCmp.setStore(this.store);
- *          }
- *      }
- *      ```
+ *    onGridReady(event) {
+ *        this.basicGridCmp = event.detail.cmp;
+ *        this.basicGridCmp.setStore(this.store);
+ *    }
+ *}
+ *```
  *
  * ## Rows and Cells
  *

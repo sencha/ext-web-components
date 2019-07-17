@@ -6,26 +6,26 @@
  * A menu item that contains a radio button item which can participate in a group of
  * mutually exclusive radio items.
  * 
- *      ```HTML
- *      @example({tab: 1})
- *      <ext-container>
- *          <ext-button text="Menu">
- *              <ext-menu rel="menu" >
- *                  <ext-menuradioitem text="Mobile" name="ui-type" />
- *                  <ext-menuradioitem text="Desktop" name="ui-type"/>
- *              </ext-menu>
- *          </ext-button>
- *      </ext-container>
- *      ```
- *      ```javascript
- *      @example({tab: 2, packages: ['ext-web-components']})
- *      import '@sencha/ext-web-components/dist/ext-container.component';
- *      import '@sencha/ext-web-components/dist/ext-button.component';
- *      import '@sencha/ext-web-components/dist/ext-menu.component';
- *      import '@sencha/ext-web-components/dist/ext-menuradioitem.component';
+ *```HTML
+ *@example({tab: 1})
+ *<ext-container>
+ *    <ext-button text="Menu">
+ *        <ext-menu rel="menu" >
+ *            <ext-menuradioitem text="Mobile" name="ui-type" />
+ *            <ext-menuradioitem text="Desktop" name="ui-type"/>
+ *        </ext-menu>
+ *    </ext-button>
+ *</ext-container>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ *import '@sencha/ext-web-components/dist/ext-container.component';
+ *import '@sencha/ext-web-components/dist/ext-button.component';
+ *import '@sencha/ext-web-components/dist/ext-menu.component';
+ *import '@sencha/ext-web-components/dist/ext-menuradioitem.component';
  * 
- *      export default class RadioItemComponent {}
- *      ```
+ *export default class RadioItemComponent {}
+ *```
  */
 
 /**

@@ -9,46 +9,46 @@
  *
  * As with all other form fields, the search field gains a "clear" button that appears whenever there
  * is text entered into the form, and which removes that text when tapped.
- *      ```HTML
- *      @example({tab: 1})
- *      <ext-container layout="center">
- *          <ext-formpanel shadow="true">
- *              <ext-searchfield
- *                   width="300"
- *                   placeholder="Search..."
- *                   onChange="searchfield.search"
- *                   onready="searchfield.searchFieldReady()"
- *              >
- *              <ext-searchfield>
- *              <ext-container
- *                  onready="searchfield.searchMessageReady()"
- *              >
- *              </ext-container>
- *          <ext-formpanel>
- *      </ext-container>
- *      ```
- *      ```javascript
- *      @example({tab: 2, packages: ['ext-web-components']})
- *      import '@sencha/ext-web-components/dist/ext-container.component';
- *      import '@sencha/ext-web-components/dist/ext-formpanel.component';
- *      import '@sencha/ext-web-components/dist/ext-searchfield.component';
+ *```HTML
+ *@example({tab: 1})
+ *<ext-container layout="center">
+ *    <ext-formpanel shadow="true">
+ *        <ext-searchfield
+ *             width="300"
+ *             placeholder="Search..."
+ *             onChange="searchfield.search"
+ *             onready="searchfield.searchFieldReady()"
+ *        >
+ *        <ext-searchfield>
+ *        <ext-container
+ *            onready="searchfield.searchMessageReady()"
+ *        >
+ *        </ext-container>
+ *    <ext-formpanel>
+ *</ext-container>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ *import '@sencha/ext-web-components/dist/ext-container.component';
+ *import '@sencha/ext-web-components/dist/ext-formpanel.component';
+ *import '@sencha/ext-web-components/dist/ext-searchfield.component';
  * 
- *      export default class SearchFieldComponent {
+ *export default class SearchFieldComponent {
  * 
- *          search = (field, value) => {
- *             this.searchFieldView.setValue(value);
- *             this.searchMessage.setHTML(`<div>You searched for ${value} </div>`);
- *          }
+ *    search = (field, value) => {
+ *       this.searchFieldView.setValue(value);
+ *       this.searchMessage.setHTML(`<div>You searched for ${value} </div>`);
+ *    }
  * 
- *          searchFieldReady = (event) => {
- *              this.searchFieldView = event.detail.cmp;
- *          }
+ *    searchFieldReady = (event) => {
+ *        this.searchFieldView = event.detail.cmp;
+ *    }
  * 
- *          searchMessageRead = (event) => {
- *              this.searchMessage = event.detail.cmp;
- *          }
- *      }
- *      ```
+ *    searchMessageRead = (event) => {
+ *        this.searchMessage = event.detail.cmp;
+ *    }
+ *}
+ *```
  *
  */
 /**

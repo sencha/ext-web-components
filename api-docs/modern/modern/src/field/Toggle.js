@@ -5,25 +5,25 @@
  *
  * Specialized {@link Ext.field.Slider} with a single thumb which only supports two
  * {@link #value values}.
- *      ```HTML
- *      @example({tab: 1})
- *      <ext-container layout="center">
- *          <ext-formpanel shadow="true">
- *              <ext-togglefield boxLabel="On" value="true"></ext-togglefield>
- *              <ext-togglefield boxLabel="Off" value="false"></ext-togglefield>
- *              <ext-togglefield boxLabel="Disabled" disabled="true"></ext-togglefield>
- *              <ext-togglefield boxLabel="Disabled (On)" disabled="true" value="true"></ext-togglefield>
- *          </ext-formpanel>
- *      </ext-container>
- *      ```
- *      ```javascript
- *      @example({tab: 2, packages: ['ext-web-components']})
- *      import '@sencha/ext-web-components/dist/ext-container.component';
- *      import '@sencha/ext-web-components/dist/ext-formpanel.component';
- *      import '@sencha/ext-web-components/dist/ext-togglefield.component';
+ *```HTML
+ *@example({tab: 1})
+ *<ext-container layout="center">
+ *    <ext-formpanel shadow="true">
+ *        <ext-togglefield boxLabel="On" value="true"></ext-togglefield>
+ *        <ext-togglefield boxLabel="Off" value="false"></ext-togglefield>
+ *        <ext-togglefield boxLabel="Disabled" disabled="true"></ext-togglefield>
+ *        <ext-togglefield boxLabel="Disabled (On)" disabled="true" value="true"></ext-togglefield>
+ *    </ext-formpanel>
+ *</ext-container>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ *import '@sencha/ext-web-components/dist/ext-container.component';
+ *import '@sencha/ext-web-components/dist/ext-formpanel.component';
+ *import '@sencha/ext-web-components/dist/ext-togglefield.component';
  *
- *      export default class ToggleFieldComponent {}
- *      ```
+ *export default class ToggleFieldComponent {}
+ *```
  */
 
 /**

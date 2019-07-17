@@ -5,25 +5,25 @@
  *
  * The Form panel presents a set of form fields and provides convenient ways to load and save data. Usually a form
  * panel just contains the set of fields you want to display.
- *      ```HTML
- *      @example({tab: 1})
- *      <ext-container layout="center" width="100%" height="100%">
- *          <ext-formpanel title="Form Panel">
- *              <ext-textfield label="First Name"></ext-textfield>
- *              <ext-textfield label="Last Name"></ext-textfield>
- *              <ext-textfield label="Account Number"></ext-textfield>
- *              <ext-button text="Submit"></ext-button>
- *          </ext-formpanel>
- *      </ext-container>
- *      ```
- *      ```javascript
- *      @example({tab: 2, packages: ['ext-web-components']})
- *      import '@sencha/ext-web-components/dist/ext-textfield.component';
- *      import '@sencha/ext-web-components/dist/ext-formpanel.component';
- *      import '@sencha/ext-web-components/dist/ext-button.component';
+ *```HTML
+ *@example({tab: 1})
+ *<ext-container layout="center" width="100%" height="100%">
+ *    <ext-formpanel title="Form Panel">
+ *        <ext-textfield label="First Name"></ext-textfield>
+ *        <ext-textfield label="Last Name"></ext-textfield>
+ *        <ext-textfield label="Account Number"></ext-textfield>
+ *        <ext-button text="Submit"></ext-button>
+ *    </ext-formpanel>
+ *</ext-container>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ *import '@sencha/ext-web-components/dist/ext-textfield.component';
+ *import '@sencha/ext-web-components/dist/ext-formpanel.component';
+ *import '@sencha/ext-web-components/dist/ext-button.component';
  *
- *      export default class PanelComponent {}
- *      ```
+ *export default class PanelComponent {}
+ *```
  *
  * ##Loading data
  *

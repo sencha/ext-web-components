@@ -9,33 +9,33 @@
  * This component has no required configurations.
  *
  * ## Examples
- *     ```HTML
- *      @example({tab: 1})
- *      <ext-container>
- *          <ext-button ui="action" ontap="datepicker.showPicker" text="Show Picker"></ext-button>
- *          <ext-datepicker
- *              onready="date.datepickerReady"
- *          >
- *          </ext-datepicker>     
- *      </ext-container>
- *     ```
- *     ```javascript
- *     @example({tab: 2, packages: ['ext-web-components']})
+ *```HTML
+ * @example({tab: 1})
+ * <ext-container>
+ *     <ext-button ui="action" ontap="datepicker.showPicker" text="Show Picker"></ext-button>
+ *     <ext-datepicker
+ *         onready="date.datepickerReady"
+ *     >
+ *     </ext-datepicker>     
+ * </ext-container>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
  *
- *     import '@sencha/ext-web-components/dist/ext-container.component';
- *     import '@sencha/ext-web-components/dist/ext-datepicker.component';
- *     import '@sencha/ext-web-components/dist/ext-button.component'; 
+ *import '@sencha/ext-web-components/dist/ext-container.component';
+ *import '@sencha/ext-web-components/dist/ext-datepicker.component';
+ *import '@sencha/ext-web-components/dist/ext-button.component'; 
  * 
- *     export default class DatePickerComponent {
- *          datepickerReady = (event) => {
- *              this.pickerCmp = event.detail.cmp;
- *          }
- * 
- *          showPicker = () => {
- *              this.pickerCmp.show();
- *          }
+ *export default class DatePickerComponent {
+ *     datepickerReady = (event) => {
+ *         this.pickerCmp = event.detail.cmp;
  *     }
- *     ```
+ * 
+ *     showPicker = () => {
+ *         this.pickerCmp.show();
+ *     }
+ *}
+ *```
  */
 /**
  * @event change
