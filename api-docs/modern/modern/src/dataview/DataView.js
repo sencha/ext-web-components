@@ -17,34 +17,34 @@
  *
  * At its simplest, a DataView is just a Store full of data and a simple template that we
  * use to render each item:
- *      ```HTML
- *      @example({tab: 1})
- *      <ext-container width="100%" height="100%">
- *          <ext-dataview
- *              itemTpl="{name} is {age} years old"
- *              onready="dataview.onDataViewready"
- *          >
- *          </ext-dataview>
- *      </ext-container>
- *      ```
- *      ```javascript
- *      @example({tab: 2, packages: ['ext-web-components']})
- *      import '@sencha/ext-web-components/dist/ext-dataview.component';
+ *```HTML
+ *@example({tab: 1})
+ *<ext-container width="100%" height="100%">
+ *    <ext-dataview
+ *        itemTpl="{name} is {age} years old"
+ *        onready="dataview.onDataViewready"
+ *    >
+ *    </ext-dataview>
+ *</ext-container>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ *import '@sencha/ext-web-components/dist/ext-dataview.component';
  *
- *      export default class DataViewComponent {
- *        onDataViewready(event) {
- *          this.dataViewCmp = event.detail.cmp;
- *          this.dataViewCmp.setStore(new Ext.data.Store({
- *             data: [
- *                  {name: 'Peter', age: 26},
- *                  {name: 'Ray', age: 21},
- *                  {name: 'Egon', age: 29},
- *                  {name: 'Winston', age: 24},
- *             ]
- *           }));
- *        }
- *      }
- *      ```
+ *export default class DataViewComponent {
+ *  onDataViewready(event) {
+ *    this.dataViewCmp = event.detail.cmp;
+ *    this.dataViewCmp.setStore(new Ext.data.Store({
+ *       data: [
+ *            {name: 'Peter', age: 26},
+ *            {name: 'Ray', age: 21},
+ *            {name: 'Egon', age: 29},
+ *            {name: 'Winston', age: 24},
+ *       ]
+ *     }));
+ *  }
+ *}
+ *```
  *
  * Here we just defined everything inline so it's all local with nothing being loaded from a server. For each of the
  * data items defined in our Store, DataView will render a {@link Ext.Component Component} and pass in the name and age
@@ -81,37 +81,37 @@
  * render the cover image and title. To do this all we have to do is grab an api key from
  * rotten tomatoes (http://developer.rottentomatoes.com/) and modify the {@link #store}
  * and {@link #itemTpl} a little:
- *      ```HTML
- *      @example({tab: 1})
- *      <ext-container width="100%" height="100%">
- *          <ext-dataview
- *              itemTpl='<h2>{collectionName}</h2><p><img src={artworkUrl100}></img></p>'
- *              onready="dataview.onDataViewready"
- *          >
- *          </ext-dataview>
- *      </ext-container>
- *      ```
- *      ```javascript
- *      @example({tab: 2, packages: ['ext-web-components']})
- *      import '@sencha/ext-web-components/dist/ext-dataview.component';
+ *```HTML
+ *@example({tab: 1})
+ *<ext-container width="100%" height="100%">
+ *    <ext-dataview
+ *        itemTpl='<h2>{collectionName}</h2><p><img src={artworkUrl100}></img></p>'
+ *        onready="dataview.onDataViewready"
+ *    >
+ *    </ext-dataview>
+ *</ext-container>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ *import '@sencha/ext-web-components/dist/ext-dataview.component';
  *
- *      export default class DataViewComponent {
- *        onDataViewready(event) {
- *          this.dataViewCmp = event.detail.cmp;
- *          this.dataViewCmp.setStore(new Ext.data.Store({
- *              autoLoad: true,
- *              proxy: {
- *                  type: 'jsonp',
- *                  url: 'https://itunes.apple.com/search?term=Pink+Floyd&entity=album',
- *                  reader: {
- *                      type: 'json',
- *                      rootProperty: 'results'
- *                 }
- *              }
- *         }));
- *       }
- *      }
- *      ```
+ *export default class DataViewComponent {
+ *  onDataViewready(event) {
+ *    this.dataViewCmp = event.detail.cmp;
+ *    this.dataViewCmp.setStore(new Ext.data.Store({
+ *        autoLoad: true,
+ *        proxy: {
+ *            type: 'jsonp',
+ *            url: 'https://itunes.apple.com/search?term=Pink+Floyd&entity=album',
+ *            reader: {
+ *                type: 'json',
+ *                rootProperty: 'results'
+ *           }
+ *        }
+ *   }));
+ * }
+ *}
+ *```
  *
  * The Store no longer has hard coded data, instead we've provided a {@link Ext.data.proxy.Proxy Proxy}, which fetches
  * the data for us. In this case we used a JSON-P proxy.

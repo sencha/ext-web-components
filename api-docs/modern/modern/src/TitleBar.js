@@ -10,27 +10,27 @@
  *
  * You can also give items of a {@link Ext.TitleBar} an `align` prop of `left` or `right`,
  * which will dock them to the `left` or `right` of the bar.
- *     ```HTML
- *      @example({tab: 1})
- *      <ext-container>
- *          <ext-titlebar title="App Title" docked="top">
- *              <ext-button align="left" iconCls="x-fa fa-bars"></ext-button>
- *              <ext-button align="right" iconCls="x-fa fa-inbox" text="Inbox"></ext-button>
- *              <ext-button align="right" iconCls="x-fa fa-user" text="Profile"></ext-button>
- *          </ext-titlebar>
- *       </ext-container>
+ *```HTML
+ *@example({tab: 1})
+ *<ext-container>
+ *    <ext-titlebar title="App Title" docked="top">
+ *        <ext-button align="left" iconCls="x-fa fa-bars"></ext-button>
+ *        <ext-button align="right" iconCls="x-fa fa-inbox" text="Inbox"></ext-button>
+ *        <ext-button align="right" iconCls="x-fa fa-user" text="Profile"></ext-button>
+ *    </ext-titlebar>
+ *</ext-container>
  *      
- *     ```
- *     ```javascript
- *     @example({tab: 2, packages: ['ext-web-components']})
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
  *
- *     import '@sencha/ext-web-components/dist/ext-button.component';
- *     import '@sencha/ext-web-components/dist/ext-container.component';
- *     import '@sencha/ext-web-components/dist/ext-titlebar.component';
+ *import '@sencha/ext-web-components/dist/ext-button.component';
+ *import '@sencha/ext-web-components/dist/ext-container.component';
+ *import '@sencha/ext-web-components/dist/ext-titlebar.component';
  * 
- *     export default class TitleBarComponent {}
+ *export default class TitleBarComponent {}
  *   
- *     ```
+ *```
  *
 /**
  * @cfg cls

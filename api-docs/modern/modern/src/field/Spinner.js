@@ -4,29 +4,29 @@
  * @xtype spinnerfield
  *
  * Wraps an HTML5 number field. Example usage:
- *      ```HTML
- *      @example({tab: 1})
- *      <ext-container layout="center">
- *          <ext-formpanel shadow="true">
- *              <ext-spinnerfield
- *                  label="Spinner"
- *                  width="150"
- *                  minValue="1"
- *                  maxValue="10"
- *                  stepValue="1"
- *              >
- *              </ext-spinnerfield>
- *          </ext-formpanel>
- *      </ext-container>
- *      ```
- *      ```javascript
- *      @example({tab: 2, packages: ['ext-web-components']})
- *      import '@sencha/ext-web-components/dist/ext-container.component';
- *      import '@sencha/ext-web-components/dist/ext-formpanel.component';
- *      import '@sencha/ext-web-components/dist/ext-spinnerfield.component';
+ *```HTML
+ *@example({tab: 1})
+ *<ext-container layout="center">
+ *    <ext-formpanel shadow="true">
+ *        <ext-spinnerfield
+ *            label="Spinner"
+ *            width="150"
+ *            minValue="1"
+ *            maxValue="10"
+ *            stepValue="1"
+ *        >
+ *        </ext-spinnerfield>
+ *    </ext-formpanel>
+ *</ext-container>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ *import '@sencha/ext-web-components/dist/ext-container.component';
+ *import '@sencha/ext-web-components/dist/ext-formpanel.component';
+ *import '@sencha/ext-web-components/dist/ext-spinnerfield.component';
  *
- *      export default class SpinnerFieldComponent {}
- *      ```
+ *export default class SpinnerFieldComponent {}
+ *```
  */
 
 /**

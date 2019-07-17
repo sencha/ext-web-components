@@ -5,24 +5,24 @@
  *
  * ActionSheet is a `Sheet` that is docked at the bottom of the screen by default.
  *
- *      ```HTML
- *      @example({tab: 1})
- *      <ext-container layout="center">
- *          <ext-actionsheet displayed="true">
- *              <ext-button ui="decline" text="Delete Draft"></ext-button>
- *              <ext-button text="Save Draft"></ext-button>
- *              <ext-button text="Cancel"></ext-button>
- *          <ext-actionsheet>
- *      </ext-container>
- *      ```
- *      ```javascript
- *      @example({tab: 2, packages: ['ext-web-components']})
- *      import '@sencha/ext-web-components/dist/ext-container.component';
- *      import '@sencha/ext-web-components/dist/ext-actionsheet.component';
- *      import '@sencha/ext-web-components/dist/ext-button.component';
+ *```HTML
+ *@example({tab: 1})
+ *<ext-container layout="center">
+ *    <ext-actionsheet displayed="true">
+ *        <ext-button ui="decline" text="Delete Draft"></ext-button>
+ *        <ext-button text="Save Draft"></ext-button>
+ *        <ext-button text="Cancel"></ext-button>
+ *    <ext-actionsheet>
+ *</ext-container>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ *import '@sencha/ext-web-components/dist/ext-container.component';
+ *import '@sencha/ext-web-components/dist/ext-actionsheet.component';
+ *import '@sencha/ext-web-components/dist/ext-button.component';
  *
- *      export default class ActionSheetComponent {}
- *      ```
+ *export default class ActionSheetComponent {}
+ *```
  */
 
 /**

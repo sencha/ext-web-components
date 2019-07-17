@@ -5,26 +5,26 @@
  *
  * A base class for all menu items that require menu-related functionality such as click handling,
  * sub-menus, icons, etc.
- *      ```HTML
- *      @example({tab: 1})
- *      <ext-container>
- *          <ext-button text="Menu">
- *              <ext-menu rel="menu" >
- *                  <ext-menuitem text="Mobile" name="ui-type" />
- *                  <ext-menuitem text="Desktop" name="ui-type"/>
- *              </ext-menu>
- *          </ext-button>
- *      </ext-container>
- *      ```
- *      ```javascript
- *      @example({tab: 2, packages: ['ext-web-components']})
- *      import '@sencha/ext-web-components/dist/ext-container.component';
- *      import '@sencha/ext-web-components/dist/ext-button.component';
- *      import '@sencha/ext-web-components/dist/ext-menu.component';
- *      import '@sencha/ext-web-components/dist/ext-menuitem.component';
+ *```HTML
+ *@example({tab: 1})
+ *<ext-container>
+ *    <ext-button text="Menu">
+ *        <ext-menu rel="menu" >
+ *            <ext-menuitem text="Mobile" name="ui-type" />
+ *            <ext-menuitem text="Desktop" name="ui-type"/>
+ *        </ext-menu>
+ *    </ext-button>
+ *</ext-container>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ *import '@sencha/ext-web-components/dist/ext-container.component';
+ *import '@sencha/ext-web-components/dist/ext-button.component';
+ *import '@sencha/ext-web-components/dist/ext-menu.component';
+ *import '@sencha/ext-web-components/dist/ext-menuitem.component';
  * 
- *      export default class ItemComponent{}
- *      ```
+ *export default class ItemComponent{}
+ *```
  */
 
 /**
