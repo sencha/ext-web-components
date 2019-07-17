@@ -12,7 +12,7 @@ This guide will show you how to install and configure ExtWebComponents in your d
 
 ExtWebComponent requires the following to be installed before proceeding:
 
-* [Node 8.10+](#getting_started_-_installing_node_and_npm)
+* [Node 8.10+](#getting_started_-_installing_node_and_npm){:target="_blank"}
 * [NPM 6+](#getting_started_-_installing_node_and_npm)
 * [Java 8](#getting_started_-_installing_java)
 
