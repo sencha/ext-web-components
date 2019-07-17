@@ -44,6 +44,9 @@ To Add ExtWebComponents to your newly created Vue CLI starter application, bring
 code .
 ```
 
+#### Do 1 of the next 2 steps:
+
+either...
 Add the following to the dependencies section of package.json:
 
 ```sh
@@ -53,6 +56,15 @@ Add the following to the dependencies section of package.json:
 "@sencha/ext-modern-theme-material": "^7.0.0",
 "@sencha/ext-webpack-plugin": "^7.0.0",
 "@webcomponents/webcomponentsjs": "^2.2.10"
+```
+
+or...
+Run the following commands in the terminal/command window:
+
+```sh
+npm install --save @sencha/ext-web-components @sencha/ext @sencha/ext-modern @sencha/ext-modern-theme-material
+npm install --save @sencha/ext-webpack-plugin
+npm install --save @webcomponents/webcomponentsjs
 ```
 
 Make sure you are logged into the Sencha npm repository - for instructions, see this link:https://github.com/sencha/ext-web-components/blob/ext-components-7.0.x/README.md
