@@ -12,7 +12,7 @@ This guide will show you how to install and configure ExtWebComponents in your d
 
 ExtWebComponent requires the following to be installed before proceeding:
 
-* [Node 8.10+](#getting_started_-_installing_node_and_npm)
+* [Node 8.10+](#getting_started_-_installing_node_and_npm){:target="_blank"}
 * [NPM 6+](#getting_started_-_installing_node_and_npm)
 * [Java 8](#getting_started_-_installing_java)
 
@@ -94,7 +94,8 @@ The resulting app uses webpack-dev-server and hot-loading. Any changes you make 
 
 The [ext-web-components repo on GitHub](https://github.com/sencha/ext-web-components) contains several example apps that you can use to learn more about ExtWebComponents.  Each has a readme that contains instructions for downloading and running:
 
-* [ext-web-components-kitchensink](https://github.com/sencha/ext-web-components/tree/ext-components-7.0.x/packages/ext-web-components-kitchensink) - Shows how to use every ExtWebComponents. See it running [here](https://examples.sencha.com/ExtWebComponents/7.0.0/).
+* [ext-web-components-kitchensink](https://github.com/sencha/ext-web-components/tree/ext-components-7.0.x/packages/ext-web-components-kitchensink) - Shows how to use every ExtWebComponents. See it running [here](https://examples.sencha.com/ExtWebComponents/7.0.0/kitchensink/).
+[ext-web-components-conference-app](https://github.com/sencha/ext-web-components/tree/ext-components-7.0.x/packages/ext-web-components-conference-app) - ExtWebComponents Conference Application Sample. See it running [here](https://examples.sencha.com/ExtWebComponents/7.0.0/conference-app/#Schedule).
 
 ## Appendix
 
