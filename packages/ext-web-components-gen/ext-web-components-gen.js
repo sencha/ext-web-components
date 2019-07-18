@@ -74,7 +74,7 @@ function stepStart() {
   var dataConfig = fs.readFileSync(nodeDir + '/config.json')
   config = JSON.parse(dataConfig)
 
-  console.log(boldGreen(`\ext-web-components-gen - Sencha ExtWebComponents Code Generator v${version}`))
+  console.log(boldGreen(`\ext-web-components-gen - Sencha Ext Web Components Code Generator v${version}`))
   console.log('')
 
   let mainDefinitions = [{ name: 'command', defaultOption: true }]
@@ -221,7 +221,7 @@ function stepCreateWithDefaults() {
 
 function stepNameYourApp() {
   new Input({
-    message: 'What would you like to name your ExtWebComponents app?',
+    message: 'What would you like to name your Ext-Web-Components app?',
     default:  config.appName
   }).run().then(answer => {
     answers['appName'] = answer
@@ -253,7 +253,7 @@ function stepPackageName() {
 
 function stepVersion() {
   new Input({
-    message: 'What version is your ExtWebComponents application?',
+    message: 'What version is your Ext-Web-Components application?',
     default: config.version
   }).run().then(answer => {
     if (semver.valid(answer) == null) {
@@ -292,12 +292,15 @@ function stepKeywords() {
     message: 'What are the npm keywords?',
     default: config.keywords
   }).run().then(answer => {
+    if (!answer) {
+      answer = "";
+    }
     var theKeywords = "";
     var keywordArray = answer.split(" ");
-     for (var i = 0; i < keywordArray.length; i++) { 
+     for (var i = 0; i < keywordArray.length; i++) {
         theKeywords += '"' + keywordArray[i] + '",'
     }
-    answers['keywords'] = theKeywords.slice(0, -1);
+    answers['keywords'] = theKeywords.slice(0, -1) || answer;
     stepAuthorName()
   })
 }
@@ -353,10 +356,10 @@ function stepGo() {
 
   var message
   if (cmdLine.defaults == true) {
-    message = 'Generate the ExtWebComponents npm project?'
+    message = 'Generate the Ext-Web-Components npm project?'
   }
   else {
-    message = 'Would you like to generate the ExtWebComponents npm project with above config now?'
+    message = 'Would you like to generate the Ext-Web-Components npm project with above config now?'
   }
 
   new Confirm({
@@ -430,7 +433,7 @@ async function stepCreate() {
   fs.writeFileSync(packageJson, packageInfoString)
 
   const indexHtml = path.join('src', 'index.html');
-  fs.writeFileSync(indexHtml, fs.readFileSync(indexHtml, 'utf8').replace('ExtWebComponents Boilerplate', answers['appName']), 'utf8')
+  fs.writeFileSync(indexHtml, fs.readFileSync(indexHtml, 'utf8').replace('Sencha Ext Web Components 7.0 Boilerplate', answers['appName']), 'utf8')
 
   try {
     const substrings = ['[ERR]', '[WRN]', '[INF] Processing', "[INF] Server", "[INF] Writing content", "[INF] Loading Build", "[INF] Waiting", "[LOG] Fashion waiting"];
@@ -456,7 +459,7 @@ async function stepCreate() {
   } catch(err) {
     console.log(boldRed('Error in npm install: ' + err));
   }
-  console.log(`${app} Your ExtWebComponents project is ready`)
+  console.log(`${app} Your Ext-Web-Components project is ready`)
   console.log(boldGreen(`\ntype "cd ${answers['packageName']}" then "npm start" to run the development build and open your new application in a web browser\n`))
  }
 
@@ -471,7 +474,7 @@ async function stepCreate() {
   if (cmdLine.name != undefined) {
     answers['appName'] = cmdLine.name
     answers['packageName'] = kebabCase(answers['appName'])
-    answers['description'] = `${answers['packageName']} description for ExtWebComponents app ${answers['appName']}`
+    answers['description'] = `${answers['packageName']} description for Ext-Web-Components app ${answers['appName']}`
   }
   else {
     answers['appName'] = config.appName
@@ -488,7 +491,7 @@ async function stepCreate() {
 }
 
 function displayDefaults() {
-  console.log(boldGreen(`Defaults for ExtWebComponents app:`))
+  console.log(boldGreen(`Defaults for Ext-Web-Components app:`))
   console.log(`appName:\t${answers['appName']}`)
   console.log('')
   console.log(`theme:\t\t${answers['theme']}`)
