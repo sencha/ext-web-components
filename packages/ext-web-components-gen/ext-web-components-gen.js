@@ -296,9 +296,8 @@ function stepKeywords() {
       answer = "";
     }
     var theKeywords = "";
-    var keywordArray = answer.split(" ");
-     for (var i = 0; i < keywordArray.length; i++) {
-        theKeywords += '"' + keywordArray[i] + '",'
+     for (var i = 0; i < answer.length; i++) {
+        theKeywords += '"' + answer[i] + '",'
     }
     answers['keywords'] = theKeywords.slice(0, -1) || answer;
     stepAuthorName()
@@ -434,6 +433,9 @@ async function stepCreate() {
 
   const indexHtml = path.join('src', 'index.html');
   fs.writeFileSync(indexHtml, fs.readFileSync(indexHtml, 'utf8').replace('Sencha Ext Web Components 7.0 Boilerplate', answers['appName']), 'utf8')
+
+  const mainHtml = path.join('src', 'view', 'main', 'MainComponent.html');
+  fs.writeFileSync(mainHtml, fs.readFileSync(mainHtml, 'utf8').replace('Sencha ExtWebComponents 7.0 Boilerplate', answers['appName']), 'utf8')
 
   try {
     const substrings = ['[ERR]', '[WRN]', '[INF] Processing', "[INF] Server", "[INF] Writing content", "[INF] Loading Build", "[INF] Waiting", "[LOG] Fashion waiting"];
