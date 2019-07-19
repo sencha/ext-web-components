@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+
 import '@sencha/ext-web-components/lib/ext-button.component';
 import '@sencha/ext-web-components/lib/ext-dataview.component';
 import '@sencha/ext-web-components/lib/ext-panel.component';

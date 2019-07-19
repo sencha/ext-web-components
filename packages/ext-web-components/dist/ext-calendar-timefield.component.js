@@ -7,7 +7,7 @@ function (_ExtBase) {
   _inheritsLoose(ExtCalendar_timefieldComponent, _ExtBase);
 
   ExtCalendar_timefieldComponent.XTYPE = function XTYPE() {
-    return 'calendar_timefield';
+    return 'calendar-timefield';
   };
 
   ExtCalendar_timefieldComponent.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
@@ -3672,6 +3672,6 @@ function (_ExtBase) {
 
 (function () {
   Ext.onReady(function () {
-    window.customElements.define('ext-calendar_timefield', ExtCalendar_timefieldComponent);
+    window.customElements.define('ext-calendar-timefield', ExtCalendar_timefieldComponent);
   });
 })();

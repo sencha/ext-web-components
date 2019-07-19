@@ -2,8 +2,23 @@ import './ScheduleComponent.html';
 
 export default class ScheduleComponent {
     constructor() {
+        this.store = Ext.create('Ext.data.Store', {
+            autoLoad: true,
+            proxy: {
+                type: 'ajax',
+                url: 'resources/schedule.json'
+            },
+            listeners: {
+                load: store => store.each(record => {
+                    if (this.favorites != null) {
+                        record.set('favorite', this.favorites.indexOf(record.getId()) !== -1);
+                    }
+                })
+            }
+        });
+
         this.storeDefaults = {
-            source: window.main.store,
+            source: this.store,
             autoDestroy: true,
             grouper: {
                 property: 'start_time',
@@ -110,7 +125,7 @@ export default class ScheduleComponent {
             window.main.backButton();
         }
 
-        window.main.store.clearFilter();
+        this.store.clearFilter();
     }
 
     resetSchedule = () => {
@@ -149,20 +164,21 @@ export default class ScheduleComponent {
         );
 
         const itemTpl = `
-            <div class="app-list-content">
-              <div class="app-list-text">
+        <div class="app-list-content">
+            <div class="app-list-text">
                 <div class="app-list-item-title">{title}</div>
                 <div class="app-list-item-details">{[values.speakerNames ? '<span>by ' + values.speakerNames + '</span>' : '']}</div>
                 <div class="app-list-item-details">{categoryName} - {location.name}</div>
                 <div class="app-list-item-details">{[(values.date).match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time}</div>
-              </div>
-              <div
-                onclick="schedule.onFavoriteClick(this)"
-                data-favorite={[ values.favorite ? "on" : "off" ]}
-                data-id="{id}"
-                class="x-item-no-tap x-font-icon md-icon-star app-list-tool app-favorite"
-              />
             </div>
+            <div
+                onclick="schedule.onFavoriteClick(this)"
+                data-id="{id}"
+                data-favorite={[ values.favorite ? "on" : "off" ]}
+                class="x-item-no-tap x-font-icon md-icon-star app-list-tool app-favorite"
+            >
+            </div>
+        </div>
         `;
         this.list1 = event.detail.cmp;
         this.list1.setItemTpl(itemTpl);

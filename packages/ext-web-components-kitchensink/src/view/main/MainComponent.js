@@ -56,12 +56,7 @@ export default class MainComponent {
 
     readyDataviewBreadcrumb = (event) => {
         this.dataviewBreadcrumbCmp = event.detail.cmp;
-        var tpl = `
-            <div class="app-toolbar">
-              {text} <span>{divider}</span>
-            </div>
-        `;
-        this.dataviewBreadcrumbCmp.setItemTpl(tpl);
+        this.dataviewBreadcrumbCmp.setStore(this.treeStore);
         this.afterAllLoaded('readyDataviewBreadcrumb');
     }
 
@@ -80,7 +75,6 @@ export default class MainComponent {
     }
 
     readySelection = (event) => {
-        //console.log('readySelection')
         this.selectionCmp = event.detail.cmp;
         var bodyStyle = `
             backgroundSize: 20px 20px;
@@ -129,31 +123,8 @@ export default class MainComponent {
         this.afterAllLoaded('readyTabPanel');
     }
 
-    generateBreadcrumb = (node) => {
-        try {
-            const path = [];
-            do {
-                path.unshift({
-                    isLeaf: !node.childNodes.length,
-                    text: node.get('text'),
-                    hash: node.get('text').toLowerCase().replace(/\s/g, ''),
-                    divider: '&nbsp;>&nbsp;'
-                });
-                node = node.parentNode;
-            } while (node);
-            path[path.length-1].divider = '';
-            return path;
-        }
-        catch(e) {
-            console.log('generateBreadcrumb');
-            console.error(e);
-        }
-    };
-
     dataviewBreadcrumbClick = (event) => {
-        var hash = event.detail.location.record.data.hash;
-        var record = this.dataviewNavCmp.getStore().findNode('hash', hash);
-        this.navigate(record);
+        this.navigate(event.detail.node);
     }
 
     dataviewNavClick = (event) => {
@@ -174,15 +145,13 @@ export default class MainComponent {
         var hash = record.data.hash;
         var childNum = record.childNodes.length;
         var node = this.dataviewNavCmp.getStore().findNode('hash', hash);
+        this.dataviewBreadcrumbCmp.setSelection(node);
 
         if (childNum == 0 && hash != undefined) {
-            this.dataviewBreadcrumbCmp.setData(this.generateBreadcrumb(node));
-
             window.location.hash = '#' + hash;
             this.showRouter();
         }
         else {
-            this.dataviewBreadcrumbCmp.setData(this.generateBreadcrumb(node));
             this.dataviewNavCmp.setData(node.childNodes);
             this.showSelection();
         }
@@ -258,7 +227,7 @@ export default class MainComponent {
                 if (route.hash == hash) {currentRoute = route;}
             }
         });
-        //var codeItem = currentRoute.hash.toLowerCase()
+
         var codeMap = window._code[currentRoute.hashlower];
         this.tabPanelCmp.removeAll();
         var componentName = currentRoute.hash + 'Component';
