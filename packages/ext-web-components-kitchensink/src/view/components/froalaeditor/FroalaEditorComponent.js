@@ -1,6 +1,5 @@
 Ext.require([ 'Ext.froala.EditorField' ]);
 import 'froala-editor/css/froala_editor.pkgd.min.css';
-// import 'froala-editor/js/plugins.pkgd.min.js';
 import './FroalaEditorComponent.html';
 
 export default class FroalaEditorComponent {
@@ -24,7 +23,7 @@ export default class FroalaEditorComponent {
       if (event.detail.cmp) {
         this.editorFieldCmp = event.detail.cmp;
         this.editorFieldCmp.setValue("<p>Four score and seven years ago.</p>");
-        
+
         this.editorFieldCmp.setListeners({
           'froala.click': (froalaComponent) => { Ext.toast({ message: 'Click!' }); }
         });
