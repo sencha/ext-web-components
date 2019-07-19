@@ -7,7 +7,7 @@ function (_ExtBase) {
   _inheritsLoose(ExtCalendar_daysheaderComponent, _ExtBase);
 
   ExtCalendar_daysheaderComponent.XTYPE = function XTYPE() {
-    return 'calendar_daysheader';
+    return 'calendar-daysheader';
   };
 
   ExtCalendar_daysheaderComponent.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
@@ -2587,6 +2587,6 @@ function (_ExtBase) {
 
 (function () {
   Ext.onReady(function () {
-    window.customElements.define('ext-calendar_daysheader', ExtCalendar_daysheaderComponent);
+    window.customElements.define('ext-calendar-daysheader', ExtCalendar_daysheaderComponent);
   });
 })();

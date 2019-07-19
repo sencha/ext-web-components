@@ -55,7 +55,7 @@ To Add ExtWebComponents to your newly created Vue CLI starter application, bring
 code .
 ```
 
-For the next steps. make sure you are logged into the Sencha npm repository - for instructions, see this link: https://github.com/sencha/ext-web-components/blob/ext-components-7.0.x/README.md
+For the next steps, make sure you are logged into the Sencha npm repository - for instructions, see this link: https://github.com/sencha/ext-web-components/blob/ext-components-7.0.x/README.md
 
 #### Do 1 of the next 2 steps:
 
