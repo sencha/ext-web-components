@@ -226,7 +226,6 @@ export default class ExtBase extends HTMLElement {
             var par = item.parentNode
             var cln = par.removeChild(item);
             var el = Ext.get(cln);
-            console.log('widget')
             this.ext.insert(i,{xtype:'widget', element:el});
             }
         }
