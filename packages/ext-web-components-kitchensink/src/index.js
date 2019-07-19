@@ -101,7 +101,7 @@ import './Data.js';
 import getMenu from './menu';
 import MainComponent from './view/main/MainComponent.js';
 import * as d3 from 'd3';
-import * as FroalaEditor from 'froala-editor';
+import * as FroalaEditor from 'froala-editor/js/froala_editor.pkgd.min.js';
 
 Ext.require([
     'Ext.layout.*',
