@@ -13,8 +13,8 @@
  *             width="200"
  *             onChange="selectfield.onchangeselectfield"
  *        >
- *        <ext-selectfield>
- *    <ext-formpanel>
+ *        </ext-selectfield>
+ *    </ext-formpanel>
  *</ext-container>
  *```
  *```javascript

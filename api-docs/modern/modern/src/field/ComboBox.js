@@ -22,7 +22,6 @@
  * set the {@link #queryMode} to `'local'`.
  *
  * # Example usage:
- *HTML
  *```HTML
  *@example({tab: 1})
  *<ext-formpanel

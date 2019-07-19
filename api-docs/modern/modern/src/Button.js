@@ -17,13 +17,13 @@
  *        handler="button.sayHello"
  *        ui="action raised" 
  *    >
- *    <ext-button>
+ *    </ext-button>
  *    <ext-button 
  *        text="Say Goodbye" 
  *        handler="button.sayGoodbye"
  *        ui="action raised" 
  *    >
- *    <ext-button>
+ *    </ext-button>
  *    <ext-container onready="button.resultContainerReady"></ext-container>
  *</ext-container>
  *```

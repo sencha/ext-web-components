@@ -12,7 +12,7 @@
  *        <ext-button ui="decline" text="Delete Draft"></ext-button>
  *        <ext-button text="Save Draft"></ext-button>
  *        <ext-button text="Cancel"></ext-button>
- *    <ext-actionsheet>
+ *    </ext-actionsheet>
  *</ext-container>
  *```
  *```javascript

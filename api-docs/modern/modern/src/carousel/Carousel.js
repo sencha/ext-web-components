@@ -19,7 +19,7 @@
  *        </ext-container>
  *        <ext-container html="<div>Slide 3!</div>">
  *        </ext-container>
- *    <ext-carousel>
+ *    </ext-carousel>
  *</ext-container>
  *```
  *```javascript
