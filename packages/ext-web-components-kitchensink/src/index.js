@@ -101,6 +101,7 @@ import './Data.js';
 import getMenu from './menu';
 import MainComponent from './view/main/MainComponent.js';
 import * as d3 from 'd3';
+import * as FroalaEditor from 'froala-editor';
 
 Ext.require([
     'Ext.layout.*',
@@ -109,6 +110,7 @@ Ext.require([
 
 function init() {
     window.d3 = d3;
+    window.FroalaEditor = FroalaEditor;
     window.menu = getMenu();
     window.routes = getRoutes(window.menu);
     window.main = new MainComponent();
