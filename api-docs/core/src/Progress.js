@@ -71,6 +71,8 @@
  *    this.innnerContainerCmp = event.detail.cmp;
  *  }
  *}
+ *
+ *window.progress = new ProgressComponent();
  *```
  */
 
