@@ -15,7 +15,7 @@
  *             accept="image"
  *         >
  *         </ext-filefield>
- *    <ext-formpanel>
+ *    </ext-formpanel>
  *</ext-container>
  *```
  *```javascript

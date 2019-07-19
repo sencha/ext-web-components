@@ -17,7 +17,7 @@
  *             name="hide"
  *         >
  *        </ext-hiddenfield>
- *    <ext-formpanel>
+ *    </ext-formpanel>
  *</ext-container>
  *```
  *```javascript

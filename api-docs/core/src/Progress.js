@@ -34,7 +34,7 @@
  *      onready="progress.progressBar2Ready"
  *    >
  *    </ext-progress>
- *<ext-panel>
+ *</ext-panel>
  *```
  *```javascript
  *@example({tab: 2, packages: ['ext-web-components']})

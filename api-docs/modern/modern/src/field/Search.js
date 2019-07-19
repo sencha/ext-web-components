@@ -19,12 +19,12 @@
  *             onChange="searchfield.search"
  *             onready="searchfield.searchFieldReady()"
  *        >
- *        <ext-searchfield>
+ *        </ext-searchfield>
  *        <ext-container
  *            onready="searchfield.searchMessageReady()"
  *        >
  *        </ext-container>
- *    <ext-formpanel>
+ *    </ext-formpanel>
  *</ext-container>
  *```
  *```javascript

@@ -16,7 +16,7 @@
  *             width="150"
  *         >
  *        </ext-numberfield>
- *    <ext-formpanel>
+ *    </ext-formpanel>
  *</ext-container>
  *```
  *```javascript

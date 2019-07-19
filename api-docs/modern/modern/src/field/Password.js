@@ -17,8 +17,8 @@
  *             required="true"
  *             revealable="true"
  *        >
- *        <ext-passwordfield>
- *    <ext-formpanel>
+ *        </ext-passwordfield>
+ *    </ext-formpanel>
  *</ext-container>
  *```
  *```javascript

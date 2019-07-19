@@ -36,7 +36,7 @@
  *             onready="sliderfield.readyMultipleValueMessage"
  *        >
  *        </ext-container>
- *    <ext-formpanel>
+ *    </ext-formpanel>
  *</ext-container>
  *```
  *```javascript

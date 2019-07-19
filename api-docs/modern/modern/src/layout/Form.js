@@ -17,6 +17,7 @@
  *    <ext-textfield label="Last Name"/>
  *    <ext-textfield label="Account Number"/>
  *    <ext-button text="Submit">
+ *    </ext-button>
  *</ext-formpanel>
  *```
  *```javascript
