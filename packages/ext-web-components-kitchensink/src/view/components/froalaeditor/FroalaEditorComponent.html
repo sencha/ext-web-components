@@ -4,9 +4,6 @@
   title="Ext.froala.EditorField insde a form panel"
   onready="froalaeditor.parentFormPanelReady"
 >
-  <ext-toolbar docked="top">
-    <ext-label onready="froalaeditor.onTopLabelReady"></ext-label>
-  </ext-toolbar>
   <ext-froalaeditorfield
     name="html"
     margin="16"
@@ -16,9 +13,7 @@
         "autofocus": true,
         "fontSize": [10, 12, 16, 24]
     }'
+    value="<p>Four score and seven years ago.</p>"
   >
   </ext-froalaeditorfield>
-  <ext-toolbar docked="bottom">
-    <ext-label onready="froalaeditor.onBottomLabelReady"></ext-label>
-  </ext-toolbar>
 </ext-formpanel>
