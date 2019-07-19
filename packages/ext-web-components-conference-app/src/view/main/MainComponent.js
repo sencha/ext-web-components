@@ -202,34 +202,55 @@ export default class MainComponent {
         }
     }
 
-    onSelectItem = (combo, newValue) => {
+    onSelectItem = (combobox, newValue) => {
         if (newValue.data.date) {
             localStorage.setItem('record', JSON.stringify(newValue.data));
+            const scheduleNode = this.navTreelistCmp.getStore().findNode('hash', 'schedule');
+            this.navTreelistCmp.setSelection(scheduleNode);
+            window.schedule.sidePanel.setHidden(false);
+            window.schedule.sideContainer.setData(JSON.parse(localStorage.getItem('record')));
 
             if (window.schedule) {
-                switch(newValue.data.date.match(/(Monday|Tuesday|Wednesday)/)[1])
-                {
-                case 'Monday' :
+                switch(newValue.data.date.match(/(Monday|Tuesday|Wednesday)/)[1]) {
+                case 'Monday' : {
                     window.schedule.tabpanelCmp.setActiveItem(0);
+                    setTimeout(function() {
+                        window.schedule.list1.setSelection(newValue);
+                        const selectedLitsItem1 = document.querySelectorAll('[data-id="'+newValue.id+'"]')[0];
+                        let coord1 = selectedLitsItem1.getBoundingClientRect();
+                        window.schedule.list1.getScrollable().scrollTo(0, (coord1.y - 2000));
+                    }, 1000);
                     break;
-                case 'Tuesday' :
+                }
+                case 'Tuesday' : {
                     window.schedule.tabpanelCmp.setActiveItem(1);
+                    setTimeout(function() {
+                        window.schedule.list2.setSelection(newValue);
+                        const selectedLitsItem2 = document.querySelectorAll('[data-id="'+newValue.id+'"]')[0];
+                        let coord2 = selectedLitsItem2.getBoundingClientRect();
+                        window.schedule.list2.getScrollable().scrollTo(0, coord2.y);
+                    }, 1000);
                     break;
-                case 'Wednesday' :
+                }
+                case 'Wednesday' : {
                     window.schedule.tabpanelCmp.setActiveItem(2);
+                    setTimeout(function() {
+                        window.schedule.list3.setSelection(newValue);
+                        const selectedLitsItem3 = document.querySelectorAll('[data-id="'+newValue.id+'"]')[0];
+                        let coord3 = selectedLitsItem3.getBoundingClientRect();
+                        window.schedule.list3.getScrollable().scrollTo(0, coord3.y);
+                    }, 1000);
+
                     break;
+                }
                 default :
                     window.schedule.tabpanelCmp.setActiveItem(0);
                 }
 
-                const scheduleNode = this.navTreelistCmp.getStore().findNode('hash', 'schedule');
-                this.navigate(scheduleNode);
-                this.navTreelistCmp.setSelection(scheduleNode);
-
-                window.schedule.sidePanel.setHidden(false);
-                window.schedule.sideContainer.setData(JSON.parse(localStorage.getItem('record')));
+                
             } else {
                 const scheduleNode = this.navTreelistCmp.getStore().findNode('hash', 'schedule');
+                console.log(scheduleNode, 'schedule');
                 this.navigate(scheduleNode);
                 this.navTreelistCmp.setSelection(scheduleNode);
             }
@@ -260,7 +281,7 @@ export default class MainComponent {
     comboboxReady = (event) => {
         const tpl = `
             <div>
-              <div class="app-event-name">{title}</div>
+              <div class="app-event-name" style="font-size:20px">{title}</div>
               <div class="app-event-speaker">{[values.speakerName ? 'by ' + values.speakerName : '']}</div>
               <div class="app-event-time">{[values && values.date && values.date.match(/(Monday|Tuesday|Wednesday)/)[1]]} {start_time} - {end_time}</div>
               <div class="app-event-location">{location.name}</div>

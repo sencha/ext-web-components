@@ -121,6 +121,7 @@ export default class SpeakersComponent {
         const scheduleNode = window.main.navTreelistCmp.getStore().findNode('hash', 'schedule');
         window.main.navigate(scheduleNode);
         window.main.navTreelistCmp.setSelection(scheduleNode);
+        window.main.onSelectItem(location, eopts.record);
     }
 
     speakerTap = (location, eopts) => {
