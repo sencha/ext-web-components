@@ -44,6 +44,8 @@
  *         this.resultContainer.setHtml('Goodbye cruel world.');
  *     }
  * }
+ *
+ * window.button = new ButtonComponent();
  * ```
  *
  * ## Icons
