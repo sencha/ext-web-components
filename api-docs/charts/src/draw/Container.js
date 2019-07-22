@@ -144,6 +144,9 @@
  *         return result;
  *    }
  *}
+ *
+ * window.draw = new DrawComponent();
+
  *```
  */
 

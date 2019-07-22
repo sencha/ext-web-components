@@ -78,6 +78,8 @@
  *        this.multipleValueMessaageView = event.detail.cmp;
  *   }
  *}
+ *
+ * window.sliderfield = new SliderFieldComponent();
  *```
  *
  */

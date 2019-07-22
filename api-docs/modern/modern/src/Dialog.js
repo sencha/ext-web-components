@@ -75,6 +75,8 @@
  *      this.dialog.setDisplayed(false);
  *  }
  *}
+ *
+ * window.dialogpopup = new DialogPopupComponent();
  *```
  * 
  *

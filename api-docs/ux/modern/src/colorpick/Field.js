@@ -21,6 +21,8 @@
  *     Ext.Msg.alert('Color', event.detail.color);
  *  }
  *}
+ *
+ * window.field = new FieldComponent();
  *```
  */
 

@@ -50,6 +50,8 @@
  *        this.editableGridCmp.setStore(this.store);
  *    }
  *}
+ *
+ * window.editablegrid = new EditableGridComponent();
  *```
  */
 

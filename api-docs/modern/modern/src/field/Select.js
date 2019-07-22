@@ -38,6 +38,8 @@
  *         return Ext.toast(`You selected the item with value ${event.detail.newValue}`);
  *    }
  *}
+ *
+ *window.selectfield = new SelectFieldComponent();
  *```
  *
  */

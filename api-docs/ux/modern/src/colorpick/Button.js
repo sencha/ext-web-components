@@ -22,6 +22,7 @@
  *     Ext.Msg.alert('Color', color);
  *  }
  *}
+ * window.button = new ButtonComponent();
  *```
  */
 

@@ -77,6 +77,8 @@
  *        this.gridCmp.setStore(this.store);
  *    }
  *}
+ *
+ * window.plugin = new PluginComponent();
  *```
  *
  * # Convenience Subclasses

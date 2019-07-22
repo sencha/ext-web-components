@@ -60,5 +60,6 @@
  *        this.rowExpanderGridCmp.setStore(this.store);
  *    }
  *}
+ * window.rowExpanderGrid = new RowExpanderGridComponent();
  *```
  */

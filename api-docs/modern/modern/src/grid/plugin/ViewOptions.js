@@ -47,6 +47,8 @@
  *        this.basicGridCmp.setStore(this.store);
  *    }
  *}
+ *
+ *  window.basicgrid = new BasicGridComponent();
  *```
  *
  * Developers may modify the menu and its contents by overriding {@link #sheet} and

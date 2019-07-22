@@ -32,6 +32,8 @@
  *        this.listView.setItemTpl(`{title}`);
  *    }
  *}
+ *
+ * window.basiclist = new BasicListComponent();
  *```
  */
 
@@ -82,6 +84,8 @@
  *       this.groupedlistView.setItemTpl(`{firstName} {lastName}`);
  *   }
  *}
+ *
+ * window.groupedlist = new GroupedListComponent();
  *```
  */
 
@@ -136,6 +140,9 @@
  *        this.positionedListView.setItemTpl(`{firstName} {lastName}`);
  *   }
  *}
+ *
+ * window.positionlistitem = new PositionedListItemComponent();
+ *
  *```
  * 
  */

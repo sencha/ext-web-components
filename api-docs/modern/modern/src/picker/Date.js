@@ -35,6 +35,7 @@
  *         this.pickerCmp.show();
  *     }
  *}
+ * window.date = new DatePickerComponent();
  *```
  */
 /**

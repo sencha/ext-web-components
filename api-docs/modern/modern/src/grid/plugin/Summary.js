@@ -72,6 +72,8 @@
  *        this.summaryGridCmp.setStore(this.store);
  *    }
  *}
+ *
+ * window.summaryGrid = new SummaryGridComponent();
  *```
  */
 

@@ -60,6 +60,9 @@
  *        this.treeListCmp.setStore(this.store);
  *   }
  *}
+ *
+ * 
+ * window.treelist = new TreeListComponent();
  *```
  *
  * To collapse the Treelist for use in a smaller navigation view see {@link #micro}.
