@@ -2,6 +2,11 @@ import './RangeEditorPluginComponent.html';
 import { generateData } from '../generateSaleData';
 import saleModel from '../saleModel';
 
+Ext.require([
+    'Ext.pivot.Grid',
+    'Ext.pivot.plugin.RangeEditor'
+]);
+
 export default class RangeEditorPluginComponent {
     constructor() {
         this.store = Ext.create('Ext.data.Store', {

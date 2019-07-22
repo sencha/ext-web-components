@@ -41,37 +41,35 @@ export default class TreeListComponent {
         this.button2Cmp.setPressed(false);
     }
 
-     toggleNav = (event) => {
-         if (this.treeCmp) {
-             this.navCmp = event.detail.value;
-             if (this.navCmp) {
-                 this.treeCmp.setUi('nav');
-                 this.treeCmp.setExpanderFirst(false);
-             } else {
-                 this.treeCmp.setUi(null);
-                 this.treeCmp.setExpanderFirst(true);
-             }
+    toggleNav = (event) => {
+        if (this.treeCmp) {
+            this.navCmp = event.detail.value;
+            if (this.navCmp) {
+                this.treeCmp.setUi('nav');
+                this.treeCmp.setExpanderFirst(false);
+            } else {
+                this.treeCmp.setUi(null);
+                this.treeCmp.setExpanderFirst(true);
+            }
+            this.button2Cmp.setPressed(false);
+        }
+    }
 
-             this.button2Cmp.setPressed(false);
-         }
-     }
-
-     toggleMicro = (event) => {
-         this.microCmp = event.detail.value;
-         if (this.microCmp) {
-             this.treeCmp.setMicro(true);
-             this.treeCmp.setExpanderFirst(false);
-             this.treeCmp.setUi('nav');
-             this.button1Cmp.setDisabled(true);
-             this.button1Cmp.setPressed(false);
-             this.button2Cmp.setPressed(true);
-         } else {
-             this.treeCmp.setMicro(false);
-             this.treeCmp.setExpanderFirst(true);
-             this.treeCmp.setUi('nav');
-             this.button1Cmp.setDisabled(false);
-             this.button1Cmp.setPressed(true);
-             this.button2Cmp.setPressed(false);
-         }
-     }
+    toggleMicro = (event) => {
+        this.microCmp = event.detail.value;
+        if (this.microCmp) {
+            this.treeCmp.setMicro(true);
+            this.treeCmp.setExpanderFirst(false);
+            this.treeCmp.setUi('nav');
+            this.button1Cmp.setDisabled(true);
+            this.button2Cmp.setPressed(true);
+        } else {
+            this.treeCmp.setMicro(false);
+            this.treeCmp.setExpanderFirst(false);
+            this.treeCmp.setUi('nav');
+            this.button1Cmp.setDisabled(false);
+            this.button1Cmp.setPressed(true);
+            this.button2Cmp.setPressed(false);
+        }
+    }
 }

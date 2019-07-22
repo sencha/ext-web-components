@@ -2,6 +2,11 @@ import './DrilldownPluginComponent.html';
 import { generateData } from '../generateSaleData';
 import saleModel from '../saleModel';
 
+Ext.require([
+    'Ext.pivot.plugin.DrillDown',
+    'Ext.pivot.Grid'
+]);
+
 export default class DrilldownPluginComponent {
     constructor() {
         this.store = Ext.create('Ext.data.Store', {
@@ -39,9 +44,7 @@ export default class DrilldownPluginComponent {
 
     onPivotGridReady = (event) => {
         this.pivotgridCmp = event.detail.cmp;
-        const plugin = [{ type: 'pivotdrilldown' }];
         this.pivotgridCmp.setMatrix(this.pivotgridMatrix);
-        this.pivotgridCmp.setPlugins(plugin);
     }
 
      onButtonReady1 = (event) => {

@@ -42,7 +42,7 @@ export default {
         }]
     }, {
         text: 'Groups',
-        iconCls: 'x-fa fa-group',
+        iconCls: 'x-fa fa-users',
         leaf: true
     }, {
         text: 'Settings',
