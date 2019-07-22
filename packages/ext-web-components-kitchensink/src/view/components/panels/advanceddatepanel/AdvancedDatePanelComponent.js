@@ -1,6 +1,7 @@
 import './AdvancedDatePanelComponent.html';
 
 Ext.require('Ext.panel.Date');
+Ext.require('Ext.layout.Center');
 
 export default class AdvancedDatePanelComponent {
     containerReady = (event) => {

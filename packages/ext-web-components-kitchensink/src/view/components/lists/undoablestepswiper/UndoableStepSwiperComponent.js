@@ -1,4 +1,5 @@
 import './UndoableStepSwiperComponent.html';
+Ext.require(['Ext.dataview.listswiper.ListSwiper']);
 
 export default class UndoableStepSwiperComponent {
     constructor() {}

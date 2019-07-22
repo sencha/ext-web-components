@@ -1,4 +1,5 @@
 import './BasicStepSwiperComponent.html';
+Ext.require(['Ext.dataview.listswiper.ListSwiper']);
 
 export default class BasicStepSwiperComponent {
     constructor() {}
