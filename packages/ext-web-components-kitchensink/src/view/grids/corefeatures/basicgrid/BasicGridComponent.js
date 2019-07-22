@@ -32,4 +32,12 @@ export default class BasicGridComponent {
         else if(value < 0) {col = 'red';}
         return `<span style='color:${col}'>${formattedValue}</span>`;
     }
+
+    renderSignPctChange = (value) => {
+        var formattedValue = Ext.util.Format.number(value, '0.00%');
+        var col = '';
+        if(value > 0) {col = 'green';}
+        else if(value < 0) {col = 'red';}
+        return `<span style='color:${col}'>${formattedValue}</span>`;
+    }
 }
