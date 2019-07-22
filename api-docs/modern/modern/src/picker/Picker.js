@@ -49,6 +49,7 @@
  *          this.pickerCmp.show();
  *     }
  *}
+ * window.picker = new PickerComponent();
  *```
  */
 /**

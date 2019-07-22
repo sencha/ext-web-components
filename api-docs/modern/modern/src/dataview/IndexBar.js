@@ -63,8 +63,8 @@
  *        this.indexBarView.setItemTpl(`<div class='contact'>{firstName} <strong>{lastName}</strong></div>`);
  *    }
  *}
- *```
- * 
+ *
+ * window.indexbar = new IndexBarComponent();
  */
 
 /**

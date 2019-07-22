@@ -44,6 +44,8 @@
  *     }));
  *  }
  *}
+ *
+ * window.dataview = new DataViewComponent();
  *```
  *
  * Here we just defined everything inline so it's all local with nothing being loaded from a server. For each of the

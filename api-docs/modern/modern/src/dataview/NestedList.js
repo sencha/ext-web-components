@@ -61,6 +61,8 @@
  *       this.nestedListView.setStore(this.store);
  *   }  
  *}
+ *
+ * window.nestedlist = new NestedListComponent();
  *```
  *
  */

@@ -48,6 +48,7 @@
  *        this.datepickerfieldView.setValue(new Date());
  *    }
  *}
+ *window.datepickerfield = new DatePickerFieldComponent();
  *```
  * 
  */

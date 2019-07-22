@@ -25,6 +25,7 @@
  *     Ext.Msg.alert('Color', color);
  *  }
  *}
+ * window.selector = new SelectorComponent();
  *```
  * 
  */
