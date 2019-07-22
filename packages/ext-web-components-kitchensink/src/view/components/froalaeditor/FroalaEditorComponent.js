@@ -22,7 +22,7 @@ export default class FroalaEditorComponent {
     onEditorFieldReady = (event) => {
       if (event.detail.cmp) {
         this.editorFieldCmp = event.detail.cmp;
-        this.editorFieldCmp.setValue("<p>Four score and seven years ago.</p>");
+        this.editorFieldCmp.setValue('');
 
         this.editorFieldCmp.setListeners({
           'froala.click': (froalaComponent) => { Ext.toast({ message: 'Click!' }); }
