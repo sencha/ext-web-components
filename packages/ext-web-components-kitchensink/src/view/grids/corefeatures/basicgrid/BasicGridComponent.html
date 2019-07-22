@@ -30,12 +30,8 @@
     <ext-column
       text="% Change"
       dataIndex="priceChangePct"
-      renderer="basicgrid.renderSign.bind(this)"
+      renderer="basicgrid.renderSignPctChange"
     >
-      <ext-renderercell
-        renderer="basicgrid.renderSign.bind(this,'0.00')"
-      >
-      </ext-renderercell>
     </ext-column>
     <ext-column
       text="Last Updated"

@@ -48,6 +48,8 @@
  *        this.searchMessage = event.detail.cmp;
  *    }
  *}
+ *
+ * window.searchfield = new SearchFieldComponent();
  *```
  *
  */

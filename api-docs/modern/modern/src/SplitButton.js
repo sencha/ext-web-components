@@ -43,6 +43,8 @@
  *         alert("Hello! The button was clicked");
  *     }
  *}
+ *
+ *  window.splitbutton = new SplitButtonComponent();
  *```
  */
 

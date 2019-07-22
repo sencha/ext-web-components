@@ -44,6 +44,8 @@
  *        this.basicGridCmp.setStore(this.store);
  *    }
  *}
+ *
+ * window.basicgrid = new BasicGridComponent();
  *```
  *
  * The code above produces a simple grid with three columns. We specified a Store which will

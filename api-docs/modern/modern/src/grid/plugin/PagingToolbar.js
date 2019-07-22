@@ -44,5 +44,6 @@
  *        this.pagingGridCmp.setStore(this.store);
  *    }
  *}
+ * window.paginggrid = new PagingGridComponent();
  *```
  */

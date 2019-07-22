@@ -58,6 +58,8 @@
  *       this.combobox.setOptions(this.data);
  *   }
  *}
+ *
+ * window.comboboxfield = new ComboBoxFieldComponent();
  *```
  *
  */

@@ -33,6 +33,7 @@
  *     Ext.toast('Hello World!')
  *   }
  *}
+ * window.toast = new ToastComponent();
  *```
  
  */

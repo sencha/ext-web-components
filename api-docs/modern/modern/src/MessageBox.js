@@ -284,5 +284,7 @@
  *       Ext.toast(`User clicked ${buttonId} and entered value "${value}".`);
  *    }
  *}
+ *
+ * window.messagebox = new MessageBoxComponent();
  *```
  */

@@ -7,7 +7,7 @@ function (_ExtBase) {
   _inheritsLoose(ExtD3_heatmapComponent, _ExtBase);
 
   ExtD3_heatmapComponent.XTYPE = function XTYPE() {
-    return 'd3_heatmap';
+    return 'd3-heatmap';
   };
 
   ExtD3_heatmapComponent.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
@@ -2713,6 +2713,6 @@ function (_ExtBase) {
 
 (function () {
   Ext.onReady(function () {
-    window.customElements.define('ext-d3_heatmap', ExtD3_heatmapComponent);
+    window.customElements.define('ext-d3-heatmap', ExtD3_heatmapComponent);
   });
 })();

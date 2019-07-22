@@ -105,7 +105,8 @@ import * as FroalaEditor from 'froala-editor/js/froala_editor.pkgd.min.js';
 
 Ext.require([
     'Ext.layout.*',
-    'Ext.data.TreeStore'
+    'Ext.data.TreeStore',
+    'Ext.webcomponents.RendererCell'
 ]);
 
 function init() {

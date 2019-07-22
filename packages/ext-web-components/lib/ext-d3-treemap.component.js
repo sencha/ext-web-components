@@ -179,7 +179,7 @@ get ontopchange(){return this.getAttribute('ontopchange')};set ontopchange(ontop
 get onupdatedata(){return this.getAttribute('onupdatedata')};set onupdatedata(onupdatedata){this.setAttribute('onupdatedata',onupdatedata)}
 get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange(onwidthchange){this.setAttribute('onwidthchange',onwidthchange)}
 
-	static XTYPE() {return 'd3_treemap'}
+	static XTYPE() {return 'd3-treemap'}
   static PROPERTIESOBJECT() { return {
 "alignSelf":["string"],
 "alwaysOnTop":["boolean","number"],
@@ -636,6 +636,6 @@ get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange
 }
 (function () {
   Ext.onReady(function() {
-    window.customElements.define('ext-d3_treemap', ExtD3_treemapComponent);
+    window.customElements.define('ext-d3-treemap', ExtD3_treemapComponent);
   });
 })();

@@ -20,8 +20,8 @@ export default class CalendarWeekViewComponent {
             this.visibleDays = 5;
             this.firstDayOfWeek = 1;
         }
-        this.calendarWeek.setFirstDayOfWeek(this.firstDayOfWeek);
-        this.calendarWeek.setVisibleDays(this.visibleDays);
+        this.calendarWeekCmp.setFirstDayOfWeek(this.firstDayOfWeek);
+        this.calendarWeekCmp.setVisibleDays(this.visibleDays);
     }
 
     panelReady = (event) => {
