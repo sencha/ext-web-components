@@ -7,7 +7,7 @@ function (_ExtBase) {
   _inheritsLoose(ExtD3_treeComponent, _ExtBase);
 
   ExtD3_treeComponent.XTYPE = function XTYPE() {
-    return 'd3_tree';
+    return 'd3-tree';
   };
 
   ExtD3_treeComponent.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
@@ -2969,6 +2969,6 @@ function (_ExtBase) {
 
 (function () {
   Ext.onReady(function () {
-    window.customElements.define('ext-d3_tree', ExtD3_treeComponent);
+    window.customElements.define('ext-d3-tree', ExtD3_treeComponent);
   });
 })();
