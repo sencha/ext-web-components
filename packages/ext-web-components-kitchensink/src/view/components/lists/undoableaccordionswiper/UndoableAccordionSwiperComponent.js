@@ -1,4 +1,5 @@
 import './UndoableAccordionSwiperComponent.html';
+Ext.require(['Ext.dataview.listswiper.ListSwiper']);
 
 export default class UndoableAccordionSwiperComponent {
     constructor() {}

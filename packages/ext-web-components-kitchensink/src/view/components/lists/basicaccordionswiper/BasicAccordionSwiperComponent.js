@@ -1,4 +1,5 @@
 import './BasicAccordionSwiperComponent.html';
+Ext.require(['Ext.dataview.listswiper.ListSwiper']);
 
 export default class BasicAccordionSwiperComponent {
     constructor() {}

@@ -1,10 +1,14 @@
 import './NeedleGaugeComponent.html';
+Ext.require('Ext.ux.gauge.needle.Diamond');
+Ext.require('Ext.ux.gauge.needle.Arrow');
+Ext.require('Ext.ux.gauge.needle.Wedge');
+Ext.require('Ext.ux.gauge.needle.Spike');
 
 export default class NeedleGaugeComponent {
     constructor() {
         this.value = 30;
-        this.outerradius = {outerRadius:'100%'};
-        this.innerradius = {type:'arrow'};
+        this.outerradius = {type: 'diamond', outerRadius:'100%'};
+        this.innerradius = {type:'arrow', innerRadius: 0};
     }
 
     updateGauges = (event) => {

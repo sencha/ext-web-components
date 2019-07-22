@@ -74,11 +74,7 @@
       <ext-textfield
           label="Custom Format Regex: Uppercase letters only"
           name="uppercase"
-          validators='{
-            "type": "format",
-            "matcher": "/^[A-Z]*$/",
-            "message": "Only uppercase letters are allowed."
-        }'
+          onReady="validation.regexTestFieldReady"
       >
       </ext-textfield>
       <ext-textfield
