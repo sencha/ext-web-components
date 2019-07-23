@@ -7,8 +7,8 @@
  * used as the foundation for all of the chart classes but may also be created directly
  * in order to create custom drawings.
  *
- *@example({tab: 1})
  *```HTML
+ *@example({tab: 1})
  *<ext-container padding="10" layout="fit" fitToParent="true" height="100%">
  *    <ext-panel shadow="true" layout="fit">
  *        <ext-toolbar docked="top">

@@ -23,40 +23,34 @@
  *@example({tab: 1})
  *<ext-container>
  *    <ext-panel
- *        shadow
+ *        shadow="true"
  *        title="Panel"
- *        height={300}
- *        width={500}
- *        tools='{[
- *            { "type": "minimize", "handler": "toolHandler" },
- *            { "type": "refresh, "handler": "toolHandler" },
- *            { "type": "save", "handler": "toolHandler" },
- *            { "type": "search", "handler": "toolHandler" },
- *            { "type": "close", "handler": "toolHandler" }
- *        ]}'
+ *        height="300"
+ *        width="500"
+ *        onready="mainPanel.onMainPanelReady"
  *    >
  *        <p>Panel Body</p>
  *    </ext-panel>
- *    <ext-button ui="action" handler={() => this.refs.modal.show()} margin="20 0 0 0" text="Show Modal"/>
+ *    <ext-button ui="action" ontap="mainPanel.modalClick" margin="20 0 0 0" text="Show Modal"></ext-button>
  *    <ext-panel
- *        ref="modal"
  *        title="Floated Panel"
- *        modal
- *        floated
- *        centered
- *        hideOnMaskTap
- *        width={Ext.filterPlatform('ie10') ? '100%' : (Ext.os.deviceType == 'Phone') ? 260 : 400}
- *        maxHeight={Ext.filterPlatform('ie10') ? '30%' : (Ext.os.deviceType == 'Phone') ? 220 : 400}
- *        showAnimation='{{
+ *        modal="true"
+ *        floated="true"
+ *        centered="true"
+ *        hideOnMaskTap="true"
+ *        width="400"
+ *        maxHeight="400"
+ *        onready="mainPanel.onModalPanelReady"
+ *        showAnimation='{
  *             "type": "popIn",
  *             "duration": 250,
  *             "easing": "ease-out"
- *        }}'
- *        hideAnimation='{{
+ *        }'
+ *        hideAnimation='{
  *             "type": "popOut",
  *             "duration": 250,
  *             "easing": "ease-out"
- *        }}'
+ *        }'
  *    >
  *        <p>This is a modal, centered and floated panel. hideOnMaskTap is true by default so we can tap anywhere outside the overlay to hide it.</p>
  *    </ext-panel>
@@ -70,48 +64,32 @@
  * 
  *Ext.require('Ext.Toast');
  * 
- *export default class PanelComponent {
+ *export default class MainPanelComponent {
  *   toolHandler = (owner, tool) => {
  *      Ext.toast(`You clicked ${tool.config.type}`);
  *   }
+ * 
+ *   onMainPanelReady = (event) => {
+ *       this.mainPanel = event.detail.cmp;
+ *       this.mainPanel.setTools([
+ *          { type: "minimize", handler: this.toolHandler.bind(this) },
+ *          { type: "refresh", handler: this.toolHandler.bind(this) },
+ *          { type: "save", handler: this.toolHandler.bind(this) },
+ *          { type: "search", handler: this.toolHandler.bind(this) },
+ *          { type: "close", handler: this.toolHandler.bind(this) }
+ *       ]);
+ *   }
+ * 
+ *   onModalPanelReady = (event) => {
+ *      this.modalPanelCmp = event.detail.cmp;
+ *   }
+ * 
+ *   modalClick = (owner, tool) => {
+ *      this.modalPanelCmp.show();
+ *   }
  *}
+ *window.mainPanel = new MainPanelComponent();
  *```
- *
- *     import '@sencha/ext-web-components/dist/ext-container.component';
- *     import '@sencha/ext-web-components/dist/ext-button.component';
- *     import '@sencha/ext-web-components/dist/ext-panel.component';
- *
- *     Ext.require('Ext.Toast');
- *
- *     export default class PanelComponent {
- *          panelReady = (event) => {
- *              const panelCmp = event.detail.cmp;
- *              if (Ext.filterPlatform('ie10')) {
- *                  panelCmp.setWidth('100%');
- *                  panelCmp.setmaxHeight('30%');
- *              }
- *              else if (Ext.os.deviceType == 'Phone') {
- *                  panelCmp.setWidth('260')
- *                  panelCmp.setmaxHeight('220')
- *              }
- *              else {
- *                 panelCmp.setWidth('400')
- *                 panelCmp.setmaxHeight('400')
- *              }
- *              panelCmp.setTools([
- *                  { type: 'minimize', handler: this.toolHandler.bind(this) }
- *                  { type: 'refresh', handler: this.toolHandler.bind(this) }
- *                  { type: 'save', handler: this.toolHandler.bind(this) }
- *                  { type: 'search', handler: this.toolHandler.bind(this) }
- *                  { type: 'close', handler: this.toolHandler.bind(this) }        
- *              ]);
- *            }
- *          toolHandler = (owner, tool) => {
- *              Ext.toast(`You clicked ${tool.config.type || 'a custom tool'}.`);
- *          }
- *      }
- *     ```
- *
 /**
  * @cfg {Boolean/Object} [header=null]
  * Pass as `false` to prevent a header from being created.

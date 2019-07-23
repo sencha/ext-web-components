@@ -96,6 +96,7 @@ import '@sencha/ext-web-components/dist/ext-checkboxgroup.component';
 import '@sencha/ext-web-components/dist/ext-component.component';
 import '@sencha/ext-web-components/dist/ext-breadcrumbbar.component';
 import '@sencha/ext-web-components/dist/ext-froalaeditorfield.component';
+import '@sencha/ext-web-components/dist/ext-accordion.component';
 
 import './Data.js';
 import getMenu from './menu';

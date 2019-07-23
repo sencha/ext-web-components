@@ -21,20 +21,23 @@
  *@example({tab: 1})
  *<ext-container layout="center">
  *    <ext-formpanel
- *        shadow="true"
- *    >
- *        <ext-datepickerfield
- *            width="150"
- *            destroyPickerOnHide="true"
- *            onready="datepickerfield.onReadyDatePickerField()"
- *            label="Date"
- *            picker='{
- *                           yearFrom: 1990
- *                         }'
- *         >
- *        </ext-datepickerfield>
- *    </ext-formpanel>
- *</ext-container>
+ *      layout='{"type": "vbox", "align": "stretch"}'
+ *      width="300"
+ *      height="100"
+ *      bodyPadding="10"
+ *      shadow="true"
+*     >
+* <ext-datepickerfield
+*  destroyPickerOnHide="true"
+*  label="Date"
+*  picker='{
+*   "yearFrom": "1990"
+*  }'
+*  onready="datepickerfield.datePickerFieldReady"
+* >
+* </ext-datepickerfield>
+* </ext-formPanel>
+* </ext-container>
  *```
  *```javascript
  *@example({tab: 2, packages: ['ext-web-components']})
@@ -43,7 +46,7 @@
  *import '@sencha/ext-web-components/dist/ext-formpanel.component';
  * 
  *export default class DatePickerFieldComponent {
- *    onReadyDatePickerField(event) {
+ *    datePickerFieldReady(event) {
  *        this.datepickerfieldView = event.detail.cmp;
  *        this.datepickerfieldView.setValue(new Date());
  *    }

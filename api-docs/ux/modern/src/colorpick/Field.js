@@ -6,7 +6,7 @@
  *```HTML
  *@example({tab: 1})
  *<ext-colorfield
- *   onchange="field.showMessage"
+ *   onchange="colorField.showMessage"
  *   format="hex6"
  *   value="00f"
  *>
@@ -16,13 +16,13 @@
  *@example({tab: 2, packages: ['ext-web-components']})
  *import '@sencha/ext-web-components/dist/ext-colorfield.component';
  * 
- *export default class FieldComponent {
+ *export default class ColorFieldComponent {
  *  showMessage = (event) => {
  *     Ext.Msg.alert('Color', event.detail.color);
  *  }
  *}
  *
- * window.field = new FieldComponent();
+ * window.colorField = new ColorFieldComponent();
  *```
  */
 

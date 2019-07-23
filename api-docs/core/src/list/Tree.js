@@ -32,7 +32,7 @@
  *              children: [{
  *                text: 'detention',
  *                leaf: true,
- *                iconCls: 'x-fa fa-frown-o'
+ *                iconCls: 'x-fa fa-frown'
  *              }, {
  *                text: 'homework',
  *                expanded: true,
@@ -49,7 +49,7 @@
  *              }, {
  *                text: 'buy lottery tickets',
  *                leaf: true,
- *                iconCls: 'x-fa fa-usd'
+ *                iconCls: 'x-fa fa-hand-holding-usd'
  *              }]
  *           }
  *       });

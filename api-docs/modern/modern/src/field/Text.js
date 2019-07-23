@@ -23,7 +23,6 @@
  *                label="Label"
  *                value="invalid value"
  *                errorTarget="under"
- *                required="true"
  *                errorMessage="The value you entered is invalid."
  *            >
  *            </ext-textfield>

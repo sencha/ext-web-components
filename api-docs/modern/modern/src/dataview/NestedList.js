@@ -8,9 +8,10 @@
  * 
  *```HTML
  *@example({tab: 1})
- *<ext-container layout="center">
+ *<ext-container layout="fit">
  *    <ext-nestedlist
  *        displayField="text"
+ *        height="600px"
  *        title="Groceries"
  *        onready="nestedlist.readyNestedList"
  *    >
