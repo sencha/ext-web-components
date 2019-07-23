@@ -7,7 +7,7 @@ Ext.require([
 ]);
 
 export default class DragFormToGridComponent {
-	constructor(){}
+    constructor(){}
 
     dataPanelReady(event) {
         this.dataPanelCmp = event.detail.cmp;
@@ -17,11 +17,11 @@ export default class DragFormToGridComponent {
         this.parentPanelCmp = event.detail.cmp;
     }
 
-	patientDataViewReady(event) {
-		this.patientDataViewCmp = event.detail.cmp;
+    patientDataViewReady(event) {
+        this.patientDataViewCmp = event.detail.cmp;
 
-		this.patientDataViewCmp.setStore({
-			fields: ['name', 'address', 'telephone'],
+        this.patientDataViewCmp.setStore({
+            fields: ['name', 'address', 'telephone'],
             data: [{
                 insuranceCode: '11111',
                 name: 'Fred Bloggs',
@@ -48,8 +48,8 @@ export default class DragFormToGridComponent {
                 address: 'Talbot County, Maryland',
                 telephone: 'N/A'
             }]
-		});
-		this.patientDataViewCmp.setItemTpl(`
+        });
+        this.patientDataViewCmp.setItemTpl(`
 			<tpl for=".">
 				<div class="patient-source">
 					<table>
@@ -62,12 +62,12 @@ export default class DragFormToGridComponent {
 				</div>
 			</tpl>
 		`);
-	}
+    }
 
-	hospitalGridReady(event) {
-		this.hospitalGridCmp = event.detail.cmp;
-		this.hospitalGridCmp.setItemConfig({
-			body: {
+    hospitalGridReady(event) {
+        this.hospitalGridCmp = event.detail.cmp;
+        this.hospitalGridCmp.setItemConfig({
+            body: {
                 tpl:`
 					<tpl if="patients">
 			            <tpl for="patients">
@@ -80,11 +80,11 @@ export default class DragFormToGridComponent {
 			            	<div class="empty-txt">Drop patients here</div>
 		            </tpl>
 				`,
-				cls: 'hospital-target'
-			}
-		});
+                cls: 'hospital-target'
+            }
+        });
 
-		this.hospitalGridCmp.setStore({
+        this.hospitalGridCmp.setStore({
             fields: ['name', 'address', 'telephone', 'patients'],
             data: [{
                 code: 'AAAAA',
@@ -118,29 +118,30 @@ export default class DragFormToGridComponent {
             tap: this.onRemoveTapped
         });
     }
-    
+
     registerDragZone = () => {
         let me = this.dataPanelCmp;
         let patientView = this.patientDataViewCmp;
         let touchEvents = Ext.supports.Touch && Ext.supports.TouchEvents;
+        let context = this;
 
         me.dragZone = Ext.create('Ext.plugin.dd.DragZone', {
             element: patientView.bodyElement,
             handle: '.patient-source',
-            view: patientView,  
-            $configStrict: false,
+            view: patientView,
             activateOnLongPress: touchEvents ? true : false,
             proxy: {
                 cls: 'x-proxy-drag-el patient-proxy-el'
             },
-
+            $configStrict: false,
             getDragText: function(info) {
-                var selector = '.x-dataview-item',
-                    el = Ext.fly(info.eventTarget).up(selector);
+                // var selector = '.x-dataview-item';
+                var result = context.getParentElement(info.eventTarget, 'x-dataview-item');
 
-                return el.dom.innerHTML;
+                if (result.isFound) {
+                    return result.searchedElement.innerHTML;
+                }
             },
-
             getDragData: function(e) {
                 return {
                     patientData: this.view.mapToRecord(e)
@@ -151,7 +152,7 @@ export default class DragFormToGridComponent {
 
     registerDropZone = () => {
         let mainContext = this;
-        let me = this.parentPanelCmp
+        let me = this.parentPanelCmp;
         let hospitalView = this.hospitalGridCmp;
 
         me.dropZone = Ext.create('Ext.plugin.dd.DropZone', {
@@ -164,19 +165,17 @@ export default class DragFormToGridComponent {
                 let me = this;
                 let ddManager = Ext.dd.Manager;
                 let targetEl = ddManager.getTargetEl(info);
-                let rowBody = Ext.fly(targetEl);
-                let isRowBody = rowBody.hasCls('hospital-target');
+
+                let result = mainContext.getParentElement(targetEl, 'x-rowbody');
+                let isRowBody = result.isFound;
+                if (!isRowBody) {
+                    return;
+                }
+
+                let rowBody = Ext.get(result.searchedElement);
                 let hospital;
                 let patients;
                 let name;
-
-                if (!isRowBody) {
-                    rowBody = Ext.fly(targetEl).parent('.x-rowbody');
-
-                    if (rowBody) {
-                        isRowBody = rowBody.hasCls('hospital-target');
-                    }
-                }
 
                 me.toggleDropMarker(info, false);
 
@@ -264,7 +263,7 @@ export default class DragFormToGridComponent {
 
     onRemoveTapped = (e, target) => {
         let mainContext = this;
-        let me = this;
+        // let me = this;
         let patientIndex = +target.getAttribute('index');
         let rowBody = Ext.Component.from(target);
         let record = rowBody.getRecord();
@@ -288,4 +287,23 @@ export default class DragFormToGridComponent {
         me.dragZone = me.dropZone = Ext.destroy(me.dragZone, me.dragZone);
         me.callParent();
     };
+
+    getParentElement = (selectedElement, selector) => {
+        let isFound = false;
+        let searchedElement = null;
+
+        while(!isFound) {
+            if (selectedElement.className.includes(selector)) {
+                isFound = true;
+                searchedElement = selectedElement;
+            } else {
+                selectedElement = selectedElement.parentNode;
+                if (selectedElement.tagName === 'BODY') {
+                    break;
+                }
+            }
+        }
+
+        return { searchedElement, isFound };
+    }
 }
