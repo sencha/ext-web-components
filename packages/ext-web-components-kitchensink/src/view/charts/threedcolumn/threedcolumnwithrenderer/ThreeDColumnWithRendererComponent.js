@@ -17,19 +17,6 @@ export default class ThreeDColumnWithRendererComponent {
         });
     }
 
-    onDownloadButtonReady = (event) => {
-        this.downloadButtonCmp = event.detail.cmp;
-        this.downloadButtonCmp.on('tap', this.downloadChart.bind(this));
-    }
-
-    downloadChart() {
-        if (Ext.is.Desktop) {
-            this.cartesianCmp.download({ filename: 'Chart' });
-        } else {
-            this.cartesianCmp.preview();
-        }
-    }
-
     cartesianReady = (event) => {
         this.cartesianCmp = event.detail.cmp;
         this.cartesianCmp.setAxes([
