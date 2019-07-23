@@ -1,4 +1,5 @@
 import './DisclosureListComponent.html';
+Ext.require('Ext.MessageBox');
 
 export default class DisclosureListComponent {
     constructor() {}
