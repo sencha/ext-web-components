@@ -17,6 +17,7 @@
  *         ui="action alt" 
  *         iconCls="x-fa fa-heart" 
  *         margin="10"
+ *         onready="splitbutton.splitButtonReady"
  *     >
  *     </ext-splitbutton>
  *</ext-container>

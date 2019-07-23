@@ -12,9 +12,9 @@
  *```HTML
  * @example({tab: 1})
  * <ext-container>
- *     <ext-button ui="action" ontap="datepicker.showPicker" text="Show Picker"></ext-button>
+ *     <ext-button ui="action" ontap="date.showPicker" text="Show Picker"></ext-button>
  *     <ext-datepicker
- *         onready="date.datepickerReady"
+ *         onready="datepickerCmp.datepickerReady"
  *     >
  *     </ext-datepicker>     
  * </ext-container>
@@ -35,7 +35,7 @@
  *         this.pickerCmp.show();
  *     }
  *}
- * window.date = new DatePickerComponent();
+ * window.datepickerCmp = new DatePickerComponent();
  *```
  */
 /**

@@ -16,7 +16,8 @@
  *         ui="action"
  *         ontap="toast.onTap"
  *         text="Show Toast"
- *    />
+ *    >
+ *     </ext-button>
  *</ext-container>
  *      
  *```

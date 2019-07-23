@@ -9,18 +9,23 @@
  * configurations (see {@link Ext.Button#iconCls iconCls} for additional information).
  * 
  *```HTML
- *@example({tab: 1})
- *<ext-tabpanel>
- *    <ext-container title="Tab 1">
- *         This is content for Tab 1!
- *    </ext-container>
- *    <ext-container title="Tab 2">
- *         This is content for Tab 2!
- *    </ext-container>
- *    <ext-container title="Tab 3">
- *         This is content for Tab 3!
- *    </ext-container>
- *</ext-tabpanel>
+*@example({tab: 1})
+*<ext-tabpanel
+* flex="1"
+* shadow="true"
+* height="100%"
+* defaults='{"cls": "card","layout": "center"}'
+*>
+*<ext-panel title="Tab 1" layout="center">
+*<ext-container flex="1" html="By default, tabs are aligned to the top of a view."></ext-container>
+*</ext-panel>
+* <ext-panel flex="1" title="Tab 2" layout="center">
+*<ext-container flex="1" html="A TabPanel can use different animations by setting <code>layout.animation.</code>"></ext-container>
+*</ext-panel>
+*<ext-panel title="Tab 3" layout="center">
+* <ext-container cls="action" html="User tapped Tab 3"></ext-container>
+*</ext-panel>
+*</ext-tabpanel>
  *```
  *```javascript
  *@example({tab: 2, packages: ['ext-web-components']})
