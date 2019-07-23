@@ -65,6 +65,7 @@
  *}
  *
  * window.indexbar = new IndexBarComponent();
+ *```
  */
 
 /**

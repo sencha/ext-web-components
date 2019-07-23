@@ -14,7 +14,7 @@
  *<ext-container layout="center">
  *    <ext-formpanel
  *        shadow="true"
- *        layout='{"type": "vbox", align: "left"}'
+ *        layout='{"type": "vbox", "align": "left"}'
  *     >  
  *        <ext-checkboxfield boxLabel="Unchecked"></ext-checkboxfield>
  *        <ext-checkboxfield boxLabel="Checked" checked></ext-checkboxfield>
