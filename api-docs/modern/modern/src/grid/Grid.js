@@ -66,7 +66,7 @@
  *```HTML
  *@example({tab: 1})
  *<ext-container width="100%" height="100%">
- *    <ext-grid shadow="true" height="100%" onready="basicgrid.onGridReady">
+ *    <ext-grid shadow="true" height="100%" onready="basicgridColumn.onGridReady">
  *        <ext-column text="Name" dataIndex="name" flex="1"></ext-column>
  *        <ext-column text="Email" dataIndex="email" flex="1" hidden="true"></ext-column>
  *        <ext-column text="Phone" dataIndex="phone" flex="1"></ext-column>
@@ -79,7 +79,7 @@
  *import '@sencha/ext-web-components/dist/ext-grid.component';
  *import '@sencha/ext-web-components/dist/ext-column.component';
  *
- *export default class BasicGridComponent {
+ *export default class BasicGridColumnComponent {
  *    constructor() {
  *       this.store = new Ext.data.Store({
  *          data: [
@@ -92,10 +92,13 @@
  *    }
  *
  *    onGridReady(event) {
- *        this.basicGridCmp = event.detail.cmp;
- *        this.basicGridCmp.setStore(this.store);
+ *        this.basicGridColumnCmp = event.detail.cmp;
+ *        this.basicGridColumnCmp.setStore(this.store);
  *    }
+ *
+ *    window.basicgridColumn = new BasicGridColumnComponent();
  *}
+ *
  *```
  *
  * ## Rows and Cells
