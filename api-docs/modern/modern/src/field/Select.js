@@ -12,6 +12,11 @@
  *             label="Select"
  *             width="200"
  *             onChange="selectfield.onchangeselectfield"
+ *             options='[
+ *                 { "text": "Option 1", "value": "1" },
+ *                 { "text": "Option 2", "value": "2" },
+ *                 { "text": "Option 3", "value": "3" }
+ *             ]'
  *        >
  *        </ext-selectfield>
  *    </ext-formpanel>
@@ -25,15 +30,6 @@
  * 
  *export default class SelectFieldComponent {
  *      
- *    selectFieldReady(event) {
- *        this.selectFieldView = event.detail.cmp;
- *        this.selectFieldView.setOptions([  
- *                { text: "Option 1", value: 1 },
- *                { text: "Option 2", value: 2 },
- *                { text: "Option 3", value: 3 }
- *            ]);
- *    }
- * 
  *    onchangeselectfield = (event) => {
  *         return Ext.toast(`You selected the item with value ${event.detail.newValue}`);
  *    }

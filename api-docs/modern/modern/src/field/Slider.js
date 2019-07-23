@@ -18,17 +18,19 @@
  *        <ext-sliderfield
  *             onChange="sliderfield.onSingleChange"
  *             label="Single Thumb"
+ *             value="20"
  *             onready="sliderfield.readySingleChangeSliderField"
  *        >
  *        </ext-sliderfield>
  *        <ext-container
  *            style='{marginBottom: "20px"}'
- *            onready="readySingleValueMessage"
+ *            onready="sliderfield.readySingleValueMessage"
  *        >
  *        </ext-container>
  *        <ext-sliderfield
  *             onChange="sliderfield.onMultipleChange"
  *             label="Multiple Thumbs"
+ *             value="[10,70]"
  *             onready="sliderfield.readyMultipleChangeSliderField"
  *        >
  *        </ext-sliderfield>
@@ -48,12 +50,12 @@
  *export default class SliderFieldComponent {
  * 
  *   constructor() {
+ *       this.singleValue = 20;
  *       this.multipleValue = [10, 70];
  *   }
  *          
- *   onSingleChange = (field, value) => {
- *       this.singleValueSliderFieldView.setValue(value);
- *       this.singleValueMessaageView.setHTML(`Values: ${value}`)
+ *   onSingleChange = (event) => {
+ *       this.singleValueMessageView.setHTML(`Values: ${event.detail.newValue}`)
  *   }
  *
  *   readySingleChangeSliderField = (event) => {
@@ -64,18 +66,18 @@
  *       this.multipleValueSliderFieldView = event.detail.cmp;
  *   }
  * 
- *   onMultipleChange = (field, value) => {
- *       this.multipleValue.push(value);
- *       this.multipleValueSliderFieldView.setValue(value);
- *       this.multipleValueMessaageView.setHTML(`Values: ${this.multipleValue.join(',')}`)
+ *   onMultipleChange = (event) => {
+ *       this.multipleValueMessageView.setHTML(`Values: ${event.detail.newValue.join(',')}`)
  *   }
  * 
  *   readyMultipleValueMessage = (event) => {
- *        this.singleValueMessaageView = event.detail.cmp;
+ *        this.multipleValueMessageView = event.detail.cmp;
+ *        this.multipleValueMessageView.setHtml(`Values: ${this.multipleValue}`)
  *   }
  * 
  *   readySingleValueMessage = (event) => {
- *        this.multipleValueMessaageView = event.detail.cmp;
+ *        this.singleValueMessageView = event.detail.cmp;
+ *        this.singleValueMessageView.setHtml(`Value: ${this.singleValue}`);
  *   }
  *}
  *
