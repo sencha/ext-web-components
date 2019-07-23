@@ -10,7 +10,7 @@
  *```HTML
  *@example({tab: 1})
  *<ext-container width="100%" height="100%">
- *    <ext-grid shadow="true" height="275" plugins='["cellediting"]' onready="paginggrid.onGridReady">
+ *    <ext-grid shadow="true" height="275" plugins='["pagingtoolbar"]' onready="paginggrid.onGridReady">
  *        <ext-column text="First Name" dataIndex="fname" flex="1" editable="true"></ext-column>
  *        <ext-column text="Last Name" dataIndex="lname" flex="1" editable="true"></ext-column>
  *        <ext-column text="Talent" dataIndex="talent" flex="1" editable="true"></ext-column>
