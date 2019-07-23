@@ -11,13 +11,11 @@
  *```HTML
  *@example({tab: 1})
  *<ext-container layout="center">
- *    <ext-formpanel shadow="true">
  *        <ext-hiddenfield
  *             value="123"
  *             name="hide"
  *         >
  *        </ext-hiddenfield>
- *    </ext-formpanel>
  *</ext-container>
  *```
  *```javascript
