@@ -12,19 +12,25 @@ export default class ThreeDGroupedComponent {
                 { quarter: 'Q4', 2013: 63000, 2014: 89000 }
             ]
         });
+        this.theme = 'default';
+        this.menuCmpArray = [];
     }
 
-    onDownloadButtonReady = (event) => {
-        this.downloadButtonCmp = event.detail.cmp;
-        this.downloadButtonCmp.on('tap', this.downloadChart.bind(this));
+    onMenuItemReady = (event) => {
+        this.menuCmpArray.push(event.detail.cmp);
+        event.detail.cmp.on('click', this.onThemeChange.bind(this));
     }
 
-    downloadChart() {
-        if (Ext.is.Desktop) {
-            this.cartesianCmp.download({ filename: 'Chart' });
-        } else {
-            this.cartesianCmp.preview();
-        }
+    onThemeChange = (event) => {
+        this.theme = event.config.text.toLowerCase();
+        this.menuCmpArray.forEach((cmp, index) => {
+            if (index == parseInt(event.config.itemId)) {
+                cmp.setIconCls('x-font-icon md-icon-done');
+                return;
+            }
+            cmp.setIconCls('');
+        });
+        this.cartesianCmp.setTheme(event.config.text.toLowerCase());
     }
 
     onAxisLabelRender = (axis, label, layoutContext) => {
