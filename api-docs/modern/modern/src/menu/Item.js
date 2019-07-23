@@ -10,8 +10,8 @@
  *<ext-container>
  *    <ext-button text="Menu">
  *        <ext-menu rel="menu" >
- *            <ext-menuitem text="Mobile" name="ui-type" />
- *            <ext-menuitem text="Desktop" name="ui-type"/>
+ *            <ext-menuitem text="Mobile" name="ui-type"></ext-menuitem>
+ *            <ext-menuitem text="Desktop" name="ui-type"/></ext-menuitem>
  *        </ext-menu>
  *    </ext-button>
  *</ext-container>

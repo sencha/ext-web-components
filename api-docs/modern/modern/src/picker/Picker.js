@@ -13,7 +13,8 @@
  * - `data`/`store`: The data or store to use for this slot.
  *
  * ## Example
- *```HTML
+ * 
+ * ```HTML
  * @example({tab: 1})
  * <ext-container>
  *     <ext-button ui="action" ontap="picker.showPicker" text="Show Picker"></ext-button>
@@ -31,16 +32,16 @@
  *                     }]'
  *      >
  *    </ext-picker>
- *</ext-container>
- *```
- *```javascript
- *@example({tab: 2, packages: ['ext-web-components']})
+ * </ext-container>
+ * ```
  *
- *import '@sencha/ext-web-components/dist/ext-container.component';
- *import '@sencha/ext-web-components/dist/ext-button.component';
- *import '@sencha/ext-web-components/dist/ext-picker.component';
+ * ```javascript
+ * @example({tab: 2, packages: ['ext-web-components']})
+ * import '@sencha/ext-web-components/dist/ext-container.component';
+ * import '@sencha/ext-web-components/dist/ext-button.component';
+ * import '@sencha/ext-web-components/dist/ext-picker.component';
  * 
- *export default class PickerComponent {
+ * export default class PickerComponent {
  *     pickerReady = (event) => {
  *         this.pickerCmp = event.detail.cmp;
  *     }
@@ -48,10 +49,10 @@
  *     showPicker = () => {
  *          this.pickerCmp.show();
  *     }
- *}
+ * }
  * window.picker = new PickerComponent();
- *```
- */
+ * ```
+ *
 /**
  * @event pick
  * Fired when a slot has been picked

@@ -11,8 +11,8 @@
  *<ext-container>
  *    <ext-button text="Menu">
  *        <ext-menu rel="menu" >
- *            <ext-menuradioitem text="Mobile" name="ui-type" />
- *            <ext-menuradioitem text="Desktop" name="ui-type"/>
+ *            <ext-menuradioitem text="Mobile" name="ui-type" ></ext-menuradioitem>
+ *            <ext-menuradioitem text="Desktop" name="ui-type"><ext-menuradioitem>
  *        </ext-menu>
  *    </ext-button>
  *</ext-container>

@@ -251,9 +251,9 @@
  *```HTML
  *@example({tab: 1})
  *<ext-panel shadow layout='{"type": "vbox", "align": "stretch"}'>
- *    <ext-button handler="messagebox.alertBoxHandler" text="Alert"/>
- *    <ext-button handler="messagebox.promptHandler" text="Prompt"/>
- *    <ext-button handler="messagebox.confirmHandler" text="Confirm"/>
+ *    <ext-button handler="messagebox.alertBoxHandler" text="Alert"></ext-button>
+ *    <ext-button handler="messagebox.promptHandler" text="Prompt"></ext-button>
+ *    <ext-button handler="messagebox.confirmHandler" text="Confirm"></ext-button>
  *</ext-panel>
  *```
  *```javascript

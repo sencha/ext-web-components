@@ -13,7 +13,7 @@
  *```HTML
  *@example({tab: 1})
  *<ext-container padding={10} layout='{"auto"}'>
- *    <ext-timepanel shadow/>
+ *    <ext-timepanel shadow></ext-timepanel>
  *</ext-container>
  *```
  *```javascript
