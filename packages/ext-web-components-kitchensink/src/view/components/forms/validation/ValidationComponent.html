@@ -74,12 +74,12 @@
       <ext-textfield
           label="Custom Format Regex: Uppercase letters only"
           name="uppercase"
-          onReady="validation.regexTestFieldReady"
+          onReady="validation.regexTextFieldReady"
       >
       </ext-textfield>
       <ext-textfield
         label="Custom Format Function: Capitalized words"
-        validators='{ "type": "method", "fn": "validation.validateCapilization" }'
+        onReady="validation.customFunctionTextFieldReady"
       >
       </ext-textfield>
     </ext-formpanel>
