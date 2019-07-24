@@ -95,9 +95,8 @@
  *        this.basicGridColumnCmp = event.detail.cmp;
  *        this.basicGridColumnCmp.setStore(this.store);
  *    }
- *
- *    window.basicgridColumn = new BasicGridColumnComponent();
  *}
+ * window.basicgridColumn = new BasicGridColumnComponent();
  *
  *```
  *
