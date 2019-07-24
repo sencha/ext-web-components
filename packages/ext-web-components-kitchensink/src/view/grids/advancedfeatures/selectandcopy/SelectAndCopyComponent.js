@@ -1,7 +1,7 @@
 import './SelectAndCopyComponent.html';
 import createStore from './SelectAndCopyComponentData.js';
 
-Ext.require([ 'Ext.grid.plugin.Clipboard']);
+Ext.require([ 'Ext.grid.plugin.Clipboard', 'Ext.grid.selection.Replicator']);
 
 export default class SelectAndCopyComponent {
     constructor() {

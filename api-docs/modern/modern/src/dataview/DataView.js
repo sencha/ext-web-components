@@ -47,7 +47,9 @@
  *
  * window.dataview = new DataViewComponent();
  *```
- *
+ */
+
+/**
  * Here we just defined everything inline so it's all local with nothing being loaded from a server. For each of the
  * data items defined in our Store, DataView will render a {@link Ext.Component Component} and pass in the name and age
  * data. The component will use the tpl we provided above, rendering the data in the curly bracket placeholders we
@@ -87,8 +89,8 @@
  *@example({tab: 1})
  *<ext-container width="100%" height="100%">
  *    <ext-dataview
- *        itemTpl='<h2>{collectionName}</h2><p><img src={artworkUrl100}></img></p>'
- *        onready="dataview.onDataViewready"
+ *        itemTpl="<h2>{collectionName}</h2><p><img src={artworkUrl100}></img></p>"
+ *        onready="dataviewMain.onDataViewready"
  *    >
  *    </ext-dataview>
  *</ext-container>
@@ -97,7 +99,7 @@
  *@example({tab: 2, packages: ['ext-web-components']})
  *import '@sencha/ext-web-components/dist/ext-dataview.component';
  *
- *export default class DataViewComponent {
+ *export default class DataViewMainComponent {
  *  onDataViewready(event) {
  *    this.dataViewCmp = event.detail.cmp;
  *    this.dataViewCmp.setStore(new Ext.data.Store({
@@ -113,7 +115,12 @@
  *   }));
  * }
  *}
+ *
+ * window.dataviewMain = new DataViewMainComponent();
  *```
+ */
+
+/**
  *
  * The Store no longer has hard coded data, instead we've provided a {@link Ext.data.proxy.Proxy Proxy}, which fetches
  * the data for us. In this case we used a JSON-P proxy.

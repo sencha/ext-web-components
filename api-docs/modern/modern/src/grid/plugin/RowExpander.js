@@ -49,13 +49,16 @@
  *
  *    onGridReady(event) {
  *        this.rowExpanderGridCmp = event.detail.cmp;
- *        this.rowExpanderGridCmp.setItemConfig({ body: `
- *            <div>
- *                <img height="100" src="http://www.sencha.com/assets/images/sencha-avatar-64x64.png"/>
- *                <div style="font-size: 16px; margin-bottom: 5px">{fname} {lname}</div>
- *                <div style="font-weight: bold; font-size: 14px">{title}</div>
- *                <div style="font-weight: bold">{department}</div>
- *            </div>`
+ *        this.rowExpanderGridCmp.setItemConfig({ body:
+ *          {
+ *            tpl: `
+ *                <div>
+ *                  <img height="100" src="http://www.sencha.com/assets/images/sencha-avatar-64x64.png"/>
+ *                  <div style="font-size: 16px; margin-bottom: 5px">{fname} {lname}</div>
+ *                  <div style="font-weight: bold; font-size: 14px">{title}</div>
+ *                  <div style="font-weight: bold">{department}</div>
+ *                </div>`
+ *          }
  *        });
  *        this.rowExpanderGridCmp.setStore(this.store);
  *    }

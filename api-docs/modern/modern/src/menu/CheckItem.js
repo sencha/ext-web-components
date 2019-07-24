@@ -4,14 +4,14 @@
  * @xtype menucheckitem
  *
  * A menu item that contains a togglable checkbox by default, but that can also be a part of a radio group.
- * 
+ *
  *```HTML
  *@example({tab: 1})
  *<ext-container>
  *    <ext-button text="Menu">
  *        <ext-menu rel="menu" >
- *            <ext-menucheckitem text="Mobile" name="ui-type" />
- *            <ext-menucheckitem text="Desktop" name="ui-type"/>
+ *            <ext-menucheckitem text="Mobile" name="ui-type"></ext-menucheckitem>
+ *            <ext-menucheckitem text="Desktop" name="ui-type"></ext-menucheckitem>
  *        </ext-menu>
  *    </ext-button>
  *</ext-container>
@@ -22,7 +22,7 @@
  *import '@sencha/ext-web-components/dist/ext-button.component';
  *import '@sencha/ext-web-components/dist/ext-menu.component';
  *import '@sencha/ext-web-components/dist/ext-menucheckitem.component';
- * 
+ *
  *export default class CheckItemComponent {}
  *```
  */

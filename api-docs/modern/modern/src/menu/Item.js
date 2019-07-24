@@ -22,7 +22,7 @@
  *import '@sencha/ext-web-components/dist/ext-button.component';
  *import '@sencha/ext-web-components/dist/ext-menu.component';
  *import '@sencha/ext-web-components/dist/ext-menuitem.component';
- * 
+ *
  *export default class ItemComponent{}
  *```
  */
