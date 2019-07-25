@@ -1,5 +1,4 @@
 import './TreeReorderComponent.html';
-import data from './data';
 
 Ext.require([ 'Ext.grid.plugin.TreeDragDrop']);
 
