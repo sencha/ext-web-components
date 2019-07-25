@@ -90,6 +90,8 @@
  *}
  *window.mainPanel = new MainPanelComponent();
  *```
+ */
+
 /**
  * @cfg {Boolean/Object} [header=null]
  * Pass as `false` to prevent a header from being created.
@@ -99,7 +101,6 @@
  *
  * See {@link Ext.panel.Header} for all the options that may be specified here.
  */
-
 /**
  * @cfg [border=false]
  * @inheritdoc

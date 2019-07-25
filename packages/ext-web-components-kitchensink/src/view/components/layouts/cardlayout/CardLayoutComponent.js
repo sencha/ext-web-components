@@ -94,7 +94,7 @@ export default class CardLayoutComponent {
             buttonElement.setAttribute('onTap', 'cardlayout.switchCards');
             buttonElement.setAttribute('animation', buttonItem.animation);
             buttonElement.animation = buttonItem.animation;
-            this.contChildCmp1.el.dom.append(buttonElement);
+            this.contChildCmp1.el.dom.appendChild(buttonElement);
         }
     }
 

@@ -6,13 +6,18 @@ export default class ValidationComponent {
         console.log('in ValidationComponent constructor');
     }
 
-    regexTestFieldReady = (event) => {
+    regexTextFieldReady = (event) => {
         const regexTestFieldCmp = event.detail.cmp;
         regexTestFieldCmp.setValidators({
             type: 'format',
             matcher: /^[A-Z]*$/,
             message: 'Only uppercase letters are allowed.'
         });
+    }
+
+    customFunctionTextFieldReady = (event) => {
+        const regexTestFieldCmp = event.detail.cmp;
+        regexTestFieldCmp.setValidators(this.validateCapitalization.bind(this));
     }
 
     validateCapitalization = (value) => {
