@@ -11,20 +11,35 @@
  *
  * Usually a `fieldpanel` just contains a set of fields.
  *
- *     panel = <FieldPanel>
- *         <TextField
- *             name="name"
- *             label="Name"
- *         />
- *         <EmailField
- *             name="email"
- *             label="Email"
- *         />
- *         <PasswordField
- *             name="password"
- *             label="Password"
- *         />
- *     </FieldPanel>
+ * ## Example
+ *```HTML
+ *@example({tab: 1})
+ *  <ext-fieldpanel fullscreen="true">
+ *      <ext-textfield
+ *           name="name"
+ *           label="Name"
+ *       >
+ *       </ext-textfield>
+ *       <ext-emailfield
+ *           name="email"
+ *           label="Email"
+ *       >
+ *       </ext-emailfield>
+ *       <ext-passwordfield
+ *           name="password"
+ *           label="Password"
+ *       >
+ *       </ext-passwordfield>
+ *   </ext-fieldpanel>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ *import '@sencha/ext-web-components/dist/ext-fieldpanel.component';
+ *import '@sencha/ext-web-components/dist/ext-textfield.component';
+ *import '@sencha/ext-web-components/dist/ext-emailfield.component';
+ *import '@sencha/ext-web-components/dist/ext-passwordfield.component';
+ *export default class PanelComponent {}
+ *```
  *
  * Here we just created a simple container which could be used as a registration form to
  * sign up to your service. We added a plain TextField for the user's Name, an EmailField,

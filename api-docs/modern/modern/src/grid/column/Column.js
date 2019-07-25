@@ -145,28 +145,43 @@
  * before it is rendered.
  *
  * For example:
+ *```HTML
+ *@example({tab: 1})
+ *<ext-container width="100%" height="100%">
+ *    <ext-grid shadow="true" height="100%" onready="columnGrid.onGridReady">
+ *        <ext-column text="Name" dataIndex="name" flex="1"></ext-column>
+ *        <ext-column text="Email" dataIndex="email" flex="1"></ext-column>
+ *        <ext-column text="Phone" dataIndex="phone" flex="1"></ext-column>
+ *    </ext-grid>
+ *</ext-container>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ *import '@sencha/ext-web-components/dist/ext-container.component';
+ *import '@sencha/ext-web-components/dist/ext-grid.component';
+ *import '@sencha/ext-web-components/dist/ext-column.component';
  *
- *      <Grid>
- *          <Column 
- *              text="Full Name"
- *              renderer={(value, record) => (
- *                  <div>{record.get('firstName')} {record.get('lastName')}</div>
- *              )}
- *          />
- *      </Grid>
+ *export default class ColumnGridComponent {
+ *    constructor() {
+ *       this.store = new Ext.data.Store({
+ *          data: [
+ *              { "name": "Lisa", "email": "lisa@simpsons.com", "phone": "555-111-1224" },
+ *              { "name": "Bart", "email": "bart@simpsons.com", "phone": "555-222-1234" },
+ *              { "name": "Homer", "email": "home@simpsons.com", "phone": "555-222-1244" },
+ *              { "name": "Marge", "email": "marge@simpsons.com", "phone": "555-222-1254" }
+ *          ]
+ *       });
+ *    }
  *
- * A renderer may return any React element or component.  Here is an example that embeds a button in a grid cell:
- * 
- *      <Grid>
- *          <Column 
- *              text="Actions" 
- *              dataIndex="name"
- *              renderer={(value, record) => (
- *                  <Button text={`Call ${value}`} handler={this.onCallClick.bind(this, record)}/>
- *              )}
- *          />
- *      </Grid>
- * 
+ *    onGridReady(event) {
+ *        this.basicGridCmp = event.detail.cmp;
+ *        this.basicGridCmp.setStore(this.store);
+ *    }
+ *}
+ *
+ * window.columnGrid = new ColumnGridComponent();
+ *```
+ *
  * When the renderer prop is specified, a {@link Ext.reactor.RendererCell RendererCell} is used.  Be sure to import
  * RendererCell so that it is included in your application's JavaScript bundle:
  * 
