@@ -73,6 +73,12 @@
  * @accessor
  */
 
+ /**
+  * @cfg {Number/String} margin
+  * The margin to use on this Component. Can be specified as a number (in which
+  * case all edges get the same margin) or a CSS string like '5 10 10 10'
+  */
+
 /**
  * @cfg {String/Object} [style=null]
  * Additional CSS styles that will be rendered into an inline style attribute when

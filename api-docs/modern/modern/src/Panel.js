@@ -94,6 +94,7 @@
  *}
  *window.mainPanel = new MainPanelComponent();
  *```
+
  *
  * **Note:** By default, the `{@link #cfg-closable close}` header tool _destroys_ the
  * Panel resulting in removal of the Panel and the destruction of any descendant
@@ -123,7 +124,6 @@
  *
  * See {@link Ext.panel.Header} for all the options that may be specified here.
  */
-
 /**
  * @cfg icon
  * @inheritdoc Ext.panel.Header#cfg-icon

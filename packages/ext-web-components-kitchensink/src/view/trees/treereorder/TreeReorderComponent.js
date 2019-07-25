@@ -1,5 +1,4 @@
 import './TreeReorderComponent.html';
-import data from './data';
 
 Ext.require([ 'Ext.grid.plugin.TreeDragDrop']);
 
@@ -10,12 +9,18 @@ export default class TreeComponent {
         this.treeStore = Ext.create('Ext.data.TreeStore', {
             type: 'tree',
             rootVisible: true,
-            root: data,
-            folderSort: true,
             sorters: [{
                 property: 'text',
                 direction: 'ASC'
-            }]
+            }],
+            root: {
+                text: 'Products',
+                expanded: true
+            },
+            proxy: {
+                type: 'ajax',
+                url: 'resources/data/tree/cars.json'
+            },
         });
         this.treeCmp.setStore(this.treeStore);
     }
@@ -44,5 +49,9 @@ export default class TreeComponent {
         this.treeCmp.collapseAll(() => {
             this.toolbar.enable();
         });
+    }
+
+    onResetClick = () => {
+        this.treeStore.reload();
     }
 }
