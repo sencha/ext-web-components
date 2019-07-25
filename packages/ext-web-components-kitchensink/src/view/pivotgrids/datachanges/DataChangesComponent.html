@@ -1,30 +1,30 @@
 <ext-container layout="fit" padding="10" fitToParent="true" height="100%">
-  <ext-toolbar
-    shadow="false"
-    docked="top"
-    ui="app-transparent-toolbar"
-    padding="5 8"
-    layout='{
+    <ext-toolbar
+        shadow="false"
+        docked="top"
+        ui="app-transparent-toolbar"
+        padding="5 8"
+        layout='{
       "type": "hbox",
       "align": "stretch"
     }'
-    defaults='{
+        defaults='{
       "margin": "0 10 0 0",
       "shadow": true,
       "ui": "action"
     }'>
-    <ext-button text="Change data">
-      <ext-menu>
-        <ext-menuitem text="Add" iconCls="x-fa fa-plus" onready="datachanges.onButtonReady1"></ext-menuitem>
-        <ext-menuitem text="Update" iconCls="x-fa fa-edit" onready="datachanges.onButtonReady2"></ext-menuitem>
-        <ext-menuitem text="Remove" iconCls="x-fa fa-minus" onready="datachanges.onButtonReady3"></ext-menuitem>
-        <ext-menuitem text="Clear all" iconCls="x-fa fa-trash" onready="datachanges.onButtonReady4"></ext-menuitem>
-      </menu>
-    </ext-button>
-  </ext-toolbar>
-  <ext-pivotgrid 
-    shadow="true"
-    onready="datachanges.onPivotGridReady"
-  >
-  </ext-pivotgrid>
-</ext-container>
+        <ext-button text="Change data">
+            <ext-menu>
+                <ext-menuitem text="Add" iconCls="x-fa fa-plus" onready="datachanges.onButtonReady1"></ext-menuitem>
+                <ext-menuitem text="Update" iconCls="x-fa fa-edit" onready="datachanges.onButtonReady2"></ext-menuitem>
+                <ext-menuitem text="Remove" iconCls="x-fa fa-minus" onready="datachanges.onButtonReady3"></ext-menuitem>
+                <ext-menuitem text="Clear all" iconCls="x-fa fa-trash" onready="datachanges.onButtonReady4"></ext-menuitem>
+            </ext-menu>
+        </ext-button>
+    </ext-toolbar>
+    <ext-pivotgrid 
+        shadow="true"
+        onready="datachanges.onPivotGridReady"
+    >
+    </ext-pivotgrid>
+</ext-container>;

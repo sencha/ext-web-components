@@ -1,46 +1,45 @@
 <ext-container
-  height='100%'
-  width='100%'
-  layout='{
+    height='100%'
+    width='100%'
+    layout='{
       "type": "box",
       "pack": "center",
       "align": "center"
   }'
-  scrollable=true
+    scrollable="true"
 >
-  <ext-toolbar 
-    onready="timepanel.toolbarReady"
-    docked='top'
-    ui='transparent'
-    style="align-self:center;"
-  >
-    <ext-togglefield
-      boxLabel="is Meridiem (12 hour)"
-      name="hourformat"
-      reference="hourformat"
-      cls="demo-solid-background"
-      padding="0 10"
-      value="true"
-      onchange="timepanel.onMeridiemChange"
+    <ext-toolbar 
+        onready="timepanel.toolbarReady"
+        docked='top'
+        ui='transparent'
+        style="align-self:center;"
     >
-    </ext-togglefield>
-    <ext-togglefield
-      boxLabel="PM hours Inside"
-      name="pminside"
-      reference="hourformat"
-      cls="demo-solid-background"
-      padding="0 10"
-      disabled="true"
-      onchange="timepanel.onPMHoursChange"
-      onready="timepanel.onIsPMHoursToggleCmpReady"
+        <ext-togglefield
+            boxLabel="is Meridiem (12 hour)"
+            name="hourformat"
+            reference="hourformat"
+            cls="demo-solid-background"
+            padding="0 10"
+            value="true"
+            onchange="timepanel.onMeridiemChange"
+        >
+        </ext-togglefield>
+        <ext-togglefield
+            boxLabel="PM hours Inside"
+            name="pminside"
+            reference="hourformat"
+            cls="demo-solid-background"
+            padding="0 10"
+            onchange="timepanel.onPMHoursChange"
+            onready="timepanel.onIsPMHoursToggleCmpReady"
+        >
+        </ext-togglefield>
+    </ext-toolbar>
+    <ext-timepanel
+        shadow="true"
+        meridiem="true"
+        alignFormatInside="false"
+        onready="timepanel.timepanelReady"
     >
-    </ext-togglefield>
-  </ext-toolbar>
-  <ext-timepanel
-    shadow="true"
-    meridiem="true"
-    alignFormatInside="false"
-    onready="timepanel.timepanelReady"
-  >
-  </ext-timepanel>
-</ext-container>
+    </ext-timepanel>
+</ext-container>;
