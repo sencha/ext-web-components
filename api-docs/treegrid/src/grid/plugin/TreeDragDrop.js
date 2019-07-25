@@ -1,62 +1,79 @@
-/**
- * This plugin provides drag and drop node moving in a tree.
- *
- *     @example
- *     var ts = Ext.create('Ext.data.TreeStore', {
- *         root: {
- *             text: 'Genre',
- *             expanded: true,
- *             children: [
- *                 {
- *                     text: 'Comedy',
- *                     children: [
- *                         { leaf: true, text: '30 Rock' },
- *                         { leaf: true, text: 'Arrested Development' },
- *                         { leaf: true, text: 'Bob\'s Burgers' },
- *                         { leaf: true, text: 'Curb your Enthusiasm' },
- *                         { leaf: true, text: 'Futurama' }
- *                     ]
- *                 },
- *                 {
- *                     text: 'Drama',
- *                     children: [
- *                         { leaf: true, text: 'Breaking Bad', },
- *                         { leaf: true, text: 'Game of Thrones' },
- *                         { leaf: true, text: 'Lost' },
- *                         { leaf: true, text: 'Preacher' },
- *                         { leaf: true, text: 'The Wire' }
- *                     ]
- *                 },
- *                 {
- *                     text: 'Science Fiction',
- *                     children: [
- *                         { leaf: true, text: 'Black Mirror' },
- *                         { leaf: true, text: 'Doctor Who' },
- *                         { leaf: true, text: 'Eureka' },
- *                         { leaf: true, text: 'Futurama' },
- *                         { leaf: true, text: 'The Twilight Zone' },
- *                         { leaf: true, text: 'X-Files' }
- *                     ]
- *                 }
- *             ]
- *         }
- *     });
- *
- *     Ext.create({
- *         fullscreen: true,
- *         xtype: 'panel',
- *
- *         items: [{
- *             xtype: 'tree',
- *             height: 600,
- *             width: 400,
- *             store: ts,
- *             title: 'Favorite Shows by Genre',
- *             plugins: {
- *                  treedragdrop: true
- *             }
- *         }]
- *     });
+  /**
+  * This plugin provides drag and drop node moving in a tree.
+  * 
+  *  ```HTML
+  *@example({tab: 1})
+  *<ext-panel
+  *   height = "100%"
+  * >
+  * <ext-tree
+  *   onready="treedragdrop.treeready"
+  *   height= "600"
+  *   width= "400"
+  *   title= "Favorite Shows by Genre"  
+  * >
+  * </ext-tree>
+  *
+  *</ext-panel>
+  *
+  *```
+  * ```javascript
+  * @example({tab: 2, packages: ['ext-web-components']})
+  * import '@sencha/ext-web-components/dist/ext-panel.component';
+  * import '@sencha/ext-web-components/dist/ext-tree.component';
+  *
+  * export default class TreeDragDropComponent {
+  *   constructor () {
+  *     this.store = Ext.create('Ext.data.TreeStore', {
+  *         root: {
+  *             text: 'Genre',
+  *             expanded: true,
+  *             children: [
+  *                 {
+  *                     text: 'Comedy',
+  *                     children: [
+  *                         { leaf: true, text: '30 Rock' },
+  *                         { leaf: true, text: 'Arrested Development' },
+  *                         { leaf: true, text: 'Bob\'s Burgers' },
+  *                         { leaf: true, text: 'Curb your Enthusiasm' },
+  *                         { leaf: true, text: 'Futurama' }
+  *                     ]
+  *                 },
+  *                 {
+  *                     text: 'Drama',
+  *                     children: [
+  *                         { leaf: true, text: 'Breaking Bad', },
+  *                         { leaf: true, text: 'Game of Thrones' },
+  *                         { leaf: true, text: 'Lost' },
+  *                         { leaf: true, text: 'Preacher' },
+  *                         { leaf: true, text: 'The Wire' }
+  *                     ]
+  *                 },
+  *                 {
+  *                      text: 'Science Fiction',
+  *                     children: [
+  *                         { leaf: true, text: 'Black Mirror' },
+  *                         { leaf: true, text: 'Doctor Who' },
+  *                         { leaf: true, text: 'Eureka' },
+  *                         { leaf: true, text: 'Futurama' },
+  *                         { leaf: true, text: 'The Twilight Zone' },
+  *                         { leaf: true, text: 'X-Files' }
+  *                     ]
+  *                 }
+  *             ]
+  *         }
+  *     });
+  *    
+  *  }
+  * 
+  *     treeready = () => {
+  *         this.treeready = event.detail.cmp;
+  *         this.treeready.setStore(this.store);
+  *     }
+  * }
+  * window.treedragdrop = new TreeDragDropComponent();
+  * 
+  * ```
  */
 
     /**
