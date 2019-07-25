@@ -18,7 +18,7 @@
  *```javascript
  *@example({tab: 2, packages: ['ext-web-components']})
  *import '@sencha/ext-web-components/dist/ext-colorselector.component';
- * 
+ *
  *export default class SelectorComponent {
  *  showMessage = (event) => {
  *     const color = event.detail.color;
@@ -27,7 +27,7 @@
  *}
  * window.selector = new SelectorComponent();
  *```
- * 
+ *
  */
 
 /**
@@ -47,31 +47,31 @@
 
 /**
  * @cfg {Boolean} [showPreviousColor]
- * Whether "previous color" region (in upper right, below the selected color preview) should 
+ * Whether "previous color" region (in upper right, below the selected color preview) should
  * be shown;
- * these are relied upon by the {@link Ext.ux.colorpick.Button} and the 
+ * these are relied upon by the {@link Ext.ux.colorpick.Button} and the
  * {@link Ext.ux.colorpick.Field}.
  */
 
 /**
  * @cfg {String} [okButtonText]
  * Text value for "Ok" button;
- * these are relied upon by the {@link Ext.ux.colorpick.Button} and the 
+ * these are relied upon by the {@link Ext.ux.colorpick.Button} and the
  * {@link Ext.ux.colorpick.Field}.
  */
 
 /**
  * @cfg {String} [cancelButtonText]
  * Text value for "Cancel" button;
- * these are relied upon by the {@link Ext.ux.colorpick.Button} and the 
+ * these are relied upon by the {@link Ext.ux.colorpick.Button} and the
  * {@link Ext.ux.colorpick.Field}.
  */
 
 /**
  * @cfg {Boolean} [showOkCancelButtons]
- * Whether Ok and Cancel buttons (in upper right, below the selected color preview) should 
+ * Whether Ok and Cancel buttons (in upper right, below the selected color preview) should
  * be shown;
- * these are relied upon by the {@link Ext.ux.colorpick.Button} and the 
+ * these are relied upon by the {@link Ext.ux.colorpick.Button} and the
  * {@link Ext.ux.colorpick.Field}.
  */
 
