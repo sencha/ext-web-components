@@ -558,6 +558,21 @@
  */
 
 /**
+ * @cfg {Object} editorDefaults
+ * This object holds default config objects for creating the column's `editor`.
+ * The keys of this object are {@link Ext.data.field.Field#cfg!type field type}
+ * values (such as `'date'` or `'int'`). These keys can also be a comma-separated
+ * list of such type names.
+ *
+ * These defaults are applied when producing an `editor` based on the field of
+ * {@link #cfg!store store's} {@link Ext.data.Store#cfg!model model} identified
+ * by the {@link #cfg!dataIndex dataIndex}.
+ *
+ * See {@link #ensureEditor ensureEditor}.
+ * @since 7.0
+ */
+
+/**
  * @event columnmenucreated
  * @member Ext.grid.Grid
  * Fired when a column first creates its column menu. This is to allow plugins
@@ -573,4 +588,20 @@
  * @param {Ext.grid.Grid} grid This Grid
  * @param {Ext.grid.Column} column The column creating the menu
  * @param {Ext.menu.Menu} menu The column's new menu
+ */
+
+ /**
+ * @method autoSize
+ * Sizes this Column to fit the max content width of records.
+ * @since 7.0
+ */
+
+/**
+ * @method ensureEditor
+ * This method returns the {@link #cfg!editor editor} for this column. If an `editor`
+ * is not explicitly configured and `editable` is `true`, then `defaultEditor` and
+ * `editorDefaults` configs are used to produce an appropriate editor based on the
+ * column's derived type and/or the `dataIndex` of the associated model.
+ * @return {Ext.Component}
+ * @since 7.0
  */

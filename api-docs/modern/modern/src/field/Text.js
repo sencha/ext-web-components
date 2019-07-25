@@ -49,6 +49,14 @@
  */
 
 /**
+ * @event keyup
+ * @preventable
+ * Fires when a key is released on the input element
+ * @param {Ext.field.Text} this This field
+ * @param {Ext.event.Event} e
+ */
+
+/**
  * @event blur
  * Fires when this field loses input focus
  * @param {Ext.field.Text} this This field
@@ -108,6 +116,13 @@
  * @cfg {Boolean} [clearIcon=true]
  * `true` to use a clear icon in this field.
  * @accessor
+ */
+
+/**
+ * @cfg {RegExp} stripCharsRe
+ * A JavaScript RegExp object used to strip unwanted content from the value
+ * during input. If `stripCharsRe` is specified,
+ * every *character sequence* matching `stripCharsRe` will be removed.
  */
 
 /**
@@ -194,4 +209,20 @@
  * The text alignment of this field.
  *
  * @accessor
+ */
+
+/**
+ * Called when a key has been pressed in the `<input>`
+ * @protected
+ */
+
+/**
+ * @method processRawValue
+ * Performs any necessary manipulation of a raw String value to prepare
+ * it for conversion and/or
+ * {@link #validate validation}. For text fields this applies the configured
+ * {@link #stripCharsRe} to the raw value.
+ * @param {String} value The unprocessed string value
+ * @return {String} The processed string value
+ * @since 7.0
  */
