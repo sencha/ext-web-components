@@ -13,59 +13,70 @@
  *
  * Here is a simple TreeGrid using inline data:
  *
- *     @example
- *     var ts = Ext.create('Ext.data.TreeStore', {
- *         root: {
- *             text: 'Genre',
- *             expanded: true,
- *             children: [
- *                 {
- *                     text: 'Comedy',
- *                     children: [
- *                         { leaf: true, text: '30 Rock' },
- *                         { leaf: true, text: 'Arrested Development' },
- *                         { leaf: true, text: 'Bob\'s Burgers' },
- *                         { leaf: true, text: 'Curb your Enthusiasm' },
- *                         { leaf: true, text: 'Futurama' }
- *                     ]
- *                 },
- *                 {
- *                     text: 'Drama',
- *                     children: [
- *                         { leaf: true, text: 'Breaking Bad', },
- *                         { leaf: true, text: 'Game of Thrones' },
- *                         { leaf: true, text: 'Lost' },
- *                         { leaf: true, text: 'Preacher' },
- *                         { leaf: true, text: 'The Wire' }
- *                     ]
- *                 },
- *                 {
- *                     text: 'Science Fiction',
- *                     children: [
- *                         { leaf: true, text: 'Black Mirror' },
- *                         { leaf: true, text: 'Doctor Who' },
- *                         { leaf: true, text: 'Eureka' },
- *                         { leaf: true, text: 'Futurama' },
- *                         { leaf: true, text: 'The Twilight Zone' },
- *                         { leaf: true, text: 'X-Files' }
- *                     ]
- *                 }
- *             ]
- *         }
- *     });
+ *```HTML
+ *@example({tab: 1})
+ * <ext-panel
+ *  fullscreen
+ * >
+ *  <ext-tree    
+ *      height="600"
+ *      width="400"
+ *      title="Favorite Shows by Genre"
+ *      onReady="tree.onTreeReady"
+ *  />
+ * </ext-panel>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ * import '@sencha/ext-web-components/dist/ext-panel.component';
  *
- *     Ext.create({
- *         fullscreen: true,
- *         xtype: 'panel',
- *
- *         items: [{
- *             xtype: 'tree',
- *             height: 600,
- *             width: 400,
- *             store: ts,
- *             title: 'Favorite Shows by Genre'
- *         }]
- *     });
+ * export default class TreeComponent {
+ *      onTreeReady = (event) => {
+ *          this.treeCmp = event.detail.cmp;
+ *          const store = Ext.create('Ext.data.TreeStore', {
+ *              root: {
+ *                  text: 'Genre',
+ *                  expanded: true,
+ *                  children: [
+ *                      {
+ *                          text: 'Comedy',
+ *                          children: [
+ *                              { leaf: true, text: '30 Rock' },
+ *                              { leaf: true, text: 'Arrested Development' },
+ *                              { leaf: true, text: 'Bob\'s Burgers' },
+ *                              { leaf: true, text: 'Curb your Enthusiasm' },
+ *                              { leaf: true, text: 'Futurama' }
+ *                          ]
+ *                      },
+ *                      {
+ *                          text: 'Drama',
+ *                          children: [
+ *                              { leaf: true, text: 'Breaking Bad', },
+ *                              { leaf: true, text: 'Game of Thrones' },
+ *                              { leaf: true, text: 'Lost' },
+ *                              { leaf: true, text: 'Preacher' },
+ *                              { leaf: true, text: 'The Wire' }
+ *                          ]
+ *                      },
+ *                      {
+ *                          text: 'Science Fiction',
+ *                          children: [
+ *                              { leaf: true, text: 'Black Mirror' },
+ *                              { leaf: true, text: 'Doctor Who' },
+ *                              { leaf: true, text: 'Eureka' },
+ *                              { leaf: true, text: 'Futurama' },
+ *                              { leaf: true, text: 'The Twilight Zone' },
+ *                              { leaf: true, text: 'X-Files' }
+ *                          ]
+ *                      }
+ *                  ]
+ *              }
+ *          });
+ *          this.treeCmp.setStore(store);
+ *      }
+ *  }
+ *window.tree = new TreeComponent();
+ *```
  */
 
 /**
