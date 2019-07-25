@@ -1,7 +1,7 @@
 import './ConfigurablePivotTreeMapComponent.html';
 import createData from './createData';
 
-Ext.require(['Ext.pivot.d3.TreeMap']);
+Ext.require(['Ext.pivot.d3.TreeMap', 'Ext.pivot.d3.Container']);
 
 export default class ConfigurablePivotTreemapComponent {
     containerReady = (event) => {

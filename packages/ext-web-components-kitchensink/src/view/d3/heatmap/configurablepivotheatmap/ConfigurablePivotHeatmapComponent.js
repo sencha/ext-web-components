@@ -1,7 +1,7 @@
 import './ConfigurablePivotHeatmapComponent.html';
 import data from './salesData';
 
-Ext.require('Ext.pivot.d3.HeatMap');
+Ext.require(['Ext.pivot.d3.HeatMap', 'Ext.pivot.d3.Container']);
 
 export default class ConfigurablePivotHeatmapComponent {
     containerReady = (event) => {

@@ -22,6 +22,7 @@ export default class TimePanelComponent {
 
     onIsPMHoursToggleCmpReady = (event) => {
         this.isPMHoursToggleCmp = event.detail.cmp;
+        this.isPMHoursToggleCmp.setDisabled(true);
     }
 
     timepanelReady = (event) => {
