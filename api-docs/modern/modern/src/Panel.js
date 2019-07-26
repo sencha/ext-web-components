@@ -1,4 +1,9 @@
 /**
+ * @class Ext.Panel
+ * @extend Ext.Container
+ * @xtype panel
+ * @alternateClassName Ext.panel.Panel
+ * @isPanel true
  * Panels are {@link Ext.Container containers} with an optional
  * {@link Ext.panel.Header header} that can be positioned using the
  * {@link #cfg-headerPosition headerPosition} config option.

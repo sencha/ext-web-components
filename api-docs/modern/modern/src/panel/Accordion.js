@@ -1,4 +1,8 @@
 /**
+ * @class Ext.panel.Accordion
+ * @extend Ext.Panel
+ * @xtype accordion
+ * @mixin Ext.mixin.Bufferable
  * This container manages child panels in an expandable accordion style. By default, only
  * one child panel can be expanded at a time. Set {@link #openable} to a different value
  * to allow multiple panels to be expanded.
@@ -6,32 +10,42 @@
  * Note: Only `Ext.Panel` and its subclasses will be explicitly managed. All other items
  * will be treated normally.
  *
- *      @example
- *      Ext.create({
- *          xtype: 'accordion',
- *          title: 'Accordion',
- *          fullscreen: true,
+ * ```HTML
+ * @example({tab: 1})
+ *  <ext-accordion 
+ *      title="Accordion"
+ *      fullscreen="true"
+ *      openable="2"
+ *  >
+ *      <ext-panel
+ *          bodyPadding="10"
+ *          title="Panel 1"
+ *          html="Panel Content!"
+ *      >
+ *      </ext-panel>
+ *      <ext-panel
+ *          bodyPadding="10"
+ *          title="Panel 2"
+ *          html="Panel Content!"
+ *      >
+ *      </ext-panel>
+ *      <ext-panel
+ *          bodyPadding="10"
+ *          title="Panel 3"
+ *          html="Panel Content!"
+ *      >
+ *      </ext-panel>
+ *  </ext-accordion>
+ *```
+ * ```javascript
+ * @example({tab: 2, packages: ['ext-web-components']})
+ * import '@sencha/ext-web-components/dist/ext-accordion.component';
+ * import '@sencha/ext-web-components/dist/ext-panel.component';
  *
- *          defaults: {
- *              // applied to each contained panel
- *              xtype: 'panel',
- *              bodyPadding: 10
- *          },
+ * export default class AccordionComponent {
+ * }
  *
- *          openable: 2,
- *
- *          items: [{
- *              title: 'Panel 1',
- *              html: 'Panel content!'
- *          }, {
- *              title: 'Panel 2',
- *              html: 'Panel content!'
- *          }, {
- *              title: 'Panel 3',
- *              html: 'Panel content!'
- *          }]
- *      });
- *
+ * ```
  * @since 7.0
  */
 

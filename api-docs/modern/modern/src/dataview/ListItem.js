@@ -1,8 +1,10 @@
 /**
  * @class Ext.dataview.ListItem
- * @extend Ext.dataview.component.DataItem
+
+ * @extend Ext.dataview.DataItem
  * @xtype listitem
- *
+ * @alternateClassName Ext.dataview.component.ListItem
+
  * A ListItem is a container for {@link Ext.dataview.List}.
  *
  * ListItem configures and updates the {@link Ext.data.Model records} for
@@ -11,6 +13,8 @@
  * *Note*: Use of ListItem increases overhead since it generates more markup than
  * using the `SimpleListItem`. This overhead is more noticeable in Internet Explorer. If
  * possible, use the default {@link Ext.dataview.SimpleListItem}. To use the additional
+ * features of this class, use the {@link Ext.dataview.List#itemConfig itemConfig} config:
+ *
  * features of this class, use the {@link Ext.dataview.List#itemConfig itemConfig} config.
  */
 
