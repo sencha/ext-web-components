@@ -145,28 +145,43 @@
  * before it is rendered.
  *
  * For example:
+ *```HTML
+ *@example({tab: 1})
+ *<ext-container width="100%" height="100%">
+ *    <ext-grid shadow="true" height="100%" onready="columnGrid.onGridReady">
+ *        <ext-column text="Name" dataIndex="name" flex="1"></ext-column>
+ *        <ext-column text="Email" dataIndex="email" flex="1"></ext-column>
+ *        <ext-column text="Phone" dataIndex="phone" flex="1"></ext-column>
+ *    </ext-grid>
+ *</ext-container>
+ *```
+ *```javascript
+ *@example({tab: 2, packages: ['ext-web-components']})
+ *import '@sencha/ext-web-components/dist/ext-container.component';
+ *import '@sencha/ext-web-components/dist/ext-grid.component';
+ *import '@sencha/ext-web-components/dist/ext-column.component';
  *
- *      <Grid>
- *          <Column 
- *              text="Full Name"
- *              renderer={(value, record) => (
- *                  <div>{record.get('firstName')} {record.get('lastName')}</div>
- *              )}
- *          />
- *      </Grid>
+ *export default class ColumnGridComponent {
+ *    constructor() {
+ *       this.store = new Ext.data.Store({
+ *          data: [
+ *              { "name": "Lisa", "email": "lisa@simpsons.com", "phone": "555-111-1224" },
+ *              { "name": "Bart", "email": "bart@simpsons.com", "phone": "555-222-1234" },
+ *              { "name": "Homer", "email": "home@simpsons.com", "phone": "555-222-1244" },
+ *              { "name": "Marge", "email": "marge@simpsons.com", "phone": "555-222-1254" }
+ *          ]
+ *       });
+ *    }
  *
- * A renderer may return any React element or component.  Here is an example that embeds a button in a grid cell:
- * 
- *      <Grid>
- *          <Column 
- *              text="Actions" 
- *              dataIndex="name"
- *              renderer={(value, record) => (
- *                  <Button text={`Call ${value}`} handler={this.onCallClick.bind(this, record)}/>
- *              )}
- *          />
- *      </Grid>
- * 
+ *    onGridReady(event) {
+ *        this.basicGridCmp = event.detail.cmp;
+ *        this.basicGridCmp.setStore(this.store);
+ *    }
+ *}
+ *
+ * window.columnGrid = new ColumnGridComponent();
+ *```
+ *
  * When the renderer prop is specified, a {@link Ext.reactor.RendererCell RendererCell} is used.  Be sure to import
  * RendererCell so that it is included in your application's JavaScript bundle:
  * 
@@ -558,6 +573,21 @@
  */
 
 /**
+ * @cfg {Object} editorDefaults
+ * This object holds default config objects for creating the column's `editor`.
+ * The keys of this object are {@link Ext.data.field.Field#cfg!type field type}
+ * values (such as `'date'` or `'int'`). These keys can also be a comma-separated
+ * list of such type names.
+ *
+ * These defaults are applied when producing an `editor` based on the field of
+ * {@link #cfg!store store's} {@link Ext.data.Store#cfg!model model} identified
+ * by the {@link #cfg!dataIndex dataIndex}.
+ *
+ * See {@link #ensureEditor ensureEditor}.
+ * @since 7.0
+ */
+
+/**
  * @event columnmenucreated
  * @member Ext.grid.Grid
  * Fired when a column first creates its column menu. This is to allow plugins
@@ -573,4 +603,20 @@
  * @param {Ext.grid.Grid} grid This Grid
  * @param {Ext.grid.Column} column The column creating the menu
  * @param {Ext.menu.Menu} menu The column's new menu
+ */
+
+ /**
+ * @method autoSize
+ * Sizes this Column to fit the max content width of records.
+ * @since 7.0
+ */
+
+/**
+ * @method ensureEditor
+ * This method returns the {@link #cfg!editor editor} for this column. If an `editor`
+ * is not explicitly configured and `editable` is `true`, then `defaultEditor` and
+ * `editorDefaults` configs are used to produce an appropriate editor based on the
+ * column's derived type and/or the `dataIndex` of the associated model.
+ * @return {Ext.Component}
+ * @since 7.0
  */

@@ -1,5 +1,10 @@
 /**
+ *
+ * @class Ext.dd.Manager
+ * @extend Ext.Base
+ * @singleton
  * @private
+ *
  */
 
  /**

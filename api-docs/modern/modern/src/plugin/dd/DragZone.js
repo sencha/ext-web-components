@@ -1,4 +1,6 @@
 /**
+ * @class Ext.plugin.dd.DragZone
+ * @extend Ext.drag.Source
  * @private
  */
 
