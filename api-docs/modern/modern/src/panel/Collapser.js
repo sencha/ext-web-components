@@ -37,6 +37,12 @@
  * @accessor
  */
 
+ /**
+ * @cfg {"collapsed"/"collapsing"/"expanded"/"expanding"} [state='expanded']
+ * @since 7.0
+ * @private
+ */
+
 /**
  * @cfg {'top'/'right'/'bottom'/'left'} [direction='top']
  * The direction to collapse the Panel when the toggle button is clicked.
