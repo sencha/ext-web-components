@@ -1,4 +1,9 @@
 /**
+ * @class Ext.BreadcrumbBar
+ * @extend Ext.toolbar
+ * @xtype breadcrumbbar
+ * 
+ * 
  * A toolbar that displays hierarchical data from a {@link Ext.data.TreeStore TreeStore}
  * as a trail of breadcrumb buttons.  Each button represents a node in the store.  A click
  * on a button will "select" that node in the tree.  Non-leaf nodes will display their

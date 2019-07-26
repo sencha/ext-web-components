@@ -1,4 +1,9 @@
 /**
+ * @class Ext.panel.time
+ * @extend Ext.panel
+ * @xtype timepanel
+ * 
+ * 
  * This component presents a time selection view with different interaction modes
  * depending on the device and configuration options. Default time view is analog
  * clock face.
