@@ -1,4 +1,7 @@
 /**
+ * @class Ext.field.Dirty
+ * @extend Ext.Mixin
+ * 
  * A mixin that adds `dirty` config and `dirtychange` event to a component (typically a
  * `field` or `form`).
  * @private

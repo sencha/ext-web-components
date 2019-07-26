@@ -1,4 +1,8 @@
 /**
+ * @class Ext.froala.EditorField
+ * @extend Ext.field.Container
+ * @xtype froalaeditorfield
+ * 
  * A field version of {@link Ext.froala.Editor}. This allows you to use the Froala Editor
  * within a form and automatically have its name and value included in a form submit.
  */

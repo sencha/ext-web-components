@@ -244,13 +244,13 @@
  *
  * For example:
  *
- *      {
- *          xtype: 'datefield',
- *          dataType: {
- *              // type: 'date'  (datefield does this by default)
- *              dateWriteFormat: 'Y-m-d'
- *          }
- *      }
+ *      <ext-datefield
+ *           dataType='{
+ *               "type": "date",
+ *               "dateWriteFormat": "Y-m-d"
+ *           }'
+ *       >
+ *       </ext-datefield>
  *
  * If this config is a string, it is used to create a {@link Ext.data.field.Field field}
  * by that alias.

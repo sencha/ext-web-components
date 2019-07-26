@@ -1,4 +1,6 @@
 /**
+ * @class Ext.grid.GridDragZone
+ * @extend Ext.plugin.dd.DragZone
  * @private
  */
 

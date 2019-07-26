@@ -1,4 +1,8 @@
 /**
+ * @class Ext.field.CheckboxGroup
+ * @extend Ext.field.FieldGroupContainer
+ * @xtype checkboxgroup
+ * 
  * This Field is useful for containing multiple {@link Ext.field.Checkbox checkbox}.
  * 
  * It plots items into wither horizontal / vertical depending on 

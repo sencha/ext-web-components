@@ -62,23 +62,6 @@
  *          password: '**********'
  *      }
  *
- * ## Observing Fields
- *
- *     <FieldPanel>
- *         <TextField
- *             name="name"
- *             label="Name"
- *             onChange={(field, newValue) => Ext.toast(`New value is ${newValue}`)}
- *         />
- *         <EmailField
- *             name="email"
- *             label="Email"
- *         />
- *         <PasswordField
- *             name="password"
- *             label="Password"
- *         />
- *     </FieldPanel>
  *
  * The above code responds to a {@link Ext.field.Text#change change} event from any `field`
  * that is an immediate child of its view, the `fieldpanel`.

@@ -1,4 +1,8 @@
 /**
+ * @class Ext.grid.column.Drag
+ * @extend Ext.grid.column.Column
+ * @xtype dragcolumn
+ *
  * A grid column used by the {@link Ext.grid.plugin.RowDragDrop RowDragDrop} plugin.
  *
  * This class should not be directly instantiated. Instances are created automatically

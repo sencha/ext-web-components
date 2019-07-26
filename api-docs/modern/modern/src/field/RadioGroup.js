@@ -1,4 +1,8 @@
 /**
+ * @class Ext.field.RadioGroup
+ * @extend Ext.field.FieldGroupContainer
+ * @xtype radiogroup
+ * 
  * This Field is useful for containing multiple {@link Ext.field.Radio radiofield}.
  *
  * It plots items into wither horizontal / vertical depending on 
@@ -56,6 +60,7 @@
  *       >
  *       </ext-radiofield>
  *   </ext-radiogroup>
+ *  </ext-formpanel>
  *```
  *```javascript
  *@example({tab: 2, packages: ['ext-web-components']})

@@ -212,8 +212,25 @@
  */
 
 /**
+ * @property doKeyDown
  * Called when a key has been pressed in the `<input>`
  * @protected
+ */
+
+/**
+ * @property defaultBindProperty
+ * @inheritdoc
+ */
+
+/**
+ * @property classCls
+ * @inheritdoc
+ */
+
+/**
+ * @method doKeyUp
+ * Called when a key has been pressed in the `<input>`
+ * @private
  */
 
 /**

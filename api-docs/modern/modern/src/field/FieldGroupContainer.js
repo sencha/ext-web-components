@@ -1,8 +1,13 @@
 /**
+ * @class Ext.field.FieldGroupContainer
+ * @extend Ext.field.Container
+ * @xtype groupcontainer
+ *
  * This Group Container Field is useful for containing multiple form fields
  * to be a single group and will line up nicely with group other fields.
  * A common use is for grouping a set of related fields.
  */
+
 /**
  * @cfg {Boolean} vertical
  * True to distribute contained controls vertically
