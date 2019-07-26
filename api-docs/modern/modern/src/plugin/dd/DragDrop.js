@@ -1,4 +1,10 @@
   /**
+   * Ext.define('Ext.plugin.dd.DragDrop', {
+   * extend: 'Ext.plugin.Abstract',
+   * alias: 'plugin.viewdragdrop',
+   */
+
+  /**
    * @cfg {String} dragText
    * The text to show while dragging.
    */
