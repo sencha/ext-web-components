@@ -7,7 +7,7 @@ function (_ExtBase) {
   _inheritsLoose(ExtD3_packComponent, _ExtBase);
 
   ExtD3_packComponent.XTYPE = function XTYPE() {
-    return 'd3-pack';
+    return 'd3_pack';
   };
 
   ExtD3_packComponent.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
@@ -2955,6 +2955,6 @@ function (_ExtBase) {
 
 (function () {
   Ext.onReady(function () {
-    window.customElements.define('ext-d3-pack', ExtD3_packComponent);
+    window.customElements.define('ext-d3_pack', ExtD3_packComponent);
   });
 })();

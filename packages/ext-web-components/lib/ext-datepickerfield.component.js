@@ -29,6 +29,7 @@ get constrainAlign(){return this.getAttribute('constrainAlign')};set constrainAl
 get contentEl(){return this.getAttribute('contentEl')};set contentEl(contentEl){this.setAttribute('contentEl',contentEl)}
 get controller(){return this.getAttribute('controller')};set controller(controller){this.setAttribute('controller',controller)}
 get data(){return this.getAttribute('data')};set data(data){this.setAttribute('data',data)}
+get dataType(){return this.getAttribute('dataType')};set dataType(dataType){this.setAttribute('dataType',dataType)}
 get dateFormat(){return this.getAttribute('dateFormat')};set dateFormat(dateFormat){this.setAttribute('dateFormat',dateFormat)}
 get defaultListenerScope(){return this.getAttribute('defaultListenerScope')};set defaultListenerScope(defaultListenerScope){this.setAttribute('defaultListenerScope',defaultListenerScope)}
 get destroyPickerOnHide(){return this.getAttribute('destroyPickerOnHide')};set destroyPickerOnHide(destroyPickerOnHide){this.setAttribute('destroyPickerOnHide',destroyPickerOnHide)}
@@ -120,7 +121,6 @@ get statefulDefaults(){return this.getAttribute('statefulDefaults')};set statefu
 get stateId(){return this.getAttribute('stateId')};set stateId(stateId){this.setAttribute('stateId',stateId)}
 get stripCharsRe(){return this.getAttribute('stripCharsRe')};set stripCharsRe(stripCharsRe){this.setAttribute('stripCharsRe',stripCharsRe)}
 get style(){return this.getAttribute('style')};set style(style){this.setAttribute('style',style)}
-get submitFormat(){return this.getAttribute('submitFormat')};set submitFormat(submitFormat){this.setAttribute('submitFormat',submitFormat)}
 get tabIndex(){return this.getAttribute('tabIndex')};set tabIndex(tabIndex){this.setAttribute('tabIndex',tabIndex)}
 get textAlign(){return this.getAttribute('textAlign')};set textAlign(textAlign){this.setAttribute('textAlign',textAlign)}
 get tipError(){return this.getAttribute('tipError')};set tipError(tipError){this.setAttribute('tipError',tipError)}
@@ -251,6 +251,7 @@ get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange
 "contentEl":["Ext.dom.Element","htmlelement","string"],
 "controller":["string","object","Ext.app.ViewController"],
 "data":["object"],
+"dataType":["Ext.data.field.Field","object","string"],
 "dateFormat":["string"],
 "defaultListenerScope":["boolean"],
 "destroyPickerOnHide":["boolean"],
@@ -342,7 +343,6 @@ get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange
 "stateId":["string"],
 "stripCharsRe":["regexp"],
 "style":["string","object"],
-"submitFormat":["string"],
 "tabIndex":["number"],
 "textAlign":["'left'","'center'","'right'"],
 "tipError":["string"],
@@ -554,12 +554,10 @@ get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange
 { name:'getSize',function: function() { return this.ext.getSize() } },
 { name:'getStateBuilder',function: function(cache) { return this.ext.getStateBuilder(cache) } },
 { name:'getStatefulOwner',function: function() { return this.ext.getStatefulOwner() } },
-{ name:'getSubmitValue',function: function() { return this.ext.getSubmitValue() } },
 { name:'getTabIndex',function: function() { return this.ext.getTabIndex() } },
 { name:'getTextSelection',function: function() { return this.ext.getTextSelection() } },
 { name:'getXTypes',function: function() { return this.ext.getXTypes() } },
 { name:'handleBlurEvent',function: function(info) { return this.ext.handleBlurEvent(info) } },
-{ name:'handleFieldDefaults',function: function() { return this.ext.handleFieldDefaults() } },
 { name:'handleFocusEvent',function: function(info) { return this.ext.handleFocusEvent(info) } },
 { name:'hasCls',function: function(className) { return this.ext.hasCls(className) } },
 { name:'hasConfig',function: function(name) { return this.ext.hasConfig(name) } },
@@ -666,6 +664,7 @@ get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange
 { name:'revertFocusTo',function: function(target) { return this.ext.revertFocusTo(target) } },
 { name:'saveState',function: function(state,stateful) { return this.ext.saveState(state,stateful) } },
 { name:'select',function: function(start,end,direction) { return this.ext.select(start,end,direction) } },
+{ name:'serialize',function: function() { return this.ext.serialize() } },
 { name:'setConfig',function: function(name,value,options) { return this.ext.setConfig(name,value,options) } },
 { name:'setCurrentAlignmentInfo',function: function(alignmentInfo) { return this.ext.setCurrentAlignmentInfo(alignmentInfo) } },
 { name:'setInputAttribute',function: function(attribute,newValue) { return this.ext.setInputAttribute(attribute,newValue) } },

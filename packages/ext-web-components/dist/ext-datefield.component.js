@@ -40,6 +40,7 @@ function (_ExtBase) {
       "contentEl": ["Ext.dom.Element", "htmlelement", "string"],
       "controller": ["string", "object", "Ext.app.ViewController"],
       "data": ["object"],
+      "dataType": ["Ext.data.field.Field", "object", "string"],
       "dateFormat": ["string"],
       "defaultListenerScope": ["boolean"],
       "destroyPickerOnHide": ["boolean"],
@@ -131,7 +132,6 @@ function (_ExtBase) {
       "stateId": ["string"],
       "stripCharsRe": ["regexp"],
       "style": ["string", "object"],
-      "submitFormat": ["string"],
       "tabIndex": ["number"],
       "textAlign": ["'left'", "'center'", "'right'"],
       "tipError": ["string"],
@@ -900,11 +900,6 @@ function (_ExtBase) {
         return this.ext.getStatefulOwner();
       }
     }, {
-      name: 'getSubmitValue',
-      "function": function _function() {
-        return this.ext.getSubmitValue();
-      }
-    }, {
       name: 'getTabIndex',
       "function": function _function() {
         return this.ext.getTabIndex();
@@ -923,11 +918,6 @@ function (_ExtBase) {
       name: 'handleBlurEvent',
       "function": function _function(info) {
         return this.ext.handleBlurEvent(info);
-      }
-    }, {
-      name: 'handleFieldDefaults',
-      "function": function _function() {
-        return this.ext.handleFieldDefaults();
       }
     }, {
       name: 'handleFocusEvent',
@@ -1460,6 +1450,11 @@ function (_ExtBase) {
         return this.ext.select(start, end, direction);
       }
     }, {
+      name: 'serialize',
+      "function": function _function() {
+        return this.ext.serialize();
+      }
+    }, {
       name: 'setConfig',
       "function": function _function(name, value, options) {
         return this.ext.setConfig(name, value, options);
@@ -1885,6 +1880,14 @@ function (_ExtBase) {
     },
     set: function set(data) {
       this.setAttribute('data', data);
+    }
+  }, {
+    key: "dataType",
+    get: function get() {
+      return this.getAttribute('dataType');
+    },
+    set: function set(dataType) {
+      this.setAttribute('dataType', dataType);
     }
   }, {
     key: "dateFormat",
@@ -2613,14 +2616,6 @@ function (_ExtBase) {
     },
     set: function set(style) {
       this.setAttribute('style', style);
-    }
-  }, {
-    key: "submitFormat",
-    get: function get() {
-      return this.getAttribute('submitFormat');
-    },
-    set: function set(submitFormat) {
-      this.setAttribute('submitFormat', submitFormat);
     }
   }, {
     key: "tabIndex",

@@ -257,7 +257,7 @@ get onvalidateeventresize(){return this.getAttribute('onvalidateeventresize')};s
 get onvaluechange(){return this.getAttribute('onvaluechange')};set onvaluechange(onvaluechange){this.setAttribute('onvaluechange',onvaluechange)}
 get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange(onwidthchange){this.setAttribute('onwidthchange',onwidthchange)}
 
-	static XTYPE() {return 'calendar-day'}
+	static XTYPE() {return 'calendar_day'}
   static PROPERTIESOBJECT() { return {
 "activeChildTabIndex":["number"],
 "activeItem":["Ext.Component","object","string","number"],
@@ -833,6 +833,6 @@ get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange
 }
 (function () {
   Ext.onReady(function() {
-    window.customElements.define('ext-calendar-day', ExtCalendar_dayComponent);
+    window.customElements.define('ext-calendar_day', ExtCalendar_dayComponent);
   });
 })();

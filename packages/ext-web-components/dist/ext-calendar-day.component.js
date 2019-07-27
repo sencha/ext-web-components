@@ -7,7 +7,7 @@ function (_ExtBase) {
   _inheritsLoose(ExtCalendar_dayComponent, _ExtBase);
 
   ExtCalendar_dayComponent.XTYPE = function XTYPE() {
-    return 'calendar-day';
+    return 'calendar_day';
   };
 
   ExtCalendar_dayComponent.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
@@ -3974,6 +3974,6 @@ function (_ExtBase) {
 
 (function () {
   Ext.onReady(function () {
-    window.customElements.define('ext-calendar-day', ExtCalendar_dayComponent);
+    window.customElements.define('ext-calendar_day', ExtCalendar_dayComponent);
   });
 })();

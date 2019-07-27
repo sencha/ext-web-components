@@ -34,6 +34,7 @@ get constrainAlign(){return this.getAttribute('constrainAlign')};set constrainAl
 get contentEl(){return this.getAttribute('contentEl')};set contentEl(contentEl){this.setAttribute('contentEl',contentEl)}
 get controller(){return this.getAttribute('controller')};set controller(controller){this.setAttribute('controller',controller)}
 get data(){return this.getAttribute('data')};set data(data){this.setAttribute('data',data)}
+get dataType(){return this.getAttribute('dataType')};set dataType(dataType){this.setAttribute('dataType',dataType)}
 get defaultListenerScope(){return this.getAttribute('defaultListenerScope')};set defaultListenerScope(defaultListenerScope){this.setAttribute('defaultListenerScope',defaultListenerScope)}
 get delimiter(){return this.getAttribute('delimiter')};set delimiter(delimiter){this.setAttribute('delimiter',delimiter)}
 get dirty(){return this.getAttribute('dirty')};set dirty(dirty){this.setAttribute('dirty',dirty)}
@@ -239,7 +240,7 @@ get ontopchange(){return this.getAttribute('ontopchange')};set ontopchange(ontop
 get onupdatedata(){return this.getAttribute('onupdatedata')};set onupdatedata(onupdatedata){this.setAttribute('onupdatedata',onupdatedata)}
 get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange(onwidthchange){this.setAttribute('onwidthchange',onwidthchange)}
 
-	static XTYPE() {return 'calendar-timefield'}
+	static XTYPE() {return 'calendar_timefield'}
   static PROPERTIESOBJECT() { return {
 "alignSelf":["string"],
 "alignTarget":["string"],
@@ -274,6 +275,7 @@ get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange
 "contentEl":["Ext.dom.Element","htmlelement","string"],
 "controller":["string","object","Ext.app.ViewController"],
 "data":["object"],
+"dataType":["Ext.data.field.Field","object","string"],
 "defaultListenerScope":["boolean"],
 "delimiter":["string"],
 "dirty":["boolean"],
@@ -599,7 +601,6 @@ get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange
 { name:'getTextSelection',function: function() { return this.ext.getTextSelection() } },
 { name:'getXTypes',function: function() { return this.ext.getXTypes() } },
 { name:'handleBlurEvent',function: function(info) { return this.ext.handleBlurEvent(info) } },
-{ name:'handleFieldDefaults',function: function() { return this.ext.handleFieldDefaults() } },
 { name:'handleFocusEvent',function: function(info) { return this.ext.handleFocusEvent(info) } },
 { name:'hasCls',function: function(className) { return this.ext.hasCls(className) } },
 { name:'hasConfig',function: function(name) { return this.ext.hasConfig(name) } },
@@ -713,6 +714,7 @@ get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange
 { name:'revertFocusTo',function: function(target) { return this.ext.revertFocusTo(target) } },
 { name:'saveState',function: function(state,stateful) { return this.ext.saveState(state,stateful) } },
 { name:'select',function: function(start,end,direction) { return this.ext.select(start,end,direction) } },
+{ name:'serialize',function: function() { return this.ext.serialize() } },
 { name:'setConfig',function: function(name,value,options) { return this.ext.setConfig(name,value,options) } },
 { name:'setCurrentAlignmentInfo',function: function(alignmentInfo) { return this.ext.setCurrentAlignmentInfo(alignmentInfo) } },
 { name:'setFieldDisplay',function: function() { return this.ext.setFieldDisplay() } },
@@ -777,6 +779,6 @@ get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange
 }
 (function () {
   Ext.onReady(function() {
-    window.customElements.define('ext-calendar-timefield', ExtCalendar_timefieldComponent);
+    window.customElements.define('ext-calendar_timefield', ExtCalendar_timefieldComponent);
   });
 })();

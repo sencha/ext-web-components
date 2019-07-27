@@ -7,7 +7,7 @@ function (_ExtBase) {
   _inheritsLoose(ExtCalendar_weeksComponent, _ExtBase);
 
   ExtCalendar_weeksComponent.XTYPE = function XTYPE() {
-    return 'calendar-weeks';
+    return 'calendar_weeks';
   };
 
   ExtCalendar_weeksComponent.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
@@ -3945,6 +3945,6 @@ function (_ExtBase) {
 
 (function () {
   Ext.onReady(function () {
-    window.customElements.define('ext-calendar-weeks', ExtCalendar_weeksComponent);
+    window.customElements.define('ext-calendar_weeks', ExtCalendar_weeksComponent);
   });
 })();
