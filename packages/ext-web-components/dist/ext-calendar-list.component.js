@@ -7,7 +7,7 @@ function (_ExtBase) {
   _inheritsLoose(ExtCalendar_listComponent, _ExtBase);
 
   ExtCalendar_listComponent.XTYPE = function XTYPE() {
-    return 'calendar-list';
+    return 'calendar_list';
   };
 
   ExtCalendar_listComponent.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
@@ -3811,6 +3811,6 @@ function (_ExtBase) {
 
 (function () {
   Ext.onReady(function () {
-    window.customElements.define('ext-calendar-list', ExtCalendar_listComponent);
+    window.customElements.define('ext-calendar_list', ExtCalendar_listComponent);
   });
 })();

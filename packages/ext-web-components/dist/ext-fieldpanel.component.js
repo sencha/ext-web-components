@@ -1053,14 +1053,19 @@ function (_ExtBase) {
         return this.ext.getStatefulOwner();
       }
     }, {
+      name: 'getSubmitValues',
+      "function": function _function(options) {
+        return this.ext.getSubmitValues(options);
+      }
+    }, {
       name: 'getTabIndex',
       "function": function _function() {
         return this.ext.getTabIndex();
       }
     }, {
       name: 'getValues',
-      "function": function _function(enabled, all) {
-        return this.ext.getValues(enabled, all);
+      "function": function _function(options) {
+        return this.ext.getValues(options);
       }
     }, {
       name: 'getXTypes',

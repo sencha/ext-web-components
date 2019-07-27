@@ -27,6 +27,7 @@ get constrainAlign(){return this.getAttribute('constrainAlign')};set constrainAl
 get contentEl(){return this.getAttribute('contentEl')};set contentEl(contentEl){this.setAttribute('contentEl',contentEl)}
 get controller(){return this.getAttribute('controller')};set controller(controller){this.setAttribute('controller',controller)}
 get data(){return this.getAttribute('data')};set data(data){this.setAttribute('data',data)}
+get dataType(){return this.getAttribute('dataType')};set dataType(dataType){this.setAttribute('dataType',dataType)}
 get decimals(){return this.getAttribute('decimals')};set decimals(decimals){this.setAttribute('decimals',decimals)}
 get decimalSeparator(){return this.getAttribute('decimalSeparator')};set decimalSeparator(decimalSeparator){this.setAttribute('decimalSeparator',decimalSeparator)}
 get decimalsText(){return this.getAttribute('decimalsText')};set decimalsText(decimalsText){this.setAttribute('decimalsText',decimalsText)}
@@ -240,6 +241,7 @@ get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange
 "contentEl":["Ext.dom.Element","htmlelement","string"],
 "controller":["string","object","Ext.app.ViewController"],
 "data":["object"],
+"dataType":["Ext.data.field.Field","object","string"],
 "decimals":["number"],
 "decimalSeparator":["string"],
 "decimalsText":["string"],
@@ -538,7 +540,6 @@ get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange
 { name:'getTextSelection',function: function() { return this.ext.getTextSelection() } },
 { name:'getXTypes',function: function() { return this.ext.getXTypes() } },
 { name:'handleBlurEvent',function: function(info) { return this.ext.handleBlurEvent(info) } },
-{ name:'handleFieldDefaults',function: function() { return this.ext.handleFieldDefaults() } },
 { name:'handleFocusEvent',function: function(info) { return this.ext.handleFocusEvent(info) } },
 { name:'hasCls',function: function(className) { return this.ext.hasCls(className) } },
 { name:'hasConfig',function: function(name) { return this.ext.hasConfig(name) } },
@@ -642,6 +643,7 @@ get onwidthchange(){return this.getAttribute('onwidthchange')};set onwidthchange
 { name:'revertFocusTo',function: function(target) { return this.ext.revertFocusTo(target) } },
 { name:'saveState',function: function(state,stateful) { return this.ext.saveState(state,stateful) } },
 { name:'select',function: function(start,end,direction) { return this.ext.select(start,end,direction) } },
+{ name:'serialize',function: function() { return this.ext.serialize() } },
 { name:'setConfig',function: function(name,value,options) { return this.ext.setConfig(name,value,options) } },
 { name:'setCurrentAlignmentInfo',function: function(alignmentInfo) { return this.ext.setCurrentAlignmentInfo(alignmentInfo) } },
 { name:'setInputAttribute',function: function(attribute,newValue) { return this.ext.setInputAttribute(attribute,newValue) } },

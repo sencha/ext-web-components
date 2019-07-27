@@ -7,7 +7,7 @@ function (_ExtBase) {
   _inheritsLoose(ExtD3_treemapComponent, _ExtBase);
 
   ExtD3_treemapComponent.XTYPE = function XTYPE() {
-    return 'd3-treemap';
+    return 'd3_treemap';
   };
 
   ExtD3_treemapComponent.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
@@ -3007,6 +3007,6 @@ function (_ExtBase) {
 
 (function () {
   Ext.onReady(function () {
-    window.customElements.define('ext-d3-treemap', ExtD3_treemapComponent);
+    window.customElements.define('ext-d3_treemap', ExtD3_treemapComponent);
   });
 })();

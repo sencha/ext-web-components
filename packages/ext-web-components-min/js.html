@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
+    <title>Sencha ExtWebComponent 7.0 Example in JavaScript</title>
+    <link  href='favicon.ico' rel='icon' type='image/x-icon'/ >
+    <script src="dist/css.production.js.gz"></script>
+    <script src="dist/ext.development.js"></script>
+    <script src="dist/ewc.development.js"></script>
+</head>
+<script>
+  //height="100px" xonready="readyGrid"
+  var readyGrid = (event) => {
+    console.log('ewady')
+      var gridCmp = event.detail.cmp
+      var data=[
+          { name: "Jean Luc",   email: "jeanluc.picard@enterprise.com", phone: "555-111-1111" },
+          { name: "ModernWorf", email: "worf.moghsson@enterprise.com",  phone: "555-222-2222" },
+          { name: "Deanna",     email: "deanna.troi@enterprise.com",    phone: "555-333-3333" },
+          { name: "Data",       email: "mr.data@enterprise.com",        phone: "555-444-4444" }
+      ]
+      gridCmp.setData(data)
+  }
+</script>
+<body>
+    <ext-grid title="Employees" onready="readyGrid"
+    store='"data":[
+        { name: "Jean Luc",   email: "jeanluc.picard@enterprise.com", phone: "555-111-1111" },
+        { name: "ModernWorf", email: "worf.moghsson@enterprise.com",  phone: "555-222-2222" },
+        { name: "Deanna",     email: "deanna.troi@enterprise.com",    phone: "555-333-3333" },
+        { name: "Data",       email: "mr.data@enterprise.com",        phone: "555-444-4444" }
+    ]'
+    >
+        <ext-column text="Name" dataIndex="name" flex="2" resizable="true"></ext-column>
+        <ext-column text="Email" dataIndex="email" flex="3" resizable="true"></ext-column>
+        <ext-column text="Phone" dataIndex="phone" flex="2" resizable="true"></ext-column>
+    </ext-grid>
+</body>
+</html>

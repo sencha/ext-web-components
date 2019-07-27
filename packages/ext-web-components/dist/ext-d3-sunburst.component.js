@@ -7,7 +7,7 @@ function (_ExtBase) {
   _inheritsLoose(ExtD3_sunburstComponent, _ExtBase);
 
   ExtD3_sunburstComponent.XTYPE = function XTYPE() {
-    return 'd3-sunburst';
+    return 'd3_sunburst';
   };
 
   ExtD3_sunburstComponent.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
@@ -2980,6 +2980,6 @@ function (_ExtBase) {
 
 (function () {
   Ext.onReady(function () {
-    window.customElements.define('ext-d3-sunburst', ExtD3_sunburstComponent);
+    window.customElements.define('ext-d3_sunburst', ExtD3_sunburstComponent);
   });
 })();

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
+    <title>Angular EWC</title>
+    <link  href='favicon.ico' rel='icon' type='image/x-icon'/ >
+    <script src="dist/css.production.js.gz"></script>
+    <script src="dist/ext.production.js.br"></script>
+    <script src="dist/ewc.production.js.gz"></script>
+
+    <script src="https://unpkg.com/core-js@2.6.5/client/shim.min.js"></script>
+    <script src="https://unpkg.com/zone.js@0.8.29/dist/zone.min.js"></script>
+    <script src="https://unpkg.com/rxjs@6.4.0/bundles/rxjs.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@angular/core@8.1.2/bundles/core.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@angular/common@8.1.2/bundles/common.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@angular/compiler@8.1.2/bundles/compiler.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@angular/platform-browser@8.1.2/bundles/platform-browser.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@angular/platform-browser-dynamic@8.1.2/bundles/platform-browser-dynamic.umd.min.js"></script>
+  </head>
+<body>
+<my-app></my-app>
+
+<script type="text/typescript">
+
+
+let { Component, NgModule, CUSTOM_ELEMENTS_SCHEMA } = ng.core;
+@Component({
+selector: 'my-app',
+template: `
+    <h1>Hello, {{ name }}</h1>
+    <button (click)="increment()">Click {{ counter }}</button>
+    <p>
+    <ext-grid title="ExtAngular - Employees" height="300px" (ready)="this.readyGrid($event)">
+        <ext-column text="Name" dataIndex="name" flex="2" resizable="true"></ext-column>
+        <ext-column text="Email" dataIndex="email" flex="3" resizable="true"></ext-column>
+        <ext-column text="Phone" dataIndex="phone" flex="2" resizable="true"></ext-column>
+    </ext-grid>
+`,
+})
+class HomeComponent {
+    counter = 0;
+    name = 'ExtAngular with Angular v8'
+
+    readyGrid = (event) => {
+        var gridCmp = event.detail.cmp
+        var data=[
+            { name: "Jean Luc",   email: "jeanluc.picard@enterprise.com", phone: "555-111-1111" },
+            { name: "ModernWorf", email: "worf.moghsson@enterprise.com",  phone: "555-222-2222" },
+            { name: "Deanna",     email: "deanna.troi@enterprise.com",    phone: "555-333-3333" },
+            { name: "Data",       email: "mr.data@enterprise.com",        phone: "555-444-4444" }
+        ]
+        gridCmp.setData(data)
+    }
+
+    increment() {
+        this.counter++;
+    }
+}
+
+
+const { BrowserModule } = ng.platformBrowser;
+@NgModule({
+    imports:      [ BrowserModule ],
+    declarations: [ HomeComponent ],
+    schemas:      [ CUSTOM_ELEMENTS_SCHEMA ],
+    bootstrap:    [ HomeComponent ]
+})
+class AppModule { }
+
+
+const { platformBrowserDynamic } = ng.platformBrowserDynamic;
+platformBrowserDynamic().bootstrapModule(AppModule);
+
+
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typescript/3.3.4000/typescript.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/basarat/typescript-script@master/transpiler.js"></script>
+</body>
+</html>
+
+
+
+    <!--
+    <script type="text/javascript" src="https://unpkg.com/core-js@2.6.5/client/shim.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/zone.js@0.8.29/dist/zone.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/rxjs@6.4.0/bundles/rxjs.umd.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@angular/core@7.2.10/bundles/core.umd.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@angular/common@7.2.10/bundles/common.umd.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@angular/compiler@7.2.10/bundles/compiler.umd.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@angular/platform-browser@7.2.10/bundles/platform-browser.umd.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@angular/platform-browser-dynamic@7.2.10/bundles/platform-browser-dynamic.umd.js"></script>
+    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/6.5.2/rxjs.umd.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/core-js@3.1.4/client/shim.min.js"></script>
+  -->
+

@@ -33,6 +33,7 @@ function (_ExtBase) {
       "contentEl": ["Ext.dom.Element", "htmlelement", "string"],
       "controller": ["string", "object", "Ext.app.ViewController"],
       "data": ["object"],
+      "dataType": ["Ext.data.field.Field", "object", "string"],
       "defaultListenerScope": ["boolean"],
       "defaults": ["object"],
       "defaultType": ["string"],
@@ -892,14 +893,19 @@ function (_ExtBase) {
         return this.ext.getStatefulOwner();
       }
     }, {
+      name: 'getSubmitValues',
+      "function": function _function(options) {
+        return this.ext.getSubmitValues(options);
+      }
+    }, {
       name: 'getTabIndex',
       "function": function _function() {
         return this.ext.getTabIndex();
       }
     }, {
       name: 'getValues',
-      "function": function _function(enabled, all) {
-        return this.ext.getValues(enabled, all);
+      "function": function _function(options) {
+        return this.ext.getValues(options);
       }
     }, {
       name: 'getXTypes',
@@ -910,11 +916,6 @@ function (_ExtBase) {
       name: 'handleBlurEvent',
       "function": function _function(info) {
         return this.ext.handleBlurEvent(info);
-      }
-    }, {
-      name: 'handleFieldDefaults',
-      "function": function _function() {
-        return this.ext.handleFieldDefaults();
       }
     }, {
       name: 'handleFocusEvent',
@@ -1442,6 +1443,11 @@ function (_ExtBase) {
         return this.ext.saveState(state, stateful);
       }
     }, {
+      name: 'serialize',
+      "function": function _function() {
+        return this.ext.serialize();
+      }
+    }, {
       name: 'setConfig',
       "function": function _function(name, value, options) {
         return this.ext.setConfig(name, value, options);
@@ -1806,6 +1812,14 @@ function (_ExtBase) {
     },
     set: function set(data) {
       this.setAttribute('data', data);
+    }
+  }, {
+    key: "dataType",
+    get: function get() {
+      return this.getAttribute('dataType');
+    },
+    set: function set(dataType) {
+      this.setAttribute('dataType', dataType);
     }
   }, {
     key: "defaultListenerScope",

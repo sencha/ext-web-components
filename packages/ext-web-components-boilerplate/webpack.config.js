@@ -5,6 +5,9 @@ const ExtWebpackPlugin = require('@sencha/ext-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const portfinder = require('portfinder');
 const webpack = require('webpack');
+const Visualizer = require('webpack-visualizer-plugin');
+//const TerserPlugin = require('terser-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = function(env) {
     function get(it, val) {if(env == undefined) {return val;} else if(env[it] == undefined) {return val;} else {return env[it];}}
@@ -42,6 +45,19 @@ module.exports = function(env) {
                 watch: watch,
                 verbose: verbose
             }),
+
+            new CompressionPlugin({
+                //include: [/\/.ext/, /\/./],
+                // asset: '[path].gz[query]',
+                // algorithm: 'gzip',
+                // test: /\.js$|\.css$|\.html$/,
+                // threshold: 10240,
+                // minRatio: 0.8
+            }),
+
+            new Visualizer({
+                filename: './statistics.html'
+            }),
             new CopyWebpackPlugin([{
                 from: '../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js',
                 to: './webcomponents-bundle.js'
@@ -52,6 +68,21 @@ module.exports = function(env) {
             })
         ];
         return {
+
+            // optimization: {
+            //     minimizer: [
+            //         new TerserPlugin({
+            //             cache: true,
+            //             parallel: true,
+            //             sourceMap: true, // Must be set to true if using source-maps in production
+            //             terserOptions: {
+            //                 // https://github.com/webpack-contrib/terser-webpack-plugin#terseroptions
+            //             }
+            //         }),
+            //     ],
+            // },
+
+
             mode: environment,
             devtool: (environment === 'development') ? 'inline-source-map' : false,
             context: path.join(__dirname, './src'),
