@@ -52,7 +52,8 @@
  * }
  * window.picker = new PickerComponent();
  * ```
- *
+ */
+ 
 /**
  * @event pick
  * Fired when a slot has been picked
