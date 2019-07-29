@@ -1,6 +1,11 @@
 /**
- * @private
- */
+  *
+  * @class Ext.dd.ScrollManager
+  * @extend Ext.Base
+  * @singleton
+  * @private
+  *
+*/
 
 /**
  * @method scrollTowardsPointer

@@ -1,9 +1,12 @@
 /**
+ * @class Ext.dataview.ListGroup
+ * @extend Ext.Base
+ *
  * This class manages a group in a `list` or `grid`. These objects arrive as parameters to
  * events and can be retrieved via the {@link Ext.dataview.List#method!groupFrom groupFrom}
  * method.
  * @since 7.0
- */
+*/
  /**
   * @cfg {Boolean} collapsed
   * This config controls whether a group is expanded or collapsed. Setting this

@@ -50,7 +50,8 @@ export default class CardLayoutComponent {
     }
 
     switchCards = (event) => {
-        const buttonText = event.srcElement.text;
+        // const buttonText = event.srcElement.text;
+        const buttonText = event.config.text;
         const targetItem = this.contents.filter(function(button) {return button.text === buttonText;})[0];
         console.log(targetItem);
 
@@ -90,11 +91,14 @@ export default class CardLayoutComponent {
             }
             buttonElement.text = buttonItem.text;
             buttonElement.ui = 'alt';
+            buttonElement.id = buttonItem.text.split(/\s/).join('_').concat('_container1');
             buttonElement.width = '100%';
-            buttonElement.setAttribute('onTap', 'cardlayout.switchCards');
+            buttonElement.height = '100%';
+            // buttonElement.setAttribute('onTap', 'cardlayout.switchCards');
             buttonElement.setAttribute('animation', buttonItem.animation);
             buttonElement.animation = buttonItem.animation;
             this.contChildCmp1.el.dom.appendChild(buttonElement);
+            Ext.getCmp(buttonElement.id).on('tap', this.switchCards.bind(this));
         }
     }
 
@@ -110,8 +114,12 @@ export default class CardLayoutComponent {
 
             buttonElement.text = buttonItem.text;
             buttonElement.ui = 'alt';
-            buttonElement.setAttribute('onTap', 'cardlayout.switchCards');
-            this.contChildCmp2.el.dom.append(buttonElement);
+            buttonElement.id = buttonItem.text.split(/\s/).join('_').concat('_container1');
+            buttonElement.width = '100%';
+            buttonElement.height = '100%';
+            // buttonElement.setAttribute('onTap', 'cardlayout.switchCards');
+            this.contChildCmp2.el.dom.appendChild(buttonElement);
+            Ext.getCmp(buttonElement.id).on('tap', this.switchCards.bind(this));
         }
     }
 }

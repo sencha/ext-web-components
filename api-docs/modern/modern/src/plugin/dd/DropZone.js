@@ -1,6 +1,9 @@
 /**
+ * @class Ext.plugin.dd.DropZone
+ * @extend Ext.drag.Target
  * @private
  */
+
 /**
  * @property {String} dropMarkerCls
  * @readonly
@@ -49,6 +52,6 @@
 /**
  * @method removeDropMarker
  * remove valid drop cls from highlighted drop target
- * 
+ *
  * @template
  */
