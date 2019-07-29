@@ -9,7 +9,7 @@
  * {@link Ext.form.Panel formpanel} but is instead designed to be used where data will be
  * saved to a server in other ways (see below) or perhaps as a child of a `formpanel`.
  *
- * Usually a `fieldpanel` just contains a set of fields.
+ * Usually a `fieldpanel` just contains a set of fields to display such as the following:
  *
  * ## Example
  *```HTML
@@ -62,11 +62,27 @@
  *          password: '**********'
  *      }
  *
+ * ## Observing Fields
+ *
+ *     <FieldPanel>
+ *         <TextField
+ *             name="name"
+ *             label="Name"
+ *             onChange={(field, newValue) => Ext.toast(`New value is ${newValue}`)}
+ *         />
+ *         <EmailField
+ *             name="email"
+ *             label="Email"
+ *         />
+ *         <PasswordField
+ *             name="password"
+ *             label="Password"
+ *         />
+ *     </FieldPanel>
  *
  * The above code responds to a {@link Ext.field.Text#change change} event from any `field`
  * that is an immediate child of its view, the `fieldpanel`.
  *
- * @since 6.5.0
  */
 
 /**

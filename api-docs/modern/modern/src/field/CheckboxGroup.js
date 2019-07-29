@@ -73,13 +73,13 @@
  */
 
 /**
- * @property {Boolean} isCheckboxGroup
+ * @property {Boolean} [isCheckboxGroup=true]
  * The value `true` to identify an object as an instance of this or derived class.
  * @readonly
  */
 
 /**
- * @property {String} defaultType
+ * @property {String} [defaultType='checkbox']
  * Default item type in radio group
  * @readonly
  */
