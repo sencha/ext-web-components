@@ -48,14 +48,17 @@ export default class TouchEventsComponent {
         const panelHeader = {
             items: [
                 {
+                  xtype: 'paneltitle',
+                  flex: 1,
+                  text: 'Event Log'
+                },
+                {
                     xtype: 'button',
-                    align: 'right',
                     text: 'clear',
                     ui: 'alt',
                     handler: this.clearEventLog.bind(this)
                 }]
         };
         this.panelCmp.setHeader(panelHeader);
-        this.panelCmp.setTitle('Event Log');
     }
 }
