@@ -70,7 +70,11 @@ export default class CollapsibleComponent {
 
     onReadyMenu = (event) => {
         this.menuCmp = event.detail.cmp;
-        this.menuCmp.on('click', this.onCollapsibleChange.bind(this));
+        if (Ext.isEdge) {
+            this.menuCmp.on('activeItemchange', this.onCollapsibleChange.bind(this));
+        } else {
+            this.menuCmp.on('click', this.onCollapsibleChange.bind(this));
+        }
     }
 
     onReadyMenuItem = (event) => {

@@ -168,7 +168,12 @@ export default class ExporterPluginComponent {
 
     onMenuReady = (event) => {
         this.menu = event.detail.cmp;
-        this.menu.on('click', this.exportDocument.bind(this));
+        if (Ext.isEdge) {
+            this.menu.on('activeItemchange', this.exportDocument.bind(this));
+        } else {
+            this.menu.on('click', this.exportDocument.bind(this));
+        }
+
     }
 
     showConfigurator = () => {this.pivotgrid.showConfigurator();}
