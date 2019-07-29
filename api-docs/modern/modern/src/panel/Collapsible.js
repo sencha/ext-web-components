@@ -21,13 +21,13 @@
  * @accessor
  */
 
-/**
-* @cfg {Boolean} [titleCollapse]
-* `true` to allow expanding and collapsing the panel (when `{@link #collapsible} = true`)
-* by clicking anywhere in the header bar, `false` to allow it only by clicking to tool
-* button.
-* @since 7.0
-*/
+ /**
+ * @cfg {Boolean} [titleCollapse]
+ * `true` to allow expanding and collapsing the panel (when `{@link #collapsible} = true`)
+ * by clicking anywhere in the header bar, `false` to allow it only by clicking to tool
+ * button.
+ * @since 7.0
+ */
 
 /**
  * @event beforecollapse
