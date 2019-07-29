@@ -34,7 +34,11 @@ export default class SelectAndCopyComponent {
 
     extensibleMenuReady = (event) => {
         this.extensibleMenuCmp = event.detail.cmp;
-        this.extensibleMenuCmp.on('click', this.onExtensibleChange.bind(this));
+        if (Ext.isEdge) {
+            this.extensibleMenuCmp.on('activeItemchange', this.onExtensibleChange.bind(this));
+        } else {
+            this.extensibleMenuCmp.on('click', this.onExtensibleChange.bind(this));
+        }
     }
 
     onSelectableChange = (event) => {
@@ -44,6 +48,7 @@ export default class SelectAndCopyComponent {
     }
 
     onExtensibleChange = (sender, value) => {
+        debugger;
         this.gridSelectable.extensible = value._text;
         this.gridCmp.setSelectable(this.gridSelectable);
 
