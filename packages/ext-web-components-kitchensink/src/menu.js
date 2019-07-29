@@ -307,7 +307,7 @@ export default function getMenu() {
                 { text: 'Summary Row', component: SummaryRowComponent, iconCls: 'icon-grid-summary'},
                 { text: 'Grid Filtering', component: GridFilteringComponent, iconCls: 'icon-grid-filtering'},
                 { text: 'View Options', component: ViewOptionsComponent, iconCls: 'icon-view-options-grid'},
-                { text: 'Row Drag And Drop', component: RowDragAndDropComponent, iconCls: 'icon-view-options-grid'},
+                { text: 'Row Drag And Drop', component: RowDragAndDropComponent, iconCls: 'icon-dd-grid-row'},
                 { text: 'Drag Form To Grid', component: DragFormToGrid, iconCls: 'icon-dd-form-to-grid'}
             ]},
             { text: 'Advanced Features', iconCls: 'icon-grid-plugins', children:[
