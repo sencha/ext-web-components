@@ -10,7 +10,7 @@
         "ext": "../node_modules/@sencha/ext"
     },
     "build": {
-        "dir": "${workspace.dir}/build"
+        "dir": "${workspace.dir}/dist"
     },
     "packages": {
         "dir": "${workspace.dir}/packages,${workspace.dir}/../node_modules/@sencha"
