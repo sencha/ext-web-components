@@ -26,6 +26,7 @@ const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpackPlugin');
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 const ExtWebpackPlugin = require('@sencha/ext-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const postcssNormalize = require('postcss-normalize');
 
@@ -517,6 +518,10 @@ module.exports = function(webpackEnv) {
         verbose: 'no',
         implicitInjection: 'no'
       }),
+      new CopyWebpackPlugin([{
+          from: './node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js',
+          to: './webcomponents-bundle.js'
+      }]),
       // Inlines the webpack runtime script. This script is too small to warrant
       // a network request.
       isEnvProduction &&
