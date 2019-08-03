@@ -1,4 +1,4 @@
-import { Switch, Route, Redirect, Router } from 'react-router';
+import { Switch, Route, Router } from 'react-router';
 
 import React from 'react';
 import Home from './home/HomeComponent.jsx';
@@ -22,7 +22,7 @@ class App extends React.Component {
                 { text: 'About', hash: '/about', iconCls: 'x-fa fa-info', leaf: true },
             ]
         };
-        this.treeStore = Ext.create('Ext.data.TreeStore', {
+        this.treeStore = window.Ext.create('Ext.data.TreeStore', {
             rootVisible: true,
             root: this.navTreeRoot
         });
@@ -35,7 +35,7 @@ class App extends React.Component {
         this.navTreelistCmp = event.detail.cmp;
         this.navTreelistCmp.setStore(this.treeStore);
         let hash = window.location.pathname.toLowerCase();
-        if (hash == '') {
+        if (hash === '') {
             hash = '/home';
         }
         const node = this.navTreelistCmp.getStore().findNode('hash', hash, false, false, false, false);
@@ -46,7 +46,7 @@ class App extends React.Component {
     toggleAppMenu = () => {
         let collapsed = this.navTreePanelCmp.getCollapsed();
 
-        if (collapsed == true) {
+        if (collapsed) {
             collapsed = false;
         } else {
             collapsed = true;
@@ -55,14 +55,14 @@ class App extends React.Component {
     }
 
 
-    navTreePanelReady = () => {
+    navTreePanelReady = (event) => {
         this.navTreePanelCmp = event.detail.cmp;
     }
 
     navTreelistSelectionChange = (event) => {
         const record = event.detail.record.data.text;
-        
-        if(Ext.os.is.phone){
+
+        if(window.Ext.os.is.phone){
             this.navTreePanelCmp.setCollapsed(this.collapsed);
         }
         this.history.push(`/${record}`);
@@ -103,9 +103,9 @@ class App extends React.Component {
             </ext-panel>
         );
 
-        if (Ext.platformTags.phone) {
+        if (window.Ext.platformTags.phone) {
             result = (
-                <ext-panel 
+                <ext-panel
                     docked="left"
                     border="true"
                     shadow="true"
@@ -141,7 +141,7 @@ class App extends React.Component {
             <Router history={this.history}>
                 <ext-panel layout="fit" bodyPadding="0" width="100%" height="100%">
                     <ext-titlebar docked="top" weight="10" title="Sencha ExtWebComponents React 7.0 Boilerplate">
-                        {Ext.platformTags.phone && (
+                        {window.Ext.platformTags.phone && (
                             <ext-button iconCls="x-fa fa-bars" onTap="app.toggleAppMenu"></ext-button>
                         )}
                     </ext-titlebar>

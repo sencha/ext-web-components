@@ -1,310 +1,190 @@
-# HOW TO RUN THIS PROJECT
-After completing the Sencha registry. Two major commands are required to run this project:
+
+## Adding Sencha ExtWebComponents to a React application created using Create React App
+
+This document defines the steps needed to add Sencha ExtWebComponents to a React application generated with Create React App. Create React App is described in the [Create React App Overview](https://facebook.github.io/create-react-app/)
+
+If you don’t want to follow the below mentioned steps, then you can consume the boilerplate code with a sample ExtWebComponents application at [ext-web-components-boilerplate-create-react-app](https://github.com/sencha/ext-web-components/tree/ext-components-7.0.x/packages/ext-web-components-boilerplate-create-react-app).
+
+### Create a Create React App starter application
+
+To create a Create React App application, continue in the terminal or command window and 'cd' to the folder where you want to create your new application.  Then, use the following command to create your new Create React App application.
+
+```sh
+npx create-react-app ext-web-components-boilerplate-create-react-app
+```
+
+The create-react-app starts up and will generate a base React application
+
+Once the 'npx create-react-app' command is finished, move to the newly created folder and run the application:
+
+```sh
+cd  ext-web-components-boilerplate-create-react-app
+npm start
+```
+
+Browse to http://localhost:3000/ in your browser.  You should see a React logo with message: 'Edit src/App.js and save to reload.' page in the browser.
+
+more details at: https://facebook.github.io/create-react-app/docs/getting-started
+
+Now, stop the 'npm start' app from running in the terminal/command window (ctrl-c).  This prepares you for the next steps.
+
+### Perform Eject.
+
+In order to consume ext-webpack-plugin, React Scripts ejection is important.
+
+```sh
+npm run eject
+```
+
+* For 'Are you sure you want to eject? This action is permanent.', write 'y' and press 'enter'
+
+This command copies all the config files and dependencies right into your project and we can make appropriate changes to consume ext-webpack-plugin.
+
+To know more about it, kindly refer: https://facebook.github.io/create-react-app/docs/available-scripts#npm-run-eject
+
+### Add Sencha ExtWebComponents to your Create React App starter application
+
+To Add ExtWebComponents to your newly created Create React App starter application, bring up the created application in your favorite editor or IDE - for example, to use Visual Studio Code, cancel the currently running sample application in the terminal or command window and type 'code .' in the terminal or command window.
+
+```sh
+code .
+```
+
+For the next steps, make sure you are logged into the Sencha npm repository - for instructions, see this link: https://github.com/sencha/ext-web-components/blob/ext-components-7.0.x/README.md
+
+#### Do 1 of the next 2 steps:
+
+either...
+Add the following to the dependencies section of package.json:
+
+```sh
+"@sencha/ext": "^7.0.0",
+"@sencha/ext-modern": "^7.0.0",
+"@sencha/ext-modern-theme-material": "^7.0.0",
+"@sencha/ext-web-components": "^7.0.0",
+"@sencha/ext-webpack-plugin": "^7.0.0",
+"@webcomponents/webcomponentsjs": "^2.2.10",
+```
+
+and add the following to the dev dependencies section of package.json:
+
+```sh
+"copy-webpack-plugin": "^5.0.4"
+```
+
+To install the npm dependencies, in the terminal or command window run the following:
 
 ```sh
 npm install
 ```
 
-and then
-```sh
-npm start
-```
-The boilerplate application will be running on the port specified after the **npm start** is completed.
-This application can be consumed as a boilerplate React application consuming Ext-Web-Components with React Routing.
-
-# HOW TO CONSUME EXT-WEBCOMPONENTS INSIDE REACT :
-
-
-### EXT-WEB-COMPONENTS-REACT
-Steps to create ext-web-components-react application using create-react-app with react version 16.8.6:
-
-- Install create-react-app by running the following command npx create-react-app ext-web-components-react-app
-
-- Run the following command : cd ext-web-components-react-app 
-
-- To consume ext-web-components, we need to add following packages to dependencies in package.json and run npm install to install these dependencies in our project.
-```sh
-    "@sencha/ext": "~6.7.0",
-    "@sencha/ext-modern": "~6.7.0",
-    "@sencha/ext-modern-theme-material": "~6.7.0",
-    "@sencha/ext-modern-treegrid": "~6.7.0",
-    "@sencha/ext-web-components": "~7.0.0",
-    "@webcomponents/webcomponentsjs": "^2.2.10"
-```
-- Add following files to your devDependencies in package.json file and run npm install to install webpack into your project.
-```sh
-    "webpack": "~4.31.0",
-    "webpack-cli": "~3.3.2",
-    "webpack-dev-server": "~3.3.1"
-```
-
-- Create a file named webpack.config.js in the root of your project to add webpack configuration which is used to bundle your application.
-
-- Add following to devDependencies in package.json file and run npm install.
-```sh
-      "portfinder": "^1.0.20",
-	  "css-loader": "^2.1.0",
-	  "node-sass": "^4.11.0",
-	  "react-hot-loader": "^4.8.4",
-      "eslint": "^5.16.0",
-      "eslint-loader": "^2.1.2",
-      "html-loader": "^0.5.5",
-      "sass-loader": "^7.1.0",
-      "style-loader": "^0.23.1",
-      "url-loader": "^2.0.0",
-      "html-webpack-plugin": "^3.2.0",
-```
-
-- This plugin will generate an HTML5 file that will include all webpack bundles in the body in script tag.
+or...
+Run the following commands in the terminal/command window:
 
 ```sh
-"base-href-webpack-plugin": "~2.0.0"
-```
-- This is an extension for html-webpack-plugin to programmatically insert or update 
-<base href=” ” />.It requires html-webpack-plugin as a dependency.
+npm install --save @sencha/ext-web-components @sencha/ext @sencha/ext-modern @sencha/ext-modern-theme-material
+npm install --save @sencha/ext-webpack-plugin
+npm install --save @webcomponents/webcomponentsjs
 
-```sh 
-"@sencha/ext-webpack-plugin": "~7.0.0"
-```
-- This plugin is used to watch file changes during developments of sencha extjs applications.
+npm install --save copy-webpack-plugin -D
 
+```
+
+#### Edit config/webpack.config.js, public/index.html, src/App.js and src/index.js
+
+To configure the ext-webpack-plugin inside application, we update **config/webpack.config.js** in three simple steps:
+
+1. Import '@sencha/ext-webpack-plugin' and 'copy-webpack-plugin' inside config/webpack.config.js
 ```sh
-"copy-webpack-plugin": "^5.0.3",
-```
-- This plugin copies individual files or entire directories to the build directory.
-
-- Change the start key of scripts object in package.json file to 
-
-```sh 
-"start":"webpack-dev-server--env.browser=true --env.emit=yes --env.verbose=no"
-```
-
-- Add the following code snippet in your webpack.config.js file to use the above mentioned plugins into your project along with the Ext-Webpack-Plugin.
-```sh
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { BaseHrefWebpackPlugin } = require('base-href-webpack-plugin');
 const ExtWebpackPlugin = require('@sencha/ext-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const portfinder = require('portfinder');
-const webpack = require('webpack');
-
-module.exports = function(env) {
-    function get(it, val) {if(env == undefined) {return val;} else if(env[it] == undefined) {return val;} else {return env[it];}}
-
-    var profile = get('profile', '');
-    var emit = get('emit', 'yes');
-    var environment = get('environment', 'development');
-    var treeshake = get('treeshake', 'no');
-    var browser = get('browser', 'yes');
-    var watch = get('watch', 'yes');
-    var verbose = get('verbose', 'no');
-    var basehref = get('basehref', '/');
-    var build_v = get('build_v', '7.0.0.0');
-
-    const isProd = environment === 'production';
-    const outputFolder = 'build';
-    portfinder.basePort = (env && env.port) || 1962;
-
-    return portfinder.getPortPromise().then(port => {
-        const plugins = [
-            new HtmlWebpackPlugin({template: 'index.html', hash: true, inject: 'body'}),
-            new BaseHrefWebpackPlugin({ baseHref: basehref }),
-            new ExtWebpackPlugin({
-                framework: 'webcomponents',
-                toolkit: 'modern',
-                theme: 'theme-material',
-                emit: emit,
-                port: port,
-                packages: [],
-                profile: profile,
-                environment: environment,
-                treeshake: treeshake,
-                browser: browser,
-                watch: watch,
-                verbose: verbose
-            }),
-            new CopyWebpackPlugin([{
-                from: '../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js',
-                to: './webcomponents-bundle.js'
-            }]),
-            // Debug purposes only, injected via script: npm run-script buildexample -- --env.build_v=<full version here in format maj.min.patch.build>
-            new webpack.DefinePlugin({
-                BUILD_VERSION: JSON.stringify(build_v)
-            })
-        ];
-        return {
-            mode: environment,
-            devtool: (environment === 'development') ? 'inline-source-map' : false,
-            context: path.join(__dirname, './src'),
-            entry: './index.js',
-            output: {
-                path: path.join(__dirname, outputFolder),
-                filename: '[name].js'
-            },
-            plugins: plugins,
-            module: {
-                rules: [
-                    { test: /\.(js|jsx)$/, exclude: /node_modules/,
-                        use: [
-                            'babel-loader',
-                            // 'eslint-loader'
-                        ]
-                    },
-                    { test: /\.(html)$/, use: { loader: 'html-loader' } },
-                    {
-                        test: /\.(css|scss)$/,
-                        use: [
-                            { loader: 'style-loader' },
-                            { loader: 'css-loader' },
-                            { loader: 'sass-loader' }
-                        ]
-                    },
-        {
-             test: /\.(svg|png|jpe?g|gif)(\?\S*)?$/,
-             use: [
-      { loader: 'url-loader'  }
-],
-                   },
-
-                ]
-            },
-            performance: { hints: false },
-            stats: 'none',
-            optimization: { noEmitOnErrors: true },
-            node: false,
-            devServer: {
-                contentBase: outputFolder,
-                hot: !isProd,
-                historyApiFallback: true,
-                host: '0.0.0.0',
-                port: port,
-                disableHostCheck: false,
-                compress: isProd,
-                inline:!isProd,
-                stats: 'none'
-            }
-        };
-    });
-};
 ```
 
-- Add the following files to your devDependencies in package.json file and run npm install to install Babel and its plugins
+2. Add them inside plugins attribute of the returning object.
 ```sh
-    "@babel/core": "^7.3.4",
-    "@babel/plugin-proposal-class-properties": "^7.3.4",
-    "@babel/plugin-proposal-decorators": "^7.3.0",
-    "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
-    "@babel/plugin-proposal-function-sent": "^7.2.0",
-    "@babel/plugin-proposal-json-strings": "^7.2.0",
-    "@babel/plugin-proposal-numeric-separator": "^7.2.0",
-    "@babel/plugin-proposal-throw-expressions": "^7.2.0",
-    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/plugin-syntax-import-meta": "^7.2.0",
-    "@babel/plugin-transform-runtime": "^7.3.4",
-    "@babel/preset-env": "^7.3.4",
-    "@babel/preset-react": "^7.0.0",
-    "@babel/runtime": "^7.3.4",
+new ExtWebpackPlugin({
+  framework: 'web-components',
+  toolkit: 'modern',
+  theme: 'theme-material',
+  emit: 'yes',
+  script: '',
+  packages: [],
+  profile: '',
+  browser: 'no',
+  implicitInjection: 'no'
+}),
+new CopyWebpackPlugin([{
+    from: './node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js',
+    to: './webcomponents-bundle.js'
+}]),
 ```
 
-- Create a new file named .babelrc in the root of your project to add babel configuration which is mainly used to convert ES6+ code into backwards compatible version of Javascript in old browsers or environments.
-
-- Add the following code snippet to your .babelrc file to include the plugins installed.
+3. Update the path attribute of Output attribute of the returning object with the below line.
 ```sh
-{
-  "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "modules": false
-      }
-    ],
-    "@babel/preset-react"
-  ],
-  "plugins": [
-    "react-hot-loader/babel",
-    "@babel/plugin-transform-runtime",
-    "@babel/plugin-syntax-dynamic-import",
-    "@babel/plugin-syntax-import-meta",
-    "@babel/plugin-proposal-class-properties",
-    "@babel/plugin-proposal-json-strings",
-    [
-      "@babel/plugin-proposal-decorators",
-      {
-        "legacy": true
-      }
-    ],
-    "@babel/plugin-proposal-function-sent",
-    "@babel/plugin-proposal-export-namespace-from",
-    "@babel/plugin-proposal-numeric-separator",
-    "@babel/plugin-proposal-throw-expressions"
-  ],
-  "ignore": [
-    "build"
-  ],
-  "env": {
-    "test": {
-      "presets": [
-        "@babel/preset-env",
-        "@babel/preset-react"
-      ],
-      "plugins": [
-        "@babel/plugin-syntax-dynamic-import",
-        "@babel/plugin-syntax-import-meta",
-        "@babel/plugin-proposal-class-properties",
-        "@babel/plugin-proposal-json-strings",
-        [
-          "@babel/plugin-proposal-decorators",
-          {
-            "legacy": true
-          }
-        ],
-        "@babel/plugin-proposal-function-sent",
-        "@babel/plugin-proposal-export-namespace-from",
-        "@babel/plugin-proposal-numeric-separator",
-        "@babel/plugin-proposal-throw-expressions"
-      ]
-    }
-  }
-}
+path: isEnvProduction ? paths.appBuild : paths.appPublic,
 ```
 
-- Add a new file named index.html in the src folder and add following code snippet to it
+**Now after configuration, you are ready to use Ext-Web-Components inside the application.**
+
+- Add Ext.js and Ext.css inside the inside public/index.html and also webcomponents-bundle.js for the compatibility of Web Components with all major browsers.
+
 ```sh
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <script src="webcomponents-bundle.js"></script>
-    <title>Sencha Web Components React Boilerplate</title>
+    <link rel="stylesheet" href="%PUBLIC_URL%/ext/ext.css">
+    <title>React App</title>
   </head>
   <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script src="%PUBLIC_URL%/ext/ext.js"></script>
     <div id="root"></div>
   </body>
 </html>
 ```
 
-- To consume any ext-web-component, we need to import it into the index.js file.
+-Import *ext-panel* inside src/index.js
+
 ```sh
-import '@sencha/ext-web-components/dist/ext-panel.component'; 
+import '@sencha/ext-web-components/lib/ext-panel.component';
 ```
 
-- Ext-web-components can be now inserted into App.js file.
+-Inside src/App.js replace the code with:
 
-- Example: Add the following code snippet in the return body of App.js file
 ```sh
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+
+function App() {
+  return (
     <ext-panel
-        height="100%"
-        shadow="true"
-        bodyPadding="20px"
+      title="EWC Panel in React"
+      bodyPadding="20px"
     >
-        <h1>I am an Ext Panel</h1>
-        <p>I am HTML inside Ext Panel.</p>
+      <h1>I am the ExtWebComponents Panel</h1>
     </ext-panel>
+  );
+}
+
+export default App;
+
 ```
 
-- Now run **npm start** in the root of your directory.
+#### Run the application
 
-- If you don’t want to follow the above mentioned steps, then you can consume the boilerplate code [ext-web-components-boilerplate-react](https://github.com/sencha/ext-web-components/tree/ext-components-7.0.x/packages/ext-web-components-react-boilerplate) and start creating your application by consuming ext-web-components directly.
+In the terminal or command window, run the application:
+
+```sh
+npm start
+```
+
+Browse to http://localhost:3000 in your browser.  You should see the React starter application with an ExtWebComponents Panel in the browser.
+
+![React with ExtWebComponents](React.png)

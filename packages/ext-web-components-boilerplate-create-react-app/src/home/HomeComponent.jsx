@@ -4,7 +4,7 @@ import React from 'react';
 export default class HomeComponent extends React.Component {
     constructor(props) {
         super(props);
-        this.store = Ext.create('Ext.data.Store', {
+        this.store = window.Ext.create('Ext.data.Store', {
             fields: ['name', 'email', 'phone', 'hoursTaken', 'hoursRemaining'],
             data,
         });
@@ -16,7 +16,7 @@ export default class HomeComponent extends React.Component {
 
     readyGrid(event) {
         this.gridCmp = event.detail.cmp;
-        const store = Ext.create('Ext.data.Store', {
+        const store = window.Ext.create('Ext.data.Store', {
             fields: ['name', 'email', 'phone', 'hoursTaken', 'hoursRemaining'],
             data,
         });
