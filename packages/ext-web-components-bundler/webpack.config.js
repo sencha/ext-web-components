@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+//const ImportHttpWebpackPlugin = require('import-http/webpack')
 
 module.exports = function(env) {
     function get(it, val) {if(env == undefined) {return val;} else if(env[it] == undefined) {return val;} else {return env[it];}}
@@ -16,6 +17,9 @@ module.exports = function(env) {
             path: path.join(__dirname, 'dist'),
             filename: '[name].' + environment + '.js'
         },
+        // plugins: [
+        //     new ImportHttpWebpackPlugin()
+        // ],
         module: {
             rules: [
                 {

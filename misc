@@ -64,3 +64,15 @@ if (environment === 'development') {
 } else {
     module.exports = require('./config/webpack.config.prod');
 }
+
+
+// import '@sencha/ext-web-components/lib/Ext/Button';
+// import '@sencha/ext-web-components/lib/Ext/dataview/DataView';
+// import '@sencha/ext-web-components/lib/Ext/field/Search';
+// import '@sencha/ext-web-components/lib/Ext/list/Tree';
+// import '@sencha/ext-web-components/lib/Ext/Panel';
+// import '@sencha/ext-web-components/lib/Ext/tab/Panel';
+// import '@sencha/ext-web-components/lib/Ext/TitleBar';
+// import '@sencha/ext-web-components/lib/Ext/Toolbar';
+// import '@sencha/ext-web-components/lib/Ext/grid/column/Column';
+// import '@sencha/ext-web-components/lib/Ext/grid/Grid';

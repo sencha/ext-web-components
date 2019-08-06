@@ -1,0 +1,10 @@
+import "https://unpkg.com/core-js@2.6.5/client/shim.min.js";
+import "https://cdnjs.cloudflare.com/ajax/libs/zone.js/0.9.1/zone.min.js";
+import "https://unpkg.com/rxjs@6.4.0/bundles/rxjs.umd.min.js";
+import "https://cdn.jsdelivr.net/npm/@angular/core@8.2.0/bundles/core.umd.min.js";
+import "https://cdn.jsdelivr.net/npm/@angular/common@8.2.0/bundles/common.umd.min.js";
+import "https://cdn.jsdelivr.net/npm/@angular/compiler@8.2.0/bundles/compiler.umd.min.js";
+import "https://cdn.jsdelivr.net/npm/@angular/platform-browser@8.2.0/bundles/platform-browser.umd.min.js";
+import "https://cdn.jsdelivr.net/npm/@angular/platform-browser-dynamic@8.2.0/bundles/platform-browser-dynamic.umd.min.js";
+import "https://cdnjs.cloudflare.com/ajax/libs/typescript/3.5.3/typescript.min.js";
+import "https://cdn.jsdelivr.net/gh/basarat/typescript-script@master/transpiler.js";
