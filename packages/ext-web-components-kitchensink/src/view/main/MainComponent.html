@@ -19,14 +19,18 @@
         height="100%"
     >
     </ext-breadcrumbbar>
-    <ext-button weight="5" hidden=true onready="main.readyCodeButton"
-        ui="fab"
-        iconCls="x-font-icon md-icon-code"
-        right="15"
-        zIndex="10000"
-        ontap="main.toggleCode"
-      >
-      </ext-button>
+    <ext-button
+      weight="5"
+      hidden="true"
+      onready="main.readyCodeButton"
+      ui="fab"
+      right="15"
+      top="-4"
+      text="<>"
+      zIndex="10000"
+      ontap="main.toggleCode"
+    >
+    </ext-button>
   </ext-toolbar>
   <!-- Navtree starts-->
   <ext-panel
