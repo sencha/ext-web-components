@@ -16,7 +16,7 @@
               <![CDATA[
               -classpath=${basedir}/manifestext.js
               load-app
-                  -temp=${basedir}/temp
+                  -temp=${basedir}/buildext/temp
                   -tag=App
         ]]>
       </x-compile>
@@ -83,9 +83,10 @@
           -split=4095
           -compress
               buildext/ext.scss
-          buildext/ext.css
+              buildext/ext.css
 
       then
+      
       fs
       minify
         -yui

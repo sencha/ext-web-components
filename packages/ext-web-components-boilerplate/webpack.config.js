@@ -5,9 +5,9 @@ const ExtWebpackPlugin = require('@sencha/ext-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const portfinder = require('portfinder');
 const webpack = require('webpack');
-const Visualizer = require('webpack-visualizer-plugin');
+//const Visualizer = require('webpack-visualizer-plugin');
 //const TerserPlugin = require('terser-webpack-plugin');
-const CompressionPlugin = require('compression-webpack-plugin');
+//const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = function(env) {
     function get(it, val) {if(env == undefined) {return val;} else if(env[it] == undefined) {return val;} else {return env[it];}}
@@ -28,7 +28,7 @@ module.exports = function(env) {
 
     return portfinder.getPortPromise().then(port => {
         const plugins = [
-            new HtmlWebpackPlugin({template: 'index.html', hash: true, inject: 'body'}),
+            new HtmlWebpackPlugin({template: 'index.html', hash: false, inject: 'body'}),
             new BaseHrefWebpackPlugin({ baseHref: basehref }),
             new ExtWebpackPlugin({
                 framework: 'web-components',
@@ -46,21 +46,24 @@ module.exports = function(env) {
                 verbose: verbose
             }),
 
-            new CompressionPlugin({
-                //include: [/\/.ext/, /\/./],
-                // asset: '[path].gz[query]',
-                // algorithm: 'gzip',
-                // test: /\.js$|\.css$|\.html$/,
-                // threshold: 10240,
-                // minRatio: 0.8
-            }),
-
-            new Visualizer({
-                filename: './statistics.html'
-            }),
+            // new CompressionPlugin({
+            //     //include: [/\/.ext/, /\/./],
+            //     // asset: '[path].gz[query]',
+            //     // algorithm: 'gzip',
+            //     // test: /\.js$|\.css$|\.html$/,
+            //     // threshold: 10240,
+            //     // minRatio: 0.8
+            // }),
+            // new Visualizer({
+            //     filename: './statistics.html'
+            // }),
             new CopyWebpackPlugin([{
                 from: '../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js',
                 to: './webcomponents-bundle.js'
+            }]),
+            new CopyWebpackPlugin([{
+                from: '../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js.map',
+                to: './webcomponents-bundle.js.map'
             }]),
             // Debug purposes only, injected via script: npm run-script buildexample -- --env.build_v=<full version here in format maj.min.patch.build>
             new webpack.DefinePlugin({
@@ -86,11 +89,17 @@ module.exports = function(env) {
             mode: environment,
             devtool: (environment === 'development') ? 'inline-source-map' : false,
             context: path.join(__dirname, './src'),
-            entry: './index.js',
+            //entry: './index.js',
+            entry: {
+            //    ewc:  './ewc.js',
+                app: './index.js'
+            },
             output: {
                 path: path.join(__dirname, outputFolder),
                 filename: '[name].js'
             },
+
+
             plugins: plugins,
             module: {
                 rules: [

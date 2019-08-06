@@ -4,7 +4,7 @@
   "description": "ext-web-components-bundler",
   "main": "index.js",
   "scripts": {
-    "start": "npm run clean && npm run sencha && npm run both && npm run gzipall && npm run copytomin",
+    "start": "npm run clean && npm run sencha && npm run both && npm run gzipall && npm run copytomin && npm run copytotester",
     "clean": "rimraf dist && rimraf build && rimraf buildext && rimraf temp",
 
     "sencha": "npx sencha app build && npm run mkdist && npm run copyextdev && npm run copyextprod",
@@ -20,6 +20,7 @@
     "gzipcss": "gzip -c dist/css.production.js > dist/css.production.js.gz",
 
     "copytomin": "rimraf ../ext-web-components-min/dist/ && cp -R dist/ ../ext-web-components-min/dist/",
+    "copytotester": "rimraf ../../demos/extjs-tester/dist/ && cp -R dist/ ../../demos/extjs-tester/dist/",
 
     "copy2": "cp build/z.js ../sencha-studio-extension/src/scripts2",
     "build:watch": "webpack --config config/webpack.prod.js --watch",
@@ -28,12 +29,33 @@
   "author": "Marc Gusmano",
   "license": "MIT",
   "devDependencies": {
-    "@sencha/ext-web-components": "~7.0.0",
+
+    "@sencha/cmd": "~7.0.0",
+
+    "@sencha/ext": "~7.0.0",
+    "@sencha/ext-calendar": "~7.0.0",
+    "@sencha/ext-charts": "~7.0.0",
+    "@sencha/ext-d3": "~7.0.0",
+    "@sencha/ext-exporter": "~7.0.0",
+    "@sencha/ext-froala-editor": "~7.0.0",
     "@sencha/ext-modern": "~7.0.0",
     "@sencha/ext-modern-theme-material": "~7.0.0",
-    "@sencha/ext": "~7.0.0",
-    "@sencha/cmd": "~7.0.0",
+    "@sencha/ext-modern-treegrid": "~7.0.0",
+    "@sencha/ext-pivot": "~7.0.0",
+    "@sencha/ext-pivot-d3": "~7.0.0",
+    "@sencha/ext-ux": "~7.0.0",
+    "@sencha/ext-web-components": "~7.0.0",
+    "@sencha/ext-web-components-renderercell": "~7.0.0",
+    "@sencha/ext-web-components-router": "~7.0.0",
+    "@sencha/ext-webpack-plugin": "~7.0.0",
+
+
+    "@node-minify/core": "^4.1.2",
+    "@node-minify/uglify-es": "^4.1.2",
+    "strip-comments": "^1.0.2",
+    "remove-blank-lines": "^1.1.1",
     "rimraf": "^2.6.3",
+    "import-http": "^0.3.1",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.0.3",
     "file-loader": "^4.0.0",

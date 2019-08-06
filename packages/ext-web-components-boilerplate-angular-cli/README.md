@@ -108,8 +108,8 @@ For **ng serve** command, update the serve/builder in the angular.json file:
 
  ```sh
  "serve": {
-   "builder": "@angular-builders/custom-webpack:dev-server"
- }
+   "builder": "@angular-builders/custom-webpack:dev-server",
+... other options
 ```
 
 To configure the ext-webpack-plugin for webpack in Angular, create a file named **custom-webpack.config.js** at the root directory (where the package.json is), and add the following:
