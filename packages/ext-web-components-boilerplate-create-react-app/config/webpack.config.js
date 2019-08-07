@@ -1,5 +1,7 @@
 'use strict';
 
+const ExtWebpackPlugin = require('@sencha/ext-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const fs = require('fs');
 const isWsl = require('is-wsl');
 const path = require('path');
@@ -25,8 +27,6 @@ const getClientEnvironment = require('./env');
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpackPlugin');
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
-const ExtWebpackPlugin = require('@sencha/ext-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const postcssNormalize = require('postcss-normalize');
 
@@ -516,7 +516,7 @@ module.exports = function(webpackEnv) {
         browser: 'no',
         watch: 'yes',
         verbose: 'no',
-        implicitInjection: 'no'
+        inject: 'no'
       }),
       new CopyWebpackPlugin([{
           from: './node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js',
