@@ -5,7 +5,7 @@
     "scripts": {
         "start": "npm run dev",
         "dev": "webpack-dev-server --env.browser=yes --env.verbose=no",
-        "build": "npm run clean && npm run webpackprod && npm run gzip && npm run http",
+        "build": "npm run clean && npm run webpackprod && npm run gzip && npm run replace && npm run http",
         "clean": "rimraf build",
         "webpackprod": "cross-env webpack --env.environment=production --env.treeshake=yes --env.basehref=/",
         "gzip": "npm run gzipbuild && npm run gzipext && npm run gzipresources",
@@ -18,6 +18,8 @@
         "buildexample": "npm run clean && cross-env webpack --env.verbose=no --env.environment=production --env.treeshake=yes --env.basehref=/ExtWebComponents/7.0.0/kitchensink/"
     },
     "devDependencies": {
+        "@sencha/ext-web-components": "~7.0.0",
+        "@sencha/ext-web-components-router": "~7.0.0",
         "@sencha/ext": "~7.0.0",
         "@sencha/ext-calendar": "~7.0.0",
         "@sencha/ext-charts": "~7.0.0",
@@ -30,9 +32,7 @@
         "@sencha/ext-pivot": "~7.0.0",
         "@sencha/ext-pivot-d3": "~7.0.0",
         "@sencha/ext-ux": "~7.0.0",
-        "@sencha/ext-web-components": "~7.0.0",
         "@sencha/ext-web-components-renderercell": "~7.0.0",
-        "@sencha/ext-web-components-router": "~7.0.0",
         "@sencha/ext-webpack-plugin": "~7.0.0",
 
         "@babel/core": "^7.5.5",
@@ -67,9 +67,11 @@
         "html-webpack-plugin": "^3.2.0",
         "node-sass": "^4.12.0",
         "portfinder": "^1.0.21",
+
         "gzip-cli": "^1.0.1",
         "replace-in-file": "^4.1.1",
         "http-server": "^0.11.1",
+        
         "rimraf": "^2.6.3",
         "sass-loader": "^7.1.0",
         "style-loader": "^0.23.1",
