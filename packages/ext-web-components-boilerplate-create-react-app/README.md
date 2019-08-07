@@ -91,14 +91,20 @@ npm install --save copy-webpack-plugin
 To configure the ext-webpack-plugin inside application, we update **config/webpack.config.js** in three steps:
 
 1. open config/webpack.config.js in your editor
-2. At the top of the file, in the line after the 'use strict' statement, add the following:
+2. At the top of the file, after the 'use strict' statement, add the following to look like this:
 ```sh
+'use strict';
+
 const ExtWebpackPlugin = require('@sencha/ext-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 ```
 
-3. do a search for this string: new HtmlWebpackPlugin
-4. below the definition for the HtmlWebpack plugin (should be somewhere around line 505, the line that contains '),' ), add the following:
+3. do a search for this string:
+
+new HtmlWebpackPlugin
+
+
+4. below the definition for the HtmlWebpack plugin (should be around or on line 506, the line that contains '),' ), add the following:
 
 ```sh
 new ExtWebpackPlugin({
@@ -119,15 +125,15 @@ new CopyWebpackPlugin([{
 }]),
 ```
 
-5. do a search for this string:
+5. do a search for this string (around or on line 154):
 
 path: isEnvProduction ? paths.appBuild : undefined,
 
-6. Update this line with the following line.
+6. Update this line with the following line:
 ```sh
 path: isEnvProduction ? paths.appBuild : paths.appPublic,
 ```
-7. save the file
+7. save config/webpack.config.js in your editor
 
 8. open public/index.html in your editor
 
@@ -160,10 +166,9 @@ path: isEnvProduction ? paths.appBuild : paths.appPublic,
 </html>
 ```
 
-10. save the file
+10. save public/index.html in your editor
 
 11. open src/App.js in your editor
-
 
 12. in src/App.js replace the code with:
 
@@ -185,6 +190,8 @@ function App() {
 
 export default App;
 ```
+
+13. save src/App.js in your editor
 
 #### Run the application
 
