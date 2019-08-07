@@ -116,10 +116,8 @@ function (_HTMLElement) {
       });
     } else if (this.nodeParentName == 'BODY') {
       var me = this;
-      me.doCreate(); //console.log('Ext.application')
-      //var elem = document.getElementById('theGrid');
-      //elem.parentNode.removeChild(elem);
-
+      me.doCreate();
+      console.log('Ext.application for ' + me.props.xtype);
       Ext.application({
         name: 'MyEWCApp',
         launch: function launch() {
@@ -127,7 +125,8 @@ function (_HTMLElement) {
           Ext.Viewport.add([me.ext]);
 
           if (window.router) {
-            //console.log('router.init called')
+            // console.log('router.init called')
+            // console.log(document.getElementById('route'))
             window.router.init();
           }
         }
@@ -156,6 +155,7 @@ function (_HTMLElement) {
           }
         }
 
+        console.log('adc-a');
         this.addTheChild(parentCmp, childCmp, location);
       } else {
         if (this.parentNode.extChildren == undefined) {
@@ -205,6 +205,7 @@ function (_HTMLElement) {
       var parentCmp = this.ext;
       var childCmp = item.EXT;
       var location = item.ADDORDER;
+      console.log('adc-b');
       this.addTheChild(parentCmp, childCmp, location);
     } //console.log('children')
     //console.dir(this.rawChildren)
@@ -238,8 +239,8 @@ function (_HTMLElement) {
   };
 
   _proto.doCreate = function doCreate() {
-    this.ext = Ext.create(this.props); //console.log('Ext.create(' + this.ext.xtype + ')')
-    //console.dir(this.props)
+    this.ext = Ext.create(this.props);
+    console.log('Ext.create(' + this.ext.xtype + ', ' + this.props.renderTo + ')'); //console.dir(this.props)
     //console.dir(this.ext)
 
     if (this.parentNode.childrenCounter != undefined) {
@@ -257,9 +258,9 @@ function (_HTMLElement) {
   };
 
   _proto.addTheChild = function addTheChild(parentCmp, childCmp, location) {
-    //console.log('addTheChild')
     var childxtype = childCmp.xtype;
     var parentxtype = parentCmp.xtype;
+    console.log('addTheChild: ' + parentxtype + ' - ' + childxtype);
 
     if (this.ext.initialConfig.align != undefined) {
       if (parentxtype != 'titlebar' && parentxtype != 'grid' && parentxtype != 'button') {

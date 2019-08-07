@@ -1,0 +1,33 @@
+<ext-panel ewc="root" layout="fit" bodyPadding="0">
+
+  <ext-titlebar ewc="top" docked="top" weight="10">
+    <ext-button ewc="bars" iconCls="x-fa fa-bars" onReady="main.readyToggleButton" onTap="main.toggleTree"></ext-button>
+    <span href="#" ewc="title" class="app-title">(ewc) Sencha ExtWebComponents 7.0 Boilerplate</span>
+  </ext-titlebar>
+
+  <ext-panel
+    ewc="left"
+    docked="left"
+    border="true"
+    shadow="true"
+    scrollable="y"
+    resizable='{"edges": "east", "dynamic": "true"}'
+    header="false"
+    collapsible='{"direction": "left"}'
+    width="200px"
+    onready="main.readyNavTreePanel"
+  >
+    <ext-treelist
+      ewc="nav"
+      ui="nav"
+      expanderFirst="false"
+      expanderOnly="false"
+      onready="main.readyNavTreelist"
+      onselectionchange="main.navTreelistSelectionChange">
+    </ext-treelist>
+  </ext-panel>
+
+  <ext-router ewc="router" hidden=false onready="main.readyRouter" padding="2"></ext-router>
+  <!-- <div id="route">hi</div> -->
+
+</ext-panel>

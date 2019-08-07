@@ -1,0 +1,40 @@
+<ext-grid
+  title="Row Body Grid"
+  shadow="true"
+  height="100%"
+  onready="rowbody.gridReady"
+>
+  <ext-column
+    text="Company"
+    dataIndex="name"
+    width="150"
+  >
+  </ext-column>
+  <ext-column
+    text="Price"
+    dataIndex="price"
+    width="75"
+    formatter="usMoney"
+  >
+  </ext-column>
+  <ext-column
+    text="Change"
+    width="100"
+    dataIndex="priceChange"
+    onready="rowbody.changeColumnReady"
+  >
+  </ext-column>
+  <ext-column
+    text="% Change"
+    dataIndex="priceChangePct"
+    onready="rowbody.percentChangeColumnReady"
+  >
+  </ext-column>
+  <ext-column
+    text="Last Updated"
+    dataIndex="priceLastChange"
+    width="125"
+    formatter="date('m/d/Y')"
+  >
+  </ext-column>
+</ext-grid>

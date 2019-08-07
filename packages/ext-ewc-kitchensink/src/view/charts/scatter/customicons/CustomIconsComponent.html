@@ -1,0 +1,28 @@
+<ext-container
+  onready="customicons.containerready"
+  layout="fit"
+  fitToParent="true"
+  height="100%"
+  width="100%">
+  <ext-toolbar
+    docked="top"
+    ui="app-transparent-toolbar"
+    shadow="false"
+    padding="0 10 0 10">
+    <chart-toolbar
+      theme="default"
+      onItemReady="customicons.onMenuItemReady"
+      onRefreshButtonReady="customicons.onRefreshButtonReady"
+    >
+    </chart-toolbar>
+  </ext-toolbar>
+  <ext-cartesian
+    onready="customicons.cartesianReady"
+    downloadServerUrl="http://svg.sencha.io"
+    width="800"
+    shadow="true"
+    insetPadding="20 20 10 10"
+    legend='{ "type": "sprite" }'
+    interactions='[{ "type": "itemedit", "style": { "strokeStyle": "gray" }}]'>
+  </ext-cartesian>
+</ext-container>

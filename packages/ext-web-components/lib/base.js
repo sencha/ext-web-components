@@ -127,18 +127,15 @@ export default class ExtBase extends HTMLElement {
         else if (this.nodeParentName == 'BODY') {
             var me = this
             me.doCreate()
-            //console.log('Ext.application')
-
-            //var elem = document.getElementById('theGrid');
-            //elem.parentNode.removeChild(elem);
-
+            console.log('Ext.application for ' + me.props.xtype)
             Ext.application({
                 name: 'MyEWCApp',
                 launch: function () {
                     //console.log('Ext.Viewport.add(' + me.ext.xtype + ')')
                     Ext.Viewport.add([me.ext])
                     if (window.router) {
-                        //console.log('router.init called')
+                        // console.log('router.init called')
+                        // console.log(document.getElementById('route'))
                         window.router.init();
                     }
                 }
@@ -170,6 +167,7 @@ export default class ExtBase extends HTMLElement {
                     location = i
                     }
                 }
+                console.log('adc-a')
                 this.addTheChild(parentCmp, childCmp, location)
             }
             else {
@@ -212,6 +210,7 @@ export default class ExtBase extends HTMLElement {
             var parentCmp = this.ext;
             var childCmp = item.EXT;
             var location = item.ADDORDER
+            console.log('adc-b')
             this.addTheChild(parentCmp, childCmp, location)
         }
         //console.log('children')
@@ -240,7 +239,7 @@ export default class ExtBase extends HTMLElement {
     doCreate() {
         this.ext = Ext.create(this.props)
 
-        //console.log('Ext.create(' + this.ext.xtype + ')')
+        console.log('Ext.create(' + this.ext.xtype + ', ' + this.props.renderTo + ')')
         //console.dir(this.props)
         //console.dir(this.ext)
 
@@ -254,9 +253,9 @@ export default class ExtBase extends HTMLElement {
     }
 
     addTheChild(parentCmp, childCmp, location) {
-        //console.log('addTheChild')
         var childxtype = childCmp.xtype
         var parentxtype = parentCmp.xtype
+        console.log('addTheChild: ' + parentxtype + ' - ' + childxtype)
 
         if (this.ext.initialConfig.align != undefined) {
             if (parentxtype != 'titlebar' && parentxtype != 'grid' && parentxtype != 'button') {

@@ -1,0 +1,22 @@
+<ext-container padding="15" layout="fit" fitToParent="true" height="100%">
+  <ext-container docked="top" padding="15"  >
+    <chart-toolbar
+      onItemReady="marked.onMenuItemReady"
+      theme="default">
+    </chart-toolbar>
+  </ext-container>
+
+  <ext-polar
+    downloadServerUrl ="http://svg.sencha.io"
+    onready="marked.onPolarReady"
+    shadow="true"
+    insetPadding="25"
+    legend='{ "type": "sprite" }'
+    animation='{ "duration": "200" }'
+    [store]="this.store"
+    [interactions]="['rotate']"
+    theme="default"
+    [axes]="polarAxes"
+    [series]="polarSeries">
+  </ext-polar>
+</ext-container>

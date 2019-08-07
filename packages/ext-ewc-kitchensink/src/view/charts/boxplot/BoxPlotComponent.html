@@ -1,0 +1,25 @@
+<ext-container
+  padding="10"
+  layout="fit"
+  fitToParent="true"
+  height="100%"
+  width="100%">
+  <ext-toolbar
+    docked="top"
+    ui="app-transparent-toolbar"
+    shadow="false"
+    padding="0 10 0 10">
+    <chart-toolbar
+      onItemReady="boxplot.onMenuItemReady"
+      onlyMidnight="true"
+      theme="default">
+    </chart-toolbar>
+  </ext-toolbar>
+  <ext-cartesian
+    onready="boxplot.cartesianReady"
+    downloadServerUrl="http://svg.sencha.io"
+    shadow="true"
+    captions='{ "title": { "text": "Age of Nobel Prize winners by field\n1901 to 2014" } }'
+    width="800px">
+  </ext-cartesian>
+</ext-container>

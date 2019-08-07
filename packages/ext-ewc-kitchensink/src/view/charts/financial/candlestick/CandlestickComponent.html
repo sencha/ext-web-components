@@ -1,0 +1,28 @@
+<ext-container
+  padding="10"
+  layout="fit"
+  fitToParent="true"
+  height="100%"
+  width="100%">
+  <ext-toolbar
+    docked="top"
+    ui="app-transparent-toolbar"
+    shadow="false"
+    padding="0 10 0 10">
+    <chart-toolbar
+      onItemReady="candlestick.onMenuItemReady"
+      theme="default"
+      onRefreshButtonReady="candlestick.onRefreshButtonReady"
+      onZoomButtonReady="candlestick.onZoomButtonReady"
+      onPanButtonReady="candlestick.onPanButtonReady"
+      onCrosshairButtonReady="candlestick.onCrosshairButtonReady"
+      style="width: 100%;"
+      onlyMidnight="true">
+    </chart-toolbar>
+  </ext-toolbar>
+  <ext-cartesian
+    onready="candlestick.cartesianReady"
+    downloadServerUrl="http://svg.sencha.io"
+    shadow="true">
+  </ext-cartesian>
+</ext-container>

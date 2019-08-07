@@ -175,6 +175,7 @@ export function getRoutes(items) {
     }
 
     connectedCallback() {
+        //console.log('ext-router: connectedCallback')
       var me = this;
       Ext.onReady(function(){
         var div = document.createElement("DIV");
@@ -215,6 +216,7 @@ export function getRoutes(items) {
     }
 
     disconnectedCallback() {
+        console.log('ext-router: disconnectedCallback')
       delete this.ext
     }
   }

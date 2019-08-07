@@ -1,0 +1,27 @@
+<ext-container scrollable="true" layout="fit" fitToParent="true" height="100%">
+  <ext-tree
+    title="Heterogeneous Geographical Tree"
+    shadow="true"
+    rootVisible="false"
+    onready="heterogeneoustree.onTreeReady"
+    onselect="heterogeneoustree.onSelectionChange"
+    columns='[{
+      "xtype":"treecolumn",
+      "text":"Name",
+      "dataIndex":"name",
+      "width":"100%"
+    }]'
+  >
+    <ext-toolbar docked="bottom">
+      <ext-textfield
+        onaction="heterogeneoustree.onFieldAction"
+        onready="heterogeneoustree.onTextFieldReady">
+      </ext-textfield>
+      <ext-button
+        text="Add Territory"
+        ontap="heterogeneoustree.addItem"
+        onready="heterogeneoustree.onButtonReady">
+      </ext-button>
+    </ext-toolbar>
+  </ext-tree>
+</ext-container>

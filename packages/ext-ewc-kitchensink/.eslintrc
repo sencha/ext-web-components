@@ -1,0 +1,36 @@
+{
+  "globals": {
+    "Ext": true,
+    "KitchenSink": true,
+    "window": true,
+    "document": true,
+    "HTMLElement": true,
+    "d3": true
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": "eslint:recommended",
+  "parser": "babel-eslint",
+  "rules": {
+    "no-unused-vars": ["error", { "varsIgnorePattern": "Ext.{1,}[cC]omponent" }],
+    "space-before-function-paren": ["warn", {
+      "anonymous": "never",
+      "named": "never",
+      "asyncArrow": "always"
+    }],
+    "space-in-parens": ["error", "never"],
+    "no-mixed-spaces-and-tabs": ["error", "smart-tabs"],
+    "block-spacing": ["error", "never"],
+    "no-irregular-whitespace": ["error", { "skipComments": false }],
+    "no-multi-spaces": ["warn", { "ignoreEOLComments": false }],
+    "comma-spacing": ["error", { "before": false, "after": true }],
+    "func-style": ["error", "declaration", { "allowArrowFunctions": true }],
+    "indent": ["error", 4],
+    "no-console":["error", { "allow": ["log", "warn", "error"] }],
+    "semi": ["error", "always"],
+    "quotes": ["warn", "single"],
+    "max-len": [1, 200, 2, {"ignoreComments": true}]
+  }
+}

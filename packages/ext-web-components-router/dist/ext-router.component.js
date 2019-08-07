@@ -208,6 +208,7 @@ function (_HTMLElement) {
   };
 
   _proto3.connectedCallback = function connectedCallback() {
+    //console.log('ext-router: connectedCallback')
     var me = this;
     Ext.onReady(function () {
       var div = document.createElement("DIV");
@@ -248,6 +249,7 @@ function (_HTMLElement) {
   };
 
   _proto3.disconnectedCallback = function disconnectedCallback() {
+    console.log('ext-router: disconnectedCallback');
     delete this.ext;
   };
 
