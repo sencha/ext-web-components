@@ -33,7 +33,7 @@ module.exports = function(env) {
 
     return portfinder.getPortPromise().then(port => {
         const plugins = [
-            new HtmlWebpackPlugin({template: 'index.html', hash: true, inject: 'body'}),
+            new HtmlWebpackPlugin({template: 'index.html', hash: false, inject: 'body'}),
             new BaseHrefWebpackPlugin({ baseHref: basehref }),
             new ExtWebpackPlugin({
                 framework: 'web-components',
