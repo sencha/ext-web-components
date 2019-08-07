@@ -1,0 +1,39 @@
+<ext-formpanel
+  layout='{"type": "vbox", "align": "stretch"}'
+  width="300"
+  height="300"
+  bodyPadding="10"
+  shadow="true"
+>
+  <ext-fieldset
+    title="Personal Info"
+    defaults='{"labelAlign": "placeholder"}'
+  >
+    <ext-timefield
+      required="true"
+      label="Time Field"
+      value="3:42 PM"
+      name="time"
+      onready="timefield.timeFieldReady"
+    >
+    </ext-timefield>
+  </ext-fieldset>
+  <ext-toolbar
+    shadow="false"
+    docked="bottom"
+    layout='{ "type": "hbox", "pack": "right" }'
+  >
+    <ext-button
+      onready="timefield.buttonReady"
+      text="Disable All"
+      margin="0 10 0 0"
+      onTap="timefield.toggleDisable"
+    >
+    </ext-button>
+    <ext-button
+      text="Reset"
+      onTap="timefield.resetTimeField"
+    >
+    </ext-button>
+  </ext-toolbar>
+</ext-formpanel>

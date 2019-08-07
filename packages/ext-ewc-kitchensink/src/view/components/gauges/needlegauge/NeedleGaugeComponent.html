@@ -1,0 +1,23 @@
+<ext-formpanel shadow="true" layout="vbox" width="850">
+  <ext-sliderfield label="Value" onchange="needlegauge.updateGauges" value="30"></ext-sliderfield>
+  <ext-container
+    flex="1"
+    layout='{ "type": "hbox", "align": "stretch"}'
+    margin='10 0 10 0'
+    minHeight="200"
+    width="100%"
+  >
+    <ext-gauge flex="1" value="30" valueStyle='{"display": "none" }' onready="needlegauge.item1Ready"></ext-gauge>
+    <ext-gauge flex="1" value="30" onready="needlegauge.item2Ready" needle="wedge"></ext-gauge>
+  </ext-container>
+  <ext-container
+    flex="1"
+    layout='{ "type": "hbox", "align": "stretch"}'
+    margin='10 0 10 0'
+    minHeight="200"
+    width="100%"
+  >
+    <ext-gauge flex="1" value="30" onready="needlegauge.item3Ready" needle="spike"></ext-gauge>
+    <ext-gauge flex="1" value="30" textOffset='{"dy": "45" }' onready="needlegauge.item4Ready"></ext-gauge>
+  </ext-container>
+</ext-formpanel>

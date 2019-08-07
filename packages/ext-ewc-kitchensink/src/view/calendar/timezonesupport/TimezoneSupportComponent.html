@@ -1,0 +1,20 @@
+<ext-container padding="10" layout="fit" fitToParent="true" height="100%" width="">
+  <ext-panel
+    shadow="true"
+    fitToParent="true"
+    layout="fit"
+    onready="timezonesupport.panelReady"
+  >
+    <ext-calendar-day
+        height="100%"
+        startTime= "6"
+        endTime= "22"
+        visibleDays= "2"
+        timezoneOffset= "timezoneOffset"
+        gestureNavigation= "false"
+        showNowMarker= "false"
+        onready="timezonesupport.calendarDayReady"
+    >
+    </ext-calendar-day>
+  </ext-panel>
+</ext-container>

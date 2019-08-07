@@ -1,0 +1,36 @@
+<ext-container layout="fit" fitToParent="true" height="100%">
+
+  <ext-container docked="top"><div #extitem>
+    <chart-toolbar
+      onItemReady="basicline.onMenuItemReady"
+      theme="default">
+    </chart-toolbar>
+  </div></ext-container>
+
+  <ext-cartesian 
+    downloadServerUrl ="http://svg.sencha.io"
+    onready="basicline.cartesianReady"
+    width="800px"
+    shadow="true"
+    insetPadding="40 40 60 40"
+    theme="default"
+    series='{
+      "type": "line",
+      "xField": "time",
+      "yField": "value"
+    }'
+    axes='[{
+      "type": "numeric",
+      "position": "left",
+      "fields": "value",
+      "title": "USD to Euro"
+    }, {
+      "type": "time",
+      "dateFormat": "Y-m-d",
+      "position":"bottom",
+      "fields": "tim",
+      "title": "Date" 
+    }]'>
+  </ext-cartesian>
+
+</ext-container>

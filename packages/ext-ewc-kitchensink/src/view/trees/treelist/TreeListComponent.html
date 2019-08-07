@@ -1,0 +1,24 @@
+<ext-container layout="center" fitToParent="false" flex="1" height="100%">
+  <ext-panel
+    shadow="true"
+    scrollable="true"
+    onready="treelist.onPanelReady"
+  >
+    <ext-toolbar docked="top">
+      <ext-segmentedbutton allowMultiple="true">
+        <ext-button onready="treelist.onButtonReady1" ui="default-toolbar" text="Nav" onpressedchange="treelist.toggleNav"></ext-button>
+        <ext-button onready="treelist.onButtonReady2" ui="default-toolbar" text="Micro" onpressedchange="treelist.toggleMicro"></ext-button>
+      </ext-segmentedbutton>
+    </ext-toolbar>
+    <ext-treelist
+      ref="tree"
+      width="400"
+      onready="treelist.onTreeListReady"
+      expanderFirst="false"
+      expanderOnly="false"
+      micro="false"
+      ui="nav"
+    >
+    </ext-treelist>
+  </ext-panel>
+</ext-container>

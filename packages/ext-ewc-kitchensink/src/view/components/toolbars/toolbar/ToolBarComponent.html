@@ -1,0 +1,13 @@
+<ext-panel flex="1" shadow="true" bodyPadding="0">
+  <ext-toolbar docked="top">
+      <ext-button text="Button" ui="toolbar-default" ontap="toolbar.buttonHandler" badgeText="2"></ext-button>
+      <ext-spacer></ext-spacer>
+      <ext-segmentedbutton>
+          <ext-button  value="1" text="Option 1" pressed="true" ontap="toolbar.buttonHandler"></ext-button>
+          <ext-button  value="2" text="Option 2" ontap="toolbar.buttonHandler"></ext-button>
+      </ext-segmentedbutton>
+      <ext-spacer></ext-spacer>
+      <ext-searchfield ui="faded" placeholder="Search"></ext-searchfield>
+  </ext-toolbar>
+  <ext-container padding="20" onready="toolbar.containerReady" html=""></ext-container>
+</ext-panel>

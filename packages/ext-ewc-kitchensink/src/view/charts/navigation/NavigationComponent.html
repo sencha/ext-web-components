@@ -1,0 +1,94 @@
+<ext-container padding="15" layout="fit" fitToParent="true" height="100%" width="100%">
+    <ext-toolbar
+      docked="top"
+      ui="app-transparent-toolbar"
+      shadow="false"
+      padding="0 10 0 10"
+    >
+    <chart-toolbar
+      onItemReady="navigation.onMenuItemReady"
+      onZoomButtonReady="navigation.onZoomButtonReady"
+      onPanButtonReady="navigation.onPanButtonReady"
+      theme="default"
+      style="width: 100%;"
+    >
+    </chart-toolbar>
+  </ext-toolbar>
+  <ext-chartnavigator
+    shadow="true"
+    ref="navigator"
+    navigator='{"axis": "bottom"}'
+    height="100%"
+    onready="navigation.onNavigatorReady"
+    chart='{
+      "xtype": "cartesian",
+      "reference": "chart",
+      "insetPadding": "20 10 10 10",
+      "platformConfig":{
+        "phone": {
+          "insetPadding": "10 5 0 0"
+        }
+      },
+      "interactions":{
+        "type": "panzoom",
+        "zoomOnPanGesture": "false",
+        "axes": {
+          "left": {
+            "allowPan": "false",
+            "allowZoom": "false"
+          }
+        }
+      },
+      "legend":{
+        "type": "sprite"
+      },
+      "axes": [{
+        "type": "numeric",
+        "position": "left",
+        "grid": "true"
+      }, {
+        "id": "bottom",
+        "type": "category",
+        "position": "bottom",
+        "grid": "true",
+        "label": {
+          "rotation": {
+            "degrees": "-90"
+          }
+        }
+      }],
+      "series": [{
+        "type": "line",
+        "title": "sin",
+        "xField": "x",
+        "yField": "sin",
+        "marker": {
+          "type": "triangle",
+          "fx": {
+            "duration": "200",
+            "easing": "backOut"
+          }
+        },
+        "highlight": {
+          "scaling": 2
+        }
+      }, {
+        "type": "line",
+        "title": "cos",
+        "xField": "x",
+        "yField": "cos",
+        "marker": {
+          "type": "cross",
+          "fx": {
+            "duration": "200",
+            "easing": "backOut"
+          }
+        },
+        "highlight": {
+          "scaling": 2
+        }
+      }]
+    }'
+  >
+  </ext-chartnavigator>
+</ext-container>

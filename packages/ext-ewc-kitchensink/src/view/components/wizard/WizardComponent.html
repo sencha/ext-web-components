@@ -1,0 +1,84 @@
+<ext-container
+  layout="vbox"
+  padding="10"
+  platformConfig='{ "!phone": { "height": "350", "width": "550" } }'
+>
+  <ext-container
+    layout="hbox"
+    margin="0 0 10 0"
+  >
+    <ext-segmentedbutton
+      onready="wizard.segmentedButtonReady"
+      onchange="wizard.changeTapMode"
+      defaultUI="toolbar-default"
+    >
+      <ext-button
+        text="direction"
+        value="direction"
+        onready="wizard.directionButtonReady"
+      >
+      </ext-button>
+      <ext-button
+        text="item"
+        value="item"
+        onready="wizard.itemButtonReady"
+      >
+      </ext-button>
+    </ext-segmentedbutton>
+  </ext-container>
+  <ext-panel
+    onready="wizard.panelReady"
+    activeItem="0"
+    shadow="true"
+    layout="card"
+    flex="1"
+  >
+    <ext-container
+      onready="wizard.containerReady1"
+      padding="5 20"
+      style="font-size: '16px'"
+    >
+    </ext-container>
+    <ext-container
+      onready="wizard.containerReady2"
+      padding="20"
+      style="font-size: '16px'"
+    >
+    </ext-container>
+    <ext-container
+      onready="wizard.containerReady3"
+      padding="5 20"
+      style="font-size: '16px'"
+    >
+    </ext-container>
+    <ext-toolbar
+      docked="bottom"
+      layout='{ "type": "hbox", "align": "center", "pack": "space-between" }'
+    >
+      <ext-button
+        onready="wizard.leftButtonReady"
+        text="Previous"
+        onTap="wizard.previous"
+        iconCls="x-fa fa-chevron-left"
+      >
+      </ext-button>
+      <ext-indicator
+        count="3"
+        onready="wizard.indicatorReady"
+        onNext="wizard.next"
+        onPrevious="wizard.previous"
+        tapMode="direction"
+        onIndicatorTap="wizard.onIndicatorTap"
+      >
+      </ext-indicator>
+      <ext-button
+        onready="wizard.rightButtonReady"
+        text="Next"
+        onTap="wizard.next"
+        iconCls="x-fa fa-chevron-right"
+        iconAlign="right"
+      >
+      </ext-button>
+    </ext-toolbar>
+  </ext-panel>
+</ext-container>

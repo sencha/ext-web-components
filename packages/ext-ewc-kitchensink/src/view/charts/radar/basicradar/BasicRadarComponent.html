@@ -1,0 +1,17 @@
+<ext-container padding="15" layout="fit" fitToParent="true" height="100%">
+  <ext-container docked="top" padding="15">
+    <chart-toolbar
+      onItemReady="basicradar.onMenuItemReady"
+      theme="default">
+    </chart-toolbar>
+  </ext-container>
+  <ext-polar
+    downloadServerUrl ="http://svg.sencha.io"
+    onready="basicradar.onPolarReady"
+    width="800px"
+    shadow="true"
+    insetPadding="25"
+    theme="default"
+    interactions="rotate">
+  </ext-polar>
+</ext-container>

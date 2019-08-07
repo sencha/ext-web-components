@@ -1,0 +1,27 @@
+<ext-container padding="10" layout="fit" fitToParent="true" height="100%">
+  <ext-tabpanel
+    shadow="true"
+    tabBar='{"docked": "top"}'
+  >
+    <ext-panel layout="fit" title="Row Lines">
+      <ext-tree
+        onready="treedecorations.onTreeReady"
+        header="false"
+        rowLines="true"
+        rootVisible="false"
+        shadow= "true"
+      >
+      </ext-tree>
+    </ext-panel>
+    <ext-panel layout="fit" title="Single Expand">
+      <ext-tree
+        onready="treedecorations.onTreeReady"
+        header="false"
+        singleExpand="true"
+        rootVisible="false"
+        shadow= "true"
+      >
+      </ext-tree>
+    </ext-panel>
+  </ext-tabpanel>
+</ext-container>

@@ -1,0 +1,70 @@
+<ext-container layout="fit" padding="10" fitToParent="true" height="100%">
+  <ext-toolbar docked="top" ui="app-transparent-toolbar" shadow="false" margin="10 0 0 10" padding="0 10 0 10"
+    defaults='{"margin": "0 10 0 0","shadow": true,"ui": "action"}'>
+    <ext-button text="Configurator" onready="exporterplugin.onButtonReady"></ext-button>
+    <ext-button text="Export to ...">
+      <ext-menu onready="exporterplugin.onMenuReady">
+        <ext-menuitem
+          text="Excel xlsx (pivot table definition)"
+          iconCls="x-fa fa-file-excel-o"
+        >
+        </ext-menuitem>
+        <ext-menuitem
+          text="Excel xlsx (all items)"
+          iconCls="x-fa fa-file-excel-o"
+        >
+        </ext-menuitem>
+        <ext-menuitem
+          text="Excel xlsx (visible items)"
+          iconCls="x-fa fa-file-excel-o"
+        >
+        </ext-menuitem>
+        <ext-menuitem
+          text="Excel xml (all items)"
+          iconCls="x-fa fa-file-excel-o"
+        >
+        </ext-menuitem>
+        <ext-menuitem
+          text="Excel xml (visible items)"
+          iconCls="x-fa fa-file-excel-o"
+        >
+        </ext-menuitem>
+        <ext-menuitem
+          text="CSV (all items)"
+          iconCls="x-fa fa-file-text-o"
+        >
+        </ext-menuitem>
+        <ext-menuitem
+          text="CSV (visible items)"
+          iconCls="x-fa fa-file-text-o"
+        >
+        </ext-menuitem>
+        <ext-menuitem
+          text="TSV (all items)"
+          iconCls="x-fa fa-file-text-o"
+        >
+        </ext-menuitem>
+        <ext-menuitem
+          text="TSV (visible items)"
+          iconCls="x-fa fa-file-text-o"
+        >
+        </ext-menuitem>
+        <ext-menuitem
+          text="HTML (all items)"
+          iconCls="x-fa fa-html5"
+        >
+        </ext-menuitem>
+        <ext-menuitem
+          text="HTML (visible items)"
+          iconCls="x-fa fa-html5"
+        >
+        </ext-menuitem>
+      </ext-menu>
+    </ext-button>
+  </ext-toolbar>
+  <ext-pivotgrid
+    shadow="true"
+    onready="exporterplugin.onPivotGridReady"
+  >
+  </ext-pivotgrid>
+</container>

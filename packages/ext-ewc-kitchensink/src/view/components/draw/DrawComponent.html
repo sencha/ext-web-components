@@ -1,0 +1,9 @@
+<ext-panel padding="10" fitToParent="true" height="100%" shadow="true" layout="fit">
+  <ext-toolbar docked="top">
+    <ext-container onready="draw.headingContainerReady">
+    </ext-container>
+    <ext-spacer></ext-spacer>
+    <ext-button ontap="draw.clear" text="Clear"></ext-button>
+  </ext-toolbar>
+  <ext-draw onready="draw.onReady"></ext-draw>
+</ext-panel>
