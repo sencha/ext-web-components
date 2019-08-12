@@ -2,7 +2,7 @@ copy/
 build/
 dist/
 buildext/
-**/lib/Ext/
+
 ext-components-prod
 testing
 package-lock.json

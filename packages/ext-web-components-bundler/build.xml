@@ -14,7 +14,7 @@
                       initOnly="true"
                       inheritAll="true">
               <![CDATA[
-              -classpath=${basedir}/manifestext.js
+              -classpath=${basedir}/manifestext-grid.js
               load-app
                   -temp=${basedir}/buildext/temp
                   -tag=App
@@ -44,15 +44,15 @@
         -r
         -tag=overrides
       and
-      # include all js files needed for manifestext.js
+      # include all js files needed for manifestext-grid.js
       include
           -r
-          -f=manifestext.js
+          -f=manifestext-grid.js
       and
       # exclude the generated manifest file itself,
       # since we don't want the generated bundle file to create any components
       exclude
-      -f=manifestext.js
+      -f=manifestext-grid.js
       and
       concatenate
       +append
@@ -86,7 +86,7 @@
               buildext/ext.css
 
       then
-      
+
       fs
       minify
         -yui
