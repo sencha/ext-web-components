@@ -5,9 +5,11 @@
     "scripts": {
         "start": "npm run dev",
         "dev": "webpack-dev-server --env.browser=yes --env.verbose=no",
-        "build": "npm run clean && npm run webpackprod && npm run gzip && npm run replace && npm run http",
+        "build": "npm run clean && npm run webpackprod && npm run gzip && npm run http",
+        "buildexample": "npm run clean && npm run webpackprodexample",
         "clean": "rimraf build",
         "webpackprod": "cross-env webpack --env.environment=production --env.treeshake=yes --env.basehref=/",
+        "webpackprodexample": "cross-env webpack --env.environment=production --env.treeshake=yes --env.basehref=/ExtWebComponents/7.0.0/kitchensink/",
         "gzip": "npm run gzipbuild && npm run gzipext && npm run gzipresources",
         "gzipbuild": "npx gzip build/*.js",
         "gzipext": "npx gzip build/ext/*.js",
@@ -15,7 +17,7 @@
         "replace": "npx replace-in-file /.js/g .js.gz build/index.html --isRegex",
         "http": "npx http-server build -g -o",
 
-        "buildexample": "npm run clean && cross-env webpack --env.verbose=no --env.environment=production --env.treeshake=yes --env.basehref=/ExtWebComponents/7.0.0/kitchensink/"
+        "buildexampleold": "npm run clean && cross-env webpack --env.verbose=no --env.environment=production --env.treeshake=yes --env.basehref=/ExtWebComponents/7.0.0/kitchensink/"
     },
     "devDependencies": {
         "@sencha/ext-web-components": "~7.0.0",
@@ -71,7 +73,7 @@
         "gzip-cli": "^1.0.1",
         "replace-in-file": "^4.1.1",
         "http-server": "^0.11.1",
-        
+
         "rimraf": "^2.6.3",
         "sass-loader": "^7.1.0",
         "style-loader": "^0.23.1",
