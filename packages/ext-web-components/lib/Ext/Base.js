@@ -7,6 +7,7 @@ export default class Ext_Base_Component extends EwcBaseComponent {
 static XTYPE() {return ''}
 static PROPERTIESOBJECT() { return {
 "ewc": ["string"],
+"viewport":["boolean"],
 "plugins":["Array","Ext.enums.Plugin","Object","Ext.plugin.Abstract"],
 "responsiveConfig":["Object"],
 "responsiveFormulas":["Object"]

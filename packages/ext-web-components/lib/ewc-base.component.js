@@ -9,10 +9,12 @@ export default class EwcBaseComponent extends HTMLElement {
         // console.log('Base connectedCallback ' + this.XTYPE)
         this.createProps()
 
-        if (this.parentNode.nodeName == 'APP-ROOT' ||
-            this.parentElement.id == 'root'||
-            this.parentNode.nodeName == 'BODY'
-        ){
+        //console.log(this.props['viewport'])
+        if (this.props['viewport'] == true) {
+        //if (this.parentNode.nodeName == 'APP-ROOT' ||
+        //    this.parentElement.id == 'root'||
+        //    this.parentNode.nodeName == 'BODY'
+        //){
             var me = this
             me.doCreate()
             //console.log('Ext.application for ' + me.props.xtype + '(' + me.props.ewc + ')')
@@ -183,23 +185,7 @@ export default class EwcBaseComponent extends HTMLElement {
 
     doCreate() {
         this.ext = Ext.create(this.props)
-
-        // var renderTo = ""
-        // if (this.props.renderTo != undefined) {
-        //     console.dir(this.props.renderTo )
-        // }
-
         //console.log('Ext.create(' + this.ext.xtype + '(' + this.props.ewc + '), ' + this.props.renderTo + ')')
-
-        //console.log('Ext.create(' + this.ext.xtype + ')')
-
-        if (this.parentNode.childrenCounter != undefined) {
-            this.parentNode.childrenCounter--
-            if (this.parentNode.childrenCounter == 0) {
-            //console.log(`ready event for this.parentNode.nodeName}`)
-            //this.parentNode.dispatchEvent(new CustomEvent('ready',{detail:{cmp: this.parentNode.ext}}))
-            }
-        }
     }
 
     addChildren(child, children) {
@@ -353,7 +339,7 @@ export default class EwcBaseComponent extends HTMLElement {
         }
 
         if (defaultparent == true && defaultchild == true) {
-            //console.log(parentxtype + '.add(' + childxtype + ')')
+            console.log(parentxtype + '.add(' + childxtype + ')')
             parentCmp.add(childCmp)
         }
 
@@ -446,7 +432,7 @@ export default class EwcBaseComponent extends HTMLElement {
     }
 
     disconnectedCallback() {
-        console.log('ExtBase disconnectedCallback ' + this.ext.xtype)
+        //console.log('ExtBase disconnectedCallback ' + this.ext.xtype)
         delete this.ext
     }
 

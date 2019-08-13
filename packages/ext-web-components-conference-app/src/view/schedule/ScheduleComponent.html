@@ -12,6 +12,7 @@
   }'
   activeItem="0"
 >
+
   <ext-container
     onready="schedule.bannerReady"
     docked="top"
@@ -19,6 +20,7 @@
   >
     <span>Sencha Ext Web Components Conference App</span>
   </ext-container>
+
   <ext-tabpanel
       onready="schedule.tabpanelReady"
       flex="1"
@@ -28,6 +30,7 @@
       height="100%"
   >
     <ext-panel
+    title="Mon"
         platformConfig='{"!phone": { "title": "MONDAY" },"phone": {"title": "MON" } }'
         height="100%"
     >
@@ -48,6 +51,7 @@
       </ext-list>
     </ext-panel>
     <ext-panel
+    title="Tue"
     platformConfig='{"!phone": { "title": "TUESDAY" },"phone": {"title": "TUE" } }'
       height="100%"
     >
@@ -68,6 +72,7 @@
       </ext-list>
     </ext-panel>
     <ext-panel
+    title="Wed"
       height="100%"
       platformConfig='{"!phone": { "title": "WEDNESDAY" },"phone": {"title": "WED" } }'
     >
@@ -112,10 +117,13 @@
   <ext-panel
       flex="1"
       padding="20"
-      header="true"
+      title="Fri"
+      xheader="true"
       hidden="true"
       onready="schedule.scheduleSidePanelReady"
   >
     <ext-container onready="schedule.scheduleSideContainerReady"></ext-container>
   </ext-panel>
+  </ext-tabpanel>
+
 </ext-container>
