@@ -1,4 +1,3 @@
-//import { base } from "./base";
 import EwcBaseComponent from './ewc-base.component'
 
 export class ExtRouterComponent extends EwcBaseComponent {
@@ -89,7 +88,7 @@ export function getRoutes(items) {
 function _getRoutes(items) {
     items.forEach(function(item) {
         item.leaf = !item.hasOwnProperty("children");
-        item.hash = item.text.replace(/\s/g, "");
+        item.hash = item.text.replace(/ /g, "");
         item.hashlower = item.hash.toLowerCase();
         if (item.children == undefined) {
             window._routes.push(

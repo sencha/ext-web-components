@@ -160,6 +160,8 @@ export class Router {
             for (var i = 0, length = routes.length; i < length; i++) {
                 var route = routes[i];
                 if (route.isActiveRoute(window.location.hash.substr(1))) {
+                    console.dir(route)
+                    
                     currentHash = route.hash;
                     currentHashLower = route.hashlower;
                     currentComponent = route.component;

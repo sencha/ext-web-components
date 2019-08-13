@@ -189,6 +189,7 @@ function () {
         var route = routes[i];
 
         if (route.isActiveRoute(window.location.hash.substr(1))) {
+          console.dir(route);
           currentHash = route.hash;
           currentHashLower = route.hashlower;
           currentComponent = route.component;
