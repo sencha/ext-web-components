@@ -1,5 +1,5 @@
 Ext.require('Ext.*');
-import { getRoutes } from '@sencha/ext-web-components-router/dist/ext-router.component';
+import { getRoutes } from '@sencha/ext-web-components/dist/ext-router.component';
 import '@sencha/ext-web-components/dist/ext-button.component';
 import '@sencha/ext-web-components/dist/ext-dialog.component';
 import '@sencha/ext-web-components/dist/ext-dataview.component';

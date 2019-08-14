@@ -12,5 +12,4 @@ rm -r ext-web-components-demo-vue/node_modules
 rm -r ext-web-components-gen/node_modules
 rm -r ext-web-components-kitchensink/node_modules
 rm -r ext-web-components-renderercell/node_modules
-rm -r ext-web-components-router/node_modules
 rm -r ext-web-components-tests/node_modules
