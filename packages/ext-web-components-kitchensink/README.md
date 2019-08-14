@@ -45,3 +45,5 @@ You can view the app by pointing your browser to [http://localhost:1962](http://
 3. `cd packages/ext-web-components-kitchensink`
 4. `ln -s /path/to/ExtJS ext` - or, for Windows: `mklink ext /path/to/ExtJS`
 5. `npm run local`
+
+https://examples-test.sencha.com/ExtWebComponents/7.0.0/kitchensink/frame-index.html
