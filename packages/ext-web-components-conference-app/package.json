@@ -29,7 +29,6 @@
     "@sencha/ext-modern-theme-material": "~7.0.0",
     "@sencha/ext-modern-treegrid": "~7.0.0",
     "@sencha/ext-web-components": "~7.0.0",
-    "@sencha/ext-web-components-router": "~7.0.0",
     "@sencha/ext-webpack-plugin": "~7.0.0",
     "@webcomponents/webcomponentsjs": "^2.2.10",
     "babel-eslint": "^10.0.2",
