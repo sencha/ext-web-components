@@ -8,6 +8,7 @@
         "build": "npm run clean && npm run webpackprod && npm run gzip && npm run http",
         "xbuildexample2": "npm run clean && npm run webpackprodexample",
         "buildexample": "cross-env webpack --env.environment=production --env.treeshake=yes --env.basehref=/ExtWebComponents/7.0.0/kitchensink/",
+        "buildexamplegzip": "cross-env webpack --env.environment=production --env.treeshake=yes --env.basehref=/ExtWebComponents/7.0.0/kitchensink/ && npm run gzip",
         "clean": "rimraf build",
         "webpackprod": "cross-env webpack --env.environment=production --env.treeshake=yes --env.basehref=/",
         "xwebpackprodexample": "cross-env webpack --env.environment=production --env.treeshake=yes --env.basehref=/ExtWebComponents/7.0.0/kitchensink/",
