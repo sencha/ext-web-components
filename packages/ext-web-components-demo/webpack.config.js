@@ -34,13 +34,15 @@ module.exports = function (env) {
         emit: emit,
         script: './extract-code.js',
         port: port,
-        packages: ['renderercell'],
-        profile: profile, 
+        packages: [],
+        profile: profile,
         environment: environment,
         treeshake: treeshake,
         browser: browser,
         watch: watch,
-        verbose: verbose
+        verbose: verbose,
+        inject: 'yes',
+        intellishake: 'no'
       })
     ]
     return {

@@ -339,7 +339,7 @@ export default class EwcBaseComponent extends HTMLElement {
         }
 
         if (defaultparent == true && defaultchild == true) {
-            console.log(parentxtype + '.add(' + childxtype + ')')
+            //console.log(parentxtype + '.add(' + childxtype + ')')
             parentCmp.add(childCmp)
         }
 
