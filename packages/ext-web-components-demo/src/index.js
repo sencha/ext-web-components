@@ -1,8 +1,3 @@
-//import '@sencha/ext-web-components'
-
-//import '@sencha/ext-web-components/lib/ext-carousel.component';
-//import '@sencha/ext-web-components/lib/ext-renderercell.component';
-
 import '@sencha/ext-web-components/lib/ext-container.component';
 import '@sencha/ext-web-components/lib/ext-panel.component';
 import '@sencha/ext-web-components/lib/ext-button.component';
@@ -23,7 +18,16 @@ import TitlebarComponent from './view/titlebar/TitlebarComponent.js';
 //import GridComponent from './view/grid/GridComponent.js';
 //import ColumnsComponent from './view/columns/ColumnsComponent.js';
 
-// var globalOne = function(event) {
+(function () {
+    Ext.onReady(function() {
+        window.titlebar = new TitlebarComponent()
+        document.body.innerHTML = window._code['titlebar']['TitlebarComponent' + '.html']
+    });
+  }());
+
+
+
+  // var globalOne = function(event) {
 //   console.log('globalOne')
 // }
 
@@ -31,16 +35,7 @@ import TitlebarComponent from './view/titlebar/TitlebarComponent.js';
 //   console.log('globalOne')
 // }
 
-
-
-(function () {
-    Ext.onReady(function() {
-        window.titlebar = new TitlebarComponent()
-        document.body.innerHTML = window._code['titlebar']['TitlebarComponent' + '.html']
-    });
-
-
-//   init();
+  //   init();
 
 //   function doIt(c) {
 //     var n = c.name.indexOf('Component');
@@ -57,5 +52,3 @@ import TitlebarComponent from './view/titlebar/TitlebarComponent.js';
 //         doIt(ColumnsComponent)
 
 //   }
-
-  }());
