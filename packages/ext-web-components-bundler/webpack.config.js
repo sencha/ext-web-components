@@ -10,7 +10,7 @@ module.exports = function(env) {
         mode: environment,
         context: path.join(__dirname, './'),
         entry: {
-            ewc: './manifestewc-grid.js',
+            ewc: './manifestewc.js',
             css: './manifestcss.js'
         },
         output: {

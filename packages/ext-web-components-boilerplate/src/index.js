@@ -1,12 +1,7 @@
 import './ewc';
 import getMenu from './menu';
-import { getRoutes } from '@sencha/ext-web-components-router/lib/ext-router.component';
+import { getRoutes } from '@sencha/ext-web-components/lib/ext-router.component';
 import MainComponent from './view/main/MainComponent.js';
-
-Ext.require([
-    'Ext.layout.*',
-    'Ext.data.TreeStore'
-]);
 
 function init() {
     window.menu = getMenu();
