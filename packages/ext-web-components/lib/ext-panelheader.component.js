@@ -1,11 +1,7 @@
 import Ext_panel_Header_Component from './Ext/panel/Header'
 
 export class ExtPanelheaderComponent extends Ext_panel_Header_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

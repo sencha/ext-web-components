@@ -1,11 +1,7 @@
 import Ext_draw_Surface_Component from './Ext/draw/Surface'
 
 export class ExtSurfaceComponent extends Ext_draw_Surface_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

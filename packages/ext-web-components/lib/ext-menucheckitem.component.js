@@ -1,11 +1,7 @@
 import Ext_menu_CheckItem_Component from './Ext/menu/CheckItem'
 
 export class ExtMenucheckitemComponent extends Ext_menu_CheckItem_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

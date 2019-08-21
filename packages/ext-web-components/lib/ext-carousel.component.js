@@ -1,11 +1,7 @@
 import Ext_Carousel_Component from './Ext/Carousel'
 
 export class ExtCarouselComponent extends Ext_Carousel_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

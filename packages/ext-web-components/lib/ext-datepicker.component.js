@@ -1,11 +1,7 @@
 import Ext_DatePicker_Component from './Ext/DatePicker'
 
 export class ExtDatepickerComponent extends Ext_DatePicker_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

@@ -1,11 +1,7 @@
 import Ext_dataview_ItemHeader_Component from './Ext/dataview/ItemHeader'
 
 export class ExtItemheaderComponent extends Ext_dataview_ItemHeader_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

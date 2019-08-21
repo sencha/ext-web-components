@@ -1,11 +1,7 @@
 import Ext_picker_Tablet_Component from './Ext/picker/Tablet'
 
 export class ExtTabletpickerComponent extends Ext_picker_Tablet_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

@@ -1,11 +1,7 @@
 import Ext_Indicator_Component from './Ext/Indicator'
 
 export class ExtIndicatorComponent extends Ext_Indicator_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

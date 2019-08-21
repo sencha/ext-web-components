@@ -1,11 +1,7 @@
 import Ext_form_Spinner_Component from './Ext/form/Spinner'
 
 export class ExtSpinnerfieldComponent extends Ext_form_Spinner_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

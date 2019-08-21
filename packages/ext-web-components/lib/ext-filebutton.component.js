@@ -1,11 +1,7 @@
 import Ext_field_FileButton_Component from './Ext/field/FileButton'
 
 export class ExtFilebuttonComponent extends Ext_field_FileButton_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

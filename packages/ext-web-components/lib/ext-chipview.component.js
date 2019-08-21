@@ -1,11 +1,7 @@
 import Ext_dataview_ChipView_Component from './Ext/dataview/ChipView'
 
 export class ExtChipviewComponent extends Ext_dataview_ChipView_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

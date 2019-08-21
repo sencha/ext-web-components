@@ -1,11 +1,7 @@
 import Ext_grid_cell_Cell_Component from './Ext/grid/cell/Cell'
 
 export class ExtGridcellComponent extends Ext_grid_cell_Cell_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

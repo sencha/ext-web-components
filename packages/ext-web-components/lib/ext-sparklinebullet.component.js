@@ -1,11 +1,7 @@
 import Ext_sparkline_Bullet_Component from './Ext/sparkline/Bullet'
 
 export class ExtSparklinebulletComponent extends Ext_sparkline_Bullet_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

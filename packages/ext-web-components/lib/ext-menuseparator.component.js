@@ -1,11 +1,7 @@
 import Ext_menu_Separator_Component from './Ext/menu/Separator'
 
 export class ExtMenuseparatorComponent extends Ext_menu_Separator_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

@@ -1,3 +1,8 @@
+
+ng new ng-gwc-all --minimal=true --interactive=false --routing=false -g=true --skipInstall=true
+
+
+
 https://docs.google.com/spreadsheets/d/1_VUmebo5GZwhoBaLAOEme-iLvXJzkBRdYja_uIZUd2g/edit?ts=5c8b94ec#gid=0
 
 git remote add upstream https://github.com/sencha/ext-components.git

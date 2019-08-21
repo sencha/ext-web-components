@@ -1,11 +1,7 @@
 import Ext_NestedList_Component from './Ext/NestedList'
 
 export class ExtNestedlistComponent extends Ext_NestedList_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

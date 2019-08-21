@@ -1,11 +1,7 @@
 import Ext_form_DatePickerNative_Component from './Ext/form/DatePickerNative'
 
 export class ExtDatepickernativefieldComponent extends Ext_form_DatePickerNative_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

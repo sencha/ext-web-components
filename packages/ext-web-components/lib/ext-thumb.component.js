@@ -1,11 +1,7 @@
 import Ext_slider_Thumb_Component from './Ext/slider/Thumb'
 
 export class ExtThumbComponent extends Ext_slider_Thumb_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

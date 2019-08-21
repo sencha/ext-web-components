@@ -1,11 +1,7 @@
 import Ext_form_Display_Component from './Ext/form/Display'
 
 export class ExtDisplayfieldComponent extends Ext_form_Display_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

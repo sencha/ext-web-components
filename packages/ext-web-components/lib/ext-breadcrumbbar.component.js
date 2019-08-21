@@ -1,11 +1,7 @@
 import Ext_BreadcrumbBar_Component from './Ext/BreadcrumbBar'
 
 export class ExtBreadcrumbbarComponent extends Ext_BreadcrumbBar_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

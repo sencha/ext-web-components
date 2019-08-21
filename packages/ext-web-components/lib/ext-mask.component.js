@@ -1,11 +1,7 @@
 import Ext_Mask_Component from './Ext/Mask'
 
 export class ExtMaskComponent extends Ext_Mask_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

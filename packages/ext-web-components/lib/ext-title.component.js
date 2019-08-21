@@ -1,11 +1,7 @@
 import Ext_Title_Component from './Ext/Title'
 
 export class ExtTitleComponent extends Ext_Title_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

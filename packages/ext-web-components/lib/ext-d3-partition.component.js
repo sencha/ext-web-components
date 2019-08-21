@@ -1,11 +1,7 @@
 import Ext_d3_hierarchy_partition_Partition_Component from './Ext/d3/hierarchy/partition/Partition'
 
 export class ExtD3_partitionComponent extends Ext_d3_hierarchy_partition_Partition_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

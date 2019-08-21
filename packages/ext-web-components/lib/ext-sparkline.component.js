@@ -1,11 +1,7 @@
 import Ext_sparkline_Base_Component from './Ext/sparkline/Base'
 
 export class ExtSparklineComponent extends Ext_sparkline_Base_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

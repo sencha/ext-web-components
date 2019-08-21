@@ -1,11 +1,7 @@
 import Ext_Editor_Component from './Ext/Editor'
 
 export class ExtEditorComponent extends Ext_Editor_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

@@ -1,11 +1,7 @@
 import Ext_Map_Component from './Ext/Map'
 
 export class ExtMapComponent extends Ext_Map_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

@@ -1,11 +1,7 @@
 import Ext_ProgressBarWidget_Component from './Ext/ProgressBarWidget'
 
 export class ExtProgressbarwidgetComponent extends Ext_ProgressBarWidget_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

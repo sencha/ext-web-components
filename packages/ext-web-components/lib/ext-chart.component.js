@@ -1,11 +1,7 @@
 import Ext_chart_Chart_Component from './Ext/chart/Chart'
 
 export class ExtChartComponent extends Ext_chart_Chart_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

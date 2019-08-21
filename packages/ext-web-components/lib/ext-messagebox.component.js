@@ -1,11 +1,7 @@
 import Ext_MessageBox_Component from './Ext/MessageBox'
 
 export class ExtMessageboxComponent extends Ext_MessageBox_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

@@ -1,11 +1,7 @@
 import Ext_Audio_Component from './Ext/Audio'
 
 export class ExtAudioComponent extends Ext_Audio_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

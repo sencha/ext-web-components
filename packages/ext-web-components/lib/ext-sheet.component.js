@@ -1,11 +1,7 @@
 import Ext_Sheet_Component from './Ext/Sheet'
 
 export class ExtSheetComponent extends Ext_Sheet_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

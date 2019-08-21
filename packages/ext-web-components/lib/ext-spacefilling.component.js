@@ -1,11 +1,7 @@
 import Ext_chart_SpaceFillingChart_Component from './Ext/chart/SpaceFillingChart'
 
 export class ExtSpacefillingComponent extends Ext_chart_SpaceFillingChart_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

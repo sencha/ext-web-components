@@ -1,11 +1,7 @@
 import Ext_list_TreeItem_Component from './Ext/list/TreeItem'
 
 export class ExtTreelistitemComponent extends Ext_list_TreeItem_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

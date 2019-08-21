@@ -1,11 +1,7 @@
 import Ext_sparkline_Discrete_Component from './Ext/sparkline/Discrete'
 
 export class ExtSparklinediscreteComponent extends Ext_sparkline_Discrete_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

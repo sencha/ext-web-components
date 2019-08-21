@@ -1,11 +1,7 @@
 import Ext_ux_rating_Picker_Component from './Ext/ux/rating/Picker'
 
 export class ExtRatingComponent extends Ext_ux_rating_Picker_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

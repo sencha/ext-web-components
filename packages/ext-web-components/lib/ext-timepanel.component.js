@@ -1,11 +1,7 @@
 import Ext_panel_Time_Component from './Ext/panel/Time'
 
 export class ExtTimepanelComponent extends Ext_panel_Time_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

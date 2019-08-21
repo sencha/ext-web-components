@@ -1,11 +1,7 @@
 import Ext_IndexBar_Component from './Ext/IndexBar'
 
 export class ExtIndexbarComponent extends Ext_IndexBar_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {
