@@ -1,11 +1,7 @@
 import Ext_field_Time_Component from './Ext/field/Time'
 
 export class ExtTimefieldComponent extends Ext_field_Time_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

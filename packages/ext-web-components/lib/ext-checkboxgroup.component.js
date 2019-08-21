@@ -1,11 +1,7 @@
 import Ext_field_CheckboxGroup_Component from './Ext/field/CheckboxGroup'
 
 export class ExtCheckboxgroupComponent extends Ext_field_CheckboxGroup_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

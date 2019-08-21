@@ -1,11 +1,7 @@
 import Ext_grid_LockedGridRegion_Component from './Ext/grid/LockedGridRegion'
 
 export class ExtLockedgridregionComponent extends Ext_grid_LockedGridRegion_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

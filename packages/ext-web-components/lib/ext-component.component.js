@@ -1,11 +1,7 @@
 import Ext_Gadget_Component from './Ext/Gadget'
 
 export class ExtComponentComponent extends Ext_Gadget_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

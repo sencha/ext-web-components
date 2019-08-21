@@ -1,0 +1,4 @@
+
+Ext.require([
+{"xtype":"panel"}
+]);

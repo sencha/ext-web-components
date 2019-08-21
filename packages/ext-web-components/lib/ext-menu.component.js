@@ -1,11 +1,7 @@
 import Ext_menu_Menu_Component from './Ext/menu/Menu'
 
 export class ExtMenuComponent extends Ext_menu_Menu_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

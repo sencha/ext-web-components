@@ -1,11 +1,7 @@
 import Ext_Image_Component from './Ext/Image'
 
 export class ExtImageComponent extends Ext_Image_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

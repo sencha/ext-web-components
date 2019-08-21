@@ -1,11 +1,7 @@
 import Ext_field_Panel_Component from './Ext/field/Panel'
 
 export class ExtFieldpanelComponent extends Ext_field_Panel_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

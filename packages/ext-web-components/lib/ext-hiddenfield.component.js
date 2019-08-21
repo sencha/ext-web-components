@@ -1,11 +1,7 @@
 import Ext_form_Hidden_Component from './Ext/form/Hidden'
 
 export class ExtHiddenfieldComponent extends Ext_form_Hidden_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

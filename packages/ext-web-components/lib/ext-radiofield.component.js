@@ -1,11 +1,7 @@
 import Ext_form_Radio_Component from './Ext/form/Radio'
 
 export class ExtRadiofieldComponent extends Ext_form_Radio_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

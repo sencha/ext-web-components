@@ -1,11 +1,7 @@
 import Ext_Spacer_Component from './Ext/Spacer'
 
 export class ExtSpacerComponent extends Ext_Spacer_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

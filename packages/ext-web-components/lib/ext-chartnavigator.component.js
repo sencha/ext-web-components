@@ -1,11 +1,7 @@
 import Ext_chart_navigator_Container_Component from './Ext/chart/navigator/Container'
 
 export class ExtChartnavigatorComponent extends Ext_chart_navigator_Container_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

@@ -1,11 +1,7 @@
 import Ext_form_FormPanel_Component from './Ext/form/FormPanel'
 
 export class ExtFormpanelComponent extends Ext_form_FormPanel_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

@@ -14,7 +14,7 @@
                       initOnly="true"
                       inheritAll="true">
               <![CDATA[
-              -classpath=${basedir}/manifestext-grid.js
+              -classpath=${basedir}/manifestext-panel.js
               load-app
                   -temp=${basedir}/buildext/temp
                   -tag=App
@@ -34,7 +34,7 @@
       -f=Boot.js
       and
       concatenate
-          buildext/ext.development.js
+          buildext/ext.panel.development.js
       and
       exclude
       -all
@@ -44,19 +44,19 @@
         -r
         -tag=overrides
       and
-      # include all js files needed for manifestext-grid.js
+      # include all js files needed for manifestext-panel.js
       include
           -r
-          -f=manifestext-grid.js
+          -f=manifestext-panel.js
       and
       # exclude the generated manifest file itself,
       # since we don't want the generated bundle file to create any components
       exclude
-      -f=manifestext-grid.js
+      -f=manifestext-panel.js
       and
       concatenate
       +append
-          buildext/ext.development.js
+          buildext/ext.panel.development.js
       and
       scss
           -appName=App
@@ -90,8 +90,8 @@
       fs
       minify
         -yui
-        -from=buildext/ext.development.js
-        -to=buildext/ext.production.js
+        -from=buildext/ext.panel.development.js
+        -to=buildext/ext.panel.production.js
 
       ]]>
     </x-sencha-command>

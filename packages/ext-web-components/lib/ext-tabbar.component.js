@@ -1,11 +1,7 @@
 import Ext_TabBar_Component from './Ext/TabBar'
 
 export class ExtTabbarComponent extends Ext_TabBar_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

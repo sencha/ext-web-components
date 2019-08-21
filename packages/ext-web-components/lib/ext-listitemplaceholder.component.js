@@ -1,11 +1,7 @@
 import Ext_dataview_ListItemPlaceholder_Component from './Ext/dataview/ListItemPlaceholder'
 
 export class ExtListitemplaceholderComponent extends Ext_dataview_ListItemPlaceholder_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

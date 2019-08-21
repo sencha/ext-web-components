@@ -1,11 +1,7 @@
 import Ext_List_Component from './Ext/List'
 
 export class ExtListComponent extends Ext_List_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

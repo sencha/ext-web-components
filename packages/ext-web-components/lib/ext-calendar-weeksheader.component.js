@@ -1,11 +1,7 @@
 import Ext_calendar_header_Weeks_Component from './Ext/calendar/header/Weeks'
 
 export class ExtCalendar_weeksheaderComponent extends Ext_calendar_header_Weeks_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

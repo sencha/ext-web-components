@@ -1,11 +1,7 @@
 import Ext_DataView_Component from './Ext/DataView'
 
 export class ExtDataviewComponent extends Ext_DataView_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

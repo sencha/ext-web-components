@@ -1,11 +1,7 @@
 import Ext_grid_RowHeader_Component from './Ext/grid/RowHeader'
 
 export class ExtRowheaderComponent extends Ext_grid_RowHeader_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

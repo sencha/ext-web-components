@@ -1,11 +1,7 @@
 import Ext_form_TextArea_Component from './Ext/form/TextArea'
 
 export class ExtTextareafieldComponent extends Ext_form_TextArea_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

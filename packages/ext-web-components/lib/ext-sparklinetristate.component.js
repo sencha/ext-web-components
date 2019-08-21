@@ -1,11 +1,7 @@
 import Ext_sparkline_TriState_Component from './Ext/sparkline/TriState'
 
 export class ExtSparklinetristateComponent extends Ext_sparkline_TriState_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

@@ -1,11 +1,7 @@
 import Ext_SplitButton_Component from './Ext/SplitButton'
 
 export class ExtSplitbuttonComponent extends Ext_SplitButton_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

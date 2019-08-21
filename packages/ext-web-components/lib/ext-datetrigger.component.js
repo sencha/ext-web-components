@@ -1,11 +1,7 @@
 import Ext_field_trigger_Date_Component from './Ext/field/trigger/Date'
 
 export class ExtDatetriggerComponent extends Ext_field_trigger_Date_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

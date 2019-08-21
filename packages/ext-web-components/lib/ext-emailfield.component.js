@@ -1,11 +1,7 @@
 import Ext_form_Email_Component from './Ext/form/Email'
 
 export class ExtEmailfieldComponent extends Ext_form_Email_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {

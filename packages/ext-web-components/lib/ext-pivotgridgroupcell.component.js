@@ -1,11 +1,7 @@
 import Ext_pivot_cell_Group_Component from './Ext/pivot/cell/Group'
 
 export class ExtPivotgridgroupcellComponent extends Ext_pivot_cell_Group_Component {
-
-    constructor() {
-        super ('','',{},'')
-    }
-
+    constructor() {super ('','',{},'')}
 }
 
 (function () {
