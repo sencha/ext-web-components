@@ -139,7 +139,7 @@ export default class ScheduleComponent {
     onFavoriteClick = (currentTarget) => {
         const data_id = currentTarget.dataset.id;
         Ext.get(currentTarget).ripple(event, { bound: false, color: '#999' });
-        const record = window.main.store.findRecord('id', data_id);
+        const record = this.store.findRecord('id', data_id);
         let favorites = [];
         const favoritesSet = JSON.parse(JSON.stringify(this.favorites));
 
