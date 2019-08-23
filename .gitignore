@@ -1,6 +1,6 @@
 copy/
 build/
-dist/
+dist2/
 buildext/
 
 ext-components-prod
