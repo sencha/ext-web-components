@@ -18,18 +18,15 @@
         "gzipresources": "npx gzip build/resources/*.js",
         "replace": "npx replace-in-file /.js/g .js.gz build/index.html --isRegex",
         "http": "npx http-server build -g -o",
-
         "buildexampleold": "npm run clean && cross-env webpack --env.verbose=no --env.environment=production --env.treeshake=yes --env.basehref=/ExtWebComponents/7.0.0/kitchensink/"
     },
     "devDependencies": {
         "@sencha/ext-web-components": "~7.0.0",
         "@sencha/ext-webpack-plugin": "~7.0.0",
-
         "@sencha/ext": "~7.0.0",
         "@sencha/ext-modern": "~7.0.0",
         "@sencha/ext-modern-treegrid": "~7.0.0",
         "@sencha/ext-modern-theme-material": "~7.0.0",
-
         "@sencha/ext-calendar": "~7.0.0",
         "@sencha/ext-charts": "~7.0.0",
         "@sencha/ext-d3": "~7.0.0",
@@ -39,16 +36,12 @@
         "@sencha/ext-pivot-d3": "~7.0.0",
         "@sencha/ext-ux": "~7.0.0",
         "@sencha/ext-web-components-renderercell": "~7.0.0",
-
-
         "@babel/core": "^7.5.5",
         "@babel/preset-env": "^7.5.5",
         "@babel/runtime": "^7.5.5",
-
         "@babel/plugin-transform-runtime": "^7.5.5",
         "@babel/plugin-syntax-dynamic-import": "^7.2.0",
         "@babel/plugin-proposal-class-properties": "^7.5.5",
-
         "@babel/plugin-proposal-decorators": "^7.4.4",
         "@babel/plugin-proposal-export-namespace-from": "^7.5.2",
         "@babel/plugin-proposal-function-sent": "^7.5.0",
@@ -56,7 +49,6 @@
         "@babel/plugin-proposal-numeric-separator": "^7.2.0",
         "@babel/plugin-proposal-throw-expressions": "^7.2.0",
         "@babel/plugin-syntax-import-meta": "^7.2.0",
-
         "@webcomponents/webcomponentsjs": "^2.2.10",
         "rimraf": "^2.7.0",
         "cross-env": "^5.2.0",
@@ -65,11 +57,9 @@
         "gzip-cli": "^1.0.1",
         "replace-in-file": "^4.1.2",
         "http-server": "^0.11.1",
-
         "html-webpack-plugin": "^3.2.0",
         "base-href-webpack-plugin": "~2.0.0",
         "copy-webpack-plugin": "^5.0.4",
-
         "eslint-loader": "^2.2.1",
         "eslint": "^6.1.0",
         "babel-loader": "^8.0.6",
@@ -79,13 +69,11 @@
         "css-loader": "^3.2.0",
         "sass-loader": "^7.2.0",
         "node-sass": "^4.12.0",
-
         "d3": "4.5.0",
         "froala-editor": "^3.0.4",
         "hammerjs": "^2.0.8",
         "highlight.js": "^9.15.9",
         "highlightjs": "~9.12.0",
-
         "webpack": "^4.39.2",
         "webpack-cli": "^3.3.6",
         "webpack-dev-server": "^3.8.0"
