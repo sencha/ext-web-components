@@ -1,0 +1,66 @@
+<ext-container padding="10" width="600px">
+
+  <ext-container margin="0 0 10 0" defaults='{ "margin": "0 10 0 0" }' width="550px">
+    <ext-button ui="action raised" text="Style">
+      <ext-menu onready="splitbutton.setDefaultsForStyle" >
+        <ext-menuitem text="None" value="" iconCls="" onready="splitbutton.setStyle"></ext-menuitem>
+        <ext-menuitem text="Action" value="action" iconCls="" onready="splitbutton.setStyle"></ext-menuitem>
+        <ext-menuitem text="Decline" value="decline" iconCls="" onready="splitbutton.setStyle"></ext-menuitem>
+        <ext-menuitem text="Confirm" value="confirm" iconCls="" onready="splitbutton.setStyle"></ext-menuitem>
+      </ext-menu>
+    </ext-button>
+    <ext-button ui="action raised" text="Type">
+      <ext-menu onready="splitbutton.setTypeForStyle">
+        <ext-menuitem text="Text" value="Text" iconCls="" onready="splitbutton.setIcon"></ext-menuitem>
+        <ext-menuitem text="Icon" value="Icon" iconCls="" onready="splitbutton.setIcon"></ext-menuitem>
+        <ext-menuitem text="Text & Icon" value="Text & Icon" iconCls="" onready="splitbutton.setIcon">
+        </ext-menuitem>
+      </ext-menu>
+    </ext-button>
+    <ext-button ui="action raised" iconCls="" enableToggle="true" text="Round" ontap="splitbutton.toggleRound"  onready="splitbutton.toggleReady">
+    </ext-button>
+  </ext-container>
+
+  <ext-panel #layoutProps padding="10" shadow="true"
+    defaults='{"layout": "hbox", "flex":"1", "margin": "10", "width": "100%"}'>
+
+    <ext-container layout="hbox">
+      <ext-container layout="hbox"
+        html="<div #groupLabelProps1 style='text-align:right;margin:24px 20px 0 0;width: 100px'>Default</div>">
+      </ext-container>
+      <ext-container flex="3" cls="button-group" #buttonGroupProps1 padding='17 0 17 20'
+        layout='{ "type": "hbox", "align": "middle", "pack": "space-around" }' flex="1" margin='0 20 0 0' width="400px"
+        defaults='{"margin": "0 20 0 0"}'>
+        <ext-splitbutton text="Normal" ui="" iconCls="" arrowAlign="bottom" onready="splitbutton.menu">
+        </ext-splitbutton>
+        <ext-splitbutton text="Disabled" ui="" iconCls="" disabled="true" onready="splitbutton.menu"></ext-splitbutton>
+      </ext-container>
+    </ext-container>
+
+    <ext-container layout="hbox">
+      <ext-container layout="hbox" html="<div #groupLabelProps1 style='text-align:right;margin:24px 20px 0 0;width: 100px'>All</div>"></ext-container>
+      <ext-container flex="3" cls="button-group button-group-alt" #buttonGroupProps1 padding= '17 0 17 20' layout='{ "type": "hbox", "align": "middle", "pack": "space-around" }'' flex='1' margin='0 20 0 0' width="400px" defaults='{"margin": "0 20 0 0"}'>
+        <ext-splitbutton text="Normal" ui="" iconCls="" onready="splitbutton.menu" shadow="true"></ext-splitbutton>
+        <ext-splitbutton text="Disabled" ui="" iconCls="" disabled="true" onready="splitbutton.menu" shadow="true"></ext-splitbutton>
+      </ext-container>
+    </ext-container>
+
+    <ext-container layout="hbox">
+      <ext-container layout="hbox" html="<div #groupLabelProps1 style='text-align:right;margin:24px 20px 0 0;width: 100px'>Raised</div>"></ext-container>
+      <ext-container flex="3" cls="button-group" #buttonGroupProps1 padding= '17 0 17 20' layout='{ "type": "hbox", "align": "middle", "pack": "space-around" }' flex='1' margin='0 20 0 0' width="400px" defaults='{"margin": "0 20 0 0"}'>
+        <ext-splitbutton text="Normal" ui="" iconCls="" onready="splitbutton.menu" shadow="true"></ext-splitbutton>
+        <ext-splitbutton text="Disabled" ui="" iconCls=""  onready="splitbutton.menu" disabled="true" shadow="true"></ext-splitbutton>
+      </ext-container>
+    </ext-container>
+
+    <ext-container layout="hbox">
+      <ext-container layout="hbox" html="<div #groupLabelProps1 style='text-align:right;margin:24px 20px 0 0;width: 100px'>Alt Raised</div>"></ext-container>
+      <ext-container flex="3" cls="button-group button-group-alt" #buttonGroupProps1 padding= '17 0 17 20' layout='{ "type": "hbox", "align": "middle", "pack": "space-around" }' flex='1' margin='0 20 0 0' width="400px" defaults='{"margin": "0 20 0 0"}'>
+        <ext-splitbutton text="Normal" ui="" iconCls="" onready="splitbutton.menu" shadow="true"></ext-splitbutton>
+        <ext-splitbutton text="Disabled" ui="" iconCls="" onready="splitbutton.menu" disabled="true" shadow="true"></ext-splitbutton>
+      </ext-container>
+    </ext-container>
+
+  </ext-panel>
+
+</ext-container>

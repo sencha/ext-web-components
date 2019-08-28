@@ -1,0 +1,35 @@
+<ext-container
+  padding="10"
+  layout="fit"
+  fitToParent="true"
+  height="100%"
+  width="100%">
+
+<ext-toolbar
+  docked="top"
+  ui="app-transparent-toolbar"
+  shadow="false"
+  padding="0 10 0 10">
+  <chart-toolbar
+    theme="default"
+    onItemReady ="stacked.onMenuItemReady"
+    onRefreshButtonReady="stacked.onRefreshButtonReady"
+    onZoomButtonReady="stacked.onZoomButtonReady"
+    onPanButtonReady="stacked.onPanButtonReady"
+    onGroupButtonReady="stacked.onGroupButtonReady"
+    style="width: 100%;"
+    onStackButtonReady="stacked.onStackButtonReady">
+  </chart-toolbar>
+</ext-toolbar>
+
+  <ext-cartesian
+    onready="stacked.cartesianReady"
+    downloadServerUrl ="http://svg.sencha.io"
+    shadow="true"
+    insetPadding="20 20 10 10"
+    legend='{
+            "type": "sprite",
+            "position": "bottom"
+        }'>
+  </ext-cartesian>
+</ext-container>

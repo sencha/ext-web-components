@@ -1,6 +1,8 @@
 copy/
-dist/
 build/
+dist2/
+buildext/
+
 ext-components-prod
 testing
 package-lock.json

@@ -1,0 +1,29 @@
+<ext-container
+  padding="10"
+  layout="fit"
+  height="100%"
+  width="100%"
+  fitToParent="true"
+>
+  <ext-toolbar
+    docked="top"
+    ui="app-transparent-toolbar"
+    shadow="false"
+    padding="0 10 0 10"
+  >
+    <chart-toolbar
+      onItemReady="fullstackedbar.onMenuItemReady"
+      theme="default"
+    >
+    </chart-toolbar>
+  </ext-toolbar>
+  <ext-cartesian
+    onready="fullstackedbar.cartesianReady"
+    downloadServerUrl="http://svg.sencha.io"
+    shadow="true"
+    insetPadding="'20 20 10 10'"
+    legend='{ "type": "sprite", "docked": "bottom" }'
+    flipXY="true"
+  >
+  </ext-cartesian>
+</ext-container>

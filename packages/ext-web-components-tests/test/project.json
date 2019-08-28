@@ -1,0 +1,17 @@
+{
+    "framework": "jasmine",
+    "libs": [],
+    "coverageFilters": [],
+    "scenarios": [
+        {
+            "libs": [],
+            "coverageFilters": [],
+            "sandbox": false,
+            "globals": "*",
+            "directory": "AllTests",
+            "name": "AllTests"
+        }
+    ],
+    "pageObjects": [],
+    "subjectUrl": "http://localhost:1962/"
+}

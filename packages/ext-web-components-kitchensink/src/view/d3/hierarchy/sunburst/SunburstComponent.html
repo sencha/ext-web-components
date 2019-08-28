@@ -1,0 +1,24 @@
+<ext-panel
+    onready="sunburst.onPanelReady"
+    shadow="true"
+    plugins="responsive"
+    layout="hbox"
+    fitToParent="true"
+    height="100%"
+>
+  <ext-tree
+    onready="sunburst.onTreeReady"
+    plugins="responsive"
+    title="Folders"
+    shadow="true"
+    selection=""
+    onSelect="sunburst.onSelectionChange"
+  >
+  </ext-tree>
+  <ext-d3-sunburst
+    onready= "sunburst.ond3Ready"
+    flex="1"
+    padding="20"
+  >
+  </ext-d3-sunburst>
+</ext-panel>

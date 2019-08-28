@@ -1,0 +1,21 @@
+<ext-panel shadow="true" left="10" top="10" width="350">
+
+  <ext-toolbar shadow="false">
+    <ext-container style="margin-right: 10px;" html="Default UI:"></ext-container>
+    <ext-segmentedbutton onchange="segmentedbutton.onButton1Change">
+      <ext-button value="'low'" text="Low"></ext-button>
+      <ext-button value="'medium'" text="Medium"></ext-button>
+      <ext-button value="'high'" text="High"></ext-button>
+    </ext-segmentedbutton>
+  </ext-toolbar>
+
+  <ext-toolbar shadow="false">
+    <ext-container style="margin-right: 10px;" html="Toolbar UI:"></ext-container>
+    <ext-segmentedbutton defaultUI="'toolbar-default'" onchange="segmentedbutton.onButton2Change">
+      <ext-button value="'low'" text="Low"></ext-button>
+      <ext-button value="'medium'" text="Medium"></ext-button>
+      <ext-button value="'high'" text="High"></ext-button>
+    </ext-segmentedbutton>
+  </ext-toolbar>
+
+</ext-panel>

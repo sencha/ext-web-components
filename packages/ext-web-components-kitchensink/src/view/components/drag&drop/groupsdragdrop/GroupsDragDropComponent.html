@@ -1,0 +1,18 @@
+<ext-panel
+    padding="10"
+    shadow="true"
+    onready="groupsdragdrop.parentReady"
+    height="100%">
+
+    <ext-container cls="group1">
+      <ext-container onready="groupsdragdrop.src1Ready" cls="group-source-group1 group-source" html="group1"></ext-container>
+      <ext-container onready="groupsdragdrop.src2Ready" cls="group-source-group2 group-source" html="group2"></ext-container>
+      <ext-container onready="groupsdragdrop.srcbReady" cls="group-source-both group-source" html="group1, group2"></ext-container>
+    </ext-container>
+
+    <ext-container className="group2">
+      <ext-container onready="groupsdragdrop.tar1Ready" cls="group-target-group1 group-target" html="group1"></ext-container>
+      <ext-container onready="groupsdragdrop.tar2Ready" cls="group-target-group2 group-target" html="group2"></ext-container>
+      <ext-container onready="groupsdragdrop.tarbReady" cls="group-target-both group-target" html="group1, group2"></ext-container>
+    </ext-container>
+</ext-panel>

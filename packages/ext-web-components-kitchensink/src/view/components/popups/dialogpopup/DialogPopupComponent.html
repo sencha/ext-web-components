@@ -1,0 +1,21 @@
+<ext-container padding="10" layout="center" flex="1" height="100%">
+  <ext-button text="Show dialog" ontap="dialogpopup.showDialog" ui="action raised"></ext-button>
+  <ext-dialog
+    displayed="false"
+    onready='dialogpopup.dialogReady'
+    title="Dialog"
+    closable="true"
+    maximizable="true"
+    closeAction="hide"
+    hideOnMaskTap="true"
+    bodyPadding="20"
+    maxWidth="200"
+    defaultFocus="#ok"
+    onHide="dialogpopup.onHide"
+    html= "'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'"
+  >
+    <ext-button text="Cancel" ontap="dialogpopup.onCancel"></ext-button>
+    <ext-button text="OK" ontap="dialogpopup.onOk"></ext-button>
+  </ext-dialog>
+</ext-container>

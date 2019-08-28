@@ -1,21 +1,30 @@
+
+ng new ng-gwc-all --minimal=true --interactive=false --routing=false -g=true --skipInstall=true
+
+
+
 https://docs.google.com/spreadsheets/d/1_VUmebo5GZwhoBaLAOEme-iLvXJzkBRdYja_uIZUd2g/edit?ts=5c8b94ec#gid=0
 
 git remote add upstream https://github.com/sencha/ext-components.git
-
 
 git fetch upstream
 git merge upstream/master
 git merge upstream/ext-components-7.0.x
 
+git merge upstream/ext-7.0.x
+
 rm ~/.npmrc
 cat ~/.npmrc
 
 npm login --registry=https://sencha.myget.org/F/early-adopter/npm/ --scope=@sencha
-
-
 npm login --registry=https://sencha.myget.org/F/commercial-test/npm/ --scope=@sencha
 npm login --registry=https://npm.sencha.com/ --scope=@sencha
 npm login --registry=https://test.npm.sencha.com/ --scope=@sencha
+
+https://custom-elements-everywhere.com/
+
+ext js 7
+https://www.youtube.com/watch?v=pmGEze3Tk6A&feature=youtu.be
 
 
 https://alligator.io/angular/using-custom-elements/
@@ -33,7 +42,7 @@ in public/index.html
     <link href="<%= BASE_URL %>copy/extjs/ext.css" rel='stylesheet'>
     <script src="<%= BASE_URL %>copy/extjs/ext.js"></script>
 in package.json
-    "@sencha/ext-components": "^7.0.0",
+    "@sencha/ext-web-components": "~7.0.0",
     "@sencha/ext-webpack-plugin": "^7.0.0",
 in src/main.js
   import '@sencha/ext-components';
@@ -60,3 +69,15 @@ if (environment === 'development') {
 } else {
     module.exports = require('./config/webpack.config.prod');
 }
+
+
+// import '@sencha/ext-web-components/lib/Ext/Button';
+// import '@sencha/ext-web-components/lib/Ext/dataview/DataView';
+// import '@sencha/ext-web-components/lib/Ext/field/Search';
+// import '@sencha/ext-web-components/lib/Ext/list/Tree';
+// import '@sencha/ext-web-components/lib/Ext/Panel';
+// import '@sencha/ext-web-components/lib/Ext/tab/Panel';
+// import '@sencha/ext-web-components/lib/Ext/TitleBar';
+// import '@sencha/ext-web-components/lib/Ext/Toolbar';
+// import '@sencha/ext-web-components/lib/Ext/grid/column/Column';
+// import '@sencha/ext-web-components/lib/Ext/grid/Grid';

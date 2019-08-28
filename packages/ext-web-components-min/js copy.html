@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
+    <title>Sencha ExtWebComponent 7.0 Example in JavaScript</title>
+    <link  href='favicon.ico' rel='icon' type='image/x-icon'/ >
+    <link  href="themes/theme-material/resources/theme-material-all.css" rel='stylesheet'/>
+    <script src="dist/ext.production.js.gz"></script>
+    <!-- <script src="extkitchensink.js"></script> -->
+
+    <script src="ewc/base.js"></script>
+    <script src="ewc/ext-grid.component.js"></script>
+    <script src="ewc/ext-column.component.js"></script>
+    <!-- <script src="dist/ewc.production.js.gz"></script> -->
+</head>
+<script>
+  //height="100px" xonready="readyGrid"
+
+  var store = Ext.create('Ext.data.Store', {
+            autoLoad: true,
+            pageSize: 0,
+            proxy: {
+                type: 'memory',
+                data: [
+                    { name: "Jean Luc",   email: "jeanluc.picard@enterprise.com", phone: "555-111-1111" },
+                    { name: "ModernWorf", email: "worf.moghsson@enterprise.com",  phone: "555-222-2222" },
+                    { name: "Deanna",     email: "deanna.troi@enterprise.com",    phone: "555-333-3333" },
+                    { name: "Data",       email: "mr.data@enterprise.com",        phone: "555-444-4444" }
+                ]
+            }
+        });
+        console.dir(store)
+
+
+
+  var readyGrid = (event) => {
+    console.log('ready')
+      var gridCmp = event.detail.cmp
+      var data=[
+          { name: "Jean Luc",   email: "jeanluc.picard@enterprise.com", phone: "555-111-1111" },
+          { name: "ModernWorf", email: "worf.moghsson@enterprise.com",  phone: "555-222-2222" },
+          { name: "Deanna",     email: "deanna.troi@enterprise.com",    phone: "555-333-3333" },
+          { name: "Data",       email: "mr.data@enterprise.com",        phone: "555-444-4444" }
+      ]
+      gridCmp.setData(data)
+  }
+</script>
+<body>
+    <ext-grid title="Employees" onready="readyGrid"
+
+    >
+        <ext-column onready="readyGrid" text="Name" dataIndex="name" flex="2"></ext-column>
+        <ext-column text="Email" dataIndex="email" flex="3"></ext-column>
+        <ext-column text="Phone" dataIndex="phone" flex="2"></ext-column>
+    </ext-grid>
+</body>
+</html>

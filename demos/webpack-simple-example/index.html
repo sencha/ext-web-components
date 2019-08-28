@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Webpack Simple Example</title>
+    <script src="./dist/main.js"></script>
+    <link rel="shortcut icon" href="./dist/favicon.ico">
+
+<script type="module">
+document.addEventListener('DOMContentLoaded', () => {
+
+    const alertButton = document.getElementById('js-button');
+    alertButton.addEventListener('click', function() {alert("Hello 😊")});
+
+    const pTagButton = document.getElementById('js-write-text-button');
+    const pTag = document.querySelector('p');
+    pTagButton.addEventListener('click', () => {
+        pTag.innerHTML = 'Hello! From hidden text ';
+    });
+
+})
+</script>
+
+</head>
+<body>
+    <h1>Welcome!! This is Webpack simple example</h1>
+    <button id="js-button">Alerts the user!</button>
+    <div>
+        <ext-button text="Employees"></ext-button>
+    </div>
+    <button id="js-write-text-button">Write text to the p tag!</button>
+    <p></p>
+
+</body>
+</html>

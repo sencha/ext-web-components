@@ -1,0 +1,24 @@
+<ext-container
+  padding="10"
+  layout="fit"
+  fitToParent="true"
+  height="100%"
+  width="100%">
+  <ext-toolbar
+    docked="top"
+    ui="app-transparent-toolbar"
+    shadow="false"
+    padding="0 10 0 10">
+    <chart-toolbar
+      onItemReady="basic3dcolumn.onMenuItemReady"
+      onThemeChange="basic3dcolumn.onThemeChange"
+      theme="default"
+      onRefreshButtonReady="basic3dcolumn.onRefreshButtonReady">
+    </chart-toolbar>
+  </ext-toolbar>
+  <ext-cartesian
+    onready="basic3dcolumn.cartesianReady"
+    downloadServerUrl="http://svg.sencha.io"
+    shadow="true">
+  </ext-cartesian>
+</ext-container>

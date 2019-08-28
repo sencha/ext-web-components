@@ -1,0 +1,45 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ext-grid</title>
+  <script src="ext-modern-all.js"></script>
+  <link href="modern/theme-material/resources/theme-material-all.css" rel='stylesheet'/>
+  <script>
+    class ExtElement extends HTMLElement {
+      get xtype() {return this.getAttribute('xtype')}
+      set xtype(val) {if (val) {this.setAttribute('xtype', val)} else {this.removeAttribute('xtype')}}
+      get config() {return this.getAttribute('config')}
+      set config(val) {if (val) {this.setAttribute('config', val)} else {this.removeAttribute('config')}}
+      connectedCallback() {
+        var o = JSON.parse(this.config)
+        o.renderTo = this
+        var xtype = this.xtype
+        var extJSClass = Ext.ClassManager.getByAlias(`widget.${xtype}`)
+        this.ext = new extJSClass(o)
+      }
+    }
+    window.customElements.define('ext-element', ExtElement)
+  </script>
+</head>
+<body>
+  <ext-element 
+    xtype='grid'
+    config='
+    {
+      "title":"Grid with a single config",
+      "height":"300px",
+      "columns": [
+        {"text": "Name", "width": "250", "dataIndex": "name"},
+        {"text": "Email Address", "flex": "1", "dataIndex": "email"},
+        {"text": "Phone Number", "width": "250", "dataIndex": "phone"}
+      ],
+      "data": [
+        {"name": "Lisa", "email": "lisa@simpsons.com", "phone": "555-111-1224"},
+        {"name": "Bart", "email": "bart@simpsons.com", "phone": "555-222-1234"},
+        {"name": "Homer", "email": "homer@simpsons.com", "phone": "555-222-1244"},
+        {"name": "Marge", "email": "marge@simpsons.com", "phone": "555-222-1254"}
+      ]
+    }'>
+  </ext-element>
+</body>
+</html>

@@ -1,0 +1,23 @@
+rename 2 calander links
+break up ext-all into a global and ExtWC (rethink this)
+tests for CellRenderer
+create pure ExtJS for column issue for Ross
+error in timezone support
+floating code button
+add polyfills
+research data binding supportput router into separate npm package
+add cellrenderer to package??
+use class proxy to avoid cmp??
+data binding?
+
+
+server-side
+  NestJS
+  GraphQL
+
+other build systems
+  polymer (data binding??)
+  lit-elements
+  stencil
+other Web Component aspects
+  shadow DOM

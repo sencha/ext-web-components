@@ -1,0 +1,42 @@
+<ext-grid
+  onready="home.readyGrid"
+  height="100%"
+>
+  <ext-toolbar docked="top">
+      <ext-searchfield
+          ui="faded"
+          placeholder="Search..."
+          onChange="home.onSearch"
+          responsiveConfig='{
+            "width <= 576": { "flex": "1" },
+            "width > 576": { "flex": "undefined" }
+          }'
+      >
+    </ext-searchfield>
+  </ext-toolbar>
+  <ext-column
+    text="Name"
+    flex="2"
+    dataIndex="name"
+    resizable="true"
+  >
+  </ext-column>
+  <ext-column
+    text="Email"
+    flex="3"
+    dataIndex="email"
+    resizable="true"
+    responsiveConfig='{
+      "width <= 576": { "hidden": true },
+      "width > 576": { "hidden": false }
+    }'
+  >
+  </ext-column>
+  <ext-column
+    text="Phone"
+    flex="2"
+    dataIndex="phone"
+    resizable="true"
+  >
+  </ext-column>
+</ext-grid>

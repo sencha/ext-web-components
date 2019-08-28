@@ -1,0 +1,34 @@
+<ext-container layout="vbox" height="100%" html="<span>This tests that grid columns, cells, and widgets can be defined using children.  The test should pass if both columns show up and the sparkline is rendered.</span>">
+    <ext-grid
+        id="gridComponent"
+        flex="1"
+        onready="relgridcolumn.onGridReady"
+        height="100%"
+        itemConfig='{"viewModel": {}}'
+    >
+        <ext-column text="Name" dataIndex="first"></ext-column>
+        <ext-column
+            text="Trend"
+            dataIndex="trend"
+            cell='{
+              "bind": "{record.trend}",
+              "xtype": "widgetcell",
+              "forceWidth": "true",
+              "widget": {
+                    "xtype": "sparklineline"
+                }
+             }'
+        >
+        </ext-column>
+    </ext-grid>
+</ext-container>
+<!--
+<ext-column text="First" dataIndex="first"></ext-column>
+<ext-column text="Last" dataIndex="last"></ext-column>
+
+<ext-column text="Trend" dataIndex="trend">
+    <ext-widgetcell forceWidth="true">
+        <ext-sparklineline itemId="sparkLine"></ext-sparklineline>
+    </ext-widgetcell>
+</ext-column>
+-->

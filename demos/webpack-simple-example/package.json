@@ -1,0 +1,27 @@
+{
+  "name": "webpack-simple-example",
+  "version": "1.0.0",
+  "description": "Just a quick and dirty example on how Webpack is integrated into the project, and how to use without any frameworks or libraries.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode=development",
+    "prod": "webpack --mode=production"
+  },
+  "repository": "https://github.com/superjose/webpack-simple-example.git",
+  "author": "Jose Asilis <superjose_49@hotmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "webpack": "^4.31.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.1",
+    "compression-webpack-plugin": "^2.0.0",
+    "webpack-bundle-analyzer": "^3.3.2",
+    "base64-inline-loader": "^1.1.1",
+    "style-loader": "^0.23.1",
+    "css-loader": "^2.1.1",
+    "file-loader": "^3.0.1",
+    "svg-inline-loader": "^0.8.0"
+  }
+}

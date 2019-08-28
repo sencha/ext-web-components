@@ -1,0 +1,24 @@
+<ext-container layout="fit" padding="10" fitToParent="true" height="100%">
+  <ext-toolbar
+    docked="top"
+    ui="app-transparent-toolbar"
+    shadow="false"
+    margin="10 0 0 10"
+    padding="0 0 0 10"
+    defaults='{"margin": "0 10 0 0","shadow": "true","ui": "action"}'
+  >
+    <ext-button text="Change data">
+      <ext-menu>
+        <ext-menuitem text="Add" iconCls="x-fa fa-plus" onready="pivotgridwidgets.onButtonReady1"></ext-menuitem>
+        <ext-menuitem text="Update" iconCls="x-fa fa-edit" onready="pivotgridwidgets.onButtonReady2"></ext-menuitem>
+        <ext-menuitem text="Remove" iconCls="x-fa fa-minus" onready="pivotgridwidgets.onButtonReady3"></ext-menuitem>
+        <ext-menuitem text="Clear all" iconCls="x-fa fa-trash" onready="pivotgridwidgets.onButtonReady4"></ext-menuitem>
+      </ext-menu>
+    </ext-button>
+  </ext-toolbar>
+  <ext-pivotgrid
+    onready="pivotgridwidgets.onPivotGridReady"
+    shadow="true"
+  >
+  </ext-pivotgrid>
+</ext-container>

@@ -1,0 +1,18 @@
+<ext-container padding="10" layout="fit" fitToParent="true" height="100%">
+  <ext-container padding="10" docked="top">
+    <chart-toolbar
+      onItemReady="basicpie.onMenuItemReady"
+      onRefreshButtonReady="basicpie.onRefreshButtonReady"
+      theme="default"
+    >
+    </chart-toolbar>
+  </ext-container>
+  <ext-polar
+    downloadServerUrl ="http://svg.sencha.io"
+    onready="basicpie.onPolarReady"
+    innerPadding="40"
+    theme="default"
+    shadow="true"
+  >
+  </ext-polar>
+</ext-container>

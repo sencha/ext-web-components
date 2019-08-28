@@ -1,0 +1,41 @@
+<ext-container
+    onready="speakers.containerReady"
+    activeItem="1"
+    height="100%"
+    width="100%"
+    scrollable="true"
+    layout="hbox"
+>
+    <ext-list
+        shadow="true"
+        onready="speakers.listReady"
+        itemCls="app-list-item"
+        flex="1"
+        rowLines="true"
+        cls="app-list"
+    >
+    </ext-list>
+    <ext-panel
+        height="100%"
+        flex="1"
+        layout="vbox"
+        padding="20"
+        hidden="true"
+        onready="speakers.panelReady"
+    >
+        <ext-container onready="speakers.speakersSideContainerReady">
+        </ext-container>
+        <ext-list
+            onready="speakers.listReady2"
+            hideMode="offsets"
+            rowLines="true"
+            maxHeight="100%"
+            itemCls="app-list-item"
+            cls="app-list"
+            pinHeaders="true"
+            emptyText="No events found."
+            shadow="true"
+        >
+        </ext-list>
+    </ext-panel>
+</ext-container>

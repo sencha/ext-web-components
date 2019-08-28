@@ -1,0 +1,67 @@
+<ext-panel
+  layout="vbox"
+  shadow="true"
+  bodyPadding="20"
+  defaults='{"margin": "0 0 50 0"}'>
+  <ext-container
+    onready="tooltip.onReadyContainer1"
+    defaults='{"margin": "0 0 50 0"}'
+  >
+    <ext-button text="Basic Tip" height="30" width="100">
+      <ext-tooltip onready="tooltip.readyTooltip1"></ext-tooltip>
+    </ext-button>
+    <ext-button text="autoHide: false">
+      <ext-tooltip onready="tooltip.readyTooltip2" showOnTap="true" autoHide="false" title="Tip Title" closable="true"></ext-tooltip>
+    </ext-button>
+    <ext-button text="Mouse Track">
+      <ext-tooltip onready="tooltip.readyTooltip3" showOnTap="true" title="Mouse Track" trackMouse="true"></ext-tooltip>
+    </ext-button>
+  </ext-container>
+  <ext-container onready="tooltip.onReadyContainer2" defaults='{"margin": "0 0 50 0"}'>
+    <ext-button text="Anchor Right, Rich Content">
+      <ext-tooltip onready="tooltip.readyTooltip4" showOnTap="true" align="tl-tr" anchorToTarget="true" anchor="true">
+      </ext-tooltip>
+    </ext-button>
+    <ext-button text="Anchor Below">
+      <ext-tooltip onready="tooltip.readyTooltip5" showOnTap="true" align="tc-bc" anchor="true" anchorToTarget></ext-tooltip>
+    </ext-button>
+    <ext-button text="Anchor with Tracking">
+      <ext-tooltip onready="tooltip.readyTooltip6" showOnTap="true" trackMouse="true" anchor="true" align="l-r"></ext-tooltip>
+    </ext-button>
+  </ext-container>
+  <ext-container
+    onready="tooltip.onReadyContainer3"
+    default='{"margin": "0 0 50 0"}'>
+    <div
+      style="width: 150px; margin: 0 15px 0 0; color: white; cursor: default;
+          padding: 5px 10px; text-align: center; background-color: #e91e63;"
+      data-qtip="This tip is inline"
+      data-qshowOnTap="true">
+      Inline Tip
+    </div>
+      <div
+        style="width: 150px; margin: 0 15px 0 0; color: white; cursor: default;
+            padding: 5px 10px; text-align: center; background-color: #2196f3;"
+        data-qtip="This tip has a fixed width"
+        data-qwidth="400"
+        data-qshowOnTap="true">
+        Fixed width inline tip
+      </div>
+    <div
+      style="width: 150px; margin: 0 15px 0 0; color: white; cursor: default;
+        padding: 5px 10px; text-align: center; background-color: #ff5722;"
+      data-qtip="This tip has a title"
+      data-qtitle="The title"
+      data-qshowOnTap="true">
+      Inline tip with title
+    </div>
+    <div
+      style="width: 150px; margin: 0 15px 0 0; color: white; cursor: default;
+        padding: 5px 10px; text-align: center; background-color: #607d8b;"
+      data-qtip="Aligned top" data-qalign="bl-tl"
+      data-qanchorToTarget="true"
+      data-qshowOnTap="true">
+      Inline tip align top
+    </div>
+  </ext-container>
+</ext-panel>
