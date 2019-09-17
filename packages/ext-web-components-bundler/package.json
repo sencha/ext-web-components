@@ -1,6 +1,6 @@
 {
   "name": "ext-web-components-bundler",
-  "version": "7.0.0",
+  "version": "7.1.0",
   "description": "ext-web-components-bundler",
   "main": "index.js",
   "scripts": {

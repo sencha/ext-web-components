@@ -1,6 +1,6 @@
 {
   "name": "inherit",
-  "version": "7.0.0",
+  "version": "7.1.0",
   "private": false,
   "peerDependencies": {},
   "scripts": {

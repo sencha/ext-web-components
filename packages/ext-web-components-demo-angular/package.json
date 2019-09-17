@@ -1,6 +1,6 @@
 {
   "name": "@sencha/ext-web-components-demo-angular",
-  "version": "7.0.0",
+  "version": "7.1.0",
   "description": "ext-web-components-demo-angular",
   "scripts": {
     "start": "npm run dev",

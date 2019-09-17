@@ -1,6 +1,6 @@
 {
   "name": "@sencha/ext-web-components-renderercell",
-  "version": "7.0.0",
+  "version": "7.1.0",
   "description": "ext-web-components-renderercell",
   "main": "index.js",
   "author": "Sencha, Inc.",
@@ -12,7 +12,7 @@
   },
   "sencha": {
     "name": "renderercell",
-    "version": "7.0.0",
+    "version": "7.1.0",
     "compatVersion": "6.7.0",
     "namespace": "Ext",
     "type": "code",
