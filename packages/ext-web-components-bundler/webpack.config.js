@@ -10,12 +10,12 @@ module.exports = function(env) {
         mode: environment,
         context: path.join(__dirname, './'),
         entry: {
-            ewc: './manifestewc.js',
-            css: './manifestcss.js'
+ //           ewc: './manifestewc.js',
+            css: './manifestcssbutton.js'
         },
         output: {
             path: path.join(__dirname, 'dist'),
-            filename: '[name].' + environment + '.js'
+            filename: '[name].' + environment + '.button.js'
         },
         // plugins: [
         //     new ImportHttpWebpackPlugin()

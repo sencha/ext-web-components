@@ -41,15 +41,12 @@ function (_Ext_grid_Row_Compone) {
     }
   }]);
 
-  function Ext_pivot_Row_Component() {
-    var _this;
-
-    _this = _Ext_grid_Row_Compone.call(this, Ext_pivot_Row_Component.METHODS(), Ext_pivot_Row_Component.XTYPE(), Ext_pivot_Row_Component.PROPERTIESOBJECT(), Ext_pivot_Row_Component.EVENTS()) || this;
-    _this.XTYPE = Ext_pivot_Row_Component.XTYPE();
-    _this.PROPERTIESOBJECT = _this.extendObject(_this.PROPERTIESOBJECT, Ext_pivot_Row_Component.PROPERTIESOBJECT());
-    _this.METHODS = _this.extendArray(_this.METHODS, Ext_pivot_Row_Component.METHODS());
-    _this.EVENTS = _this.extendArray(_this.EVENTS, Ext_pivot_Row_Component.EVENTS());
-    return _this;
+  function Ext_pivot_Row_Component(propertiesobject, methods, events) {
+    return _Ext_grid_Row_Compone.call(this, Object.assign(propertiesobject, Ext_pivot_Row_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_pivot_Row_Component.PROPERTIESOBJECT()},
+    methods.concat(Ext_pivot_Row_Component.METHODS()), events.concat(Ext_pivot_Row_Component.EVENTS())) || this; //this.XTYPE = Ext_pivot_Row_Component.XTYPE()
+    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_pivot_Row_Component.PROPERTIESOBJECT());
+    //this.methods = this.extendArray(this.methods, Ext_pivot_Row_Component.METHODS());
+    //this.events = this.extendArray(this.events, Ext_pivot_Row_Component.EVENTS());
   }
 
   var _proto = Ext_pivot_Row_Component.prototype;

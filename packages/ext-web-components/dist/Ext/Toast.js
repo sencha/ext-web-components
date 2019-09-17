@@ -99,15 +99,12 @@ function (_Ext_Sheet_Component) {
     }
   }]);
 
-  function Ext_Toast_Component() {
-    var _this;
-
-    _this = _Ext_Sheet_Component.call(this, Ext_Toast_Component.METHODS(), Ext_Toast_Component.XTYPE(), Ext_Toast_Component.PROPERTIESOBJECT(), Ext_Toast_Component.EVENTS()) || this;
-    _this.XTYPE = Ext_Toast_Component.XTYPE();
-    _this.PROPERTIESOBJECT = _this.extendObject(_this.PROPERTIESOBJECT, Ext_Toast_Component.PROPERTIESOBJECT());
-    _this.METHODS = _this.extendArray(_this.METHODS, Ext_Toast_Component.METHODS());
-    _this.EVENTS = _this.extendArray(_this.EVENTS, Ext_Toast_Component.EVENTS());
-    return _this;
+  function Ext_Toast_Component(propertiesobject, methods, events) {
+    return _Ext_Sheet_Component.call(this, Object.assign(propertiesobject, Ext_Toast_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_Toast_Component.PROPERTIESOBJECT()},
+    methods.concat(Ext_Toast_Component.METHODS()), events.concat(Ext_Toast_Component.EVENTS())) || this; //this.XTYPE = Ext_Toast_Component.XTYPE()
+    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_Toast_Component.PROPERTIESOBJECT());
+    //this.methods = this.extendArray(this.methods, Ext_Toast_Component.METHODS());
+    //this.events = this.extendArray(this.events, Ext_Toast_Component.EVENTS());
   }
 
   var _proto = Ext_Toast_Component.prototype;

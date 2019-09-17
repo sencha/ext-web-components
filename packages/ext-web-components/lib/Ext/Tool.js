@@ -37,17 +37,28 @@ static METHODS() { return [
         return attrs
     }
 
-    constructor() {
+    constructor(propertiesobject, methods, events) {
         super (
-            Ext_Tool_Component.METHODS(),
-            Ext_Tool_Component.XTYPE(),
-            Ext_Tool_Component.PROPERTIESOBJECT(),
-            Ext_Tool_Component.EVENTS()
+            Object.assign(propertiesobject, Ext_Tool_Component.PROPERTIESOBJECT()),
+            //{propertiesobject, Ext_Tool_Component.PROPERTIESOBJECT()},
+            methods.concat(Ext_Tool_Component.METHODS()),
+            events.concat(Ext_Tool_Component.EVENTS())
+
+
+
+            //events.concat(Ext_Tool_Component.EVENTS()),
+            //propertiesobject.concat(Ext_Tool_Component.PROPERTIESOBJECT()),
+            //methods.concat(Ext_Tool_Component.METHODS())
+
+            //EwcBaseComponent.extendArray(events, Ext_Tool_Component.EVENTS()),
+            //EwcBaseComponent.extendArray(propertiesobject, Ext_Tool_Component.PROPERTIESOBJECT()),
+            //EwcBaseComponent.extendArray(methods, Ext_Tool_Component.METHODS())
         )
-        this.XTYPE = Ext_Tool_Component.XTYPE()
-        this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_Tool_Component.PROPERTIESOBJECT());
-        this.METHODS = this.extendArray(this.METHODS, Ext_Tool_Component.METHODS());
-        this.EVENTS = this.extendArray(this.EVENTS, Ext_Tool_Component.EVENTS());
+        //this.XTYPE = Ext_Tool_Component.XTYPE()
+        //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_Tool_Component.PROPERTIESOBJECT());
+        //this.methods = this.extendArray(this.methods, Ext_Tool_Component.METHODS());
+        //this.events = this.extendArray(this.events, Ext_Tool_Component.EVENTS());
+
     }
 
     connectedCallback() {

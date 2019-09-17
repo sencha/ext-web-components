@@ -1,19 +1,25 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_chart_navigator_Container_Component from './Ext/chart/navigator/Container';
+import HTMLParsedElement from './HTMLParsedElement';
 export var ExtChartnavigatorComponent =
 /*#__PURE__*/
 function (_Ext_chart_navigator_) {
   _inheritsLoose(ExtChartnavigatorComponent, _Ext_chart_navigator_);
 
   function ExtChartnavigatorComponent() {
-    return _Ext_chart_navigator_.call(this, '', '', {}, '') || this;
+    var _this;
+
+    _this = _Ext_chart_navigator_.call(this, {}, [], []) || this;
+    _this.xtype = 'chartnavigator';
+    return _this;
   }
 
   return ExtChartnavigatorComponent;
-}(Ext_chart_navigator_Container_Component);
+}(Ext_chart_navigator_Container_Component); //(function () {
+//    Ext.onReady(function() {
+//        window.customElements.define('ext-chartnavigator', ExtChartnavigatorComponent);
+//    });
+//})();
+//const  = HTMLParsedElement;
 
-(function () {
-  Ext.onReady(function () {
-    window.customElements.define('ext-chartnavigator', ExtChartnavigatorComponent);
-  });
-})();
+window.customElements.define('ext-chartnavigator', HTMLParsedElement.withParsedCallback(ExtChartnavigatorComponent));

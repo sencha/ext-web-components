@@ -29,17 +29,28 @@ static METHODS() { return [
         return attrs
     }
 
-    constructor() {
+    constructor(propertiesobject, methods, events) {
         super (
-            Ext_calendar_view_Week_Component.METHODS(),
-            Ext_calendar_view_Week_Component.XTYPE(),
-            Ext_calendar_view_Week_Component.PROPERTIESOBJECT(),
-            Ext_calendar_view_Week_Component.EVENTS()
+            Object.assign(propertiesobject, Ext_calendar_view_Week_Component.PROPERTIESOBJECT()),
+            //{propertiesobject, Ext_calendar_view_Week_Component.PROPERTIESOBJECT()},
+            methods.concat(Ext_calendar_view_Week_Component.METHODS()),
+            events.concat(Ext_calendar_view_Week_Component.EVENTS())
+
+
+
+            //events.concat(Ext_calendar_view_Week_Component.EVENTS()),
+            //propertiesobject.concat(Ext_calendar_view_Week_Component.PROPERTIESOBJECT()),
+            //methods.concat(Ext_calendar_view_Week_Component.METHODS())
+
+            //EwcBaseComponent.extendArray(events, Ext_calendar_view_Week_Component.EVENTS()),
+            //EwcBaseComponent.extendArray(propertiesobject, Ext_calendar_view_Week_Component.PROPERTIESOBJECT()),
+            //EwcBaseComponent.extendArray(methods, Ext_calendar_view_Week_Component.METHODS())
         )
-        this.XTYPE = Ext_calendar_view_Week_Component.XTYPE()
-        this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_calendar_view_Week_Component.PROPERTIESOBJECT());
-        this.METHODS = this.extendArray(this.METHODS, Ext_calendar_view_Week_Component.METHODS());
-        this.EVENTS = this.extendArray(this.EVENTS, Ext_calendar_view_Week_Component.EVENTS());
+        //this.XTYPE = Ext_calendar_view_Week_Component.XTYPE()
+        //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_calendar_view_Week_Component.PROPERTIESOBJECT());
+        //this.methods = this.extendArray(this.methods, Ext_calendar_view_Week_Component.METHODS());
+        //this.events = this.extendArray(this.events, Ext_calendar_view_Week_Component.EVENTS());
+
     }
 
     connectedCallback() {

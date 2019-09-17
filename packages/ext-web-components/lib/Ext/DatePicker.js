@@ -44,17 +44,28 @@ static METHODS() { return [
         return attrs
     }
 
-    constructor() {
+    constructor(propertiesobject, methods, events) {
         super (
-            Ext_DatePicker_Component.METHODS(),
-            Ext_DatePicker_Component.XTYPE(),
-            Ext_DatePicker_Component.PROPERTIESOBJECT(),
-            Ext_DatePicker_Component.EVENTS()
+            Object.assign(propertiesobject, Ext_DatePicker_Component.PROPERTIESOBJECT()),
+            //{propertiesobject, Ext_DatePicker_Component.PROPERTIESOBJECT()},
+            methods.concat(Ext_DatePicker_Component.METHODS()),
+            events.concat(Ext_DatePicker_Component.EVENTS())
+
+
+
+            //events.concat(Ext_DatePicker_Component.EVENTS()),
+            //propertiesobject.concat(Ext_DatePicker_Component.PROPERTIESOBJECT()),
+            //methods.concat(Ext_DatePicker_Component.METHODS())
+
+            //EwcBaseComponent.extendArray(events, Ext_DatePicker_Component.EVENTS()),
+            //EwcBaseComponent.extendArray(propertiesobject, Ext_DatePicker_Component.PROPERTIESOBJECT()),
+            //EwcBaseComponent.extendArray(methods, Ext_DatePicker_Component.METHODS())
         )
-        this.XTYPE = Ext_DatePicker_Component.XTYPE()
-        this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_DatePicker_Component.PROPERTIESOBJECT());
-        this.METHODS = this.extendArray(this.METHODS, Ext_DatePicker_Component.METHODS());
-        this.EVENTS = this.extendArray(this.EVENTS, Ext_DatePicker_Component.EVENTS());
+        //this.XTYPE = Ext_DatePicker_Component.XTYPE()
+        //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_DatePicker_Component.PROPERTIESOBJECT());
+        //this.methods = this.extendArray(this.methods, Ext_DatePicker_Component.METHODS());
+        //this.events = this.extendArray(this.events, Ext_DatePicker_Component.EVENTS());
+
     }
 
     connectedCallback() {

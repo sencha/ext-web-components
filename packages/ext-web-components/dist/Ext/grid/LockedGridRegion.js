@@ -46,15 +46,12 @@ function (_Ext_Panel_Component) {
     }
   }]);
 
-  function Ext_grid_LockedGridRegion_Component() {
-    var _this;
-
-    _this = _Ext_Panel_Component.call(this, Ext_grid_LockedGridRegion_Component.METHODS(), Ext_grid_LockedGridRegion_Component.XTYPE(), Ext_grid_LockedGridRegion_Component.PROPERTIESOBJECT(), Ext_grid_LockedGridRegion_Component.EVENTS()) || this;
-    _this.XTYPE = Ext_grid_LockedGridRegion_Component.XTYPE();
-    _this.PROPERTIESOBJECT = _this.extendObject(_this.PROPERTIESOBJECT, Ext_grid_LockedGridRegion_Component.PROPERTIESOBJECT());
-    _this.METHODS = _this.extendArray(_this.METHODS, Ext_grid_LockedGridRegion_Component.METHODS());
-    _this.EVENTS = _this.extendArray(_this.EVENTS, Ext_grid_LockedGridRegion_Component.EVENTS());
-    return _this;
+  function Ext_grid_LockedGridRegion_Component(propertiesobject, methods, events) {
+    return _Ext_Panel_Component.call(this, Object.assign(propertiesobject, Ext_grid_LockedGridRegion_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_grid_LockedGridRegion_Component.PROPERTIESOBJECT()},
+    methods.concat(Ext_grid_LockedGridRegion_Component.METHODS()), events.concat(Ext_grid_LockedGridRegion_Component.EVENTS())) || this; //this.XTYPE = Ext_grid_LockedGridRegion_Component.XTYPE()
+    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_grid_LockedGridRegion_Component.PROPERTIESOBJECT());
+    //this.methods = this.extendArray(this.methods, Ext_grid_LockedGridRegion_Component.METHODS());
+    //this.events = this.extendArray(this.events, Ext_grid_LockedGridRegion_Component.EVENTS());
   }
 
   var _proto = Ext_grid_LockedGridRegion_Component.prototype;

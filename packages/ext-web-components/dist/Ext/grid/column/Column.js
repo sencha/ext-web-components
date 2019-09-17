@@ -125,15 +125,12 @@ function (_Ext_grid_HeaderConta) {
     }
   }]);
 
-  function Ext_grid_column_Column_Component() {
-    var _this;
-
-    _this = _Ext_grid_HeaderConta.call(this, Ext_grid_column_Column_Component.METHODS(), Ext_grid_column_Column_Component.XTYPE(), Ext_grid_column_Column_Component.PROPERTIESOBJECT(), Ext_grid_column_Column_Component.EVENTS()) || this;
-    _this.XTYPE = Ext_grid_column_Column_Component.XTYPE();
-    _this.PROPERTIESOBJECT = _this.extendObject(_this.PROPERTIESOBJECT, Ext_grid_column_Column_Component.PROPERTIESOBJECT());
-    _this.METHODS = _this.extendArray(_this.METHODS, Ext_grid_column_Column_Component.METHODS());
-    _this.EVENTS = _this.extendArray(_this.EVENTS, Ext_grid_column_Column_Component.EVENTS());
-    return _this;
+  function Ext_grid_column_Column_Component(propertiesobject, methods, events) {
+    return _Ext_grid_HeaderConta.call(this, Object.assign(propertiesobject, Ext_grid_column_Column_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_grid_column_Column_Component.PROPERTIESOBJECT()},
+    methods.concat(Ext_grid_column_Column_Component.METHODS()), events.concat(Ext_grid_column_Column_Component.EVENTS())) || this; //this.XTYPE = Ext_grid_column_Column_Component.XTYPE()
+    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_grid_column_Column_Component.PROPERTIESOBJECT());
+    //this.methods = this.extendArray(this.methods, Ext_grid_column_Column_Component.METHODS());
+    //this.events = this.extendArray(this.events, Ext_grid_column_Column_Component.EVENTS());
   }
 
   var _proto = Ext_grid_column_Column_Component.prototype;

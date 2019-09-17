@@ -27,17 +27,28 @@ static METHODS() { return [
         return attrs
     }
 
-    constructor() {
+    constructor(propertiesobject, methods, events) {
         super (
-            Ext_Audio_Component.METHODS(),
-            Ext_Audio_Component.XTYPE(),
-            Ext_Audio_Component.PROPERTIESOBJECT(),
-            Ext_Audio_Component.EVENTS()
+            Object.assign(propertiesobject, Ext_Audio_Component.PROPERTIESOBJECT()),
+            //{propertiesobject, Ext_Audio_Component.PROPERTIESOBJECT()},
+            methods.concat(Ext_Audio_Component.METHODS()),
+            events.concat(Ext_Audio_Component.EVENTS())
+
+
+
+            //events.concat(Ext_Audio_Component.EVENTS()),
+            //propertiesobject.concat(Ext_Audio_Component.PROPERTIESOBJECT()),
+            //methods.concat(Ext_Audio_Component.METHODS())
+
+            //EwcBaseComponent.extendArray(events, Ext_Audio_Component.EVENTS()),
+            //EwcBaseComponent.extendArray(propertiesobject, Ext_Audio_Component.PROPERTIESOBJECT()),
+            //EwcBaseComponent.extendArray(methods, Ext_Audio_Component.METHODS())
         )
-        this.XTYPE = Ext_Audio_Component.XTYPE()
-        this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_Audio_Component.PROPERTIESOBJECT());
-        this.METHODS = this.extendArray(this.METHODS, Ext_Audio_Component.METHODS());
-        this.EVENTS = this.extendArray(this.EVENTS, Ext_Audio_Component.EVENTS());
+        //this.XTYPE = Ext_Audio_Component.XTYPE()
+        //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_Audio_Component.PROPERTIESOBJECT());
+        //this.methods = this.extendArray(this.methods, Ext_Audio_Component.METHODS());
+        //this.events = this.extendArray(this.events, Ext_Audio_Component.EVENTS());
+
     }
 
     connectedCallback() {

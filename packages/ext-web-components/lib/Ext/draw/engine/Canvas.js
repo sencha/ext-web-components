@@ -66,17 +66,28 @@ static METHODS() { return [
         return attrs
     }
 
-    constructor() {
+    constructor(propertiesobject, methods, events) {
         super (
-            Ext_draw_engine_Canvas_Component.METHODS(),
-            Ext_draw_engine_Canvas_Component.XTYPE(),
-            Ext_draw_engine_Canvas_Component.PROPERTIESOBJECT(),
-            Ext_draw_engine_Canvas_Component.EVENTS()
+            Object.assign(propertiesobject, Ext_draw_engine_Canvas_Component.PROPERTIESOBJECT()),
+            //{propertiesobject, Ext_draw_engine_Canvas_Component.PROPERTIESOBJECT()},
+            methods.concat(Ext_draw_engine_Canvas_Component.METHODS()),
+            events.concat(Ext_draw_engine_Canvas_Component.EVENTS())
+
+
+
+            //events.concat(Ext_draw_engine_Canvas_Component.EVENTS()),
+            //propertiesobject.concat(Ext_draw_engine_Canvas_Component.PROPERTIESOBJECT()),
+            //methods.concat(Ext_draw_engine_Canvas_Component.METHODS())
+
+            //EwcBaseComponent.extendArray(events, Ext_draw_engine_Canvas_Component.EVENTS()),
+            //EwcBaseComponent.extendArray(propertiesobject, Ext_draw_engine_Canvas_Component.PROPERTIESOBJECT()),
+            //EwcBaseComponent.extendArray(methods, Ext_draw_engine_Canvas_Component.METHODS())
         )
-        this.XTYPE = Ext_draw_engine_Canvas_Component.XTYPE()
-        this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_draw_engine_Canvas_Component.PROPERTIESOBJECT());
-        this.METHODS = this.extendArray(this.METHODS, Ext_draw_engine_Canvas_Component.METHODS());
-        this.EVENTS = this.extendArray(this.EVENTS, Ext_draw_engine_Canvas_Component.EVENTS());
+        //this.XTYPE = Ext_draw_engine_Canvas_Component.XTYPE()
+        //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_draw_engine_Canvas_Component.PROPERTIESOBJECT());
+        //this.methods = this.extendArray(this.methods, Ext_draw_engine_Canvas_Component.METHODS());
+        //this.events = this.extendArray(this.events, Ext_draw_engine_Canvas_Component.EVENTS());
+
     }
 
     connectedCallback() {

@@ -45,15 +45,12 @@ function (_Ext_chart_legend_Leg) {
     }
   }]);
 
-  function Ext_chart_legend_Legend_Component() {
-    var _this;
-
-    _this = _Ext_chart_legend_Leg.call(this, Ext_chart_legend_Legend_Component.METHODS(), Ext_chart_legend_Legend_Component.XTYPE(), Ext_chart_legend_Legend_Component.PROPERTIESOBJECT(), Ext_chart_legend_Legend_Component.EVENTS()) || this;
-    _this.XTYPE = Ext_chart_legend_Legend_Component.XTYPE();
-    _this.PROPERTIESOBJECT = _this.extendObject(_this.PROPERTIESOBJECT, Ext_chart_legend_Legend_Component.PROPERTIESOBJECT());
-    _this.METHODS = _this.extendArray(_this.METHODS, Ext_chart_legend_Legend_Component.METHODS());
-    _this.EVENTS = _this.extendArray(_this.EVENTS, Ext_chart_legend_Legend_Component.EVENTS());
-    return _this;
+  function Ext_chart_legend_Legend_Component(propertiesobject, methods, events) {
+    return _Ext_chart_legend_Leg.call(this, Object.assign(propertiesobject, Ext_chart_legend_Legend_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_chart_legend_Legend_Component.PROPERTIESOBJECT()},
+    methods.concat(Ext_chart_legend_Legend_Component.METHODS()), events.concat(Ext_chart_legend_Legend_Component.EVENTS())) || this; //this.XTYPE = Ext_chart_legend_Legend_Component.XTYPE()
+    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_chart_legend_Legend_Component.PROPERTIESOBJECT());
+    //this.methods = this.extendArray(this.methods, Ext_chart_legend_Legend_Component.METHODS());
+    //this.events = this.extendArray(this.events, Ext_chart_legend_Legend_Component.EVENTS());
   }
 
   var _proto = Ext_chart_legend_Legend_Component.prototype;

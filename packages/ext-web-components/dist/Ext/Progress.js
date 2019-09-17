@@ -44,15 +44,12 @@ function (_Ext_Gadget_Component) {
     }
   }]);
 
-  function Ext_Progress_Component() {
-    var _this;
-
-    _this = _Ext_Gadget_Component.call(this, Ext_Progress_Component.METHODS(), Ext_Progress_Component.XTYPE(), Ext_Progress_Component.PROPERTIESOBJECT(), Ext_Progress_Component.EVENTS()) || this;
-    _this.XTYPE = Ext_Progress_Component.XTYPE();
-    _this.PROPERTIESOBJECT = _this.extendObject(_this.PROPERTIESOBJECT, Ext_Progress_Component.PROPERTIESOBJECT());
-    _this.METHODS = _this.extendArray(_this.METHODS, Ext_Progress_Component.METHODS());
-    _this.EVENTS = _this.extendArray(_this.EVENTS, Ext_Progress_Component.EVENTS());
-    return _this;
+  function Ext_Progress_Component(propertiesobject, methods, events) {
+    return _Ext_Gadget_Component.call(this, Object.assign(propertiesobject, Ext_Progress_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_Progress_Component.PROPERTIESOBJECT()},
+    methods.concat(Ext_Progress_Component.METHODS()), events.concat(Ext_Progress_Component.EVENTS())) || this; //this.XTYPE = Ext_Progress_Component.XTYPE()
+    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_Progress_Component.PROPERTIESOBJECT());
+    //this.methods = this.extendArray(this.methods, Ext_Progress_Component.METHODS());
+    //this.events = this.extendArray(this.events, Ext_Progress_Component.EVENTS());
   }
 
   var _proto = Ext_Progress_Component.prototype;

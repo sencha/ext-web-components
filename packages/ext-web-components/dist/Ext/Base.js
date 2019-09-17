@@ -7,7 +7,6 @@ var Ext_Base_Component =
 function (_EwcBaseComponent) {
   _inheritsLoose(Ext_Base_Component, _EwcBaseComponent);
 
-  //events
   //configs
   Ext_Base_Component.XTYPE = function XTYPE() {
     return '';
@@ -15,7 +14,7 @@ function (_EwcBaseComponent) {
 
   Ext_Base_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
     return {
-      "ewc": ["string"],
+      "ext": ["string"],
       "align": ["string"],
       "viewport": ["boolean"],
       "plugins": ["Array", "Ext.enums.Plugin", "Object", "Ext.plugin.Abstract"],
@@ -25,7 +24,10 @@ function (_EwcBaseComponent) {
   };
 
   Ext_Base_Component.EVENTS = function EVENTS() {
-    return [];
+    return [{
+      name: 'ready',
+      parameters: ''
+    }];
   };
 
   Ext_Base_Component.METHODS = function METHODS() {
@@ -112,7 +114,16 @@ function (_EwcBaseComponent) {
     }];
   };
 
-  _createClass(Ext_Base_Component, null, [{
+  _createClass(Ext_Base_Component, [{
+    key: "onready",
+    //events
+    get: function get() {
+      return this.getAttribute('onready');
+    },
+    set: function set(onready) {
+      this.setAttribute('onready', onready);
+    }
+  }], [{
     key: "observedAttributes",
     get: function get() {
       var attrs = [];
@@ -124,20 +135,16 @@ function (_EwcBaseComponent) {
       Ext_Base_Component.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
-      attrs.push('on' + 'ready');
+      attrs.push('onready');
       return attrs;
     }
   }]);
 
-  function Ext_Base_Component() {
-    var _this;
-
-    _this = _EwcBaseComponent.call(this, Ext_Base_Component.METHODS(), Ext_Base_Component.XTYPE(), Ext_Base_Component.PROPERTIESOBJECT(), Ext_Base_Component.EVENTS()) || this;
-    _this.XTYPE = Ext_Base_Component.XTYPE();
-    _this.PROPERTIESOBJECT = _this.extendObject(_this.PROPERTIESOBJECT, Ext_Base_Component.PROPERTIESOBJECT());
-    _this.METHODS = _this.extendArray(_this.METHODS, Ext_Base_Component.METHODS());
-    _this.EVENTS = _this.extendArray(_this.EVENTS, Ext_Base_Component.EVENTS());
-    return _this;
+  function Ext_Base_Component(propertiesobject, methods, events) {
+    return _EwcBaseComponent.call(this, Object.assign(propertiesobject, Ext_Base_Component.PROPERTIESOBJECT()), methods.concat(Ext_Base_Component.METHODS()), events.concat(Ext_Base_Component.EVENTS())) || this; //this.XTYPE = Ext_Base_Component.XTYPE()
+    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_Base_Component.PROPERTIESOBJECT());
+    //this.METHODS = this.extendArray(this.METHODS, Ext_Base_Component.METHODS());
+    //this.EVENTS = this.extendArray(this.EVENTS, Ext_Base_Component.EVENTS());
   }
 
   return Ext_Base_Component;

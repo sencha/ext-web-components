@@ -1,19 +1,25 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_File_Component from './Ext/field/File';
+import HTMLParsedElement from './HTMLParsedElement';
 export var ExtFilefieldComponent =
 /*#__PURE__*/
 function (_Ext_field_File_Compo) {
   _inheritsLoose(ExtFilefieldComponent, _Ext_field_File_Compo);
 
   function ExtFilefieldComponent() {
-    return _Ext_field_File_Compo.call(this, '', '', {}, '') || this;
+    var _this;
+
+    _this = _Ext_field_File_Compo.call(this, {}, [], []) || this;
+    _this.xtype = 'filefield';
+    return _this;
   }
 
   return ExtFilefieldComponent;
-}(Ext_field_File_Component);
+}(Ext_field_File_Component); //(function () {
+//    Ext.onReady(function() {
+//        window.customElements.define('ext-filefield', ExtFilefieldComponent);
+//    });
+//})();
+//const  = HTMLParsedElement;
 
-(function () {
-  Ext.onReady(function () {
-    window.customElements.define('ext-filefield', ExtFilefieldComponent);
-  });
-})();
+window.customElements.define('ext-filefield', HTMLParsedElement.withParsedCallback(ExtFilefieldComponent));

@@ -66,15 +66,12 @@ function (_Ext_d3_ComponentBase) {
     }
   }]);
 
-  function Ext_d3_Component_Component() {
-    var _this;
-
-    _this = _Ext_d3_ComponentBase.call(this, Ext_d3_Component_Component.METHODS(), Ext_d3_Component_Component.XTYPE(), Ext_d3_Component_Component.PROPERTIESOBJECT(), Ext_d3_Component_Component.EVENTS()) || this;
-    _this.XTYPE = Ext_d3_Component_Component.XTYPE();
-    _this.PROPERTIESOBJECT = _this.extendObject(_this.PROPERTIESOBJECT, Ext_d3_Component_Component.PROPERTIESOBJECT());
-    _this.METHODS = _this.extendArray(_this.METHODS, Ext_d3_Component_Component.METHODS());
-    _this.EVENTS = _this.extendArray(_this.EVENTS, Ext_d3_Component_Component.EVENTS());
-    return _this;
+  function Ext_d3_Component_Component(propertiesobject, methods, events) {
+    return _Ext_d3_ComponentBase.call(this, Object.assign(propertiesobject, Ext_d3_Component_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_d3_Component_Component.PROPERTIESOBJECT()},
+    methods.concat(Ext_d3_Component_Component.METHODS()), events.concat(Ext_d3_Component_Component.EVENTS())) || this; //this.XTYPE = Ext_d3_Component_Component.XTYPE()
+    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_d3_Component_Component.PROPERTIESOBJECT());
+    //this.methods = this.extendArray(this.methods, Ext_d3_Component_Component.METHODS());
+    //this.events = this.extendArray(this.events, Ext_d3_Component_Component.EVENTS());
   }
 
   var _proto = Ext_d3_Component_Component.prototype;

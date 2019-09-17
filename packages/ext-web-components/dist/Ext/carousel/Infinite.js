@@ -41,15 +41,12 @@ function (_Ext_carousel_Carouse) {
     }
   }]);
 
-  function Ext_carousel_Infinite_Component() {
-    var _this;
-
-    _this = _Ext_carousel_Carouse.call(this, Ext_carousel_Infinite_Component.METHODS(), Ext_carousel_Infinite_Component.XTYPE(), Ext_carousel_Infinite_Component.PROPERTIESOBJECT(), Ext_carousel_Infinite_Component.EVENTS()) || this;
-    _this.XTYPE = Ext_carousel_Infinite_Component.XTYPE();
-    _this.PROPERTIESOBJECT = _this.extendObject(_this.PROPERTIESOBJECT, Ext_carousel_Infinite_Component.PROPERTIESOBJECT());
-    _this.METHODS = _this.extendArray(_this.METHODS, Ext_carousel_Infinite_Component.METHODS());
-    _this.EVENTS = _this.extendArray(_this.EVENTS, Ext_carousel_Infinite_Component.EVENTS());
-    return _this;
+  function Ext_carousel_Infinite_Component(propertiesobject, methods, events) {
+    return _Ext_carousel_Carouse.call(this, Object.assign(propertiesobject, Ext_carousel_Infinite_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_carousel_Infinite_Component.PROPERTIESOBJECT()},
+    methods.concat(Ext_carousel_Infinite_Component.METHODS()), events.concat(Ext_carousel_Infinite_Component.EVENTS())) || this; //this.XTYPE = Ext_carousel_Infinite_Component.XTYPE()
+    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_carousel_Infinite_Component.PROPERTIESOBJECT());
+    //this.methods = this.extendArray(this.methods, Ext_carousel_Infinite_Component.METHODS());
+    //this.events = this.extendArray(this.events, Ext_carousel_Infinite_Component.EVENTS());
   }
 
   var _proto = Ext_carousel_Infinite_Component.prototype;

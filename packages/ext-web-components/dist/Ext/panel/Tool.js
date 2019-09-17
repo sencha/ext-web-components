@@ -85,15 +85,12 @@ function (_Ext_Component_Compon) {
     }
   }]);
 
-  function Ext_panel_Tool_Component() {
-    var _this;
-
-    _this = _Ext_Component_Compon.call(this, Ext_panel_Tool_Component.METHODS(), Ext_panel_Tool_Component.XTYPE(), Ext_panel_Tool_Component.PROPERTIESOBJECT(), Ext_panel_Tool_Component.EVENTS()) || this;
-    _this.XTYPE = Ext_panel_Tool_Component.XTYPE();
-    _this.PROPERTIESOBJECT = _this.extendObject(_this.PROPERTIESOBJECT, Ext_panel_Tool_Component.PROPERTIESOBJECT());
-    _this.METHODS = _this.extendArray(_this.METHODS, Ext_panel_Tool_Component.METHODS());
-    _this.EVENTS = _this.extendArray(_this.EVENTS, Ext_panel_Tool_Component.EVENTS());
-    return _this;
+  function Ext_panel_Tool_Component(propertiesobject, methods, events) {
+    return _Ext_Component_Compon.call(this, Object.assign(propertiesobject, Ext_panel_Tool_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_panel_Tool_Component.PROPERTIESOBJECT()},
+    methods.concat(Ext_panel_Tool_Component.METHODS()), events.concat(Ext_panel_Tool_Component.EVENTS())) || this; //this.XTYPE = Ext_panel_Tool_Component.XTYPE()
+    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_panel_Tool_Component.PROPERTIESOBJECT());
+    //this.methods = this.extendArray(this.methods, Ext_panel_Tool_Component.METHODS());
+    //this.events = this.extendArray(this.events, Ext_panel_Tool_Component.EVENTS());
   }
 
   var _proto = Ext_panel_Tool_Component.prototype;

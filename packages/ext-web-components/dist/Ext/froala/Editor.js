@@ -63,15 +63,12 @@ function (_Ext_Component_Compon) {
     }
   }]);
 
-  function Ext_froala_Editor_Component() {
-    var _this;
-
-    _this = _Ext_Component_Compon.call(this, Ext_froala_Editor_Component.METHODS(), Ext_froala_Editor_Component.XTYPE(), Ext_froala_Editor_Component.PROPERTIESOBJECT(), Ext_froala_Editor_Component.EVENTS()) || this;
-    _this.XTYPE = Ext_froala_Editor_Component.XTYPE();
-    _this.PROPERTIESOBJECT = _this.extendObject(_this.PROPERTIESOBJECT, Ext_froala_Editor_Component.PROPERTIESOBJECT());
-    _this.METHODS = _this.extendArray(_this.METHODS, Ext_froala_Editor_Component.METHODS());
-    _this.EVENTS = _this.extendArray(_this.EVENTS, Ext_froala_Editor_Component.EVENTS());
-    return _this;
+  function Ext_froala_Editor_Component(propertiesobject, methods, events) {
+    return _Ext_Component_Compon.call(this, Object.assign(propertiesobject, Ext_froala_Editor_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_froala_Editor_Component.PROPERTIESOBJECT()},
+    methods.concat(Ext_froala_Editor_Component.METHODS()), events.concat(Ext_froala_Editor_Component.EVENTS())) || this; //this.XTYPE = Ext_froala_Editor_Component.XTYPE()
+    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_froala_Editor_Component.PROPERTIESOBJECT());
+    //this.methods = this.extendArray(this.methods, Ext_froala_Editor_Component.METHODS());
+    //this.events = this.extendArray(this.events, Ext_froala_Editor_Component.EVENTS());
   }
 
   var _proto = Ext_froala_Editor_Component.prototype;

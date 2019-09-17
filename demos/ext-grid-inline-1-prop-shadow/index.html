@@ -1,7 +1,7 @@
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <xmeta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
+    <xmeta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>ext-grid</title>
     <script src="public/ext.js"></script>
     <link href="public/ext.css" rel='stylesheet'/>
@@ -16,56 +16,29 @@ class ExtGrid extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
-        // const template = document.createElement('template');
-        // template.innerHTML = `${this.html}${this.style}${this.host}`;
-        // this.shadowRoot.appendChild(template.content.cloneNode(true));
-
         let link = document.createElement('link');
         link.setAttribute('rel', 'stylesheet');
         link.setAttribute('href', 'public/ext.css');
         this.shadowRoot.appendChild(link);
-
-        // let link = document.createElement('link');
-        // link.setAttribute('rel', 'stylesheet');
-        // link.setAttribute('href', 'public/ext_1.css');
-        // this.shadowRoot.appendChild(link);
-
-        // let link2 = document.createElement('link');
-        // link2.setAttribute('rel', 'stylesheet');
-        // link2.setAttribute('href', 'public/ext_2.css');
-        // this.shadowRoot.appendChild(link2);
     }
-
-    get html() { return ``}
-
-    get style() { return `
-<style>
-// @import "public/ext.css";
-</style>
-    `}
-
-    get host() { return `
-<style>
-</style>
-    `}
 
     connectedCallback() {
         var o = JSON.parse(this.config)
         o.xtype = 'grid'
         o.renderTo = this.shadowRoot
-        this.ext = Ext.create(o)
-    }
 
+        Ext.onReady(function() {
+            Ext.create(o)
+        })
+    }
 }
-Ext.onReady(function() {
-    window.customElements.define('ext-grid', ExtGrid)
-})
+window.customElements.define('ext-grid', ExtGrid)
 
 </script>
 </head>
 <body>
     <div style="height:400px;width:800px;">
-        <ext-grid 
+        <ext-grid
             config='{
                 "title":"Grid with a single config",
                 "height":"100%",

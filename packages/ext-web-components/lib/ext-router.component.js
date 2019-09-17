@@ -15,11 +15,47 @@ export class ExtRouterComponent extends EwcBaseComponent {
     }
 
     constructor() {
-        super();
+        super (
+            {},
+            [],
+            []
+        )
+        this.xtype = 'router'
         this.router = new Router(window.routes);
+
+        // this.newDiv = document.createElement('div');
+        // var textnode = document.createTextNode(this.xtype);
+        // this.newDiv.appendChild(textnode)
+        // this.insertAdjacentElement('beforebegin', this.newDiv);
+
+        var div = document.createElement("DIV");
+        div.setAttribute("id", "route");
+        //div.style.width = "100%";
+        //div.style.height = "100%";
+        div.style.width = "400px";
+        div.style.height = "400px";
+        div.style.padding = this.padding;
+        //div.style.display = "none";
+        //mjg should not be hard coded
+        div.style.backgroundSize = "20px 20px";
+        //div.style.overflow='scroll';
+        div.style.borderWidth = "0px";
+        div.style.backgroundColor = "#e8e8e8";
+        div.style.backgroundImage =
+            "linear-gradient( 0deg, #f5f5f5 1.1px, transparent 0)," +
+            "linear-gradient(90deg, #f5f5f5 1.1px, transparent 0)";
+        //this.insertAdjacentElement('beforebegin', div);
+        this.appendChild(div)
+        console.log('router constructor')
+
+
     }
 
-    createProps() {
+    createProps(properties, propertiesobject, events, eventnames) {
+        console.log('create props')
+    }
+
+    createProps2() {
         this.props = {};
         var div = document.createElement("DIV");
         div.setAttribute("id", "route");

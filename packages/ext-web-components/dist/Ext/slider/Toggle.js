@@ -43,15 +43,12 @@ function (_Ext_slider_Slider_Co) {
     }
   }]);
 
-  function Ext_slider_Toggle_Component() {
-    var _this;
-
-    _this = _Ext_slider_Slider_Co.call(this, Ext_slider_Toggle_Component.METHODS(), Ext_slider_Toggle_Component.XTYPE(), Ext_slider_Toggle_Component.PROPERTIESOBJECT(), Ext_slider_Toggle_Component.EVENTS()) || this;
-    _this.XTYPE = Ext_slider_Toggle_Component.XTYPE();
-    _this.PROPERTIESOBJECT = _this.extendObject(_this.PROPERTIESOBJECT, Ext_slider_Toggle_Component.PROPERTIESOBJECT());
-    _this.METHODS = _this.extendArray(_this.METHODS, Ext_slider_Toggle_Component.METHODS());
-    _this.EVENTS = _this.extendArray(_this.EVENTS, Ext_slider_Toggle_Component.EVENTS());
-    return _this;
+  function Ext_slider_Toggle_Component(propertiesobject, methods, events) {
+    return _Ext_slider_Slider_Co.call(this, Object.assign(propertiesobject, Ext_slider_Toggle_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_slider_Toggle_Component.PROPERTIESOBJECT()},
+    methods.concat(Ext_slider_Toggle_Component.METHODS()), events.concat(Ext_slider_Toggle_Component.EVENTS())) || this; //this.XTYPE = Ext_slider_Toggle_Component.XTYPE()
+    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_slider_Toggle_Component.PROPERTIESOBJECT());
+    //this.methods = this.extendArray(this.methods, Ext_slider_Toggle_Component.METHODS());
+    //this.events = this.extendArray(this.events, Ext_slider_Toggle_Component.EVENTS());
   }
 
   var _proto = Ext_slider_Toggle_Component.prototype;

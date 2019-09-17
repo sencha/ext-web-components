@@ -92,17 +92,28 @@ static METHODS() { return [
         return attrs
     }
 
-    constructor() {
+    constructor(propertiesobject, methods, events) {
         super (
-            Ext_chart_AbstractChart_Component.METHODS(),
-            Ext_chart_AbstractChart_Component.XTYPE(),
-            Ext_chart_AbstractChart_Component.PROPERTIESOBJECT(),
-            Ext_chart_AbstractChart_Component.EVENTS()
+            Object.assign(propertiesobject, Ext_chart_AbstractChart_Component.PROPERTIESOBJECT()),
+            //{propertiesobject, Ext_chart_AbstractChart_Component.PROPERTIESOBJECT()},
+            methods.concat(Ext_chart_AbstractChart_Component.METHODS()),
+            events.concat(Ext_chart_AbstractChart_Component.EVENTS())
+
+
+
+            //events.concat(Ext_chart_AbstractChart_Component.EVENTS()),
+            //propertiesobject.concat(Ext_chart_AbstractChart_Component.PROPERTIESOBJECT()),
+            //methods.concat(Ext_chart_AbstractChart_Component.METHODS())
+
+            //EwcBaseComponent.extendArray(events, Ext_chart_AbstractChart_Component.EVENTS()),
+            //EwcBaseComponent.extendArray(propertiesobject, Ext_chart_AbstractChart_Component.PROPERTIESOBJECT()),
+            //EwcBaseComponent.extendArray(methods, Ext_chart_AbstractChart_Component.METHODS())
         )
-        this.XTYPE = Ext_chart_AbstractChart_Component.XTYPE()
-        this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_chart_AbstractChart_Component.PROPERTIESOBJECT());
-        this.METHODS = this.extendArray(this.METHODS, Ext_chart_AbstractChart_Component.METHODS());
-        this.EVENTS = this.extendArray(this.EVENTS, Ext_chart_AbstractChart_Component.EVENTS());
+        //this.XTYPE = Ext_chart_AbstractChart_Component.XTYPE()
+        //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_chart_AbstractChart_Component.PROPERTIESOBJECT());
+        //this.methods = this.extendArray(this.methods, Ext_chart_AbstractChart_Component.METHODS());
+        //this.events = this.extendArray(this.events, Ext_chart_AbstractChart_Component.EVENTS());
+
     }
 
     connectedCallback() {

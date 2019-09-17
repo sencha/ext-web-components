@@ -69,15 +69,12 @@ function (_Ext_Button_Component) {
     }
   }]);
 
-  function Ext_Tab_Component() {
-    var _this;
-
-    _this = _Ext_Button_Component.call(this, Ext_Tab_Component.METHODS(), Ext_Tab_Component.XTYPE(), Ext_Tab_Component.PROPERTIESOBJECT(), Ext_Tab_Component.EVENTS()) || this;
-    _this.XTYPE = Ext_Tab_Component.XTYPE();
-    _this.PROPERTIESOBJECT = _this.extendObject(_this.PROPERTIESOBJECT, Ext_Tab_Component.PROPERTIESOBJECT());
-    _this.METHODS = _this.extendArray(_this.METHODS, Ext_Tab_Component.METHODS());
-    _this.EVENTS = _this.extendArray(_this.EVENTS, Ext_Tab_Component.EVENTS());
-    return _this;
+  function Ext_Tab_Component(propertiesobject, methods, events) {
+    return _Ext_Button_Component.call(this, Object.assign(propertiesobject, Ext_Tab_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_Tab_Component.PROPERTIESOBJECT()},
+    methods.concat(Ext_Tab_Component.METHODS()), events.concat(Ext_Tab_Component.EVENTS())) || this; //this.XTYPE = Ext_Tab_Component.XTYPE()
+    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_Tab_Component.PROPERTIESOBJECT());
+    //this.methods = this.extendArray(this.methods, Ext_Tab_Component.METHODS());
+    //this.events = this.extendArray(this.events, Ext_Tab_Component.EVENTS());
   }
 
   var _proto = Ext_Tab_Component.prototype;

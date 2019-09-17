@@ -72,7 +72,7 @@
         "d3": "4.5.0",
         "froala-editor": "^3.0.4",
         "hammerjs": "^2.0.8",
-        "highlight.js": "^9.15.9",
+        "highlight.js": "^9.15.10",
         "highlightjs": "~9.12.0",
         "webpack": "^4.39.2",
         "webpack-cli": "^3.3.6",

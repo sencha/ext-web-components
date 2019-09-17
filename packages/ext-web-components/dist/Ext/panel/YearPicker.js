@@ -41,15 +41,12 @@ function (_Ext_dataview_BoundLi) {
     }
   }]);
 
-  function Ext_panel_YearPicker_Component() {
-    var _this;
-
-    _this = _Ext_dataview_BoundLi.call(this, Ext_panel_YearPicker_Component.METHODS(), Ext_panel_YearPicker_Component.XTYPE(), Ext_panel_YearPicker_Component.PROPERTIESOBJECT(), Ext_panel_YearPicker_Component.EVENTS()) || this;
-    _this.XTYPE = Ext_panel_YearPicker_Component.XTYPE();
-    _this.PROPERTIESOBJECT = _this.extendObject(_this.PROPERTIESOBJECT, Ext_panel_YearPicker_Component.PROPERTIESOBJECT());
-    _this.METHODS = _this.extendArray(_this.METHODS, Ext_panel_YearPicker_Component.METHODS());
-    _this.EVENTS = _this.extendArray(_this.EVENTS, Ext_panel_YearPicker_Component.EVENTS());
-    return _this;
+  function Ext_panel_YearPicker_Component(propertiesobject, methods, events) {
+    return _Ext_dataview_BoundLi.call(this, Object.assign(propertiesobject, Ext_panel_YearPicker_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_panel_YearPicker_Component.PROPERTIESOBJECT()},
+    methods.concat(Ext_panel_YearPicker_Component.METHODS()), events.concat(Ext_panel_YearPicker_Component.EVENTS())) || this; //this.XTYPE = Ext_panel_YearPicker_Component.XTYPE()
+    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_panel_YearPicker_Component.PROPERTIESOBJECT());
+    //this.methods = this.extendArray(this.methods, Ext_panel_YearPicker_Component.METHODS());
+    //this.events = this.extendArray(this.events, Ext_panel_YearPicker_Component.EVENTS());
   }
 
   var _proto = Ext_panel_YearPicker_Component.prototype;

@@ -41,15 +41,12 @@ function (_Ext_Panel_Component) {
     }
   }]);
 
-  function Ext_picker_Tablet_Component() {
-    var _this;
-
-    _this = _Ext_Panel_Component.call(this, Ext_picker_Tablet_Component.METHODS(), Ext_picker_Tablet_Component.XTYPE(), Ext_picker_Tablet_Component.PROPERTIESOBJECT(), Ext_picker_Tablet_Component.EVENTS()) || this;
-    _this.XTYPE = Ext_picker_Tablet_Component.XTYPE();
-    _this.PROPERTIESOBJECT = _this.extendObject(_this.PROPERTIESOBJECT, Ext_picker_Tablet_Component.PROPERTIESOBJECT());
-    _this.METHODS = _this.extendArray(_this.METHODS, Ext_picker_Tablet_Component.METHODS());
-    _this.EVENTS = _this.extendArray(_this.EVENTS, Ext_picker_Tablet_Component.EVENTS());
-    return _this;
+  function Ext_picker_Tablet_Component(propertiesobject, methods, events) {
+    return _Ext_Panel_Component.call(this, Object.assign(propertiesobject, Ext_picker_Tablet_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_picker_Tablet_Component.PROPERTIESOBJECT()},
+    methods.concat(Ext_picker_Tablet_Component.METHODS()), events.concat(Ext_picker_Tablet_Component.EVENTS())) || this; //this.XTYPE = Ext_picker_Tablet_Component.XTYPE()
+    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_picker_Tablet_Component.PROPERTIESOBJECT());
+    //this.methods = this.extendArray(this.methods, Ext_picker_Tablet_Component.METHODS());
+    //this.events = this.extendArray(this.events, Ext_picker_Tablet_Component.EVENTS());
   }
 
   var _proto = Ext_picker_Tablet_Component.prototype;

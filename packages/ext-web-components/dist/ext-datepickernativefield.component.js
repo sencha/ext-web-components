@@ -1,19 +1,25 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_DatePickerNative_Component from './Ext/form/DatePickerNative';
+import HTMLParsedElement from './HTMLParsedElement';
 export var ExtDatepickernativefieldComponent =
 /*#__PURE__*/
 function (_Ext_form_DatePickerN) {
   _inheritsLoose(ExtDatepickernativefieldComponent, _Ext_form_DatePickerN);
 
   function ExtDatepickernativefieldComponent() {
-    return _Ext_form_DatePickerN.call(this, '', '', {}, '') || this;
+    var _this;
+
+    _this = _Ext_form_DatePickerN.call(this, {}, [], []) || this;
+    _this.xtype = 'datepickernativefield';
+    return _this;
   }
 
   return ExtDatepickernativefieldComponent;
-}(Ext_form_DatePickerNative_Component);
+}(Ext_form_DatePickerNative_Component); //(function () {
+//    Ext.onReady(function() {
+//        window.customElements.define('ext-datepickernativefield', ExtDatepickernativefieldComponent);
+//    });
+//})();
+//const  = HTMLParsedElement;
 
-(function () {
-  Ext.onReady(function () {
-    window.customElements.define('ext-datepickernativefield', ExtDatepickernativefieldComponent);
-  });
-})();
+window.customElements.define('ext-datepickernativefield', HTMLParsedElement.withParsedCallback(ExtDatepickernativefieldComponent));

@@ -41,15 +41,12 @@ function (_Ext_picker_Picker_Co) {
     }
   }]);
 
-  function Ext_picker_SelectPicker_Component() {
-    var _this;
-
-    _this = _Ext_picker_Picker_Co.call(this, Ext_picker_SelectPicker_Component.METHODS(), Ext_picker_SelectPicker_Component.XTYPE(), Ext_picker_SelectPicker_Component.PROPERTIESOBJECT(), Ext_picker_SelectPicker_Component.EVENTS()) || this;
-    _this.XTYPE = Ext_picker_SelectPicker_Component.XTYPE();
-    _this.PROPERTIESOBJECT = _this.extendObject(_this.PROPERTIESOBJECT, Ext_picker_SelectPicker_Component.PROPERTIESOBJECT());
-    _this.METHODS = _this.extendArray(_this.METHODS, Ext_picker_SelectPicker_Component.METHODS());
-    _this.EVENTS = _this.extendArray(_this.EVENTS, Ext_picker_SelectPicker_Component.EVENTS());
-    return _this;
+  function Ext_picker_SelectPicker_Component(propertiesobject, methods, events) {
+    return _Ext_picker_Picker_Co.call(this, Object.assign(propertiesobject, Ext_picker_SelectPicker_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_picker_SelectPicker_Component.PROPERTIESOBJECT()},
+    methods.concat(Ext_picker_SelectPicker_Component.METHODS()), events.concat(Ext_picker_SelectPicker_Component.EVENTS())) || this; //this.XTYPE = Ext_picker_SelectPicker_Component.XTYPE()
+    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_picker_SelectPicker_Component.PROPERTIESOBJECT());
+    //this.methods = this.extendArray(this.methods, Ext_picker_SelectPicker_Component.METHODS());
+    //this.events = this.extendArray(this.events, Ext_picker_SelectPicker_Component.EVENTS());
   }
 
   var _proto = Ext_picker_SelectPicker_Component.prototype;

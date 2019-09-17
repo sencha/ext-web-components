@@ -60,15 +60,12 @@ function (_Ext_Container_Compon) {
     }
   }]);
 
-  function Ext_dataview_component_DataItem_Component() {
-    var _this;
-
-    _this = _Ext_Container_Compon.call(this, Ext_dataview_component_DataItem_Component.METHODS(), Ext_dataview_component_DataItem_Component.XTYPE(), Ext_dataview_component_DataItem_Component.PROPERTIESOBJECT(), Ext_dataview_component_DataItem_Component.EVENTS()) || this;
-    _this.XTYPE = Ext_dataview_component_DataItem_Component.XTYPE();
-    _this.PROPERTIESOBJECT = _this.extendObject(_this.PROPERTIESOBJECT, Ext_dataview_component_DataItem_Component.PROPERTIESOBJECT());
-    _this.METHODS = _this.extendArray(_this.METHODS, Ext_dataview_component_DataItem_Component.METHODS());
-    _this.EVENTS = _this.extendArray(_this.EVENTS, Ext_dataview_component_DataItem_Component.EVENTS());
-    return _this;
+  function Ext_dataview_component_DataItem_Component(propertiesobject, methods, events) {
+    return _Ext_Container_Compon.call(this, Object.assign(propertiesobject, Ext_dataview_component_DataItem_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_dataview_component_DataItem_Component.PROPERTIESOBJECT()},
+    methods.concat(Ext_dataview_component_DataItem_Component.METHODS()), events.concat(Ext_dataview_component_DataItem_Component.EVENTS())) || this; //this.XTYPE = Ext_dataview_component_DataItem_Component.XTYPE()
+    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_dataview_component_DataItem_Component.PROPERTIESOBJECT());
+    //this.methods = this.extendArray(this.methods, Ext_dataview_component_DataItem_Component.METHODS());
+    //this.events = this.extendArray(this.events, Ext_dataview_component_DataItem_Component.EVENTS());
   }
 
   var _proto = Ext_dataview_component_DataItem_Component.prototype;
