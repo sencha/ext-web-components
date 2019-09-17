@@ -1,6 +1,6 @@
 {
   "name": "@sencha/ext-web-components-demo",
-  "version": "7.0.0",
+  "version": "7.1.0",
   "description": "ext-web-components-demo",
   "scripts": {
     "start": "npm run dev",

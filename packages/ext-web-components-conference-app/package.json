@@ -1,6 +1,6 @@
 {
   "name": "@sencha/ext-web-components-conference-app",
-  "version": "7.0.0",
+  "version": "7.1.0",
   "description": "ext-web-components-conference-app",
   "scripts": {
     "start": "npm run dev",
