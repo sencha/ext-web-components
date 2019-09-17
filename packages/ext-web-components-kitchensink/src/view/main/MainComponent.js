@@ -7,8 +7,10 @@ Ext.require([
     'Ext.data.TreeStore'
 ]);
 
+
 export default class MainComponent {
     constructor() {
+         this.wait = 5;
         var navTreeRoot = {
             hash: 'all',
             iconCls: 'x-fa fa-home',
@@ -26,38 +28,56 @@ export default class MainComponent {
             root: navTreeRoot
         });
 
-        this.wait = 5;
-
         if (Ext.os.is.Phone) {
             this.collapsed = true;
         }
     }
 
+    readyViewport = (event) => {
+        console.log('ready ready')
+        // var hash = window.location.hash.substr(1);
+        // if (hash == '') {hash = 'all';}
+        // var node = this.treeStore.findNode('name', hash);
+        // this.nav(node);
+
+        var hash = window.location.hash.substr(1);
+        if (hash == '') {hash = 'all';}
+        var node = this.navTreelistCmp.getStore().findNode('hash', hash);
+        this.navTreelistCmp.setSelection(node);
+        this.navigate(node);
+
+
+    }
+
+    afterAllLoaded = (who) => {
+        console.log('afterAllLoaded ****** ' + who);
+        // this.wait = this.wait - 1;
+        // console.log(this.wait)
+
+        // if (this.wait == 0) {
+        //     var hash = window.location.hash.substr(1);
+        //     if (hash == '') {hash = 'all';}
+        //     var node = this.navTreelistCmp.getStore().findNode('hash', hash);
+        //     this.navTreelistCmp.setSelection(node);
+        //     this.navigate(node);
+        // }
+    }
+
     readyRightContainer = (event) => {
         this.rightContainerCmp = event.detail.cmp;
         this.rightContainerCmp.updateHtml('Build: ' + BUILD_VERSION); // eslint-disable-line no-undef
+        this.afterAllLoaded('readyRightContainer');
     }
 
-    afterAllLoaded = () => {
-        this.wait = this.wait - 1;
-
-        if (this.wait == 0) {
-            var hash = window.location.hash.substr(1);
-            if (hash == '') {hash = 'all';}
-            var node = this.navTreelistCmp.getStore().findNode('hash', hash);
-            this.navTreelistCmp.setSelection(node);
-            this.navigate(node);
-        }
+    readyBreadcrumb = (event) => {
+        this.breadcrumbCmp = event.detail.cmp;
+        this.breadcrumbCmp.setStore(this.treeStore);
+        this.afterAllLoaded('readyDataviewBreadcrumb');
     }
 
     readyCodeButton = (event) => {
         this.codeButtonCmp = event.detail.cmp;
-    }
-
-    readyDataviewBreadcrumb = (event) => {
-        this.dataviewBreadcrumbCmp = event.detail.cmp;
-        this.dataviewBreadcrumbCmp.setStore(this.treeStore);
-        this.afterAllLoaded('readyDataviewBreadcrumb');
+        this.afterAllLoaded('readyCodeButton');
     }
 
     readyNavTreePanel = (event) => {
@@ -66,6 +86,7 @@ export default class MainComponent {
         if(Ext.os.is.Phone) {
             this.navTreePanelCmp.setWidth('100%');
         }
+        this.afterAllLoaded('readyNavTreePanel');
     }
 
     readyNavTreelist = (event) => {
@@ -85,6 +106,7 @@ export default class MainComponent {
             linear-gradient(90deg, #f5f5f5 1.1px, transparent 0)
         `;
         this.selectionCmp.setBodyStyle(bodyStyle);
+        this.afterAllLoaded('readySelection');
     }
 
     readyDataviewNav = (event) => {
@@ -116,6 +138,7 @@ export default class MainComponent {
 
     readyCodePanel = (event) => {
         this.codePanelCmp = event.detail.cmp;
+        this.afterAllLoaded('readyCodePanel');
     }
 
     readyTabPanel = (event) => {
@@ -123,11 +146,13 @@ export default class MainComponent {
         this.afterAllLoaded('readyTabPanel');
     }
 
-    dataviewBreadcrumbClick = (event) => {
+    clickBreadcrumb = (event) => {
         this.navigate(event.detail.node);
     }
 
     dataviewNavClick = (event) => {
+        console.log('dataviewNavClick');
+        console.log(event);
         var record = event.detail.location.record;
         this.navigate(record);
     }
@@ -145,7 +170,7 @@ export default class MainComponent {
         var hash = record.data.hash;
         var childNum = record.childNodes.length;
         var node = this.dataviewNavCmp.getStore().findNode('hash', hash);
-        this.dataviewBreadcrumbCmp.setSelection(node);
+        this.breadcrumbCmp.setSelection(node);
 
         if (childNum == 0 && hash != undefined) {
             window.location.hash = '#' + hash;
@@ -163,13 +188,13 @@ export default class MainComponent {
 
     showSelection = () => {
         this.selectionCmp.setHidden(false);
-        this.router.hidden = true;
+        window.router.hidden = true;
         this.codeButtonCmp.setHidden(true);
     }
 
     showRouter = () => {
         this.selectionCmp.setHidden(true);
-        this.router.hidden = false;
+        window.router.hidden = false;
         this.codeButtonCmp.setHidden(false);
 
         if(Ext.os.is.Phone) {

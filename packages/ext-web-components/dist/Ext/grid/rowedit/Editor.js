@@ -91,15 +91,12 @@ function (_Ext_dataview_ListIte) {
     }
   }]);
 
-  function Ext_grid_rowedit_Editor_Component() {
-    var _this;
-
-    _this = _Ext_dataview_ListIte.call(this, Ext_grid_rowedit_Editor_Component.METHODS(), Ext_grid_rowedit_Editor_Component.XTYPE(), Ext_grid_rowedit_Editor_Component.PROPERTIESOBJECT(), Ext_grid_rowedit_Editor_Component.EVENTS()) || this;
-    _this.XTYPE = Ext_grid_rowedit_Editor_Component.XTYPE();
-    _this.PROPERTIESOBJECT = _this.extendObject(_this.PROPERTIESOBJECT, Ext_grid_rowedit_Editor_Component.PROPERTIESOBJECT());
-    _this.METHODS = _this.extendArray(_this.METHODS, Ext_grid_rowedit_Editor_Component.METHODS());
-    _this.EVENTS = _this.extendArray(_this.EVENTS, Ext_grid_rowedit_Editor_Component.EVENTS());
-    return _this;
+  function Ext_grid_rowedit_Editor_Component(propertiesobject, methods, events) {
+    return _Ext_dataview_ListIte.call(this, Object.assign(propertiesobject, Ext_grid_rowedit_Editor_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_grid_rowedit_Editor_Component.PROPERTIESOBJECT()},
+    methods.concat(Ext_grid_rowedit_Editor_Component.METHODS()), events.concat(Ext_grid_rowedit_Editor_Component.EVENTS())) || this; //this.XTYPE = Ext_grid_rowedit_Editor_Component.XTYPE()
+    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_grid_rowedit_Editor_Component.PROPERTIESOBJECT());
+    //this.methods = this.extendArray(this.methods, Ext_grid_rowedit_Editor_Component.METHODS());
+    //this.events = this.extendArray(this.events, Ext_grid_rowedit_Editor_Component.EVENTS());
   }
 
   var _proto = Ext_grid_rowedit_Editor_Component.prototype;

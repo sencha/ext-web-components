@@ -126,15 +126,12 @@ function (_Ext_Toolbar_Componen) {
     }
   }]);
 
-  function Ext_TabBar_Component() {
-    var _this;
-
-    _this = _Ext_Toolbar_Componen.call(this, Ext_TabBar_Component.METHODS(), Ext_TabBar_Component.XTYPE(), Ext_TabBar_Component.PROPERTIESOBJECT(), Ext_TabBar_Component.EVENTS()) || this;
-    _this.XTYPE = Ext_TabBar_Component.XTYPE();
-    _this.PROPERTIESOBJECT = _this.extendObject(_this.PROPERTIESOBJECT, Ext_TabBar_Component.PROPERTIESOBJECT());
-    _this.METHODS = _this.extendArray(_this.METHODS, Ext_TabBar_Component.METHODS());
-    _this.EVENTS = _this.extendArray(_this.EVENTS, Ext_TabBar_Component.EVENTS());
-    return _this;
+  function Ext_TabBar_Component(propertiesobject, methods, events) {
+    return _Ext_Toolbar_Componen.call(this, Object.assign(propertiesobject, Ext_TabBar_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_TabBar_Component.PROPERTIESOBJECT()},
+    methods.concat(Ext_TabBar_Component.METHODS()), events.concat(Ext_TabBar_Component.EVENTS())) || this; //this.XTYPE = Ext_TabBar_Component.XTYPE()
+    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_TabBar_Component.PROPERTIESOBJECT());
+    //this.methods = this.extendArray(this.methods, Ext_TabBar_Component.METHODS());
+    //this.events = this.extendArray(this.events, Ext_TabBar_Component.EVENTS());
   }
 
   var _proto = Ext_TabBar_Component.prototype;

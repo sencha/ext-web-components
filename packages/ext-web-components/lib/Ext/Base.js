@@ -2,11 +2,12 @@ import EwcBaseComponent from '../ewc-base.component'
 
 export default class Ext_Base_Component extends EwcBaseComponent {
 //events
+get onready(){return this.getAttribute('onready')};set onready(onready){this.setAttribute('onready',onready)}
 //configs
 
 static XTYPE() {return ''}
 static PROPERTIESOBJECT() { return {
-"ewc": ["string"],
+"ext": ["string"],
 "align": ["string"],
 "viewport":["boolean"],
 "plugins":["Array","Ext.enums.Plugin","Object","Ext.plugin.Abstract"],
@@ -14,6 +15,7 @@ static PROPERTIESOBJECT() { return {
 "responsiveFormulas":["Object"]
 }}
 static EVENTS() { return [
+{name:'ready',parameters:''},
 ]}
 static METHODS() { return [
 { name:'addDeprecations',function: function(deprecations) { return this.ext.addDeprecations(deprecations) } },
@@ -42,20 +44,19 @@ static METHODS() { return [
         Ext_Base_Component.EVENTS().forEach(function (eventparameter, index, array) {
             attrs.push('on' + eventparameter.name)
         })
-        attrs.push('on' + 'ready')
+        attrs.push('onready')
         return attrs
     }
 
-    constructor() {
+    constructor(propertiesobject, methods, events) {
         super (
-            Ext_Base_Component.METHODS(),
-            Ext_Base_Component.XTYPE(),
-            Ext_Base_Component.PROPERTIESOBJECT(),
-            Ext_Base_Component.EVENTS()
+            Object.assign(propertiesobject, Ext_Base_Component.PROPERTIESOBJECT()),
+            methods.concat(Ext_Base_Component.METHODS()),
+            events.concat(Ext_Base_Component.EVENTS())
         )
-        this.XTYPE = Ext_Base_Component.XTYPE()
-        this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_Base_Component.PROPERTIESOBJECT());
-        this.METHODS = this.extendArray(this.METHODS, Ext_Base_Component.METHODS());
-        this.EVENTS = this.extendArray(this.EVENTS, Ext_Base_Component.EVENTS());
+        //this.XTYPE = Ext_Base_Component.XTYPE()
+        //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_Base_Component.PROPERTIESOBJECT());
+        //this.METHODS = this.extendArray(this.METHODS, Ext_Base_Component.METHODS());
+        //this.EVENTS = this.extendArray(this.EVENTS, Ext_Base_Component.EVENTS());
     }
 }

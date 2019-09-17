@@ -23,17 +23,28 @@ static METHODS() { return [
         return attrs
     }
 
-    constructor() {
+    constructor(propertiesobject, methods, events) {
         super (
-            Ext_EventedBase_Component.METHODS(),
-            Ext_EventedBase_Component.XTYPE(),
-            Ext_EventedBase_Component.PROPERTIESOBJECT(),
-            Ext_EventedBase_Component.EVENTS()
+            Object.assign(propertiesobject, Ext_EventedBase_Component.PROPERTIESOBJECT()),
+            //{propertiesobject, Ext_EventedBase_Component.PROPERTIESOBJECT()},
+            methods.concat(Ext_EventedBase_Component.METHODS()),
+            events.concat(Ext_EventedBase_Component.EVENTS())
+
+
+
+            //events.concat(Ext_EventedBase_Component.EVENTS()),
+            //propertiesobject.concat(Ext_EventedBase_Component.PROPERTIESOBJECT()),
+            //methods.concat(Ext_EventedBase_Component.METHODS())
+
+            //EwcBaseComponent.extendArray(events, Ext_EventedBase_Component.EVENTS()),
+            //EwcBaseComponent.extendArray(propertiesobject, Ext_EventedBase_Component.PROPERTIESOBJECT()),
+            //EwcBaseComponent.extendArray(methods, Ext_EventedBase_Component.METHODS())
         )
-        this.XTYPE = Ext_EventedBase_Component.XTYPE()
-        this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_EventedBase_Component.PROPERTIESOBJECT());
-        this.METHODS = this.extendArray(this.METHODS, Ext_EventedBase_Component.METHODS());
-        this.EVENTS = this.extendArray(this.EVENTS, Ext_EventedBase_Component.EVENTS());
+        //this.XTYPE = Ext_EventedBase_Component.XTYPE()
+        //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_EventedBase_Component.PROPERTIESOBJECT());
+        //this.methods = this.extendArray(this.methods, Ext_EventedBase_Component.METHODS());
+        //this.events = this.extendArray(this.events, Ext_EventedBase_Component.EVENTS());
+
     }
 
     connectedCallback() {

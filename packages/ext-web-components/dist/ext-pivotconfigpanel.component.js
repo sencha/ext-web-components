@@ -1,19 +1,25 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_pivot_plugin_configurator_Panel_Component from './Ext/pivot/plugin/configurator/Panel';
+import HTMLParsedElement from './HTMLParsedElement';
 export var ExtPivotconfigpanelComponent =
 /*#__PURE__*/
 function (_Ext_pivot_plugin_con) {
   _inheritsLoose(ExtPivotconfigpanelComponent, _Ext_pivot_plugin_con);
 
   function ExtPivotconfigpanelComponent() {
-    return _Ext_pivot_plugin_con.call(this, '', '', {}, '') || this;
+    var _this;
+
+    _this = _Ext_pivot_plugin_con.call(this, {}, [], []) || this;
+    _this.xtype = 'pivotconfigpanel';
+    return _this;
   }
 
   return ExtPivotconfigpanelComponent;
-}(Ext_pivot_plugin_configurator_Panel_Component);
+}(Ext_pivot_plugin_configurator_Panel_Component); //(function () {
+//    Ext.onReady(function() {
+//        window.customElements.define('ext-pivotconfigpanel', ExtPivotconfigpanelComponent);
+//    });
+//})();
+//const  = HTMLParsedElement;
 
-(function () {
-  Ext.onReady(function () {
-    window.customElements.define('ext-pivotconfigpanel', ExtPivotconfigpanelComponent);
-  });
-})();
+window.customElements.define('ext-pivotconfigpanel', HTMLParsedElement.withParsedCallback(ExtPivotconfigpanelComponent));

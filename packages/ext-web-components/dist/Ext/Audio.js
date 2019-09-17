@@ -54,15 +54,12 @@ function (_Ext_Media_Component) {
     }
   }]);
 
-  function Ext_Audio_Component() {
-    var _this;
-
-    _this = _Ext_Media_Component.call(this, Ext_Audio_Component.METHODS(), Ext_Audio_Component.XTYPE(), Ext_Audio_Component.PROPERTIESOBJECT(), Ext_Audio_Component.EVENTS()) || this;
-    _this.XTYPE = Ext_Audio_Component.XTYPE();
-    _this.PROPERTIESOBJECT = _this.extendObject(_this.PROPERTIESOBJECT, Ext_Audio_Component.PROPERTIESOBJECT());
-    _this.METHODS = _this.extendArray(_this.METHODS, Ext_Audio_Component.METHODS());
-    _this.EVENTS = _this.extendArray(_this.EVENTS, Ext_Audio_Component.EVENTS());
-    return _this;
+  function Ext_Audio_Component(propertiesobject, methods, events) {
+    return _Ext_Media_Component.call(this, Object.assign(propertiesobject, Ext_Audio_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_Audio_Component.PROPERTIESOBJECT()},
+    methods.concat(Ext_Audio_Component.METHODS()), events.concat(Ext_Audio_Component.EVENTS())) || this; //this.XTYPE = Ext_Audio_Component.XTYPE()
+    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_Audio_Component.PROPERTIESOBJECT());
+    //this.methods = this.extendArray(this.methods, Ext_Audio_Component.METHODS());
+    //this.events = this.extendArray(this.events, Ext_Audio_Component.EVENTS());
   }
 
   var _proto = Ext_Audio_Component.prototype;

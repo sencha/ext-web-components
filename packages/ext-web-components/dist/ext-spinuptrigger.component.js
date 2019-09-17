@@ -1,19 +1,25 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_trigger_SpinUp_Component from './Ext/field/trigger/SpinUp';
+import HTMLParsedElement from './HTMLParsedElement';
 export var ExtSpinuptriggerComponent =
 /*#__PURE__*/
 function (_Ext_field_trigger_Sp) {
   _inheritsLoose(ExtSpinuptriggerComponent, _Ext_field_trigger_Sp);
 
   function ExtSpinuptriggerComponent() {
-    return _Ext_field_trigger_Sp.call(this, '', '', {}, '') || this;
+    var _this;
+
+    _this = _Ext_field_trigger_Sp.call(this, {}, [], []) || this;
+    _this.xtype = 'spinuptrigger';
+    return _this;
   }
 
   return ExtSpinuptriggerComponent;
-}(Ext_field_trigger_SpinUp_Component);
+}(Ext_field_trigger_SpinUp_Component); //(function () {
+//    Ext.onReady(function() {
+//        window.customElements.define('ext-spinuptrigger', ExtSpinuptriggerComponent);
+//    });
+//})();
+//const  = HTMLParsedElement;
 
-(function () {
-  Ext.onReady(function () {
-    window.customElements.define('ext-spinuptrigger', ExtSpinuptriggerComponent);
-  });
-})();
+window.customElements.define('ext-spinuptrigger', HTMLParsedElement.withParsedCallback(ExtSpinuptriggerComponent));

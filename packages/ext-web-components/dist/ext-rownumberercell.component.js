@@ -1,19 +1,25 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_cell_RowNumberer_Component from './Ext/grid/cell/RowNumberer';
+import HTMLParsedElement from './HTMLParsedElement';
 export var ExtRownumberercellComponent =
 /*#__PURE__*/
 function (_Ext_grid_cell_RowNum) {
   _inheritsLoose(ExtRownumberercellComponent, _Ext_grid_cell_RowNum);
 
   function ExtRownumberercellComponent() {
-    return _Ext_grid_cell_RowNum.call(this, '', '', {}, '') || this;
+    var _this;
+
+    _this = _Ext_grid_cell_RowNum.call(this, {}, [], []) || this;
+    _this.xtype = 'rownumberercell';
+    return _this;
   }
 
   return ExtRownumberercellComponent;
-}(Ext_grid_cell_RowNumberer_Component);
+}(Ext_grid_cell_RowNumberer_Component); //(function () {
+//    Ext.onReady(function() {
+//        window.customElements.define('ext-rownumberercell', ExtRownumberercellComponent);
+//    });
+//})();
+//const  = HTMLParsedElement;
 
-(function () {
-  Ext.onReady(function () {
-    window.customElements.define('ext-rownumberercell', ExtRownumberercellComponent);
-  });
-})();
+window.customElements.define('ext-rownumberercell', HTMLParsedElement.withParsedCallback(ExtRownumberercellComponent));

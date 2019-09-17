@@ -35,17 +35,28 @@ static METHODS() { return [
         return attrs
     }
 
-    constructor() {
+    constructor(propertiesobject, methods, events) {
         super (
-            Ext_ux_colorpick_Selector_Component.METHODS(),
-            Ext_ux_colorpick_Selector_Component.XTYPE(),
-            Ext_ux_colorpick_Selector_Component.PROPERTIESOBJECT(),
-            Ext_ux_colorpick_Selector_Component.EVENTS()
+            Object.assign(propertiesobject, Ext_ux_colorpick_Selector_Component.PROPERTIESOBJECT()),
+            //{propertiesobject, Ext_ux_colorpick_Selector_Component.PROPERTIESOBJECT()},
+            methods.concat(Ext_ux_colorpick_Selector_Component.METHODS()),
+            events.concat(Ext_ux_colorpick_Selector_Component.EVENTS())
+
+
+
+            //events.concat(Ext_ux_colorpick_Selector_Component.EVENTS()),
+            //propertiesobject.concat(Ext_ux_colorpick_Selector_Component.PROPERTIESOBJECT()),
+            //methods.concat(Ext_ux_colorpick_Selector_Component.METHODS())
+
+            //EwcBaseComponent.extendArray(events, Ext_ux_colorpick_Selector_Component.EVENTS()),
+            //EwcBaseComponent.extendArray(propertiesobject, Ext_ux_colorpick_Selector_Component.PROPERTIESOBJECT()),
+            //EwcBaseComponent.extendArray(methods, Ext_ux_colorpick_Selector_Component.METHODS())
         )
-        this.XTYPE = Ext_ux_colorpick_Selector_Component.XTYPE()
-        this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_ux_colorpick_Selector_Component.PROPERTIESOBJECT());
-        this.METHODS = this.extendArray(this.METHODS, Ext_ux_colorpick_Selector_Component.METHODS());
-        this.EVENTS = this.extendArray(this.EVENTS, Ext_ux_colorpick_Selector_Component.EVENTS());
+        //this.XTYPE = Ext_ux_colorpick_Selector_Component.XTYPE()
+        //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_ux_colorpick_Selector_Component.PROPERTIESOBJECT());
+        //this.methods = this.extendArray(this.methods, Ext_ux_colorpick_Selector_Component.METHODS());
+        //this.events = this.extendArray(this.events, Ext_ux_colorpick_Selector_Component.EVENTS());
+
     }
 
     connectedCallback() {

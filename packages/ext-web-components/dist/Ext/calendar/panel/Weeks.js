@@ -91,15 +91,12 @@ function (_Ext_calendar_panel_B) {
     }
   }]);
 
-  function Ext_calendar_panel_Weeks_Component() {
-    var _this;
-
-    _this = _Ext_calendar_panel_B.call(this, Ext_calendar_panel_Weeks_Component.METHODS(), Ext_calendar_panel_Weeks_Component.XTYPE(), Ext_calendar_panel_Weeks_Component.PROPERTIESOBJECT(), Ext_calendar_panel_Weeks_Component.EVENTS()) || this;
-    _this.XTYPE = Ext_calendar_panel_Weeks_Component.XTYPE();
-    _this.PROPERTIESOBJECT = _this.extendObject(_this.PROPERTIESOBJECT, Ext_calendar_panel_Weeks_Component.PROPERTIESOBJECT());
-    _this.METHODS = _this.extendArray(_this.METHODS, Ext_calendar_panel_Weeks_Component.METHODS());
-    _this.EVENTS = _this.extendArray(_this.EVENTS, Ext_calendar_panel_Weeks_Component.EVENTS());
-    return _this;
+  function Ext_calendar_panel_Weeks_Component(propertiesobject, methods, events) {
+    return _Ext_calendar_panel_B.call(this, Object.assign(propertiesobject, Ext_calendar_panel_Weeks_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_calendar_panel_Weeks_Component.PROPERTIESOBJECT()},
+    methods.concat(Ext_calendar_panel_Weeks_Component.METHODS()), events.concat(Ext_calendar_panel_Weeks_Component.EVENTS())) || this; //this.XTYPE = Ext_calendar_panel_Weeks_Component.XTYPE()
+    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_calendar_panel_Weeks_Component.PROPERTIESOBJECT());
+    //this.methods = this.extendArray(this.methods, Ext_calendar_panel_Weeks_Component.METHODS());
+    //this.events = this.extendArray(this.events, Ext_calendar_panel_Weeks_Component.EVENTS());
   }
 
   var _proto = Ext_calendar_panel_Weeks_Component.prototype;

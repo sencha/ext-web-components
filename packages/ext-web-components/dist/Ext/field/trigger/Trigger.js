@@ -47,15 +47,12 @@ function (_Ext_field_trigger_Ba) {
     }
   }]);
 
-  function Ext_field_trigger_Trigger_Component() {
-    var _this;
-
-    _this = _Ext_field_trigger_Ba.call(this, Ext_field_trigger_Trigger_Component.METHODS(), Ext_field_trigger_Trigger_Component.XTYPE(), Ext_field_trigger_Trigger_Component.PROPERTIESOBJECT(), Ext_field_trigger_Trigger_Component.EVENTS()) || this;
-    _this.XTYPE = Ext_field_trigger_Trigger_Component.XTYPE();
-    _this.PROPERTIESOBJECT = _this.extendObject(_this.PROPERTIESOBJECT, Ext_field_trigger_Trigger_Component.PROPERTIESOBJECT());
-    _this.METHODS = _this.extendArray(_this.METHODS, Ext_field_trigger_Trigger_Component.METHODS());
-    _this.EVENTS = _this.extendArray(_this.EVENTS, Ext_field_trigger_Trigger_Component.EVENTS());
-    return _this;
+  function Ext_field_trigger_Trigger_Component(propertiesobject, methods, events) {
+    return _Ext_field_trigger_Ba.call(this, Object.assign(propertiesobject, Ext_field_trigger_Trigger_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_field_trigger_Trigger_Component.PROPERTIESOBJECT()},
+    methods.concat(Ext_field_trigger_Trigger_Component.METHODS()), events.concat(Ext_field_trigger_Trigger_Component.EVENTS())) || this; //this.XTYPE = Ext_field_trigger_Trigger_Component.XTYPE()
+    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_field_trigger_Trigger_Component.PROPERTIESOBJECT());
+    //this.methods = this.extendArray(this.methods, Ext_field_trigger_Trigger_Component.METHODS());
+    //this.events = this.extendArray(this.events, Ext_field_trigger_Trigger_Component.EVENTS());
   }
 
   var _proto = Ext_field_trigger_Trigger_Component.prototype;

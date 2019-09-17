@@ -84,15 +84,12 @@ function (_Ext_Component_Compon) {
     }
   }]);
 
-  function Ext_Img_Component() {
-    var _this;
-
-    _this = _Ext_Component_Compon.call(this, Ext_Img_Component.METHODS(), Ext_Img_Component.XTYPE(), Ext_Img_Component.PROPERTIESOBJECT(), Ext_Img_Component.EVENTS()) || this;
-    _this.XTYPE = Ext_Img_Component.XTYPE();
-    _this.PROPERTIESOBJECT = _this.extendObject(_this.PROPERTIESOBJECT, Ext_Img_Component.PROPERTIESOBJECT());
-    _this.METHODS = _this.extendArray(_this.METHODS, Ext_Img_Component.METHODS());
-    _this.EVENTS = _this.extendArray(_this.EVENTS, Ext_Img_Component.EVENTS());
-    return _this;
+  function Ext_Img_Component(propertiesobject, methods, events) {
+    return _Ext_Component_Compon.call(this, Object.assign(propertiesobject, Ext_Img_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_Img_Component.PROPERTIESOBJECT()},
+    methods.concat(Ext_Img_Component.METHODS()), events.concat(Ext_Img_Component.EVENTS())) || this; //this.XTYPE = Ext_Img_Component.XTYPE()
+    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_Img_Component.PROPERTIESOBJECT());
+    //this.methods = this.extendArray(this.methods, Ext_Img_Component.METHODS());
+    //this.events = this.extendArray(this.events, Ext_Img_Component.EVENTS());
   }
 
   var _proto = Ext_Img_Component.prototype;

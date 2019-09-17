@@ -39,17 +39,28 @@ static METHODS() { return [
         return attrs
     }
 
-    constructor() {
+    constructor(propertiesobject, methods, events) {
         super (
-            Ext_TabPanel_Component.METHODS(),
-            Ext_TabPanel_Component.XTYPE(),
-            Ext_TabPanel_Component.PROPERTIESOBJECT(),
-            Ext_TabPanel_Component.EVENTS()
+            Object.assign(propertiesobject, Ext_TabPanel_Component.PROPERTIESOBJECT()),
+            //{propertiesobject, Ext_TabPanel_Component.PROPERTIESOBJECT()},
+            methods.concat(Ext_TabPanel_Component.METHODS()),
+            events.concat(Ext_TabPanel_Component.EVENTS())
+
+
+
+            //events.concat(Ext_TabPanel_Component.EVENTS()),
+            //propertiesobject.concat(Ext_TabPanel_Component.PROPERTIESOBJECT()),
+            //methods.concat(Ext_TabPanel_Component.METHODS())
+
+            //EwcBaseComponent.extendArray(events, Ext_TabPanel_Component.EVENTS()),
+            //EwcBaseComponent.extendArray(propertiesobject, Ext_TabPanel_Component.PROPERTIESOBJECT()),
+            //EwcBaseComponent.extendArray(methods, Ext_TabPanel_Component.METHODS())
         )
-        this.XTYPE = Ext_TabPanel_Component.XTYPE()
-        this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_TabPanel_Component.PROPERTIESOBJECT());
-        this.METHODS = this.extendArray(this.METHODS, Ext_TabPanel_Component.METHODS());
-        this.EVENTS = this.extendArray(this.EVENTS, Ext_TabPanel_Component.EVENTS());
+        //this.XTYPE = Ext_TabPanel_Component.XTYPE()
+        //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_TabPanel_Component.PROPERTIESOBJECT());
+        //this.methods = this.extendArray(this.methods, Ext_TabPanel_Component.METHODS());
+        //this.events = this.extendArray(this.events, Ext_TabPanel_Component.EVENTS());
+
     }
 
     connectedCallback() {

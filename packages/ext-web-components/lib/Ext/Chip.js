@@ -29,17 +29,28 @@ static METHODS() { return [
         return attrs
     }
 
-    constructor() {
+    constructor(propertiesobject, methods, events) {
         super (
-            Ext_Chip_Component.METHODS(),
-            Ext_Chip_Component.XTYPE(),
-            Ext_Chip_Component.PROPERTIESOBJECT(),
-            Ext_Chip_Component.EVENTS()
+            Object.assign(propertiesobject, Ext_Chip_Component.PROPERTIESOBJECT()),
+            //{propertiesobject, Ext_Chip_Component.PROPERTIESOBJECT()},
+            methods.concat(Ext_Chip_Component.METHODS()),
+            events.concat(Ext_Chip_Component.EVENTS())
+
+
+
+            //events.concat(Ext_Chip_Component.EVENTS()),
+            //propertiesobject.concat(Ext_Chip_Component.PROPERTIESOBJECT()),
+            //methods.concat(Ext_Chip_Component.METHODS())
+
+            //EwcBaseComponent.extendArray(events, Ext_Chip_Component.EVENTS()),
+            //EwcBaseComponent.extendArray(propertiesobject, Ext_Chip_Component.PROPERTIESOBJECT()),
+            //EwcBaseComponent.extendArray(methods, Ext_Chip_Component.METHODS())
         )
-        this.XTYPE = Ext_Chip_Component.XTYPE()
-        this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_Chip_Component.PROPERTIESOBJECT());
-        this.METHODS = this.extendArray(this.METHODS, Ext_Chip_Component.METHODS());
-        this.EVENTS = this.extendArray(this.EVENTS, Ext_Chip_Component.EVENTS());
+        //this.XTYPE = Ext_Chip_Component.XTYPE()
+        //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_Chip_Component.PROPERTIESOBJECT());
+        //this.methods = this.extendArray(this.methods, Ext_Chip_Component.METHODS());
+        //this.events = this.extendArray(this.events, Ext_Chip_Component.EVENTS());
+
     }
 
     connectedCallback() {

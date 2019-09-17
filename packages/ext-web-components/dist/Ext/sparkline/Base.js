@@ -61,15 +61,12 @@ function (_Ext_Gadget_Component) {
     }
   }]);
 
-  function Ext_sparkline_Base_Component() {
-    var _this;
-
-    _this = _Ext_Gadget_Component.call(this, Ext_sparkline_Base_Component.METHODS(), Ext_sparkline_Base_Component.XTYPE(), Ext_sparkline_Base_Component.PROPERTIESOBJECT(), Ext_sparkline_Base_Component.EVENTS()) || this;
-    _this.XTYPE = Ext_sparkline_Base_Component.XTYPE();
-    _this.PROPERTIESOBJECT = _this.extendObject(_this.PROPERTIESOBJECT, Ext_sparkline_Base_Component.PROPERTIESOBJECT());
-    _this.METHODS = _this.extendArray(_this.METHODS, Ext_sparkline_Base_Component.METHODS());
-    _this.EVENTS = _this.extendArray(_this.EVENTS, Ext_sparkline_Base_Component.EVENTS());
-    return _this;
+  function Ext_sparkline_Base_Component(propertiesobject, methods, events) {
+    return _Ext_Gadget_Component.call(this, Object.assign(propertiesobject, Ext_sparkline_Base_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_sparkline_Base_Component.PROPERTIESOBJECT()},
+    methods.concat(Ext_sparkline_Base_Component.METHODS()), events.concat(Ext_sparkline_Base_Component.EVENTS())) || this; //this.XTYPE = Ext_sparkline_Base_Component.XTYPE()
+    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_sparkline_Base_Component.PROPERTIESOBJECT());
+    //this.methods = this.extendArray(this.methods, Ext_sparkline_Base_Component.METHODS());
+    //this.events = this.extendArray(this.events, Ext_sparkline_Base_Component.EVENTS());
   }
 
   var _proto = Ext_sparkline_Base_Component.prototype;

@@ -35,17 +35,28 @@ static METHODS() { return [
         return attrs
     }
 
-    constructor() {
+    constructor(propertiesobject, methods, events) {
         super (
-            Ext_TitleBar_Component.METHODS(),
-            Ext_TitleBar_Component.XTYPE(),
-            Ext_TitleBar_Component.PROPERTIESOBJECT(),
-            Ext_TitleBar_Component.EVENTS()
+            Object.assign(propertiesobject, Ext_TitleBar_Component.PROPERTIESOBJECT()),
+            //{propertiesobject, Ext_TitleBar_Component.PROPERTIESOBJECT()},
+            methods.concat(Ext_TitleBar_Component.METHODS()),
+            events.concat(Ext_TitleBar_Component.EVENTS())
+
+
+
+            //events.concat(Ext_TitleBar_Component.EVENTS()),
+            //propertiesobject.concat(Ext_TitleBar_Component.PROPERTIESOBJECT()),
+            //methods.concat(Ext_TitleBar_Component.METHODS())
+
+            //EwcBaseComponent.extendArray(events, Ext_TitleBar_Component.EVENTS()),
+            //EwcBaseComponent.extendArray(propertiesobject, Ext_TitleBar_Component.PROPERTIESOBJECT()),
+            //EwcBaseComponent.extendArray(methods, Ext_TitleBar_Component.METHODS())
         )
-        this.XTYPE = Ext_TitleBar_Component.XTYPE()
-        this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_TitleBar_Component.PROPERTIESOBJECT());
-        this.METHODS = this.extendArray(this.METHODS, Ext_TitleBar_Component.METHODS());
-        this.EVENTS = this.extendArray(this.EVENTS, Ext_TitleBar_Component.EVENTS());
+        //this.XTYPE = Ext_TitleBar_Component.XTYPE()
+        //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_TitleBar_Component.PROPERTIESOBJECT());
+        //this.methods = this.extendArray(this.methods, Ext_TitleBar_Component.METHODS());
+        //this.events = this.extendArray(this.events, Ext_TitleBar_Component.EVENTS());
+
     }
 
     connectedCallback() {

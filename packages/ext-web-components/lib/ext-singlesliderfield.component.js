@@ -1,11 +1,22 @@
 import Ext_field_SingleSlider_Component from './Ext/field/SingleSlider'
+import HTMLParsedElement from './HTMLParsedElement'
 
 export class ExtSinglesliderfieldComponent extends Ext_field_SingleSlider_Component {
-    constructor() {super ('','',{},'')}
+    constructor() {
+        super (
+            {},
+            [],
+            []
+        )
+        this.xtype = 'singlesliderfield'
+    }
 }
 
-(function () {
-    Ext.onReady(function() {
-        window.customElements.define('ext-singlesliderfield', ExtSinglesliderfieldComponent);
-    });
-})();
+//(function () {
+//    Ext.onReady(function() {
+//        window.customElements.define('ext-singlesliderfield', ExtSinglesliderfieldComponent);
+//    });
+//})();
+
+//const  = HTMLParsedElement;
+window.customElements.define('ext-singlesliderfield', HTMLParsedElement.withParsedCallback(ExtSinglesliderfieldComponent))

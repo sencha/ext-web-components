@@ -1,19 +1,25 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_pivot_d3_TreeMap_Component from './Ext/pivot/d3/TreeMap';
+import HTMLParsedElement from './HTMLParsedElement';
 export var ExtPivottreemapComponent =
 /*#__PURE__*/
 function (_Ext_pivot_d3_TreeMap) {
   _inheritsLoose(ExtPivottreemapComponent, _Ext_pivot_d3_TreeMap);
 
   function ExtPivottreemapComponent() {
-    return _Ext_pivot_d3_TreeMap.call(this, '', '', {}, '') || this;
+    var _this;
+
+    _this = _Ext_pivot_d3_TreeMap.call(this, {}, [], []) || this;
+    _this.xtype = 'pivottreemap';
+    return _this;
   }
 
   return ExtPivottreemapComponent;
-}(Ext_pivot_d3_TreeMap_Component);
+}(Ext_pivot_d3_TreeMap_Component); //(function () {
+//    Ext.onReady(function() {
+//        window.customElements.define('ext-pivottreemap', ExtPivottreemapComponent);
+//    });
+//})();
+//const  = HTMLParsedElement;
 
-(function () {
-  Ext.onReady(function () {
-    window.customElements.define('ext-pivottreemap', ExtPivottreemapComponent);
-  });
-})();
+window.customElements.define('ext-pivottreemap', HTMLParsedElement.withParsedCallback(ExtPivottreemapComponent));

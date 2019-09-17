@@ -53,15 +53,12 @@ function (_Ext_form_Panel_Compo) {
     }
   }]);
 
-  function Ext_calendar_form_AbstractForm_Component() {
-    var _this;
-
-    _this = _Ext_form_Panel_Compo.call(this, Ext_calendar_form_AbstractForm_Component.METHODS(), Ext_calendar_form_AbstractForm_Component.XTYPE(), Ext_calendar_form_AbstractForm_Component.PROPERTIESOBJECT(), Ext_calendar_form_AbstractForm_Component.EVENTS()) || this;
-    _this.XTYPE = Ext_calendar_form_AbstractForm_Component.XTYPE();
-    _this.PROPERTIESOBJECT = _this.extendObject(_this.PROPERTIESOBJECT, Ext_calendar_form_AbstractForm_Component.PROPERTIESOBJECT());
-    _this.METHODS = _this.extendArray(_this.METHODS, Ext_calendar_form_AbstractForm_Component.METHODS());
-    _this.EVENTS = _this.extendArray(_this.EVENTS, Ext_calendar_form_AbstractForm_Component.EVENTS());
-    return _this;
+  function Ext_calendar_form_AbstractForm_Component(propertiesobject, methods, events) {
+    return _Ext_form_Panel_Compo.call(this, Object.assign(propertiesobject, Ext_calendar_form_AbstractForm_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_calendar_form_AbstractForm_Component.PROPERTIESOBJECT()},
+    methods.concat(Ext_calendar_form_AbstractForm_Component.METHODS()), events.concat(Ext_calendar_form_AbstractForm_Component.EVENTS())) || this; //this.XTYPE = Ext_calendar_form_AbstractForm_Component.XTYPE()
+    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_calendar_form_AbstractForm_Component.PROPERTIESOBJECT());
+    //this.methods = this.extendArray(this.methods, Ext_calendar_form_AbstractForm_Component.METHODS());
+    //this.events = this.extendArray(this.events, Ext_calendar_form_AbstractForm_Component.EVENTS());
   }
 
   var _proto = Ext_calendar_form_AbstractForm_Component.prototype;

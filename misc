@@ -9,7 +9,7 @@ git remote add upstream https://github.com/sencha/ext-components.git
 
 git fetch upstream
 git merge upstream/master
-git merge upstream/ext-components-7.0.x
+git merge upstream/ext-components-7.1.x
 
 git merge upstream/ext-7.0.x
 
