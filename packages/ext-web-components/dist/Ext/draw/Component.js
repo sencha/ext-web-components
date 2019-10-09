@@ -1,32 +1,194 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_draw_ContainerBase_Component from '../../Ext/draw/ContainerBase';
+import Ext_draw_ContainerBase from '../../Ext/draw/ContainerBase';
 
-var Ext_draw_Component_Component =
+var Ext_draw_Component =
 /*#__PURE__*/
 function (_Ext_draw_ContainerBa) {
-  _inheritsLoose(Ext_draw_Component_Component, _Ext_draw_ContainerBa);
+  _inheritsLoose(Ext_draw_Component, _Ext_draw_ContainerBa);
 
-  //configs
-  Ext_draw_Component_Component.XTYPE = function XTYPE() {
-    return 'draw';
+  Ext_draw_Component.PROPERTIES = function PROPERTIES() {
+    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'cardSwitchAnimation', 'centered', 'cls', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'disabled', 'displayed', 'docked', 'downloadServerUrl', 'draggable', 'engine', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'gradients', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'listeners', 'manageBorders', 'margin', 'masked', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'resizeHandler', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'sprites', 'stateful', 'statefulDefaults', 'stateId', 'style', 'surfaceZIndexes', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_draw_Component_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "downloadServerUrl": ["string"],
-      "engine": ["string"],
-      "gradients": ["object[]"],
-      "resizeHandler": ["function"],
-      "sprites": ["object[]"],
-      "surfaceZIndexes": ["object"]
-    };
-  };
-
-  Ext_draw_Component_Component.EVENTS = function EVENTS() {
+  Ext_draw_Component.EVENTS = function EVENTS() {
     return [{
+      name: 'activate',
+      parameters: 'newActiveItem,draw,oldActiveItem'
+    }, {
+      name: 'activeItemchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'add',
+      parameters: 'draw,item,index'
+    }, {
+      name: 'added',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'beforeactiveItemchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehide',
+      parameters: 'sender'
+    }, {
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforetofront',
+      parameters: 'draw'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'draw,event'
+    }, {
       name: 'bodyresize',
       parameters: 'size'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'deactivate',
+      parameters: 'oldActiveItem,draw,newActiveItem'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'erased',
+      parameters: 'sender'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'draw,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'draw,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'draw,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
+    }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'move',
+      parameters: 'draw,item,toIndex,fromIndex'
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'remove',
+      parameters: 'draw,item,index'
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'renderedchange',
+      parameters: 'draw,item,rendered'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'show',
+      parameters: 'sender'
     }, {
       name: 'spriteclick',
       parameters: 'sprite,event'
@@ -51,151 +213,64 @@ function (_Ext_draw_ContainerBa) {
     }, {
       name: 'spritetap',
       parameters: 'sprite,event'
+    }, {
+      name: 'tofront',
+      parameters: 'draw'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  Ext_draw_Component_Component.METHODS = function METHODS() {
-    return [{
-      name: 'download',
-      "function": function _function(config) {
-        return this.ext.download(config);
-      }
-    }, {
-      name: 'getImage',
-      "function": function _function(format) {
-        return this.ext.getImage(format);
-      }
-    }, {
-      name: 'getSurface',
-      "function": function _function(id, type) {
-        return this.ext.getSurface(id, type);
-      }
-    }, {
-      name: 'getSurfaces',
-      "function": function _function(sort) {
-        return this.ext.getSurfaces(sort);
-      }
-    }, {
-      name: 'handleResize',
-      "function": function _function(size, instantly) {
-        return this.ext.handleResize(size, instantly);
-      }
-    }, {
-      name: 'preview',
-      "function": function _function() {
-        return this.ext.preview();
-      }
-    }, {
-      name: 'renderFrame',
-      "function": function _function() {
-        return this.ext.renderFrame();
-      }
-    }, {
-      name: 'stopResizeTimer',
-      "function": function _function() {
-        return this.ext.stopResizeTimer();
-      }
-    }];
+  Ext_draw_Component.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_draw_Component.PROPERTIES());
+    return Ext_draw_ContainerBase.getProperties(properties);
   };
 
-  _createClass(Ext_draw_Component_Component, [{
-    key: "onbodyresize",
-    //events
-    get: function get() {
-      return this.getAttribute('onbodyresize');
-    },
-    set: function set(onbodyresize) {
-      this.setAttribute('onbodyresize', onbodyresize);
-    }
-  }, {
-    key: "onspriteclick",
-    get: function get() {
-      return this.getAttribute('onspriteclick');
-    },
-    set: function set(onspriteclick) {
-      this.setAttribute('onspriteclick', onspriteclick);
-    }
-  }, {
-    key: "onspritedblclick",
-    get: function get() {
-      return this.getAttribute('onspritedblclick');
-    },
-    set: function set(onspritedblclick) {
-      this.setAttribute('onspritedblclick', onspritedblclick);
-    }
-  }, {
-    key: "onspritemousedown",
-    get: function get() {
-      return this.getAttribute('onspritemousedown');
-    },
-    set: function set(onspritemousedown) {
-      this.setAttribute('onspritemousedown', onspritemousedown);
-    }
-  }, {
-    key: "onspritemousemove",
-    get: function get() {
-      return this.getAttribute('onspritemousemove');
-    },
-    set: function set(onspritemousemove) {
-      this.setAttribute('onspritemousemove', onspritemousemove);
-    }
-  }, {
-    key: "onspritemouseout",
-    get: function get() {
-      return this.getAttribute('onspritemouseout');
-    },
-    set: function set(onspritemouseout) {
-      this.setAttribute('onspritemouseout', onspritemouseout);
-    }
-  }, {
-    key: "onspritemouseover",
-    get: function get() {
-      return this.getAttribute('onspritemouseover');
-    },
-    set: function set(onspritemouseover) {
-      this.setAttribute('onspritemouseover', onspritemouseover);
-    }
-  }, {
-    key: "onspritemouseup",
-    get: function get() {
-      return this.getAttribute('onspritemouseup');
-    },
-    set: function set(onspritemouseup) {
-      this.setAttribute('onspritemouseup', onspritemouseup);
-    }
-  }, {
-    key: "onspritetap",
-    get: function get() {
-      return this.getAttribute('onspritetap');
-    },
-    set: function set(onspritetap) {
-      this.setAttribute('onspritetap', onspritetap);
-    }
-  }], [{
+  Ext_draw_Component.getEvents = function getEvents(events) {
+    events = events.concat(Ext_draw_Component.EVENTS());
+    return Ext_draw_ContainerBase.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'draw'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_draw_Component, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_draw_ContainerBa.observedAttributes;
+      var attrs = _Ext_draw_ContainerBa.observedAttributes; //for (var property in Ext_draw_Component.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_draw_Component_Component.PROPERTIESOBJECT()) {
+      Ext_draw_Component.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_draw_Component_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_draw_Component.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_draw_Component_Component(propertiesobject, methods, events) {
-    return _Ext_draw_ContainerBa.call(this, Object.assign(propertiesobject, Ext_draw_Component_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_draw_Component_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_draw_Component_Component.METHODS()), events.concat(Ext_draw_Component_Component.EVENTS())) || this; //this.XTYPE = Ext_draw_Component_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_draw_Component_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_draw_Component_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_draw_Component_Component.EVENTS());
+  function Ext_draw_Component(properties, events) {
+    return _Ext_draw_ContainerBa.call(this, properties.concat(Ext_draw_Component.PROPERTIES()), events.concat(Ext_draw_Component.EVENTS())) || this;
   }
 
-  var _proto = Ext_draw_Component_Component.prototype;
+  var _proto = Ext_draw_Component.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
     _Ext_draw_ContainerBa.prototype.connectedCallback.call(this);
@@ -205,7 +280,7 @@ function (_Ext_draw_ContainerBa) {
     _Ext_draw_ContainerBa.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_draw_Component_Component;
-}(Ext_draw_ContainerBase_Component);
+  return Ext_draw_Component;
+}(Ext_draw_ContainerBase);
 
-export { Ext_draw_Component_Component as default };
+export { Ext_draw_Component as default };

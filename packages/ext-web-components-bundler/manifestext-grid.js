@@ -1,3 +1,0 @@
-Ext.require([
-{"xtype":"container"}
-]);

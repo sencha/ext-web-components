@@ -1,63 +1,321 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_chart_AbstractChart_Component from '../../Ext/chart/AbstractChart';
+import Ext_chart_AbstractChart from '../../Ext/chart/AbstractChart';
 
-var Ext_chart_CartesianChart_Component =
+var Ext_chart_CartesianChart =
 /*#__PURE__*/
 function (_Ext_chart_AbstractCh) {
-  _inheritsLoose(Ext_chart_CartesianChart_Component, _Ext_chart_AbstractCh);
+  _inheritsLoose(Ext_chart_CartesianChart, _Ext_chart_AbstractCh);
 
-  //events
-  //configs
-  Ext_chart_CartesianChart_Component.XTYPE = function XTYPE() {
-    return 'cartesian';
+  Ext_chart_CartesianChart.PROPERTIES = function PROPERTIES() {
+    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'animation', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axes', 'axisLock', 'background', 'bind', 'bodyCls', 'border', 'bottom', 'captions', 'cardSwitchAnimation', 'centered', 'cls', 'colors', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'disabled', 'displayed', 'docked', 'downloadServerUrl', 'draggable', 'engine', 'flex', 'flipXY', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'gradients', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'highlightItem', 'html', 'id', 'inactiveChildTabIndex', 'innerCls', 'innerPadding', 'insetPadding', 'instanceCls', 'interactions', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'legend', 'listeners', 'mainRect', 'manageBorders', 'margin', 'masked', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'resizeHandler', 'right', 'ripple', 'scrollable', 'series', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'sprites', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'surfaceZIndexes', 'tabIndex', 'theme', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_chart_CartesianChart_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "flipXY": ["boolean"],
-      "innerPadding": ["object"]
-    };
-  };
-
-  Ext_chart_CartesianChart_Component.EVENTS = function EVENTS() {
-    return [];
-  };
-
-  Ext_chart_CartesianChart_Component.METHODS = function METHODS() {
+  Ext_chart_CartesianChart.EVENTS = function EVENTS() {
     return [{
-      name: 'performLayout',
-      "function": function _function() {
-        return this.ext.performLayout();
-      }
+      name: 'activate',
+      parameters: 'newActiveItem,cartesian,oldActiveItem'
+    }, {
+      name: 'activeItemchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'add',
+      parameters: 'cartesian,item,index'
+    }, {
+      name: 'added',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'beforeactiveItemchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehide',
+      parameters: 'sender'
+    }, {
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
+      name: 'beforerefresh',
+      parameters: 'cartesian'
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforetofront',
+      parameters: 'cartesian'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'cartesian,event'
+    }, {
+      name: 'bodyresize',
+      parameters: 'size'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'deactivate',
+      parameters: 'oldActiveItem,cartesian,newActiveItem'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'erased',
+      parameters: 'sender'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'cartesian,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'cartesian,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'cartesian,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
+    }, {
+      name: 'itemclick',
+      parameters: 'chart,item,event'
+    }, {
+      name: 'itemdblclick',
+      parameters: 'chart,item,event'
+    }, {
+      name: 'itemhighlight',
+      parameters: 'cartesian,newItem,oldItem'
+    }, {
+      name: 'itemhighlightchange',
+      parameters: 'cartesian,newItem,oldItem'
+    }, {
+      name: 'itemmousedown',
+      parameters: 'chart,item,event'
+    }, {
+      name: 'itemmousemove',
+      parameters: 'chart,item,event'
+    }, {
+      name: 'itemmouseout',
+      parameters: 'chart,item,event'
+    }, {
+      name: 'itemmouseover',
+      parameters: 'chart,item,event'
+    }, {
+      name: 'itemmouseup',
+      parameters: 'chart,item,event'
+    }, {
+      name: 'itemtap',
+      parameters: 'chart,item,event'
+    }, {
+      name: 'layout',
+      parameters: 'cartesian'
+    }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'move',
+      parameters: 'cartesian,item,toIndex,fromIndex'
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'redraw',
+      parameters: 'cartesian'
+    }, {
+      name: 'refresh',
+      parameters: 'cartesian'
+    }, {
+      name: 'remove',
+      parameters: 'cartesian,item,index'
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'renderedchange',
+      parameters: 'cartesian,item,rendered'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'show',
+      parameters: 'sender'
+    }, {
+      name: 'spriteclick',
+      parameters: 'sprite,event'
+    }, {
+      name: 'spritedblclick',
+      parameters: 'sprite,event'
+    }, {
+      name: 'spritemousedown',
+      parameters: 'sprite,event'
+    }, {
+      name: 'spritemousemove',
+      parameters: 'sprite,event'
+    }, {
+      name: 'spritemouseout',
+      parameters: 'sprite,event'
+    }, {
+      name: 'spritemouseover',
+      parameters: 'sprite,event'
+    }, {
+      name: 'spritemouseup',
+      parameters: 'sprite,event'
+    }, {
+      name: 'spritetap',
+      parameters: 'sprite,event'
+    }, {
+      name: 'storechange',
+      parameters: 'chart,newStore,oldStore'
+    }, {
+      name: 'tofront',
+      parameters: 'cartesian'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  _createClass(Ext_chart_CartesianChart_Component, null, [{
+  Ext_chart_CartesianChart.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_chart_CartesianChart.PROPERTIES());
+    return Ext_chart_AbstractChart.getProperties(properties);
+  };
+
+  Ext_chart_CartesianChart.getEvents = function getEvents(events) {
+    events = events.concat(Ext_chart_CartesianChart.EVENTS());
+    return Ext_chart_AbstractChart.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'cartesian'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_chart_CartesianChart, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_chart_AbstractCh.observedAttributes;
+      var attrs = _Ext_chart_AbstractCh.observedAttributes; //for (var property in Ext_chart_CartesianChart.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_chart_CartesianChart_Component.PROPERTIESOBJECT()) {
+      Ext_chart_CartesianChart.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_chart_CartesianChart_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_chart_CartesianChart.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_chart_CartesianChart_Component(propertiesobject, methods, events) {
-    return _Ext_chart_AbstractCh.call(this, Object.assign(propertiesobject, Ext_chart_CartesianChart_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_chart_CartesianChart_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_chart_CartesianChart_Component.METHODS()), events.concat(Ext_chart_CartesianChart_Component.EVENTS())) || this; //this.XTYPE = Ext_chart_CartesianChart_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_chart_CartesianChart_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_chart_CartesianChart_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_chart_CartesianChart_Component.EVENTS());
+  function Ext_chart_CartesianChart(properties, events) {
+    return _Ext_chart_AbstractCh.call(this, properties.concat(Ext_chart_CartesianChart.PROPERTIES()), events.concat(Ext_chart_CartesianChart.EVENTS())) || this;
   }
 
-  var _proto = Ext_chart_CartesianChart_Component.prototype;
+  var _proto = Ext_chart_CartesianChart.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
     _Ext_chart_AbstractCh.prototype.connectedCallback.call(this);
@@ -67,7 +325,7 @@ function (_Ext_chart_AbstractCh) {
     _Ext_chart_AbstractCh.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_chart_CartesianChart_Component;
-}(Ext_chart_AbstractChart_Component);
+  return Ext_chart_CartesianChart;
+}(Ext_chart_AbstractChart);
 
-export { Ext_chart_CartesianChart_Component as default };
+export { Ext_chart_CartesianChart as default };

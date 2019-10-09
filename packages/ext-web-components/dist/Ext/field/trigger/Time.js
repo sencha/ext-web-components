@@ -1,55 +1,105 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_trigger_Expand_Component from '../../../Ext/field/trigger/Expand';
+import Ext_field_trigger_Expand from '../../../Ext/field/trigger/Expand';
 
-var Ext_field_trigger_Time_Component =
+var Ext_field_trigger_Time =
 /*#__PURE__*/
 function (_Ext_field_trigger_Ex) {
-  _inheritsLoose(Ext_field_trigger_Time_Component, _Ext_field_trigger_Ex);
+  _inheritsLoose(Ext_field_trigger_Time, _Ext_field_trigger_Ex);
 
-  //events
-  //configs
-  Ext_field_trigger_Time_Component.XTYPE = function XTYPE() {
-    return 'timetrigger';
+  Ext_field_trigger_Time.PROPERTIES = function PROPERTIES() {
+    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'bind', 'border', 'cls', 'constrainAlign', 'controller', 'defaultListenerScope', 'disabled', 'field', 'flex', 'floated', 'focusCls', 'focusOnTap', 'group', 'handler', 'height', 'hidden', 'hideMode', 'iconCls', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'listeners', 'margin', 'name', 'nameable', 'plugins', 'publishes', 'reference', 'relative', 'renderTo', 'repeat', 'ripple', 'scope', 'session', 'shadow', 'shareableName', 'shim', 'side', 'style', 'toFrontOnShow', 'touchAction', 'translatable', 'triggers', 'twoWayBindable', 'ui', 'userCls', 'viewModel', 'width', 'x', 'y', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_field_trigger_Time_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {};
+  Ext_field_trigger_Time.EVENTS = function EVENTS() {
+    return [{
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforetofront',
+      parameters: 'timetrigger'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'timetrigger,event'
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'focus',
+      parameters: 'timetrigger,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'timetrigger,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'timetrigger,event'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'tofront',
+      parameters: 'timetrigger'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
+    }];
   };
 
-  Ext_field_trigger_Time_Component.EVENTS = function EVENTS() {
-    return [];
+  Ext_field_trigger_Time.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_field_trigger_Time.PROPERTIES());
+    return Ext_field_trigger_Expand.getProperties(properties);
   };
 
-  Ext_field_trigger_Time_Component.METHODS = function METHODS() {
-    return [];
-  };
+  Ext_field_trigger_Time.getEvents = function getEvents(events) {
+    events = events.concat(Ext_field_trigger_Time.EVENTS());
+    return Ext_field_trigger_Expand.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'timetrigger'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
 
-  _createClass(Ext_field_trigger_Time_Component, null, [{
+  _createClass(Ext_field_trigger_Time, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_field_trigger_Ex.observedAttributes;
+      var attrs = _Ext_field_trigger_Ex.observedAttributes; //for (var property in Ext_field_trigger_Time.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_field_trigger_Time_Component.PROPERTIESOBJECT()) {
+      Ext_field_trigger_Time.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_field_trigger_Time_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_field_trigger_Time.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_field_trigger_Time_Component(propertiesobject, methods, events) {
-    return _Ext_field_trigger_Ex.call(this, Object.assign(propertiesobject, Ext_field_trigger_Time_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_field_trigger_Time_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_field_trigger_Time_Component.METHODS()), events.concat(Ext_field_trigger_Time_Component.EVENTS())) || this; //this.XTYPE = Ext_field_trigger_Time_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_field_trigger_Time_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_field_trigger_Time_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_field_trigger_Time_Component.EVENTS());
+  function Ext_field_trigger_Time(properties, events) {
+    return _Ext_field_trigger_Ex.call(this, properties.concat(Ext_field_trigger_Time.PROPERTIES()), events.concat(Ext_field_trigger_Time.EVENTS())) || this;
   }
 
-  var _proto = Ext_field_trigger_Time_Component.prototype;
+  var _proto = Ext_field_trigger_Time.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
     _Ext_field_trigger_Ex.prototype.connectedCallback.call(this);
@@ -59,7 +109,7 @@ function (_Ext_field_trigger_Ex) {
     _Ext_field_trigger_Ex.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_field_trigger_Time_Component;
-}(Ext_field_trigger_Expand_Component);
+  return Ext_field_trigger_Time;
+}(Ext_field_trigger_Expand);
 
-export { Ext_field_trigger_Time_Component as default };
+export { Ext_field_trigger_Time as default };

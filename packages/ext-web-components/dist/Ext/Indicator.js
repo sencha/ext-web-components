@@ -1,148 +1,244 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Component_Component from '../Ext/Component';
+import Ext_Component from '../Ext/Component';
 
-var Ext_Indicator_Component =
+var Ext_Indicator =
 /*#__PURE__*/
-function (_Ext_Component_Compon) {
-  _inheritsLoose(Ext_Indicator_Component, _Ext_Component_Compon);
+function (_Ext_Component) {
+  _inheritsLoose(Ext_Indicator, _Ext_Component);
 
-  //configs
-  Ext_Indicator_Component.XTYPE = function XTYPE() {
-    return 'indicator';
+  Ext_Indicator.PROPERTIES = function PROPERTIES() {
+    return ['activeIndex', 'alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'cls', 'constrainAlign', 'contentEl', 'controller', 'count', 'data', 'defaultListenerScope', 'direction', 'disabled', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'tapMode', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_Indicator_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "activeIndex": ["number"],
-      "count": ["number"],
-      "direction": ["string"],
-      "tapMode": ["string"]
-    };
-  };
-
-  Ext_Indicator_Component.EVENTS = function EVENTS() {
+  Ext_Indicator.EVENTS = function EVENTS() {
     return [{
+      name: 'added',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehide',
+      parameters: 'sender'
+    }, {
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforetofront',
+      parameters: 'indicator'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'indicator,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'erased',
+      parameters: 'sender'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'indicator,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'indicator,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'indicator,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
       name: 'indicatortap',
-      parameters: 'undefined,index,item'
+      parameters: 'indicator,index,item'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
+    }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
     }, {
       name: 'next',
-      parameters: 'undefined'
+      parameters: 'indicator'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
     }, {
       name: 'previous',
-      parameters: 'undefined'
+      parameters: 'indicator'
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'show',
+      parameters: 'sender'
+    }, {
+      name: 'tofront',
+      parameters: 'indicator'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  Ext_Indicator_Component.METHODS = function METHODS() {
-    return [{
-      name: 'add',
-      "function": function _function() {
-        return this.ext.add();
-      }
-    }, {
-      name: 'doAdd',
-      "function": function _function() {
-        return this.ext.doAdd();
-      }
-    }, {
-      name: 'doRemove',
-      "function": function _function() {
-        return this.ext.doRemove();
-      }
-    }, {
-      name: 'onTap',
-      "function": function _function(e) {
-        return this.ext.onTap(e);
-      }
-    }, {
-      name: 'onTapDirection',
-      "function": function _function(e) {
-        return this.ext.onTapDirection(e);
-      }
-    }, {
-      name: 'onTapItem',
-      "function": function _function(e) {
-        return this.ext.onTapItem(e);
-      }
-    }, {
-      name: 'remove',
-      "function": function _function() {
-        return this.ext.remove();
-      }
-    }, {
-      name: 'removeAll',
-      "function": function _function() {
-        return this.ext.removeAll();
-      }
-    }, {
-      name: 'sync',
-      "function": function _function(count, activeIndex) {
-        return this.ext.sync(count, activeIndex);
-      }
-    }];
+  Ext_Indicator.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_Indicator.PROPERTIES());
+    return Ext_Component.getProperties(properties);
   };
 
-  _createClass(Ext_Indicator_Component, [{
-    key: "onindicatortap",
-    //events
-    get: function get() {
-      return this.getAttribute('onindicatortap');
-    },
-    set: function set(onindicatortap) {
-      this.setAttribute('onindicatortap', onindicatortap);
-    }
-  }, {
-    key: "onnext",
-    get: function get() {
-      return this.getAttribute('onnext');
-    },
-    set: function set(onnext) {
-      this.setAttribute('onnext', onnext);
-    }
-  }, {
-    key: "onprevious",
-    get: function get() {
-      return this.getAttribute('onprevious');
-    },
-    set: function set(onprevious) {
-      this.setAttribute('onprevious', onprevious);
-    }
-  }], [{
+  Ext_Indicator.getEvents = function getEvents(events) {
+    events = events.concat(Ext_Indicator.EVENTS());
+    return Ext_Component.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'indicator'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_Indicator, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Component_Compon.observedAttributes;
+      var attrs = _Ext_Component.observedAttributes; //for (var property in Ext_Indicator.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_Indicator_Component.PROPERTIESOBJECT()) {
+      Ext_Indicator.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_Indicator_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_Indicator.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_Indicator_Component(propertiesobject, methods, events) {
-    return _Ext_Component_Compon.call(this, Object.assign(propertiesobject, Ext_Indicator_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_Indicator_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_Indicator_Component.METHODS()), events.concat(Ext_Indicator_Component.EVENTS())) || this; //this.XTYPE = Ext_Indicator_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_Indicator_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_Indicator_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_Indicator_Component.EVENTS());
+  function Ext_Indicator(properties, events) {
+    return _Ext_Component.call(this, properties.concat(Ext_Indicator.PROPERTIES()), events.concat(Ext_Indicator.EVENTS())) || this;
   }
 
-  var _proto = Ext_Indicator_Component.prototype;
+  var _proto = Ext_Indicator.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    _Ext_Component_Compon.prototype.connectedCallback.call(this);
+    _Ext_Component.prototype.connectedCallback.call(this);
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
-    _Ext_Component_Compon.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+    _Ext_Component.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_Indicator_Component;
-}(Ext_Component_Component);
+  return Ext_Indicator;
+}(Ext_Component);
 
-export { Ext_Indicator_Component as default };
+export { Ext_Indicator as default };

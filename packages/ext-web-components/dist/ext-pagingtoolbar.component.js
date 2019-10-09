@@ -1,5 +1,5 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_PagingToolbar_Component from './Ext/grid/PagingToolbar';
+import Ext_grid_PagingToolbar from './Ext/grid/PagingToolbar';
 import HTMLParsedElement from './HTMLParsedElement';
 export var ExtPagingtoolbarComponent =
 /*#__PURE__*/
@@ -9,13 +9,13 @@ function (_Ext_grid_PagingToolb) {
   function ExtPagingtoolbarComponent() {
     var _this;
 
-    _this = _Ext_grid_PagingToolb.call(this, {}, [], []) || this;
+    _this = _Ext_grid_PagingToolb.call(this, [], []) || this;
     _this.xtype = 'pagingtoolbar';
     return _this;
   }
 
   return ExtPagingtoolbarComponent;
-}(Ext_grid_PagingToolbar_Component); //(function () {
+}(Ext_grid_PagingToolbar); //(function () {
 //    Ext.onReady(function() {
 //        window.customElements.define('ext-pagingtoolbar', ExtPagingtoolbarComponent);
 //    });

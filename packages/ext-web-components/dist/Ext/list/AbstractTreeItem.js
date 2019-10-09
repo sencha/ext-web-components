@@ -1,210 +1,115 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Widget_Component from '../../Ext/Widget';
+import Ext_Widget from '../../Ext/Widget';
 
-var Ext_list_AbstractTreeItem_Component =
+var Ext_list_AbstractTreeItem =
 /*#__PURE__*/
-function (_Ext_Widget_Component) {
-  _inheritsLoose(Ext_list_AbstractTreeItem_Component, _Ext_Widget_Component);
+function (_Ext_Widget) {
+  _inheritsLoose(Ext_list_AbstractTreeItem, _Ext_Widget);
 
-  //events
-  //configs
-  Ext_list_AbstractTreeItem_Component.XTYPE = function XTYPE() {
-    return '';
+  Ext_list_AbstractTreeItem.PROPERTIES = function PROPERTIES() {
+    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'bind', 'border', 'cls', 'constrainAlign', 'controller', 'defaultListenerScope', 'disabled', 'expandable', 'expanded', 'flex', 'floated', 'focusCls', 'height', 'hidden', 'hideMode', 'iconCls', 'iconClsProperty', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'leaf', 'listeners', 'loading', 'margin', 'name', 'nameable', 'node', 'over', 'owner', 'parentItem', 'plugins', 'publishes', 'reference', 'relative', 'renderTo', 'ripple', 'selected', 'selectedParent', 'session', 'shadow', 'shareableName', 'shim', 'style', 'text', 'textProperty', 'toFrontOnShow', 'touchAction', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'viewModel', 'width', 'x', 'y', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_list_AbstractTreeItem_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "expandable": ["boolean"],
-      "expanded": ["boolean"],
-      "iconCls": ["string"],
-      "iconClsProperty": ["string"],
-      "leaf": ["boolean"],
-      "loading": ["boolean"],
-      "node": ["Ext.data.TreeModel"],
-      "over": ["number"],
-      "owner": ["Ext.list.Tree"],
-      "parentItem": ["Ext.list.AbstractTreeItem"],
-      "selected": ["boolean"],
-      "selectedParent": ["boolean"],
-      "text": ["string"],
-      "textProperty": ["string"]
-    };
-  };
-
-  Ext_list_AbstractTreeItem_Component.EVENTS = function EVENTS() {
-    return [];
-  };
-
-  Ext_list_AbstractTreeItem_Component.METHODS = function METHODS() {
+  Ext_list_AbstractTreeItem.EVENTS = function EVENTS() {
     return [{
-      name: 'collapse',
-      "function": function _function() {
-        return this.ext.collapse();
-      }
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'destroy',
-      "function": function _function() {
-        return this.ext.destroy();
-      }
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'doNodeUpdate',
-      "function": function _function(node, modifiedFieldNames) {
-        return this.ext.doNodeUpdate(node, modifiedFieldNames);
-      }
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'expand',
-      "function": function _function() {
-        return this.ext.expand();
-      }
+      name: 'beforetofront',
+      parameters: 'undefined'
     }, {
-      name: 'getToolElement',
-      "function": function _function() {
-        return this.ext.getToolElement();
-      }
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'insertItem',
-      "function": function _function(item, refItem) {
-        return this.ext.insertItem(item, refItem);
-      }
+      name: 'blur',
+      parameters: 'undefined,event'
     }, {
-      name: 'isExpanded',
-      "function": function _function() {
-        return this.ext.isExpanded();
-      }
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
     }, {
-      name: 'isSelectionEvent',
-      "function": function _function(e) {
-        return this.ext.isSelectionEvent(e);
-      }
+      name: 'focus',
+      parameters: 'undefined,event'
     }, {
-      name: 'isToggleEvent',
-      "function": function _function(e) {
-        return this.ext.isToggleEvent(e);
-      }
+      name: 'focusenter',
+      parameters: 'undefined,event'
     }, {
-      name: 'nodeCollapse',
-      "function": function _function(node, collapsingForExpand) {
-        return this.ext.nodeCollapse(node, collapsingForExpand);
-      }
+      name: 'focusleave',
+      parameters: 'undefined,event'
     }, {
-      name: 'nodeExpand',
-      "function": function _function(node) {
-        return this.ext.nodeExpand(node);
-      }
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
     }, {
-      name: 'nodeInsert',
-      "function": function _function(node, refNode) {
-        return this.ext.nodeInsert(node, refNode);
-      }
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
     }, {
-      name: 'nodeRemove',
-      "function": function _function(node) {
-        return this.ext.nodeRemove(node);
-      }
+      name: 'tofront',
+      parameters: 'undefined'
     }, {
-      name: 'nodeUpdate',
-      "function": function _function(node, modifiedFieldNames) {
-        return this.ext.nodeUpdate(node, modifiedFieldNames);
-      }
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
     }, {
-      name: 'onClick',
-      "function": function _function(e) {
-        return this.ext.onClick(e);
-      }
-    }, {
-      name: 'removeItem',
-      "function": function _function(item) {
-        return this.ext.removeItem(item);
-      }
-    }, {
-      name: 'setExpandable',
-      "function": function _function() {
-        return this.ext.setExpandable();
-      }
-    }, {
-      name: 'setExpanded',
-      "function": function _function() {
-        return this.ext.setExpanded();
-      }
-    }, {
-      name: 'setIconCls',
-      "function": function _function() {
-        return this.ext.setIconCls();
-      }
-    }, {
-      name: 'setLeaf',
-      "function": function _function() {
-        return this.ext.setLeaf();
-      }
-    }, {
-      name: 'setLoading',
-      "function": function _function() {
-        return this.ext.setLoading();
-      }
-    }, {
-      name: 'setNode',
-      "function": function _function() {
-        return this.ext.setNode();
-      }
-    }, {
-      name: 'setOwner',
-      "function": function _function() {
-        return this.ext.setOwner();
-      }
-    }, {
-      name: 'setParentItem',
-      "function": function _function() {
-        return this.ext.setParentItem();
-      }
-    }, {
-      name: 'setText',
-      "function": function _function() {
-        return this.ext.setText();
-      }
-    }, {
-      name: 'updateOwner',
-      "function": function _function(owner) {
-        return this.ext.updateOwner(owner);
-      }
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  _createClass(Ext_list_AbstractTreeItem_Component, null, [{
+  Ext_list_AbstractTreeItem.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_list_AbstractTreeItem.PROPERTIES());
+    return Ext_Widget.getProperties(properties);
+  };
+
+  Ext_list_AbstractTreeItem.getEvents = function getEvents(events) {
+    events = events.concat(Ext_list_AbstractTreeItem.EVENTS());
+    return Ext_Widget.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return ''}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_list_AbstractTreeItem, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Widget_Component.observedAttributes;
+      var attrs = _Ext_Widget.observedAttributes; //for (var property in Ext_list_AbstractTreeItem.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_list_AbstractTreeItem_Component.PROPERTIESOBJECT()) {
+      Ext_list_AbstractTreeItem.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_list_AbstractTreeItem_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_list_AbstractTreeItem.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_list_AbstractTreeItem_Component(propertiesobject, methods, events) {
-    return _Ext_Widget_Component.call(this, Object.assign(propertiesobject, Ext_list_AbstractTreeItem_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_list_AbstractTreeItem_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_list_AbstractTreeItem_Component.METHODS()), events.concat(Ext_list_AbstractTreeItem_Component.EVENTS())) || this; //this.XTYPE = Ext_list_AbstractTreeItem_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_list_AbstractTreeItem_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_list_AbstractTreeItem_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_list_AbstractTreeItem_Component.EVENTS());
+  function Ext_list_AbstractTreeItem(properties, events) {
+    return _Ext_Widget.call(this, properties.concat(Ext_list_AbstractTreeItem.PROPERTIES()), events.concat(Ext_list_AbstractTreeItem.EVENTS())) || this;
   }
 
-  var _proto = Ext_list_AbstractTreeItem_Component.prototype;
+  var _proto = Ext_list_AbstractTreeItem.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    _Ext_Widget_Component.prototype.connectedCallback.call(this);
+    _Ext_Widget.prototype.connectedCallback.call(this);
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
-    _Ext_Widget_Component.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+    _Ext_Widget.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_list_AbstractTreeItem_Component;
-}(Ext_Widget_Component);
+  return Ext_list_AbstractTreeItem;
+}(Ext_Widget);
 
-export { Ext_list_AbstractTreeItem_Component as default };
+export { Ext_list_AbstractTreeItem as default };

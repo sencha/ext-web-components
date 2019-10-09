@@ -1,5 +1,5 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_pivot_plugin_configurator_Container_Component from './Ext/pivot/plugin/configurator/Container';
+import Ext_pivot_plugin_configurator_Container from './Ext/pivot/plugin/configurator/Container';
 import HTMLParsedElement from './HTMLParsedElement';
 export var ExtPivotconfigcontainerComponent =
 /*#__PURE__*/
@@ -9,13 +9,13 @@ function (_Ext_pivot_plugin_con) {
   function ExtPivotconfigcontainerComponent() {
     var _this;
 
-    _this = _Ext_pivot_plugin_con.call(this, {}, [], []) || this;
+    _this = _Ext_pivot_plugin_con.call(this, [], []) || this;
     _this.xtype = 'pivotconfigcontainer';
     return _this;
   }
 
   return ExtPivotconfigcontainerComponent;
-}(Ext_pivot_plugin_configurator_Container_Component); //(function () {
+}(Ext_pivot_plugin_configurator_Container); //(function () {
 //    Ext.onReady(function() {
 //        window.customElements.define('ext-pivotconfigcontainer', ExtPivotconfigcontainerComponent);
 //    });

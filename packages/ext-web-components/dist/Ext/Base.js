@@ -1,138 +1,47 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import EwcBaseComponent from '../ewc-base.component';
+import EwcBaseComponent from '../ewc-base';
 
-var Ext_Base_Component =
+var Ext_Base =
 /*#__PURE__*/
 function (_EwcBaseComponent) {
-  _inheritsLoose(Ext_Base_Component, _EwcBaseComponent);
+  _inheritsLoose(Ext_Base, _EwcBaseComponent);
 
-  //configs
-  Ext_Base_Component.XTYPE = function XTYPE() {
-    return '';
+  //events
+  //get onready(){return this.getAttribute('onready')};set onready(onready){this.setAttribute('onready',onready)}
+  Ext_Base.PROPERTIES = function PROPERTIES() {
+    return ['eng', 'viewport', 'align', 'plugins', 'responsiveConfig', 'responsiveFormulas', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_Base_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "ext": ["string"],
-      "align": ["string"],
-      "viewport": ["boolean"],
-      "plugins": ["Array", "Ext.enums.Plugin", "Object", "Ext.plugin.Abstract"],
-      "responsiveConfig": ["Object"],
-      "responsiveFormulas": ["Object"]
-    };
-  };
-
-  Ext_Base_Component.EVENTS = function EVENTS() {
+  Ext_Base.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
       parameters: ''
     }];
   };
 
-  Ext_Base_Component.METHODS = function METHODS() {
-    return [{
-      name: 'addDeprecations',
-      "function": function _function(deprecations) {
-        return this.ext.addDeprecations(deprecations);
-      }
-    }, {
-      name: 'callOverridden',
-      "function": function _function(args) {
-        return this.ext.callOverridden(args);
-      }
-    }, {
-      name: 'callParent',
-      "function": function _function(args) {
-        return this.ext.callParent(args);
-      }
-    }, {
-      name: 'callSuper',
-      "function": function _function(args) {
-        return this.ext.callSuper(args);
-      }
-    }, {
-      name: 'destroy',
-      "function": function _function() {
-        return this.ext.destroy();
-      }
-    }, {
-      name: 'destroyMembers',
-      "function": function _function(args) {
-        return this.ext.destroyMembers(args);
-      }
-    }, {
-      name: 'getConfig',
-      "function": function _function(name, peek, ifInitialized) {
-        return this.ext.getConfig(name, peek, ifInitialized);
-      }
-    }, {
-      name: 'getCurrentConfig',
-      "function": function _function() {
-        return this.ext.getCurrentConfig();
-      }
-    }, {
-      name: 'getInitialConfig',
-      "function": function _function(name) {
-        return this.ext.getInitialConfig(name);
-      }
-    }, {
-      name: 'hasConfig',
-      "function": function _function(name) {
-        return this.ext.hasConfig(name);
-      }
-    }, {
-      name: 'initConfig',
-      "function": function _function(instanceConfig) {
-        return this.ext.initConfig(instanceConfig);
-      }
-    }, {
-      name: 'link',
-      "function": function _function(name, value) {
-        return this.ext.link(name, value);
-      }
-    }, {
-      name: 'setConfig',
-      "function": function _function(name, value, options) {
-        return this.ext.setConfig(name, value, options);
-      }
-    }, {
-      name: 'statics',
-      "function": function _function() {
-        return this.ext.statics();
-      }
-    }, {
-      name: 'unlink',
-      "function": function _function(names) {
-        return this.ext.unlink(names);
-      }
-    }, {
-      name: 'watchConfig',
-      "function": function _function(name, fn, scope) {
-        return this.ext.watchConfig(name, fn, scope);
-      }
-    }];
+  Ext_Base.getProperties = function getProperties(properties) {
+    return properties.concat(Ext_Base.PROPERTIES);
   };
 
-  _createClass(Ext_Base_Component, [{
-    key: "onready",
-    //events
-    get: function get() {
-      return this.getAttribute('onready');
-    },
-    set: function set(onready) {
-      this.setAttribute('onready', onready);
-    }
-  }], [{
+  Ext_Base.getEvents = function getEvents(events) {
+    return events.concat(Ext_Base.EVENTS);
+  };
+
+  _createClass(Ext_Base, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = [];
+      var attrs = []; //for (var property in Ext_Base.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
+      //Ext_Base.EVENTS().forEach(function (eventparameter, index, array) {
+      //    attrs.push('on' + eventparameter.name)
+      //})
 
-      for (var property in Ext_Base_Component.PROPERTIESOBJECT()) {
+      Ext_Base.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_Base_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_Base.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       attrs.push('onready');
@@ -140,14 +49,11 @@ function (_EwcBaseComponent) {
     }
   }]);
 
-  function Ext_Base_Component(propertiesobject, methods, events) {
-    return _EwcBaseComponent.call(this, Object.assign(propertiesobject, Ext_Base_Component.PROPERTIESOBJECT()), methods.concat(Ext_Base_Component.METHODS()), events.concat(Ext_Base_Component.EVENTS())) || this; //this.XTYPE = Ext_Base_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_Base_Component.PROPERTIESOBJECT());
-    //this.METHODS = this.extendArray(this.METHODS, Ext_Base_Component.METHODS());
-    //this.EVENTS = this.extendArray(this.EVENTS, Ext_Base_Component.EVENTS());
+  function Ext_Base(properties, events) {
+    return _EwcBaseComponent.call(this, properties.concat(Ext_Base.PROPERTIES()), events.concat(Ext_Base.EVENTS())) || this;
   }
 
-  return Ext_Base_Component;
+  return Ext_Base;
 }(EwcBaseComponent);
 
-export { Ext_Base_Component as default };
+export { Ext_Base as default };

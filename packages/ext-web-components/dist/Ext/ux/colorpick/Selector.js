@@ -1,105 +1,82 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_panel_Panel_Component from '../../../Ext/panel/Panel';
+import Ext_panel_Panel from '../../../Ext/panel/Panel';
 
-var Ext_ux_colorpick_Selector_Component =
+var Ext_ux_colorpick_Selector =
 /*#__PURE__*/
-function (_Ext_panel_Panel_Comp) {
-  _inheritsLoose(Ext_ux_colorpick_Selector_Component, _Ext_panel_Panel_Comp);
+function (_Ext_panel_Panel) {
+  _inheritsLoose(Ext_ux_colorpick_Selector, _Ext_panel_Panel);
 
-  //configs
-  Ext_ux_colorpick_Selector_Component.XTYPE = function XTYPE() {
-    return 'colorselector';
+  Ext_ux_colorpick_Selector.PROPERTIES = function PROPERTIES() {
+    return ['alphaDecimalFormat', 'cancelButtonText', 'color', 'fieldPad', 'fieldWidth', 'format', 'okButtonText', 'showOkCancelButtons', 'showPreviousColor', 'value', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_ux_colorpick_Selector_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "cancelButtonText": ["string"],
-      "fieldPad": ["number"],
-      "fieldWidth": ["number"],
-      "okButtonText": ["string"],
-      "showOkCancelButtons": ["boolean"],
-      "showPreviousColor": ["boolean"]
-    };
-  };
-
-  Ext_ux_colorpick_Selector_Component.EVENTS = function EVENTS() {
+  Ext_ux_colorpick_Selector.EVENTS = function EVENTS() {
     return [{
       name: 'cancel',
-      parameters: 'undefined'
+      parameters: 'colorselector'
     }, {
       name: 'change',
-      parameters: 'undefined,color,previousColor'
+      parameters: 'colorselector,color,previousColor'
     }, {
       name: 'ok',
-      parameters: 'undefined,color'
+      parameters: 'colorselector,color'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  Ext_ux_colorpick_Selector_Component.METHODS = function METHODS() {
-    return [];
+  Ext_ux_colorpick_Selector.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_ux_colorpick_Selector.PROPERTIES());
+    return Ext_panel_Panel.getProperties(properties);
   };
 
-  _createClass(Ext_ux_colorpick_Selector_Component, [{
-    key: "oncancel",
-    //events
-    get: function get() {
-      return this.getAttribute('oncancel');
-    },
-    set: function set(oncancel) {
-      this.setAttribute('oncancel', oncancel);
-    }
-  }, {
-    key: "onchange",
-    get: function get() {
-      return this.getAttribute('onchange');
-    },
-    set: function set(onchange) {
-      this.setAttribute('onchange', onchange);
-    }
-  }, {
-    key: "onok",
-    get: function get() {
-      return this.getAttribute('onok');
-    },
-    set: function set(onok) {
-      this.setAttribute('onok', onok);
-    }
-  }], [{
+  Ext_ux_colorpick_Selector.getEvents = function getEvents(events) {
+    events = events.concat(Ext_ux_colorpick_Selector.EVENTS());
+    return Ext_panel_Panel.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'colorselector'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_ux_colorpick_Selector, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_panel_Panel_Comp.observedAttributes;
+      var attrs = _Ext_panel_Panel.observedAttributes; //for (var property in Ext_ux_colorpick_Selector.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_ux_colorpick_Selector_Component.PROPERTIESOBJECT()) {
+      Ext_ux_colorpick_Selector.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_ux_colorpick_Selector_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_ux_colorpick_Selector.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_ux_colorpick_Selector_Component(propertiesobject, methods, events) {
-    return _Ext_panel_Panel_Comp.call(this, Object.assign(propertiesobject, Ext_ux_colorpick_Selector_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_ux_colorpick_Selector_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_ux_colorpick_Selector_Component.METHODS()), events.concat(Ext_ux_colorpick_Selector_Component.EVENTS())) || this; //this.XTYPE = Ext_ux_colorpick_Selector_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_ux_colorpick_Selector_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_ux_colorpick_Selector_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_ux_colorpick_Selector_Component.EVENTS());
+  function Ext_ux_colorpick_Selector(properties, events) {
+    return _Ext_panel_Panel.call(this, properties.concat(Ext_ux_colorpick_Selector.PROPERTIES()), events.concat(Ext_ux_colorpick_Selector.EVENTS())) || this;
   }
 
-  var _proto = Ext_ux_colorpick_Selector_Component.prototype;
+  var _proto = Ext_ux_colorpick_Selector.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    _Ext_panel_Panel_Comp.prototype.connectedCallback.call(this);
+    _Ext_panel_Panel.prototype.connectedCallback.call(this);
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
-    _Ext_panel_Panel_Comp.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+    _Ext_panel_Panel.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_ux_colorpick_Selector_Component;
-}(Ext_panel_Panel_Component);
+  return Ext_ux_colorpick_Selector;
+}(Ext_panel_Panel);
 
-export { Ext_ux_colorpick_Selector_Component as default };
+export { Ext_ux_colorpick_Selector as default };

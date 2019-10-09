@@ -1,175 +1,301 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Sheet_Component from '../Ext/Sheet';
+import Ext_Sheet from '../Ext/Sheet';
 
-var Ext_Picker_Component =
+var Ext_Picker =
 /*#__PURE__*/
-function (_Ext_Sheet_Component) {
-  _inheritsLoose(Ext_Picker_Component, _Ext_Sheet_Component);
+function (_Ext_Sheet) {
+  _inheritsLoose(Ext_Picker, _Ext_Sheet);
 
-  //configs
-  Ext_Picker_Component.XTYPE = function XTYPE() {
-    return 'picker';
+  Ext_Picker.PROPERTIES = function PROPERTIES() {
+    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'anchor', 'anchorPosition', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'bbar', 'bind', 'bodyBorder', 'bodyCls', 'bodyPadding', 'bodyStyle', 'border', 'bottom', 'buttonAlign', 'buttons', 'buttonToolbar', 'cancelButton', 'cardSwitchAnimation', 'centered', 'closable', 'closeAction', 'closeToolText', 'cls', 'collapsed', 'collapsible', 'constrainAlign', 'contentEl', 'control', 'controller', 'cover', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultToolWeights', 'defaultType', 'disabled', 'displayed', 'docked', 'doneButton', 'draggable', 'enter', 'exit', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'header', 'headerPosition', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'icon', 'iconAlign', 'iconCls', 'id', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'lbar', 'left', 'listeners', 'manageBorders', 'margin', 'masked', 'maxHeight', 'maxWidth', 'minButtonWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'publishes', 'rbar', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'resizable', 'reveal', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'side', 'slots', 'standardButtons', 'stateful', 'statefulDefaults', 'stateId', 'stretchX', 'stretchY', 'style', 'tabIndex', 'tbar', 'title', 'titleAlign', 'titleCollapse', 'toFrontOnShow', 'toolbar', 'toolDefaults', 'tools', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'useTitles', 'value', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_Picker_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "bottom": ["number", "string"],
-      "cancelButton": ["string", "mixed"],
-      "centered": ["any"],
-      "defaultType": ["any"],
-      "doneButton": ["string", "mixed"],
-      "floated": ["boolean"],
-      "height": ["number"],
-      "layout": ["object", "string"],
-      "left": ["number", "string"],
-      "right": ["number", "string"],
-      "side": ["'left'", "'right'", "'top'", "'bottom'"],
-      "slots": ["array"],
-      "tabIndex": ["number"],
-      "toolbar": ["Ext.TitleBar", "Ext.Toolbar", "object"],
-      "useTitles": ["boolean"],
-      "value": ["object"]
-    };
-  };
-
-  Ext_Picker_Component.EVENTS = function EVENTS() {
+  Ext_Picker.EVENTS = function EVENTS() {
     return [{
+      name: 'activate',
+      parameters: 'newActiveItem,picker,oldActiveItem'
+    }, {
+      name: 'activeItemchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'add',
+      parameters: 'picker,item,index'
+    }, {
+      name: 'added',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'beforeactiveItemchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecollapse',
+      parameters: 'picker'
+    }, {
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeexpand',
+      parameters: 'picker'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehide',
+      parameters: 'sender'
+    }, {
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
+      name: 'beforeresizedragstart',
+      parameters: 'picker,context'
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforetofront',
+      parameters: 'picker'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'picker,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
       name: 'cancel',
-      parameters: 'undefined'
+      parameters: 'picker'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
     }, {
       name: 'change',
-      parameters: 'undefined,values'
+      parameters: 'picker,values'
+    }, {
+      name: 'collapse',
+      parameters: 'picker'
+    }, {
+      name: 'deactivate',
+      parameters: 'oldActiveItem,picker,newActiveItem'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'drawerhide',
+      parameters: 'picker'
+    }, {
+      name: 'drawershow',
+      parameters: 'picker'
+    }, {
+      name: 'erased',
+      parameters: 'sender'
+    }, {
+      name: 'expand',
+      parameters: 'picker'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'picker,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'picker,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'picker,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
+    }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'move',
+      parameters: 'picker,item,toIndex,fromIndex'
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
     }, {
       name: 'pick',
-      parameters: 'undefined,values,slot'
+      parameters: 'picker,values,slot'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'remove',
+      parameters: 'picker,item,index'
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'renderedchange',
+      parameters: 'picker,item,rendered'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'resizedrag',
+      parameters: 'picker,context'
+    }, {
+      name: 'resizedragcancel',
+      parameters: 'picker,context'
+    }, {
+      name: 'resizedragend',
+      parameters: 'picker,context'
+    }, {
+      name: 'resizedragstart',
+      parameters: 'picker,context'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'show',
+      parameters: 'sender'
+    }, {
+      name: 'tofront',
+      parameters: 'picker'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  Ext_Picker_Component.METHODS = function METHODS() {
-    return [{
-      name: 'applyCancelButton',
-      "function": function _function(config, oldButton) {
-        return this.ext.applyCancelButton(config, oldButton);
-      }
-    }, {
-      name: 'applyDoneButton',
-      "function": function _function(config, oldButton) {
-        return this.ext.applyDoneButton(config, oldButton);
-      }
-    }, {
-      name: 'applyToolbar',
-      "function": function _function(config, oldToolbar) {
-        return this.ext.applyToolbar(config, oldToolbar);
-      }
-    }, {
-      name: 'getValue',
-      "function": function _function(useDom) {
-        return this.ext.getValue(useDom);
-      }
-    }, {
-      name: 'getValues',
-      "function": function _function() {
-        return this.ext.getValues();
-      }
-    }, {
-      name: 'onCancelButtonTap',
-      "function": function _function() {
-        return this.ext.onCancelButtonTap();
-      }
-    }, {
-      name: 'onDoneButtonTap',
-      "function": function _function() {
-        return this.ext.onDoneButtonTap();
-      }
-    }, {
-      name: 'onSlotPick',
-      "function": function _function(slot) {
-        return this.ext.onSlotPick(slot);
-      }
-    }, {
-      name: 'setValue',
-      "function": function _function(values, animated) {
-        return this.ext.setValue(values, animated);
-      }
-    }, {
-      name: 'updateSlots',
-      "function": function _function(newSlots) {
-        return this.ext.updateSlots(newSlots);
-      }
-    }, {
-      name: 'updateToolbar',
-      "function": function _function(newToolbar) {
-        return this.ext.updateToolbar(newToolbar);
-      }
-    }, {
-      name: 'updateUseTitles',
-      "function": function _function(useTitles) {
-        return this.ext.updateUseTitles(useTitles);
-      }
-    }];
+  Ext_Picker.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_Picker.PROPERTIES());
+    return Ext_Sheet.getProperties(properties);
   };
 
-  _createClass(Ext_Picker_Component, [{
-    key: "oncancel",
-    //events
-    get: function get() {
-      return this.getAttribute('oncancel');
-    },
-    set: function set(oncancel) {
-      this.setAttribute('oncancel', oncancel);
-    }
-  }, {
-    key: "onchange",
-    get: function get() {
-      return this.getAttribute('onchange');
-    },
-    set: function set(onchange) {
-      this.setAttribute('onchange', onchange);
-    }
-  }, {
-    key: "onpick",
-    get: function get() {
-      return this.getAttribute('onpick');
-    },
-    set: function set(onpick) {
-      this.setAttribute('onpick', onpick);
-    }
-  }], [{
+  Ext_Picker.getEvents = function getEvents(events) {
+    events = events.concat(Ext_Picker.EVENTS());
+    return Ext_Sheet.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'picker'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_Picker, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Sheet_Component.observedAttributes;
+      var attrs = _Ext_Sheet.observedAttributes; //for (var property in Ext_Picker.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_Picker_Component.PROPERTIESOBJECT()) {
+      Ext_Picker.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_Picker_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_Picker.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_Picker_Component(propertiesobject, methods, events) {
-    return _Ext_Sheet_Component.call(this, Object.assign(propertiesobject, Ext_Picker_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_Picker_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_Picker_Component.METHODS()), events.concat(Ext_Picker_Component.EVENTS())) || this; //this.XTYPE = Ext_Picker_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_Picker_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_Picker_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_Picker_Component.EVENTS());
+  function Ext_Picker(properties, events) {
+    return _Ext_Sheet.call(this, properties.concat(Ext_Picker.PROPERTIES()), events.concat(Ext_Picker.EVENTS())) || this;
   }
 
-  var _proto = Ext_Picker_Component.prototype;
+  var _proto = Ext_Picker.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    _Ext_Sheet_Component.prototype.connectedCallback.call(this);
+    _Ext_Sheet.prototype.connectedCallback.call(this);
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
-    _Ext_Sheet_Component.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+    _Ext_Sheet.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_Picker_Component;
-}(Ext_Sheet_Component);
+  return Ext_Picker;
+}(Ext_Sheet);
 
-export { Ext_Picker_Component as default };
+export { Ext_Picker as default };

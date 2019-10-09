@@ -1,65 +1,73 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Base_Component from '../Ext/Base';
+import Ext_Base from '../Ext/Base';
 
-var Ext_Evented_Component =
+var Ext_Evented =
 /*#__PURE__*/
-function (_Ext_Base_Component) {
-  _inheritsLoose(Ext_Evented_Component, _Ext_Base_Component);
+function (_Ext_Base) {
+  _inheritsLoose(Ext_Evented, _Ext_Base);
 
-  //events
-  //configs
-  Ext_Evented_Component.XTYPE = function XTYPE() {
-    return '';
+  Ext_Evented.PROPERTIES = function PROPERTIES() {
+    return ['listeners', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_Evented_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {};
+  Ext_Evented.EVENTS = function EVENTS() {
+    return [{
+      name: 'ready',
+      parameters: ''
+    }];
   };
 
-  Ext_Evented_Component.EVENTS = function EVENTS() {
-    return [];
+  Ext_Evented.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_Evented.PROPERTIES());
+    return Ext_Base.getProperties(properties);
   };
 
-  Ext_Evented_Component.METHODS = function METHODS() {
-    return [];
-  };
+  Ext_Evented.getEvents = function getEvents(events) {
+    events = events.concat(Ext_Evented.EVENTS());
+    return Ext_Base.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return ''}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
 
-  _createClass(Ext_Evented_Component, null, [{
+  _createClass(Ext_Evented, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Base_Component.observedAttributes;
+      var attrs = _Ext_Base.observedAttributes; //for (var property in Ext_Evented.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_Evented_Component.PROPERTIESOBJECT()) {
+      Ext_Evented.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_Evented_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_Evented.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_Evented_Component(propertiesobject, methods, events) {
-    return _Ext_Base_Component.call(this, Object.assign(propertiesobject, Ext_Evented_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_Evented_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_Evented_Component.METHODS()), events.concat(Ext_Evented_Component.EVENTS())) || this; //this.XTYPE = Ext_Evented_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_Evented_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_Evented_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_Evented_Component.EVENTS());
+  function Ext_Evented(properties, events) {
+    return _Ext_Base.call(this, properties.concat(Ext_Evented.PROPERTIES()), events.concat(Ext_Evented.EVENTS())) || this;
   }
 
-  var _proto = Ext_Evented_Component.prototype;
+  var _proto = Ext_Evented.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    _Ext_Base_Component.prototype.connectedCallback.call(this);
+    _Ext_Base.prototype.connectedCallback.call(this);
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
-    _Ext_Base_Component.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+    _Ext_Base.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_Evented_Component;
-}(Ext_Base_Component);
+  return Ext_Evented;
+}(Ext_Base);
 
-export { Ext_Evented_Component as default };
+export { Ext_Evented as default };

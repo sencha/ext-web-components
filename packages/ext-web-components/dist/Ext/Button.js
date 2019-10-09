@@ -1,185 +1,247 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Component_Component from '../Ext/Component';
+import Ext_Component from '../Ext/Component';
 
-var Ext_Button_Component =
+var Ext_Button =
 /*#__PURE__*/
-function (_Ext_Component_Compon) {
-  _inheritsLoose(Ext_Button_Component, _Ext_Component_Compon);
+function (_Ext_Component) {
+  _inheritsLoose(Ext_Button, _Ext_Component);
 
-  //configs
-  Ext_Button_Component.XTYPE = function XTYPE() {
-    return 'button';
+  Ext_Button.PROPERTIES = function PROPERTIES() {
+    return ['alignSelf', 'allowDepress', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'arrow', 'arrowAlign', 'autoEvent', 'axisLock', 'badgeText', 'bind', 'border', 'bottom', 'buttonType', 'centered', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'destroyMenu', 'disabled', 'displayed', 'docked', 'draggable', 'enableToggle', 'flex', 'floated', 'focusCls', 'fullscreen', 'handler', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'icon', 'iconAlign', 'iconCls', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'menu', 'menuAlign', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'pressed', 'pressedDelay', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scope', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'stretchMenu', 'style', 'tabIndex', 'text', 'textAlign', 'toFrontOnShow', 'toggleHandler', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_Button_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "allowDepress": ["boolean"],
-      "arrow": ["boolean"],
-      "arrowAlign": ["'right'", "'bottom'"],
-      "autoEvent": ["string"],
-      "badgeText": ["string"],
-      "buttonType": ["string"],
-      "destroyMenu": ["boolean"],
-      "enableToggle": ["boolean"],
-      "handler": ["function"],
-      "html": ["string"],
-      "icon": ["string"],
-      "iconAlign": ["'top'", "'right'", "'bottom'", "'left'"],
-      "iconCls": ["string"],
-      "menu": ["Ext.menu.Menu", "string", "object"],
-      "menuAlign": ["string"],
-      "pressed": ["boolean"],
-      "pressedDelay": ["number", "boolean"],
-      "publishes": ["string", "string[]", "object"],
-      "scope": ["object"],
-      "stretchMenu": ["boolean"],
-      "text": ["string"],
-      "textAlign": ["'left'", "'right'", "'center'"],
-      "toggleHandler": ["function"],
-      "ui": ["string"],
-      "value": ["string", "number"]
-    };
-  };
-
-  Ext_Button_Component.EVENTS = function EVENTS() {
+  Ext_Button.EVENTS = function EVENTS() {
     return [{
+      name: 'added',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehide',
+      parameters: 'sender'
+    }, {
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
       name: 'beforepressedchange',
       parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforetofront',
+      parameters: 'button'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'button,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'erased',
+      parameters: 'sender'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'button,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'button,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'button,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
+    }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
     }, {
       name: 'pressedchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'release',
-      parameters: 'undefined,e'
+      parameters: 'button,e'
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'show',
+      parameters: 'sender'
     }, {
       name: 'tap',
-      parameters: 'undefined,e'
+      parameters: 'button,e'
+    }, {
+      name: 'tofront',
+      parameters: 'button'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  Ext_Button_Component.METHODS = function METHODS() {
-    return [{
-      name: 'doRelease',
-      "function": function _function(me, e) {
-        return this.ext.doRelease(me, e);
-      }
-    }, {
-      name: 'doTap',
-      "function": function _function(me, e) {
-        return this.ext.doTap(me, e);
-      }
-    }, {
-      name: 'findEventTarget',
-      "function": function _function() {
-        return this.ext.findEventTarget();
-      }
-    }, {
-      name: 'getButtonTemplate',
-      "function": function _function() {
-        return this.ext.getButtonTemplate();
-      }
-    }, {
-      name: 'isPressed',
-      "function": function _function() {
-        return this.ext.isPressed();
-      }
-    }, {
-      name: 'onPress',
-      "function": function _function(e) {
-        return this.ext.onPress(e);
-      }
-    }, {
-      name: 'onRelease',
-      "function": function _function(e) {
-        return this.ext.onRelease(e);
-      }
-    }, {
-      name: 'onTap',
-      "function": function _function(e) {
-        return this.ext.onTap(e);
-      }
-    }, {
-      name: 'shouldRipple',
-      "function": function _function() {
-        return this.ext.shouldRipple();
-      }
-    }, {
-      name: 'toggle',
-      "function": function _function() {
-        return this.ext.toggle();
-      }
-    }];
+  Ext_Button.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_Button.PROPERTIES());
+    return Ext_Component.getProperties(properties);
   };
 
-  _createClass(Ext_Button_Component, [{
-    key: "onbeforepressedchange",
-    //events
-    get: function get() {
-      return this.getAttribute('onbeforepressedchange');
-    },
-    set: function set(onbeforepressedchange) {
-      this.setAttribute('onbeforepressedchange', onbeforepressedchange);
-    }
-  }, {
-    key: "onpressedchange",
-    get: function get() {
-      return this.getAttribute('onpressedchange');
-    },
-    set: function set(onpressedchange) {
-      this.setAttribute('onpressedchange', onpressedchange);
-    }
-  }, {
-    key: "onrelease",
-    get: function get() {
-      return this.getAttribute('onrelease');
-    },
-    set: function set(onrelease) {
-      this.setAttribute('onrelease', onrelease);
-    }
-  }, {
-    key: "ontap",
-    get: function get() {
-      return this.getAttribute('ontap');
-    },
-    set: function set(ontap) {
-      this.setAttribute('ontap', ontap);
-    }
-  }], [{
+  Ext_Button.getEvents = function getEvents(events) {
+    events = events.concat(Ext_Button.EVENTS());
+    return Ext_Component.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'button'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_Button, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Component_Compon.observedAttributes;
+      var attrs = _Ext_Component.observedAttributes; //for (var property in Ext_Button.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_Button_Component.PROPERTIESOBJECT()) {
+      Ext_Button.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_Button_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_Button.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_Button_Component(propertiesobject, methods, events) {
-    return _Ext_Component_Compon.call(this, Object.assign(propertiesobject, Ext_Button_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_Button_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_Button_Component.METHODS()), events.concat(Ext_Button_Component.EVENTS())) || this; //this.XTYPE = Ext_Button_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_Button_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_Button_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_Button_Component.EVENTS());
+  function Ext_Button(properties, events) {
+    return _Ext_Component.call(this, properties.concat(Ext_Button.PROPERTIES()), events.concat(Ext_Button.EVENTS())) || this;
   }
 
-  var _proto = Ext_Button_Component.prototype;
+  var _proto = Ext_Button.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    _Ext_Component_Compon.prototype.connectedCallback.call(this);
+    _Ext_Component.prototype.connectedCallback.call(this);
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
-    _Ext_Component_Compon.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+    _Ext_Component.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_Button_Component;
-}(Ext_Component_Component);
+  return Ext_Button;
+}(Ext_Component);
 
-export { Ext_Button_Component as default };
+export { Ext_Button as default };

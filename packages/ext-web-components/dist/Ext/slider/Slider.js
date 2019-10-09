@@ -1,210 +1,247 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Component_Component from '../../Ext/Component';
+import Ext_Component from '../../Ext/Component';
 
-var Ext_slider_Slider_Component =
+var Ext_slider_Slider =
 /*#__PURE__*/
-function (_Ext_Component_Compon) {
-  _inheritsLoose(Ext_slider_Slider_Component, _Ext_Component_Compon);
+function (_Ext_Component) {
+  _inheritsLoose(Ext_slider_Slider, _Ext_Component);
 
-  //configs
-  Ext_slider_Slider_Component.XTYPE = function XTYPE() {
-    return 'slider';
+  Ext_slider_Slider.PROPERTIES = function PROPERTIES() {
+    return ['alignSelf', 'allowThumbsOverlapping', 'alwaysOnTop', 'animation', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'disabled', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'increment', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxValue', 'maxWidth', 'minHeight', 'minValue', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'readOnly', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'thumbDefaults', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'valueIsArray', 'values', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_slider_Slider_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "allowThumbsOverlapping": ["boolean"],
-      "animation": ["boolean", "object"],
-      "increment": ["number"],
-      "maxValue": ["number"],
-      "minValue": ["number"],
-      "readOnly": ["boolean"],
-      "thumbDefaults": ["object"],
-      "value": ["number", "number[]"],
-      "valueIsArray": ["boolean"],
-      "values": ["number", "number[]"]
-    };
-  };
-
-  Ext_slider_Slider_Component.EVENTS = function EVENTS() {
+  Ext_slider_Slider.EVENTS = function EVENTS() {
     return [{
+      name: 'added',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehide',
+      parameters: 'sender'
+    }, {
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforetofront',
+      parameters: 'slider'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'slider,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
+    }, {
       name: 'change',
-      parameters: 'undefined,thumb,newValue,oldValue'
+      parameters: 'slider,thumb,newValue,oldValue'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
     }, {
       name: 'drag',
-      parameters: 'undefined,thumb,e'
+      parameters: 'slider,thumb,e'
     }, {
       name: 'dragend',
-      parameters: 'undefined,thumb,value,e'
+      parameters: 'slider,thumb,value,e'
     }, {
       name: 'dragstart',
-      parameters: 'undefined,thumb,value,e'
-    }];
-  };
-
-  Ext_slider_Slider_Component.METHODS = function METHODS() {
-    return [{
-      name: 'applyIncrement',
-      "function": function _function(increment) {
-        return this.ext.applyIncrement(increment);
-      }
+      parameters: 'slider,thumb,value,e'
     }, {
-      name: 'constrainValue',
-      "function": function _function(value) {
-        return this.ext.constrainValue(value);
-      }
+      name: 'erased',
+      parameters: 'sender'
     }, {
-      name: 'factoryThumb',
-      "function": function _function() {
-        return this.ext.factoryThumb();
-      }
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
     }, {
-      name: 'getArrayValues',
-      "function": function _function() {
-        return this.ext.getArrayValues();
-      }
+      name: 'focus',
+      parameters: 'slider,event'
     }, {
-      name: 'getThumb',
-      "function": function _function(index) {
-        return this.ext.getThumb(index);
-      }
+      name: 'focusenter',
+      parameters: 'slider,event'
     }, {
-      name: 'getThumbs',
-      "function": function _function() {
-        return this.ext.getThumbs();
-      }
+      name: 'focusleave',
+      parameters: 'slider,event'
     }, {
-      name: 'getValues',
-      "function": function _function() {
-        return this.ext.getValues();
-      }
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
     }, {
       name: 'initialize',
-      "function": function _function() {
-        return this.ext.initialize();
-      }
+      parameters: 'sender'
     }, {
-      name: 'onTap',
-      "function": function _function(e) {
-        return this.ext.onTap(e);
-      }
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
     }, {
-      name: 'refreshAllThumbConstraints',
-      "function": function _function() {
-        return this.ext.refreshAllThumbConstraints();
-      }
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
     }, {
-      name: 'refreshValue',
-      "function": function _function() {
-        return this.ext.refreshValue();
-      }
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
     }, {
-      name: 'setValues',
-      "function": function _function(value) {
-        return this.ext.setValues(value);
-      }
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
     }, {
-      name: 'updateAllowThumbsOverlapping',
-      "function": function _function(newValue, oldValue) {
-        return this.ext.updateAllowThumbsOverlapping(newValue, oldValue);
-      }
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
     }, {
-      name: 'updateIncrement',
-      "function": function _function(newValue, oldValue) {
-        return this.ext.updateIncrement(newValue, oldValue);
-      }
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
     }, {
-      name: 'updateMaxValue',
-      "function": function _function(newValue, oldValue) {
-        return this.ext.updateMaxValue(newValue, oldValue);
-      }
+      name: 'orientationchange',
+      parameters: ''
     }, {
-      name: 'updateMinValue',
-      "function": function _function(newValue, oldValue) {
-        return this.ext.updateMinValue(newValue, oldValue);
-      }
+      name: 'painted',
+      parameters: 'sender,element'
     }, {
-      name: 'updateThumbs',
-      "function": function _function(newThumbs) {
-        return this.ext.updateThumbs(newThumbs);
-      }
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
     }, {
-      name: 'updateValue',
-      "function": function _function() {
-        return this.ext.updateValue();
-      }
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'show',
+      parameters: 'sender'
+    }, {
+      name: 'tofront',
+      parameters: 'slider'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  _createClass(Ext_slider_Slider_Component, [{
-    key: "onchange",
-    //events
-    get: function get() {
-      return this.getAttribute('onchange');
-    },
-    set: function set(onchange) {
-      this.setAttribute('onchange', onchange);
-    }
-  }, {
-    key: "ondrag",
-    get: function get() {
-      return this.getAttribute('ondrag');
-    },
-    set: function set(ondrag) {
-      this.setAttribute('ondrag', ondrag);
-    }
-  }, {
-    key: "ondragend",
-    get: function get() {
-      return this.getAttribute('ondragend');
-    },
-    set: function set(ondragend) {
-      this.setAttribute('ondragend', ondragend);
-    }
-  }, {
-    key: "ondragstart",
-    get: function get() {
-      return this.getAttribute('ondragstart');
-    },
-    set: function set(ondragstart) {
-      this.setAttribute('ondragstart', ondragstart);
-    }
-  }], [{
+  Ext_slider_Slider.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_slider_Slider.PROPERTIES());
+    return Ext_Component.getProperties(properties);
+  };
+
+  Ext_slider_Slider.getEvents = function getEvents(events) {
+    events = events.concat(Ext_slider_Slider.EVENTS());
+    return Ext_Component.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'slider'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_slider_Slider, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Component_Compon.observedAttributes;
+      var attrs = _Ext_Component.observedAttributes; //for (var property in Ext_slider_Slider.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_slider_Slider_Component.PROPERTIESOBJECT()) {
+      Ext_slider_Slider.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_slider_Slider_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_slider_Slider.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_slider_Slider_Component(propertiesobject, methods, events) {
-    return _Ext_Component_Compon.call(this, Object.assign(propertiesobject, Ext_slider_Slider_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_slider_Slider_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_slider_Slider_Component.METHODS()), events.concat(Ext_slider_Slider_Component.EVENTS())) || this; //this.XTYPE = Ext_slider_Slider_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_slider_Slider_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_slider_Slider_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_slider_Slider_Component.EVENTS());
+  function Ext_slider_Slider(properties, events) {
+    return _Ext_Component.call(this, properties.concat(Ext_slider_Slider.PROPERTIES()), events.concat(Ext_slider_Slider.EVENTS())) || this;
   }
 
-  var _proto = Ext_slider_Slider_Component.prototype;
+  var _proto = Ext_slider_Slider.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    _Ext_Component_Compon.prototype.connectedCallback.call(this);
+    _Ext_Component.prototype.connectedCallback.call(this);
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
-    _Ext_Component_Compon.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+    _Ext_Component.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_slider_Slider_Component;
-}(Ext_Component_Component);
+  return Ext_slider_Slider;
+}(Ext_Component);
 
-export { Ext_slider_Slider_Component as default };
+export { Ext_slider_Slider as default };

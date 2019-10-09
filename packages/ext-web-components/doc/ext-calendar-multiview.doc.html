@@ -6,15 +6,15 @@
 
 <script>
 function changeProperty() {
-  var x = document.getElementById("properties").value;
+  var x = document.getElementById("propertiesDocs").value;
   document.getElementById("property").innerHTML = x;
 }
 function changeMethod() {
-  var x = document.getElementById("methods").value;
+  var x = document.getElementById("methodsDocs").value;
   document.getElementById("method").innerHTML = x;
 }
 function changeEvent() {
-  var x = document.getElementById("events").value;
+  var x = document.getElementById("eventsDocs").value;
   document.getElementById("event").innerHTML = x;
 }
 </script>
@@ -83,88 +83,13 @@ window.Calendar_multiviewExample = new Calendar_multiviewComponentExample();
     <z-tabs>
         <z-tabpanel tabname="properties">
 <div class="flex-container">
-  <div id="propertylist" class="thelist"><div>properties:</div><div class="select-div"><select id="properties" onchange="changeProperty()" name="properties">
-    <option value="`true` to display this view in compact mode, typically used
-for smaller form factors.  Setting to `true` applies any configured
-{@link #cfg!compactOptions #cfg-compactOptions}.
-<br>The compact config is applied to all configured {@link #cfg!views #cfg-views}.
-">compact</option>
-    <option value="A series of config options for this class to set when this class is in
-{@link #cfg!compact #cfg-compact} mode.
-<br>The compactOptions config is applied to all configured {@link #cfg!views #cfg-views}.
-">compactOptions</option>
-    <option value="The key of the item from {@link #cfg!views #views} to use as the default.
-">defaultView</option>
-    <option value="Configuration for this Container's layout. Example:
-
-    @example
-    Ext.create({
-        xtype: 'container',
-        layout: {
-            type: 'hbox',
-            align: 'middle'
-        },
-        items: [{
-            xtype: 'panel',
-            flex: 1,
-            bodyStyle: {
-                background: "#000",
-                color:"#fff"
-            }
-        }, {
-           xtype: 'panel',
-           flex: 2,
-           bodyStyle: {
-               background: "#f00",
-               color:"#fff"
-           }
-        }]
-    });
-">layout</option>
-    <option value="A {@link Ext.calendar.store.Calendars} instance or
-configuration
-<br>The store config is applied to all configured {@link #cfg!views #cfg-views}.
-">store</option>
-    <option value="The timezone offset to display this calendar in. The value should be
-specified in the same way as the native Date offset. That is, the number
-of minutes between UTC and local time. For example the offset for UTC+10
-would be -600 (10 hours * 60 minutes ahead).
-
-Defaults to the current browser offset.
-<br>The timezoneOffset config is applied to all configured {@link #cfg!views #cfg-views}.
-">timezoneOffset</option>
-    <option value="The value for the current view.
-
-    value: new Date('10-02-2016') // to set the date to Oct 2nd 2016
-<br>The value config is applied to all configured {@link #cfg!views #cfg-views}.
-">value</option>
-    <option value="The calendar views to have available, each item in this configuration
-(labelled by a key) is to contain the configuration for the view, a class that
-extends {@link Ext.calendar.panel.Base}.
-
-Example with a day and week view:
-
-    views: {
-        day: {
-            xtype: 'calendar-day'
-        },
-        week: {
-            xtype: 'calendar-week'
-        }
-    }
-
-The "day" and "week" keys would be the eligible values for the
-{@link #cfg!defaultView #cfg-defaultView} and the param string to pass to
-{@link #method!setView #method-setView}.
-">views</option>
-</select></div>
-</div>
+  <div id="propertylist" class="thelist"><div>properties:</div></div>
   <div id="property" class="thetext"></div>
 </div>
         </z-tabpanel>
         <z-tabpanel tabname="methods">
 <div class="flex-container">
-  <div id="methodlist" class="thelist"><div>methods:</div><div class="select-div"><select id="methods" onchange="changeMethod()" name="methods">
+  <div id="methodlist" class="thelist"><div>methods:</div><div class="select-div"><select id="methodsDocs" onchange="changeMethod()" name="methodsDocs">
     <option value="Moves the active view forward. The amount moved
 depends on the current view.
 ">moveNext</option>
@@ -198,7 +123,7 @@ To change the view from the default of "day" to "week":
         </z-tabpanel>
         <z-tabpanel tabname="events">
 <div class="flex-container">
-  <div id="eventlist" class="thelist"><div>events:</div><div class="select-div"><select id="events" onchange="changeEvent()" name="events">
+  <div id="eventlist" class="thelist"><div>events:</div><div class="select-div"><select id="eventsDocs" onchange="changeEvent()" name="eventsDocs">
 </select></div>
 </div>
   <div id="event" class="thetext"></div>

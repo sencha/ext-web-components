@@ -1,5 +1,5 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_dataview_EmptyText_Component from './Ext/dataview/EmptyText';
+import Ext_dataview_EmptyText from './Ext/dataview/EmptyText';
 import HTMLParsedElement from './HTMLParsedElement';
 export var ExtEmptytextComponent =
 /*#__PURE__*/
@@ -9,13 +9,13 @@ function (_Ext_dataview_EmptyTe) {
   function ExtEmptytextComponent() {
     var _this;
 
-    _this = _Ext_dataview_EmptyTe.call(this, {}, [], []) || this;
+    _this = _Ext_dataview_EmptyTe.call(this, [], []) || this;
     _this.xtype = 'emptytext';
     return _this;
   }
 
   return ExtEmptytextComponent;
-}(Ext_dataview_EmptyText_Component); //(function () {
+}(Ext_dataview_EmptyText); //(function () {
 //    Ext.onReady(function() {
 //        window.customElements.define('ext-emptytext', ExtEmptytextComponent);
 //    });

@@ -1,21 +1,21 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_BreadcrumbBar_Component from './Ext/BreadcrumbBar';
+import Ext_BreadcrumbBar from './Ext/BreadcrumbBar';
 import HTMLParsedElement from './HTMLParsedElement';
 export var ExtBreadcrumbbarComponent =
 /*#__PURE__*/
-function (_Ext_BreadcrumbBar_Co) {
-  _inheritsLoose(ExtBreadcrumbbarComponent, _Ext_BreadcrumbBar_Co);
+function (_Ext_BreadcrumbBar) {
+  _inheritsLoose(ExtBreadcrumbbarComponent, _Ext_BreadcrumbBar);
 
   function ExtBreadcrumbbarComponent() {
     var _this;
 
-    _this = _Ext_BreadcrumbBar_Co.call(this, {}, [], []) || this;
+    _this = _Ext_BreadcrumbBar.call(this, [], []) || this;
     _this.xtype = 'breadcrumbbar';
     return _this;
   }
 
   return ExtBreadcrumbbarComponent;
-}(Ext_BreadcrumbBar_Component); //(function () {
+}(Ext_BreadcrumbBar); //(function () {
 //    Ext.onReady(function() {
 //        window.customElements.define('ext-breadcrumbbar', ExtBreadcrumbbarComponent);
 //    });

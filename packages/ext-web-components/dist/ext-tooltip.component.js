@@ -1,21 +1,21 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_tip_ToolTip_Component from './Ext/tip/ToolTip';
+import Ext_tip_ToolTip from './Ext/tip/ToolTip';
 import HTMLParsedElement from './HTMLParsedElement';
 export var ExtTooltipComponent =
 /*#__PURE__*/
-function (_Ext_tip_ToolTip_Comp) {
-  _inheritsLoose(ExtTooltipComponent, _Ext_tip_ToolTip_Comp);
+function (_Ext_tip_ToolTip) {
+  _inheritsLoose(ExtTooltipComponent, _Ext_tip_ToolTip);
 
   function ExtTooltipComponent() {
     var _this;
 
-    _this = _Ext_tip_ToolTip_Comp.call(this, {}, [], []) || this;
+    _this = _Ext_tip_ToolTip.call(this, [], []) || this;
     _this.xtype = 'tooltip';
     return _this;
   }
 
   return ExtTooltipComponent;
-}(Ext_tip_ToolTip_Component); //(function () {
+}(Ext_tip_ToolTip); //(function () {
 //    Ext.onReady(function() {
 //        window.customElements.define('ext-tooltip', ExtTooltipComponent);
 //    });

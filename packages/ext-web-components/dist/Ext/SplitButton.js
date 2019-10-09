@@ -1,83 +1,250 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Button_Component from '../Ext/Button';
+import Ext_Button from '../Ext/Button';
 
-var Ext_SplitButton_Component =
+var Ext_SplitButton =
 /*#__PURE__*/
-function (_Ext_Button_Component) {
-  _inheritsLoose(Ext_SplitButton_Component, _Ext_Button_Component);
+function (_Ext_Button) {
+  _inheritsLoose(Ext_SplitButton, _Ext_Button);
 
-  //configs
-  Ext_SplitButton_Component.XTYPE = function XTYPE() {
-    return 'splitbutton';
+  Ext_SplitButton.PROPERTIES = function PROPERTIES() {
+    return ['alignSelf', 'allowDepress', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'arrow', 'arrowAlign', 'arrowHandler', 'autoEvent', 'axisLock', 'badgeText', 'bind', 'border', 'bottom', 'buttonType', 'centered', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'destroyMenu', 'disabled', 'displayed', 'docked', 'draggable', 'enableToggle', 'flex', 'floated', 'focusCls', 'fullscreen', 'handler', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'icon', 'iconAlign', 'iconCls', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'menu', 'menuAlign', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'pressed', 'pressedDelay', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scope', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'stretchMenu', 'style', 'tabIndex', 'text', 'textAlign', 'toFrontOnShow', 'toggleHandler', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_SplitButton_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "arrowHandler": ["function"]
-    };
-  };
-
-  Ext_SplitButton_Component.EVENTS = function EVENTS() {
+  Ext_SplitButton.EVENTS = function EVENTS() {
     return [{
+      name: 'added',
+      parameters: 'sender,container,index'
+    }, {
       name: 'arrowclick',
-      parameters: 'undefined,e'
+      parameters: 'splitbutton,e'
+    }, {
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehide',
+      parameters: 'sender'
+    }, {
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
+      name: 'beforepressedchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforetofront',
+      parameters: 'splitbutton'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'splitbutton,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'erased',
+      parameters: 'sender'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'splitbutton,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'splitbutton,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'splitbutton,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
+    }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'pressedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'release',
+      parameters: 'splitbutton,e'
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'show',
+      parameters: 'sender'
+    }, {
+      name: 'tap',
+      parameters: 'splitbutton,e'
+    }, {
+      name: 'tofront',
+      parameters: 'splitbutton'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  Ext_SplitButton_Component.METHODS = function METHODS() {
-    return [{
-      name: 'doTap',
-      "function": function _function(me, e) {
-        return this.ext.doTap(me, e);
-      }
-    }];
+  Ext_SplitButton.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_SplitButton.PROPERTIES());
+    return Ext_Button.getProperties(properties);
   };
 
-  _createClass(Ext_SplitButton_Component, [{
-    key: "onarrowclick",
-    //events
-    get: function get() {
-      return this.getAttribute('onarrowclick');
-    },
-    set: function set(onarrowclick) {
-      this.setAttribute('onarrowclick', onarrowclick);
-    }
-  }], [{
+  Ext_SplitButton.getEvents = function getEvents(events) {
+    events = events.concat(Ext_SplitButton.EVENTS());
+    return Ext_Button.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'splitbutton'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_SplitButton, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Button_Component.observedAttributes;
+      var attrs = _Ext_Button.observedAttributes; //for (var property in Ext_SplitButton.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_SplitButton_Component.PROPERTIESOBJECT()) {
+      Ext_SplitButton.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_SplitButton_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_SplitButton.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_SplitButton_Component(propertiesobject, methods, events) {
-    return _Ext_Button_Component.call(this, Object.assign(propertiesobject, Ext_SplitButton_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_SplitButton_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_SplitButton_Component.METHODS()), events.concat(Ext_SplitButton_Component.EVENTS())) || this; //this.XTYPE = Ext_SplitButton_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_SplitButton_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_SplitButton_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_SplitButton_Component.EVENTS());
+  function Ext_SplitButton(properties, events) {
+    return _Ext_Button.call(this, properties.concat(Ext_SplitButton.PROPERTIES()), events.concat(Ext_SplitButton.EVENTS())) || this;
   }
 
-  var _proto = Ext_SplitButton_Component.prototype;
+  var _proto = Ext_SplitButton.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    _Ext_Button_Component.prototype.connectedCallback.call(this);
+    _Ext_Button.prototype.connectedCallback.call(this);
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
-    _Ext_Button_Component.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+    _Ext_Button.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_SplitButton_Component;
-}(Ext_Button_Component);
+  return Ext_SplitButton;
+}(Ext_Button);
 
-export { Ext_SplitButton_Component as default };
+export { Ext_SplitButton as default };

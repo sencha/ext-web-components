@@ -1,187 +1,282 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_calendar_panel_AbstractPanel_Component from '../../../Ext/calendar/panel/AbstractPanel';
+import Ext_calendar_panel_AbstractPanel from '../../../Ext/calendar/panel/AbstractPanel';
 
-var Ext_calendar_panel_Panel_Component =
+var Ext_calendar_panel_Panel =
 /*#__PURE__*/
 function (_Ext_calendar_panel_A) {
-  _inheritsLoose(Ext_calendar_panel_Panel_Component, _Ext_calendar_panel_A);
+  _inheritsLoose(Ext_calendar_panel_Panel, _Ext_calendar_panel_A);
 
-  //events
-  //configs
-  Ext_calendar_panel_Panel_Component.XTYPE = function XTYPE() {
-    return 'calendar';
+  Ext_calendar_panel_Panel.PROPERTIES = function PROPERTIES() {
+    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'anchor', 'anchorPosition', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'bbar', 'bind', 'bodyBorder', 'bodyCls', 'bodyPadding', 'bodyStyle', 'border', 'bottom', 'buttonAlign', 'buttons', 'buttonToolbar', 'calendarList', 'cardSwitchAnimation', 'centered', 'closable', 'closeAction', 'closeToolText', 'cls', 'collapsed', 'collapsible', 'compact', 'compactOptions', 'constrainAlign', 'contentEl', 'control', 'controller', 'createButton', 'createButtonPosition', 'data', 'dateTitle', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultToolWeights', 'defaultType', 'defaultView', 'disabled', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'header', 'headerPosition', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'highlightToday', 'html', 'icon', 'iconAlign', 'iconCls', 'id', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'lbar', 'left', 'listeners', 'manageBorders', 'margin', 'masked', 'maxHeight', 'maxWidth', 'menuButton', 'minButtonWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'nextButton', 'padding', 'plugins', 'previousButton', 'publishes', 'rbar', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'resizable', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'sheet', 'shim', 'showAnimation', 'sideBar', 'standardButtons', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'switcher', 'switcherPosition', 'tabIndex', 'tbar', 'timezoneOffset', 'title', 'titleAlign', 'titleBar', 'titleCollapse', 'todayButton', 'toFrontOnShow', 'toolDefaults', 'tools', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'viewModel', 'views', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_calendar_panel_Panel_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "calendarList": ["object"],
-      "cls": ["string", "string[]"],
-      "compact": ["boolean"],
-      "compactOptions": ["object"],
-      "createButton": ["object"],
-      "createButtonPosition": ["string"],
-      "dateTitle": ["object"],
-      "defaultView": ["string"],
-      "highlightToday": ["boolean"],
-      "nextButton": ["object"],
-      "previousButton": ["object"],
-      "referenceHolder": ["boolean"],
-      "sideBar": ["object"],
-      "store": ["object", "Ext.calendar.store.Calendars"],
-      "switcher": ["object"],
-      "switcherPosition": ["string"],
-      "timezoneOffset": ["number"],
-      "titleBar": ["object"],
-      "todayButton": ["object"],
-      "value": ["date"],
-      "views": ["object"]
-    };
-  };
-
-  Ext_calendar_panel_Panel_Component.EVENTS = function EVENTS() {
-    return [];
-  };
-
-  Ext_calendar_panel_Panel_Component.METHODS = function METHODS() {
+  Ext_calendar_panel_Panel.EVENTS = function EVENTS() {
     return [{
-      name: 'getCalendarList',
-      "function": function _function() {
-        return this.ext.getCalendarList();
-      }
+      name: 'activate',
+      parameters: 'newActiveItem,calendar,oldActiveItem'
     }, {
-      name: 'getCreateButton',
-      "function": function _function() {
-        return this.ext.getCreateButton();
-      }
+      name: 'activeItemchange',
+      parameters: 'sender,value,oldValue'
     }, {
-      name: 'getNextButton',
-      "function": function _function() {
-        return this.ext.getNextButton();
-      }
+      name: 'add',
+      parameters: 'calendar,item,index'
     }, {
-      name: 'getPreviousButton',
-      "function": function _function() {
-        return this.ext.getPreviousButton();
-      }
+      name: 'added',
+      parameters: 'sender,container,index'
     }, {
-      name: 'getSideBar',
-      "function": function _function() {
-        return this.ext.getSideBar();
-      }
+      name: 'beforeactiveItemchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'getSwitcher',
-      "function": function _function() {
-        return this.ext.getSwitcher();
-      }
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'getTitleBar',
-      "function": function _function() {
-        return this.ext.getTitleBar();
-      }
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'getTodayButton',
-      "function": function _function() {
-        return this.ext.getTodayButton();
-      }
+      name: 'beforecollapse',
+      parameters: 'calendar'
     }, {
-      name: 'getView',
-      "function": function _function() {
-        return this.ext.getView();
-      }
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'moveNext',
-      "function": function _function() {
-        return this.ext.moveNext();
-      }
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'movePrevious',
-      "function": function _function() {
-        return this.ext.movePrevious();
-      }
+      name: 'beforeexpand',
+      parameters: 'calendar'
     }, {
-      name: 'navigate',
-      "function": function _function(amount, interval) {
-        return this.ext.navigate(amount, interval);
-      }
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'setCalendarList',
-      "function": function _function() {
-        return this.ext.setCalendarList();
-      }
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'setCreateButton',
-      "function": function _function() {
-        return this.ext.setCreateButton();
-      }
+      name: 'beforehide',
+      parameters: 'sender'
     }, {
-      name: 'setNextButton',
-      "function": function _function() {
-        return this.ext.setNextButton();
-      }
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'setPreviousButton',
-      "function": function _function() {
-        return this.ext.setPreviousButton();
-      }
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'setSideBar',
-      "function": function _function() {
-        return this.ext.setSideBar();
-      }
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'setSwitcher',
-      "function": function _function() {
-        return this.ext.setSwitcher();
-      }
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'setTitleBar',
-      "function": function _function() {
-        return this.ext.setTitleBar();
-      }
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'setTodayButton',
-      "function": function _function() {
-        return this.ext.setTodayButton();
-      }
+      name: 'beforeorientationchange',
+      parameters: ''
     }, {
-      name: 'setView',
-      "function": function _function(view) {
-        return this.ext.setView(view);
-      }
+      name: 'beforeresizedragstart',
+      parameters: 'calendar,context'
     }, {
-      name: 'setViews',
-      "function": function _function() {
-        return this.ext.setViews();
-      }
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforetofront',
+      parameters: 'calendar'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'calendar,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'collapse',
+      parameters: 'calendar'
+    }, {
+      name: 'deactivate',
+      parameters: 'oldActiveItem,calendar,newActiveItem'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'drawerhide',
+      parameters: 'calendar'
+    }, {
+      name: 'drawershow',
+      parameters: 'calendar'
+    }, {
+      name: 'erased',
+      parameters: 'sender'
+    }, {
+      name: 'expand',
+      parameters: 'calendar'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'calendar,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'calendar,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'calendar,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
+    }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'move',
+      parameters: 'calendar,item,toIndex,fromIndex'
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'remove',
+      parameters: 'calendar,item,index'
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'renderedchange',
+      parameters: 'calendar,item,rendered'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'resizedrag',
+      parameters: 'calendar,context'
+    }, {
+      name: 'resizedragcancel',
+      parameters: 'calendar,context'
+    }, {
+      name: 'resizedragend',
+      parameters: 'calendar,context'
+    }, {
+      name: 'resizedragstart',
+      parameters: 'calendar,context'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'show',
+      parameters: 'sender'
+    }, {
+      name: 'tofront',
+      parameters: 'calendar'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  _createClass(Ext_calendar_panel_Panel_Component, null, [{
+  Ext_calendar_panel_Panel.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_calendar_panel_Panel.PROPERTIES());
+    return Ext_calendar_panel_AbstractPanel.getProperties(properties);
+  };
+
+  Ext_calendar_panel_Panel.getEvents = function getEvents(events) {
+    events = events.concat(Ext_calendar_panel_Panel.EVENTS());
+    return Ext_calendar_panel_AbstractPanel.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'calendar'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_calendar_panel_Panel, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_calendar_panel_A.observedAttributes;
+      var attrs = _Ext_calendar_panel_A.observedAttributes; //for (var property in Ext_calendar_panel_Panel.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_calendar_panel_Panel_Component.PROPERTIESOBJECT()) {
+      Ext_calendar_panel_Panel.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_calendar_panel_Panel_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_calendar_panel_Panel.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_calendar_panel_Panel_Component(propertiesobject, methods, events) {
-    return _Ext_calendar_panel_A.call(this, Object.assign(propertiesobject, Ext_calendar_panel_Panel_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_calendar_panel_Panel_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_calendar_panel_Panel_Component.METHODS()), events.concat(Ext_calendar_panel_Panel_Component.EVENTS())) || this; //this.XTYPE = Ext_calendar_panel_Panel_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_calendar_panel_Panel_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_calendar_panel_Panel_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_calendar_panel_Panel_Component.EVENTS());
+  function Ext_calendar_panel_Panel(properties, events) {
+    return _Ext_calendar_panel_A.call(this, properties.concat(Ext_calendar_panel_Panel.PROPERTIES()), events.concat(Ext_calendar_panel_Panel.EVENTS())) || this;
   }
 
-  var _proto = Ext_calendar_panel_Panel_Component.prototype;
+  var _proto = Ext_calendar_panel_Panel.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
     _Ext_calendar_panel_A.prototype.connectedCallback.call(this);
@@ -191,7 +286,7 @@ function (_Ext_calendar_panel_A) {
     _Ext_calendar_panel_A.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_calendar_panel_Panel_Component;
-}(Ext_calendar_panel_AbstractPanel_Component);
+  return Ext_calendar_panel_Panel;
+}(Ext_calendar_panel_AbstractPanel);
 
-export { Ext_calendar_panel_Panel_Component as default };
+export { Ext_calendar_panel_Panel as default };

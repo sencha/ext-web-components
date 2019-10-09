@@ -1,176 +1,105 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_draw_SurfaceBase_Component from '../../Ext/draw/SurfaceBase';
+import Ext_draw_SurfaceBase from '../../Ext/draw/SurfaceBase';
 
-var Ext_draw_Surface_Component =
+var Ext_draw_Surface =
 /*#__PURE__*/
 function (_Ext_draw_SurfaceBase) {
-  _inheritsLoose(Ext_draw_Surface_Component, _Ext_draw_SurfaceBase);
+  _inheritsLoose(Ext_draw_Surface, _Ext_draw_SurfaceBase);
 
-  //events
-  //configs
-  Ext_draw_Surface_Component.XTYPE = function XTYPE() {
-    return 'surface';
+  Ext_draw_Surface.PROPERTIES = function PROPERTIES() {
+    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'background', 'bind', 'border', 'cls', 'constrainAlign', 'controller', 'defaultListenerScope', 'dirty', 'disabled', 'flex', 'flipRtlText', 'floated', 'focusCls', 'height', 'hidden', 'hideMode', 'id', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'listeners', 'margin', 'name', 'nameable', 'plugins', 'publishes', 'rect', 'reference', 'relative', 'renderTo', 'ripple', 'session', 'shadow', 'shareableName', 'shim', 'style', 'toFrontOnShow', 'touchAction', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'viewModel', 'width', 'x', 'y', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_draw_Surface_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "background": ["object"],
-      "dirty": ["boolean"],
-      "flipRtlText": ["boolean"],
-      "items": ["array"],
-      "rect": ["array"]
-    };
-  };
-
-  Ext_draw_Surface_Component.EVENTS = function EVENTS() {
-    return [];
-  };
-
-  Ext_draw_Surface_Component.METHODS = function METHODS() {
+  Ext_draw_Surface.EVENTS = function EVENTS() {
     return [{
-      name: 'add',
-      "function": function _function(sprite) {
-        return this.ext.add(sprite);
-      }
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'applyItems',
-      "function": function _function(items) {
-        return this.ext.applyItems(items);
-      }
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'clear',
-      "function": function _function() {
-        return this.ext.clear();
-      }
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'clearTransform',
-      "function": function _function() {
-        return this.ext.clearTransform();
-      }
+      name: 'beforetofront',
+      parameters: 'surface'
     }, {
-      name: 'createItem',
-      "function": function _function(config) {
-        return this.ext.createItem(config);
-      }
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'destroy',
-      "function": function _function() {
-        return this.ext.destroy();
-      }
+      name: 'blur',
+      parameters: 'surface,event'
     }, {
-      name: 'flatten',
-      "function": function _function(size, surfaces) {
-        return this.ext.flatten(size, surfaces);
-      }
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
     }, {
-      name: 'get',
-      "function": function _function(id) {
-        return this.ext.get(id);
-      }
+      name: 'focus',
+      parameters: 'surface,event'
     }, {
-      name: 'getBBox',
-      "function": function _function(sprites, isWithoutTransform) {
-        return this.ext.getBBox(sprites, isWithoutTransform);
-      }
+      name: 'focusenter',
+      parameters: 'surface,event'
     }, {
-      name: 'getEventXY',
-      "function": function _function(e) {
-        return this.ext.getEventXY(e);
-      }
+      name: 'focusleave',
+      parameters: 'surface,event'
     }, {
-      name: 'getOwnerBody',
-      "function": function _function() {
-        return this.ext.getOwnerBody();
-      }
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
     }, {
-      name: 'hitTest',
-      "function": function _function(point, options) {
-        return this.ext.hitTest(point, options);
-      }
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
     }, {
-      name: 'hitTestEvent',
-      "function": function _function(event, options) {
-        return this.ext.hitTestEvent(event, options);
-      }
+      name: 'tofront',
+      parameters: 'surface'
     }, {
-      name: 'onAdd',
-      "function": function _function(sprite) {
-        return this.ext.onAdd(sprite);
-      }
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
     }, {
-      name: 'orderByZIndex',
-      "function": function _function() {
-        return this.ext.orderByZIndex();
-      }
-    }, {
-      name: 'remove',
-      "function": function _function(sprite, isDestroy) {
-        return this.ext.remove(sprite, isDestroy);
-      }
-    }, {
-      name: 'removeAll',
-      "function": function _function(isDestroy) {
-        return this.ext.removeAll(isDestroy);
-      }
-    }, {
-      name: 'renderFrame',
-      "function": function _function() {
-        return this.ext.renderFrame();
-      }
-    }, {
-      name: 'renderSprite',
-      "function": function _function(sprite) {
-        return this.ext.renderSprite(sprite);
-      }
-    }, {
-      name: 'repaint',
-      "function": function _function() {
-        return this.ext.repaint();
-      }
-    }, {
-      name: 'resetTransform',
-      "function": function _function() {
-        return this.ext.resetTransform();
-      }
-    }, {
-      name: 'roundPixel',
-      "function": function _function(num) {
-        return this.ext.roundPixel(num);
-      }
-    }, {
-      name: 'waitFor',
-      "function": function _function(surface) {
-        return this.ext.waitFor(surface);
-      }
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  _createClass(Ext_draw_Surface_Component, null, [{
+  Ext_draw_Surface.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_draw_Surface.PROPERTIES());
+    return Ext_draw_SurfaceBase.getProperties(properties);
+  };
+
+  Ext_draw_Surface.getEvents = function getEvents(events) {
+    events = events.concat(Ext_draw_Surface.EVENTS());
+    return Ext_draw_SurfaceBase.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'surface'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_draw_Surface, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_draw_SurfaceBase.observedAttributes;
+      var attrs = _Ext_draw_SurfaceBase.observedAttributes; //for (var property in Ext_draw_Surface.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_draw_Surface_Component.PROPERTIESOBJECT()) {
+      Ext_draw_Surface.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_draw_Surface_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_draw_Surface.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_draw_Surface_Component(propertiesobject, methods, events) {
-    return _Ext_draw_SurfaceBase.call(this, Object.assign(propertiesobject, Ext_draw_Surface_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_draw_Surface_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_draw_Surface_Component.METHODS()), events.concat(Ext_draw_Surface_Component.EVENTS())) || this; //this.XTYPE = Ext_draw_Surface_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_draw_Surface_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_draw_Surface_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_draw_Surface_Component.EVENTS());
+  function Ext_draw_Surface(properties, events) {
+    return _Ext_draw_SurfaceBase.call(this, properties.concat(Ext_draw_Surface.PROPERTIES()), events.concat(Ext_draw_Surface.EVENTS())) || this;
   }
 
-  var _proto = Ext_draw_Surface_Component.prototype;
+  var _proto = Ext_draw_Surface.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
     _Ext_draw_SurfaceBase.prototype.connectedCallback.call(this);
@@ -180,7 +109,7 @@ function (_Ext_draw_SurfaceBase) {
     _Ext_draw_SurfaceBase.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_draw_Surface_Component;
-}(Ext_draw_SurfaceBase_Component);
+  return Ext_draw_Surface;
+}(Ext_draw_SurfaceBase);
 
-export { Ext_draw_Surface_Component as default };
+export { Ext_draw_Surface as default };

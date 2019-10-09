@@ -1,324 +1,267 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_calendar_view_Base_Component from '../../../Ext/calendar/view/Base';
+import Ext_calendar_view_Base from '../../../Ext/calendar/view/Base';
 
-var Ext_calendar_view_Days_Component =
+var Ext_calendar_view_Days =
 /*#__PURE__*/
 function (_Ext_calendar_view_Ba) {
-  _inheritsLoose(Ext_calendar_view_Days_Component, _Ext_calendar_view_Ba);
+  _inheritsLoose(Ext_calendar_view_Days, _Ext_calendar_view_Ba);
 
-  //configs
-  Ext_calendar_view_Days_Component.XTYPE = function XTYPE() {
-    return 'calendar-daysview';
+  Ext_calendar_view_Days.PROPERTIES = function PROPERTIES() {
+    return ['addForm', 'alignSelf', 'allowSelection', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'cls', 'compact', 'compactOptions', 'constrainAlign', 'contentEl', 'controller', 'controlStoreRange', 'data', 'defaultListenerScope', 'disabled', 'displayed', 'displayOverlap', 'docked', 'draggable', 'droppable', 'editForm', 'endTime', 'eventDefaults', 'flex', 'floated', 'focusCls', 'fullscreen', 'gestureNavigation', 'header', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'resizeEvents', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'showNowMarker', 'startTime', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'timeFormat', 'timeRenderer', 'timezoneOffset', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'viewModel', 'visibleDays', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_calendar_view_Days_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "allowSelection": ["boolean"],
-      "displayOverlap": ["boolean"],
-      "draggable": ["boolean"],
-      "droppable": ["boolean"],
-      "endTime": ["number"],
-      "resizeEvents": ["boolean"],
-      "showNowMarker": ["boolean"],
-      "startTime": ["number"],
-      "timeFormat": ["string"],
-      "timeRenderer": ["function"],
-      "value": ["date"],
-      "visibleDays": ["number"]
-    };
-  };
-
-  Ext_calendar_view_Days_Component.EVENTS = function EVENTS() {
+  Ext_calendar_view_Days.EVENTS = function EVENTS() {
     return [{
+      name: 'added',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeeventadd',
+      parameters: 'calendar-daysview,context'
+    }, {
       name: 'beforeeventdragstart',
-      parameters: 'undefined,context'
+      parameters: 'calendar-daysview,context'
+    }, {
+      name: 'beforeeventedit',
+      parameters: 'calendar-daysview,context'
     }, {
       name: 'beforeeventresizestart',
-      parameters: 'undefined,context'
+      parameters: 'calendar-daysview,context'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehide',
+      parameters: 'sender'
+    }, {
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforetofront',
+      parameters: 'calendar-daysview'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'calendar-daysview,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'erased',
+      parameters: 'sender'
+    }, {
+      name: 'eventadd',
+      parameters: 'calendar-daysview,context'
     }, {
       name: 'eventdrop',
-      parameters: 'undefined,context'
+      parameters: 'calendar-daysview,context'
+    }, {
+      name: 'eventedit',
+      parameters: 'calendar-daysview,context'
     }, {
       name: 'eventresize',
-      parameters: 'undefined,context'
+      parameters: 'calendar-daysview,context'
+    }, {
+      name: 'eventtap',
+      parameters: 'calendar-daysview,context'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'calendar-daysview,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'calendar-daysview,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'calendar-daysview,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
+    }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'show',
+      parameters: 'sender'
+    }, {
+      name: 'tofront',
+      parameters: 'calendar-daysview'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'validateeventadd',
+      parameters: 'calendar-daysview,context'
     }, {
       name: 'validateeventdrop',
-      parameters: 'undefined,context'
+      parameters: 'calendar-daysview,context'
+    }, {
+      name: 'validateeventedit',
+      parameters: 'calendar-daysview,context'
     }, {
       name: 'validateeventresize',
-      parameters: 'undefined,context'
+      parameters: 'calendar-daysview,context'
+    }, {
+      name: 'valuechange',
+      parameters: 'calendar-daysview,context'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  Ext_calendar_view_Days_Component.METHODS = function METHODS() {
-    return [{
-      name: 'calculateSlots',
-      "function": function _function() {
-        return this.ext.calculateSlots();
-      }
-    }, {
-      name: 'checkNowMarker',
-      "function": function _function() {
-        return this.ext.checkNowMarker();
-      }
-    }, {
-      name: 'clearAndPopulate',
-      "function": function _function(row, nodes, clearAll) {
-        return this.ext.clearAndPopulate(row, nodes, clearAll);
-      }
-    }, {
-      name: 'clearSelected',
-      "function": function _function() {
-        return this.ext.clearSelected();
-      }
-    }, {
-      name: 'constructAllDayEvents',
-      "function": function _function(events) {
-        return this.ext.constructAllDayEvents(events);
-      }
-    }, {
-      name: 'constructEvents',
-      "function": function _function() {
-        return this.ext.constructEvents();
-      }
-    }, {
-      name: 'createScroller',
-      "function": function _function() {
-        return this.ext.createScroller();
-      }
-    }, {
-      name: 'doCheckNowMarker',
-      "function": function _function() {
-        return this.ext.doCheckNowMarker();
-      }
-    }, {
-      name: 'doRecalculate',
-      "function": function _function(start) {
-        return this.ext.doRecalculate(start);
-      }
-    }, {
-      name: 'generateAllDayCells',
-      "function": function _function(cls, html) {
-        return this.ext.generateAllDayCells(cls, html);
-      }
-    }, {
-      name: 'generateColumns',
-      "function": function _function() {
-        return this.ext.generateColumns();
-      }
-    }, {
-      name: 'generateTimeElements',
-      "function": function _function() {
-        return this.ext.generateTimeElements();
-      }
-    }, {
-      name: 'generateTimeLabels',
-      "function": function _function() {
-        return this.ext.generateTimeLabels();
-      }
-    }, {
-      name: 'getColumn',
-      "function": function _function(index) {
-        return this.ext.getColumn(index);
-      }
-    }, {
-      name: 'getColumns',
-      "function": function _function() {
-        return this.ext.getColumns();
-      }
-    }, {
-      name: 'getEventColumn',
-      "function": function _function(index) {
-        return this.ext.getEventColumn(index);
-      }
-    }, {
-      name: 'getEventStyle',
-      "function": function _function() {
-        return this.ext.getEventStyle();
-      }
-    }, {
-      name: 'getEventWidget',
-      "function": function _function(event) {
-        return this.ext.getEventWidget(event);
-      }
-    }, {
-      name: 'getSlotStyle',
-      "function": function _function() {
-        return this.ext.getSlotStyle();
-      }
-    }, {
-      name: 'handleEventTap',
-      "function": function _function(e) {
-        return this.ext.handleEventTap(e);
-      }
-    }, {
-      name: 'onAllDayTouchEnd',
-      "function": function _function(e) {
-        return this.ext.onAllDayTouchEnd(e);
-      }
-    }, {
-      name: 'onAllDayTouchMove',
-      "function": function _function(e) {
-        return this.ext.onAllDayTouchMove(e);
-      }
-    }, {
-      name: 'onAllDayTouchStart',
-      "function": function _function(e) {
-        return this.ext.onAllDayTouchStart(e);
-      }
-    }, {
-      name: 'onBodyTouchEnd',
-      "function": function _function(e) {
-        return this.ext.onBodyTouchEnd(e);
-      }
-    }, {
-      name: 'onBodyTouchMove',
-      "function": function _function(e) {
-        return this.ext.onBodyTouchMove(e);
-      }
-    }, {
-      name: 'onBodyTouchStart',
-      "function": function _function(e) {
-        return this.ext.onBodyTouchStart(e);
-      }
-    }, {
-      name: 'onResizerDrag',
-      "function": function _function(e) {
-        return this.ext.onResizerDrag(e);
-      }
-    }, {
-      name: 'onResizerDragEnd',
-      "function": function _function(e) {
-        return this.ext.onResizerDragEnd(e);
-      }
-    }, {
-      name: 'onResizerDragStart',
-      "function": function _function(e) {
-        return this.ext.onResizerDragStart(e);
-      }
-    }, {
-      name: 'processDay',
-      "function": function _function(day, frag) {
-        return this.ext.processDay(day, frag);
-      }
-    }, {
-      name: 'recalculate',
-      "function": function _function() {
-        return this.ext.recalculate();
-      }
-    }, {
-      name: 'refreshHeaders',
-      "function": function _function() {
-        return this.ext.refreshHeaders();
-      }
-    }, {
-      name: 'roundDate',
-      "function": function _function(d) {
-        return this.ext.roundDate(d);
-      }
-    }, {
-      name: 'selectRange',
-      "function": function _function(start, end) {
-        return this.ext.selectRange(start, end);
-      }
-    }, {
-      name: 'setTimeRange',
-      "function": function _function(start, end) {
-        return this.ext.setTimeRange(start, end);
-      }
-    }, {
-      name: 'slotFromPosition',
-      "function": function _function(pageY, local) {
-        return this.ext.slotFromPosition(pageY, local);
-      }
-    }, {
-      name: 'slotToPosition',
-      "function": function _function(slot) {
-        return this.ext.slotToPosition(slot);
-      }
-    }, {
-      name: 'syncHeaderScroll',
-      "function": function _function() {
-        return this.ext.syncHeaderScroll();
-      }
-    }];
+  Ext_calendar_view_Days.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_calendar_view_Days.PROPERTIES());
+    return Ext_calendar_view_Base.getProperties(properties);
   };
 
-  _createClass(Ext_calendar_view_Days_Component, [{
-    key: "onbeforeeventdragstart",
-    //events
-    get: function get() {
-      return this.getAttribute('onbeforeeventdragstart');
-    },
-    set: function set(onbeforeeventdragstart) {
-      this.setAttribute('onbeforeeventdragstart', onbeforeeventdragstart);
-    }
-  }, {
-    key: "onbeforeeventresizestart",
-    get: function get() {
-      return this.getAttribute('onbeforeeventresizestart');
-    },
-    set: function set(onbeforeeventresizestart) {
-      this.setAttribute('onbeforeeventresizestart', onbeforeeventresizestart);
-    }
-  }, {
-    key: "oneventdrop",
-    get: function get() {
-      return this.getAttribute('oneventdrop');
-    },
-    set: function set(oneventdrop) {
-      this.setAttribute('oneventdrop', oneventdrop);
-    }
-  }, {
-    key: "oneventresize",
-    get: function get() {
-      return this.getAttribute('oneventresize');
-    },
-    set: function set(oneventresize) {
-      this.setAttribute('oneventresize', oneventresize);
-    }
-  }, {
-    key: "onvalidateeventdrop",
-    get: function get() {
-      return this.getAttribute('onvalidateeventdrop');
-    },
-    set: function set(onvalidateeventdrop) {
-      this.setAttribute('onvalidateeventdrop', onvalidateeventdrop);
-    }
-  }, {
-    key: "onvalidateeventresize",
-    get: function get() {
-      return this.getAttribute('onvalidateeventresize');
-    },
-    set: function set(onvalidateeventresize) {
-      this.setAttribute('onvalidateeventresize', onvalidateeventresize);
-    }
-  }], [{
+  Ext_calendar_view_Days.getEvents = function getEvents(events) {
+    events = events.concat(Ext_calendar_view_Days.EVENTS());
+    return Ext_calendar_view_Base.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'calendar-daysview'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_calendar_view_Days, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_calendar_view_Ba.observedAttributes;
+      var attrs = _Ext_calendar_view_Ba.observedAttributes; //for (var property in Ext_calendar_view_Days.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_calendar_view_Days_Component.PROPERTIESOBJECT()) {
+      Ext_calendar_view_Days.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_calendar_view_Days_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_calendar_view_Days.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_calendar_view_Days_Component(propertiesobject, methods, events) {
-    return _Ext_calendar_view_Ba.call(this, Object.assign(propertiesobject, Ext_calendar_view_Days_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_calendar_view_Days_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_calendar_view_Days_Component.METHODS()), events.concat(Ext_calendar_view_Days_Component.EVENTS())) || this; //this.XTYPE = Ext_calendar_view_Days_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_calendar_view_Days_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_calendar_view_Days_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_calendar_view_Days_Component.EVENTS());
+  function Ext_calendar_view_Days(properties, events) {
+    return _Ext_calendar_view_Ba.call(this, properties.concat(Ext_calendar_view_Days.PROPERTIES()), events.concat(Ext_calendar_view_Days.EVENTS())) || this;
   }
 
-  var _proto = Ext_calendar_view_Days_Component.prototype;
+  var _proto = Ext_calendar_view_Days.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
     _Ext_calendar_view_Ba.prototype.connectedCallback.call(this);
@@ -328,7 +271,7 @@ function (_Ext_calendar_view_Ba) {
     _Ext_calendar_view_Ba.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_calendar_view_Days_Component;
-}(Ext_calendar_view_Base_Component);
+  return Ext_calendar_view_Days;
+}(Ext_calendar_view_Base);
 
-export { Ext_calendar_view_Days_Component as default };
+export { Ext_calendar_view_Days as default };

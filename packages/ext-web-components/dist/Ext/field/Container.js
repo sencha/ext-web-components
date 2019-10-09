@@ -1,129 +1,256 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_Field_Component from '../../Ext/field/Field';
+import Ext_field_Field from '../../Ext/field/Field';
 
-var Ext_field_Container_Component =
+var Ext_field_Container =
 /*#__PURE__*/
-function (_Ext_field_Field_Comp) {
-  _inheritsLoose(Ext_field_Container_Component, _Ext_field_Field_Comp);
+function (_Ext_field_Field) {
+  _inheritsLoose(Ext_field_Container, _Ext_field_Field);
 
-  //events
-  //configs
-  Ext_field_Container_Component.XTYPE = function XTYPE() {
-    return 'containerfield';
+  Ext_field_Container.PROPERTIES = function PROPERTIES() {
+    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoFitErrors', 'autoSize', 'axisLock', 'bind', 'bodyAlign', 'border', 'bottom', 'bubbleDirty', 'centered', 'cls', 'constrainAlign', 'container', 'contentEl', 'controller', 'data', 'dataType', 'defaultListenerScope', 'defaults', 'defaultType', 'dirty', 'disabled', 'displayed', 'docked', 'draggable', 'error', 'errorMessage', 'errorTarget', 'errorTip', 'errorTpl', 'fieldDefaults', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inline', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'label', 'labelAlign', 'labelCls', 'labelMinWidth', 'labelTextAlign', 'labelWidth', 'labelWrap', 'layout', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'required', 'requiredMessage', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'sideError', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'tipError', 'titleError', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'underError', 'userCls', 'userSelectable', 'validateDisabled', 'validationMessage', 'validators', 'value', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_field_Container_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "autoSize": ["any"],
-      "container": ["Ext.Container"],
-      "defaults": ["object"],
-      "defaultType": ["string"],
-      "error": ["any"],
-      "fieldDefaults": ["object"],
-      "items": ["array", "object"],
-      "layout": ["object", "string"]
-    };
-  };
-
-  Ext_field_Container_Component.EVENTS = function EVENTS() {
-    return [];
-  };
-
-  Ext_field_Container_Component.METHODS = function METHODS() {
+  Ext_field_Container.EVENTS = function EVENTS() {
     return [{
-      name: 'add',
-      "function": function _function(newItems) {
-        return this.ext.add(newItems);
-      }
+      name: 'added',
+      parameters: 'sender,container,index'
     }, {
-      name: 'child',
-      "function": function _function(selector) {
-        return this.ext.child(selector);
-      }
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'down',
-      "function": function _function(selector) {
-        return this.ext.down(selector);
-      }
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'getAt',
-      "function": function _function(index) {
-        return this.ext.getAt(index);
-      }
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'getFocusEl',
-      "function": function _function() {
-        return this.ext.getFocusEl();
-      }
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'getRefItems',
-      "function": function _function(deep) {
-        return this.ext.getRefItems(deep);
-      }
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'insert',
-      "function": function _function(index, item) {
-        return this.ext.insert(index, item);
-      }
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'query',
-      "function": function _function(selector) {
-        return this.ext.query(selector);
-      }
+      name: 'beforehide',
+      parameters: 'sender'
     }, {
-      name: 'remove',
-      "function": function _function(which, destroy) {
-        return this.ext.remove(which, destroy);
-      }
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'removeAll',
-      "function": function _function(destroy, everything) {
-        return this.ext.removeAll(destroy, everything);
-      }
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'setErrors',
-      "function": function _function(errors) {
-        return this.ext.setErrors(errors);
-      }
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforetofront',
+      parameters: 'containerfield'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'containerfield,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'change',
+      parameters: 'containerfield,newValue,oldValue'
+    }, {
+      name: 'click',
+      parameters: 'e'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'dirtychange',
+      parameters: 'containerfield,dirty'
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'erased',
+      parameters: 'sender'
+    }, {
+      name: 'errorchange',
+      parameters: 'containerfield,error'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'containerfield,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'containerfield,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'containerfield,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
+    }, {
+      name: 'keyup',
+      parameters: 'e'
+    }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'mousedown',
+      parameters: 'e'
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
+    }, {
+      name: 'paste',
+      parameters: 'e'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'show',
+      parameters: 'sender'
+    }, {
+      name: 'tofront',
+      parameters: 'containerfield'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  _createClass(Ext_field_Container_Component, null, [{
+  Ext_field_Container.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_field_Container.PROPERTIES());
+    return Ext_field_Field.getProperties(properties);
+  };
+
+  Ext_field_Container.getEvents = function getEvents(events) {
+    events = events.concat(Ext_field_Container.EVENTS());
+    return Ext_field_Field.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'containerfield'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_field_Container, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_field_Field_Comp.observedAttributes;
+      var attrs = _Ext_field_Field.observedAttributes; //for (var property in Ext_field_Container.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_field_Container_Component.PROPERTIESOBJECT()) {
+      Ext_field_Container.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_field_Container_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_field_Container.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_field_Container_Component(propertiesobject, methods, events) {
-    return _Ext_field_Field_Comp.call(this, Object.assign(propertiesobject, Ext_field_Container_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_field_Container_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_field_Container_Component.METHODS()), events.concat(Ext_field_Container_Component.EVENTS())) || this; //this.XTYPE = Ext_field_Container_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_field_Container_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_field_Container_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_field_Container_Component.EVENTS());
+  function Ext_field_Container(properties, events) {
+    return _Ext_field_Field.call(this, properties.concat(Ext_field_Container.PROPERTIES()), events.concat(Ext_field_Container.EVENTS())) || this;
   }
 
-  var _proto = Ext_field_Container_Component.prototype;
+  var _proto = Ext_field_Container.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    _Ext_field_Field_Comp.prototype.connectedCallback.call(this);
+    _Ext_field_Field.prototype.connectedCallback.call(this);
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
-    _Ext_field_Field_Comp.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+    _Ext_field_Field.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_field_Container_Component;
-}(Ext_field_Field_Component);
+  return Ext_field_Container;
+}(Ext_field_Field);
 
-export { Ext_field_Container_Component as default };
+export { Ext_field_Container as default };

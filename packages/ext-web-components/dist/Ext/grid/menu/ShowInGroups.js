@@ -1,67 +1,241 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_menu_CheckItem_Component from '../../../Ext/menu/CheckItem';
+import Ext_menu_CheckItem from '../../../Ext/menu/CheckItem';
 
-var Ext_grid_menu_ShowInGroups_Component =
+var Ext_grid_menu_ShowInGroups =
 /*#__PURE__*/
-function (_Ext_menu_CheckItem_C) {
-  _inheritsLoose(Ext_grid_menu_ShowInGroups_Component, _Ext_menu_CheckItem_C);
+function (_Ext_menu_CheckItem) {
+  _inheritsLoose(Ext_grid_menu_ShowInGroups, _Ext_menu_CheckItem);
 
-  //events
-  //configs
-  Ext_grid_menu_ShowInGroups_Component.XTYPE = function XTYPE() {
-    return 'gridshowingroupsmenuitem';
+  Ext_grid_menu_ShowInGroups.PROPERTIES = function PROPERTIES() {
+    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'checkChangeDisabled', 'checked', 'checkHandler', 'clickHideDelay', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'destroyMenu', 'disabled', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusCls', 'fullscreen', 'handler', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnClick', 'hideOnMaskTap', 'href', 'html', 'icon', 'iconAlign', 'iconCls', 'id', 'indented', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'menu', 'menuAlign', 'menuExpandDelay', 'menuHideDelay', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scope', 'scrollable', 'separator', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'submenuText', 'tabIndex', 'target', 'text', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_grid_menu_ShowInGroups_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "text": ["string"]
-    };
+  Ext_grid_menu_ShowInGroups.EVENTS = function EVENTS() {
+    return [{
+      name: 'added',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecheckchange',
+      parameters: 'gridshowingroupsmenuitem,checked'
+    }, {
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehide',
+      parameters: 'sender'
+    }, {
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforetofront',
+      parameters: 'gridshowingroupsmenuitem'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'gridshowingroupsmenuitem,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'checkchange',
+      parameters: 'gridshowingroupsmenuitem,checked'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'erased',
+      parameters: 'sender'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'gridshowingroupsmenuitem,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'gridshowingroupsmenuitem,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'gridshowingroupsmenuitem,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
+    }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'show',
+      parameters: 'sender'
+    }, {
+      name: 'tofront',
+      parameters: 'gridshowingroupsmenuitem'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
+    }];
   };
 
-  Ext_grid_menu_ShowInGroups_Component.EVENTS = function EVENTS() {
-    return [];
+  Ext_grid_menu_ShowInGroups.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_grid_menu_ShowInGroups.PROPERTIES());
+    return Ext_menu_CheckItem.getProperties(properties);
   };
 
-  Ext_grid_menu_ShowInGroups_Component.METHODS = function METHODS() {
-    return [];
-  };
+  Ext_grid_menu_ShowInGroups.getEvents = function getEvents(events) {
+    events = events.concat(Ext_grid_menu_ShowInGroups.EVENTS());
+    return Ext_menu_CheckItem.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'gridshowingroupsmenuitem'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
 
-  _createClass(Ext_grid_menu_ShowInGroups_Component, null, [{
+  _createClass(Ext_grid_menu_ShowInGroups, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_menu_CheckItem_C.observedAttributes;
+      var attrs = _Ext_menu_CheckItem.observedAttributes; //for (var property in Ext_grid_menu_ShowInGroups.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_grid_menu_ShowInGroups_Component.PROPERTIESOBJECT()) {
+      Ext_grid_menu_ShowInGroups.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_grid_menu_ShowInGroups_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_grid_menu_ShowInGroups.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_grid_menu_ShowInGroups_Component(propertiesobject, methods, events) {
-    return _Ext_menu_CheckItem_C.call(this, Object.assign(propertiesobject, Ext_grid_menu_ShowInGroups_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_grid_menu_ShowInGroups_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_grid_menu_ShowInGroups_Component.METHODS()), events.concat(Ext_grid_menu_ShowInGroups_Component.EVENTS())) || this; //this.XTYPE = Ext_grid_menu_ShowInGroups_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_grid_menu_ShowInGroups_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_grid_menu_ShowInGroups_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_grid_menu_ShowInGroups_Component.EVENTS());
+  function Ext_grid_menu_ShowInGroups(properties, events) {
+    return _Ext_menu_CheckItem.call(this, properties.concat(Ext_grid_menu_ShowInGroups.PROPERTIES()), events.concat(Ext_grid_menu_ShowInGroups.EVENTS())) || this;
   }
 
-  var _proto = Ext_grid_menu_ShowInGroups_Component.prototype;
+  var _proto = Ext_grid_menu_ShowInGroups.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    _Ext_menu_CheckItem_C.prototype.connectedCallback.call(this);
+    _Ext_menu_CheckItem.prototype.connectedCallback.call(this);
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
-    _Ext_menu_CheckItem_C.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+    _Ext_menu_CheckItem.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_grid_menu_ShowInGroups_Component;
-}(Ext_menu_CheckItem_Component);
+  return Ext_grid_menu_ShowInGroups;
+}(Ext_menu_CheckItem);
 
-export { Ext_grid_menu_ShowInGroups_Component as default };
+export { Ext_grid_menu_ShowInGroups as default };

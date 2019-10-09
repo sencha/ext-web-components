@@ -1,144 +1,292 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Panel_Component from '../../../../Ext/Panel';
+import Ext_Panel from '../../../../Ext/Panel';
 
-var Ext_pivot_plugin_configurator_Panel_Component =
+var Ext_pivot_plugin_configurator_Panel =
 /*#__PURE__*/
-function (_Ext_Panel_Component) {
-  _inheritsLoose(Ext_pivot_plugin_configurator_Panel_Component, _Ext_Panel_Component);
+function (_Ext_Panel) {
+  _inheritsLoose(Ext_pivot_plugin_configurator_Panel, _Ext_Panel);
 
-  //events
-  //configs
-  Ext_pivot_plugin_configurator_Panel_Component.XTYPE = function XTYPE() {
-    return 'pivotconfigpanel';
+  Ext_pivot_plugin_configurator_Panel.PROPERTIES = function PROPERTIES() {
+    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'anchor', 'anchorPosition', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'bbar', 'bind', 'bodyBorder', 'bodyCls', 'bodyPadding', 'bodyStyle', 'border', 'bottom', 'buttonAlign', 'buttons', 'buttonToolbar', 'cardSwitchAnimation', 'centered', 'closable', 'closeAction', 'closeToolText', 'cls', 'collapsed', 'collapsible', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultToolWeights', 'defaultType', 'disabled', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'header', 'headerPosition', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'icon', 'iconAlign', 'iconCls', 'id', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'lbar', 'left', 'listeners', 'manageBorders', 'margin', 'masked', 'maxHeight', 'maxWidth', 'minButtonWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'panelAggFieldsText', 'panelAggFieldsTitle', 'panelAllFieldsText', 'panelAllFieldsTitle', 'panelLeftFieldsText', 'panelLeftFieldsTitle', 'panelTopFieldsText', 'panelTopFieldsTitle', 'plugins', 'publishes', 'rbar', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'resizable', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'standardButtons', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'tbar', 'title', 'titleAlign', 'titleCollapse', 'toFrontOnShow', 'toolDefaults', 'tools', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_pivot_plugin_configurator_Panel_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "panelAggFieldsText": ["string"],
-      "panelAggFieldsTitle": ["string"],
-      "panelAllFieldsText": ["string"],
-      "panelAllFieldsTitle": ["string"],
-      "panelLeftFieldsText": ["string"],
-      "panelLeftFieldsTitle": ["string"],
-      "panelTopFieldsText": ["string"],
-      "panelTopFieldsTitle": ["string"]
-    };
-  };
-
-  Ext_pivot_plugin_configurator_Panel_Component.EVENTS = function EVENTS() {
-    return [];
-  };
-
-  Ext_pivot_plugin_configurator_Panel_Component.METHODS = function METHODS() {
+  Ext_pivot_plugin_configurator_Panel.EVENTS = function EVENTS() {
     return [{
-      name: 'dragDropField',
-      "function": function _function(fromContainer, toContainer, record, newPos) {
-        return this.ext.dragDropField(fromContainer, toContainer, record, newPos);
-      }
+      name: 'activate',
+      parameters: 'newActiveItem,pivotconfigpanel,oldActiveItem'
     }, {
-      name: 'findFieldInContainer',
-      "function": function _function(field, container) {
-        return this.ext.findFieldInContainer(field, container);
-      }
+      name: 'activeItemchange',
+      parameters: 'sender,value,oldValue'
     }, {
-      name: 'getAggregateContainer',
-      "function": function _function() {
-        return this.ext.getAggregateContainer();
-      }
+      name: 'add',
+      parameters: 'pivotconfigpanel,item,index'
     }, {
-      name: 'getAggregateHeader',
-      "function": function _function() {
-        return this.ext.getAggregateHeader();
-      }
+      name: 'added',
+      parameters: 'sender,container,index'
     }, {
-      name: 'getAllFieldsContainer',
-      "function": function _function() {
-        return this.ext.getAllFieldsContainer();
-      }
+      name: 'beforeactiveItemchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'getAllFieldsHeader',
-      "function": function _function() {
-        return this.ext.getAllFieldsHeader();
-      }
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'getLeftAxisContainer',
-      "function": function _function() {
-        return this.ext.getLeftAxisContainer();
-      }
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'getLeftAxisHeader',
-      "function": function _function() {
-        return this.ext.getLeftAxisHeader();
-      }
+      name: 'beforecollapse',
+      parameters: 'pivotconfigpanel'
     }, {
-      name: 'getTopAxisContainer',
-      "function": function _function() {
-        return this.ext.getTopAxisContainer();
-      }
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'getTopAxisHeader',
-      "function": function _function() {
-        return this.ext.getTopAxisHeader();
-      }
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'setAggregateContainerVisible',
-      "function": function _function(visible) {
-        return this.ext.setAggregateContainerVisible(visible);
-      }
+      name: 'beforeexpand',
+      parameters: 'pivotconfigpanel'
     }, {
-      name: 'setAllFieldsContainerVisible',
-      "function": function _function(visible) {
-        return this.ext.setAllFieldsContainerVisible(visible);
-      }
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'setLeftAxisContainerVisible',
-      "function": function _function(visible) {
-        return this.ext.setLeftAxisContainerVisible(visible);
-      }
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'setTopAxisContainerVisible',
-      "function": function _function(visible) {
-        return this.ext.setTopAxisContainerVisible(visible);
-      }
+      name: 'beforehide',
+      parameters: 'sender'
+    }, {
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
+      name: 'beforeresizedragstart',
+      parameters: 'pivotconfigpanel,context'
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforetofront',
+      parameters: 'pivotconfigpanel'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'pivotconfigpanel,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'collapse',
+      parameters: 'pivotconfigpanel'
+    }, {
+      name: 'deactivate',
+      parameters: 'oldActiveItem,pivotconfigpanel,newActiveItem'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'drawerhide',
+      parameters: 'pivotconfigpanel'
+    }, {
+      name: 'drawershow',
+      parameters: 'pivotconfigpanel'
+    }, {
+      name: 'erased',
+      parameters: 'sender'
+    }, {
+      name: 'expand',
+      parameters: 'pivotconfigpanel'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'pivotconfigpanel,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'pivotconfigpanel,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'pivotconfigpanel,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
+    }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'move',
+      parameters: 'pivotconfigpanel,item,toIndex,fromIndex'
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'remove',
+      parameters: 'pivotconfigpanel,item,index'
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'renderedchange',
+      parameters: 'pivotconfigpanel,item,rendered'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'resizedrag',
+      parameters: 'pivotconfigpanel,context'
+    }, {
+      name: 'resizedragcancel',
+      parameters: 'pivotconfigpanel,context'
+    }, {
+      name: 'resizedragend',
+      parameters: 'pivotconfigpanel,context'
+    }, {
+      name: 'resizedragstart',
+      parameters: 'pivotconfigpanel,context'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'show',
+      parameters: 'sender'
+    }, {
+      name: 'tofront',
+      parameters: 'pivotconfigpanel'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  _createClass(Ext_pivot_plugin_configurator_Panel_Component, null, [{
+  Ext_pivot_plugin_configurator_Panel.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_pivot_plugin_configurator_Panel.PROPERTIES());
+    return Ext_Panel.getProperties(properties);
+  };
+
+  Ext_pivot_plugin_configurator_Panel.getEvents = function getEvents(events) {
+    events = events.concat(Ext_pivot_plugin_configurator_Panel.EVENTS());
+    return Ext_Panel.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'pivotconfigpanel'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_pivot_plugin_configurator_Panel, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Panel_Component.observedAttributes;
+      var attrs = _Ext_Panel.observedAttributes; //for (var property in Ext_pivot_plugin_configurator_Panel.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_pivot_plugin_configurator_Panel_Component.PROPERTIESOBJECT()) {
+      Ext_pivot_plugin_configurator_Panel.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_pivot_plugin_configurator_Panel_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_pivot_plugin_configurator_Panel.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_pivot_plugin_configurator_Panel_Component(propertiesobject, methods, events) {
-    return _Ext_Panel_Component.call(this, Object.assign(propertiesobject, Ext_pivot_plugin_configurator_Panel_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_pivot_plugin_configurator_Panel_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_pivot_plugin_configurator_Panel_Component.METHODS()), events.concat(Ext_pivot_plugin_configurator_Panel_Component.EVENTS())) || this; //this.XTYPE = Ext_pivot_plugin_configurator_Panel_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_pivot_plugin_configurator_Panel_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_pivot_plugin_configurator_Panel_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_pivot_plugin_configurator_Panel_Component.EVENTS());
+  function Ext_pivot_plugin_configurator_Panel(properties, events) {
+    return _Ext_Panel.call(this, properties.concat(Ext_pivot_plugin_configurator_Panel.PROPERTIES()), events.concat(Ext_pivot_plugin_configurator_Panel.EVENTS())) || this;
   }
 
-  var _proto = Ext_pivot_plugin_configurator_Panel_Component.prototype;
+  var _proto = Ext_pivot_plugin_configurator_Panel.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    _Ext_Panel_Component.prototype.connectedCallback.call(this);
+    _Ext_Panel.prototype.connectedCallback.call(this);
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
-    _Ext_Panel_Component.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+    _Ext_Panel.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_pivot_plugin_configurator_Panel_Component;
-}(Ext_Panel_Component);
+  return Ext_pivot_plugin_configurator_Panel;
+}(Ext_Panel);
 
-export { Ext_pivot_plugin_configurator_Panel_Component as default };
+export { Ext_pivot_plugin_configurator_Panel as default };
