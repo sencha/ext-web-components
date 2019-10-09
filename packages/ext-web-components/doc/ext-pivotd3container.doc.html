@@ -6,15 +6,15 @@
 
 <script>
 function changeProperty() {
-  var x = document.getElementById("properties").value;
+  var x = document.getElementById("propertiesDocs").value;
   document.getElementById("property").innerHTML = x;
 }
 function changeMethod() {
-  var x = document.getElementById("methods").value;
+  var x = document.getElementById("methodsDocs").value;
   document.getElementById("method").innerHTML = x;
 }
 function changeEvent() {
-  var x = document.getElementById("events").value;
+  var x = document.getElementById("eventsDocs").value;
   document.getElementById("event").innerHTML = x;
 }
 </script>
@@ -82,29 +82,13 @@ window.Pivotd3containerExample = new Pivotd3containerComponentExample();
     <z-tabs>
         <z-tabpanel tabname="properties">
 <div class="flex-container">
-  <div id="propertylist" class="thelist"><div>properties:</div><div class="select-div"><select id="properties" onchange="changeProperty()" name="properties">
-    <option value="
-Configuration object for the pivot Configurator plugin.
-">configurator</option>
-    <option value="
-Configuration object for the item that will be added to this container
-">drawing</option>
-    <option value="
-This is the pivot matrix used by the pivot D3 container. All axis and aggregate
-dimensions should be defined here.
-
-Needed by this pivot container so that the configurator plugin can call getMatrix.
-
-This matrix is also used by the {@link #cfg!drawing #drawing}.
-">matrix</option>
-</select></div>
-</div>
+  <div id="propertylist" class="thelist"><div>properties:</div></div>
   <div id="property" class="thetext"></div>
 </div>
         </z-tabpanel>
         <z-tabpanel tabname="methods">
 <div class="flex-container">
-  <div id="methodlist" class="thelist"><div>methods:</div><div class="select-div"><select id="methods" onchange="changeMethod()" name="methods">
+  <div id="methodlist" class="thelist"><div>methods:</div><div class="select-div"><select id="methodsDocs" onchange="changeMethod()" name="methodsDocs">
 </select></div>
 </div>
   <div id="method" class="thetext"></div>
@@ -112,7 +96,7 @@ This matrix is also used by the {@link #cfg!drawing #drawing}.
         </z-tabpanel>
         <z-tabpanel tabname="events">
 <div class="flex-container">
-  <div id="eventlist" class="thelist"><div>events:</div><div class="select-div"><select id="events" onchange="changeEvent()" name="events">
+  <div id="eventlist" class="thelist"><div>events:</div><div class="select-div"><select id="eventsDocs" onchange="changeEvent()" name="eventsDocs">
 </select></div>
 </div>
   <div id="event" class="thetext"></div>

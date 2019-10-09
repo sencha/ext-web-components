@@ -1,141 +1,235 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Gadget_Component from '../../../Ext/Gadget';
+import Ext_Gadget from '../../../Ext/Gadget';
 
-var Ext_ux_gauge_Gauge_Component =
+var Ext_ux_gauge_Gauge =
 /*#__PURE__*/
-function (_Ext_Gadget_Component) {
-  _inheritsLoose(Ext_ux_gauge_Gauge_Component, _Ext_Gadget_Component);
+function (_Ext_Gadget) {
+  _inheritsLoose(Ext_ux_gauge_Gauge, _Ext_Gadget);
 
-  //events
-  //configs
-  Ext_ux_gauge_Gauge_Component.XTYPE = function XTYPE() {
-    return 'gauge';
+  Ext_ux_gauge_Gauge.PROPERTIES = function PROPERTIES() {
+    return ['alignSelf', 'alwaysOnTop', 'angleOffset', 'animation', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'clockwise', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'disabled', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxValue', 'maxWidth', 'minHeight', 'minValue', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'needle', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'textAlign', 'textOffset', 'textTpl', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'trackLength', 'trackStart', 'trackStyle', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'valueStyle', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_ux_gauge_Gauge_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "angleOffset": ["number"],
-      "animation": ["object", "boolean"],
-      "clockwise": ["boolean"],
-      "maxValue": ["number"],
-      "minValue": ["number"],
-      "needle": ["Ext.ux.gauge.needle.Abstract"],
-      "padding": ["number", "string"],
-      "textAlign": ["string"],
-      "textOffset": ["object"],
-      "textTpl": ["Ext.XTemplate"],
-      "trackLength": ["number"],
-      "trackStart": ["number"],
-      "trackStyle": ["object"],
-      "value": ["number"],
-      "valueStyle": ["object"]
-    };
-  };
-
-  Ext_ux_gauge_Gauge_Component.EVENTS = function EVENTS() {
-    return [];
-  };
-
-  Ext_ux_gauge_Gauge_Component.METHODS = function METHODS() {
+  Ext_ux_gauge_Gauge.EVENTS = function EVENTS() {
     return [{
-      name: 'animate',
-      "function": function _function(from, to, duration, easing, fn, scope) {
-        return this.ext.animate(from, to, duration, easing, fn, scope);
-      }
+      name: 'added',
+      parameters: 'sender,container,index'
     }, {
-      name: 'camelToHyphen',
-      "function": function _function(name) {
-        return this.ext.camelToHyphen(name);
-      }
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'createInterpolator',
-      "function": function _function(rangeCheck) {
-        return this.ext.createInterpolator(rangeCheck);
-      }
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'fitSectorInPaddedRect',
-      "function": function _function(width, height, padding, startAngle, lengthAngle, ratio) {
-        return this.ext.fitSectorInPaddedRect(width, height, padding, startAngle, lengthAngle, ratio);
-      }
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'fitSectorInRect',
-      "function": function _function(width, height, startAngle, lengthAngle, ratio) {
-        return this.ext.fitSectorInRect(width, height, startAngle, lengthAngle, ratio);
-      }
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'getRadiusFn',
-      "function": function _function(radius) {
-        return this.ext.getRadiusFn(radius);
-      }
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'getUnitSectorExtrema',
-      "function": function _function(startAngle, lengthAngle) {
-        return this.ext.getUnitSectorExtrema(startAngle, lengthAngle);
-      }
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'normalizeAngle',
-      "function": function _function(angle) {
-        return this.ext.normalizeAngle(angle);
-      }
+      name: 'beforehide',
+      parameters: 'sender'
     }, {
-      name: 'resizeGradients',
-      "function": function _function(size) {
-        return this.ext.resizeGradients(size);
-      }
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'setGradientSize',
-      "function": function _function(gradient, x1, y1, x2, y2) {
-        return this.ext.setGradientSize(gradient, x1, y1, x2, y2);
-      }
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'setGradientStops',
-      "function": function _function(gradient, stops) {
-        return this.ext.setGradientStops(gradient, stops);
-      }
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'stopAnimation',
-      "function": function _function() {
-        return this.ext.stopAnimation();
-      }
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforetofront',
+      parameters: 'gauge'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'gauge,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'erased',
+      parameters: 'sender'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'gauge,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'gauge,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'gauge,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
+    }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'show',
+      parameters: 'sender'
+    }, {
+      name: 'tofront',
+      parameters: 'gauge'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  _createClass(Ext_ux_gauge_Gauge_Component, null, [{
+  Ext_ux_gauge_Gauge.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_ux_gauge_Gauge.PROPERTIES());
+    return Ext_Gadget.getProperties(properties);
+  };
+
+  Ext_ux_gauge_Gauge.getEvents = function getEvents(events) {
+    events = events.concat(Ext_ux_gauge_Gauge.EVENTS());
+    return Ext_Gadget.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'gauge'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_ux_gauge_Gauge, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Gadget_Component.observedAttributes;
+      var attrs = _Ext_Gadget.observedAttributes; //for (var property in Ext_ux_gauge_Gauge.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_ux_gauge_Gauge_Component.PROPERTIESOBJECT()) {
+      Ext_ux_gauge_Gauge.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_ux_gauge_Gauge_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_ux_gauge_Gauge.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_ux_gauge_Gauge_Component(propertiesobject, methods, events) {
-    return _Ext_Gadget_Component.call(this, Object.assign(propertiesobject, Ext_ux_gauge_Gauge_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_ux_gauge_Gauge_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_ux_gauge_Gauge_Component.METHODS()), events.concat(Ext_ux_gauge_Gauge_Component.EVENTS())) || this; //this.XTYPE = Ext_ux_gauge_Gauge_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_ux_gauge_Gauge_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_ux_gauge_Gauge_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_ux_gauge_Gauge_Component.EVENTS());
+  function Ext_ux_gauge_Gauge(properties, events) {
+    return _Ext_Gadget.call(this, properties.concat(Ext_ux_gauge_Gauge.PROPERTIES()), events.concat(Ext_ux_gauge_Gauge.EVENTS())) || this;
   }
 
-  var _proto = Ext_ux_gauge_Gauge_Component.prototype;
+  var _proto = Ext_ux_gauge_Gauge.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    _Ext_Gadget_Component.prototype.connectedCallback.call(this);
+    _Ext_Gadget.prototype.connectedCallback.call(this);
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
-    _Ext_Gadget_Component.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+    _Ext_Gadget.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_ux_gauge_Gauge_Component;
-}(Ext_Gadget_Component);
+  return Ext_ux_gauge_Gauge;
+}(Ext_Gadget);
 
-export { Ext_ux_gauge_Gauge_Component as default };
+export { Ext_ux_gauge_Gauge as default };

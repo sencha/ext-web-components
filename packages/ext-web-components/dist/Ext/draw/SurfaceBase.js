@@ -1,65 +1,115 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Widget_Component from '../../Ext/Widget';
+import Ext_Widget from '../../Ext/Widget';
 
-var Ext_draw_SurfaceBase_Component =
+var Ext_draw_SurfaceBase =
 /*#__PURE__*/
-function (_Ext_Widget_Component) {
-  _inheritsLoose(Ext_draw_SurfaceBase_Component, _Ext_Widget_Component);
+function (_Ext_Widget) {
+  _inheritsLoose(Ext_draw_SurfaceBase, _Ext_Widget);
 
-  //events
-  //configs
-  Ext_draw_SurfaceBase_Component.XTYPE = function XTYPE() {
-    return '';
+  Ext_draw_SurfaceBase.PROPERTIES = function PROPERTIES() {
+    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'bind', 'border', 'cls', 'constrainAlign', 'controller', 'defaultListenerScope', 'disabled', 'flex', 'floated', 'focusCls', 'height', 'hidden', 'hideMode', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'listeners', 'margin', 'name', 'nameable', 'plugins', 'publishes', 'reference', 'relative', 'renderTo', 'ripple', 'session', 'shadow', 'shareableName', 'shim', 'style', 'toFrontOnShow', 'touchAction', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'viewModel', 'width', 'x', 'y', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_draw_SurfaceBase_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {};
+  Ext_draw_SurfaceBase.EVENTS = function EVENTS() {
+    return [{
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforetofront',
+      parameters: 'undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'undefined,event'
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'focus',
+      parameters: 'undefined,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'undefined,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'undefined,event'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'tofront',
+      parameters: 'undefined'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
+    }];
   };
 
-  Ext_draw_SurfaceBase_Component.EVENTS = function EVENTS() {
-    return [];
+  Ext_draw_SurfaceBase.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_draw_SurfaceBase.PROPERTIES());
+    return Ext_Widget.getProperties(properties);
   };
 
-  Ext_draw_SurfaceBase_Component.METHODS = function METHODS() {
-    return [];
-  };
+  Ext_draw_SurfaceBase.getEvents = function getEvents(events) {
+    events = events.concat(Ext_draw_SurfaceBase.EVENTS());
+    return Ext_Widget.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return ''}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
 
-  _createClass(Ext_draw_SurfaceBase_Component, null, [{
+  _createClass(Ext_draw_SurfaceBase, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Widget_Component.observedAttributes;
+      var attrs = _Ext_Widget.observedAttributes; //for (var property in Ext_draw_SurfaceBase.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_draw_SurfaceBase_Component.PROPERTIESOBJECT()) {
+      Ext_draw_SurfaceBase.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_draw_SurfaceBase_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_draw_SurfaceBase.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_draw_SurfaceBase_Component(propertiesobject, methods, events) {
-    return _Ext_Widget_Component.call(this, Object.assign(propertiesobject, Ext_draw_SurfaceBase_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_draw_SurfaceBase_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_draw_SurfaceBase_Component.METHODS()), events.concat(Ext_draw_SurfaceBase_Component.EVENTS())) || this; //this.XTYPE = Ext_draw_SurfaceBase_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_draw_SurfaceBase_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_draw_SurfaceBase_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_draw_SurfaceBase_Component.EVENTS());
+  function Ext_draw_SurfaceBase(properties, events) {
+    return _Ext_Widget.call(this, properties.concat(Ext_draw_SurfaceBase.PROPERTIES()), events.concat(Ext_draw_SurfaceBase.EVENTS())) || this;
   }
 
-  var _proto = Ext_draw_SurfaceBase_Component.prototype;
+  var _proto = Ext_draw_SurfaceBase.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    _Ext_Widget_Component.prototype.connectedCallback.call(this);
+    _Ext_Widget.prototype.connectedCallback.call(this);
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
-    _Ext_Widget_Component.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+    _Ext_Widget.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_draw_SurfaceBase_Component;
-}(Ext_Widget_Component);
+  return Ext_draw_SurfaceBase;
+}(Ext_Widget);
 
-export { Ext_draw_SurfaceBase_Component as default };
+export { Ext_draw_SurfaceBase as default };

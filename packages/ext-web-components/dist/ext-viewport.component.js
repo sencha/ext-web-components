@@ -1,5 +1,5 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_viewport_Default_Component from './Ext/viewport/Default';
+import Ext_viewport_Default from './Ext/viewport/Default';
 import HTMLParsedElement from './HTMLParsedElement';
 export var ExtViewportComponent =
 /*#__PURE__*/
@@ -9,13 +9,13 @@ function (_Ext_viewport_Default) {
   function ExtViewportComponent() {
     var _this;
 
-    _this = _Ext_viewport_Default.call(this, {}, [], []) || this;
+    _this = _Ext_viewport_Default.call(this, [], []) || this;
     _this.xtype = 'viewport';
     return _this;
   }
 
   return ExtViewportComponent;
-}(Ext_viewport_Default_Component); //(function () {
+}(Ext_viewport_Default); //(function () {
 //    Ext.onReady(function() {
 //        window.customElements.define('ext-viewport', ExtViewportComponent);
 //    });

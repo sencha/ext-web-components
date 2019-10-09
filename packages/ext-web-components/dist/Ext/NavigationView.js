@@ -1,199 +1,268 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Container_Component from '../Ext/Container';
+import Ext_Container from '../Ext/Container';
 
-var Ext_NavigationView_Component =
+var Ext_NavigationView =
 /*#__PURE__*/
-function (_Ext_Container_Compon) {
-  _inheritsLoose(Ext_NavigationView_Component, _Ext_Container_Compon);
+function (_Ext_Container) {
+  _inheritsLoose(Ext_NavigationView, _Ext_Container);
 
-  //configs
-  Ext_NavigationView_Component.XTYPE = function XTYPE() {
-    return 'navigationview';
+  Ext_NavigationView.PROPERTIES = function PROPERTIES() {
+    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'cardSwitchAnimation', 'centered', 'cls', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultBackButtonText', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'disabled', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'listeners', 'manageBorders', 'margin', 'masked', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'navigationBar', 'padding', 'plugins', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'useTitleForBackButtonText', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_NavigationView_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "defaultBackButtonText": ["string"],
-      "items": ["array", "object"],
-      "layout": ["object"],
-      "navigationBar": ["boolean", "object"],
-      "useTitleForBackButtonText": ["boolean"]
-    };
-  };
-
-  Ext_NavigationView_Component.EVENTS = function EVENTS() {
+  Ext_NavigationView.EVENTS = function EVENTS() {
     return [{
+      name: 'activate',
+      parameters: 'newActiveItem,navigationview,oldActiveItem'
+    }, {
+      name: 'activeItemchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'add',
+      parameters: 'navigationview,item,index'
+    }, {
+      name: 'added',
+      parameters: 'sender,container,index'
+    }, {
       name: 'back',
-      parameters: 'undefined'
+      parameters: 'navigationview'
     }, {
-      name: 'pop',
-      parameters: 'undefined,view'
+      name: 'beforeactiveItemchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'push',
-      parameters: 'undefined,view'
-    }];
-  };
-
-  Ext_NavigationView_Component.METHODS = function METHODS() {
-    return [{
-      name: 'applyActiveItem',
-      "function": function _function(activeItem, currentActiveItem) {
-        return this.ext.applyActiveItem(activeItem, currentActiveItem);
-      }
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'applyNavigationBar',
-      "function": function _function(config) {
-        return this.ext.applyNavigationBar(config);
-      }
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'beforePop',
-      "function": function _function(count) {
-        return this.ext.beforePop(count);
-      }
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'doPop',
-      "function": function _function() {
-        return this.ext.doPop();
-      }
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'doRemove',
-      "function": function _function() {
-        return this.ext.doRemove();
-      }
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'getPreviousItem',
-      "function": function _function() {
-        return this.ext.getPreviousItem();
-      }
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehide',
+      parameters: 'sender'
+    }, {
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforetofront',
+      parameters: 'navigationview'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'navigationview,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'deactivate',
+      parameters: 'oldActiveItem,navigationview,newActiveItem'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'erased',
+      parameters: 'sender'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'navigationview,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'navigationview,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'navigationview,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
     }, {
       name: 'initialize',
-      "function": function _function() {
-        return this.ext.initialize();
-      }
+      parameters: 'sender'
     }, {
-      name: 'onBackButtonContainerAdd',
-      "function": function _function(toolbar, item) {
-        return this.ext.onBackButtonContainerAdd(toolbar, item);
-      }
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
     }, {
-      name: 'onBackButtonContainerRemove',
-      "function": function _function(toolbar, item) {
-        return this.ext.onBackButtonContainerRemove(toolbar, item);
-      }
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
     }, {
-      name: 'onBackButtonTap',
-      "function": function _function() {
-        return this.ext.onBackButtonTap();
-      }
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
     }, {
-      name: 'onItemAdd',
-      "function": function _function(item, index) {
-        return this.ext.onItemAdd(item, index);
-      }
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'move',
+      parameters: 'navigationview,item,toIndex,fromIndex'
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
     }, {
       name: 'pop',
-      "function": function _function(count) {
-        return this.ext.pop(count);
-      }
+      parameters: 'navigationview,view'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
     }, {
       name: 'push',
-      "function": function _function(view) {
-        return this.ext.push(view);
-      }
+      parameters: 'navigationview,view'
     }, {
-      name: 'refreshBackButtonContainer',
-      "function": function _function() {
-        return this.ext.refreshBackButtonContainer();
-      }
+      name: 'remove',
+      parameters: 'navigationview,item,index'
     }, {
-      name: 'reset',
-      "function": function _function() {
-        return this.ext.reset();
-      }
+      name: 'removed',
+      parameters: 'sender,container,index'
     }, {
-      name: 'updateDefaultBackButtonText',
-      "function": function _function(defaultBackButtonText) {
-        return this.ext.updateDefaultBackButtonText(defaultBackButtonText);
-      }
+      name: 'renderedchange',
+      parameters: 'navigationview,item,rendered'
     }, {
-      name: 'updateNavigationBar',
-      "function": function _function(newNavigationBar, oldNavigationBar) {
-        return this.ext.updateNavigationBar(newNavigationBar, oldNavigationBar);
-      }
+      name: 'resize',
+      parameters: 'element,info'
     }, {
-      name: 'updateTitleContainerTitle',
-      "function": function _function(title) {
-        return this.ext.updateTitleContainerTitle(title);
-      }
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
     }, {
-      name: 'updateUseTitleForBackButtonText',
-      "function": function _function(useTitleForBackButtonText) {
-        return this.ext.updateUseTitleForBackButtonText(useTitleForBackButtonText);
-      }
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'show',
+      parameters: 'sender'
+    }, {
+      name: 'tofront',
+      parameters: 'navigationview'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  _createClass(Ext_NavigationView_Component, [{
-    key: "onback",
-    //events
-    get: function get() {
-      return this.getAttribute('onback');
-    },
-    set: function set(onback) {
-      this.setAttribute('onback', onback);
-    }
-  }, {
-    key: "onpop",
-    get: function get() {
-      return this.getAttribute('onpop');
-    },
-    set: function set(onpop) {
-      this.setAttribute('onpop', onpop);
-    }
-  }, {
-    key: "onpush",
-    get: function get() {
-      return this.getAttribute('onpush');
-    },
-    set: function set(onpush) {
-      this.setAttribute('onpush', onpush);
-    }
-  }], [{
+  Ext_NavigationView.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_NavigationView.PROPERTIES());
+    return Ext_Container.getProperties(properties);
+  };
+
+  Ext_NavigationView.getEvents = function getEvents(events) {
+    events = events.concat(Ext_NavigationView.EVENTS());
+    return Ext_Container.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'navigationview'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_NavigationView, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Container_Compon.observedAttributes;
+      var attrs = _Ext_Container.observedAttributes; //for (var property in Ext_NavigationView.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_NavigationView_Component.PROPERTIESOBJECT()) {
+      Ext_NavigationView.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_NavigationView_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_NavigationView.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_NavigationView_Component(propertiesobject, methods, events) {
-    return _Ext_Container_Compon.call(this, Object.assign(propertiesobject, Ext_NavigationView_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_NavigationView_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_NavigationView_Component.METHODS()), events.concat(Ext_NavigationView_Component.EVENTS())) || this; //this.XTYPE = Ext_NavigationView_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_NavigationView_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_NavigationView_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_NavigationView_Component.EVENTS());
+  function Ext_NavigationView(properties, events) {
+    return _Ext_Container.call(this, properties.concat(Ext_NavigationView.PROPERTIES()), events.concat(Ext_NavigationView.EVENTS())) || this;
   }
 
-  var _proto = Ext_NavigationView_Component.prototype;
+  var _proto = Ext_NavigationView.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    _Ext_Container_Compon.prototype.connectedCallback.call(this);
+    _Ext_Container.prototype.connectedCallback.call(this);
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
-    _Ext_Container_Compon.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+    _Ext_Container.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_NavigationView_Component;
-}(Ext_Container_Component);
+  return Ext_NavigationView;
+}(Ext_Container);
 
-export { Ext_NavigationView_Component as default };
+export { Ext_NavigationView as default };

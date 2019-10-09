@@ -1,44 +1,137 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_calendar_panel_AbstractBase_Component from '../../../Ext/calendar/panel/AbstractBase';
+import Ext_calendar_panel_AbstractBase from '../../../Ext/calendar/panel/AbstractBase';
 
-var Ext_calendar_panel_Base_Component =
+var Ext_calendar_panel_Base =
 /*#__PURE__*/
 function (_Ext_calendar_panel_A) {
-  _inheritsLoose(Ext_calendar_panel_Base_Component, _Ext_calendar_panel_A);
+  _inheritsLoose(Ext_calendar_panel_Base, _Ext_calendar_panel_A);
 
-  //configs
-  Ext_calendar_panel_Base_Component.XTYPE = function XTYPE() {
-    return '';
+  Ext_calendar_panel_Base.PROPERTIES = function PROPERTIES() {
+    return ['activeChildTabIndex', 'activeItem', 'addForm', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'anchor', 'anchorPosition', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'bbar', 'bind', 'bodyBorder', 'bodyCls', 'bodyPadding', 'bodyStyle', 'border', 'bottom', 'buttonAlign', 'buttons', 'buttonToolbar', 'cardSwitchAnimation', 'centered', 'closable', 'closeAction', 'closeToolText', 'cls', 'collapsed', 'collapsible', 'compact', 'compactOptions', 'constrainAlign', 'contentEl', 'control', 'controller', 'controlStoreRange', 'data', 'dayHeader', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultToolWeights', 'defaultType', 'disabled', 'displayed', 'docked', 'draggable', 'editForm', 'eventDefaults', 'eventRelayers', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'gestureNavigation', 'header', 'headerPosition', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'icon', 'iconAlign', 'iconCls', 'id', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'lbar', 'left', 'listeners', 'manageBorders', 'margin', 'masked', 'maxHeight', 'maxWidth', 'minButtonWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'publishes', 'rbar', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'resizable', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'standardButtons', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'tbar', 'timezoneOffset', 'title', 'titleAlign', 'titleCollapse', 'toFrontOnShow', 'toolDefaults', 'tools', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'view', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_calendar_panel_Base_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "addForm": ["object"],
-      "cls": ["string", "string[]"],
-      "compact": ["boolean"],
-      "compactOptions": ["object"],
-      "controlStoreRange": ["boolean"],
-      "dayHeader": ["object"],
-      "editForm": ["object"],
-      "eventDefaults": ["object"],
-      "eventRelayers": ["object"],
-      "gestureNavigation": ["boolean"],
-      "store": ["object", "Ext.calendar.store.Calendars"],
-      "timezoneOffset": ["number"],
-      "twoWayBindable": ["string", "string[]", "object"],
-      "value": ["date"],
-      "view": ["object"]
-    };
-  };
-
-  Ext_calendar_panel_Base_Component.EVENTS = function EVENTS() {
+  Ext_calendar_panel_Base.EVENTS = function EVENTS() {
     return [{
+      name: 'activate',
+      parameters: 'newActiveItem,undefined,oldActiveItem'
+    }, {
+      name: 'activeItemchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'add',
+      parameters: 'undefined,item,index'
+    }, {
+      name: 'added',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'beforeactiveItemchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecollapse',
+      parameters: 'undefined'
+    }, {
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
       name: 'beforeeventadd',
       parameters: 'undefined,context'
     }, {
       name: 'beforeeventedit',
       parameters: 'undefined,context'
+    }, {
+      name: 'beforeexpand',
+      parameters: 'undefined'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehide',
+      parameters: 'sender'
+    }, {
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
+      name: 'beforeresizedragstart',
+      parameters: 'undefined,context'
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforetofront',
+      parameters: 'undefined'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'undefined,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'collapse',
+      parameters: 'undefined'
+    }, {
+      name: 'deactivate',
+      parameters: 'oldActiveItem,undefined,newActiveItem'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'drawerhide',
+      parameters: 'undefined'
+    }, {
+      name: 'drawershow',
+      parameters: 'undefined'
+    }, {
+      name: 'erased',
+      parameters: 'sender'
     }, {
       name: 'eventadd',
       parameters: 'undefined,context'
@@ -52,6 +145,108 @@ function (_Ext_calendar_panel_A) {
       name: 'eventtap',
       parameters: 'undefined,context'
     }, {
+      name: 'expand',
+      parameters: 'undefined'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'undefined,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'undefined,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'undefined,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
+    }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'move',
+      parameters: 'undefined,item,toIndex,fromIndex'
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'remove',
+      parameters: 'undefined,item,index'
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'renderedchange',
+      parameters: 'undefined,item,rendered'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'resizedrag',
+      parameters: 'undefined,context'
+    }, {
+      name: 'resizedragcancel',
+      parameters: 'undefined,context'
+    }, {
+      name: 'resizedragend',
+      parameters: 'undefined,context'
+    }, {
+      name: 'resizedragstart',
+      parameters: 'undefined,context'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'show',
+      parameters: 'sender'
+    }, {
+      name: 'tofront',
+      parameters: 'undefined'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
       name: 'validateeventadd',
       parameters: 'undefined,context'
     }, {
@@ -63,189 +258,55 @@ function (_Ext_calendar_panel_A) {
     }, {
       name: 'valuechange',
       parameters: 'undefined,context'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  Ext_calendar_panel_Base_Component.METHODS = function METHODS() {
-    return [{
-      name: 'calculateMoveNext',
-      "function": function _function() {
-        return this.ext.calculateMoveNext();
-      }
-    }, {
-      name: 'calculateMovePrevious',
-      "function": function _function() {
-        return this.ext.calculateMovePrevious();
-      }
-    }, {
-      name: 'createItemRelayer',
-      "function": function _function(name) {
-        return this.ext.createItemRelayer(name);
-      }
-    }, {
-      name: 'generateProxyMethod',
-      "function": function _function(thisCfg, targetCfg, targetName) {
-        return this.ext.generateProxyMethod(thisCfg, targetCfg, targetName);
-      }
-    }, {
-      name: 'getDisplayRange',
-      "function": function _function() {
-        return this.ext.getDisplayRange();
-      }
-    }, {
-      name: 'getVisibleRange',
-      "function": function _function() {
-        return this.ext.getVisibleRange();
-      }
-    }, {
-      name: 'initRelayers',
-      "function": function _function() {
-        return this.ext.initRelayers();
-      }
-    }, {
-      name: 'moveNext',
-      "function": function _function() {
-        return this.ext.moveNext();
-      }
-    }, {
-      name: 'movePrevious',
-      "function": function _function() {
-        return this.ext.movePrevious();
-      }
-    }, {
-      name: 'navigate',
-      "function": function _function(amount, interval) {
-        return this.ext.navigate(amount, interval);
-      }
-    }, {
-      name: 'refreshEvents',
-      "function": function _function() {
-        return this.ext.refreshEvents();
-      }
-    }, {
-      name: 'setupProxy',
-      "function": function _function(configs, targetName) {
-        return this.ext.setupProxy(configs, targetName);
-      }
-    }, {
-      name: 'showAddForm',
-      "function": function _function(data, options) {
-        return this.ext.showAddForm(data, options);
-      }
-    }, {
-      name: 'showEditForm',
-      "function": function _function(event, options) {
-        return this.ext.showEditForm(event, options);
-      }
-    }];
+  Ext_calendar_panel_Base.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_calendar_panel_Base.PROPERTIES());
+    return Ext_calendar_panel_AbstractBase.getProperties(properties);
   };
 
-  _createClass(Ext_calendar_panel_Base_Component, [{
-    key: "onbeforeeventadd",
-    //events
-    get: function get() {
-      return this.getAttribute('onbeforeeventadd');
-    },
-    set: function set(onbeforeeventadd) {
-      this.setAttribute('onbeforeeventadd', onbeforeeventadd);
-    }
-  }, {
-    key: "onbeforeeventedit",
-    get: function get() {
-      return this.getAttribute('onbeforeeventedit');
-    },
-    set: function set(onbeforeeventedit) {
-      this.setAttribute('onbeforeeventedit', onbeforeeventedit);
-    }
-  }, {
-    key: "oneventadd",
-    get: function get() {
-      return this.getAttribute('oneventadd');
-    },
-    set: function set(oneventadd) {
-      this.setAttribute('oneventadd', oneventadd);
-    }
-  }, {
-    key: "oneventdrop",
-    get: function get() {
-      return this.getAttribute('oneventdrop');
-    },
-    set: function set(oneventdrop) {
-      this.setAttribute('oneventdrop', oneventdrop);
-    }
-  }, {
-    key: "oneventedit",
-    get: function get() {
-      return this.getAttribute('oneventedit');
-    },
-    set: function set(oneventedit) {
-      this.setAttribute('oneventedit', oneventedit);
-    }
-  }, {
-    key: "oneventtap",
-    get: function get() {
-      return this.getAttribute('oneventtap');
-    },
-    set: function set(oneventtap) {
-      this.setAttribute('oneventtap', oneventtap);
-    }
-  }, {
-    key: "onvalidateeventadd",
-    get: function get() {
-      return this.getAttribute('onvalidateeventadd');
-    },
-    set: function set(onvalidateeventadd) {
-      this.setAttribute('onvalidateeventadd', onvalidateeventadd);
-    }
-  }, {
-    key: "onvalidateeventdrop",
-    get: function get() {
-      return this.getAttribute('onvalidateeventdrop');
-    },
-    set: function set(onvalidateeventdrop) {
-      this.setAttribute('onvalidateeventdrop', onvalidateeventdrop);
-    }
-  }, {
-    key: "onvalidateeventedit",
-    get: function get() {
-      return this.getAttribute('onvalidateeventedit');
-    },
-    set: function set(onvalidateeventedit) {
-      this.setAttribute('onvalidateeventedit', onvalidateeventedit);
-    }
-  }, {
-    key: "onvaluechange",
-    get: function get() {
-      return this.getAttribute('onvaluechange');
-    },
-    set: function set(onvaluechange) {
-      this.setAttribute('onvaluechange', onvaluechange);
-    }
-  }], [{
+  Ext_calendar_panel_Base.getEvents = function getEvents(events) {
+    events = events.concat(Ext_calendar_panel_Base.EVENTS());
+    return Ext_calendar_panel_AbstractBase.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return ''}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_calendar_panel_Base, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_calendar_panel_A.observedAttributes;
+      var attrs = _Ext_calendar_panel_A.observedAttributes; //for (var property in Ext_calendar_panel_Base.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_calendar_panel_Base_Component.PROPERTIESOBJECT()) {
+      Ext_calendar_panel_Base.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_calendar_panel_Base_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_calendar_panel_Base.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_calendar_panel_Base_Component(propertiesobject, methods, events) {
-    return _Ext_calendar_panel_A.call(this, Object.assign(propertiesobject, Ext_calendar_panel_Base_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_calendar_panel_Base_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_calendar_panel_Base_Component.METHODS()), events.concat(Ext_calendar_panel_Base_Component.EVENTS())) || this; //this.XTYPE = Ext_calendar_panel_Base_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_calendar_panel_Base_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_calendar_panel_Base_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_calendar_panel_Base_Component.EVENTS());
+  function Ext_calendar_panel_Base(properties, events) {
+    return _Ext_calendar_panel_A.call(this, properties.concat(Ext_calendar_panel_Base.PROPERTIES()), events.concat(Ext_calendar_panel_Base.EVENTS())) || this;
   }
 
-  var _proto = Ext_calendar_panel_Base_Component.prototype;
+  var _proto = Ext_calendar_panel_Base.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
     _Ext_calendar_panel_A.prototype.connectedCallback.call(this);
@@ -255,7 +316,7 @@ function (_Ext_calendar_panel_A) {
     _Ext_calendar_panel_A.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_calendar_panel_Base_Component;
-}(Ext_calendar_panel_AbstractBase_Component);
+  return Ext_calendar_panel_Base;
+}(Ext_calendar_panel_AbstractBase);
 
-export { Ext_calendar_panel_Base_Component as default };
+export { Ext_calendar_panel_Base as default };

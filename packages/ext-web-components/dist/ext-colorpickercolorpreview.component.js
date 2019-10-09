@@ -1,5 +1,5 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_ux_colorpick_ColorPreview_Component from './Ext/ux/colorpick/ColorPreview';
+import Ext_ux_colorpick_ColorPreview from './Ext/ux/colorpick/ColorPreview';
 import HTMLParsedElement from './HTMLParsedElement';
 export var ExtColorpickercolorpreviewComponent =
 /*#__PURE__*/
@@ -9,13 +9,13 @@ function (_Ext_ux_colorpick_Col) {
   function ExtColorpickercolorpreviewComponent() {
     var _this;
 
-    _this = _Ext_ux_colorpick_Col.call(this, {}, [], []) || this;
+    _this = _Ext_ux_colorpick_Col.call(this, [], []) || this;
     _this.xtype = 'colorpickercolorpreview';
     return _this;
   }
 
   return ExtColorpickercolorpreviewComponent;
-}(Ext_ux_colorpick_ColorPreview_Component); //(function () {
+}(Ext_ux_colorpick_ColorPreview); //(function () {
 //    Ext.onReady(function() {
 //        window.customElements.define('ext-colorpickercolorpreview', ExtColorpickercolorpreviewComponent);
 //    });

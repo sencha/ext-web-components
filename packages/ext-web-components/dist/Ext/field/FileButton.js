@@ -1,86 +1,250 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Button_Component from '../../Ext/Button';
+import Ext_Button from '../../Ext/Button';
 
-var Ext_field_FileButton_Component =
+var Ext_field_FileButton =
 /*#__PURE__*/
-function (_Ext_Button_Component) {
-  _inheritsLoose(Ext_field_FileButton_Component, _Ext_Button_Component);
+function (_Ext_Button) {
+  _inheritsLoose(Ext_field_FileButton, _Ext_Button);
 
-  //configs
-  Ext_field_FileButton_Component.XTYPE = function XTYPE() {
-    return 'filebutton';
+  Ext_field_FileButton.PROPERTIES = function PROPERTIES() {
+    return ['accept', 'alignSelf', 'allowDepress', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'arrow', 'arrowAlign', 'autoEvent', 'axisLock', 'badgeText', 'bind', 'border', 'bottom', 'buttonType', 'capture', 'centered', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'destroyMenu', 'disabled', 'displayed', 'docked', 'draggable', 'enableToggle', 'flex', 'floated', 'focusCls', 'fullscreen', 'handler', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'icon', 'iconAlign', 'iconCls', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'menu', 'menuAlign', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'multiple', 'name', 'nameable', 'padding', 'plugins', 'pressed', 'pressedDelay', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scope', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'stretchMenu', 'style', 'tabIndex', 'text', 'textAlign', 'toFrontOnShow', 'toggleHandler', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_field_FileButton_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "accept": ["string"],
-      "capture": ["string"],
-      "multiple": ["boolean"],
-      "value": ["string"]
-    };
-  };
-
-  Ext_field_FileButton_Component.EVENTS = function EVENTS() {
+  Ext_field_FileButton.EVENTS = function EVENTS() {
     return [{
+      name: 'added',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehide',
+      parameters: 'sender'
+    }, {
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
+      name: 'beforepressedchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforetofront',
+      parameters: 'filebutton'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'filebutton,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
+    }, {
       name: 'change',
-      parameters: 'undefined,newValue,oldValue'
+      parameters: 'filebutton,newValue,oldValue'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'erased',
+      parameters: 'sender'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'filebutton,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'filebutton,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'filebutton,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
+    }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'pressedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'release',
+      parameters: 'filebutton,e'
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'show',
+      parameters: 'sender'
+    }, {
+      name: 'tap',
+      parameters: 'filebutton,e'
+    }, {
+      name: 'tofront',
+      parameters: 'filebutton'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  Ext_field_FileButton_Component.METHODS = function METHODS() {
-    return [{
-      name: 'getFiles',
-      "function": function _function() {
-        return this.ext.getFiles();
-      }
-    }];
+  Ext_field_FileButton.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_field_FileButton.PROPERTIES());
+    return Ext_Button.getProperties(properties);
   };
 
-  _createClass(Ext_field_FileButton_Component, [{
-    key: "onchange",
-    //events
-    get: function get() {
-      return this.getAttribute('onchange');
-    },
-    set: function set(onchange) {
-      this.setAttribute('onchange', onchange);
-    }
-  }], [{
+  Ext_field_FileButton.getEvents = function getEvents(events) {
+    events = events.concat(Ext_field_FileButton.EVENTS());
+    return Ext_Button.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'filebutton'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_field_FileButton, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Button_Component.observedAttributes;
+      var attrs = _Ext_Button.observedAttributes; //for (var property in Ext_field_FileButton.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_field_FileButton_Component.PROPERTIESOBJECT()) {
+      Ext_field_FileButton.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_field_FileButton_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_field_FileButton.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_field_FileButton_Component(propertiesobject, methods, events) {
-    return _Ext_Button_Component.call(this, Object.assign(propertiesobject, Ext_field_FileButton_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_field_FileButton_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_field_FileButton_Component.METHODS()), events.concat(Ext_field_FileButton_Component.EVENTS())) || this; //this.XTYPE = Ext_field_FileButton_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_field_FileButton_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_field_FileButton_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_field_FileButton_Component.EVENTS());
+  function Ext_field_FileButton(properties, events) {
+    return _Ext_Button.call(this, properties.concat(Ext_field_FileButton.PROPERTIES()), events.concat(Ext_field_FileButton.EVENTS())) || this;
   }
 
-  var _proto = Ext_field_FileButton_Component.prototype;
+  var _proto = Ext_field_FileButton.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    _Ext_Button_Component.prototype.connectedCallback.call(this);
+    _Ext_Button.prototype.connectedCallback.call(this);
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
-    _Ext_Button_Component.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+    _Ext_Button.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_field_FileButton_Component;
-}(Ext_Button_Component);
+  return Ext_field_FileButton;
+}(Ext_Button);
 
-export { Ext_field_FileButton_Component as default };
+export { Ext_field_FileButton as default };

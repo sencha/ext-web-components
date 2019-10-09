@@ -1,127 +1,258 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_SingleSlider_Component from '../../Ext/field/SingleSlider';
+import Ext_field_SingleSlider from '../../Ext/field/SingleSlider';
 
-var Ext_field_Toggle_Component =
+var Ext_field_Toggle =
 /*#__PURE__*/
 function (_Ext_field_SingleSlid) {
-  _inheritsLoose(Ext_field_Toggle_Component, _Ext_field_SingleSlid);
+  _inheritsLoose(Ext_field_Toggle, _Ext_field_SingleSlid);
 
-  //configs
-  Ext_field_Toggle_Component.XTYPE = function XTYPE() {
-    return 'togglefield';
+  Ext_field_Toggle.PROPERTIES = function PROPERTIES() {
+    return ['activeLabel', 'alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoFitErrors', 'axisLock', 'bind', 'bodyAlign', 'border', 'bottom', 'boxLabel', 'boxLabelAlign', 'bubbleDirty', 'centered', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'dataType', 'defaultListenerScope', 'dirty', 'disabled', 'displayed', 'docked', 'draggable', 'error', 'errorMessage', 'errorTarget', 'errorTip', 'errorTpl', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inactiveLabel', 'increment', 'inline', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'label', 'labelAlign', 'labelCls', 'labelMinWidth', 'labelTextAlign', 'labelWidth', 'labelWrap', 'left', 'listeners', 'liveUpdate', 'margin', 'maxHeight', 'maxValue', 'maxWidth', 'minHeight', 'minValue', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'readOnly', 'record', 'reference', 'relative', 'renderTo', 'required', 'requiredMessage', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'sideError', 'slider', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'tipError', 'titleError', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'underError', 'userCls', 'userSelectable', 'validateDisabled', 'validationMessage', 'validators', 'value', 'values', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_field_Toggle_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "activeLabel": ["string"],
-      "bodyAlign": ["'start'", "'center'", "'end'", "'stretch'"],
-      "inactiveLabel": ["string"],
-      "publishes": ["string", "string[]", "object"],
-      "slider": ["any"],
-      "twoWayBindable": ["string", "string[]", "object"],
-      "value": ["number", "number[]"]
-    };
-  };
-
-  Ext_field_Toggle_Component.EVENTS = function EVENTS() {
+  Ext_field_Toggle.EVENTS = function EVENTS() {
     return [{
+      name: 'added',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehide',
+      parameters: 'sender'
+    }, {
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforetofront',
+      parameters: 'togglefield'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'togglefield,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
+    }, {
       name: 'change',
-      parameters: 'undefined,newValue,oldValue'
+      parameters: 'togglefield,newValue,oldValue'
+    }, {
+      name: 'click',
+      parameters: 'e'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'dirtychange',
+      parameters: 'togglefield,dirty'
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
     }, {
       name: 'drag',
       parameters: ''
+    }, {
+      name: 'dragchange',
+      parameters: 'me,sl,newValue,oldValue'
     }, {
       name: 'dragend',
       parameters: ''
     }, {
       name: 'dragstart',
       parameters: ''
+    }, {
+      name: 'erased',
+      parameters: 'sender'
+    }, {
+      name: 'errorchange',
+      parameters: 'togglefield,error'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'togglefield,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'togglefield,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'togglefield,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
+    }, {
+      name: 'keyup',
+      parameters: 'e'
+    }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'mousedown',
+      parameters: 'e'
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
+    }, {
+      name: 'paste',
+      parameters: 'e'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'show',
+      parameters: 'sender'
+    }, {
+      name: 'tofront',
+      parameters: 'togglefield'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  Ext_field_Toggle_Component.METHODS = function METHODS() {
-    return [{
-      name: 'getRawValue',
-      "function": function _function() {
-        return this.ext.getRawValue();
-      }
-    }, {
-      name: 'toggle',
-      "function": function _function() {
-        return this.ext.toggle();
-      }
-    }, {
-      name: 'updateActiveLabel',
-      "function": function _function(newActiveLabel, oldActiveLabel) {
-        return this.ext.updateActiveLabel(newActiveLabel, oldActiveLabel);
-      }
-    }, {
-      name: 'updateInactiveLabel',
-      "function": function _function(newInactiveLabel, oldInactiveLabel) {
-        return this.ext.updateInactiveLabel(newInactiveLabel, oldInactiveLabel);
-      }
-    }];
+  Ext_field_Toggle.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_field_Toggle.PROPERTIES());
+    return Ext_field_SingleSlider.getProperties(properties);
   };
 
-  _createClass(Ext_field_Toggle_Component, [{
-    key: "onchange",
-    //events
-    get: function get() {
-      return this.getAttribute('onchange');
-    },
-    set: function set(onchange) {
-      this.setAttribute('onchange', onchange);
-    }
-  }, {
-    key: "ondrag",
-    get: function get() {
-      return this.getAttribute('ondrag');
-    },
-    set: function set(ondrag) {
-      this.setAttribute('ondrag', ondrag);
-    }
-  }, {
-    key: "ondragend",
-    get: function get() {
-      return this.getAttribute('ondragend');
-    },
-    set: function set(ondragend) {
-      this.setAttribute('ondragend', ondragend);
-    }
-  }, {
-    key: "ondragstart",
-    get: function get() {
-      return this.getAttribute('ondragstart');
-    },
-    set: function set(ondragstart) {
-      this.setAttribute('ondragstart', ondragstart);
-    }
-  }], [{
+  Ext_field_Toggle.getEvents = function getEvents(events) {
+    events = events.concat(Ext_field_Toggle.EVENTS());
+    return Ext_field_SingleSlider.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'togglefield'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_field_Toggle, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_field_SingleSlid.observedAttributes;
+      var attrs = _Ext_field_SingleSlid.observedAttributes; //for (var property in Ext_field_Toggle.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_field_Toggle_Component.PROPERTIESOBJECT()) {
+      Ext_field_Toggle.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_field_Toggle_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_field_Toggle.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_field_Toggle_Component(propertiesobject, methods, events) {
-    return _Ext_field_SingleSlid.call(this, Object.assign(propertiesobject, Ext_field_Toggle_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_field_Toggle_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_field_Toggle_Component.METHODS()), events.concat(Ext_field_Toggle_Component.EVENTS())) || this; //this.XTYPE = Ext_field_Toggle_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_field_Toggle_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_field_Toggle_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_field_Toggle_Component.EVENTS());
+  function Ext_field_Toggle(properties, events) {
+    return _Ext_field_SingleSlid.call(this, properties.concat(Ext_field_Toggle.PROPERTIES()), events.concat(Ext_field_Toggle.EVENTS())) || this;
   }
 
-  var _proto = Ext_field_Toggle_Component.prototype;
+  var _proto = Ext_field_Toggle.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
     _Ext_field_SingleSlid.prototype.connectedCallback.call(this);
@@ -131,7 +262,7 @@ function (_Ext_field_SingleSlid) {
     _Ext_field_SingleSlid.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_field_Toggle_Component;
-}(Ext_field_SingleSlider_Component);
+  return Ext_field_Toggle;
+}(Ext_field_SingleSlider);
 
-export { Ext_field_Toggle_Component as default };
+export { Ext_field_Toggle as default };

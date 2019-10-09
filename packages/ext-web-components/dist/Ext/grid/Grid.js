@@ -1,58 +1,116 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_dataview_List_Component from '../../Ext/dataview/List';
+import Ext_dataview_List from '../../Ext/dataview/List';
 
-var Ext_grid_Grid_Component =
+var Ext_grid_Grid =
 /*#__PURE__*/
-function (_Ext_dataview_List_Co) {
-  _inheritsLoose(Ext_grid_Grid_Component, _Ext_dataview_List_Co);
+function (_Ext_dataview_List) {
+  _inheritsLoose(Ext_grid_Grid, _Ext_dataview_List);
 
-  //configs
-  Ext_grid_Grid_Component.XTYPE = function XTYPE() {
-    return 'grid';
+  Ext_grid_Grid.PROPERTIES = function PROPERTIES() {
+    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'associatedData', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'bufferSize', 'cardSwitchAnimation', 'centered', 'cls', 'collapseDefaults', 'collapsible', 'columnLines', 'columnMenu', 'columnResize', 'columns', 'columnsMenuItem', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'deferEmptyText', 'deselectOnContainerClick', 'disabled', 'disableSelection', 'disclosureProperty', 'displayed', 'docked', 'draggable', 'emptyItemText', 'emptyState', 'emptyText', 'emptyTextDefaults', 'emptyTextProperty', 'enableColumnMove', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'grouped', 'groupFooter', 'groupHeader', 'grouping', 'groupPlaceholder', 'height', 'hidden', 'hideAnimation', 'hideHeaders', 'hideMode', 'hideOnMaskTap', 'hideScrollbar', 'horizontalOverflow', 'html', 'id', 'inactiveChildTabIndex', 'indexBar', 'infinite', 'inline', 'innerCls', 'innerCtHeight', 'innerWidth', 'instanceCls', 'itemButtonMode', 'itemCls', 'itemConfig', 'itemContentCls', 'itemDataMap', 'itemId', 'itemInnerCls', 'itemRipple', 'items', 'itemsFocusable', 'itemTpl', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'listeners', 'loadingHeight', 'loadingText', 'maintainChildNodes', 'manageBorders', 'margin', 'markDirty', 'masked', 'maxHeight', 'maxItemCache', 'maxWidth', 'minHeight', 'minimumBufferDistance', 'minWidth', 'modal', 'modelValidation', 'multiColumnSort', 'name', 'nameable', 'nameHolder', 'onItemDisclosure', 'padding', 'pinFooters', 'pinHeaders', 'pinnedFooter', 'pinnedFooterHeight', 'pinnedHeader', 'pinnedHeaderHeight', 'plugins', 'pressedDelay', 'preventSelectionOnDisclose', 'preventSelectionOnTool', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'reserveScrollbar', 'resetFocusPosition', 'right', 'ripple', 'rowLines', 'rowNumbers', 'scrollable', 'scrollDock', 'scrollToTopOnRefresh', 'selectable', 'selection', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'sortable', 'stateful', 'statefulDefaults', 'stateId', 'store', 'striped', 'style', 'tabIndex', 'title', 'titleBar', 'toFrontOnShow', 'tooltip', 'top', 'topRenderedIndex', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'triggerCtEvent', 'triggerEvent', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'variableHeights', 'verticalOverflow', 'viewModel', 'visibleHeight', 'visibleLeft', 'visibleTop', 'visibleWidth', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_grid_Grid_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "columnLines": ["boolean"],
-      "columnMenu": ["object"],
-      "columnResize": ["boolean"],
-      "columns": ["Ext.grid.column.Column[]"],
-      "columnsMenuItem": ["Ext.grid.menu.Columns"],
-      "enableColumnMove": ["boolean"],
-      "groupHeader": ["object", "Ext.dataview.ItemHeader"],
-      "hideHeaders": ["boolean"],
-      "hideScrollbar": ["boolean"],
-      "infinite": ["boolean"],
-      "itemConfig": ["object", "Ext.grid.Row"],
-      "itemsFocusable": ["any"],
-      "multiColumnSort": ["boolean"],
-      "pinnedHeader": ["object"],
-      "reserveScrollbar": ["boolean"],
-      "rowNumbers": ["boolean", "object"],
-      "scrollable": ["boolean", "string", "object"],
-      "scrollToTopOnRefresh": ["boolean"],
-      "selectable": ["Ext.grid.selection.Model"],
-      "sortable": ["boolean"],
-      "striped": ["boolean"],
-      "title": ["string"],
-      "titleBar": ["object"]
-    };
-  };
-
-  Ext_grid_Grid_Component.EVENTS = function EVENTS() {
+  Ext_grid_Grid.EVENTS = function EVENTS() {
     return [{
+      name: 'activate',
+      parameters: 'newActiveItem,grid,oldActiveItem'
+    }, {
+      name: 'activeItemchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'add',
+      parameters: ''
+    }, {
+      name: 'added',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'beforeactiveItemchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
       name: 'beforecomplete',
       parameters: 'editor,value,startValue,The'
+    }, {
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforeedit',
       parameters: 'sender,location'
     }, {
+      name: 'beforegroupcollapse',
+      parameters: 'grid,group'
+    }, {
+      name: 'beforegroupexpand',
+      parameters: 'grid,group'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehide',
+      parameters: 'sender'
+    }, {
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
       name: 'beforeselectionextend',
       parameters: 'grid,An,extension'
     }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
       name: 'beforestartedit',
       parameters: 'editor,boundEl,value,The'
+    }, {
+      name: 'beforestorechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforetofront',
+      parameters: 'grid'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'grid,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
     }, {
       name: 'canceledit',
       parameters: 'editor,value,startValue'
@@ -63,41 +121,230 @@ function (_Ext_dataview_List_Co) {
       name: 'cellselection',
       parameters: 'grid,selection'
     }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'childdoubletap',
+      parameters: 'grid,location'
+    }, {
+      name: 'childlongpress',
+      parameters: 'grid,location'
+    }, {
+      name: 'childmouseenter',
+      parameters: 'grid,location'
+    }, {
+      name: 'childmouseleave',
+      parameters: 'grid,location'
+    }, {
+      name: 'childsingletap',
+      parameters: 'grid,location'
+    }, {
+      name: 'childtap',
+      parameters: 'grid,location'
+    }, {
+      name: 'childtaphold',
+      parameters: 'grid,location'
+    }, {
+      name: 'childtouchcancel',
+      parameters: 'grid,location'
+    }, {
+      name: 'childtouchend',
+      parameters: 'grid,location'
+    }, {
+      name: 'childtouchmove',
+      parameters: 'grid,location'
+    }, {
+      name: 'childtouchstart',
+      parameters: 'grid,location'
+    }, {
       name: 'columnadd',
-      parameters: 'undefined,column,index'
+      parameters: 'grid,column,index'
     }, {
       name: 'columnhide',
-      parameters: 'undefined,column'
+      parameters: 'grid,column'
     }, {
       name: 'columnmenucreated',
       parameters: 'grid,column,menu'
     }, {
       name: 'columnmove',
-      parameters: 'undefined,column,fromIndex,toIndex'
+      parameters: 'grid,column,fromIndex,toIndex'
     }, {
       name: 'columnremove',
-      parameters: 'undefined,column'
+      parameters: 'grid,column'
     }, {
       name: 'columnresize',
-      parameters: 'undefined,column,width'
+      parameters: 'grid,column,width'
     }, {
       name: 'columnselection',
       parameters: 'grid,selection'
     }, {
       name: 'columnshow',
-      parameters: 'undefined,column'
+      parameters: 'grid,column'
     }, {
       name: 'columnsort',
-      parameters: 'undefined,column,direction'
+      parameters: 'grid,column,direction'
     }, {
       name: 'complete',
       parameters: 'editor,value,startValue,The'
     }, {
+      name: 'deactivate',
+      parameters: 'oldActiveItem,grid,newActiveItem'
+    }, {
+      name: 'deselect',
+      parameters: 'grid,records'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'disclose',
+      parameters: 'list,record,target,index,event'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
       name: 'edit',
       parameters: 'sender,location'
     }, {
+      name: 'erased',
+      parameters: 'sender'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'grid,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'grid,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'grid,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'groupcollapse',
+      parameters: 'grid,group'
+    }, {
+      name: 'groupexpand',
+      parameters: 'grid,group'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
+    }, {
+      name: 'itemaction',
+      parameters: 'grid,index,record,action'
+    }, {
+      name: 'itemdoubletap',
+      parameters: 'grid,index,target,record,e'
+    }, {
+      name: 'itemlongpress',
+      parameters: 'grid,index,target,record,e'
+    }, {
+      name: 'itemmouseenter',
+      parameters: 'grid,index,target,record,e'
+    }, {
+      name: 'itemmouseleave',
+      parameters: 'grid,index,target,record,e'
+    }, {
+      name: 'itemsingletap',
+      parameters: 'grid,index,target,record,e'
+    }, {
+      name: 'itemswipe',
+      parameters: 'grid,index,target,record,e'
+    }, {
+      name: 'itemtap',
+      parameters: 'grid,index,target,record,e'
+    }, {
+      name: 'itemtaphold',
+      parameters: 'grid,index,target,record,e'
+    }, {
+      name: 'itemtouchcancel',
+      parameters: 'grid,index,target,record,e'
+    }, {
+      name: 'itemtouchend',
+      parameters: 'grid,index,target,record,e'
+    }, {
+      name: 'itemtouchmove',
+      parameters: 'grid,index,target,record,e'
+    }, {
+      name: 'itemtouchstart',
+      parameters: 'grid,index,target,record,e'
+    }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'move',
+      parameters: ''
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'navigate',
+      parameters: 'grid,to,from'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'refresh',
+      parameters: 'grid'
+    }, {
+      name: 'remove',
+      parameters: ''
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'renderedchange',
+      parameters: 'grid,item,rendered'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'select',
+      parameters: 'grid,selected'
+    }, {
       name: 'selectionextenderdrag',
       parameters: 'grid,An,extension'
+    }, {
+      name: 'show',
+      parameters: 'sender'
     }, {
       name: 'specialkey',
       parameters: 'editor,field,event'
@@ -105,254 +352,79 @@ function (_Ext_dataview_List_Co) {
       name: 'startedit',
       parameters: 'editor,boundEl,value,The'
     }, {
+      name: 'storechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'tofront',
+      parameters: 'grid'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
       name: 'validateedit',
       parameters: 'sender,location'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  Ext_grid_Grid_Component.METHODS = function METHODS() {
-    return [{
-      name: 'generateSelectorFunctions',
-      "function": function _function() {
-        return this.ext.generateSelectorFunctions();
-      }
-    }, {
-      name: 'getColumns',
-      "function": function _function(selector) {
-        return this.ext.getColumns(selector);
-      }
-    }, {
-      name: 'getSelection',
-      "function": function _function() {
-        return this.ext.getSelection();
-      }
-    }, {
-      name: 'mapToCell',
-      "function": function _function(value, column) {
-        return this.ext.mapToCell(value, column);
-      }
-    }, {
-      name: 'mapToRowBody',
-      "function": function _function(value) {
-        return this.ext.mapToRowBody(value);
-      }
-    }, {
-      name: 'registerActionable',
-      "function": function _function(actionable) {
-        return this.ext.registerActionable(actionable);
-      }
-    }, {
-      name: 'unregisterActionable',
-      "function": function _function(actionable) {
-        return this.ext.unregisterActionable(actionable);
-      }
-    }];
+  Ext_grid_Grid.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_grid_Grid.PROPERTIES());
+    return Ext_dataview_List.getProperties(properties);
   };
 
-  _createClass(Ext_grid_Grid_Component, [{
-    key: "onbeforecomplete",
-    //events
-    get: function get() {
-      return this.getAttribute('onbeforecomplete');
-    },
-    set: function set(onbeforecomplete) {
-      this.setAttribute('onbeforecomplete', onbeforecomplete);
-    }
-  }, {
-    key: "onbeforeedit",
-    get: function get() {
-      return this.getAttribute('onbeforeedit');
-    },
-    set: function set(onbeforeedit) {
-      this.setAttribute('onbeforeedit', onbeforeedit);
-    }
-  }, {
-    key: "onbeforeselectionextend",
-    get: function get() {
-      return this.getAttribute('onbeforeselectionextend');
-    },
-    set: function set(onbeforeselectionextend) {
-      this.setAttribute('onbeforeselectionextend', onbeforeselectionextend);
-    }
-  }, {
-    key: "onbeforestartedit",
-    get: function get() {
-      return this.getAttribute('onbeforestartedit');
-    },
-    set: function set(onbeforestartedit) {
-      this.setAttribute('onbeforestartedit', onbeforestartedit);
-    }
-  }, {
-    key: "oncanceledit",
-    get: function get() {
-      return this.getAttribute('oncanceledit');
-    },
-    set: function set(oncanceledit) {
-      this.setAttribute('oncanceledit', oncanceledit);
-    }
-  }, {
-    key: "oncellselection",
-    get: function get() {
-      return this.getAttribute('oncellselection');
-    },
-    set: function set(oncellselection) {
-      this.setAttribute('oncellselection', oncellselection);
-    }
-  }, {
-    key: "oncolumnadd",
-    get: function get() {
-      return this.getAttribute('oncolumnadd');
-    },
-    set: function set(oncolumnadd) {
-      this.setAttribute('oncolumnadd', oncolumnadd);
-    }
-  }, {
-    key: "oncolumnhide",
-    get: function get() {
-      return this.getAttribute('oncolumnhide');
-    },
-    set: function set(oncolumnhide) {
-      this.setAttribute('oncolumnhide', oncolumnhide);
-    }
-  }, {
-    key: "oncolumnmenucreated",
-    get: function get() {
-      return this.getAttribute('oncolumnmenucreated');
-    },
-    set: function set(oncolumnmenucreated) {
-      this.setAttribute('oncolumnmenucreated', oncolumnmenucreated);
-    }
-  }, {
-    key: "oncolumnmove",
-    get: function get() {
-      return this.getAttribute('oncolumnmove');
-    },
-    set: function set(oncolumnmove) {
-      this.setAttribute('oncolumnmove', oncolumnmove);
-    }
-  }, {
-    key: "oncolumnremove",
-    get: function get() {
-      return this.getAttribute('oncolumnremove');
-    },
-    set: function set(oncolumnremove) {
-      this.setAttribute('oncolumnremove', oncolumnremove);
-    }
-  }, {
-    key: "oncolumnresize",
-    get: function get() {
-      return this.getAttribute('oncolumnresize');
-    },
-    set: function set(oncolumnresize) {
-      this.setAttribute('oncolumnresize', oncolumnresize);
-    }
-  }, {
-    key: "oncolumnselection",
-    get: function get() {
-      return this.getAttribute('oncolumnselection');
-    },
-    set: function set(oncolumnselection) {
-      this.setAttribute('oncolumnselection', oncolumnselection);
-    }
-  }, {
-    key: "oncolumnshow",
-    get: function get() {
-      return this.getAttribute('oncolumnshow');
-    },
-    set: function set(oncolumnshow) {
-      this.setAttribute('oncolumnshow', oncolumnshow);
-    }
-  }, {
-    key: "oncolumnsort",
-    get: function get() {
-      return this.getAttribute('oncolumnsort');
-    },
-    set: function set(oncolumnsort) {
-      this.setAttribute('oncolumnsort', oncolumnsort);
-    }
-  }, {
-    key: "oncomplete",
-    get: function get() {
-      return this.getAttribute('oncomplete');
-    },
-    set: function set(oncomplete) {
-      this.setAttribute('oncomplete', oncomplete);
-    }
-  }, {
-    key: "onedit",
-    get: function get() {
-      return this.getAttribute('onedit');
-    },
-    set: function set(onedit) {
-      this.setAttribute('onedit', onedit);
-    }
-  }, {
-    key: "onselectionextenderdrag",
-    get: function get() {
-      return this.getAttribute('onselectionextenderdrag');
-    },
-    set: function set(onselectionextenderdrag) {
-      this.setAttribute('onselectionextenderdrag', onselectionextenderdrag);
-    }
-  }, {
-    key: "onspecialkey",
-    get: function get() {
-      return this.getAttribute('onspecialkey');
-    },
-    set: function set(onspecialkey) {
-      this.setAttribute('onspecialkey', onspecialkey);
-    }
-  }, {
-    key: "onstartedit",
-    get: function get() {
-      return this.getAttribute('onstartedit');
-    },
-    set: function set(onstartedit) {
-      this.setAttribute('onstartedit', onstartedit);
-    }
-  }, {
-    key: "onvalidateedit",
-    get: function get() {
-      return this.getAttribute('onvalidateedit');
-    },
-    set: function set(onvalidateedit) {
-      this.setAttribute('onvalidateedit', onvalidateedit);
-    }
-  }], [{
+  Ext_grid_Grid.getEvents = function getEvents(events) {
+    events = events.concat(Ext_grid_Grid.EVENTS());
+    return Ext_dataview_List.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'grid'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_grid_Grid, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_dataview_List_Co.observedAttributes;
+      var attrs = _Ext_dataview_List.observedAttributes; //for (var property in Ext_grid_Grid.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_grid_Grid_Component.PROPERTIESOBJECT()) {
+      Ext_grid_Grid.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_grid_Grid_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_grid_Grid.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_grid_Grid_Component(propertiesobject, methods, events) {
-    return _Ext_dataview_List_Co.call(this, Object.assign(propertiesobject, Ext_grid_Grid_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_grid_Grid_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_grid_Grid_Component.METHODS()), events.concat(Ext_grid_Grid_Component.EVENTS())) || this; //this.XTYPE = Ext_grid_Grid_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_grid_Grid_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_grid_Grid_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_grid_Grid_Component.EVENTS());
+  function Ext_grid_Grid(properties, events) {
+    return _Ext_dataview_List.call(this, properties.concat(Ext_grid_Grid.PROPERTIES()), events.concat(Ext_grid_Grid.EVENTS())) || this;
   }
 
-  var _proto = Ext_grid_Grid_Component.prototype;
+  var _proto = Ext_grid_Grid.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    _Ext_dataview_List_Co.prototype.connectedCallback.call(this);
+    _Ext_dataview_List.prototype.connectedCallback.call(this);
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
-    _Ext_dataview_List_Co.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+    _Ext_dataview_List.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_grid_Grid_Component;
-}(Ext_dataview_List_Component);
+  return Ext_grid_Grid;
+}(Ext_dataview_List);
 
-export { Ext_grid_Grid_Component as default };
+export { Ext_grid_Grid as default };

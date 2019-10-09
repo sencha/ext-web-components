@@ -1,202 +1,244 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_d3_svg_Svg_Component from '../../../Ext/d3/svg/Svg';
+import Ext_d3_svg_Svg from '../../../Ext/d3/svg/Svg';
 
-var Ext_d3_hierarchy_Hierarchy_Component =
+var Ext_d3_hierarchy_Hierarchy =
 /*#__PURE__*/
-function (_Ext_d3_svg_Svg_Compo) {
-  _inheritsLoose(Ext_d3_hierarchy_Hierarchy_Component, _Ext_d3_svg_Svg_Compo);
+function (_Ext_d3_svg_Svg) {
+  _inheritsLoose(Ext_d3_hierarchy_Hierarchy, _Ext_d3_svg_Svg);
 
-  //configs
-  Ext_d3_hierarchy_Hierarchy_Component.XTYPE = function XTYPE() {
-    return '';
+  Ext_d3_hierarchy_Hierarchy.PROPERTIES = function PROPERTIES() {
+    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'clipScene', 'cls', 'colorAxis', 'componentCls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'disabled', 'displayed', 'docked', 'draggable', 'expandEventName', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'hierarchyCls', 'html', 'id', 'instanceCls', 'interactions', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'linkKey', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nodeChildren', 'nodeClass', 'nodeKey', 'nodeText', 'nodeTransform', 'nodeValue', 'noParentValue', 'noSizeLayout', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderLinks', 'renderTo', 'right', 'ripple', 'rootVisible', 'scrollable', 'selectEventName', 'selection', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'size', 'sorter', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'transitions', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_d3_hierarchy_Hierarchy_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "colorAxis": ["Ext.d3.axis.Color"],
-      "expandEventName": ["string", "string[]"],
-      "hierarchyCls": ["string"],
-      "layout": ["function"],
-      "linkKey": ["function"],
-      "nodeChildren": ["function"],
-      "nodeClass": ["function"],
-      "nodeKey": ["function"],
-      "nodeText": ["function", "string", "string[]"],
-      "nodeTransform": ["function"],
-      "nodeValue": ["function", "string", "number"],
-      "noParentValue": ["boolean"],
-      "noSizeLayout": ["boolean"],
-      "publishes": ["string", "string[]", "object"],
-      "renderLinks": ["boolean"],
-      "rootVisible": ["boolean"],
-      "selectEventName": ["string", "string[]"],
-      "selection": ["Ext.data.TreeModel"],
-      "sorter": ["function"],
-      "transitions": ["any"]
-    };
-  };
-
-  Ext_d3_hierarchy_Hierarchy_Component.EVENTS = function EVENTS() {
+  Ext_d3_hierarchy_Hierarchy.EVENTS = function EVENTS() {
     return [{
+      name: 'added',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehide',
+      parameters: 'sender'
+    }, {
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforetofront',
+      parameters: 'undefined'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'undefined,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'erased',
+      parameters: 'sender'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'undefined,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'undefined,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'undefined,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
+    }, {
       name: 'layout',
       parameters: 'component'
+    }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'sceneresize',
+      parameters: 'component,scene,size'
+    }, {
+      name: 'scenesetup',
+      parameters: 'component,scene'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'show',
+      parameters: 'sender'
+    }, {
+      name: 'tofront',
+      parameters: 'undefined'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  Ext_d3_hierarchy_Hierarchy_Component.METHODS = function METHODS() {
-    return [{
-      name: 'addNodeListener',
-      "function": function _function(eventName, handler) {
-        return this.ext.addNodeListener(eventName, handler);
-      }
-    }, {
-      name: 'addNodeListeners',
-      "function": function _function() {
-        return this.ext.addNodeListeners();
-      }
-    }, {
-      name: 'findNode',
-      "function": function _function(node, selection) {
-        return this.ext.findNode(node, selection);
-      }
-    }, {
-      name: 'hideRoot',
-      "function": function _function() {
-        return this.ext.hideRoot();
-      }
-    }, {
-      name: 'isRecordInStore',
-      "function": function _function(record) {
-        return this.ext.isRecordInStore(record);
-      }
-    }, {
-      name: 'nodeFromRecord',
-      "function": function _function(record) {
-        return this.ext.nodeFromRecord(record);
-      }
-    }, {
-      name: 'onLayout',
-      "function": function _function() {
-        return this.ext.onLayout();
-      }
-    }, {
-      name: 'onNodeDeselect',
-      "function": function _function(record, selection) {
-        return this.ext.onNodeDeselect(record, selection);
-      }
-    }, {
-      name: 'onNodesAdd',
-      "function": function _function(selection) {
-        return this.ext.onNodesAdd(selection);
-      }
-    }, {
-      name: 'onNodeSelect',
-      "function": function _function(record, selection) {
-        return this.ext.onNodeSelect(record, selection);
-      }
-    }, {
-      name: 'performLayout',
-      "function": function _function() {
-        return this.ext.performLayout();
-      }
-    }, {
-      name: 'removeLinks',
-      "function": function _function(selection) {
-        return this.ext.removeLinks(selection);
-      }
-    }, {
-      name: 'removeNodeListener',
-      "function": function _function(eventName, handler) {
-        return this.ext.removeNodeListener(eventName, handler);
-      }
-    }, {
-      name: 'removeNodes',
-      "function": function _function(selection) {
-        return this.ext.removeNodes(selection);
-      }
-    }, {
-      name: 'renderLinks',
-      "function": function _function(update) {
-        return this.ext.renderLinks(update);
-      }
-    }, {
-      name: 'renderNodes',
-      "function": function _function(update) {
-        return this.ext.renderNodes(update);
-      }
-    }, {
-      name: 'renderScene',
-      "function": function _function(nodes, links) {
-        return this.ext.renderScene(nodes, links);
-      }
-    }, {
-      name: 'selectionFromRecord',
-      "function": function _function(record) {
-        return this.ext.selectionFromRecord(record);
-      }
-    }, {
-      name: 'setLayoutSize',
-      "function": function _function(size) {
-        return this.ext.setLayoutSize(size);
-      }
-    }, {
-      name: 'skipLayoutTransition',
-      "function": function _function() {
-        return this.ext.skipLayoutTransition();
-      }
-    }, {
-      name: 'updateEventName',
-      "function": function _function(name, oldName, handler) {
-        return this.ext.updateEventName(name, oldName, handler);
-      }
-    }];
+  Ext_d3_hierarchy_Hierarchy.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_d3_hierarchy_Hierarchy.PROPERTIES());
+    return Ext_d3_svg_Svg.getProperties(properties);
   };
 
-  _createClass(Ext_d3_hierarchy_Hierarchy_Component, [{
-    key: "onlayout",
-    //events
-    get: function get() {
-      return this.getAttribute('onlayout');
-    },
-    set: function set(onlayout) {
-      this.setAttribute('onlayout', onlayout);
-    }
-  }], [{
+  Ext_d3_hierarchy_Hierarchy.getEvents = function getEvents(events) {
+    events = events.concat(Ext_d3_hierarchy_Hierarchy.EVENTS());
+    return Ext_d3_svg_Svg.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return ''}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_d3_hierarchy_Hierarchy, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_d3_svg_Svg_Compo.observedAttributes;
+      var attrs = _Ext_d3_svg_Svg.observedAttributes; //for (var property in Ext_d3_hierarchy_Hierarchy.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_d3_hierarchy_Hierarchy_Component.PROPERTIESOBJECT()) {
+      Ext_d3_hierarchy_Hierarchy.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_d3_hierarchy_Hierarchy_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_d3_hierarchy_Hierarchy.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_d3_hierarchy_Hierarchy_Component(propertiesobject, methods, events) {
-    return _Ext_d3_svg_Svg_Compo.call(this, Object.assign(propertiesobject, Ext_d3_hierarchy_Hierarchy_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_d3_hierarchy_Hierarchy_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_d3_hierarchy_Hierarchy_Component.METHODS()), events.concat(Ext_d3_hierarchy_Hierarchy_Component.EVENTS())) || this; //this.XTYPE = Ext_d3_hierarchy_Hierarchy_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_d3_hierarchy_Hierarchy_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_d3_hierarchy_Hierarchy_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_d3_hierarchy_Hierarchy_Component.EVENTS());
+  function Ext_d3_hierarchy_Hierarchy(properties, events) {
+    return _Ext_d3_svg_Svg.call(this, properties.concat(Ext_d3_hierarchy_Hierarchy.PROPERTIES()), events.concat(Ext_d3_hierarchy_Hierarchy.EVENTS())) || this;
   }
 
-  var _proto = Ext_d3_hierarchy_Hierarchy_Component.prototype;
+  var _proto = Ext_d3_hierarchy_Hierarchy.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    _Ext_d3_svg_Svg_Compo.prototype.connectedCallback.call(this);
+    _Ext_d3_svg_Svg.prototype.connectedCallback.call(this);
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
-    _Ext_d3_svg_Svg_Compo.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+    _Ext_d3_svg_Svg.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_d3_hierarchy_Hierarchy_Component;
-}(Ext_d3_svg_Svg_Component);
+  return Ext_d3_hierarchy_Hierarchy;
+}(Ext_d3_svg_Svg);
 
-export { Ext_d3_hierarchy_Hierarchy_Component as default };
+export { Ext_d3_hierarchy_Hierarchy as default };

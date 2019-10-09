@@ -1,21 +1,21 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_calendar_Event_Component from './Ext/calendar/Event';
+import Ext_calendar_Event from './Ext/calendar/Event';
 import HTMLParsedElement from './HTMLParsedElement';
 export var ExtCalendar_eventComponent =
 /*#__PURE__*/
-function (_Ext_calendar_Event_C) {
-  _inheritsLoose(ExtCalendar_eventComponent, _Ext_calendar_Event_C);
+function (_Ext_calendar_Event) {
+  _inheritsLoose(ExtCalendar_eventComponent, _Ext_calendar_Event);
 
   function ExtCalendar_eventComponent() {
     var _this;
 
-    _this = _Ext_calendar_Event_C.call(this, {}, [], []) || this;
+    _this = _Ext_calendar_Event.call(this, [], []) || this;
     _this.xtype = 'calendar-event';
     return _this;
   }
 
   return ExtCalendar_eventComponent;
-}(Ext_calendar_Event_Component); //(function () {
+}(Ext_calendar_Event); //(function () {
 //    Ext.onReady(function() {
 //        window.customElements.define('ext-calendar-event', ExtCalendar_eventComponent);
 //    });

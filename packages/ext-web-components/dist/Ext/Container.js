@@ -1,369 +1,259 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Component_Component from '../Ext/Component';
+import Ext_Component from '../Ext/Component';
 
-var Ext_Container_Component =
+var Ext_Container =
 /*#__PURE__*/
-function (_Ext_Component_Compon) {
-  _inheritsLoose(Ext_Container_Component, _Ext_Component_Compon);
+function (_Ext_Component) {
+  _inheritsLoose(Ext_Container, _Ext_Component);
 
-  //configs
-  Ext_Container_Component.XTYPE = function XTYPE() {
-    return 'container';
+  Ext_Container.PROPERTIES = function PROPERTIES() {
+    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'cardSwitchAnimation', 'centered', 'cls', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'disabled', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'listeners', 'manageBorders', 'margin', 'masked', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_Container_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "activeItem": ["Ext.Component", "object", "string", "number"],
-      "autoDestroy": ["boolean"],
-      "autoSize": ["boolean"],
-      "bodyCls": ["string", "string[]"],
-      "cardSwitchAnimation": ["string", "object", "boolean"],
-      "control": ["object"],
-      "defaultFocus": ["string"],
-      "defaults": ["object"],
-      "defaultType": ["string"],
-      "innerCls": ["string"],
-      "items": ["array", "object"],
-      "layout": ["object", "string"],
-      "manageBorders": ["boolean"],
-      "masked": ["boolean", "string", "object", "Ext.Mask", "Ext.LoadMask"],
-      "weighted": ["boolean"]
-    };
-  };
-
-  Ext_Container_Component.EVENTS = function EVENTS() {
+  Ext_Container.EVENTS = function EVENTS() {
     return [{
       name: 'activate',
-      parameters: 'newActiveItem,undefined,oldActiveItem'
+      parameters: 'newActiveItem,container,oldActiveItem'
     }, {
       name: 'activeItemchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'add',
-      parameters: 'undefined,item,index'
+      parameters: 'container,item,index'
+    }, {
+      name: 'added',
+      parameters: 'sender,container,index'
     }, {
       name: 'beforeactiveItemchange',
       parameters: 'sender,value,oldValue,undefined'
     }, {
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehide',
+      parameters: 'sender'
+    }, {
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforetofront',
+      parameters: 'container'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'container,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
+    }, {
       name: 'deactivate',
-      parameters: 'oldActiveItem,undefined,newActiveItem'
+      parameters: 'oldActiveItem,container,newActiveItem'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'erased',
+      parameters: 'sender'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'container,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'container,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'container,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
+    }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
     }, {
       name: 'move',
-      parameters: 'undefined,item,toIndex,fromIndex'
+      parameters: 'container,item,toIndex,fromIndex'
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
     }, {
       name: 'remove',
-      parameters: 'undefined,item,index'
+      parameters: 'container,item,index'
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
     }, {
       name: 'renderedchange',
-      parameters: 'undefined,item,rendered'
+      parameters: 'container,item,rendered'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'show',
+      parameters: 'sender'
+    }, {
+      name: 'tofront',
+      parameters: 'container'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  Ext_Container_Component.METHODS = function METHODS() {
-    return [{
-      name: 'add',
-      "function": function _function(newItems) {
-        return this.ext.add(newItems);
-      }
-    }, {
-      name: 'animateActiveItem',
-      "function": function _function(activeItem, animation) {
-        return this.ext.animateActiveItem(activeItem, animation);
-      }
-    }, {
-      name: 'applyActiveItem',
-      "function": function _function(activeItem, currentActiveItem) {
-        return this.ext.applyActiveItem(activeItem, currentActiveItem);
-      }
-    }, {
-      name: 'applyControl',
-      "function": function _function(selectors) {
-        return this.ext.applyControl(selectors);
-      }
-    }, {
-      name: 'applyItemDefaults',
-      "function": function _function(item) {
-        return this.ext.applyItemDefaults(item);
-      }
-    }, {
-      name: 'applyMasked',
-      "function": function _function(masked) {
-        return this.ext.applyMasked(masked);
-      }
-    }, {
-      name: 'doAdd',
-      "function": function _function(item, instanced) {
-        return this.ext.doAdd(item, instanced);
-      }
-    }, {
-      name: 'doInsert',
-      "function": function _function(index, item, instanced) {
-        return this.ext.doInsert(index, item, instanced);
-      }
-    }, {
-      name: 'factoryItem',
-      "function": function _function(item) {
-        return this.ext.factoryItem(item);
-      }
-    }, {
-      name: 'findDefaultFocus',
-      "function": function _function() {
-        return this.ext.findDefaultFocus();
-      }
-    }, {
-      name: 'getAt',
-      "function": function _function(index) {
-        return this.ext.getAt(index);
-      }
-    }, {
-      name: 'getComponent',
-      "function": function _function(component) {
-        return this.ext.getComponent(component);
-      }
-    }, {
-      name: 'getDockedComponent',
-      "function": function _function(component) {
-        return this.ext.getDockedComponent(component);
-      }
-    }, {
-      name: 'getDockedItems',
-      "function": function _function() {
-        return this.ext.getDockedItems();
-      }
-    }, {
-      name: 'getFirstReferences',
-      "function": function _function() {
-        return this.ext.getFirstReferences();
-      }
-    }, {
-      name: 'getFocusEl',
-      "function": function _function() {
-        return this.ext.getFocusEl();
-      }
-    }, {
-      name: 'getInnerItems',
-      "function": function _function() {
-        return this.ext.getInnerItems();
-      }
-    }, {
-      name: 'getMaxHeightElement',
-      "function": function _function() {
-        return this.ext.getMaxHeightElement();
-      }
-    }, {
-      name: 'getPositionedItemTarget',
-      "function": function _function(item) {
-        return this.ext.getPositionedItemTarget(item);
-      }
-    }, {
-      name: 'getRefItems',
-      "function": function _function(deep) {
-        return this.ext.getRefItems(deep);
-      }
-    }, {
-      name: 'has',
-      "function": function _function(item) {
-        return this.ext.has(item);
-      }
-    }, {
-      name: 'hasInnerItem',
-      "function": function _function(item) {
-        return this.ext.hasInnerItem(item);
-      }
-    }, {
-      name: 'indexOf',
-      "function": function _function(item) {
-        return this.ext.indexOf(item);
-      }
-    }, {
-      name: 'insert',
-      "function": function _function(index, item) {
-        return this.ext.insert(index, item);
-      }
-    }, {
-      name: 'insertAfter',
-      "function": function _function(item, relativeToItem) {
-        return this.ext.insertAfter(item, relativeToItem);
-      }
-    }, {
-      name: 'insertBefore',
-      "function": function _function(item, relativeToItem) {
-        return this.ext.insertBefore(item, relativeToItem);
-      }
-    }, {
-      name: 'insertFirst',
-      "function": function _function(item) {
-        return this.ext.insertFirst(item);
-      }
-    }, {
-      name: 'insertInner',
-      "function": function _function(item, index) {
-        return this.ext.insertInner(item, index);
-      }
-    }, {
-      name: 'insertLast',
-      "function": function _function(item) {
-        return this.ext.insertLast(item);
-      }
-    }, {
-      name: 'mask',
-      "function": function _function(mask) {
-        return this.ext.mask(mask);
-      }
-    }, {
-      name: 'onFirstItemAdd',
-      "function": function _function(item) {
-        return this.ext.onFirstItemAdd(item);
-      }
-    }, {
-      name: 'onItemAdd',
-      "function": function _function(item, index) {
-        return this.ext.onItemAdd(item, index);
-      }
-    }, {
-      name: 'onItemMove',
-      "function": function _function(item, toIndex, fromIndex) {
-        return this.ext.onItemMove(item, toIndex, fromIndex);
-      }
-    }, {
-      name: 'onItemRemove',
-      "function": function _function(item, index, destroying) {
-        return this.ext.onItemRemove(item, index, destroying);
-      }
-    }, {
-      name: 'remove',
-      "function": function _function(which, destroy) {
-        return this.ext.remove(which, destroy);
-      }
-    }, {
-      name: 'removeAll',
-      "function": function _function(destroy, everything) {
-        return this.ext.removeAll(destroy, everything);
-      }
-    }, {
-      name: 'removeAt',
-      "function": function _function(index, destroy) {
-        return this.ext.removeAt(index, destroy);
-      }
-    }, {
-      name: 'removeInner',
-      "function": function _function(item) {
-        return this.ext.removeInner(item);
-      }
-    }, {
-      name: 'removeInnerAt',
-      "function": function _function(index) {
-        return this.ext.removeInnerAt(index);
-      }
-    }, {
-      name: 'unmask',
-      "function": function _function() {
-        return this.ext.unmask();
-      }
-    }];
+  Ext_Container.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_Container.PROPERTIES());
+    return Ext_Component.getProperties(properties);
   };
 
-  _createClass(Ext_Container_Component, [{
-    key: "onactivate",
-    //events
-    get: function get() {
-      return this.getAttribute('onactivate');
-    },
-    set: function set(onactivate) {
-      this.setAttribute('onactivate', onactivate);
-    }
-  }, {
-    key: "onactiveItemchange",
-    get: function get() {
-      return this.getAttribute('onactiveItemchange');
-    },
-    set: function set(onactiveItemchange) {
-      this.setAttribute('onactiveItemchange', onactiveItemchange);
-    }
-  }, {
-    key: "onadd",
-    get: function get() {
-      return this.getAttribute('onadd');
-    },
-    set: function set(onadd) {
-      this.setAttribute('onadd', onadd);
-    }
-  }, {
-    key: "onbeforeactiveItemchange",
-    get: function get() {
-      return this.getAttribute('onbeforeactiveItemchange');
-    },
-    set: function set(onbeforeactiveItemchange) {
-      this.setAttribute('onbeforeactiveItemchange', onbeforeactiveItemchange);
-    }
-  }, {
-    key: "ondeactivate",
-    get: function get() {
-      return this.getAttribute('ondeactivate');
-    },
-    set: function set(ondeactivate) {
-      this.setAttribute('ondeactivate', ondeactivate);
-    }
-  }, {
-    key: "onmove",
-    get: function get() {
-      return this.getAttribute('onmove');
-    },
-    set: function set(onmove) {
-      this.setAttribute('onmove', onmove);
-    }
-  }, {
-    key: "onremove",
-    get: function get() {
-      return this.getAttribute('onremove');
-    },
-    set: function set(onremove) {
-      this.setAttribute('onremove', onremove);
-    }
-  }, {
-    key: "onrenderedchange",
-    get: function get() {
-      return this.getAttribute('onrenderedchange');
-    },
-    set: function set(onrenderedchange) {
-      this.setAttribute('onrenderedchange', onrenderedchange);
-    }
-  }], [{
+  Ext_Container.getEvents = function getEvents(events) {
+    events = events.concat(Ext_Container.EVENTS());
+    return Ext_Component.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'container'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_Container, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Component_Compon.observedAttributes;
+      var attrs = _Ext_Component.observedAttributes; //for (var property in Ext_Container.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_Container_Component.PROPERTIESOBJECT()) {
+      Ext_Container.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_Container_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_Container.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_Container_Component(propertiesobject, methods, events) {
-    return _Ext_Component_Compon.call(this, Object.assign(propertiesobject, Ext_Container_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_Container_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_Container_Component.METHODS()), events.concat(Ext_Container_Component.EVENTS())) || this; //this.XTYPE = Ext_Container_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_Container_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_Container_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_Container_Component.EVENTS());
+  function Ext_Container(properties, events) {
+    return _Ext_Component.call(this, properties.concat(Ext_Container.PROPERTIES()), events.concat(Ext_Container.EVENTS())) || this;
   }
 
-  var _proto = Ext_Container_Component.prototype;
+  var _proto = Ext_Container.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    _Ext_Component_Compon.prototype.connectedCallback.call(this);
+    _Ext_Component.prototype.connectedCallback.call(this);
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
-    _Ext_Component_Compon.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+    _Ext_Component.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_Container_Component;
-}(Ext_Component_Component);
+  return Ext_Container;
+}(Ext_Component);
 
-export { Ext_Container_Component as default };
+export { Ext_Container as default };

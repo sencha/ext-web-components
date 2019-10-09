@@ -1,126 +1,259 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Container_Component from '../../Ext/Container';
+import Ext_Container from '../../Ext/Container';
 
-var Ext_carousel_Carousel_Component =
+var Ext_carousel_Carousel =
 /*#__PURE__*/
-function (_Ext_Container_Compon) {
-  _inheritsLoose(Ext_carousel_Carousel_Component, _Ext_Container_Compon);
+function (_Ext_Container) {
+  _inheritsLoose(Ext_carousel_Carousel, _Ext_Container);
 
-  //events
-  //configs
-  Ext_carousel_Carousel_Component.XTYPE = function XTYPE() {
-    return 'carousel';
+  Ext_carousel_Carousel.PROPERTIES = function PROPERTIES() {
+    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'cardSwitchAnimation', 'centered', 'cls', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'direction', 'disabled', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inactiveChildTabIndex', 'indicator', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'listeners', 'manageBorders', 'margin', 'masked', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_carousel_Carousel_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "direction": ["string"],
-      "draggable": ["any"],
-      "indicator": ["boolean", "Ext.carousel.Indicator"],
-      "layout": ["any"],
-      "ui": ["string"]
-    };
-  };
-
-  Ext_carousel_Carousel_Component.EVENTS = function EVENTS() {
-    return [];
-  };
-
-  Ext_carousel_Carousel_Component.METHODS = function METHODS() {
+  Ext_carousel_Carousel.EVENTS = function EVENTS() {
     return [{
-      name: 'applyActiveItem',
-      "function": function _function(activeItem, oldActiveItem) {
-        return this.ext.applyActiveItem(activeItem, oldActiveItem);
-      }
+      name: 'activate',
+      parameters: 'newActiveItem,carousel,oldActiveItem'
     }, {
-      name: 'applyIndicator',
-      "function": function _function(indicator, currentIndicator) {
-        return this.ext.applyIndicator(indicator, currentIndicator);
-      }
+      name: 'activeItemchange',
+      parameters: 'sender,value,oldValue'
     }, {
-      name: 'getActiveIndex',
-      "function": function _function() {
-        return this.ext.getActiveIndex();
-      }
+      name: 'add',
+      parameters: 'carousel,item,index'
     }, {
-      name: 'getInnerItemAt',
-      "function": function _function(index) {
-        return this.ext.getInnerItemAt(index);
-      }
+      name: 'added',
+      parameters: 'sender,container,index'
     }, {
-      name: 'getInnerItemIndex',
-      "function": function _function(item) {
-        return this.ext.getInnerItemIndex(item);
-      }
+      name: 'beforeactiveItemchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'getMaxItemIndex',
-      "function": function _function() {
-        return this.ext.getMaxItemIndex();
-      }
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'next',
-      "function": function _function() {
-        return this.ext.next();
-      }
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'previous',
-      "function": function _function() {
-        return this.ext.previous();
-      }
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'setOffset',
-      "function": function _function(offset) {
-        return this.ext.setOffset(offset);
-      }
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'setOffsetAnimated',
-      "function": function _function(offset) {
-        return this.ext.setOffsetAnimated(offset);
-      }
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'updateIndicator',
-      "function": function _function(indicator) {
-        return this.ext.updateIndicator(indicator);
-      }
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehide',
+      parameters: 'sender'
+    }, {
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforetofront',
+      parameters: 'carousel'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'carousel,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'deactivate',
+      parameters: 'oldActiveItem,carousel,newActiveItem'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'erased',
+      parameters: 'sender'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'carousel,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'carousel,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'carousel,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
+    }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'move',
+      parameters: 'carousel,item,toIndex,fromIndex'
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'remove',
+      parameters: 'carousel,item,index'
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'renderedchange',
+      parameters: 'carousel,item,rendered'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'show',
+      parameters: 'sender'
+    }, {
+      name: 'tofront',
+      parameters: 'carousel'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  _createClass(Ext_carousel_Carousel_Component, null, [{
+  Ext_carousel_Carousel.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_carousel_Carousel.PROPERTIES());
+    return Ext_Container.getProperties(properties);
+  };
+
+  Ext_carousel_Carousel.getEvents = function getEvents(events) {
+    events = events.concat(Ext_carousel_Carousel.EVENTS());
+    return Ext_Container.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'carousel'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_carousel_Carousel, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Container_Compon.observedAttributes;
+      var attrs = _Ext_Container.observedAttributes; //for (var property in Ext_carousel_Carousel.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_carousel_Carousel_Component.PROPERTIESOBJECT()) {
+      Ext_carousel_Carousel.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_carousel_Carousel_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_carousel_Carousel.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_carousel_Carousel_Component(propertiesobject, methods, events) {
-    return _Ext_Container_Compon.call(this, Object.assign(propertiesobject, Ext_carousel_Carousel_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_carousel_Carousel_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_carousel_Carousel_Component.METHODS()), events.concat(Ext_carousel_Carousel_Component.EVENTS())) || this; //this.XTYPE = Ext_carousel_Carousel_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_carousel_Carousel_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_carousel_Carousel_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_carousel_Carousel_Component.EVENTS());
+  function Ext_carousel_Carousel(properties, events) {
+    return _Ext_Container.call(this, properties.concat(Ext_carousel_Carousel.PROPERTIES()), events.concat(Ext_carousel_Carousel.EVENTS())) || this;
   }
 
-  var _proto = Ext_carousel_Carousel_Component.prototype;
+  var _proto = Ext_carousel_Carousel.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    _Ext_Container_Compon.prototype.connectedCallback.call(this);
+    _Ext_Container.prototype.connectedCallback.call(this);
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
-    _Ext_Container_Compon.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+    _Ext_Container.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_carousel_Carousel_Component;
-}(Ext_Container_Component);
+  return Ext_carousel_Carousel;
+}(Ext_Container);
 
-export { Ext_carousel_Carousel_Component as default };
+export { Ext_carousel_Carousel as default };

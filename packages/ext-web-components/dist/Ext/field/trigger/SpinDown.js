@@ -1,55 +1,105 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_trigger_Trigger_Component from '../../../Ext/field/trigger/Trigger';
+import Ext_field_trigger_Trigger from '../../../Ext/field/trigger/Trigger';
 
-var Ext_field_trigger_SpinDown_Component =
+var Ext_field_trigger_SpinDown =
 /*#__PURE__*/
 function (_Ext_field_trigger_Tr) {
-  _inheritsLoose(Ext_field_trigger_SpinDown_Component, _Ext_field_trigger_Tr);
+  _inheritsLoose(Ext_field_trigger_SpinDown, _Ext_field_trigger_Tr);
 
-  //events
-  //configs
-  Ext_field_trigger_SpinDown_Component.XTYPE = function XTYPE() {
-    return 'spindowntrigger';
+  Ext_field_trigger_SpinDown.PROPERTIES = function PROPERTIES() {
+    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'bind', 'border', 'cls', 'constrainAlign', 'controller', 'defaultListenerScope', 'disabled', 'field', 'flex', 'floated', 'focusCls', 'focusOnTap', 'group', 'handler', 'height', 'hidden', 'hideMode', 'iconCls', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'listeners', 'margin', 'name', 'nameable', 'plugins', 'publishes', 'reference', 'relative', 'renderTo', 'repeat', 'ripple', 'scope', 'session', 'shadow', 'shareableName', 'shim', 'side', 'style', 'toFrontOnShow', 'touchAction', 'translatable', 'triggers', 'twoWayBindable', 'ui', 'userCls', 'viewModel', 'width', 'x', 'y', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_field_trigger_SpinDown_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {};
+  Ext_field_trigger_SpinDown.EVENTS = function EVENTS() {
+    return [{
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforetofront',
+      parameters: 'spindowntrigger'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'spindowntrigger,event'
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'focus',
+      parameters: 'spindowntrigger,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'spindowntrigger,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'spindowntrigger,event'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'tofront',
+      parameters: 'spindowntrigger'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
+    }];
   };
 
-  Ext_field_trigger_SpinDown_Component.EVENTS = function EVENTS() {
-    return [];
+  Ext_field_trigger_SpinDown.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_field_trigger_SpinDown.PROPERTIES());
+    return Ext_field_trigger_Trigger.getProperties(properties);
   };
 
-  Ext_field_trigger_SpinDown_Component.METHODS = function METHODS() {
-    return [];
-  };
+  Ext_field_trigger_SpinDown.getEvents = function getEvents(events) {
+    events = events.concat(Ext_field_trigger_SpinDown.EVENTS());
+    return Ext_field_trigger_Trigger.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'spindowntrigger'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
 
-  _createClass(Ext_field_trigger_SpinDown_Component, null, [{
+  _createClass(Ext_field_trigger_SpinDown, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_field_trigger_Tr.observedAttributes;
+      var attrs = _Ext_field_trigger_Tr.observedAttributes; //for (var property in Ext_field_trigger_SpinDown.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_field_trigger_SpinDown_Component.PROPERTIESOBJECT()) {
+      Ext_field_trigger_SpinDown.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_field_trigger_SpinDown_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_field_trigger_SpinDown.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_field_trigger_SpinDown_Component(propertiesobject, methods, events) {
-    return _Ext_field_trigger_Tr.call(this, Object.assign(propertiesobject, Ext_field_trigger_SpinDown_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_field_trigger_SpinDown_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_field_trigger_SpinDown_Component.METHODS()), events.concat(Ext_field_trigger_SpinDown_Component.EVENTS())) || this; //this.XTYPE = Ext_field_trigger_SpinDown_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_field_trigger_SpinDown_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_field_trigger_SpinDown_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_field_trigger_SpinDown_Component.EVENTS());
+  function Ext_field_trigger_SpinDown(properties, events) {
+    return _Ext_field_trigger_Tr.call(this, properties.concat(Ext_field_trigger_SpinDown.PROPERTIES()), events.concat(Ext_field_trigger_SpinDown.EVENTS())) || this;
   }
 
-  var _proto = Ext_field_trigger_SpinDown_Component.prototype;
+  var _proto = Ext_field_trigger_SpinDown.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
     _Ext_field_trigger_Tr.prototype.connectedCallback.call(this);
@@ -59,7 +109,7 @@ function (_Ext_field_trigger_Tr) {
     _Ext_field_trigger_Tr.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_field_trigger_SpinDown_Component;
-}(Ext_field_trigger_Trigger_Component);
+  return Ext_field_trigger_SpinDown;
+}(Ext_field_trigger_Trigger);
 
-export { Ext_field_trigger_SpinDown_Component as default };
+export { Ext_field_trigger_SpinDown as default };

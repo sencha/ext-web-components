@@ -1,34 +1,315 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_Grid_Component from '../../Ext/grid/Grid';
+import Ext_grid_Grid from '../../Ext/grid/Grid';
 
-var Ext_pivot_Grid_Component =
+var Ext_pivot_Grid =
 /*#__PURE__*/
-function (_Ext_grid_Grid_Compon) {
-  _inheritsLoose(Ext_pivot_Grid_Component, _Ext_grid_Grid_Compon);
+function (_Ext_grid_Grid) {
+  _inheritsLoose(Ext_pivot_Grid, _Ext_grid_Grid);
 
-  //configs
-  Ext_pivot_Grid_Component.XTYPE = function XTYPE() {
-    return 'pivotgrid';
+  Ext_pivot_Grid.PROPERTIES = function PROPERTIES() {
+    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'associatedData', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'bufferSize', 'cardSwitchAnimation', 'centered', 'cls', 'clsGrandTotal', 'clsGroupTotal', 'collapseDefaults', 'collapsible', 'columnLines', 'columnMenu', 'columnResize', 'columns', 'columnsMenuItem', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'deferEmptyText', 'deselectOnContainerClick', 'disabled', 'disableSelection', 'disclosureProperty', 'displayed', 'docked', 'draggable', 'emptyItemText', 'emptyState', 'emptyText', 'emptyTextDefaults', 'emptyTextProperty', 'enableColumnMove', 'enableColumnSort', 'enableLoadMask', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'grouped', 'groupFooter', 'groupHeader', 'grouping', 'groupPlaceholder', 'height', 'hidden', 'hideAnimation', 'hideHeaders', 'hideMode', 'hideOnMaskTap', 'hideScrollbar', 'horizontalOverflow', 'html', 'id', 'inactiveChildTabIndex', 'indexBar', 'infinite', 'inline', 'innerCls', 'innerCtHeight', 'innerWidth', 'instanceCls', 'itemButtonMode', 'itemCls', 'itemConfig', 'itemContentCls', 'itemDataMap', 'itemId', 'itemInnerCls', 'itemRipple', 'items', 'itemsFocusable', 'itemTpl', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'leftAxisCellConfig', 'listeners', 'loadingHeight', 'loadingText', 'maintainChildNodes', 'manageBorders', 'margin', 'markDirty', 'masked', 'matrix', 'maxHeight', 'maxItemCache', 'maxWidth', 'minHeight', 'minimumBufferDistance', 'minWidth', 'modal', 'modelValidation', 'multiColumnSort', 'name', 'nameable', 'nameHolder', 'onItemDisclosure', 'padding', 'pinFooters', 'pinHeaders', 'pinnedFooter', 'pinnedFooterHeight', 'pinnedHeader', 'pinnedHeaderHeight', 'plugins', 'pressedDelay', 'preventSelectionOnDisclose', 'preventSelectionOnTool', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'reserveScrollbar', 'resetFocusPosition', 'right', 'ripple', 'rowLines', 'rowNumbers', 'scrollable', 'scrollDock', 'scrollToTopOnRefresh', 'selectable', 'selection', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'sortable', 'startColGroupsCollapsed', 'startRowGroupsCollapsed', 'stateful', 'statefulDefaults', 'stateId', 'store', 'striped', 'style', 'tabIndex', 'title', 'titleBar', 'toFrontOnShow', 'tooltip', 'top', 'topAxisCellConfig', 'topRenderedIndex', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'triggerCtEvent', 'triggerEvent', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'variableHeights', 'verticalOverflow', 'viewModel', 'visibleHeight', 'visibleLeft', 'visibleTop', 'visibleWidth', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_pivot_Grid_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "clsGrandTotal": ["string"],
-      "clsGroupTotal": ["string"],
-      "enableColumnSort": ["boolean"],
-      "enableLoadMask": ["boolean"],
-      "leftAxisCellConfig": ["object"],
-      "matrix": ["Ext.pivot.matrix.Base"],
-      "record": ["any"],
-      "startColGroupsCollapsed": ["boolean"],
-      "startRowGroupsCollapsed": ["boolean"],
-      "topAxisCellConfig": ["object"]
-    };
-  };
-
-  Ext_pivot_Grid_Component.EVENTS = function EVENTS() {
+  Ext_pivot_Grid.EVENTS = function EVENTS() {
     return [{
+      name: 'activate',
+      parameters: 'newActiveItem,pivotgrid,oldActiveItem'
+    }, {
+      name: 'activeItemchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'add',
+      parameters: ''
+    }, {
+      name: 'added',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'beforeactiveItemchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecomplete',
+      parameters: 'editor,value,startValue,The'
+    }, {
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeedit',
+      parameters: 'sender,location'
+    }, {
+      name: 'beforegroupcollapse',
+      parameters: 'pivotgrid,group'
+    }, {
+      name: 'beforegroupexpand',
+      parameters: 'pivotgrid,group'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehide',
+      parameters: 'sender'
+    }, {
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeselectionextend',
+      parameters: 'grid,An,extension'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforestartedit',
+      parameters: 'editor,boundEl,value,The'
+    }, {
+      name: 'beforestorechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforetofront',
+      parameters: 'pivotgrid'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'pivotgrid,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'canceledit',
+      parameters: 'editor,value,startValue'
+    }, {
+      name: 'cellselection',
+      parameters: 'grid,selection'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'childdoubletap',
+      parameters: 'pivotgrid,location'
+    }, {
+      name: 'childlongpress',
+      parameters: 'pivotgrid,location'
+    }, {
+      name: 'childmouseenter',
+      parameters: 'pivotgrid,location'
+    }, {
+      name: 'childmouseleave',
+      parameters: 'pivotgrid,location'
+    }, {
+      name: 'childsingletap',
+      parameters: 'pivotgrid,location'
+    }, {
+      name: 'childtap',
+      parameters: 'pivotgrid,location'
+    }, {
+      name: 'childtaphold',
+      parameters: 'pivotgrid,location'
+    }, {
+      name: 'childtouchcancel',
+      parameters: 'pivotgrid,location'
+    }, {
+      name: 'childtouchend',
+      parameters: 'pivotgrid,location'
+    }, {
+      name: 'childtouchmove',
+      parameters: 'pivotgrid,location'
+    }, {
+      name: 'childtouchstart',
+      parameters: 'pivotgrid,location'
+    }, {
+      name: 'columnadd',
+      parameters: 'pivotgrid,column,index'
+    }, {
+      name: 'columnhide',
+      parameters: 'pivotgrid,column'
+    }, {
+      name: 'columnmenucreated',
+      parameters: 'grid,column,menu'
+    }, {
+      name: 'columnmove',
+      parameters: 'pivotgrid,column,fromIndex,toIndex'
+    }, {
+      name: 'columnremove',
+      parameters: 'pivotgrid,column'
+    }, {
+      name: 'columnresize',
+      parameters: 'pivotgrid,column,width'
+    }, {
+      name: 'columnselection',
+      parameters: 'grid,selection'
+    }, {
+      name: 'columnshow',
+      parameters: 'pivotgrid,column'
+    }, {
+      name: 'columnsort',
+      parameters: 'pivotgrid,column,direction'
+    }, {
+      name: 'complete',
+      parameters: 'editor,value,startValue,The'
+    }, {
+      name: 'deactivate',
+      parameters: 'oldActiveItem,pivotgrid,newActiveItem'
+    }, {
+      name: 'deselect',
+      parameters: 'pivotgrid,records'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'disclose',
+      parameters: 'list,record,target,index,event'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'edit',
+      parameters: 'sender,location'
+    }, {
+      name: 'erased',
+      parameters: 'sender'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'pivotgrid,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'pivotgrid,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'pivotgrid,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'groupcollapse',
+      parameters: 'pivotgrid,group'
+    }, {
+      name: 'groupexpand',
+      parameters: 'pivotgrid,group'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
+    }, {
+      name: 'itemaction',
+      parameters: 'pivotgrid,index,record,action'
+    }, {
+      name: 'itemdoubletap',
+      parameters: 'pivotgrid,index,target,record,e'
+    }, {
+      name: 'itemlongpress',
+      parameters: 'pivotgrid,index,target,record,e'
+    }, {
+      name: 'itemmouseenter',
+      parameters: 'pivotgrid,index,target,record,e'
+    }, {
+      name: 'itemmouseleave',
+      parameters: 'pivotgrid,index,target,record,e'
+    }, {
+      name: 'itemsingletap',
+      parameters: 'pivotgrid,index,target,record,e'
+    }, {
+      name: 'itemswipe',
+      parameters: 'pivotgrid,index,target,record,e'
+    }, {
+      name: 'itemtap',
+      parameters: 'pivotgrid,index,target,record,e'
+    }, {
+      name: 'itemtaphold',
+      parameters: 'pivotgrid,index,target,record,e'
+    }, {
+      name: 'itemtouchcancel',
+      parameters: 'pivotgrid,index,target,record,e'
+    }, {
+      name: 'itemtouchend',
+      parameters: 'pivotgrid,index,target,record,e'
+    }, {
+      name: 'itemtouchmove',
+      parameters: 'pivotgrid,index,target,record,e'
+    }, {
+      name: 'itemtouchstart',
+      parameters: 'pivotgrid,index,target,record,e'
+    }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'move',
+      parameters: ''
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'navigate',
+      parameters: 'pivotgrid,to,from'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
+    }, {
       name: 'pivotbeforereconfigure',
       parameters: 'matrix,config'
     }, {
@@ -124,460 +405,119 @@ function (_Ext_grid_Grid_Compon) {
     }, {
       name: 'pivottotaltaphold',
       parameters: 'params,e'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'refresh',
+      parameters: 'pivotgrid'
+    }, {
+      name: 'remove',
+      parameters: ''
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'renderedchange',
+      parameters: 'pivotgrid,item,rendered'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'select',
+      parameters: 'pivotgrid,selected'
+    }, {
+      name: 'selectionextenderdrag',
+      parameters: 'grid,An,extension'
+    }, {
+      name: 'show',
+      parameters: 'sender'
+    }, {
+      name: 'specialkey',
+      parameters: 'editor,field,event'
+    }, {
+      name: 'startedit',
+      parameters: 'editor,boundEl,value,The'
+    }, {
+      name: 'storechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'tofront',
+      parameters: 'pivotgrid'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'validateedit',
+      parameters: 'sender,location'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  Ext_pivot_Grid_Component.METHODS = function METHODS() {
-    return [{
-      name: 'collapseAll',
-      "function": function _function() {
-        return this.ext.collapseAll();
-      }
-    }, {
-      name: 'collapseAllColumns',
-      "function": function _function() {
-        return this.ext.collapseAllColumns();
-      }
-    }, {
-      name: 'collapseAllRows',
-      "function": function _function() {
-        return this.ext.collapseAllRows();
-      }
-    }, {
-      name: 'collapseCol',
-      "function": function _function(topAxisItemKey, includeChildren) {
-        return this.ext.collapseCol(topAxisItemKey, includeChildren);
-      }
-    }, {
-      name: 'collapseRow',
-      "function": function _function(leftAxisItemKey, includeChildren) {
-        return this.ext.collapseRow(leftAxisItemKey, includeChildren);
-      }
-    }, {
-      name: 'doExpandCollapse',
-      "function": function _function(type, groupId, state, includeChildren) {
-        return this.ext.doExpandCollapse(type, groupId, state, includeChildren);
-      }
-    }, {
-      name: 'doExpandCollapseTree',
-      "function": function _function(tree, expanded) {
-        return this.ext.doExpandCollapseTree(tree, expanded);
-      }
-    }, {
-      name: 'expandAll',
-      "function": function _function() {
-        return this.ext.expandAll();
-      }
-    }, {
-      name: 'expandAllColumns',
-      "function": function _function() {
-        return this.ext.expandAllColumns();
-      }
-    }, {
-      name: 'expandAllRows',
-      "function": function _function() {
-        return this.ext.expandAllRows();
-      }
-    }, {
-      name: 'expandCol',
-      "function": function _function(topAxisItemKey, includeChildren) {
-        return this.ext.expandCol(topAxisItemKey, includeChildren);
-      }
-    }, {
-      name: 'expandRow',
-      "function": function _function(leftAxisItemKey, includeChildren) {
-        return this.ext.expandRow(leftAxisItemKey, includeChildren);
-      }
-    }, {
-      name: 'getDataIndexColumns',
-      "function": function _function(columns) {
-        return this.ext.getDataIndexColumns(columns);
-      }
-    }, {
-      name: 'getLeftAxisItem',
-      "function": function _function(record) {
-        return this.ext.getLeftAxisItem(record);
-      }
-    }, {
-      name: 'getPivotColumnsState',
-      "function": function _function() {
-        return this.ext.getPivotColumnsState();
-      }
-    }, {
-      name: 'getTopAxisItem',
-      "function": function _function(column) {
-        return this.ext.getTopAxisItem(column);
-      }
-    }, {
-      name: 'getTopAxisKey',
-      "function": function _function(column) {
-        return this.ext.getTopAxisKey(column);
-      }
-    }, {
-      name: 'getVisiblePivotColumns',
-      "function": function _function(columns, group) {
-        return this.ext.getVisiblePivotColumns(columns, group);
-      }
-    }, {
-      name: 'onMatrixAfterUpdate',
-      "function": function _function(matrix, changed) {
-        return this.ext.onMatrixAfterUpdate(matrix, changed);
-      }
-    }, {
-      name: 'onMatrixClearData',
-      "function": function _function() {
-        return this.ext.onMatrixClearData();
-      }
-    }, {
-      name: 'onMatrixDataReady',
-      "function": function _function(matrix) {
-        return this.ext.onMatrixDataReady(matrix);
-      }
-    }, {
-      name: 'onMatrixGroupExpandCollapse',
-      "function": function _function(matrix, type, item) {
-        return this.ext.onMatrixGroupExpandCollapse(matrix, type, item);
-      }
-    }, {
-      name: 'onMatrixProcessProgress',
-      "function": function _function(matrix, index, length) {
-        return this.ext.onMatrixProcessProgress(matrix, index, length);
-      }
-    }, {
-      name: 'onMatrixProcessStart',
-      "function": function _function() {
-        return this.ext.onMatrixProcessStart();
-      }
-    }, {
-      name: 'preparePivotColumns',
-      "function": function _function(columns) {
-        return this.ext.preparePivotColumns(columns);
-      }
-    }, {
-      name: 'prepareVisiblePivotColumns',
-      "function": function _function(columns) {
-        return this.ext.prepareVisiblePivotColumns(columns);
-      }
-    }, {
-      name: 'reconfigurePivot',
-      "function": function _function(config) {
-        return this.ext.reconfigurePivot(config);
-      }
-    }, {
-      name: 'refreshMatrixData',
-      "function": function _function(matrix, keepStates) {
-        return this.ext.refreshMatrixData(matrix, keepStates);
-      }
-    }, {
-      name: 'refreshView',
-      "function": function _function() {
-        return this.ext.refreshView();
-      }
-    }, {
-      name: 'restorePivotColumnsState',
-      "function": function _function(columns) {
-        return this.ext.restorePivotColumnsState(columns);
-      }
-    }, {
-      name: 'setStore',
-      "function": function _function(store) {
-        return this.ext.setStore(store);
-      }
-    }];
+  Ext_pivot_Grid.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_pivot_Grid.PROPERTIES());
+    return Ext_grid_Grid.getProperties(properties);
   };
 
-  _createClass(Ext_pivot_Grid_Component, [{
-    key: "onpivotbeforereconfigure",
-    //events
-    get: function get() {
-      return this.getAttribute('onpivotbeforereconfigure');
-    },
-    set: function set(onpivotbeforereconfigure) {
-      this.setAttribute('onpivotbeforereconfigure', onpivotbeforereconfigure);
-    }
-  }, {
-    key: "onpivotbeforerequest",
-    get: function get() {
-      return this.getAttribute('onpivotbeforerequest');
-    },
-    set: function set(onpivotbeforerequest) {
-      this.setAttribute('onpivotbeforerequest', onpivotbeforerequest);
-    }
-  }, {
-    key: "onpivotbuildtotals",
-    get: function get() {
-      return this.getAttribute('onpivotbuildtotals');
-    },
-    set: function set(onpivotbuildtotals) {
-      this.setAttribute('onpivotbuildtotals', onpivotbuildtotals);
-    }
-  }, {
-    key: "onpivotcolumnsbuilt",
-    get: function get() {
-      return this.getAttribute('onpivotcolumnsbuilt');
-    },
-    set: function set(onpivotcolumnsbuilt) {
-      this.setAttribute('onpivotcolumnsbuilt', onpivotcolumnsbuilt);
-    }
-  }, {
-    key: "onpivotdone",
-    get: function get() {
-      return this.getAttribute('onpivotdone');
-    },
-    set: function set(onpivotdone) {
-      this.setAttribute('onpivotdone', onpivotdone);
-    }
-  }, {
-    key: "onpivotgroupcelldoubletap",
-    get: function get() {
-      return this.getAttribute('onpivotgroupcelldoubletap');
-    },
-    set: function set(onpivotgroupcelldoubletap) {
-      this.setAttribute('onpivotgroupcelldoubletap', onpivotgroupcelldoubletap);
-    }
-  }, {
-    key: "onpivotgroupcelltap",
-    get: function get() {
-      return this.getAttribute('onpivotgroupcelltap');
-    },
-    set: function set(onpivotgroupcelltap) {
-      this.setAttribute('onpivotgroupcelltap', onpivotgroupcelltap);
-    }
-  }, {
-    key: "onpivotgroupcelltaphold",
-    get: function get() {
-      return this.getAttribute('onpivotgroupcelltaphold');
-    },
-    set: function set(onpivotgroupcelltaphold) {
-      this.setAttribute('onpivotgroupcelltaphold', onpivotgroupcelltaphold);
-    }
-  }, {
-    key: "onpivotgroupcollapse",
-    get: function get() {
-      return this.getAttribute('onpivotgroupcollapse');
-    },
-    set: function set(onpivotgroupcollapse) {
-      this.setAttribute('onpivotgroupcollapse', onpivotgroupcollapse);
-    }
-  }, {
-    key: "onpivotgroupdoubletap",
-    get: function get() {
-      return this.getAttribute('onpivotgroupdoubletap');
-    },
-    set: function set(onpivotgroupdoubletap) {
-      this.setAttribute('onpivotgroupdoubletap', onpivotgroupdoubletap);
-    }
-  }, {
-    key: "onpivotgroupexpand",
-    get: function get() {
-      return this.getAttribute('onpivotgroupexpand');
-    },
-    set: function set(onpivotgroupexpand) {
-      this.setAttribute('onpivotgroupexpand', onpivotgroupexpand);
-    }
-  }, {
-    key: "onpivotgrouptap",
-    get: function get() {
-      return this.getAttribute('onpivotgrouptap');
-    },
-    set: function set(onpivotgrouptap) {
-      this.setAttribute('onpivotgrouptap', onpivotgrouptap);
-    }
-  }, {
-    key: "onpivotgrouptaphold",
-    get: function get() {
-      return this.getAttribute('onpivotgrouptaphold');
-    },
-    set: function set(onpivotgrouptaphold) {
-      this.setAttribute('onpivotgrouptaphold', onpivotgrouptaphold);
-    }
-  }, {
-    key: "onpivotitemcelldoubletap",
-    get: function get() {
-      return this.getAttribute('onpivotitemcelldoubletap');
-    },
-    set: function set(onpivotitemcelldoubletap) {
-      this.setAttribute('onpivotitemcelldoubletap', onpivotitemcelldoubletap);
-    }
-  }, {
-    key: "onpivotitemcelltap",
-    get: function get() {
-      return this.getAttribute('onpivotitemcelltap');
-    },
-    set: function set(onpivotitemcelltap) {
-      this.setAttribute('onpivotitemcelltap', onpivotitemcelltap);
-    }
-  }, {
-    key: "onpivotitemcelltaphold",
-    get: function get() {
-      return this.getAttribute('onpivotitemcelltaphold');
-    },
-    set: function set(onpivotitemcelltaphold) {
-      this.setAttribute('onpivotitemcelltaphold', onpivotitemcelltaphold);
-    }
-  }, {
-    key: "onpivotitemdoubletap",
-    get: function get() {
-      return this.getAttribute('onpivotitemdoubletap');
-    },
-    set: function set(onpivotitemdoubletap) {
-      this.setAttribute('onpivotitemdoubletap', onpivotitemdoubletap);
-    }
-  }, {
-    key: "onpivotitemtap",
-    get: function get() {
-      return this.getAttribute('onpivotitemtap');
-    },
-    set: function set(onpivotitemtap) {
-      this.setAttribute('onpivotitemtap', onpivotitemtap);
-    }
-  }, {
-    key: "onpivotitemtaphold",
-    get: function get() {
-      return this.getAttribute('onpivotitemtaphold');
-    },
-    set: function set(onpivotitemtaphold) {
-      this.setAttribute('onpivotitemtaphold', onpivotitemtaphold);
-    }
-  }, {
-    key: "onpivotmodelbuilt",
-    get: function get() {
-      return this.getAttribute('onpivotmodelbuilt');
-    },
-    set: function set(onpivotmodelbuilt) {
-      this.setAttribute('onpivotmodelbuilt', onpivotmodelbuilt);
-    }
-  }, {
-    key: "onpivotprogress",
-    get: function get() {
-      return this.getAttribute('onpivotprogress');
-    },
-    set: function set(onpivotprogress) {
-      this.setAttribute('onpivotprogress', onpivotprogress);
-    }
-  }, {
-    key: "onpivotreconfigure",
-    get: function get() {
-      return this.getAttribute('onpivotreconfigure');
-    },
-    set: function set(onpivotreconfigure) {
-      this.setAttribute('onpivotreconfigure', onpivotreconfigure);
-    }
-  }, {
-    key: "onpivotrecordbuilt",
-    get: function get() {
-      return this.getAttribute('onpivotrecordbuilt');
-    },
-    set: function set(onpivotrecordbuilt) {
-      this.setAttribute('onpivotrecordbuilt', onpivotrecordbuilt);
-    }
-  }, {
-    key: "onpivotrequestexception",
-    get: function get() {
-      return this.getAttribute('onpivotrequestexception');
-    },
-    set: function set(onpivotrequestexception) {
-      this.setAttribute('onpivotrequestexception', onpivotrequestexception);
-    }
-  }, {
-    key: "onpivotstart",
-    get: function get() {
-      return this.getAttribute('onpivotstart');
-    },
-    set: function set(onpivotstart) {
-      this.setAttribute('onpivotstart', onpivotstart);
-    }
-  }, {
-    key: "onpivotstorebuilt",
-    get: function get() {
-      return this.getAttribute('onpivotstorebuilt');
-    },
-    set: function set(onpivotstorebuilt) {
-      this.setAttribute('onpivotstorebuilt', onpivotstorebuilt);
-    }
-  }, {
-    key: "onpivottotalcelldoubletap",
-    get: function get() {
-      return this.getAttribute('onpivottotalcelldoubletap');
-    },
-    set: function set(onpivottotalcelldoubletap) {
-      this.setAttribute('onpivottotalcelldoubletap', onpivottotalcelldoubletap);
-    }
-  }, {
-    key: "onpivottotalcelltap",
-    get: function get() {
-      return this.getAttribute('onpivottotalcelltap');
-    },
-    set: function set(onpivottotalcelltap) {
-      this.setAttribute('onpivottotalcelltap', onpivottotalcelltap);
-    }
-  }, {
-    key: "onpivottotalcelltaphold",
-    get: function get() {
-      return this.getAttribute('onpivottotalcelltaphold');
-    },
-    set: function set(onpivottotalcelltaphold) {
-      this.setAttribute('onpivottotalcelltaphold', onpivottotalcelltaphold);
-    }
-  }, {
-    key: "onpivottotaldoubletap",
-    get: function get() {
-      return this.getAttribute('onpivottotaldoubletap');
-    },
-    set: function set(onpivottotaldoubletap) {
-      this.setAttribute('onpivottotaldoubletap', onpivottotaldoubletap);
-    }
-  }, {
-    key: "onpivottotaltap",
-    get: function get() {
-      return this.getAttribute('onpivottotaltap');
-    },
-    set: function set(onpivottotaltap) {
-      this.setAttribute('onpivottotaltap', onpivottotaltap);
-    }
-  }, {
-    key: "onpivottotaltaphold",
-    get: function get() {
-      return this.getAttribute('onpivottotaltaphold');
-    },
-    set: function set(onpivottotaltaphold) {
-      this.setAttribute('onpivottotaltaphold', onpivottotaltaphold);
-    }
-  }], [{
+  Ext_pivot_Grid.getEvents = function getEvents(events) {
+    events = events.concat(Ext_pivot_Grid.EVENTS());
+    return Ext_grid_Grid.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'pivotgrid'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_pivot_Grid, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_grid_Grid_Compon.observedAttributes;
+      var attrs = _Ext_grid_Grid.observedAttributes; //for (var property in Ext_pivot_Grid.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_pivot_Grid_Component.PROPERTIESOBJECT()) {
+      Ext_pivot_Grid.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_pivot_Grid_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_pivot_Grid.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_pivot_Grid_Component(propertiesobject, methods, events) {
-    return _Ext_grid_Grid_Compon.call(this, Object.assign(propertiesobject, Ext_pivot_Grid_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_pivot_Grid_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_pivot_Grid_Component.METHODS()), events.concat(Ext_pivot_Grid_Component.EVENTS())) || this; //this.XTYPE = Ext_pivot_Grid_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_pivot_Grid_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_pivot_Grid_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_pivot_Grid_Component.EVENTS());
+  function Ext_pivot_Grid(properties, events) {
+    return _Ext_grid_Grid.call(this, properties.concat(Ext_pivot_Grid.PROPERTIES()), events.concat(Ext_pivot_Grid.EVENTS())) || this;
   }
 
-  var _proto = Ext_pivot_Grid_Component.prototype;
+  var _proto = Ext_pivot_Grid.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    _Ext_grid_Grid_Compon.prototype.connectedCallback.call(this);
+    _Ext_grid_Grid.prototype.connectedCallback.call(this);
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
-    _Ext_grid_Grid_Compon.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+    _Ext_grid_Grid.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_pivot_Grid_Component;
-}(Ext_grid_Grid_Component);
+  return Ext_pivot_Grid;
+}(Ext_grid_Grid);
 
-export { Ext_pivot_Grid_Component as default };
+export { Ext_pivot_Grid as default };

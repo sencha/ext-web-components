@@ -1,249 +1,292 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Container_Component from '../../Ext/Container';
+import Ext_Container from '../../Ext/Container';
 
-var Ext_panel_Panel_Component =
+var Ext_panel_Panel =
 /*#__PURE__*/
-function (_Ext_Container_Compon) {
-  _inheritsLoose(Ext_panel_Panel_Component, _Ext_Container_Compon);
+function (_Ext_Container) {
+  _inheritsLoose(Ext_panel_Panel, _Ext_Container);
 
-  //configs
-  Ext_panel_Panel_Component.XTYPE = function XTYPE() {
-    return 'panel';
+  Ext_panel_Panel.PROPERTIES = function PROPERTIES() {
+    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'anchor', 'anchorPosition', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'bbar', 'bind', 'bodyBorder', 'bodyCls', 'bodyPadding', 'bodyStyle', 'border', 'bottom', 'buttonAlign', 'buttons', 'buttonToolbar', 'cardSwitchAnimation', 'centered', 'closable', 'closeAction', 'closeToolText', 'cls', 'collapsed', 'collapsible', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultToolWeights', 'defaultType', 'disabled', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'header', 'headerPosition', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'icon', 'iconAlign', 'iconCls', 'id', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'lbar', 'left', 'listeners', 'manageBorders', 'margin', 'masked', 'maxHeight', 'maxWidth', 'minButtonWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'publishes', 'rbar', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'resizable', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'standardButtons', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'tbar', 'title', 'titleAlign', 'titleCollapse', 'toFrontOnShow', 'toolDefaults', 'tools', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_panel_Panel_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "anchor": ["boolean"],
-      "anchorPosition": ["string"],
-      "bbar": ["object", "object[]"],
-      "bodyBorder": ["boolean"],
-      "bodyPadding": ["number", "boolean", "string"],
-      "bodyStyle": ["string", "object"],
-      "border": ["boolean"],
-      "buttons": ["object", "Ext.Button[]"],
-      "buttonToolbar": ["object", "Ext.Toolbar"],
-      "closable": ["boolean"],
-      "closeAction": ["string"],
-      "closeToolText": ["string"],
-      "collapsed": ["boolean"],
-      "collapsible": ["'top'", "'right'", "'bottom'", "'left'", "boolean", "object"],
-      "header": ["boolean", "object"],
-      "headerPosition": ["'top'", "'right'", "'bottom'", "'left'"],
-      "icon": ["string"],
-      "iconAlign": ["'top'", "'right'", "'bottom'", "'left'"],
-      "iconCls": ["string"],
-      "lbar": ["object", "object[]"],
-      "manageBorders": ["boolean"],
-      "rbar": ["object", "object[]"],
-      "resizable": ["object"],
-      "tbar": ["object", "object[]"],
-      "title": ["string", "Ext.panel.Title"],
-      "titleAlign": ["'left'", "'center'", "'right'"],
-      "titleCollapse": ["boolean"]
-    };
-  };
-
-  Ext_panel_Panel_Component.EVENTS = function EVENTS() {
+  Ext_panel_Panel.EVENTS = function EVENTS() {
     return [{
+      name: 'activate',
+      parameters: 'newActiveItem,panel,oldActiveItem'
+    }, {
+      name: 'activeItemchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'add',
+      parameters: 'panel,item,index'
+    }, {
+      name: 'added',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'beforeactiveItemchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
       name: 'beforecollapse',
-      parameters: 'undefined'
+      parameters: 'panel'
+    }, {
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforeexpand',
-      parameters: 'undefined'
+      parameters: 'panel'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehide',
+      parameters: 'sender'
+    }, {
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
     }, {
       name: 'beforeresizedragstart',
-      parameters: 'undefined,context'
+      parameters: 'panel,context'
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforetofront',
+      parameters: 'panel'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'panel,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
     }, {
       name: 'collapse',
-      parameters: 'undefined'
+      parameters: 'panel'
+    }, {
+      name: 'deactivate',
+      parameters: 'oldActiveItem,panel,newActiveItem'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
     }, {
       name: 'drawerhide',
-      parameters: 'undefined'
+      parameters: 'panel'
     }, {
       name: 'drawershow',
-      parameters: 'undefined'
+      parameters: 'panel'
+    }, {
+      name: 'erased',
+      parameters: 'sender'
     }, {
       name: 'expand',
-      parameters: 'undefined'
+      parameters: 'panel'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'panel,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'panel,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'panel,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
+    }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'move',
+      parameters: 'panel,item,toIndex,fromIndex'
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'remove',
+      parameters: 'panel,item,index'
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'renderedchange',
+      parameters: 'panel,item,rendered'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
     }, {
       name: 'resizedrag',
-      parameters: 'undefined,context'
+      parameters: 'panel,context'
     }, {
       name: 'resizedragcancel',
-      parameters: 'undefined,context'
+      parameters: 'panel,context'
     }, {
       name: 'resizedragend',
-      parameters: 'undefined,context'
+      parameters: 'panel,context'
     }, {
       name: 'resizedragstart',
-      parameters: 'undefined,context'
+      parameters: 'panel,context'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'show',
+      parameters: 'sender'
+    }, {
+      name: 'tofront',
+      parameters: 'panel'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  Ext_panel_Panel_Component.METHODS = function METHODS() {
-    return [{
-      name: 'addBodyCls',
-      "function": function _function(cls) {
-        return this.ext.addBodyCls(cls);
-      }
-    }, {
-      name: 'addTool',
-      "function": function _function(tool) {
-        return this.ext.addTool(tool);
-      }
-    }, {
-      name: 'close',
-      "function": function _function() {
-        return this.ext.close();
-      }
-    }, {
-      name: 'collapse',
-      "function": function _function(animation) {
-        return this.ext.collapse(animation);
-      }
-    }, {
-      name: 'expand',
-      "function": function _function(animation) {
-        return this.ext.expand(animation);
-      }
-    }, {
-      name: 'removeBodyCls',
-      "function": function _function(cls) {
-        return this.ext.removeBodyCls(cls);
-      }
-    }, {
-      name: 'toggleCollapsed',
-      "function": function _function(collapsed, animation) {
-        return this.ext.toggleCollapsed(collapsed, animation);
-      }
-    }];
+  Ext_panel_Panel.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_panel_Panel.PROPERTIES());
+    return Ext_Container.getProperties(properties);
   };
 
-  _createClass(Ext_panel_Panel_Component, [{
-    key: "onbeforecollapse",
-    //events
-    get: function get() {
-      return this.getAttribute('onbeforecollapse');
-    },
-    set: function set(onbeforecollapse) {
-      this.setAttribute('onbeforecollapse', onbeforecollapse);
-    }
-  }, {
-    key: "onbeforeexpand",
-    get: function get() {
-      return this.getAttribute('onbeforeexpand');
-    },
-    set: function set(onbeforeexpand) {
-      this.setAttribute('onbeforeexpand', onbeforeexpand);
-    }
-  }, {
-    key: "onbeforeresizedragstart",
-    get: function get() {
-      return this.getAttribute('onbeforeresizedragstart');
-    },
-    set: function set(onbeforeresizedragstart) {
-      this.setAttribute('onbeforeresizedragstart', onbeforeresizedragstart);
-    }
-  }, {
-    key: "oncollapse",
-    get: function get() {
-      return this.getAttribute('oncollapse');
-    },
-    set: function set(oncollapse) {
-      this.setAttribute('oncollapse', oncollapse);
-    }
-  }, {
-    key: "ondrawerhide",
-    get: function get() {
-      return this.getAttribute('ondrawerhide');
-    },
-    set: function set(ondrawerhide) {
-      this.setAttribute('ondrawerhide', ondrawerhide);
-    }
-  }, {
-    key: "ondrawershow",
-    get: function get() {
-      return this.getAttribute('ondrawershow');
-    },
-    set: function set(ondrawershow) {
-      this.setAttribute('ondrawershow', ondrawershow);
-    }
-  }, {
-    key: "onexpand",
-    get: function get() {
-      return this.getAttribute('onexpand');
-    },
-    set: function set(onexpand) {
-      this.setAttribute('onexpand', onexpand);
-    }
-  }, {
-    key: "onresizedrag",
-    get: function get() {
-      return this.getAttribute('onresizedrag');
-    },
-    set: function set(onresizedrag) {
-      this.setAttribute('onresizedrag', onresizedrag);
-    }
-  }, {
-    key: "onresizedragcancel",
-    get: function get() {
-      return this.getAttribute('onresizedragcancel');
-    },
-    set: function set(onresizedragcancel) {
-      this.setAttribute('onresizedragcancel', onresizedragcancel);
-    }
-  }, {
-    key: "onresizedragend",
-    get: function get() {
-      return this.getAttribute('onresizedragend');
-    },
-    set: function set(onresizedragend) {
-      this.setAttribute('onresizedragend', onresizedragend);
-    }
-  }, {
-    key: "onresizedragstart",
-    get: function get() {
-      return this.getAttribute('onresizedragstart');
-    },
-    set: function set(onresizedragstart) {
-      this.setAttribute('onresizedragstart', onresizedragstart);
-    }
-  }], [{
+  Ext_panel_Panel.getEvents = function getEvents(events) {
+    events = events.concat(Ext_panel_Panel.EVENTS());
+    return Ext_Container.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'panel'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_panel_Panel, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Container_Compon.observedAttributes;
+      var attrs = _Ext_Container.observedAttributes; //for (var property in Ext_panel_Panel.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_panel_Panel_Component.PROPERTIESOBJECT()) {
+      Ext_panel_Panel.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_panel_Panel_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_panel_Panel.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_panel_Panel_Component(propertiesobject, methods, events) {
-    return _Ext_Container_Compon.call(this, Object.assign(propertiesobject, Ext_panel_Panel_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_panel_Panel_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_panel_Panel_Component.METHODS()), events.concat(Ext_panel_Panel_Component.EVENTS())) || this; //this.XTYPE = Ext_panel_Panel_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_panel_Panel_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_panel_Panel_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_panel_Panel_Component.EVENTS());
+  function Ext_panel_Panel(properties, events) {
+    return _Ext_Container.call(this, properties.concat(Ext_panel_Panel.PROPERTIES()), events.concat(Ext_panel_Panel.EVENTS())) || this;
   }
 
-  var _proto = Ext_panel_Panel_Component.prototype;
+  var _proto = Ext_panel_Panel.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    _Ext_Container_Compon.prototype.connectedCallback.call(this);
+    _Ext_Container.prototype.connectedCallback.call(this);
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
-    _Ext_Container_Compon.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+    _Ext_Container.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_panel_Panel_Component;
-}(Ext_Container_Component);
+  return Ext_panel_Panel;
+}(Ext_Container);
 
-export { Ext_panel_Panel_Component as default };
+export { Ext_panel_Panel as default };

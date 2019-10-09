@@ -1,194 +1,277 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Container_Component from '../Ext/Container';
+import Ext_Container from '../Ext/Container';
 
-var Ext_Editor_Component =
+var Ext_Editor =
 /*#__PURE__*/
-function (_Ext_Container_Compon) {
-  _inheritsLoose(Ext_Editor_Component, _Ext_Container_Compon);
+function (_Ext_Container) {
+  _inheritsLoose(Ext_Editor, _Ext_Container);
 
-  //configs
-  Ext_Editor_Component.XTYPE = function XTYPE() {
-    return 'editor';
+  Ext_Editor.PROPERTIES = function PROPERTIES() {
+    return ['activeChildTabIndex', 'activeItem', 'alignment', 'alignSelf', 'allowBlur', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'cancelOnClear', 'cancelOnEsc', 'cardSwitchAnimation', 'centered', 'cls', 'completeOnEnter', 'constrain', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'disabled', 'displayed', 'docked', 'draggable', 'field', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideEl', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'ignoreNoChange', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'listeners', 'manageBorders', 'margin', 'masked', 'matchFont', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'offset', 'padding', 'parentEl', 'plugins', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'revertInvalid', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'swallowKeys', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'updateEl', 'userCls', 'userSelectable', 'value', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_Editor_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "alignment": ["string"],
-      "allowBlur": ["boolean"],
-      "cancelOnClear": ["boolean"],
-      "cancelOnEsc": ["boolean"],
-      "completeOnEnter": ["boolean"],
-      "constrain": ["boolean"],
-      "field": ["object"],
-      "hideEl": ["boolean"],
-      "ignoreNoChange": ["boolean"],
-      "matchFont": ["boolean"],
-      "offset": ["number[]"],
-      "parentEl": ["string", "htmlelement", "Ext.dom.Element"],
-      "revertInvalid": ["boolean"],
-      "shadow": ["boolean", "string"],
-      "swallowKeys": ["boolean"],
-      "updateEl": ["boolean"],
-      "value": ["object"]
-    };
-  };
-
-  Ext_Editor_Component.EVENTS = function EVENTS() {
+  Ext_Editor.EVENTS = function EVENTS() {
     return [{
+      name: 'activate',
+      parameters: 'newActiveItem,editor,oldActiveItem'
+    }, {
+      name: 'activeItemchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'add',
+      parameters: 'editor,item,index'
+    }, {
+      name: 'added',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'beforeactiveItemchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
       name: 'beforecomplete',
-      parameters: 'undefined,value,startValue'
+      parameters: 'editor,value,startValue'
+    }, {
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehide',
+      parameters: 'sender'
+    }, {
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
     }, {
       name: 'beforestartedit',
-      parameters: 'undefined,boundEl,value'
+      parameters: 'editor,boundEl,value'
+    }, {
+      name: 'beforetofront',
+      parameters: 'editor'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'editor,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
     }, {
       name: 'canceledit',
-      parameters: 'undefined,value,startValue'
+      parameters: 'editor,value,startValue'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
     }, {
       name: 'complete',
-      parameters: 'undefined,value,startValue'
+      parameters: 'editor,value,startValue'
+    }, {
+      name: 'deactivate',
+      parameters: 'oldActiveItem,editor,newActiveItem'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'erased',
+      parameters: 'sender'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'editor,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'editor,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'editor,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
+    }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'move',
+      parameters: 'editor,item,toIndex,fromIndex'
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'remove',
+      parameters: 'editor,item,index'
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'renderedchange',
+      parameters: 'editor,item,rendered'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'show',
+      parameters: 'sender'
     }, {
       name: 'specialkey',
-      parameters: 'undefined,field,event'
+      parameters: 'editor,field,event'
     }, {
       name: 'startedit',
-      parameters: 'undefined,boundEl,value'
+      parameters: 'editor,boundEl,value'
+    }, {
+      name: 'tofront',
+      parameters: 'editor'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  Ext_Editor_Component.METHODS = function METHODS() {
-    return [{
-      name: 'cancelEdit',
-      "function": function _function(remainVisible) {
-        return this.ext.cancelEdit(remainVisible);
-      }
-    }, {
-      name: 'completeEdit',
-      "function": function _function(remainVisible) {
-        return this.ext.completeEdit(remainVisible);
-      }
-    }, {
-      name: 'getLocation',
-      "function": function _function() {
-        return this.ext.getLocation();
-      }
-    }, {
-      name: 'getValue',
-      "function": function _function() {
-        return this.ext.getValue();
-      }
-    }, {
-      name: 'onEditComplete',
-      "function": function _function(remainVisible, cancelling) {
-        return this.ext.onEditComplete(remainVisible, cancelling);
-      }
-    }, {
-      name: 'onSpecialKey',
-      "function": function _function(field, event) {
-        return this.ext.onSpecialKey(field, event);
-      }
-    }, {
-      name: 'realign',
-      "function": function _function() {
-        return this.ext.realign();
-      }
-    }, {
-      name: 'setValue',
-      "function": function _function(value) {
-        return this.ext.setValue(value);
-      }
-    }, {
-      name: 'startEdit',
-      "function": function _function(el, value, doFocus) {
-        return this.ext.startEdit(el, value, doFocus);
-      }
-    }];
+  Ext_Editor.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_Editor.PROPERTIES());
+    return Ext_Container.getProperties(properties);
   };
 
-  _createClass(Ext_Editor_Component, [{
-    key: "onbeforecomplete",
-    //events
-    get: function get() {
-      return this.getAttribute('onbeforecomplete');
-    },
-    set: function set(onbeforecomplete) {
-      this.setAttribute('onbeforecomplete', onbeforecomplete);
-    }
-  }, {
-    key: "onbeforestartedit",
-    get: function get() {
-      return this.getAttribute('onbeforestartedit');
-    },
-    set: function set(onbeforestartedit) {
-      this.setAttribute('onbeforestartedit', onbeforestartedit);
-    }
-  }, {
-    key: "oncanceledit",
-    get: function get() {
-      return this.getAttribute('oncanceledit');
-    },
-    set: function set(oncanceledit) {
-      this.setAttribute('oncanceledit', oncanceledit);
-    }
-  }, {
-    key: "oncomplete",
-    get: function get() {
-      return this.getAttribute('oncomplete');
-    },
-    set: function set(oncomplete) {
-      this.setAttribute('oncomplete', oncomplete);
-    }
-  }, {
-    key: "onspecialkey",
-    get: function get() {
-      return this.getAttribute('onspecialkey');
-    },
-    set: function set(onspecialkey) {
-      this.setAttribute('onspecialkey', onspecialkey);
-    }
-  }, {
-    key: "onstartedit",
-    get: function get() {
-      return this.getAttribute('onstartedit');
-    },
-    set: function set(onstartedit) {
-      this.setAttribute('onstartedit', onstartedit);
-    }
-  }], [{
+  Ext_Editor.getEvents = function getEvents(events) {
+    events = events.concat(Ext_Editor.EVENTS());
+    return Ext_Container.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'editor'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_Editor, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Container_Compon.observedAttributes;
+      var attrs = _Ext_Container.observedAttributes; //for (var property in Ext_Editor.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_Editor_Component.PROPERTIESOBJECT()) {
+      Ext_Editor.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_Editor_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_Editor.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_Editor_Component(propertiesobject, methods, events) {
-    return _Ext_Container_Compon.call(this, Object.assign(propertiesobject, Ext_Editor_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_Editor_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_Editor_Component.METHODS()), events.concat(Ext_Editor_Component.EVENTS())) || this; //this.XTYPE = Ext_Editor_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_Editor_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_Editor_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_Editor_Component.EVENTS());
+  function Ext_Editor(properties, events) {
+    return _Ext_Container.call(this, properties.concat(Ext_Editor.PROPERTIES()), events.concat(Ext_Editor.EVENTS())) || this;
   }
 
-  var _proto = Ext_Editor_Component.prototype;
+  var _proto = Ext_Editor.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    _Ext_Container_Compon.prototype.connectedCallback.call(this);
+    _Ext_Container.prototype.connectedCallback.call(this);
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
-    _Ext_Container_Compon.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+    _Ext_Container.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_Editor_Component;
-}(Ext_Container_Component);
+  return Ext_Editor;
+}(Ext_Container);
 
-export { Ext_Editor_Component as default };
+export { Ext_Editor as default };

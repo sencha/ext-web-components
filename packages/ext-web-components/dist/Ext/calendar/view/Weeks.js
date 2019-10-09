@@ -1,279 +1,264 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_calendar_view_Base_Component from '../../../Ext/calendar/view/Base';
+import Ext_calendar_view_Base from '../../../Ext/calendar/view/Base';
 
-var Ext_calendar_view_Weeks_Component =
+var Ext_calendar_view_Weeks =
 /*#__PURE__*/
 function (_Ext_calendar_view_Ba) {
-  _inheritsLoose(Ext_calendar_view_Weeks_Component, _Ext_calendar_view_Ba);
+  _inheritsLoose(Ext_calendar_view_Weeks, _Ext_calendar_view_Ba);
 
-  //configs
-  Ext_calendar_view_Weeks_Component.XTYPE = function XTYPE() {
-    return 'calendar-weeksview';
+  Ext_calendar_view_Weeks.PROPERTIES = function PROPERTIES() {
+    return ['addForm', 'addOnSelect', 'alignSelf', 'allowSelection', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'cls', 'compact', 'compactOptions', 'constrainAlign', 'contentEl', 'controller', 'controlStoreRange', 'data', 'dayFormat', 'defaultListenerScope', 'disabled', 'displayed', 'docked', 'draggable', 'droppable', 'editForm', 'eventDefaults', 'firstDayOfWeek', 'flex', 'floated', 'focusCls', 'fullscreen', 'gestureNavigation', 'header', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'overflowText', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'showOverflow', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'timezoneOffset', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'viewModel', 'visibleDays', 'visibleWeeks', 'weekendDays', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_calendar_view_Weeks_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "addOnSelect": ["boolean"],
-      "allowSelection": ["boolean"],
-      "compactOptions": ["object"],
-      "dayFormat": ["string"],
-      "draggable": ["boolean"],
-      "droppable": ["boolean"],
-      "firstDayOfWeek": ["number"],
-      "overflowText": ["string"],
-      "showOverflow": ["string"],
-      "value": ["date"],
-      "visibleDays": ["number"],
-      "visibleWeeks": ["number"],
-      "weekendDays": ["number[]"]
-    };
-  };
-
-  Ext_calendar_view_Weeks_Component.EVENTS = function EVENTS() {
+  Ext_calendar_view_Weeks.EVENTS = function EVENTS() {
     return [{
+      name: 'added',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeeventadd',
+      parameters: 'calendar-weeksview,context'
+    }, {
       name: 'beforeeventdragstart',
-      parameters: 'undefined,context'
+      parameters: 'calendar-weeksview,context'
+    }, {
+      name: 'beforeeventedit',
+      parameters: 'calendar-weeksview,context'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehide',
+      parameters: 'sender'
+    }, {
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforetofront',
+      parameters: 'calendar-weeksview'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'calendar-weeksview,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'erased',
+      parameters: 'sender'
+    }, {
+      name: 'eventadd',
+      parameters: 'calendar-weeksview,context'
     }, {
       name: 'eventdrop',
-      parameters: 'undefined,context'
+      parameters: 'calendar-weeksview,context'
+    }, {
+      name: 'eventedit',
+      parameters: 'calendar-weeksview,context'
+    }, {
+      name: 'eventtap',
+      parameters: 'calendar-weeksview,context'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'calendar-weeksview,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'calendar-weeksview,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'calendar-weeksview,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
+    }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
     }, {
       name: 'select',
-      parameters: 'undefined,context'
+      parameters: 'calendar-weeksview,context'
     }, {
       name: 'selectrange',
-      parameters: 'undefined,context'
+      parameters: 'calendar-weeksview,context'
+    }, {
+      name: 'show',
+      parameters: 'sender'
+    }, {
+      name: 'tofront',
+      parameters: 'calendar-weeksview'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'validateeventadd',
+      parameters: 'calendar-weeksview,context'
     }, {
       name: 'validateeventdrop',
-      parameters: 'undefined,context'
+      parameters: 'calendar-weeksview,context'
+    }, {
+      name: 'validateeventedit',
+      parameters: 'calendar-weeksview,context'
+    }, {
+      name: 'valuechange',
+      parameters: 'calendar-weeksview,context'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  Ext_calendar_view_Weeks_Component.METHODS = function METHODS() {
-    return [{
-      name: 'clearSelected',
-      "function": function _function() {
-        return this.ext.clearSelected();
-      }
-    }, {
-      name: 'constructEvents',
-      "function": function _function() {
-        return this.ext.constructEvents();
-      }
-    }, {
-      name: 'createEvent',
-      "function": function _function(event, cfg, dummy) {
-        return this.ext.createEvent(event, cfg, dummy);
-      }
-    }, {
-      name: 'doRecalculate',
-      "function": function _function(start) {
-        return this.ext.doRecalculate(start);
-      }
-    }, {
-      name: 'doRefresh',
-      "function": function _function() {
-        return this.ext.doRefresh();
-      }
-    }, {
-      name: 'doRefreshEvents',
-      "function": function _function() {
-        return this.ext.doRefreshEvents();
-      }
-    }, {
-      name: 'findIndex',
-      "function": function _function(sizes, offset) {
-        return this.ext.findIndex(sizes, offset);
-      }
-    }, {
-      name: 'generateCells',
-      "function": function _function(numRows, setHeights) {
-        return this.ext.generateCells(numRows, setHeights);
-      }
-    }, {
-      name: 'getCell',
-      "function": function _function(date) {
-        return this.ext.getCell(date);
-      }
-    }, {
-      name: 'getCellByPosition',
-      "function": function _function(pageX, pageY) {
-        return this.ext.getCellByPosition(pageX, pageY);
-      }
-    }, {
-      name: 'getCellFromEvent',
-      "function": function _function(e, inferFromWidget) {
-        return this.ext.getCellFromEvent(e, inferFromWidget);
-      }
-    }, {
-      name: 'getDateFromCell',
-      "function": function _function(cell) {
-        return this.ext.getDateFromCell(cell);
-      }
-    }, {
-      name: 'getDaySizes',
-      "function": function _function() {
-        return this.ext.getDaySizes();
-      }
-    }, {
-      name: 'getEventStyle',
-      "function": function _function() {
-        return this.ext.getEventStyle();
-      }
-    }, {
-      name: 'getEventWidget',
-      "function": function _function(el) {
-        return this.ext.getEventWidget(el);
-      }
-    }, {
-      name: 'getMoveBaseValue',
-      "function": function _function() {
-        return this.ext.getMoveBaseValue();
-      }
-    }, {
-      name: 'getMoveInterval',
-      "function": function _function() {
-        return this.ext.getMoveInterval();
-      }
-    }, {
-      name: 'handleEventTap',
-      "function": function _function(e) {
-        return this.ext.handleEventTap(e);
-      }
-    }, {
-      name: 'handleResize',
-      "function": function _function() {
-        return this.ext.handleResize();
-      }
-    }, {
-      name: 'onOverflowClick',
-      "function": function _function(e) {
-        return this.ext.onOverflowClick(e);
-      }
-    }, {
-      name: 'onSourceAttach',
-      "function": function _function() {
-        return this.ext.onSourceAttach();
-      }
-    }, {
-      name: 'onTouchEnd',
-      "function": function _function(event) {
-        return this.ext.onTouchEnd(event);
-      }
-    }, {
-      name: 'onTouchMove',
-      "function": function _function(e) {
-        return this.ext.onTouchMove(e);
-      }
-    }, {
-      name: 'onTouchStart',
-      "function": function _function(e, t) {
-        return this.ext.onTouchStart(e, t);
-      }
-    }, {
-      name: 'positionEvent',
-      "function": function _function(el, item) {
-        return this.ext.positionEvent(el, item);
-      }
-    }, {
-      name: 'positionSum',
-      "function": function _function(start, len, sizes) {
-        return this.ext.positionSum(start, len, sizes);
-      }
-    }, {
-      name: 'processWeek',
-      "function": function _function(week, frag) {
-        return this.ext.processWeek(week, frag);
-      }
-    }, {
-      name: 'queryCells',
-      "function": function _function() {
-        return this.ext.queryCells();
-      }
-    }, {
-      name: 'recalculate',
-      "function": function _function() {
-        return this.ext.recalculate();
-      }
-    }, {
-      name: 'refreshHeaders',
-      "function": function _function() {
-        return this.ext.refreshHeaders();
-      }
-    }, {
-      name: 'selectRange',
-      "function": function _function(from, to) {
-        return this.ext.selectRange(from, to);
-      }
-    }];
+  Ext_calendar_view_Weeks.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_calendar_view_Weeks.PROPERTIES());
+    return Ext_calendar_view_Base.getProperties(properties);
   };
 
-  _createClass(Ext_calendar_view_Weeks_Component, [{
-    key: "onbeforeeventdragstart",
-    //events
-    get: function get() {
-      return this.getAttribute('onbeforeeventdragstart');
-    },
-    set: function set(onbeforeeventdragstart) {
-      this.setAttribute('onbeforeeventdragstart', onbeforeeventdragstart);
-    }
-  }, {
-    key: "oneventdrop",
-    get: function get() {
-      return this.getAttribute('oneventdrop');
-    },
-    set: function set(oneventdrop) {
-      this.setAttribute('oneventdrop', oneventdrop);
-    }
-  }, {
-    key: "onselect",
-    get: function get() {
-      return this.getAttribute('onselect');
-    },
-    set: function set(onselect) {
-      this.setAttribute('onselect', onselect);
-    }
-  }, {
-    key: "onselectrange",
-    get: function get() {
-      return this.getAttribute('onselectrange');
-    },
-    set: function set(onselectrange) {
-      this.setAttribute('onselectrange', onselectrange);
-    }
-  }, {
-    key: "onvalidateeventdrop",
-    get: function get() {
-      return this.getAttribute('onvalidateeventdrop');
-    },
-    set: function set(onvalidateeventdrop) {
-      this.setAttribute('onvalidateeventdrop', onvalidateeventdrop);
-    }
-  }], [{
+  Ext_calendar_view_Weeks.getEvents = function getEvents(events) {
+    events = events.concat(Ext_calendar_view_Weeks.EVENTS());
+    return Ext_calendar_view_Base.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'calendar-weeksview'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_calendar_view_Weeks, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_calendar_view_Ba.observedAttributes;
+      var attrs = _Ext_calendar_view_Ba.observedAttributes; //for (var property in Ext_calendar_view_Weeks.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_calendar_view_Weeks_Component.PROPERTIESOBJECT()) {
+      Ext_calendar_view_Weeks.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_calendar_view_Weeks_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_calendar_view_Weeks.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_calendar_view_Weeks_Component(propertiesobject, methods, events) {
-    return _Ext_calendar_view_Ba.call(this, Object.assign(propertiesobject, Ext_calendar_view_Weeks_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_calendar_view_Weeks_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_calendar_view_Weeks_Component.METHODS()), events.concat(Ext_calendar_view_Weeks_Component.EVENTS())) || this; //this.XTYPE = Ext_calendar_view_Weeks_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_calendar_view_Weeks_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_calendar_view_Weeks_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_calendar_view_Weeks_Component.EVENTS());
+  function Ext_calendar_view_Weeks(properties, events) {
+    return _Ext_calendar_view_Ba.call(this, properties.concat(Ext_calendar_view_Weeks.PROPERTIES()), events.concat(Ext_calendar_view_Weeks.EVENTS())) || this;
   }
 
-  var _proto = Ext_calendar_view_Weeks_Component.prototype;
+  var _proto = Ext_calendar_view_Weeks.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
     _Ext_calendar_view_Ba.prototype.connectedCallback.call(this);
@@ -283,7 +268,7 @@ function (_Ext_calendar_view_Ba) {
     _Ext_calendar_view_Ba.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_calendar_view_Weeks_Component;
-}(Ext_calendar_view_Base_Component);
+  return Ext_calendar_view_Weeks;
+}(Ext_calendar_view_Base);
 
-export { Ext_calendar_view_Weeks_Component as default };
+export { Ext_calendar_view_Weeks as default };

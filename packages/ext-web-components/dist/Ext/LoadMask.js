@@ -1,85 +1,238 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Mask_Component from '../Ext/Mask';
+import Ext_Mask from '../Ext/Mask';
 
-var Ext_LoadMask_Component =
+var Ext_LoadMask =
 /*#__PURE__*/
-function (_Ext_Mask_Component) {
-  _inheritsLoose(Ext_LoadMask_Component, _Ext_Mask_Component);
+function (_Ext_Mask) {
+  _inheritsLoose(Ext_LoadMask, _Ext_Mask);
 
-  //events
-  //configs
-  Ext_LoadMask_Component.XTYPE = function XTYPE() {
-    return 'loadmask';
+  Ext_LoadMask.PROPERTIES = function PROPERTIES() {
+    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'disabled', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'indicator', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'message', 'messageCls', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'transparent', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_LoadMask_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "cls": ["string"],
-      "indicator": ["boolean"],
-      "message": ["string"],
-      "messageCls": ["string"]
-    };
-  };
-
-  Ext_LoadMask_Component.EVENTS = function EVENTS() {
-    return [];
-  };
-
-  Ext_LoadMask_Component.METHODS = function METHODS() {
+  Ext_LoadMask.EVENTS = function EVENTS() {
     return [{
-      name: 'updateIndicator',
-      "function": function _function(newIndicator) {
-        return this.ext.updateIndicator(newIndicator);
-      }
+      name: 'added',
+      parameters: 'sender,container,index'
     }, {
-      name: 'updateMessage',
-      "function": function _function(newMessage) {
-        return this.ext.updateMessage(newMessage);
-      }
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
-      name: 'updateMessageCls',
-      "function": function _function(newMessageCls, oldMessageCls) {
-        return this.ext.updateMessageCls(newMessageCls, oldMessageCls);
-      }
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehide',
+      parameters: 'sender'
+    }, {
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforetofront',
+      parameters: 'loadmask'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'loadmask,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'erased',
+      parameters: 'sender'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'loadmask,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'loadmask,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'loadmask,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
+    }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'show',
+      parameters: 'sender'
+    }, {
+      name: 'tap',
+      parameters: 'loadmask,e'
+    }, {
+      name: 'tofront',
+      parameters: 'loadmask'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  _createClass(Ext_LoadMask_Component, null, [{
+  Ext_LoadMask.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_LoadMask.PROPERTIES());
+    return Ext_Mask.getProperties(properties);
+  };
+
+  Ext_LoadMask.getEvents = function getEvents(events) {
+    events = events.concat(Ext_LoadMask.EVENTS());
+    return Ext_Mask.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'loadmask'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_LoadMask, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Mask_Component.observedAttributes;
+      var attrs = _Ext_Mask.observedAttributes; //for (var property in Ext_LoadMask.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_LoadMask_Component.PROPERTIESOBJECT()) {
+      Ext_LoadMask.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_LoadMask_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_LoadMask.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_LoadMask_Component(propertiesobject, methods, events) {
-    return _Ext_Mask_Component.call(this, Object.assign(propertiesobject, Ext_LoadMask_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_LoadMask_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_LoadMask_Component.METHODS()), events.concat(Ext_LoadMask_Component.EVENTS())) || this; //this.XTYPE = Ext_LoadMask_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_LoadMask_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_LoadMask_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_LoadMask_Component.EVENTS());
+  function Ext_LoadMask(properties, events) {
+    return _Ext_Mask.call(this, properties.concat(Ext_LoadMask.PROPERTIES()), events.concat(Ext_LoadMask.EVENTS())) || this;
   }
 
-  var _proto = Ext_LoadMask_Component.prototype;
+  var _proto = Ext_LoadMask.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    _Ext_Mask_Component.prototype.connectedCallback.call(this);
+    _Ext_Mask.prototype.connectedCallback.call(this);
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
-    _Ext_Mask_Component.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+    _Ext_Mask.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_LoadMask_Component;
-}(Ext_Mask_Component);
+  return Ext_LoadMask;
+}(Ext_Mask);
 
-export { Ext_LoadMask_Component as default };
+export { Ext_LoadMask as default };

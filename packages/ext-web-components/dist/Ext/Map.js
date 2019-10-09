@@ -1,36 +1,149 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Container_Component from '../Ext/Container';
+import Ext_Container from '../Ext/Container';
 
-var Ext_Map_Component =
+var Ext_Map =
 /*#__PURE__*/
-function (_Ext_Container_Compon) {
-  _inheritsLoose(Ext_Map_Component, _Ext_Container_Compon);
+function (_Ext_Container) {
+  _inheritsLoose(Ext_Map, _Ext_Container);
 
-  //configs
-  Ext_Map_Component.XTYPE = function XTYPE() {
-    return 'map';
+  Ext_Map.PROPERTIES = function PROPERTIES() {
+    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'cardSwitchAnimation', 'centered', 'cls', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'disabled', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'geo', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'listeners', 'manageBorders', 'map', 'mapListeners', 'mapOptions', 'margin', 'markers', 'markerTemplate', 'masked', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'requiredScripts', 'resetFocusPosition', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'useCurrentLocation', 'userCls', 'userSelectable', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_Map_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "geo": ["Ext.util.Geolocation"],
-      "map": ["google.maps.map"],
-      "mapListeners": ["object"],
-      "mapOptions": ["object"],
-      "markers": ["Ext.data.Store", "object", "Ext.data.Model[]", "Ext.ux.google.map.Marker"],
-      "markerTemplate": ["object", "Ext.util.ObjectTemplate"],
-      "useCurrentLocation": ["boolean", "Ext.util.Geolocation"]
-    };
-  };
-
-  Ext_Map_Component.EVENTS = function EVENTS() {
+  Ext_Map.EVENTS = function EVENTS() {
     return [{
+      name: 'activate',
+      parameters: 'newActiveItem,map,oldActiveItem'
+    }, {
+      name: 'activeItemchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'add',
+      parameters: 'map,item,index'
+    }, {
+      name: 'added',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'beforeactiveItemchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehide',
+      parameters: 'sender'
+    }, {
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforetofront',
+      parameters: 'map'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'map,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
       name: 'centerchange',
-      parameters: 'undefined,map,center'
+      parameters: 'map,map,center'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'deactivate',
+      parameters: 'oldActiveItem,map,newActiveItem'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'erased',
+      parameters: 'sender'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'map,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'map,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'map,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
+    }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
     }, {
       name: 'maprender',
-      parameters: 'undefined,map'
+      parameters: 'map,map'
     }, {
       name: 'markerclick',
       parameters: 'map,info'
@@ -62,216 +175,127 @@ function (_Ext_Container_Compon) {
       name: 'markerrightclick',
       parameters: 'map,info'
     }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'move',
+      parameters: 'map,item,toIndex,fromIndex'
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'remove',
+      parameters: 'map,item,index'
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'renderedchange',
+      parameters: 'map,item,rendered'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'show',
+      parameters: 'sender'
+    }, {
+      name: 'tofront',
+      parameters: 'map'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
       name: 'typechange',
-      parameters: 'undefined,map,mapType'
+      parameters: 'map,map,mapType'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
     }, {
       name: 'zoomchange',
-      parameters: 'undefined,map,zoomLevel'
+      parameters: 'map,map,zoomLevel'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  Ext_Map_Component.METHODS = function METHODS() {
-    return [{
-      name: 'addMapListeners',
-      "function": function _function() {
-        return this.ext.addMapListeners();
-      }
-    }, {
-      name: 'fitMarkersInView',
-      "function": function _function(records) {
-        return this.ext.fitMarkersInView(records);
-      }
-    }, {
-      name: 'onCenterChange',
-      "function": function _function() {
-        return this.ext.onCenterChange();
-      }
-    }, {
-      name: 'onGeoError',
-      "function": function _function() {
-        return this.ext.onGeoError();
-      }
-    }, {
-      name: 'onGeoUpdate',
-      "function": function _function(geo) {
-        return this.ext.onGeoUpdate(geo);
-      }
-    }, {
-      name: 'onPainted',
-      "function": function _function() {
-        return this.ext.onPainted();
-      }
-    }, {
-      name: 'onTilesLoaded',
-      "function": function _function() {
-        return this.ext.onTilesLoaded();
-      }
-    }, {
-      name: 'onTypeChange',
-      "function": function _function() {
-        return this.ext.onTypeChange();
-      }
-    }, {
-      name: 'onZoomChange',
-      "function": function _function() {
-        return this.ext.onZoomChange();
-      }
-    }, {
-      name: 'setMapCenter',
-      "function": function _function(coordinates) {
-        return this.ext.setMapCenter(coordinates);
-      }
-    }];
+  Ext_Map.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_Map.PROPERTIES());
+    return Ext_Container.getProperties(properties);
   };
 
-  _createClass(Ext_Map_Component, [{
-    key: "oncenterchange",
-    //events
-    get: function get() {
-      return this.getAttribute('oncenterchange');
-    },
-    set: function set(oncenterchange) {
-      this.setAttribute('oncenterchange', oncenterchange);
-    }
-  }, {
-    key: "onmaprender",
-    get: function get() {
-      return this.getAttribute('onmaprender');
-    },
-    set: function set(onmaprender) {
-      this.setAttribute('onmaprender', onmaprender);
-    }
-  }, {
-    key: "onmarkerclick",
-    get: function get() {
-      return this.getAttribute('onmarkerclick');
-    },
-    set: function set(onmarkerclick) {
-      this.setAttribute('onmarkerclick', onmarkerclick);
-    }
-  }, {
-    key: "onmarkerdblclick",
-    get: function get() {
-      return this.getAttribute('onmarkerdblclick');
-    },
-    set: function set(onmarkerdblclick) {
-      this.setAttribute('onmarkerdblclick', onmarkerdblclick);
-    }
-  }, {
-    key: "onmarkerdrag",
-    get: function get() {
-      return this.getAttribute('onmarkerdrag');
-    },
-    set: function set(onmarkerdrag) {
-      this.setAttribute('onmarkerdrag', onmarkerdrag);
-    }
-  }, {
-    key: "onmarkerdragend",
-    get: function get() {
-      return this.getAttribute('onmarkerdragend');
-    },
-    set: function set(onmarkerdragend) {
-      this.setAttribute('onmarkerdragend', onmarkerdragend);
-    }
-  }, {
-    key: "onmarkerdragstart",
-    get: function get() {
-      return this.getAttribute('onmarkerdragstart');
-    },
-    set: function set(onmarkerdragstart) {
-      this.setAttribute('onmarkerdragstart', onmarkerdragstart);
-    }
-  }, {
-    key: "onmarkermousedown",
-    get: function get() {
-      return this.getAttribute('onmarkermousedown');
-    },
-    set: function set(onmarkermousedown) {
-      this.setAttribute('onmarkermousedown', onmarkermousedown);
-    }
-  }, {
-    key: "onmarkermouseout",
-    get: function get() {
-      return this.getAttribute('onmarkermouseout');
-    },
-    set: function set(onmarkermouseout) {
-      this.setAttribute('onmarkermouseout', onmarkermouseout);
-    }
-  }, {
-    key: "onmarkermouseover",
-    get: function get() {
-      return this.getAttribute('onmarkermouseover');
-    },
-    set: function set(onmarkermouseover) {
-      this.setAttribute('onmarkermouseover', onmarkermouseover);
-    }
-  }, {
-    key: "onmarkermouseup",
-    get: function get() {
-      return this.getAttribute('onmarkermouseup');
-    },
-    set: function set(onmarkermouseup) {
-      this.setAttribute('onmarkermouseup', onmarkermouseup);
-    }
-  }, {
-    key: "onmarkerrightclick",
-    get: function get() {
-      return this.getAttribute('onmarkerrightclick');
-    },
-    set: function set(onmarkerrightclick) {
-      this.setAttribute('onmarkerrightclick', onmarkerrightclick);
-    }
-  }, {
-    key: "ontypechange",
-    get: function get() {
-      return this.getAttribute('ontypechange');
-    },
-    set: function set(ontypechange) {
-      this.setAttribute('ontypechange', ontypechange);
-    }
-  }, {
-    key: "onzoomchange",
-    get: function get() {
-      return this.getAttribute('onzoomchange');
-    },
-    set: function set(onzoomchange) {
-      this.setAttribute('onzoomchange', onzoomchange);
-    }
-  }], [{
+  Ext_Map.getEvents = function getEvents(events) {
+    events = events.concat(Ext_Map.EVENTS());
+    return Ext_Container.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'map'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_Map, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Container_Compon.observedAttributes;
+      var attrs = _Ext_Container.observedAttributes; //for (var property in Ext_Map.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_Map_Component.PROPERTIESOBJECT()) {
+      Ext_Map.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_Map_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_Map.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_Map_Component(propertiesobject, methods, events) {
-    return _Ext_Container_Compon.call(this, Object.assign(propertiesobject, Ext_Map_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_Map_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_Map_Component.METHODS()), events.concat(Ext_Map_Component.EVENTS())) || this; //this.XTYPE = Ext_Map_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_Map_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_Map_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_Map_Component.EVENTS());
+  function Ext_Map(properties, events) {
+    return _Ext_Container.call(this, properties.concat(Ext_Map.PROPERTIES()), events.concat(Ext_Map.EVENTS())) || this;
   }
 
-  var _proto = Ext_Map_Component.prototype;
+  var _proto = Ext_Map.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    _Ext_Container_Compon.prototype.connectedCallback.call(this);
+    _Ext_Container.prototype.connectedCallback.call(this);
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
-    _Ext_Container_Compon.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+    _Ext_Container.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_Map_Component;
-}(Ext_Container_Component);
+  return Ext_Map;
+}(Ext_Container);
 
-export { Ext_Map_Component as default };
+export { Ext_Map as default };

@@ -1,21 +1,21 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_Container_Component from './Ext/field/Container';
+import Ext_field_Container from './Ext/field/Container';
 import HTMLParsedElement from './HTMLParsedElement';
 export var ExtContainerfieldComponent =
 /*#__PURE__*/
-function (_Ext_field_Container_) {
-  _inheritsLoose(ExtContainerfieldComponent, _Ext_field_Container_);
+function (_Ext_field_Container) {
+  _inheritsLoose(ExtContainerfieldComponent, _Ext_field_Container);
 
   function ExtContainerfieldComponent() {
     var _this;
 
-    _this = _Ext_field_Container_.call(this, {}, [], []) || this;
+    _this = _Ext_field_Container.call(this, [], []) || this;
     _this.xtype = 'containerfield';
     return _this;
   }
 
   return ExtContainerfieldComponent;
-}(Ext_field_Container_Component); //(function () {
+}(Ext_field_Container); //(function () {
 //    Ext.onReady(function() {
 //        window.customElements.define('ext-containerfield', ExtContainerfieldComponent);
 //    });

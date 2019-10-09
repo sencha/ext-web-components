@@ -1,67 +1,115 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_cell_Text_Component from '../../../Ext/grid/cell/Text';
+import Ext_grid_cell_Text from '../../../Ext/grid/cell/Text';
 
-var Ext_grid_cell_Number_Component =
+var Ext_grid_cell_Number =
 /*#__PURE__*/
-function (_Ext_grid_cell_Text_C) {
-  _inheritsLoose(Ext_grid_cell_Number_Component, _Ext_grid_cell_Text_C);
+function (_Ext_grid_cell_Text) {
+  _inheritsLoose(Ext_grid_cell_Number, _Ext_grid_cell_Text);
 
-  //events
-  //configs
-  Ext_grid_cell_Number_Component.XTYPE = function XTYPE() {
-    return 'numbercell';
+  Ext_grid_cell_Number.PROPERTIES = function PROPERTIES() {
+    return ['align', 'alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'bind', 'bodyCls', 'bodyStyle', 'border', 'cellCls', 'cls', 'column', 'constrainAlign', 'controller', 'defaultListenerScope', 'defaultToolWeights', 'disabled', 'encodeHtml', 'flex', 'floated', 'focusCls', 'format', 'height', 'hidden', 'hideMode', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'listeners', 'margin', 'name', 'nameable', 'plugins', 'publishes', 'rawValue', 'record', 'reference', 'relative', 'renderTo', 'ripple', 'selectable', 'session', 'shadow', 'shareableName', 'shim', 'style', 'toFrontOnShow', 'toolDefaults', 'tools', 'touchAction', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'value', 'viewModel', 'width', 'x', 'y', 'zeroValue', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_grid_cell_Number_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "format": ["string"]
-    };
+  Ext_grid_cell_Number.EVENTS = function EVENTS() {
+    return [{
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforetofront',
+      parameters: 'numbercell'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'numbercell,event'
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'focus',
+      parameters: 'numbercell,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'numbercell,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'numbercell,event'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'tofront',
+      parameters: 'numbercell'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
+    }];
   };
 
-  Ext_grid_cell_Number_Component.EVENTS = function EVENTS() {
-    return [];
+  Ext_grid_cell_Number.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_grid_cell_Number.PROPERTIES());
+    return Ext_grid_cell_Text.getProperties(properties);
   };
 
-  Ext_grid_cell_Number_Component.METHODS = function METHODS() {
-    return [];
-  };
+  Ext_grid_cell_Number.getEvents = function getEvents(events) {
+    events = events.concat(Ext_grid_cell_Number.EVENTS());
+    return Ext_grid_cell_Text.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'numbercell'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
 
-  _createClass(Ext_grid_cell_Number_Component, null, [{
+  _createClass(Ext_grid_cell_Number, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_grid_cell_Text_C.observedAttributes;
+      var attrs = _Ext_grid_cell_Text.observedAttributes; //for (var property in Ext_grid_cell_Number.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_grid_cell_Number_Component.PROPERTIESOBJECT()) {
+      Ext_grid_cell_Number.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_grid_cell_Number_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_grid_cell_Number.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_grid_cell_Number_Component(propertiesobject, methods, events) {
-    return _Ext_grid_cell_Text_C.call(this, Object.assign(propertiesobject, Ext_grid_cell_Number_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_grid_cell_Number_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_grid_cell_Number_Component.METHODS()), events.concat(Ext_grid_cell_Number_Component.EVENTS())) || this; //this.XTYPE = Ext_grid_cell_Number_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_grid_cell_Number_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_grid_cell_Number_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_grid_cell_Number_Component.EVENTS());
+  function Ext_grid_cell_Number(properties, events) {
+    return _Ext_grid_cell_Text.call(this, properties.concat(Ext_grid_cell_Number.PROPERTIES()), events.concat(Ext_grid_cell_Number.EVENTS())) || this;
   }
 
-  var _proto = Ext_grid_cell_Number_Component.prototype;
+  var _proto = Ext_grid_cell_Number.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    _Ext_grid_cell_Text_C.prototype.connectedCallback.call(this);
+    _Ext_grid_cell_Text.prototype.connectedCallback.call(this);
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
-    _Ext_grid_cell_Text_C.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+    _Ext_grid_cell_Text.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_grid_cell_Number_Component;
-}(Ext_grid_cell_Text_Component);
+  return Ext_grid_cell_Number;
+}(Ext_grid_cell_Text);
 
-export { Ext_grid_cell_Number_Component as default };
+export { Ext_grid_cell_Number as default };

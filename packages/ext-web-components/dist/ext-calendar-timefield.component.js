@@ -1,5 +1,5 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_calendar_form_TimeField_Component from './Ext/calendar/form/TimeField';
+import Ext_calendar_form_TimeField from './Ext/calendar/form/TimeField';
 import HTMLParsedElement from './HTMLParsedElement';
 export var ExtCalendar_timefieldComponent =
 /*#__PURE__*/
@@ -9,13 +9,13 @@ function (_Ext_calendar_form_Ti) {
   function ExtCalendar_timefieldComponent() {
     var _this;
 
-    _this = _Ext_calendar_form_Ti.call(this, {}, [], []) || this;
+    _this = _Ext_calendar_form_Ti.call(this, [], []) || this;
     _this.xtype = 'calendar-timefield';
     return _this;
   }
 
   return ExtCalendar_timefieldComponent;
-}(Ext_calendar_form_TimeField_Component); //(function () {
+}(Ext_calendar_form_TimeField); //(function () {
 //    Ext.onReady(function() {
 //        window.customElements.define('ext-calendar-timefield', ExtCalendar_timefieldComponent);
 //    });

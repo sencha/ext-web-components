@@ -1,84 +1,63 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_container_Container_Component from '../../../Ext/container/Container';
+import Ext_container_Container from '../../../Ext/container/Container';
 
-var Ext_calendar_view_Multi_Component =
+var Ext_calendar_view_Multi =
 /*#__PURE__*/
 function (_Ext_container_Contai) {
-  _inheritsLoose(Ext_calendar_view_Multi_Component, _Ext_container_Contai);
+  _inheritsLoose(Ext_calendar_view_Multi, _Ext_container_Contai);
 
-  //events
-  //configs
-  Ext_calendar_view_Multi_Component.XTYPE = function XTYPE() {
-    return 'calendar-multiview';
+  Ext_calendar_view_Multi.PROPERTIES = function PROPERTIES() {
+    return ['compact', 'compactOptions', 'defaultView', 'layout', 'store', 'timezoneOffset', 'value', 'views', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_calendar_view_Multi_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "compact": ["boolean"],
-      "compactOptions": ["object"],
-      "defaultView": ["string"],
-      "layout": ["object", "string"],
-      "store": ["object", "Ext.calendar.store.Calendars"],
-      "timezoneOffset": ["number"],
-      "value": ["date"],
-      "views": ["object"]
-    };
-  };
-
-  Ext_calendar_view_Multi_Component.EVENTS = function EVENTS() {
-    return [];
-  };
-
-  Ext_calendar_view_Multi_Component.METHODS = function METHODS() {
+  Ext_calendar_view_Multi.EVENTS = function EVENTS() {
     return [{
-      name: 'moveNext',
-      "function": function _function() {
-        return this.ext.moveNext();
-      }
-    }, {
-      name: 'movePrevious',
-      "function": function _function() {
-        return this.ext.movePrevious();
-      }
-    }, {
-      name: 'navigate',
-      "function": function _function(amount, interval) {
-        return this.ext.navigate(amount, interval);
-      }
-    }, {
-      name: 'setView',
-      "function": function _function(view) {
-        return this.ext.setView(view);
-      }
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  _createClass(Ext_calendar_view_Multi_Component, null, [{
+  Ext_calendar_view_Multi.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_calendar_view_Multi.PROPERTIES());
+    return Ext_container_Container.getProperties(properties);
+  };
+
+  Ext_calendar_view_Multi.getEvents = function getEvents(events) {
+    events = events.concat(Ext_calendar_view_Multi.EVENTS());
+    return Ext_container_Container.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'calendar-multiview'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_calendar_view_Multi, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_container_Contai.observedAttributes;
+      var attrs = _Ext_container_Contai.observedAttributes; //for (var property in Ext_calendar_view_Multi.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_calendar_view_Multi_Component.PROPERTIESOBJECT()) {
+      Ext_calendar_view_Multi.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_calendar_view_Multi_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_calendar_view_Multi.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_calendar_view_Multi_Component(propertiesobject, methods, events) {
-    return _Ext_container_Contai.call(this, Object.assign(propertiesobject, Ext_calendar_view_Multi_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_calendar_view_Multi_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_calendar_view_Multi_Component.METHODS()), events.concat(Ext_calendar_view_Multi_Component.EVENTS())) || this; //this.XTYPE = Ext_calendar_view_Multi_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_calendar_view_Multi_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_calendar_view_Multi_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_calendar_view_Multi_Component.EVENTS());
+  function Ext_calendar_view_Multi(properties, events) {
+    return _Ext_container_Contai.call(this, properties.concat(Ext_calendar_view_Multi.PROPERTIES()), events.concat(Ext_calendar_view_Multi.EVENTS())) || this;
   }
 
-  var _proto = Ext_calendar_view_Multi_Component.prototype;
+  var _proto = Ext_calendar_view_Multi.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
     _Ext_container_Contai.prototype.connectedCallback.call(this);
@@ -88,7 +67,7 @@ function (_Ext_container_Contai) {
     _Ext_container_Contai.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_calendar_view_Multi_Component;
-}(Ext_container_Container_Component);
+  return Ext_calendar_view_Multi;
+}(Ext_container_Container);
 
-export { Ext_calendar_view_Multi_Component as default };
+export { Ext_calendar_view_Multi as default };

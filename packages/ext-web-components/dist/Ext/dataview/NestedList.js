@@ -1,273 +1,295 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Container_Component from '../../Ext/Container';
+import Ext_Container from '../../Ext/Container';
 
-var Ext_dataview_NestedList_Component =
+var Ext_dataview_NestedList =
 /*#__PURE__*/
-function (_Ext_Container_Compon) {
-  _inheritsLoose(Ext_dataview_NestedList_Component, _Ext_Container_Compon);
+function (_Ext_Container) {
+  _inheritsLoose(Ext_dataview_NestedList, _Ext_Container);
 
-  //configs
-  Ext_dataview_NestedList_Component.XTYPE = function XTYPE() {
-    return 'nestedlist';
+  Ext_dataview_NestedList.PROPERTIES = function PROPERTIES() {
+    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowDeselect', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'backButton', 'backText', 'bind', 'bodyCls', 'border', 'bottom', 'cardSwitchAnimation', 'centered', 'cls', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'detailCard', 'detailContainer', 'disabled', 'displayed', 'displayField', 'docked', 'draggable', 'emptyText', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'lastActiveList', 'lastNode', 'layout', 'left', 'listConfig', 'listeners', 'loadingText', 'manageBorders', 'margin', 'masked', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'onItemDisclosure', 'padding', 'plugins', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'title', 'toFrontOnShow', 'toolbar', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'updateTitleText', 'userCls', 'userSelectable', 'useTitleAsBackText', 'variableHeights', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_dataview_NestedList_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "allowDeselect": ["boolean"],
-      "backButton": ["object"],
-      "backText": ["string"],
-      "cardSwitchAnimation": ["string", "object", "boolean"],
-      "detailCard": ["Ext.Component"],
-      "detailContainer": ["Ext.Container"],
-      "displayField": ["string"],
-      "emptyText": ["string"],
-      "lastActiveList": ["any"],
-      "lastNode": ["any"],
-      "layout": ["string"],
-      "listConfig": ["object"],
-      "loadingText": ["string"],
-      "onItemDisclosure": ["boolean", "function"],
-      "store": ["Ext.data.TreeStore", "string"],
-      "title": ["string"],
-      "toolbar": ["Ext.Toolbar", "object", "boolean"],
-      "updateTitleText": ["boolean"],
-      "useTitleAsBackText": ["boolean"],
-      "variableHeights": ["boolean"]
-    };
-  };
-
-  Ext_dataview_NestedList_Component.EVENTS = function EVENTS() {
+  Ext_dataview_NestedList.EVENTS = function EVENTS() {
     return [{
+      name: 'activate',
+      parameters: 'newActiveItem,nestedlist,oldActiveItem'
+    }, {
+      name: 'activeItemchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'add',
+      parameters: 'nestedlist,item,index'
+    }, {
+      name: 'added',
+      parameters: 'sender,container,index'
+    }, {
       name: 'back',
-      parameters: 'undefined,node,lastActiveList,detailCardActive'
+      parameters: 'nestedlist,node,lastActiveList,detailCardActive'
+    }, {
+      name: 'beforeactiveItemchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehide',
+      parameters: 'sender'
+    }, {
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforeload',
-      parameters: 'undefined,store,operation'
+      parameters: 'nestedlist,store,operation'
+    }, {
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforeselectionchange',
-      parameters: 'undefined,list,node,selections'
+      parameters: 'nestedlist,list,node,selections'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforetofront',
+      parameters: 'nestedlist'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'nestedlist,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
     }, {
       name: 'containertap',
-      parameters: 'undefined,list,e'
+      parameters: 'nestedlist,list,e'
+    }, {
+      name: 'deactivate',
+      parameters: 'oldActiveItem,nestedlist,newActiveItem'
     }, {
       name: 'deselect',
-      parameters: 'undefined,list,selections'
+      parameters: 'nestedlist,list,selections'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'erased',
+      parameters: 'sender'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'nestedlist,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'nestedlist,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'nestedlist,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
     }, {
       name: 'itemdoubletap',
-      parameters: 'undefined,list,index,target,record,e'
+      parameters: 'nestedlist,list,index,target,record,e'
     }, {
       name: 'itemtap',
-      parameters: 'undefined,list,index,target,record,e'
+      parameters: 'nestedlist,list,index,target,record,e'
     }, {
       name: 'leafitemtap',
-      parameters: 'undefined,list,index,target,record,e'
+      parameters: 'nestedlist,list,index,target,record,e'
+    }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
     }, {
       name: 'listchange',
-      parameters: 'undefined,listitem'
+      parameters: 'nestedlist,listitem'
     }, {
       name: 'load',
-      parameters: 'undefined,store,records,successful,operation'
+      parameters: 'nestedlist,store,records,successful,operation'
+    }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'move',
+      parameters: 'nestedlist,item,toIndex,fromIndex'
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'remove',
+      parameters: 'nestedlist,item,index'
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'renderedchange',
+      parameters: 'nestedlist,item,rendered'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
     }, {
       name: 'select',
-      parameters: 'undefined,list,selections'
+      parameters: 'nestedlist,list,selections'
     }, {
       name: 'selectionchange',
-      parameters: 'undefined,list,selections'
+      parameters: 'nestedlist,list,selections'
+    }, {
+      name: 'show',
+      parameters: 'sender'
+    }, {
+      name: 'tofront',
+      parameters: 'nestedlist'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  Ext_dataview_NestedList_Component.METHODS = function METHODS() {
-    return [{
-      name: 'getItemTextTpl',
-      "function": function _function(node) {
-        return this.ext.getItemTextTpl(node);
-      }
-    }, {
-      name: 'getList',
-      "function": function _function(node) {
-        return this.ext.getList(node);
-      }
-    }, {
-      name: 'getTitleTextTpl',
-      "function": function _function(node) {
-        return this.ext.getTitleTextTpl(node);
-      }
-    }, {
-      name: 'goToLeaf',
-      "function": function _function(node) {
-        return this.ext.goToLeaf(node);
-      }
-    }, {
-      name: 'goToNode',
-      "function": function _function(node) {
-        return this.ext.goToNode(node);
-      }
-    }, {
-      name: 'goToNodeReverseAnimation',
-      "function": function _function(node) {
-        return this.ext.goToNodeReverseAnimation(node);
-      }
-    }, {
-      name: 'onBackTap',
-      "function": function _function() {
-        return this.ext.onBackTap();
-      }
-    }, {
-      name: 'onChildTap',
-      "function": function _function(list, location) {
-        return this.ext.onChildTap(list, location);
-      }
-    }, {
-      name: 'renderTitleText',
-      "function": function _function(node, forBackButton) {
-        return this.ext.renderTitleText(node, forBackButton);
-      }
-    }, {
-      name: 'setToolbarTitle',
-      "function": function _function(newTitle) {
-        return this.ext.setToolbarTitle(newTitle);
-      }
-    }, {
-      name: 'syncToolbar',
-      "function": function _function(forceDetail) {
-        return this.ext.syncToolbar(forceDetail);
-      }
-    }];
+  Ext_dataview_NestedList.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_dataview_NestedList.PROPERTIES());
+    return Ext_Container.getProperties(properties);
   };
 
-  _createClass(Ext_dataview_NestedList_Component, [{
-    key: "onback",
-    //events
-    get: function get() {
-      return this.getAttribute('onback');
-    },
-    set: function set(onback) {
-      this.setAttribute('onback', onback);
-    }
-  }, {
-    key: "onbeforeload",
-    get: function get() {
-      return this.getAttribute('onbeforeload');
-    },
-    set: function set(onbeforeload) {
-      this.setAttribute('onbeforeload', onbeforeload);
-    }
-  }, {
-    key: "onbeforeselectionchange",
-    get: function get() {
-      return this.getAttribute('onbeforeselectionchange');
-    },
-    set: function set(onbeforeselectionchange) {
-      this.setAttribute('onbeforeselectionchange', onbeforeselectionchange);
-    }
-  }, {
-    key: "oncontainertap",
-    get: function get() {
-      return this.getAttribute('oncontainertap');
-    },
-    set: function set(oncontainertap) {
-      this.setAttribute('oncontainertap', oncontainertap);
-    }
-  }, {
-    key: "ondeselect",
-    get: function get() {
-      return this.getAttribute('ondeselect');
-    },
-    set: function set(ondeselect) {
-      this.setAttribute('ondeselect', ondeselect);
-    }
-  }, {
-    key: "onitemdoubletap",
-    get: function get() {
-      return this.getAttribute('onitemdoubletap');
-    },
-    set: function set(onitemdoubletap) {
-      this.setAttribute('onitemdoubletap', onitemdoubletap);
-    }
-  }, {
-    key: "onitemtap",
-    get: function get() {
-      return this.getAttribute('onitemtap');
-    },
-    set: function set(onitemtap) {
-      this.setAttribute('onitemtap', onitemtap);
-    }
-  }, {
-    key: "onleafitemtap",
-    get: function get() {
-      return this.getAttribute('onleafitemtap');
-    },
-    set: function set(onleafitemtap) {
-      this.setAttribute('onleafitemtap', onleafitemtap);
-    }
-  }, {
-    key: "onlistchange",
-    get: function get() {
-      return this.getAttribute('onlistchange');
-    },
-    set: function set(onlistchange) {
-      this.setAttribute('onlistchange', onlistchange);
-    }
-  }, {
-    key: "onload",
-    get: function get() {
-      return this.getAttribute('onload');
-    },
-    set: function set(onload) {
-      this.setAttribute('onload', onload);
-    }
-  }, {
-    key: "onselect",
-    get: function get() {
-      return this.getAttribute('onselect');
-    },
-    set: function set(onselect) {
-      this.setAttribute('onselect', onselect);
-    }
-  }, {
-    key: "onselectionchange",
-    get: function get() {
-      return this.getAttribute('onselectionchange');
-    },
-    set: function set(onselectionchange) {
-      this.setAttribute('onselectionchange', onselectionchange);
-    }
-  }], [{
+  Ext_dataview_NestedList.getEvents = function getEvents(events) {
+    events = events.concat(Ext_dataview_NestedList.EVENTS());
+    return Ext_Container.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'nestedlist'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_dataview_NestedList, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Container_Compon.observedAttributes;
+      var attrs = _Ext_Container.observedAttributes; //for (var property in Ext_dataview_NestedList.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_dataview_NestedList_Component.PROPERTIESOBJECT()) {
+      Ext_dataview_NestedList.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_dataview_NestedList_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_dataview_NestedList.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_dataview_NestedList_Component(propertiesobject, methods, events) {
-    return _Ext_Container_Compon.call(this, Object.assign(propertiesobject, Ext_dataview_NestedList_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_dataview_NestedList_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_dataview_NestedList_Component.METHODS()), events.concat(Ext_dataview_NestedList_Component.EVENTS())) || this; //this.XTYPE = Ext_dataview_NestedList_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_dataview_NestedList_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_dataview_NestedList_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_dataview_NestedList_Component.EVENTS());
+  function Ext_dataview_NestedList(properties, events) {
+    return _Ext_Container.call(this, properties.concat(Ext_dataview_NestedList.PROPERTIES()), events.concat(Ext_dataview_NestedList.EVENTS())) || this;
   }
 
-  var _proto = Ext_dataview_NestedList_Component.prototype;
+  var _proto = Ext_dataview_NestedList.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    _Ext_Container_Compon.prototype.connectedCallback.call(this);
+    _Ext_Container.prototype.connectedCallback.call(this);
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
-    _Ext_Container_Compon.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+    _Ext_Container.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_dataview_NestedList_Component;
-}(Ext_Container_Component);
+  return Ext_dataview_NestedList;
+}(Ext_Container);
 
-export { Ext_dataview_NestedList_Component as default };
+export { Ext_dataview_NestedList as default };

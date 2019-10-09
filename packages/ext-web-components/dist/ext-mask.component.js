@@ -1,21 +1,21 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Mask_Component from './Ext/Mask';
+import Ext_Mask from './Ext/Mask';
 import HTMLParsedElement from './HTMLParsedElement';
 export var ExtMaskComponent =
 /*#__PURE__*/
-function (_Ext_Mask_Component) {
-  _inheritsLoose(ExtMaskComponent, _Ext_Mask_Component);
+function (_Ext_Mask) {
+  _inheritsLoose(ExtMaskComponent, _Ext_Mask);
 
   function ExtMaskComponent() {
     var _this;
 
-    _this = _Ext_Mask_Component.call(this, {}, [], []) || this;
+    _this = _Ext_Mask.call(this, [], []) || this;
     _this.xtype = 'mask';
     return _this;
   }
 
   return ExtMaskComponent;
-}(Ext_Mask_Component); //(function () {
+}(Ext_Mask); //(function () {
 //    Ext.onReady(function() {
 //        window.customElements.define('ext-mask', ExtMaskComponent);
 //    });

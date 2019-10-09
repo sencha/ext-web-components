@@ -1,5 +1,5 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_trigger_SpinUp_Component from './Ext/field/trigger/SpinUp';
+import Ext_field_trigger_SpinUp from './Ext/field/trigger/SpinUp';
 import HTMLParsedElement from './HTMLParsedElement';
 export var ExtSpinuptriggerComponent =
 /*#__PURE__*/
@@ -9,13 +9,13 @@ function (_Ext_field_trigger_Sp) {
   function ExtSpinuptriggerComponent() {
     var _this;
 
-    _this = _Ext_field_trigger_Sp.call(this, {}, [], []) || this;
+    _this = _Ext_field_trigger_Sp.call(this, [], []) || this;
     _this.xtype = 'spinuptrigger';
     return _this;
   }
 
   return ExtSpinuptriggerComponent;
-}(Ext_field_trigger_SpinUp_Component); //(function () {
+}(Ext_field_trigger_SpinUp); //(function () {
 //    Ext.onReady(function() {
 //        window.customElements.define('ext-spinuptrigger', ExtSpinuptriggerComponent);
 //    });

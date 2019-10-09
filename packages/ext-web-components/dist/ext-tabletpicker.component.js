@@ -1,21 +1,21 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_picker_Tablet_Component from './Ext/picker/Tablet';
+import Ext_picker_Tablet from './Ext/picker/Tablet';
 import HTMLParsedElement from './HTMLParsedElement';
 export var ExtTabletpickerComponent =
 /*#__PURE__*/
-function (_Ext_picker_Tablet_Co) {
-  _inheritsLoose(ExtTabletpickerComponent, _Ext_picker_Tablet_Co);
+function (_Ext_picker_Tablet) {
+  _inheritsLoose(ExtTabletpickerComponent, _Ext_picker_Tablet);
 
   function ExtTabletpickerComponent() {
     var _this;
 
-    _this = _Ext_picker_Tablet_Co.call(this, {}, [], []) || this;
+    _this = _Ext_picker_Tablet.call(this, [], []) || this;
     _this.xtype = 'tabletpicker';
     return _this;
   }
 
   return ExtTabletpickerComponent;
-}(Ext_picker_Tablet_Component); //(function () {
+}(Ext_picker_Tablet); //(function () {
 //    Ext.onReady(function() {
 //        window.customElements.define('ext-tabletpicker', ExtTabletpickerComponent);
 //    });

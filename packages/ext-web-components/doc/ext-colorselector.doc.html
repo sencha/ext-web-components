@@ -6,15 +6,15 @@
 
 <script>
 function changeProperty() {
-  var x = document.getElementById("properties").value;
+  var x = document.getElementById("propertiesDocs").value;
   document.getElementById("property").innerHTML = x;
 }
 function changeMethod() {
-  var x = document.getElementById("methods").value;
+  var x = document.getElementById("methodsDocs").value;
   document.getElementById("method").innerHTML = x;
 }
 function changeEvent() {
-  var x = document.getElementById("events").value;
+  var x = document.getElementById("eventsDocs").value;
   document.getElementById("event").innerHTML = x;
 }
 </script>
@@ -84,65 +84,13 @@ window.ColorselectorExample = new ColorselectorComponentExample();
     <z-tabs>
         <z-tabpanel tabname="properties">
 <div class="flex-container">
-  <div id="propertylist" class="thelist"><div>properties:</div><div class="select-div"><select id="properties" onchange="changeProperty()" name="properties">
-    <option value="The format used by {@link Ext.util.Format#method!number Ext.util.Format#number} to format the alpha channel's
-value.
-">alphaDecimalFormat</option>
-    <option value="Text value for "Cancel" button;
-these are relied upon by the {@link Ext.ux.colorpick.Button} and the
-{@link Ext.ux.colorpick.Field}.
-">cancelButtonText</option>
-    <option value="This config property is used internally by the UI to maintain the full color.
-Changes to this config are automatically reflected in `{@link #cfg!value value}` and vise-versa.
-Setting `{@link #cfg!value value}` can, however, cause the alpha to be dropped if the new value
-does not contain an alpha component.
-">color</option>
-    <option value="padding between the sliders and HEX/R/G/B fields.
-">fieldPad</option>
-    <option value="Width of the text fields on the container (excluding HEX);
-since the width of the slider containers is the same as the text field under it
-(it's the same vbox column), changing this value will also affect the spacing between
-the sliders.
-">fieldWidth</option>
-    <option value="The color format to for the `{@link #cfg!value value}` config. The `{@link #cfg!value value}` can be set using any
-supported format or named color, but the stored value will always be in this
-format.
-
-Supported formats are:
-
-- hex6 - For example "ffaa00" (Note: does not preserve transparency).
-- hex8 - For eaxmple "ffaa00ff" - the last 2 digits represent transparency
-- #hex6 - For example "#ffaa00" (same as "hex6" but with a leading "#").
-- #hex8 - For example "#ffaa00ff" (same as "hex8" but with a leading "#").
-- HEX6 - Same as "hex6" but upper case.
-- HEX8 - Same as "hex8" but upper case.
-- #HEX6 - Same as "#hex6" but upper case.
-- #HEX8 - Same as "#hex8" but upper case.
-">format</option>
-    <option value="Text value for "Ok" button;
-these are relied upon by the {@link Ext.ux.colorpick.Button} and the
-{@link Ext.ux.colorpick.Field}.
-">okButtonText</option>
-    <option value="Whether Ok and Cancel buttons (in upper right, below the selected color preview) should
-be shown;
-these are relied upon by the {@link Ext.ux.colorpick.Button} and the
-{@link Ext.ux.colorpick.Field}.
-">showOkCancelButtons</option>
-    <option value="Whether "previous color" region (in upper right, below the selected color preview) should
-be shown;
-these are relied upon by the {@link Ext.ux.colorpick.Button} and the
-{@link Ext.ux.colorpick.Field}.
-">showPreviousColor</option>
-    <option value="The initial color to highlight; see {@link #cfg!format #format} for supported formats.
-">value</option>
-</select></div>
-</div>
+  <div id="propertylist" class="thelist"><div>properties:</div></div>
   <div id="property" class="thetext"></div>
 </div>
         </z-tabpanel>
         <z-tabpanel tabname="methods">
 <div class="flex-container">
-  <div id="methodlist" class="thelist"><div>methods:</div><div class="select-div"><select id="methods" onchange="changeMethod()" name="methods">
+  <div id="methodlist" class="thelist"><div>methods:</div><div class="select-div"><select id="methodsDocs" onchange="changeMethod()" name="methodsDocs">
     <option value="This method applies a versioned, deprecation declaration to this class. This
 is typically called by the `deprecated` config.
 ">addDeprecations</option>
@@ -435,7 +383,7 @@ the linked object is being destroyed before this instance.
         </z-tabpanel>
         <z-tabpanel tabname="events">
 <div class="flex-container">
-  <div id="eventlist" class="thelist"><div>events:</div><div class="select-div"><select id="events" onchange="changeEvent()" name="events">
+  <div id="eventlist" class="thelist"><div>events:</div><div class="select-div"><select id="eventsDocs" onchange="changeEvent()" name="eventsDocs">
     <option value="Fires when Cancel button is clicked (see {@link #cfg!showOkCancelButtons #showOkCancelButtons}).
 ">cancel</option>
     <option value="Fires when a color is selected. Simply dragging sliders around will trigger this.

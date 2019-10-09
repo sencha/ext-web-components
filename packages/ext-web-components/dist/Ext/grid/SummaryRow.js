@@ -1,65 +1,235 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_Row_Component from '../../Ext/grid/Row';
+import Ext_grid_Row from '../../Ext/grid/Row';
 
-var Ext_grid_SummaryRow_Component =
+var Ext_grid_SummaryRow =
 /*#__PURE__*/
-function (_Ext_grid_Row_Compone) {
-  _inheritsLoose(Ext_grid_SummaryRow_Component, _Ext_grid_Row_Compone);
+function (_Ext_grid_Row) {
+  _inheritsLoose(Ext_grid_SummaryRow, _Ext_grid_Row);
 
-  //events
-  //configs
-  Ext_grid_SummaryRow_Component.XTYPE = function XTYPE() {
-    return 'gridsummaryrow';
+  Ext_grid_SummaryRow.PROPERTIES = function PROPERTIES() {
+    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'body', 'border', 'bottom', 'centered', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultCellUI', 'defaultListenerScope', 'disabled', 'displayed', 'docked', 'draggable', 'expandedField', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'pinned', 'plugins', 'publishes', 'record', 'recordIndex', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'stickyVisibility', 'style', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_grid_SummaryRow_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {};
+  Ext_grid_SummaryRow.EVENTS = function EVENTS() {
+    return [{
+      name: 'added',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehide',
+      parameters: 'sender'
+    }, {
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforetofront',
+      parameters: 'gridsummaryrow'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'gridsummaryrow,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'erased',
+      parameters: 'sender'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'gridsummaryrow,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'gridsummaryrow,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'gridsummaryrow,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
+    }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'show',
+      parameters: 'sender'
+    }, {
+      name: 'tofront',
+      parameters: 'gridsummaryrow'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
+    }];
   };
 
-  Ext_grid_SummaryRow_Component.EVENTS = function EVENTS() {
-    return [];
+  Ext_grid_SummaryRow.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_grid_SummaryRow.PROPERTIES());
+    return Ext_grid_Row.getProperties(properties);
   };
 
-  Ext_grid_SummaryRow_Component.METHODS = function METHODS() {
-    return [];
-  };
+  Ext_grid_SummaryRow.getEvents = function getEvents(events) {
+    events = events.concat(Ext_grid_SummaryRow.EVENTS());
+    return Ext_grid_Row.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'gridsummaryrow'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
 
-  _createClass(Ext_grid_SummaryRow_Component, null, [{
+  _createClass(Ext_grid_SummaryRow, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_grid_Row_Compone.observedAttributes;
+      var attrs = _Ext_grid_Row.observedAttributes; //for (var property in Ext_grid_SummaryRow.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_grid_SummaryRow_Component.PROPERTIESOBJECT()) {
+      Ext_grid_SummaryRow.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_grid_SummaryRow_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_grid_SummaryRow.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_grid_SummaryRow_Component(propertiesobject, methods, events) {
-    return _Ext_grid_Row_Compone.call(this, Object.assign(propertiesobject, Ext_grid_SummaryRow_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_grid_SummaryRow_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_grid_SummaryRow_Component.METHODS()), events.concat(Ext_grid_SummaryRow_Component.EVENTS())) || this; //this.XTYPE = Ext_grid_SummaryRow_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_grid_SummaryRow_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_grid_SummaryRow_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_grid_SummaryRow_Component.EVENTS());
+  function Ext_grid_SummaryRow(properties, events) {
+    return _Ext_grid_Row.call(this, properties.concat(Ext_grid_SummaryRow.PROPERTIES()), events.concat(Ext_grid_SummaryRow.EVENTS())) || this;
   }
 
-  var _proto = Ext_grid_SummaryRow_Component.prototype;
+  var _proto = Ext_grid_SummaryRow.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    _Ext_grid_Row_Compone.prototype.connectedCallback.call(this);
+    _Ext_grid_Row.prototype.connectedCallback.call(this);
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
-    _Ext_grid_Row_Compone.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+    _Ext_grid_Row.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_grid_SummaryRow_Component;
-}(Ext_grid_Row_Component);
+  return Ext_grid_SummaryRow;
+}(Ext_grid_Row);
 
-export { Ext_grid_SummaryRow_Component as default };
+export { Ext_grid_SummaryRow as default };

@@ -1,182 +1,241 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Gadget_Component from '../../Ext/Gadget';
+import Ext_Gadget from '../../Ext/Gadget';
 
-var Ext_list_Tree_Component =
+var Ext_list_Tree =
 /*#__PURE__*/
-function (_Ext_Gadget_Component) {
-  _inheritsLoose(Ext_list_Tree_Component, _Ext_Gadget_Component);
+function (_Ext_Gadget) {
+  _inheritsLoose(Ext_list_Tree, _Ext_Gadget);
 
-  //configs
-  Ext_list_Tree_Component.XTYPE = function XTYPE() {
-    return 'treelist';
+  Ext_list_Tree.PROPERTIES = function PROPERTIES() {
+    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'defaults', 'disabled', 'displayed', 'docked', 'draggable', 'expanderFirst', 'expanderOnly', 'flex', 'floated', 'floatLeafItems', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'highlightPath', 'html', 'id', 'indent', 'instanceCls', 'itemId', 'itemRipple', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'micro', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scrollable', 'selection', 'selectOnExpander', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'singleExpand', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
-  Ext_list_Tree_Component.PROPERTIESOBJECT = function PROPERTIESOBJECT() {
-    return {
-      "defaults": ["object"],
-      "expanderFirst": ["boolean"],
-      "expanderOnly": ["boolean"],
-      "floatLeafItems": ["boolean"],
-      "highlightPath": ["boolean"],
-      "indent": ["number"],
-      "micro": ["boolean"],
-      "publishes": ["string", "string[]", "object"],
-      "selection": ["Ext.data.TreeModel", "number", "string"],
-      "selectOnExpander": ["boolean"],
-      "singleExpand": ["boolean"],
-      "store": ["string", "object", "Ext.data.TreeStore"],
-      "twoWayBindable": ["string", "string[]", "object"],
-      "ui": ["string", "string[]"]
-    };
-  };
-
-  Ext_list_Tree_Component.EVENTS = function EVENTS() {
+  Ext_list_Tree.EVENTS = function EVENTS() {
     return [{
+      name: 'added',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehide',
+      parameters: 'sender'
+    }, {
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforetofront',
+      parameters: 'treelist'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'treelist,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'erased',
+      parameters: 'sender'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'treelist,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'treelist,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'treelist,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
+    }, {
       name: 'itemclick',
       parameters: 'sender,info'
     }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
       name: 'selectionchange',
       parameters: 'treelist,record'
+    }, {
+      name: 'show',
+      parameters: 'sender'
+    }, {
+      name: 'tofront',
+      parameters: 'treelist'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
     }];
   };
 
-  Ext_list_Tree_Component.METHODS = function METHODS() {
-    return [{
-      name: 'createItem',
-      "function": function _function(node, parent) {
-        return this.ext.createItem(node, parent);
-      }
-    }, {
-      name: 'createRootItem',
-      "function": function _function(root) {
-        return this.ext.createRootItem(root);
-      }
-    }, {
-      name: 'getItem',
-      "function": function _function(node) {
-        return this.ext.getItem(node);
-      }
-    }, {
-      name: 'getItemConfig',
-      "function": function _function(node, parent) {
-        return this.ext.getItemConfig(node, parent);
-      }
-    }, {
-      name: 'onClick',
-      "function": function _function(e) {
-        return this.ext.onClick(e);
-      }
-    }, {
-      name: 'onNodeAppend',
-      "function": function _function(parentNode, node) {
-        return this.ext.onNodeAppend(parentNode, node);
-      }
-    }, {
-      name: 'onNodeCollapse',
-      "function": function _function(node) {
-        return this.ext.onNodeCollapse(node);
-      }
-    }, {
-      name: 'onNodeExpand',
-      "function": function _function(node) {
-        return this.ext.onNodeExpand(node);
-      }
-    }, {
-      name: 'onNodeInsert',
-      "function": function _function(parentNode, node, refNode) {
-        return this.ext.onNodeInsert(parentNode, node, refNode);
-      }
-    }, {
-      name: 'onNodeRemove',
-      "function": function _function(parentNode, node, isMove) {
-        return this.ext.onNodeRemove(parentNode, node, isMove);
-      }
-    }, {
-      name: 'onNodeUpdate',
-      "function": function _function(store, node, type, modifiedFieldNames) {
-        return this.ext.onNodeUpdate(store, node, type, modifiedFieldNames);
-      }
-    }, {
-      name: 'onRefresh',
-      "function": function _function(store) {
-        return this.ext.onRefresh(store);
-      }
-    }, {
-      name: 'onRootChange',
-      "function": function _function(root) {
-        return this.ext.onRootChange(root);
-      }
-    }, {
-      name: 'onToolStripClick',
-      "function": function _function(e) {
-        return this.ext.onToolStripClick(e);
-      }
-    }, {
-      name: 'onToolStripMouseOver',
-      "function": function _function(e) {
-        return this.ext.onToolStripMouseOver(e);
-      }
-    }, {
-      name: 'removeItem',
-      "function": function _function(node) {
-        return this.ext.removeItem(node);
-      }
-    }];
+  Ext_list_Tree.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_list_Tree.PROPERTIES());
+    return Ext_Gadget.getProperties(properties);
   };
 
-  _createClass(Ext_list_Tree_Component, [{
-    key: "onitemclick",
-    //events
-    get: function get() {
-      return this.getAttribute('onitemclick');
-    },
-    set: function set(onitemclick) {
-      this.setAttribute('onitemclick', onitemclick);
-    }
-  }, {
-    key: "onselectionchange",
-    get: function get() {
-      return this.getAttribute('onselectionchange');
-    },
-    set: function set(onselectionchange) {
-      this.setAttribute('onselectionchange', onselectionchange);
-    }
-  }], [{
+  Ext_list_Tree.getEvents = function getEvents(events) {
+    events = events.concat(Ext_list_Tree.EVENTS());
+    return Ext_Gadget.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'treelist'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_list_Tree, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Gadget_Component.observedAttributes;
+      var attrs = _Ext_Gadget.observedAttributes; //for (var property in Ext_list_Tree.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
 
-      for (var property in Ext_list_Tree_Component.PROPERTIESOBJECT()) {
+      Ext_list_Tree.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
-      }
-
-      Ext_list_Tree_Component.EVENTS().forEach(function (eventparameter, index, array) {
+      });
+      Ext_list_Tree.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
       });
       return attrs;
     }
   }]);
 
-  function Ext_list_Tree_Component(propertiesobject, methods, events) {
-    return _Ext_Gadget_Component.call(this, Object.assign(propertiesobject, Ext_list_Tree_Component.PROPERTIESOBJECT()), //{propertiesobject, Ext_list_Tree_Component.PROPERTIESOBJECT()},
-    methods.concat(Ext_list_Tree_Component.METHODS()), events.concat(Ext_list_Tree_Component.EVENTS())) || this; //this.XTYPE = Ext_list_Tree_Component.XTYPE()
-    //this.PROPERTIESOBJECT = this.extendObject(this.PROPERTIESOBJECT, Ext_list_Tree_Component.PROPERTIESOBJECT());
-    //this.methods = this.extendArray(this.methods, Ext_list_Tree_Component.METHODS());
-    //this.events = this.extendArray(this.events, Ext_list_Tree_Component.EVENTS());
+  function Ext_list_Tree(properties, events) {
+    return _Ext_Gadget.call(this, properties.concat(Ext_list_Tree.PROPERTIES()), events.concat(Ext_list_Tree.EVENTS())) || this;
   }
 
-  var _proto = Ext_list_Tree_Component.prototype;
+  var _proto = Ext_list_Tree.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    _Ext_Gadget_Component.prototype.connectedCallback.call(this);
+    _Ext_Gadget.prototype.connectedCallback.call(this);
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
-    _Ext_Gadget_Component.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+    _Ext_Gadget.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
   };
 
-  return Ext_list_Tree_Component;
-}(Ext_Gadget_Component);
+  return Ext_list_Tree;
+}(Ext_Gadget);
 
-export { Ext_list_Tree_Component as default };
+export { Ext_list_Tree as default };
