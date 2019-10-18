@@ -1,0 +1,1593 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="z-tabs.js"></script>
+
+<script>
+function changeProperty() {
+  var x = document.getElementById("propertiesDocs").value;
+  document.getElementById("property").innerHTML = x;
+}
+function changeMethod() {
+  var x = document.getElementById("methodsDocs").value;
+  document.getElementById("method").innerHTML = x;
+}
+function changeEvent() {
+  var x = document.getElementById("eventsDocs").value;
+  document.getElementById("event").innerHTML = x;
+}
+</script>
+
+</head>
+<body>
+
+<div>
+
+
+
+
+
+
+<!--
+<div class="heading">&lt;ext-menuradioitem&gt;&lt;/ext-menuradioitem&gt;</div>
+-->
+
+<div class="heading">ext-menuradioitem</div>
+<br>
+<pre> checkable menu item that participates in a `{@link #cfg!group group}` of mutually exclusive items.
+
+Radio items must be a assigned to a `{@link #cfg!group}` and only one member of
+that group is allo...</pre>
+<br>
+<div><b>JavaScript:</b></div>
+
+<pre class="code">
+import '@sencha/ext-web-components/lib/ext-menuradioitem.component';
+
+menuradioitemReady(event) {
+  this.MenuradioitemCmp = event.detail.cmp;
+}
+</pre>
+
+<div><b>HTML:</b></div>
+<pre class="code">
+&lt;ext-menuradioitem onready="menuradioitemReady"&gt;&lt;/ext-menuradioitem&gt;
+</pre>
+
+
+<!--
+<pre class="code">
+import '@sencha/ext-web-components/lib/ext-menuradioitem.component';
+
+class MenuradioitemComponentExample {
+
+  onMenuradioitemReady(event) {
+    this.MenuradioitemCmp = event.detail.cmp;
+  }
+
+}
+
+window.MenuradioitemExample = new MenuradioitemComponentExample();
+</pre>
+
+<div><b>HTML:</b></div>
+<pre class="code">
+&lt;ext-menuradioitem onready="MenuradioitemExample.onMenuradioitemReady"&gt;
+...
+&lt;/ext-menuradioitem&gt;
+</pre>
+-->
+
+<div style="height:300px;">
+    <z-tabs>
+        <z-tabpanel tabname="properties">
+<div class="flex-container">
+  <div id="propertylist" class="thelist"><div>properties:</div></div>
+  <div id="property" class="thetext"></div>
+</div>
+        </z-tabpanel>
+        <z-tabpanel tabname="methods">
+<div class="flex-container">
+  <div id="methodlist" class="thelist"><div>methods:</div><div class="select-div"><select id="methodsDocs" onchange="changeMethod()" name="methodsDocs">
+    <option value="Adds declarative listeners as nested arrays of listener objects.
+">_addDeclaredListeners</option>
+    <option value="Sets up a reference on our current reference holder.
+">_fixReference</option>
+    <option value="This method is called before `{@link #method!destroy destroy}` to ensure that this instance's `{@link #cfg!stateful stateful}`
+properties are saved to persistent storage. Since this object is about to be
+destroyed, this cannot be delayed.
+">_flushStateful</option>
+    <option value="Returns the state id for this object.
+">_getStateId</option>
+    <option value="Creates a particular plugin type if defined in the `{@link #cfg!plugins plugins}` configuration.
+">activatePlugin</option>
+    <option value="Alias for {@link #method!onAfter #onAfter}.
+">addAfterListener</option>
+    <option value="Alias for {@link #method!onBefore #onBefore}.
+">addBeforeListener</option>
+    <option value="Adds a CSS class (or classes) to this Component's rendered element.
+">addCls</option>
+    <option value="Adds a listeners with the "delegate" event option.  Users should not invoke this
+method directly.  Use the "delegate" event option of
+{@link Ext.util.Observable#method!addListener addListener} instead.
+">addDelegatedListener</option>
+    <option value="This method applies a versioned, deprecation declaration to this class. This
+is typically called by the `deprecated` config.
+">addDeprecations</option>
+    <option value="Adds an element reference to this Widget instance.
+">addElementReference</option>
+    <option value="Reduces instantiation time for a Widget by lazily instantiating Ext.Element
+references the first time they are used.  This optimization only works for elements
+with no listeners specified.
+">addElementReferenceOnDemand</option>
+    <option value="The {@link #method!on #on} method is shorthand for
+{@link Ext.util.Observable#method!addListener addListener}.
+
+Appends an event handler to this object.  For example:
+
+    myGridPanel.on("itemclick", this.onItemClick, this);
+
+The method also allows for a single argument to be passed which is a config object
+containing properties which specify multiple events. For example:
+
+    myGridPanel.on({
+        cellclick: this.onCellClick,
+        select: this.onSelect,
+        viewready: this.onViewReady,
+        scope: this // Important. Ensure "this" is correct during handler execution
+    });
+
+One can also specify options for each event handler separately:
+
+    myGridPanel.on({
+        cellclick: {fn: this.onCellClick, scope: this, single: true},
+        viewready: {fn: panel.onViewReady, scope: panel}
+    });
+
+*Names* of methods in a specified scope may also be used:
+
+    myGridPanel.on({
+        cellclick: {fn: 'onCellClick', scope: this, single: true},
+        viewready: {fn: 'onViewReady', scope: panel}
+    });
+">addListener</option>
+    <option value="The addManagedListener method is used when some object (call it "A") is listening
+to an event on another observable object ("B") and you want to remove that listener
+from "B" when "A" is destroyed. This is not an issue when "B" is destroyed because
+all of its listeners will be removed at that time.
+
+Example:
+
+    Ext.define('Foo', {
+        extend: 'Ext.Component',
+
+        initComponent: function () {
+            this.addManagedListener(MyApp.SomeSharedMenu, 'show', this.doSomething);
+            this.callParent();
+        }
+    });
+
+As you can see, when an instance of Foo is destroyed, it ensures that the 'show'
+listener on the menu (`MyApp.SomeGlobalSharedMenu`) is also removed.
+
+As of version 5.1 it is no longer necessary to use this method in most cases because
+listeners are automatically managed if the scope object provided to
+{@link Ext.util.Observable#method!addListener addListener} is an Observable instance.
+However, if the observable instance and scope are not the same object you
+still need to use `{@link #method!mon mon}` or `{@link #method!addManagedListener addManagedListener}` if you want the listener to be
+managed.
+">addManagedListener</option>
+    <option value="Adds a plugin. For example:
+
+     list.addPlugin('pullrefresh');
+
+Or:
+
+     list.addPlugin({
+         type: 'pullrefresh',
+         pullRefreshText: 'Pull to refresh...'
+     });
+">addPlugin</option>
+    <option value="Used to handle joining of a record to a tpl
+">afterEdit</option>
+    <option value="Used to handle joining of a record to a tpl
+">afterErase</option>
+    <option value="This method is called after the component is initially added to the DOM. If this
+component {@link Ext.Container} other components, the `{@link #method!afterRender afterRender}` method
+for child components is called *before* the parent's `{@link #method!afterRender afterRender}`.
+
+Implementations of this method should avoid reading from the DOM but are free to
+write to the DOM as needed. To read the DOM, consider implementing
+{@link #method!onRender onRender} instead.
+
+This method is not generally needed because components always have their own DOM
+{@link #property!element} and these are maintained by config property
+updaters prior to insertion in the DOM. In general, it is always best to manipulate
+the component's elements outside the DOM where there is no associated reflow or
+layout cost. This method is useful for situations where the component's elements
+must be in the DOM in order to be manipulated correctly.
+">afterRender</option>
+    <option value="undefined">alignTo</option>
+    <option value="undefined">applyBind</option>
+    <option value="undefined">applyCentered</option>
+    <option value="Applier for the `{@link #cfg!plugins plugins}` config property.
+">applyPlugins</option>
+    <option value="Transforms a Session config to a proper instance.
+">applySession</option>
+    <option value="undefined">applyStyle</option>
+    <option value="undefined">applyTpl</option>
+    <option value="Transforms a ViewModel config to a proper instance.
+">applyViewModel</option>
+    <option value="undefined">beforeInitialize</option>
+    <option value="undefined">blur</option>
+    <option value="Bubbles up the {@link #method!getRefOwner} hierarchy, calling the specified function
+with each component. The scope (`this` reference) of the function call will be the
+scope provided or the current component. The arguments to the function will
+be the args provided or the current component. If the function returns false at any
+point, the bubble is stopped.
+">bubble</option>
+    <option value="Call the original method that was previously overridden with {@link Ext.Base#static-method!override Ext.Base#override}
+
+    Ext.define('My.Cat', {
+        constructor: function() {
+            alert("I'm a cat!");
+        }
+    });
+
+    My.Cat.override({
+        constructor: function() {
+            alert("I'm going to be a cat!");
+
+            this.callOverridden();
+
+            alert("Meeeeoooowwww");
+        }
+    });
+
+    var kitty = new My.Cat(); // alerts "I'm going to be a cat!"
+                              // alerts "I'm a cat!"
+                              // alerts "Meeeeoooowwww"
+">callOverridden</option>
+    <option value="Call the "parent" method of the current method. That is the method previously
+overridden by derivation or by an override (see {@link Ext#method!define Ext#define}).
+
+     Ext.define('My.Base', {
+         constructor: function(x) {
+             this.x = x;
+         },
+
+         statics: {
+             method: function(x) {
+                 return x;
+             }
+         }
+     });
+
+     Ext.define('My.Derived', {
+         extend: 'My.Base',
+
+         constructor: function() {
+             this.callParent([21]);
+         }
+     });
+
+     var obj = new My.Derived();
+
+     alert(obj.x);  // alerts 21
+
+This can be used with an override as follows:
+
+     Ext.define('My.DerivedOverride', {
+         override: 'My.Derived',
+
+         constructor: function(x) {
+             this.callParent([x*2]); // calls original My.Derived constructor
+         }
+     });
+
+     var obj = new My.Derived();
+
+     alert(obj.x);  // now alerts 42
+
+This also works with static and private methods.
+
+     Ext.define('My.Derived2', {
+         extend: 'My.Base',
+
+         // privates: {
+         statics: {
+             method: function(x) {
+                 return this.callParent([x*2]); // calls My.Base.method
+             }
+         }
+     });
+
+     alert(My.Base.method(10));     // alerts 10
+     alert(My.Derived2.method(10)); // alerts 20
+
+Lastly, it also works with overridden static methods.
+
+     Ext.define('My.Derived2Override', {
+         override: 'My.Derived2',
+
+         // privates: {
+         statics: {
+             method: function(x) {
+                 return this.callParent([x*2]); // calls My.Derived2.method
+             }
+         }
+     });
+
+     alert(My.Derived2.method(10); // now alerts 40
+
+To override a method and replace it and also call the superclass method, use
+{@link #method!callSuper #method-callSuper}. This is often done to patch a method to fix a bug.
+">callParent</option>
+    <option value="This method is used by an **override** to call the superclass method but
+bypass any overridden method. This is often done to "patch" a method that
+contains a bug but for whatever reason cannot be fixed directly.
+
+Consider:
+
+     Ext.define('Ext.some.Class', {
+         method: function() {
+             console.log('Good');
+         }
+     });
+
+     Ext.define('Ext.some.DerivedClass', {
+         extend: 'Ext.some.Class',
+
+         method: function() {
+             console.log('Bad');
+
+             // ... logic but with a bug ...
+
+             this.callParent();
+         }
+     });
+
+To patch the bug in `Ext.some.DerivedClass.method`, the typical solution is to create an
+override:
+
+     Ext.define('App.patches.DerivedClass', {
+         override: 'Ext.some.DerivedClass',
+
+         method: function() {
+             console.log('Fixed');
+
+             // ... logic but with bug fixed ...
+
+             this.callSuper();
+         }
+     });
+
+The patch method cannot use {@link #method!callParent #method-callParent} to call the superclass
+`method` since that would call the overridden method containing the bug. In
+other words, the above patch would only produce "Fixed" then "Good" in the
+console log, whereas, using `callParent` would produce "Fixed" then "Bad"
+then "Good".
+">callSuper</option>
+    <option value="Center this {@link #cfg!floated #cfg-floated} or {@link #isPositioned positioned} Component in its parent.
+">center</option>
+    <option value="Clears all listeners that were attached using the "delegate" event option.
+Users should not invoke this method directly.  It is called automatically as
+part of normal {@link Ext.util.Observable#method!clearListeners clearListeners}
+processing.
+">clearDelegatedListeners</option>
+    <option value="Removes all listeners for this object including the managed listeners
+">clearListeners</option>
+    <option value="Removes all managed listeners for this object.
+">clearManagedListeners</option>
+    <option value="Creates new Component.
+">constructor</option>
+    <option value="Converts the provided type or config object into a plugin instance.
+">createPlugin</option>
+    <option value="Creates an event handling function which re-fires the event from this object
+as the passed event name.
+">createRelayer</option>
+    <option value="Destroys the Widget. This method should not be overridden in custom Widgets,
+because it sets the flags and does final cleanup that must go last. Instead,
+override {@link #method!doDestroy #doDestroy} method to add functionality at destruction time.
+">destroy</option>
+    <option value="Destroys member properties by name.
+
+If a property name is the name of a *config*, the getter is *not* invoked, so
+if the config has not been initialized, nothing will be done.
+
+The property will be destroyed, and the corrected name (if the property is a *config*
+and config names are prefixed) will set to `null` in this object's dictionary.
+">destroyMembers</option>
+    <option value="Removes and destroys a plugin.
+
+**Note:** Not all plugins are designed to be removable. Consult the documentation
+for the specific plugin in question to be sure.
+">destroyPlugin</option>
+    <option value="Disables this Component
+">disable</option>
+    <option value="undefined">doAddListener</option>
+    <option value="Perform the actual destruction sequence. This is the method to override in your
+subclasses to add steps specific to the destruction of custom Component.
+
+If the Component is currently added to a Container it will first be removed
+from that Container. All {@link Ext.dom.Element Ext.Element} references are also deleted and
+the Component is de-registered from {@link Ext.ComponentManager}.
+
+As a rule of thumb, subclasses should destroy their child Components, Elements,
+and/or other objects before calling parent method. Any object references will be
+nulled after this method has finished, to prevent the possibility of memory leaks.
+">doDestroy</option>
+    <option value="Fires a delegated event.  Users should not invoke this method directly.  It
+is called automatically by the framework as needed (see the "delegate" event
+option of {@link Ext.util.Observable#method!addListener addListener} for more
+details.
+">doFireDelegatedEvent</option>
+    <option value="Continue to fire event.
+">doFireEvent</option>
+    <option value="undefined">doInheritUi</option>
+    <option value="undefined">doUninheritUi</option>
+    <option value="Enables this Component
+">enable</option>
+    <option value="Enables events fired by this Observable to bubble up an owner hierarchy by calling
+`this.getBubbleTarget()` if present. There is no implementation in the Observable
+base class.
+
+This is commonly used by Ext.Components to bubble events to owner Containers.
+See {@link Ext.Component#getBubbleTarget}. The default implementation in Ext.Component
+returns the Component's immediate owner. But if a known target is required, this can be
+overridden to access the required target more quickly.
+
+Example:
+
+    Ext.define('Ext.overrides.form.field.Base', {
+        override: 'Ext.form.field.Base',
+
+        //  Add functionality to Field's initComponent to enable
+        // the change event to bubble
+        initComponent: function () {
+            this.callParent();
+            this.enableBubble('change');
+        }
+    });
+
+    var myForm = Ext.create('Ext.form.Panel', {
+        title: 'User Details',
+        items: [{
+            ...
+        }],
+        listeners: {
+            change: function() {
+                // Title goes red if form has been modified.
+                myForm.header.setStyle('color', 'red');
+            }
+        }
+    });
+">enableBubble</option>
+    <option value="Expand this item's menu.
+">expandMenu</option>
+    <option value="The method finds this floated component's floatParent. That means a DOM positioning
+container which acts as a root element for sibling floated components, and allows allows
+floated components to be absolutely positioned, and their encapsulating elements to be
+reordered to produce a visual stacking effect.
+
+This component's element is appended to its floatParent.
+
+There is a global floatParent element, created on demand when the first top level
+floated component is shown. This may be an item child of a container configured with
+`{@link #cfg!floated #cfg-floated}: true`, or a free `{@link #cfg!floated floated}` component which is programatically
+{@link Ext.Component#show shown}.
+
+Child items of components inside a floated component may also be configured `{@link #cfg!floated floated}`.
+These are give a floatParent which is created on demand wrapping the nearest `{@link #cfg!floated floated}`
+ancestor. This means that when that ancestor's element is brought to the top of the
+stack (by moving its element to the end of its own floatParent), the descendant elements
+will automatically remain above.
+">findFloatParent</option>
+    <option value="Finds an alternate Component to focus if this Component is disabled while focused, or
+focused while disabled, or otherwise unable to focus.
+
+In both cases, focus must not be lost to document.body, but must move to an intuitively
+connectible Component, either a sibling, or uncle or nephew.
+
+This is both for the convenience of keyboard users, and also for when focus is tracked
+within a Component tree such as for ComboBoxes and their dropdowns.
+
+For example, a ComboBox with a PagingToolbar in is BoundList. If the "Next Page"
+button is hit, the LoadMask shows and focuses, the next page is the last page, so
+the "Next Page" button is disabled. When the LoadMask hides, it attempt to focus the
+last focused Component which is the disabled "Next Page" button. In this situation,
+focus should move to a sibling within the PagingToolbar.
+">findFocusTarget</option>
+    <option value="Retrieves plugin by its `type` alias. For example:
+
+     var list = Ext.create({
+         xtype: 'list',
+         itemTpl: '<div class="item">{title}</div>',
+         store: 'Items',
+
+         plugins: ['listpaging', 'pullrefresh']
+     });
+
+     list.findPlugin('pullrefresh').setPullRefreshText('Pull to refresh...');
+
+**Note:** See also {@link #method!getPlugin #getPlugin}.
+">findPlugin</option>
+    <option value="Fires the specified event with the passed parameters and executes a function (action).
+By default, the action function will be executed after any "before" event handlers
+(as specified using the `order` option of
+`{@link Ext.util.Observable#method!addListener addListener}`), but before any other
+handlers are fired.  This gives the "before" handlers an opportunity to
+cancel the event by returning `false`, and prevent the action function from
+being called.
+
+The action can also be configured to run after normal handlers, but before any "after"
+handlers (as specified using the `order` event option) by passing `'after'`
+as the `order` parameter.  This configuration gives any event handlers except
+for "after" handlers the opportunity to cancel the event and prevent the action
+function from being called.
+">fireAction</option>
+    <option value="Fires the specified event with the passed parameters (minus the event name, plus
+the `options` object passed to {@link Ext.util.Observable#method!addListener addListener}).
+
+An event may be set to bubble up an Observable parent hierarchy (See
+{@link Ext.Component#getBubbleTarget}) by calling {@link #method!enableBubble #enableBubble}.
+">fireEvent</option>
+    <option value="Fires the specified event with the passed parameter list.
+
+An event may be set to bubble up an Observable parent hierarchy
+(See {@link Ext.Component#getBubbleTarget}) by calling {@link #method!enableBubble #enableBubble}.
+">fireEventArgs</option>
+    <option value="Fires the specified event with the passed parameters and executes a function (action).
+Evented Actions will automatically dispatch a 'before' event passing. This event will
+be given a special controller that allows for pausing/resuming of the event flow.
+
+By pausing the controller the updater and events will not run until resumed. Pausing,
+however, will not stop the processing of any other before events.
+">fireEventedAction</option>
+    <option value="Try to focus this component.
+
+If this component is disabled or otherwise not focusable, a close relation
+will be targeted for focus instead to keep focus localized for keyboard users.
+">focus</option>
+    <option value="Prepares information on aligning this to component using alignment.
+Also checks to see if this is already aligned to component according to alignment.
+">getAlignmentInfo</option>
+    <option value="undefined">getAlignRegion</option>
+    <option value="Find component(s) that label or describe this component,
+and return the id(s) of their ariaEl elements.
+">getAriaLabelEl</option>
+    <option value="Gets the bubbling parent for an Observable
+">getBubbleParent</option>
+    <option value="undefined">getClassCls</option>
+    <option value="Returns a specified config property value. If the name parameter is not passed,
+all current configuration options will be returned as key value pairs.
+">getConfig</option>
+    <option value="Returns the {@link Ext.app.ViewController} instance associated with this
+component via the {@link #cfg!controller #controller} config or {@link #setController} method.
+">getController</option>
+    <option value="Current Alignment information from the last alignTo call
+">getCurrentAlignmentInfo</option>
+    <option value="undefined">getCurrentConfig</option>
+    <option value="A template method for modifying the {@link #property!element #element} config before it is processed.
+By default adds the result of `this.getTemplate()` as the `children` array of
+{@link #property!element #element} if `children` were not specified in the original
+{@link #property!element #element} config.  Typically this method should not need to be implemented
+in subclasses.  Instead the {@link #property!element #element} property should be use to configure
+the element template for a given Widget subclass.
+
+This method is called once when the first instance of each Widget subclass is
+created.  The element config object that is returned is cached and used as the template
+for all successive instances.  The scope object for this method is the class prototype,
+not the instance.
+">getElementConfig</option>
+    <option value="*For {@link #cfg!floated #cfg-floated} components only. *
+
+Finds the owning {@link #cfg!floated #cfg-floated} component (if any) responsible for
+the base z-index stack position of this compoonent, and, if that component
+is {@link #cfg!relative #cfg-relative}, for the coordinate system in which this component
+is positioned.
+
+If this is a top level floated component, this method will return `null`
+">getFloatParent</option>
+    <option value="This method returns, or creates on demand the floatWrap element which wraps the passed
+floated component. It enables that floated component to act as a host for descendant
+floated components.
+">getFloatWrap</option>
+    <option value="Returns the element used to apply focus styling CSS class when Focusable's
+{@link #property!focusEl #focusEl} becomes focused. By default it is {@link #property!focusEl #focusEl}.
+">getFocusClsEl</option>
+    <option value="Returns the main focus holder element associated with this Focusable, i.e.
+the element that will be focused when Focusable's {@link #method!focus} method is
+called. For most Focusables, this will be the {@link #property!focusEl #focusEl}.
+">getFocusEl</option>
+    <option value="Retrieves the `id`. This method Will auto-generate an id if one has not already
+been configured.
+">getId</option>
+    <option value="This method returns an object containing the inherited properties for this instance.
+">getInherited</option>
+    <option value="This method returns the value of a config property that may be inherited from some
+ancestor.
+
+In some cases, a config may be explicitly set on a component with the intent of
+*only* being presented to its children while that component should act upon the
+inherited value (see `referenceHolder` for example). In these cases the `skipThis`
+parameter should be specified as `true`.
+">getInheritedConfig</option>
+    <option value="Returns the initial configuration passed to the constructor when
+instantiating this class.
+
+Given this example Ext.button.Button definition and instance:
+
+    Ext.define('MyApp.view.Button', {
+        extend: 'Ext.button.Button',
+        xtype: 'mybutton',
+
+        scale: 'large',
+        enableToggle: true
+    });
+
+    var btn = Ext.create({
+        xtype: 'mybutton',
+        renderTo: Ext.getBody(),
+        text: 'Test Button'
+    });
+
+Calling `btn.getInitialConfig()` would return an object including the config
+options passed to the `{@link #static-method!create create}` method:
+
+    xtype: 'mybutton',
+    renderTo: // The document body itself
+    text: 'Test Button'
+
+Calling `btn.getInitialConfig('text')`returns **'Test Button'**.
+">getInitialConfig</option>
+    <option value="Returns the topmost modal floated component (other then this one).
+">getModalSibling</option>
+    <option value="Retrieves a plugin by its `id`.
+
+     var list = Ext.create({
+         xtype: 'list',
+         itemTpl: '<div class="item">{title}</div>',
+         store: 'Items',
+
+         plugins: [{
+             type: 'pullrefresh',
+             id: 'foo'
+         }]
+     });
+
+     list.getPlugin('foo').setPullRefreshText('Pull to refresh...');
+
+**Note:** See also {@link #method!findPlugin #findPlugin}.
+">getPlugin</option>
+    <option value="Used by {@link Ext.ComponentQuery}, and the {@link Ext.Component#method!up up}
+method to find the owning Component in the linkage hierarchy.
+
+By default this returns the Container which contains this Component.
+
+This may be overridden by Component authors who implement ownership hierarchies
+which are not based upon ownerCt, such as BoundLists being owned by Fields or Menus
+being owned by Buttons.
+">getRefOwner</option>
+    <option value="Returns the element into which the html content and items should be rendered.
+This defaults to the `bodyElement` but derived classes can override this method
+to use a different element.
+
+For containers his only applies to `inner` items, not `{@link #cfg!docked docked}` items. The
+`{@link #property!positioned positioned}` items are rendered to the element returned by the
+{@link Ext.Container#getPositionedItemTarget method.
+">getRenderTarget</option>
+    <option value="This method is required by the Scroller to return the scrollable client region
+">getScrollableClientRegion</option>
+    <option value="Returns the height and width of the Component.
+">getSize</option>
+    <option value="Creates a state builder to access or edit this instance's state object. If this
+instance has a `{@link #method!getStatefulOwner}`, the returned
+builder will have a `parent` reference that owner's state builder. This can be
+an arbitrarily deep chain but does proceed all the way up to the root instance
+(with no owner) since that is the instance that determines the ultimate state
+storage key.
+">getStateBuilder</option>
+    <option value="This method allows a class to specify an owning stateful object. This is used by
+{@link Ext.plugin.Abstract} to save their state as part of their owning
+{@link Ext.Component}.
+
+The return value can be either a `Stateful` object or an array whose first element is
+a `Stateful` object. This object's state will be stored inside the state object of
+the returned `Stateful` object. If an array is returned, the elements beyond the first
+are sub-keys in the state object.
+
+For example, {@link Ext.plugin.Abstract} implement this method like so:
+
+     getStatefulOwner: function() {
+         return [ this.cmp, 'plugins' ];
+     }
+
+The effect of this is to produce a state object like so:
+
+     {
+         plugins: {
+             pluginId1: {
+                 //...
+             }
+         }
+     }
+
+In order for a child object's state to be saved and restored, all of its parents must
+also be stateful (i.e., have a `{@link #cfg!stateId stateId}`).
+">getStatefulOwner</option>
+    <option value="Return the actual tabIndex for this Focusable.
+">getTabIndex</option>
+    <option value="Returns this Component's xtype hierarchy as a slash-delimited string. For a list of all
+available xtypes, see the {@link Ext.Component} header.
+
+__Note:__ If using your own subclasses, be aware that a Component must register its own xtype
+to participate in determination of inherited xtypes.
+
+Example usage:
+
+    var t = new Ext.field.Text();
+    alert(t.getXTypes());  // alerts 'component/field/textfield'
+">getXTypes</option>
+    <option value="undefined">handleBlurEvent</option>
+    <option value="undefined">handleFocusEvent</option>
+    <option value="Function to add click listener for touch devices.
+">handleTouch</option>
+    <option value="Checks if the specified CSS class exists on this element's DOM node.
+">hasCls</option>
+    <option value="undefined">hasConfig</option>
+    <option value="Checks to see if this object has any listeners for a specified event, or whether
+the event bubbles. The answer indicates whether the event needs firing or not.
+">hasListener</option>
+    <option value="Hides this Component optionally using an animation.
+">hide</option>
+    <option value="Hides the entire floating menu tree that we are within.
+Walks up the refOwner axis hiding each Menu instance it find until it hits
+a non-floating ancestor.
+">hideParentMenus</option>
+    <option value="This method triggers the lazy configs and must be called when it is time to
+fully boot up. The configs that must be initialized are: `{@link #cfg!bind bind}`, `{@link #cfg!publishes publishes}`,
+`{@link #cfg!session session}`, `{@link #cfg!twoWayBindable twoWayBindable}` and `{@link #cfg!viewModel viewModel}`.
+">initBindable</option>
+    <option value="Initialize configuration for this class. a typical example:
+
+    Ext.define('My.awesome.Class', {
+        // The default config
+        config: {
+            name: 'Awesome',
+            isAwesome: true
+        },
+
+        constructor: function(config) {
+            this.initConfig(config);
+        }
+    });
+
+    var awesome = new My.awesome.Class({
+        name: 'Super Awesome'
+    });
+
+    alert(awesome.getName()); // 'Super Awesome'
+">initConfig</option>
+    <option value="This method is called when a drag is initializing. This method should adjust the
+drag constraints to ensure all drag movements are properly restricted. See
+{@link Ext.drag.Source#cfg!constrain Ext.drag.Source#constrain}.
+">initDragConstraints</option>
+    <option value="Initializes the Element for this Widget instance.  If this is the first time a
+Widget of this type has been instantiated the {@link #property!element #element} config will be
+processed to create an Element.  This Element is then cached on the prototype (see
+afterCachedConfig) so that future instances can obtain their element by simply
+cloning the Element that was cached by the first instance.
+">initElement</option>
+    <option value="Called for the first instance of this Widget to create an object that contains the
+listener configs for all of the element references keyed by reference name. The
+object is cached on the prototype and has the following shape:
+
+    _elementListeners: {
+        element: {
+            click: 'onClick',
+            scope: this
+        },
+        fooReference: {
+            tap: {
+                fn: someFunction,
+                delay: 100
+            }
+        }
+    }
+
+The returned object is prototype chained to the _elementListeners object of its
+superclass, and each key in the object is prototype chained to object with the
+corresponding key in the superclass _elementListeners.  This allows element
+listeners to be inherited and overridden when subclassing widgets.
+
+This method is invoked with the prototype object as the scope
+">initElementListeners</option>
+    <option value="Sets up the focus listener on this Component's {@link #method!getFocusEl focusEl} if it has one.
+
+Form Components which must implicitly participate in tabbing order usually have
+a naturally focusable element as their {@link #method!getFocusEl focusEl}, and it is
+the DOM event of that receiving focus which drives the Component's `{@link #method!onFocus onFocus}` handling,
+and the DOM event of it being blurred which drives the `{@link #method!onBlur onBlur}` handling.
+">initFocusableElement</option>
+    <option value="Template method to do any event listener initialization for a Focusable.
+This generally happens after the focusEl is available.
+">initFocusableEvents</option>
+    <option value="Allows addition of behavior to the rendering phase.
+">initialize</option>
+    <option value="Called by `{@link #method!getInherited getInherited}` to initialize the inheritedState the first time it is requested.
+">initInheritedState</option>
+    <option value="This method should be called when the instance is ready to start listening for
+keyboard events. This is called automatically for `{@link Ext.Component}` and derived
+classes. This is done after the component is rendered.
+">initKeyMap</option>
+    <option value="Initializes a "uiReference".  Ui rerefences are reference elements that have
+classCls and ui info in their CSS class names.  They can be used by setting
+uiCls in the template, or by invoking this method to setup the ui reference
+after element/template initialization (Toolable uses this for its dock wrapper)
+">initUiReference</option>
+    <option value="This method inserts this floated component's DOM into its owning floatParent.
+">insertFloatedDom</option>
+    <option value="This method marks the current inherited state as invalid. The next time a call is
+made to `{@link #method!getInherited getInherited}` the objects will be recreated and initialized.
+">invalidateInheritedState</option>
+    <option value="Tests whether this Widget matches a {@link Ext.ComponentQuery}
+selector string.
+">is</option>
+    <option value="Determines whether **this Component** is an ancestor of the passed Component.
+This will return `true` if the passed Component is anywhere within the subtree
+beneath this Component.
+">isAncestor</option>
+    <option value="undefined">isBlurring</option>
+    <option value="Determines if the passed property name is bound to ViewModel data.
+">isBound</option>
+    <option value="undefined">isCentered</option>
+    <option value="Determines whether this component is the descendant of a passed component.
+">isDescendantOf</option>
+    <option value="Determines if this Component is inside a Component tree which is destroyed, *or
+is being destroyed*.
+">isDestructing</option>
+    <option value="Returns `true` if this Component is currently disabled.
+">isDisabled</option>
+    <option value="Returns `true` if this Component is not currently disabled.
+">isEnabled</option>
+    <option value="Determine if this Focusable can receive focus at this time.
+
+Note that Containers can be non-focusable themselves while delegating
+focus treatment to a child Component; see {@link Ext.Container}
+for more information.
+">isFocusable</option>
+    <option value="undefined">isFocusing</option>
+    <option value="undefined">isHeighted</option>
+    <option value="Returns `true` if this Component is currently hidden.
+">isHidden</option>
+    <option value="undefined">isPainted</option>
+    <option value="undefined">isRendered</option>
+    <option value="Checks if all events, or a specific event, is suspended.
+">isSuspended</option>
+    <option value="Checks if a particular binding is synchronizing the value.
+">isSyncing</option>
+    <option value="Returns `true` if this Component is currently visible.
+
+A Widget is visible if its element is not hidden, *and* has been
+{@link #property!rendered} *and* has not been destroyed.
+">isVisible</option>
+    <option value="undefined">isWidthed</option>
+    <option value="Tests whether or not this Component is of a specific xtype. This can test whether this
+Component is descended from the xtype (default) or whether it is directly of the xtype
+specified (`shallow = true`).
+**If using your own subclasses, be aware that a Component must register its own xtype
+to participate in determination of inherited xtypes.__
+
+For a list of all available xtypes, see the {@link Ext.Component} header.
+
+Example usage:
+
+    var t = new Ext.field.Text();
+    var isText = t.isXType('textfield'); // true
+    var isBoxSubclass = t.isXType('field'); // true, descended from Ext.field.Field
+    var isBoxInstance = t.isXType('field', true); // false, not a direct
+                                                  // Ext.field.Field instance
+">isXType</option>
+    <option value="Adds a "destroyable" object to an internal list of objects that will be destroyed
+when this instance is destroyed (via `{@link #method!destroy}`).
+">link</option>
+    <option value="This method is called to load state from the provided `state` builder. This method
+should return the config properties loaded from `state`.
+
+This method, like `{@link #method!saveState saveState}`, can be overridden by derived classes:
+
+     loadState: function(state) {
+         var ret = this.callParent([ state ]);
+
+         if (ret.foo) {
+             // use custom data...
+
+             delete ret.foo;  // remove it since it isn't a config
+         }
+
+         return ret;
+     }
+
+When overriding this method, it is also likely necessary to override `{@link #method!saveState saveState}`.
+">loadState</option>
+    <option value="Gets the controller that controls this view. May be a controller that belongs
+to a view higher in the hierarchy.
+">lookupController</option>
+    <option value="Gets the Form or Component that is used as the name holder for this component.
+">lookupNameHolder</option>
+    <option value="Gets the Controller or Component that is used as the reference holder for this view.
+">lookupReferenceHolder</option>
+    <option value="Returns the `{@link Ext.data.Session}` for this instance. This property may come
+from this instance's `{@link #cfg!session #session}` or be inherited from this object's parent.
+">lookupSession</option>
+    <option value="Gets a named template instance for this class. See {@link Ext.XTemplate#static-method!getTpl Ext.XTemplate#getTpl}.
+">lookupTpl</option>
+    <option value="Returns the `{@link Ext.app.ViewModel}` for this instance. This property may come from this
+this instance's `{@link #cfg!viewModel #viewModel}` or be inherited from this object's parent.
+">lookupViewModel</option>
+    <option value="Shorthand for {@link #method!addManagedListener #addManagedListener}.
+The addManagedListener method is used when some object (call it "A") is listening
+to an event on another observable object ("B") and you want to remove that listener
+from "B" when "A" is destroyed. This is not an issue when "B" is destroyed because
+all of its listeners will be removed at that time.
+
+Example:
+
+    Ext.define('Foo', {
+        extend: 'Ext.Component',
+
+        initComponent: function () {
+            this.addManagedListener(MyApp.SomeSharedMenu, 'show', this.doSomething);
+            this.callParent();
+        }
+    });
+
+As you can see, when an instance of Foo is destroyed, it ensures that the 'show'
+listener on the menu (`MyApp.SomeGlobalSharedMenu`) is also removed.
+
+As of version 5.1 it is no longer necessary to use this method in most cases because
+listeners are automatically managed if the scope object provided to
+{@link Ext.util.Observable#method!addListener addListener} is an Observable instance.
+However, if the observable instance and scope are not the same object you
+still need to use `{@link #method!mon mon}` or `{@link #method!addManagedListener addManagedListener}` if you want the listener to be
+managed.
+">mon</option>
+    <option value="Shorthand for {@link #method!removeManagedListener #removeManagedListener}.
+Removes listeners that were added by the {@link #method!mon #mon} method.
+">mun</option>
+    <option value="The {@link #method!on #on} method is shorthand for
+{@link Ext.util.Observable#method!addListener addListener}.
+
+Appends an event handler to this object.  For example:
+
+    myGridPanel.on("itemclick", this.onItemClick, this);
+
+The method also allows for a single argument to be passed which is a config object
+containing properties which specify multiple events. For example:
+
+    myGridPanel.on({
+        cellclick: this.onCellClick,
+        select: this.onSelect,
+        viewready: this.onViewReady,
+        scope: this // Important. Ensure "this" is correct during handler execution
+    });
+
+One can also specify options for each event handler separately:
+
+    myGridPanel.on({
+        cellclick: {fn: this.onCellClick, scope: this, single: true},
+        viewready: {fn: panel.onViewReady, scope: panel}
+    });
+
+*Names* of methods in a specified scope may also be used:
+
+    myGridPanel.on({
+        cellclick: {fn: 'onCellClick', scope: this, single: true},
+        viewready: {fn: 'onViewReady', scope: panel}
+    });
+">on</option>
+    <option value="undefined">onAdded</option>
+    <option value="Appends an after-event handler.
+
+Same as {@link Ext.util.Observable#method!addListener addListener} with `order` set
+to `'after'`.
+">onAfter</option>
+    <option value="Appends a before-event handler.  Returning `false` from the handler will stop the event.
+
+Same as {@link Ext.util.Observable#method!addListener addListener} with `order` set
+to `'before'`.
+">onBefore</option>
+    <option value="undefined">onBlur</option>
+    <option value="undefined">onFocus</option>
+    <option value="Called when focus enters this Component's hierarchy
+">onFocusEnter</option>
+    <option value="Called when focus exits from this Component's hierarchy
+">onFocusLeave</option>
+    <option value="Called when focus moves *within* this Component's hierarchy
+">onFocusMove</option>
+    <option value="Called when this Inheritable is added to a parent
+">onInheritedAdd</option>
+    <option value="Called when this inheritable is removed from a parent
+">onInheritedRemove</option>
+    <option value="undefined">onInitialized</option>
+    <option value="This method is called the first time a component is inserted into the DOM. If this
+component {@link Ext.Container} other components, the `{@link #method!onRender onRender}` method
+for child components is called *after* the parent's `{@link #method!onRender onRender}`.
+
+Implementations of this method should avoid modifying the DOM but are free to read
+from and measure elements as needed. To adjust the DOM, consider implementing
+{@link #method!afterRender afterRender} instead.
+
+If this method is overridden, be sure to use `callParent` to call the base class
+version.
+
+     onRender: function() {
+         this.callParent();
+
+         // custom actions
+     }
+
+This method is not generally needed because components always have their own DOM
+{@link #property!element} and these are maintained by config property
+updaters prior to insertion in the DOM. In general, it is always best to interrogate
+the component's elements outside the DOM where there is no associated reflow or
+layout cost. This method is useful for situations where the component's elements
+must be in the DOM. For example to be measured correctly.
+">onRender</option>
+    <option value="Optional template method. If implemented, this is called *asynchronously* after a browser
+layout caused by a component resize. This may be triggered for any or several of the
+following reasons:
+   - Programmatic changes to {@link #cfg!width #cfg-width} or {@link #cfg!height #cfg-height} configs.
+   - Setting the {@link #cfg!flex #cfg-flex} config when the owning layout is {@link Ext.layout.Box}.
+   - Setting {@link #cfg!minHeight #cfg-minHeight}, {@link #cfg!maxHeight #cfg-maxHeight}, {@link #cfg!minWidth #cfg-minWidth}
+     or {@link #cfg!maxWidth #cfg-maxWidth}.
+   - Changing device orientation.
+   - Changing the browser viewport size.
+   - Any resize caused by browser layout recalculation which may be caused by content
+     size changes or application of default browser layout rules.
+">onResize</option>
+    <option value="Invoked when a scroll operation is completed via this component's
+{@link #cfg!scrollable scroller}.
+">onScrollEnd</option>
+    <option value="Invoked when this component is scrolled via its {@link #cfg!scrollable scroller}.
+">onScrollMove</option>
+    <option value="Invoked when a scroll is initiated on this component via its {@link #cfg!scrollable scroller}.
+">onScrollStart</option>
+    <option value="This method is called when any of the `{@link #cfg!stateful stateful}` configs are modified.
+">onStatefulChange</option>
+    <option value="Returns `true` if the passed element is within the container tree of this component.
+
+For example if a menu's submenu contains an {@link Ext.form.field.Date}, that top level
+menu owns the elements of the date picker. Using this method, you can tell if an event
+took place within a certain component tree.
+">owns</option>
+    <option value="Saves the state of this instance to the persistence store. This method is called
+by the {@link Ext.state.Provider} when it is ready to save state
+to storage.
+">persistState</option>
+    <option value="This is the private method to ensure everything is set up for showing.
+This is called by both show and showBy to set a component up.
+the user-facing method is beforeShow, this setup must have
+happened by the time that is called.
+">preprocessShow</option>
+    <option value="Recursively processes the element templates for this class and its superclasses,
+ascending the hierarchy until it reaches a superclass whose element template
+has already been processed.  This method is invoked using the prototype as the scope.
+">processElementConfig</option>
+    <option value="Publish this components state to the `ViewModel`. If no arguments are given (or if
+this is the first call), the entire state is published. This state is determined by
+the `{@link #cfg!publishes publishes}` property.
+
+This method is called only by component authors.
+">publishState</option>
+    <option value="Returns this instance's state object from the persistence store. This object
+should contain config properties.
+">readStateObject</option>
+    <option value="undefined">realign</option>
+    <option value="Relays selected events from the specified Observable as if the events were fired
+by `this`.
+
+For example if you are extending Grid, you might decide to forward some events from
+store. So you can do this inside your initComponent:
+
+    this.relayEvents(this.getStore(), ['load']);
+
+The grid instance will then have an observable 'load' event which will be passed
+the parameters of the store's load event and any function fired with the grid's
+load event would have access to the grid using the this keyword (unless the event
+is handled by a controller's control/listen event listener in which case 'this'
+will be the controller rather than the grid).
+">relayEvents</option>
+    <option value="Alias for {@link #method!unAfter #unAfter}.
+">removeAfterListener</option>
+    <option value="Alias for {@link #method!unBefore #unBefore}.
+">removeBeforeListener</option>
+    <option value="Removes the given CSS class(es) from this widget's primary element.
+">removeCls</option>
+    <option value="Removes delegated listeners for a given eventName, function, and scope.
+Users should not invoke this method directly.  It is called automatically by
+the framework as part of {@link #method!removeListener #removeListener} processing.
+">removeDelegatedListener</option>
+    <option value="Removes an event handler.
+">removeListener</option>
+    <option value="Removes listeners that were added by the {@link #method!mon #mon} method.
+">removeManagedListener</option>
+    <option value="Remove a single managed listener item
+">removeManagedListenerItem</option>
+    <option value="Removes and (optionally) destroys a plugin.
+
+**Note:** Not all plugins are designed to be removable. Consult the documentation
+for the specific plugin in question to be sure.
+">removePlugin</option>
+    <option value="Replaces specified classes with the newly specified classes.
+It uses the {@link #method!addCls #addCls} and {@link #method!removeCls #removeCls} methods, so if the class(es) you
+are removing don't exist, it will still add the new classes.
+">replaceCls</option>
+    <option value="Resets {@link #cfg!top #top}, {@link #cfg!right #right}, {@link #cfg!bottom #bottom} and {@link #cfg!left #left} configurations to
+`null`, which will cause this component to stop being 'positioned' and to take its place in
+its owning container's layout.
+">resetFloating</option>
+    <option value="Resets {@link #cfg!top #top}, {@link #cfg!right #right}, {@link #cfg!bottom #bottom} and {@link #cfg!left #left} configurations to
+`null`, which will cause this component to stop being 'positioned' and to take its place in
+its owning container's layout.
+">resetPositioned</option>
+    <option value="Gets the default scope for firing late bound events (string names with
+no scope attached) at runtime.
+">resolveListenerScope</option>
+    <option value="Returns the default listener scope for a "satellite" of this component.
+Used for resolving scope for observable objects that are not part of the normal
+Container/Component hierarchy (for example, plugins)
+">resolveSatelliteListenerScope</option>
+    <option value="Resumes firing of the named event(s).
+
+After calling this method to resume events, the events will fire when requested to fire.
+
+**Note that if the {@link #method!suspendEvent #suspendEvent} method is called multiple times for a certain
+event, this converse method will have to be called the same number of times for it
+to resume firing.**
+">resumeEvent</option>
+    <option value="Resumes firing events (see {@link #method!suspendEvents #suspendEvents}).
+
+If events were suspended using the `queueSuspended` parameter, then all events fired
+during event suspension will be sent to any listeners now.
+">resumeEvents</option>
+    <option value="Returns focus to the Component or element found in the cached
+focusEnterEvent.
+">revertFocus</option>
+    <option value="This field is on the recieving end of a call from {@link #method!revertFocus}.
+
+It is called when focus is being pushed back into this Component from a Component
+that is focused and is being hidden or disabled.
+
+We must focus the passed element.
+
+Subclasses may perform some extra processing to prepare for refocusing.
+">revertFocusTo</option>
+    <option value="Saves the current state of this object to the provided `state` builder. By default
+this method saves the configs specified as `{@link #cfg!stateful stateful}`.
+
+This method can also be overridden by subclasses to store custom data directly to
+the `state` builder:
+
+     saveState: function(state) {
+         this.callParent([ state ]);
+
+         state.set('foo', 42);
+     }
+
+When overriding this method, it is also likely necessary to override `{@link #method!loadState loadState}`.
+">saveState</option>
+    <option value="Sets the checked state of the item
+">setChecked</option>
+    <option value="Sets a single/multiple configuration options.
+">setConfig</option>
+    <option value="Sets the current Alignment information, called by alignTo
+">setCurrentAlignmentInfo</option>
+    <option value="An alias for {@link Ext.util.Observable#method!addListener addListener}.  In
+versions prior to 5.1, {@link #cfg!listeners #listeners} had a generated setter which could
+be called to add listeners.  In 5.1 the listeners config is not processed
+using the config system and has no generated setter, so this method is
+provided for backward compatibility.  The preferred way of adding listeners
+is to use the {@link #method!on #on} method.
+">setListeners</option>
+    <option value="All Components need a potentially recursive setRendered because some are
+pseudo containers, such as grid {@link Ext.grid.Row}, and some mix in
+{@link Ext.mixin.Toolable}.
+">setRendered</option>
+    <option value="Sets the size of the Component.
+">setSize</option>
+    <option value="Set the tabIndex property for this Focusable. If the focusEl
+is available, set tabIndex attribute on it, too.
+">setTabIndex</option>
+    <option value="undefined">setVisibility</option>
+    <option value="This method has the same arguments as {@link Ext.dom.Element#method!setXY element's setXY}
+method, but is used to maintain the `{@link #cfg!x x}` and `{@link #cfg!y y}` configs (for `{@link #cfg!floated floated}` components)
+or the `{@link #cfg!left left}` and `{@link #cfg!top top}` config for positioned components.
+">setXY</option>
+    <option value="Shows this component optionally using an animation.
+">show</option>
+    <option value="Displays component at specific xy position.
+A floating component (like a menu) is positioned relative to its ownerCt if any.
+Useful for popping up a context menu:
+
+    listeners: {
+        itemcontextmenu: function(view, record, item, index, event, options) {
+            Ext.create('Ext.menu.Menu', {
+                width: 100,
+                height: 100,
+                margin: '0 0 10 0',
+                items: [{
+                    text: 'regular item 1'
+                },{
+                    text: 'regular item 2'
+                },{
+                    text: 'regular item 3'
+                }]
+            }).showAt(event.getXY());
+        }
+    }
+">showAt</option>
+    <option value="Shows this component by another component. If you specify no alignment, it will automatically
+position this component relative to the reference component depending upon the `alignment`
+parameter.
+
+The `alignment` parameter describes the edge-to-edge alignment of *this* component
+with the target. It can be specified thus:
+
+- **Blank**: Defaults to positioning where the component will fit trying `'l-r?'`,
+`'r-l?'`, `'b-t?'` then `'t-b?'` in that order.
+- **Two anchors**: If two values from the table below are passed separated by a dash,
+  the first value is used as the element's anchor point, and the second value is
+  used as the target's anchor point.
+- **Two edge/offset descriptors:** An edge/offset descriptor is an edge initial
+  (`t`/`r`/`b`/`l`) followed by a percentage along that side. This describes a
+  point to align with a similar point in the target. So `'t0-b0'` would be
+  the same as `'tl-bl'`, `'l0-r50'` would place the top left corner of this item
+  halfway down the right edge of the target item. This allows more flexibility
+  and also describes which two edges are considered adjacent when positioning a tip pointer.
+
+Following are all of the supported predefined anchor positions:
+
+     Value  Description
+     -----  -----------------------------
+     tl     The top left corner
+     t      The center of the top edge
+     tr     The top right corner
+     l      The center of the left edge
+     c      The center
+     r      The center of the right edge
+     bl     The bottom left corner
+     b      The center of the bottom edge
+     br     The bottom right corner
+
+You can put a '?' at the end of the alignment string to constrain the positioned element to
+the {@link Ext.Viewport}. The element will attempt to align as specified, but the
+position will be adjusted to constrain to the viewport if necessary. Note that the element
+being aligned might be swapped to align to a different position than that specified in order
+to enforce the viewport constraints.
+
+Example Usage:
+
+    // show `panel` by `button` using the default positioning (auto fit)
+    panel.showBy(button);
+
+    // align the top left corner of `panel` with the top right corner of `button`
+    // (constrained to viewport)
+    panel.showBy(button, "tl-tr?");
+
+    // align the bottom right corner of `panel` with the center left edge of `button`
+    // (not constrained by viewport)
+    panel.showBy(button, "br-cl");
+
+    // align the center of panel with the bottom left corner of button and
+    // adjust the x position by -6 pixels (and the y position by 0)
+    panel.showBy(button, "c-bl", [-6, 0]);
+
+    // align the 25% point on the bottom edge of this panel
+    // with the 75% point on the top edge of button.
+    panel.showBy(button, 'b25-t75');
+">showBy</option>
+    <option value="Get the reference to the class from which this object was instantiated. Note that unlike
+{@link Ext.Base#property!self Ext.Base#self}, `this.statics()` is scope-independent and it always returns
+the class from which it was called, regardless of what `this` points to during run-time
+
+    Ext.define('My.Cat', {
+        statics: {
+            totalCreated: 0,
+            speciesName: 'Cat' // My.Cat.speciesName = 'Cat'
+        },
+
+        constructor: function() {
+            var statics = this.statics();
+
+            // always equals to 'Cat' no matter what 'this' refers to
+            // equivalent to: My.Cat.speciesName
+            alert(statics.speciesName);
+
+
+            alert(this.self.speciesName);   // dependent on 'this'
+
+            statics.totalCreated++;
+        },
+
+        clone: function() {
+            var cloned = new this.self();   // dependent on 'this'
+
+            // equivalent to: My.Cat.speciesName
+            cloned.groupName = this.statics().speciesName;
+
+            return cloned;
+        }
+    });
+
+
+    Ext.define('My.SnowLeopard', {
+        extend: 'My.Cat',
+
+        statics: {
+            speciesName: 'Snow Leopard' // My.SnowLeopard.speciesName = 'Snow Leopard'
+        },
+
+        constructor: function() {
+            this.callParent();
+        }
+    });
+
+    var cat = new My.Cat();                 // alerts 'Cat', then alerts 'Cat'
+
+    var snowLeopard = new My.SnowLeopard(); // alerts 'Cat', then alerts 'Snow Leopard'
+
+    var clone = snowLeopard.clone();
+    alert(Ext.getClassName(clone));         // alerts 'My.SnowLeopard'
+    alert(clone.groupName);                 // alerts 'Cat'
+
+    alert(My.Cat.totalCreated);             // alerts 3
+">statics</option>
+    <option value="Suspends firing of the named event(s).
+
+After calling this method to suspend events, the events will no longer fire when
+requested to fire.
+
+**Note that if this is called multiple times for a certain event, the converse method
+{@link #method!resumeEvent #resumeEvent} will have to be called the same number of times for it to resume
+firing.**
+">suspendEvent</option>
+    <option value="Suspends the firing of all events. (see {@link #method!resumeEvents #resumeEvents})
+">suspendEvents</option>
+    <option value="Fixes up the alwaysOnTop order of this floated widget within its siblings.
+">syncAlwaysOnTop</option>
+    <option value="Synchronizes the size and position of the {@link #method!getFloatWrap floatWrap}
+when this Widget is resized
+">syncFloatWrap</option>
+    <option value="Brings a {@link #cfg!floated #cfg-floated} Component to the front of any other visible, floated
+Components while honoring all {@link #cfg!alwaysOnTop} settings. This may not become
+topmost if another visible floated component has a higher {@link #cfg!alwaysOnTop} value.
+
+If this Component becomes the topmost *modal* floated component, the the shared modal
+mask is moved to just below this Component.
+">toFront</option>
+    <option value="Toggles the specified CSS class on this element (removes it if it already exists,
+otherwise adds it).
+">toggleCls</option>
+    <option value="This method is called internally by `{@link #method!initConfig initConfig}` to apply whatever changes are
+needed from persistent storage.
+">transformStatefulConfig</option>
+    <option value="undefined">triggerInitialized</option>
+    <option value="Shorthand for {@link #method!removeListener #removeListener}.
+Removes an event handler.
+">un</option>
+    <option value="Removes a before-event handler.
+
+Same as {@link #method!removeListener #removeListener} with `order` set to `'after'`.
+">unAfter</option>
+    <option value="Removes a before-event handler.
+
+Same as {@link #method!removeListener #removeListener} with `order` set to `'before'`.
+">unBefore</option>
+    <option value="Destroys a given set of `{@link #method!link linked}` objects. This is only needed if
+the linked object is being destroyed before this instance.
+">unlink</option>
+    <option value="Walks up the ownership hierarchy looking for an ancestor Component which matches
+the passed simple selector.
+
+Example:
+
+    var owningTabPanel = grid.up('tabpanel');
+">up</option>
+    <option value="All cls methods directly report to the {@link #cfg!cls #cls} configuration, so anytime it changes,
+{@link #method!updateCls #updateCls} will be called
+">updateCls</option>
+    <option value="undefined">updateData</option>
+    <option value="undefined">updateHeight</option>
+    <option value="Updates the session config.
+">updateSession</option>
+    <option value="Updates the viewModel config.
+">updateViewModel</option>
+    <option value="undefined">updateWidth</option>
+    <option value="Watches config properties.
+
+     instance.watchConfig({
+         title: 'onTitleChange',
+         scope: me
+     });
+">watchConfig</option>
+    <option value="Queue a function to run when the component is visible & painted. If those conditions
+are met, the function will execute  immediately, otherwise it will wait until it is
+visible and painted.
+">whenVisible</option>
+</select></div>
+</div>
+  <div id="method" class="thetext"></div>
+</div>
+        </z-tabpanel>
+        <z-tabpanel tabname="events">
+<div class="flex-container">
+  <div id="eventlist" class="thelist"><div>events:</div><div class="select-div"><select id="eventsDocs" onchange="changeEvent()" name="eventsDocs">
+    <option value="Fires after a Component had been added to a Container.
+">added</option>
+    <option value="This event fires when `{@link #cfg!bottom}` changes.">beforebottomchange</option>
+    <option value="This event fires when `{@link #cfg!centered}` changes.">beforecenteredchange</option>
+    <option value="Fires before a a user invoked check change. This does *not* fire when a programmatic
+check change is performed.
+">beforecheckchange</option>
+    <option value="This event fires when `{@link #cfg!disabled}` changes.">beforedisabledchange</option>
+    <option value="This event fires when `{@link #cfg!docked}` changes.">beforedockedchange</option>
+    <option value="This event fires when `{@link #cfg!height}` changes.">beforeheightchange</option>
+    <option value="This event fires when `{@link #cfg!hidden}` changes.">beforehiddenchange</option>
+    <option value="Fires before the Component is hidden. Hide may be vetoed by returning `false` from a handler.
+">beforehide</option>
+    <option value="This event fires when `{@link #cfg!left}` changes.">beforeleftchange</option>
+    <option value="This event fires when `{@link #cfg!maxHeight}` changes.">beforemaxHeightchange</option>
+    <option value="This event fires when `{@link #cfg!maxWidth}` changes.">beforemaxWidthchange</option>
+    <option value="This event fires when `{@link #cfg!minHeight}` changes.">beforeminHeightchange</option>
+    <option value="This event fires when `{@link #cfg!minWidth}` changes.">beforeminWidthchange</option>
+    <option value="Fires before orientation changes.
+">beforeorientationchange</option>
+    <option value="This event fires when `{@link #cfg!right}` changes.">beforerightchange</option>
+    <option value="This event fires when `{@link #cfg!scrollable}` changes.">beforescrollablechange</option>
+    <option value="Fires before the Component is shown. Show may be vetoed by returning `false` from a handler.
+">beforeshow</option>
+    <option value="Fires before a {@link #cfg!floated #cfg-floated} component is brought to the front of the visual stack.
+">beforetofront</option>
+    <option value="This event fires when `{@link #cfg!top}` changes.">beforetopchange</option>
+    <option value="This event fires when `{@link #cfg!width}` changes.">beforewidthchange</option>
+    <option value="Fires when this Component's {@link #property!focusEl #focusEl} loses focus.
+">blur</option>
+    <option value="This event fires when `{@link #cfg!bottom}` changes.">bottomchange</option>
+    <option value="This event fires when `{@link #cfg!centered}` changes.">centeredchange</option>
+    <option value="Fires after a change event.
+">checkchange</option>
+    <option value="Fires when the component is destroyed
+">destroy</option>
+    <option value="This event fires when `{@link #cfg!disabled}` changes.">disabledchange</option>
+    <option value="This event fires when `{@link #cfg!docked}` changes.">dockedchange</option>
+    <option value="Fires when the component is no longer displayed in the DOM.  Listening to this event will
+degrade performance not recommend for general use.
+">erased</option>
+    <option value="Fires whenever there is a change in the positioned status of a component
+">floatingchange</option>
+    <option value="Fires when this Component's {@link #property!focusEl #focusEl} receives focus.
+">focus</option>
+    <option value="Fires when focus enters this Component's hierarchy.
+">focusenter</option>
+    <option value="Fires when focus leaves this Component's hierarchy.
+">focusleave</option>
+    <option value="Fires whenever a Component with the fullscreen config is instantiated
+">fullscreen</option>
+    <option value="This event fires when `{@link #cfg!height}` changes.">heightchange</option>
+    <option value="This event fires when `{@link #cfg!hidden}` changes.">hiddenchange</option>
+    <option value="Fires whenever the Component is hidden
+">hide</option>
+    <option value="Fires when the component has been initialized
+">initialize</option>
+    <option value="This event fires when `{@link #cfg!left}` changes.">leftchange</option>
+    <option value="This event fires when `{@link #cfg!maxHeight}` changes.">maxHeightchange</option>
+    <option value="This event fires when `{@link #cfg!maxWidth}` changes.">maxWidthchange</option>
+    <option value="This event fires when `{@link #cfg!minHeight}` changes.">minHeightchange</option>
+    <option value="This event fires when `{@link #cfg!minWidth}` changes.">minWidthchange</option>
+    <option value="Fires when a component si moved within its Container.
+">moved</option>
+    <option value="Fires when orientation changes.
+">orientationchange</option>
+    <option value="Fires whenever this Element actually becomes visible (painted) on the screen. This is
+useful when you need to perform 'read' operations on the DOM element, i.e: calculating
+natural sizes and positioning.
+
+__Note:__ This event is not available to be used with event delegation. Instead `{@link #event!painted painted}`
+only fires if you explicitly add at least one listener to it, for performance reasons.
+">painted</option>
+    <option value="Fires whenever there is a change in the positioned status of a component
+">positionedchange</option>
+    <option value="Fires when a component is removed from a Container
+">removed</option>
+    <option value="Important note: For the best performance on mobile devices, use this only when you
+absolutely need to monitor a Element's size.
+
+__Note:__ This event is not available to be used with event delegation. Instead `{@link #event!resize resize}`
+only fires if you explicitly add at least one listener to it, for performance reasons.
+">resize</option>
+    <option value="This event fires when `{@link #cfg!right}` changes.">rightchange</option>
+    <option value="This event fires when `{@link #cfg!scrollable}` changes.">scrollablechange</option>
+    <option value="Fires whenever the Component is shown
+">show</option>
+    <option value="Fires when a {@link #cfg!floated #cfg-floated} component has been brought to the front of the visual
+stack.
+">tofront</option>
+    <option value="This event fires when `{@link #cfg!top}` changes.">topchange</option>
+    <option value="Fires whenever the data of the component is updated
+">updatedata</option>
+    <option value="This event fires when `{@link #cfg!width}` changes.">widthchange</option>
+</select></div>
+</div>
+  <div id="event" class="thetext"></div>
+</div>
+        </z-tabpanel>
+    </z-tabs>
+</div>
+
+<p>
+------------------
+<pre>A checkable menu item that participates in a `{@link #cfg!group group}` of mutually exclusive items.
+
+Radio items must be a assigned to a `{@link #cfg!group}` and only one member of
+that group is allowed to be checked. The owning `{@link Ext.menu.Menu}` provides
+the `{@link Ext.menu.Menu#cfg!groups}` config to assist in managing the state
+of its radio items.
+
+     @example
+     Ext.Viewport.add({
+         xtype: 'container',
+         items: [{
+             xtype: 'button',
+             bind: 'Call {menuGroups.option}',
+
+             viewModel: {
+                 data: {
+                     menuGroups: {
+                         option: 'home'
+                     }
+                 }
+             },
+
+             menu: {
+                 bind: {
+                     groups: '{menuGroups}'
+                 },
+                 items: [{
+                     text: 'Home',
+                     group: 'option',  // causes Menu to create this class of item
+                     value: 'home'
+                 }, {
+                     text: 'Work',
+                     group: 'option',
+                     value: 'work'
+                 }, {
+                     text: 'Mobile',
+                     group: 'option',
+                     value: 'mobile'
+                 }]
+             }
+         }]
+     });
+</pre>
+
+<span><b>Ext JS name:</b></span>
+<br>
+<span>Ext.menu.RadioItem</span>
+<br><br>
+<span><b>others:</b></span>
+extend: 
+extenders: Ext.grid.menu.SortAsc,Ext.grid.menu.SortDesc
+mixed: Ext.Mixin,Ext.mixin.Accessible,Ext.mixin.Bindable,Ext.mixin.ComponentDelegation,Ext.mixin.Factoryable,Ext.mixin.Focusable,Ext.mixin.Identifiable,Ext.mixin.Inheritable,Ext.mixin.Keyboard,Ext.mixin.Observable,Ext.mixin.Pluggable,Ext.state.Stateful
+mixins: 
+requires: 
+src: [object Object]
+
+
+
+</div>
+
+</body>
+</html>

@@ -1,7 +1,7 @@
 //import './ewc';
-import '@sencha/ext-web-components';
+import '@sencha/ext-web-components-all';
 import getMenu from './menu';
-import { getRoutes } from '@sencha/ext-web-components/lib/ext-router.component';
+import { getRoutes } from '@sencha/ext-web-components-all/src/ext-router.component';
 import MainComponent from './view/main/MainComponent.js';
 
 function init() {

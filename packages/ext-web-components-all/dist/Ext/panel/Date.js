@@ -1,0 +1,292 @@
+import _createClass from "@babel/runtime/helpers/createClass";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import Ext_Panel from '../../Ext/Panel.js';
+
+var Ext_panel_Date =
+/*#__PURE__*/
+function (_Ext_Panel) {
+  _inheritsLoose(Ext_panel_Date, _Ext_Panel);
+
+  Ext_panel_Date.PROPERTIES = function PROPERTIES() {
+    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'anchor', 'anchorPosition', 'animation', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoConfirm', 'autoDestroy', 'autoSize', 'axisLock', 'bbar', 'bind', 'bodyBorder', 'bodyCls', 'bodyPadding', 'bodyStyle', 'border', 'bottom', 'buttonAlign', 'buttons', 'buttonToolbar', 'captionFormat', 'cardSwitchAnimation', 'centered', 'closable', 'closeAction', 'closeToolText', 'cls', 'collapsed', 'collapsible', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'dateCellFormat', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultToolWeights', 'defaultType', 'disabled', 'disabledDates', 'disabledDays', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusableContainer', 'focusableDate', 'focusCls', 'format', 'fullscreen', 'handler', 'header', 'headerFormat', 'headerLength', 'headerPosition', 'height', 'hidden', 'hideAnimation', 'hideCaptions', 'hideMode', 'hideOnMaskTap', 'hideOutside', 'html', 'icon', 'iconAlign', 'iconCls', 'id', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'lbar', 'left', 'listeners', 'manageBorders', 'margin', 'masked', 'maxDate', 'maxHeight', 'maxWidth', 'minButtonWidth', 'minDate', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'navigationPosition', 'nextText', 'padding', 'panes', 'plugins', 'prevText', 'publishes', 'rbar', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'resizable', 'right', 'ripple', 'scope', 'scrollable', 'selectOnNavigate', 'session', 'shadow', 'shareableName', 'shim', 'showAfterMaxDate', 'showAnimation', 'showBeforeMinDate', 'showFooter', 'showTodayButton', 'specialDates', 'specialDays', 'splitTitle', 'standardButtons', 'startDay', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'tbar', 'title', 'titleAlign', 'titleAnimation', 'titleCollapse', 'toFrontOnShow', 'toolDefaults', 'tools', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'transformCellCls', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'viewModel', 'weekendDays', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'yearPicker', 'yearPickerDefaults', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+  };
+
+  Ext_panel_Date.EVENTS = function EVENTS() {
+    return [{
+      name: 'activate',
+      parameters: 'newActiveItem,datepanel,oldActiveItem'
+    }, {
+      name: 'activeItemchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'add',
+      parameters: 'datepanel,item,index'
+    }, {
+      name: 'added',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'beforeactiveItemchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforebottomchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecenteredchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforecollapse',
+      parameters: 'datepanel'
+    }, {
+      name: 'beforedisabledchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforedockedchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeexpand',
+      parameters: 'datepanel'
+    }, {
+      name: 'beforeheightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehiddenchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforehide',
+      parameters: 'sender'
+    }, {
+      name: 'beforeleftchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforemaxWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminHeightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeminWidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeorientationchange',
+      parameters: ''
+    }, {
+      name: 'beforeresizedragstart',
+      parameters: 'datepanel,context'
+    }, {
+      name: 'beforerightchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforescrollablechange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforeshow',
+      parameters: 'sender'
+    }, {
+      name: 'beforetofront',
+      parameters: 'datepanel'
+    }, {
+      name: 'beforetopchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'beforewidthchange',
+      parameters: 'sender,value,oldValue,undefined'
+    }, {
+      name: 'blur',
+      parameters: 'datepanel,event'
+    }, {
+      name: 'bottomchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'centeredchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'collapse',
+      parameters: 'datepanel'
+    }, {
+      name: 'deactivate',
+      parameters: 'oldActiveItem,datepanel,newActiveItem'
+    }, {
+      name: 'destroy',
+      parameters: ''
+    }, {
+      name: 'disabledchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'dockedchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'drawerhide',
+      parameters: 'datepanel'
+    }, {
+      name: 'drawershow',
+      parameters: 'datepanel'
+    }, {
+      name: 'erased',
+      parameters: 'sender'
+    }, {
+      name: 'expand',
+      parameters: 'datepanel'
+    }, {
+      name: 'floatingchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'focus',
+      parameters: 'datepanel,event'
+    }, {
+      name: 'focusenter',
+      parameters: 'datepanel,event'
+    }, {
+      name: 'focusleave',
+      parameters: 'datepanel,event'
+    }, {
+      name: 'fullscreen',
+      parameters: 'sender'
+    }, {
+      name: 'heightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hiddenchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'hide',
+      parameters: 'sender'
+    }, {
+      name: 'initialize',
+      parameters: 'sender'
+    }, {
+      name: 'leftchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'maxWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minHeightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'minWidthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'move',
+      parameters: 'datepanel,item,toIndex,fromIndex'
+    }, {
+      name: 'moved',
+      parameters: 'sender,container,toIndex,fromIndex'
+    }, {
+      name: 'orientationchange',
+      parameters: ''
+    }, {
+      name: 'painted',
+      parameters: 'sender,element'
+    }, {
+      name: 'positionedchange',
+      parameters: 'sender,positioned'
+    }, {
+      name: 'remove',
+      parameters: 'datepanel,item,index'
+    }, {
+      name: 'removed',
+      parameters: 'sender,container,index'
+    }, {
+      name: 'renderedchange',
+      parameters: 'datepanel,item,rendered'
+    }, {
+      name: 'resize',
+      parameters: 'element,info'
+    }, {
+      name: 'resizedrag',
+      parameters: 'datepanel,context'
+    }, {
+      name: 'resizedragcancel',
+      parameters: 'datepanel,context'
+    }, {
+      name: 'resizedragend',
+      parameters: 'datepanel,context'
+    }, {
+      name: 'resizedragstart',
+      parameters: 'datepanel,context'
+    }, {
+      name: 'rightchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'scrollablechange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'show',
+      parameters: 'sender'
+    }, {
+      name: 'tofront',
+      parameters: 'datepanel'
+    }, {
+      name: 'topchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'updatedata',
+      parameters: 'sender,newData'
+    }, {
+      name: 'widthchange',
+      parameters: 'sender,value,oldValue'
+    }, {
+      name: 'ready',
+      parameters: ''
+    }];
+  };
+
+  Ext_panel_Date.getProperties = function getProperties(properties) {
+    properties = properties.concat(Ext_panel_Date.PROPERTIES());
+    return Ext_Panel.getProperties(properties);
+  };
+
+  Ext_panel_Date.getEvents = function getEvents(events) {
+    events = events.concat(Ext_panel_Date.EVENTS());
+    return Ext_Panel.getEvents(events);
+  } //events
+  ////configs
+  //
+  //static XTYPE() {return 'datepanel'}
+  //static PROPERTIESOBJECT() { return {
+  //[object Object]}}
+  //static METHODS() { return [
+  //]}
+  ;
+
+  _createClass(Ext_panel_Date, null, [{
+    key: "observedAttributes",
+    get: function get() {
+      var attrs = _Ext_Panel.observedAttributes; //for (var property in Ext_panel_Date.PROPERTIESOBJECT()) {
+      //    attrs.push(property)
+      //}
+
+      Ext_panel_Date.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property);
+      });
+      Ext_panel_Date.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name);
+      });
+      return attrs;
+    }
+  }]);
+
+  function Ext_panel_Date(properties, events) {
+    return _Ext_Panel.call(this, properties.concat(Ext_panel_Date.PROPERTIES()), events.concat(Ext_panel_Date.EVENTS())) || this;
+  }
+
+  var _proto = Ext_panel_Date.prototype;
+
+  _proto.connectedCallback = function connectedCallback() {
+    _Ext_Panel.prototype.connectedCallback.call(this);
+  };
+
+  _proto.attributeChangedCallback = function attributeChangedCallback(attrName, oldVal, newVal) {
+    _Ext_Panel.prototype.attributeChangedCallback.call(this, attrName, oldVal, newVal);
+  };
+
+  return Ext_panel_Date;
+}(Ext_Panel);
+
+export { Ext_panel_Date as default };
