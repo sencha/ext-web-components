@@ -1,4 +1,4 @@
-import EwcBaseComponent from './ewc-base.component'
+import EwcBaseComponent from './ewc-base'
 
 export class ExtRouterComponent extends EwcBaseComponent {
     //prettier-ignore

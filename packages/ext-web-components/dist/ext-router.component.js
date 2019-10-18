@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import EwcBaseComponent from './ewc-base.component';
+import EwcBaseComponent from './ewc-base';
 export var ExtRouterComponent =
 /*#__PURE__*/
 function (_EwcBaseComponent) {
