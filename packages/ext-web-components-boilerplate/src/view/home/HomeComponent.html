@@ -1,4 +1,5 @@
 <ext-grid
+  extname="mainGrid"
   onready="home.readyGrid"
   height="100%"
 >
@@ -14,14 +15,14 @@
       >
     </ext-searchfield>
   </ext-toolbar>
-  <ext-column
+  <ext-gridcolumn
     text="Name"
     flex="2"
     dataIndex="name"
     resizable="true"
   >
-  </ext-column>
-  <ext-column
+  </ext-gridcolumn>
+  <ext-gridcolumn
     text="Email"
     flex="3"
     dataIndex="email"
@@ -31,12 +32,12 @@
       "width > 576": { "hidden": false }
     }'
   >
-  </ext-column>
-  <ext-column
+  </ext-gridcolumn>
+  <ext-gridcolumn
     text="Phone"
     flex="2"
     dataIndex="phone"
     resizable="true"
   >
-  </ext-column>
+  </ext-gridcolumn>
 </ext-grid>

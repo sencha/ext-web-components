@@ -2,13 +2,28 @@ import data from './data.js';
 import './HomeComponent.html';
 
 export default class HomeComponent {
+
+    getCmp(event, value) {
+        var array = event.detail.allCmp;
+        for (var i = 0; i < array.length; i++) {
+            if (array[i]['extname'] === value) {
+                return array[i].ext;
+            }
+        }
+        return null;
+    }
+
     readyGrid = (event) => {
-        this.gridCmp = event.detail.cmp;
+        console.log('home.readyGrid');
+        console.log(event);
+        this.gridCmp = this.getCmp(event, 'mainGrid');
+        //this.gridCmp = event.detail.cmp;
         const store = Ext.create('Ext.data.Store', {
             fields: ['name', 'email', 'phone', 'hoursTaken', 'hoursRemaining'],
             data,
         });
 
+        console.log(this.gridCmp);
         this.gridCmp.setStore(store);
     }
 

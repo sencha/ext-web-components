@@ -1,8 +1,8 @@
-//import './ewc';
-import '@sencha/ext-web-components';
+//import './ewc.js';
+import '@sencha/ext-web-components-all';
 
 import getMenu from './menu';
-import { getRoutes } from '@sencha/ext-web-components/lib/ext-router.component';
+import { getRoutes } from '@sencha/ext-web-components/src/ext-router.component.js';
 import MainComponent from './view/main/MainComponent.js';
 
 Ext.require([
@@ -14,6 +14,7 @@ import * as d3 from 'd3';
 import * as FroalaEditor from 'froala-editor/js/froala_editor.pkgd.min.js';
 
 function init() {
+    console.log('in init');
     window.d3 = d3;
     window.FroalaEditor = FroalaEditor;
     window.menu = getMenu();

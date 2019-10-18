@@ -1,30 +1,31 @@
-<ext-panel layout="fit" bodyPadding="0" viewport=true>
-
-  <ext-titlebar docked="top" weight="10">
-    <ext-button iconCls="x-fa fa-bars" onReady="main.readyToggleButton" onTap="main.toggleTree"></ext-button>
-    <span href="#" class="app-title">Sencha ExtWebComponents 7.0 Boilerplate</span>
-  </ext-titlebar>
-
-  <ext-panel
-    docked="left"
-    border="true"
-    shadow="true"
-    scrollable="y"
-    resizable='{"edges": "east", "dynamic": "true"}'
-    header="false"
-    collapsible='{"direction": "left"}'
-    width="200px"
-    onready="main.readyNavTreePanel"
-  >
+<ext-panel
+    onReady="main.readyMainPanel"
+    layout="fit"
+    bodyPadding="0"
+    viewport=true
+>
+    <ext-titlebar docked="top" weight="10">
+        <ext-button extname="navButton" text="B" iconCls="x-fa fa-bars" onTap="main.toggleTree"></ext-button>
+        <span href="#" class="app-title">Sencha ExtWebComponents 7.0 Boilerplate</span>
+    </ext-titlebar>
+    <ext-panel
+        docked="left"
+        border="true"
+        shadow="true"
+        scrollable="y"
+        resizable='{"edges": "east", "dynamic": "true"}'
+        header="false"
+        collapsible='{"direction": "left"}'
+        width="200px"
+        xonready="main.readyNavTreePanel"
+    >
     <ext-treelist
-      ui="nav"
-      expanderFirst="false"
-      expanderOnly="false"
-      onready="main.readyNavTreelist"
-      onselectionchange="main.navTreelistSelectionChange">
+        extname="navTreelist"
+        ui="nav"
+        expanderFirst="false"
+        expanderOnly="false"
+        onselectionchange="main.navTreelistSelectionChange">
     </ext-treelist>
-  </ext-panel>
-<!-- 
-  <ext-router hidden=false onready="main.readyRouter" padding="2"></ext-router> -->
-
+    </ext-panel>
+    <ext-router hidden=false padding="2"></ext-router>
 </ext-panel>

@@ -7,8 +7,8 @@
     <!-- Titlebar starts-->
     <ext-titlebar docked="top" weight="10">
       <ext-button iconCls="x-fa fa-bars" onTap="main.toggleTree"></ext-button>
-      <!-- <span class="ext ext-sencha" style="margin: '0 5px 0 7px;'; font-size: '20px'; width: '20px'"></span>
-      <span id="theTitle" href="#" class="app-title">Sencha Ext Web Components 7.0 Kitchen Sink</span> -->
+      <span class="ext ext-sencha" style="margin: '0 5px 0 7px;'; font-size: '20px'; width: '20px'"></span>
+      <span id="theTitle" href="#" class="app-title">Sencha Ext Web Components 7.0 Kitchen Sink</span>
       <ext-container align="right" onready="main.readyRightContainer"></ext-container>
     </ext-titlebar>
     <!-- Titlebar ends-->
@@ -16,8 +16,9 @@
     <ext-toolbar docked="top" weight="10" padding="0">
     <!-- Breadcrumb starts-->
       <ext-breadcrumbbar
+          extname="navBreadcrumb"
           showIcons= "true"
-          onready="main.readyBreadcrumb"
+          xonready="main.readyBreadcrumb"
           onChange="main.clickBreadcrumb"
           useSplitButtons="true"
           width="100%"
@@ -25,9 +26,10 @@
       >
       </ext-breadcrumbbar>
       <ext-button
+      extname="codeButton"
         weight="5"
         hidden="true"
-        onready="main.readyCodeButton"
+        xonready="main.readyCodeButton"
         ui="fab"
         right="15"
         top="-4"
@@ -60,23 +62,25 @@
       >
       </ext-searchfield>
       <ext-treelist
+        extname="navTreelist"
         ui="nav"
         expanderFirst="false"
         expanderOnly="true"
         selectOnExpander="true"
-        onready="main.readyNavTreelist"
+        xonready="main.readyNavTreelist"
         onselectionchange="main.navTreelistSelectionChange"
       >
       </ext-treelist>
     </ext-panel>
     <!-- Navtree ends-->
     <!-- selections starts-->
-    <ext-panel scrollable="y" hidden="false" onready="main.readySelection" padding="15">
+    <ext-panel extname = "selectionPanel" scrollable="y" hidden="false" xonready="main.readySelection" padding="15">
       <ext-dataview
+        extname="navDataview"
         inline="true"
         centered="true"
         onchildtap="main.dataviewNavClick"
-        onready="main.readyDataviewNav"
+        xonready="main.readyDataviewNav"
         itemCls="div.app-thumbnail"
         itemsFocusable="false"
       >

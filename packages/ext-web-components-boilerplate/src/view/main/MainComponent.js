@@ -12,60 +12,48 @@ export default class MainComponent {
             rootVisible: true,
             root: navTreeRoot
         });
-        this.wait = 3;
         this.collapsed = false;
         this.isInitial = true;
-
         if (Ext.os.is.Phone) {
             this.collapsed = true;
         }
     }
 
-    afterAllLoaded = () => {
-        this.wait = this.wait - 1;
-
-        if (this.wait == 0) {
-            let hash = window.location.hash.substr(1);
-
-            if (hash == '') {
-                hash = 'home';
-            }
-
-            const node = this.navTreelistCmp.getStore().findNode('hash', hash);
-            this.navTreelistCmp.setSelection(node);
-            this.navigate(node);
-        }
-    }
-
-    readyNavTreePanel = (event) => {
-        this.navTreePanelCmp = event.detail.cmp;
-        this.afterAllLoaded('readyNavTreePanel');
-        if(Ext.os.is.Phone) {
-            let collapsed = this.navTreePanelCmp.getCollapsed();
     
-            if (collapsed === true) {
-                collapsed = false;
-            } else {
-                collapsed = true;
+    getCmp(event, value) {
+        var array = event.detail.allCmp;
+        for (var i = 0; i < array.length; i++) {
+            if (array[i]['extname'] === value) {
+                return array[i].ext;
             }
-            this.navTreePanelCmp.setCollapsed(collapsed);
         }
+        return null;
     }
 
-    readyNavTreelist = (event) => {
-        this.navTreelistCmp = event.detail.cmp;
+    readyMainPanel = (event) => {
+        console.log('readyMainPanel');
+        //console.log(event);
+        this.navTreelistCmp = this.getCmp(event, 'navTreelist');
+        this.navButton = this.getCmp(event, 'navButton');
+
+        //if (Ext.os.is.Phone) {
+        //    console.log('h');
+        this.navButton.setHidden(false);
+        //} else {
+        //    this.navButton.setHidden(true);
+        //}
+        //console.log(this.navTreelistCmp);
         this.navTreelistCmp.setStore(this.treeStore);
-        this.afterAllLoaded('readyNavTreelist');
-    }
-
-    readyRouter = (event) => {
-        this.router = event.target;
-        this.afterAllLoaded('readyRouter');
+        let hash = window.location.hash.substr(1);
+        if (hash == '') {
+            hash = 'home';
+        }
+        const node = this.navTreelistCmp.getStore().findNode('hash', hash);
+        this.navTreelistCmp.setSelection(node);
     }
 
     readyToggleButton = (event) => {
         const navButton = event.detail.cmp;
-
         if (Ext.os.is.Phone) {
             navButton.setHidden(false);
         } else {
@@ -79,6 +67,7 @@ export default class MainComponent {
     }
 
     navigate = (record) => {
+        console.log('navigate');
         if (record == null) {
             console.log('it was null');
             return;
@@ -88,6 +77,7 @@ export default class MainComponent {
 
         if (childNum == 0 && hash != undefined) {
             window.location.hash = '#' + hash;
+            if (window['router']) {window['router'].routeMe();}
         }
 
         if(Ext.os.is.Phone) {
@@ -122,5 +112,70 @@ export default class MainComponent {
         }
         this.navTreePanelCmp.setCollapsed(collapsed);
     }
+
+
+    // readyNavTreelist = (event) => {
+    //     console.log(event);
+    //     // console.log('readyNavTreelist');
+    //     // this.navTreelistCmp = event.detail.cmp;
+    //     // this.navTreelistCmp.setStore(this.treeStore);
+
+
+    //     // let hash = window.location.hash.substr(1);
+
+    //     // if (hash == '') {
+    //     //     hash = 'home';
+    //     // }
+
+    //     // const node = this.navTreelistCmp.getStore().findNode('hash', hash);
+    //     // this.navTreelistCmp.setSelection(node);
+    //     //this.navigate(node);
+
+
+
+
+
+
+    //     //this.afterAllLoaded('readyNavTreelist');
+    // }
+
+
+    // afterAllLoaded = () => {
+    //     // this.wait = this.wait - 1;
+
+    //     // if (this.wait == 0) {
+    //     //     let hash = window.location.hash.substr(1);
+
+    //     //     if (hash == '') {
+    //     //         hash = 'home';
+    //     //     }
+
+    //     //     const node = this.navTreelistCmp.getStore().findNode('hash', hash);
+    //     //     this.navTreelistCmp.setSelection(node);
+    //     //     this.navigate(node);
+    //     // }
+    // }
+
+    // readyNavTreePanel = (event) => {
+    //     // this.navTreePanelCmp = event.detail.cmp;
+    //     // this.afterAllLoaded('readyNavTreePanel');
+    //     // if(Ext.os.is.Phone) {
+    //     //     let collapsed = this.navTreePanelCmp.getCollapsed();
+
+    //     //     if (collapsed === true) {
+    //     //         collapsed = false;
+    //     //     } else {
+    //     //         collapsed = true;
+    //     //     }
+    //     //     this.navTreePanelCmp.setCollapsed(collapsed);
+    //     // }
+    // }
+
+
+
+    // readyRouter = (event) => {
+    //     this.router = event.target;
+    //     this.afterAllLoaded('readyRouter');
+    // }
 
 }

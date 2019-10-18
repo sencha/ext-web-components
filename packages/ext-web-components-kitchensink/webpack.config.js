@@ -17,9 +17,9 @@ module.exports = function(env) {
         }
     }
 
+    var environment= get('environment', 'development');
     var profile=get('profile', '');
     var emit=get('emit', 'yes');
-    var environment= get('environment', 'development');
     var treeshake= get('treeshake', 'no');
     var browser= get('browser', 'yes');
     var watch= get('watch', 'yes');
@@ -31,7 +31,7 @@ module.exports = function(env) {
     const outputFolder = 'build';
     portfinder.basePort = (env && env.port) || 1962;
 
-    return portfinder.getPortPromise().then(port => {
+    return portfinder.getPortPromise().then(port => {{}
         const plugins = [
             new HtmlWebpackPlugin({template: 'index.html', hash: false, inject: 'body'}),
             new BaseHrefWebpackPlugin({ baseHref: basehref }),
@@ -121,7 +121,7 @@ module.exports = function(env) {
                 disableHostCheck: false,
                 compress: isProd,
                 inline:!isProd,
-                stats: 'none'
+                stats: 'errors-only'
             }
         };
     });

@@ -10,7 +10,7 @@ Ext.require([
 
 export default class MainComponent {
     constructor() {
-         this.wait = 5;
+        this.wait = 5;
         var navTreeRoot = {
             hash: 'all',
             iconCls: 'x-fa fa-home',
@@ -33,8 +33,59 @@ export default class MainComponent {
         }
     }
 
+    getCmp(event, value) {
+        var array = event.detail.allCmp;
+        for (var i = 0; i < array.length; i++) {
+            if (array[i]['extname'] === value) {
+                return array[i].ext;
+            }
+        }
+        return null;
+    }
+
     readyViewport = (event) => {
-        console.log('ready ready')
+        console.log('readyViewport');
+
+        this.selectionCmp = this.getCmp(event, 'selectionPanel');
+        var bodyStyle = `
+            backgroundSize: 20px 20px;
+            borderWidth: 0px;
+            backgroundColor: #e8e8e8;
+            backgroundImage:
+            linear-gradient(0deg, #f5f5f5 1.1px, transparent 0),
+            linear-gradient(90deg, #f5f5f5 1.1px, transparent 0)
+        `;
+        this.selectionCmp.setBodyStyle(bodyStyle);
+
+
+        this.navTreelistCmp = this.getCmp(event, 'navTreelist');
+        this.navTreelistCmp.setStore(this.navTreeView);
+
+        this.dataviewNavCmp = this.getCmp(event, 'navDataview');
+        this.dataviewNavCmp.setStyle({'background':'top', 'display':'block', 'text-align':'center'});
+
+        if(Ext.os.is.Phone) {
+            this.dataviewNavCmp.setCentered(false);
+        }
+
+        var tpl = `
+            <div class="app-thumbnail">
+              <div class="app-thumbnail-icon-wrap">
+                <div class="app-thumbnail-icon {iconCls}"></div>
+              </div>
+              <div class="app-thumbnail-text">{text}</div>
+              <div class="{premiumClass}"></div>
+            </div>
+        `;
+        this.dataviewNavCmp.setItemTpl(tpl);
+        this.dataviewNavCmp.setStore(this.treeStore);
+
+        this.breadcrumbCmp = this.getCmp(event, 'navBreadcrumb');
+        this.breadcrumbCmp.setStore(this.treeStore);
+
+        this.codeButtonCmp = this.getCmp(event, 'codeButton');
+
+
         // var hash = window.location.hash.substr(1);
         // if (hash == '') {hash = 'all';}
         // var node = this.treeStore.findNode('name', hash);
@@ -44,7 +95,7 @@ export default class MainComponent {
         if (hash == '') {hash = 'all';}
         var node = this.navTreelistCmp.getStore().findNode('hash', hash);
         this.navTreelistCmp.setSelection(node);
-        this.navigate(node);
+        //this.navigate(node);
 
 
     }
@@ -66,19 +117,19 @@ export default class MainComponent {
     readyRightContainer = (event) => {
         this.rightContainerCmp = event.detail.cmp;
         this.rightContainerCmp.updateHtml('Build: ' + BUILD_VERSION); // eslint-disable-line no-undef
-        this.afterAllLoaded('readyRightContainer');
+        //this.afterAllLoaded('readyRightContainer');
     }
 
-    readyBreadcrumb = (event) => {
-        this.breadcrumbCmp = event.detail.cmp;
-        this.breadcrumbCmp.setStore(this.treeStore);
-        this.afterAllLoaded('readyDataviewBreadcrumb');
-    }
+    // readyBreadcrumb = (event) => {
+    //     this.breadcrumbCmp = event.detail.cmp;
+    //     this.breadcrumbCmp.setStore(this.treeStore);
+    //     this.afterAllLoaded('readyDataviewBreadcrumb');
+    // }
 
-    readyCodeButton = (event) => {
-        this.codeButtonCmp = event.detail.cmp;
-        this.afterAllLoaded('readyCodeButton');
-    }
+    // readyCodeButton = (event) => {
+    //     this.codeButtonCmp = event.detail.cmp;
+    //     this.afterAllLoaded('readyCodeButton');
+    // }
 
     readyNavTreePanel = (event) => {
         this.navTreePanelCmp = event.detail.cmp;
@@ -89,11 +140,11 @@ export default class MainComponent {
         this.afterAllLoaded('readyNavTreePanel');
     }
 
-    readyNavTreelist = (event) => {
-        this.navTreelistCmp = event.detail.cmp;
-        this.navTreelistCmp.setStore(this.navTreeView);
-        this.afterAllLoaded('readyNavTreelist');
-    }
+    // readyNavTreelist = (event) => {
+    //     this.navTreelistCmp = event.detail.cmp;
+    //     this.navTreelistCmp.setStore(this.navTreeView);
+    //     this.afterAllLoaded('readyNavTreelist');
+    // }
 
     readySelection = (event) => {
         this.selectionCmp = event.detail.cmp;
