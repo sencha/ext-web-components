@@ -9,7 +9,7 @@
       <ext-button iconCls="x-fa fa-bars" onTap="main.toggleTree"></ext-button>
       <span class="ext ext-sencha" style="margin: '0 5px 0 7px;'; font-size: '20px'; width: '20px'"></span>
       <span id="theTitle" href="#" class="app-title">Sencha Ext Web Components 7.0 Kitchen Sink</span>
-      <ext-container align="right" onready="main.readyRightContainer"></ext-container>
+      <ext-container align="right" xonready="main.readyRightContainer"></ext-container>
     </ext-titlebar>
     <!-- Titlebar ends-->
 
@@ -51,7 +51,7 @@
       collapsible='{"direction": "left"}'
       collapsed="false"
       width="375px"
-      onready="main.readyNavTreePanel"
+      xonready="main.readyNavTreePanel"
     >
       <ext-searchfield
         flex="1"
@@ -90,7 +90,7 @@
     <!-- Router starts-->
     <ext-router
       hidden=false
-      onready="main.readyRouter"
+      xonready="main.readyRouter"
       style="overflow:scroll;"
       padding="10px"
     >
@@ -98,6 +98,7 @@
     <!-- Router ends-->
     <!-- code window starts-->
     <ext-panel
+      extname="codePanel"
       ewc="code"
       docked="right"
       border=true
@@ -111,11 +112,12 @@
       showAnimation='{"type": "slideIn", "direction": "left", "duration": 100, "easing": "ease" }'
       header=false
       collapsible='{"direction": "right"}'
-      onready="main.readyCodePanel"
+      xonready="main.readyCodePanel"
       hidden=true
       collapsed=false
     >
       <ext-tabpanel
+        extname="tabpanel"
         shadow="true"
         height="100%"
         tabConfig='{
@@ -125,7 +127,7 @@
       }'
         tabBarPosition="top"
         tabBar='{"layout": {"pack": "start"}}'
-        onready="main.readyTabPanel"
+        xonready="main.readyTabPanel"
       >
       </ext-tabpanel>
     </ext-panel>

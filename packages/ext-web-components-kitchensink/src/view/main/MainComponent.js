@@ -1,3 +1,4 @@
+import { getCmp } from '../../util.js';
 import hljs from 'highlightjs';
 import 'highlightjs/styles/atom-one-dark.css';
 import './MainComponent.css';
@@ -7,10 +8,9 @@ Ext.require([
     'Ext.data.TreeStore'
 ]);
 
-
 export default class MainComponent {
     constructor() {
-        this.wait = 5;
+        //this.wait = 5;
         var navTreeRoot = {
             hash: 'all',
             iconCls: 'x-fa fa-home',
@@ -33,20 +33,12 @@ export default class MainComponent {
         }
     }
 
-    getCmp(event, value) {
-        var array = event.detail.allCmp;
-        for (var i = 0; i < array.length; i++) {
-            if (array[i]['extname'] === value) {
-                return array[i].ext;
-            }
-        }
-        return null;
-    }
-
     readyViewport = (event) => {
         console.log('readyViewport');
-
-        this.selectionCmp = this.getCmp(event, 'selectionPanel');
+        this.tabPanelCmp = getCmp(event, 'tabPanel');
+        this.codePanelCmp = getCmp(event, 'codePanel');
+        
+        this.selectionCmp = getCmp(event, 'selectionPanel');
         var bodyStyle = `
             backgroundSize: 20px 20px;
             borderWidth: 0px;
@@ -57,17 +49,14 @@ export default class MainComponent {
         `;
         this.selectionCmp.setBodyStyle(bodyStyle);
 
-
-        this.navTreelistCmp = this.getCmp(event, 'navTreelist');
+        this.navTreelistCmp = getCmp(event, 'navTreelist');
         this.navTreelistCmp.setStore(this.navTreeView);
 
-        this.dataviewNavCmp = this.getCmp(event, 'navDataview');
+        this.dataviewNavCmp = getCmp(event, 'navDataview');
         this.dataviewNavCmp.setStyle({'background':'top', 'display':'block', 'text-align':'center'});
-
         if(Ext.os.is.Phone) {
             this.dataviewNavCmp.setCentered(false);
         }
-
         var tpl = `
             <div class="app-thumbnail">
               <div class="app-thumbnail-icon-wrap">
@@ -80,10 +69,10 @@ export default class MainComponent {
         this.dataviewNavCmp.setItemTpl(tpl);
         this.dataviewNavCmp.setStore(this.treeStore);
 
-        this.breadcrumbCmp = this.getCmp(event, 'navBreadcrumb');
+        this.breadcrumbCmp = getCmp(event, 'navBreadcrumb');
         this.breadcrumbCmp.setStore(this.treeStore);
 
-        this.codeButtonCmp = this.getCmp(event, 'codeButton');
+        this.codeButtonCmp = getCmp(event, 'codeButton');
 
 
         // var hash = window.location.hash.substr(1);
@@ -95,24 +84,23 @@ export default class MainComponent {
         if (hash == '') {hash = 'all';}
         var node = this.navTreelistCmp.getStore().findNode('hash', hash);
         this.navTreelistCmp.setSelection(node);
-        //this.navigate(node);
-
+        this.navigate(node);
 
     }
 
-    afterAllLoaded = (who) => {
-        console.log('afterAllLoaded ****** ' + who);
-        // this.wait = this.wait - 1;
-        // console.log(this.wait)
+    // afterAllLoaded = (who) => {
+    //     console.log('afterAllLoaded ****** ' + who);
+    //     // this.wait = this.wait - 1;
+    //     // console.log(this.wait)
 
-        // if (this.wait == 0) {
-        //     var hash = window.location.hash.substr(1);
-        //     if (hash == '') {hash = 'all';}
-        //     var node = this.navTreelistCmp.getStore().findNode('hash', hash);
-        //     this.navTreelistCmp.setSelection(node);
-        //     this.navigate(node);
-        // }
-    }
+    //     // if (this.wait == 0) {
+    //     //     var hash = window.location.hash.substr(1);
+    //     //     if (hash == '') {hash = 'all';}
+    //     //     var node = this.navTreelistCmp.getStore().findNode('hash', hash);
+    //     //     this.navTreelistCmp.setSelection(node);
+    //     //     this.navigate(node);
+    //     // }
+    // }
 
     readyRightContainer = (event) => {
         this.rightContainerCmp = event.detail.cmp;
@@ -131,14 +119,14 @@ export default class MainComponent {
     //     this.afterAllLoaded('readyCodeButton');
     // }
 
-    readyNavTreePanel = (event) => {
-        this.navTreePanelCmp = event.detail.cmp;
+    // readyNavTreePanel = (event) => {
+    //     this.navTreePanelCmp = event.detail.cmp;
 
-        if(Ext.os.is.Phone) {
-            this.navTreePanelCmp.setWidth('100%');
-        }
-        this.afterAllLoaded('readyNavTreePanel');
-    }
+    //     if(Ext.os.is.Phone) {
+    //         this.navTreePanelCmp.setWidth('100%');
+    //     }
+    //     this.afterAllLoaded('readyNavTreePanel');
+    // }
 
     // readyNavTreelist = (event) => {
     //     this.navTreelistCmp = event.detail.cmp;
@@ -146,56 +134,56 @@ export default class MainComponent {
     //     this.afterAllLoaded('readyNavTreelist');
     // }
 
-    readySelection = (event) => {
-        this.selectionCmp = event.detail.cmp;
-        var bodyStyle = `
-            backgroundSize: 20px 20px;
-            borderWidth: 0px;
-            backgroundColor: #e8e8e8;
-            backgroundImage:
-            linear-gradient(0deg, #f5f5f5 1.1px, transparent 0),
-            linear-gradient(90deg, #f5f5f5 1.1px, transparent 0)
-        `;
-        this.selectionCmp.setBodyStyle(bodyStyle);
-        this.afterAllLoaded('readySelection');
-    }
+    // readySelection = (event) => {
+    //     this.selectionCmp = event.detail.cmp;
+    //     var bodyStyle = `
+    //         backgroundSize: 20px 20px;
+    //         borderWidth: 0px;
+    //         backgroundColor: #e8e8e8;
+    //         backgroundImage:
+    //         linear-gradient(0deg, #f5f5f5 1.1px, transparent 0),
+    //         linear-gradient(90deg, #f5f5f5 1.1px, transparent 0)
+    //     `;
+    //     this.selectionCmp.setBodyStyle(bodyStyle);
+    //     this.afterAllLoaded('readySelection');
+    // }
 
-    readyDataviewNav = (event) => {
-        this.dataviewNavCmp = event.detail.cmp;
-        this.dataviewNavCmp.setStyle({'background':'top', 'display':'block', 'text-align':'center'});
+    // readyDataviewNav = (event) => {
+    //     this.dataviewNavCmp = event.detail.cmp;
+    //     this.dataviewNavCmp.setStyle({'background':'top', 'display':'block', 'text-align':'center'});
 
-        if(Ext.os.is.Phone) {
-            this.dataviewNavCmp.setCentered(false);
-        }
+    //     if(Ext.os.is.Phone) {
+    //         this.dataviewNavCmp.setCentered(false);
+    //     }
 
-        var tpl = `
-            <div class="app-thumbnail">
-              <div class="app-thumbnail-icon-wrap">
-                <div class="app-thumbnail-icon {iconCls}"></div>
-              </div>
-              <div class="app-thumbnail-text">{text}</div>
-              <div class="{premiumClass}"></div>
-            </div>
-        `;
-        this.dataviewNavCmp.setItemTpl(tpl);
-        this.dataviewNavCmp.setStore(this.treeStore);
-        this.afterAllLoaded('readyDataviewNav');
-    }
+    //     var tpl = `
+    //         <div class="app-thumbnail">
+    //           <div class="app-thumbnail-icon-wrap">
+    //             <div class="app-thumbnail-icon {iconCls}"></div>
+    //           </div>
+    //           <div class="app-thumbnail-text">{text}</div>
+    //           <div class="{premiumClass}"></div>
+    //         </div>
+    //     `;
+    //     this.dataviewNavCmp.setItemTpl(tpl);
+    //     this.dataviewNavCmp.setStore(this.treeStore);
+    //     this.afterAllLoaded('readyDataviewNav');
+    // }
 
-    readyRouter = (event) => {
-        this.router = event.target;
-        this.afterAllLoaded('readyRouter');
-    }
+    // readyRouter = (event) => {
+    //     this.router = event.target;
+    //     this.afterAllLoaded('readyRouter');
+    // }
 
-    readyCodePanel = (event) => {
-        this.codePanelCmp = event.detail.cmp;
-        this.afterAllLoaded('readyCodePanel');
-    }
+    // readyCodePanel = (event) => {
+    //     this.codePanelCmp = event.detail.cmp;
+    //     this.afterAllLoaded('readyCodePanel');
+    // }
 
-    readyTabPanel = (event) => {
-        this.tabPanelCmp = event.detail.cmp;
-        this.afterAllLoaded('readyTabPanel');
-    }
+    // readyTabPanel = (event) => {
+    //     this.tabPanelCmp = event.detail.cmp;
+    //     this.afterAllLoaded('readyTabPanel');
+    // }
 
     clickBreadcrumb = (event) => {
         this.navigate(event.detail.node);
@@ -210,7 +198,7 @@ export default class MainComponent {
 
     navTreelistSelectionChange = (event) => {
         var record = event.detail.record;
-        this.navigate(record);
+        //this.navigate(record);
     }
 
     navigate = (record) => {
@@ -247,6 +235,15 @@ export default class MainComponent {
         this.selectionCmp.setHidden(true);
         window.router.hidden = false;
         this.codeButtonCmp.setHidden(false);
+
+        //if (childNum == 0 && hash != undefined) {
+        //    window.location.hash = '#' + hash;
+        if (window['router']) {
+            console.log('routeme');
+            window['router'].routeMe();
+        }
+        //}
+
 
         if(Ext.os.is.Phone) {
             this.navTreePanelCmp.setCollapsed(true);
