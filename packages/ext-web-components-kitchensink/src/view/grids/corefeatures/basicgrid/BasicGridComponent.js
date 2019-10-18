@@ -1,3 +1,4 @@
+import { getCmp } from '../../../../util.js';
 import './BasicGridComponent.scss';
 import './BasicGridComponent.html';
 import model from '../../data/CompanyModel';
@@ -20,10 +21,17 @@ export default class BasicGridComponent {
         });
     }
 
-    onGridReady = (event) => {
-        this.gridCmp = event.detail.cmp;
+    onPageReady = event => {
+        console.log('onPageReady')
+        this.gridCmp = getCmp(event, 'grid');
+        console.log(this.gridCmp)
         this.gridCmp.setStore(this.store);
     }
+
+    // onGridReady = (event) => {
+    //     this.gridCmp = event.detail.cmp;
+    //     this.gridCmp.setStore(this.store);
+    // }
 
     renderSign = (value) => {
         var formattedValue = Ext.util.Format.number(value, '0.00');

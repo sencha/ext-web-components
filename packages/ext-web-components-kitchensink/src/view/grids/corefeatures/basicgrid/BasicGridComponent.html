@@ -1,44 +1,51 @@
-<ext-container padding="10" layout="fit" fitToParent="true" height="100%" width="100%">
+<ext-container
+    onready="basicgrid.onPageReady"
+    padding="10"
+    layout="fit"
+    fitToParent="true"
+    height="100%"
+    width="100%"
+>
   <ext-grid
+    extname="grid"
     multiColumnSort="true"
-    onready="basicgrid.onGridReady"
     shadow="true"
     title="Stock Prices"
     grouped="true"
     enableColumnMove="true"
   >
-    <ext-column
+    <ext-gridcolumn
       text="Company"
       flex="1"
       dataIndex="name"
     >
-    </ext-column>
-    <ext-column
+    </ext-gridcolumn>
+    <ext-gridcolumn
       text="Price"
       width="85"
       dataIndex="price"
       formatter="usMoney"
     >
-    </ext-column>
-    <ext-column
+    </ext-gridcolumn>
+    <ext-gridcolumn
       text="Change"
       width="100"
       dataIndex="priceChange"
       renderer="basicgrid.renderSign"
     >
-    </ext-column>
-    <ext-column
+    </ext-gridcolumn>
+    <ext-gridcolumn
       text="% Change"
       dataIndex="priceChangePct"
       renderer="basicgrid.renderSignPctChange"
     >
-    </ext-column>
-    <ext-column
+    </ext-gridcolumn>
+    <ext-gridcolumn
       text="Last Updated"
       width="125"
       dataIndex="lastChange"
       formatter='date("m/d/Y")'
     >
-    </ext-column>
+    </ext-gridcolumn>
   </ext-grid>
 </ext-container>
