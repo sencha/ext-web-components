@@ -1,9 +1,8 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Fri Oct 18 2019 13:22:21 GMT-0400 (Eastern Daylight Time)
-//import HTMLParsedElement from './HTMLParsedElement.js'
-import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js'; //const Ext = window.Ext;
+//Sat Oct 19 2019 05:53:55 GMT-0400 (Eastern Daylight Time)
+import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var EwcBaseComponent =
 /*#__PURE__*/
@@ -54,14 +53,10 @@ function (_HTMLElement) {
           element: el
         });
         this.A.CHILDREN.push(w);
-      } // if (child.nodeName.substring(0, 10) === 'EXT-ROUTER') {
-      //     //console.log(child);
-      //     var el = Ext.get(child);
-      //     var w = Ext.create({xtype:'widget', element: el});
-      //     this.A.CHILDREN.push(w);
-      // }
+      }
+    }
 
-    } //this.properties = []
+    this.base = EwcBaseComponent; //this.properties = []
     //for (var property in this.propertiesobject) {
     //    this.properties.push(property)
     //}
@@ -69,15 +64,24 @@ function (_HTMLElement) {
     // //var textnode = document.createTextNode(this.xtype);
     // //this.newDiv.appendChild(textnode)
     // this.insertAdjacentElement('beforebegin', this.newDiv);
-
-
-    this.base = EwcBaseComponent;
   };
 
   _proto.parsedCallback = function parsedCallback() {
     this.initMe();
   } //******* base start */
   ;
+
+  _proto.initMe = function initMe() {
+    this.newParsedCallback();
+    return; //console.log('');console.log('*** initMe for ' + this.currentElName);
+
+    this.createRawChildren();
+    this.setParentType();
+    this.setDirection();
+    this.figureOutA();
+    this.createProps(this.properties, this.events);
+    this.createExtComponent();
+  };
 
   _proto.newParsedCallback = function newParsedCallback() {
     var me = this;
@@ -92,10 +96,7 @@ function (_HTMLElement) {
     this.A.o.listeners = {};
     this.events.forEach(function (e, index, array) {
       me.setEvent(e, me.A.o, me);
-    }); // if (this.nodeName == 'EXT-ROUTER') {
-    //     EwcBaseComponent.elementcount--;
-    //     return
-    // }
+    });
 
     if (this.A.o['viewport'] == true) {
       this.newDoExtCreate(me, true);
@@ -147,18 +148,13 @@ function (_HTMLElement) {
             } else {
               me.parentNode.A.CHILDREN.push(me.A.ext);
             }
-          } // //console.log('Ext is there')
-          // console.log(meA.props)
-          // methis.currentEl.A.ext = Ext.create(meA.props);
-          // methis.assessChildren(methis.base, methis.xtype);
-
+          }
 
           if (isApplication) {
             Ext.application({
               name: 'MyEWCApp',
               launch: function launch() {
-                Ext.Viewport.add([me.A.ext]); //if (window['router']) {window['router'].init();}
-                //methis.sendReadyEvent(methis);
+                Ext.Viewport.add([me.A.ext]);
               }
             });
           }
@@ -177,8 +173,7 @@ function (_HTMLElement) {
                 o.cmp = element.A.ext;
                 allExt.push(o);
               }
-            }); //console.log(EwcBaseComponent.elements)
-
+            });
             EwcBaseComponent.elements.forEach(function (element) {
               console.dir(element);
               element.dispatchEvent(new CustomEvent('ready', {
@@ -189,11 +184,7 @@ function (_HTMLElement) {
                   allExt: allExt
                 }
               }));
-            }); //console.log('setting to 0')
-            //EwcBaseComponent.elementcount = 0;
-            //EwcBaseComponent.elements = [];
-            //console.log('would router init here...')
-            //if (window['router']) {window['router'].init();}
+            });
           }
         });
       }
@@ -223,18 +214,6 @@ function (_HTMLElement) {
     }
 
     this.A.o = o;
-  };
-
-  _proto.initMe = function initMe() {
-    this.newParsedCallback();
-    return; //console.log('');console.log('*** initMe for ' + this.currentElName);
-
-    this.createRawChildren();
-    this.setParentType();
-    this.setDirection();
-    this.figureOutA();
-    this.createProps(this.properties, this.events);
-    this.createExtComponent();
   };
 
   _proto.createRawChildren = function createRawChildren() {
@@ -1165,7 +1144,19 @@ EwcBaseComponent.elements = [];
 EwcBaseComponent.isLoading = false;
 EwcBaseComponent.isDone = false;
 EwcBaseComponent.count = 0;
-EwcBaseComponent.DIRECTION = ''; //EwcBaseComponent.extendArray = function(obj, src) {
+EwcBaseComponent.DIRECTION = '';
+
+EwcBaseComponent.getCmp = function getCmp(event, value) {
+  var array = event.detail.allCmp;
+
+  for (var i = 0; i < array.length; i++) {
+    if (array[i]['extname'] === value) {
+      return array[i].ext;
+    }
+  }
+
+  return null;
+}; //EwcBaseComponent.extendArray = function(obj, src) {
 //    if (obj == undefined) {obj = []}
 //    Array.prototype.push.apply(obj,src);
 //    return obj;

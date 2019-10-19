@@ -135,7 +135,6 @@ newDoExtCreate(me, isApplication) {
         if (EwcBaseComponent.isDone === true) {
             clearInterval(myVar)
             Ext.onReady(function () {
-
                 //console.log(me.A.o)
                 me.A.ext = Ext.create(me.A.o)
                 me.A.CHILDREN.forEach(function(child) {
@@ -150,31 +149,25 @@ newDoExtCreate(me, isApplication) {
                         me.parentNode.A.CHILDREN.push(me.A.ext);
                     }
                 }
-
-
-                // //console.log('Ext is there')
-                // console.log(meA.props)
-                // methis.currentEl.A.ext = Ext.create(meA.props);
-                // methis.assessChildren(methis.base, methis.xtype);
                 if (isApplication) {
                     Ext.application({
                         name: 'MyEWCApp',
                         launch: function () {
                             Ext.Viewport.add([me.A.ext]);
-                            //if (window['router']) {window['router'].init();}
-                            //methis.sendReadyEvent(methis);
                         }
                     });
                 }
-
-
 
                 EwcBaseComponent.elementcount--;
                 console.log('reduced: ' + me.tagName + ': elementcount reduced to ' + EwcBaseComponent.elementcount)
                 if (EwcBaseComponent.elementcount == 0) {
                     console.log('done');
+                    console.log(EwcBaseComponent.elements);
+                    EwcBaseComponent.elementsprior = [...EwcBaseComponent.elements];
+                    EwcBaseComponent.elements = [];
+                    console.log(EwcBaseComponent.elementsprior);
                     var allExt = [];
-                    EwcBaseComponent.elements.forEach(element => {
+                    EwcBaseComponent.elementsprior.forEach(element => {
                         if (element.getAttribute('extname') != undefined) {
                             var o = {}
                             o.extname = element.getAttribute('extname');
@@ -184,8 +177,8 @@ newDoExtCreate(me, isApplication) {
                         }
                     })
 
-                    //console.log(EwcBaseComponent.elements)
-                    EwcBaseComponent.elements.forEach(element => {
+                    //console.log(EwcBaseComponent.elementsprior)
+                    EwcBaseComponent.elementsprior.forEach(element => {
                         console.dir(element)
                         element.dispatchEvent(new CustomEvent('ready', {
                             detail: {
@@ -196,13 +189,6 @@ newDoExtCreate(me, isApplication) {
                             }
                         }))
                     })
-
-                    //console.log('setting to 0')
-                    //EwcBaseComponent.elementcount = 0;
-                    //EwcBaseComponent.elements = [];
-
-                    //console.log('would router init here...')
-                    //if (window['router']) {window['router'].init();}
                 }
             })
         }

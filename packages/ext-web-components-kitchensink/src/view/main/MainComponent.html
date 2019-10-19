@@ -1,5 +1,5 @@
 <ext-panel
-    onready="main.readyViewport"
+    onready="main.viewportReady"
     viewport="true"
     layout="fit"
     bodyPadding="0"
@@ -9,7 +9,7 @@
       <ext-button iconCls="x-fa fa-bars" onTap="main.toggleTree"></ext-button>
       <span class="ext ext-sencha" style="margin: '0 5px 0 7px;'; font-size: '20px'; width: '20px'"></span>
       <span id="theTitle" href="#" class="app-title">Sencha Ext Web Components 7.0 Kitchen Sink</span>
-      <ext-container align="right" xonready="main.readyRightContainer"></ext-container>
+      <ext-container extname="rightContainer" align="right"></ext-container>
     </ext-titlebar>
     <!-- Titlebar ends-->
 
@@ -17,19 +17,17 @@
     <!-- Breadcrumb starts-->
       <ext-breadcrumbbar
           extname="navBreadcrumb"
+          onChange="main.breadcrumbClick"
           showIcons= "true"
-          xonready="main.readyBreadcrumb"
-          onChange="main.clickBreadcrumb"
           useSplitButtons="true"
           width="100%"
           height="100%"
       >
       </ext-breadcrumbbar>
       <ext-button
-      extname="codeButton"
+        extname="codeButton"
         weight="5"
         hidden="true"
-        xonready="main.readyCodeButton"
         ui="fab"
         right="15"
         top="-4"
@@ -51,7 +49,6 @@
       collapsible='{"direction": "left"}'
       collapsed="false"
       width="375px"
-      xonready="main.readyNavTreePanel"
     >
       <ext-searchfield
         flex="1"
@@ -63,24 +60,27 @@
       </ext-searchfield>
       <ext-treelist
         extname="navTreelist"
+        onselectionchange="main.navTreelistSelectionChange"
         ui="nav"
         expanderFirst="false"
         expanderOnly="true"
         selectOnExpander="true"
-        xonready="main.readyNavTreelist"
-        onselectionchange="main.navTreelistSelectionChange"
       >
       </ext-treelist>
     </ext-panel>
     <!-- Navtree ends-->
     <!-- selections starts-->
-    <ext-panel extname = "selectionPanel" scrollable="y" hidden="false" xonready="main.readySelection" padding="15">
+    <ext-panel
+        extname="selectionPanel"
+        scrollable="y"
+        hidden="false"
+        padding="15"
+    >
       <ext-dataview
         extname="navDataview"
+        onchildtap="main.dataviewNavClick"
         inline="true"
         centered="true"
-        onchildtap="main.dataviewNavClick"
-        xonready="main.readyDataviewNav"
         itemCls="div.app-thumbnail"
         itemsFocusable="false"
       >
@@ -90,7 +90,6 @@
     <!-- Router starts-->
     <ext-router
       hidden=false
-      xonready="main.readyRouter"
       style="overflow:scroll;"
       padding="10px"
     >
@@ -99,7 +98,6 @@
     <!-- code window starts-->
     <ext-panel
       extname="codePanel"
-      ewc="code"
       docked="right"
       border=true
       shadow=true
@@ -112,12 +110,11 @@
       showAnimation='{"type": "slideIn", "direction": "left", "duration": 100, "easing": "ease" }'
       header=false
       collapsible='{"direction": "right"}'
-      xonready="main.readyCodePanel"
       hidden=true
       collapsed=false
     >
       <ext-tabpanel
-        extname="tabpanel"
+        extname="tabPanel"
         shadow="true"
         height="100%"
         tabConfig='{
@@ -127,7 +124,6 @@
       }'
         tabBarPosition="top"
         tabBar='{"layout": {"pack": "start"}}'
-        xonready="main.readyTabPanel"
       >
       </ext-tabpanel>
     </ext-panel>
