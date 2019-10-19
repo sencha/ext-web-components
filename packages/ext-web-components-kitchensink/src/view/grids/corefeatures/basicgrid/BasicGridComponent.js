@@ -21,10 +21,11 @@ export default class BasicGridComponent {
         });
     }
 
-    onPageReady = event => {
-        console.log('onPageReady')
+    onPageReady(event) {
+    //onPageReady = event => {
+        console.log('onPageReady');
         this.gridCmp = getCmp(event, 'grid');
-        console.log(this.gridCmp)
+        console.log(this.gridCmp);
         this.gridCmp.setStore(this.store);
     }
 

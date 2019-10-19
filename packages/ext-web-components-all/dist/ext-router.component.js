@@ -287,8 +287,8 @@ function () {
       var componentHtml = currentHash + "Component.html";
       var code = window._code[currentHashLower][componentHtml]; //console.log(code)
 
-      console.log('hash > 0, setting innerHTML');
-      console.log(scope.rootElem.innerHTML);
+      console.log('hash > 0, setting innerHTML'); //console.log(scope.rootElem.innerHTML)
+
       scope.rootElem.innerHTML = code;
     } else {
       var currentHash = "";
