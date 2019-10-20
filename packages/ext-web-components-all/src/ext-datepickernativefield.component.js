@@ -1,7 +1,8 @@
-import Ext_form_DatePickerNative from './Ext/form/DatePickerNative.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_form_DatePickerNative from './Ext/form/DatePickerNative.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtDatepickernativefieldComponent extends Ext_form_DatePickerNative {
+export default class ExtDatepickernativefield extends Ext_form_DatePickerNative {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtDatepickernativefieldComponent extends Ext_form_DatePickerNative
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-datepickernativefield', ExtDatepickernativefieldComponent);
+//        window.customElements.define('ext-datepickernativefield', ExtDatepickernativefield);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-datepickernativefield', HTMLParsedElement.withParsedCallback(ExtDatepickernativefieldComponent))
+window.customElements.define('ext-datepickernativefield', HTMLParsedElement.withParsedCallback(ExtDatepickernativefield))
+//export default reactify(ExtDatepickernativefield);

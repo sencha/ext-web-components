@@ -1,7 +1,8 @@
-import Ext_panel_YearPicker from './Ext/panel/YearPicker.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_panel_YearPicker from './Ext/panel/YearPicker.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtYearpickerComponent extends Ext_panel_YearPicker {
+export default class ExtYearpicker extends Ext_panel_YearPicker {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtYearpickerComponent extends Ext_panel_YearPicker {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-yearpicker', ExtYearpickerComponent);
+//        window.customElements.define('ext-yearpicker', ExtYearpicker);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-yearpicker', HTMLParsedElement.withParsedCallback(ExtYearpickerComponent))
+window.customElements.define('ext-yearpicker', HTMLParsedElement.withParsedCallback(ExtYearpicker))
+//export default reactify(ExtYearpicker);

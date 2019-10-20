@@ -1,7 +1,8 @@
-import Ext_grid_RowHeader from './Ext/grid/RowHeader.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_grid_RowHeader from './Ext/grid/RowHeader.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtRowheaderComponent extends Ext_grid_RowHeader {
+export default class ExtRowheader extends Ext_grid_RowHeader {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtRowheaderComponent extends Ext_grid_RowHeader {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-rowheader', ExtRowheaderComponent);
+//        window.customElements.define('ext-rowheader', ExtRowheader);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-rowheader', HTMLParsedElement.withParsedCallback(ExtRowheaderComponent))
+window.customElements.define('ext-rowheader', HTMLParsedElement.withParsedCallback(ExtRowheader))
+//export default reactify(ExtRowheader);

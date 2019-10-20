@@ -1,7 +1,8 @@
-import Ext_form_Search from './Ext/form/Search.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_form_Search from './Ext/form/Search.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtSearchfieldComponent extends Ext_form_Search {
+export default class ExtSearchfield extends Ext_form_Search {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtSearchfieldComponent extends Ext_form_Search {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-searchfield', ExtSearchfieldComponent);
+//        window.customElements.define('ext-searchfield', ExtSearchfield);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-searchfield', HTMLParsedElement.withParsedCallback(ExtSearchfieldComponent))
+window.customElements.define('ext-searchfield', HTMLParsedElement.withParsedCallback(ExtSearchfield))
+//export default reactify(ExtSearchfield);

@@ -1,7 +1,8 @@
-import Ext_ux_colorpick_Field from './Ext/ux/colorpick/Field.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_ux_colorpick_Field from './Ext/ux/colorpick/Field.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtColorfieldComponent extends Ext_ux_colorpick_Field {
+export default class ExtColorfield extends Ext_ux_colorpick_Field {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtColorfieldComponent extends Ext_ux_colorpick_Field {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-colorfield', ExtColorfieldComponent);
+//        window.customElements.define('ext-colorfield', ExtColorfield);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-colorfield', HTMLParsedElement.withParsedCallback(ExtColorfieldComponent))
+window.customElements.define('ext-colorfield', HTMLParsedElement.withParsedCallback(ExtColorfield))
+//export default reactify(ExtColorfield);

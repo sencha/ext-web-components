@@ -1,7 +1,8 @@
-import Ext_panel_Time from './Ext/panel/Time.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_panel_Time from './Ext/panel/Time.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtTimepanelComponent extends Ext_panel_Time {
+export default class ExtTimepanel extends Ext_panel_Time {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtTimepanelComponent extends Ext_panel_Time {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-timepanel', ExtTimepanelComponent);
+//        window.customElements.define('ext-timepanel', ExtTimepanel);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-timepanel', HTMLParsedElement.withParsedCallback(ExtTimepanelComponent))
+window.customElements.define('ext-timepanel', HTMLParsedElement.withParsedCallback(ExtTimepanel))
+//export default reactify(ExtTimepanel);

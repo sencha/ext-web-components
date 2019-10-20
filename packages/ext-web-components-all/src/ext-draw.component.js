@@ -1,7 +1,8 @@
-import Ext_draw_Component from './Ext/draw/Component.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_draw_Component from './Ext/draw/Component.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtDrawComponent extends Ext_draw_Component {
+export default class ExtDraw extends Ext_draw_Component {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtDrawComponent extends Ext_draw_Component {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-draw', ExtDrawComponent);
+//        window.customElements.define('ext-draw', ExtDraw);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-draw', HTMLParsedElement.withParsedCallback(ExtDrawComponent))
+window.customElements.define('ext-draw', HTMLParsedElement.withParsedCallback(ExtDraw))
+//export default reactify(ExtDraw);

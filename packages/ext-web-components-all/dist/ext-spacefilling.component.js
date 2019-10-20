@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_chart_SpaceFillingChart from './Ext/chart/SpaceFillingChart.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtSpacefillingComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtSpacefilling =
 /*#__PURE__*/
 function (_Ext_chart_SpaceFilli) {
-  _inheritsLoose(ExtSpacefillingComponent, _Ext_chart_SpaceFilli);
+  _inheritsLoose(ExtSpacefilling, _Ext_chart_SpaceFilli);
 
-  function ExtSpacefillingComponent() {
+  function ExtSpacefilling() {
     var _this;
 
     _this = _Ext_chart_SpaceFilli.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_chart_SpaceFilli) {
     return _this;
   }
 
-  return ExtSpacefillingComponent;
+  return ExtSpacefilling;
 }(Ext_chart_SpaceFillingChart); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-spacefilling', ExtSpacefillingComponent);
+//        window.customElements.define('ext-spacefilling', ExtSpacefilling);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-spacefilling', HTMLParsedElement.withParsedCallback(ExtSpacefillingComponent));
+
+export { ExtSpacefilling as default };
+window.customElements.define('ext-spacefilling', HTMLParsedElement.withParsedCallback(ExtSpacefilling)); //export default reactify(ExtSpacefilling);

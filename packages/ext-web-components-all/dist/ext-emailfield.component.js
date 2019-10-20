@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_Email from './Ext/form/Email.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtEmailfieldComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtEmailfield =
 /*#__PURE__*/
 function (_Ext_form_Email) {
-  _inheritsLoose(ExtEmailfieldComponent, _Ext_form_Email);
+  _inheritsLoose(ExtEmailfield, _Ext_form_Email);
 
-  function ExtEmailfieldComponent() {
+  function ExtEmailfield() {
     var _this;
 
     _this = _Ext_form_Email.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_form_Email) {
     return _this;
   }
 
-  return ExtEmailfieldComponent;
+  return ExtEmailfield;
 }(Ext_form_Email); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-emailfield', ExtEmailfieldComponent);
+//        window.customElements.define('ext-emailfield', ExtEmailfield);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-emailfield', HTMLParsedElement.withParsedCallback(ExtEmailfieldComponent));
+
+export { ExtEmailfield as default };
+window.customElements.define('ext-emailfield', HTMLParsedElement.withParsedCallback(ExtEmailfield)); //export default reactify(ExtEmailfield);

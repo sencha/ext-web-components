@@ -1,7 +1,8 @@
-import Ext_Tab from './Ext/Tab.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_Tab from './Ext/Tab.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtTabComponent extends Ext_Tab {
+export default class ExtTab extends Ext_Tab {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtTabComponent extends Ext_Tab {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-tab', ExtTabComponent);
+//        window.customElements.define('ext-tab', ExtTab);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-tab', HTMLParsedElement.withParsedCallback(ExtTabComponent))
+window.customElements.define('ext-tab', HTMLParsedElement.withParsedCallback(ExtTab))
+//export default reactify(ExtTab);

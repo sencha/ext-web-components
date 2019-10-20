@@ -1,7 +1,8 @@
-import Ext_grid_rowedit_Editor from './Ext/grid/rowedit/Editor.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_grid_rowedit_Editor from './Ext/grid/rowedit/Editor.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtRoweditorComponent extends Ext_grid_rowedit_Editor {
+export default class ExtRoweditor extends Ext_grid_rowedit_Editor {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtRoweditorComponent extends Ext_grid_rowedit_Editor {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-roweditor', ExtRoweditorComponent);
+//        window.customElements.define('ext-roweditor', ExtRoweditor);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-roweditor', HTMLParsedElement.withParsedCallback(ExtRoweditorComponent))
+window.customElements.define('ext-roweditor', HTMLParsedElement.withParsedCallback(ExtRoweditor))
+//export default reactify(ExtRoweditor);

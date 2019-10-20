@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ux_colorpick_Field from './Ext/ux/colorpick/Field.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtColorfieldComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtColorfield =
 /*#__PURE__*/
 function (_Ext_ux_colorpick_Fie) {
-  _inheritsLoose(ExtColorfieldComponent, _Ext_ux_colorpick_Fie);
+  _inheritsLoose(ExtColorfield, _Ext_ux_colorpick_Fie);
 
-  function ExtColorfieldComponent() {
+  function ExtColorfield() {
     var _this;
 
     _this = _Ext_ux_colorpick_Fie.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_ux_colorpick_Fie) {
     return _this;
   }
 
-  return ExtColorfieldComponent;
+  return ExtColorfield;
 }(Ext_ux_colorpick_Field); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-colorfield', ExtColorfieldComponent);
+//        window.customElements.define('ext-colorfield', ExtColorfield);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-colorfield', HTMLParsedElement.withParsedCallback(ExtColorfieldComponent));
+
+export { ExtColorfield as default };
+window.customElements.define('ext-colorfield', HTMLParsedElement.withParsedCallback(ExtColorfield)); //export default reactify(ExtColorfield);

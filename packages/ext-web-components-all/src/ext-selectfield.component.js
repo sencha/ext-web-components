@@ -1,7 +1,8 @@
-import Ext_form_Select from './Ext/form/Select.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_form_Select from './Ext/form/Select.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtSelectfieldComponent extends Ext_form_Select {
+export default class ExtSelectfield extends Ext_form_Select {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtSelectfieldComponent extends Ext_form_Select {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-selectfield', ExtSelectfieldComponent);
+//        window.customElements.define('ext-selectfield', ExtSelectfield);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-selectfield', HTMLParsedElement.withParsedCallback(ExtSelectfieldComponent))
+window.customElements.define('ext-selectfield', HTMLParsedElement.withParsedCallback(ExtSelectfield))
+//export default reactify(ExtSelectfield);

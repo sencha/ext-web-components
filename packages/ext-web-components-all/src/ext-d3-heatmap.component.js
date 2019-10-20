@@ -1,7 +1,8 @@
-import Ext_d3_HeatMap from './Ext/d3/HeatMap.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_d3_HeatMap from './Ext/d3/HeatMap.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtD3_heatmapComponent extends Ext_d3_HeatMap {
+export default class ExtD3_heatmap extends Ext_d3_HeatMap {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtD3_heatmapComponent extends Ext_d3_HeatMap {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-d3-heatmap', ExtD3_heatmapComponent);
+//        window.customElements.define('ext-d3-heatmap', ExtD3_heatmap);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-d3-heatmap', HTMLParsedElement.withParsedCallback(ExtD3_heatmapComponent))
+window.customElements.define('ext-d3-heatmap', HTMLParsedElement.withParsedCallback(ExtD3_heatmap))
+//export default reactify(ExtD3_heatmap);

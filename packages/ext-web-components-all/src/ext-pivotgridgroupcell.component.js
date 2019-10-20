@@ -1,7 +1,8 @@
-import Ext_pivot_cell_Group from './Ext/pivot/cell/Group.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_pivot_cell_Group from './Ext/pivot/cell/Group.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtPivotgridgroupcellComponent extends Ext_pivot_cell_Group {
+export default class ExtPivotgridgroupcell extends Ext_pivot_cell_Group {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtPivotgridgroupcellComponent extends Ext_pivot_cell_Group {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-pivotgridgroupcell', ExtPivotgridgroupcellComponent);
+//        window.customElements.define('ext-pivotgridgroupcell', ExtPivotgridgroupcell);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-pivotgridgroupcell', HTMLParsedElement.withParsedCallback(ExtPivotgridgroupcellComponent))
+window.customElements.define('ext-pivotgridgroupcell', HTMLParsedElement.withParsedCallback(ExtPivotgridgroupcell))
+//export default reactify(ExtPivotgridgroupcell);

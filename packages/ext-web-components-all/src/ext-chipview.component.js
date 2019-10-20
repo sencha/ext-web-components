@@ -1,7 +1,8 @@
-import Ext_dataview_ChipView from './Ext/dataview/ChipView.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_dataview_ChipView from './Ext/dataview/ChipView.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtChipviewComponent extends Ext_dataview_ChipView {
+export default class ExtChipview extends Ext_dataview_ChipView {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtChipviewComponent extends Ext_dataview_ChipView {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-chipview', ExtChipviewComponent);
+//        window.customElements.define('ext-chipview', ExtChipview);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-chipview', HTMLParsedElement.withParsedCallback(ExtChipviewComponent))
+window.customElements.define('ext-chipview', HTMLParsedElement.withParsedCallback(ExtChipview))
+//export default reactify(ExtChipview);

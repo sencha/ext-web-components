@@ -9,7 +9,6 @@ export default class Ext_Base extends EwcBaseComponent {
 
     static PROPERTIES() { return [
         'extname',
-        'eng',
         'viewport',
         'align',
         'plugins',
@@ -46,7 +45,7 @@ export default class Ext_Base extends EwcBaseComponent {
         Ext_Base.EVENTS().forEach(function (eventparameter, index, array) {
             attrs.push('on' + eventparameter.name)
         })
-        attrs.push('onready')
+        //attrs.push('onready')
         return attrs
     }
 

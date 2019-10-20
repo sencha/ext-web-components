@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_pullrefresh_Bar from './Ext/dataview/pullrefresh/Bar.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtPullrefreshbarComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtPullrefreshbar =
 /*#__PURE__*/
 function (_Ext_dataview_pullref) {
-  _inheritsLoose(ExtPullrefreshbarComponent, _Ext_dataview_pullref);
+  _inheritsLoose(ExtPullrefreshbar, _Ext_dataview_pullref);
 
-  function ExtPullrefreshbarComponent() {
+  function ExtPullrefreshbar() {
     var _this;
 
     _this = _Ext_dataview_pullref.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_dataview_pullref) {
     return _this;
   }
 
-  return ExtPullrefreshbarComponent;
+  return ExtPullrefreshbar;
 }(Ext_dataview_pullrefresh_Bar); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-pullrefreshbar', ExtPullrefreshbarComponent);
+//        window.customElements.define('ext-pullrefreshbar', ExtPullrefreshbar);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-pullrefreshbar', HTMLParsedElement.withParsedCallback(ExtPullrefreshbarComponent));
+
+export { ExtPullrefreshbar as default };
+window.customElements.define('ext-pullrefreshbar', HTMLParsedElement.withParsedCallback(ExtPullrefreshbar)); //export default reactify(ExtPullrefreshbar);

@@ -1,7 +1,8 @@
-import Ext_Media from './Ext/Media.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_Media from './Ext/Media.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtMediaComponent extends Ext_Media {
+export default class ExtMedia extends Ext_Media {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtMediaComponent extends Ext_Media {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-media', ExtMediaComponent);
+//        window.customElements.define('ext-media', ExtMedia);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-media', HTMLParsedElement.withParsedCallback(ExtMediaComponent))
+window.customElements.define('ext-media', HTMLParsedElement.withParsedCallback(ExtMedia))
+//export default reactify(ExtMedia);

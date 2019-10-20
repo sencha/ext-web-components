@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Map from './Ext/Map.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtMapComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtMap =
 /*#__PURE__*/
 function (_Ext_Map) {
-  _inheritsLoose(ExtMapComponent, _Ext_Map);
+  _inheritsLoose(ExtMap, _Ext_Map);
 
-  function ExtMapComponent() {
+  function ExtMap() {
     var _this;
 
     _this = _Ext_Map.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_Map) {
     return _this;
   }
 
-  return ExtMapComponent;
+  return ExtMap;
 }(Ext_Map); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-map', ExtMapComponent);
+//        window.customElements.define('ext-map', ExtMap);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-map', HTMLParsedElement.withParsedCallback(ExtMapComponent));
+
+export { ExtMap as default };
+window.customElements.define('ext-map', HTMLParsedElement.withParsedCallback(ExtMap)); //export default reactify(ExtMap);

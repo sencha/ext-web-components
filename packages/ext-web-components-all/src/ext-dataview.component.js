@@ -1,7 +1,8 @@
-import Ext_DataView from './Ext/DataView.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_DataView from './Ext/DataView.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtDataviewComponent extends Ext_DataView {
+export default class ExtDataview extends Ext_DataView {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtDataviewComponent extends Ext_DataView {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-dataview', ExtDataviewComponent);
+//        window.customElements.define('ext-dataview', ExtDataview);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-dataview', HTMLParsedElement.withParsedCallback(ExtDataviewComponent))
+window.customElements.define('ext-dataview', HTMLParsedElement.withParsedCallback(ExtDataview))
+//export default reactify(ExtDataview);

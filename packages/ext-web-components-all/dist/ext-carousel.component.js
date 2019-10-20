@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Carousel from './Ext/Carousel.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtCarouselComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtCarousel =
 /*#__PURE__*/
 function (_Ext_Carousel) {
-  _inheritsLoose(ExtCarouselComponent, _Ext_Carousel);
+  _inheritsLoose(ExtCarousel, _Ext_Carousel);
 
-  function ExtCarouselComponent() {
+  function ExtCarousel() {
     var _this;
 
     _this = _Ext_Carousel.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_Carousel) {
     return _this;
   }
 
-  return ExtCarouselComponent;
+  return ExtCarousel;
 }(Ext_Carousel); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-carousel', ExtCarouselComponent);
+//        window.customElements.define('ext-carousel', ExtCarousel);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-carousel', HTMLParsedElement.withParsedCallback(ExtCarouselComponent));
+
+export { ExtCarousel as default };
+window.customElements.define('ext-carousel', HTMLParsedElement.withParsedCallback(ExtCarousel)); //export default reactify(ExtCarousel);

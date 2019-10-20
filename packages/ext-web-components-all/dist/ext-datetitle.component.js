@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_panel_DateTitle from './Ext/panel/DateTitle.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtDatetitleComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtDatetitle =
 /*#__PURE__*/
 function (_Ext_panel_DateTitle) {
-  _inheritsLoose(ExtDatetitleComponent, _Ext_panel_DateTitle);
+  _inheritsLoose(ExtDatetitle, _Ext_panel_DateTitle);
 
-  function ExtDatetitleComponent() {
+  function ExtDatetitle() {
     var _this;
 
     _this = _Ext_panel_DateTitle.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_panel_DateTitle) {
     return _this;
   }
 
-  return ExtDatetitleComponent;
+  return ExtDatetitle;
 }(Ext_panel_DateTitle); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-datetitle', ExtDatetitleComponent);
+//        window.customElements.define('ext-datetitle', ExtDatetitle);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-datetitle', HTMLParsedElement.withParsedCallback(ExtDatetitleComponent));
+
+export { ExtDatetitle as default };
+window.customElements.define('ext-datetitle', HTMLParsedElement.withParsedCallback(ExtDatetitle)); //export default reactify(ExtDatetitle);

@@ -1,7 +1,8 @@
-import Ext_pivot_Grid from './Ext/pivot/Grid.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_pivot_Grid from './Ext/pivot/Grid.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtPivotgridComponent extends Ext_pivot_Grid {
+export default class ExtPivotgrid extends Ext_pivot_Grid {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtPivotgridComponent extends Ext_pivot_Grid {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-pivotgrid', ExtPivotgridComponent);
+//        window.customElements.define('ext-pivotgrid', ExtPivotgrid);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-pivotgrid', HTMLParsedElement.withParsedCallback(ExtPivotgridComponent))
+window.customElements.define('ext-pivotgrid', HTMLParsedElement.withParsedCallback(ExtPivotgrid))
+//export default reactify(ExtPivotgrid);

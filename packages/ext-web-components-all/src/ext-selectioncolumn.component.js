@@ -1,7 +1,8 @@
-import Ext_grid_column_Selection from './Ext/grid/column/Selection.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_grid_column_Selection from './Ext/grid/column/Selection.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtSelectioncolumnComponent extends Ext_grid_column_Selection {
+export default class ExtSelectioncolumn extends Ext_grid_column_Selection {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtSelectioncolumnComponent extends Ext_grid_column_Selection {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-selectioncolumn', ExtSelectioncolumnComponent);
+//        window.customElements.define('ext-selectioncolumn', ExtSelectioncolumn);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-selectioncolumn', HTMLParsedElement.withParsedCallback(ExtSelectioncolumnComponent))
+window.customElements.define('ext-selectioncolumn', HTMLParsedElement.withParsedCallback(ExtSelectioncolumn))
+//export default reactify(ExtSelectioncolumn);

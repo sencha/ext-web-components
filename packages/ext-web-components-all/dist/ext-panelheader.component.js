@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_panel_Header from './Ext/panel/Header.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtPanelheaderComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtPanelheader =
 /*#__PURE__*/
 function (_Ext_panel_Header) {
-  _inheritsLoose(ExtPanelheaderComponent, _Ext_panel_Header);
+  _inheritsLoose(ExtPanelheader, _Ext_panel_Header);
 
-  function ExtPanelheaderComponent() {
+  function ExtPanelheader() {
     var _this;
 
     _this = _Ext_panel_Header.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_panel_Header) {
     return _this;
   }
 
-  return ExtPanelheaderComponent;
+  return ExtPanelheader;
 }(Ext_panel_Header); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-panelheader', ExtPanelheaderComponent);
+//        window.customElements.define('ext-panelheader', ExtPanelheader);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-panelheader', HTMLParsedElement.withParsedCallback(ExtPanelheaderComponent));
+
+export { ExtPanelheader as default };
+window.customElements.define('ext-panelheader', HTMLParsedElement.withParsedCallback(ExtPanelheader)); //export default reactify(ExtPanelheader);

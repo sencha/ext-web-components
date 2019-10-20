@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_LockedGridRegion from './Ext/grid/LockedGridRegion.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtLockedgridregionComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtLockedgridregion =
 /*#__PURE__*/
 function (_Ext_grid_LockedGridR) {
-  _inheritsLoose(ExtLockedgridregionComponent, _Ext_grid_LockedGridR);
+  _inheritsLoose(ExtLockedgridregion, _Ext_grid_LockedGridR);
 
-  function ExtLockedgridregionComponent() {
+  function ExtLockedgridregion() {
     var _this;
 
     _this = _Ext_grid_LockedGridR.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_grid_LockedGridR) {
     return _this;
   }
 
-  return ExtLockedgridregionComponent;
+  return ExtLockedgridregion;
 }(Ext_grid_LockedGridRegion); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-lockedgridregion', ExtLockedgridregionComponent);
+//        window.customElements.define('ext-lockedgridregion', ExtLockedgridregion);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-lockedgridregion', HTMLParsedElement.withParsedCallback(ExtLockedgridregionComponent));
+
+export { ExtLockedgridregion as default };
+window.customElements.define('ext-lockedgridregion', HTMLParsedElement.withParsedCallback(ExtLockedgridregion)); //export default reactify(ExtLockedgridregion);

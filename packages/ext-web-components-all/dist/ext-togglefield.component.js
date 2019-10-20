@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_Toggle from './Ext/form/Toggle.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtTogglefieldComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtTogglefield =
 /*#__PURE__*/
 function (_Ext_form_Toggle) {
-  _inheritsLoose(ExtTogglefieldComponent, _Ext_form_Toggle);
+  _inheritsLoose(ExtTogglefield, _Ext_form_Toggle);
 
-  function ExtTogglefieldComponent() {
+  function ExtTogglefield() {
     var _this;
 
     _this = _Ext_form_Toggle.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_form_Toggle) {
     return _this;
   }
 
-  return ExtTogglefieldComponent;
+  return ExtTogglefield;
 }(Ext_form_Toggle); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-togglefield', ExtTogglefieldComponent);
+//        window.customElements.define('ext-togglefield', ExtTogglefield);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-togglefield', HTMLParsedElement.withParsedCallback(ExtTogglefieldComponent));
+
+export { ExtTogglefield as default };
+window.customElements.define('ext-togglefield', HTMLParsedElement.withParsedCallback(ExtTogglefield)); //export default reactify(ExtTogglefield);

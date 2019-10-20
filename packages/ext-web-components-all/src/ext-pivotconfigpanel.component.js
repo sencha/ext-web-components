@@ -1,7 +1,8 @@
-import Ext_pivot_plugin_configurator_Panel from './Ext/pivot/plugin/configurator/Panel.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_pivot_plugin_configurator_Panel from './Ext/pivot/plugin/configurator/Panel.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtPivotconfigpanelComponent extends Ext_pivot_plugin_configurator_Panel {
+export default class ExtPivotconfigpanel extends Ext_pivot_plugin_configurator_Panel {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtPivotconfigpanelComponent extends Ext_pivot_plugin_configurator_
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-pivotconfigpanel', ExtPivotconfigpanelComponent);
+//        window.customElements.define('ext-pivotconfigpanel', ExtPivotconfigpanel);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-pivotconfigpanel', HTMLParsedElement.withParsedCallback(ExtPivotconfigpanelComponent))
+window.customElements.define('ext-pivotconfigpanel', HTMLParsedElement.withParsedCallback(ExtPivotconfigpanel))
+//export default reactify(ExtPivotconfigpanel);

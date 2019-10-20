@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_NavigationView from './Ext/NavigationView.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtNavigationviewComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtNavigationview =
 /*#__PURE__*/
 function (_Ext_NavigationView) {
-  _inheritsLoose(ExtNavigationviewComponent, _Ext_NavigationView);
+  _inheritsLoose(ExtNavigationview, _Ext_NavigationView);
 
-  function ExtNavigationviewComponent() {
+  function ExtNavigationview() {
     var _this;
 
     _this = _Ext_NavigationView.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_NavigationView) {
     return _this;
   }
 
-  return ExtNavigationviewComponent;
+  return ExtNavigationview;
 }(Ext_NavigationView); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-navigationview', ExtNavigationviewComponent);
+//        window.customElements.define('ext-navigationview', ExtNavigationview);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-navigationview', HTMLParsedElement.withParsedCallback(ExtNavigationviewComponent));
+
+export { ExtNavigationview as default };
+window.customElements.define('ext-navigationview', HTMLParsedElement.withParsedCallback(ExtNavigationview)); //export default reactify(ExtNavigationview);

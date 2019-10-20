@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_SplitButton from './Ext/SplitButton.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtSplitbuttonComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtSplitbutton =
 /*#__PURE__*/
 function (_Ext_SplitButton) {
-  _inheritsLoose(ExtSplitbuttonComponent, _Ext_SplitButton);
+  _inheritsLoose(ExtSplitbutton, _Ext_SplitButton);
 
-  function ExtSplitbuttonComponent() {
+  function ExtSplitbutton() {
     var _this;
 
     _this = _Ext_SplitButton.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_SplitButton) {
     return _this;
   }
 
-  return ExtSplitbuttonComponent;
+  return ExtSplitbutton;
 }(Ext_SplitButton); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-splitbutton', ExtSplitbuttonComponent);
+//        window.customElements.define('ext-splitbutton', ExtSplitbutton);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-splitbutton', HTMLParsedElement.withParsedCallback(ExtSplitbuttonComponent));
+
+export { ExtSplitbutton as default };
+window.customElements.define('ext-splitbutton', HTMLParsedElement.withParsedCallback(ExtSplitbutton)); //export default reactify(ExtSplitbutton);

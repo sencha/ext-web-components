@@ -1,7 +1,8 @@
-import Ext_grid_HeaderContainer from './Ext/grid/HeaderContainer.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_grid_HeaderContainer from './Ext/grid/HeaderContainer.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtHeadercontainerComponent extends Ext_grid_HeaderContainer {
+export default class ExtHeadercontainer extends Ext_grid_HeaderContainer {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtHeadercontainerComponent extends Ext_grid_HeaderContainer {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-headercontainer', ExtHeadercontainerComponent);
+//        window.customElements.define('ext-headercontainer', ExtHeadercontainer);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-headercontainer', HTMLParsedElement.withParsedCallback(ExtHeadercontainerComponent))
+window.customElements.define('ext-headercontainer', HTMLParsedElement.withParsedCallback(ExtHeadercontainer))
+//export default reactify(ExtHeadercontainer);

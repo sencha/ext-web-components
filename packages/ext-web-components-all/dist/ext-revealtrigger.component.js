@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_trigger_Reveal from './Ext/field/trigger/Reveal.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtRevealtriggerComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtRevealtrigger =
 /*#__PURE__*/
 function (_Ext_field_trigger_Re) {
-  _inheritsLoose(ExtRevealtriggerComponent, _Ext_field_trigger_Re);
+  _inheritsLoose(ExtRevealtrigger, _Ext_field_trigger_Re);
 
-  function ExtRevealtriggerComponent() {
+  function ExtRevealtrigger() {
     var _this;
 
     _this = _Ext_field_trigger_Re.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_field_trigger_Re) {
     return _this;
   }
 
-  return ExtRevealtriggerComponent;
+  return ExtRevealtrigger;
 }(Ext_field_trigger_Reveal); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-revealtrigger', ExtRevealtriggerComponent);
+//        window.customElements.define('ext-revealtrigger', ExtRevealtrigger);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-revealtrigger', HTMLParsedElement.withParsedCallback(ExtRevealtriggerComponent));
+
+export { ExtRevealtrigger as default };
+window.customElements.define('ext-revealtrigger', HTMLParsedElement.withParsedCallback(ExtRevealtrigger)); //export default reactify(ExtRevealtrigger);

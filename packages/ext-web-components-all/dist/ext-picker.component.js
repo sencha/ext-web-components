@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Picker from './Ext/Picker.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtPickerComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtPicker =
 /*#__PURE__*/
 function (_Ext_Picker) {
-  _inheritsLoose(ExtPickerComponent, _Ext_Picker);
+  _inheritsLoose(ExtPicker, _Ext_Picker);
 
-  function ExtPickerComponent() {
+  function ExtPicker() {
     var _this;
 
     _this = _Ext_Picker.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_Picker) {
     return _this;
   }
 
-  return ExtPickerComponent;
+  return ExtPicker;
 }(Ext_Picker); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-picker', ExtPickerComponent);
+//        window.customElements.define('ext-picker', ExtPicker);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-picker', HTMLParsedElement.withParsedCallback(ExtPickerComponent));
+
+export { ExtPicker as default };
+window.customElements.define('ext-picker', HTMLParsedElement.withParsedCallback(ExtPicker)); //export default reactify(ExtPicker);

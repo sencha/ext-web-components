@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_menu_SortDesc from './Ext/grid/menu/SortDesc.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtGridsortdescmenuitemComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtGridsortdescmenuitem =
 /*#__PURE__*/
 function (_Ext_grid_menu_SortDe) {
-  _inheritsLoose(ExtGridsortdescmenuitemComponent, _Ext_grid_menu_SortDe);
+  _inheritsLoose(ExtGridsortdescmenuitem, _Ext_grid_menu_SortDe);
 
-  function ExtGridsortdescmenuitemComponent() {
+  function ExtGridsortdescmenuitem() {
     var _this;
 
     _this = _Ext_grid_menu_SortDe.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_grid_menu_SortDe) {
     return _this;
   }
 
-  return ExtGridsortdescmenuitemComponent;
+  return ExtGridsortdescmenuitem;
 }(Ext_grid_menu_SortDesc); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-gridsortdescmenuitem', ExtGridsortdescmenuitemComponent);
+//        window.customElements.define('ext-gridsortdescmenuitem', ExtGridsortdescmenuitem);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-gridsortdescmenuitem', HTMLParsedElement.withParsedCallback(ExtGridsortdescmenuitemComponent));
+
+export { ExtGridsortdescmenuitem as default };
+window.customElements.define('ext-gridsortdescmenuitem', HTMLParsedElement.withParsedCallback(ExtGridsortdescmenuitem)); //export default reactify(ExtGridsortdescmenuitem);

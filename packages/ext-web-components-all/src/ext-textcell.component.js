@@ -1,7 +1,8 @@
-import Ext_grid_cell_Text from './Ext/grid/cell/Text.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_grid_cell_Text from './Ext/grid/cell/Text.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtTextcellComponent extends Ext_grid_cell_Text {
+export default class ExtTextcell extends Ext_grid_cell_Text {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtTextcellComponent extends Ext_grid_cell_Text {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-textcell', ExtTextcellComponent);
+//        window.customElements.define('ext-textcell', ExtTextcell);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-textcell', HTMLParsedElement.withParsedCallback(ExtTextcellComponent))
+window.customElements.define('ext-textcell', HTMLParsedElement.withParsedCallback(ExtTextcell))
+//export default reactify(ExtTextcell);

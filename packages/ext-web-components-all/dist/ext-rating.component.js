@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ux_rating_Picker from './Ext/ux/rating/Picker.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtRatingComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtRating =
 /*#__PURE__*/
 function (_Ext_ux_rating_Picker) {
-  _inheritsLoose(ExtRatingComponent, _Ext_ux_rating_Picker);
+  _inheritsLoose(ExtRating, _Ext_ux_rating_Picker);
 
-  function ExtRatingComponent() {
+  function ExtRating() {
     var _this;
 
     _this = _Ext_ux_rating_Picker.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_ux_rating_Picker) {
     return _this;
   }
 
-  return ExtRatingComponent;
+  return ExtRating;
 }(Ext_ux_rating_Picker); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-rating', ExtRatingComponent);
+//        window.customElements.define('ext-rating', ExtRating);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-rating', HTMLParsedElement.withParsedCallback(ExtRatingComponent));
+
+export { ExtRating as default };
+window.customElements.define('ext-rating', HTMLParsedElement.withParsedCallback(ExtRating)); //export default reactify(ExtRating);

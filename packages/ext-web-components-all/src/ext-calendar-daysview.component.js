@@ -1,7 +1,8 @@
-import Ext_calendar_view_Days from './Ext/calendar/view/Days.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_calendar_view_Days from './Ext/calendar/view/Days.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtCalendar_daysviewComponent extends Ext_calendar_view_Days {
+export default class ExtCalendar_daysview extends Ext_calendar_view_Days {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtCalendar_daysviewComponent extends Ext_calendar_view_Days {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-daysview', ExtCalendar_daysviewComponent);
+//        window.customElements.define('ext-calendar-daysview', ExtCalendar_daysview);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-calendar-daysview', HTMLParsedElement.withParsedCallback(ExtCalendar_daysviewComponent))
+window.customElements.define('ext-calendar-daysview', HTMLParsedElement.withParsedCallback(ExtCalendar_daysview))
+//export default reactify(ExtCalendar_daysview);

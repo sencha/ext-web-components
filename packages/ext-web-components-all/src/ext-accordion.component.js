@@ -1,7 +1,8 @@
-import Ext_panel_Accordion from './Ext/panel/Accordion.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_panel_Accordion from './Ext/panel/Accordion.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtAccordionComponent extends Ext_panel_Accordion {
+export default class ExtAccordion extends Ext_panel_Accordion {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtAccordionComponent extends Ext_panel_Accordion {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-accordion', ExtAccordionComponent);
+//        window.customElements.define('ext-accordion', ExtAccordion);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-accordion', HTMLParsedElement.withParsedCallback(ExtAccordionComponent))
+window.customElements.define('ext-accordion', HTMLParsedElement.withParsedCallback(ExtAccordion))
+//export default reactify(ExtAccordion);

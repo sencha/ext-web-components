@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_column_RowNumberer from './Ext/grid/column/RowNumberer.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtRownumbererComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtRownumberer =
 /*#__PURE__*/
 function (_Ext_grid_column_RowN) {
-  _inheritsLoose(ExtRownumbererComponent, _Ext_grid_column_RowN);
+  _inheritsLoose(ExtRownumberer, _Ext_grid_column_RowN);
 
-  function ExtRownumbererComponent() {
+  function ExtRownumberer() {
     var _this;
 
     _this = _Ext_grid_column_RowN.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_grid_column_RowN) {
     return _this;
   }
 
-  return ExtRownumbererComponent;
+  return ExtRownumberer;
 }(Ext_grid_column_RowNumberer); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-rownumberer', ExtRownumbererComponent);
+//        window.customElements.define('ext-rownumberer', ExtRownumberer);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-rownumberer', HTMLParsedElement.withParsedCallback(ExtRownumbererComponent));
+
+export { ExtRownumberer as default };
+window.customElements.define('ext-rownumberer', HTMLParsedElement.withParsedCallback(ExtRownumberer)); //export default reactify(ExtRownumberer);

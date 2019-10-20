@@ -1,7 +1,8 @@
-import Ext_panel_Tool from './Ext/panel/Tool.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_panel_Tool from './Ext/panel/Tool.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtToolComponent extends Ext_panel_Tool {
+export default class ExtTool extends Ext_panel_Tool {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtToolComponent extends Ext_panel_Tool {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-tool', ExtToolComponent);
+//        window.customElements.define('ext-tool', ExtTool);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-tool', HTMLParsedElement.withParsedCallback(ExtToolComponent))
+window.customElements.define('ext-tool', HTMLParsedElement.withParsedCallback(ExtTool))
+//export default reactify(ExtTool);

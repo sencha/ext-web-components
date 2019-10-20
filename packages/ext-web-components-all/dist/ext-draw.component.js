@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_draw_Component from './Ext/draw/Component.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtDrawComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtDraw =
 /*#__PURE__*/
 function (_Ext_draw_Component) {
-  _inheritsLoose(ExtDrawComponent, _Ext_draw_Component);
+  _inheritsLoose(ExtDraw, _Ext_draw_Component);
 
-  function ExtDrawComponent() {
+  function ExtDraw() {
     var _this;
 
     _this = _Ext_draw_Component.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_draw_Component) {
     return _this;
   }
 
-  return ExtDrawComponent;
+  return ExtDraw;
 }(Ext_draw_Component); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-draw', ExtDrawComponent);
+//        window.customElements.define('ext-draw', ExtDraw);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-draw', HTMLParsedElement.withParsedCallback(ExtDrawComponent));
+
+export { ExtDraw as default };
+window.customElements.define('ext-draw', HTMLParsedElement.withParsedCallback(ExtDraw)); //export default reactify(ExtDraw);

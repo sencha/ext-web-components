@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Button from './Ext/Button.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtButtonComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtButton =
 /*#__PURE__*/
 function (_Ext_Button) {
-  _inheritsLoose(ExtButtonComponent, _Ext_Button);
+  _inheritsLoose(ExtButton, _Ext_Button);
 
-  function ExtButtonComponent() {
+  function ExtButton() {
     var _this;
 
     _this = _Ext_Button.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_Button) {
     return _this;
   }
 
-  return ExtButtonComponent;
+  return ExtButton;
 }(Ext_Button); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-button', ExtButtonComponent);
+//        window.customElements.define('ext-button', ExtButton);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-button', HTMLParsedElement.withParsedCallback(ExtButtonComponent));
+
+export { ExtButton as default };
+window.customElements.define('ext-button', HTMLParsedElement.withParsedCallback(ExtButton)); //export default reactify(ExtButton);

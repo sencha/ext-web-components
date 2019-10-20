@@ -1,7 +1,8 @@
-import Ext_pivot_d3_TreeMap from './Ext/pivot/d3/TreeMap.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_pivot_d3_TreeMap from './Ext/pivot/d3/TreeMap.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtPivottreemapComponent extends Ext_pivot_d3_TreeMap {
+export default class ExtPivottreemap extends Ext_pivot_d3_TreeMap {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtPivottreemapComponent extends Ext_pivot_d3_TreeMap {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-pivottreemap', ExtPivottreemapComponent);
+//        window.customElements.define('ext-pivottreemap', ExtPivottreemap);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-pivottreemap', HTMLParsedElement.withParsedCallback(ExtPivottreemapComponent))
+window.customElements.define('ext-pivottreemap', HTMLParsedElement.withParsedCallback(ExtPivottreemap))
+//export default reactify(ExtPivottreemap);

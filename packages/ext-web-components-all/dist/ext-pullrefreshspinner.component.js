@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_pullrefresh_Spinner from './Ext/dataview/pullrefresh/Spinner.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtPullrefreshspinnerComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtPullrefreshspinner =
 /*#__PURE__*/
 function (_Ext_dataview_pullref) {
-  _inheritsLoose(ExtPullrefreshspinnerComponent, _Ext_dataview_pullref);
+  _inheritsLoose(ExtPullrefreshspinner, _Ext_dataview_pullref);
 
-  function ExtPullrefreshspinnerComponent() {
+  function ExtPullrefreshspinner() {
     var _this;
 
     _this = _Ext_dataview_pullref.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_dataview_pullref) {
     return _this;
   }
 
-  return ExtPullrefreshspinnerComponent;
+  return ExtPullrefreshspinner;
 }(Ext_dataview_pullrefresh_Spinner); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-pullrefreshspinner', ExtPullrefreshspinnerComponent);
+//        window.customElements.define('ext-pullrefreshspinner', ExtPullrefreshspinner);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-pullrefreshspinner', HTMLParsedElement.withParsedCallback(ExtPullrefreshspinnerComponent));
+
+export { ExtPullrefreshspinner as default };
+window.customElements.define('ext-pullrefreshspinner', HTMLParsedElement.withParsedCallback(ExtPullrefreshspinner)); //export default reactify(ExtPullrefreshspinner);

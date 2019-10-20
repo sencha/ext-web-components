@@ -1,7 +1,8 @@
-import Ext_dataview_listswiper_Stepper from './Ext/dataview/listswiper/Stepper.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_dataview_listswiper_Stepper from './Ext/dataview/listswiper/Stepper.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtListswiperstepperComponent extends Ext_dataview_listswiper_Stepper {
+export default class ExtListswiperstepper extends Ext_dataview_listswiper_Stepper {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtListswiperstepperComponent extends Ext_dataview_listswiper_Stepp
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-listswiperstepper', ExtListswiperstepperComponent);
+//        window.customElements.define('ext-listswiperstepper', ExtListswiperstepper);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-listswiperstepper', HTMLParsedElement.withParsedCallback(ExtListswiperstepperComponent))
+window.customElements.define('ext-listswiperstepper', HTMLParsedElement.withParsedCallback(ExtListswiperstepper))
+//export default reactify(ExtListswiperstepper);

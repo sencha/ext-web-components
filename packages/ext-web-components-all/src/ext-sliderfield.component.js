@@ -1,7 +1,8 @@
-import Ext_form_Slider from './Ext/form/Slider.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_form_Slider from './Ext/form/Slider.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtSliderfieldComponent extends Ext_form_Slider {
+export default class ExtSliderfield extends Ext_form_Slider {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtSliderfieldComponent extends Ext_form_Slider {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-sliderfield', ExtSliderfieldComponent);
+//        window.customElements.define('ext-sliderfield', ExtSliderfield);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-sliderfield', HTMLParsedElement.withParsedCallback(ExtSliderfieldComponent))
+window.customElements.define('ext-sliderfield', HTMLParsedElement.withParsedCallback(ExtSliderfield))
+//export default reactify(ExtSliderfield);

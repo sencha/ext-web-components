@@ -1,7 +1,8 @@
-import Ext_Image from './Ext/Image.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_Image from './Ext/Image.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtImageComponent extends Ext_Image {
+export default class ExtImage extends Ext_Image {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtImageComponent extends Ext_Image {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-image', ExtImageComponent);
+//        window.customElements.define('ext-image', ExtImage);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-image', HTMLParsedElement.withParsedCallback(ExtImageComponent))
+window.customElements.define('ext-image', HTMLParsedElement.withParsedCallback(ExtImage))
+//export default reactify(ExtImage);

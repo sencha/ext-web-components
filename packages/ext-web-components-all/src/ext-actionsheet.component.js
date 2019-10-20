@@ -1,7 +1,8 @@
-import Ext_ActionSheet from './Ext/ActionSheet.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_ActionSheet from './Ext/ActionSheet.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtActionsheetComponent extends Ext_ActionSheet {
+export default class ExtActionsheet extends Ext_ActionSheet {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtActionsheetComponent extends Ext_ActionSheet {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-actionsheet', ExtActionsheetComponent);
+//        window.customElements.define('ext-actionsheet', ExtActionsheet);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-actionsheet', HTMLParsedElement.withParsedCallback(ExtActionsheetComponent))
+window.customElements.define('ext-actionsheet', HTMLParsedElement.withParsedCallback(ExtActionsheet))
+//export default reactify(ExtActionsheet);

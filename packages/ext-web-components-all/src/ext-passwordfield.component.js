@@ -1,7 +1,8 @@
-import Ext_form_Password from './Ext/form/Password.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_form_Password from './Ext/form/Password.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtPasswordfieldComponent extends Ext_form_Password {
+export default class ExtPasswordfield extends Ext_form_Password {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtPasswordfieldComponent extends Ext_form_Password {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-passwordfield', ExtPasswordfieldComponent);
+//        window.customElements.define('ext-passwordfield', ExtPasswordfield);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-passwordfield', HTMLParsedElement.withParsedCallback(ExtPasswordfieldComponent))
+window.customElements.define('ext-passwordfield', HTMLParsedElement.withParsedCallback(ExtPasswordfield))
+//export default reactify(ExtPasswordfield);

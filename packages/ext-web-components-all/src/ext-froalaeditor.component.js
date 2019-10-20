@@ -1,7 +1,8 @@
-import Ext_froala_Editor from './Ext/froala/Editor.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_froala_Editor from './Ext/froala/Editor.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtFroalaeditorComponent extends Ext_froala_Editor {
+export default class ExtFroalaeditor extends Ext_froala_Editor {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtFroalaeditorComponent extends Ext_froala_Editor {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-froalaeditor', ExtFroalaeditorComponent);
+//        window.customElements.define('ext-froalaeditor', ExtFroalaeditor);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-froalaeditor', HTMLParsedElement.withParsedCallback(ExtFroalaeditorComponent))
+window.customElements.define('ext-froalaeditor', HTMLParsedElement.withParsedCallback(ExtFroalaeditor))
+//export default reactify(ExtFroalaeditor);

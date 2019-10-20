@@ -1,7 +1,8 @@
-import Ext_d3_hierarchy_Pack from './Ext/d3/hierarchy/Pack.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_d3_hierarchy_Pack from './Ext/d3/hierarchy/Pack.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtD3_packComponent extends Ext_d3_hierarchy_Pack {
+export default class ExtD3_pack extends Ext_d3_hierarchy_Pack {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtD3_packComponent extends Ext_d3_hierarchy_Pack {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-d3-pack', ExtD3_packComponent);
+//        window.customElements.define('ext-d3-pack', ExtD3_pack);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-d3-pack', HTMLParsedElement.withParsedCallback(ExtD3_packComponent))
+window.customElements.define('ext-d3-pack', HTMLParsedElement.withParsedCallback(ExtD3_pack))
+//export default reactify(ExtD3_pack);

@@ -1,7 +1,8 @@
-import Ext_viewport_Default from './Ext/viewport/Default.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_viewport_Default from './Ext/viewport/Default.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtViewportComponent extends Ext_viewport_Default {
+export default class ExtViewport extends Ext_viewport_Default {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtViewportComponent extends Ext_viewport_Default {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-viewport', ExtViewportComponent);
+//        window.customElements.define('ext-viewport', ExtViewport);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-viewport', HTMLParsedElement.withParsedCallback(ExtViewportComponent))
+window.customElements.define('ext-viewport', HTMLParsedElement.withParsedCallback(ExtViewport))
+//export default reactify(ExtViewport);

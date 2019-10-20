@@ -1,6 +1,4 @@
-//Fri Oct 18 2019 13:22:21 GMT-0400 (Eastern Daylight Time)
-
-//import HTMLParsedElement from './HTMLParsedElement.js'
+//Sun Oct 20 2019 19:04:52 GMT-0400 (Eastern Daylight Time)
 
 import {
     doProp,
@@ -11,29 +9,41 @@ import {
     isTooltip,
     isPlugin
 } from './util.js';
-//const Ext = window.Ext;
 
 export default class EwcBaseComponent extends HTMLElement {
 
-    static getCmp(event, value) {
-        var array = event.detail.allCmp;
-        for (var i = 0; i < array.length; i++) {
-            if (array[i]['extname'] === value) {
-                return array[i].ext;
-            }
-        }
-        return null;
-    }
-
-
-
     constructor(properties, events) {
         super ();
-        //properties.forEach( prop => doProp(this,prop))
-        this.properties = properties;
+
+        //var props = ['text','align','title','extname','height','width','columns','data','layout','flex']
+        // props.forEach( prop =>
+        //     {
+        //         doProp(this,prop)
+        //     }
+        // )
+        const distinct = (value, index, self) => {
+            return self.indexOf(value) === index;
+        }
+        var properties2 = [];
+        //console.log(typeof properties2)
+        //var myStringArray = ["Hello","World"];
+        var arrayLength = properties.length;
+        for (var i = 0; i < arrayLength; i++) {
+            properties2.push(properties[i]);
+        }
+        //console.log(properties2)
+        //console.log(typeof properties2)
+        var p2 = properties2.filter(distinct);
+        this.properties = p2;
+        p2.forEach( prop =>
+            {
+                doProp(this,prop)
+            }
+        )
         //this.methods = methods;
         this.events = events;
     }
+
     connectedCallback() {
         EwcBaseComponent.elementcount++;
         console.log('added: ' + this.tagName + ': elementcount is now ' + EwcBaseComponent.elementcount);
@@ -52,17 +62,8 @@ export default class EwcBaseComponent extends HTMLElement {
                 var w = Ext.create({xtype:'widget', element: el});
                 this.A.CHILDREN.push(w);
             }
-            // if (child.nodeName.substring(0, 10) === 'EXT-ROUTER') {
-            //     //console.log(child);
-            //     var el = Ext.get(child);
-            //     var w = Ext.create({xtype:'widget', element: el});
-            //     this.A.CHILDREN.push(w);
-            // }
-
         }
-
-
-
+                this.base = EwcBaseComponent;
 
         //this.properties = []
         //for (var property in this.propertiesobject) {
@@ -73,9 +74,6 @@ export default class EwcBaseComponent extends HTMLElement {
         // //var textnode = document.createTextNode(this.xtype);
         // //this.newDiv.appendChild(textnode)
         // this.insertAdjacentElement('beforebegin', this.newDiv);
-
-        this.base = EwcBaseComponent;
-
     }
 
     parsedCallback() {
@@ -83,12 +81,21 @@ export default class EwcBaseComponent extends HTMLElement {
     }
 
 //******* base start */
+initMe() {
+    this.newParsedCallback();
+    return
+    //console.log('');console.log('*** initMe for ' + this.currentElName);
+    this.createRawChildren();
+    this.setParentType();
+    this.setDirection();
+    this.figureOutA();
+    this.createProps(this.properties, this.events);
+    this.createExtComponent();
+}
+
 newParsedCallback() {
     var me = this;
-
-
     this.newCreateProps(this.properties, this.events)
-
     if (this.parentNode != null && this.parentNode.nodeName.substring(0, 4) !== 'EXT-') {
         this.A.o.renderTo = this; //.parentNode;
         //this.A.o.renderTo = this.newDiv.parentNode;
@@ -98,10 +105,6 @@ newParsedCallback() {
     this.events.forEach(function (e, index, array) {
         me.setEvent(e,me.A.o,me)
     })
-    // if (this.nodeName == 'EXT-ROUTER') {
-    //     EwcBaseComponent.elementcount--;
-    //     return
-    // }
     if (this.A.o['viewport'] == true) {
         this.newDoExtCreate(me, true);
     }
@@ -111,7 +114,8 @@ newParsedCallback() {
 }
 
 newDoExtCreate(me, isApplication) {
-    if (Ext != undefined) {
+    //if (Ext != undefined) {
+    if (window['Ext'] != undefined) {
         EwcBaseComponent.isLoading = true;
         EwcBaseComponent.isDone = true;
     }
@@ -217,17 +221,6 @@ newCreateProps(properties) {
     this.A.o = o;
 }
 
-initMe() {
-    this.newParsedCallback();
-    return
-    //console.log('');console.log('*** initMe for ' + this.currentElName);
-    this.createRawChildren();
-    this.setParentType();
-    this.setDirection();
-    this.figureOutA();
-    this.createProps(this.properties, this.events);
-    this.createExtComponent();
-}
 createRawChildren() {
     if (this.currentEl.isAngular) {
         this.currentEl.rawChildren = this.currentEl.childComponents;
@@ -1055,7 +1048,10 @@ createProps(properties, propertiesobject, events, eventnames) {
                 if (this.A.ext != undefined) {
                     ischanged = true
                     var method = 'set' + attr[0].toUpperCase() + attr.substring(1)
-                    this.A.ext[method](newVal)
+                    if (method != 'setExtname') {
+                        console.log(method)
+                        this.A.ext[method](newVal)
+                    }
                 }
                 else {
                     ischanged = false
@@ -1118,12 +1114,24 @@ createProps(properties, propertiesobject, events, eventnames) {
 
 EwcBaseComponent.elementcount = 0;
 EwcBaseComponent.elements = [];
+EwcBaseComponent.elementsprior = [];
 
 EwcBaseComponent.isLoading = false;
 EwcBaseComponent.isDone = false;
 
 EwcBaseComponent.count = 0;
 EwcBaseComponent.DIRECTION = '';
+
+//EwcBaseComponent.getCmp = function getCmp(event, value) {
+//    var array = event.detail.allCmp;
+//    for (var i = 0; i < array.length; i++) {
+//        if (array[i]['extname'] === value) {
+//        return array[i].ext;
+//        }
+//    }
+//    return null;
+//};
+
 
 //EwcBaseComponent.extendArray = function(obj, src) {
 //    if (obj == undefined) {obj = []}

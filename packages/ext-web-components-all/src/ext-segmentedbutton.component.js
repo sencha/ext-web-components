@@ -1,7 +1,8 @@
-import Ext_button_Segmented from './Ext/button/Segmented.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_button_Segmented from './Ext/button/Segmented.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtSegmentedbuttonComponent extends Ext_button_Segmented {
+export default class ExtSegmentedbutton extends Ext_button_Segmented {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtSegmentedbuttonComponent extends Ext_button_Segmented {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-segmentedbutton', ExtSegmentedbuttonComponent);
+//        window.customElements.define('ext-segmentedbutton', ExtSegmentedbutton);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-segmentedbutton', HTMLParsedElement.withParsedCallback(ExtSegmentedbuttonComponent))
+window.customElements.define('ext-segmentedbutton', HTMLParsedElement.withParsedCallback(ExtSegmentedbutton))
+//export default reactify(ExtSegmentedbutton);

@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_PagingToolbar from './Ext/grid/PagingToolbar.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtPagingtoolbarComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtPagingtoolbar =
 /*#__PURE__*/
 function (_Ext_grid_PagingToolb) {
-  _inheritsLoose(ExtPagingtoolbarComponent, _Ext_grid_PagingToolb);
+  _inheritsLoose(ExtPagingtoolbar, _Ext_grid_PagingToolb);
 
-  function ExtPagingtoolbarComponent() {
+  function ExtPagingtoolbar() {
     var _this;
 
     _this = _Ext_grid_PagingToolb.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_grid_PagingToolb) {
     return _this;
   }
 
-  return ExtPagingtoolbarComponent;
+  return ExtPagingtoolbar;
 }(Ext_grid_PagingToolbar); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-pagingtoolbar', ExtPagingtoolbarComponent);
+//        window.customElements.define('ext-pagingtoolbar', ExtPagingtoolbar);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-pagingtoolbar', HTMLParsedElement.withParsedCallback(ExtPagingtoolbarComponent));
+
+export { ExtPagingtoolbar as default };
+window.customElements.define('ext-pagingtoolbar', HTMLParsedElement.withParsedCallback(ExtPagingtoolbar)); //export default reactify(ExtPagingtoolbar);

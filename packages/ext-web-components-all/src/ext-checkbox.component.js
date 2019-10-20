@@ -1,7 +1,8 @@
-import Ext_form_Checkbox from './Ext/form/Checkbox.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_form_Checkbox from './Ext/form/Checkbox.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtCheckboxComponent extends Ext_form_Checkbox {
+export default class ExtCheckbox extends Ext_form_Checkbox {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtCheckboxComponent extends Ext_form_Checkbox {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-checkbox', ExtCheckboxComponent);
+//        window.customElements.define('ext-checkbox', ExtCheckbox);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-checkbox', HTMLParsedElement.withParsedCallback(ExtCheckboxComponent))
+window.customElements.define('ext-checkbox', HTMLParsedElement.withParsedCallback(ExtCheckbox))
+//export default reactify(ExtCheckbox);

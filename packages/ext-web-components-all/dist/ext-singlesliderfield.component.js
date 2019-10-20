@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_SingleSlider from './Ext/field/SingleSlider.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtSinglesliderfieldComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtSinglesliderfield =
 /*#__PURE__*/
 function (_Ext_field_SingleSlid) {
-  _inheritsLoose(ExtSinglesliderfieldComponent, _Ext_field_SingleSlid);
+  _inheritsLoose(ExtSinglesliderfield, _Ext_field_SingleSlid);
 
-  function ExtSinglesliderfieldComponent() {
+  function ExtSinglesliderfield() {
     var _this;
 
     _this = _Ext_field_SingleSlid.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_field_SingleSlid) {
     return _this;
   }
 
-  return ExtSinglesliderfieldComponent;
+  return ExtSinglesliderfield;
 }(Ext_field_SingleSlider); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-singlesliderfield', ExtSinglesliderfieldComponent);
+//        window.customElements.define('ext-singlesliderfield', ExtSinglesliderfield);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-singlesliderfield', HTMLParsedElement.withParsedCallback(ExtSinglesliderfieldComponent));
+
+export { ExtSinglesliderfield as default };
+window.customElements.define('ext-singlesliderfield', HTMLParsedElement.withParsedCallback(ExtSinglesliderfield)); //export default reactify(ExtSinglesliderfield);

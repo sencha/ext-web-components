@@ -1,7 +1,8 @@
-import Ext_Editor from './Ext/Editor.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_Editor from './Ext/Editor.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtEditorComponent extends Ext_Editor {
+export default class ExtEditor extends Ext_Editor {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtEditorComponent extends Ext_Editor {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-editor', ExtEditorComponent);
+//        window.customElements.define('ext-editor', ExtEditor);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-editor', HTMLParsedElement.withParsedCallback(ExtEditorComponent))
+window.customElements.define('ext-editor', HTMLParsedElement.withParsedCallback(ExtEditor))
+//export default reactify(ExtEditor);

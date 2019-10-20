@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_panel_Time from './Ext/panel/Time.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtTimepanelComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtTimepanel =
 /*#__PURE__*/
 function (_Ext_panel_Time) {
-  _inheritsLoose(ExtTimepanelComponent, _Ext_panel_Time);
+  _inheritsLoose(ExtTimepanel, _Ext_panel_Time);
 
-  function ExtTimepanelComponent() {
+  function ExtTimepanel() {
     var _this;
 
     _this = _Ext_panel_Time.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_panel_Time) {
     return _this;
   }
 
-  return ExtTimepanelComponent;
+  return ExtTimepanel;
 }(Ext_panel_Time); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-timepanel', ExtTimepanelComponent);
+//        window.customElements.define('ext-timepanel', ExtTimepanel);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-timepanel', HTMLParsedElement.withParsedCallback(ExtTimepanelComponent));
+
+export { ExtTimepanel as default };
+window.customElements.define('ext-timepanel', HTMLParsedElement.withParsedCallback(ExtTimepanel)); //export default reactify(ExtTimepanel);

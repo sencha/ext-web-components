@@ -1,7 +1,8 @@
-import Ext_grid_rowedit_Gap from './Ext/grid/rowedit/Gap.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_grid_rowedit_Gap from './Ext/grid/rowedit/Gap.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtRoweditorgapComponent extends Ext_grid_rowedit_Gap {
+export default class ExtRoweditorgap extends Ext_grid_rowedit_Gap {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtRoweditorgapComponent extends Ext_grid_rowedit_Gap {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-roweditorgap', ExtRoweditorgapComponent);
+//        window.customElements.define('ext-roweditorgap', ExtRoweditorgap);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-roweditorgap', HTMLParsedElement.withParsedCallback(ExtRoweditorgapComponent))
+window.customElements.define('ext-roweditorgap', HTMLParsedElement.withParsedCallback(ExtRoweditorgap))
+//export default reactify(ExtRoweditorgap);

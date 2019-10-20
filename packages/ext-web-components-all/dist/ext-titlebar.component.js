@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_TitleBar from './Ext/TitleBar.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtTitlebarComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtTitlebar =
 /*#__PURE__*/
 function (_Ext_TitleBar) {
-  _inheritsLoose(ExtTitlebarComponent, _Ext_TitleBar);
+  _inheritsLoose(ExtTitlebar, _Ext_TitleBar);
 
-  function ExtTitlebarComponent() {
+  function ExtTitlebar() {
     var _this;
 
     _this = _Ext_TitleBar.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_TitleBar) {
     return _this;
   }
 
-  return ExtTitlebarComponent;
+  return ExtTitlebar;
 }(Ext_TitleBar); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-titlebar', ExtTitlebarComponent);
+//        window.customElements.define('ext-titlebar', ExtTitlebar);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-titlebar', HTMLParsedElement.withParsedCallback(ExtTitlebarComponent));
+
+export { ExtTitlebar as default };
+window.customElements.define('ext-titlebar', HTMLParsedElement.withParsedCallback(ExtTitlebar)); //export default reactify(ExtTitlebar);

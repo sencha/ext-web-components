@@ -1,7 +1,8 @@
-import Ext_d3_hierarchy_TreeMap from './Ext/d3/hierarchy/TreeMap.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_d3_hierarchy_TreeMap from './Ext/d3/hierarchy/TreeMap.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtD3_treemapComponent extends Ext_d3_hierarchy_TreeMap {
+export default class ExtD3_treemap extends Ext_d3_hierarchy_TreeMap {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtD3_treemapComponent extends Ext_d3_hierarchy_TreeMap {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-d3-treemap', ExtD3_treemapComponent);
+//        window.customElements.define('ext-d3-treemap', ExtD3_treemap);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-d3-treemap', HTMLParsedElement.withParsedCallback(ExtD3_treemapComponent))
+window.customElements.define('ext-d3-treemap', HTMLParsedElement.withParsedCallback(ExtD3_treemap))
+//export default reactify(ExtD3_treemap);

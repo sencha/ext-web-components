@@ -1,7 +1,8 @@
-import Ext_grid_LockedGridRegion from './Ext/grid/LockedGridRegion.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_grid_LockedGridRegion from './Ext/grid/LockedGridRegion.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtLockedgridregionComponent extends Ext_grid_LockedGridRegion {
+export default class ExtLockedgridregion extends Ext_grid_LockedGridRegion {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtLockedgridregionComponent extends Ext_grid_LockedGridRegion {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-lockedgridregion', ExtLockedgridregionComponent);
+//        window.customElements.define('ext-lockedgridregion', ExtLockedgridregion);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-lockedgridregion', HTMLParsedElement.withParsedCallback(ExtLockedgridregionComponent))
+window.customElements.define('ext-lockedgridregion', HTMLParsedElement.withParsedCallback(ExtLockedgridregion))
+//export default reactify(ExtLockedgridregion);

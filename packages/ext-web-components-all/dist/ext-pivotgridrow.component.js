@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_pivot_Row from './Ext/pivot/Row.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtPivotgridrowComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtPivotgridrow =
 /*#__PURE__*/
 function (_Ext_pivot_Row) {
-  _inheritsLoose(ExtPivotgridrowComponent, _Ext_pivot_Row);
+  _inheritsLoose(ExtPivotgridrow, _Ext_pivot_Row);
 
-  function ExtPivotgridrowComponent() {
+  function ExtPivotgridrow() {
     var _this;
 
     _this = _Ext_pivot_Row.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_pivot_Row) {
     return _this;
   }
 
-  return ExtPivotgridrowComponent;
+  return ExtPivotgridrow;
 }(Ext_pivot_Row); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-pivotgridrow', ExtPivotgridrowComponent);
+//        window.customElements.define('ext-pivotgridrow', ExtPivotgridrow);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-pivotgridrow', HTMLParsedElement.withParsedCallback(ExtPivotgridrowComponent));
+
+export { ExtPivotgridrow as default };
+window.customElements.define('ext-pivotgridrow', HTMLParsedElement.withParsedCallback(ExtPivotgridrow)); //export default reactify(ExtPivotgridrow);

@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_slider_Thumb from './Ext/slider/Thumb.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtThumbComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtThumb =
 /*#__PURE__*/
 function (_Ext_slider_Thumb) {
-  _inheritsLoose(ExtThumbComponent, _Ext_slider_Thumb);
+  _inheritsLoose(ExtThumb, _Ext_slider_Thumb);
 
-  function ExtThumbComponent() {
+  function ExtThumb() {
     var _this;
 
     _this = _Ext_slider_Thumb.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_slider_Thumb) {
     return _this;
   }
 
-  return ExtThumbComponent;
+  return ExtThumb;
 }(Ext_slider_Thumb); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-thumb', ExtThumbComponent);
+//        window.customElements.define('ext-thumb', ExtThumb);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-thumb', HTMLParsedElement.withParsedCallback(ExtThumbComponent));
+
+export { ExtThumb as default };
+window.customElements.define('ext-thumb', HTMLParsedElement.withParsedCallback(ExtThumb)); //export default reactify(ExtThumb);

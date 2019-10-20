@@ -1,7 +1,8 @@
-import Ext_NavigationView from './Ext/NavigationView.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_NavigationView from './Ext/NavigationView.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtNavigationviewComponent extends Ext_NavigationView {
+export default class ExtNavigationview extends Ext_NavigationView {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtNavigationviewComponent extends Ext_NavigationView {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-navigationview', ExtNavigationviewComponent);
+//        window.customElements.define('ext-navigationview', ExtNavigationview);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-navigationview', HTMLParsedElement.withParsedCallback(ExtNavigationviewComponent))
+window.customElements.define('ext-navigationview', HTMLParsedElement.withParsedCallback(ExtNavigationview))
+//export default reactify(ExtNavigationview);

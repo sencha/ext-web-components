@@ -1,7 +1,8 @@
-import Ext_Carousel from './Ext/Carousel.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_Carousel from './Ext/Carousel.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtCarouselComponent extends Ext_Carousel {
+export default class ExtCarousel extends Ext_Carousel {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtCarouselComponent extends Ext_Carousel {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-carousel', ExtCarouselComponent);
+//        window.customElements.define('ext-carousel', ExtCarousel);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-carousel', HTMLParsedElement.withParsedCallback(ExtCarouselComponent))
+window.customElements.define('ext-carousel', HTMLParsedElement.withParsedCallback(ExtCarousel))
+//export default reactify(ExtCarousel);

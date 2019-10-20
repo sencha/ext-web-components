@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_CellEditor from './Ext/grid/CellEditor.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtCelleditorComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtCelleditor =
 /*#__PURE__*/
 function (_Ext_grid_CellEditor) {
-  _inheritsLoose(ExtCelleditorComponent, _Ext_grid_CellEditor);
+  _inheritsLoose(ExtCelleditor, _Ext_grid_CellEditor);
 
-  function ExtCelleditorComponent() {
+  function ExtCelleditor() {
     var _this;
 
     _this = _Ext_grid_CellEditor.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_grid_CellEditor) {
     return _this;
   }
 
-  return ExtCelleditorComponent;
+  return ExtCelleditor;
 }(Ext_grid_CellEditor); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-celleditor', ExtCelleditorComponent);
+//        window.customElements.define('ext-celleditor', ExtCelleditor);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-celleditor', HTMLParsedElement.withParsedCallback(ExtCelleditorComponent));
+
+export { ExtCelleditor as default };
+window.customElements.define('ext-celleditor', HTMLParsedElement.withParsedCallback(ExtCelleditor)); //export default reactify(ExtCelleditor);

@@ -1,7 +1,8 @@
-import Ext_panel_Title from './Ext/panel/Title.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_panel_Title from './Ext/panel/Title.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtPaneltitleComponent extends Ext_panel_Title {
+export default class ExtPaneltitle extends Ext_panel_Title {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtPaneltitleComponent extends Ext_panel_Title {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-paneltitle', ExtPaneltitleComponent);
+//        window.customElements.define('ext-paneltitle', ExtPaneltitle);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-paneltitle', HTMLParsedElement.withParsedCallback(ExtPaneltitleComponent))
+window.customElements.define('ext-paneltitle', HTMLParsedElement.withParsedCallback(ExtPaneltitle))
+//export default reactify(ExtPaneltitle);

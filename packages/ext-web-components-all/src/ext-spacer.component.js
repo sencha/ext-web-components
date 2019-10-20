@@ -1,7 +1,8 @@
-import Ext_Spacer from './Ext/Spacer.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_Spacer from './Ext/Spacer.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtSpacerComponent extends Ext_Spacer {
+export default class ExtSpacer extends Ext_Spacer {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtSpacerComponent extends Ext_Spacer {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-spacer', ExtSpacerComponent);
+//        window.customElements.define('ext-spacer', ExtSpacer);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-spacer', HTMLParsedElement.withParsedCallback(ExtSpacerComponent))
+window.customElements.define('ext-spacer', HTMLParsedElement.withParsedCallback(ExtSpacer))
+//export default reactify(ExtSpacer);

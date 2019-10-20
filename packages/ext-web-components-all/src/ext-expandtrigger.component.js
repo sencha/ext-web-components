@@ -1,7 +1,8 @@
-import Ext_field_trigger_Expand from './Ext/field/trigger/Expand.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_field_trigger_Expand from './Ext/field/trigger/Expand.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtExpandtriggerComponent extends Ext_field_trigger_Expand {
+export default class ExtExpandtrigger extends Ext_field_trigger_Expand {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtExpandtriggerComponent extends Ext_field_trigger_Expand {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-expandtrigger', ExtExpandtriggerComponent);
+//        window.customElements.define('ext-expandtrigger', ExtExpandtrigger);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-expandtrigger', HTMLParsedElement.withParsedCallback(ExtExpandtriggerComponent))
+window.customElements.define('ext-expandtrigger', HTMLParsedElement.withParsedCallback(ExtExpandtrigger))
+//export default reactify(ExtExpandtrigger);

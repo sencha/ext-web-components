@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_EmptyText from './Ext/dataview/EmptyText.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtEmptytextComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtEmptytext =
 /*#__PURE__*/
 function (_Ext_dataview_EmptyTe) {
-  _inheritsLoose(ExtEmptytextComponent, _Ext_dataview_EmptyTe);
+  _inheritsLoose(ExtEmptytext, _Ext_dataview_EmptyTe);
 
-  function ExtEmptytextComponent() {
+  function ExtEmptytext() {
     var _this;
 
     _this = _Ext_dataview_EmptyTe.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_dataview_EmptyTe) {
     return _this;
   }
 
-  return ExtEmptytextComponent;
+  return ExtEmptytext;
 }(Ext_dataview_EmptyText); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-emptytext', ExtEmptytextComponent);
+//        window.customElements.define('ext-emptytext', ExtEmptytext);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-emptytext', HTMLParsedElement.withParsedCallback(ExtEmptytextComponent));
+
+export { ExtEmptytext as default };
+window.customElements.define('ext-emptytext', HTMLParsedElement.withParsedCallback(ExtEmptytext)); //export default reactify(ExtEmptytext);

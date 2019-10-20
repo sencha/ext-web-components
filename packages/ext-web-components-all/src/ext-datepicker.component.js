@@ -1,7 +1,8 @@
-import Ext_DatePicker from './Ext/DatePicker.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_DatePicker from './Ext/DatePicker.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtDatepickerComponent extends Ext_DatePicker {
+export default class ExtDatepicker extends Ext_DatePicker {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtDatepickerComponent extends Ext_DatePicker {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-datepicker', ExtDatepickerComponent);
+//        window.customElements.define('ext-datepicker', ExtDatepicker);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-datepicker', HTMLParsedElement.withParsedCallback(ExtDatepickerComponent))
+window.customElements.define('ext-datepicker', HTMLParsedElement.withParsedCallback(ExtDatepicker))
+//export default reactify(ExtDatepicker);

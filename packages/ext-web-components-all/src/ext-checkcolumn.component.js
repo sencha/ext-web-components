@@ -1,7 +1,8 @@
-import Ext_grid_column_Check from './Ext/grid/column/Check.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_grid_column_Check from './Ext/grid/column/Check.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtCheckcolumnComponent extends Ext_grid_column_Check {
+export default class ExtCheckcolumn extends Ext_grid_column_Check {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtCheckcolumnComponent extends Ext_grid_column_Check {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-checkcolumn', ExtCheckcolumnComponent);
+//        window.customElements.define('ext-checkcolumn', ExtCheckcolumn);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-checkcolumn', HTMLParsedElement.withParsedCallback(ExtCheckcolumnComponent))
+window.customElements.define('ext-checkcolumn', HTMLParsedElement.withParsedCallback(ExtCheckcolumn))
+//export default reactify(ExtCheckcolumn);

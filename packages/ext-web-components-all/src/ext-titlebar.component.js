@@ -1,7 +1,8 @@
-import Ext_TitleBar from './Ext/TitleBar.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_TitleBar from './Ext/TitleBar.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtTitlebarComponent extends Ext_TitleBar {
+export default class ExtTitlebar extends Ext_TitleBar {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtTitlebarComponent extends Ext_TitleBar {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-titlebar', ExtTitlebarComponent);
+//        window.customElements.define('ext-titlebar', ExtTitlebar);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-titlebar', HTMLParsedElement.withParsedCallback(ExtTitlebarComponent))
+window.customElements.define('ext-titlebar', HTMLParsedElement.withParsedCallback(ExtTitlebar))
+//export default reactify(ExtTitlebar);

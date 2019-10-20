@@ -1,7 +1,8 @@
-import Ext_sparkline_Discrete from './Ext/sparkline/Discrete.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_sparkline_Discrete from './Ext/sparkline/Discrete.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtSparklinediscreteComponent extends Ext_sparkline_Discrete {
+export default class ExtSparklinediscrete extends Ext_sparkline_Discrete {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtSparklinediscreteComponent extends Ext_sparkline_Discrete {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-sparklinediscrete', ExtSparklinediscreteComponent);
+//        window.customElements.define('ext-sparklinediscrete', ExtSparklinediscrete);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-sparklinediscrete', HTMLParsedElement.withParsedCallback(ExtSparklinediscreteComponent))
+window.customElements.define('ext-sparklinediscrete', HTMLParsedElement.withParsedCallback(ExtSparklinediscrete))
+//export default reactify(ExtSparklinediscrete);

@@ -1,7 +1,8 @@
-import Ext_draw_Surface from './Ext/draw/Surface.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_draw_Surface from './Ext/draw/Surface.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtSurfaceComponent extends Ext_draw_Surface {
+export default class ExtSurface extends Ext_draw_Surface {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtSurfaceComponent extends Ext_draw_Surface {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-surface', ExtSurfaceComponent);
+//        window.customElements.define('ext-surface', ExtSurface);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-surface', HTMLParsedElement.withParsedCallback(ExtSurfaceComponent))
+window.customElements.define('ext-surface', HTMLParsedElement.withParsedCallback(ExtSurface))
+//export default reactify(ExtSurface);

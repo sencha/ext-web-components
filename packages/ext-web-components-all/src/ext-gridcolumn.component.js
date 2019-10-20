@@ -1,7 +1,8 @@
-import Ext_grid_column_Template from './Ext/grid/column/Template.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_grid_column_Template from './Ext/grid/column/Template.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtGridcolumnComponent extends Ext_grid_column_Template {
+export default class ExtGridcolumn extends Ext_grid_column_Template {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtGridcolumnComponent extends Ext_grid_column_Template {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-gridcolumn', ExtGridcolumnComponent);
+//        window.customElements.define('ext-gridcolumn', ExtGridcolumn);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-gridcolumn', HTMLParsedElement.withParsedCallback(ExtGridcolumnComponent))
+window.customElements.define('ext-gridcolumn', HTMLParsedElement.withParsedCallback(ExtGridcolumn))
+//export default reactify(ExtGridcolumn);

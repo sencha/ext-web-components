@@ -1,7 +1,8 @@
-import Ext_Video from './Ext/Video.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_Video from './Ext/Video.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtVideoComponent extends Ext_Video {
+export default class ExtVideo extends Ext_Video {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtVideoComponent extends Ext_Video {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-video', ExtVideoComponent);
+//        window.customElements.define('ext-video', ExtVideo);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-video', HTMLParsedElement.withParsedCallback(ExtVideoComponent))
+window.customElements.define('ext-video', HTMLParsedElement.withParsedCallback(ExtVideo))
+//export default reactify(ExtVideo);

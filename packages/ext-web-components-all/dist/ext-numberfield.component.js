@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_Number from './Ext/form/Number.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtNumberfieldComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtNumberfield =
 /*#__PURE__*/
 function (_Ext_form_Number) {
-  _inheritsLoose(ExtNumberfieldComponent, _Ext_form_Number);
+  _inheritsLoose(ExtNumberfield, _Ext_form_Number);
 
-  function ExtNumberfieldComponent() {
+  function ExtNumberfield() {
     var _this;
 
     _this = _Ext_form_Number.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_form_Number) {
     return _this;
   }
 
-  return ExtNumberfieldComponent;
+  return ExtNumberfield;
 }(Ext_form_Number); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-numberfield', ExtNumberfieldComponent);
+//        window.customElements.define('ext-numberfield', ExtNumberfield);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-numberfield', HTMLParsedElement.withParsedCallback(ExtNumberfieldComponent));
+
+export { ExtNumberfield as default };
+window.customElements.define('ext-numberfield', HTMLParsedElement.withParsedCallback(ExtNumberfield)); //export default reactify(ExtNumberfield);

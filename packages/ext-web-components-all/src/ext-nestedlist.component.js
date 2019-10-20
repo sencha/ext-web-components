@@ -1,7 +1,8 @@
-import Ext_NestedList from './Ext/NestedList.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_NestedList from './Ext/NestedList.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtNestedlistComponent extends Ext_NestedList {
+export default class ExtNestedlist extends Ext_NestedList {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtNestedlistComponent extends Ext_NestedList {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-nestedlist', ExtNestedlistComponent);
+//        window.customElements.define('ext-nestedlist', ExtNestedlist);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-nestedlist', HTMLParsedElement.withParsedCallback(ExtNestedlistComponent))
+window.customElements.define('ext-nestedlist', HTMLParsedElement.withParsedCallback(ExtNestedlist))
+//export default reactify(ExtNestedlist);

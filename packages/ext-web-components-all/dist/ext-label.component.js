@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Label from './Ext/Label.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtLabelComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtLabel =
 /*#__PURE__*/
 function (_Ext_Label) {
-  _inheritsLoose(ExtLabelComponent, _Ext_Label);
+  _inheritsLoose(ExtLabel, _Ext_Label);
 
-  function ExtLabelComponent() {
+  function ExtLabel() {
     var _this;
 
     _this = _Ext_Label.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_Label) {
     return _this;
   }
 
-  return ExtLabelComponent;
+  return ExtLabel;
 }(Ext_Label); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-label', ExtLabelComponent);
+//        window.customElements.define('ext-label', ExtLabel);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-label', HTMLParsedElement.withParsedCallback(ExtLabelComponent));
+
+export { ExtLabel as default };
+window.customElements.define('ext-label', HTMLParsedElement.withParsedCallback(ExtLabel)); //export default reactify(ExtLabel);

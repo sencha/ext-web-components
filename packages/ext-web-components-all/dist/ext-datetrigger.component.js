@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_trigger_Date from './Ext/field/trigger/Date.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtDatetriggerComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtDatetrigger =
 /*#__PURE__*/
 function (_Ext_field_trigger_Da) {
-  _inheritsLoose(ExtDatetriggerComponent, _Ext_field_trigger_Da);
+  _inheritsLoose(ExtDatetrigger, _Ext_field_trigger_Da);
 
-  function ExtDatetriggerComponent() {
+  function ExtDatetrigger() {
     var _this;
 
     _this = _Ext_field_trigger_Da.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_field_trigger_Da) {
     return _this;
   }
 
-  return ExtDatetriggerComponent;
+  return ExtDatetrigger;
 }(Ext_field_trigger_Date); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-datetrigger', ExtDatetriggerComponent);
+//        window.customElements.define('ext-datetrigger', ExtDatetrigger);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-datetrigger', HTMLParsedElement.withParsedCallback(ExtDatetriggerComponent));
+
+export { ExtDatetrigger as default };
+window.customElements.define('ext-datetrigger', HTMLParsedElement.withParsedCallback(ExtDatetrigger)); //export default reactify(ExtDatetrigger);

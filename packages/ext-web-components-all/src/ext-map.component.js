@@ -1,7 +1,8 @@
-import Ext_Map from './Ext/Map.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_Map from './Ext/Map.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtMapComponent extends Ext_Map {
+export default class ExtMap extends Ext_Map {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtMapComponent extends Ext_Map {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-map', ExtMapComponent);
+//        window.customElements.define('ext-map', ExtMap);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-map', HTMLParsedElement.withParsedCallback(ExtMapComponent))
+window.customElements.define('ext-map', HTMLParsedElement.withParsedCallback(ExtMap))
+//export default reactify(ExtMap);

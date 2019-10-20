@@ -1,7 +1,8 @@
-import Ext_chart_Legend from './Ext/chart/Legend.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_chart_Legend from './Ext/chart/Legend.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtLegendComponent extends Ext_chart_Legend {
+export default class ExtLegend extends Ext_chart_Legend {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtLegendComponent extends Ext_chart_Legend {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-legend', ExtLegendComponent);
+//        window.customElements.define('ext-legend', ExtLegend);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-legend', HTMLParsedElement.withParsedCallback(ExtLegendComponent))
+window.customElements.define('ext-legend', HTMLParsedElement.withParsedCallback(ExtLegend))
+//export default reactify(ExtLegend);

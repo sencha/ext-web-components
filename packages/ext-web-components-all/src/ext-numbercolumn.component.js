@@ -1,7 +1,8 @@
-import Ext_grid_column_Number from './Ext/grid/column/Number.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_grid_column_Number from './Ext/grid/column/Number.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtNumbercolumnComponent extends Ext_grid_column_Number {
+export default class ExtNumbercolumn extends Ext_grid_column_Number {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtNumbercolumnComponent extends Ext_grid_column_Number {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-numbercolumn', ExtNumbercolumnComponent);
+//        window.customElements.define('ext-numbercolumn', ExtNumbercolumn);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-numbercolumn', HTMLParsedElement.withParsedCallback(ExtNumbercolumnComponent))
+window.customElements.define('ext-numbercolumn', HTMLParsedElement.withParsedCallback(ExtNumbercolumn))
+//export default reactify(ExtNumbercolumn);

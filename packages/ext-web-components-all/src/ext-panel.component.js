@@ -1,7 +1,8 @@
-import Ext_panel_Panel from './Ext/panel/Panel.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_panel_Panel from './Ext/panel/Panel.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtPanelComponent extends Ext_panel_Panel {
+export default class ExtPanel extends Ext_panel_Panel {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtPanelComponent extends Ext_panel_Panel {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-panel', ExtPanelComponent);
+//        window.customElements.define('ext-panel', ExtPanel);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-panel', HTMLParsedElement.withParsedCallback(ExtPanelComponent))
+window.customElements.define('ext-panel', HTMLParsedElement.withParsedCallback(ExtPanel))
+//export default reactify(ExtPanel);

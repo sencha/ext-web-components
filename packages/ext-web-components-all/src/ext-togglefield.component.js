@@ -1,7 +1,8 @@
-import Ext_form_Toggle from './Ext/form/Toggle.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_form_Toggle from './Ext/form/Toggle.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtTogglefieldComponent extends Ext_form_Toggle {
+export default class ExtTogglefield extends Ext_form_Toggle {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtTogglefieldComponent extends Ext_form_Toggle {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-togglefield', ExtTogglefieldComponent);
+//        window.customElements.define('ext-togglefield', ExtTogglefield);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-togglefield', HTMLParsedElement.withParsedCallback(ExtTogglefieldComponent))
+window.customElements.define('ext-togglefield', HTMLParsedElement.withParsedCallback(ExtTogglefield))
+//export default reactify(ExtTogglefield);

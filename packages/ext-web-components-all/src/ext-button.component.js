@@ -1,7 +1,8 @@
-import Ext_Button from './Ext/Button.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_Button from './Ext/Button.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtButtonComponent extends Ext_Button {
+export default class ExtButton extends Ext_Button {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtButtonComponent extends Ext_Button {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-button', ExtButtonComponent);
+//        window.customElements.define('ext-button', ExtButton);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-button', HTMLParsedElement.withParsedCallback(ExtButtonComponent))
+window.customElements.define('ext-button', HTMLParsedElement.withParsedCallback(ExtButton))
+//export default reactify(ExtButton);

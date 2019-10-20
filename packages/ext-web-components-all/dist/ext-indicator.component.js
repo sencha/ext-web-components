@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Indicator from './Ext/Indicator.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtIndicatorComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtIndicator =
 /*#__PURE__*/
 function (_Ext_Indicator) {
-  _inheritsLoose(ExtIndicatorComponent, _Ext_Indicator);
+  _inheritsLoose(ExtIndicator, _Ext_Indicator);
 
-  function ExtIndicatorComponent() {
+  function ExtIndicator() {
     var _this;
 
     _this = _Ext_Indicator.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_Indicator) {
     return _this;
   }
 
-  return ExtIndicatorComponent;
+  return ExtIndicator;
 }(Ext_Indicator); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-indicator', ExtIndicatorComponent);
+//        window.customElements.define('ext-indicator', ExtIndicator);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-indicator', HTMLParsedElement.withParsedCallback(ExtIndicatorComponent));
+
+export { ExtIndicator as default };
+window.customElements.define('ext-indicator', HTMLParsedElement.withParsedCallback(ExtIndicator)); //export default reactify(ExtIndicator);

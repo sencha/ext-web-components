@@ -1,6 +1,6 @@
 ## @sencha/ext-web-components-all
 
-last run: Sat Oct 19 2019 05:53:55 GMT-0400 (Eastern Daylight Time)
+last run: Sun Oct 20 2019 19:04:52 GMT-0400 (Eastern Daylight Time)
 
 ## Test with an  CLI generated app
 

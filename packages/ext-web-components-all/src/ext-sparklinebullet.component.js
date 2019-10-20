@@ -1,7 +1,8 @@
-import Ext_sparkline_Bullet from './Ext/sparkline/Bullet.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_sparkline_Bullet from './Ext/sparkline/Bullet.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtSparklinebulletComponent extends Ext_sparkline_Bullet {
+export default class ExtSparklinebullet extends Ext_sparkline_Bullet {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtSparklinebulletComponent extends Ext_sparkline_Bullet {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-sparklinebullet', ExtSparklinebulletComponent);
+//        window.customElements.define('ext-sparklinebullet', ExtSparklinebullet);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-sparklinebullet', HTMLParsedElement.withParsedCallback(ExtSparklinebulletComponent))
+window.customElements.define('ext-sparklinebullet', HTMLParsedElement.withParsedCallback(ExtSparklinebullet))
+//export default reactify(ExtSparklinebullet);

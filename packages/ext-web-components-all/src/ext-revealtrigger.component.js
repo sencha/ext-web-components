@@ -1,7 +1,8 @@
-import Ext_field_trigger_Reveal from './Ext/field/trigger/Reveal.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_field_trigger_Reveal from './Ext/field/trigger/Reveal.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtRevealtriggerComponent extends Ext_field_trigger_Reveal {
+export default class ExtRevealtrigger extends Ext_field_trigger_Reveal {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtRevealtriggerComponent extends Ext_field_trigger_Reveal {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-revealtrigger', ExtRevealtriggerComponent);
+//        window.customElements.define('ext-revealtrigger', ExtRevealtrigger);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-revealtrigger', HTMLParsedElement.withParsedCallback(ExtRevealtriggerComponent))
+window.customElements.define('ext-revealtrigger', HTMLParsedElement.withParsedCallback(ExtRevealtrigger))
+//export default reactify(ExtRevealtrigger);

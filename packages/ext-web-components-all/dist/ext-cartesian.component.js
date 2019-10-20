@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_chart_Chart from './Ext/chart/Chart.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtCartesianComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtCartesian =
 /*#__PURE__*/
 function (_Ext_chart_Chart) {
-  _inheritsLoose(ExtCartesianComponent, _Ext_chart_Chart);
+  _inheritsLoose(ExtCartesian, _Ext_chart_Chart);
 
-  function ExtCartesianComponent() {
+  function ExtCartesian() {
     var _this;
 
     _this = _Ext_chart_Chart.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_chart_Chart) {
     return _this;
   }
 
-  return ExtCartesianComponent;
+  return ExtCartesian;
 }(Ext_chart_Chart); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-cartesian', ExtCartesianComponent);
+//        window.customElements.define('ext-cartesian', ExtCartesian);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-cartesian', HTMLParsedElement.withParsedCallback(ExtCartesianComponent));
+
+export { ExtCartesian as default };
+window.customElements.define('ext-cartesian', HTMLParsedElement.withParsedCallback(ExtCartesian)); //export default reactify(ExtCartesian);

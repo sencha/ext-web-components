@@ -1,7 +1,8 @@
-import Ext_dataview_pullrefresh_Bar from './Ext/dataview/pullrefresh/Bar.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_dataview_pullrefresh_Bar from './Ext/dataview/pullrefresh/Bar.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtPullrefreshbarComponent extends Ext_dataview_pullrefresh_Bar {
+export default class ExtPullrefreshbar extends Ext_dataview_pullrefresh_Bar {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtPullrefreshbarComponent extends Ext_dataview_pullrefresh_Bar {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-pullrefreshbar', ExtPullrefreshbarComponent);
+//        window.customElements.define('ext-pullrefreshbar', ExtPullrefreshbar);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-pullrefreshbar', HTMLParsedElement.withParsedCallback(ExtPullrefreshbarComponent))
+window.customElements.define('ext-pullrefreshbar', HTMLParsedElement.withParsedCallback(ExtPullrefreshbar))
+//export default reactify(ExtPullrefreshbar);

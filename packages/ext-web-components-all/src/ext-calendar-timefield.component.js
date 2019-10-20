@@ -1,7 +1,8 @@
-import Ext_calendar_form_TimeField from './Ext/calendar/form/TimeField.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_calendar_form_TimeField from './Ext/calendar/form/TimeField.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtCalendar_timefieldComponent extends Ext_calendar_form_TimeField {
+export default class ExtCalendar_timefield extends Ext_calendar_form_TimeField {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtCalendar_timefieldComponent extends Ext_calendar_form_TimeField 
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-timefield', ExtCalendar_timefieldComponent);
+//        window.customElements.define('ext-calendar-timefield', ExtCalendar_timefield);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-calendar-timefield', HTMLParsedElement.withParsedCallback(ExtCalendar_timefieldComponent))
+window.customElements.define('ext-calendar-timefield', HTMLParsedElement.withParsedCallback(ExtCalendar_timefield))
+//export default reactify(ExtCalendar_timefield);

@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_cell_Text from './Ext/grid/cell/Text.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtTextcellComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtTextcell =
 /*#__PURE__*/
 function (_Ext_grid_cell_Text) {
-  _inheritsLoose(ExtTextcellComponent, _Ext_grid_cell_Text);
+  _inheritsLoose(ExtTextcell, _Ext_grid_cell_Text);
 
-  function ExtTextcellComponent() {
+  function ExtTextcell() {
     var _this;
 
     _this = _Ext_grid_cell_Text.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_grid_cell_Text) {
     return _this;
   }
 
-  return ExtTextcellComponent;
+  return ExtTextcell;
 }(Ext_grid_cell_Text); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-textcell', ExtTextcellComponent);
+//        window.customElements.define('ext-textcell', ExtTextcell);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-textcell', HTMLParsedElement.withParsedCallback(ExtTextcellComponent));
+
+export { ExtTextcell as default };
+window.customElements.define('ext-textcell', HTMLParsedElement.withParsedCallback(ExtTextcell)); //export default reactify(ExtTextcell);

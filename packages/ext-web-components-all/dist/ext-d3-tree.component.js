@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_d3_hierarchy_tree_HorizontalTree from './Ext/d3/hierarchy/tree/HorizontalTree.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtD3_treeComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtD3_tree =
 /*#__PURE__*/
 function (_Ext_d3_hierarchy_tre) {
-  _inheritsLoose(ExtD3_treeComponent, _Ext_d3_hierarchy_tre);
+  _inheritsLoose(ExtD3_tree, _Ext_d3_hierarchy_tre);
 
-  function ExtD3_treeComponent() {
+  function ExtD3_tree() {
     var _this;
 
     _this = _Ext_d3_hierarchy_tre.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_d3_hierarchy_tre) {
     return _this;
   }
 
-  return ExtD3_treeComponent;
+  return ExtD3_tree;
 }(Ext_d3_hierarchy_tree_HorizontalTree); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-d3-tree', ExtD3_treeComponent);
+//        window.customElements.define('ext-d3-tree', ExtD3_tree);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-d3-tree', HTMLParsedElement.withParsedCallback(ExtD3_treeComponent));
+
+export { ExtD3_tree as default };
+window.customElements.define('ext-d3-tree', HTMLParsedElement.withParsedCallback(ExtD3_tree)); //export default reactify(ExtD3_tree);

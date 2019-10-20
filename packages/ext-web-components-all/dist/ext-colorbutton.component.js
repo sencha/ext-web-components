@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ux_colorpick_Button from './Ext/ux/colorpick/Button.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtColorbuttonComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtColorbutton =
 /*#__PURE__*/
 function (_Ext_ux_colorpick_But) {
-  _inheritsLoose(ExtColorbuttonComponent, _Ext_ux_colorpick_But);
+  _inheritsLoose(ExtColorbutton, _Ext_ux_colorpick_But);
 
-  function ExtColorbuttonComponent() {
+  function ExtColorbutton() {
     var _this;
 
     _this = _Ext_ux_colorpick_But.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_ux_colorpick_But) {
     return _this;
   }
 
-  return ExtColorbuttonComponent;
+  return ExtColorbutton;
 }(Ext_ux_colorpick_Button); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-colorbutton', ExtColorbuttonComponent);
+//        window.customElements.define('ext-colorbutton', ExtColorbutton);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-colorbutton', HTMLParsedElement.withParsedCallback(ExtColorbuttonComponent));
+
+export { ExtColorbutton as default };
+window.customElements.define('ext-colorbutton', HTMLParsedElement.withParsedCallback(ExtColorbutton)); //export default reactify(ExtColorbutton);

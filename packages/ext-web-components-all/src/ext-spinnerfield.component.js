@@ -1,7 +1,8 @@
-import Ext_form_Spinner from './Ext/form/Spinner.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_form_Spinner from './Ext/form/Spinner.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtSpinnerfieldComponent extends Ext_form_Spinner {
+export default class ExtSpinnerfield extends Ext_form_Spinner {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtSpinnerfieldComponent extends Ext_form_Spinner {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-spinnerfield', ExtSpinnerfieldComponent);
+//        window.customElements.define('ext-spinnerfield', ExtSpinnerfield);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-spinnerfield', HTMLParsedElement.withParsedCallback(ExtSpinnerfieldComponent))
+window.customElements.define('ext-spinnerfield', HTMLParsedElement.withParsedCallback(ExtSpinnerfield))
+//export default reactify(ExtSpinnerfield);

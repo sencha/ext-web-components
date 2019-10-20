@@ -1,7 +1,8 @@
-import Ext_panel_DateTitle from './Ext/panel/DateTitle.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_panel_DateTitle from './Ext/panel/DateTitle.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtDatetitleComponent extends Ext_panel_DateTitle {
+export default class ExtDatetitle extends Ext_panel_DateTitle {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtDatetitleComponent extends Ext_panel_DateTitle {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-datetitle', ExtDatetitleComponent);
+//        window.customElements.define('ext-datetitle', ExtDatetitle);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-datetitle', HTMLParsedElement.withParsedCallback(ExtDatetitleComponent))
+window.customElements.define('ext-datetitle', HTMLParsedElement.withParsedCallback(ExtDatetitle))
+//export default reactify(ExtDatetitle);

@@ -1,7 +1,8 @@
-import Ext_ux_rating_Picker from './Ext/ux/rating/Picker.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_ux_rating_Picker from './Ext/ux/rating/Picker.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtRatingComponent extends Ext_ux_rating_Picker {
+export default class ExtRating extends Ext_ux_rating_Picker {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtRatingComponent extends Ext_ux_rating_Picker {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-rating', ExtRatingComponent);
+//        window.customElements.define('ext-rating', ExtRating);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-rating', HTMLParsedElement.withParsedCallback(ExtRatingComponent))
+window.customElements.define('ext-rating', HTMLParsedElement.withParsedCallback(ExtRating))
+//export default reactify(ExtRating);

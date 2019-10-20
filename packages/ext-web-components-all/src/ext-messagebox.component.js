@@ -1,7 +1,8 @@
-import Ext_MessageBox from './Ext/MessageBox.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_MessageBox from './Ext/MessageBox.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtMessageboxComponent extends Ext_MessageBox {
+export default class ExtMessagebox extends Ext_MessageBox {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtMessageboxComponent extends Ext_MessageBox {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-messagebox', ExtMessageboxComponent);
+//        window.customElements.define('ext-messagebox', ExtMessagebox);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-messagebox', HTMLParsedElement.withParsedCallback(ExtMessageboxComponent))
+window.customElements.define('ext-messagebox', HTMLParsedElement.withParsedCallback(ExtMessagebox))
+//export default reactify(ExtMessagebox);

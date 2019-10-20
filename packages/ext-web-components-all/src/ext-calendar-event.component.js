@@ -1,7 +1,8 @@
-import Ext_calendar_Event from './Ext/calendar/Event.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_calendar_Event from './Ext/calendar/Event.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtCalendar_eventComponent extends Ext_calendar_Event {
+export default class ExtCalendar_event extends Ext_calendar_Event {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtCalendar_eventComponent extends Ext_calendar_Event {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-event', ExtCalendar_eventComponent);
+//        window.customElements.define('ext-calendar-event', ExtCalendar_event);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-calendar-event', HTMLParsedElement.withParsedCallback(ExtCalendar_eventComponent))
+window.customElements.define('ext-calendar-event', HTMLParsedElement.withParsedCallback(ExtCalendar_event))
+//export default reactify(ExtCalendar_event);

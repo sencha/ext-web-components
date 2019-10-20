@@ -1,7 +1,8 @@
-import Ext_menu_Menu from './Ext/menu/Menu.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_menu_Menu from './Ext/menu/Menu.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtMenuComponent extends Ext_menu_Menu {
+export default class ExtMenu extends Ext_menu_Menu {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtMenuComponent extends Ext_menu_Menu {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-menu', ExtMenuComponent);
+//        window.customElements.define('ext-menu', ExtMenu);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-menu', HTMLParsedElement.withParsedCallback(ExtMenuComponent))
+window.customElements.define('ext-menu', HTMLParsedElement.withParsedCallback(ExtMenu))
+//export default reactify(ExtMenu);

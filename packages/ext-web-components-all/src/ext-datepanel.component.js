@@ -1,7 +1,8 @@
-import Ext_panel_Date from './Ext/panel/Date.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_panel_Date from './Ext/panel/Date.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtDatepanelComponent extends Ext_panel_Date {
+export default class ExtDatepanel extends Ext_panel_Date {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtDatepanelComponent extends Ext_panel_Date {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-datepanel', ExtDatepanelComponent);
+//        window.customElements.define('ext-datepanel', ExtDatepanel);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-datepanel', HTMLParsedElement.withParsedCallback(ExtDatepanelComponent))
+window.customElements.define('ext-datepanel', HTMLParsedElement.withParsedCallback(ExtDatepanel))
+//export default reactify(ExtDatepanel);
