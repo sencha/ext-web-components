@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_calendar_view_Weeks from './Ext/calendar/view/Weeks.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtCalendar_weeksviewComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtCalendar_weeksview =
 /*#__PURE__*/
 function (_Ext_calendar_view_We) {
-  _inheritsLoose(ExtCalendar_weeksviewComponent, _Ext_calendar_view_We);
+  _inheritsLoose(ExtCalendar_weeksview, _Ext_calendar_view_We);
 
-  function ExtCalendar_weeksviewComponent() {
+  function ExtCalendar_weeksview() {
     var _this;
 
     _this = _Ext_calendar_view_We.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_calendar_view_We) {
     return _this;
   }
 
-  return ExtCalendar_weeksviewComponent;
+  return ExtCalendar_weeksview;
 }(Ext_calendar_view_Weeks); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-weeksview', ExtCalendar_weeksviewComponent);
+//        window.customElements.define('ext-calendar-weeksview', ExtCalendar_weeksview);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-calendar-weeksview', HTMLParsedElement.withParsedCallback(ExtCalendar_weeksviewComponent));
+
+export { ExtCalendar_weeksview as default };
+window.customElements.define('ext-calendar-weeksview', HTMLParsedElement.withParsedCallback(ExtCalendar_weeksview)); //export default reactify(ExtCalendar_weeksview);

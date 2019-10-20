@@ -1,7 +1,8 @@
-import Ext_dataview_BoundList from './Ext/dataview/BoundList.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_dataview_BoundList from './Ext/dataview/BoundList.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtBoundlistComponent extends Ext_dataview_BoundList {
+export default class ExtBoundlist extends Ext_dataview_BoundList {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtBoundlistComponent extends Ext_dataview_BoundList {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-boundlist', ExtBoundlistComponent);
+//        window.customElements.define('ext-boundlist', ExtBoundlist);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-boundlist', HTMLParsedElement.withParsedCallback(ExtBoundlistComponent))
+window.customElements.define('ext-boundlist', HTMLParsedElement.withParsedCallback(ExtBoundlist))
+//export default reactify(ExtBoundlist);

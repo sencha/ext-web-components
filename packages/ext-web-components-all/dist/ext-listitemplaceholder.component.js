@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_ListItemPlaceholder from './Ext/dataview/ListItemPlaceholder.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtListitemplaceholderComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtListitemplaceholder =
 /*#__PURE__*/
 function (_Ext_dataview_ListIte) {
-  _inheritsLoose(ExtListitemplaceholderComponent, _Ext_dataview_ListIte);
+  _inheritsLoose(ExtListitemplaceholder, _Ext_dataview_ListIte);
 
-  function ExtListitemplaceholderComponent() {
+  function ExtListitemplaceholder() {
     var _this;
 
     _this = _Ext_dataview_ListIte.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_dataview_ListIte) {
     return _this;
   }
 
-  return ExtListitemplaceholderComponent;
+  return ExtListitemplaceholder;
 }(Ext_dataview_ListItemPlaceholder); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-listitemplaceholder', ExtListitemplaceholderComponent);
+//        window.customElements.define('ext-listitemplaceholder', ExtListitemplaceholder);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-listitemplaceholder', HTMLParsedElement.withParsedCallback(ExtListitemplaceholderComponent));
+
+export { ExtListitemplaceholder as default };
+window.customElements.define('ext-listitemplaceholder', HTMLParsedElement.withParsedCallback(ExtListitemplaceholder)); //export default reactify(ExtListitemplaceholder);

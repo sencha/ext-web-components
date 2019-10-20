@@ -1,7 +1,8 @@
-import Ext_dataview_pullrefresh_Spinner from './Ext/dataview/pullrefresh/Spinner.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_dataview_pullrefresh_Spinner from './Ext/dataview/pullrefresh/Spinner.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtPullrefreshspinnerComponent extends Ext_dataview_pullrefresh_Spinner {
+export default class ExtPullrefreshspinner extends Ext_dataview_pullrefresh_Spinner {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtPullrefreshspinnerComponent extends Ext_dataview_pullrefresh_Spi
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-pullrefreshspinner', ExtPullrefreshspinnerComponent);
+//        window.customElements.define('ext-pullrefreshspinner', ExtPullrefreshspinner);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-pullrefreshspinner', HTMLParsedElement.withParsedCallback(ExtPullrefreshspinnerComponent))
+window.customElements.define('ext-pullrefreshspinner', HTMLParsedElement.withParsedCallback(ExtPullrefreshspinner))
+//export default reactify(ExtPullrefreshspinner);

@@ -1,7 +1,8 @@
-import Ext_LoadMask from './Ext/LoadMask.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_LoadMask from './Ext/LoadMask.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtLoadmaskComponent extends Ext_LoadMask {
+export default class ExtLoadmask extends Ext_LoadMask {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtLoadmaskComponent extends Ext_LoadMask {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-loadmask', ExtLoadmaskComponent);
+//        window.customElements.define('ext-loadmask', ExtLoadmask);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-loadmask', HTMLParsedElement.withParsedCallback(ExtLoadmaskComponent))
+window.customElements.define('ext-loadmask', HTMLParsedElement.withParsedCallback(ExtLoadmask))
+//export default reactify(ExtLoadmask);

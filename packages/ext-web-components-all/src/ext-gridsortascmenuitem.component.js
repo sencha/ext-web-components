@@ -1,7 +1,8 @@
-import Ext_grid_menu_SortAsc from './Ext/grid/menu/SortAsc.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_grid_menu_SortAsc from './Ext/grid/menu/SortAsc.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtGridsortascmenuitemComponent extends Ext_grid_menu_SortAsc {
+export default class ExtGridsortascmenuitem extends Ext_grid_menu_SortAsc {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtGridsortascmenuitemComponent extends Ext_grid_menu_SortAsc {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-gridsortascmenuitem', ExtGridsortascmenuitemComponent);
+//        window.customElements.define('ext-gridsortascmenuitem', ExtGridsortascmenuitem);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-gridsortascmenuitem', HTMLParsedElement.withParsedCallback(ExtGridsortascmenuitemComponent))
+window.customElements.define('ext-gridsortascmenuitem', HTMLParsedElement.withParsedCallback(ExtGridsortascmenuitem))
+//export default reactify(ExtGridsortascmenuitem);

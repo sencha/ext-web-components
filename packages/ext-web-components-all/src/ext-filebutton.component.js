@@ -1,7 +1,8 @@
-import Ext_field_FileButton from './Ext/field/FileButton.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_field_FileButton from './Ext/field/FileButton.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtFilebuttonComponent extends Ext_field_FileButton {
+export default class ExtFilebutton extends Ext_field_FileButton {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtFilebuttonComponent extends Ext_field_FileButton {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-filebutton', ExtFilebuttonComponent);
+//        window.customElements.define('ext-filebutton', ExtFilebutton);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-filebutton', HTMLParsedElement.withParsedCallback(ExtFilebuttonComponent))
+window.customElements.define('ext-filebutton', HTMLParsedElement.withParsedCallback(ExtFilebutton))
+//export default reactify(ExtFilebutton);

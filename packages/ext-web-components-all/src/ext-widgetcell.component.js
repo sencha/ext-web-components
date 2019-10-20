@@ -1,7 +1,8 @@
-import Ext_grid_cell_Widget from './Ext/grid/cell/Widget.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_grid_cell_Widget from './Ext/grid/cell/Widget.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtWidgetcellComponent extends Ext_grid_cell_Widget {
+export default class ExtWidgetcell extends Ext_grid_cell_Widget {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtWidgetcellComponent extends Ext_grid_cell_Widget {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-widgetcell', ExtWidgetcellComponent);
+//        window.customElements.define('ext-widgetcell', ExtWidgetcell);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-widgetcell', HTMLParsedElement.withParsedCallback(ExtWidgetcellComponent))
+window.customElements.define('ext-widgetcell', HTMLParsedElement.withParsedCallback(ExtWidgetcell))
+//export default reactify(ExtWidgetcell);

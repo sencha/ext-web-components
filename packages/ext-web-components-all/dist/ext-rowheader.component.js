@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_RowHeader from './Ext/grid/RowHeader.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtRowheaderComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtRowheader =
 /*#__PURE__*/
 function (_Ext_grid_RowHeader) {
-  _inheritsLoose(ExtRowheaderComponent, _Ext_grid_RowHeader);
+  _inheritsLoose(ExtRowheader, _Ext_grid_RowHeader);
 
-  function ExtRowheaderComponent() {
+  function ExtRowheader() {
     var _this;
 
     _this = _Ext_grid_RowHeader.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_grid_RowHeader) {
     return _this;
   }
 
-  return ExtRowheaderComponent;
+  return ExtRowheader;
 }(Ext_grid_RowHeader); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-rowheader', ExtRowheaderComponent);
+//        window.customElements.define('ext-rowheader', ExtRowheader);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-rowheader', HTMLParsedElement.withParsedCallback(ExtRowheaderComponent));
+
+export { ExtRowheader as default };
+window.customElements.define('ext-rowheader', HTMLParsedElement.withParsedCallback(ExtRowheader)); //export default reactify(ExtRowheader);

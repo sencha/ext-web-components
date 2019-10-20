@@ -1,7 +1,8 @@
-import Ext_dataview_component_ListItem from './Ext/dataview/component/ListItem.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_dataview_component_ListItem from './Ext/dataview/component/ListItem.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtListitemComponent extends Ext_dataview_component_ListItem {
+export default class ExtListitem extends Ext_dataview_component_ListItem {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtListitemComponent extends Ext_dataview_component_ListItem {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-listitem', ExtListitemComponent);
+//        window.customElements.define('ext-listitem', ExtListitem);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-listitem', HTMLParsedElement.withParsedCallback(ExtListitemComponent))
+window.customElements.define('ext-listitem', HTMLParsedElement.withParsedCallback(ExtListitem))
+//export default reactify(ExtListitem);

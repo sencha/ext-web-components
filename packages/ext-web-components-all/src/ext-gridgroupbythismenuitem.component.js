@@ -1,7 +1,8 @@
-import Ext_grid_menu_GroupByThis from './Ext/grid/menu/GroupByThis.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_grid_menu_GroupByThis from './Ext/grid/menu/GroupByThis.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtGridgroupbythismenuitemComponent extends Ext_grid_menu_GroupByThis {
+export default class ExtGridgroupbythismenuitem extends Ext_grid_menu_GroupByThis {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtGridgroupbythismenuitemComponent extends Ext_grid_menu_GroupByTh
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-gridgroupbythismenuitem', ExtGridgroupbythismenuitemComponent);
+//        window.customElements.define('ext-gridgroupbythismenuitem', ExtGridgroupbythismenuitem);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-gridgroupbythismenuitem', HTMLParsedElement.withParsedCallback(ExtGridgroupbythismenuitemComponent))
+window.customElements.define('ext-gridgroupbythismenuitem', HTMLParsedElement.withParsedCallback(ExtGridgroupbythismenuitem))
+//export default reactify(ExtGridgroupbythismenuitem);

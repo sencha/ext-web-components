@@ -1,7 +1,8 @@
-import Ext_field_trigger_SpinUp from './Ext/field/trigger/SpinUp.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_field_trigger_SpinUp from './Ext/field/trigger/SpinUp.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtSpinuptriggerComponent extends Ext_field_trigger_SpinUp {
+export default class ExtSpinuptrigger extends Ext_field_trigger_SpinUp {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtSpinuptriggerComponent extends Ext_field_trigger_SpinUp {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-spinuptrigger', ExtSpinuptriggerComponent);
+//        window.customElements.define('ext-spinuptrigger', ExtSpinuptrigger);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-spinuptrigger', HTMLParsedElement.withParsedCallback(ExtSpinuptriggerComponent))
+window.customElements.define('ext-spinuptrigger', HTMLParsedElement.withParsedCallback(ExtSpinuptrigger))
+//export default reactify(ExtSpinuptrigger);

@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_ItemHeader from './Ext/dataview/ItemHeader.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtItemheaderComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtItemheader =
 /*#__PURE__*/
 function (_Ext_dataview_ItemHea) {
-  _inheritsLoose(ExtItemheaderComponent, _Ext_dataview_ItemHea);
+  _inheritsLoose(ExtItemheader, _Ext_dataview_ItemHea);
 
-  function ExtItemheaderComponent() {
+  function ExtItemheader() {
     var _this;
 
     _this = _Ext_dataview_ItemHea.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_dataview_ItemHea) {
     return _this;
   }
 
-  return ExtItemheaderComponent;
+  return ExtItemheader;
 }(Ext_dataview_ItemHeader); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-itemheader', ExtItemheaderComponent);
+//        window.customElements.define('ext-itemheader', ExtItemheader);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-itemheader', HTMLParsedElement.withParsedCallback(ExtItemheaderComponent));
+
+export { ExtItemheader as default };
+window.customElements.define('ext-itemheader', HTMLParsedElement.withParsedCallback(ExtItemheader)); //export default reactify(ExtItemheader);

@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_sparkline_Box from './Ext/sparkline/Box.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtSparklineboxComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtSparklinebox =
 /*#__PURE__*/
 function (_Ext_sparkline_Box) {
-  _inheritsLoose(ExtSparklineboxComponent, _Ext_sparkline_Box);
+  _inheritsLoose(ExtSparklinebox, _Ext_sparkline_Box);
 
-  function ExtSparklineboxComponent() {
+  function ExtSparklinebox() {
     var _this;
 
     _this = _Ext_sparkline_Box.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_sparkline_Box) {
     return _this;
   }
 
-  return ExtSparklineboxComponent;
+  return ExtSparklinebox;
 }(Ext_sparkline_Box); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-sparklinebox', ExtSparklineboxComponent);
+//        window.customElements.define('ext-sparklinebox', ExtSparklinebox);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-sparklinebox', HTMLParsedElement.withParsedCallback(ExtSparklineboxComponent));
+
+export { ExtSparklinebox as default };
+window.customElements.define('ext-sparklinebox', HTMLParsedElement.withParsedCallback(ExtSparklinebox)); //export default reactify(ExtSparklinebox);

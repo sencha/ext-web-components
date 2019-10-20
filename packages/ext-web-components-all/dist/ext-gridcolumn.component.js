@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_column_Template from './Ext/grid/column/Template.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtGridcolumnComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtGridcolumn =
 /*#__PURE__*/
 function (_Ext_grid_column_Temp) {
-  _inheritsLoose(ExtGridcolumnComponent, _Ext_grid_column_Temp);
+  _inheritsLoose(ExtGridcolumn, _Ext_grid_column_Temp);
 
-  function ExtGridcolumnComponent() {
+  function ExtGridcolumn() {
     var _this;
 
     _this = _Ext_grid_column_Temp.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_grid_column_Temp) {
     return _this;
   }
 
-  return ExtGridcolumnComponent;
+  return ExtGridcolumn;
 }(Ext_grid_column_Template); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-gridcolumn', ExtGridcolumnComponent);
+//        window.customElements.define('ext-gridcolumn', ExtGridcolumn);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-gridcolumn', HTMLParsedElement.withParsedCallback(ExtGridcolumnComponent));
+
+export { ExtGridcolumn as default };
+window.customElements.define('ext-gridcolumn', HTMLParsedElement.withParsedCallback(ExtGridcolumn)); //export default reactify(ExtGridcolumn);

@@ -1,7 +1,8 @@
-import Ext_menu_Separator from './Ext/menu/Separator.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_menu_Separator from './Ext/menu/Separator.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtMenuseparatorComponent extends Ext_menu_Separator {
+export default class ExtMenuseparator extends Ext_menu_Separator {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtMenuseparatorComponent extends Ext_menu_Separator {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-menuseparator', ExtMenuseparatorComponent);
+//        window.customElements.define('ext-menuseparator', ExtMenuseparator);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-menuseparator', HTMLParsedElement.withParsedCallback(ExtMenuseparatorComponent))
+window.customElements.define('ext-menuseparator', HTMLParsedElement.withParsedCallback(ExtMenuseparator))
+//export default reactify(ExtMenuseparator);

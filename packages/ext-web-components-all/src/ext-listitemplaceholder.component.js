@@ -1,7 +1,8 @@
-import Ext_dataview_ListItemPlaceholder from './Ext/dataview/ListItemPlaceholder.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_dataview_ListItemPlaceholder from './Ext/dataview/ListItemPlaceholder.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtListitemplaceholderComponent extends Ext_dataview_ListItemPlaceholder {
+export default class ExtListitemplaceholder extends Ext_dataview_ListItemPlaceholder {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtListitemplaceholderComponent extends Ext_dataview_ListItemPlaceh
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-listitemplaceholder', ExtListitemplaceholderComponent);
+//        window.customElements.define('ext-listitemplaceholder', ExtListitemplaceholder);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-listitemplaceholder', HTMLParsedElement.withParsedCallback(ExtListitemplaceholderComponent))
+window.customElements.define('ext-listitemplaceholder', HTMLParsedElement.withParsedCallback(ExtListitemplaceholder))
+//export default reactify(ExtListitemplaceholder);

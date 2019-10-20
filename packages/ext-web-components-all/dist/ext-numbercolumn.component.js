@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_column_Number from './Ext/grid/column/Number.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtNumbercolumnComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtNumbercolumn =
 /*#__PURE__*/
 function (_Ext_grid_column_Numb) {
-  _inheritsLoose(ExtNumbercolumnComponent, _Ext_grid_column_Numb);
+  _inheritsLoose(ExtNumbercolumn, _Ext_grid_column_Numb);
 
-  function ExtNumbercolumnComponent() {
+  function ExtNumbercolumn() {
     var _this;
 
     _this = _Ext_grid_column_Numb.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_grid_column_Numb) {
     return _this;
   }
 
-  return ExtNumbercolumnComponent;
+  return ExtNumbercolumn;
 }(Ext_grid_column_Number); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-numbercolumn', ExtNumbercolumnComponent);
+//        window.customElements.define('ext-numbercolumn', ExtNumbercolumn);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-numbercolumn', HTMLParsedElement.withParsedCallback(ExtNumbercolumnComponent));
+
+export { ExtNumbercolumn as default };
+window.customElements.define('ext-numbercolumn', HTMLParsedElement.withParsedCallback(ExtNumbercolumn)); //export default reactify(ExtNumbercolumn);

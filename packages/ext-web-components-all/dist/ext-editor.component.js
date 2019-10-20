@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Editor from './Ext/Editor.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtEditorComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtEditor =
 /*#__PURE__*/
 function (_Ext_Editor) {
-  _inheritsLoose(ExtEditorComponent, _Ext_Editor);
+  _inheritsLoose(ExtEditor, _Ext_Editor);
 
-  function ExtEditorComponent() {
+  function ExtEditor() {
     var _this;
 
     _this = _Ext_Editor.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_Editor) {
     return _this;
   }
 
-  return ExtEditorComponent;
+  return ExtEditor;
 }(Ext_Editor); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-editor', ExtEditorComponent);
+//        window.customElements.define('ext-editor', ExtEditor);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-editor', HTMLParsedElement.withParsedCallback(ExtEditorComponent));
+
+export { ExtEditor as default };
+window.customElements.define('ext-editor', HTMLParsedElement.withParsedCallback(ExtEditor)); //export default reactify(ExtEditor);

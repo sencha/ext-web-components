@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_Grid from './Ext/grid/Grid.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtGridComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtGrid =
 /*#__PURE__*/
 function (_Ext_grid_Grid) {
-  _inheritsLoose(ExtGridComponent, _Ext_grid_Grid);
+  _inheritsLoose(ExtGrid, _Ext_grid_Grid);
 
-  function ExtGridComponent() {
+  function ExtGrid() {
     var _this;
 
     _this = _Ext_grid_Grid.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_grid_Grid) {
     return _this;
   }
 
-  return ExtGridComponent;
+  return ExtGrid;
 }(Ext_grid_Grid); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-grid', ExtGridComponent);
+//        window.customElements.define('ext-grid', ExtGrid);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-grid', HTMLParsedElement.withParsedCallback(ExtGridComponent));
+
+export { ExtGrid as default };
+window.customElements.define('ext-grid', HTMLParsedElement.withParsedCallback(ExtGrid)); //export default reactify(ExtGrid);

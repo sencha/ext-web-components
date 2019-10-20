@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_menu_RadioItem from './Ext/menu/RadioItem.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtMenuradioitemComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtMenuradioitem =
 /*#__PURE__*/
 function (_Ext_menu_RadioItem) {
-  _inheritsLoose(ExtMenuradioitemComponent, _Ext_menu_RadioItem);
+  _inheritsLoose(ExtMenuradioitem, _Ext_menu_RadioItem);
 
-  function ExtMenuradioitemComponent() {
+  function ExtMenuradioitem() {
     var _this;
 
     _this = _Ext_menu_RadioItem.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_menu_RadioItem) {
     return _this;
   }
 
-  return ExtMenuradioitemComponent;
+  return ExtMenuradioitem;
 }(Ext_menu_RadioItem); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-menuradioitem', ExtMenuradioitemComponent);
+//        window.customElements.define('ext-menuradioitem', ExtMenuradioitem);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-menuradioitem', HTMLParsedElement.withParsedCallback(ExtMenuradioitemComponent));
+
+export { ExtMenuradioitem as default };
+window.customElements.define('ext-menuradioitem', HTMLParsedElement.withParsedCallback(ExtMenuradioitem)); //export default reactify(ExtMenuradioitem);

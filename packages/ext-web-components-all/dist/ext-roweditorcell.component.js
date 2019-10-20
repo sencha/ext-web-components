@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_rowedit_Cell from './Ext/grid/rowedit/Cell.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtRoweditorcellComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtRoweditorcell =
 /*#__PURE__*/
 function (_Ext_grid_rowedit_Cel) {
-  _inheritsLoose(ExtRoweditorcellComponent, _Ext_grid_rowedit_Cel);
+  _inheritsLoose(ExtRoweditorcell, _Ext_grid_rowedit_Cel);
 
-  function ExtRoweditorcellComponent() {
+  function ExtRoweditorcell() {
     var _this;
 
     _this = _Ext_grid_rowedit_Cel.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_grid_rowedit_Cel) {
     return _this;
   }
 
-  return ExtRoweditorcellComponent;
+  return ExtRoweditorcell;
 }(Ext_grid_rowedit_Cell); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-roweditorcell', ExtRoweditorcellComponent);
+//        window.customElements.define('ext-roweditorcell', ExtRoweditorcell);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-roweditorcell', HTMLParsedElement.withParsedCallback(ExtRoweditorcellComponent));
+
+export { ExtRoweditorcell as default };
+window.customElements.define('ext-roweditorcell', HTMLParsedElement.withParsedCallback(ExtRoweditorcell)); //export default reactify(ExtRoweditorcell);

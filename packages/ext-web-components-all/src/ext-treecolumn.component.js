@@ -1,7 +1,8 @@
-import Ext_grid_column_Tree from './Ext/grid/column/Tree.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_grid_column_Tree from './Ext/grid/column/Tree.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtTreecolumnComponent extends Ext_grid_column_Tree {
+export default class ExtTreecolumn extends Ext_grid_column_Tree {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtTreecolumnComponent extends Ext_grid_column_Tree {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-treecolumn', ExtTreecolumnComponent);
+//        window.customElements.define('ext-treecolumn', ExtTreecolumn);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-treecolumn', HTMLParsedElement.withParsedCallback(ExtTreecolumnComponent))
+window.customElements.define('ext-treecolumn', HTMLParsedElement.withParsedCallback(ExtTreecolumn))
+//export default reactify(ExtTreecolumn);

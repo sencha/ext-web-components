@@ -1,7 +1,8 @@
-import Ext_Chip from './Ext/Chip.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_Chip from './Ext/Chip.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtChipComponent extends Ext_Chip {
+export default class ExtChip extends Ext_Chip {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtChipComponent extends Ext_Chip {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-chip', ExtChipComponent);
+//        window.customElements.define('ext-chip', ExtChip);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-chip', HTMLParsedElement.withParsedCallback(ExtChipComponent))
+window.customElements.define('ext-chip', HTMLParsedElement.withParsedCallback(ExtChip))
+//export default reactify(ExtChip);

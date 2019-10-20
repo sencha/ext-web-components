@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_Container from './Ext/field/Container.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtContainerfieldComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtContainerfield =
 /*#__PURE__*/
 function (_Ext_field_Container) {
-  _inheritsLoose(ExtContainerfieldComponent, _Ext_field_Container);
+  _inheritsLoose(ExtContainerfield, _Ext_field_Container);
 
-  function ExtContainerfieldComponent() {
+  function ExtContainerfield() {
     var _this;
 
     _this = _Ext_field_Container.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_field_Container) {
     return _this;
   }
 
-  return ExtContainerfieldComponent;
+  return ExtContainerfield;
 }(Ext_field_Container); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-containerfield', ExtContainerfieldComponent);
+//        window.customElements.define('ext-containerfield', ExtContainerfield);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-containerfield', HTMLParsedElement.withParsedCallback(ExtContainerfieldComponent));
+
+export { ExtContainerfield as default };
+window.customElements.define('ext-containerfield', HTMLParsedElement.withParsedCallback(ExtContainerfield)); //export default reactify(ExtContainerfield);

@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_TextArea from './Ext/form/TextArea.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtTextareafieldComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtTextareafield =
 /*#__PURE__*/
 function (_Ext_form_TextArea) {
-  _inheritsLoose(ExtTextareafieldComponent, _Ext_form_TextArea);
+  _inheritsLoose(ExtTextareafield, _Ext_form_TextArea);
 
-  function ExtTextareafieldComponent() {
+  function ExtTextareafield() {
     var _this;
 
     _this = _Ext_form_TextArea.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_form_TextArea) {
     return _this;
   }
 
-  return ExtTextareafieldComponent;
+  return ExtTextareafield;
 }(Ext_form_TextArea); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-textareafield', ExtTextareafieldComponent);
+//        window.customElements.define('ext-textareafield', ExtTextareafield);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-textareafield', HTMLParsedElement.withParsedCallback(ExtTextareafieldComponent));
+
+export { ExtTextareafield as default };
+window.customElements.define('ext-textareafield', HTMLParsedElement.withParsedCallback(ExtTextareafield)); //export default reactify(ExtTextareafield);

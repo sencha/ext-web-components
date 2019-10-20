@@ -1,7 +1,8 @@
 import _createClass from "@babel/runtime/helpers/createClass";
+import _assertThisInitialized from "@babel/runtime/helpers/assertThisInitialized";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Sat Oct 19 2019 05:53:55 GMT-0400 (Eastern Daylight Time)
+//Sun Oct 20 2019 19:04:52 GMT-0400 (Eastern Daylight Time)
 import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var EwcBaseComponent =
@@ -12,9 +13,33 @@ function (_HTMLElement) {
   function EwcBaseComponent(properties, events) {
     var _this;
 
-    _this = _HTMLElement.call(this) || this; //properties.forEach( prop => doProp(this,prop))
+    _this = _HTMLElement.call(this) || this; //var props = ['text','align','title','extname','height','width','columns','data','layout','flex']
+    // props.forEach( prop =>
+    //     {
+    //         doProp(this,prop)
+    //     }
+    // )
 
-    _this.properties = properties; //this.methods = methods;
+    var distinct = function distinct(value, index, self) {
+      return self.indexOf(value) === index;
+    };
+
+    var properties2 = []; //console.log(typeof properties2)
+    //var myStringArray = ["Hello","World"];
+
+    var arrayLength = properties.length;
+
+    for (var i = 0; i < arrayLength; i++) {
+      properties2.push(properties[i]);
+    } //console.log(properties2)
+    //console.log(typeof properties2)
+
+
+    var p2 = properties2.filter(distinct);
+    _this.properties = p2;
+    p2.forEach(function (prop) {
+      doProp(_assertThisInitialized(_this), prop);
+    }); //this.methods = methods;
 
     _this.events = events;
     return _this;
@@ -106,7 +131,8 @@ function (_HTMLElement) {
   };
 
   _proto.newDoExtCreate = function newDoExtCreate(me, isApplication) {
-    if (Ext != undefined) {
+    //if (Ext != undefined) {
+    if (window['Ext'] != undefined) {
       EwcBaseComponent.isLoading = true;
       EwcBaseComponent.isDone = true;
     }
@@ -164,8 +190,12 @@ function (_HTMLElement) {
 
           if (EwcBaseComponent.elementcount == 0) {
             console.log('done');
+            console.log(EwcBaseComponent.elements);
+            EwcBaseComponent.elementsprior = [].concat(EwcBaseComponent.elements);
+            EwcBaseComponent.elements = [];
+            console.log(EwcBaseComponent.elementsprior);
             var allExt = [];
-            EwcBaseComponent.elements.forEach(function (element) {
+            EwcBaseComponent.elementsprior.forEach(function (element) {
               if (element.getAttribute('extname') != undefined) {
                 var o = {};
                 o.extname = element.getAttribute('extname');
@@ -173,8 +203,9 @@ function (_HTMLElement) {
                 o.cmp = element.A.ext;
                 allExt.push(o);
               }
-            });
-            EwcBaseComponent.elements.forEach(function (element) {
+            }); //console.log(EwcBaseComponent.elementsprior)
+
+            EwcBaseComponent.elementsprior.forEach(function (element) {
               console.dir(element);
               element.dispatchEvent(new CustomEvent('ready', {
                 detail: {
@@ -1023,7 +1054,11 @@ function (_HTMLElement) {
         if (this.A.ext != undefined) {
           ischanged = true;
           var method = 'set' + attr[0].toUpperCase() + attr.substring(1);
-          this.A.ext[method](newVal);
+
+          if (method != 'setExtname') {
+            console.log(method);
+            this.A.ext[method](newVal);
+          }
         } else {
           ischanged = false;
         }
@@ -1141,22 +1176,20 @@ function (_HTMLElement) {
 export { EwcBaseComponent as default };
 EwcBaseComponent.elementcount = 0;
 EwcBaseComponent.elements = [];
+EwcBaseComponent.elementsprior = [];
 EwcBaseComponent.isLoading = false;
 EwcBaseComponent.isDone = false;
 EwcBaseComponent.count = 0;
-EwcBaseComponent.DIRECTION = '';
-
-EwcBaseComponent.getCmp = function getCmp(event, value) {
-  var array = event.detail.allCmp;
-
-  for (var i = 0; i < array.length; i++) {
-    if (array[i]['extname'] === value) {
-      return array[i].ext;
-    }
-  }
-
-  return null;
-}; //EwcBaseComponent.extendArray = function(obj, src) {
+EwcBaseComponent.DIRECTION = ''; //EwcBaseComponent.getCmp = function getCmp(event, value) {
+//    var array = event.detail.allCmp;
+//    for (var i = 0; i < array.length; i++) {
+//        if (array[i]['extname'] === value) {
+//        return array[i].ext;
+//        }
+//    }
+//    return null;
+//};
+//EwcBaseComponent.extendArray = function(obj, src) {
 //    if (obj == undefined) {obj = []}
 //    Array.prototype.push.apply(obj,src);
 //    return obj;

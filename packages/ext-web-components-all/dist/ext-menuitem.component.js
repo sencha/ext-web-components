@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_menu_TextItem from './Ext/menu/TextItem.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtMenuitemComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtMenuitem =
 /*#__PURE__*/
 function (_Ext_menu_TextItem) {
-  _inheritsLoose(ExtMenuitemComponent, _Ext_menu_TextItem);
+  _inheritsLoose(ExtMenuitem, _Ext_menu_TextItem);
 
-  function ExtMenuitemComponent() {
+  function ExtMenuitem() {
     var _this;
 
     _this = _Ext_menu_TextItem.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_menu_TextItem) {
     return _this;
   }
 
-  return ExtMenuitemComponent;
+  return ExtMenuitem;
 }(Ext_menu_TextItem); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-menuitem', ExtMenuitemComponent);
+//        window.customElements.define('ext-menuitem', ExtMenuitem);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-menuitem', HTMLParsedElement.withParsedCallback(ExtMenuitemComponent));
+
+export { ExtMenuitem as default };
+window.customElements.define('ext-menuitem', HTMLParsedElement.withParsedCallback(ExtMenuitem)); //export default reactify(ExtMenuitem);

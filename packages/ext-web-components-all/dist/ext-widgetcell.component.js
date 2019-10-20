@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_cell_Widget from './Ext/grid/cell/Widget.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtWidgetcellComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtWidgetcell =
 /*#__PURE__*/
 function (_Ext_grid_cell_Widget) {
-  _inheritsLoose(ExtWidgetcellComponent, _Ext_grid_cell_Widget);
+  _inheritsLoose(ExtWidgetcell, _Ext_grid_cell_Widget);
 
-  function ExtWidgetcellComponent() {
+  function ExtWidgetcell() {
     var _this;
 
     _this = _Ext_grid_cell_Widget.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_grid_cell_Widget) {
     return _this;
   }
 
-  return ExtWidgetcellComponent;
+  return ExtWidgetcell;
 }(Ext_grid_cell_Widget); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-widgetcell', ExtWidgetcellComponent);
+//        window.customElements.define('ext-widgetcell', ExtWidgetcell);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-widgetcell', HTMLParsedElement.withParsedCallback(ExtWidgetcellComponent));
+
+export { ExtWidgetcell as default };
+window.customElements.define('ext-widgetcell', HTMLParsedElement.withParsedCallback(ExtWidgetcell)); //export default reactify(ExtWidgetcell);

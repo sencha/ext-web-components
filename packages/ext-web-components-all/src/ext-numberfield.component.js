@@ -1,7 +1,8 @@
-import Ext_form_Number from './Ext/form/Number.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_form_Number from './Ext/form/Number.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtNumberfieldComponent extends Ext_form_Number {
+export default class ExtNumberfield extends Ext_form_Number {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtNumberfieldComponent extends Ext_form_Number {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-numberfield', ExtNumberfieldComponent);
+//        window.customElements.define('ext-numberfield', ExtNumberfield);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-numberfield', HTMLParsedElement.withParsedCallback(ExtNumberfieldComponent))
+window.customElements.define('ext-numberfield', HTMLParsedElement.withParsedCallback(ExtNumberfield))
+//export default reactify(ExtNumberfield);

@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_pivot_plugin_configurator_Container from './Ext/pivot/plugin/configurator/Container.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtPivotconfigcontainerComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtPivotconfigcontainer =
 /*#__PURE__*/
 function (_Ext_pivot_plugin_con) {
-  _inheritsLoose(ExtPivotconfigcontainerComponent, _Ext_pivot_plugin_con);
+  _inheritsLoose(ExtPivotconfigcontainer, _Ext_pivot_plugin_con);
 
-  function ExtPivotconfigcontainerComponent() {
+  function ExtPivotconfigcontainer() {
     var _this;
 
     _this = _Ext_pivot_plugin_con.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_pivot_plugin_con) {
     return _this;
   }
 
-  return ExtPivotconfigcontainerComponent;
+  return ExtPivotconfigcontainer;
 }(Ext_pivot_plugin_configurator_Container); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-pivotconfigcontainer', ExtPivotconfigcontainerComponent);
+//        window.customElements.define('ext-pivotconfigcontainer', ExtPivotconfigcontainer);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-pivotconfigcontainer', HTMLParsedElement.withParsedCallback(ExtPivotconfigcontainerComponent));
+
+export { ExtPivotconfigcontainer as default };
+window.customElements.define('ext-pivotconfigcontainer', HTMLParsedElement.withParsedCallback(ExtPivotconfigcontainer)); //export default reactify(ExtPivotconfigcontainer);

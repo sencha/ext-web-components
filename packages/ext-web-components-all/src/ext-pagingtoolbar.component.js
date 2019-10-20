@@ -1,7 +1,8 @@
-import Ext_grid_PagingToolbar from './Ext/grid/PagingToolbar.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_grid_PagingToolbar from './Ext/grid/PagingToolbar.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtPagingtoolbarComponent extends Ext_grid_PagingToolbar {
+export default class ExtPagingtoolbar extends Ext_grid_PagingToolbar {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtPagingtoolbarComponent extends Ext_grid_PagingToolbar {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-pagingtoolbar', ExtPagingtoolbarComponent);
+//        window.customElements.define('ext-pagingtoolbar', ExtPagingtoolbar);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-pagingtoolbar', HTMLParsedElement.withParsedCallback(ExtPagingtoolbarComponent))
+window.customElements.define('ext-pagingtoolbar', HTMLParsedElement.withParsedCallback(ExtPagingtoolbar))
+//export default reactify(ExtPagingtoolbar);

@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_field_ComboBox from './Ext/form/field/ComboBox.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtComboboxComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtCombobox =
 /*#__PURE__*/
 function (_Ext_form_field_Combo) {
-  _inheritsLoose(ExtComboboxComponent, _Ext_form_field_Combo);
+  _inheritsLoose(ExtCombobox, _Ext_form_field_Combo);
 
-  function ExtComboboxComponent() {
+  function ExtCombobox() {
     var _this;
 
     _this = _Ext_form_field_Combo.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_form_field_Combo) {
     return _this;
   }
 
-  return ExtComboboxComponent;
+  return ExtCombobox;
 }(Ext_form_field_ComboBox); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-combobox', ExtComboboxComponent);
+//        window.customElements.define('ext-combobox', ExtCombobox);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-combobox', HTMLParsedElement.withParsedCallback(ExtComboboxComponent));
+
+export { ExtCombobox as default };
+window.customElements.define('ext-combobox', HTMLParsedElement.withParsedCallback(ExtCombobox)); //export default reactify(ExtCombobox);

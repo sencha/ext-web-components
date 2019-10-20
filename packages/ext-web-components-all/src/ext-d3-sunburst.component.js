@@ -1,7 +1,8 @@
-import Ext_d3_hierarchy_partition_Sunburst from './Ext/d3/hierarchy/partition/Sunburst.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_d3_hierarchy_partition_Sunburst from './Ext/d3/hierarchy/partition/Sunburst.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtD3_sunburstComponent extends Ext_d3_hierarchy_partition_Sunburst {
+export default class ExtD3_sunburst extends Ext_d3_hierarchy_partition_Sunburst {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtD3_sunburstComponent extends Ext_d3_hierarchy_partition_Sunburst
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-d3-sunburst', ExtD3_sunburstComponent);
+//        window.customElements.define('ext-d3-sunburst', ExtD3_sunburst);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-d3-sunburst', HTMLParsedElement.withParsedCallback(ExtD3_sunburstComponent))
+window.customElements.define('ext-d3-sunburst', HTMLParsedElement.withParsedCallback(ExtD3_sunburst))
+//export default reactify(ExtD3_sunburst);

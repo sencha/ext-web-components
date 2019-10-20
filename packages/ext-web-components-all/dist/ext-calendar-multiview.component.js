@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_calendar_view_Multi from './Ext/calendar/view/Multi.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtCalendar_multiviewComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtCalendar_multiview =
 /*#__PURE__*/
 function (_Ext_calendar_view_Mu) {
-  _inheritsLoose(ExtCalendar_multiviewComponent, _Ext_calendar_view_Mu);
+  _inheritsLoose(ExtCalendar_multiview, _Ext_calendar_view_Mu);
 
-  function ExtCalendar_multiviewComponent() {
+  function ExtCalendar_multiview() {
     var _this;
 
     _this = _Ext_calendar_view_Mu.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_calendar_view_Mu) {
     return _this;
   }
 
-  return ExtCalendar_multiviewComponent;
+  return ExtCalendar_multiview;
 }(Ext_calendar_view_Multi); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-multiview', ExtCalendar_multiviewComponent);
+//        window.customElements.define('ext-calendar-multiview', ExtCalendar_multiview);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-calendar-multiview', HTMLParsedElement.withParsedCallback(ExtCalendar_multiviewComponent));
+
+export { ExtCalendar_multiview as default };
+window.customElements.define('ext-calendar-multiview', HTMLParsedElement.withParsedCallback(ExtCalendar_multiview)); //export default reactify(ExtCalendar_multiview);

@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_LoadMask from './Ext/LoadMask.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtLoadmaskComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtLoadmask =
 /*#__PURE__*/
 function (_Ext_LoadMask) {
-  _inheritsLoose(ExtLoadmaskComponent, _Ext_LoadMask);
+  _inheritsLoose(ExtLoadmask, _Ext_LoadMask);
 
-  function ExtLoadmaskComponent() {
+  function ExtLoadmask() {
     var _this;
 
     _this = _Ext_LoadMask.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_LoadMask) {
     return _this;
   }
 
-  return ExtLoadmaskComponent;
+  return ExtLoadmask;
 }(Ext_LoadMask); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-loadmask', ExtLoadmaskComponent);
+//        window.customElements.define('ext-loadmask', ExtLoadmask);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-loadmask', HTMLParsedElement.withParsedCallback(ExtLoadmaskComponent));
+
+export { ExtLoadmask as default };
+window.customElements.define('ext-loadmask', HTMLParsedElement.withParsedCallback(ExtLoadmask)); //export default reactify(ExtLoadmask);

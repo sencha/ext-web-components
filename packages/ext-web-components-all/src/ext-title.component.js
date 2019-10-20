@@ -1,7 +1,8 @@
-import Ext_Title from './Ext/Title.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_Title from './Ext/Title.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtTitleComponent extends Ext_Title {
+export default class ExtTitle extends Ext_Title {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtTitleComponent extends Ext_Title {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-title', ExtTitleComponent);
+//        window.customElements.define('ext-title', ExtTitle);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-title', HTMLParsedElement.withParsedCallback(ExtTitleComponent))
+window.customElements.define('ext-title', HTMLParsedElement.withParsedCallback(ExtTitle))
+//export default reactify(ExtTitle);

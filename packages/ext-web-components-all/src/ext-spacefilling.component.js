@@ -1,7 +1,8 @@
-import Ext_chart_SpaceFillingChart from './Ext/chart/SpaceFillingChart.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_chart_SpaceFillingChart from './Ext/chart/SpaceFillingChart.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtSpacefillingComponent extends Ext_chart_SpaceFillingChart {
+export default class ExtSpacefilling extends Ext_chart_SpaceFillingChart {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtSpacefillingComponent extends Ext_chart_SpaceFillingChart {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-spacefilling', ExtSpacefillingComponent);
+//        window.customElements.define('ext-spacefilling', ExtSpacefilling);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-spacefilling', HTMLParsedElement.withParsedCallback(ExtSpacefillingComponent))
+window.customElements.define('ext-spacefilling', HTMLParsedElement.withParsedCallback(ExtSpacefilling))
+//export default reactify(ExtSpacefilling);

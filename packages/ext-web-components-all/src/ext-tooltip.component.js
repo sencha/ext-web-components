@@ -1,7 +1,8 @@
-import Ext_tip_ToolTip from './Ext/tip/ToolTip.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_tip_ToolTip from './Ext/tip/ToolTip.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtTooltipComponent extends Ext_tip_ToolTip {
+export default class ExtTooltip extends Ext_tip_ToolTip {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtTooltipComponent extends Ext_tip_ToolTip {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-tooltip', ExtTooltipComponent);
+//        window.customElements.define('ext-tooltip', ExtTooltip);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-tooltip', HTMLParsedElement.withParsedCallback(ExtTooltipComponent))
+window.customElements.define('ext-tooltip', HTMLParsedElement.withParsedCallback(ExtTooltip))
+//export default reactify(ExtTooltip);

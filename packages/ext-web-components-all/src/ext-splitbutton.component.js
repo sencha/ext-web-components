@@ -1,7 +1,8 @@
-import Ext_SplitButton from './Ext/SplitButton.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_SplitButton from './Ext/SplitButton.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtSplitbuttonComponent extends Ext_SplitButton {
+export default class ExtSplitbutton extends Ext_SplitButton {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtSplitbuttonComponent extends Ext_SplitButton {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-splitbutton', ExtSplitbuttonComponent);
+//        window.customElements.define('ext-splitbutton', ExtSplitbutton);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-splitbutton', HTMLParsedElement.withParsedCallback(ExtSplitbuttonComponent))
+window.customElements.define('ext-splitbutton', HTMLParsedElement.withParsedCallback(ExtSplitbutton))
+//export default reactify(ExtSplitbutton);

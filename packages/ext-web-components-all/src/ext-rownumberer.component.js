@@ -1,7 +1,8 @@
-import Ext_grid_column_RowNumberer from './Ext/grid/column/RowNumberer.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_grid_column_RowNumberer from './Ext/grid/column/RowNumberer.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtRownumbererComponent extends Ext_grid_column_RowNumberer {
+export default class ExtRownumberer extends Ext_grid_column_RowNumberer {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtRownumbererComponent extends Ext_grid_column_RowNumberer {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-rownumberer', ExtRownumbererComponent);
+//        window.customElements.define('ext-rownumberer', ExtRownumberer);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-rownumberer', HTMLParsedElement.withParsedCallback(ExtRownumbererComponent))
+window.customElements.define('ext-rownumberer', HTMLParsedElement.withParsedCallback(ExtRownumberer))
+//export default reactify(ExtRownumberer);

@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ProgressBarWidget from './Ext/ProgressBarWidget.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtProgressComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtProgress =
 /*#__PURE__*/
 function (_Ext_ProgressBarWidge) {
-  _inheritsLoose(ExtProgressComponent, _Ext_ProgressBarWidge);
+  _inheritsLoose(ExtProgress, _Ext_ProgressBarWidge);
 
-  function ExtProgressComponent() {
+  function ExtProgress() {
     var _this;
 
     _this = _Ext_ProgressBarWidge.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_ProgressBarWidge) {
     return _this;
   }
 
-  return ExtProgressComponent;
+  return ExtProgress;
 }(Ext_ProgressBarWidget); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-progress', ExtProgressComponent);
+//        window.customElements.define('ext-progress', ExtProgress);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-progress', HTMLParsedElement.withParsedCallback(ExtProgressComponent));
+
+export { ExtProgress as default };
+window.customElements.define('ext-progress', HTMLParsedElement.withParsedCallback(ExtProgress)); //export default reactify(ExtProgress);

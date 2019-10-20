@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_container_Container from './Ext/container/Container.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtContainerComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtContainer =
 /*#__PURE__*/
 function (_Ext_container_Contai) {
-  _inheritsLoose(ExtContainerComponent, _Ext_container_Contai);
+  _inheritsLoose(ExtContainer, _Ext_container_Contai);
 
-  function ExtContainerComponent() {
+  function ExtContainer() {
     var _this;
 
     _this = _Ext_container_Contai.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_container_Contai) {
     return _this;
   }
 
-  return ExtContainerComponent;
+  return ExtContainer;
 }(Ext_container_Container); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-container', ExtContainerComponent);
+//        window.customElements.define('ext-container', ExtContainer);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-container', HTMLParsedElement.withParsedCallback(ExtContainerComponent));
+
+export { ExtContainer as default };
+window.customElements.define('ext-container', HTMLParsedElement.withParsedCallback(ExtContainer)); //export default reactify(ExtContainer);

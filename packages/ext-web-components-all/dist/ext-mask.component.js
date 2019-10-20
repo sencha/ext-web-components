@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Mask from './Ext/Mask.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtMaskComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtMask =
 /*#__PURE__*/
 function (_Ext_Mask) {
-  _inheritsLoose(ExtMaskComponent, _Ext_Mask);
+  _inheritsLoose(ExtMask, _Ext_Mask);
 
-  function ExtMaskComponent() {
+  function ExtMask() {
     var _this;
 
     _this = _Ext_Mask.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_Mask) {
     return _this;
   }
 
-  return ExtMaskComponent;
+  return ExtMask;
 }(Ext_Mask); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-mask', ExtMaskComponent);
+//        window.customElements.define('ext-mask', ExtMask);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-mask', HTMLParsedElement.withParsedCallback(ExtMaskComponent));
+
+export { ExtMask as default };
+window.customElements.define('ext-mask', HTMLParsedElement.withParsedCallback(ExtMask)); //export default reactify(ExtMask);

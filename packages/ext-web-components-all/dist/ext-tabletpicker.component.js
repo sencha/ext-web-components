@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_picker_Tablet from './Ext/picker/Tablet.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtTabletpickerComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtTabletpicker =
 /*#__PURE__*/
 function (_Ext_picker_Tablet) {
-  _inheritsLoose(ExtTabletpickerComponent, _Ext_picker_Tablet);
+  _inheritsLoose(ExtTabletpicker, _Ext_picker_Tablet);
 
-  function ExtTabletpickerComponent() {
+  function ExtTabletpicker() {
     var _this;
 
     _this = _Ext_picker_Tablet.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_picker_Tablet) {
     return _this;
   }
 
-  return ExtTabletpickerComponent;
+  return ExtTabletpicker;
 }(Ext_picker_Tablet); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-tabletpicker', ExtTabletpickerComponent);
+//        window.customElements.define('ext-tabletpicker', ExtTabletpicker);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-tabletpicker', HTMLParsedElement.withParsedCallback(ExtTabletpickerComponent));
+
+export { ExtTabletpicker as default };
+window.customElements.define('ext-tabletpicker', HTMLParsedElement.withParsedCallback(ExtTabletpicker)); //export default reactify(ExtTabletpicker);

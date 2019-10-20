@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_pivot_cell_Group from './Ext/pivot/cell/Group.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtPivotgridgroupcellComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtPivotgridgroupcell =
 /*#__PURE__*/
 function (_Ext_pivot_cell_Group) {
-  _inheritsLoose(ExtPivotgridgroupcellComponent, _Ext_pivot_cell_Group);
+  _inheritsLoose(ExtPivotgridgroupcell, _Ext_pivot_cell_Group);
 
-  function ExtPivotgridgroupcellComponent() {
+  function ExtPivotgridgroupcell() {
     var _this;
 
     _this = _Ext_pivot_cell_Group.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_pivot_cell_Group) {
     return _this;
   }
 
-  return ExtPivotgridgroupcellComponent;
+  return ExtPivotgridgroupcell;
 }(Ext_pivot_cell_Group); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-pivotgridgroupcell', ExtPivotgridgroupcellComponent);
+//        window.customElements.define('ext-pivotgridgroupcell', ExtPivotgridgroupcell);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-pivotgridgroupcell', HTMLParsedElement.withParsedCallback(ExtPivotgridgroupcellComponent));
+
+export { ExtPivotgridgroupcell as default };
+window.customElements.define('ext-pivotgridgroupcell', HTMLParsedElement.withParsedCallback(ExtPivotgridgroupcell)); //export default reactify(ExtPivotgridgroupcell);

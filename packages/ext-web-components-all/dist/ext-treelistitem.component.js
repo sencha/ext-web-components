@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_list_TreeItem from './Ext/list/TreeItem.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtTreelistitemComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtTreelistitem =
 /*#__PURE__*/
 function (_Ext_list_TreeItem) {
-  _inheritsLoose(ExtTreelistitemComponent, _Ext_list_TreeItem);
+  _inheritsLoose(ExtTreelistitem, _Ext_list_TreeItem);
 
-  function ExtTreelistitemComponent() {
+  function ExtTreelistitem() {
     var _this;
 
     _this = _Ext_list_TreeItem.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_list_TreeItem) {
     return _this;
   }
 
-  return ExtTreelistitemComponent;
+  return ExtTreelistitem;
 }(Ext_list_TreeItem); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-treelistitem', ExtTreelistitemComponent);
+//        window.customElements.define('ext-treelistitem', ExtTreelistitem);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-treelistitem', HTMLParsedElement.withParsedCallback(ExtTreelistitemComponent));
+
+export { ExtTreelistitem as default };
+window.customElements.define('ext-treelistitem', HTMLParsedElement.withParsedCallback(ExtTreelistitem)); //export default reactify(ExtTreelistitem);

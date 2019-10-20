@@ -1,7 +1,8 @@
-import Ext_calendar_view_Weeks from './Ext/calendar/view/Weeks.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_calendar_view_Weeks from './Ext/calendar/view/Weeks.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtCalendar_weeksviewComponent extends Ext_calendar_view_Weeks {
+export default class ExtCalendar_weeksview extends Ext_calendar_view_Weeks {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtCalendar_weeksviewComponent extends Ext_calendar_view_Weeks {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-weeksview', ExtCalendar_weeksviewComponent);
+//        window.customElements.define('ext-calendar-weeksview', ExtCalendar_weeksview);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-calendar-weeksview', HTMLParsedElement.withParsedCallback(ExtCalendar_weeksviewComponent))
+window.customElements.define('ext-calendar-weeksview', HTMLParsedElement.withParsedCallback(ExtCalendar_weeksview))
+//export default reactify(ExtCalendar_weeksview);

@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_trigger_SpinDown from './Ext/field/trigger/SpinDown.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtSpindowntriggerComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtSpindowntrigger =
 /*#__PURE__*/
 function (_Ext_field_trigger_Sp) {
-  _inheritsLoose(ExtSpindowntriggerComponent, _Ext_field_trigger_Sp);
+  _inheritsLoose(ExtSpindowntrigger, _Ext_field_trigger_Sp);
 
-  function ExtSpindowntriggerComponent() {
+  function ExtSpindowntrigger() {
     var _this;
 
     _this = _Ext_field_trigger_Sp.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_field_trigger_Sp) {
     return _this;
   }
 
-  return ExtSpindowntriggerComponent;
+  return ExtSpindowntrigger;
 }(Ext_field_trigger_SpinDown); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-spindowntrigger', ExtSpindowntriggerComponent);
+//        window.customElements.define('ext-spindowntrigger', ExtSpindowntrigger);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-spindowntrigger', HTMLParsedElement.withParsedCallback(ExtSpindowntriggerComponent));
+
+export { ExtSpindowntrigger as default };
+window.customElements.define('ext-spindowntrigger', HTMLParsedElement.withParsedCallback(ExtSpindowntrigger)); //export default reactify(ExtSpindowntrigger);

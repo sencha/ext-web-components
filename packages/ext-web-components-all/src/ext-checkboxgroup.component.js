@@ -1,7 +1,8 @@
-import Ext_field_CheckboxGroup from './Ext/field/CheckboxGroup.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_field_CheckboxGroup from './Ext/field/CheckboxGroup.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtCheckboxgroupComponent extends Ext_field_CheckboxGroup {
+export default class ExtCheckboxgroup extends Ext_field_CheckboxGroup {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtCheckboxgroupComponent extends Ext_field_CheckboxGroup {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-checkboxgroup', ExtCheckboxgroupComponent);
+//        window.customElements.define('ext-checkboxgroup', ExtCheckboxgroup);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-checkboxgroup', HTMLParsedElement.withParsedCallback(ExtCheckboxgroupComponent))
+window.customElements.define('ext-checkboxgroup', HTMLParsedElement.withParsedCallback(ExtCheckboxgroup))
+//export default reactify(ExtCheckboxgroup);

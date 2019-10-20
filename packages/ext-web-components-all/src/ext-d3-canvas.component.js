@@ -1,7 +1,8 @@
-import Ext_d3_canvas_Canvas from './Ext/d3/canvas/Canvas.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_d3_canvas_Canvas from './Ext/d3/canvas/Canvas.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtD3_canvasComponent extends Ext_d3_canvas_Canvas {
+export default class ExtD3_canvas extends Ext_d3_canvas_Canvas {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtD3_canvasComponent extends Ext_d3_canvas_Canvas {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-d3-canvas', ExtD3_canvasComponent);
+//        window.customElements.define('ext-d3-canvas', ExtD3_canvas);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-d3-canvas', HTMLParsedElement.withParsedCallback(ExtD3_canvasComponent))
+window.customElements.define('ext-d3-canvas', HTMLParsedElement.withParsedCallback(ExtD3_canvas))
+//export default reactify(ExtD3_canvas);

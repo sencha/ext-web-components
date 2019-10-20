@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_calendar_List from './Ext/calendar/List.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtCalendar_listComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtCalendar_list =
 /*#__PURE__*/
 function (_Ext_calendar_List) {
-  _inheritsLoose(ExtCalendar_listComponent, _Ext_calendar_List);
+  _inheritsLoose(ExtCalendar_list, _Ext_calendar_List);
 
-  function ExtCalendar_listComponent() {
+  function ExtCalendar_list() {
     var _this;
 
     _this = _Ext_calendar_List.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_calendar_List) {
     return _this;
   }
 
-  return ExtCalendar_listComponent;
+  return ExtCalendar_list;
 }(Ext_calendar_List); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-list', ExtCalendar_listComponent);
+//        window.customElements.define('ext-calendar-list', ExtCalendar_list);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-calendar-list', HTMLParsedElement.withParsedCallback(ExtCalendar_listComponent));
+
+export { ExtCalendar_list as default };
+window.customElements.define('ext-calendar-list', HTMLParsedElement.withParsedCallback(ExtCalendar_list)); //export default reactify(ExtCalendar_list);

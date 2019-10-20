@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_tip_ToolTip from './Ext/tip/ToolTip.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtTooltipComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtTooltip =
 /*#__PURE__*/
 function (_Ext_tip_ToolTip) {
-  _inheritsLoose(ExtTooltipComponent, _Ext_tip_ToolTip);
+  _inheritsLoose(ExtTooltip, _Ext_tip_ToolTip);
 
-  function ExtTooltipComponent() {
+  function ExtTooltip() {
     var _this;
 
     _this = _Ext_tip_ToolTip.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_tip_ToolTip) {
     return _this;
   }
 
-  return ExtTooltipComponent;
+  return ExtTooltip;
 }(Ext_tip_ToolTip); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-tooltip', ExtTooltipComponent);
+//        window.customElements.define('ext-tooltip', ExtTooltip);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-tooltip', HTMLParsedElement.withParsedCallback(ExtTooltipComponent));
+
+export { ExtTooltip as default };
+window.customElements.define('ext-tooltip', HTMLParsedElement.withParsedCallback(ExtTooltip)); //export default reactify(ExtTooltip);

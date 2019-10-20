@@ -1,7 +1,8 @@
-import Ext_Indicator from './Ext/Indicator.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_Indicator from './Ext/Indicator.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtIndicatorComponent extends Ext_Indicator {
+export default class ExtIndicator extends Ext_Indicator {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtIndicatorComponent extends Ext_Indicator {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-indicator', ExtIndicatorComponent);
+//        window.customElements.define('ext-indicator', ExtIndicator);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-indicator', HTMLParsedElement.withParsedCallback(ExtIndicatorComponent))
+window.customElements.define('ext-indicator', HTMLParsedElement.withParsedCallback(ExtIndicator))
+//export default reactify(ExtIndicator);

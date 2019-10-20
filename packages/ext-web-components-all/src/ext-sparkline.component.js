@@ -1,7 +1,8 @@
-import Ext_sparkline_Base from './Ext/sparkline/Base.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_sparkline_Base from './Ext/sparkline/Base.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtSparklineComponent extends Ext_sparkline_Base {
+export default class ExtSparkline extends Ext_sparkline_Base {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtSparklineComponent extends Ext_sparkline_Base {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-sparkline', ExtSparklineComponent);
+//        window.customElements.define('ext-sparkline', ExtSparkline);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-sparkline', HTMLParsedElement.withParsedCallback(ExtSparklineComponent))
+window.customElements.define('ext-sparkline', HTMLParsedElement.withParsedCallback(ExtSparkline))
+//export default reactify(ExtSparkline);

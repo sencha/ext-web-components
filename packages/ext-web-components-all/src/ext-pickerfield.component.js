@@ -1,7 +1,8 @@
-import Ext_field_Picker from './Ext/field/Picker.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_field_Picker from './Ext/field/Picker.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtPickerfieldComponent extends Ext_field_Picker {
+export default class ExtPickerfield extends Ext_field_Picker {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtPickerfieldComponent extends Ext_field_Picker {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-pickerfield', ExtPickerfieldComponent);
+//        window.customElements.define('ext-pickerfield', ExtPickerfield);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-pickerfield', HTMLParsedElement.withParsedCallback(ExtPickerfieldComponent))
+window.customElements.define('ext-pickerfield', HTMLParsedElement.withParsedCallback(ExtPickerfield))
+//export default reactify(ExtPickerfield);

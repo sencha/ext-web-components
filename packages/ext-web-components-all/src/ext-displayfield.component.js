@@ -1,7 +1,8 @@
-import Ext_form_Display from './Ext/form/Display.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_form_Display from './Ext/form/Display.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtDisplayfieldComponent extends Ext_form_Display {
+export default class ExtDisplayfield extends Ext_form_Display {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtDisplayfieldComponent extends Ext_form_Display {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-displayfield', ExtDisplayfieldComponent);
+//        window.customElements.define('ext-displayfield', ExtDisplayfield);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-displayfield', HTMLParsedElement.withParsedCallback(ExtDisplayfieldComponent))
+window.customElements.define('ext-displayfield', HTMLParsedElement.withParsedCallback(ExtDisplayfield))
+//export default reactify(ExtDisplayfield);

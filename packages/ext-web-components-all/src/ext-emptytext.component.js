@@ -1,7 +1,8 @@
-import Ext_dataview_EmptyText from './Ext/dataview/EmptyText.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_dataview_EmptyText from './Ext/dataview/EmptyText.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtEmptytextComponent extends Ext_dataview_EmptyText {
+export default class ExtEmptytext extends Ext_dataview_EmptyText {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtEmptytextComponent extends Ext_dataview_EmptyText {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-emptytext', ExtEmptytextComponent);
+//        window.customElements.define('ext-emptytext', ExtEmptytext);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-emptytext', HTMLParsedElement.withParsedCallback(ExtEmptytextComponent))
+window.customElements.define('ext-emptytext', HTMLParsedElement.withParsedCallback(ExtEmptytext))
+//export default reactify(ExtEmptytext);

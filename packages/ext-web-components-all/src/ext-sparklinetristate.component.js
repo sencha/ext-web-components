@@ -1,7 +1,8 @@
-import Ext_sparkline_TriState from './Ext/sparkline/TriState.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_sparkline_TriState from './Ext/sparkline/TriState.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtSparklinetristateComponent extends Ext_sparkline_TriState {
+export default class ExtSparklinetristate extends Ext_sparkline_TriState {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtSparklinetristateComponent extends Ext_sparkline_TriState {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-sparklinetristate', ExtSparklinetristateComponent);
+//        window.customElements.define('ext-sparklinetristate', ExtSparklinetristate);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-sparklinetristate', HTMLParsedElement.withParsedCallback(ExtSparklinetristateComponent))
+window.customElements.define('ext-sparklinetristate', HTMLParsedElement.withParsedCallback(ExtSparklinetristate))
+//export default reactify(ExtSparklinetristate);

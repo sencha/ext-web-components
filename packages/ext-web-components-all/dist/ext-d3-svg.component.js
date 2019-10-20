@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_d3_svg_Svg from './Ext/d3/svg/Svg.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtD3_svgComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtD3_svg =
 /*#__PURE__*/
 function (_Ext_d3_svg_Svg) {
-  _inheritsLoose(ExtD3_svgComponent, _Ext_d3_svg_Svg);
+  _inheritsLoose(ExtD3_svg, _Ext_d3_svg_Svg);
 
-  function ExtD3_svgComponent() {
+  function ExtD3_svg() {
     var _this;
 
     _this = _Ext_d3_svg_Svg.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_d3_svg_Svg) {
     return _this;
   }
 
-  return ExtD3_svgComponent;
+  return ExtD3_svg;
 }(Ext_d3_svg_Svg); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-d3-svg', ExtD3_svgComponent);
+//        window.customElements.define('ext-d3-svg', ExtD3_svg);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-d3-svg', HTMLParsedElement.withParsedCallback(ExtD3_svgComponent));
+
+export { ExtD3_svg as default };
+window.customElements.define('ext-d3-svg', HTMLParsedElement.withParsedCallback(ExtD3_svg)); //export default reactify(ExtD3_svg);

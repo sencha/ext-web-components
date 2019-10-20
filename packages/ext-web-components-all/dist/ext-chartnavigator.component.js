@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_chart_navigator_Container from './Ext/chart/navigator/Container.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtChartnavigatorComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtChartnavigator =
 /*#__PURE__*/
 function (_Ext_chart_navigator_) {
-  _inheritsLoose(ExtChartnavigatorComponent, _Ext_chart_navigator_);
+  _inheritsLoose(ExtChartnavigator, _Ext_chart_navigator_);
 
-  function ExtChartnavigatorComponent() {
+  function ExtChartnavigator() {
     var _this;
 
     _this = _Ext_chart_navigator_.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_chart_navigator_) {
     return _this;
   }
 
-  return ExtChartnavigatorComponent;
+  return ExtChartnavigator;
 }(Ext_chart_navigator_Container); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-chartnavigator', ExtChartnavigatorComponent);
+//        window.customElements.define('ext-chartnavigator', ExtChartnavigator);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-chartnavigator', HTMLParsedElement.withParsedCallback(ExtChartnavigatorComponent));
+
+export { ExtChartnavigator as default };
+window.customElements.define('ext-chartnavigator', HTMLParsedElement.withParsedCallback(ExtChartnavigator)); //export default reactify(ExtChartnavigator);

@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_cell_Cell from './Ext/grid/cell/Cell.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtGridcellComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtGridcell =
 /*#__PURE__*/
 function (_Ext_grid_cell_Cell) {
-  _inheritsLoose(ExtGridcellComponent, _Ext_grid_cell_Cell);
+  _inheritsLoose(ExtGridcell, _Ext_grid_cell_Cell);
 
-  function ExtGridcellComponent() {
+  function ExtGridcell() {
     var _this;
 
     _this = _Ext_grid_cell_Cell.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_grid_cell_Cell) {
     return _this;
   }
 
-  return ExtGridcellComponent;
+  return ExtGridcell;
 }(Ext_grid_cell_Cell); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-gridcell', ExtGridcellComponent);
+//        window.customElements.define('ext-gridcell', ExtGridcell);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-gridcell', HTMLParsedElement.withParsedCallback(ExtGridcellComponent));
+
+export { ExtGridcell as default };
+window.customElements.define('ext-gridcell', HTMLParsedElement.withParsedCallback(ExtGridcell)); //export default reactify(ExtGridcell);

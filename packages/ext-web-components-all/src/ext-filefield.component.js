@@ -1,7 +1,8 @@
-import Ext_field_File from './Ext/field/File.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_field_File from './Ext/field/File.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtFilefieldComponent extends Ext_field_File {
+export default class ExtFilefield extends Ext_field_File {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtFilefieldComponent extends Ext_field_File {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-filefield', ExtFilefieldComponent);
+//        window.customElements.define('ext-filefield', ExtFilefield);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-filefield', HTMLParsedElement.withParsedCallback(ExtFilefieldComponent))
+window.customElements.define('ext-filefield', HTMLParsedElement.withParsedCallback(ExtFilefield))
+//export default reactify(ExtFilefield);

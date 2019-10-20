@@ -1,7 +1,8 @@
-import Ext_chart_navigator_Container from './Ext/chart/navigator/Container.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_chart_navigator_Container from './Ext/chart/navigator/Container.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtChartnavigatorComponent extends Ext_chart_navigator_Container {
+export default class ExtChartnavigator extends Ext_chart_navigator_Container {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtChartnavigatorComponent extends Ext_chart_navigator_Container {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-chartnavigator', ExtChartnavigatorComponent);
+//        window.customElements.define('ext-chartnavigator', ExtChartnavigator);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-chartnavigator', HTMLParsedElement.withParsedCallback(ExtChartnavigatorComponent))
+window.customElements.define('ext-chartnavigator', HTMLParsedElement.withParsedCallback(ExtChartnavigator))
+//export default reactify(ExtChartnavigator);

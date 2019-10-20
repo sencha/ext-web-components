@@ -1,7 +1,8 @@
-import Ext_container_Container from './Ext/container/Container.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_container_Container from './Ext/container/Container.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtContainerComponent extends Ext_container_Container {
+export default class ExtContainer extends Ext_container_Container {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtContainerComponent extends Ext_container_Container {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-container', ExtContainerComponent);
+//        window.customElements.define('ext-container', ExtContainer);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-container', HTMLParsedElement.withParsedCallback(ExtContainerComponent))
+window.customElements.define('ext-container', HTMLParsedElement.withParsedCallback(ExtContainer))
+//export default reactify(ExtContainer);

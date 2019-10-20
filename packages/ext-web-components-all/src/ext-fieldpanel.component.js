@@ -1,7 +1,8 @@
-import Ext_field_Panel from './Ext/field/Panel.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_field_Panel from './Ext/field/Panel.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtFieldpanelComponent extends Ext_field_Panel {
+export default class ExtFieldpanel extends Ext_field_Panel {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtFieldpanelComponent extends Ext_field_Panel {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-fieldpanel', ExtFieldpanelComponent);
+//        window.customElements.define('ext-fieldpanel', ExtFieldpanel);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-fieldpanel', HTMLParsedElement.withParsedCallback(ExtFieldpanelComponent))
+window.customElements.define('ext-fieldpanel', HTMLParsedElement.withParsedCallback(ExtFieldpanel))
+//export default reactify(ExtFieldpanel);

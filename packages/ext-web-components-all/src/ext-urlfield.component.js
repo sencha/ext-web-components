@@ -1,7 +1,8 @@
-import Ext_form_Url from './Ext/form/Url.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_form_Url from './Ext/form/Url.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtUrlfieldComponent extends Ext_form_Url {
+export default class ExtUrlfield extends Ext_form_Url {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtUrlfieldComponent extends Ext_form_Url {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-urlfield', ExtUrlfieldComponent);
+//        window.customElements.define('ext-urlfield', ExtUrlfield);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-urlfield', HTMLParsedElement.withParsedCallback(ExtUrlfieldComponent))
+window.customElements.define('ext-urlfield', HTMLParsedElement.withParsedCallback(ExtUrlfield))
+//export default reactify(ExtUrlfield);

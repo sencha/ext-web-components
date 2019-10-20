@@ -1,7 +1,8 @@
-import Ext_pivot_d3_HeatMap from './Ext/pivot/d3/HeatMap.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_pivot_d3_HeatMap from './Ext/pivot/d3/HeatMap.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtPivotheatmapComponent extends Ext_pivot_d3_HeatMap {
+export default class ExtPivotheatmap extends Ext_pivot_d3_HeatMap {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtPivotheatmapComponent extends Ext_pivot_d3_HeatMap {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-pivotheatmap', ExtPivotheatmapComponent);
+//        window.customElements.define('ext-pivotheatmap', ExtPivotheatmap);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-pivotheatmap', HTMLParsedElement.withParsedCallback(ExtPivotheatmapComponent))
+window.customElements.define('ext-pivotheatmap', HTMLParsedElement.withParsedCallback(ExtPivotheatmap))
+//export default reactify(ExtPivotheatmap);

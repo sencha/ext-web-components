@@ -1,7 +1,8 @@
-import Ext_chart_Chart from './Ext/chart/Chart.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_chart_Chart from './Ext/chart/Chart.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtCartesianComponent extends Ext_chart_Chart {
+export default class ExtCartesian extends Ext_chart_Chart {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtCartesianComponent extends Ext_chart_Chart {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-cartesian', ExtCartesianComponent);
+//        window.customElements.define('ext-cartesian', ExtCartesian);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-cartesian', HTMLParsedElement.withParsedCallback(ExtCartesianComponent))
+window.customElements.define('ext-cartesian', HTMLParsedElement.withParsedCallback(ExtCartesian))
+//export default reactify(ExtCartesian);

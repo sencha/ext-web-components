@@ -1,7 +1,8 @@
-import Ext_pivot_Row from './Ext/pivot/Row.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_pivot_Row from './Ext/pivot/Row.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtPivotgridrowComponent extends Ext_pivot_Row {
+export default class ExtPivotgridrow extends Ext_pivot_Row {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtPivotgridrowComponent extends Ext_pivot_Row {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-pivotgridrow', ExtPivotgridrowComponent);
+//        window.customElements.define('ext-pivotgridrow', ExtPivotgridrow);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-pivotgridrow', HTMLParsedElement.withParsedCallback(ExtPivotgridrowComponent))
+window.customElements.define('ext-pivotgridrow', HTMLParsedElement.withParsedCallback(ExtPivotgridrow))
+//export default reactify(ExtPivotgridrow);

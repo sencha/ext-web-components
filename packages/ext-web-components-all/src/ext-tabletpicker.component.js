@@ -1,7 +1,8 @@
-import Ext_picker_Tablet from './Ext/picker/Tablet.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_picker_Tablet from './Ext/picker/Tablet.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtTabletpickerComponent extends Ext_picker_Tablet {
+export default class ExtTabletpicker extends Ext_picker_Tablet {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtTabletpickerComponent extends Ext_picker_Tablet {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-tabletpicker', ExtTabletpickerComponent);
+//        window.customElements.define('ext-tabletpicker', ExtTabletpicker);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-tabletpicker', HTMLParsedElement.withParsedCallback(ExtTabletpickerComponent))
+window.customElements.define('ext-tabletpicker', HTMLParsedElement.withParsedCallback(ExtTabletpicker))
+//export default reactify(ExtTabletpicker);

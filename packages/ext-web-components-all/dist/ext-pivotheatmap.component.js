@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_pivot_d3_HeatMap from './Ext/pivot/d3/HeatMap.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtPivotheatmapComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtPivotheatmap =
 /*#__PURE__*/
 function (_Ext_pivot_d3_HeatMap) {
-  _inheritsLoose(ExtPivotheatmapComponent, _Ext_pivot_d3_HeatMap);
+  _inheritsLoose(ExtPivotheatmap, _Ext_pivot_d3_HeatMap);
 
-  function ExtPivotheatmapComponent() {
+  function ExtPivotheatmap() {
     var _this;
 
     _this = _Ext_pivot_d3_HeatMap.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_pivot_d3_HeatMap) {
     return _this;
   }
 
-  return ExtPivotheatmapComponent;
+  return ExtPivotheatmap;
 }(Ext_pivot_d3_HeatMap); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-pivotheatmap', ExtPivotheatmapComponent);
+//        window.customElements.define('ext-pivotheatmap', ExtPivotheatmap);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-pivotheatmap', HTMLParsedElement.withParsedCallback(ExtPivotheatmapComponent));
+
+export { ExtPivotheatmap as default };
+window.customElements.define('ext-pivotheatmap', HTMLParsedElement.withParsedCallback(ExtPivotheatmap)); //export default reactify(ExtPivotheatmap);

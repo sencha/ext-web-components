@@ -1,7 +1,8 @@
-import Ext_pivot_plugin_rangeeditor_Panel from './Ext/pivot/plugin/rangeeditor/Panel.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_pivot_plugin_rangeeditor_Panel from './Ext/pivot/plugin/rangeeditor/Panel.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtPivotrangeeditorComponent extends Ext_pivot_plugin_rangeeditor_Panel {
+export default class ExtPivotrangeeditor extends Ext_pivot_plugin_rangeeditor_Panel {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtPivotrangeeditorComponent extends Ext_pivot_plugin_rangeeditor_P
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-pivotrangeeditor', ExtPivotrangeeditorComponent);
+//        window.customElements.define('ext-pivotrangeeditor', ExtPivotrangeeditor);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-pivotrangeeditor', HTMLParsedElement.withParsedCallback(ExtPivotrangeeditorComponent))
+window.customElements.define('ext-pivotrangeeditor', HTMLParsedElement.withParsedCallback(ExtPivotrangeeditor))
+//export default reactify(ExtPivotrangeeditor);

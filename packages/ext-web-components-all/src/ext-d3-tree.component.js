@@ -1,7 +1,8 @@
-import Ext_d3_hierarchy_tree_HorizontalTree from './Ext/d3/hierarchy/tree/HorizontalTree.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_d3_hierarchy_tree_HorizontalTree from './Ext/d3/hierarchy/tree/HorizontalTree.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtD3_treeComponent extends Ext_d3_hierarchy_tree_HorizontalTree {
+export default class ExtD3_tree extends Ext_d3_hierarchy_tree_HorizontalTree {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtD3_treeComponent extends Ext_d3_hierarchy_tree_HorizontalTree {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-d3-tree', ExtD3_treeComponent);
+//        window.customElements.define('ext-d3-tree', ExtD3_tree);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-d3-tree', HTMLParsedElement.withParsedCallback(ExtD3_treeComponent))
+window.customElements.define('ext-d3-tree', HTMLParsedElement.withParsedCallback(ExtD3_tree))
+//export default reactify(ExtD3_tree);

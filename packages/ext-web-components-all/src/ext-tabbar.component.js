@@ -1,7 +1,8 @@
-import Ext_TabBar from './Ext/TabBar.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_TabBar from './Ext/TabBar.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtTabbarComponent extends Ext_TabBar {
+export default class ExtTabbar extends Ext_TabBar {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtTabbarComponent extends Ext_TabBar {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-tabbar', ExtTabbarComponent);
+//        window.customElements.define('ext-tabbar', ExtTabbar);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-tabbar', HTMLParsedElement.withParsedCallback(ExtTabbarComponent))
+window.customElements.define('ext-tabbar', HTMLParsedElement.withParsedCallback(ExtTabbar))
+//export default reactify(ExtTabbar);

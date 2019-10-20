@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_pivot_plugin_configurator_Form from './Ext/pivot/plugin/configurator/Form.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtPivotconfigformComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtPivotconfigform =
 /*#__PURE__*/
 function (_Ext_pivot_plugin_con) {
-  _inheritsLoose(ExtPivotconfigformComponent, _Ext_pivot_plugin_con);
+  _inheritsLoose(ExtPivotconfigform, _Ext_pivot_plugin_con);
 
-  function ExtPivotconfigformComponent() {
+  function ExtPivotconfigform() {
     var _this;
 
     _this = _Ext_pivot_plugin_con.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_pivot_plugin_con) {
     return _this;
   }
 
-  return ExtPivotconfigformComponent;
+  return ExtPivotconfigform;
 }(Ext_pivot_plugin_configurator_Form); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-pivotconfigform', ExtPivotconfigformComponent);
+//        window.customElements.define('ext-pivotconfigform', ExtPivotconfigform);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-pivotconfigform', HTMLParsedElement.withParsedCallback(ExtPivotconfigformComponent));
+
+export { ExtPivotconfigform as default };
+window.customElements.define('ext-pivotconfigform', HTMLParsedElement.withParsedCallback(ExtPivotconfigform)); //export default reactify(ExtPivotconfigform);

@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_trigger_Clear from './Ext/field/trigger/Clear.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtCleartriggerComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtCleartrigger =
 /*#__PURE__*/
 function (_Ext_field_trigger_Cl) {
-  _inheritsLoose(ExtCleartriggerComponent, _Ext_field_trigger_Cl);
+  _inheritsLoose(ExtCleartrigger, _Ext_field_trigger_Cl);
 
-  function ExtCleartriggerComponent() {
+  function ExtCleartrigger() {
     var _this;
 
     _this = _Ext_field_trigger_Cl.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_field_trigger_Cl) {
     return _this;
   }
 
-  return ExtCleartriggerComponent;
+  return ExtCleartrigger;
 }(Ext_field_trigger_Clear); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-cleartrigger', ExtCleartriggerComponent);
+//        window.customElements.define('ext-cleartrigger', ExtCleartrigger);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-cleartrigger', HTMLParsedElement.withParsedCallback(ExtCleartriggerComponent));
+
+export { ExtCleartrigger as default };
+window.customElements.define('ext-cleartrigger', HTMLParsedElement.withParsedCallback(ExtCleartrigger)); //export default reactify(ExtCleartrigger);

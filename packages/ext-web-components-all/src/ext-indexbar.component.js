@@ -1,7 +1,8 @@
-import Ext_IndexBar from './Ext/IndexBar.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_IndexBar from './Ext/IndexBar.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtIndexbarComponent extends Ext_IndexBar {
+export default class ExtIndexbar extends Ext_IndexBar {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtIndexbarComponent extends Ext_IndexBar {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-indexbar', ExtIndexbarComponent);
+//        window.customElements.define('ext-indexbar', ExtIndexbar);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-indexbar', HTMLParsedElement.withParsedCallback(ExtIndexbarComponent))
+window.customElements.define('ext-indexbar', HTMLParsedElement.withParsedCallback(ExtIndexbar))
+//export default reactify(ExtIndexbar);

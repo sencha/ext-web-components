@@ -1,7 +1,8 @@
-import Ext_list_TreeItem from './Ext/list/TreeItem.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_list_TreeItem from './Ext/list/TreeItem.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtTreelistitemComponent extends Ext_list_TreeItem {
+export default class ExtTreelistitem extends Ext_list_TreeItem {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtTreelistitemComponent extends Ext_list_TreeItem {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-treelistitem', ExtTreelistitemComponent);
+//        window.customElements.define('ext-treelistitem', ExtTreelistitem);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-treelistitem', HTMLParsedElement.withParsedCallback(ExtTreelistitemComponent))
+window.customElements.define('ext-treelistitem', HTMLParsedElement.withParsedCallback(ExtTreelistitem))
+//export default reactify(ExtTreelistitem);

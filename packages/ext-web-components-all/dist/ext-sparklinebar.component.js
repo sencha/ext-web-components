@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_sparkline_Bar from './Ext/sparkline/Bar.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtSparklinebarComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtSparklinebar =
 /*#__PURE__*/
 function (_Ext_sparkline_Bar) {
-  _inheritsLoose(ExtSparklinebarComponent, _Ext_sparkline_Bar);
+  _inheritsLoose(ExtSparklinebar, _Ext_sparkline_Bar);
 
-  function ExtSparklinebarComponent() {
+  function ExtSparklinebar() {
     var _this;
 
     _this = _Ext_sparkline_Bar.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_sparkline_Bar) {
     return _this;
   }
 
-  return ExtSparklinebarComponent;
+  return ExtSparklinebar;
 }(Ext_sparkline_Bar); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-sparklinebar', ExtSparklinebarComponent);
+//        window.customElements.define('ext-sparklinebar', ExtSparklinebar);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-sparklinebar', HTMLParsedElement.withParsedCallback(ExtSparklinebarComponent));
+
+export { ExtSparklinebar as default };
+window.customElements.define('ext-sparklinebar', HTMLParsedElement.withParsedCallback(ExtSparklinebar)); //export default reactify(ExtSparklinebar);

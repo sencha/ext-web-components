@@ -10,7 +10,7 @@ function (_EwcBaseComponent) {
   //events
   //get onready(){return this.getAttribute('onready')};set onready(onready){this.setAttribute('onready',onready)}
   Ext_Base.PROPERTIES = function PROPERTIES() {
-    return ['extname', 'eng', 'viewport', 'align', 'plugins', 'responsiveConfig', 'responsiveFormulas', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['extname', 'viewport', 'align', 'plugins', 'responsiveConfig', 'responsiveFormulas', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
   };
 
   Ext_Base.EVENTS = function EVENTS() {
@@ -43,8 +43,8 @@ function (_EwcBaseComponent) {
       });
       Ext_Base.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
-      });
-      attrs.push('onready');
+      }); //attrs.push('onready')
+
       return attrs;
     }
   }]);

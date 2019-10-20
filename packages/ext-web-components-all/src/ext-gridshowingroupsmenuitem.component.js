@@ -1,7 +1,8 @@
-import Ext_grid_menu_ShowInGroups from './Ext/grid/menu/ShowInGroups.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_grid_menu_ShowInGroups from './Ext/grid/menu/ShowInGroups.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtGridshowingroupsmenuitemComponent extends Ext_grid_menu_ShowInGroups {
+export default class ExtGridshowingroupsmenuitem extends Ext_grid_menu_ShowInGroups {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtGridshowingroupsmenuitemComponent extends Ext_grid_menu_ShowInGr
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-gridshowingroupsmenuitem', ExtGridshowingroupsmenuitemComponent);
+//        window.customElements.define('ext-gridshowingroupsmenuitem', ExtGridshowingroupsmenuitem);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-gridshowingroupsmenuitem', HTMLParsedElement.withParsedCallback(ExtGridshowingroupsmenuitemComponent))
+window.customElements.define('ext-gridshowingroupsmenuitem', HTMLParsedElement.withParsedCallback(ExtGridshowingroupsmenuitem))
+//export default reactify(ExtGridshowingroupsmenuitem);

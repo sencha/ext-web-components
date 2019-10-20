@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ActionSheet from './Ext/ActionSheet.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtActionsheetComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtActionsheet =
 /*#__PURE__*/
 function (_Ext_ActionSheet) {
-  _inheritsLoose(ExtActionsheetComponent, _Ext_ActionSheet);
+  _inheritsLoose(ExtActionsheet, _Ext_ActionSheet);
 
-  function ExtActionsheetComponent() {
+  function ExtActionsheet() {
     var _this;
 
     _this = _Ext_ActionSheet.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_ActionSheet) {
     return _this;
   }
 
-  return ExtActionsheetComponent;
+  return ExtActionsheet;
 }(Ext_ActionSheet); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-actionsheet', ExtActionsheetComponent);
+//        window.customElements.define('ext-actionsheet', ExtActionsheet);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-actionsheet', HTMLParsedElement.withParsedCallback(ExtActionsheetComponent));
+
+export { ExtActionsheet as default };
+window.customElements.define('ext-actionsheet', HTMLParsedElement.withParsedCallback(ExtActionsheet)); //export default reactify(ExtActionsheet);

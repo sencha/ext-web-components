@@ -1,7 +1,8 @@
-import Ext_Sheet from './Ext/Sheet.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_Sheet from './Ext/Sheet.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtSheetComponent extends Ext_Sheet {
+export default class ExtSheet extends Ext_Sheet {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtSheetComponent extends Ext_Sheet {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-sheet', ExtSheetComponent);
+//        window.customElements.define('ext-sheet', ExtSheet);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-sheet', HTMLParsedElement.withParsedCallback(ExtSheetComponent))
+window.customElements.define('ext-sheet', HTMLParsedElement.withParsedCallback(ExtSheet))
+//export default reactify(ExtSheet);

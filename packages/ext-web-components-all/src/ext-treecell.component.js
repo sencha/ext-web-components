@@ -1,7 +1,8 @@
-import Ext_grid_cell_Tree from './Ext/grid/cell/Tree.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_grid_cell_Tree from './Ext/grid/cell/Tree.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtTreecellComponent extends Ext_grid_cell_Tree {
+export default class ExtTreecell extends Ext_grid_cell_Tree {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtTreecellComponent extends Ext_grid_cell_Tree {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-treecell', ExtTreecellComponent);
+//        window.customElements.define('ext-treecell', ExtTreecell);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-treecell', HTMLParsedElement.withParsedCallback(ExtTreecellComponent))
+window.customElements.define('ext-treecell', HTMLParsedElement.withParsedCallback(ExtTreecell))
+//export default reactify(ExtTreecell);

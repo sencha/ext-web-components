@@ -1,7 +1,8 @@
-import Ext_grid_cell_Check from './Ext/grid/cell/Check.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_grid_cell_Check from './Ext/grid/cell/Check.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtCheckcellComponent extends Ext_grid_cell_Check {
+export default class ExtCheckcell extends Ext_grid_cell_Check {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtCheckcellComponent extends Ext_grid_cell_Check {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-checkcell', ExtCheckcellComponent);
+//        window.customElements.define('ext-checkcell', ExtCheckcell);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-checkcell', HTMLParsedElement.withParsedCallback(ExtCheckcellComponent))
+window.customElements.define('ext-checkcell', HTMLParsedElement.withParsedCallback(ExtCheckcell))
+//export default reactify(ExtCheckcell);

@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_FieldSet from './Ext/form/FieldSet.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtFieldsetComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtFieldset =
 /*#__PURE__*/
 function (_Ext_form_FieldSet) {
-  _inheritsLoose(ExtFieldsetComponent, _Ext_form_FieldSet);
+  _inheritsLoose(ExtFieldset, _Ext_form_FieldSet);
 
-  function ExtFieldsetComponent() {
+  function ExtFieldset() {
     var _this;
 
     _this = _Ext_form_FieldSet.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_form_FieldSet) {
     return _this;
   }
 
-  return ExtFieldsetComponent;
+  return ExtFieldset;
 }(Ext_form_FieldSet); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-fieldset', ExtFieldsetComponent);
+//        window.customElements.define('ext-fieldset', ExtFieldset);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-fieldset', HTMLParsedElement.withParsedCallback(ExtFieldsetComponent));
+
+export { ExtFieldset as default };
+window.customElements.define('ext-fieldset', HTMLParsedElement.withParsedCallback(ExtFieldset)); //export default reactify(ExtFieldset);

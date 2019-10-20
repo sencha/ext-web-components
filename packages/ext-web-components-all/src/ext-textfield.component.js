@@ -1,7 +1,8 @@
-import Ext_form_Text from './Ext/form/Text.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_form_Text from './Ext/form/Text.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtTextfieldComponent extends Ext_form_Text {
+export default class ExtTextfield extends Ext_form_Text {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtTextfieldComponent extends Ext_form_Text {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-textfield', ExtTextfieldComponent);
+//        window.customElements.define('ext-textfield', ExtTextfield);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-textfield', HTMLParsedElement.withParsedCallback(ExtTextfieldComponent))
+window.customElements.define('ext-textfield', HTMLParsedElement.withParsedCallback(ExtTextfield))
+//export default reactify(ExtTextfield);

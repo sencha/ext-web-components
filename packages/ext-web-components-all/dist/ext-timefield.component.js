@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_Time from './Ext/field/Time.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtTimefieldComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtTimefield =
 /*#__PURE__*/
 function (_Ext_field_Time) {
-  _inheritsLoose(ExtTimefieldComponent, _Ext_field_Time);
+  _inheritsLoose(ExtTimefield, _Ext_field_Time);
 
-  function ExtTimefieldComponent() {
+  function ExtTimefield() {
     var _this;
 
     _this = _Ext_field_Time.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_field_Time) {
     return _this;
   }
 
-  return ExtTimefieldComponent;
+  return ExtTimefield;
 }(Ext_field_Time); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-timefield', ExtTimefieldComponent);
+//        window.customElements.define('ext-timefield', ExtTimefield);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-timefield', HTMLParsedElement.withParsedCallback(ExtTimefieldComponent));
+
+export { ExtTimefield as default };
+window.customElements.define('ext-timefield', HTMLParsedElement.withParsedCallback(ExtTimefield)); //export default reactify(ExtTimefield);

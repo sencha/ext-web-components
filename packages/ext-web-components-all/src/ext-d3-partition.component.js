@@ -1,7 +1,8 @@
-import Ext_d3_hierarchy_partition_Partition from './Ext/d3/hierarchy/partition/Partition.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_d3_hierarchy_partition_Partition from './Ext/d3/hierarchy/partition/Partition.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtD3_partitionComponent extends Ext_d3_hierarchy_partition_Partition {
+export default class ExtD3_partition extends Ext_d3_hierarchy_partition_Partition {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtD3_partitionComponent extends Ext_d3_hierarchy_partition_Partiti
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-d3-partition', ExtD3_partitionComponent);
+//        window.customElements.define('ext-d3-partition', ExtD3_partition);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-d3-partition', HTMLParsedElement.withParsedCallback(ExtD3_partitionComponent))
+window.customElements.define('ext-d3-partition', HTMLParsedElement.withParsedCallback(ExtD3_partition))
+//export default reactify(ExtD3_partition);

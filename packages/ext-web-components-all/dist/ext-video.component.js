@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Video from './Ext/Video.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtVideoComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtVideo =
 /*#__PURE__*/
 function (_Ext_Video) {
-  _inheritsLoose(ExtVideoComponent, _Ext_Video);
+  _inheritsLoose(ExtVideo, _Ext_Video);
 
-  function ExtVideoComponent() {
+  function ExtVideo() {
     var _this;
 
     _this = _Ext_Video.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_Video) {
     return _this;
   }
 
-  return ExtVideoComponent;
+  return ExtVideo;
 }(Ext_Video); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-video', ExtVideoComponent);
+//        window.customElements.define('ext-video', ExtVideo);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-video', HTMLParsedElement.withParsedCallback(ExtVideoComponent));
+
+export { ExtVideo as default };
+window.customElements.define('ext-video', HTMLParsedElement.withParsedCallback(ExtVideo)); //export default reactify(ExtVideo);

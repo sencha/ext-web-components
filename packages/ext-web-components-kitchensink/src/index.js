@@ -15,7 +15,6 @@ import * as d3 from 'd3';
 import * as FroalaEditor from 'froala-editor/js/froala_editor.pkgd.min.js';
 
 function init() {
-    console.log('in init');
     window.d3 = d3;
     window.FroalaEditor = FroalaEditor;
     window.menu = getMenu();

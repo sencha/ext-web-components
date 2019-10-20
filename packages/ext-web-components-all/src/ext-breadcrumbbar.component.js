@@ -1,7 +1,8 @@
-import Ext_BreadcrumbBar from './Ext/BreadcrumbBar.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_BreadcrumbBar from './Ext/BreadcrumbBar.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtBreadcrumbbarComponent extends Ext_BreadcrumbBar {
+export default class ExtBreadcrumbbar extends Ext_BreadcrumbBar {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtBreadcrumbbarComponent extends Ext_BreadcrumbBar {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-breadcrumbbar', ExtBreadcrumbbarComponent);
+//        window.customElements.define('ext-breadcrumbbar', ExtBreadcrumbbar);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-breadcrumbbar', HTMLParsedElement.withParsedCallback(ExtBreadcrumbbarComponent))
+window.customElements.define('ext-breadcrumbbar', HTMLParsedElement.withParsedCallback(ExtBreadcrumbbar))
+//export default reactify(ExtBreadcrumbbar);

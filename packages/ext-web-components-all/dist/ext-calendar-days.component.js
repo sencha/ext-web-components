@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_calendar_panel_Days from './Ext/calendar/panel/Days.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtCalendar_daysComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtCalendar_days =
 /*#__PURE__*/
 function (_Ext_calendar_panel_D) {
-  _inheritsLoose(ExtCalendar_daysComponent, _Ext_calendar_panel_D);
+  _inheritsLoose(ExtCalendar_days, _Ext_calendar_panel_D);
 
-  function ExtCalendar_daysComponent() {
+  function ExtCalendar_days() {
     var _this;
 
     _this = _Ext_calendar_panel_D.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_calendar_panel_D) {
     return _this;
   }
 
-  return ExtCalendar_daysComponent;
+  return ExtCalendar_days;
 }(Ext_calendar_panel_Days); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-days', ExtCalendar_daysComponent);
+//        window.customElements.define('ext-calendar-days', ExtCalendar_days);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-calendar-days', HTMLParsedElement.withParsedCallback(ExtCalendar_daysComponent));
+
+export { ExtCalendar_days as default };
+window.customElements.define('ext-calendar-days', HTMLParsedElement.withParsedCallback(ExtCalendar_days)); //export default reactify(ExtCalendar_days);

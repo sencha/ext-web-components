@@ -1,7 +1,8 @@
-import Ext_form_Field from './Ext/form/Field.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_form_Field from './Ext/form/Field.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtFieldComponent extends Ext_form_Field {
+export default class ExtField extends Ext_form_Field {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtFieldComponent extends Ext_form_Field {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-field', ExtFieldComponent);
+//        window.customElements.define('ext-field', ExtField);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-field', HTMLParsedElement.withParsedCallback(ExtFieldComponent))
+window.customElements.define('ext-field', HTMLParsedElement.withParsedCallback(ExtField))
+//export default reactify(ExtField);

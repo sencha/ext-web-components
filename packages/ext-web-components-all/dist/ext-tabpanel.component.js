@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_TabPanel from './Ext/TabPanel.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtTabpanelComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtTabpanel =
 /*#__PURE__*/
 function (_Ext_TabPanel) {
-  _inheritsLoose(ExtTabpanelComponent, _Ext_TabPanel);
+  _inheritsLoose(ExtTabpanel, _Ext_TabPanel);
 
-  function ExtTabpanelComponent() {
+  function ExtTabpanel() {
     var _this;
 
     _this = _Ext_TabPanel.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_TabPanel) {
     return _this;
   }
 
-  return ExtTabpanelComponent;
+  return ExtTabpanel;
 }(Ext_TabPanel); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-tabpanel', ExtTabpanelComponent);
+//        window.customElements.define('ext-tabpanel', ExtTabpanel);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-tabpanel', HTMLParsedElement.withParsedCallback(ExtTabpanelComponent));
+
+export { ExtTabpanel as default };
+window.customElements.define('ext-tabpanel', HTMLParsedElement.withParsedCallback(ExtTabpanel)); //export default reactify(ExtTabpanel);

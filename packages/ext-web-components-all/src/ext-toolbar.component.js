@@ -1,7 +1,8 @@
-import Ext_Toolbar from './Ext/Toolbar.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_Toolbar from './Ext/Toolbar.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtToolbarComponent extends Ext_Toolbar {
+export default class ExtToolbar extends Ext_Toolbar {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtToolbarComponent extends Ext_Toolbar {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-toolbar', ExtToolbarComponent);
+//        window.customElements.define('ext-toolbar', ExtToolbar);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-toolbar', HTMLParsedElement.withParsedCallback(ExtToolbarComponent))
+window.customElements.define('ext-toolbar', HTMLParsedElement.withParsedCallback(ExtToolbar))
+//export default reactify(ExtToolbar);

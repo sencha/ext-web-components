@@ -1,7 +1,8 @@
-import Ext_field_trigger_Time from './Ext/field/trigger/Time.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_field_trigger_Time from './Ext/field/trigger/Time.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtTimetriggerComponent extends Ext_field_trigger_Time {
+export default class ExtTimetrigger extends Ext_field_trigger_Time {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtTimetriggerComponent extends Ext_field_trigger_Time {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-timetrigger', ExtTimetriggerComponent);
+//        window.customElements.define('ext-timetrigger', ExtTimetrigger);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-timetrigger', HTMLParsedElement.withParsedCallback(ExtTimetriggerComponent))
+window.customElements.define('ext-timetrigger', HTMLParsedElement.withParsedCallback(ExtTimetrigger))
+//export default reactify(ExtTimetrigger);

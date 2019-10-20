@@ -1,7 +1,8 @@
-import Ext_Audio from './Ext/Audio.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_Audio from './Ext/Audio.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtAudioComponent extends Ext_Audio {
+export default class ExtAudio extends Ext_Audio {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtAudioComponent extends Ext_Audio {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-audio', ExtAudioComponent);
+//        window.customElements.define('ext-audio', ExtAudio);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-audio', HTMLParsedElement.withParsedCallback(ExtAudioComponent))
+window.customElements.define('ext-audio', HTMLParsedElement.withParsedCallback(ExtAudio))
+//export default reactify(ExtAudio);

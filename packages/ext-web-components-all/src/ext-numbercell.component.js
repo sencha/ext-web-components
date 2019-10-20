@@ -1,7 +1,8 @@
-import Ext_grid_cell_Number from './Ext/grid/cell/Number.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_grid_cell_Number from './Ext/grid/cell/Number.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtNumbercellComponent extends Ext_grid_cell_Number {
+export default class ExtNumbercell extends Ext_grid_cell_Number {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtNumbercellComponent extends Ext_grid_cell_Number {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-numbercell', ExtNumbercellComponent);
+//        window.customElements.define('ext-numbercell', ExtNumbercell);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-numbercell', HTMLParsedElement.withParsedCallback(ExtNumbercellComponent))
+window.customElements.define('ext-numbercell', HTMLParsedElement.withParsedCallback(ExtNumbercell))
+//export default reactify(ExtNumbercell);

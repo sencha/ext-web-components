@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_trigger_Expand from './Ext/field/trigger/Expand.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtExpandtriggerComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtExpandtrigger =
 /*#__PURE__*/
 function (_Ext_field_trigger_Ex) {
-  _inheritsLoose(ExtExpandtriggerComponent, _Ext_field_trigger_Ex);
+  _inheritsLoose(ExtExpandtrigger, _Ext_field_trigger_Ex);
 
-  function ExtExpandtriggerComponent() {
+  function ExtExpandtrigger() {
     var _this;
 
     _this = _Ext_field_trigger_Ex.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_field_trigger_Ex) {
     return _this;
   }
 
-  return ExtExpandtriggerComponent;
+  return ExtExpandtrigger;
 }(Ext_field_trigger_Expand); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-expandtrigger', ExtExpandtriggerComponent);
+//        window.customElements.define('ext-expandtrigger', ExtExpandtrigger);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-expandtrigger', HTMLParsedElement.withParsedCallback(ExtExpandtriggerComponent));
+
+export { ExtExpandtrigger as default };
+window.customElements.define('ext-expandtrigger', HTMLParsedElement.withParsedCallback(ExtExpandtrigger)); //export default reactify(ExtExpandtrigger);

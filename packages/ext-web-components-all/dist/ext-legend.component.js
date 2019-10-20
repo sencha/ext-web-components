@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_chart_Legend from './Ext/chart/Legend.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtLegendComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtLegend =
 /*#__PURE__*/
 function (_Ext_chart_Legend) {
-  _inheritsLoose(ExtLegendComponent, _Ext_chart_Legend);
+  _inheritsLoose(ExtLegend, _Ext_chart_Legend);
 
-  function ExtLegendComponent() {
+  function ExtLegend() {
     var _this;
 
     _this = _Ext_chart_Legend.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_chart_Legend) {
     return _this;
   }
 
-  return ExtLegendComponent;
+  return ExtLegend;
 }(Ext_chart_Legend); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-legend', ExtLegendComponent);
+//        window.customElements.define('ext-legend', ExtLegend);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-legend', HTMLParsedElement.withParsedCallback(ExtLegendComponent));
+
+export { ExtLegend as default };
+window.customElements.define('ext-legend', HTMLParsedElement.withParsedCallback(ExtLegend)); //export default reactify(ExtLegend);

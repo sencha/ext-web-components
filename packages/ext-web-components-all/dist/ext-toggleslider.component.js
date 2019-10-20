@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_slider_Toggle from './Ext/slider/Toggle.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtTogglesliderComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtToggleslider =
 /*#__PURE__*/
 function (_Ext_slider_Toggle) {
-  _inheritsLoose(ExtTogglesliderComponent, _Ext_slider_Toggle);
+  _inheritsLoose(ExtToggleslider, _Ext_slider_Toggle);
 
-  function ExtTogglesliderComponent() {
+  function ExtToggleslider() {
     var _this;
 
     _this = _Ext_slider_Toggle.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_slider_Toggle) {
     return _this;
   }
 
-  return ExtTogglesliderComponent;
+  return ExtToggleslider;
 }(Ext_slider_Toggle); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-toggleslider', ExtTogglesliderComponent);
+//        window.customElements.define('ext-toggleslider', ExtToggleslider);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-toggleslider', HTMLParsedElement.withParsedCallback(ExtTogglesliderComponent));
+
+export { ExtToggleslider as default };
+window.customElements.define('ext-toggleslider', HTMLParsedElement.withParsedCallback(ExtToggleslider)); //export default reactify(ExtToggleslider);

@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_cell_Tree from './Ext/grid/cell/Tree.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtTreecellComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtTreecell =
 /*#__PURE__*/
 function (_Ext_grid_cell_Tree) {
-  _inheritsLoose(ExtTreecellComponent, _Ext_grid_cell_Tree);
+  _inheritsLoose(ExtTreecell, _Ext_grid_cell_Tree);
 
-  function ExtTreecellComponent() {
+  function ExtTreecell() {
     var _this;
 
     _this = _Ext_grid_cell_Tree.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_grid_cell_Tree) {
     return _this;
   }
 
-  return ExtTreecellComponent;
+  return ExtTreecell;
 }(Ext_grid_cell_Tree); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-treecell', ExtTreecellComponent);
+//        window.customElements.define('ext-treecell', ExtTreecell);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-treecell', HTMLParsedElement.withParsedCallback(ExtTreecellComponent));
+
+export { ExtTreecell as default };
+window.customElements.define('ext-treecell', HTMLParsedElement.withParsedCallback(ExtTreecell)); //export default reactify(ExtTreecell);

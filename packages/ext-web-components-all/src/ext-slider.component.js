@@ -1,7 +1,8 @@
-import Ext_slider_Slider from './Ext/slider/Slider.js'
-import HTMLParsedElement from './HTMLParsedElement.js'
+import Ext_slider_Slider from './Ext/slider/Slider.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+//import reactify from './reactify.js';
 
-export class ExtSliderComponent extends Ext_slider_Slider {
+export default class ExtSlider extends Ext_slider_Slider {
     constructor() {
         super (
             [],
@@ -13,9 +14,10 @@ export class ExtSliderComponent extends Ext_slider_Slider {
 
 //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-slider', ExtSliderComponent);
+//        window.customElements.define('ext-slider', ExtSlider);
 //    });
 //})();
 
 //const  = HTMLParsedElement;
-window.customElements.define('ext-slider', HTMLParsedElement.withParsedCallback(ExtSliderComponent))
+window.customElements.define('ext-slider', HTMLParsedElement.withParsedCallback(ExtSlider))
+//export default reactify(ExtSlider);

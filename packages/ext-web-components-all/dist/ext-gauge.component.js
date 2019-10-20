@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ux_Gauge from './Ext/ux/Gauge.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtGaugeComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtGauge =
 /*#__PURE__*/
 function (_Ext_ux_Gauge) {
-  _inheritsLoose(ExtGaugeComponent, _Ext_ux_Gauge);
+  _inheritsLoose(ExtGauge, _Ext_ux_Gauge);
 
-  function ExtGaugeComponent() {
+  function ExtGauge() {
     var _this;
 
     _this = _Ext_ux_Gauge.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_ux_Gauge) {
     return _this;
   }
 
-  return ExtGaugeComponent;
+  return ExtGauge;
 }(Ext_ux_Gauge); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-gauge', ExtGaugeComponent);
+//        window.customElements.define('ext-gauge', ExtGauge);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-gauge', HTMLParsedElement.withParsedCallback(ExtGaugeComponent));
+
+export { ExtGauge as default };
+window.customElements.define('ext-gauge', HTMLParsedElement.withParsedCallback(ExtGauge)); //export default reactify(ExtGauge);

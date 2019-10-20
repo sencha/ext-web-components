@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_trigger_Menu from './Ext/field/trigger/Menu.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtMenutriggerComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtMenutrigger =
 /*#__PURE__*/
 function (_Ext_field_trigger_Me) {
-  _inheritsLoose(ExtMenutriggerComponent, _Ext_field_trigger_Me);
+  _inheritsLoose(ExtMenutrigger, _Ext_field_trigger_Me);
 
-  function ExtMenutriggerComponent() {
+  function ExtMenutrigger() {
     var _this;
 
     _this = _Ext_field_trigger_Me.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_field_trigger_Me) {
     return _this;
   }
 
-  return ExtMenutriggerComponent;
+  return ExtMenutrigger;
 }(Ext_field_trigger_Menu); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-menutrigger', ExtMenutriggerComponent);
+//        window.customElements.define('ext-menutrigger', ExtMenutrigger);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-menutrigger', HTMLParsedElement.withParsedCallback(ExtMenutriggerComponent));
+
+export { ExtMenutrigger as default };
+window.customElements.define('ext-menutrigger', HTMLParsedElement.withParsedCallback(ExtMenutrigger)); //export default reactify(ExtMenutrigger);

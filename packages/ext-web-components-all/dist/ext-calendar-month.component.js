@@ -1,12 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_calendar_panel_Month from './Ext/calendar/panel/Month.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
-export var ExtCalendar_monthComponent =
+import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+
+var ExtCalendar_month =
 /*#__PURE__*/
 function (_Ext_calendar_panel_M) {
-  _inheritsLoose(ExtCalendar_monthComponent, _Ext_calendar_panel_M);
+  _inheritsLoose(ExtCalendar_month, _Ext_calendar_panel_M);
 
-  function ExtCalendar_monthComponent() {
+  function ExtCalendar_month() {
     var _this;
 
     _this = _Ext_calendar_panel_M.call(this, [], []) || this;
@@ -14,12 +15,14 @@ function (_Ext_calendar_panel_M) {
     return _this;
   }
 
-  return ExtCalendar_monthComponent;
+  return ExtCalendar_month;
 }(Ext_calendar_panel_Month); //(function () {
 //    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-month', ExtCalendar_monthComponent);
+//        window.customElements.define('ext-calendar-month', ExtCalendar_month);
 //    });
 //})();
 //const  = HTMLParsedElement;
 
-window.customElements.define('ext-calendar-month', HTMLParsedElement.withParsedCallback(ExtCalendar_monthComponent));
+
+export { ExtCalendar_month as default };
+window.customElements.define('ext-calendar-month', HTMLParsedElement.withParsedCallback(ExtCalendar_month)); //export default reactify(ExtCalendar_month);
