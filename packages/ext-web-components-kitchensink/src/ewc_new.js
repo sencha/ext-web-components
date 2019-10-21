@@ -94,3 +94,4 @@ import '@sencha/ext-web-components-all/src/ext-gridsummaryrow.component';
 import '@sencha/ext-web-components-all/src/ext-sparklineline.component';
 import '@sencha/ext-web-components-all/src/ext-rating.component';
 import '@sencha/ext-web-components-all/src/ext-actionsheet.component';
+import '@sencha/ext-web-components-all/src/ext-datefield.component';
