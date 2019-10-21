@@ -33,6 +33,7 @@ export default class MainComponent {
         this.dataviewNavCmp = getCmp(event, 'navDataview');
         this.codePanelCmp = getCmp(event, 'codePanel');
         this.tabPanelCmp = getCmp(event, 'tabPanel');
+        this.navTreePanelCmp = getCmp(event, 'navTreePanel');
 
         this.rightContainerCmp.updateHtml('Build: ' + BUILD_VERSION); // eslint-disable-line no-undef
         this.breadcrumbCmp.setStore(this.treeStore);
