@@ -34,6 +34,7 @@ export default class MainComponent {
         this.codePanelCmp = getCmp(event, 'codePanel');
         this.tabPanelCmp = getCmp(event, 'tabPanel');
         this.navTreePanelCmp = getCmp(event, 'navTreePanel');
+        this.componentsViewCmp = getCmp(event, 'componentsView');
 
         this.rightContainerCmp.updateHtml('Build: ' + BUILD_VERSION); // eslint-disable-line no-undef
         this.breadcrumbCmp.setStore(this.treeStore);
@@ -105,6 +106,7 @@ export default class MainComponent {
             this.showRouter();
         }
         else {
+            this.componentsViewCmp.setHidden(true);
             this.dataviewNavCmp.setData(node.childNodes);
             this.showSelection();
         }
@@ -119,7 +121,7 @@ export default class MainComponent {
         this.selectionCmp.setHidden(true);
         window.router.hidden = false;
         this.codeButtonCmp.setHidden(false);
-
+        this.componentsViewCmp.setHidden(false);
         console.log('routeme');
         window.router.routeMe();
 
@@ -139,9 +141,8 @@ export default class MainComponent {
     }
 
     containsMatches = (node) => {
-        const found = node.data.name.match(this.filterRegex) || node.childNodes.some(child => this.containsMatches(child));
+        const found = node.data.text.match(this.filterRegex) || node.childNodes.some(child => this.containsMatches(child));
         if (found) node.expand();
-        node.data.text = node.data.name.replace(this.filterRegex, '<span style="color:#2196F3;font-weight:bold">$1</span>');
         return found;
     }
 
