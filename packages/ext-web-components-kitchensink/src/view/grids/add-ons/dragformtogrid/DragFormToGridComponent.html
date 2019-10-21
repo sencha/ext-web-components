@@ -4,9 +4,20 @@
 	}'
 	padding="10"
 	cls="form-to-grid-dd"
-	title="Patient Hospital Assignment"
 	maxWidth="800"
 	onready="dragformtogrid.parentPanelReady"
+	responsiveConfig='{
+		"width < 565": {
+			"layout": {
+				"vertical": true
+			}
+		},
+		"width >= 565": {
+			"layout": {
+				"vertical": false
+			}
+		}
+	  }'
 >
 	<ext-panel
 		title="Patients"
@@ -30,7 +41,6 @@
 		title="Hospitals"
 		flex="0.6"
         cls="dd-hospital-grid"
-        variableHeights="true"
         reference="hospitalView"
         onready="dragformtogrid.hospitalGridReady"
 	>

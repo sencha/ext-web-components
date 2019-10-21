@@ -32,7 +32,24 @@ export default class PivotHeatmapComponent {
 
         this.isPhone = Ext.platformTags.phone;
 
-        if(!this.isPhone){
+        if(this.isPhone) {
+            this.padding = '20 20 60 60';
+            this.legendVar = {
+                docked: 'bottom',
+                padding: 10,
+                items: {
+                    count: 5,
+                    slice: [1],
+                    reverse: true,
+                    size: {
+                        x: 30,
+                        y: 20
+                    }
+                }
+            };
+        }
+        else {
+            this.padding = '20 30 70 120';
             this.legendVar = {
                 docked: 'right',
                 padding: 50,
@@ -47,6 +64,7 @@ export default class PivotHeatmapComponent {
                 }
             };
         }
+
     }
 
   onPivotReady = (event) => {
@@ -54,6 +72,9 @@ export default class PivotHeatmapComponent {
       const tooltip = {
           renderer: this.onTooltip.bind(this)
       };
+
+      this.pivotCmp.setPadding(this.padding);
+    //   this.pivotCmp.setLegend(this.legendVar);
       this.pivotCmp.setMatrix(this.matrixVar);
       this.pivotCmp.setTooltip(tooltip);
   }
