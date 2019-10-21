@@ -13,7 +13,7 @@ import FilesDragDropComponent from './view/components/drag&drop/filesdragdrop/Fi
 import DrawComponent from './view/components/draw/DrawComponent.js';
 import CheckBoxFieldComponent from './view/components/forms/checkboxfield/CheckBoxFieldComponent.js';
 import CheckBoxGroupComponent from './view/components/forms/checkboxgroup/CheckBoxGroupComponent.js';
-import ComboBoxFieldComponent from './view/components/forms/comboboxfield/ComboBoxFieldComponent.js';
+import ComboBoxComponent from './view/components/forms/combobox/ComboBoxComponent.js';
 import MultiSelectComboBoxFieldComponent from './view/components/forms/multiselectcomboboxfield/MultiSelectComboBoxFieldComponent.js';
 import ContainerFieldComponent from './view/components/forms/containerfield/ContainerFieldComponent.js';
 import DatePickerFieldComponent from './view/components/forms/datepickerfield/DatePickerFieldComponent.js';
@@ -201,7 +201,7 @@ export default function getMenu() {
             { text: 'Forms', iconCls: 'icon-forms', children: [
                 { text: 'CheckBoxField', component: CheckBoxFieldComponent, layout: 'center', iconCls: 'icon-Forms-CheckBoxField' },
                 { text: 'CheckBoxGroup', component: CheckBoxGroupComponent, layout: 'center', iconCls: 'icon-Forms-CheckBoxField' },
-                { text: 'ComboBoxField', component: ComboBoxFieldComponent, layout: 'center', iconCls: 'icon-Forms-ComboBoxField' },
+                { text: 'ComboBox', component: ComboBoxComponent, layout: 'center', iconCls: 'icon-Forms-ComboBoxField' },
                 { text: 'MultiSelect ComboBoxField', component: MultiSelectComboBoxFieldComponent, layout: 'center', iconCls: 'icon-Forms-ComboBoxField' },
                 { text: 'ContainerField', component: ContainerFieldComponent, layout: Ext.os.is.Phone ? 'auto' : 'center', iconCls: 'icon-Forms-ContainerField' },
                 { text: 'DatePickerField', component: DatePickerFieldComponent, layout: 'center', iconCls: 'icon-Forms-DatePickerField' },

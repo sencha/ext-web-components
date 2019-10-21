@@ -10,51 +10,51 @@
       Long press on a column header to customize this grid.
     </div>
   </ext-toolbar>
-  <ext-column
+  <ext-gridcolumn
     text="Company"
     dataIndex="name"
     width="150"
   >
-  </ext-column>
-  <ext-column
+  </ext-gridcolumn>
+  <ext-gridcolumn
     text="Phone"
     dataIndex="phone"
     width="100"
     hidden="true"
   >
-  </ext-column>
-  <ext-column
+  </ext-gridcolumn>
+  <ext-gridcolumn
     text="Industry"
     dataIndex="industry"
     width="150"
     hidden="true"
   >
-  </ext-column>
-  <ext-column
+  </ext-gridcolumn>
+  <ext-gridcolumn
     text="Price"
     dataIndex="price"
     width="75"
     formatter="usMoney"
   >
-  </ext-column>
-  <ext-column
+  </ext-gridcolumn>
+  <ext-gridcolumn
     text="Change"
     width="100"
     dataIndex="priceChange"
     onready="viewoptions.changeColumnReady"
   >
-  </ext-column>
-  <ext-column
+  </ext-gridcolumn>
+  <ext-gridcolumn
     text="% Change"
     dataIndex="priceChangePct"
     onready="viewoptions.percentChangeColumnReady"
   >
-  </ext-column>
-  <ext-column
+  </ext-gridcolumn>
+  <ext-gridcolumn
     text="Last Updated"
     dataIndex="priceLastChange"
     width="125"
     formatter="date('m/d/Y')"
   >
-  </ext-column>
+  </ext-gridcolumn>
 </ext-grid>

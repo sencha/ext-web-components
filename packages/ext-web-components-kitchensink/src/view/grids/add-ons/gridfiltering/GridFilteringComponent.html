@@ -8,22 +8,22 @@
   onready="gridfiltering.gridReady"
   height="100%"
 >
-  <ext-column
+  <ext-gridcolumn
     dataIndex="employeeNo"
     filter="number"
     minWidth="50"
     text="Id"
   >
-  </ext-column>
-  <ext-column
+  </ext-gridcolumn>
+  <ext-gridcolumn
     dataIndex="fullName"
     filter="string"
     minWidth="150"
     text="Name"
     onready="gridfiltering.nameColumnReady"
   >
-  </ext-column>
-  <ext-column
+  </ext-gridcolumn>
+  <ext-gridcolumn
     dataIndex="dob"
     editable="true"
     formatter='date("m/d/y")'
@@ -31,30 +31,30 @@
     text="Date of Birth"
     width="115"
   >
-  </ext-column>
-  <ext-column
+  </ext-gridcolumn>
+  <ext-gridcolumn
     dataIndex="noticePeriod"
     editable="true"
     filter="string"
     text="Notice Period"
     minWidth="140"
   >
-  </ext-column>
-  <ext-column
+  </ext-gridcolumn>
+  <ext-gridcolumn
     align="center"
     dataIndex="holidayDays"
     format="0"
     text="Holidays"
   />
-  </ext-column>
-  <ext-column
+  </ext-gridcolumn>
+  <ext-gridcolumn
     align="center"
     dataIndex="verified"
     text="Visible"
     width="150"
   >
-  </ext-column>
-  <ext-column
+  </ext-gridcolumn>
+  <ext-gridcolumn
     align="right"
     dataIndex="salary"
     editable="true"
@@ -62,8 +62,8 @@
     text="Salary"
     width="150"
   >
-  </ext-column>
-  <ext-column
+  </ext-gridcolumn>
+  <ext-gridcolumn
     dataIndex="email"
     editable="true"
     editor='{
@@ -72,5 +72,5 @@
     text="Email"
     width="250"
   >
-  </ext-column>
+  </ext-gridcolumn>
 </ext-grid>

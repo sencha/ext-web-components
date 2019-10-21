@@ -5,37 +5,37 @@
   onready="componentsincells.onGridReady"
   height="100%"
 >
-  <ext-column
+  <ext-gridcolumn
     text="Company"
     dataIndex="name"
     width="150"
   >
-  </ext-column>
-  <ext-column
+  </ext-gridcolumn>
+  <ext-gridcolumn
     text="Price"
     width="85"
     dataIndex="price"
     formatter="usMoney"
   >
-  </ext-column>
-  <ext-column
+  </ext-gridcolumn>
+  <ext-gridcolumn
     text="Change"
     width="100"
     dataIndex="priceChange"
     onready="componentsincells.changeColumnReady"
   >
-  </ext-column>
-  <ext-column
+  </ext-gridcolumn>
+  <ext-gridcolumn
     text="% Change"
     dataIndex="priceChangePct"
     onready="componentsincells.percentChangeColumnReady"
   >
-  </ext-column>
-  <ext-column
+  </ext-gridcolumn>
+  <ext-gridcolumn
     text="Actions"
     flex="1"
     minWidth="210"
     onready="componentsincells.onLastGrid"
   >
-  </ext-column>
+  </ext-gridcolumn>
 </ext-grid>

@@ -81,7 +81,7 @@
       headerCheckbox="true"
     >
     </ext-checkcolumn>
-    <ext-column
+    <ext-gridcolumn
       text="Ratings"
       columns='[
         {
@@ -116,7 +116,7 @@
           }
       }]'
     >
-    </ext-column>
+    </ext-gridcolumn>
     <ext-datecolumn
       dataIndex="dob"
       editable="true"
@@ -134,14 +134,14 @@
       }]'
     >
     </ext-datecolumn>
-    <ext-column
+    <ext-gridcolumn
       text=""
       width="100"
       ignoreExport="true"
       align="center"
       onready="bigdata.emptyColumnReady"
     >
-    </ext-column>
+    </ext-gridcolumn>
     <ext-datecolumn
       text="Join Date"
       dataIndex="joinDate"
@@ -169,7 +169,7 @@
           "xtype":"emailfield"
       }'>
     </ext-textcolumn>
-    <ext-column
+    <ext-gridcolumn
       text='Absences'
       columns='[{
         "text":"Illness",
@@ -185,8 +185,8 @@
         "summary":"sum"
       }]'
     >
-    </ext-column>
-    <ext-column
+    </ext-gridcolumn>
+    <ext-gridcolumn
       text="Rating This Year"
       dataIndex="ratingThisYear"
       groupable="false"
@@ -206,7 +206,7 @@
         }
       }'
     >
-    </ext-column>
+    </ext-gridcolumn>
     <ext-textcolumn
       text="Salary"
       dataIndex="salary"
