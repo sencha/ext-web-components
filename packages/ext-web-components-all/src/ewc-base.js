@@ -1,4 +1,4 @@
-//Sun Oct 20 2019 19:04:52 GMT-0400 (Eastern Daylight Time)
+//Mon Oct 21 2019 15:29:42 GMT-0400 (Eastern Daylight Time)
 
 import {
     doProp,
@@ -14,7 +14,14 @@ export default class EwcBaseComponent extends HTMLElement {
 
     constructor(properties, events) {
         super ();
+        this.properties = properties;
+        this.events = events;
+    }
 
+    connectedCallback() {
+        console.log('connectedCallback')
+        console.log(this.xtype)
+        var x = this.xtype
         //var props = ['text','align','title','extname','height','width','columns','data','layout','flex']
         // props.forEach( prop =>
         //     {
@@ -27,24 +34,23 @@ export default class EwcBaseComponent extends HTMLElement {
         var properties2 = [];
         //console.log(typeof properties2)
         //var myStringArray = ["Hello","World"];
-        var arrayLength = properties.length;
+        var arrayLength = this.properties.length;
         for (var i = 0; i < arrayLength; i++) {
-            properties2.push(properties[i]);
+            properties2.push(this.properties[i]);
         }
         //console.log(properties2)
         //console.log(typeof properties2)
         var p2 = properties2.filter(distinct);
-        this.properties = p2;
+        //this.properties = p2;
         p2.forEach( prop =>
             {
                 doProp(this,prop)
             }
         )
         //this.methods = methods;
-        this.events = events;
-    }
+        //this.events = events;
 
-    connectedCallback() {
+
         EwcBaseComponent.elementcount++;
         console.log('added: ' + this.tagName + ': elementcount is now ' + EwcBaseComponent.elementcount);
         EwcBaseComponent.elements.push(this);
@@ -74,6 +80,7 @@ export default class EwcBaseComponent extends HTMLElement {
         // //var textnode = document.createTextNode(this.xtype);
         // //this.newDiv.appendChild(textnode)
         // this.insertAdjacentElement('beforebegin', this.newDiv);
+        this.xtype = x
     }
 
     parsedCallback() {
