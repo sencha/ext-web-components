@@ -1,8 +1,7 @@
 import _createClass from "@babel/runtime/helpers/createClass";
-import _assertThisInitialized from "@babel/runtime/helpers/assertThisInitialized";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Sun Oct 20 2019 19:04:52 GMT-0400 (Eastern Daylight Time)
+//Mon Oct 21 2019 15:29:42 GMT-0400 (Eastern Daylight Time)
 import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var EwcBaseComponent =
@@ -13,7 +12,20 @@ function (_HTMLElement) {
   function EwcBaseComponent(properties, events) {
     var _this;
 
-    _this = _HTMLElement.call(this) || this; //var props = ['text','align','title','extname','height','width','columns','data','layout','flex']
+    _this = _HTMLElement.call(this) || this;
+    _this.properties = properties;
+    _this.events = events;
+    return _this;
+  }
+
+  var _proto = EwcBaseComponent.prototype;
+
+  _proto.connectedCallback = function connectedCallback() {
+    var _this2 = this;
+
+    console.log('connectedCallback');
+    console.log(this.xtype);
+    var x = this.xtype; //var props = ['text','align','title','extname','height','width','columns','data','layout','flex']
     // props.forEach( prop =>
     //     {
     //         doProp(this,prop)
@@ -27,27 +39,21 @@ function (_HTMLElement) {
     var properties2 = []; //console.log(typeof properties2)
     //var myStringArray = ["Hello","World"];
 
-    var arrayLength = properties.length;
+    var arrayLength = this.properties.length;
 
     for (var i = 0; i < arrayLength; i++) {
-      properties2.push(properties[i]);
+      properties2.push(this.properties[i]);
     } //console.log(properties2)
     //console.log(typeof properties2)
 
 
-    var p2 = properties2.filter(distinct);
-    _this.properties = p2;
+    var p2 = properties2.filter(distinct); //this.properties = p2;
+
     p2.forEach(function (prop) {
-      doProp(_assertThisInitialized(_this), prop);
+      doProp(_this2, prop);
     }); //this.methods = methods;
+    //this.events = events;
 
-    _this.events = events;
-    return _this;
-  }
-
-  var _proto = EwcBaseComponent.prototype;
-
-  _proto.connectedCallback = function connectedCallback() {
     EwcBaseComponent.elementcount++;
     console.log('added: ' + this.tagName + ': elementcount is now ' + EwcBaseComponent.elementcount);
     EwcBaseComponent.elements.push(this);
@@ -89,6 +95,8 @@ function (_HTMLElement) {
     // //var textnode = document.createTextNode(this.xtype);
     // //this.newDiv.appendChild(textnode)
     // this.insertAdjacentElement('beforebegin', this.newDiv);
+
+    this.xtype = x;
   };
 
   _proto.parsedCallback = function parsedCallback() {
