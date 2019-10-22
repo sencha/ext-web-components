@@ -1,6 +1,6 @@
 import './CheckBoxGroupComponent.scss';
 import './CheckBoxGroupComponent.html';
-Ext.require(['Ext.field.CheckboxGroup']);
+Ext.require('Ext.field.CheckboxGroup');
 
 export default class CheckBoxFieldComponent {
     onParentPanelReady = (event) => {
