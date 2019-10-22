@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_d3_hierarchy_tree_HorizontalTree from './Ext/d3/hierarchy/tree/HorizontalTree.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtD3_tree =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_d3_hierarchy_tre) {
   }
 
   return ExtD3_tree;
-}(Ext_d3_hierarchy_tree_HorizontalTree); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-d3-tree', ExtD3_tree);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_d3_hierarchy_tree_HorizontalTree);
 
 export { ExtD3_tree as default };
-window.customElements.define('ext-d3-tree', HTMLParsedElement.withParsedCallback(ExtD3_tree)); //export default reactify(ExtD3_tree);
+window.customElements.define('ext-d3-tree', HTMLParsedElement.withParsedCallback(ExtD3_tree));

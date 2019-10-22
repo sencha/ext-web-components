@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_column_Boolean from './Ext/grid/column/Boolean.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtBooleancolumn =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_grid_column_Bool) {
   }
 
   return ExtBooleancolumn;
-}(Ext_grid_column_Boolean); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-booleancolumn', ExtBooleancolumn);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_grid_column_Boolean);
 
 export { ExtBooleancolumn as default };
-window.customElements.define('ext-booleancolumn', HTMLParsedElement.withParsedCallback(ExtBooleancolumn)); //export default reactify(ExtBooleancolumn);
+window.customElements.define('ext-booleancolumn', HTMLParsedElement.withParsedCallback(ExtBooleancolumn));

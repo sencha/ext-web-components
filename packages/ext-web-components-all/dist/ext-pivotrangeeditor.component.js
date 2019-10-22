@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_pivot_plugin_rangeeditor_Panel from './Ext/pivot/plugin/rangeeditor/Panel.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtPivotrangeeditor =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_pivot_plugin_ran) {
   }
 
   return ExtPivotrangeeditor;
-}(Ext_pivot_plugin_rangeeditor_Panel); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-pivotrangeeditor', ExtPivotrangeeditor);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_pivot_plugin_rangeeditor_Panel);
 
 export { ExtPivotrangeeditor as default };
-window.customElements.define('ext-pivotrangeeditor', HTMLParsedElement.withParsedCallback(ExtPivotrangeeditor)); //export default reactify(ExtPivotrangeeditor);
+window.customElements.define('ext-pivotrangeeditor', HTMLParsedElement.withParsedCallback(ExtPivotrangeeditor));

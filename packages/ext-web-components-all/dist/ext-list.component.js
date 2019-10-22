@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_List from './Ext/List.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtList =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_List) {
   }
 
   return ExtList;
-}(Ext_List); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-list', ExtList);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_List);
 
 export { ExtList as default };
-window.customElements.define('ext-list', HTMLParsedElement.withParsedCallback(ExtList)); //export default reactify(ExtList);
+window.customElements.define('ext-list', HTMLParsedElement.withParsedCallback(ExtList));

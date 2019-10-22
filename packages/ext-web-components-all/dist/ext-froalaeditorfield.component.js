@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_froala_EditorField from './Ext/froala/EditorField.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtFroalaeditorfield =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_froala_EditorFie) {
   }
 
   return ExtFroalaeditorfield;
-}(Ext_froala_EditorField); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-froalaeditorfield', ExtFroalaeditorfield);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_froala_EditorField);
 
 export { ExtFroalaeditorfield as default };
-window.customElements.define('ext-froalaeditorfield', HTMLParsedElement.withParsedCallback(ExtFroalaeditorfield)); //export default reactify(ExtFroalaeditorfield);
+window.customElements.define('ext-froalaeditorfield', HTMLParsedElement.withParsedCallback(ExtFroalaeditorfield));

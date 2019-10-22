@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_slider_Slider from './Ext/slider/Slider.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtSlider =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_slider_Slider) {
   }
 
   return ExtSlider;
-}(Ext_slider_Slider); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-slider', ExtSlider);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_slider_Slider);
 
 export { ExtSlider as default };
-window.customElements.define('ext-slider', HTMLParsedElement.withParsedCallback(ExtSlider)); //export default reactify(ExtSlider);
+window.customElements.define('ext-slider', HTMLParsedElement.withParsedCallback(ExtSlider));

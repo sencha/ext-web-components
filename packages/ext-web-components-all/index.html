@@ -50,3 +50,20 @@
 </body>
 
 </html>
+
+<!-- package.json
+
+{
+    "name": "js-cli",
+    "version": "1.0.0",
+    "description": "ext-web-components example",
+    "scripts": {},
+    "devDependencies": {
+      "@sencha/ext-web-components-all": "~7.1.0"
+    },
+    "author": "",
+    "license": "ISC",
+    "repository": {}
+}
+
+-->

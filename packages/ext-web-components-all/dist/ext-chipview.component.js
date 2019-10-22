@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_ChipView from './Ext/dataview/ChipView.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtChipview =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_dataview_ChipVie) {
   }
 
   return ExtChipview;
-}(Ext_dataview_ChipView); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-chipview', ExtChipview);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_dataview_ChipView);
 
 export { ExtChipview as default };
-window.customElements.define('ext-chipview', HTMLParsedElement.withParsedCallback(ExtChipview)); //export default reactify(ExtChipview);
+window.customElements.define('ext-chipview', HTMLParsedElement.withParsedCallback(ExtChipview));

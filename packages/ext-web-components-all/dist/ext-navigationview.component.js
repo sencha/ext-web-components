@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_NavigationView from './Ext/NavigationView.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtNavigationview =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_NavigationView) {
   }
 
   return ExtNavigationview;
-}(Ext_NavigationView); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-navigationview', ExtNavigationview);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_NavigationView);
 
 export { ExtNavigationview as default };
-window.customElements.define('ext-navigationview', HTMLParsedElement.withParsedCallback(ExtNavigationview)); //export default reactify(ExtNavigationview);
+window.customElements.define('ext-navigationview', HTMLParsedElement.withParsedCallback(ExtNavigationview));

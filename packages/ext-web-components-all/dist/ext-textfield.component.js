@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_Text from './Ext/form/Text.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtTextfield =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_form_Text) {
   }
 
   return ExtTextfield;
-}(Ext_form_Text); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-textfield', ExtTextfield);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_form_Text);
 
 export { ExtTextfield as default };
-window.customElements.define('ext-textfield', HTMLParsedElement.withParsedCallback(ExtTextfield)); //export default reactify(ExtTextfield);
+window.customElements.define('ext-textfield', HTMLParsedElement.withParsedCallback(ExtTextfield));

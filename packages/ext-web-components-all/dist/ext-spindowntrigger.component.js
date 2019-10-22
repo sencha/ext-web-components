@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_trigger_SpinDown from './Ext/field/trigger/SpinDown.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtSpindowntrigger =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_field_trigger_Sp) {
   }
 
   return ExtSpindowntrigger;
-}(Ext_field_trigger_SpinDown); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-spindowntrigger', ExtSpindowntrigger);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_field_trigger_SpinDown);
 
 export { ExtSpindowntrigger as default };
-window.customElements.define('ext-spindowntrigger', HTMLParsedElement.withParsedCallback(ExtSpindowntrigger)); //export default reactify(ExtSpindowntrigger);
+window.customElements.define('ext-spindowntrigger', HTMLParsedElement.withParsedCallback(ExtSpindowntrigger));

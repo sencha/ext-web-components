@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_panel_Accordion from './Ext/panel/Accordion.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtAccordion =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_panel_Accordion) {
   }
 
   return ExtAccordion;
-}(Ext_panel_Accordion); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-accordion', ExtAccordion);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_panel_Accordion);
 
 export { ExtAccordion as default };
-window.customElements.define('ext-accordion', HTMLParsedElement.withParsedCallback(ExtAccordion)); //export default reactify(ExtAccordion);
+window.customElements.define('ext-accordion', HTMLParsedElement.withParsedCallback(ExtAccordion));

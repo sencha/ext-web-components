@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_panel_Title from './Ext/panel/Title.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtPaneltitle =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_panel_Title) {
   }
 
   return ExtPaneltitle;
-}(Ext_panel_Title); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-paneltitle', ExtPaneltitle);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_panel_Title);
 
 export { ExtPaneltitle as default };
-window.customElements.define('ext-paneltitle', HTMLParsedElement.withParsedCallback(ExtPaneltitle)); //export default reactify(ExtPaneltitle);
+window.customElements.define('ext-paneltitle', HTMLParsedElement.withParsedCallback(ExtPaneltitle));

@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_pivot_d3_Container from './Ext/pivot/d3/Container.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtPivotd3container =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_pivot_d3_Contain) {
   }
 
   return ExtPivotd3container;
-}(Ext_pivot_d3_Container); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-pivotd3container', ExtPivotd3container);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_pivot_d3_Container);
 
 export { ExtPivotd3container as default };
-window.customElements.define('ext-pivotd3container', HTMLParsedElement.withParsedCallback(ExtPivotd3container)); //export default reactify(ExtPivotd3container);
+window.customElements.define('ext-pivotd3container', HTMLParsedElement.withParsedCallback(ExtPivotd3container));

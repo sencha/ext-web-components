@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ux_colorpick_ColorPreview from './Ext/ux/colorpick/ColorPreview.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtColorpickercolorpreview =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_ux_colorpick_Col) {
   }
 
   return ExtColorpickercolorpreview;
-}(Ext_ux_colorpick_ColorPreview); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-colorpickercolorpreview', ExtColorpickercolorpreview);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_ux_colorpick_ColorPreview);
 
 export { ExtColorpickercolorpreview as default };
-window.customElements.define('ext-colorpickercolorpreview', HTMLParsedElement.withParsedCallback(ExtColorpickercolorpreview)); //export default reactify(ExtColorpickercolorpreview);
+window.customElements.define('ext-colorpickercolorpreview', HTMLParsedElement.withParsedCallback(ExtColorpickercolorpreview));

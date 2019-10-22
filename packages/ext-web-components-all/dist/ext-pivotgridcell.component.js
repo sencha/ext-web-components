@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_pivot_cell_Cell from './Ext/pivot/cell/Cell.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtPivotgridcell =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_pivot_cell_Cell) {
   }
 
   return ExtPivotgridcell;
-}(Ext_pivot_cell_Cell); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-pivotgridcell', ExtPivotgridcell);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_pivot_cell_Cell);
 
 export { ExtPivotgridcell as default };
-window.customElements.define('ext-pivotgridcell', HTMLParsedElement.withParsedCallback(ExtPivotgridcell)); //export default reactify(ExtPivotgridcell);
+window.customElements.define('ext-pivotgridcell', HTMLParsedElement.withParsedCallback(ExtPivotgridcell));

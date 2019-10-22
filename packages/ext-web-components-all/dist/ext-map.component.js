@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Map from './Ext/Map.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtMap =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_Map) {
   }
 
   return ExtMap;
-}(Ext_Map); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-map', ExtMap);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_Map);
 
 export { ExtMap as default };
-window.customElements.define('ext-map', HTMLParsedElement.withParsedCallback(ExtMap)); //export default reactify(ExtMap);
+window.customElements.define('ext-map', HTMLParsedElement.withParsedCallback(ExtMap));

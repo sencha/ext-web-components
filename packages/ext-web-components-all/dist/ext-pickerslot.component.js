@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_picker_Slot from './Ext/picker/Slot.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtPickerslot =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_picker_Slot) {
   }
 
   return ExtPickerslot;
-}(Ext_picker_Slot); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-pickerslot', ExtPickerslot);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_picker_Slot);
 
 export { ExtPickerslot as default };
-window.customElements.define('ext-pickerslot', HTMLParsedElement.withParsedCallback(ExtPickerslot)); //export default reactify(ExtPickerslot);
+window.customElements.define('ext-pickerslot', HTMLParsedElement.withParsedCallback(ExtPickerslot));

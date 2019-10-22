@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_calendar_form_Add from './Ext/calendar/form/Add.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtCalendar_form_add =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_calendar_form_Ad) {
   }
 
   return ExtCalendar_form_add;
-}(Ext_calendar_form_Add); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-form-add', ExtCalendar_form_add);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_calendar_form_Add);
 
 export { ExtCalendar_form_add as default };
-window.customElements.define('ext-calendar-form-add', HTMLParsedElement.withParsedCallback(ExtCalendar_form_add)); //export default reactify(ExtCalendar_form_add);
+window.customElements.define('ext-calendar-form-add', HTMLParsedElement.withParsedCallback(ExtCalendar_form_add));

@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_RadioGroup from './Ext/field/RadioGroup.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtRadiogroup =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_field_RadioGroup) {
   }
 
   return ExtRadiogroup;
-}(Ext_field_RadioGroup); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-radiogroup', ExtRadiogroup);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_field_RadioGroup);
 
 export { ExtRadiogroup as default };
-window.customElements.define('ext-radiogroup', HTMLParsedElement.withParsedCallback(ExtRadiogroup)); //export default reactify(ExtRadiogroup);
+window.customElements.define('ext-radiogroup', HTMLParsedElement.withParsedCallback(ExtRadiogroup));

@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_MessageBox from './Ext/MessageBox.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtMessagebox =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_MessageBox) {
   }
 
   return ExtMessagebox;
-}(Ext_MessageBox); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-messagebox', ExtMessagebox);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_MessageBox);
 
 export { ExtMessagebox as default };
-window.customElements.define('ext-messagebox', HTMLParsedElement.withParsedCallback(ExtMessagebox)); //export default reactify(ExtMessagebox);
+window.customElements.define('ext-messagebox', HTMLParsedElement.withParsedCallback(ExtMessagebox));

@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_column_Template from './Ext/grid/column/Template.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtGridcolumn =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_grid_column_Temp) {
   }
 
   return ExtGridcolumn;
-}(Ext_grid_column_Template); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-gridcolumn', ExtGridcolumn);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_grid_column_Template);
 
 export { ExtGridcolumn as default };
-window.customElements.define('ext-gridcolumn', HTMLParsedElement.withParsedCallback(ExtGridcolumn)); //export default reactify(ExtGridcolumn);
+window.customElements.define('ext-gridcolumn', HTMLParsedElement.withParsedCallback(ExtGridcolumn));
