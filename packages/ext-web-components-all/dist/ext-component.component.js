@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Gadget from './Ext/Gadget.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtComponent =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_Gadget) {
   }
 
   return ExtComponent;
-}(Ext_Gadget); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-component', ExtComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_Gadget);
 
 export { ExtComponent as default };
-window.customElements.define('ext-component', HTMLParsedElement.withParsedCallback(ExtComponent)); //export default reactify(ExtComponent);
+window.customElements.define('ext-component', HTMLParsedElement.withParsedCallback(ExtComponent));

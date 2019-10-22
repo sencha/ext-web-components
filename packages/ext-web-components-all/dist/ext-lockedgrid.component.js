@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_LockedGrid from './Ext/grid/LockedGrid.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtLockedgrid =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_grid_LockedGrid) {
   }
 
   return ExtLockedgrid;
-}(Ext_grid_LockedGrid); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-lockedgrid', ExtLockedgrid);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_grid_LockedGrid);
 
 export { ExtLockedgrid as default };
-window.customElements.define('ext-lockedgrid', HTMLParsedElement.withParsedCallback(ExtLockedgrid)); //export default reactify(ExtLockedgrid);
+window.customElements.define('ext-lockedgrid', HTMLParsedElement.withParsedCallback(ExtLockedgrid));

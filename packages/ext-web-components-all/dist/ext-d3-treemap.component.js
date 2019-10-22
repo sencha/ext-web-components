@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_d3_hierarchy_TreeMap from './Ext/d3/hierarchy/TreeMap.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtD3_treemap =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_d3_hierarchy_Tre) {
   }
 
   return ExtD3_treemap;
-}(Ext_d3_hierarchy_TreeMap); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-d3-treemap', ExtD3_treemap);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_d3_hierarchy_TreeMap);
 
 export { ExtD3_treemap as default };
-window.customElements.define('ext-d3-treemap', HTMLParsedElement.withParsedCallback(ExtD3_treemap)); //export default reactify(ExtD3_treemap);
+window.customElements.define('ext-d3-treemap', HTMLParsedElement.withParsedCallback(ExtD3_treemap));

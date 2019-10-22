@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_Checkbox from './Ext/form/Checkbox.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtCheckbox =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_form_Checkbox) {
   }
 
   return ExtCheckbox;
-}(Ext_form_Checkbox); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-checkbox', ExtCheckbox);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_form_Checkbox);
 
 export { ExtCheckbox as default };
-window.customElements.define('ext-checkbox', HTMLParsedElement.withParsedCallback(ExtCheckbox)); //export default reactify(ExtCheckbox);
+window.customElements.define('ext-checkbox', HTMLParsedElement.withParsedCallback(ExtCheckbox));

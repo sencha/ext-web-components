@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_d3_HeatMap from './Ext/d3/HeatMap.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtD3_heatmap =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_d3_HeatMap) {
   }
 
   return ExtD3_heatmap;
-}(Ext_d3_HeatMap); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-d3-heatmap', ExtD3_heatmap);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_d3_HeatMap);
 
 export { ExtD3_heatmap as default };
-window.customElements.define('ext-d3-heatmap', HTMLParsedElement.withParsedCallback(ExtD3_heatmap)); //export default reactify(ExtD3_heatmap);
+window.customElements.define('ext-d3-heatmap', HTMLParsedElement.withParsedCallback(ExtD3_heatmap));

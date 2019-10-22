@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_column_Check from './Ext/grid/column/Check.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtCheckcolumn =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_grid_column_Chec) {
   }
 
   return ExtCheckcolumn;
-}(Ext_grid_column_Check); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-checkcolumn', ExtCheckcolumn);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_grid_column_Check);
 
 export { ExtCheckcolumn as default };
-window.customElements.define('ext-checkcolumn', HTMLParsedElement.withParsedCallback(ExtCheckcolumn)); //export default reactify(ExtCheckcolumn);
+window.customElements.define('ext-checkcolumn', HTMLParsedElement.withParsedCallback(ExtCheckcolumn));

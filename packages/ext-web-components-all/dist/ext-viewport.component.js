@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_viewport_Default from './Ext/viewport/Default.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtViewport =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_viewport_Default) {
   }
 
   return ExtViewport;
-}(Ext_viewport_Default); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-viewport', ExtViewport);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_viewport_Default);
 
 export { ExtViewport as default };
-window.customElements.define('ext-viewport', HTMLParsedElement.withParsedCallback(ExtViewport)); //export default reactify(ExtViewport);
+window.customElements.define('ext-viewport', HTMLParsedElement.withParsedCallback(ExtViewport));

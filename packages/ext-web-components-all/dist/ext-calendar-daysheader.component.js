@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_calendar_header_Days from './Ext/calendar/header/Days.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtCalendar_daysheader =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_calendar_header_) {
   }
 
   return ExtCalendar_daysheader;
-}(Ext_calendar_header_Days); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-daysheader', ExtCalendar_daysheader);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_calendar_header_Days);
 
 export { ExtCalendar_daysheader as default };
-window.customElements.define('ext-calendar-daysheader', HTMLParsedElement.withParsedCallback(ExtCalendar_daysheader)); //export default reactify(ExtCalendar_daysheader);
+window.customElements.define('ext-calendar-daysheader', HTMLParsedElement.withParsedCallback(ExtCalendar_daysheader));

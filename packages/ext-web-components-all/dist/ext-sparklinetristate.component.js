@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_sparkline_TriState from './Ext/sparkline/TriState.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtSparklinetristate =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_sparkline_TriSta) {
   }
 
   return ExtSparklinetristate;
-}(Ext_sparkline_TriState); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-sparklinetristate', ExtSparklinetristate);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_sparkline_TriState);
 
 export { ExtSparklinetristate as default };
-window.customElements.define('ext-sparklinetristate', HTMLParsedElement.withParsedCallback(ExtSparklinetristate)); //export default reactify(ExtSparklinetristate);
+window.customElements.define('ext-sparklinetristate', HTMLParsedElement.withParsedCallback(ExtSparklinetristate));

@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_IndexBar from './Ext/IndexBar.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtIndexbar =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_IndexBar) {
   }
 
   return ExtIndexbar;
-}(Ext_IndexBar); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-indexbar', ExtIndexbar);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_IndexBar);
 
 export { ExtIndexbar as default };
-window.customElements.define('ext-indexbar', HTMLParsedElement.withParsedCallback(ExtIndexbar)); //export default reactify(ExtIndexbar);
+window.customElements.define('ext-indexbar', HTMLParsedElement.withParsedCallback(ExtIndexbar));

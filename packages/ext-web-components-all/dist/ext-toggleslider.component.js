@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_slider_Toggle from './Ext/slider/Toggle.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtToggleslider =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_slider_Toggle) {
   }
 
   return ExtToggleslider;
-}(Ext_slider_Toggle); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-toggleslider', ExtToggleslider);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_slider_Toggle);
 
 export { ExtToggleslider as default };
-window.customElements.define('ext-toggleslider', HTMLParsedElement.withParsedCallback(ExtToggleslider)); //export default reactify(ExtToggleslider);
+window.customElements.define('ext-toggleslider', HTMLParsedElement.withParsedCallback(ExtToggleslider));

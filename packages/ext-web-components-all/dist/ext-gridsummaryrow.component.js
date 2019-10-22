@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_SummaryRow from './Ext/grid/SummaryRow.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtGridsummaryrow =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_grid_SummaryRow) {
   }
 
   return ExtGridsummaryrow;
-}(Ext_grid_SummaryRow); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-gridsummaryrow', ExtGridsummaryrow);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_grid_SummaryRow);
 
 export { ExtGridsummaryrow as default };
-window.customElements.define('ext-gridsummaryrow', HTMLParsedElement.withParsedCallback(ExtGridsummaryrow)); //export default reactify(ExtGridsummaryrow);
+window.customElements.define('ext-gridsummaryrow', HTMLParsedElement.withParsedCallback(ExtGridsummaryrow));

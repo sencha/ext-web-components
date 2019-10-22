@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_trigger_Expand from './Ext/field/trigger/Expand.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtExpandtrigger =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_field_trigger_Ex) {
   }
 
   return ExtExpandtrigger;
-}(Ext_field_trigger_Expand); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-expandtrigger', ExtExpandtrigger);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_field_trigger_Expand);
 
 export { ExtExpandtrigger as default };
-window.customElements.define('ext-expandtrigger', HTMLParsedElement.withParsedCallback(ExtExpandtrigger)); //export default reactify(ExtExpandtrigger);
+window.customElements.define('ext-expandtrigger', HTMLParsedElement.withParsedCallback(ExtExpandtrigger));

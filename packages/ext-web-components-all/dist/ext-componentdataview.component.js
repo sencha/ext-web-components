@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_Component from './Ext/dataview/Component.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtComponentdataview =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_dataview_Compone) {
   }
 
   return ExtComponentdataview;
-}(Ext_dataview_Component); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-componentdataview', ExtComponentdataview);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_dataview_Component);
 
 export { ExtComponentdataview as default };
-window.customElements.define('ext-componentdataview', HTMLParsedElement.withParsedCallback(ExtComponentdataview)); //export default reactify(ExtComponentdataview);
+window.customElements.define('ext-componentdataview', HTMLParsedElement.withParsedCallback(ExtComponentdataview));

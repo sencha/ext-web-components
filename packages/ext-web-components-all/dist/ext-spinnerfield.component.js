@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_Spinner from './Ext/form/Spinner.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtSpinnerfield =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_form_Spinner) {
   }
 
   return ExtSpinnerfield;
-}(Ext_form_Spinner); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-spinnerfield', ExtSpinnerfield);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_form_Spinner);
 
 export { ExtSpinnerfield as default };
-window.customElements.define('ext-spinnerfield', HTMLParsedElement.withParsedCallback(ExtSpinnerfield)); //export default reactify(ExtSpinnerfield);
+window.customElements.define('ext-spinnerfield', HTMLParsedElement.withParsedCallback(ExtSpinnerfield));

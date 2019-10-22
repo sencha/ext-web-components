@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_Radio from './Ext/form/Radio.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtRadio =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_form_Radio) {
   }
 
   return ExtRadio;
-}(Ext_form_Radio); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-radio', ExtRadio);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_form_Radio);
 
 export { ExtRadio as default };
-window.customElements.define('ext-radio', HTMLParsedElement.withParsedCallback(ExtRadio)); //export default reactify(ExtRadio);
+window.customElements.define('ext-radio', HTMLParsedElement.withParsedCallback(ExtRadio));

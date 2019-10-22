@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_cell_Number from './Ext/grid/cell/Number.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtNumbercell =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_grid_cell_Number) {
   }
 
   return ExtNumbercell;
-}(Ext_grid_cell_Number); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-numbercell', ExtNumbercell);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_grid_cell_Number);
 
 export { ExtNumbercell as default };
-window.customElements.define('ext-numbercell', HTMLParsedElement.withParsedCallback(ExtNumbercell)); //export default reactify(ExtNumbercell);
+window.customElements.define('ext-numbercell', HTMLParsedElement.withParsedCallback(ExtNumbercell));

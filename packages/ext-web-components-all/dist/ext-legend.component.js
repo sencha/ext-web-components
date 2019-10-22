@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_chart_Legend from './Ext/chart/Legend.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtLegend =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_chart_Legend) {
   }
 
   return ExtLegend;
-}(Ext_chart_Legend); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-legend', ExtLegend);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_chart_Legend);
 
 export { ExtLegend as default };
-window.customElements.define('ext-legend', HTMLParsedElement.withParsedCallback(ExtLegend)); //export default reactify(ExtLegend);
+window.customElements.define('ext-legend', HTMLParsedElement.withParsedCallback(ExtLegend));

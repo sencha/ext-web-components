@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_calendar_panel_Panel from './Ext/calendar/panel/Panel.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtCalendar =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_calendar_panel_P) {
   }
 
   return ExtCalendar;
-}(Ext_calendar_panel_Panel); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar', ExtCalendar);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_calendar_panel_Panel);
 
 export { ExtCalendar as default };
-window.customElements.define('ext-calendar', HTMLParsedElement.withParsedCallback(ExtCalendar)); //export default reactify(ExtCalendar);
+window.customElements.define('ext-calendar', HTMLParsedElement.withParsedCallback(ExtCalendar));

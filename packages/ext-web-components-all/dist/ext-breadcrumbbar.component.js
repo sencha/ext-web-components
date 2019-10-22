@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_BreadcrumbBar from './Ext/BreadcrumbBar.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtBreadcrumbbar =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_BreadcrumbBar) {
   }
 
   return ExtBreadcrumbbar;
-}(Ext_BreadcrumbBar); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-breadcrumbbar', ExtBreadcrumbbar);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_BreadcrumbBar);
 
 export { ExtBreadcrumbbar as default };
-window.customElements.define('ext-breadcrumbbar', HTMLParsedElement.withParsedCallback(ExtBreadcrumbbar)); //export default reactify(ExtBreadcrumbbar);
+window.customElements.define('ext-breadcrumbbar', HTMLParsedElement.withParsedCallback(ExtBreadcrumbbar));

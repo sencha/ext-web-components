@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_d3_hierarchy_partition_Partition from './Ext/d3/hierarchy/partition/Partition.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtD3_partition =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_d3_hierarchy_par) {
   }
 
   return ExtD3_partition;
-}(Ext_d3_hierarchy_partition_Partition); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-d3-partition', ExtD3_partition);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_d3_hierarchy_partition_Partition);
 
 export { ExtD3_partition as default };
-window.customElements.define('ext-d3-partition', HTMLParsedElement.withParsedCallback(ExtD3_partition)); //export default reactify(ExtD3_partition);
+window.customElements.define('ext-d3-partition', HTMLParsedElement.withParsedCallback(ExtD3_partition));

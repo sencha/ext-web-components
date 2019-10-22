@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_CellEditor from './Ext/grid/CellEditor.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtCelleditor =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_grid_CellEditor) {
   }
 
   return ExtCelleditor;
-}(Ext_grid_CellEditor); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-celleditor', ExtCelleditor);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_grid_CellEditor);
 
 export { ExtCelleditor as default };
-window.customElements.define('ext-celleditor', HTMLParsedElement.withParsedCallback(ExtCelleditor)); //export default reactify(ExtCelleditor);
+window.customElements.define('ext-celleditor', HTMLParsedElement.withParsedCallback(ExtCelleditor));

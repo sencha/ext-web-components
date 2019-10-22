@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_FieldSet from './Ext/form/FieldSet.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtFieldset =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_form_FieldSet) {
   }
 
   return ExtFieldset;
-}(Ext_form_FieldSet); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-fieldset', ExtFieldset);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_form_FieldSet);
 
 export { ExtFieldset as default };
-window.customElements.define('ext-fieldset', HTMLParsedElement.withParsedCallback(ExtFieldset)); //export default reactify(ExtFieldset);
+window.customElements.define('ext-fieldset', HTMLParsedElement.withParsedCallback(ExtFieldset));

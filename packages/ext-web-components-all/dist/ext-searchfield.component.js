@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_Search from './Ext/form/Search.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtSearchfield =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_form_Search) {
   }
 
   return ExtSearchfield;
-}(Ext_form_Search); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-searchfield', ExtSearchfield);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_form_Search);
 
 export { ExtSearchfield as default };
-window.customElements.define('ext-searchfield', HTMLParsedElement.withParsedCallback(ExtSearchfield)); //export default reactify(ExtSearchfield);
+window.customElements.define('ext-searchfield', HTMLParsedElement.withParsedCallback(ExtSearchfield));

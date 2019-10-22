@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_BoundList from './Ext/dataview/BoundList.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtBoundlist =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_dataview_BoundLi) {
   }
 
   return ExtBoundlist;
-}(Ext_dataview_BoundList); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-boundlist', ExtBoundlist);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_dataview_BoundList);
 
 export { ExtBoundlist as default };
-window.customElements.define('ext-boundlist', HTMLParsedElement.withParsedCallback(ExtBoundlist)); //export default reactify(ExtBoundlist);
+window.customElements.define('ext-boundlist', HTMLParsedElement.withParsedCallback(ExtBoundlist));

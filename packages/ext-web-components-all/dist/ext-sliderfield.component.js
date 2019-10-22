@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_Slider from './Ext/form/Slider.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtSliderfield =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_form_Slider) {
   }
 
   return ExtSliderfield;
-}(Ext_form_Slider); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-sliderfield', ExtSliderfield);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_form_Slider);
 
 export { ExtSliderfield as default };
-window.customElements.define('ext-sliderfield', HTMLParsedElement.withParsedCallback(ExtSliderfield)); //export default reactify(ExtSliderfield);
+window.customElements.define('ext-sliderfield', HTMLParsedElement.withParsedCallback(ExtSliderfield));

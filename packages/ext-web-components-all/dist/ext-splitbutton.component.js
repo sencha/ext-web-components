@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_SplitButton from './Ext/SplitButton.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtSplitbutton =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_SplitButton) {
   }
 
   return ExtSplitbutton;
-}(Ext_SplitButton); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-splitbutton', ExtSplitbutton);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_SplitButton);
 
 export { ExtSplitbutton as default };
-window.customElements.define('ext-splitbutton', HTMLParsedElement.withParsedCallback(ExtSplitbutton)); //export default reactify(ExtSplitbutton);
+window.customElements.define('ext-splitbutton', HTMLParsedElement.withParsedCallback(ExtSplitbutton));

@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Image from './Ext/Image.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtImage =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_Image) {
   }
 
   return ExtImage;
-}(Ext_Image); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-image', ExtImage);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_Image);
 
 export { ExtImage as default };
-window.customElements.define('ext-image', HTMLParsedElement.withParsedCallback(ExtImage)); //export default reactify(ExtImage);
+window.customElements.define('ext-image', HTMLParsedElement.withParsedCallback(ExtImage));

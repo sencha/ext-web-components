@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_Container from './Ext/field/Container.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtContainerfield =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_field_Container) {
   }
 
   return ExtContainerfield;
-}(Ext_field_Container); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-containerfield', ExtContainerfield);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_field_Container);
 
 export { ExtContainerfield as default };
-window.customElements.define('ext-containerfield', HTMLParsedElement.withParsedCallback(ExtContainerfield)); //export default reactify(ExtContainerfield);
+window.customElements.define('ext-containerfield', HTMLParsedElement.withParsedCallback(ExtContainerfield));
