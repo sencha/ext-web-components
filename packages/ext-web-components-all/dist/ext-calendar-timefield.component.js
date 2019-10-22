@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_calendar_form_TimeField from './Ext/calendar/form/TimeField.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtCalendar_timefield =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_calendar_form_Ti) {
   }
 
   return ExtCalendar_timefield;
-}(Ext_calendar_form_TimeField); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-timefield', ExtCalendar_timefield);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_calendar_form_TimeField);
 
 export { ExtCalendar_timefield as default };
-window.customElements.define('ext-calendar-timefield', HTMLParsedElement.withParsedCallback(ExtCalendar_timefield)); //export default reactify(ExtCalendar_timefield);
+window.customElements.define('ext-calendar-timefield', HTMLParsedElement.withParsedCallback(ExtCalendar_timefield));

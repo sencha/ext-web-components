@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_FieldGroupContainer from './Ext/field/FieldGroupContainer.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtGroupcontainer =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_field_FieldGroup) {
   }
 
   return ExtGroupcontainer;
-}(Ext_field_FieldGroupContainer); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-groupcontainer', ExtGroupcontainer);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_field_FieldGroupContainer);
 
 export { ExtGroupcontainer as default };
-window.customElements.define('ext-groupcontainer', HTMLParsedElement.withParsedCallback(ExtGroupcontainer)); //export default reactify(ExtGroupcontainer);
+window.customElements.define('ext-groupcontainer', HTMLParsedElement.withParsedCallback(ExtGroupcontainer));

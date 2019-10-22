@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_chart_PolarChart from './Ext/chart/PolarChart.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtPolar =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_chart_PolarChart) {
   }
 
   return ExtPolar;
-}(Ext_chart_PolarChart); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-polar', ExtPolar);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_chart_PolarChart);
 
 export { ExtPolar as default };
-window.customElements.define('ext-polar', HTMLParsedElement.withParsedCallback(ExtPolar)); //export default reactify(ExtPolar);
+window.customElements.define('ext-polar', HTMLParsedElement.withParsedCallback(ExtPolar));

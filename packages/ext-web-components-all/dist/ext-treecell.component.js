@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_cell_Tree from './Ext/grid/cell/Tree.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtTreecell =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_grid_cell_Tree) {
   }
 
   return ExtTreecell;
-}(Ext_grid_cell_Tree); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-treecell', ExtTreecell);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_grid_cell_Tree);
 
 export { ExtTreecell as default };
-window.customElements.define('ext-treecell', HTMLParsedElement.withParsedCallback(ExtTreecell)); //export default reactify(ExtTreecell);
+window.customElements.define('ext-treecell', HTMLParsedElement.withParsedCallback(ExtTreecell));

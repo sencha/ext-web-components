@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_panel_YearPicker from './Ext/panel/YearPicker.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtYearpicker =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_panel_YearPicker) {
   }
 
   return ExtYearpicker;
-}(Ext_panel_YearPicker); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-yearpicker', ExtYearpicker);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_panel_YearPicker);
 
 export { ExtYearpicker as default };
-window.customElements.define('ext-yearpicker', HTMLParsedElement.withParsedCallback(ExtYearpicker)); //export default reactify(ExtYearpicker);
+window.customElements.define('ext-yearpicker', HTMLParsedElement.withParsedCallback(ExtYearpicker));

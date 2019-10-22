@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_panel_Tool from './Ext/panel/Tool.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtTool =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_panel_Tool) {
   }
 
   return ExtTool;
-}(Ext_panel_Tool); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-tool', ExtTool);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_panel_Tool);
 
 export { ExtTool as default };
-window.customElements.define('ext-tool', HTMLParsedElement.withParsedCallback(ExtTool)); //export default reactify(ExtTool);
+window.customElements.define('ext-tool', HTMLParsedElement.withParsedCallback(ExtTool));

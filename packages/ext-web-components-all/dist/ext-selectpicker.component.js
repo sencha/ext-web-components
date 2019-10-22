@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_picker_SelectPicker from './Ext/picker/SelectPicker.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtSelectpicker =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_picker_SelectPic) {
   }
 
   return ExtSelectpicker;
-}(Ext_picker_SelectPicker); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-selectpicker', ExtSelectpicker);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_picker_SelectPicker);
 
 export { ExtSelectpicker as default };
-window.customElements.define('ext-selectpicker', HTMLParsedElement.withParsedCallback(ExtSelectpicker)); //export default reactify(ExtSelectpicker);
+window.customElements.define('ext-selectpicker', HTMLParsedElement.withParsedCallback(ExtSelectpicker));

@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ux_colorpick_Field from './Ext/ux/colorpick/Field.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtColorfield =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_ux_colorpick_Fie) {
   }
 
   return ExtColorfield;
-}(Ext_ux_colorpick_Field); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-colorfield', ExtColorfield);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_ux_colorpick_Field);
 
 export { ExtColorfield as default };
-window.customElements.define('ext-colorfield', HTMLParsedElement.withParsedCallback(ExtColorfield)); //export default reactify(ExtColorfield);
+window.customElements.define('ext-colorfield', HTMLParsedElement.withParsedCallback(ExtColorfield));

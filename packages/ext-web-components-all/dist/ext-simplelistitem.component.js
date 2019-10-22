@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_component_SimpleListItem from './Ext/dataview/component/SimpleListItem.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtSimplelistitem =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_dataview_compone) {
   }
 
   return ExtSimplelistitem;
-}(Ext_dataview_component_SimpleListItem); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-simplelistitem', ExtSimplelistitem);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_dataview_component_SimpleListItem);
 
 export { ExtSimplelistitem as default };
-window.customElements.define('ext-simplelistitem', HTMLParsedElement.withParsedCallback(ExtSimplelistitem)); //export default reactify(ExtSimplelistitem);
+window.customElements.define('ext-simplelistitem', HTMLParsedElement.withParsedCallback(ExtSimplelistitem));

@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_trigger_Menu from './Ext/field/trigger/Menu.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtMenutrigger =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_field_trigger_Me) {
   }
 
   return ExtMenutrigger;
-}(Ext_field_trigger_Menu); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-menutrigger', ExtMenutrigger);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_field_trigger_Menu);
 
 export { ExtMenutrigger as default };
-window.customElements.define('ext-menutrigger', HTMLParsedElement.withParsedCallback(ExtMenutrigger)); //export default reactify(ExtMenutrigger);
+window.customElements.define('ext-menutrigger', HTMLParsedElement.withParsedCallback(ExtMenutrigger));

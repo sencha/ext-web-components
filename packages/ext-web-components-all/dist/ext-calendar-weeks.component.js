@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_calendar_panel_Weeks from './Ext/calendar/panel/Weeks.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtCalendar_weeks =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_calendar_panel_W) {
   }
 
   return ExtCalendar_weeks;
-}(Ext_calendar_panel_Weeks); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-weeks', ExtCalendar_weeks);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_calendar_panel_Weeks);
 
 export { ExtCalendar_weeks as default };
-window.customElements.define('ext-calendar-weeks', HTMLParsedElement.withParsedCallback(ExtCalendar_weeks)); //export default reactify(ExtCalendar_weeks);
+window.customElements.define('ext-calendar-weeks', HTMLParsedElement.withParsedCallback(ExtCalendar_weeks));

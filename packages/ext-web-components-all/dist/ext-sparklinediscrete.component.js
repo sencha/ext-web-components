@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_sparkline_Discrete from './Ext/sparkline/Discrete.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtSparklinediscrete =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_sparkline_Discre) {
   }
 
   return ExtSparklinediscrete;
-}(Ext_sparkline_Discrete); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-sparklinediscrete', ExtSparklinediscrete);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_sparkline_Discrete);
 
 export { ExtSparklinediscrete as default };
-window.customElements.define('ext-sparklinediscrete', HTMLParsedElement.withParsedCallback(ExtSparklinediscrete)); //export default reactify(ExtSparklinediscrete);
+window.customElements.define('ext-sparklinediscrete', HTMLParsedElement.withParsedCallback(ExtSparklinediscrete));

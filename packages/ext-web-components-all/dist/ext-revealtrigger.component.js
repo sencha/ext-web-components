@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_trigger_Reveal from './Ext/field/trigger/Reveal.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtRevealtrigger =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_field_trigger_Re) {
   }
 
   return ExtRevealtrigger;
-}(Ext_field_trigger_Reveal); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-revealtrigger', ExtRevealtrigger);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_field_trigger_Reveal);
 
 export { ExtRevealtrigger as default };
-window.customElements.define('ext-revealtrigger', HTMLParsedElement.withParsedCallback(ExtRevealtrigger)); //export default reactify(ExtRevealtrigger);
+window.customElements.define('ext-revealtrigger', HTMLParsedElement.withParsedCallback(ExtRevealtrigger));

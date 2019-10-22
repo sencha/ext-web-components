@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_Picker from './Ext/field/Picker.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtPickerfield =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_field_Picker) {
   }
 
   return ExtPickerfield;
-}(Ext_field_Picker); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-pickerfield', ExtPickerfield);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_field_Picker);
 
 export { ExtPickerfield as default };
-window.customElements.define('ext-pickerfield', HTMLParsedElement.withParsedCallback(ExtPickerfield)); //export default reactify(ExtPickerfield);
+window.customElements.define('ext-pickerfield', HTMLParsedElement.withParsedCallback(ExtPickerfield));

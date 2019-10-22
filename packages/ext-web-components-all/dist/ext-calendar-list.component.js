@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_calendar_List from './Ext/calendar/List.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtCalendar_list =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_calendar_List) {
   }
 
   return ExtCalendar_list;
-}(Ext_calendar_List); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-list', ExtCalendar_list);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_calendar_List);
 
 export { ExtCalendar_list as default };
-window.customElements.define('ext-calendar-list', HTMLParsedElement.withParsedCallback(ExtCalendar_list)); //export default reactify(ExtCalendar_list);
+window.customElements.define('ext-calendar-list', HTMLParsedElement.withParsedCallback(ExtCalendar_list));

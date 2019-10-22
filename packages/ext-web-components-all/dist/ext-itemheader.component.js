@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_ItemHeader from './Ext/dataview/ItemHeader.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtItemheader =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_dataview_ItemHea) {
   }
 
   return ExtItemheader;
-}(Ext_dataview_ItemHeader); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-itemheader', ExtItemheader);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_dataview_ItemHeader);
 
 export { ExtItemheader as default };
-window.customElements.define('ext-itemheader', HTMLParsedElement.withParsedCallback(ExtItemheader)); //export default reactify(ExtItemheader);
+window.customElements.define('ext-itemheader', HTMLParsedElement.withParsedCallback(ExtItemheader));

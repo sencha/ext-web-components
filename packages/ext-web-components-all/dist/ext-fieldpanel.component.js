@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_Panel from './Ext/field/Panel.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtFieldpanel =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_field_Panel) {
   }
 
   return ExtFieldpanel;
-}(Ext_field_Panel); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-fieldpanel', ExtFieldpanel);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_field_Panel);
 
 export { ExtFieldpanel as default };
-window.customElements.define('ext-fieldpanel', HTMLParsedElement.withParsedCallback(ExtFieldpanel)); //export default reactify(ExtFieldpanel);
+window.customElements.define('ext-fieldpanel', HTMLParsedElement.withParsedCallback(ExtFieldpanel));

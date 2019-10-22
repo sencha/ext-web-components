@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_Hidden from './Ext/form/Hidden.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtHiddenfield =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_form_Hidden) {
   }
 
   return ExtHiddenfield;
-}(Ext_form_Hidden); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-hiddenfield', ExtHiddenfield);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_form_Hidden);
 
 export { ExtHiddenfield as default };
-window.customElements.define('ext-hiddenfield', HTMLParsedElement.withParsedCallback(ExtHiddenfield)); //export default reactify(ExtHiddenfield);
+window.customElements.define('ext-hiddenfield', HTMLParsedElement.withParsedCallback(ExtHiddenfield));

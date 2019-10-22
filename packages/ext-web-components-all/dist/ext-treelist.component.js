@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_list_Tree from './Ext/list/Tree.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtTreelist =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_list_Tree) {
   }
 
   return ExtTreelist;
-}(Ext_list_Tree); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-treelist', ExtTreelist);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_list_Tree);
 
 export { ExtTreelist as default };
-window.customElements.define('ext-treelist', HTMLParsedElement.withParsedCallback(ExtTreelist)); //export default reactify(ExtTreelist);
+window.customElements.define('ext-treelist', HTMLParsedElement.withParsedCallback(ExtTreelist));
