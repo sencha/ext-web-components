@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Audio from './Ext/Audio.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtAudio =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_Audio) {
   }
 
   return ExtAudio;
-}(Ext_Audio); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-audio', ExtAudio);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_Audio);
 
 export { ExtAudio as default };
-window.customElements.define('ext-audio', HTMLParsedElement.withParsedCallback(ExtAudio)); //export default reactify(ExtAudio);
+window.customElements.define('ext-audio', HTMLParsedElement.withParsedCallback(ExtAudio));

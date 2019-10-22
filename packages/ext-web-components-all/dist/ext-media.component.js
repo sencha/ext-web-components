@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Media from './Ext/Media.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtMedia =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_Media) {
   }
 
   return ExtMedia;
-}(Ext_Media); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-media', ExtMedia);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_Media);
 
 export { ExtMedia as default };
-window.customElements.define('ext-media', HTMLParsedElement.withParsedCallback(ExtMedia)); //export default reactify(ExtMedia);
+window.customElements.define('ext-media', HTMLParsedElement.withParsedCallback(ExtMedia));

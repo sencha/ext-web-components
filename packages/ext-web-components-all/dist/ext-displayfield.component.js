@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_Display from './Ext/form/Display.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtDisplayfield =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_form_Display) {
   }
 
   return ExtDisplayfield;
-}(Ext_form_Display); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-displayfield', ExtDisplayfield);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_form_Display);
 
 export { ExtDisplayfield as default };
-window.customElements.define('ext-displayfield', HTMLParsedElement.withParsedCallback(ExtDisplayfield)); //export default reactify(ExtDisplayfield);
+window.customElements.define('ext-displayfield', HTMLParsedElement.withParsedCallback(ExtDisplayfield));

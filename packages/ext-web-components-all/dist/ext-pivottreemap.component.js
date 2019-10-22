@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_pivot_d3_TreeMap from './Ext/pivot/d3/TreeMap.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtPivottreemap =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_pivot_d3_TreeMap) {
   }
 
   return ExtPivottreemap;
-}(Ext_pivot_d3_TreeMap); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-pivottreemap', ExtPivottreemap);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_pivot_d3_TreeMap);
 
 export { ExtPivottreemap as default };
-window.customElements.define('ext-pivottreemap', HTMLParsedElement.withParsedCallback(ExtPivottreemap)); //export default reactify(ExtPivottreemap);
+window.customElements.define('ext-pivottreemap', HTMLParsedElement.withParsedCallback(ExtPivottreemap));

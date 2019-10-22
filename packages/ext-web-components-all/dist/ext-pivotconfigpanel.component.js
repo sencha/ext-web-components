@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_pivot_plugin_configurator_Panel from './Ext/pivot/plugin/configurator/Panel.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtPivotconfigpanel =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_pivot_plugin_con) {
   }
 
   return ExtPivotconfigpanel;
-}(Ext_pivot_plugin_configurator_Panel); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-pivotconfigpanel', ExtPivotconfigpanel);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_pivot_plugin_configurator_Panel);
 
 export { ExtPivotconfigpanel as default };
-window.customElements.define('ext-pivotconfigpanel', HTMLParsedElement.withParsedCallback(ExtPivotconfigpanel)); //export default reactify(ExtPivotconfigpanel);
+window.customElements.define('ext-pivotconfigpanel', HTMLParsedElement.withParsedCallback(ExtPivotconfigpanel));

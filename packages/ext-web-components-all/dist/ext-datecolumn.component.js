@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_column_Date from './Ext/grid/column/Date.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtDatecolumn =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_grid_column_Date) {
   }
 
   return ExtDatecolumn;
-}(Ext_grid_column_Date); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-datecolumn', ExtDatecolumn);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_grid_column_Date);
 
 export { ExtDatecolumn as default };
-window.customElements.define('ext-datecolumn', HTMLParsedElement.withParsedCallback(ExtDatecolumn)); //export default reactify(ExtDatecolumn);
+window.customElements.define('ext-datecolumn', HTMLParsedElement.withParsedCallback(ExtDatecolumn));

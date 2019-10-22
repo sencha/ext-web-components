@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_button_Segmented from './Ext/button/Segmented.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtSegmentedbutton =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_button_Segmented) {
   }
 
   return ExtSegmentedbutton;
-}(Ext_button_Segmented); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-segmentedbutton', ExtSegmentedbutton);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_button_Segmented);
 
 export { ExtSegmentedbutton as default };
-window.customElements.define('ext-segmentedbutton', HTMLParsedElement.withParsedCallback(ExtSegmentedbutton)); //export default reactify(ExtSegmentedbutton);
+window.customElements.define('ext-segmentedbutton', HTMLParsedElement.withParsedCallback(ExtSegmentedbutton));

@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_LockedGridRegion from './Ext/grid/LockedGridRegion.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtLockedgridregion =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_grid_LockedGridR) {
   }
 
   return ExtLockedgridregion;
-}(Ext_grid_LockedGridRegion); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-lockedgridregion', ExtLockedgridregion);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_grid_LockedGridRegion);
 
 export { ExtLockedgridregion as default };
-window.customElements.define('ext-lockedgridregion', HTMLParsedElement.withParsedCallback(ExtLockedgridregion)); //export default reactify(ExtLockedgridregion);
+window.customElements.define('ext-lockedgridregion', HTMLParsedElement.withParsedCallback(ExtLockedgridregion));

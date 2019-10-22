@@ -72,6 +72,9 @@ function (_EwcBaseComponent) {
     this.props.element = el;
     var me = this;
     me.A = {};
+    me.A.CHILDREN = [];
+    me.A.ITEMS = [];
+    me.A.o = {};
     Ext.onReady(function () {
       me.A.ext = Ext.create(me.props);
 

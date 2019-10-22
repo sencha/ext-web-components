@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Sheet from './Ext/Sheet.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtSheet =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_Sheet) {
   }
 
   return ExtSheet;
-}(Ext_Sheet); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-sheet', ExtSheet);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_Sheet);
 
 export { ExtSheet as default };
-window.customElements.define('ext-sheet', HTMLParsedElement.withParsedCallback(ExtSheet)); //export default reactify(ExtSheet);
+window.customElements.define('ext-sheet', HTMLParsedElement.withParsedCallback(ExtSheet));

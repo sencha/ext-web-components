@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_rowedit_Editor from './Ext/grid/rowedit/Editor.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtRoweditor =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_grid_rowedit_Edi) {
   }
 
   return ExtRoweditor;
-}(Ext_grid_rowedit_Editor); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-roweditor', ExtRoweditor);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_grid_rowedit_Editor);
 
 export { ExtRoweditor as default };
-window.customElements.define('ext-roweditor', HTMLParsedElement.withParsedCallback(ExtRoweditor)); //export default reactify(ExtRoweditor);
+window.customElements.define('ext-roweditor', HTMLParsedElement.withParsedCallback(ExtRoweditor));

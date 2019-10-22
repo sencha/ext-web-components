@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_listswiper_Stepper from './Ext/dataview/listswiper/Stepper.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtListswiperstepper =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_dataview_listswi) {
   }
 
   return ExtListswiperstepper;
-}(Ext_dataview_listswiper_Stepper); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-listswiperstepper', ExtListswiperstepper);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_dataview_listswiper_Stepper);
 
 export { ExtListswiperstepper as default };
-window.customElements.define('ext-listswiperstepper', HTMLParsedElement.withParsedCallback(ExtListswiperstepper)); //export default reactify(ExtListswiperstepper);
+window.customElements.define('ext-listswiperstepper', HTMLParsedElement.withParsedCallback(ExtListswiperstepper));

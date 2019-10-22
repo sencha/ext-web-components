@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_File from './Ext/field/File.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtFilefield =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_field_File) {
   }
 
   return ExtFilefield;
-}(Ext_field_File); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-filefield', ExtFilefield);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_field_File);
 
 export { ExtFilefield as default };
-window.customElements.define('ext-filefield', HTMLParsedElement.withParsedCallback(ExtFilefield)); //export default reactify(ExtFilefield);
+window.customElements.define('ext-filefield', HTMLParsedElement.withParsedCallback(ExtFilefield));

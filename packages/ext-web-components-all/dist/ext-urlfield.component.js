@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_Url from './Ext/form/Url.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtUrlfield =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_form_Url) {
   }
 
   return ExtUrlfield;
-}(Ext_form_Url); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-urlfield', ExtUrlfield);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_form_Url);
 
 export { ExtUrlfield as default };
-window.customElements.define('ext-urlfield', HTMLParsedElement.withParsedCallback(ExtUrlfield)); //export default reactify(ExtUrlfield);
+window.customElements.define('ext-urlfield', HTMLParsedElement.withParsedCallback(ExtUrlfield));

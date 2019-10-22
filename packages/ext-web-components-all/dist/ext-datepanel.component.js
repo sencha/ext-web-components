@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_panel_Date from './Ext/panel/Date.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtDatepanel =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_panel_Date) {
   }
 
   return ExtDatepanel;
-}(Ext_panel_Date); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-datepanel', ExtDatepanel);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_panel_Date);
 
 export { ExtDatepanel as default };
-window.customElements.define('ext-datepanel', HTMLParsedElement.withParsedCallback(ExtDatepanel)); //export default reactify(ExtDatepanel);
+window.customElements.define('ext-datepanel', HTMLParsedElement.withParsedCallback(ExtDatepanel));

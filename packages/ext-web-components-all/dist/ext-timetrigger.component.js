@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_trigger_Time from './Ext/field/trigger/Time.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtTimetrigger =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_field_trigger_Ti) {
   }
 
   return ExtTimetrigger;
-}(Ext_field_trigger_Time); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-timetrigger', ExtTimetrigger);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_field_trigger_Time);
 
 export { ExtTimetrigger as default };
-window.customElements.define('ext-timetrigger', HTMLParsedElement.withParsedCallback(ExtTimetrigger)); //export default reactify(ExtTimetrigger);
+window.customElements.define('ext-timetrigger', HTMLParsedElement.withParsedCallback(ExtTimetrigger));

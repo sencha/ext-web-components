@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_slider_Thumb from './Ext/slider/Thumb.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtThumb =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_slider_Thumb) {
   }
 
   return ExtThumb;
-}(Ext_slider_Thumb); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-thumb', ExtThumb);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_slider_Thumb);
 
 export { ExtThumb as default };
-window.customElements.define('ext-thumb', HTMLParsedElement.withParsedCallback(ExtThumb)); //export default reactify(ExtThumb);
+window.customElements.define('ext-thumb', HTMLParsedElement.withParsedCallback(ExtThumb));

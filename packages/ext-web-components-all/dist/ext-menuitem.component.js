@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_menu_TextItem from './Ext/menu/TextItem.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtMenuitem =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_menu_TextItem) {
   }
 
   return ExtMenuitem;
-}(Ext_menu_TextItem); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-menuitem', ExtMenuitem);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_menu_TextItem);
 
 export { ExtMenuitem as default };
-window.customElements.define('ext-menuitem', HTMLParsedElement.withParsedCallback(ExtMenuitem)); //export default reactify(ExtMenuitem);
+window.customElements.define('ext-menuitem', HTMLParsedElement.withParsedCallback(ExtMenuitem));

@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Toolbar from './Ext/Toolbar.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtToolbar =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_Toolbar) {
   }
 
   return ExtToolbar;
-}(Ext_Toolbar); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-toolbar', ExtToolbar);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_Toolbar);
 
 export { ExtToolbar as default };
-window.customElements.define('ext-toolbar', HTMLParsedElement.withParsedCallback(ExtToolbar)); //export default reactify(ExtToolbar);
+window.customElements.define('ext-toolbar', HTMLParsedElement.withParsedCallback(ExtToolbar));

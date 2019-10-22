@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_calendar_view_Multi from './Ext/calendar/view/Multi.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtCalendar_multiview =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_calendar_view_Mu) {
   }
 
   return ExtCalendar_multiview;
-}(Ext_calendar_view_Multi); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-multiview', ExtCalendar_multiview);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_calendar_view_Multi);
 
 export { ExtCalendar_multiview as default };
-window.customElements.define('ext-calendar-multiview', HTMLParsedElement.withParsedCallback(ExtCalendar_multiview)); //export default reactify(ExtCalendar_multiview);
+window.customElements.define('ext-calendar-multiview', HTMLParsedElement.withParsedCallback(ExtCalendar_multiview));

@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ux_Gauge from './Ext/ux/Gauge.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtGauge =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_ux_Gauge) {
   }
 
   return ExtGauge;
-}(Ext_ux_Gauge); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-gauge', ExtGauge);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_ux_Gauge);
 
 export { ExtGauge as default };
-window.customElements.define('ext-gauge', HTMLParsedElement.withParsedCallback(ExtGauge)); //export default reactify(ExtGauge);
+window.customElements.define('ext-gauge', HTMLParsedElement.withParsedCallback(ExtGauge));
