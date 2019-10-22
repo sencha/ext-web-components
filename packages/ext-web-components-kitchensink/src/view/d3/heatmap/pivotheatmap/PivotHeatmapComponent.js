@@ -36,9 +36,9 @@ export default class PivotHeatmapComponent {
             this.padding = '20 20 60 60';
             this.legendVar = {
                 docked: 'bottom',
-                padding: 10,
+                padding: 30,
                 items: {
-                    count: 5,
+                    count: 6,
                     slice: [1],
                     reverse: true,
                     size: {
@@ -74,7 +74,11 @@ export default class PivotHeatmapComponent {
       };
 
       this.pivotCmp.setPadding(this.padding);
-    //   this.pivotCmp.setLegend(this.legendVar);
+      if(this.isPhone) {
+        const legend = this.pivotCmp.getLegend(false);
+        legend.setComponent(null);
+        this.pivotCmp.setLegend(this.legendVar);
+      }
       this.pivotCmp.setMatrix(this.matrixVar);
       this.pivotCmp.setTooltip(tooltip);
   }
