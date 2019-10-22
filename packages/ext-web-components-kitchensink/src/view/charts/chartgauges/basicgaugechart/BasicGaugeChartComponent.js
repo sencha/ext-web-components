@@ -15,8 +15,10 @@ export default class BasicGaugeChartComponent {
     }
 
     onRefreshButtonReady = (event) => {
-        this.refreshButtonCmp = event.detail.cmp;
-        this.refreshButtonCmp.on('tap', this.onRefreshClick.bind(this));
+        if (event.detail.cmp) {
+          this.refreshButtonCmp = event.detail.cmp;
+          this.refreshButtonCmp.on('tap', this.onRefreshClick.bind(this));
+        }
     }
 
     onRefreshClick = () => {
