@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_pullrefresh_Spinner from './Ext/dataview/pullrefresh/Spinner.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtPullrefreshspinner =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_dataview_pullref) {
   }
 
   return ExtPullrefreshspinner;
-}(Ext_dataview_pullrefresh_Spinner); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-pullrefreshspinner', ExtPullrefreshspinner);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_dataview_pullrefresh_Spinner);
 
 export { ExtPullrefreshspinner as default };
-window.customElements.define('ext-pullrefreshspinner', HTMLParsedElement.withParsedCallback(ExtPullrefreshspinner)); //export default reactify(ExtPullrefreshspinner);
+window.customElements.define('ext-pullrefreshspinner', HTMLParsedElement.withParsedCallback(ExtPullrefreshspinner));

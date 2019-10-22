@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_DatePicker from './Ext/DatePicker.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtDatepicker =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_DatePicker) {
   }
 
   return ExtDatepicker;
-}(Ext_DatePicker); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-datepicker', ExtDatepicker);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_DatePicker);
 
 export { ExtDatepicker as default };
-window.customElements.define('ext-datepicker', HTMLParsedElement.withParsedCallback(ExtDatepicker)); //export default reactify(ExtDatepicker);
+window.customElements.define('ext-datepicker', HTMLParsedElement.withParsedCallback(ExtDatepicker));

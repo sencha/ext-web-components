@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_column_Tree from './Ext/grid/column/Tree.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtTreecolumn =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_grid_column_Tree) {
   }
 
   return ExtTreecolumn;
-}(Ext_grid_column_Tree); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-treecolumn', ExtTreecolumn);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_grid_column_Tree);
 
 export { ExtTreecolumn as default };
-window.customElements.define('ext-treecolumn', HTMLParsedElement.withParsedCallback(ExtTreecolumn)); //export default reactify(ExtTreecolumn);
+window.customElements.define('ext-treecolumn', HTMLParsedElement.withParsedCallback(ExtTreecolumn));

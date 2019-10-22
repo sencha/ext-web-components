@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Chip from './Ext/Chip.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtChip =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_Chip) {
   }
 
   return ExtChip;
-}(Ext_Chip); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-chip', ExtChip);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_Chip);
 
 export { ExtChip as default };
-window.customElements.define('ext-chip', HTMLParsedElement.withParsedCallback(ExtChip)); //export default reactify(ExtChip);
+window.customElements.define('ext-chip', HTMLParsedElement.withParsedCallback(ExtChip));

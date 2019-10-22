@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_sparkline_Pie from './Ext/sparkline/Pie.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtSparklinepie =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_sparkline_Pie) {
   }
 
   return ExtSparklinepie;
-}(Ext_sparkline_Pie); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-sparklinepie', ExtSparklinepie);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_sparkline_Pie);
 
 export { ExtSparklinepie as default };
-window.customElements.define('ext-sparklinepie', HTMLParsedElement.withParsedCallback(ExtSparklinepie)); //export default reactify(ExtSparklinepie);
+window.customElements.define('ext-sparklinepie', HTMLParsedElement.withParsedCallback(ExtSparklinepie));

@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_draw_Surface from './Ext/draw/Surface.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtSurface =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_draw_Surface) {
   }
 
   return ExtSurface;
-}(Ext_draw_Surface); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-surface', ExtSurface);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_draw_Surface);
 
 export { ExtSurface as default };
-window.customElements.define('ext-surface', HTMLParsedElement.withParsedCallback(ExtSurface)); //export default reactify(ExtSurface);
+window.customElements.define('ext-surface', HTMLParsedElement.withParsedCallback(ExtSurface));

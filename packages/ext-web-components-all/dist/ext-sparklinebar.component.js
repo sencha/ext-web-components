@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_sparkline_Bar from './Ext/sparkline/Bar.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtSparklinebar =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_sparkline_Bar) {
   }
 
   return ExtSparklinebar;
-}(Ext_sparkline_Bar); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-sparklinebar', ExtSparklinebar);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_sparkline_Bar);
 
 export { ExtSparklinebar as default };
-window.customElements.define('ext-sparklinebar', HTMLParsedElement.withParsedCallback(ExtSparklinebar)); //export default reactify(ExtSparklinebar);
+window.customElements.define('ext-sparklinebar', HTMLParsedElement.withParsedCallback(ExtSparklinebar));

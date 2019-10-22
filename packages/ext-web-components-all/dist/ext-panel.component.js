@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_panel_Panel from './Ext/panel/Panel.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtPanel =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_panel_Panel) {
   }
 
   return ExtPanel;
-}(Ext_panel_Panel); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-panel', ExtPanel);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_panel_Panel);
 
 export { ExtPanel as default };
-window.customElements.define('ext-panel', HTMLParsedElement.withParsedCallback(ExtPanel)); //export default reactify(ExtPanel);
+window.customElements.define('ext-panel', HTMLParsedElement.withParsedCallback(ExtPanel));

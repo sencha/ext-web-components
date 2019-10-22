@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_cell_Boolean from './Ext/grid/cell/Boolean.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtBooleancell =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_grid_cell_Boolea) {
   }
 
   return ExtBooleancell;
-}(Ext_grid_cell_Boolean); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-booleancell', ExtBooleancell);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_grid_cell_Boolean);
 
 export { ExtBooleancell as default };
-window.customElements.define('ext-booleancell', HTMLParsedElement.withParsedCallback(ExtBooleancell)); //export default reactify(ExtBooleancell);
+window.customElements.define('ext-booleancell', HTMLParsedElement.withParsedCallback(ExtBooleancell));

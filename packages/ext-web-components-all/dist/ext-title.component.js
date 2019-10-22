@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Title from './Ext/Title.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtTitle =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_Title) {
   }
 
   return ExtTitle;
-}(Ext_Title); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-title', ExtTitle);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_Title);
 
 export { ExtTitle as default };
-window.customElements.define('ext-title', HTMLParsedElement.withParsedCallback(ExtTitle)); //export default reactify(ExtTitle);
+window.customElements.define('ext-title', HTMLParsedElement.withParsedCallback(ExtTitle));

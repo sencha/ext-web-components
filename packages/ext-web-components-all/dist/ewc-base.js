@@ -1,7 +1,7 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Mon Oct 21 2019 15:29:42 GMT-0400 (Eastern Daylight Time)
+//Tue Oct 22 2019 07:09:11 GMT-0400 (Eastern Daylight Time)
 import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var EwcBaseComponent =
@@ -59,6 +59,7 @@ function (_HTMLElement) {
     EwcBaseComponent.elements.push(this);
     this.A = {};
     this.A.CHILDREN = [];
+    this.A.ITEMS = [];
     this.A.o = {}; //console.log(this.children)
 
     for (var _iterator = this.children, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
@@ -75,17 +76,28 @@ function (_HTMLElement) {
 
       var child = _ref;
 
-      //console.dir(child)
       if (child.nodeName.substring(0, 4) !== 'EXT-') {
-        //console.log(child);
         var el = Ext.get(child);
         var w = Ext.create({
           xtype: 'widget',
           element: el
         });
-        this.A.CHILDREN.push(w);
+        this.A.ITEMS.push(w);
+      } else {
+        var g = {};
+        g.type = 'ext';
+        this.A.ITEMS.push(g);
       }
-    }
+    } //for (let child of this.children) {
+    //    //console.dir(child)
+    //    if (child.nodeName.substring(0, 4) !== 'EXT-') {
+    //        //console.log(child);
+    //        var el = Ext.get(child);
+    //        var w = Ext.create({xtype:'widget', element: el});
+    //        //this.A.CHILDREN.push(w);
+    //    }
+    //}
+
 
     this.base = EwcBaseComponent; //this.properties = []
     //for (var property in this.propertiesobject) {
@@ -204,6 +216,23 @@ function (_HTMLElement) {
             console.log(EwcBaseComponent.elementsprior);
             var allExt = [];
             EwcBaseComponent.elementsprior.forEach(function (element) {
+              //console.dir(element)
+              if (element.A != undefined) {
+                for (var i = 0; i < element.A.ITEMS.length; i++) {
+                  //console.log(element.A.ITEMS[i])
+                  if (element.A.ITEMS[i].xtype == 'widget') {
+                    //console.log('do it for ' + i)
+                    //console.log(me)
+                    //console.dir(element)
+                    //console.log(me.A.ext)
+                    //console.log(element.A.ITEMS[i])
+                    //element.A.ext.insert(i,element.A.ITEMS[i])
+                    element.addTheChild(element.A.ext, element.A.ITEMS[i], i);
+                  }
+                }
+              } //console.log('after loop')
+
+
               if (element.getAttribute('extname') != undefined) {
                 var o = {};
                 o.extname = element.getAttribute('extname');
@@ -214,7 +243,7 @@ function (_HTMLElement) {
             }); //console.log(EwcBaseComponent.elementsprior)
 
             EwcBaseComponent.elementsprior.forEach(function (element) {
-              console.dir(element);
+              //console.dir(element)
               element.dispatchEvent(new CustomEvent('ready', {
                 detail: {
                   cmp: element.A.ext,

@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_cell_Widget from './Ext/grid/cell/Widget.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtWidgetcell =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_grid_cell_Widget) {
   }
 
   return ExtWidgetcell;
-}(Ext_grid_cell_Widget); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-widgetcell', ExtWidgetcell);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_grid_cell_Widget);
 
 export { ExtWidgetcell as default };
-window.customElements.define('ext-widgetcell', HTMLParsedElement.withParsedCallback(ExtWidgetcell)); //export default reactify(ExtWidgetcell);
+window.customElements.define('ext-widgetcell', HTMLParsedElement.withParsedCallback(ExtWidgetcell));

@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_Select from './Ext/form/Select.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtSelectfield =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_form_Select) {
   }
 
   return ExtSelectfield;
-}(Ext_form_Select); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-selectfield', ExtSelectfield);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_form_Select);
 
 export { ExtSelectfield as default };
-window.customElements.define('ext-selectfield', HTMLParsedElement.withParsedCallback(ExtSelectfield)); //export default reactify(ExtSelectfield);
+window.customElements.define('ext-selectfield', HTMLParsedElement.withParsedCallback(ExtSelectfield));

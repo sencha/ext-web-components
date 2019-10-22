@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_TabBar from './Ext/TabBar.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtTabbar =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_TabBar) {
   }
 
   return ExtTabbar;
-}(Ext_TabBar); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-tabbar', ExtTabbar);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_TabBar);
 
 export { ExtTabbar as default };
-window.customElements.define('ext-tabbar', HTMLParsedElement.withParsedCallback(ExtTabbar)); //export default reactify(ExtTabbar);
+window.customElements.define('ext-tabbar', HTMLParsedElement.withParsedCallback(ExtTabbar));

@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_picker_Tablet from './Ext/picker/Tablet.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtTabletpicker =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_picker_Tablet) {
   }
 
   return ExtTabletpicker;
-}(Ext_picker_Tablet); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-tabletpicker', ExtTabletpicker);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_picker_Tablet);
 
 export { ExtTabletpicker as default };
-window.customElements.define('ext-tabletpicker', HTMLParsedElement.withParsedCallback(ExtTabletpicker)); //export default reactify(ExtTabletpicker);
+window.customElements.define('ext-tabletpicker', HTMLParsedElement.withParsedCallback(ExtTabletpicker));

@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_pullrefresh_Bar from './Ext/dataview/pullrefresh/Bar.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtPullrefreshbar =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_dataview_pullref) {
   }
 
   return ExtPullrefreshbar;
-}(Ext_dataview_pullrefresh_Bar); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-pullrefreshbar', ExtPullrefreshbar);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_dataview_pullrefresh_Bar);
 
 export { ExtPullrefreshbar as default };
-window.customElements.define('ext-pullrefreshbar', HTMLParsedElement.withParsedCallback(ExtPullrefreshbar)); //export default reactify(ExtPullrefreshbar);
+window.customElements.define('ext-pullrefreshbar', HTMLParsedElement.withParsedCallback(ExtPullrefreshbar));

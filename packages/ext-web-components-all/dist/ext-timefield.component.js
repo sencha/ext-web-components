@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_Time from './Ext/field/Time.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtTimefield =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_field_Time) {
   }
 
   return ExtTimefield;
-}(Ext_field_Time); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-timefield', ExtTimefield);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_field_Time);
 
 export { ExtTimefield as default };
-window.customElements.define('ext-timefield', HTMLParsedElement.withParsedCallback(ExtTimefield)); //export default reactify(ExtTimefield);
+window.customElements.define('ext-timefield', HTMLParsedElement.withParsedCallback(ExtTimefield));

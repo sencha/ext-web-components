@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_d3_canvas_Canvas from './Ext/d3/canvas/Canvas.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtD3_canvas =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_d3_canvas_Canvas) {
   }
 
   return ExtD3_canvas;
-}(Ext_d3_canvas_Canvas); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-d3-canvas', ExtD3_canvas);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_d3_canvas_Canvas);
 
 export { ExtD3_canvas as default };
-window.customElements.define('ext-d3-canvas', HTMLParsedElement.withParsedCallback(ExtD3_canvas)); //export default reactify(ExtD3_canvas);
+window.customElements.define('ext-d3-canvas', HTMLParsedElement.withParsedCallback(ExtD3_canvas));

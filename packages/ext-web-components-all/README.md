@@ -1,6 +1,39 @@
 ## @sencha/ext-web-components-all
 
-last run: Mon Oct 21 2019 15:29:42 GMT-0400 (Eastern Daylight Time)
+last run: Tue Oct 22 2019 07:09:11 GMT-0400 (Eastern Daylight Time)
+
+## Test with Vanilla JavaScript
+
+#### Create a folder named 'js-example'
+
+#### In js-example, create a package.json file with the following:
+
+```sh
+{
+  "name": "js-example",
+  "version": "1.0.0",
+  "description": "ext-web-components example",
+  "scripts": {},
+  "devDependencies": {
+    "@sencha/ext-web-components-all": "~7.1.0",
+    "http-server": "^0.11.1"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {}
+}
+
+```
+
+#### Copy 'index.html' from @sencha/ext-webcomponents-all to js-example
+
+#### Run 'npm install' in js-example folder
+
+#### Run 'npx http-server' in js-example folder
+
+#### Run http://127.0.0.1:8080 in a browser
+
+
 
 ## Test with an  CLI generated app
 

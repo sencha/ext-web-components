@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_HeaderContainer from './Ext/grid/HeaderContainer.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtHeadercontainer =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_grid_HeaderConta) {
   }
 
   return ExtHeadercontainer;
-}(Ext_grid_HeaderContainer); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-headercontainer', ExtHeadercontainer);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_grid_HeaderContainer);
 
 export { ExtHeadercontainer as default };
-window.customElements.define('ext-headercontainer', HTMLParsedElement.withParsedCallback(ExtHeadercontainer)); //export default reactify(ExtHeadercontainer);
+window.customElements.define('ext-headercontainer', HTMLParsedElement.withParsedCallback(ExtHeadercontainer));

@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_cell_Date from './Ext/grid/cell/Date.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtDatecell =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_grid_cell_Date) {
   }
 
   return ExtDatecell;
-}(Ext_grid_cell_Date); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-datecell', ExtDatecell);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_grid_cell_Date);
 
 export { ExtDatecell as default };
-window.customElements.define('ext-datecell', HTMLParsedElement.withParsedCallback(ExtDatecell)); //export default reactify(ExtDatecell);
+window.customElements.define('ext-datecell', HTMLParsedElement.withParsedCallback(ExtDatecell));

@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_pivot_plugin_configurator_Form from './Ext/pivot/plugin/configurator/Form.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtPivotconfigform =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_pivot_plugin_con) {
   }
 
   return ExtPivotconfigform;
-}(Ext_pivot_plugin_configurator_Form); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-pivotconfigform', ExtPivotconfigform);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_pivot_plugin_configurator_Form);
 
 export { ExtPivotconfigform as default };
-window.customElements.define('ext-pivotconfigform', HTMLParsedElement.withParsedCallback(ExtPivotconfigform)); //export default reactify(ExtPivotconfigform);
+window.customElements.define('ext-pivotconfigform', HTMLParsedElement.withParsedCallback(ExtPivotconfigform));

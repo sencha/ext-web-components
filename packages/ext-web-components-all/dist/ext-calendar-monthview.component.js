@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_calendar_view_Month from './Ext/calendar/view/Month.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtCalendar_monthview =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_calendar_view_Mo) {
   }
 
   return ExtCalendar_monthview;
-}(Ext_calendar_view_Month); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-monthview', ExtCalendar_monthview);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_calendar_view_Month);
 
 export { ExtCalendar_monthview as default };
-window.customElements.define('ext-calendar-monthview', HTMLParsedElement.withParsedCallback(ExtCalendar_monthview)); //export default reactify(ExtCalendar_monthview);
+window.customElements.define('ext-calendar-monthview', HTMLParsedElement.withParsedCallback(ExtCalendar_monthview));

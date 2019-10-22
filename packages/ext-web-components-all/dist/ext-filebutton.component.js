@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_FileButton from './Ext/field/FileButton.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtFilebutton =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_field_FileButton) {
   }
 
   return ExtFilebutton;
-}(Ext_field_FileButton); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-filebutton', ExtFilebutton);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_field_FileButton);
 
 export { ExtFilebutton as default };
-window.customElements.define('ext-filebutton', HTMLParsedElement.withParsedCallback(ExtFilebutton)); //export default reactify(ExtFilebutton);
+window.customElements.define('ext-filebutton', HTMLParsedElement.withParsedCallback(ExtFilebutton));

@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_menu_SortAsc from './Ext/grid/menu/SortAsc.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtGridsortascmenuitem =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_grid_menu_SortAs) {
   }
 
   return ExtGridsortascmenuitem;
-}(Ext_grid_menu_SortAsc); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-gridsortascmenuitem', ExtGridsortascmenuitem);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_grid_menu_SortAsc);
 
 export { ExtGridsortascmenuitem as default };
-window.customElements.define('ext-gridsortascmenuitem', HTMLParsedElement.withParsedCallback(ExtGridsortascmenuitem)); //export default reactify(ExtGridsortascmenuitem);
+window.customElements.define('ext-gridsortascmenuitem', HTMLParsedElement.withParsedCallback(ExtGridsortascmenuitem));

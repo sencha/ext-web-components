@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_d3_hierarchy_Pack from './Ext/d3/hierarchy/Pack.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtD3_pack =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_d3_hierarchy_Pac) {
   }
 
   return ExtD3_pack;
-}(Ext_d3_hierarchy_Pack); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-d3-pack', ExtD3_pack);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_d3_hierarchy_Pack);
 
 export { ExtD3_pack as default };
-window.customElements.define('ext-d3-pack', HTMLParsedElement.withParsedCallback(ExtD3_pack)); //export default reactify(ExtD3_pack);
+window.customElements.define('ext-d3-pack', HTMLParsedElement.withParsedCallback(ExtD3_pack));

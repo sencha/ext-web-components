@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_trigger_Date from './Ext/field/trigger/Date.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtDatetrigger =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_field_trigger_Da) {
   }
 
   return ExtDatetrigger;
-}(Ext_field_trigger_Date); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-datetrigger', ExtDatetrigger);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_field_trigger_Date);
 
 export { ExtDatetrigger as default };
-window.customElements.define('ext-datetrigger', HTMLParsedElement.withParsedCallback(ExtDatetrigger)); //export default reactify(ExtDatetrigger);
+window.customElements.define('ext-datetrigger', HTMLParsedElement.withParsedCallback(ExtDatetrigger));

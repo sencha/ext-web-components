@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_trigger_Clear from './Ext/field/trigger/Clear.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtCleartrigger =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_field_trigger_Cl) {
   }
 
   return ExtCleartrigger;
-}(Ext_field_trigger_Clear); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-cleartrigger', ExtCleartrigger);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_field_trigger_Clear);
 
 export { ExtCleartrigger as default };
-window.customElements.define('ext-cleartrigger', HTMLParsedElement.withParsedCallback(ExtCleartrigger)); //export default reactify(ExtCleartrigger);
+window.customElements.define('ext-cleartrigger', HTMLParsedElement.withParsedCallback(ExtCleartrigger));

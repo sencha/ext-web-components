@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_pivot_Row from './Ext/pivot/Row.js';
-import HTMLParsedElement from './HTMLParsedElement.js'; //import reactify from './reactify.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
 var ExtPivotgridrow =
 /*#__PURE__*/
@@ -16,13 +16,7 @@ function (_Ext_pivot_Row) {
   }
 
   return ExtPivotgridrow;
-}(Ext_pivot_Row); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-pivotgridrow', ExtPivotgridrow);
-//    });
-//})();
-//const  = HTMLParsedElement;
-
+}(Ext_pivot_Row);
 
 export { ExtPivotgridrow as default };
-window.customElements.define('ext-pivotgridrow', HTMLParsedElement.withParsedCallback(ExtPivotgridrow)); //export default reactify(ExtPivotgridrow);
+window.customElements.define('ext-pivotgridrow', HTMLParsedElement.withParsedCallback(ExtPivotgridrow));
