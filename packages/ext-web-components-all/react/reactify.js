@@ -1,5 +1,5 @@
 import assign from 'object-assign';
-import pascalCase from 'pascal-case';
+//import pascalCase from 'pascal-case';
 import React from 'react';
 import ReactDOM from 'react-dom';
 //<script src="%PUBLIC_URL%/css.all.js"></script>
@@ -32,7 +32,17 @@ export default function (CustomElement, opts) {
     }
     const tagName = (new CustomElement()).tagName;
     console.log('after CustomElement: ' + tagName)
-    const displayName = pascalCase(tagName);
+    //const displayName = pascalCase(tagName);
+
+    function toPascalCase(s) {
+        return s.match(/[a-z]+/gi)
+            .map(function (word) {
+                return word.charAt(0).toUpperCase() + word.substr(1).toLowerCase()
+            })
+            .join('')
+    }
+    const displayName = toPascalCase(tagName)
+
     const { React, ReactDOM } = opts;
     if (!React || !ReactDOM) {
         throw new Error('React and ReactDOM must be dependencies, globally on your `window` object or passed via opts.');
@@ -43,12 +53,15 @@ export default function (CustomElement, opts) {
         constructor() {
             super()
             console.log('constructor')
+            console.log(this.props)
         }
 
         static get displayName() {
             return displayName;
         }
         componentDidMount() {
+            console.log('componentDidMount')
+            console.log(this.props)
             this.UNSAFE_componentWillReceiveProps(this.props);
         }
         UNSAFE_componentWillReceiveProps(props) {
@@ -71,7 +84,13 @@ export default function (CustomElement, opts) {
 
         }
         render() {
+            console.log('in render')
+            console.log(tagName)
+            console.log(this.props.style)
+            console.log(this.props.children)
             return React.createElement(tagName, { style: this.props.style }, this.props.children);
+            //return React.createElement(tagName);
+            //return React.createElement('ext-panel');
         }
     }
 
