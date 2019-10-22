@@ -2,7 +2,7 @@ import './TreeReorderComponent.html';
 
 Ext.require([ 'Ext.grid.plugin.TreeDragDrop']);
 
-export default class TreeComponent {
+export default class TreeReorderComponent {
     onTreeReady = (event) => {
         this.treeCmp = event.detail.cmp;
 

@@ -52,14 +52,14 @@
       labelAlign="top"
     >
     </ext-spinnerfield>
-    <ext-datepickerfield
+    <ext-datefield
       onready="formpanel.componentReady"
       picker='{
       "yearFrom": "1990"
     }'
       label="Start Date"
     >
-    </ext-datepickerfield>
+    </ext-datefield>
     <ext-selectfield
       onready="formpanel.componentReady"
       label="Rank"
@@ -100,16 +100,16 @@
     margin="15 0"
     defaults='{"labelAlign": "placeholder"}'
   >
-    <ext-checkboxfield
+    <ext-checkbox
       onready="formpanel.componentReady"
       boxLabel="Admin"
     >
-    </ext-checkboxfield>
-    <ext-checkboxfield
+    </ext-checkbox>
+    <ext-checkbox
       onready="formpanel.componentReady"
       boxLabel="Power User"
     >
-    </ext-checkboxfield>
+    </ext-checkbox>
   </ext-fieldset>
   <ext-fieldset
     title="Favorite Color"
@@ -122,34 +122,34 @@
                 "padding": "0"
               }'
   >
-    <ext-radiofield
+    <ext-radio
       onready="formpanel.componentReady"
       name="color"
       boxLabel="Red"
       value="red"
     >
-    </ext-radiofield>
-    <ext-radiofield
+    </ext-radio>
+    <ext-radio
       onready="formpanel.componentReady"
       name="color"
       boxLabel="Blue"
       value="blue"
     >
-    </ext-radiofield>
-    <ext-radiofield
+    </ext-radio>
+    <ext-radio
       onready="formpanel.componentReady"
       name="color"
       boxLabel="Green"
       value="green"
     >
-    </ext-radiofield>
-    <ext-radiofield
+    </ext-radio>
+    <ext-radio
       onready="formpanel.componentReady"
       name="color"
       boxLabel="Purple"
       value="purple"
     >
-    </ext-radiofield>
+    </ext-radio>
     </ext-fieldset>
     <ext-toolbar
       shadow="false"

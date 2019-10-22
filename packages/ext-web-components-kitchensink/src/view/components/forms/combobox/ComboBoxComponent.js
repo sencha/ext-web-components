@@ -1,4 +1,4 @@
-import './ComboBoxFieldComponent.html';
+import './ComboBoxComponent.html';
 import data from './ComboBoxFieldComponentData.js';
 
 export default class ComboBoxFieldComponent {
@@ -10,6 +10,7 @@ export default class ComboBoxFieldComponent {
     }
 
     comboboxFieldReady = (event) => {
+        debugger;
         this.comboboxCmp = event.detail.cmp;
         this.comboboxCmp.setStore(this.store);
     }

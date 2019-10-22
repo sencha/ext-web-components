@@ -1,5 +1,5 @@
-//import './ewc.js';
-import '@sencha/ext-web-components-all';
+import './ewc_new.js';
+// import '@sencha/ext-web-components-all';
 import '@sencha/ext-web-components-all/src/ext-router.component.js';
 
 import getMenu from './menu';

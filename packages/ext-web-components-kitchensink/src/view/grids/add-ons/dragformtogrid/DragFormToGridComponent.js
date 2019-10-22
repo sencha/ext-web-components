@@ -11,10 +11,20 @@ export default class DragFormToGridComponent {
 
     dataPanelReady(event) {
         this.dataPanelCmp = event.detail.cmp;
+
+        if (Ext.platformTags.phone) {
+            this.dataPanelCmp.setHeight(250);
+        }
     }
 
     parentPanelReady(event) {
         this.parentPanelCmp = event.detail.cmp;
+
+        if (!Ext.platformTags.phone) {
+            this.parentPanelCmp.setTitle('Patient Hospital Assignment');
+        } else {
+            this.parentPanelCmp.setTitle(null);
+        }
     }
 
     patientDataViewReady(event) {
@@ -66,6 +76,9 @@ export default class DragFormToGridComponent {
 
     hospitalGridReady(event) {
         this.hospitalGridCmp = event.detail.cmp;
+        if (Ext.platformTags.phone) {
+            this.hospitalGridCmp.setHeight(300);
+        }
         this.hospitalGridCmp.setItemConfig({
             body: {
                 tpl:`

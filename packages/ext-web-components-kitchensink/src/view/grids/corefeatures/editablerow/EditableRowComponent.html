@@ -1,5 +1,5 @@
 <ext-container padding="10" layout="fit" fitToParent="true">
-  <ext-grid 
+  <ext-grid
     title="Row Editing"
     shadow="true"
     height="700"
@@ -9,15 +9,15 @@
     onready="editablerow.onGirdReady"
     plugins='{"rowedit": { "autoConfirm": false }}'
   >
-    <ext-column  
+    <ext-gridcolumn
       text= 'Common Name'
       flex= "1"
       width= "100"
       dataIndex= "common"
       editable= "true"
     >
-    </ext-column>
-    <ext-column
+    </ext-gridcolumn>
+    <ext-gridcolumn
       text= 'Light'
       width= "125"
       flex= "1"
@@ -33,15 +33,15 @@
               "Sunny"
           ]
       }'>
-    </ext-column>
-    <ext-column
+    </ext-gridcolumn>
+    <ext-gridcolumn
       text= 'Price'
       width= "100"
       flex= "1"
       formatter= "usMoney"
       dataIndex= 'price'
       editable= 'true'>
-    </ext-column>
+    </ext-gridcolumn>
     <ext-datecolumn
       text= 'Available'
       width= '125'

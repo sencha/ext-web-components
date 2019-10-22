@@ -1,5 +1,4 @@
 <ext-container
-    onready="basicgrid.onPageReady"
     padding="10"
     layout="fit"
     fitToParent="true"
@@ -13,6 +12,7 @@
     title="Stock Prices"
     grouped="true"
     enableColumnMove="true"
+    onready="basicgrid.onPageReady"
   >
     <ext-gridcolumn
       text="Company"
@@ -27,19 +27,19 @@
       formatter="usMoney"
     >
     </ext-gridcolumn>
-    <!-- <ext-gridcolumn
+    <ext-gridcolumn
       text="Change"
       width="100"
       dataIndex="priceChange"
-      renderer="basicgrid.renderSign"
+      onready="basicgrid.changeColumnReady"
     >
     </ext-gridcolumn>
     <ext-gridcolumn
       text="% Change"
       dataIndex="priceChangePct"
-      renderer="basicgrid.renderSignPctChange"
+      onready="basicgrid.percentChangeColumnReady"
     >
-    </ext-gridcolumn> -->
+    </ext-gridcolumn>
     <ext-gridcolumn
       text="Last Updated"
       width="125"

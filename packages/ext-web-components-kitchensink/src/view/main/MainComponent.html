@@ -6,9 +6,11 @@
 >
     <!-- Titlebar starts-->
     <ext-titlebar docked="top" weight="10">
-      <ext-button iconCls="x-fa fa-bars" onTap="main.toggleTree"></ext-button>
-      <span class="ext ext-sencha" style="margin: '0 5px 0 7px;'; font-size: '20px'; width: '20px'"></span>
-      <span id="theTitle" href="#" class="app-title">Sencha Ext Web Components 7.0 Kitchen Sink</span>
+      <ext-button iconCls="x-fa fa-bars" ontap="main.toggleTree"></ext-button>
+      <ext-container>
+        <span class="ext ext-sencha" style="margin: '0 5px 0 7px;'; font-size: '20px'; width: '20px'"></span>
+        <span id="theTitle" href="#" class="app-title">Sencha Ext Web Components 7.0 Kitchen Sink</span>
+      </ext-container>
       <ext-container extname="rightContainer" align="right"></ext-container>
     </ext-titlebar>
     <!-- Titlebar ends-->
@@ -49,6 +51,7 @@
       collapsible='{"direction": "left"}'
       collapsed="false"
       width="375px"
+      extname="navTreePanel"
     >
       <ext-searchfield
         flex="1"
@@ -88,12 +91,14 @@
     </ext-panel>
     <!-- selections ends-->
     <!-- Router starts-->
-    <ext-router
-      hidden=false
-      style="overflow:scroll;"
-      padding="10px"
-    >
-    </ext-router>
+    <ext-container extname="componentsView">
+      <ext-router
+        hidden=false
+        style="overflow:scroll;"
+        padding="10px"
+      >
+      </ext-router>
+    </ext-container>
     <!-- Router ends-->
     <!-- code window starts-->
     <ext-panel
@@ -129,4 +134,3 @@
     </ext-panel>
     <!-- code window ends-->
   </ext-panel>
-

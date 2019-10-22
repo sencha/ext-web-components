@@ -4,14 +4,14 @@
     onready="stockticker.onGridReady"
     height="100%"
 >
-    <ext-column
+    <ext-gridcolumn
       text="Company"
       dataIndex="name"
       width="150"
       sortable="true"
     >
-    </ext-column>
-    <ext-column
+    </ext-gridcolumn>
+    <ext-gridcolumn
       align="right"
       text="Price"
       width="85"
@@ -19,8 +19,8 @@
       formatter="usMoney"
       sortable="true"
     >
-    </ext-column>
-    <ext-column
+    </ext-gridcolumn>
+    <ext-gridcolumn
       text="Trend"
       width="200"
       dataIndex="trend"
@@ -35,8 +35,8 @@
           }
        }'
     >
-    </ext-column>
-    <ext-column
+    </ext-gridcolumn>
+    <ext-gridcolumn
       align="right"
       text="Change"
       width="90"
@@ -45,8 +45,8 @@
       sortable="true"
       onready="stockticker.changeColumnReady"
     >
-    </ext-column>
-    <ext-column
+    </ext-gridcolumn>
+    <ext-gridcolumn
       align="right"
       text="% Change"
       dataIndex="pctChange"
@@ -54,7 +54,7 @@
       sortable="true"
       onready="stockticker.percentChangeColumnReady"
     >
-    </ext-column>
+    </ext-gridcolumn>
     <ext-toolbar
       docked="bottom"
       defaults='{"margin": "0 20 0 0"}'
@@ -75,11 +75,11 @@
         onready="stockticker.infoContainerReady"
       >
       </ext-container>
-      <ext-checkboxfield
+      <ext-checkbox
           margin="0"
           boxLabel="Flash background color on change"
           onChange="stockticker.toggleFlashBackground"
       >
-      </ext-checkboxfield>
+      </ext-checkbox>
     </ext-toolbar>
 </ext-grid>
