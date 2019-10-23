@@ -14,7 +14,16 @@ function doSet(me, prop, val) {
     var val2;
 
     if (typeof val == 'object') {
-      val2 = JSON.stringify(val);
+      try {
+        val2 = JSON.stringify(val);
+      } catch (e) {
+        if (me.attributeObjects == undefined) {
+          me.attributeObjects = {};
+        }
+
+        me.attributeObjects[prop] = val;
+        val2 = 'error';
+      }
     } else {
       val2 = val;
     }
@@ -29,8 +38,13 @@ function doGet(me, prop) {
   return me.getAttribute(prop);
 }
 
-export function filterProp(propertyValue) {
+export function filterProp(propertyValue, property, me) {
   try {
+    if (propertyValue == 'error') {
+      console.log(property);
+      return me.attributeObjects[property];
+    }
+
     var parsedProp = JSON.parse(propertyValue);
 
     if (parsedProp === null || parsedProp === undefined || parsedProp === true || parsedProp === false || parsedProp === Object(parsedProp) || !isNaN(parsedProp) && parsedProp !== 0) {
