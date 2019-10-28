@@ -1,4 +1,4 @@
-import { getCmp } from '../../util.js';
+import { extnameToProperty } from '@sencha/ext-elements-all/src/util.js';
 import hljs from 'highlightjs';
 import 'highlightjs/styles/atom-one-dark.css';
 import './MainComponent.css';
@@ -22,19 +22,19 @@ export default class MainComponent {
         if (Ext.os.is.Phone) {this.collapsed = true;}
     }
 
+    // setupCmp(event) {
+    //     for (var prop in event.detail.cmpObj) {
+    //         this[prop+'Cmp'] = event.detail.cmpObj[prop];
+    //     }
+    // }
+
     viewportReady = (event) => {
         console.log('readyViewport');
         this.navInProcess = false;
-        this.rightContainerCmp = getCmp(event, 'rightContainer');
-        this.breadcrumbCmp = getCmp(event, 'navBreadcrumb');
-        this.codeButtonCmp = getCmp(event, 'codeButton');
-        this.navTreelistCmp = getCmp(event, 'navTreelist');
-        this.selectionCmp = getCmp(event, 'selectionPanel');
-        this.dataviewNavCmp = getCmp(event, 'navDataview');
-        this.codePanelCmp = getCmp(event, 'codePanel');
-        this.tabPanelCmp = getCmp(event, 'tabPanel');
-        this.navTreePanelCmp = getCmp(event, 'navTreePanel');
-        this.componentsViewCmp = getCmp(event, 'componentsView');
+
+        //find a way for this to be run automatically
+        extnameToProperty(event, this);
+        //extnameToProperty(['all'], event, this, 'Cmp');
 
         this.rightContainerCmp.updateHtml('Build: ' + BUILD_VERSION); // eslint-disable-line no-undef
         this.breadcrumbCmp.setStore(this.treeStore);
