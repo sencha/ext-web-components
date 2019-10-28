@@ -1,9 +1,9 @@
 import './ewc_new.js';
-// import '@sencha/ext-web-components-all';
-import '@sencha/ext-web-components-all/src/ext-router.component.js';
+// import '@sencha/ext-elements-all';
+import '@sencha/ext-elements-all/dist/ext-router.component.js';
 
 import getMenu from './menu';
-import { getRoutes } from '@sencha/ext-web-components-all/src/ext-router.component.js';
+import { getRoutes } from '@sencha/ext-elements-all/dist/ext-router.component.js';
 import MainComponent from './view/main/MainComponent.js';
 
 Ext.require([

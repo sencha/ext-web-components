@@ -1,7 +1,7 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Wed Oct 23 2019 07:48:07 GMT-0400 (Eastern Daylight Time)
+//Thu Oct 24 2019 09:00:27 GMT-0400 (Eastern Daylight Time)
 import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var EwcBaseComponent =
