@@ -2,13 +2,11 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
-    <script type="text/javascript" src="./node_modules/@sencha/ext-elements-all/ext/css.all.js"></script>
-    <!-- <script type="text/javascript" src="./ext.core.dev.js"></script> -->
     <!-- <script type="text/javascript" src="./node_modules/@sencha/cmd/dist/ant/build/app/Boot.js"></script> -->
-    <script type="text/javascript" src="./ext.grid.dev.js"></script>
-
-    <!-- <script type="text/javascript" src="./node_modules/@sencha/ext-elements-all/ext/ext.all.js"></script>
-     -->
+    <!-- <script type="text/javascript" src="./node_modules/@sencha/ext-elements-all/ext/css.all.js"></script>
+    <script type="text/javascript" src="./node_modules/@sencha/ext-elements-all/ext/ext.all.js"></script> -->
+    <!-- <script type="text/javascript" src="./ext.core.dev1.js"></script>
+     <script type="text/javascript" src="./ext.grid.dev.js"></script> -->
 
     <script type="module" src="./node_modules/@sencha/ext-elements-all/src/ext-grid.component.js"></script>
     <script type="module" src="./node_modules/@sencha/ext-elements-all/src/ext-gridcolumn.component.js"></script>
@@ -18,19 +16,21 @@
 
 <script>
     window.main = {}
+    window.main.mjg = {}
     console.log('window.main')
 
-    window.main.renderChange = (value) => {
+    window.main.mjg.renderChange = (value) => {
         console.log('*****')
         console.log(value)
         return '<ext-button text="' + value + '"></ext-button>'
     }
 
-    window.main.onReady = function(event) {
+    //window.main.onReady = function(event) {
+    window.main.mjg.onReady = ({detail: {cmp, cmpObj}}) => {
         console.log('ready')
         console.log(event)
 
-        event.detail.ext.setData([
+        cmp.setData([
             {"name": "Lisa3", "email": "lisa@simpsons.com", "phone": "555-111-1224"},
             {"name": "Bart", "email": "bart@simpsons.com", "phone": "555-222-1234"},
             {"name": "Homer", "email": "homer@simpsons.com", "phone": "555-222-1244"},
@@ -70,7 +70,7 @@
 
 
     <ext-grid
-        onready="main.onReady"
+        onready="main.mjg.onReady"
         title="the grid"
         height="250px"
         xcolumns='[
@@ -87,7 +87,7 @@
     >
         <ext-gridcolumn width="250px" text="Name" dataIndex="name"></ext-gridcolumn>
         <ext-gridcolumn flex="1" text="Email Address" dataIndex="email"></ext-gridcolumn>
-        <ext-gridcolumn renderer="main.renderChange" width="250px" text="Phone Number" dataIndex="phone"></ext-gridcolumn>
+        <ext-gridcolumn xrenderer="main.renderChange" width="250px" text="Phone Number" dataIndex="phone"></ext-gridcolumn>
     </ext-grid>
 
 </body>
