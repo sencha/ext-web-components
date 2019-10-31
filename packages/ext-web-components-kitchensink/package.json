@@ -21,7 +21,6 @@
         "buildexampleold": "npm run clean && cross-env webpack --env.verbose=no --env.environment=production --env.treeshake=yes --env.basehref=/ExtWebComponents/7.0.0/kitchensink/"
     },
     "devDependencies": {
-        "@sencha/ext-web-components-all": "~7.1.0",
         "@sencha/ext-elements-all": "~7.1.0",
         "@sencha/ext-webpack-plugin": "~7.1.0",
         "@sencha/ext": "~7.0.0",
