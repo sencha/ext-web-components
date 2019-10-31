@@ -7,33 +7,33 @@ export default class SliderFieldComponent {
         this.multipleValue = [10, 70];
     }
 
-    onSingleContainerReady = (event) => {
-        this.singleContainerCmp = event.detail.cmp;
-        this.singleContainerCmp.setHtml(`Value: ${this.singleValue}`);
+    onSingleThumbReady = (event) => {
+        this.singleThumbCmp = event.detail.cmp;
+        this.singleThumbCmp.setHtml(`Value: ${this.singleValue}`);
     }
 
-    onLiveUpdateContainerReady = (event) => {
-        this.liveupdateContainerCmp = event.detail.cmp;
-        this.liveupdateContainerCmp.setHtml(`Value: ${this.liveUpdateValue}`);
+    onLiveUpdateReady = (event) => {
+        this.liveupdateCmp = event.detail.cmp;
+        this.liveupdateCmp.setHtml(`Value: ${this.liveUpdateValue}`);
     }
 
-    onMultipleContainerReady = (event) => {
-        this.multipleContainerCmp = event.detail.cmp;
-        this.multipleContainerCmp.setHtml(`Value: ${this.multipleValue}`);
+    onMultipleThumbReady = (event) => {
+        this.multipleThumbCmp = event.detail.cmp;
+        this.multipleThumbCmp.setHtml(`Value: ${this.multipleValue}`);
     }
 
-    onSingleChange = (event) => {
+    onSingleThumbChange = (event) => {
         this.singleValue = event.detail.newValue;
-        this.singleContainerCmp.setHtml(`Value: ${event.detail.newValue}`);
+        this.singleThumbCmp.setHtml(`Value: ${event.detail.newValue}`);
     }
 
     onLiveUpdateChange = (event) => {
         this.liveUpdateValue = event.detail.newValue;
-        this.liveupdateContainerCmp.setHtml(`Value: ${event.detail.newValue}`);
+        this.liveupdateCmp.setHtml(`Value: ${event.detail.newValue}`);
     }
 
-    onMultipleChange = (event) => {
+    onMultipleThumbChange = (event) => {
         this.multipleValue = event.detail.newValue;
-        this.multipleContainerCmp.setHtml(`Value: ${event.detail.newValue}`);
+        this.multipleThumbCmp.setHtml(`Value: ${event.detail.newValue}`);
     }
 }

@@ -15,6 +15,10 @@ export default class ButtonComponent {
         this.menuButtons.push(event.detail.cmp);
     }
 
+    // menuItem = (event) => {
+    //     this.menuItem = event.detail.cmp;
+    // }
+
     toggleReady = (event) => {
         this.toggleButtonCmp = event.detail.cmp;
     }
@@ -55,22 +59,9 @@ export default class ButtonComponent {
             });
             
             const tempMenu = {
-                xtype: 'menu',
-                items: [{
-                    indented: false,
-                    text: 'Item 1',
-                    xtype: 'menuitem'
-                }, {
-                    indented: false,
-                    text: 'Item 2',
-                    xtype: 'menuitem'
-                }, {
-                    indented: false,
-                    text: 'Item 3',
-                    xtype: 'menuitem'
-                }]
+                items: [{ text: 'Item 1'}, { text: 'Item 2' }, { text: 'Item 3' }]
             };
-          
+            
             this.menuButtons.forEach(button => {
                 button.setMenu(tempMenu);
             });
