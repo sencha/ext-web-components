@@ -1,0 +1,16 @@
+{
+  "name": "js-example",
+  "version": "1.0.0",
+  "description": "ext-elements-example",
+  "scripts": {
+    "start": "npx http-server -o"
+  },
+  "devDependencies": {
+    "@sencha/ext-elements-all": "~7.1.0",
+    "@sencha/cmd": "~7.0.0",
+    "http-server": "^0.11.1"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {}
+}

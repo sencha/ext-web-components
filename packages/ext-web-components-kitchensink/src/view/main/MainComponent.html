@@ -18,7 +18,7 @@
     <ext-toolbar docked="top" weight="10" padding="0">
     <!-- Breadcrumb starts-->
       <ext-breadcrumbbar
-          extname="navBreadcrumb"
+          extname="breadcrumb"
           onChange="main.breadcrumbClick"
           showIcons= "true"
           useSplitButtons="true"
@@ -74,13 +74,13 @@
     <!-- Navtree ends-->
     <!-- selections starts-->
     <ext-panel
-        extname="selectionPanel"
+        extname="selection"
         scrollable="y"
         hidden="false"
         padding="15"
     >
       <ext-dataview
-        extname="navDataview"
+        extname="dataviewNav"
         onchildtap="main.dataviewNavClick"
         inline="true"
         centered="true"

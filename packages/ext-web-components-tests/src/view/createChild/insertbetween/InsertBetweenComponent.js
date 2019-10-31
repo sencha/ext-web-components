@@ -12,6 +12,9 @@ export default class InsertBetweenComponent {
 
     buttonClick = () => {
         const container = document.createElement('ext-container');
+        // container.setAttribute('html', 'Inserted' + this.counter);
+        // container.setAttribute('cls', 'insertedComp' + this.counter);
+
         container.html = 'Inserted' + this.counter;
         container.cls = 'insertedComp' + this.counter;
         this.buttonComp.el.dom.insertAdjacentElement('beforebegin', container);
