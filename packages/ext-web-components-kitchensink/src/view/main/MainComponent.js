@@ -33,9 +33,8 @@ export default class MainComponent {
         this.navInProcess = false;
 
         //find a way for this to be run automatically
-        extnameToProperty(event, this);
+        extnameToProperty(event.detail.cmpObj, this);
         //extnameToProperty(['all'], event, this, 'Cmp');
-
         this.rightContainerCmp.updateHtml('Build: ' + BUILD_VERSION); // eslint-disable-line no-undef
         this.breadcrumbCmp.setStore(this.treeStore);
         this.navTreelistCmp.setStore(this.treeStore);
