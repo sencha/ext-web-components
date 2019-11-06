@@ -7,6 +7,7 @@ Ext.require([
 
 export default class LockingGridComponent {
     onGridReady = (event) => {
+        console.log('onGridReady');
         const store = Ext.create('Ext.data.Store', {
             model,
             autoLoad: true,
@@ -86,7 +87,7 @@ export default class LockingGridComponent {
                 'dataIndex': 'industry'
             }
         ];
-
+console.log('here')
         const lockedGridCmp = event.detail.cmp;
         lockedGridCmp.setStore(store);
         lockedGridCmp.setColumns(columns);

@@ -1,14 +1,16 @@
-import './ewc_new.js';
-// import '@sencha/ext-elements-all';
+//import './ewcSrc.js';
+import './ewcDist.js';
+
 import '@sencha/ext-elements-all/dist/ext-router.component.js';
+import { getRoutes } from '@sencha/ext-elements-all/dist/ext-router.component.js';
 
 import getMenu from './menu';
-import { getRoutes } from '@sencha/ext-elements-all/dist/ext-router.component.js';
+
 import MainComponent from './view/main/MainComponent.js';
 
-Ext.require([
-    'Ext.webcomponents.RendererCell'
-]);
+// Ext.require([
+//     'Ext.webcomponents.RendererCell'
+// ]);
 
 import './Data.js';
 import * as d3 from 'd3';
