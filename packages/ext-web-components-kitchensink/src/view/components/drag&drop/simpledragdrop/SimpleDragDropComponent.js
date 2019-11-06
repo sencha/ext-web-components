@@ -1,7 +1,24 @@
 import './SimpleDragDropComponent.html';
+import { extnameToProperty } from '@sencha/ext-elements-all/src/util.js';
 
 export default class SimpleDragDropComponent {
-    constructor() {}
+
+    onReadyParent = ({detail: {cmpObj}}) => {
+        extnameToProperty(cmpObj, this);
+        this.source = new Ext.drag.Source({
+            element: this.itemCmp.el,
+            constrain: this.parentCmp.el,
+            listeners: {
+                dragstart: this.onDragStart,
+                dragmove: this.onDragMove,
+                dragend: this.onDragEnd,
+            }
+        });
+    }
+
+    onDragStart = () => {
+        //console.log('start');
+    }
 
     onDragMove = (source, info) => {
         const pos = info.element.current;
@@ -17,19 +34,4 @@ export default class SimpleDragDropComponent {
         Ext.destroy(this.source);
     }
 
-    onParentReady = (ele) => {
-        this.parentCmp = ele.detail.cmp.el;
-    }
-
-    onItemReady = (ele) => {
-        this.itemCmp = ele.detail.cmp.el;
-        this.source = new Ext.drag.Source({
-            element: this.itemCmp,
-            constrain: this.parentCmp,
-            listeners: {
-                dragMove: this.onDragMove.bind(this),
-                dragEnd: this.onDragEnd.bind(this),
-            }
-        });
-    }
 }

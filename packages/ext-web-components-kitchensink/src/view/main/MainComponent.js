@@ -22,14 +22,8 @@ export default class MainComponent {
         if (Ext.os.is.Phone) {this.collapsed = true;}
     }
 
-    // setupCmp(event) {
-    //     for (var prop in event.detail.cmpObj) {
-    //         this[prop+'Cmp'] = event.detail.cmpObj[prop];
-    //     }
-    // }
-
     viewportReady = (event) => {
-        console.log('readyViewport');
+        console.log('readyViewport - mainComponent');
         this.navInProcess = false;
 
         //find a way for this to be run automatically
@@ -68,26 +62,26 @@ export default class MainComponent {
     }
 
     breadcrumbClick = (event) => {
-        console.log('clickBreadcrumb');
+        //console.log('clickBreadcrumb');
         var node = event.detail.node;
         this.navigate('breadcrumb', node);
     }
 
     dataviewNavClick = (event) => {
-        console.log('dataviewNavClick');
+        //console.log('dataviewNavClick');
         var node = event.detail.location.record;
         this.navigate('dataview', node);
     }
 
     navTreelistSelectionChange = (event) => {
-        console.log('navTreelistSelectionChange');
+        //console.log('navTreelistSelectionChange');
         var node = event.detail.record;
         this.navigate('tree', node);
     }
 
     navigate = (who, node) => {
         if (this.navInProcess) {
-            console.log('nav in process, request from ' + who);
+            //console.log('nav in process, request from ' + who);
             return;
         }
         if (node == null) {return;}
@@ -102,6 +96,7 @@ export default class MainComponent {
 
         if (childNum == 0 && hash != undefined) {
             window.location.hash = '#' + hash;
+            //console.log('showRouter');
             this.showRouter();
         }
         else {
@@ -110,10 +105,10 @@ export default class MainComponent {
             this.showSelection();
         }
 
-        if(Ext.os.is.Phone) {this.navTreePanelCmp.setCollapsed(true);}
+        //if(Ext.os.is.Phone) {this.navTreePanelCmp.setCollapsed(true);}
 
         this.navInProcess = false;
-        console.log('nav ended');
+        //console.log('nav ended');
     }
 
     showRouter = () => {
@@ -121,7 +116,7 @@ export default class MainComponent {
         window.router.hidden = false;
         this.codeButtonCmp.setHidden(false);
         this.componentsViewCmp.setHidden(false);
-        console.log('routeme');
+        //console.log('routeMe in MainComponent');
         window.router.routeMe();
 
         this.setCodeTabs();

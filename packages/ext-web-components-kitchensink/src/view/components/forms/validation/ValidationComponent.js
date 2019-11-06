@@ -2,9 +2,6 @@ import './ValidationComponent.html';
 Ext.require('Ext.data.validator.*');
 
 export default class ValidationComponent {
-    constructor() {
-        console.log('in ValidationComponent constructor');
-    }
 
     regexTextFieldReady = (event) => {
         const regexTestFieldCmp = event.detail.cmp;

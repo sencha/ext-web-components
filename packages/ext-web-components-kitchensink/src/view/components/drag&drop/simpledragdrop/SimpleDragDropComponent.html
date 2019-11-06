@@ -1,22 +1,25 @@
 <ext-container height="100%" layout="vbox" padding="10" fitToParent="true" ariaLabel="mjg">
-<ext-panel
-  height="100%"
-  shadow="true"
-  bodyPadding="10px"
-  onready="simpledragdrop.onParentReady">
-    <ext-container
-      onready="simpledragdrop.onItemReady"
-      style="
-        width:130px;
-        height:130px;
-        text-align:center;
-        color:#fff;
-        background-color:#ff5722;
-        border-radius:5px;
-        user-select:none;
-        cursor:move;
-      "
-      html="Drag Me!">
-    </ext-container>
-</ext-panel>
+    <ext-panel
+        extname="parent"
+        height="100%"
+        shadow="true"
+        bodyPadding="10px"
+        onready="simpledragdrop.onReadyParent"
+    >
+        <ext-container
+            extname="item"
+            style="
+                width:130px;
+                height:130px;
+                text-align:center;
+                color:#fff;
+                background-color:#ff5722;
+                border-radius:5px;
+                user-select:none;
+                cursor:move;
+            "
+            html="Drag Me!"
+        >
+        </ext-container>
+    </ext-panel>
 </ext-container>
