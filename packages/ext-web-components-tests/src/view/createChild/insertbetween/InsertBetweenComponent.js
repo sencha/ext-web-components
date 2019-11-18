@@ -14,10 +14,9 @@ export default class InsertBetweenComponent {
         const container = document.createElement('ext-container');
         // container.setAttribute('html', 'Inserted' + this.counter);
         // container.setAttribute('cls', 'insertedComp' + this.counter);
-
+        this.buttonComp.el.dom.insertAdjacentElement('beforebegin', container);
         container.html = 'Inserted' + this.counter;
         container.cls = 'insertedComp' + this.counter;
-        this.buttonComp.el.dom.insertAdjacentElement('beforebegin', container);
         this.counter++;
     }
 }

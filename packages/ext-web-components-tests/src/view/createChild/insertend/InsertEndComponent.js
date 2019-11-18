@@ -12,9 +12,9 @@ export default class InsertEndComponent {
 
     buttonClick = () => {
         const container = document.createElement('ext-container');
+        this.buttonComp.el.dom.insertAdjacentElement('afterend', container);
         container.html = 'Inserted' + this.counter;
         container.cls = 'insertedComp' + this.counter;
-        this.buttonComp.el.dom.insertAdjacentElement('afterend', container);
         this.counter++;
     }
 }
