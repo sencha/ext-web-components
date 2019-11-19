@@ -1,21 +1,12 @@
-import Ext_calendar_view_Month from './Ext/calendar/view/Month'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_calendar_view_Month from '@sencha/ext-runtime-base/dist/./Ext/calendar/view/Month.js';
+import Ext_calendar_view_Month from './Ext/calendar/view/Month.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtCalendar_monthviewComponent extends Ext_calendar_view_Month {
+export default class EWCCalendar_monthview extends Ext_calendar_view_Month {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'calendar-monthview'
+        super ([], []);
+        this.xtype = 'calendar-monthview';
     }
 }
+window.customElements.define('ext-calendar-monthview', HTMLParsedElement.withParsedCallback(EWCCalendar_monthview));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-monthview', ExtCalendar_monthviewComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-calendar-monthview', HTMLParsedElement.withParsedCallback(ExtCalendar_monthviewComponent))

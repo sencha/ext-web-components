@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_column_Boolean from './Ext/grid/column/Boolean';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtBooleancolumnComponent =
+//import Ext_grid_column_Boolean from '@sencha/ext-runtime-base/dist/./Ext/grid/column/Boolean.js';
+import Ext_grid_column_Boolean from './Ext/grid/column/Boolean.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCBooleancolumn =
 /*#__PURE__*/
 function (_Ext_grid_column_Bool) {
-  _inheritsLoose(ExtBooleancolumnComponent, _Ext_grid_column_Bool);
+  _inheritsLoose(EWCBooleancolumn, _Ext_grid_column_Bool);
 
-  function ExtBooleancolumnComponent() {
+  function EWCBooleancolumn() {
     var _this;
 
     _this = _Ext_grid_column_Bool.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_grid_column_Bool) {
     return _this;
   }
 
-  return ExtBooleancolumnComponent;
-}(Ext_grid_column_Boolean); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-booleancolumn', ExtBooleancolumnComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCBooleancolumn;
+}(Ext_grid_column_Boolean);
 
-window.customElements.define('ext-booleancolumn', HTMLParsedElement.withParsedCallback(ExtBooleancolumnComponent));
+export { EWCBooleancolumn as default };
+window.customElements.define('ext-booleancolumn', HTMLParsedElement.withParsedCallback(EWCBooleancolumn));

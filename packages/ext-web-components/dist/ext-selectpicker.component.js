@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_picker_SelectPicker from './Ext/picker/SelectPicker';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtSelectpickerComponent =
+//import Ext_picker_SelectPicker from '@sencha/ext-runtime-base/dist/./Ext/picker/SelectPicker.js';
+import Ext_picker_SelectPicker from './Ext/picker/SelectPicker.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCSelectpicker =
 /*#__PURE__*/
 function (_Ext_picker_SelectPic) {
-  _inheritsLoose(ExtSelectpickerComponent, _Ext_picker_SelectPic);
+  _inheritsLoose(EWCSelectpicker, _Ext_picker_SelectPic);
 
-  function ExtSelectpickerComponent() {
+  function EWCSelectpicker() {
     var _this;
 
     _this = _Ext_picker_SelectPic.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_picker_SelectPic) {
     return _this;
   }
 
-  return ExtSelectpickerComponent;
-}(Ext_picker_SelectPicker); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-selectpicker', ExtSelectpickerComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCSelectpicker;
+}(Ext_picker_SelectPicker);
 
-window.customElements.define('ext-selectpicker', HTMLParsedElement.withParsedCallback(ExtSelectpickerComponent));
+export { EWCSelectpicker as default };
+window.customElements.define('ext-selectpicker', HTMLParsedElement.withParsedCallback(EWCSelectpicker));

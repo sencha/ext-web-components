@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_column_Text from './Ext/grid/column/Text';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtTextcolumnComponent =
+//import Ext_grid_column_Text from '@sencha/ext-runtime-base/dist/./Ext/grid/column/Text.js';
+import Ext_grid_column_Text from './Ext/grid/column/Text.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCTextcolumn =
 /*#__PURE__*/
 function (_Ext_grid_column_Text) {
-  _inheritsLoose(ExtTextcolumnComponent, _Ext_grid_column_Text);
+  _inheritsLoose(EWCTextcolumn, _Ext_grid_column_Text);
 
-  function ExtTextcolumnComponent() {
+  function EWCTextcolumn() {
     var _this;
 
     _this = _Ext_grid_column_Text.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_grid_column_Text) {
     return _this;
   }
 
-  return ExtTextcolumnComponent;
-}(Ext_grid_column_Text); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-textcolumn', ExtTextcolumnComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCTextcolumn;
+}(Ext_grid_column_Text);
 
-window.customElements.define('ext-textcolumn', HTMLParsedElement.withParsedCallback(ExtTextcolumnComponent));
+export { EWCTextcolumn as default };
+window.customElements.define('ext-textcolumn', HTMLParsedElement.withParsedCallback(EWCTextcolumn));

@@ -1,21 +1,12 @@
-import Ext_form_Url from './Ext/form/Url'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_form_Url from '@sencha/ext-runtime-base/dist/./Ext/form/Url.js';
+import Ext_form_Url from './Ext/form/Url.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtUrlfieldComponent extends Ext_form_Url {
+export default class EWCUrlfield extends Ext_form_Url {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'urlfield'
+        super ([], []);
+        this.xtype = 'urlfield';
     }
 }
+window.customElements.define('ext-urlfield', HTMLParsedElement.withParsedCallback(EWCUrlfield));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-urlfield', ExtUrlfieldComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-urlfield', HTMLParsedElement.withParsedCallback(ExtUrlfieldComponent))

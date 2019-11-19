@@ -1,21 +1,12 @@
-import Ext_TabPanel from './Ext/TabPanel'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_TabPanel from '@sencha/ext-runtime-base/dist/./Ext/TabPanel.js';
+import Ext_TabPanel from './Ext/TabPanel.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtTabpanelComponent extends Ext_TabPanel {
+export default class EWCTabpanel extends Ext_TabPanel {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'tabpanel'
+        super ([], []);
+        this.xtype = 'tabpanel';
     }
 }
+window.customElements.define('ext-tabpanel', HTMLParsedElement.withParsedCallback(EWCTabpanel));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-tabpanel', ExtTabpanelComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-tabpanel', HTMLParsedElement.withParsedCallback(ExtTabpanelComponent))

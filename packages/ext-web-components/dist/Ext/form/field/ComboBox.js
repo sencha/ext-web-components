@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_Select from '../../../Ext/field/Select';
+import Ext_field_Select from '../../../Ext/field/Select.js';
 
 var Ext_form_field_ComboBox =
 /*#__PURE__*/
@@ -8,13 +8,13 @@ function (_Ext_field_Select) {
   _inheritsLoose(Ext_form_field_ComboBox, _Ext_field_Select);
 
   Ext_form_field_ComboBox.PROPERTIES = function PROPERTIES() {
-    return ['alignSelf', 'alignTarget', 'allQuery', 'alwaysOnTop', 'animateUnderline', 'anyMatch', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoCapitalize', 'autoComplete', 'autoCorrect', 'autoFitErrors', 'autoFocus', 'autoFocusLast', 'autoHideInputMask', 'autoLoadOnValue', 'autoSelect', 'axisLock', 'badFormatMessage', 'bind', 'bodyAlign', 'border', 'bottom', 'bubbleDirty', 'caseSensitive', 'centered', 'chipView', 'clearable', 'cls', 'collapseOnSelect', 'constrainAlign', 'contentEl', 'controller', 'data', 'dataType', 'defaultListenerScope', 'delimiter', 'dirty', 'disabled', 'displayed', 'displayField', 'displayTpl', 'docked', 'draggable', 'edgePicker', 'editable', 'enableRegEx', 'error', 'errorMessage', 'errorTarget', 'errorTip', 'errorTpl', 'flex', 'floated', 'floatedPicker', 'floatedPickerAlign', 'focusCls', 'focusTrap', 'forceSelection', 'fullscreen', 'height', 'hidden', 'hiddenName', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'hideTrigger', 'html', 'id', 'inline', 'inputMask', 'inputType', 'inputValue', 'instanceCls', 'itemCls', 'itemId', 'itemTpl', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'label', 'labelAlign', 'labelCls', 'labelInPlaceholder', 'labelMinWidth', 'labelTextAlign', 'labelWidth', 'labelWrap', 'left', 'listeners', 'margin', 'matchFieldWidth', 'maxHeight', 'maxLength', 'maxWidth', 'minChars', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'multiSelect', 'name', 'nameable', 'options', 'padding', 'parseValidator', 'pattern', 'picker', 'pickerSlotAlign', 'placeholder', 'plugins', 'primaryFilter', 'publishes', 'queryCaching', 'queryDelay', 'queryMode', 'queryParam', 'readOnly', 'record', 'recordCreator', 'recordCreatorScope', 'reference', 'relative', 'renderTo', 'required', 'requiredMessage', 'right', 'ripple', 'scrollable', 'selection', 'selectOnTab', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'sideError', 'stateful', 'statefulDefaults', 'stateId', 'store', 'stripCharsRe', 'style', 'tabIndex', 'textAlign', 'tipError', 'titleError', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'triggerAction', 'triggers', 'twoWayBindable', 'typeAhead', 'typeAheadDelay', 'ui', 'underError', 'userCls', 'userSelectable', 'validateDisabled', 'validationMessage', 'validators', 'value', 'valueCollection', 'valueField', 'valueNotFoundText', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['alignSelf', 'alignTarget', 'allQuery', 'alwaysOnTop', 'animateUnderline', 'anyMatch', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoCapitalize', 'autoComplete', 'autoCorrect', 'autoFitErrors', 'autoFocus', 'autoFocusLast', 'autoHideInputMask', 'autoLoadOnValue', 'autoSelect', 'axisLock', 'badFormatMessage', 'bind', 'bodyAlign', 'border', 'bottom', 'bubbleDirty', 'caseSensitive', 'centered', 'chipView', 'clearable', 'cls', 'collapseOnSelect', 'constrainAlign', 'contentEl', 'controller', 'data', 'dataType', 'defaultListenerScope', 'delimiter', 'dirty', 'disabled', 'displayed', 'displayField', 'displayTpl', 'docked', 'draggable', 'edgePicker', 'editable', 'enableRegEx', 'error', 'errorMessage', 'errorTarget', 'errorTip', 'errorTpl', 'flex', 'floated', 'floatedPicker', 'floatedPickerAlign', 'focusCls', 'focusTrap', 'forceSelection', 'fullscreen', 'height', 'hidden', 'hiddenName', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'hideTrigger', 'html', 'id', 'inline', 'inputMask', 'inputType', 'inputValue', 'instanceCls', 'itemCls', 'itemId', 'itemTpl', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'label', 'labelAlign', 'labelCls', 'labelInPlaceholder', 'labelMinWidth', 'labelTextAlign', 'labelWidth', 'labelWrap', 'left', 'listeners', 'margin', 'matchFieldWidth', 'maxHeight', 'maxLength', 'maxWidth', 'minChars', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'multiSelect', 'name', 'nameable', 'options', 'padding', 'parseValidator', 'pattern', 'picker', 'pickerSlotAlign', 'placeholder', 'plugins', 'primaryFilter', 'publishes', 'queryCaching', 'queryDelay', 'queryMode', 'queryParam', 'readOnly', 'record', 'recordCreator', 'recordCreatorScope', 'reference', 'relative', 'renderTo', 'required', 'requiredMessage', 'right', 'ripple', 'scrollable', 'selection', 'selectOnTab', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'sideError', 'stateful', 'statefulDefaults', 'stateId', 'store', 'stripCharsRe', 'style', 'tabIndex', 'textAlign', 'tipError', 'titleError', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'triggerAction', 'triggers', 'twoWayBindable', 'typeAhead', 'typeAheadDelay', 'ui', 'underError', 'userCls', 'userSelectable', 'validateDisabled', 'validationMessage', 'validators', 'value', 'valueCollection', 'valueField', 'valueNotFoundText', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_form_field_ComboBox.EVENTS = function EVENTS() {
     return [{
       name: 'action',
-      parameters: 'combobox,e'
+      parameters: 'sender,e'
     }, {
       name: 'added',
       parameters: 'sender,container,index'
@@ -59,7 +59,7 @@ function (_Ext_field_Select) {
       parameters: ''
     }, {
       name: 'beforepickercreate',
-      parameters: 'combobox,newValue'
+      parameters: 'sender,newValue'
     }, {
       name: 'beforequery',
       parameters: 'queryPlan'
@@ -74,7 +74,7 @@ function (_Ext_field_Select) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'combobox'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -83,7 +83,7 @@ function (_Ext_field_Select) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'combobox,e'
+      parameters: 'sender,e'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -92,10 +92,10 @@ function (_Ext_field_Select) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'change',
-      parameters: 'combobox,newValue,oldValue'
+      parameters: 'sender,newValue,oldValue'
     }, {
       name: 'clearicontap',
-      parameters: 'combobox,input,e'
+      parameters: 'sender,input,e'
     }, {
       name: 'click',
       parameters: 'e'
@@ -107,7 +107,7 @@ function (_Ext_field_Select) {
       parameters: ''
     }, {
       name: 'dirtychange',
-      parameters: 'combobox,dirty'
+      parameters: 'sender,dirty'
     }, {
       name: 'disabledchange',
       parameters: 'sender,value,oldValue'
@@ -119,7 +119,7 @@ function (_Ext_field_Select) {
       parameters: 'sender'
     }, {
       name: 'errorchange',
-      parameters: 'combobox,error'
+      parameters: 'sender,error'
     }, {
       name: 'expand',
       parameters: 'field'
@@ -128,13 +128,13 @@ function (_Ext_field_Select) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'combobox,e'
+      parameters: 'sender,e'
     }, {
       name: 'focusenter',
-      parameters: 'combobox,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'combobox,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -152,10 +152,10 @@ function (_Ext_field_Select) {
       parameters: 'sender'
     }, {
       name: 'keydown',
-      parameters: 'combobox,e'
+      parameters: 'sender,e'
     }, {
       name: 'keyup',
-      parameters: 'combobox,e'
+      parameters: 'sender,e'
     }, {
       name: 'leftchange',
       parameters: 'sender,value,oldValue'
@@ -173,7 +173,7 @@ function (_Ext_field_Select) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'mousedown',
-      parameters: 'combobox,e'
+      parameters: 'sender,e'
     }, {
       name: 'moved',
       parameters: 'sender,container,toIndex,fromIndex'
@@ -185,10 +185,10 @@ function (_Ext_field_Select) {
       parameters: 'sender,element'
     }, {
       name: 'paste',
-      parameters: 'combobox,e'
+      parameters: 'sender,e'
     }, {
       name: 'pickercreate',
-      parameters: 'combobox,picker'
+      parameters: 'sender,picker'
     }, {
       name: 'positionedchange',
       parameters: 'sender,positioned'
@@ -206,13 +206,13 @@ function (_Ext_field_Select) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'select',
-      parameters: 'combobox,newValue'
+      parameters: 'sender,newValue'
     }, {
       name: 'show',
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'combobox'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -224,7 +224,7 @@ function (_Ext_field_Select) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

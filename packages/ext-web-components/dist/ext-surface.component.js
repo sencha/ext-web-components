@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_draw_Surface from './Ext/draw/Surface';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtSurfaceComponent =
+//import Ext_draw_Surface from '@sencha/ext-runtime-base/dist/./Ext/draw/Surface.js';
+import Ext_draw_Surface from './Ext/draw/Surface.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCSurface =
 /*#__PURE__*/
 function (_Ext_draw_Surface) {
-  _inheritsLoose(ExtSurfaceComponent, _Ext_draw_Surface);
+  _inheritsLoose(EWCSurface, _Ext_draw_Surface);
 
-  function ExtSurfaceComponent() {
+  function EWCSurface() {
     var _this;
 
     _this = _Ext_draw_Surface.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_draw_Surface) {
     return _this;
   }
 
-  return ExtSurfaceComponent;
-}(Ext_draw_Surface); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-surface', ExtSurfaceComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCSurface;
+}(Ext_draw_Surface);
 
-window.customElements.define('ext-surface', HTMLParsedElement.withParsedCallback(ExtSurfaceComponent));
+export { EWCSurface as default };
+window.customElements.define('ext-surface', HTMLParsedElement.withParsedCallback(EWCSurface));

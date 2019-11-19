@@ -1,21 +1,12 @@
-import Ext_field_trigger_Expand from './Ext/field/trigger/Expand'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_field_trigger_Expand from '@sencha/ext-runtime-base/dist/./Ext/field/trigger/Expand.js';
+import Ext_field_trigger_Expand from './Ext/field/trigger/Expand.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtExpandtriggerComponent extends Ext_field_trigger_Expand {
+export default class EWCExpandtrigger extends Ext_field_trigger_Expand {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'expandtrigger'
+        super ([], []);
+        this.xtype = 'expandtrigger';
     }
 }
+window.customElements.define('ext-expandtrigger', HTMLParsedElement.withParsedCallback(EWCExpandtrigger));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-expandtrigger', ExtExpandtriggerComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-expandtrigger', HTMLParsedElement.withParsedCallback(ExtExpandtriggerComponent))

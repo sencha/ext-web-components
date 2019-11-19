@@ -1,21 +1,12 @@
-import Ext_calendar_List from './Ext/calendar/List'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_calendar_List from '@sencha/ext-runtime-base/dist/./Ext/calendar/List.js';
+import Ext_calendar_List from './Ext/calendar/List.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtCalendar_listComponent extends Ext_calendar_List {
+export default class EWCCalendar_list extends Ext_calendar_List {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'calendar-list'
+        super ([], []);
+        this.xtype = 'calendar-list';
     }
 }
+window.customElements.define('ext-calendar-list', HTMLParsedElement.withParsedCallback(EWCCalendar_list));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-list', ExtCalendar_listComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-calendar-list', HTMLParsedElement.withParsedCallback(ExtCalendar_listComponent))

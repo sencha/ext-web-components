@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Base from '../Ext/Base';
+import Ext_Base from '../Ext/Base.js';
 
 var Ext_Evented =
 /*#__PURE__*/
@@ -8,13 +8,13 @@ function (_Ext_Base) {
   _inheritsLoose(Ext_Evented, _Ext_Base);
 
   Ext_Evented.PROPERTIES = function PROPERTIES() {
-    return ['listeners', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['listeners'];
   };
 
   Ext_Evented.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

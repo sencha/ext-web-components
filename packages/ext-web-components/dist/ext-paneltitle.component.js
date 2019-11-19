@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_panel_Title from './Ext/panel/Title';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtPaneltitleComponent =
+//import Ext_panel_Title from '@sencha/ext-runtime-base/dist/./Ext/panel/Title.js';
+import Ext_panel_Title from './Ext/panel/Title.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCPaneltitle =
 /*#__PURE__*/
 function (_Ext_panel_Title) {
-  _inheritsLoose(ExtPaneltitleComponent, _Ext_panel_Title);
+  _inheritsLoose(EWCPaneltitle, _Ext_panel_Title);
 
-  function ExtPaneltitleComponent() {
+  function EWCPaneltitle() {
     var _this;
 
     _this = _Ext_panel_Title.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_panel_Title) {
     return _this;
   }
 
-  return ExtPaneltitleComponent;
-}(Ext_panel_Title); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-paneltitle', ExtPaneltitleComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCPaneltitle;
+}(Ext_panel_Title);
 
-window.customElements.define('ext-paneltitle', HTMLParsedElement.withParsedCallback(ExtPaneltitleComponent));
+export { EWCPaneltitle as default };
+window.customElements.define('ext-paneltitle', HTMLParsedElement.withParsedCallback(EWCPaneltitle));

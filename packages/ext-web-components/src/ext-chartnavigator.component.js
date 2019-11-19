@@ -1,21 +1,12 @@
-import Ext_chart_navigator_Container from './Ext/chart/navigator/Container'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_chart_navigator_Container from '@sencha/ext-runtime-base/dist/./Ext/chart/navigator/Container.js';
+import Ext_chart_navigator_Container from './Ext/chart/navigator/Container.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtChartnavigatorComponent extends Ext_chart_navigator_Container {
+export default class EWCChartnavigator extends Ext_chart_navigator_Container {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'chartnavigator'
+        super ([], []);
+        this.xtype = 'chartnavigator';
     }
 }
+window.customElements.define('ext-chartnavigator', HTMLParsedElement.withParsedCallback(EWCChartnavigator));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-chartnavigator', ExtChartnavigatorComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-chartnavigator', HTMLParsedElement.withParsedCallback(ExtChartnavigatorComponent))

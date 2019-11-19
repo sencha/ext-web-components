@@ -1,21 +1,12 @@
-import Ext_Button from './Ext/Button'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_Button from '@sencha/ext-runtime-base/dist/./Ext/Button.js';
+import Ext_Button from './Ext/Button.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtButtonComponent extends Ext_Button {
+export default class EWCButton extends Ext_Button {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'button'
+        super ([], []);
+        this.xtype = 'button';
     }
 }
+window.customElements.define('ext-button', HTMLParsedElement.withParsedCallback(EWCButton));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-button', ExtButtonComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-button', HTMLParsedElement.withParsedCallback(ExtButtonComponent))

@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_dataview_List from '../../Ext/dataview/List';
+import Ext_dataview_List from '../../Ext/dataview/List.js';
 
 var Ext_dataview_BoundList =
 /*#__PURE__*/
@@ -8,13 +8,13 @@ function (_Ext_dataview_List) {
   _inheritsLoose(Ext_dataview_BoundList, _Ext_dataview_List);
 
   Ext_dataview_BoundList.PROPERTIES = function PROPERTIES() {
-    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'associatedData', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'bufferSize', 'cardSwitchAnimation', 'centered', 'cls', 'collapseDefaults', 'collapsible', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'deferEmptyText', 'deselectOnContainerClick', 'disabled', 'disableSelection', 'disclosureProperty', 'displayed', 'docked', 'draggable', 'emptyItemText', 'emptyState', 'emptyText', 'emptyTextDefaults', 'emptyTextProperty', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'grouped', 'groupFooter', 'groupHeader', 'grouping', 'groupPlaceholder', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'horizontalOverflow', 'html', 'id', 'inactiveChildTabIndex', 'indexBar', 'infinite', 'inline', 'innerCls', 'innerCtHeight', 'innerWidth', 'instanceCls', 'itemButtonMode', 'itemCls', 'itemConfig', 'itemContentCls', 'itemDataMap', 'itemId', 'itemInnerCls', 'itemRipple', 'items', 'itemsFocusable', 'itemTpl', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'listeners', 'loadingHeight', 'loadingText', 'maintainChildNodes', 'manageBorders', 'margin', 'markDirty', 'masked', 'maxHeight', 'maxItemCache', 'maxWidth', 'minHeight', 'minimumBufferDistance', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'onItemDisclosure', 'padding', 'pinFooters', 'pinHeaders', 'pinnedFooter', 'pinnedFooterHeight', 'pinnedHeader', 'pinnedHeaderHeight', 'plugins', 'pressedDelay', 'preventSelectionOnDisclose', 'preventSelectionOnTool', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'right', 'ripple', 'rowLines', 'scrollable', 'scrollDock', 'scrollToTopOnRefresh', 'selectable', 'selection', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'store', 'striped', 'style', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'topRenderedIndex', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'triggerCtEvent', 'triggerEvent', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'variableHeights', 'verticalOverflow', 'viewModel', 'visibleHeight', 'visibleLeft', 'visibleTop', 'visibleWidth', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'associatedData', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'bufferSize', 'cardSwitchAnimation', 'centered', 'cls', 'collapseDefaults', 'collapsible', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'deferEmptyText', 'deselectOnContainerClick', 'disabled', 'disableSelection', 'disclosureProperty', 'displayed', 'docked', 'draggable', 'emptyItemText', 'emptyState', 'emptyText', 'emptyTextDefaults', 'emptyTextProperty', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'grouped', 'groupFooter', 'groupHeader', 'grouping', 'groupPlaceholder', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'horizontalOverflow', 'html', 'id', 'inactiveChildTabIndex', 'indexBar', 'infinite', 'inline', 'innerCls', 'innerCtHeight', 'innerWidth', 'instanceCls', 'itemButtonMode', 'itemCls', 'itemConfig', 'itemContentCls', 'itemDataMap', 'itemId', 'itemInnerCls', 'itemRipple', 'items', 'itemsFocusable', 'itemTpl', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'listeners', 'loadingHeight', 'loadingText', 'maintainChildNodes', 'manageBorders', 'margin', 'markDirty', 'masked', 'maxHeight', 'maxItemCache', 'maxWidth', 'minHeight', 'minimumBufferDistance', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'onItemDisclosure', 'padding', 'pinFooters', 'pinHeaders', 'pinnedFooter', 'pinnedFooterHeight', 'pinnedHeader', 'pinnedHeaderHeight', 'plugins', 'pressedDelay', 'preventSelectionOnDisclose', 'preventSelectionOnTool', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'right', 'ripple', 'rowLines', 'scrollable', 'scrollDock', 'scrollToTopOnRefresh', 'selectable', 'selection', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'store', 'striped', 'style', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'topRenderedIndex', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'triggerCtEvent', 'triggerEvent', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'variableHeights', 'verticalOverflow', 'viewModel', 'visibleHeight', 'visibleLeft', 'visibleTop', 'visibleWidth', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_dataview_BoundList.EVENTS = function EVENTS() {
     return [{
       name: 'activate',
-      parameters: 'newActiveItem,boundlist,oldActiveItem'
+      parameters: 'newActiveItem,sender,oldActiveItem'
     }, {
       name: 'activeItemchange',
       parameters: 'sender,value,oldValue'
@@ -41,10 +41,10 @@ function (_Ext_dataview_List) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforegroupcollapse',
-      parameters: 'boundlist,group'
+      parameters: 'sender,group'
     }, {
       name: 'beforegroupexpand',
-      parameters: 'boundlist,group'
+      parameters: 'sender,group'
     }, {
       name: 'beforeheightchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -86,7 +86,7 @@ function (_Ext_dataview_List) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforetofront',
-      parameters: 'boundlist'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -95,7 +95,7 @@ function (_Ext_dataview_List) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'boundlist,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -104,43 +104,43 @@ function (_Ext_dataview_List) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'childdoubletap',
-      parameters: 'boundlist,location'
+      parameters: 'sender,location'
     }, {
       name: 'childlongpress',
-      parameters: 'boundlist,location'
+      parameters: 'sender,location'
     }, {
       name: 'childmouseenter',
-      parameters: 'boundlist,location'
+      parameters: 'sender,location'
     }, {
       name: 'childmouseleave',
-      parameters: 'boundlist,location'
+      parameters: 'sender,location'
     }, {
       name: 'childsingletap',
-      parameters: 'boundlist,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtap',
-      parameters: 'boundlist,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtaphold',
-      parameters: 'boundlist,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtouchcancel',
-      parameters: 'boundlist,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtouchend',
-      parameters: 'boundlist,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtouchmove',
-      parameters: 'boundlist,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtouchstart',
-      parameters: 'boundlist,location'
+      parameters: 'sender,location'
     }, {
       name: 'deactivate',
-      parameters: 'oldActiveItem,boundlist,newActiveItem'
+      parameters: 'oldActiveItem,sender,newActiveItem'
     }, {
       name: 'deselect',
-      parameters: 'boundlist,records'
+      parameters: 'sender,records'
     }, {
       name: 'destroy',
       parameters: ''
@@ -161,22 +161,22 @@ function (_Ext_dataview_List) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'boundlist,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'boundlist,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'boundlist,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
     }, {
       name: 'groupcollapse',
-      parameters: 'boundlist,group'
+      parameters: 'sender,group'
     }, {
       name: 'groupexpand',
-      parameters: 'boundlist,group'
+      parameters: 'sender,group'
     }, {
       name: 'heightchange',
       parameters: 'sender,value,oldValue'
@@ -191,43 +191,43 @@ function (_Ext_dataview_List) {
       parameters: 'sender'
     }, {
       name: 'itemaction',
-      parameters: 'boundlist,index,record,action'
+      parameters: 'sender,index,record,action'
     }, {
       name: 'itemdoubletap',
-      parameters: 'boundlist,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemlongpress',
-      parameters: 'boundlist,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemmouseenter',
-      parameters: 'boundlist,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemmouseleave',
-      parameters: 'boundlist,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemsingletap',
-      parameters: 'boundlist,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemswipe',
-      parameters: 'boundlist,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtap',
-      parameters: 'boundlist,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtaphold',
-      parameters: 'boundlist,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtouchcancel',
-      parameters: 'boundlist,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtouchend',
-      parameters: 'boundlist,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtouchmove',
-      parameters: 'boundlist,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtouchstart',
-      parameters: 'boundlist,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'leftchange',
       parameters: 'sender,value,oldValue'
@@ -251,7 +251,7 @@ function (_Ext_dataview_List) {
       parameters: 'sender,container,toIndex,fromIndex'
     }, {
       name: 'navigate',
-      parameters: 'boundlist,to,from'
+      parameters: 'sender,to,from'
     }, {
       name: 'orientationchange',
       parameters: ''
@@ -263,7 +263,7 @@ function (_Ext_dataview_List) {
       parameters: 'sender,positioned'
     }, {
       name: 'refresh',
-      parameters: 'boundlist'
+      parameters: 'sender'
     }, {
       name: 'remove',
       parameters: ''
@@ -272,7 +272,7 @@ function (_Ext_dataview_List) {
       parameters: 'sender,container,index'
     }, {
       name: 'renderedchange',
-      parameters: 'boundlist,item,rendered'
+      parameters: 'sender,item,rendered'
     }, {
       name: 'resize',
       parameters: 'element,info'
@@ -284,7 +284,7 @@ function (_Ext_dataview_List) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'select',
-      parameters: 'boundlist,selected'
+      parameters: 'sender,selected'
     }, {
       name: 'show',
       parameters: 'sender'
@@ -293,7 +293,7 @@ function (_Ext_dataview_List) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'tofront',
-      parameters: 'boundlist'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -305,7 +305,7 @@ function (_Ext_dataview_List) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

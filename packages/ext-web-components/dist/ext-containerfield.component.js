@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_Container from './Ext/field/Container';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtContainerfieldComponent =
+//import Ext_field_Container from '@sencha/ext-runtime-base/dist/./Ext/field/Container.js';
+import Ext_field_Container from './Ext/field/Container.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCContainerfield =
 /*#__PURE__*/
 function (_Ext_field_Container) {
-  _inheritsLoose(ExtContainerfieldComponent, _Ext_field_Container);
+  _inheritsLoose(EWCContainerfield, _Ext_field_Container);
 
-  function ExtContainerfieldComponent() {
+  function EWCContainerfield() {
     var _this;
 
     _this = _Ext_field_Container.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_field_Container) {
     return _this;
   }
 
-  return ExtContainerfieldComponent;
-}(Ext_field_Container); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-containerfield', ExtContainerfieldComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCContainerfield;
+}(Ext_field_Container);
 
-window.customElements.define('ext-containerfield', HTMLParsedElement.withParsedCallback(ExtContainerfieldComponent));
+export { EWCContainerfield as default };
+window.customElements.define('ext-containerfield', HTMLParsedElement.withParsedCallback(EWCContainerfield));

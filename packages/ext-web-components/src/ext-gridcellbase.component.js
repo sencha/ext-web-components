@@ -1,21 +1,12 @@
-import Ext_grid_cell_Base from './Ext/grid/cell/Base'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_grid_cell_Base from '@sencha/ext-runtime-base/dist/./Ext/grid/cell/Base.js';
+import Ext_grid_cell_Base from './Ext/grid/cell/Base.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtGridcellbaseComponent extends Ext_grid_cell_Base {
+export default class EWCGridcellbase extends Ext_grid_cell_Base {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'gridcellbase'
+        super ([], []);
+        this.xtype = 'gridcellbase';
     }
 }
+window.customElements.define('ext-gridcellbase', HTMLParsedElement.withParsedCallback(EWCGridcellbase));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-gridcellbase', ExtGridcellbaseComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-gridcellbase', HTMLParsedElement.withParsedCallback(ExtGridcellbaseComponent))

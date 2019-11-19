@@ -1,21 +1,12 @@
-import Ext_pivot_plugin_configurator_Settings from './Ext/pivot/plugin/configurator/Settings'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_pivot_plugin_configurator_Settings from '@sencha/ext-runtime-base/dist/./Ext/pivot/plugin/configurator/Settings.js';
+import Ext_pivot_plugin_configurator_Settings from './Ext/pivot/plugin/configurator/Settings.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtPivotsettingsComponent extends Ext_pivot_plugin_configurator_Settings {
+export default class EWCPivotsettings extends Ext_pivot_plugin_configurator_Settings {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'pivotsettings'
+        super ([], []);
+        this.xtype = 'pivotsettings';
     }
 }
+window.customElements.define('ext-pivotsettings', HTMLParsedElement.withParsedCallback(EWCPivotsettings));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-pivotsettings', ExtPivotsettingsComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-pivotsettings', HTMLParsedElement.withParsedCallback(ExtPivotsettingsComponent))

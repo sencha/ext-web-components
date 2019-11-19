@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_MessageBox from './Ext/MessageBox';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtMessageboxComponent =
+//import Ext_MessageBox from '@sencha/ext-runtime-base/dist/./Ext/MessageBox.js';
+import Ext_MessageBox from './Ext/MessageBox.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCMessagebox =
 /*#__PURE__*/
 function (_Ext_MessageBox) {
-  _inheritsLoose(ExtMessageboxComponent, _Ext_MessageBox);
+  _inheritsLoose(EWCMessagebox, _Ext_MessageBox);
 
-  function ExtMessageboxComponent() {
+  function EWCMessagebox() {
     var _this;
 
     _this = _Ext_MessageBox.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_MessageBox) {
     return _this;
   }
 
-  return ExtMessageboxComponent;
-}(Ext_MessageBox); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-messagebox', ExtMessageboxComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCMessagebox;
+}(Ext_MessageBox);
 
-window.customElements.define('ext-messagebox', HTMLParsedElement.withParsedCallback(ExtMessageboxComponent));
+export { EWCMessagebox as default };
+window.customElements.define('ext-messagebox', HTMLParsedElement.withParsedCallback(EWCMessagebox));

@@ -1,21 +1,12 @@
-import Ext_chart_PolarChart from './Ext/chart/PolarChart'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_chart_PolarChart from '@sencha/ext-runtime-base/dist/./Ext/chart/PolarChart.js';
+import Ext_chart_PolarChart from './Ext/chart/PolarChart.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtPolarComponent extends Ext_chart_PolarChart {
+export default class EWCPolar extends Ext_chart_PolarChart {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'polar'
+        super ([], []);
+        this.xtype = 'polar';
     }
 }
+window.customElements.define('ext-polar', HTMLParsedElement.withParsedCallback(EWCPolar));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-polar', ExtPolarComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-polar', HTMLParsedElement.withParsedCallback(ExtPolarComponent))

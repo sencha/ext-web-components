@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_calendar_panel_Panel from './Ext/calendar/panel/Panel';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtCalendarComponent =
+//import Ext_calendar_panel_Panel from '@sencha/ext-runtime-base/dist/./Ext/calendar/panel/Panel.js';
+import Ext_calendar_panel_Panel from './Ext/calendar/panel/Panel.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCCalendar =
 /*#__PURE__*/
 function (_Ext_calendar_panel_P) {
-  _inheritsLoose(ExtCalendarComponent, _Ext_calendar_panel_P);
+  _inheritsLoose(EWCCalendar, _Ext_calendar_panel_P);
 
-  function ExtCalendarComponent() {
+  function EWCCalendar() {
     var _this;
 
     _this = _Ext_calendar_panel_P.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_calendar_panel_P) {
     return _this;
   }
 
-  return ExtCalendarComponent;
-}(Ext_calendar_panel_Panel); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar', ExtCalendarComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCCalendar;
+}(Ext_calendar_panel_Panel);
 
-window.customElements.define('ext-calendar', HTMLParsedElement.withParsedCallback(ExtCalendarComponent));
+export { EWCCalendar as default };
+window.customElements.define('ext-calendar', HTMLParsedElement.withParsedCallback(EWCCalendar));

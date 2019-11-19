@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_sparkline_Bar from './Ext/sparkline/Bar';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtSparklinebarComponent =
+//import Ext_sparkline_Bar from '@sencha/ext-runtime-base/dist/./Ext/sparkline/Bar.js';
+import Ext_sparkline_Bar from './Ext/sparkline/Bar.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCSparklinebar =
 /*#__PURE__*/
 function (_Ext_sparkline_Bar) {
-  _inheritsLoose(ExtSparklinebarComponent, _Ext_sparkline_Bar);
+  _inheritsLoose(EWCSparklinebar, _Ext_sparkline_Bar);
 
-  function ExtSparklinebarComponent() {
+  function EWCSparklinebar() {
     var _this;
 
     _this = _Ext_sparkline_Bar.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_sparkline_Bar) {
     return _this;
   }
 
-  return ExtSparklinebarComponent;
-}(Ext_sparkline_Bar); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-sparklinebar', ExtSparklinebarComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCSparklinebar;
+}(Ext_sparkline_Bar);
 
-window.customElements.define('ext-sparklinebar', HTMLParsedElement.withParsedCallback(ExtSparklinebarComponent));
+export { EWCSparklinebar as default };
+window.customElements.define('ext-sparklinebar', HTMLParsedElement.withParsedCallback(EWCSparklinebar));

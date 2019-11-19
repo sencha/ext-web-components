@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_calendar_form_CalendarPicker from './Ext/calendar/form/CalendarPicker';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtCalendar_calendar_pickerComponent =
+//import Ext_calendar_form_CalendarPicker from '@sencha/ext-runtime-base/dist/./Ext/calendar/form/CalendarPicker.js';
+import Ext_calendar_form_CalendarPicker from './Ext/calendar/form/CalendarPicker.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCCalendar_calendar_picker =
 /*#__PURE__*/
 function (_Ext_calendar_form_Ca) {
-  _inheritsLoose(ExtCalendar_calendar_pickerComponent, _Ext_calendar_form_Ca);
+  _inheritsLoose(EWCCalendar_calendar_picker, _Ext_calendar_form_Ca);
 
-  function ExtCalendar_calendar_pickerComponent() {
+  function EWCCalendar_calendar_picker() {
     var _this;
 
     _this = _Ext_calendar_form_Ca.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_calendar_form_Ca) {
     return _this;
   }
 
-  return ExtCalendar_calendar_pickerComponent;
-}(Ext_calendar_form_CalendarPicker); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-calendar-picker', ExtCalendar_calendar_pickerComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCCalendar_calendar_picker;
+}(Ext_calendar_form_CalendarPicker);
 
-window.customElements.define('ext-calendar-calendar-picker', HTMLParsedElement.withParsedCallback(ExtCalendar_calendar_pickerComponent));
+export { EWCCalendar_calendar_picker as default };
+window.customElements.define('ext-calendar-calendar-picker', HTMLParsedElement.withParsedCallback(EWCCalendar_calendar_picker));

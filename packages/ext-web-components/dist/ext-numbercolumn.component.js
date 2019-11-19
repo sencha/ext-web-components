@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_column_Number from './Ext/grid/column/Number';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtNumbercolumnComponent =
+//import Ext_grid_column_Number from '@sencha/ext-runtime-base/dist/./Ext/grid/column/Number.js';
+import Ext_grid_column_Number from './Ext/grid/column/Number.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCNumbercolumn =
 /*#__PURE__*/
 function (_Ext_grid_column_Numb) {
-  _inheritsLoose(ExtNumbercolumnComponent, _Ext_grid_column_Numb);
+  _inheritsLoose(EWCNumbercolumn, _Ext_grid_column_Numb);
 
-  function ExtNumbercolumnComponent() {
+  function EWCNumbercolumn() {
     var _this;
 
     _this = _Ext_grid_column_Numb.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_grid_column_Numb) {
     return _this;
   }
 
-  return ExtNumbercolumnComponent;
-}(Ext_grid_column_Number); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-numbercolumn', ExtNumbercolumnComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCNumbercolumn;
+}(Ext_grid_column_Number);
 
-window.customElements.define('ext-numbercolumn', HTMLParsedElement.withParsedCallback(ExtNumbercolumnComponent));
+export { EWCNumbercolumn as default };
+window.customElements.define('ext-numbercolumn', HTMLParsedElement.withParsedCallback(EWCNumbercolumn));

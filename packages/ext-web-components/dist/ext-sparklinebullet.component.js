@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_sparkline_Bullet from './Ext/sparkline/Bullet';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtSparklinebulletComponent =
+//import Ext_sparkline_Bullet from '@sencha/ext-runtime-base/dist/./Ext/sparkline/Bullet.js';
+import Ext_sparkline_Bullet from './Ext/sparkline/Bullet.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCSparklinebullet =
 /*#__PURE__*/
 function (_Ext_sparkline_Bullet) {
-  _inheritsLoose(ExtSparklinebulletComponent, _Ext_sparkline_Bullet);
+  _inheritsLoose(EWCSparklinebullet, _Ext_sparkline_Bullet);
 
-  function ExtSparklinebulletComponent() {
+  function EWCSparklinebullet() {
     var _this;
 
     _this = _Ext_sparkline_Bullet.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_sparkline_Bullet) {
     return _this;
   }
 
-  return ExtSparklinebulletComponent;
-}(Ext_sparkline_Bullet); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-sparklinebullet', ExtSparklinebulletComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCSparklinebullet;
+}(Ext_sparkline_Bullet);
 
-window.customElements.define('ext-sparklinebullet', HTMLParsedElement.withParsedCallback(ExtSparklinebulletComponent));
+export { EWCSparklinebullet as default };
+window.customElements.define('ext-sparklinebullet', HTMLParsedElement.withParsedCallback(EWCSparklinebullet));

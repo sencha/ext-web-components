@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Editor from './Ext/Editor';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtEditorComponent =
+//import Ext_Editor from '@sencha/ext-runtime-base/dist/./Ext/Editor.js';
+import Ext_Editor from './Ext/Editor.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCEditor =
 /*#__PURE__*/
 function (_Ext_Editor) {
-  _inheritsLoose(ExtEditorComponent, _Ext_Editor);
+  _inheritsLoose(EWCEditor, _Ext_Editor);
 
-  function ExtEditorComponent() {
+  function EWCEditor() {
     var _this;
 
     _this = _Ext_Editor.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_Editor) {
     return _this;
   }
 
-  return ExtEditorComponent;
-}(Ext_Editor); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-editor', ExtEditorComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCEditor;
+}(Ext_Editor);
 
-window.customElements.define('ext-editor', HTMLParsedElement.withParsedCallback(ExtEditorComponent));
+export { EWCEditor as default };
+window.customElements.define('ext-editor', HTMLParsedElement.withParsedCallback(EWCEditor));

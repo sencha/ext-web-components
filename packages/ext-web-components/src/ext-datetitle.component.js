@@ -1,21 +1,12 @@
-import Ext_panel_DateTitle from './Ext/panel/DateTitle'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_panel_DateTitle from '@sencha/ext-runtime-base/dist/./Ext/panel/DateTitle.js';
+import Ext_panel_DateTitle from './Ext/panel/DateTitle.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtDatetitleComponent extends Ext_panel_DateTitle {
+export default class EWCDatetitle extends Ext_panel_DateTitle {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'datetitle'
+        super ([], []);
+        this.xtype = 'datetitle';
     }
 }
+window.customElements.define('ext-datetitle', HTMLParsedElement.withParsedCallback(EWCDatetitle));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-datetitle', ExtDatetitleComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-datetitle', HTMLParsedElement.withParsedCallback(ExtDatetitleComponent))

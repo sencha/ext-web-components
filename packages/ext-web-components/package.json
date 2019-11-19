@@ -1,24 +1,29 @@
 {
   "name": "@sencha/ext-web-components",
+  "mjg": "marc",
   "version": "7.1.0",
-  "main": "ext-web-components.module.js",
+  "main2wc": "ext-web-components.module.js",
+  "main": "index.js",
   "private": false,
-  "bin": {
+  "binx": {
     "ext-web-components": "./bin/ext-web-components.js"
   },
-  "peerDependencies": {},
   "scripts": {
     "watch": "npx babel ./src --out-dir ./dist --watch",
     "build": "npx babel ./src --out-dir ./dist",
     "prepare": "npm run build"
   },
   "homepage": "https://github.com/sencha/ext-web-components#readme",
+  "peerDependencies": {
+    "@sencha/ext-runtime-base": "~7.1.0"
+  },
   "dependencies": {
+    "@sencha/ext-runtime-base": "~7.1.0",
+    "object-assign": "~4.1.0",
+    "pascal-case": "~2.0.1",
     "@babel/runtime": "^7.6.2",
     "script-loader": "^0.7.2",
-    "comment-json": "^2.2.0"
-  },
-  "devDependencies": {
+    "comment-json": "^2.2.0",
     "html-parsed-element": "^0.4.0",
     "@babel/cli": "^7.6.2",
     "@babel/core": "^7.6.2",
@@ -34,6 +39,7 @@
     "@babel/plugin-transform-runtime": "^7.6.2",
     "@babel/preset-env": "^7.6.2"
   },
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sencha/ext-web-components"

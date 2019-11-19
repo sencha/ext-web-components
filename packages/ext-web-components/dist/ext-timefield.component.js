@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_Time from './Ext/field/Time';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtTimefieldComponent =
+//import Ext_field_Time from '@sencha/ext-runtime-base/dist/./Ext/field/Time.js';
+import Ext_field_Time from './Ext/field/Time.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCTimefield =
 /*#__PURE__*/
 function (_Ext_field_Time) {
-  _inheritsLoose(ExtTimefieldComponent, _Ext_field_Time);
+  _inheritsLoose(EWCTimefield, _Ext_field_Time);
 
-  function ExtTimefieldComponent() {
+  function EWCTimefield() {
     var _this;
 
     _this = _Ext_field_Time.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_field_Time) {
     return _this;
   }
 
-  return ExtTimefieldComponent;
-}(Ext_field_Time); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-timefield', ExtTimefieldComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCTimefield;
+}(Ext_field_Time);
 
-window.customElements.define('ext-timefield', HTMLParsedElement.withParsedCallback(ExtTimefieldComponent));
+export { EWCTimefield as default };
+window.customElements.define('ext-timefield', HTMLParsedElement.withParsedCallback(EWCTimefield));

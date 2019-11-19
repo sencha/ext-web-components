@@ -1,21 +1,12 @@
-import Ext_ActionSheet from './Ext/ActionSheet'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_ActionSheet from '@sencha/ext-runtime-base/dist/./Ext/ActionSheet.js';
+import Ext_ActionSheet from './Ext/ActionSheet.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtActionsheetComponent extends Ext_ActionSheet {
+export default class EWCActionsheet extends Ext_ActionSheet {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'actionsheet'
+        super ([], []);
+        this.xtype = 'actionsheet';
     }
 }
+window.customElements.define('ext-actionsheet', HTMLParsedElement.withParsedCallback(EWCActionsheet));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-actionsheet', ExtActionsheetComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-actionsheet', HTMLParsedElement.withParsedCallback(ExtActionsheetComponent))

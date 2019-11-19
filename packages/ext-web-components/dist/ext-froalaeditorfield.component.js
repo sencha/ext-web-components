@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_froala_EditorField from './Ext/froala/EditorField';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtFroalaeditorfieldComponent =
+//import Ext_froala_EditorField from '@sencha/ext-runtime-base/dist/./Ext/froala/EditorField.js';
+import Ext_froala_EditorField from './Ext/froala/EditorField.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCFroalaeditorfield =
 /*#__PURE__*/
 function (_Ext_froala_EditorFie) {
-  _inheritsLoose(ExtFroalaeditorfieldComponent, _Ext_froala_EditorFie);
+  _inheritsLoose(EWCFroalaeditorfield, _Ext_froala_EditorFie);
 
-  function ExtFroalaeditorfieldComponent() {
+  function EWCFroalaeditorfield() {
     var _this;
 
     _this = _Ext_froala_EditorFie.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_froala_EditorFie) {
     return _this;
   }
 
-  return ExtFroalaeditorfieldComponent;
-}(Ext_froala_EditorField); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-froalaeditorfield', ExtFroalaeditorfieldComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCFroalaeditorfield;
+}(Ext_froala_EditorField);
 
-window.customElements.define('ext-froalaeditorfield', HTMLParsedElement.withParsedCallback(ExtFroalaeditorfieldComponent));
+export { EWCFroalaeditorfield as default };
+window.customElements.define('ext-froalaeditorfield', HTMLParsedElement.withParsedCallback(EWCFroalaeditorfield));

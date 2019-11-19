@@ -1,21 +1,12 @@
-import Ext_form_Spinner from './Ext/form/Spinner'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_form_Spinner from '@sencha/ext-runtime-base/dist/./Ext/form/Spinner.js';
+import Ext_form_Spinner from './Ext/form/Spinner.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtSpinnerfieldComponent extends Ext_form_Spinner {
+export default class EWCSpinnerfield extends Ext_form_Spinner {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'spinnerfield'
+        super ([], []);
+        this.xtype = 'spinnerfield';
     }
 }
+window.customElements.define('ext-spinnerfield', HTMLParsedElement.withParsedCallback(EWCSpinnerfield));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-spinnerfield', ExtSpinnerfieldComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-spinnerfield', HTMLParsedElement.withParsedCallback(ExtSpinnerfieldComponent))

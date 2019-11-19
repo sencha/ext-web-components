@@ -1,21 +1,12 @@
-import Ext_dataview_listswiper_Stepper from './Ext/dataview/listswiper/Stepper'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_dataview_listswiper_Stepper from '@sencha/ext-runtime-base/dist/./Ext/dataview/listswiper/Stepper.js';
+import Ext_dataview_listswiper_Stepper from './Ext/dataview/listswiper/Stepper.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtListswiperstepperComponent extends Ext_dataview_listswiper_Stepper {
+export default class EWCListswiperstepper extends Ext_dataview_listswiper_Stepper {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'listswiperstepper'
+        super ([], []);
+        this.xtype = 'listswiperstepper';
     }
 }
+window.customElements.define('ext-listswiperstepper', HTMLParsedElement.withParsedCallback(EWCListswiperstepper));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-listswiperstepper', ExtListswiperstepperComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-listswiperstepper', HTMLParsedElement.withParsedCallback(ExtListswiperstepperComponent))

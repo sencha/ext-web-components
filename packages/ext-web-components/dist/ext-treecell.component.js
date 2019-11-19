@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_cell_Tree from './Ext/grid/cell/Tree';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtTreecellComponent =
+//import Ext_grid_cell_Tree from '@sencha/ext-runtime-base/dist/./Ext/grid/cell/Tree.js';
+import Ext_grid_cell_Tree from './Ext/grid/cell/Tree.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCTreecell =
 /*#__PURE__*/
 function (_Ext_grid_cell_Tree) {
-  _inheritsLoose(ExtTreecellComponent, _Ext_grid_cell_Tree);
+  _inheritsLoose(EWCTreecell, _Ext_grid_cell_Tree);
 
-  function ExtTreecellComponent() {
+  function EWCTreecell() {
     var _this;
 
     _this = _Ext_grid_cell_Tree.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_grid_cell_Tree) {
     return _this;
   }
 
-  return ExtTreecellComponent;
-}(Ext_grid_cell_Tree); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-treecell', ExtTreecellComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCTreecell;
+}(Ext_grid_cell_Tree);
 
-window.customElements.define('ext-treecell', HTMLParsedElement.withParsedCallback(ExtTreecellComponent));
+export { EWCTreecell as default };
+window.customElements.define('ext-treecell', HTMLParsedElement.withParsedCallback(EWCTreecell));

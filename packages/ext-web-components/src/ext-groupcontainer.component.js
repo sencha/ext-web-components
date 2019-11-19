@@ -1,21 +1,12 @@
-import Ext_field_FieldGroupContainer from './Ext/field/FieldGroupContainer'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_field_FieldGroupContainer from '@sencha/ext-runtime-base/dist/./Ext/field/FieldGroupContainer.js';
+import Ext_field_FieldGroupContainer from './Ext/field/FieldGroupContainer.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtGroupcontainerComponent extends Ext_field_FieldGroupContainer {
+export default class EWCGroupcontainer extends Ext_field_FieldGroupContainer {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'groupcontainer'
+        super ([], []);
+        this.xtype = 'groupcontainer';
     }
 }
+window.customElements.define('ext-groupcontainer', HTMLParsedElement.withParsedCallback(EWCGroupcontainer));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-groupcontainer', ExtGroupcontainerComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-groupcontainer', HTMLParsedElement.withParsedCallback(ExtGroupcontainerComponent))

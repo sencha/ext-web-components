@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_sparkline_Box from './Ext/sparkline/Box';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtSparklineboxComponent =
+//import Ext_sparkline_Box from '@sencha/ext-runtime-base/dist/./Ext/sparkline/Box.js';
+import Ext_sparkline_Box from './Ext/sparkline/Box.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCSparklinebox =
 /*#__PURE__*/
 function (_Ext_sparkline_Box) {
-  _inheritsLoose(ExtSparklineboxComponent, _Ext_sparkline_Box);
+  _inheritsLoose(EWCSparklinebox, _Ext_sparkline_Box);
 
-  function ExtSparklineboxComponent() {
+  function EWCSparklinebox() {
     var _this;
 
     _this = _Ext_sparkline_Box.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_sparkline_Box) {
     return _this;
   }
 
-  return ExtSparklineboxComponent;
-}(Ext_sparkline_Box); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-sparklinebox', ExtSparklineboxComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCSparklinebox;
+}(Ext_sparkline_Box);
 
-window.customElements.define('ext-sparklinebox', HTMLParsedElement.withParsedCallback(ExtSparklineboxComponent));
+export { EWCSparklinebox as default };
+window.customElements.define('ext-sparklinebox', HTMLParsedElement.withParsedCallback(EWCSparklinebox));

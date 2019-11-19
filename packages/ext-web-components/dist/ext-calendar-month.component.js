@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_calendar_panel_Month from './Ext/calendar/panel/Month';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtCalendar_monthComponent =
+//import Ext_calendar_panel_Month from '@sencha/ext-runtime-base/dist/./Ext/calendar/panel/Month.js';
+import Ext_calendar_panel_Month from './Ext/calendar/panel/Month.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCCalendar_month =
 /*#__PURE__*/
 function (_Ext_calendar_panel_M) {
-  _inheritsLoose(ExtCalendar_monthComponent, _Ext_calendar_panel_M);
+  _inheritsLoose(EWCCalendar_month, _Ext_calendar_panel_M);
 
-  function ExtCalendar_monthComponent() {
+  function EWCCalendar_month() {
     var _this;
 
     _this = _Ext_calendar_panel_M.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_calendar_panel_M) {
     return _this;
   }
 
-  return ExtCalendar_monthComponent;
-}(Ext_calendar_panel_Month); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-month', ExtCalendar_monthComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCCalendar_month;
+}(Ext_calendar_panel_Month);
 
-window.customElements.define('ext-calendar-month', HTMLParsedElement.withParsedCallback(ExtCalendar_monthComponent));
+export { EWCCalendar_month as default };
+window.customElements.define('ext-calendar-month', HTMLParsedElement.withParsedCallback(EWCCalendar_month));

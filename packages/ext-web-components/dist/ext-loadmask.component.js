@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_LoadMask from './Ext/LoadMask';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtLoadmaskComponent =
+//import Ext_LoadMask from '@sencha/ext-runtime-base/dist/./Ext/LoadMask.js';
+import Ext_LoadMask from './Ext/LoadMask.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCLoadmask =
 /*#__PURE__*/
 function (_Ext_LoadMask) {
-  _inheritsLoose(ExtLoadmaskComponent, _Ext_LoadMask);
+  _inheritsLoose(EWCLoadmask, _Ext_LoadMask);
 
-  function ExtLoadmaskComponent() {
+  function EWCLoadmask() {
     var _this;
 
     _this = _Ext_LoadMask.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_LoadMask) {
     return _this;
   }
 
-  return ExtLoadmaskComponent;
-}(Ext_LoadMask); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-loadmask', ExtLoadmaskComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCLoadmask;
+}(Ext_LoadMask);
 
-window.customElements.define('ext-loadmask', HTMLParsedElement.withParsedCallback(ExtLoadmaskComponent));
+export { EWCLoadmask as default };
+window.customElements.define('ext-loadmask', HTMLParsedElement.withParsedCallback(EWCLoadmask));

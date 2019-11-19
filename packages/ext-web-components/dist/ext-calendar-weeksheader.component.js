@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_calendar_header_Weeks from './Ext/calendar/header/Weeks';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtCalendar_weeksheaderComponent =
+//import Ext_calendar_header_Weeks from '@sencha/ext-runtime-base/dist/./Ext/calendar/header/Weeks.js';
+import Ext_calendar_header_Weeks from './Ext/calendar/header/Weeks.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCCalendar_weeksheader =
 /*#__PURE__*/
 function (_Ext_calendar_header_) {
-  _inheritsLoose(ExtCalendar_weeksheaderComponent, _Ext_calendar_header_);
+  _inheritsLoose(EWCCalendar_weeksheader, _Ext_calendar_header_);
 
-  function ExtCalendar_weeksheaderComponent() {
+  function EWCCalendar_weeksheader() {
     var _this;
 
     _this = _Ext_calendar_header_.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_calendar_header_) {
     return _this;
   }
 
-  return ExtCalendar_weeksheaderComponent;
-}(Ext_calendar_header_Weeks); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-weeksheader', ExtCalendar_weeksheaderComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCCalendar_weeksheader;
+}(Ext_calendar_header_Weeks);
 
-window.customElements.define('ext-calendar-weeksheader', HTMLParsedElement.withParsedCallback(ExtCalendar_weeksheaderComponent));
+export { EWCCalendar_weeksheader as default };
+window.customElements.define('ext-calendar-weeksheader', HTMLParsedElement.withParsedCallback(EWCCalendar_weeksheader));

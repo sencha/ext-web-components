@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_Number from '../../Ext/field/Number';
+import Ext_field_Number from '../../Ext/field/Number.js';
 
 var Ext_form_Spinner =
 /*#__PURE__*/
@@ -8,7 +8,7 @@ function (_Ext_field_Number) {
   _inheritsLoose(Ext_form_Spinner, _Ext_field_Number);
 
   Ext_form_Spinner.PROPERTIES = function PROPERTIES() {
-    return ['accelerateOnTapHold', 'alignSelf', 'alwaysOnTop', 'animateUnderline', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoCapitalize', 'autoComplete', 'autoCorrect', 'autoFitErrors', 'autoHideInputMask', 'axisLock', 'badFormatMessage', 'bind', 'bodyAlign', 'border', 'bottom', 'bubbleDirty', 'centered', 'clearable', 'cls', 'constrainAlign', 'contentEl', 'controller', 'cycle', 'data', 'dataType', 'decimals', 'decimalSeparator', 'decimalsText', 'defaultListenerScope', 'dirty', 'disabled', 'displayed', 'docked', 'draggable', 'editable', 'error', 'errorMessage', 'errorTarget', 'errorTip', 'errorTpl', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inline', 'inputMask', 'inputType', 'inputValue', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'label', 'labelAlign', 'labelCls', 'labelInPlaceholder', 'labelMinWidth', 'labelTextAlign', 'labelWidth', 'labelWrap', 'left', 'listeners', 'margin', 'maxHeight', 'maxLength', 'maxValue', 'maxValueText', 'maxWidth', 'minHeight', 'minValue', 'minValueText', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'parseValidator', 'pattern', 'placeholder', 'plugins', 'publishes', 'readOnly', 'record', 'reference', 'relative', 'renderTo', 'required', 'requiredMessage', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'sideError', 'stateful', 'statefulDefaults', 'stateId', 'stepValue', 'stripCharsRe', 'style', 'tabIndex', 'textAlign', 'tipError', 'titleError', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'triggers', 'trim', 'twoWayBindable', 'ui', 'underError', 'userCls', 'userSelectable', 'validateDisabled', 'validationMessage', 'validators', 'value', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['accelerateOnTapHold', 'alignSelf', 'alwaysOnTop', 'animateUnderline', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoCapitalize', 'autoComplete', 'autoCorrect', 'autoFitErrors', 'autoHideInputMask', 'axisLock', 'badFormatMessage', 'bind', 'bodyAlign', 'border', 'bottom', 'bubbleDirty', 'centered', 'clearable', 'cls', 'constrainAlign', 'contentEl', 'controller', 'cycle', 'data', 'dataType', 'decimals', 'decimalSeparator', 'decimalsText', 'defaultListenerScope', 'dirty', 'disabled', 'displayed', 'docked', 'draggable', 'editable', 'error', 'errorMessage', 'errorTarget', 'errorTip', 'errorTpl', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inline', 'inputMask', 'inputType', 'inputValue', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'label', 'labelAlign', 'labelCls', 'labelInPlaceholder', 'labelMinWidth', 'labelTextAlign', 'labelWidth', 'labelWrap', 'left', 'listeners', 'margin', 'maxHeight', 'maxLength', 'maxValue', 'maxValueText', 'maxWidth', 'minHeight', 'minValue', 'minValueText', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'parseValidator', 'pattern', 'placeholder', 'plugins', 'publishes', 'readOnly', 'record', 'reference', 'relative', 'renderTo', 'required', 'requiredMessage', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'sideError', 'stateful', 'statefulDefaults', 'stateId', 'stepValue', 'stripCharsRe', 'style', 'tabIndex', 'textAlign', 'tipError', 'titleError', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'triggers', 'trim', 'twoWayBindable', 'ui', 'underError', 'userCls', 'userSelectable', 'validateDisabled', 'validationMessage', 'validators', 'value', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_form_Spinner.EVENTS = function EVENTS() {
@@ -68,7 +68,7 @@ function (_Ext_field_Number) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'spinnerfield'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -77,7 +77,7 @@ function (_Ext_field_Number) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'spinnerfield,e'
+      parameters: 'sender,e'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -86,10 +86,10 @@ function (_Ext_field_Number) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'change',
-      parameters: 'spinnerfield,newValue,oldValue'
+      parameters: 'sender,newValue,oldValue'
     }, {
       name: 'clearicontap',
-      parameters: 'spinnerfield,input,e'
+      parameters: 'sender,input,e'
     }, {
       name: 'click',
       parameters: 'e'
@@ -98,7 +98,7 @@ function (_Ext_field_Number) {
       parameters: ''
     }, {
       name: 'dirtychange',
-      parameters: 'spinnerfield,dirty'
+      parameters: 'sender,dirty'
     }, {
       name: 'disabledchange',
       parameters: 'sender,value,oldValue'
@@ -110,19 +110,19 @@ function (_Ext_field_Number) {
       parameters: 'sender'
     }, {
       name: 'errorchange',
-      parameters: 'spinnerfield,error'
+      parameters: 'sender,error'
     }, {
       name: 'floatingchange',
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'spinnerfield,e'
+      parameters: 'sender,e'
     }, {
       name: 'focusenter',
-      parameters: 'spinnerfield,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'spinnerfield,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -140,10 +140,10 @@ function (_Ext_field_Number) {
       parameters: 'sender'
     }, {
       name: 'keydown',
-      parameters: 'spinnerfield,e'
+      parameters: 'sender,e'
     }, {
       name: 'keyup',
-      parameters: 'spinnerfield,e'
+      parameters: 'sender,e'
     }, {
       name: 'leftchange',
       parameters: 'sender,value,oldValue'
@@ -161,7 +161,7 @@ function (_Ext_field_Number) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'mousedown',
-      parameters: 'spinnerfield,e'
+      parameters: 'sender,e'
     }, {
       name: 'moved',
       parameters: 'sender,container,toIndex,fromIndex'
@@ -173,7 +173,7 @@ function (_Ext_field_Number) {
       parameters: 'sender,element'
     }, {
       name: 'paste',
-      parameters: 'spinnerfield,e'
+      parameters: 'sender,e'
     }, {
       name: 'positionedchange',
       parameters: 'sender,positioned'
@@ -194,16 +194,16 @@ function (_Ext_field_Number) {
       parameters: 'sender'
     }, {
       name: 'spin',
-      parameters: 'spinnerfield,value,direction'
+      parameters: 'sender,value,direction'
     }, {
       name: 'spindown',
-      parameters: 'spinnerfield,value'
+      parameters: 'sender,value'
     }, {
       name: 'spinup',
-      parameters: 'spinnerfield,value'
+      parameters: 'sender,value'
     }, {
       name: 'tofront',
-      parameters: 'spinnerfield'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -215,7 +215,7 @@ function (_Ext_field_Number) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

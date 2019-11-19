@@ -1,21 +1,12 @@
-import Ext_Gadget from './Ext/Gadget'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_Gadget from '@sencha/ext-runtime-base/dist/./Ext/Gadget.js';
+import Ext_Gadget from './Ext/Gadget.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtWidgetComponent extends Ext_Gadget {
+export default class EWCWidget extends Ext_Gadget {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'widget'
+        super ([], []);
+        this.xtype = 'widget';
     }
 }
+window.customElements.define('ext-widget', HTMLParsedElement.withParsedCallback(EWCWidget));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-widget', ExtWidgetComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-widget', HTMLParsedElement.withParsedCallback(ExtWidgetComponent))

@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_slider_Slider from './Ext/slider/Slider';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtSliderComponent =
+//import Ext_slider_Slider from '@sencha/ext-runtime-base/dist/./Ext/slider/Slider.js';
+import Ext_slider_Slider from './Ext/slider/Slider.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCSlider =
 /*#__PURE__*/
 function (_Ext_slider_Slider) {
-  _inheritsLoose(ExtSliderComponent, _Ext_slider_Slider);
+  _inheritsLoose(EWCSlider, _Ext_slider_Slider);
 
-  function ExtSliderComponent() {
+  function EWCSlider() {
     var _this;
 
     _this = _Ext_slider_Slider.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_slider_Slider) {
     return _this;
   }
 
-  return ExtSliderComponent;
-}(Ext_slider_Slider); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-slider', ExtSliderComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCSlider;
+}(Ext_slider_Slider);
 
-window.customElements.define('ext-slider', HTMLParsedElement.withParsedCallback(ExtSliderComponent));
+export { EWCSlider as default };
+window.customElements.define('ext-slider', HTMLParsedElement.withParsedCallback(EWCSlider));

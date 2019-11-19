@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Component from '../../Ext/Component';
+import Ext_Component from '../../Ext/Component.js';
 
 var Ext_froala_Editor =
 /*#__PURE__*/
@@ -8,7 +8,7 @@ function (_Ext_Component) {
   _inheritsLoose(Ext_froala_Editor, _Ext_Component);
 
   Ext_froala_Editor.PROPERTIES = function PROPERTIES() {
-    return ['activationKey', 'alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultEditor', 'defaultListenerScope', 'disabled', 'displayed', 'docked', 'draggable', 'editor', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['activationKey', 'alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultEditor', 'defaultListenerScope', 'disabled', 'displayed', 'docked', 'draggable', 'editor', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_froala_Editor.EVENTS = function EVENTS() {
@@ -65,7 +65,7 @@ function (_Ext_Component) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'froalaeditor'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -74,7 +74,7 @@ function (_Ext_Component) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'froalaeditor,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -83,7 +83,7 @@ function (_Ext_Component) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'change',
-      parameters: 'froalaeditor,the'
+      parameters: 'sender,the'
     }, {
       name: 'destroy',
       parameters: ''
@@ -101,13 +101,13 @@ function (_Ext_Component) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'froalaeditor,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'froalaeditor,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'froalaeditor,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -152,7 +152,7 @@ function (_Ext_Component) {
       parameters: 'sender,positioned'
     }, {
       name: 'ready',
-      parameters: 'froalaeditor,the'
+      parameters: 'sender,the'
     }, {
       name: 'removed',
       parameters: 'sender,container,index'
@@ -170,7 +170,7 @@ function (_Ext_Component) {
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'froalaeditor'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -182,7 +182,7 @@ function (_Ext_Component) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

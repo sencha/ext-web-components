@@ -1,21 +1,12 @@
-import Ext_Video from './Ext/Video'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_Video from '@sencha/ext-runtime-base/dist/./Ext/Video.js';
+import Ext_Video from './Ext/Video.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtVideoComponent extends Ext_Video {
+export default class EWCVideo extends Ext_Video {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'video'
+        super ([], []);
+        this.xtype = 'video';
     }
 }
+window.customElements.define('ext-video', HTMLParsedElement.withParsedCallback(EWCVideo));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-video', ExtVideoComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-video', HTMLParsedElement.withParsedCallback(ExtVideoComponent))

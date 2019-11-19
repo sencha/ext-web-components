@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Sheet from './Ext/Sheet';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtSheetComponent =
+//import Ext_Sheet from '@sencha/ext-runtime-base/dist/./Ext/Sheet.js';
+import Ext_Sheet from './Ext/Sheet.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCSheet =
 /*#__PURE__*/
 function (_Ext_Sheet) {
-  _inheritsLoose(ExtSheetComponent, _Ext_Sheet);
+  _inheritsLoose(EWCSheet, _Ext_Sheet);
 
-  function ExtSheetComponent() {
+  function EWCSheet() {
     var _this;
 
     _this = _Ext_Sheet.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_Sheet) {
     return _this;
   }
 
-  return ExtSheetComponent;
-}(Ext_Sheet); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-sheet', ExtSheetComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCSheet;
+}(Ext_Sheet);
 
-window.customElements.define('ext-sheet', HTMLParsedElement.withParsedCallback(ExtSheetComponent));
+export { EWCSheet as default };
+window.customElements.define('ext-sheet', HTMLParsedElement.withParsedCallback(EWCSheet));

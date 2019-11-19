@@ -1,21 +1,12 @@
-import Ext_ux_colorpick_Selector from './Ext/ux/colorpick/Selector'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_ux_colorpick_Selector from '@sencha/ext-runtime-base/dist/./Ext/ux/colorpick/Selector.js';
+import Ext_ux_colorpick_Selector from './Ext/ux/colorpick/Selector.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtColorselectorComponent extends Ext_ux_colorpick_Selector {
+export default class EWCColorselector extends Ext_ux_colorpick_Selector {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'colorselector'
+        super ([], []);
+        this.xtype = 'colorselector';
     }
 }
+window.customElements.define('ext-colorselector', HTMLParsedElement.withParsedCallback(EWCColorselector));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-colorselector', ExtColorselectorComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-colorselector', HTMLParsedElement.withParsedCallback(ExtColorselectorComponent))

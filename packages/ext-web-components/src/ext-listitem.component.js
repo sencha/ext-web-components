@@ -1,21 +1,12 @@
-import Ext_dataview_component_ListItem from './Ext/dataview/component/ListItem'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_dataview_component_ListItem from '@sencha/ext-runtime-base/dist/./Ext/dataview/component/ListItem.js';
+import Ext_dataview_component_ListItem from './Ext/dataview/component/ListItem.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtListitemComponent extends Ext_dataview_component_ListItem {
+export default class EWCListitem extends Ext_dataview_component_ListItem {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'listitem'
+        super ([], []);
+        this.xtype = 'listitem';
     }
 }
+window.customElements.define('ext-listitem', HTMLParsedElement.withParsedCallback(EWCListitem));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-listitem', ExtListitemComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-listitem', HTMLParsedElement.withParsedCallback(ExtListitemComponent))

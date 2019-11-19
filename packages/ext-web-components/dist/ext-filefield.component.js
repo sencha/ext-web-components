@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_File from './Ext/field/File';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtFilefieldComponent =
+//import Ext_field_File from '@sencha/ext-runtime-base/dist/./Ext/field/File.js';
+import Ext_field_File from './Ext/field/File.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCFilefield =
 /*#__PURE__*/
 function (_Ext_field_File) {
-  _inheritsLoose(ExtFilefieldComponent, _Ext_field_File);
+  _inheritsLoose(EWCFilefield, _Ext_field_File);
 
-  function ExtFilefieldComponent() {
+  function EWCFilefield() {
     var _this;
 
     _this = _Ext_field_File.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_field_File) {
     return _this;
   }
 
-  return ExtFilefieldComponent;
-}(Ext_field_File); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-filefield', ExtFilefieldComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCFilefield;
+}(Ext_field_File);
 
-window.customElements.define('ext-filefield', HTMLParsedElement.withParsedCallback(ExtFilefieldComponent));
+export { EWCFilefield as default };
+window.customElements.define('ext-filefield', HTMLParsedElement.withParsedCallback(EWCFilefield));

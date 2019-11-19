@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_panel_YearPicker from './Ext/panel/YearPicker';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtYearpickerComponent =
+//import Ext_panel_YearPicker from '@sencha/ext-runtime-base/dist/./Ext/panel/YearPicker.js';
+import Ext_panel_YearPicker from './Ext/panel/YearPicker.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCYearpicker =
 /*#__PURE__*/
 function (_Ext_panel_YearPicker) {
-  _inheritsLoose(ExtYearpickerComponent, _Ext_panel_YearPicker);
+  _inheritsLoose(EWCYearpicker, _Ext_panel_YearPicker);
 
-  function ExtYearpickerComponent() {
+  function EWCYearpicker() {
     var _this;
 
     _this = _Ext_panel_YearPicker.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_panel_YearPicker) {
     return _this;
   }
 
-  return ExtYearpickerComponent;
-}(Ext_panel_YearPicker); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-yearpicker', ExtYearpickerComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCYearpicker;
+}(Ext_panel_YearPicker);
 
-window.customElements.define('ext-yearpicker', HTMLParsedElement.withParsedCallback(ExtYearpickerComponent));
+export { EWCYearpicker as default };
+window.customElements.define('ext-yearpicker', HTMLParsedElement.withParsedCallback(EWCYearpicker));

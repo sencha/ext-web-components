@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_Grid from '../../Ext/grid/Grid';
+import Ext_grid_Grid from '../../Ext/grid/Grid.js';
 
 var Ext_pivot_Grid =
 /*#__PURE__*/
@@ -8,13 +8,13 @@ function (_Ext_grid_Grid) {
   _inheritsLoose(Ext_pivot_Grid, _Ext_grid_Grid);
 
   Ext_pivot_Grid.PROPERTIES = function PROPERTIES() {
-    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'associatedData', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'bufferSize', 'cardSwitchAnimation', 'centered', 'cls', 'clsGrandTotal', 'clsGroupTotal', 'collapseDefaults', 'collapsible', 'columnLines', 'columnMenu', 'columnResize', 'columns', 'columnsMenuItem', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'deferEmptyText', 'deselectOnContainerClick', 'disabled', 'disableSelection', 'disclosureProperty', 'displayed', 'docked', 'draggable', 'emptyItemText', 'emptyState', 'emptyText', 'emptyTextDefaults', 'emptyTextProperty', 'enableColumnMove', 'enableColumnSort', 'enableLoadMask', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'grouped', 'groupFooter', 'groupHeader', 'grouping', 'groupPlaceholder', 'height', 'hidden', 'hideAnimation', 'hideHeaders', 'hideMode', 'hideOnMaskTap', 'hideScrollbar', 'horizontalOverflow', 'html', 'id', 'inactiveChildTabIndex', 'indexBar', 'infinite', 'inline', 'innerCls', 'innerCtHeight', 'innerWidth', 'instanceCls', 'itemButtonMode', 'itemCls', 'itemConfig', 'itemContentCls', 'itemDataMap', 'itemId', 'itemInnerCls', 'itemRipple', 'items', 'itemsFocusable', 'itemTpl', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'leftAxisCellConfig', 'listeners', 'loadingHeight', 'loadingText', 'maintainChildNodes', 'manageBorders', 'margin', 'markDirty', 'masked', 'matrix', 'maxHeight', 'maxItemCache', 'maxWidth', 'minHeight', 'minimumBufferDistance', 'minWidth', 'modal', 'modelValidation', 'multiColumnSort', 'name', 'nameable', 'nameHolder', 'onItemDisclosure', 'padding', 'pinFooters', 'pinHeaders', 'pinnedFooter', 'pinnedFooterHeight', 'pinnedHeader', 'pinnedHeaderHeight', 'plugins', 'pressedDelay', 'preventSelectionOnDisclose', 'preventSelectionOnTool', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'reserveScrollbar', 'resetFocusPosition', 'right', 'ripple', 'rowLines', 'rowNumbers', 'scrollable', 'scrollDock', 'scrollToTopOnRefresh', 'selectable', 'selection', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'sortable', 'startColGroupsCollapsed', 'startRowGroupsCollapsed', 'stateful', 'statefulDefaults', 'stateId', 'store', 'striped', 'style', 'tabIndex', 'title', 'titleBar', 'toFrontOnShow', 'tooltip', 'top', 'topAxisCellConfig', 'topRenderedIndex', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'triggerCtEvent', 'triggerEvent', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'variableHeights', 'verticalOverflow', 'viewModel', 'visibleHeight', 'visibleLeft', 'visibleTop', 'visibleWidth', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'associatedData', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'bufferSize', 'cardSwitchAnimation', 'centered', 'cls', 'clsGrandTotal', 'clsGroupTotal', 'collapseDefaults', 'collapsible', 'columnLines', 'columnMenu', 'columnResize', 'columns', 'columnsMenuItem', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'deferEmptyText', 'deselectOnContainerClick', 'disabled', 'disableSelection', 'disclosureProperty', 'displayed', 'docked', 'draggable', 'emptyItemText', 'emptyState', 'emptyText', 'emptyTextDefaults', 'emptyTextProperty', 'enableColumnMove', 'enableColumnSort', 'enableLoadMask', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'grouped', 'groupFooter', 'groupHeader', 'grouping', 'groupPlaceholder', 'height', 'hidden', 'hideAnimation', 'hideHeaders', 'hideMode', 'hideOnMaskTap', 'hideScrollbar', 'horizontalOverflow', 'html', 'id', 'inactiveChildTabIndex', 'indexBar', 'infinite', 'inline', 'innerCls', 'innerCtHeight', 'innerWidth', 'instanceCls', 'itemButtonMode', 'itemCls', 'itemConfig', 'itemContentCls', 'itemDataMap', 'itemId', 'itemInnerCls', 'itemRipple', 'items', 'itemsFocusable', 'itemTpl', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'leftAxisCellConfig', 'listeners', 'loadingHeight', 'loadingText', 'maintainChildNodes', 'manageBorders', 'margin', 'markDirty', 'masked', 'matrix', 'maxHeight', 'maxItemCache', 'maxWidth', 'minHeight', 'minimumBufferDistance', 'minWidth', 'modal', 'modelValidation', 'multiColumnSort', 'name', 'nameable', 'nameHolder', 'onItemDisclosure', 'padding', 'pinFooters', 'pinHeaders', 'pinnedFooter', 'pinnedFooterHeight', 'pinnedHeader', 'pinnedHeaderHeight', 'plugins', 'pressedDelay', 'preventSelectionOnDisclose', 'preventSelectionOnTool', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'reserveScrollbar', 'resetFocusPosition', 'right', 'ripple', 'rowLines', 'rowNumbers', 'scrollable', 'scrollDock', 'scrollToTopOnRefresh', 'selectable', 'selection', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'sortable', 'startColGroupsCollapsed', 'startRowGroupsCollapsed', 'stateful', 'statefulDefaults', 'stateId', 'store', 'striped', 'style', 'tabIndex', 'title', 'titleBar', 'toFrontOnShow', 'tooltip', 'top', 'topAxisCellConfig', 'topRenderedIndex', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'triggerCtEvent', 'triggerEvent', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'variableHeights', 'verticalOverflow', 'viewModel', 'visibleHeight', 'visibleLeft', 'visibleTop', 'visibleWidth', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_pivot_Grid.EVENTS = function EVENTS() {
     return [{
       name: 'activate',
-      parameters: 'newActiveItem,pivotgrid,oldActiveItem'
+      parameters: 'newActiveItem,sender,oldActiveItem'
     }, {
       name: 'activeItemchange',
       parameters: 'sender,value,oldValue'
@@ -47,10 +47,10 @@ function (_Ext_grid_Grid) {
       parameters: 'sender,location'
     }, {
       name: 'beforegroupcollapse',
-      parameters: 'pivotgrid,group'
+      parameters: 'sender,group'
     }, {
       name: 'beforegroupexpand',
-      parameters: 'pivotgrid,group'
+      parameters: 'sender,group'
     }, {
       name: 'beforeheightchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -98,7 +98,7 @@ function (_Ext_grid_Grid) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforetofront',
-      parameters: 'pivotgrid'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -107,7 +107,7 @@ function (_Ext_grid_Grid) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'pivotgrid,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -122,73 +122,73 @@ function (_Ext_grid_Grid) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'childdoubletap',
-      parameters: 'pivotgrid,location'
+      parameters: 'sender,location'
     }, {
       name: 'childlongpress',
-      parameters: 'pivotgrid,location'
+      parameters: 'sender,location'
     }, {
       name: 'childmouseenter',
-      parameters: 'pivotgrid,location'
+      parameters: 'sender,location'
     }, {
       name: 'childmouseleave',
-      parameters: 'pivotgrid,location'
+      parameters: 'sender,location'
     }, {
       name: 'childsingletap',
-      parameters: 'pivotgrid,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtap',
-      parameters: 'pivotgrid,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtaphold',
-      parameters: 'pivotgrid,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtouchcancel',
-      parameters: 'pivotgrid,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtouchend',
-      parameters: 'pivotgrid,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtouchmove',
-      parameters: 'pivotgrid,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtouchstart',
-      parameters: 'pivotgrid,location'
+      parameters: 'sender,location'
     }, {
       name: 'columnadd',
-      parameters: 'pivotgrid,column,index'
+      parameters: 'sender,column,index'
     }, {
       name: 'columnhide',
-      parameters: 'pivotgrid,column'
+      parameters: 'sender,column'
     }, {
       name: 'columnmenucreated',
       parameters: 'grid,column,menu'
     }, {
       name: 'columnmove',
-      parameters: 'pivotgrid,column,fromIndex,toIndex'
+      parameters: 'sender,column,fromIndex,toIndex'
     }, {
       name: 'columnremove',
-      parameters: 'pivotgrid,column'
+      parameters: 'sender,column'
     }, {
       name: 'columnresize',
-      parameters: 'pivotgrid,column,width'
+      parameters: 'sender,column,width'
     }, {
       name: 'columnselection',
       parameters: 'grid,selection'
     }, {
       name: 'columnshow',
-      parameters: 'pivotgrid,column'
+      parameters: 'sender,column'
     }, {
       name: 'columnsort',
-      parameters: 'pivotgrid,column,direction'
+      parameters: 'sender,column,direction'
     }, {
       name: 'complete',
       parameters: 'editor,value,startValue,The'
     }, {
       name: 'deactivate',
-      parameters: 'oldActiveItem,pivotgrid,newActiveItem'
+      parameters: 'oldActiveItem,sender,newActiveItem'
     }, {
       name: 'deselect',
-      parameters: 'pivotgrid,records'
+      parameters: 'sender,records'
     }, {
       name: 'destroy',
       parameters: ''
@@ -212,22 +212,22 @@ function (_Ext_grid_Grid) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'pivotgrid,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'pivotgrid,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'pivotgrid,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
     }, {
       name: 'groupcollapse',
-      parameters: 'pivotgrid,group'
+      parameters: 'sender,group'
     }, {
       name: 'groupexpand',
-      parameters: 'pivotgrid,group'
+      parameters: 'sender,group'
     }, {
       name: 'heightchange',
       parameters: 'sender,value,oldValue'
@@ -242,43 +242,43 @@ function (_Ext_grid_Grid) {
       parameters: 'sender'
     }, {
       name: 'itemaction',
-      parameters: 'pivotgrid,index,record,action'
+      parameters: 'sender,index,record,action'
     }, {
       name: 'itemdoubletap',
-      parameters: 'pivotgrid,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemlongpress',
-      parameters: 'pivotgrid,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemmouseenter',
-      parameters: 'pivotgrid,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemmouseleave',
-      parameters: 'pivotgrid,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemsingletap',
-      parameters: 'pivotgrid,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemswipe',
-      parameters: 'pivotgrid,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtap',
-      parameters: 'pivotgrid,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtaphold',
-      parameters: 'pivotgrid,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtouchcancel',
-      parameters: 'pivotgrid,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtouchend',
-      parameters: 'pivotgrid,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtouchmove',
-      parameters: 'pivotgrid,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtouchstart',
-      parameters: 'pivotgrid,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'leftchange',
       parameters: 'sender,value,oldValue'
@@ -302,7 +302,7 @@ function (_Ext_grid_Grid) {
       parameters: 'sender,container,toIndex,fromIndex'
     }, {
       name: 'navigate',
-      parameters: 'pivotgrid,to,from'
+      parameters: 'sender,to,from'
     }, {
       name: 'orientationchange',
       parameters: ''
@@ -410,7 +410,7 @@ function (_Ext_grid_Grid) {
       parameters: 'sender,positioned'
     }, {
       name: 'refresh',
-      parameters: 'pivotgrid'
+      parameters: 'sender'
     }, {
       name: 'remove',
       parameters: ''
@@ -419,7 +419,7 @@ function (_Ext_grid_Grid) {
       parameters: 'sender,container,index'
     }, {
       name: 'renderedchange',
-      parameters: 'pivotgrid,item,rendered'
+      parameters: 'sender,item,rendered'
     }, {
       name: 'resize',
       parameters: 'element,info'
@@ -431,7 +431,7 @@ function (_Ext_grid_Grid) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'select',
-      parameters: 'pivotgrid,selected'
+      parameters: 'sender,selected'
     }, {
       name: 'selectionextenderdrag',
       parameters: 'grid,An,extension'
@@ -449,7 +449,7 @@ function (_Ext_grid_Grid) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'tofront',
-      parameters: 'pivotgrid'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -464,7 +464,7 @@ function (_Ext_grid_Grid) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

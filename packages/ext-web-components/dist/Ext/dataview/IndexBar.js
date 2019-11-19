@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Component from '../../Ext/Component';
+import Ext_Component from '../../Ext/Component.js';
 
 var Ext_dataview_IndexBar =
 /*#__PURE__*/
@@ -8,7 +8,7 @@ function (_Ext_Component) {
   _inheritsLoose(Ext_dataview_IndexBar, _Ext_Component);
 
   Ext_dataview_IndexBar.PROPERTIES = function PROPERTIES() {
-    return ['alignSelf', 'alwaysOnTop', 'animation', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoHide', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'direction', 'disabled', 'displayed', 'docked', 'draggable', 'dynamic', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'indicator', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'letters', 'listeners', 'listPrefix', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['alignSelf', 'alwaysOnTop', 'animation', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoHide', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'direction', 'disabled', 'displayed', 'docked', 'draggable', 'dynamic', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'indicator', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'letters', 'listeners', 'listPrefix', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_dataview_IndexBar.EVENTS = function EVENTS() {
@@ -68,7 +68,7 @@ function (_Ext_Component) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'indexbar'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -77,7 +77,7 @@ function (_Ext_Component) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'indexbar,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -104,13 +104,13 @@ function (_Ext_Component) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'indexbar,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'indexbar,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'indexbar,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -125,7 +125,7 @@ function (_Ext_Component) {
       parameters: 'sender'
     }, {
       name: 'index',
-      parameters: 'indexbar,html,target'
+      parameters: 'sender,html,target'
     }, {
       name: 'initialize',
       parameters: 'sender'
@@ -173,7 +173,7 @@ function (_Ext_Component) {
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'indexbar'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -185,7 +185,7 @@ function (_Ext_Component) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

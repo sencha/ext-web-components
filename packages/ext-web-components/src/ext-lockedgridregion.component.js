@@ -1,21 +1,12 @@
-import Ext_grid_LockedGridRegion from './Ext/grid/LockedGridRegion'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_grid_LockedGridRegion from '@sencha/ext-runtime-base/dist/./Ext/grid/LockedGridRegion.js';
+import Ext_grid_LockedGridRegion from './Ext/grid/LockedGridRegion.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtLockedgridregionComponent extends Ext_grid_LockedGridRegion {
+export default class EWCLockedgridregion extends Ext_grid_LockedGridRegion {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'lockedgridregion'
+        super ([], []);
+        this.xtype = 'lockedgridregion';
     }
 }
+window.customElements.define('ext-lockedgridregion', HTMLParsedElement.withParsedCallback(EWCLockedgridregion));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-lockedgridregion', ExtLockedgridregionComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-lockedgridregion', HTMLParsedElement.withParsedCallback(ExtLockedgridregionComponent))

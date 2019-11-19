@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_dataview_DataView from '../../Ext/dataview/DataView';
+import Ext_dataview_DataView from '../../Ext/dataview/DataView.js';
 
 var Ext_picker_Slot =
 /*#__PURE__*/
@@ -8,13 +8,13 @@ function (_Ext_dataview_DataVie) {
   _inheritsLoose(Ext_picker_Slot, _Ext_dataview_DataVie);
 
   Ext_picker_Slot.PROPERTIES = function PROPERTIES() {
-    return ['activeChildTabIndex', 'activeItem', 'align', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'associatedData', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'cardSwitchAnimation', 'centered', 'cls', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'deferEmptyText', 'deselectOnContainerClick', 'disabled', 'disableSelection', 'displayed', 'displayField', 'docked', 'draggable', 'emptyItemText', 'emptyState', 'emptyText', 'emptyTextDefaults', 'emptyTextProperty', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inactiveChildTabIndex', 'inline', 'innerCls', 'instanceCls', 'itemButtonMode', 'itemCls', 'itemId', 'itemRipple', 'items', 'itemsFocusable', 'itemTpl', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'lastSelected', 'layout', 'left', 'listeners', 'loadingHeight', 'loadingText', 'manageBorders', 'margin', 'markDirty', 'masked', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'pressedDelay', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'right', 'ripple', 'scrollable', 'scrollDock', 'scrollToTopOnRefresh', 'selectable', 'selected', 'selection', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'showTitle', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'title', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'triggerCtEvent', 'triggerEvent', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'valueField', 'verticallyCenterItems', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['activeChildTabIndex', 'activeItem', 'align', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'associatedData', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'cardSwitchAnimation', 'centered', 'cls', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'deferEmptyText', 'deselectOnContainerClick', 'disabled', 'disableSelection', 'displayed', 'displayField', 'docked', 'draggable', 'emptyItemText', 'emptyState', 'emptyText', 'emptyTextDefaults', 'emptyTextProperty', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inactiveChildTabIndex', 'inline', 'innerCls', 'instanceCls', 'itemButtonMode', 'itemCls', 'itemId', 'itemRipple', 'items', 'itemsFocusable', 'itemTpl', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'lastSelected', 'layout', 'left', 'listeners', 'loadingHeight', 'loadingText', 'manageBorders', 'margin', 'markDirty', 'masked', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'pressedDelay', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'right', 'ripple', 'scrollable', 'scrollDock', 'scrollToTopOnRefresh', 'selectable', 'selected', 'selection', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'showTitle', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'title', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'triggerCtEvent', 'triggerEvent', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'valueField', 'verticallyCenterItems', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_picker_Slot.EVENTS = function EVENTS() {
     return [{
       name: 'activate',
-      parameters: 'newActiveItem,pickerslot,oldActiveItem'
+      parameters: 'newActiveItem,sender,oldActiveItem'
     }, {
       name: 'activeItemchange',
       parameters: 'sender,value,oldValue'
@@ -80,7 +80,7 @@ function (_Ext_dataview_DataVie) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforetofront',
-      parameters: 'pickerslot'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -89,7 +89,7 @@ function (_Ext_dataview_DataVie) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'pickerslot,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -98,43 +98,43 @@ function (_Ext_dataview_DataVie) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'childdoubletap',
-      parameters: 'pickerslot,location'
+      parameters: 'sender,location'
     }, {
       name: 'childlongpress',
-      parameters: 'pickerslot,location'
+      parameters: 'sender,location'
     }, {
       name: 'childmouseenter',
-      parameters: 'pickerslot,location'
+      parameters: 'sender,location'
     }, {
       name: 'childmouseleave',
-      parameters: 'pickerslot,location'
+      parameters: 'sender,location'
     }, {
       name: 'childsingletap',
-      parameters: 'pickerslot,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtap',
-      parameters: 'pickerslot,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtaphold',
-      parameters: 'pickerslot,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtouchcancel',
-      parameters: 'pickerslot,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtouchend',
-      parameters: 'pickerslot,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtouchmove',
-      parameters: 'pickerslot,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtouchstart',
-      parameters: 'pickerslot,location'
+      parameters: 'sender,location'
     }, {
       name: 'deactivate',
-      parameters: 'oldActiveItem,pickerslot,newActiveItem'
+      parameters: 'oldActiveItem,sender,newActiveItem'
     }, {
       name: 'deselect',
-      parameters: 'pickerslot,records'
+      parameters: 'sender,records'
     }, {
       name: 'destroy',
       parameters: ''
@@ -152,13 +152,13 @@ function (_Ext_dataview_DataVie) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'pickerslot,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'pickerslot,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'pickerslot,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -176,40 +176,40 @@ function (_Ext_dataview_DataVie) {
       parameters: 'sender'
     }, {
       name: 'itemdoubletap',
-      parameters: 'pickerslot,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemlongpress',
-      parameters: 'pickerslot,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemmouseenter',
-      parameters: 'pickerslot,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemmouseleave',
-      parameters: 'pickerslot,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemsingletap',
-      parameters: 'pickerslot,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemswipe',
-      parameters: 'pickerslot,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtap',
-      parameters: 'pickerslot,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtaphold',
-      parameters: 'pickerslot,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtouchcancel',
-      parameters: 'pickerslot,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtouchend',
-      parameters: 'pickerslot,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtouchmove',
-      parameters: 'pickerslot,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtouchstart',
-      parameters: 'pickerslot,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'leftchange',
       parameters: 'sender,value,oldValue'
@@ -233,7 +233,7 @@ function (_Ext_dataview_DataVie) {
       parameters: 'sender,container,toIndex,fromIndex'
     }, {
       name: 'navigate',
-      parameters: 'pickerslot,to,from'
+      parameters: 'sender,to,from'
     }, {
       name: 'orientationchange',
       parameters: ''
@@ -245,7 +245,7 @@ function (_Ext_dataview_DataVie) {
       parameters: 'sender,positioned'
     }, {
       name: 'refresh',
-      parameters: 'pickerslot'
+      parameters: 'sender'
     }, {
       name: 'remove',
       parameters: ''
@@ -254,7 +254,7 @@ function (_Ext_dataview_DataVie) {
       parameters: 'sender,container,index'
     }, {
       name: 'renderedchange',
-      parameters: 'pickerslot,item,rendered'
+      parameters: 'sender,item,rendered'
     }, {
       name: 'resize',
       parameters: 'element,info'
@@ -269,7 +269,7 @@ function (_Ext_dataview_DataVie) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'select',
-      parameters: 'pickerslot,selected'
+      parameters: 'sender,selected'
     }, {
       name: 'selectionchange',
       parameters: 'view,records,selected,selection'
@@ -278,13 +278,13 @@ function (_Ext_dataview_DataVie) {
       parameters: 'sender'
     }, {
       name: 'slotpick',
-      parameters: 'pickerslot,value,node'
+      parameters: 'sender,value,node'
     }, {
       name: 'storechange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'tofront',
-      parameters: 'pickerslot'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -296,7 +296,7 @@ function (_Ext_dataview_DataVie) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

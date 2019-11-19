@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_d3_hierarchy_partition_Partition from './Ext/d3/hierarchy/partition/Partition';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtD3_partitionComponent =
+//import Ext_d3_hierarchy_partition_Partition from '@sencha/ext-runtime-base/dist/./Ext/d3/hierarchy/partition/Partition.js';
+import Ext_d3_hierarchy_partition_Partition from './Ext/d3/hierarchy/partition/Partition.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCD3_partition =
 /*#__PURE__*/
 function (_Ext_d3_hierarchy_par) {
-  _inheritsLoose(ExtD3_partitionComponent, _Ext_d3_hierarchy_par);
+  _inheritsLoose(EWCD3_partition, _Ext_d3_hierarchy_par);
 
-  function ExtD3_partitionComponent() {
+  function EWCD3_partition() {
     var _this;
 
     _this = _Ext_d3_hierarchy_par.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_d3_hierarchy_par) {
     return _this;
   }
 
-  return ExtD3_partitionComponent;
-}(Ext_d3_hierarchy_partition_Partition); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-d3-partition', ExtD3_partitionComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCD3_partition;
+}(Ext_d3_hierarchy_partition_Partition);
 
-window.customElements.define('ext-d3-partition', HTMLParsedElement.withParsedCallback(ExtD3_partitionComponent));
+export { EWCD3_partition as default };
+window.customElements.define('ext-d3-partition', HTMLParsedElement.withParsedCallback(EWCD3_partition));

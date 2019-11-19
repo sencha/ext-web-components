@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Toolbar from '../../Ext/Toolbar';
+import Ext_Toolbar from '../../Ext/Toolbar.js';
 
 var Ext_tab_Bar =
 /*#__PURE__*/
@@ -8,13 +8,13 @@ function (_Ext_Toolbar) {
   _inheritsLoose(Ext_tab_Bar, _Ext_Toolbar);
 
   Ext_tab_Bar.PROPERTIES = function PROPERTIES() {
-    return ['activeChildTabIndex', 'activeItem', 'activeTab', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'animateIndicator', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'cardSwitchAnimation', 'centered', 'cls', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultButtonUI', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultTabUI', 'defaultType', 'disabled', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'listeners', 'manageBorders', 'margin', 'masked', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'tabRotation', 'title', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['activeChildTabIndex', 'activeItem', 'activeTab', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'animateIndicator', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'cardSwitchAnimation', 'centered', 'cls', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultButtonUI', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultTabUI', 'defaultType', 'disabled', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'listeners', 'manageBorders', 'margin', 'masked', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'tabRotation', 'title', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_tab_Bar.EVENTS = function EVENTS() {
     return [{
       name: 'activate',
-      parameters: 'newActiveItem,tabbar,oldActiveItem'
+      parameters: 'newActiveItem,sender,oldActiveItem'
     }, {
       name: 'activeItemchange',
       parameters: 'sender,value,oldValue'
@@ -23,7 +23,7 @@ function (_Ext_Toolbar) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'add',
-      parameters: 'tabbar,item,index'
+      parameters: 'sender,item,index'
     }, {
       name: 'added',
       parameters: 'sender,container,index'
@@ -83,7 +83,7 @@ function (_Ext_Toolbar) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'tabbar'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -92,7 +92,7 @@ function (_Ext_Toolbar) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'tabbar,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -101,7 +101,7 @@ function (_Ext_Toolbar) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'deactivate',
-      parameters: 'oldActiveItem,tabbar,newActiveItem'
+      parameters: 'oldActiveItem,sender,newActiveItem'
     }, {
       name: 'destroy',
       parameters: ''
@@ -119,13 +119,13 @@ function (_Ext_Toolbar) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'tabbar,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'tabbar,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'tabbar,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -158,7 +158,7 @@ function (_Ext_Toolbar) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'move',
-      parameters: 'tabbar,item,toIndex,fromIndex'
+      parameters: 'sender,item,toIndex,fromIndex'
     }, {
       name: 'moved',
       parameters: 'sender,container,toIndex,fromIndex'
@@ -173,13 +173,13 @@ function (_Ext_Toolbar) {
       parameters: 'sender,positioned'
     }, {
       name: 'remove',
-      parameters: 'tabbar,item,index'
+      parameters: 'sender,item,index'
     }, {
       name: 'removed',
       parameters: 'sender,container,index'
     }, {
       name: 'renderedchange',
-      parameters: 'tabbar,item,rendered'
+      parameters: 'sender,item,rendered'
     }, {
       name: 'resize',
       parameters: 'element,info'
@@ -194,10 +194,10 @@ function (_Ext_Toolbar) {
       parameters: 'sender'
     }, {
       name: 'tabchange',
-      parameters: 'tabbar,newTab,oldTab'
+      parameters: 'sender,newTab,oldTab'
     }, {
       name: 'tofront',
-      parameters: 'tabbar'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -209,7 +209,7 @@ function (_Ext_Toolbar) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

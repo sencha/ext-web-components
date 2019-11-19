@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_calendar_panel_Days from './Ext/calendar/panel/Days';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtCalendar_daysComponent =
+//import Ext_calendar_panel_Days from '@sencha/ext-runtime-base/dist/./Ext/calendar/panel/Days.js';
+import Ext_calendar_panel_Days from './Ext/calendar/panel/Days.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCCalendar_days =
 /*#__PURE__*/
 function (_Ext_calendar_panel_D) {
-  _inheritsLoose(ExtCalendar_daysComponent, _Ext_calendar_panel_D);
+  _inheritsLoose(EWCCalendar_days, _Ext_calendar_panel_D);
 
-  function ExtCalendar_daysComponent() {
+  function EWCCalendar_days() {
     var _this;
 
     _this = _Ext_calendar_panel_D.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_calendar_panel_D) {
     return _this;
   }
 
-  return ExtCalendar_daysComponent;
-}(Ext_calendar_panel_Days); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-days', ExtCalendar_daysComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCCalendar_days;
+}(Ext_calendar_panel_Days);
 
-window.customElements.define('ext-calendar-days', HTMLParsedElement.withParsedCallback(ExtCalendar_daysComponent));
+export { EWCCalendar_days as default };
+window.customElements.define('ext-calendar-days', HTMLParsedElement.withParsedCallback(EWCCalendar_days));

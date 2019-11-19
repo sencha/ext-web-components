@@ -1,21 +1,12 @@
-import Ext_field_Input from './Ext/field/Input'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_field_Input from '@sencha/ext-runtime-base/dist/./Ext/field/Input.js';
+import Ext_field_Input from './Ext/field/Input.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtInputfieldComponent extends Ext_field_Input {
+export default class EWCInputfield extends Ext_field_Input {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'inputfield'
+        super ([], []);
+        this.xtype = 'inputfield';
     }
 }
+window.customElements.define('ext-inputfield', HTMLParsedElement.withParsedCallback(EWCInputfield));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-inputfield', ExtInputfieldComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-inputfield', HTMLParsedElement.withParsedCallback(ExtInputfieldComponent))

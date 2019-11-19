@@ -1,21 +1,12 @@
-import Ext_grid_Grid from './Ext/grid/Grid'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_grid_Grid from '@sencha/ext-runtime-base/dist/./Ext/grid/Grid.js';
+import Ext_grid_Grid from './Ext/grid/Grid.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtGridComponent extends Ext_grid_Grid {
+export default class EWCGrid extends Ext_grid_Grid {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'grid'
+        super ([], []);
+        this.xtype = 'grid';
     }
 }
-
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-grid', ExtGridComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-grid', HTMLParsedElement.withParsedCallback(ExtGridComponent))
+window.customElements.define('ext-grid', HTMLParsedElement.withParsedCallback(EWCGrid));
+import './ElementCell';

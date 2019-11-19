@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_form_Display from './Ext/form/Display';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtDisplayfieldComponent =
+//import Ext_form_Display from '@sencha/ext-runtime-base/dist/./Ext/form/Display.js';
+import Ext_form_Display from './Ext/form/Display.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCDisplayfield =
 /*#__PURE__*/
 function (_Ext_form_Display) {
-  _inheritsLoose(ExtDisplayfieldComponent, _Ext_form_Display);
+  _inheritsLoose(EWCDisplayfield, _Ext_form_Display);
 
-  function ExtDisplayfieldComponent() {
+  function EWCDisplayfield() {
     var _this;
 
     _this = _Ext_form_Display.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_form_Display) {
     return _this;
   }
 
-  return ExtDisplayfieldComponent;
-}(Ext_form_Display); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-displayfield', ExtDisplayfieldComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCDisplayfield;
+}(Ext_form_Display);
 
-window.customElements.define('ext-displayfield', HTMLParsedElement.withParsedCallback(ExtDisplayfieldComponent));
+export { EWCDisplayfield as default };
+window.customElements.define('ext-displayfield', HTMLParsedElement.withParsedCallback(EWCDisplayfield));

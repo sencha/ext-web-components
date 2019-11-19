@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_TabPanel from './Ext/TabPanel';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtTabpanelComponent =
+//import Ext_TabPanel from '@sencha/ext-runtime-base/dist/./Ext/TabPanel.js';
+import Ext_TabPanel from './Ext/TabPanel.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCTabpanel =
 /*#__PURE__*/
 function (_Ext_TabPanel) {
-  _inheritsLoose(ExtTabpanelComponent, _Ext_TabPanel);
+  _inheritsLoose(EWCTabpanel, _Ext_TabPanel);
 
-  function ExtTabpanelComponent() {
+  function EWCTabpanel() {
     var _this;
 
     _this = _Ext_TabPanel.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_TabPanel) {
     return _this;
   }
 
-  return ExtTabpanelComponent;
-}(Ext_TabPanel); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-tabpanel', ExtTabpanelComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCTabpanel;
+}(Ext_TabPanel);
 
-window.customElements.define('ext-tabpanel', HTMLParsedElement.withParsedCallback(ExtTabpanelComponent));
+export { EWCTabpanel as default };
+window.customElements.define('ext-tabpanel', HTMLParsedElement.withParsedCallback(EWCTabpanel));

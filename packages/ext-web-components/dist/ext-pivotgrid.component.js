@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_pivot_Grid from './Ext/pivot/Grid';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtPivotgridComponent =
+//import Ext_pivot_Grid from '@sencha/ext-runtime-base/dist/./Ext/pivot/Grid.js';
+import Ext_pivot_Grid from './Ext/pivot/Grid.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCPivotgrid =
 /*#__PURE__*/
 function (_Ext_pivot_Grid) {
-  _inheritsLoose(ExtPivotgridComponent, _Ext_pivot_Grid);
+  _inheritsLoose(EWCPivotgrid, _Ext_pivot_Grid);
 
-  function ExtPivotgridComponent() {
+  function EWCPivotgrid() {
     var _this;
 
     _this = _Ext_pivot_Grid.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_pivot_Grid) {
     return _this;
   }
 
-  return ExtPivotgridComponent;
-}(Ext_pivot_Grid); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-pivotgrid', ExtPivotgridComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCPivotgrid;
+}(Ext_pivot_Grid);
 
-window.customElements.define('ext-pivotgrid', HTMLParsedElement.withParsedCallback(ExtPivotgridComponent));
+export { EWCPivotgrid as default };
+window.customElements.define('ext-pivotgrid', HTMLParsedElement.withParsedCallback(EWCPivotgrid));

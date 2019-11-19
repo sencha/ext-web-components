@@ -1,19 +1,14 @@
-import Ext_panel_Panel from '../../../Ext/panel/Panel';
+import Ext_panel_Panel from '../../../Ext/panel/Panel.js';
 
 export default class Ext_pivot_d3_AbstractContainer extends Ext_panel_Panel {
-
-    static PROPERTIES() { return [
-'configurator',
-'drawing',
-'matrix',
-'platformConfig',
-'responsiveConfig',
-'fitToParent',
-'config'
-]};
-    static EVENTS() { return [
-{name:'ready',parameters:''}
-]};
+    static PROPERTIES() {return [
+        'configurator',
+        'drawing',
+        'matrix',
+    ]};
+    static EVENTS() {return [
+        {name:'ready', parameters:'cmd,cmdAll'}
+    ]};
     static getProperties(properties) {
         properties = properties.concat(Ext_pivot_d3_AbstractContainer.PROPERTIES());
         return Ext_panel_Panel.getProperties(properties);

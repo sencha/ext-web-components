@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Component from '../Ext/Component';
+import Ext_Component from '../Ext/Component.js';
 
 var Ext_Media =
 /*#__PURE__*/
@@ -8,7 +8,7 @@ function (_Ext_Component) {
   _inheritsLoose(Ext_Media, _Ext_Component);
 
   Ext_Media.PROPERTIES = function PROPERTIES() {
-    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoPause', 'autoResume', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'cls', 'constrainAlign', 'contentEl', 'controller', 'controls', 'data', 'defaultListenerScope', 'disabled', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'loop', 'margin', 'maxHeight', 'maxWidth', 'media', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'muted', 'name', 'nameable', 'padding', 'plugins', 'preload', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'url', 'userCls', 'userSelectable', 'viewModel', 'volume', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoPause', 'autoResume', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'cls', 'constrainAlign', 'contentEl', 'controller', 'controls', 'data', 'defaultListenerScope', 'disabled', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'loop', 'margin', 'maxHeight', 'maxWidth', 'media', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'muted', 'name', 'nameable', 'padding', 'plugins', 'preload', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'url', 'userCls', 'userSelectable', 'viewModel', 'volume', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_Media.EVENTS = function EVENTS() {
@@ -65,7 +65,7 @@ function (_Ext_Component) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'media'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -74,7 +74,7 @@ function (_Ext_Component) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'media,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -92,7 +92,7 @@ function (_Ext_Component) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ended',
-      parameters: 'media,time'
+      parameters: 'sender,time'
     }, {
       name: 'erased',
       parameters: 'sender'
@@ -101,13 +101,13 @@ function (_Ext_Component) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'media,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'media,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'media,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -143,7 +143,7 @@ function (_Ext_Component) {
       parameters: 'sender,container,toIndex,fromIndex'
     }, {
       name: 'mutedchange',
-      parameters: 'media,muted'
+      parameters: 'sender,muted'
     }, {
       name: 'orientationchange',
       parameters: ''
@@ -152,10 +152,10 @@ function (_Ext_Component) {
       parameters: 'sender,element'
     }, {
       name: 'pause',
-      parameters: 'media,time'
+      parameters: 'sender,time'
     }, {
       name: 'play',
-      parameters: 'media'
+      parameters: 'sender'
     }, {
       name: 'positionedchange',
       parameters: 'sender,positioned'
@@ -176,13 +176,13 @@ function (_Ext_Component) {
       parameters: 'sender'
     }, {
       name: 'stop',
-      parameters: 'media'
+      parameters: 'sender'
     }, {
       name: 'timeupdate',
-      parameters: 'media,time'
+      parameters: 'sender,time'
     }, {
       name: 'tofront',
-      parameters: 'media'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -191,13 +191,13 @@ function (_Ext_Component) {
       parameters: 'sender,newData'
     }, {
       name: 'volumechange',
-      parameters: 'media,volume'
+      parameters: 'sender,volume'
     }, {
       name: 'widthchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

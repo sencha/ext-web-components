@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_panel_Panel from '../../../Ext/panel/Panel';
+import Ext_panel_Panel from '../../../Ext/panel/Panel.js';
 
 var Ext_ux_colorpick_Selector =
 /*#__PURE__*/
@@ -8,22 +8,22 @@ function (_Ext_panel_Panel) {
   _inheritsLoose(Ext_ux_colorpick_Selector, _Ext_panel_Panel);
 
   Ext_ux_colorpick_Selector.PROPERTIES = function PROPERTIES() {
-    return ['alphaDecimalFormat', 'cancelButtonText', 'color', 'fieldPad', 'fieldWidth', 'format', 'okButtonText', 'showOkCancelButtons', 'showPreviousColor', 'value', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['alphaDecimalFormat', 'cancelButtonText', 'color', 'fieldPad', 'fieldWidth', 'format', 'okButtonText', 'showOkCancelButtons', 'showPreviousColor', 'value'];
   };
 
   Ext_ux_colorpick_Selector.EVENTS = function EVENTS() {
     return [{
       name: 'cancel',
-      parameters: 'colorselector'
+      parameters: 'sender'
     }, {
       name: 'change',
-      parameters: 'colorselector,color,previousColor'
+      parameters: 'sender,color,previousColor'
     }, {
       name: 'ok',
-      parameters: 'colorselector,color'
+      parameters: 'sender,color'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

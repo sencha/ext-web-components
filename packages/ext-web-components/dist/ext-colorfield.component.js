@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_ux_colorpick_Field from './Ext/ux/colorpick/Field';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtColorfieldComponent =
+//import Ext_ux_colorpick_Field from '@sencha/ext-runtime-base/dist/./Ext/ux/colorpick/Field.js';
+import Ext_ux_colorpick_Field from './Ext/ux/colorpick/Field.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCColorfield =
 /*#__PURE__*/
 function (_Ext_ux_colorpick_Fie) {
-  _inheritsLoose(ExtColorfieldComponent, _Ext_ux_colorpick_Fie);
+  _inheritsLoose(EWCColorfield, _Ext_ux_colorpick_Fie);
 
-  function ExtColorfieldComponent() {
+  function EWCColorfield() {
     var _this;
 
     _this = _Ext_ux_colorpick_Fie.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_ux_colorpick_Fie) {
     return _this;
   }
 
-  return ExtColorfieldComponent;
-}(Ext_ux_colorpick_Field); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-colorfield', ExtColorfieldComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCColorfield;
+}(Ext_ux_colorpick_Field);
 
-window.customElements.define('ext-colorfield', HTMLParsedElement.withParsedCallback(ExtColorfieldComponent));
+export { EWCColorfield as default };
+window.customElements.define('ext-colorfield', HTMLParsedElement.withParsedCallback(EWCColorfield));

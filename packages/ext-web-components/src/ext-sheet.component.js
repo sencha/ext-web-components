@@ -1,21 +1,12 @@
-import Ext_Sheet from './Ext/Sheet'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_Sheet from '@sencha/ext-runtime-base/dist/./Ext/Sheet.js';
+import Ext_Sheet from './Ext/Sheet.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtSheetComponent extends Ext_Sheet {
+export default class EWCSheet extends Ext_Sheet {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'sheet'
+        super ([], []);
+        this.xtype = 'sheet';
     }
 }
+window.customElements.define('ext-sheet', HTMLParsedElement.withParsedCallback(EWCSheet));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-sheet', ExtSheetComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-sheet', HTMLParsedElement.withParsedCallback(ExtSheetComponent))

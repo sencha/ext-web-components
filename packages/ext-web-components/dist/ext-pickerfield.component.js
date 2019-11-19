@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_Picker from './Ext/field/Picker';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtPickerfieldComponent =
+//import Ext_field_Picker from '@sencha/ext-runtime-base/dist/./Ext/field/Picker.js';
+import Ext_field_Picker from './Ext/field/Picker.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCPickerfield =
 /*#__PURE__*/
 function (_Ext_field_Picker) {
-  _inheritsLoose(ExtPickerfieldComponent, _Ext_field_Picker);
+  _inheritsLoose(EWCPickerfield, _Ext_field_Picker);
 
-  function ExtPickerfieldComponent() {
+  function EWCPickerfield() {
     var _this;
 
     _this = _Ext_field_Picker.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_field_Picker) {
     return _this;
   }
 
-  return ExtPickerfieldComponent;
-}(Ext_field_Picker); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-pickerfield', ExtPickerfieldComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCPickerfield;
+}(Ext_field_Picker);
 
-window.customElements.define('ext-pickerfield', HTMLParsedElement.withParsedCallback(ExtPickerfieldComponent));
+export { EWCPickerfield as default };
+window.customElements.define('ext-pickerfield', HTMLParsedElement.withParsedCallback(EWCPickerfield));

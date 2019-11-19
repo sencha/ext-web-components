@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_container_Container from './Ext/container/Container';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtContainerComponent =
+//import Ext_container_Container from '@sencha/ext-runtime-base/dist/./Ext/container/Container.js';
+import Ext_container_Container from './Ext/container/Container.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCContainer =
 /*#__PURE__*/
 function (_Ext_container_Contai) {
-  _inheritsLoose(ExtContainerComponent, _Ext_container_Contai);
+  _inheritsLoose(EWCContainer, _Ext_container_Contai);
 
-  function ExtContainerComponent() {
+  function EWCContainer() {
     var _this;
 
     _this = _Ext_container_Contai.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_container_Contai) {
     return _this;
   }
 
-  return ExtContainerComponent;
-}(Ext_container_Container); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-container', ExtContainerComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCContainer;
+}(Ext_container_Container);
 
-window.customElements.define('ext-container', HTMLParsedElement.withParsedCallback(ExtContainerComponent));
+export { EWCContainer as default };
+window.customElements.define('ext-container', HTMLParsedElement.withParsedCallback(EWCContainer));

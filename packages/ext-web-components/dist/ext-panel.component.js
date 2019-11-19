@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_panel_Panel from './Ext/panel/Panel';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtPanelComponent =
+//import Ext_panel_Panel from '@sencha/ext-runtime-base/dist/./Ext/panel/Panel.js';
+import Ext_panel_Panel from './Ext/panel/Panel.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCPanel =
 /*#__PURE__*/
 function (_Ext_panel_Panel) {
-  _inheritsLoose(ExtPanelComponent, _Ext_panel_Panel);
+  _inheritsLoose(EWCPanel, _Ext_panel_Panel);
 
-  function ExtPanelComponent() {
+  function EWCPanel() {
     var _this;
 
     _this = _Ext_panel_Panel.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_panel_Panel) {
     return _this;
   }
 
-  return ExtPanelComponent;
-}(Ext_panel_Panel); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-panel', ExtPanelComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCPanel;
+}(Ext_panel_Panel);
 
-window.customElements.define('ext-panel', HTMLParsedElement.withParsedCallback(ExtPanelComponent));
+export { EWCPanel as default };
+window.customElements.define('ext-panel', HTMLParsedElement.withParsedCallback(EWCPanel));

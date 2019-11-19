@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_column_Drag from './Ext/grid/column/Drag';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtDragcolumnComponent =
+//import Ext_grid_column_Drag from '@sencha/ext-runtime-base/dist/./Ext/grid/column/Drag.js';
+import Ext_grid_column_Drag from './Ext/grid/column/Drag.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCDragcolumn =
 /*#__PURE__*/
 function (_Ext_grid_column_Drag) {
-  _inheritsLoose(ExtDragcolumnComponent, _Ext_grid_column_Drag);
+  _inheritsLoose(EWCDragcolumn, _Ext_grid_column_Drag);
 
-  function ExtDragcolumnComponent() {
+  function EWCDragcolumn() {
     var _this;
 
     _this = _Ext_grid_column_Drag.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_grid_column_Drag) {
     return _this;
   }
 
-  return ExtDragcolumnComponent;
-}(Ext_grid_column_Drag); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-dragcolumn', ExtDragcolumnComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCDragcolumn;
+}(Ext_grid_column_Drag);
 
-window.customElements.define('ext-dragcolumn', HTMLParsedElement.withParsedCallback(ExtDragcolumnComponent));
+export { EWCDragcolumn as default };
+window.customElements.define('ext-dragcolumn', HTMLParsedElement.withParsedCallback(EWCDragcolumn));

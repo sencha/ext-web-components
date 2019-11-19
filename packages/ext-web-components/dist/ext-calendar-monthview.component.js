@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_calendar_view_Month from './Ext/calendar/view/Month';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtCalendar_monthviewComponent =
+//import Ext_calendar_view_Month from '@sencha/ext-runtime-base/dist/./Ext/calendar/view/Month.js';
+import Ext_calendar_view_Month from './Ext/calendar/view/Month.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCCalendar_monthview =
 /*#__PURE__*/
 function (_Ext_calendar_view_Mo) {
-  _inheritsLoose(ExtCalendar_monthviewComponent, _Ext_calendar_view_Mo);
+  _inheritsLoose(EWCCalendar_monthview, _Ext_calendar_view_Mo);
 
-  function ExtCalendar_monthviewComponent() {
+  function EWCCalendar_monthview() {
     var _this;
 
     _this = _Ext_calendar_view_Mo.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_calendar_view_Mo) {
     return _this;
   }
 
-  return ExtCalendar_monthviewComponent;
-}(Ext_calendar_view_Month); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-monthview', ExtCalendar_monthviewComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCCalendar_monthview;
+}(Ext_calendar_view_Month);
 
-window.customElements.define('ext-calendar-monthview', HTMLParsedElement.withParsedCallback(ExtCalendar_monthviewComponent));
+export { EWCCalendar_monthview as default };
+window.customElements.define('ext-calendar-monthview', HTMLParsedElement.withParsedCallback(EWCCalendar_monthview));

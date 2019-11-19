@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_sparkline_TriState from './Ext/sparkline/TriState';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtSparklinetristateComponent =
+//import Ext_sparkline_TriState from '@sencha/ext-runtime-base/dist/./Ext/sparkline/TriState.js';
+import Ext_sparkline_TriState from './Ext/sparkline/TriState.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCSparklinetristate =
 /*#__PURE__*/
 function (_Ext_sparkline_TriSta) {
-  _inheritsLoose(ExtSparklinetristateComponent, _Ext_sparkline_TriSta);
+  _inheritsLoose(EWCSparklinetristate, _Ext_sparkline_TriSta);
 
-  function ExtSparklinetristateComponent() {
+  function EWCSparklinetristate() {
     var _this;
 
     _this = _Ext_sparkline_TriSta.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_sparkline_TriSta) {
     return _this;
   }
 
-  return ExtSparklinetristateComponent;
-}(Ext_sparkline_TriState); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-sparklinetristate', ExtSparklinetristateComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCSparklinetristate;
+}(Ext_sparkline_TriState);
 
-window.customElements.define('ext-sparklinetristate', HTMLParsedElement.withParsedCallback(ExtSparklinetristateComponent));
+export { EWCSparklinetristate as default };
+window.customElements.define('ext-sparklinetristate', HTMLParsedElement.withParsedCallback(EWCSparklinetristate));

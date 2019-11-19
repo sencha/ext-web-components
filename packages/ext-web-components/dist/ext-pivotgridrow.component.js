@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_pivot_Row from './Ext/pivot/Row';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtPivotgridrowComponent =
+//import Ext_pivot_Row from '@sencha/ext-runtime-base/dist/./Ext/pivot/Row.js';
+import Ext_pivot_Row from './Ext/pivot/Row.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCPivotgridrow =
 /*#__PURE__*/
 function (_Ext_pivot_Row) {
-  _inheritsLoose(ExtPivotgridrowComponent, _Ext_pivot_Row);
+  _inheritsLoose(EWCPivotgridrow, _Ext_pivot_Row);
 
-  function ExtPivotgridrowComponent() {
+  function EWCPivotgridrow() {
     var _this;
 
     _this = _Ext_pivot_Row.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_pivot_Row) {
     return _this;
   }
 
-  return ExtPivotgridrowComponent;
-}(Ext_pivot_Row); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-pivotgridrow', ExtPivotgridrowComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCPivotgridrow;
+}(Ext_pivot_Row);
 
-window.customElements.define('ext-pivotgridrow', HTMLParsedElement.withParsedCallback(ExtPivotgridrowComponent));
+export { EWCPivotgridrow as default };
+window.customElements.define('ext-pivotgridrow', HTMLParsedElement.withParsedCallback(EWCPivotgridrow));

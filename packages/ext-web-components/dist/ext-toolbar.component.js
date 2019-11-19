@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Toolbar from './Ext/Toolbar';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtToolbarComponent =
+//import Ext_Toolbar from '@sencha/ext-runtime-base/dist/./Ext/Toolbar.js';
+import Ext_Toolbar from './Ext/Toolbar.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCToolbar =
 /*#__PURE__*/
 function (_Ext_Toolbar) {
-  _inheritsLoose(ExtToolbarComponent, _Ext_Toolbar);
+  _inheritsLoose(EWCToolbar, _Ext_Toolbar);
 
-  function ExtToolbarComponent() {
+  function EWCToolbar() {
     var _this;
 
     _this = _Ext_Toolbar.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_Toolbar) {
     return _this;
   }
 
-  return ExtToolbarComponent;
-}(Ext_Toolbar); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-toolbar', ExtToolbarComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCToolbar;
+}(Ext_Toolbar);
 
-window.customElements.define('ext-toolbar', HTMLParsedElement.withParsedCallback(ExtToolbarComponent));
+export { EWCToolbar as default };
+window.customElements.define('ext-toolbar', HTMLParsedElement.withParsedCallback(EWCToolbar));

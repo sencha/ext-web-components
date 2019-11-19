@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_form_FormPanel from './Ext/form/FormPanel';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtFormpanelComponent =
+//import Ext_form_FormPanel from '@sencha/ext-runtime-base/dist/./Ext/form/FormPanel.js';
+import Ext_form_FormPanel from './Ext/form/FormPanel.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCFormpanel =
 /*#__PURE__*/
 function (_Ext_form_FormPanel) {
-  _inheritsLoose(ExtFormpanelComponent, _Ext_form_FormPanel);
+  _inheritsLoose(EWCFormpanel, _Ext_form_FormPanel);
 
-  function ExtFormpanelComponent() {
+  function EWCFormpanel() {
     var _this;
 
     _this = _Ext_form_FormPanel.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_form_FormPanel) {
     return _this;
   }
 
-  return ExtFormpanelComponent;
-}(Ext_form_FormPanel); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-formpanel', ExtFormpanelComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCFormpanel;
+}(Ext_form_FormPanel);
 
-window.customElements.define('ext-formpanel', HTMLParsedElement.withParsedCallback(ExtFormpanelComponent));
+export { EWCFormpanel as default };
+window.customElements.define('ext-formpanel', HTMLParsedElement.withParsedCallback(EWCFormpanel));

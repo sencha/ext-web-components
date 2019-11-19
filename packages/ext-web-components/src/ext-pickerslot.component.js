@@ -1,21 +1,12 @@
-import Ext_picker_Slot from './Ext/picker/Slot'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_picker_Slot from '@sencha/ext-runtime-base/dist/./Ext/picker/Slot.js';
+import Ext_picker_Slot from './Ext/picker/Slot.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtPickerslotComponent extends Ext_picker_Slot {
+export default class EWCPickerslot extends Ext_picker_Slot {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'pickerslot'
+        super ([], []);
+        this.xtype = 'pickerslot';
     }
 }
+window.customElements.define('ext-pickerslot', HTMLParsedElement.withParsedCallback(EWCPickerslot));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-pickerslot', ExtPickerslotComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-pickerslot', HTMLParsedElement.withParsedCallback(ExtPickerslotComponent))

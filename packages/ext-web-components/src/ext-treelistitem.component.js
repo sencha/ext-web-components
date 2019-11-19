@@ -1,21 +1,12 @@
-import Ext_list_TreeItem from './Ext/list/TreeItem'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_list_TreeItem from '@sencha/ext-runtime-base/dist/./Ext/list/TreeItem.js';
+import Ext_list_TreeItem from './Ext/list/TreeItem.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtTreelistitemComponent extends Ext_list_TreeItem {
+export default class EWCTreelistitem extends Ext_list_TreeItem {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'treelistitem'
+        super ([], []);
+        this.xtype = 'treelistitem';
     }
 }
+window.customElements.define('ext-treelistitem', HTMLParsedElement.withParsedCallback(EWCTreelistitem));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-treelistitem', ExtTreelistitemComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-treelistitem', HTMLParsedElement.withParsedCallback(ExtTreelistitemComponent))

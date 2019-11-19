@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_List from './Ext/List';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtListComponent =
+//import Ext_List from '@sencha/ext-runtime-base/dist/./Ext/List.js';
+import Ext_List from './Ext/List.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCList =
 /*#__PURE__*/
 function (_Ext_List) {
-  _inheritsLoose(ExtListComponent, _Ext_List);
+  _inheritsLoose(EWCList, _Ext_List);
 
-  function ExtListComponent() {
+  function EWCList() {
     var _this;
 
     _this = _Ext_List.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_List) {
     return _this;
   }
 
-  return ExtListComponent;
-}(Ext_List); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-list', ExtListComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCList;
+}(Ext_List);
 
-window.customElements.define('ext-list', HTMLParsedElement.withParsedCallback(ExtListComponent));
+export { EWCList as default };
+window.customElements.define('ext-list', HTMLParsedElement.withParsedCallback(EWCList));

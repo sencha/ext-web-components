@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_PagingToolbar from './Ext/grid/PagingToolbar';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtPagingtoolbarComponent =
+//import Ext_grid_PagingToolbar from '@sencha/ext-runtime-base/dist/./Ext/grid/PagingToolbar.js';
+import Ext_grid_PagingToolbar from './Ext/grid/PagingToolbar.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCPagingtoolbar =
 /*#__PURE__*/
 function (_Ext_grid_PagingToolb) {
-  _inheritsLoose(ExtPagingtoolbarComponent, _Ext_grid_PagingToolb);
+  _inheritsLoose(EWCPagingtoolbar, _Ext_grid_PagingToolb);
 
-  function ExtPagingtoolbarComponent() {
+  function EWCPagingtoolbar() {
     var _this;
 
     _this = _Ext_grid_PagingToolb.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_grid_PagingToolb) {
     return _this;
   }
 
-  return ExtPagingtoolbarComponent;
-}(Ext_grid_PagingToolbar); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-pagingtoolbar', ExtPagingtoolbarComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCPagingtoolbar;
+}(Ext_grid_PagingToolbar);
 
-window.customElements.define('ext-pagingtoolbar', HTMLParsedElement.withParsedCallback(ExtPagingtoolbarComponent));
+export { EWCPagingtoolbar as default };
+window.customElements.define('ext-pagingtoolbar', HTMLParsedElement.withParsedCallback(EWCPagingtoolbar));

@@ -1,21 +1,12 @@
-import Ext_dataview_pullrefresh_Spinner from './Ext/dataview/pullrefresh/Spinner'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_dataview_pullrefresh_Spinner from '@sencha/ext-runtime-base/dist/./Ext/dataview/pullrefresh/Spinner.js';
+import Ext_dataview_pullrefresh_Spinner from './Ext/dataview/pullrefresh/Spinner.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtPullrefreshspinnerComponent extends Ext_dataview_pullrefresh_Spinner {
+export default class EWCPullrefreshspinner extends Ext_dataview_pullrefresh_Spinner {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'pullrefreshspinner'
+        super ([], []);
+        this.xtype = 'pullrefreshspinner';
     }
 }
+window.customElements.define('ext-pullrefreshspinner', HTMLParsedElement.withParsedCallback(EWCPullrefreshspinner));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-pullrefreshspinner', ExtPullrefreshspinnerComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-pullrefreshspinner', HTMLParsedElement.withParsedCallback(ExtPullrefreshspinnerComponent))

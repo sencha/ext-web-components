@@ -1,21 +1,12 @@
-import Ext_SplitButton from './Ext/SplitButton'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_SplitButton from '@sencha/ext-runtime-base/dist/./Ext/SplitButton.js';
+import Ext_SplitButton from './Ext/SplitButton.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtSplitbuttonComponent extends Ext_SplitButton {
+export default class EWCSplitbutton extends Ext_SplitButton {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'splitbutton'
+        super ([], []);
+        this.xtype = 'splitbutton';
     }
 }
+window.customElements.define('ext-splitbutton', HTMLParsedElement.withParsedCallback(EWCSplitbutton));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-splitbutton', ExtSplitbuttonComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-splitbutton', HTMLParsedElement.withParsedCallback(ExtSplitbuttonComponent))

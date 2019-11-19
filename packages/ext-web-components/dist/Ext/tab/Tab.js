@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Button from '../../Ext/Button';
+import Ext_Button from '../../Ext/Button.js';
 
 var Ext_tab_Tab =
 /*#__PURE__*/
@@ -8,13 +8,13 @@ function (_Ext_Button) {
   _inheritsLoose(Ext_tab_Tab, _Ext_Button);
 
   Ext_tab_Tab.PROPERTIES = function PROPERTIES() {
-    return ['active', 'alignSelf', 'allowDepress', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'arrow', 'arrowAlign', 'autoEvent', 'axisLock', 'badgeText', 'bind', 'border', 'bottom', 'buttonType', 'centered', 'closable', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'destroyMenu', 'disabled', 'displayed', 'docked', 'draggable', 'enableToggle', 'flex', 'floated', 'focusCls', 'fullscreen', 'handler', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'icon', 'iconAlign', 'iconCls', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'menu', 'menuAlign', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'pressed', 'pressedDelay', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'rotation', 'scope', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'stretchMenu', 'style', 'tabIndex', 'tabPosition', 'text', 'textAlign', 'title', 'toFrontOnShow', 'toggleHandler', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['active', 'alignSelf', 'allowDepress', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'arrow', 'arrowAlign', 'autoEvent', 'axisLock', 'badgeText', 'bind', 'border', 'bottom', 'buttonType', 'centered', 'closable', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'destroyMenu', 'disabled', 'displayed', 'docked', 'draggable', 'enableToggle', 'flex', 'floated', 'focusCls', 'fullscreen', 'handler', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'icon', 'iconAlign', 'iconCls', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'menu', 'menuAlign', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'pressed', 'pressedDelay', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'rotation', 'scope', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'stretchMenu', 'style', 'tabIndex', 'tabPosition', 'text', 'textAlign', 'title', 'toFrontOnShow', 'toggleHandler', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_tab_Tab.EVENTS = function EVENTS() {
     return [{
       name: 'activate',
-      parameters: 'tab'
+      parameters: 'sender'
     }, {
       name: 'added',
       parameters: 'sender,container,index'
@@ -71,7 +71,7 @@ function (_Ext_Button) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'tab'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -80,7 +80,7 @@ function (_Ext_Button) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'tab,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -89,7 +89,7 @@ function (_Ext_Button) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'deactivate',
-      parameters: 'tab'
+      parameters: 'sender'
     }, {
       name: 'destroy',
       parameters: ''
@@ -107,13 +107,13 @@ function (_Ext_Button) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'tab,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'tab,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'tab,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -161,7 +161,7 @@ function (_Ext_Button) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'release',
-      parameters: 'tab,e'
+      parameters: 'sender,e'
     }, {
       name: 'removed',
       parameters: 'sender,container,index'
@@ -179,10 +179,10 @@ function (_Ext_Button) {
       parameters: 'sender'
     }, {
       name: 'tap',
-      parameters: 'tab,e'
+      parameters: 'sender,e'
     }, {
       name: 'tofront',
-      parameters: 'tab'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -194,7 +194,7 @@ function (_Ext_Button) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

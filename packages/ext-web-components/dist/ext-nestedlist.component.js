@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_NestedList from './Ext/NestedList';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtNestedlistComponent =
+//import Ext_NestedList from '@sencha/ext-runtime-base/dist/./Ext/NestedList.js';
+import Ext_NestedList from './Ext/NestedList.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCNestedlist =
 /*#__PURE__*/
 function (_Ext_NestedList) {
-  _inheritsLoose(ExtNestedlistComponent, _Ext_NestedList);
+  _inheritsLoose(EWCNestedlist, _Ext_NestedList);
 
-  function ExtNestedlistComponent() {
+  function EWCNestedlist() {
     var _this;
 
     _this = _Ext_NestedList.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_NestedList) {
     return _this;
   }
 
-  return ExtNestedlistComponent;
-}(Ext_NestedList); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-nestedlist', ExtNestedlistComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCNestedlist;
+}(Ext_NestedList);
 
-window.customElements.define('ext-nestedlist', HTMLParsedElement.withParsedCallback(ExtNestedlistComponent));
+export { EWCNestedlist as default };
+window.customElements.define('ext-nestedlist', HTMLParsedElement.withParsedCallback(EWCNestedlist));

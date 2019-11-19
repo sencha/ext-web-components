@@ -1,21 +1,12 @@
-import Ext_NestedList from './Ext/NestedList'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_NestedList from '@sencha/ext-runtime-base/dist/./Ext/NestedList.js';
+import Ext_NestedList from './Ext/NestedList.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtNestedlistComponent extends Ext_NestedList {
+export default class EWCNestedlist extends Ext_NestedList {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'nestedlist'
+        super ([], []);
+        this.xtype = 'nestedlist';
     }
 }
+window.customElements.define('ext-nestedlist', HTMLParsedElement.withParsedCallback(EWCNestedlist));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-nestedlist', ExtNestedlistComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-nestedlist', HTMLParsedElement.withParsedCallback(ExtNestedlistComponent))

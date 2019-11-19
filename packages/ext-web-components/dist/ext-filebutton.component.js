@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_FileButton from './Ext/field/FileButton';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtFilebuttonComponent =
+//import Ext_field_FileButton from '@sencha/ext-runtime-base/dist/./Ext/field/FileButton.js';
+import Ext_field_FileButton from './Ext/field/FileButton.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCFilebutton =
 /*#__PURE__*/
 function (_Ext_field_FileButton) {
-  _inheritsLoose(ExtFilebuttonComponent, _Ext_field_FileButton);
+  _inheritsLoose(EWCFilebutton, _Ext_field_FileButton);
 
-  function ExtFilebuttonComponent() {
+  function EWCFilebutton() {
     var _this;
 
     _this = _Ext_field_FileButton.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_field_FileButton) {
     return _this;
   }
 
-  return ExtFilebuttonComponent;
-}(Ext_field_FileButton); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-filebutton', ExtFilebuttonComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCFilebutton;
+}(Ext_field_FileButton);
 
-window.customElements.define('ext-filebutton', HTMLParsedElement.withParsedCallback(ExtFilebuttonComponent));
+export { EWCFilebutton as default };
+window.customElements.define('ext-filebutton', HTMLParsedElement.withParsedCallback(EWCFilebutton));

@@ -1,21 +1,12 @@
-import Ext_field_DatePicker from './Ext/field/DatePicker'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_field_DatePicker from '@sencha/ext-runtime-base/dist/./Ext/field/DatePicker.js';
+import Ext_field_DatePicker from './Ext/field/DatePicker.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtDatefieldComponent extends Ext_field_DatePicker {
+export default class EWCDatefield extends Ext_field_DatePicker {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'datefield'
+        super ([], []);
+        this.xtype = 'datefield';
     }
 }
+window.customElements.define('ext-datefield', HTMLParsedElement.withParsedCallback(EWCDatefield));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-datefield', ExtDatefieldComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-datefield', HTMLParsedElement.withParsedCallback(ExtDatefieldComponent))

@@ -1,21 +1,12 @@
-import Ext_sparkline_Base from './Ext/sparkline/Base'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_sparkline_Base from '@sencha/ext-runtime-base/dist/./Ext/sparkline/Base.js';
+import Ext_sparkline_Base from './Ext/sparkline/Base.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtSparklineComponent extends Ext_sparkline_Base {
+export default class EWCSparkline extends Ext_sparkline_Base {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'sparkline'
+        super ([], []);
+        this.xtype = 'sparkline';
     }
 }
+window.customElements.define('ext-sparkline', HTMLParsedElement.withParsedCallback(EWCSparkline));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-sparkline', ExtSparklineComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-sparkline', HTMLParsedElement.withParsedCallback(ExtSparklineComponent))

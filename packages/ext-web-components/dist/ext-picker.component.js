@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Picker from './Ext/Picker';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtPickerComponent =
+//import Ext_Picker from '@sencha/ext-runtime-base/dist/./Ext/Picker.js';
+import Ext_Picker from './Ext/Picker.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCPicker =
 /*#__PURE__*/
 function (_Ext_Picker) {
-  _inheritsLoose(ExtPickerComponent, _Ext_Picker);
+  _inheritsLoose(EWCPicker, _Ext_Picker);
 
-  function ExtPickerComponent() {
+  function EWCPicker() {
     var _this;
 
     _this = _Ext_Picker.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_Picker) {
     return _this;
   }
 
-  return ExtPickerComponent;
-}(Ext_Picker); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-picker', ExtPickerComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCPicker;
+}(Ext_Picker);
 
-window.customElements.define('ext-picker', HTMLParsedElement.withParsedCallback(ExtPickerComponent));
+export { EWCPicker as default };
+window.customElements.define('ext-picker', HTMLParsedElement.withParsedCallback(EWCPicker));

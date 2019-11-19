@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_chart_Legend from './Ext/chart/Legend';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtLegendComponent =
+//import Ext_chart_Legend from '@sencha/ext-runtime-base/dist/./Ext/chart/Legend.js';
+import Ext_chart_Legend from './Ext/chart/Legend.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCLegend =
 /*#__PURE__*/
 function (_Ext_chart_Legend) {
-  _inheritsLoose(ExtLegendComponent, _Ext_chart_Legend);
+  _inheritsLoose(EWCLegend, _Ext_chart_Legend);
 
-  function ExtLegendComponent() {
+  function EWCLegend() {
     var _this;
 
     _this = _Ext_chart_Legend.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_chart_Legend) {
     return _this;
   }
 
-  return ExtLegendComponent;
-}(Ext_chart_Legend); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-legend', ExtLegendComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCLegend;
+}(Ext_chart_Legend);
 
-window.customElements.define('ext-legend', HTMLParsedElement.withParsedCallback(ExtLegendComponent));
+export { EWCLegend as default };
+window.customElements.define('ext-legend', HTMLParsedElement.withParsedCallback(EWCLegend));

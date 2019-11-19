@@ -1,21 +1,12 @@
-import Ext_Picker from './Ext/Picker'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_Picker from '@sencha/ext-runtime-base/dist/./Ext/Picker.js';
+import Ext_Picker from './Ext/Picker.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtPickerComponent extends Ext_Picker {
+export default class EWCPicker extends Ext_Picker {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'picker'
+        super ([], []);
+        this.xtype = 'picker';
     }
 }
+window.customElements.define('ext-picker', HTMLParsedElement.withParsedCallback(EWCPicker));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-picker', ExtPickerComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-picker', HTMLParsedElement.withParsedCallback(ExtPickerComponent))

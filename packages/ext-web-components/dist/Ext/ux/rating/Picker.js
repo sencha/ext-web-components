@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Gadget from '../../../Ext/Gadget';
+import Ext_Gadget from '../../../Ext/Gadget.js';
 
 var Ext_ux_rating_Picker =
 /*#__PURE__*/
@@ -8,7 +8,7 @@ function (_Ext_Gadget) {
   _inheritsLoose(Ext_ux_rating_Picker, _Ext_Gadget);
 
   Ext_ux_rating_Picker.PROPERTIES = function PROPERTIES() {
-    return ['alignSelf', 'alwaysOnTop', 'animate', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'disabled', 'displayed', 'docked', 'draggable', 'family', 'flex', 'floated', 'focusCls', 'fullscreen', 'glyphs', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'limit', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minimum', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'overStyle', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'rounding', 'scale', 'scrollable', 'selectedStyle', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'tip', 'toFrontOnShow', 'tooltip', 'tooltipText', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'trackingValue', 'trackOver', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['alignSelf', 'alwaysOnTop', 'animate', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'disabled', 'displayed', 'docked', 'draggable', 'family', 'flex', 'floated', 'focusCls', 'fullscreen', 'glyphs', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'limit', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minimum', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'overStyle', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'rounding', 'scale', 'scrollable', 'selectedStyle', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'tip', 'toFrontOnShow', 'tooltip', 'tooltipText', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'trackingValue', 'trackOver', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_ux_rating_Picker.EVENTS = function EVENTS() {
@@ -65,7 +65,7 @@ function (_Ext_Gadget) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'rating'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -74,7 +74,7 @@ function (_Ext_Gadget) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'rating,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -98,13 +98,13 @@ function (_Ext_Gadget) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'rating,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'rating,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'rating,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -164,7 +164,7 @@ function (_Ext_Gadget) {
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'rating'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -176,7 +176,7 @@ function (_Ext_Gadget) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

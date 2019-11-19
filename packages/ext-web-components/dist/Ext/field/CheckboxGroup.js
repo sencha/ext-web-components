@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_FieldGroupContainer from '../../Ext/field/FieldGroupContainer';
+import Ext_field_FieldGroupContainer from '../../Ext/field/FieldGroupContainer.js';
 
 var Ext_field_CheckboxGroup =
 /*#__PURE__*/
@@ -8,7 +8,7 @@ function (_Ext_field_FieldGroup) {
   _inheritsLoose(Ext_field_CheckboxGroup, _Ext_field_FieldGroup);
 
   Ext_field_CheckboxGroup.PROPERTIES = function PROPERTIES() {
-    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoFitErrors', 'autoSize', 'axisLock', 'bind', 'bodyAlign', 'border', 'bottom', 'bubbleDirty', 'centered', 'cls', 'constrainAlign', 'container', 'contentEl', 'controller', 'data', 'dataType', 'defaultFieldValue', 'defaultListenerScope', 'defaults', 'defaultType', 'delegate', 'dirty', 'disabled', 'displayed', 'docked', 'draggable', 'error', 'errorMessage', 'errorTarget', 'errorTip', 'errorTpl', 'fieldDefaults', 'fieldsName', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inline', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'label', 'labelAlign', 'labelCls', 'labelMinWidth', 'labelTextAlign', 'labelWidth', 'labelWrap', 'layout', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'required', 'requiredMessage', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'sideError', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'tipError', 'titleError', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'underError', 'userCls', 'userSelectable', 'validateDisabled', 'validationMessage', 'validators', 'value', 'vertical', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoFitErrors', 'autoSize', 'axisLock', 'bind', 'bodyAlign', 'border', 'bottom', 'bubbleDirty', 'centered', 'cls', 'constrainAlign', 'container', 'contentEl', 'controller', 'data', 'dataType', 'defaultFieldValue', 'defaultListenerScope', 'defaults', 'defaultType', 'delegate', 'dirty', 'disabled', 'displayed', 'docked', 'draggable', 'error', 'errorMessage', 'errorTarget', 'errorTip', 'errorTpl', 'fieldDefaults', 'fieldsName', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inline', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'label', 'labelAlign', 'labelCls', 'labelMinWidth', 'labelTextAlign', 'labelWidth', 'labelWrap', 'layout', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'required', 'requiredMessage', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'sideError', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'tipError', 'titleError', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'underError', 'userCls', 'userSelectable', 'validateDisabled', 'validationMessage', 'validators', 'value', 'vertical', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_field_CheckboxGroup.EVENTS = function EVENTS() {
@@ -65,7 +65,7 @@ function (_Ext_field_FieldGroup) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'checkboxgroup'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -74,7 +74,7 @@ function (_Ext_field_FieldGroup) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'checkboxgroup,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -83,7 +83,7 @@ function (_Ext_field_FieldGroup) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'change',
-      parameters: 'checkboxgroup,newValue,oldValue'
+      parameters: 'sender,newValue,oldValue'
     }, {
       name: 'click',
       parameters: 'e'
@@ -92,7 +92,7 @@ function (_Ext_field_FieldGroup) {
       parameters: ''
     }, {
       name: 'dirtychange',
-      parameters: 'checkboxgroup,dirty'
+      parameters: 'sender,dirty'
     }, {
       name: 'disabledchange',
       parameters: 'sender,value,oldValue'
@@ -104,19 +104,19 @@ function (_Ext_field_FieldGroup) {
       parameters: 'sender'
     }, {
       name: 'errorchange',
-      parameters: 'checkboxgroup,error'
+      parameters: 'sender,error'
     }, {
       name: 'floatingchange',
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'checkboxgroup,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'checkboxgroup,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'checkboxgroup,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -185,7 +185,7 @@ function (_Ext_field_FieldGroup) {
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'checkboxgroup'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -197,7 +197,7 @@ function (_Ext_field_FieldGroup) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

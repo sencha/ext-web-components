@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_CheckboxGroup from './Ext/field/CheckboxGroup';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtCheckboxgroupComponent =
+//import Ext_field_CheckboxGroup from '@sencha/ext-runtime-base/dist/./Ext/field/CheckboxGroup.js';
+import Ext_field_CheckboxGroup from './Ext/field/CheckboxGroup.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCCheckboxgroup =
 /*#__PURE__*/
 function (_Ext_field_CheckboxGr) {
-  _inheritsLoose(ExtCheckboxgroupComponent, _Ext_field_CheckboxGr);
+  _inheritsLoose(EWCCheckboxgroup, _Ext_field_CheckboxGr);
 
-  function ExtCheckboxgroupComponent() {
+  function EWCCheckboxgroup() {
     var _this;
 
     _this = _Ext_field_CheckboxGr.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_field_CheckboxGr) {
     return _this;
   }
 
-  return ExtCheckboxgroupComponent;
-}(Ext_field_CheckboxGroup); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-checkboxgroup', ExtCheckboxgroupComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCCheckboxgroup;
+}(Ext_field_CheckboxGroup);
 
-window.customElements.define('ext-checkboxgroup', HTMLParsedElement.withParsedCallback(ExtCheckboxgroupComponent));
+export { EWCCheckboxgroup as default };
+window.customElements.define('ext-checkboxgroup', HTMLParsedElement.withParsedCallback(EWCCheckboxgroup));

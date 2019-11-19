@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_form_Password from './Ext/form/Password';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtPasswordfieldComponent =
+//import Ext_form_Password from '@sencha/ext-runtime-base/dist/./Ext/form/Password.js';
+import Ext_form_Password from './Ext/form/Password.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCPasswordfield =
 /*#__PURE__*/
 function (_Ext_form_Password) {
-  _inheritsLoose(ExtPasswordfieldComponent, _Ext_form_Password);
+  _inheritsLoose(EWCPasswordfield, _Ext_form_Password);
 
-  function ExtPasswordfieldComponent() {
+  function EWCPasswordfield() {
     var _this;
 
     _this = _Ext_form_Password.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_form_Password) {
     return _this;
   }
 
-  return ExtPasswordfieldComponent;
-}(Ext_form_Password); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-passwordfield', ExtPasswordfieldComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCPasswordfield;
+}(Ext_form_Password);
 
-window.customElements.define('ext-passwordfield', HTMLParsedElement.withParsedCallback(ExtPasswordfieldComponent));
+export { EWCPasswordfield as default };
+window.customElements.define('ext-passwordfield', HTMLParsedElement.withParsedCallback(EWCPasswordfield));

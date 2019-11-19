@@ -1,21 +1,12 @@
-import Ext_calendar_header_Days from './Ext/calendar/header/Days'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_calendar_header_Days from '@sencha/ext-runtime-base/dist/./Ext/calendar/header/Days.js';
+import Ext_calendar_header_Days from './Ext/calendar/header/Days.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtCalendar_daysheaderComponent extends Ext_calendar_header_Days {
+export default class EWCCalendar_daysheader extends Ext_calendar_header_Days {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'calendar-daysheader'
+        super ([], []);
+        this.xtype = 'calendar-daysheader';
     }
 }
+window.customElements.define('ext-calendar-daysheader', HTMLParsedElement.withParsedCallback(EWCCalendar_daysheader));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-daysheader', ExtCalendar_daysheaderComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-calendar-daysheader', HTMLParsedElement.withParsedCallback(ExtCalendar_daysheaderComponent))

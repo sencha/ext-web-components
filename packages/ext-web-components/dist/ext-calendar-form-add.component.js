@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_calendar_form_Add from './Ext/calendar/form/Add';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtCalendar_form_addComponent =
+//import Ext_calendar_form_Add from '@sencha/ext-runtime-base/dist/./Ext/calendar/form/Add.js';
+import Ext_calendar_form_Add from './Ext/calendar/form/Add.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCCalendar_form_add =
 /*#__PURE__*/
 function (_Ext_calendar_form_Ad) {
-  _inheritsLoose(ExtCalendar_form_addComponent, _Ext_calendar_form_Ad);
+  _inheritsLoose(EWCCalendar_form_add, _Ext_calendar_form_Ad);
 
-  function ExtCalendar_form_addComponent() {
+  function EWCCalendar_form_add() {
     var _this;
 
     _this = _Ext_calendar_form_Ad.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_calendar_form_Ad) {
     return _this;
   }
 
-  return ExtCalendar_form_addComponent;
-}(Ext_calendar_form_Add); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-form-add', ExtCalendar_form_addComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCCalendar_form_add;
+}(Ext_calendar_form_Add);
 
-window.customElements.define('ext-calendar-form-add', HTMLParsedElement.withParsedCallback(ExtCalendar_form_addComponent));
+export { EWCCalendar_form_add as default };
+window.customElements.define('ext-calendar-form-add', HTMLParsedElement.withParsedCallback(EWCCalendar_form_add));

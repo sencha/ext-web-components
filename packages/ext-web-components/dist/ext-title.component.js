@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Title from './Ext/Title';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtTitleComponent =
+//import Ext_Title from '@sencha/ext-runtime-base/dist/./Ext/Title.js';
+import Ext_Title from './Ext/Title.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCTitle =
 /*#__PURE__*/
 function (_Ext_Title) {
-  _inheritsLoose(ExtTitleComponent, _Ext_Title);
+  _inheritsLoose(EWCTitle, _Ext_Title);
 
-  function ExtTitleComponent() {
+  function EWCTitle() {
     var _this;
 
     _this = _Ext_Title.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_Title) {
     return _this;
   }
 
-  return ExtTitleComponent;
-}(Ext_Title); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-title', ExtTitleComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCTitle;
+}(Ext_Title);
 
-window.customElements.define('ext-title', HTMLParsedElement.withParsedCallback(ExtTitleComponent));
+export { EWCTitle as default };
+window.customElements.define('ext-title', HTMLParsedElement.withParsedCallback(EWCTitle));

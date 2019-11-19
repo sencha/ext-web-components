@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_d3_hierarchy_Hierarchy from '../../../Ext/d3/hierarchy/Hierarchy';
+import Ext_d3_hierarchy_Hierarchy from '../../../Ext/d3/hierarchy/Hierarchy.js';
 
 var Ext_d3_hierarchy_Pack =
 /*#__PURE__*/
@@ -8,7 +8,7 @@ function (_Ext_d3_hierarchy_Hie) {
   _inheritsLoose(Ext_d3_hierarchy_Pack, _Ext_d3_hierarchy_Hie);
 
   Ext_d3_hierarchy_Pack.PROPERTIES = function PROPERTIES() {
-    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'clipScene', 'clipText', 'cls', 'colorAxis', 'componentCls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'disabled', 'displayed', 'docked', 'draggable', 'expandEventName', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'hierarchyCls', 'html', 'id', 'instanceCls', 'interactions', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'linkKey', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nodeChildren', 'nodeClass', 'nodeKey', 'nodeText', 'nodeTransform', 'nodeValue', 'noParentValue', 'noSizeLayout', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderLinks', 'renderTo', 'right', 'ripple', 'rootVisible', 'scrollable', 'selectEventName', 'selection', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'size', 'sorter', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'textPadding', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'transitions', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'clipScene', 'clipText', 'cls', 'colorAxis', 'componentCls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'disabled', 'displayed', 'docked', 'draggable', 'expandEventName', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'hierarchyCls', 'html', 'id', 'instanceCls', 'interactions', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'linkKey', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nodeChildren', 'nodeClass', 'nodeKey', 'nodeText', 'nodeTransform', 'nodeValue', 'noParentValue', 'noSizeLayout', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderLinks', 'renderTo', 'right', 'ripple', 'rootVisible', 'scrollable', 'selectEventName', 'selection', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'size', 'sorter', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'textPadding', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'transitions', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_d3_hierarchy_Pack.EVENTS = function EVENTS() {
@@ -65,7 +65,7 @@ function (_Ext_d3_hierarchy_Hie) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'd3-pack'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -74,7 +74,7 @@ function (_Ext_d3_hierarchy_Hie) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'd3-pack,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -98,13 +98,13 @@ function (_Ext_d3_hierarchy_Hie) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'd3-pack,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'd3-pack,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'd3-pack,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -173,7 +173,7 @@ function (_Ext_d3_hierarchy_Hie) {
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'd3-pack'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -185,7 +185,7 @@ function (_Ext_d3_hierarchy_Hie) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

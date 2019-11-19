@@ -1,21 +1,12 @@
-import Ext_calendar_view_Multi from './Ext/calendar/view/Multi'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_calendar_view_Multi from '@sencha/ext-runtime-base/dist/./Ext/calendar/view/Multi.js';
+import Ext_calendar_view_Multi from './Ext/calendar/view/Multi.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtCalendar_multiviewComponent extends Ext_calendar_view_Multi {
+export default class EWCCalendar_multiview extends Ext_calendar_view_Multi {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'calendar-multiview'
+        super ([], []);
+        this.xtype = 'calendar-multiview';
     }
 }
+window.customElements.define('ext-calendar-multiview', HTMLParsedElement.withParsedCallback(EWCCalendar_multiview));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-multiview', ExtCalendar_multiviewComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-calendar-multiview', HTMLParsedElement.withParsedCallback(ExtCalendar_multiviewComponent))

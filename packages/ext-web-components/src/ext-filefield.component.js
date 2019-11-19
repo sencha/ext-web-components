@@ -1,21 +1,12 @@
-import Ext_field_File from './Ext/field/File'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_field_File from '@sencha/ext-runtime-base/dist/./Ext/field/File.js';
+import Ext_field_File from './Ext/field/File.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtFilefieldComponent extends Ext_field_File {
+export default class EWCFilefield extends Ext_field_File {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'filefield'
+        super ([], []);
+        this.xtype = 'filefield';
     }
 }
+window.customElements.define('ext-filefield', HTMLParsedElement.withParsedCallback(EWCFilefield));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-filefield', ExtFilefieldComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-filefield', HTMLParsedElement.withParsedCallback(ExtFilefieldComponent))

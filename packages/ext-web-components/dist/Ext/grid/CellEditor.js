@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Editor from '../../Ext/Editor';
+import Ext_Editor from '../../Ext/Editor.js';
 
 var Ext_grid_CellEditor =
 /*#__PURE__*/
@@ -8,19 +8,19 @@ function (_Ext_Editor) {
   _inheritsLoose(Ext_grid_CellEditor, _Ext_Editor);
 
   Ext_grid_CellEditor.PROPERTIES = function PROPERTIES() {
-    return ['activeChildTabIndex', 'activeItem', 'alignment', 'alignSelf', 'allowBlur', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoPin', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'cancelOnClear', 'cancelOnEsc', 'cardSwitchAnimation', 'centered', 'cls', 'completeOnEnter', 'constrain', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'disabled', 'displayed', 'docked', 'draggable', 'field', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideEl', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'ignoreNoChange', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'listeners', 'manageBorders', 'margin', 'masked', 'matchFont', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'offset', 'padding', 'parentEl', 'plugins', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'revertInvalid', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'swallowKeys', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'updateEl', 'userCls', 'userSelectable', 'value', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['activeChildTabIndex', 'activeItem', 'alignment', 'alignSelf', 'allowBlur', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoPin', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'cancelOnClear', 'cancelOnEsc', 'cardSwitchAnimation', 'centered', 'cls', 'completeOnEnter', 'constrain', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'disabled', 'displayed', 'docked', 'draggable', 'field', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideEl', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'ignoreNoChange', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'listeners', 'manageBorders', 'margin', 'masked', 'matchFont', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'offset', 'padding', 'parentEl', 'plugins', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'revertInvalid', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'swallowKeys', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'updateEl', 'userCls', 'userSelectable', 'value', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_grid_CellEditor.EVENTS = function EVENTS() {
     return [{
       name: 'activate',
-      parameters: 'newActiveItem,celleditor,oldActiveItem'
+      parameters: 'newActiveItem,sender,oldActiveItem'
     }, {
       name: 'activeItemchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'add',
-      parameters: 'celleditor,item,index'
+      parameters: 'sender,item,index'
     }, {
       name: 'added',
       parameters: 'sender,container,index'
@@ -35,7 +35,7 @@ function (_Ext_Editor) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforecomplete',
-      parameters: 'celleditor,value,startValue'
+      parameters: 'sender,value,startValue'
     }, {
       name: 'beforedisabledchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -80,10 +80,10 @@ function (_Ext_Editor) {
       parameters: 'sender'
     }, {
       name: 'beforestartedit',
-      parameters: 'celleditor,boundEl,value'
+      parameters: 'sender,boundEl,value'
     }, {
       name: 'beforetofront',
-      parameters: 'celleditor'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -92,22 +92,22 @@ function (_Ext_Editor) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'celleditor,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'canceledit',
-      parameters: 'celleditor,value,startValue'
+      parameters: 'sender,value,startValue'
     }, {
       name: 'centeredchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'complete',
-      parameters: 'celleditor,value,startValue'
+      parameters: 'sender,value,startValue'
     }, {
       name: 'deactivate',
-      parameters: 'oldActiveItem,celleditor,newActiveItem'
+      parameters: 'oldActiveItem,sender,newActiveItem'
     }, {
       name: 'destroy',
       parameters: ''
@@ -125,13 +125,13 @@ function (_Ext_Editor) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'celleditor,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'celleditor,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'celleditor,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -164,7 +164,7 @@ function (_Ext_Editor) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'move',
-      parameters: 'celleditor,item,toIndex,fromIndex'
+      parameters: 'sender,item,toIndex,fromIndex'
     }, {
       name: 'moved',
       parameters: 'sender,container,toIndex,fromIndex'
@@ -179,13 +179,13 @@ function (_Ext_Editor) {
       parameters: 'sender,positioned'
     }, {
       name: 'remove',
-      parameters: 'celleditor,item,index'
+      parameters: 'sender,item,index'
     }, {
       name: 'removed',
       parameters: 'sender,container,index'
     }, {
       name: 'renderedchange',
-      parameters: 'celleditor,item,rendered'
+      parameters: 'sender,item,rendered'
     }, {
       name: 'resize',
       parameters: 'element,info'
@@ -200,13 +200,13 @@ function (_Ext_Editor) {
       parameters: 'sender'
     }, {
       name: 'specialkey',
-      parameters: 'celleditor,field,event'
+      parameters: 'sender,field,event'
     }, {
       name: 'startedit',
-      parameters: 'celleditor,boundEl,value'
+      parameters: 'sender,boundEl,value'
     }, {
       name: 'tofront',
-      parameters: 'celleditor'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -218,7 +218,7 @@ function (_Ext_Editor) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

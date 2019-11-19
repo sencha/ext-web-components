@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_sparkline_Pie from './Ext/sparkline/Pie';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtSparklinepieComponent =
+//import Ext_sparkline_Pie from '@sencha/ext-runtime-base/dist/./Ext/sparkline/Pie.js';
+import Ext_sparkline_Pie from './Ext/sparkline/Pie.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCSparklinepie =
 /*#__PURE__*/
 function (_Ext_sparkline_Pie) {
-  _inheritsLoose(ExtSparklinepieComponent, _Ext_sparkline_Pie);
+  _inheritsLoose(EWCSparklinepie, _Ext_sparkline_Pie);
 
-  function ExtSparklinepieComponent() {
+  function EWCSparklinepie() {
     var _this;
 
     _this = _Ext_sparkline_Pie.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_sparkline_Pie) {
     return _this;
   }
 
-  return ExtSparklinepieComponent;
-}(Ext_sparkline_Pie); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-sparklinepie', ExtSparklinepieComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCSparklinepie;
+}(Ext_sparkline_Pie);
 
-window.customElements.define('ext-sparklinepie', HTMLParsedElement.withParsedCallback(ExtSparklinepieComponent));
+export { EWCSparklinepie as default };
+window.customElements.define('ext-sparklinepie', HTMLParsedElement.withParsedCallback(EWCSparklinepie));

@@ -1,21 +1,12 @@
-import Ext_grid_cell_Date from './Ext/grid/cell/Date'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_grid_cell_Date from '@sencha/ext-runtime-base/dist/./Ext/grid/cell/Date.js';
+import Ext_grid_cell_Date from './Ext/grid/cell/Date.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtDatecellComponent extends Ext_grid_cell_Date {
+export default class EWCDatecell extends Ext_grid_cell_Date {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'datecell'
+        super ([], []);
+        this.xtype = 'datecell';
     }
 }
+window.customElements.define('ext-datecell', HTMLParsedElement.withParsedCallback(EWCDatecell));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-datecell', ExtDatecellComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-datecell', HTMLParsedElement.withParsedCallback(ExtDatecellComponent))

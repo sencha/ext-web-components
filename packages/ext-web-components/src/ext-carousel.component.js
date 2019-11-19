@@ -1,21 +1,12 @@
-import Ext_Carousel from './Ext/Carousel'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_Carousel from '@sencha/ext-runtime-base/dist/./Ext/Carousel.js';
+import Ext_Carousel from './Ext/Carousel.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtCarouselComponent extends Ext_Carousel {
+export default class EWCCarousel extends Ext_Carousel {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'carousel'
+        super ([], []);
+        this.xtype = 'carousel';
     }
 }
+window.customElements.define('ext-carousel', HTMLParsedElement.withParsedCallback(EWCCarousel));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-carousel', ExtCarouselComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-carousel', HTMLParsedElement.withParsedCallback(ExtCarouselComponent))

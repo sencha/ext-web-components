@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_pivot_d3_AbstractContainer from '../../../Ext/pivot/d3/AbstractContainer';
+import Ext_pivot_d3_AbstractContainer from '../../../Ext/pivot/d3/AbstractContainer.js';
 
 var Ext_pivot_d3_Container =
 /*#__PURE__*/
@@ -8,13 +8,13 @@ function (_Ext_pivot_d3_Abstrac) {
   _inheritsLoose(Ext_pivot_d3_Container, _Ext_pivot_d3_Abstrac);
 
   Ext_pivot_d3_Container.PROPERTIES = function PROPERTIES() {
-    return ['configurator', 'drawing', 'matrix', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['configurator', 'drawing', 'matrix'];
   };
 
   Ext_pivot_d3_Container.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

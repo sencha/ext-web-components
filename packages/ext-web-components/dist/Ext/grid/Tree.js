@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_Grid from '../../Ext/grid/Grid';
+import Ext_grid_Grid from '../../Ext/grid/Grid.js';
 
 var Ext_grid_Tree =
 /*#__PURE__*/
@@ -8,13 +8,13 @@ function (_Ext_grid_Grid) {
   _inheritsLoose(Ext_grid_Tree, _Ext_grid_Grid);
 
   Ext_grid_Tree.PROPERTIES = function PROPERTIES() {
-    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'associatedData', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'bufferSize', 'cardSwitchAnimation', 'centered', 'cls', 'collapseDefaults', 'collapsible', 'columnLines', 'columnMenu', 'columnResize', 'columns', 'columnsMenuItem', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'deferEmptyText', 'deselectOnContainerClick', 'disabled', 'disableSelection', 'disclosureProperty', 'displayed', 'docked', 'draggable', 'emptyItemText', 'emptyState', 'emptyText', 'emptyTextDefaults', 'emptyTextProperty', 'enableColumnMove', 'expanderFirst', 'expanderOnly', 'flex', 'floated', 'focusableContainer', 'focusCls', 'folderSort', 'fullscreen', 'grouped', 'groupFooter', 'groupHeader', 'grouping', 'groupPlaceholder', 'height', 'hidden', 'hideAnimation', 'hideHeaders', 'hideMode', 'hideOnMaskTap', 'hideScrollbar', 'horizontalOverflow', 'html', 'id', 'inactiveChildTabIndex', 'indexBar', 'infinite', 'inline', 'innerCls', 'innerCtHeight', 'innerWidth', 'instanceCls', 'itemButtonMode', 'itemCls', 'itemConfig', 'itemContentCls', 'itemDataMap', 'itemId', 'itemInnerCls', 'itemRipple', 'items', 'itemsFocusable', 'itemTpl', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'listeners', 'loadingHeight', 'loadingText', 'maintainChildNodes', 'manageBorders', 'margin', 'markDirty', 'masked', 'maxHeight', 'maxItemCache', 'maxWidth', 'minHeight', 'minimumBufferDistance', 'minWidth', 'modal', 'modelValidation', 'multiColumnSort', 'name', 'nameable', 'nameHolder', 'onItemDisclosure', 'padding', 'pinFooters', 'pinHeaders', 'pinnedFooter', 'pinnedFooterHeight', 'pinnedHeader', 'pinnedHeaderHeight', 'plugins', 'pressedDelay', 'preventSelectionOnDisclose', 'preventSelectionOnTool', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'reserveScrollbar', 'resetFocusPosition', 'right', 'ripple', 'rowLines', 'rowNumbers', 'scrollable', 'scrollDock', 'scrollToTopOnRefresh', 'selectable', 'selection', 'selectOnExpander', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'singleExpand', 'sortable', 'stateful', 'statefulDefaults', 'stateId', 'store', 'striped', 'style', 'tabIndex', 'title', 'titleBar', 'toFrontOnShow', 'tooltip', 'top', 'topRenderedIndex', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'triggerCtEvent', 'triggerEvent', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'variableHeights', 'verticalOverflow', 'viewModel', 'visibleHeight', 'visibleLeft', 'visibleTop', 'visibleWidth', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'associatedData', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'bufferSize', 'cardSwitchAnimation', 'centered', 'cls', 'collapseDefaults', 'collapsible', 'columnLines', 'columnMenu', 'columnResize', 'columns', 'columnsMenuItem', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'deferEmptyText', 'deselectOnContainerClick', 'disabled', 'disableSelection', 'disclosureProperty', 'displayed', 'docked', 'draggable', 'emptyItemText', 'emptyState', 'emptyText', 'emptyTextDefaults', 'emptyTextProperty', 'enableColumnMove', 'expanderFirst', 'expanderOnly', 'flex', 'floated', 'focusableContainer', 'focusCls', 'folderSort', 'fullscreen', 'grouped', 'groupFooter', 'groupHeader', 'grouping', 'groupPlaceholder', 'height', 'hidden', 'hideAnimation', 'hideHeaders', 'hideMode', 'hideOnMaskTap', 'hideScrollbar', 'horizontalOverflow', 'html', 'id', 'inactiveChildTabIndex', 'indexBar', 'infinite', 'inline', 'innerCls', 'innerCtHeight', 'innerWidth', 'instanceCls', 'itemButtonMode', 'itemCls', 'itemConfig', 'itemContentCls', 'itemDataMap', 'itemId', 'itemInnerCls', 'itemRipple', 'items', 'itemsFocusable', 'itemTpl', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'listeners', 'loadingHeight', 'loadingText', 'maintainChildNodes', 'manageBorders', 'margin', 'markDirty', 'masked', 'maxHeight', 'maxItemCache', 'maxWidth', 'minHeight', 'minimumBufferDistance', 'minWidth', 'modal', 'modelValidation', 'multiColumnSort', 'name', 'nameable', 'nameHolder', 'onItemDisclosure', 'padding', 'pinFooters', 'pinHeaders', 'pinnedFooter', 'pinnedFooterHeight', 'pinnedHeader', 'pinnedHeaderHeight', 'plugins', 'pressedDelay', 'preventSelectionOnDisclose', 'preventSelectionOnTool', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'reserveScrollbar', 'resetFocusPosition', 'right', 'ripple', 'rowLines', 'rowNumbers', 'scrollable', 'scrollDock', 'scrollToTopOnRefresh', 'selectable', 'selection', 'selectOnExpander', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'singleExpand', 'sortable', 'stateful', 'statefulDefaults', 'stateId', 'store', 'striped', 'style', 'tabIndex', 'title', 'titleBar', 'toFrontOnShow', 'tooltip', 'top', 'topRenderedIndex', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'triggerCtEvent', 'triggerEvent', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'variableHeights', 'verticalOverflow', 'viewModel', 'visibleHeight', 'visibleLeft', 'visibleTop', 'visibleWidth', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_grid_Tree.EVENTS = function EVENTS() {
     return [{
       name: 'activate',
-      parameters: 'newActiveItem,tree,oldActiveItem'
+      parameters: 'newActiveItem,sender,oldActiveItem'
     }, {
       name: 'activeItemchange',
       parameters: 'sender,value,oldValue'
@@ -35,7 +35,7 @@ function (_Ext_grid_Grid) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforecheckchange',
-      parameters: 'tree,checked,current,record,e'
+      parameters: 'sender,checked,current,record,e'
     }, {
       name: 'beforecomplete',
       parameters: 'editor,value,startValue,The'
@@ -50,10 +50,10 @@ function (_Ext_grid_Grid) {
       parameters: 'sender,location'
     }, {
       name: 'beforegroupcollapse',
-      parameters: 'tree,group'
+      parameters: 'sender,group'
     }, {
       name: 'beforegroupexpand',
-      parameters: 'tree,group'
+      parameters: 'sender,group'
     }, {
       name: 'beforeheightchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -110,7 +110,7 @@ function (_Ext_grid_Grid) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforetofront',
-      parameters: 'tree'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -119,7 +119,7 @@ function (_Ext_grid_Grid) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'tree,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -137,73 +137,73 @@ function (_Ext_grid_Grid) {
       parameters: 'cell,checked,record,e'
     }, {
       name: 'childdoubletap',
-      parameters: 'tree,location'
+      parameters: 'sender,location'
     }, {
       name: 'childlongpress',
-      parameters: 'tree,location'
+      parameters: 'sender,location'
     }, {
       name: 'childmouseenter',
-      parameters: 'tree,location'
+      parameters: 'sender,location'
     }, {
       name: 'childmouseleave',
-      parameters: 'tree,location'
+      parameters: 'sender,location'
     }, {
       name: 'childsingletap',
-      parameters: 'tree,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtap',
-      parameters: 'tree,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtaphold',
-      parameters: 'tree,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtouchcancel',
-      parameters: 'tree,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtouchend',
-      parameters: 'tree,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtouchmove',
-      parameters: 'tree,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtouchstart',
-      parameters: 'tree,location'
+      parameters: 'sender,location'
     }, {
       name: 'columnadd',
-      parameters: 'tree,column,index'
+      parameters: 'sender,column,index'
     }, {
       name: 'columnhide',
-      parameters: 'tree,column'
+      parameters: 'sender,column'
     }, {
       name: 'columnmenucreated',
       parameters: 'grid,column,menu'
     }, {
       name: 'columnmove',
-      parameters: 'tree,column,fromIndex,toIndex'
+      parameters: 'sender,column,fromIndex,toIndex'
     }, {
       name: 'columnremove',
-      parameters: 'tree,column'
+      parameters: 'sender,column'
     }, {
       name: 'columnresize',
-      parameters: 'tree,column,width'
+      parameters: 'sender,column,width'
     }, {
       name: 'columnselection',
       parameters: 'grid,selection'
     }, {
       name: 'columnshow',
-      parameters: 'tree,column'
+      parameters: 'sender,column'
     }, {
       name: 'columnsort',
-      parameters: 'tree,column,direction'
+      parameters: 'sender,column,direction'
     }, {
       name: 'complete',
       parameters: 'editor,value,startValue,The'
     }, {
       name: 'deactivate',
-      parameters: 'oldActiveItem,tree,newActiveItem'
+      parameters: 'oldActiveItem,sender,newActiveItem'
     }, {
       name: 'deselect',
-      parameters: 'tree,records'
+      parameters: 'sender,records'
     }, {
       name: 'destroy',
       parameters: ''
@@ -227,22 +227,22 @@ function (_Ext_grid_Grid) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'tree,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'tree,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'tree,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
     }, {
       name: 'groupcollapse',
-      parameters: 'tree,group'
+      parameters: 'sender,group'
     }, {
       name: 'groupexpand',
-      parameters: 'tree,group'
+      parameters: 'sender,group'
     }, {
       name: 'heightchange',
       parameters: 'sender,value,oldValue'
@@ -257,49 +257,49 @@ function (_Ext_grid_Grid) {
       parameters: 'sender'
     }, {
       name: 'itemaction',
-      parameters: 'tree,index,record,action'
+      parameters: 'sender,index,record,action'
     }, {
       name: 'itemdoubletap',
-      parameters: 'tree,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemlongpress',
-      parameters: 'tree,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemmouseenter',
-      parameters: 'tree,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemmouseleave',
-      parameters: 'tree,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemsingletap',
-      parameters: 'tree,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemswipe',
-      parameters: 'tree,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtap',
-      parameters: 'tree,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtaphold',
-      parameters: 'tree,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtouchcancel',
-      parameters: 'tree,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtouchend',
-      parameters: 'tree,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtouchmove',
-      parameters: 'tree,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtouchstart',
-      parameters: 'tree,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'leftchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'load',
-      parameters: 'tree,records,successful,operation,node'
+      parameters: 'sender,records,successful,operation,node'
     }, {
       name: 'maxHeightchange',
       parameters: 'sender,value,oldValue'
@@ -320,7 +320,7 @@ function (_Ext_grid_Grid) {
       parameters: 'sender,container,toIndex,fromIndex'
     }, {
       name: 'navigate',
-      parameters: 'tree,to,from'
+      parameters: 'sender,to,from'
     }, {
       name: 'nodecollapse',
       parameters: 'node,record'
@@ -338,7 +338,7 @@ function (_Ext_grid_Grid) {
       parameters: 'sender,positioned'
     }, {
       name: 'refresh',
-      parameters: 'tree'
+      parameters: 'sender'
     }, {
       name: 'remove',
       parameters: ''
@@ -347,7 +347,7 @@ function (_Ext_grid_Grid) {
       parameters: 'sender,container,index'
     }, {
       name: 'renderedchange',
-      parameters: 'tree,item,rendered'
+      parameters: 'sender,item,rendered'
     }, {
       name: 'resize',
       parameters: 'element,info'
@@ -359,7 +359,7 @@ function (_Ext_grid_Grid) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'select',
-      parameters: 'tree,selected'
+      parameters: 'sender,selected'
     }, {
       name: 'selectionextenderdrag',
       parameters: 'grid,An,extension'
@@ -377,7 +377,7 @@ function (_Ext_grid_Grid) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'tofront',
-      parameters: 'tree'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -392,7 +392,7 @@ function (_Ext_grid_Grid) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

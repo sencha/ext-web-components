@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_menu_GroupByThis from './Ext/grid/menu/GroupByThis';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtGridgroupbythismenuitemComponent =
+//import Ext_grid_menu_GroupByThis from '@sencha/ext-runtime-base/dist/./Ext/grid/menu/GroupByThis.js';
+import Ext_grid_menu_GroupByThis from './Ext/grid/menu/GroupByThis.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCGridgroupbythismenuitem =
 /*#__PURE__*/
 function (_Ext_grid_menu_GroupB) {
-  _inheritsLoose(ExtGridgroupbythismenuitemComponent, _Ext_grid_menu_GroupB);
+  _inheritsLoose(EWCGridgroupbythismenuitem, _Ext_grid_menu_GroupB);
 
-  function ExtGridgroupbythismenuitemComponent() {
+  function EWCGridgroupbythismenuitem() {
     var _this;
 
     _this = _Ext_grid_menu_GroupB.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_grid_menu_GroupB) {
     return _this;
   }
 
-  return ExtGridgroupbythismenuitemComponent;
-}(Ext_grid_menu_GroupByThis); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-gridgroupbythismenuitem', ExtGridgroupbythismenuitemComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCGridgroupbythismenuitem;
+}(Ext_grid_menu_GroupByThis);
 
-window.customElements.define('ext-gridgroupbythismenuitem', HTMLParsedElement.withParsedCallback(ExtGridgroupbythismenuitemComponent));
+export { EWCGridgroupbythismenuitem as default };
+window.customElements.define('ext-gridgroupbythismenuitem', HTMLParsedElement.withParsedCallback(EWCGridgroupbythismenuitem));

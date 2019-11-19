@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_Input from './Ext/field/Input';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtInputfieldComponent =
+//import Ext_field_Input from '@sencha/ext-runtime-base/dist/./Ext/field/Input.js';
+import Ext_field_Input from './Ext/field/Input.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCInputfield =
 /*#__PURE__*/
 function (_Ext_field_Input) {
-  _inheritsLoose(ExtInputfieldComponent, _Ext_field_Input);
+  _inheritsLoose(EWCInputfield, _Ext_field_Input);
 
-  function ExtInputfieldComponent() {
+  function EWCInputfield() {
     var _this;
 
     _this = _Ext_field_Input.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_field_Input) {
     return _this;
   }
 
-  return ExtInputfieldComponent;
-}(Ext_field_Input); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-inputfield', ExtInputfieldComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCInputfield;
+}(Ext_field_Input);
 
-window.customElements.define('ext-inputfield', HTMLParsedElement.withParsedCallback(ExtInputfieldComponent));
+export { EWCInputfield as default };
+window.customElements.define('ext-inputfield', HTMLParsedElement.withParsedCallback(EWCInputfield));

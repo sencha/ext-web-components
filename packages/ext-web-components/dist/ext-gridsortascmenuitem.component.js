@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_menu_SortAsc from './Ext/grid/menu/SortAsc';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtGridsortascmenuitemComponent =
+//import Ext_grid_menu_SortAsc from '@sencha/ext-runtime-base/dist/./Ext/grid/menu/SortAsc.js';
+import Ext_grid_menu_SortAsc from './Ext/grid/menu/SortAsc.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCGridsortascmenuitem =
 /*#__PURE__*/
 function (_Ext_grid_menu_SortAs) {
-  _inheritsLoose(ExtGridsortascmenuitemComponent, _Ext_grid_menu_SortAs);
+  _inheritsLoose(EWCGridsortascmenuitem, _Ext_grid_menu_SortAs);
 
-  function ExtGridsortascmenuitemComponent() {
+  function EWCGridsortascmenuitem() {
     var _this;
 
     _this = _Ext_grid_menu_SortAs.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_grid_menu_SortAs) {
     return _this;
   }
 
-  return ExtGridsortascmenuitemComponent;
-}(Ext_grid_menu_SortAsc); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-gridsortascmenuitem', ExtGridsortascmenuitemComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCGridsortascmenuitem;
+}(Ext_grid_menu_SortAsc);
 
-window.customElements.define('ext-gridsortascmenuitem', HTMLParsedElement.withParsedCallback(ExtGridsortascmenuitemComponent));
+export { EWCGridsortascmenuitem as default };
+window.customElements.define('ext-gridsortascmenuitem', HTMLParsedElement.withParsedCallback(EWCGridsortascmenuitem));

@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_trigger_SpinDown from './Ext/field/trigger/SpinDown';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtSpindowntriggerComponent =
+//import Ext_field_trigger_SpinDown from '@sencha/ext-runtime-base/dist/./Ext/field/trigger/SpinDown.js';
+import Ext_field_trigger_SpinDown from './Ext/field/trigger/SpinDown.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCSpindowntrigger =
 /*#__PURE__*/
 function (_Ext_field_trigger_Sp) {
-  _inheritsLoose(ExtSpindowntriggerComponent, _Ext_field_trigger_Sp);
+  _inheritsLoose(EWCSpindowntrigger, _Ext_field_trigger_Sp);
 
-  function ExtSpindowntriggerComponent() {
+  function EWCSpindowntrigger() {
     var _this;
 
     _this = _Ext_field_trigger_Sp.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_field_trigger_Sp) {
     return _this;
   }
 
-  return ExtSpindowntriggerComponent;
-}(Ext_field_trigger_SpinDown); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-spindowntrigger', ExtSpindowntriggerComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCSpindowntrigger;
+}(Ext_field_trigger_SpinDown);
 
-window.customElements.define('ext-spindowntrigger', HTMLParsedElement.withParsedCallback(ExtSpindowntriggerComponent));
+export { EWCSpindowntrigger as default };
+window.customElements.define('ext-spindowntrigger', HTMLParsedElement.withParsedCallback(EWCSpindowntrigger));

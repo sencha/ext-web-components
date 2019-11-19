@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_dataview_pullrefresh_Item from '../../../Ext/dataview/pullrefresh/Item';
+import Ext_dataview_pullrefresh_Item from '../../../Ext/dataview/pullrefresh/Item.js';
 
 var Ext_dataview_pullrefresh_Bar =
 /*#__PURE__*/
@@ -8,7 +8,7 @@ function (_Ext_dataview_pullref) {
   _inheritsLoose(Ext_dataview_pullrefresh_Bar, _Ext_dataview_pullref);
 
   Ext_dataview_pullrefresh_Bar.PROPERTIES = function PROPERTIES() {
-    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'disabled', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'lastUpdated', 'lastUpdatedDateFormat', 'lastUpdatedText', 'left', 'listeners', 'loadedText', 'loadingText', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'mode', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'pull', 'pullText', 'record', 'reference', 'relative', 'releaseText', 'renderTo', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'state', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'disabled', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'lastUpdated', 'lastUpdatedDateFormat', 'lastUpdatedText', 'left', 'listeners', 'loadedText', 'loadingText', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'mode', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'pull', 'pullText', 'record', 'reference', 'relative', 'releaseText', 'renderTo', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'state', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_dataview_pullrefresh_Bar.EVENTS = function EVENTS() {
@@ -65,7 +65,7 @@ function (_Ext_dataview_pullref) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'pullrefreshbar'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -74,7 +74,7 @@ function (_Ext_dataview_pullref) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'pullrefreshbar,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -98,13 +98,13 @@ function (_Ext_dataview_pullref) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'pullrefreshbar,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'pullrefreshbar,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'pullrefreshbar,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -164,7 +164,7 @@ function (_Ext_dataview_pullref) {
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'pullrefreshbar'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -176,7 +176,7 @@ function (_Ext_dataview_pullref) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

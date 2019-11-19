@@ -1,21 +1,12 @@
-import Ext_calendar_panel_Weeks from './Ext/calendar/panel/Weeks'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_calendar_panel_Weeks from '@sencha/ext-runtime-base/dist/./Ext/calendar/panel/Weeks.js';
+import Ext_calendar_panel_Weeks from './Ext/calendar/panel/Weeks.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtCalendar_weeksComponent extends Ext_calendar_panel_Weeks {
+export default class EWCCalendar_weeks extends Ext_calendar_panel_Weeks {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'calendar-weeks'
+        super ([], []);
+        this.xtype = 'calendar-weeks';
     }
 }
+window.customElements.define('ext-calendar-weeks', HTMLParsedElement.withParsedCallback(EWCCalendar_weeks));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-weeks', ExtCalendar_weeksComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-calendar-weeks', HTMLParsedElement.withParsedCallback(ExtCalendar_weeksComponent))

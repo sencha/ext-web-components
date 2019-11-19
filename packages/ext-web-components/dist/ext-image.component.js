@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Image from './Ext/Image';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtImageComponent =
+//import Ext_Image from '@sencha/ext-runtime-base/dist/./Ext/Image.js';
+import Ext_Image from './Ext/Image.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCImage =
 /*#__PURE__*/
 function (_Ext_Image) {
-  _inheritsLoose(ExtImageComponent, _Ext_Image);
+  _inheritsLoose(EWCImage, _Ext_Image);
 
-  function ExtImageComponent() {
+  function EWCImage() {
     var _this;
 
     _this = _Ext_Image.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_Image) {
     return _this;
   }
 
-  return ExtImageComponent;
-}(Ext_Image); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-image', ExtImageComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCImage;
+}(Ext_Image);
 
-window.customElements.define('ext-image', HTMLParsedElement.withParsedCallback(ExtImageComponent));
+export { EWCImage as default };
+window.customElements.define('ext-image', HTMLParsedElement.withParsedCallback(EWCImage));

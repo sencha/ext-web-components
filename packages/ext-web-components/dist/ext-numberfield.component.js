@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_form_Number from './Ext/form/Number';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtNumberfieldComponent =
+//import Ext_form_Number from '@sencha/ext-runtime-base/dist/./Ext/form/Number.js';
+import Ext_form_Number from './Ext/form/Number.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCNumberfield =
 /*#__PURE__*/
 function (_Ext_form_Number) {
-  _inheritsLoose(ExtNumberfieldComponent, _Ext_form_Number);
+  _inheritsLoose(EWCNumberfield, _Ext_form_Number);
 
-  function ExtNumberfieldComponent() {
+  function EWCNumberfield() {
     var _this;
 
     _this = _Ext_form_Number.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_form_Number) {
     return _this;
   }
 
-  return ExtNumberfieldComponent;
-}(Ext_form_Number); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-numberfield', ExtNumberfieldComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCNumberfield;
+}(Ext_form_Number);
 
-window.customElements.define('ext-numberfield', HTMLParsedElement.withParsedCallback(ExtNumberfieldComponent));
+export { EWCNumberfield as default };
+window.customElements.define('ext-numberfield', HTMLParsedElement.withParsedCallback(EWCNumberfield));

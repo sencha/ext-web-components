@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_pivot_d3_TreeMap from './Ext/pivot/d3/TreeMap';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtPivottreemapComponent =
+//import Ext_pivot_d3_TreeMap from '@sencha/ext-runtime-base/dist/./Ext/pivot/d3/TreeMap.js';
+import Ext_pivot_d3_TreeMap from './Ext/pivot/d3/TreeMap.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCPivottreemap =
 /*#__PURE__*/
 function (_Ext_pivot_d3_TreeMap) {
-  _inheritsLoose(ExtPivottreemapComponent, _Ext_pivot_d3_TreeMap);
+  _inheritsLoose(EWCPivottreemap, _Ext_pivot_d3_TreeMap);
 
-  function ExtPivottreemapComponent() {
+  function EWCPivottreemap() {
     var _this;
 
     _this = _Ext_pivot_d3_TreeMap.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_pivot_d3_TreeMap) {
     return _this;
   }
 
-  return ExtPivottreemapComponent;
-}(Ext_pivot_d3_TreeMap); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-pivottreemap', ExtPivottreemapComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCPivottreemap;
+}(Ext_pivot_d3_TreeMap);
 
-window.customElements.define('ext-pivottreemap', HTMLParsedElement.withParsedCallback(ExtPivottreemapComponent));
+export { EWCPivottreemap as default };
+window.customElements.define('ext-pivottreemap', HTMLParsedElement.withParsedCallback(EWCPivottreemap));

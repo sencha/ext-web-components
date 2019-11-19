@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Carousel from './Ext/Carousel';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtCarouselComponent =
+//import Ext_Carousel from '@sencha/ext-runtime-base/dist/./Ext/Carousel.js';
+import Ext_Carousel from './Ext/Carousel.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCCarousel =
 /*#__PURE__*/
 function (_Ext_Carousel) {
-  _inheritsLoose(ExtCarouselComponent, _Ext_Carousel);
+  _inheritsLoose(EWCCarousel, _Ext_Carousel);
 
-  function ExtCarouselComponent() {
+  function EWCCarousel() {
     var _this;
 
     _this = _Ext_Carousel.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_Carousel) {
     return _this;
   }
 
-  return ExtCarouselComponent;
-}(Ext_Carousel); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-carousel', ExtCarouselComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCCarousel;
+}(Ext_Carousel);
 
-window.customElements.define('ext-carousel', HTMLParsedElement.withParsedCallback(ExtCarouselComponent));
+export { EWCCarousel as default };
+window.customElements.define('ext-carousel', HTMLParsedElement.withParsedCallback(EWCCarousel));

@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_calendar_view_Multi from './Ext/calendar/view/Multi';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtCalendar_multiviewComponent =
+//import Ext_calendar_view_Multi from '@sencha/ext-runtime-base/dist/./Ext/calendar/view/Multi.js';
+import Ext_calendar_view_Multi from './Ext/calendar/view/Multi.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCCalendar_multiview =
 /*#__PURE__*/
 function (_Ext_calendar_view_Mu) {
-  _inheritsLoose(ExtCalendar_multiviewComponent, _Ext_calendar_view_Mu);
+  _inheritsLoose(EWCCalendar_multiview, _Ext_calendar_view_Mu);
 
-  function ExtCalendar_multiviewComponent() {
+  function EWCCalendar_multiview() {
     var _this;
 
     _this = _Ext_calendar_view_Mu.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_calendar_view_Mu) {
     return _this;
   }
 
-  return ExtCalendar_multiviewComponent;
-}(Ext_calendar_view_Multi); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-multiview', ExtCalendar_multiviewComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCCalendar_multiview;
+}(Ext_calendar_view_Multi);
 
-window.customElements.define('ext-calendar-multiview', HTMLParsedElement.withParsedCallback(ExtCalendar_multiviewComponent));
+export { EWCCalendar_multiview as default };
+window.customElements.define('ext-calendar-multiview', HTMLParsedElement.withParsedCallback(EWCCalendar_multiview));

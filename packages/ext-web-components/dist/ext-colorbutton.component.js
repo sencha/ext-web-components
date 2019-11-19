@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_ux_colorpick_Button from './Ext/ux/colorpick/Button';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtColorbuttonComponent =
+//import Ext_ux_colorpick_Button from '@sencha/ext-runtime-base/dist/./Ext/ux/colorpick/Button.js';
+import Ext_ux_colorpick_Button from './Ext/ux/colorpick/Button.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCColorbutton =
 /*#__PURE__*/
 function (_Ext_ux_colorpick_But) {
-  _inheritsLoose(ExtColorbuttonComponent, _Ext_ux_colorpick_But);
+  _inheritsLoose(EWCColorbutton, _Ext_ux_colorpick_But);
 
-  function ExtColorbuttonComponent() {
+  function EWCColorbutton() {
     var _this;
 
     _this = _Ext_ux_colorpick_But.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_ux_colorpick_But) {
     return _this;
   }
 
-  return ExtColorbuttonComponent;
-}(Ext_ux_colorpick_Button); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-colorbutton', ExtColorbuttonComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCColorbutton;
+}(Ext_ux_colorpick_Button);
 
-window.customElements.define('ext-colorbutton', HTMLParsedElement.withParsedCallback(ExtColorbuttonComponent));
+export { EWCColorbutton as default };
+window.customElements.define('ext-colorbutton', HTMLParsedElement.withParsedCallback(EWCColorbutton));

@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_list_TreeItem from './Ext/list/TreeItem';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtTreelistitemComponent =
+//import Ext_list_TreeItem from '@sencha/ext-runtime-base/dist/./Ext/list/TreeItem.js';
+import Ext_list_TreeItem from './Ext/list/TreeItem.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCTreelistitem =
 /*#__PURE__*/
 function (_Ext_list_TreeItem) {
-  _inheritsLoose(ExtTreelistitemComponent, _Ext_list_TreeItem);
+  _inheritsLoose(EWCTreelistitem, _Ext_list_TreeItem);
 
-  function ExtTreelistitemComponent() {
+  function EWCTreelistitem() {
     var _this;
 
     _this = _Ext_list_TreeItem.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_list_TreeItem) {
     return _this;
   }
 
-  return ExtTreelistitemComponent;
-}(Ext_list_TreeItem); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-treelistitem', ExtTreelistitemComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCTreelistitem;
+}(Ext_list_TreeItem);
 
-window.customElements.define('ext-treelistitem', HTMLParsedElement.withParsedCallback(ExtTreelistitemComponent));
+export { EWCTreelistitem as default };
+window.customElements.define('ext-treelistitem', HTMLParsedElement.withParsedCallback(EWCTreelistitem));

@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_DatePicker from './Ext/field/DatePicker';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtDatefieldComponent =
+//import Ext_field_DatePicker from '@sencha/ext-runtime-base/dist/./Ext/field/DatePicker.js';
+import Ext_field_DatePicker from './Ext/field/DatePicker.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCDatefield =
 /*#__PURE__*/
 function (_Ext_field_DatePicker) {
-  _inheritsLoose(ExtDatefieldComponent, _Ext_field_DatePicker);
+  _inheritsLoose(EWCDatefield, _Ext_field_DatePicker);
 
-  function ExtDatefieldComponent() {
+  function EWCDatefield() {
     var _this;
 
     _this = _Ext_field_DatePicker.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_field_DatePicker) {
     return _this;
   }
 
-  return ExtDatefieldComponent;
-}(Ext_field_DatePicker); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-datefield', ExtDatefieldComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCDatefield;
+}(Ext_field_DatePicker);
 
-window.customElements.define('ext-datefield', HTMLParsedElement.withParsedCallback(ExtDatefieldComponent));
+export { EWCDatefield as default };
+window.customElements.define('ext-datefield', HTMLParsedElement.withParsedCallback(EWCDatefield));

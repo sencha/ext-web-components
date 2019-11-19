@@ -1,21 +1,12 @@
-import Ext_Chip from './Ext/Chip'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_Chip from '@sencha/ext-runtime-base/dist/./Ext/Chip.js';
+import Ext_Chip from './Ext/Chip.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtChipComponent extends Ext_Chip {
+export default class EWCChip extends Ext_Chip {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'chip'
+        super ([], []);
+        this.xtype = 'chip';
     }
 }
+window.customElements.define('ext-chip', HTMLParsedElement.withParsedCallback(EWCChip));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-chip', ExtChipComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-chip', HTMLParsedElement.withParsedCallback(ExtChipComponent))

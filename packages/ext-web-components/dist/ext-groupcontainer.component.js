@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_FieldGroupContainer from './Ext/field/FieldGroupContainer';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtGroupcontainerComponent =
+//import Ext_field_FieldGroupContainer from '@sencha/ext-runtime-base/dist/./Ext/field/FieldGroupContainer.js';
+import Ext_field_FieldGroupContainer from './Ext/field/FieldGroupContainer.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCGroupcontainer =
 /*#__PURE__*/
 function (_Ext_field_FieldGroup) {
-  _inheritsLoose(ExtGroupcontainerComponent, _Ext_field_FieldGroup);
+  _inheritsLoose(EWCGroupcontainer, _Ext_field_FieldGroup);
 
-  function ExtGroupcontainerComponent() {
+  function EWCGroupcontainer() {
     var _this;
 
     _this = _Ext_field_FieldGroup.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_field_FieldGroup) {
     return _this;
   }
 
-  return ExtGroupcontainerComponent;
-}(Ext_field_FieldGroupContainer); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-groupcontainer', ExtGroupcontainerComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCGroupcontainer;
+}(Ext_field_FieldGroupContainer);
 
-window.customElements.define('ext-groupcontainer', HTMLParsedElement.withParsedCallback(ExtGroupcontainerComponent));
+export { EWCGroupcontainer as default };
+window.customElements.define('ext-groupcontainer', HTMLParsedElement.withParsedCallback(EWCGroupcontainer));

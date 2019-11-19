@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_button_Segmented from './Ext/button/Segmented';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtSegmentedbuttonComponent =
+//import Ext_button_Segmented from '@sencha/ext-runtime-base/dist/./Ext/button/Segmented.js';
+import Ext_button_Segmented from './Ext/button/Segmented.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCSegmentedbutton =
 /*#__PURE__*/
 function (_Ext_button_Segmented) {
-  _inheritsLoose(ExtSegmentedbuttonComponent, _Ext_button_Segmented);
+  _inheritsLoose(EWCSegmentedbutton, _Ext_button_Segmented);
 
-  function ExtSegmentedbuttonComponent() {
+  function EWCSegmentedbutton() {
     var _this;
 
     _this = _Ext_button_Segmented.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_button_Segmented) {
     return _this;
   }
 
-  return ExtSegmentedbuttonComponent;
-}(Ext_button_Segmented); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-segmentedbutton', ExtSegmentedbuttonComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCSegmentedbutton;
+}(Ext_button_Segmented);
 
-window.customElements.define('ext-segmentedbutton', HTMLParsedElement.withParsedCallback(ExtSegmentedbuttonComponent));
+export { EWCSegmentedbutton as default };
+window.customElements.define('ext-segmentedbutton', HTMLParsedElement.withParsedCallback(EWCSegmentedbutton));

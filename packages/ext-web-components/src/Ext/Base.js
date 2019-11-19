@@ -1,27 +1,24 @@
-import EwcBaseComponent from '../ewc-base'
+import EleBaseComponent from '../ele-base.js'
 
-export default class Ext_Base extends EwcBaseComponent {
-
-
-
-//events
-//get onready(){return this.getAttribute('onready')};set onready(onready){this.setAttribute('onready',onready)}
+export default class Ext_Base extends EleBaseComponent {
 
     static PROPERTIES() { return [
-        'eng',
+
+        'fitToParent',
+        'tab',
+        'config',
+        'platformConfig',
+'renderer',
+        'extname',
         'viewport',
         'align',
         'plugins',
         'responsiveConfig',
         'responsiveFormulas',
         
-'platformConfig',
-'responsiveConfig',
-'fitToParent',
-'config'
 ]};
     static EVENTS() { return [
-{name:'ready',parameters:''}
+        {name:'ready', parameters:'cmd,cmdAll'}
 ]};
     static getProperties(properties) {
         return properties.concat(Ext_Base.PROPERTIES)
@@ -45,7 +42,7 @@ export default class Ext_Base extends EwcBaseComponent {
         Ext_Base.EVENTS().forEach(function (eventparameter, index, array) {
             attrs.push('on' + eventparameter.name)
         })
-        attrs.push('onready')
+        //attrs.push('onready')
         return attrs
     }
 

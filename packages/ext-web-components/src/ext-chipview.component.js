@@ -1,21 +1,12 @@
-import Ext_dataview_ChipView from './Ext/dataview/ChipView'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_dataview_ChipView from '@sencha/ext-runtime-base/dist/./Ext/dataview/ChipView.js';
+import Ext_dataview_ChipView from './Ext/dataview/ChipView.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtChipviewComponent extends Ext_dataview_ChipView {
+export default class EWCChipview extends Ext_dataview_ChipView {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'chipview'
+        super ([], []);
+        this.xtype = 'chipview';
     }
 }
+window.customElements.define('ext-chipview', HTMLParsedElement.withParsedCallback(EWCChipview));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-chipview', ExtChipviewComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-chipview', HTMLParsedElement.withParsedCallback(ExtChipviewComponent))

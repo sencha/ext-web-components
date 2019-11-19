@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_form_Toggle from './Ext/form/Toggle';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtTogglefieldComponent =
+//import Ext_form_Toggle from '@sencha/ext-runtime-base/dist/./Ext/form/Toggle.js';
+import Ext_form_Toggle from './Ext/form/Toggle.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCTogglefield =
 /*#__PURE__*/
 function (_Ext_form_Toggle) {
-  _inheritsLoose(ExtTogglefieldComponent, _Ext_form_Toggle);
+  _inheritsLoose(EWCTogglefield, _Ext_form_Toggle);
 
-  function ExtTogglefieldComponent() {
+  function EWCTogglefield() {
     var _this;
 
     _this = _Ext_form_Toggle.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_form_Toggle) {
     return _this;
   }
 
-  return ExtTogglefieldComponent;
-}(Ext_form_Toggle); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-togglefield', ExtTogglefieldComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCTogglefield;
+}(Ext_form_Toggle);
 
-window.customElements.define('ext-togglefield', HTMLParsedElement.withParsedCallback(ExtTogglefieldComponent));
+export { EWCTogglefield as default };
+window.customElements.define('ext-togglefield', HTMLParsedElement.withParsedCallback(EWCTogglefield));

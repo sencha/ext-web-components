@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_pivot_cell_Group from './Ext/pivot/cell/Group';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtPivotgridgroupcellComponent =
+//import Ext_pivot_cell_Group from '@sencha/ext-runtime-base/dist/./Ext/pivot/cell/Group.js';
+import Ext_pivot_cell_Group from './Ext/pivot/cell/Group.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCPivotgridgroupcell =
 /*#__PURE__*/
 function (_Ext_pivot_cell_Group) {
-  _inheritsLoose(ExtPivotgridgroupcellComponent, _Ext_pivot_cell_Group);
+  _inheritsLoose(EWCPivotgridgroupcell, _Ext_pivot_cell_Group);
 
-  function ExtPivotgridgroupcellComponent() {
+  function EWCPivotgridgroupcell() {
     var _this;
 
     _this = _Ext_pivot_cell_Group.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_pivot_cell_Group) {
     return _this;
   }
 
-  return ExtPivotgridgroupcellComponent;
-}(Ext_pivot_cell_Group); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-pivotgridgroupcell', ExtPivotgridgroupcellComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCPivotgridgroupcell;
+}(Ext_pivot_cell_Group);
 
-window.customElements.define('ext-pivotgridgroupcell', HTMLParsedElement.withParsedCallback(ExtPivotgridgroupcellComponent));
+export { EWCPivotgridgroupcell as default };
+window.customElements.define('ext-pivotgridgroupcell', HTMLParsedElement.withParsedCallback(EWCPivotgridgroupcell));

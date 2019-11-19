@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_ux_rating_Picker from './Ext/ux/rating/Picker';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtRatingComponent =
+//import Ext_ux_rating_Picker from '@sencha/ext-runtime-base/dist/./Ext/ux/rating/Picker.js';
+import Ext_ux_rating_Picker from './Ext/ux/rating/Picker.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCRating =
 /*#__PURE__*/
 function (_Ext_ux_rating_Picker) {
-  _inheritsLoose(ExtRatingComponent, _Ext_ux_rating_Picker);
+  _inheritsLoose(EWCRating, _Ext_ux_rating_Picker);
 
-  function ExtRatingComponent() {
+  function EWCRating() {
     var _this;
 
     _this = _Ext_ux_rating_Picker.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_ux_rating_Picker) {
     return _this;
   }
 
-  return ExtRatingComponent;
-}(Ext_ux_rating_Picker); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-rating', ExtRatingComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCRating;
+}(Ext_ux_rating_Picker);
 
-window.customElements.define('ext-rating', HTMLParsedElement.withParsedCallback(ExtRatingComponent));
+export { EWCRating as default };
+window.customElements.define('ext-rating', HTMLParsedElement.withParsedCallback(EWCRating));

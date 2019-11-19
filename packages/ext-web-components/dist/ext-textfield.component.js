@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_form_Text from './Ext/form/Text';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtTextfieldComponent =
+//import Ext_form_Text from '@sencha/ext-runtime-base/dist/./Ext/form/Text.js';
+import Ext_form_Text from './Ext/form/Text.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCTextfield =
 /*#__PURE__*/
 function (_Ext_form_Text) {
-  _inheritsLoose(ExtTextfieldComponent, _Ext_form_Text);
+  _inheritsLoose(EWCTextfield, _Ext_form_Text);
 
-  function ExtTextfieldComponent() {
+  function EWCTextfield() {
     var _this;
 
     _this = _Ext_form_Text.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_form_Text) {
     return _this;
   }
 
-  return ExtTextfieldComponent;
-}(Ext_form_Text); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-textfield', ExtTextfieldComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCTextfield;
+}(Ext_form_Text);
 
-window.customElements.define('ext-textfield', HTMLParsedElement.withParsedCallback(ExtTextfieldComponent));
+export { EWCTextfield as default };
+window.customElements.define('ext-textfield', HTMLParsedElement.withParsedCallback(EWCTextfield));

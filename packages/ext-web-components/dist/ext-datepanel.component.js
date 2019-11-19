@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_panel_Date from './Ext/panel/Date';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtDatepanelComponent =
+//import Ext_panel_Date from '@sencha/ext-runtime-base/dist/./Ext/panel/Date.js';
+import Ext_panel_Date from './Ext/panel/Date.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCDatepanel =
 /*#__PURE__*/
 function (_Ext_panel_Date) {
-  _inheritsLoose(ExtDatepanelComponent, _Ext_panel_Date);
+  _inheritsLoose(EWCDatepanel, _Ext_panel_Date);
 
-  function ExtDatepanelComponent() {
+  function EWCDatepanel() {
     var _this;
 
     _this = _Ext_panel_Date.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_panel_Date) {
     return _this;
   }
 
-  return ExtDatepanelComponent;
-}(Ext_panel_Date); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-datepanel', ExtDatepanelComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCDatepanel;
+}(Ext_panel_Date);
 
-window.customElements.define('ext-datepanel', HTMLParsedElement.withParsedCallback(ExtDatepanelComponent));
+export { EWCDatepanel as default };
+window.customElements.define('ext-datepanel', HTMLParsedElement.withParsedCallback(EWCDatepanel));

@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Gadget from './Ext/Gadget';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtWidgetComponent =
+//import Ext_Gadget from '@sencha/ext-runtime-base/dist/./Ext/Gadget.js';
+import Ext_Gadget from './Ext/Gadget.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCWidget =
 /*#__PURE__*/
 function (_Ext_Gadget) {
-  _inheritsLoose(ExtWidgetComponent, _Ext_Gadget);
+  _inheritsLoose(EWCWidget, _Ext_Gadget);
 
-  function ExtWidgetComponent() {
+  function EWCWidget() {
     var _this;
 
     _this = _Ext_Gadget.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_Gadget) {
     return _this;
   }
 
-  return ExtWidgetComponent;
-}(Ext_Gadget); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-widget', ExtWidgetComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCWidget;
+}(Ext_Gadget);
 
-window.customElements.define('ext-widget', HTMLParsedElement.withParsedCallback(ExtWidgetComponent));
+export { EWCWidget as default };
+window.customElements.define('ext-widget', HTMLParsedElement.withParsedCallback(EWCWidget));

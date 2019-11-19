@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_calendar_view_Days from '../../../Ext/calendar/view/Days';
+import Ext_calendar_view_Days from '../../../Ext/calendar/view/Days.js';
 
 var Ext_calendar_view_Day =
 /*#__PURE__*/
@@ -8,7 +8,7 @@ function (_Ext_calendar_view_Da) {
   _inheritsLoose(Ext_calendar_view_Day, _Ext_calendar_view_Da);
 
   Ext_calendar_view_Day.PROPERTIES = function PROPERTIES() {
-    return ['addForm', 'alignSelf', 'allowSelection', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'cls', 'compact', 'compactOptions', 'constrainAlign', 'contentEl', 'controller', 'controlStoreRange', 'data', 'defaultListenerScope', 'disabled', 'displayed', 'displayOverlap', 'docked', 'draggable', 'droppable', 'editForm', 'endTime', 'eventDefaults', 'flex', 'floated', 'focusCls', 'fullscreen', 'gestureNavigation', 'header', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'resizeEvents', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'showNowMarker', 'startTime', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'timeFormat', 'timeRenderer', 'timezoneOffset', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'viewModel', 'visibleDays', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['addForm', 'alignSelf', 'allowSelection', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'cls', 'compact', 'compactOptions', 'constrainAlign', 'contentEl', 'controller', 'controlStoreRange', 'data', 'defaultListenerScope', 'disabled', 'displayed', 'displayOverlap', 'docked', 'draggable', 'droppable', 'editForm', 'endTime', 'eventDefaults', 'flex', 'floated', 'focusCls', 'fullscreen', 'gestureNavigation', 'header', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'resizeEvents', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'showNowMarker', 'startTime', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'timeFormat', 'timeRenderer', 'timezoneOffset', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'viewModel', 'visibleDays', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_calendar_view_Day.EVENTS = function EVENTS() {
@@ -29,16 +29,16 @@ function (_Ext_calendar_view_Da) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforeeventadd',
-      parameters: 'calendar-dayview,context'
+      parameters: 'sender,context'
     }, {
       name: 'beforeeventdragstart',
-      parameters: 'calendar-dayview,context'
+      parameters: 'sender,context'
     }, {
       name: 'beforeeventedit',
-      parameters: 'calendar-dayview,context'
+      parameters: 'sender,context'
     }, {
       name: 'beforeeventresizestart',
-      parameters: 'calendar-dayview,context'
+      parameters: 'sender,context'
     }, {
       name: 'beforeheightchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -77,7 +77,7 @@ function (_Ext_calendar_view_Da) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'calendar-dayview'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -86,7 +86,7 @@ function (_Ext_calendar_view_Da) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'calendar-dayview,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -107,31 +107,31 @@ function (_Ext_calendar_view_Da) {
       parameters: 'sender'
     }, {
       name: 'eventadd',
-      parameters: 'calendar-dayview,context'
+      parameters: 'sender,context'
     }, {
       name: 'eventdrop',
-      parameters: 'calendar-dayview,context'
+      parameters: 'sender,context'
     }, {
       name: 'eventedit',
-      parameters: 'calendar-dayview,context'
+      parameters: 'sender,context'
     }, {
       name: 'eventresize',
-      parameters: 'calendar-dayview,context'
+      parameters: 'sender,context'
     }, {
       name: 'eventtap',
-      parameters: 'calendar-dayview,context'
+      parameters: 'sender,context'
     }, {
       name: 'floatingchange',
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'calendar-dayview,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'calendar-dayview,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'calendar-dayview,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -191,7 +191,7 @@ function (_Ext_calendar_view_Da) {
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'calendar-dayview'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -200,25 +200,25 @@ function (_Ext_calendar_view_Da) {
       parameters: 'sender,newData'
     }, {
       name: 'validateeventadd',
-      parameters: 'calendar-dayview,context'
+      parameters: 'sender,context'
     }, {
       name: 'validateeventdrop',
-      parameters: 'calendar-dayview,context'
+      parameters: 'sender,context'
     }, {
       name: 'validateeventedit',
-      parameters: 'calendar-dayview,context'
+      parameters: 'sender,context'
     }, {
       name: 'validateeventresize',
-      parameters: 'calendar-dayview,context'
+      parameters: 'sender,context'
     }, {
       name: 'valuechange',
-      parameters: 'calendar-dayview,context'
+      parameters: 'sender,context'
     }, {
       name: 'widthchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

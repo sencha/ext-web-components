@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_ActionSheet from './Ext/ActionSheet';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtActionsheetComponent =
+//import Ext_ActionSheet from '@sencha/ext-runtime-base/dist/./Ext/ActionSheet.js';
+import Ext_ActionSheet from './Ext/ActionSheet.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCActionsheet =
 /*#__PURE__*/
 function (_Ext_ActionSheet) {
-  _inheritsLoose(ExtActionsheetComponent, _Ext_ActionSheet);
+  _inheritsLoose(EWCActionsheet, _Ext_ActionSheet);
 
-  function ExtActionsheetComponent() {
+  function EWCActionsheet() {
     var _this;
 
     _this = _Ext_ActionSheet.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_ActionSheet) {
     return _this;
   }
 
-  return ExtActionsheetComponent;
-}(Ext_ActionSheet); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-actionsheet', ExtActionsheetComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCActionsheet;
+}(Ext_ActionSheet);
 
-window.customElements.define('ext-actionsheet', HTMLParsedElement.withParsedCallback(ExtActionsheetComponent));
+export { EWCActionsheet as default };
+window.customElements.define('ext-actionsheet', HTMLParsedElement.withParsedCallback(EWCActionsheet));

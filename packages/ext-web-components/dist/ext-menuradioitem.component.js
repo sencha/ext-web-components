@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_menu_RadioItem from './Ext/menu/RadioItem';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtMenuradioitemComponent =
+//import Ext_menu_RadioItem from '@sencha/ext-runtime-base/dist/./Ext/menu/RadioItem.js';
+import Ext_menu_RadioItem from './Ext/menu/RadioItem.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCMenuradioitem =
 /*#__PURE__*/
 function (_Ext_menu_RadioItem) {
-  _inheritsLoose(ExtMenuradioitemComponent, _Ext_menu_RadioItem);
+  _inheritsLoose(EWCMenuradioitem, _Ext_menu_RadioItem);
 
-  function ExtMenuradioitemComponent() {
+  function EWCMenuradioitem() {
     var _this;
 
     _this = _Ext_menu_RadioItem.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_menu_RadioItem) {
     return _this;
   }
 
-  return ExtMenuradioitemComponent;
-}(Ext_menu_RadioItem); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-menuradioitem', ExtMenuradioitemComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCMenuradioitem;
+}(Ext_menu_RadioItem);
 
-window.customElements.define('ext-menuradioitem', HTMLParsedElement.withParsedCallback(ExtMenuradioitemComponent));
+export { EWCMenuradioitem as default };
+window.customElements.define('ext-menuradioitem', HTMLParsedElement.withParsedCallback(EWCMenuradioitem));

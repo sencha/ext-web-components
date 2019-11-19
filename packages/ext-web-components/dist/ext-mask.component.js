@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Mask from './Ext/Mask';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtMaskComponent =
+//import Ext_Mask from '@sencha/ext-runtime-base/dist/./Ext/Mask.js';
+import Ext_Mask from './Ext/Mask.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCMask =
 /*#__PURE__*/
 function (_Ext_Mask) {
-  _inheritsLoose(ExtMaskComponent, _Ext_Mask);
+  _inheritsLoose(EWCMask, _Ext_Mask);
 
-  function ExtMaskComponent() {
+  function EWCMask() {
     var _this;
 
     _this = _Ext_Mask.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_Mask) {
     return _this;
   }
 
-  return ExtMaskComponent;
-}(Ext_Mask); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-mask', ExtMaskComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCMask;
+}(Ext_Mask);
 
-window.customElements.define('ext-mask', HTMLParsedElement.withParsedCallback(ExtMaskComponent));
+export { EWCMask as default };
+window.customElements.define('ext-mask', HTMLParsedElement.withParsedCallback(EWCMask));

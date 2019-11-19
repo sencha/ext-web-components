@@ -1,21 +1,12 @@
-import Ext_form_Display from './Ext/form/Display'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_form_Display from '@sencha/ext-runtime-base/dist/./Ext/form/Display.js';
+import Ext_form_Display from './Ext/form/Display.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtDisplayfieldComponent extends Ext_form_Display {
+export default class EWCDisplayfield extends Ext_form_Display {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'displayfield'
+        super ([], []);
+        this.xtype = 'displayfield';
     }
 }
+window.customElements.define('ext-displayfield', HTMLParsedElement.withParsedCallback(EWCDisplayfield));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-displayfield', ExtDisplayfieldComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-displayfield', HTMLParsedElement.withParsedCallback(ExtDisplayfieldComponent))

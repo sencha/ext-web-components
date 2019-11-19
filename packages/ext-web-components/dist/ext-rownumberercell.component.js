@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_cell_RowNumberer from './Ext/grid/cell/RowNumberer';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtRownumberercellComponent =
+//import Ext_grid_cell_RowNumberer from '@sencha/ext-runtime-base/dist/./Ext/grid/cell/RowNumberer.js';
+import Ext_grid_cell_RowNumberer from './Ext/grid/cell/RowNumberer.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCRownumberercell =
 /*#__PURE__*/
 function (_Ext_grid_cell_RowNum) {
-  _inheritsLoose(ExtRownumberercellComponent, _Ext_grid_cell_RowNum);
+  _inheritsLoose(EWCRownumberercell, _Ext_grid_cell_RowNum);
 
-  function ExtRownumberercellComponent() {
+  function EWCRownumberercell() {
     var _this;
 
     _this = _Ext_grid_cell_RowNum.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_grid_cell_RowNum) {
     return _this;
   }
 
-  return ExtRownumberercellComponent;
-}(Ext_grid_cell_RowNumberer); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-rownumberercell', ExtRownumberercellComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCRownumberercell;
+}(Ext_grid_cell_RowNumberer);
 
-window.customElements.define('ext-rownumberercell', HTMLParsedElement.withParsedCallback(ExtRownumberercellComponent));
+export { EWCRownumberercell as default };
+window.customElements.define('ext-rownumberercell', HTMLParsedElement.withParsedCallback(EWCRownumberercell));

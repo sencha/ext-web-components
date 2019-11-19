@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_cell_Cell from '../../../Ext/grid/cell/Cell';
+import Ext_grid_cell_Cell from '../../../Ext/grid/cell/Cell.js';
 
 var Ext_grid_cell_Tree =
 /*#__PURE__*/
@@ -8,13 +8,13 @@ function (_Ext_grid_cell_Cell) {
   _inheritsLoose(Ext_grid_cell_Tree, _Ext_grid_cell_Cell);
 
   Ext_grid_cell_Tree.PROPERTIES = function PROPERTIES() {
-    return ['align', 'alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoCheckChildren', 'bind', 'bodyCls', 'bodyStyle', 'border', 'cellCls', 'checkable', 'checkableField', 'checkedField', 'checkOnTriTap', 'cls', 'column', 'constrainAlign', 'controller', 'defaultListenerScope', 'defaultToolWeights', 'disabled', 'enableTri', 'encodeHtml', 'flex', 'floated', 'focusCls', 'formatter', 'height', 'hidden', 'hideMode', 'iconCls', 'iconClsProperty', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'listeners', 'margin', 'name', 'nameable', 'plugins', 'publishes', 'rawValue', 'record', 'reference', 'relative', 'renderer', 'renderTo', 'ripple', 'scope', 'selectable', 'session', 'shadow', 'shareableName', 'shim', 'style', 'text', 'toFrontOnShow', 'toolDefaults', 'tools', 'touchAction', 'tpl', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'value', 'viewModel', 'width', 'x', 'y', 'zeroValue', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['align', 'alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoCheckChildren', 'bind', 'bodyCls', 'bodyStyle', 'border', 'cellCls', 'checkable', 'checkableField', 'checkedField', 'checkOnTriTap', 'cls', 'column', 'constrainAlign', 'controller', 'defaultListenerScope', 'defaultToolWeights', 'disabled', 'enableTri', 'encodeHtml', 'flex', 'floated', 'focusCls', 'formatter', 'height', 'hidden', 'hideMode', 'iconCls', 'iconClsProperty', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'listeners', 'margin', 'name', 'nameable', 'plugins', 'publishes', 'rawValue', 'record', 'reference', 'relative', 'renderer', 'renderTo', 'ripple', 'scope', 'selectable', 'session', 'shadow', 'shareableName', 'shim', 'style', 'text', 'toFrontOnShow', 'toolDefaults', 'tools', 'touchAction', 'tpl', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'value', 'viewModel', 'width', 'x', 'y', 'zeroValue'];
   };
 
   Ext_grid_cell_Tree.EVENTS = function EVENTS() {
     return [{
       name: 'beforecheckchange',
-      parameters: 'treecell,checked,current,record,e'
+      parameters: 'sender,checked,current,record,e'
     }, {
       name: 'beforedisabledchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -26,28 +26,28 @@ function (_Ext_grid_cell_Cell) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforetofront',
-      parameters: 'treecell'
+      parameters: 'sender'
     }, {
       name: 'beforewidthchange',
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'treecell,event'
+      parameters: 'sender,event'
     }, {
       name: 'checkchange',
-      parameters: 'treecell,checked,record,e'
+      parameters: 'sender,checked,record,e'
     }, {
       name: 'disabledchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'focus',
-      parameters: 'treecell,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'treecell,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'treecell,event'
+      parameters: 'sender,event'
     }, {
       name: 'heightchange',
       parameters: 'sender,value,oldValue'
@@ -56,13 +56,13 @@ function (_Ext_grid_cell_Cell) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'tofront',
-      parameters: 'treecell'
+      parameters: 'sender'
     }, {
       name: 'widthchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

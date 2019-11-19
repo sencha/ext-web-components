@@ -1,24 +1,19 @@
-import Ext_container_Container from '../../../Ext/container/Container';
+import Ext_container_Container from '../../../Ext/container/Container.js';
 
 export default class Ext_calendar_view_Multi extends Ext_container_Container {
-
-    static PROPERTIES() { return [
-'compact',
-'compactOptions',
-'defaultView',
-'layout',
-'store',
-'timezoneOffset',
-'value',
-'views',
-'platformConfig',
-'responsiveConfig',
-'fitToParent',
-'config'
-]};
-    static EVENTS() { return [
-{name:'ready',parameters:''}
-]};
+    static PROPERTIES() {return [
+        'compact',
+        'compactOptions',
+        'defaultView',
+        'layout',
+        'store',
+        'timezoneOffset',
+        'value',
+        'views',
+    ]};
+    static EVENTS() {return [
+        {name:'ready', parameters:'cmd,cmdAll'}
+    ]};
     static getProperties(properties) {
         properties = properties.concat(Ext_calendar_view_Multi.PROPERTIES());
         return Ext_container_Container.getProperties(properties);
