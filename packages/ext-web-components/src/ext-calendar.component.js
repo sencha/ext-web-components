@@ -1,21 +1,12 @@
-import Ext_calendar_panel_Panel from './Ext/calendar/panel/Panel'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_calendar_panel_Panel from '@sencha/ext-runtime-base/dist/./Ext/calendar/panel/Panel.js';
+import Ext_calendar_panel_Panel from './Ext/calendar/panel/Panel.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtCalendarComponent extends Ext_calendar_panel_Panel {
+export default class EWCCalendar extends Ext_calendar_panel_Panel {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'calendar'
+        super ([], []);
+        this.xtype = 'calendar';
     }
 }
+window.customElements.define('ext-calendar', HTMLParsedElement.withParsedCallback(EWCCalendar));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar', ExtCalendarComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-calendar', HTMLParsedElement.withParsedCallback(ExtCalendarComponent))

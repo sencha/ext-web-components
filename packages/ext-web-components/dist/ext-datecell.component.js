@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_cell_Date from './Ext/grid/cell/Date';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtDatecellComponent =
+//import Ext_grid_cell_Date from '@sencha/ext-runtime-base/dist/./Ext/grid/cell/Date.js';
+import Ext_grid_cell_Date from './Ext/grid/cell/Date.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCDatecell =
 /*#__PURE__*/
 function (_Ext_grid_cell_Date) {
-  _inheritsLoose(ExtDatecellComponent, _Ext_grid_cell_Date);
+  _inheritsLoose(EWCDatecell, _Ext_grid_cell_Date);
 
-  function ExtDatecellComponent() {
+  function EWCDatecell() {
     var _this;
 
     _this = _Ext_grid_cell_Date.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_grid_cell_Date) {
     return _this;
   }
 
-  return ExtDatecellComponent;
-}(Ext_grid_cell_Date); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-datecell', ExtDatecellComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCDatecell;
+}(Ext_grid_cell_Date);
 
-window.customElements.define('ext-datecell', HTMLParsedElement.withParsedCallback(ExtDatecellComponent));
+export { EWCDatecell as default };
+window.customElements.define('ext-datecell', HTMLParsedElement.withParsedCallback(EWCDatecell));

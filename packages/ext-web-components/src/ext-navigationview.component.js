@@ -1,21 +1,12 @@
-import Ext_NavigationView from './Ext/NavigationView'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_NavigationView from '@sencha/ext-runtime-base/dist/./Ext/NavigationView.js';
+import Ext_NavigationView from './Ext/NavigationView.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtNavigationviewComponent extends Ext_NavigationView {
+export default class EWCNavigationview extends Ext_NavigationView {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'navigationview'
+        super ([], []);
+        this.xtype = 'navigationview';
     }
 }
+window.customElements.define('ext-navigationview', HTMLParsedElement.withParsedCallback(EWCNavigationview));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-navigationview', ExtNavigationviewComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-navigationview', HTMLParsedElement.withParsedCallback(ExtNavigationviewComponent))

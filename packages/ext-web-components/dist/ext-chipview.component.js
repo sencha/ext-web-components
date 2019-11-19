@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_dataview_ChipView from './Ext/dataview/ChipView';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtChipviewComponent =
+//import Ext_dataview_ChipView from '@sencha/ext-runtime-base/dist/./Ext/dataview/ChipView.js';
+import Ext_dataview_ChipView from './Ext/dataview/ChipView.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCChipview =
 /*#__PURE__*/
 function (_Ext_dataview_ChipVie) {
-  _inheritsLoose(ExtChipviewComponent, _Ext_dataview_ChipVie);
+  _inheritsLoose(EWCChipview, _Ext_dataview_ChipVie);
 
-  function ExtChipviewComponent() {
+  function EWCChipview() {
     var _this;
 
     _this = _Ext_dataview_ChipVie.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_dataview_ChipVie) {
     return _this;
   }
 
-  return ExtChipviewComponent;
-}(Ext_dataview_ChipView); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-chipview', ExtChipviewComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCChipview;
+}(Ext_dataview_ChipView);
 
-window.customElements.define('ext-chipview', HTMLParsedElement.withParsedCallback(ExtChipviewComponent));
+export { EWCChipview as default };
+window.customElements.define('ext-chipview', HTMLParsedElement.withParsedCallback(EWCChipview));

@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_viewport_Default from './Ext/viewport/Default';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtViewportComponent =
+//import Ext_viewport_Default from '@sencha/ext-runtime-base/dist/./Ext/viewport/Default.js';
+import Ext_viewport_Default from './Ext/viewport/Default.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCViewport =
 /*#__PURE__*/
 function (_Ext_viewport_Default) {
-  _inheritsLoose(ExtViewportComponent, _Ext_viewport_Default);
+  _inheritsLoose(EWCViewport, _Ext_viewport_Default);
 
-  function ExtViewportComponent() {
+  function EWCViewport() {
     var _this;
 
     _this = _Ext_viewport_Default.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_viewport_Default) {
     return _this;
   }
 
-  return ExtViewportComponent;
-}(Ext_viewport_Default); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-viewport', ExtViewportComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCViewport;
+}(Ext_viewport_Default);
 
-window.customElements.define('ext-viewport', HTMLParsedElement.withParsedCallback(ExtViewportComponent));
+export { EWCViewport as default };
+window.customElements.define('ext-viewport', HTMLParsedElement.withParsedCallback(EWCViewport));

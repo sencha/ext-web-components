@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_LockedGridRegion from './Ext/grid/LockedGridRegion';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtLockedgridregionComponent =
+//import Ext_grid_LockedGridRegion from '@sencha/ext-runtime-base/dist/./Ext/grid/LockedGridRegion.js';
+import Ext_grid_LockedGridRegion from './Ext/grid/LockedGridRegion.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCLockedgridregion =
 /*#__PURE__*/
 function (_Ext_grid_LockedGridR) {
-  _inheritsLoose(ExtLockedgridregionComponent, _Ext_grid_LockedGridR);
+  _inheritsLoose(EWCLockedgridregion, _Ext_grid_LockedGridR);
 
-  function ExtLockedgridregionComponent() {
+  function EWCLockedgridregion() {
     var _this;
 
     _this = _Ext_grid_LockedGridR.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_grid_LockedGridR) {
     return _this;
   }
 
-  return ExtLockedgridregionComponent;
-}(Ext_grid_LockedGridRegion); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-lockedgridregion', ExtLockedgridregionComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCLockedgridregion;
+}(Ext_grid_LockedGridRegion);
 
-window.customElements.define('ext-lockedgridregion', HTMLParsedElement.withParsedCallback(ExtLockedgridregionComponent));
+export { EWCLockedgridregion as default };
+window.customElements.define('ext-lockedgridregion', HTMLParsedElement.withParsedCallback(EWCLockedgridregion));

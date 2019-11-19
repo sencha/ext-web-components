@@ -1,21 +1,12 @@
-import Ext_grid_column_Template from './Ext/grid/column/Template'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_grid_column_Template from '@sencha/ext-runtime-base/dist/./Ext/grid/column/Template.js';
+import Ext_grid_column_Template from './Ext/grid/column/Template.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtGridcolumnComponent extends Ext_grid_column_Template {
+export default class EWCGridcolumn extends Ext_grid_column_Template {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'gridcolumn'
+        super ([], []);
+        this.xtype = 'gridcolumn';
     }
 }
+window.customElements.define('ext-gridcolumn', HTMLParsedElement.withParsedCallback(EWCGridcolumn));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-gridcolumn', ExtGridcolumnComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-gridcolumn', HTMLParsedElement.withParsedCallback(ExtGridcolumnComponent))

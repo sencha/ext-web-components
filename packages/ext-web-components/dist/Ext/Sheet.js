@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Panel from '../Ext/Panel';
+import Ext_Panel from '../Ext/Panel.js';
 
 var Ext_Sheet =
 /*#__PURE__*/
@@ -8,19 +8,19 @@ function (_Ext_Panel) {
   _inheritsLoose(Ext_Sheet, _Ext_Panel);
 
   Ext_Sheet.PROPERTIES = function PROPERTIES() {
-    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'anchor', 'anchorPosition', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'bbar', 'bind', 'bodyBorder', 'bodyCls', 'bodyPadding', 'bodyStyle', 'border', 'bottom', 'buttonAlign', 'buttons', 'buttonToolbar', 'cardSwitchAnimation', 'centered', 'closable', 'closeAction', 'closeToolText', 'cls', 'collapsed', 'collapsible', 'constrainAlign', 'contentEl', 'control', 'controller', 'cover', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultToolWeights', 'defaultType', 'disabled', 'displayed', 'docked', 'draggable', 'enter', 'exit', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'header', 'headerPosition', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'icon', 'iconAlign', 'iconCls', 'id', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'lbar', 'left', 'listeners', 'manageBorders', 'margin', 'masked', 'maxHeight', 'maxWidth', 'minButtonWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'publishes', 'rbar', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'resizable', 'reveal', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'side', 'standardButtons', 'stateful', 'statefulDefaults', 'stateId', 'stretchX', 'stretchY', 'style', 'tabIndex', 'tbar', 'title', 'titleAlign', 'titleCollapse', 'toFrontOnShow', 'toolDefaults', 'tools', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'anchor', 'anchorPosition', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'bbar', 'bind', 'bodyBorder', 'bodyCls', 'bodyPadding', 'bodyStyle', 'border', 'bottom', 'buttonAlign', 'buttons', 'buttonToolbar', 'cardSwitchAnimation', 'centered', 'closable', 'closeAction', 'closeToolText', 'cls', 'collapsed', 'collapsible', 'constrainAlign', 'contentEl', 'control', 'controller', 'cover', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultToolWeights', 'defaultType', 'disabled', 'displayed', 'docked', 'draggable', 'enter', 'exit', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'header', 'headerPosition', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'icon', 'iconAlign', 'iconCls', 'id', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'lbar', 'left', 'listeners', 'manageBorders', 'margin', 'masked', 'maxHeight', 'maxWidth', 'minButtonWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'publishes', 'rbar', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'resizable', 'reveal', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'side', 'standardButtons', 'stateful', 'statefulDefaults', 'stateId', 'stretchX', 'stretchY', 'style', 'tabIndex', 'tbar', 'title', 'titleAlign', 'titleCollapse', 'toFrontOnShow', 'toolDefaults', 'tools', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_Sheet.EVENTS = function EVENTS() {
     return [{
       name: 'activate',
-      parameters: 'newActiveItem,sheet,oldActiveItem'
+      parameters: 'newActiveItem,sender,oldActiveItem'
     }, {
       name: 'activeItemchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'add',
-      parameters: 'sheet,item,index'
+      parameters: 'sender,item,index'
     }, {
       name: 'added',
       parameters: 'sender,container,index'
@@ -35,7 +35,7 @@ function (_Ext_Panel) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforecollapse',
-      parameters: 'sheet'
+      parameters: 'sender'
     }, {
       name: 'beforedisabledchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -44,7 +44,7 @@ function (_Ext_Panel) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforeexpand',
-      parameters: 'sheet'
+      parameters: 'sender'
     }, {
       name: 'beforeheightchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -74,7 +74,7 @@ function (_Ext_Panel) {
       parameters: ''
     }, {
       name: 'beforeresizedragstart',
-      parameters: 'sheet,context'
+      parameters: 'sender,context'
     }, {
       name: 'beforerightchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -86,7 +86,7 @@ function (_Ext_Panel) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'sheet'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -95,7 +95,7 @@ function (_Ext_Panel) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'sheet,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -104,10 +104,10 @@ function (_Ext_Panel) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'collapse',
-      parameters: 'sheet'
+      parameters: 'sender'
     }, {
       name: 'deactivate',
-      parameters: 'oldActiveItem,sheet,newActiveItem'
+      parameters: 'oldActiveItem,sender,newActiveItem'
     }, {
       name: 'destroy',
       parameters: ''
@@ -119,28 +119,28 @@ function (_Ext_Panel) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'drawerhide',
-      parameters: 'sheet'
+      parameters: 'sender'
     }, {
       name: 'drawershow',
-      parameters: 'sheet'
+      parameters: 'sender'
     }, {
       name: 'erased',
       parameters: 'sender'
     }, {
       name: 'expand',
-      parameters: 'sheet'
+      parameters: 'sender'
     }, {
       name: 'floatingchange',
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'sheet,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'sheet,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'sheet,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -173,7 +173,7 @@ function (_Ext_Panel) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'move',
-      parameters: 'sheet,item,toIndex,fromIndex'
+      parameters: 'sender,item,toIndex,fromIndex'
     }, {
       name: 'moved',
       parameters: 'sender,container,toIndex,fromIndex'
@@ -188,28 +188,28 @@ function (_Ext_Panel) {
       parameters: 'sender,positioned'
     }, {
       name: 'remove',
-      parameters: 'sheet,item,index'
+      parameters: 'sender,item,index'
     }, {
       name: 'removed',
       parameters: 'sender,container,index'
     }, {
       name: 'renderedchange',
-      parameters: 'sheet,item,rendered'
+      parameters: 'sender,item,rendered'
     }, {
       name: 'resize',
       parameters: 'element,info'
     }, {
       name: 'resizedrag',
-      parameters: 'sheet,context'
+      parameters: 'sender,context'
     }, {
       name: 'resizedragcancel',
-      parameters: 'sheet,context'
+      parameters: 'sender,context'
     }, {
       name: 'resizedragend',
-      parameters: 'sheet,context'
+      parameters: 'sender,context'
     }, {
       name: 'resizedragstart',
-      parameters: 'sheet,context'
+      parameters: 'sender,context'
     }, {
       name: 'rightchange',
       parameters: 'sender,value,oldValue'
@@ -221,7 +221,7 @@ function (_Ext_Panel) {
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'sheet'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -233,7 +233,7 @@ function (_Ext_Panel) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

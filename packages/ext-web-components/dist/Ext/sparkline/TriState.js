@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_sparkline_BarBase from '../../Ext/sparkline/BarBase';
+import Ext_sparkline_BarBase from '../../Ext/sparkline/BarBase.js';
 
 var Ext_sparkline_TriState =
 /*#__PURE__*/
@@ -8,7 +8,7 @@ function (_Ext_sparkline_BarBas) {
   _inheritsLoose(Ext_sparkline_TriState, _Ext_sparkline_BarBas);
 
   Ext_sparkline_TriState.PROPERTIES = function PROPERTIES() {
-    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'barSpacing', 'barWidth', 'bind', 'border', 'bottom', 'centered', 'cls', 'colorMap', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'disabled', 'disableTooltips', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'highlightColor', 'highlightLighten', 'html', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'lineColor', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'negBarColor', 'padding', 'plugins', 'posBarColor', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'tipTpl', 'toFrontOnShow', 'tooltip', 'tooltipPrefix', 'tooltipSkipNull', 'tooltipSuffix', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'values', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zeroBarColor', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'barSpacing', 'barWidth', 'bind', 'border', 'bottom', 'centered', 'cls', 'colorMap', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'disabled', 'disableTooltips', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'highlightColor', 'highlightLighten', 'html', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'lineColor', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'negBarColor', 'padding', 'plugins', 'posBarColor', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'tipTpl', 'toFrontOnShow', 'tooltip', 'tooltipPrefix', 'tooltipSkipNull', 'tooltipSuffix', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'values', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zeroBarColor', 'zIndex'];
   };
 
   Ext_sparkline_TriState.EVENTS = function EVENTS() {
@@ -65,7 +65,7 @@ function (_Ext_sparkline_BarBas) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'sparklinetristate'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -74,7 +74,7 @@ function (_Ext_sparkline_BarBas) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'sparklinetristate,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -98,13 +98,13 @@ function (_Ext_sparkline_BarBas) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'sparklinetristate,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'sparklinetristate,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'sparklinetristate,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -164,7 +164,7 @@ function (_Ext_sparkline_BarBas) {
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'sparklinetristate'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -176,7 +176,7 @@ function (_Ext_sparkline_BarBas) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

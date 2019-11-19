@@ -1,21 +1,12 @@
-import Ext_chart_SpaceFillingChart from './Ext/chart/SpaceFillingChart'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_chart_SpaceFillingChart from '@sencha/ext-runtime-base/dist/./Ext/chart/SpaceFillingChart.js';
+import Ext_chart_SpaceFillingChart from './Ext/chart/SpaceFillingChart.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtSpacefillingComponent extends Ext_chart_SpaceFillingChart {
+export default class EWCSpacefilling extends Ext_chart_SpaceFillingChart {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'spacefilling'
+        super ([], []);
+        this.xtype = 'spacefilling';
     }
 }
+window.customElements.define('ext-spacefilling', HTMLParsedElement.withParsedCallback(EWCSpacefilling));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-spacefilling', ExtSpacefillingComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-spacefilling', HTMLParsedElement.withParsedCallback(ExtSpacefillingComponent))

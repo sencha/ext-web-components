@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_cell_Base from '../../../Ext/grid/cell/Base';
+import Ext_grid_cell_Base from '../../../Ext/grid/cell/Base.js';
 
 var Ext_grid_cell_Text =
 /*#__PURE__*/
@@ -8,7 +8,7 @@ function (_Ext_grid_cell_Base) {
   _inheritsLoose(Ext_grid_cell_Text, _Ext_grid_cell_Base);
 
   Ext_grid_cell_Text.PROPERTIES = function PROPERTIES() {
-    return ['align', 'alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'bind', 'bodyCls', 'bodyStyle', 'border', 'cellCls', 'cls', 'column', 'constrainAlign', 'controller', 'defaultListenerScope', 'defaultToolWeights', 'disabled', 'encodeHtml', 'flex', 'floated', 'focusCls', 'height', 'hidden', 'hideMode', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'listeners', 'margin', 'name', 'nameable', 'plugins', 'publishes', 'rawValue', 'record', 'reference', 'relative', 'renderTo', 'ripple', 'selectable', 'session', 'shadow', 'shareableName', 'shim', 'style', 'toFrontOnShow', 'toolDefaults', 'tools', 'touchAction', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'value', 'viewModel', 'width', 'x', 'y', 'zeroValue', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['align', 'alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'bind', 'bodyCls', 'bodyStyle', 'border', 'cellCls', 'cls', 'column', 'constrainAlign', 'controller', 'defaultListenerScope', 'defaultToolWeights', 'disabled', 'encodeHtml', 'flex', 'floated', 'focusCls', 'height', 'hidden', 'hideMode', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'listeners', 'margin', 'name', 'nameable', 'plugins', 'publishes', 'rawValue', 'record', 'reference', 'relative', 'renderTo', 'ripple', 'selectable', 'session', 'shadow', 'shareableName', 'shim', 'style', 'toFrontOnShow', 'toolDefaults', 'tools', 'touchAction', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'value', 'viewModel', 'width', 'x', 'y', 'zeroValue'];
   };
 
   Ext_grid_cell_Text.EVENTS = function EVENTS() {
@@ -23,25 +23,25 @@ function (_Ext_grid_cell_Base) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforetofront',
-      parameters: 'textcell'
+      parameters: 'sender'
     }, {
       name: 'beforewidthchange',
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'textcell,event'
+      parameters: 'sender,event'
     }, {
       name: 'disabledchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'focus',
-      parameters: 'textcell,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'textcell,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'textcell,event'
+      parameters: 'sender,event'
     }, {
       name: 'heightchange',
       parameters: 'sender,value,oldValue'
@@ -50,13 +50,13 @@ function (_Ext_grid_cell_Base) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'tofront',
-      parameters: 'textcell'
+      parameters: 'sender'
     }, {
       name: 'widthchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

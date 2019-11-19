@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_trigger_Trigger from './Ext/field/trigger/Trigger';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtTriggerComponent =
+//import Ext_field_trigger_Trigger from '@sencha/ext-runtime-base/dist/./Ext/field/trigger/Trigger.js';
+import Ext_field_trigger_Trigger from './Ext/field/trigger/Trigger.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCTrigger =
 /*#__PURE__*/
 function (_Ext_field_trigger_Tr) {
-  _inheritsLoose(ExtTriggerComponent, _Ext_field_trigger_Tr);
+  _inheritsLoose(EWCTrigger, _Ext_field_trigger_Tr);
 
-  function ExtTriggerComponent() {
+  function EWCTrigger() {
     var _this;
 
     _this = _Ext_field_trigger_Tr.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_field_trigger_Tr) {
     return _this;
   }
 
-  return ExtTriggerComponent;
-}(Ext_field_trigger_Trigger); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-trigger', ExtTriggerComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCTrigger;
+}(Ext_field_trigger_Trigger);
 
-window.customElements.define('ext-trigger', HTMLParsedElement.withParsedCallback(ExtTriggerComponent));
+export { EWCTrigger as default };
+window.customElements.define('ext-trigger', HTMLParsedElement.withParsedCallback(EWCTrigger));

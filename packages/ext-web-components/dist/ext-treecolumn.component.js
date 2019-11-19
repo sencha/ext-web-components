@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_column_Tree from './Ext/grid/column/Tree';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtTreecolumnComponent =
+//import Ext_grid_column_Tree from '@sencha/ext-runtime-base/dist/./Ext/grid/column/Tree.js';
+import Ext_grid_column_Tree from './Ext/grid/column/Tree.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCTreecolumn =
 /*#__PURE__*/
 function (_Ext_grid_column_Tree) {
-  _inheritsLoose(ExtTreecolumnComponent, _Ext_grid_column_Tree);
+  _inheritsLoose(EWCTreecolumn, _Ext_grid_column_Tree);
 
-  function ExtTreecolumnComponent() {
+  function EWCTreecolumn() {
     var _this;
 
     _this = _Ext_grid_column_Tree.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_grid_column_Tree) {
     return _this;
   }
 
-  return ExtTreecolumnComponent;
-}(Ext_grid_column_Tree); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-treecolumn', ExtTreecolumnComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCTreecolumn;
+}(Ext_grid_column_Tree);
 
-window.customElements.define('ext-treecolumn', HTMLParsedElement.withParsedCallback(ExtTreecolumnComponent));
+export { EWCTreecolumn as default };
+window.customElements.define('ext-treecolumn', HTMLParsedElement.withParsedCallback(EWCTreecolumn));

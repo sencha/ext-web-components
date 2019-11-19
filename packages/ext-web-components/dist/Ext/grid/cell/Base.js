@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Widget from '../../../Ext/Widget';
+import Ext_Widget from '../../../Ext/Widget.js';
 
 var Ext_grid_cell_Base =
 /*#__PURE__*/
@@ -8,7 +8,7 @@ function (_Ext_Widget) {
   _inheritsLoose(Ext_grid_cell_Base, _Ext_Widget);
 
   Ext_grid_cell_Base.PROPERTIES = function PROPERTIES() {
-    return ['align', 'alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'bind', 'bodyCls', 'bodyStyle', 'border', 'cellCls', 'cls', 'column', 'constrainAlign', 'controller', 'defaultListenerScope', 'defaultToolWeights', 'disabled', 'flex', 'floated', 'focusCls', 'height', 'hidden', 'hideMode', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'listeners', 'margin', 'name', 'nameable', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'ripple', 'selectable', 'session', 'shadow', 'shareableName', 'shim', 'style', 'toFrontOnShow', 'toolDefaults', 'tools', 'touchAction', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'value', 'viewModel', 'width', 'x', 'y', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['align', 'alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'bind', 'bodyCls', 'bodyStyle', 'border', 'cellCls', 'cls', 'column', 'constrainAlign', 'controller', 'defaultListenerScope', 'defaultToolWeights', 'disabled', 'flex', 'floated', 'focusCls', 'height', 'hidden', 'hideMode', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'listeners', 'margin', 'name', 'nameable', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'ripple', 'selectable', 'session', 'shadow', 'shareableName', 'shim', 'style', 'toFrontOnShow', 'toolDefaults', 'tools', 'touchAction', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'value', 'viewModel', 'width', 'x', 'y'];
   };
 
   Ext_grid_cell_Base.EVENTS = function EVENTS() {
@@ -23,25 +23,25 @@ function (_Ext_Widget) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforetofront',
-      parameters: 'gridcellbase'
+      parameters: 'sender'
     }, {
       name: 'beforewidthchange',
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'gridcellbase,event'
+      parameters: 'sender,event'
     }, {
       name: 'disabledchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'focus',
-      parameters: 'gridcellbase,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'gridcellbase,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'gridcellbase,event'
+      parameters: 'sender,event'
     }, {
       name: 'heightchange',
       parameters: 'sender,value,oldValue'
@@ -50,13 +50,13 @@ function (_Ext_Widget) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'tofront',
-      parameters: 'gridcellbase'
+      parameters: 'sender'
     }, {
       name: 'widthchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

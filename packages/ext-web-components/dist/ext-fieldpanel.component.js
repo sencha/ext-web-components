@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_Panel from './Ext/field/Panel';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtFieldpanelComponent =
+//import Ext_field_Panel from '@sencha/ext-runtime-base/dist/./Ext/field/Panel.js';
+import Ext_field_Panel from './Ext/field/Panel.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCFieldpanel =
 /*#__PURE__*/
 function (_Ext_field_Panel) {
-  _inheritsLoose(ExtFieldpanelComponent, _Ext_field_Panel);
+  _inheritsLoose(EWCFieldpanel, _Ext_field_Panel);
 
-  function ExtFieldpanelComponent() {
+  function EWCFieldpanel() {
     var _this;
 
     _this = _Ext_field_Panel.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_field_Panel) {
     return _this;
   }
 
-  return ExtFieldpanelComponent;
-}(Ext_field_Panel); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-fieldpanel', ExtFieldpanelComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCFieldpanel;
+}(Ext_field_Panel);
 
-window.customElements.define('ext-fieldpanel', HTMLParsedElement.withParsedCallback(ExtFieldpanelComponent));
+export { EWCFieldpanel as default };
+window.customElements.define('ext-fieldpanel', HTMLParsedElement.withParsedCallback(EWCFieldpanel));

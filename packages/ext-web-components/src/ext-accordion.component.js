@@ -1,21 +1,12 @@
-import Ext_panel_Accordion from './Ext/panel/Accordion'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_panel_Accordion from '@sencha/ext-runtime-base/dist/./Ext/panel/Accordion.js';
+import Ext_panel_Accordion from './Ext/panel/Accordion.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtAccordionComponent extends Ext_panel_Accordion {
+export default class EWCAccordion extends Ext_panel_Accordion {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'accordion'
+        super ([], []);
+        this.xtype = 'accordion';
     }
 }
+window.customElements.define('ext-accordion', HTMLParsedElement.withParsedCallback(EWCAccordion));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-accordion', ExtAccordionComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-accordion', HTMLParsedElement.withParsedCallback(ExtAccordionComponent))

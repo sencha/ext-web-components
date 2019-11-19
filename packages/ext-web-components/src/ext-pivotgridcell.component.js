@@ -1,21 +1,12 @@
-import Ext_pivot_cell_Cell from './Ext/pivot/cell/Cell'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_pivot_cell_Cell from '@sencha/ext-runtime-base/dist/./Ext/pivot/cell/Cell.js';
+import Ext_pivot_cell_Cell from './Ext/pivot/cell/Cell.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtPivotgridcellComponent extends Ext_pivot_cell_Cell {
+export default class EWCPivotgridcell extends Ext_pivot_cell_Cell {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'pivotgridcell'
+        super ([], []);
+        this.xtype = 'pivotgridcell';
     }
 }
+window.customElements.define('ext-pivotgridcell', HTMLParsedElement.withParsedCallback(EWCPivotgridcell));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-pivotgridcell', ExtPivotgridcellComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-pivotgridcell', HTMLParsedElement.withParsedCallback(ExtPivotgridcellComponent))

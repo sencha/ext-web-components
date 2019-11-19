@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_pivot_d3_HeatMap from './Ext/pivot/d3/HeatMap';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtPivotheatmapComponent =
+//import Ext_pivot_d3_HeatMap from '@sencha/ext-runtime-base/dist/./Ext/pivot/d3/HeatMap.js';
+import Ext_pivot_d3_HeatMap from './Ext/pivot/d3/HeatMap.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCPivotheatmap =
 /*#__PURE__*/
 function (_Ext_pivot_d3_HeatMap) {
-  _inheritsLoose(ExtPivotheatmapComponent, _Ext_pivot_d3_HeatMap);
+  _inheritsLoose(EWCPivotheatmap, _Ext_pivot_d3_HeatMap);
 
-  function ExtPivotheatmapComponent() {
+  function EWCPivotheatmap() {
     var _this;
 
     _this = _Ext_pivot_d3_HeatMap.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_pivot_d3_HeatMap) {
     return _this;
   }
 
-  return ExtPivotheatmapComponent;
-}(Ext_pivot_d3_HeatMap); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-pivotheatmap', ExtPivotheatmapComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCPivotheatmap;
+}(Ext_pivot_d3_HeatMap);
 
-window.customElements.define('ext-pivotheatmap', HTMLParsedElement.withParsedCallback(ExtPivotheatmapComponent));
+export { EWCPivotheatmap as default };
+window.customElements.define('ext-pivotheatmap', HTMLParsedElement.withParsedCallback(EWCPivotheatmap));

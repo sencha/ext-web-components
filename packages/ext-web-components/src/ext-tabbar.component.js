@@ -1,21 +1,12 @@
-import Ext_TabBar from './Ext/TabBar'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_TabBar from '@sencha/ext-runtime-base/dist/./Ext/TabBar.js';
+import Ext_TabBar from './Ext/TabBar.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtTabbarComponent extends Ext_TabBar {
+export default class EWCTabbar extends Ext_TabBar {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'tabbar'
+        super ([], []);
+        this.xtype = 'tabbar';
     }
 }
+window.customElements.define('ext-tabbar', HTMLParsedElement.withParsedCallback(EWCTabbar));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-tabbar', ExtTabbarComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-tabbar', HTMLParsedElement.withParsedCallback(ExtTabbarComponent))

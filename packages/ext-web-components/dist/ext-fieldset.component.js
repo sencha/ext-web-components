@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_form_FieldSet from './Ext/form/FieldSet';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtFieldsetComponent =
+//import Ext_form_FieldSet from '@sencha/ext-runtime-base/dist/./Ext/form/FieldSet.js';
+import Ext_form_FieldSet from './Ext/form/FieldSet.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCFieldset =
 /*#__PURE__*/
 function (_Ext_form_FieldSet) {
-  _inheritsLoose(ExtFieldsetComponent, _Ext_form_FieldSet);
+  _inheritsLoose(EWCFieldset, _Ext_form_FieldSet);
 
-  function ExtFieldsetComponent() {
+  function EWCFieldset() {
     var _this;
 
     _this = _Ext_form_FieldSet.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_form_FieldSet) {
     return _this;
   }
 
-  return ExtFieldsetComponent;
-}(Ext_form_FieldSet); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-fieldset', ExtFieldsetComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCFieldset;
+}(Ext_form_FieldSet);
 
-window.customElements.define('ext-fieldset', HTMLParsedElement.withParsedCallback(ExtFieldsetComponent));
+export { EWCFieldset as default };
+window.customElements.define('ext-fieldset', HTMLParsedElement.withParsedCallback(EWCFieldset));

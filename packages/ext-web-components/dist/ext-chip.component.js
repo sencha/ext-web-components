@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Chip from './Ext/Chip';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtChipComponent =
+//import Ext_Chip from '@sencha/ext-runtime-base/dist/./Ext/Chip.js';
+import Ext_Chip from './Ext/Chip.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCChip =
 /*#__PURE__*/
 function (_Ext_Chip) {
-  _inheritsLoose(ExtChipComponent, _Ext_Chip);
+  _inheritsLoose(EWCChip, _Ext_Chip);
 
-  function ExtChipComponent() {
+  function EWCChip() {
     var _this;
 
     _this = _Ext_Chip.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_Chip) {
     return _this;
   }
 
-  return ExtChipComponent;
-}(Ext_Chip); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-chip', ExtChipComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCChip;
+}(Ext_Chip);
 
-window.customElements.define('ext-chip', HTMLParsedElement.withParsedCallback(ExtChipComponent));
+export { EWCChip as default };
+window.customElements.define('ext-chip', HTMLParsedElement.withParsedCallback(EWCChip));

@@ -1,21 +1,12 @@
-import Ext_grid_column_RowNumberer from './Ext/grid/column/RowNumberer'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_grid_column_RowNumberer from '@sencha/ext-runtime-base/dist/./Ext/grid/column/RowNumberer.js';
+import Ext_grid_column_RowNumberer from './Ext/grid/column/RowNumberer.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtRownumbererComponent extends Ext_grid_column_RowNumberer {
+export default class EWCRownumberer extends Ext_grid_column_RowNumberer {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'rownumberer'
+        super ([], []);
+        this.xtype = 'rownumberer';
     }
 }
+window.customElements.define('ext-rownumberer', HTMLParsedElement.withParsedCallback(EWCRownumberer));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-rownumberer', ExtRownumbererComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-rownumberer', HTMLParsedElement.withParsedCallback(ExtRownumbererComponent))

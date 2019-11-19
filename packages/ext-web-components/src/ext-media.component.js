@@ -1,21 +1,12 @@
-import Ext_Media from './Ext/Media'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_Media from '@sencha/ext-runtime-base/dist/./Ext/Media.js';
+import Ext_Media from './Ext/Media.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtMediaComponent extends Ext_Media {
+export default class EWCMedia extends Ext_Media {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'media'
+        super ([], []);
+        this.xtype = 'media';
     }
 }
+window.customElements.define('ext-media', HTMLParsedElement.withParsedCallback(EWCMedia));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-media', ExtMediaComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-media', HTMLParsedElement.withParsedCallback(ExtMediaComponent))

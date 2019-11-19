@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Button from '../Ext/Button';
+import Ext_Button from '../Ext/Button.js';
 
 var Ext_SplitButton =
 /*#__PURE__*/
@@ -8,7 +8,7 @@ function (_Ext_Button) {
   _inheritsLoose(Ext_SplitButton, _Ext_Button);
 
   Ext_SplitButton.PROPERTIES = function PROPERTIES() {
-    return ['alignSelf', 'allowDepress', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'arrow', 'arrowAlign', 'arrowHandler', 'autoEvent', 'axisLock', 'badgeText', 'bind', 'border', 'bottom', 'buttonType', 'centered', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'destroyMenu', 'disabled', 'displayed', 'docked', 'draggable', 'enableToggle', 'flex', 'floated', 'focusCls', 'fullscreen', 'handler', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'icon', 'iconAlign', 'iconCls', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'menu', 'menuAlign', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'pressed', 'pressedDelay', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scope', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'stretchMenu', 'style', 'tabIndex', 'text', 'textAlign', 'toFrontOnShow', 'toggleHandler', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['alignSelf', 'allowDepress', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'arrow', 'arrowAlign', 'arrowHandler', 'autoEvent', 'axisLock', 'badgeText', 'bind', 'border', 'bottom', 'buttonType', 'centered', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'destroyMenu', 'disabled', 'displayed', 'docked', 'draggable', 'enableToggle', 'flex', 'floated', 'focusCls', 'fullscreen', 'handler', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'icon', 'iconAlign', 'iconCls', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'menu', 'menuAlign', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'pressed', 'pressedDelay', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scope', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'stretchMenu', 'style', 'tabIndex', 'text', 'textAlign', 'toFrontOnShow', 'toggleHandler', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_SplitButton.EVENTS = function EVENTS() {
@@ -17,7 +17,7 @@ function (_Ext_Button) {
       parameters: 'sender,container,index'
     }, {
       name: 'arrowclick',
-      parameters: 'splitbutton,e'
+      parameters: 'sender,e'
     }, {
       name: 'beforebottomchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -71,7 +71,7 @@ function (_Ext_Button) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'splitbutton'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -80,7 +80,7 @@ function (_Ext_Button) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'splitbutton,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -104,13 +104,13 @@ function (_Ext_Button) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'splitbutton,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'splitbutton,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'splitbutton,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -158,7 +158,7 @@ function (_Ext_Button) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'release',
-      parameters: 'splitbutton,e'
+      parameters: 'sender,e'
     }, {
       name: 'removed',
       parameters: 'sender,container,index'
@@ -176,10 +176,10 @@ function (_Ext_Button) {
       parameters: 'sender'
     }, {
       name: 'tap',
-      parameters: 'splitbutton,e'
+      parameters: 'sender,e'
     }, {
       name: 'tofront',
-      parameters: 'splitbutton'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -191,7 +191,7 @@ function (_Ext_Button) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

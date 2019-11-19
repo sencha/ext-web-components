@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Dialog from '../Ext/Dialog';
+import Ext_Dialog from '../Ext/Dialog.js';
 
 var Ext_MessageBox =
 /*#__PURE__*/
@@ -8,19 +8,19 @@ function (_Ext_Dialog) {
   _inheritsLoose(Ext_MessageBox, _Ext_Dialog);
 
   Ext_MessageBox.PROPERTIES = function PROPERTIES() {
-    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'anchor', 'anchorPosition', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'bbar', 'bind', 'bodyBorder', 'bodyCls', 'bodyPadding', 'bodyStyle', 'border', 'bottom', 'buttonAlign', 'buttons', 'buttonToolbar', 'cardSwitchAnimation', 'centered', 'closable', 'closeAction', 'closeToolText', 'cls', 'collapsed', 'collapsible', 'constrainAlign', 'constrainDrag', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultTextHeight', 'defaultToolWeights', 'defaultType', 'disabled', 'dismissAction', 'dismissHandler', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'header', 'headerPosition', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'icon', 'iconAlign', 'iconCls', 'id', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'lbar', 'left', 'listeners', 'manageBorders', 'margin', 'masked', 'maskTapHandler', 'maxHeight', 'maximizable', 'maximizeAnimation', 'maximized', 'maximizeProxy', 'maximizeTool', 'maxWidth', 'message', 'minButtonWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'msg', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'prompt', 'publishes', 'rbar', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'resizable', 'restorable', 'restoreAnimation', 'restoreTool', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'standardButtons', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'tbar', 'title', 'titleAlign', 'titleCollapse', 'toFrontOnShow', 'toolDefaults', 'tools', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'anchor', 'anchorPosition', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'bbar', 'bind', 'bodyBorder', 'bodyCls', 'bodyPadding', 'bodyStyle', 'border', 'bottom', 'buttonAlign', 'buttons', 'buttonToolbar', 'cardSwitchAnimation', 'centered', 'closable', 'closeAction', 'closeToolText', 'cls', 'collapsed', 'collapsible', 'constrainAlign', 'constrainDrag', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultTextHeight', 'defaultToolWeights', 'defaultType', 'disabled', 'dismissAction', 'dismissHandler', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'header', 'headerPosition', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'icon', 'iconAlign', 'iconCls', 'id', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'lbar', 'left', 'listeners', 'manageBorders', 'margin', 'masked', 'maskTapHandler', 'maxHeight', 'maximizable', 'maximizeAnimation', 'maximized', 'maximizeProxy', 'maximizeTool', 'maxWidth', 'message', 'minButtonWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'msg', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'prompt', 'publishes', 'rbar', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'resizable', 'restorable', 'restoreAnimation', 'restoreTool', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'standardButtons', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'tbar', 'title', 'titleAlign', 'titleCollapse', 'toFrontOnShow', 'toolDefaults', 'tools', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_MessageBox.EVENTS = function EVENTS() {
     return [{
       name: 'activate',
-      parameters: 'newActiveItem,messagebox,oldActiveItem'
+      parameters: 'newActiveItem,sender,oldActiveItem'
     }, {
       name: 'activeItemchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'add',
-      parameters: 'messagebox,item,index'
+      parameters: 'sender,item,index'
     }, {
       name: 'added',
       parameters: 'sender,container,index'
@@ -35,7 +35,7 @@ function (_Ext_Dialog) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforecollapse',
-      parameters: 'messagebox'
+      parameters: 'sender'
     }, {
       name: 'beforedisabledchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -44,7 +44,7 @@ function (_Ext_Dialog) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforeexpand',
-      parameters: 'messagebox'
+      parameters: 'sender'
     }, {
       name: 'beforeheightchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -77,7 +77,7 @@ function (_Ext_Dialog) {
       parameters: ''
     }, {
       name: 'beforeresizedragstart',
-      parameters: 'messagebox,context'
+      parameters: 'sender,context'
     }, {
       name: 'beforerestore',
       parameters: 'dialog'
@@ -92,7 +92,7 @@ function (_Ext_Dialog) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'messagebox'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -101,7 +101,7 @@ function (_Ext_Dialog) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'messagebox,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -110,10 +110,10 @@ function (_Ext_Dialog) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'collapse',
-      parameters: 'messagebox'
+      parameters: 'sender'
     }, {
       name: 'deactivate',
-      parameters: 'oldActiveItem,messagebox,newActiveItem'
+      parameters: 'oldActiveItem,sender,newActiveItem'
     }, {
       name: 'destroy',
       parameters: ''
@@ -125,28 +125,28 @@ function (_Ext_Dialog) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'drawerhide',
-      parameters: 'messagebox'
+      parameters: 'sender'
     }, {
       name: 'drawershow',
-      parameters: 'messagebox'
+      parameters: 'sender'
     }, {
       name: 'erased',
       parameters: 'sender'
     }, {
       name: 'expand',
-      parameters: 'messagebox'
+      parameters: 'sender'
     }, {
       name: 'floatingchange',
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'messagebox,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'messagebox,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'messagebox,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -182,7 +182,7 @@ function (_Ext_Dialog) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'move',
-      parameters: 'messagebox,item,toIndex,fromIndex'
+      parameters: 'sender,item,toIndex,fromIndex'
     }, {
       name: 'moved',
       parameters: 'sender,container,toIndex,fromIndex'
@@ -197,28 +197,28 @@ function (_Ext_Dialog) {
       parameters: 'sender,positioned'
     }, {
       name: 'remove',
-      parameters: 'messagebox,item,index'
+      parameters: 'sender,item,index'
     }, {
       name: 'removed',
       parameters: 'sender,container,index'
     }, {
       name: 'renderedchange',
-      parameters: 'messagebox,item,rendered'
+      parameters: 'sender,item,rendered'
     }, {
       name: 'resize',
       parameters: 'element,info'
     }, {
       name: 'resizedrag',
-      parameters: 'messagebox,context'
+      parameters: 'sender,context'
     }, {
       name: 'resizedragcancel',
-      parameters: 'messagebox,context'
+      parameters: 'sender,context'
     }, {
       name: 'resizedragend',
-      parameters: 'messagebox,context'
+      parameters: 'sender,context'
     }, {
       name: 'resizedragstart',
-      parameters: 'messagebox,context'
+      parameters: 'sender,context'
     }, {
       name: 'restore',
       parameters: 'dialog'
@@ -233,7 +233,7 @@ function (_Ext_Dialog) {
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'messagebox'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -245,7 +245,7 @@ function (_Ext_Dialog) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

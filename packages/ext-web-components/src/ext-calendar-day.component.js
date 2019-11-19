@@ -1,21 +1,12 @@
-import Ext_calendar_panel_Day from './Ext/calendar/panel/Day'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_calendar_panel_Day from '@sencha/ext-runtime-base/dist/./Ext/calendar/panel/Day.js';
+import Ext_calendar_panel_Day from './Ext/calendar/panel/Day.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtCalendar_dayComponent extends Ext_calendar_panel_Day {
+export default class EWCCalendar_day extends Ext_calendar_panel_Day {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'calendar-day'
+        super ([], []);
+        this.xtype = 'calendar-day';
     }
 }
+window.customElements.define('ext-calendar-day', HTMLParsedElement.withParsedCallback(EWCCalendar_day));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-day', ExtCalendar_dayComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-calendar-day', HTMLParsedElement.withParsedCallback(ExtCalendar_dayComponent))

@@ -3,7 +3,7 @@ import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
 
 var HTMLParsedElement = function () {
   var DCL = 'DOMContentLoaded';
-  var init = new WeakMap();
+  var init = new window.WeakMap();
   var queue = [];
 
   var isParsed = function isParsed(el) {
@@ -66,7 +66,35 @@ var HTMLParsedElement = function () {
               var self = this;
               var ownerDocument = self.ownerDocument;
               init.set(self, false);
-              if (ownerDocument.readyState === 'complete' || isParsed(self)) parsedCallback(self);else {
+
+              if (ownerDocument.readyState === 'complete' || isParsed(self)) {
+                //console.log(window.Ext);
+                if (window.Ext == undefined) {
+                  var striptTag = document.createElement('script');
+                  striptTag.type = 'text/javascript';
+                  striptTag.src = './node_modules/@sencha/ext-runtime-base/engine.js';
+
+                  striptTag.onload = function () {
+                    var linkTag = document.createElement('link');
+                    linkTag.rel = 'stylesheet';
+                    linkTag.type = 'text/css';
+                    linkTag.href = './node_modules/@sencha/ext-runtime-base/theme/material/material-all.css';
+
+                    linkTag.onload = function () {
+                      console.log('load done');
+                      Ext.onReady(function () {
+                        parsedCallback(self);
+                      });
+                    };
+
+                    document.getElementsByTagName('head')[0].appendChild(linkTag);
+                  };
+
+                  document.getElementsByTagName('head')[0].appendChild(striptTag);
+                } else {
+                  parsedCallback(self);
+                }
+              } else {
                 var onDCL = function onDCL() {
                   return cleanUp(self, observer, ownerDocument, onDCL);
                 };

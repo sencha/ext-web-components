@@ -1,8 +1,130 @@
 ## @sencha/ext-web-components
 
-last run: Wed Oct 09 2019 05:56:48 GMT-0400 (Eastern Daylight Time)
+last run: Tue Nov 19 2019 06:45:38 GMT-0500 (Eastern Standard Time)
 
-## Test with an  CLI generated app
+## Test with Vanilla JavaScript
+
+- Create a folder named ext-web-components-demo
+
+mac
+```sh
+mkdir ext-web-components-demo
+cd ext-web-components-demo
+```
+
+windows
+```sh
+md ext-web-components-demo
+cd ext-web-components-demo
+```
+
+- In the ext-web-components-demo folder, create a package.json file with the following:
+
+```sh
+{
+  "name": "ext-web-components-demo",
+  "version": "1.0.0",
+  "description": "ext-web-components-demo",
+  "scripts": {
+    "start": "npx http-server -o"
+  },
+  "devDependencies": {
+    "@sencha/ext-web-components": "~7.1.0",
+    "http-server": "^0.11.1"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {}
+}
+```
+
+- In the ext-web-components-demo folder, create an index.html file with the following:
+
+```sh
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
+</head>
+<script type="module">
+  import "./node_modules/@sencha/ext-web-components/src/ext-toolbar.component.js";
+  import "./node_modules/@sencha/ext-web-components/src/ext-button.component.js";
+  window.sayHello = function() {
+    let updateDiv = document.querySelector('#updateDiv');
+    updateDiv.innerText = 'Say Hello!';
+  }
+  window.sayGoodbye = function() {
+    let updateDiv = document.querySelector('#updateDiv');
+    updateDiv.innerText = 'Say Goodbye!';
+  }
+</script>
+<body>
+  <ext-toolbar>
+    <ext-button text="hello" shadow="true" ontap="sayHello"></ext-button>
+    <ext-button text="goodbye" shadow="true" ontap="sayGoodbye"></ext-button>
+    <div id='updateDiv' style="margin-left:20px;"></div>
+  </ext-toolbar>
+</body>
+</html>
+```
+
+- Run the following in the ext-web-components-demo folder
+
+```sh
+npm install
+npm start
+```
+
+A browser window at http://127.0.0.1:8080 will display
+
+
+
+
+_____________________________________________________________
+## Test with create-react-app
+
+- Run the following:
+
+```sh
+npx create-react-app react-ext-web-components-demo
+cd react-ext-web-components-demo
+npm install @sencha/ext-elements-all --save
+cp node_modules/@sencha/ext-elements-all/ext/css.all.js ./public/css.all.js
+cp node_modules/@sencha/ext-elements-all/ext/ext.all.js ./public/ext.all.js
+cp node_modules/@sencha/ext-elements-all/react/ReactCell.js ./public/ReactCell.js
+```
+
+- Add the following to ./public/index.html
+
+```sh
+    <script src="%PUBLIC_URL%/css.all.js"></script>
+    <script src="%PUBLIC_URL%/ext.all.js"></script>
+    <script src="%PUBLIC_URL%/ReactCell.js"></script>
+```
+
+- Replace ./src/App.js with:
+
+```sh
+import React from 'react';
+import ExtPanel from "@sencha/ext-elements-all/react/ExtPanel";
+
+function App() {
+  return (
+    <ExtPanel title="hi"></ExtPanel>
+  );
+}
+
+export default App;
+```
+
+- Run the following:
+
+```sh
+npm start
+```
+
+
+## Test with an Angular CLI generated app
 
 #### Install Angular CLI
 
@@ -13,10 +135,10 @@ npm install -g @angular/cli
 should be @angular/cli@8.3.x
 
 
-#### Create a new  CLI application
+#### Create a new web-components CLI application
 
 ```sh
-ng new ng-ewc-blank --minimal=true --interactive=false -g=true --skipInstall=true
+ng new ng-ext-web-components --minimal=true --interactive=false -g=true --skipInstall=true
 ```
 
 #### Open your editor
@@ -24,7 +146,7 @@ ng new ng-ewc-blank --minimal=true --interactive=false -g=true --skipInstall=tru
 To open Visual Studio Code, type the following:
 
 ```sh
-cd ng-ewc-blank; code .
+cd ng-ext-web-components; code .
 ```
 
 #### Add to package.json
@@ -129,39 +251,6 @@ export class AppModule {}
 Open the src/app/app.component.ts file in the editor and replace the contents with the following:
 
 ```sh
-
-import { Component } from '@angular/core';
-
-@Component({
-    selector: 'app-root',
-    template: `
-<ext-panel viewport="true" title="panel" layout="fit">
-    <ext-toolbar docked="top">
-        <ext-button text="toolbar button"></ext-button>
-    </ext-toolbar>
-    <ext-grid
-        title="title"
-        onready="readyGrid($event)"
-    >
-        <ext-column text="name" dataIndex="name"></ext-column>
-        <ext-column text="email" dataIndex="email" flex="1"></ext-column>
-    </ext-grid>
-</ext-panel>
-    `,
-    styles: []
-})
-export class AppComponent {
-    title = 'the grid';
-    data=[
-        {name: 'Marc', email: 'marc@gmail.com'},
-        {name: 'Nick', email: 'nick@gmail.com'},
-        {name: 'Andy', email: 'andy@gmail.com'},
-    ]
-    readyGrid(event) {
-        var grid = event.target.ext;
-        grid.setData(this.data)
-    }
-}
 
 ```
 

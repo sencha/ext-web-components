@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_column_Check from '../../../Ext/grid/column/Check';
+import Ext_grid_column_Check from '../../../Ext/grid/column/Check.js';
 
 var Ext_grid_column_Selection =
 /*#__PURE__*/
@@ -8,19 +8,19 @@ function (_Ext_grid_column_Chec) {
   _inheritsLoose(Ext_grid_column_Selection, _Ext_grid_column_Chec);
 
   Ext_grid_column_Selection.PROPERTIES = function PROPERTIES() {
-    return ['activeChildTabIndex', 'activeItem', 'align', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'cardSwitchAnimation', 'cell', 'centered', 'cls', 'columns', 'computedWidth', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'dataIndex', 'defaultColumnUI', 'defaultEditor', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultToolWeights', 'defaultType', 'defaultWidth', 'depends', 'disabled', 'displayed', 'docked', 'draggable', 'editable', 'editor', 'editorDefaults', 'exportRenderer', 'exportStyle', 'exportSummaryRenderer', 'filter', 'flex', 'floated', 'focusableContainer', 'focusCls', 'formatter', 'fullscreen', 'groupable', 'grouper', 'groupHeaderTpl', 'headerCheckbox', 'headerCheckboxAlign', 'height', 'hidden', 'hideable', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'hideShowMenuItem', 'html', 'id', 'ignore', 'ignoreExport', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'listeners', 'locked', 'manageBorders', 'margin', 'masked', 'maxHeight', 'maxWidth', 'menu', 'menuDisabled', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderer', 'renderTo', 'reserveScrollbar', 'resetFocusPosition', 'resizable', 'right', 'ripple', 'scope', 'scratchCell', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'sortable', 'sorter', 'stateful', 'statefulDefaults', 'stateId', 'stopSelection', 'style', 'summary', 'summaryCell', 'summaryDataIndex', 'summaryFormatter', 'summaryRenderer', 'tabIndex', 'text', 'toFrontOnShow', 'toolDefaults', 'tools', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'verticalOverflow', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['activeChildTabIndex', 'activeItem', 'align', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'cardSwitchAnimation', 'cell', 'centered', 'cls', 'columns', 'computedWidth', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'dataIndex', 'defaultColumnUI', 'defaultEditor', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultToolWeights', 'defaultType', 'defaultWidth', 'depends', 'disabled', 'displayed', 'docked', 'draggable', 'editable', 'editor', 'editorDefaults', 'exportRenderer', 'exportStyle', 'exportSummaryRenderer', 'filter', 'flex', 'floated', 'focusableContainer', 'focusCls', 'formatter', 'fullscreen', 'groupable', 'grouper', 'groupHeaderTpl', 'headerCheckbox', 'headerCheckboxAlign', 'height', 'hidden', 'hideable', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'hideShowMenuItem', 'html', 'id', 'ignore', 'ignoreExport', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'listeners', 'locked', 'manageBorders', 'margin', 'masked', 'maxHeight', 'maxWidth', 'menu', 'menuDisabled', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderer', 'renderTo', 'reserveScrollbar', 'resetFocusPosition', 'resizable', 'right', 'ripple', 'scope', 'scratchCell', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'sortable', 'sorter', 'stateful', 'statefulDefaults', 'stateId', 'stopSelection', 'style', 'summary', 'summaryCell', 'summaryDataIndex', 'summaryFormatter', 'summaryRenderer', 'tabIndex', 'text', 'toFrontOnShow', 'toolDefaults', 'tools', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'verticalOverflow', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_grid_column_Selection.EVENTS = function EVENTS() {
     return [{
       name: 'activate',
-      parameters: 'newActiveItem,selectioncolumn,oldActiveItem'
+      parameters: 'newActiveItem,sender,oldActiveItem'
     }, {
       name: 'activeItemchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'add',
-      parameters: 'selectioncolumn,item,index'
+      parameters: 'sender,item,index'
     }, {
       name: 'added',
       parameters: 'sender,container,index'
@@ -35,7 +35,7 @@ function (_Ext_grid_column_Chec) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforecheckchange',
-      parameters: 'selectioncolumn,rowIndex,checked,record,e'
+      parameters: 'sender,rowIndex,checked,record,e'
     }, {
       name: 'beforedisabledchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -80,7 +80,7 @@ function (_Ext_grid_column_Chec) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'selectioncolumn'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -89,7 +89,7 @@ function (_Ext_grid_column_Chec) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'selectioncolumn,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -98,10 +98,10 @@ function (_Ext_grid_column_Chec) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'checkchange',
-      parameters: 'selectioncolumn,rowIndex,checked,record,e'
+      parameters: 'sender,rowIndex,checked,record,e'
     }, {
       name: 'deactivate',
-      parameters: 'oldActiveItem,selectioncolumn,newActiveItem'
+      parameters: 'oldActiveItem,sender,newActiveItem'
     }, {
       name: 'destroy',
       parameters: ''
@@ -119,13 +119,13 @@ function (_Ext_grid_column_Chec) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'selectioncolumn,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'selectioncolumn,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'selectioncolumn,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -158,7 +158,7 @@ function (_Ext_grid_column_Chec) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'move',
-      parameters: 'selectioncolumn,item,toIndex,fromIndex'
+      parameters: 'sender,item,toIndex,fromIndex'
     }, {
       name: 'moved',
       parameters: 'sender,container,toIndex,fromIndex'
@@ -173,13 +173,13 @@ function (_Ext_grid_column_Chec) {
       parameters: 'sender,positioned'
     }, {
       name: 'remove',
-      parameters: 'selectioncolumn,item,index'
+      parameters: 'sender,item,index'
     }, {
       name: 'removed',
       parameters: 'sender,container,index'
     }, {
       name: 'renderedchange',
-      parameters: 'selectioncolumn,item,rendered'
+      parameters: 'sender,item,rendered'
     }, {
       name: 'resize',
       parameters: 'element,info'
@@ -194,7 +194,7 @@ function (_Ext_grid_column_Chec) {
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'selectioncolumn'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -206,7 +206,7 @@ function (_Ext_grid_column_Chec) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

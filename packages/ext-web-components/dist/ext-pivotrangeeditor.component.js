@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_pivot_plugin_rangeeditor_Panel from './Ext/pivot/plugin/rangeeditor/Panel';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtPivotrangeeditorComponent =
+//import Ext_pivot_plugin_rangeeditor_Panel from '@sencha/ext-runtime-base/dist/./Ext/pivot/plugin/rangeeditor/Panel.js';
+import Ext_pivot_plugin_rangeeditor_Panel from './Ext/pivot/plugin/rangeeditor/Panel.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCPivotrangeeditor =
 /*#__PURE__*/
 function (_Ext_pivot_plugin_ran) {
-  _inheritsLoose(ExtPivotrangeeditorComponent, _Ext_pivot_plugin_ran);
+  _inheritsLoose(EWCPivotrangeeditor, _Ext_pivot_plugin_ran);
 
-  function ExtPivotrangeeditorComponent() {
+  function EWCPivotrangeeditor() {
     var _this;
 
     _this = _Ext_pivot_plugin_ran.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_pivot_plugin_ran) {
     return _this;
   }
 
-  return ExtPivotrangeeditorComponent;
-}(Ext_pivot_plugin_rangeeditor_Panel); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-pivotrangeeditor', ExtPivotrangeeditorComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCPivotrangeeditor;
+}(Ext_pivot_plugin_rangeeditor_Panel);
 
-window.customElements.define('ext-pivotrangeeditor', HTMLParsedElement.withParsedCallback(ExtPivotrangeeditorComponent));
+export { EWCPivotrangeeditor as default };
+window.customElements.define('ext-pivotrangeeditor', HTMLParsedElement.withParsedCallback(EWCPivotrangeeditor));

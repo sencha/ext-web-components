@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_slider_Slider from '../../Ext/slider/Slider';
+import Ext_slider_Slider from '../../Ext/slider/Slider.js';
 
 var Ext_slider_Toggle =
 /*#__PURE__*/
@@ -8,7 +8,7 @@ function (_Ext_slider_Slider) {
   _inheritsLoose(Ext_slider_Toggle, _Ext_slider_Slider);
 
   Ext_slider_Toggle.PROPERTIES = function PROPERTIES() {
-    return ['alignSelf', 'allowThumbsOverlapping', 'alwaysOnTop', 'animation', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'disabled', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'increment', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxValue', 'maxWidth', 'minHeight', 'minValue', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'readOnly', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'thumbDefaults', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'valueIsArray', 'values', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['alignSelf', 'allowThumbsOverlapping', 'alwaysOnTop', 'animation', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'disabled', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'increment', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxValue', 'maxWidth', 'minHeight', 'minValue', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'readOnly', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'thumbDefaults', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'valueIsArray', 'values', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_slider_Toggle.EVENTS = function EVENTS() {
@@ -65,7 +65,7 @@ function (_Ext_slider_Slider) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'toggleslider'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -74,7 +74,7 @@ function (_Ext_slider_Slider) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'toggleslider,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -83,7 +83,7 @@ function (_Ext_slider_Slider) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'change',
-      parameters: 'toggleslider,thumb,newValue,oldValue'
+      parameters: 'sender,thumb,newValue,oldValue'
     }, {
       name: 'destroy',
       parameters: ''
@@ -95,13 +95,13 @@ function (_Ext_slider_Slider) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'drag',
-      parameters: 'toggleslider,thumb,e'
+      parameters: 'sender,thumb,e'
     }, {
       name: 'dragend',
-      parameters: 'toggleslider,thumb,value,e'
+      parameters: 'sender,thumb,value,e'
     }, {
       name: 'dragstart',
-      parameters: 'toggleslider,thumb,value,e'
+      parameters: 'sender,thumb,value,e'
     }, {
       name: 'erased',
       parameters: 'sender'
@@ -110,13 +110,13 @@ function (_Ext_slider_Slider) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'toggleslider,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'toggleslider,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'toggleslider,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -176,7 +176,7 @@ function (_Ext_slider_Slider) {
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'toggleslider'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -188,7 +188,7 @@ function (_Ext_slider_Slider) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

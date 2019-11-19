@@ -1,21 +1,12 @@
-import Ext_menu_Separator from './Ext/menu/Separator'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_menu_Separator from '@sencha/ext-runtime-base/dist/./Ext/menu/Separator.js';
+import Ext_menu_Separator from './Ext/menu/Separator.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtMenuseparatorComponent extends Ext_menu_Separator {
+export default class EWCMenuseparator extends Ext_menu_Separator {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'menuseparator'
+        super ([], []);
+        this.xtype = 'menuseparator';
     }
 }
+window.customElements.define('ext-menuseparator', HTMLParsedElement.withParsedCallback(EWCMenuseparator));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-menuseparator', ExtMenuseparatorComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-menuseparator', HTMLParsedElement.withParsedCallback(ExtMenuseparatorComponent))

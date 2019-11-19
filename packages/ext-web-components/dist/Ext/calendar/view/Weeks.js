@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_calendar_view_Base from '../../../Ext/calendar/view/Base';
+import Ext_calendar_view_Base from '../../../Ext/calendar/view/Base.js';
 
 var Ext_calendar_view_Weeks =
 /*#__PURE__*/
@@ -8,7 +8,7 @@ function (_Ext_calendar_view_Ba) {
   _inheritsLoose(Ext_calendar_view_Weeks, _Ext_calendar_view_Ba);
 
   Ext_calendar_view_Weeks.PROPERTIES = function PROPERTIES() {
-    return ['addForm', 'addOnSelect', 'alignSelf', 'allowSelection', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'cls', 'compact', 'compactOptions', 'constrainAlign', 'contentEl', 'controller', 'controlStoreRange', 'data', 'dayFormat', 'defaultListenerScope', 'disabled', 'displayed', 'docked', 'draggable', 'droppable', 'editForm', 'eventDefaults', 'firstDayOfWeek', 'flex', 'floated', 'focusCls', 'fullscreen', 'gestureNavigation', 'header', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'overflowText', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'showOverflow', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'timezoneOffset', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'viewModel', 'visibleDays', 'visibleWeeks', 'weekendDays', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['addForm', 'addOnSelect', 'alignSelf', 'allowSelection', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'cls', 'compact', 'compactOptions', 'constrainAlign', 'contentEl', 'controller', 'controlStoreRange', 'data', 'dayFormat', 'defaultListenerScope', 'disabled', 'displayed', 'docked', 'draggable', 'droppable', 'editForm', 'eventDefaults', 'firstDayOfWeek', 'flex', 'floated', 'focusCls', 'fullscreen', 'gestureNavigation', 'header', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'overflowText', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'showOverflow', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'timezoneOffset', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'viewModel', 'visibleDays', 'visibleWeeks', 'weekendDays', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_calendar_view_Weeks.EVENTS = function EVENTS() {
@@ -29,13 +29,13 @@ function (_Ext_calendar_view_Ba) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforeeventadd',
-      parameters: 'calendar-weeksview,context'
+      parameters: 'sender,context'
     }, {
       name: 'beforeeventdragstart',
-      parameters: 'calendar-weeksview,context'
+      parameters: 'sender,context'
     }, {
       name: 'beforeeventedit',
-      parameters: 'calendar-weeksview,context'
+      parameters: 'sender,context'
     }, {
       name: 'beforeheightchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -74,7 +74,7 @@ function (_Ext_calendar_view_Ba) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'calendar-weeksview'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -83,7 +83,7 @@ function (_Ext_calendar_view_Ba) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'calendar-weeksview,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -104,28 +104,28 @@ function (_Ext_calendar_view_Ba) {
       parameters: 'sender'
     }, {
       name: 'eventadd',
-      parameters: 'calendar-weeksview,context'
+      parameters: 'sender,context'
     }, {
       name: 'eventdrop',
-      parameters: 'calendar-weeksview,context'
+      parameters: 'sender,context'
     }, {
       name: 'eventedit',
-      parameters: 'calendar-weeksview,context'
+      parameters: 'sender,context'
     }, {
       name: 'eventtap',
-      parameters: 'calendar-weeksview,context'
+      parameters: 'sender,context'
     }, {
       name: 'floatingchange',
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'calendar-weeksview,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'calendar-weeksview,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'calendar-weeksview,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -182,16 +182,16 @@ function (_Ext_calendar_view_Ba) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'select',
-      parameters: 'calendar-weeksview,context'
+      parameters: 'sender,context'
     }, {
       name: 'selectrange',
-      parameters: 'calendar-weeksview,context'
+      parameters: 'sender,context'
     }, {
       name: 'show',
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'calendar-weeksview'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -200,22 +200,22 @@ function (_Ext_calendar_view_Ba) {
       parameters: 'sender,newData'
     }, {
       name: 'validateeventadd',
-      parameters: 'calendar-weeksview,context'
+      parameters: 'sender,context'
     }, {
       name: 'validateeventdrop',
-      parameters: 'calendar-weeksview,context'
+      parameters: 'sender,context'
     }, {
       name: 'validateeventedit',
-      parameters: 'calendar-weeksview,context'
+      parameters: 'sender,context'
     }, {
       name: 'valuechange',
-      parameters: 'calendar-weeksview,context'
+      parameters: 'sender,context'
     }, {
       name: 'widthchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

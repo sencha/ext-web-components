@@ -1,21 +1,12 @@
-import Ext_grid_CellEditor from './Ext/grid/CellEditor'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_grid_CellEditor from '@sencha/ext-runtime-base/dist/./Ext/grid/CellEditor.js';
+import Ext_grid_CellEditor from './Ext/grid/CellEditor.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtCelleditorComponent extends Ext_grid_CellEditor {
+export default class EWCCelleditor extends Ext_grid_CellEditor {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'celleditor'
+        super ([], []);
+        this.xtype = 'celleditor';
     }
 }
+window.customElements.define('ext-celleditor', HTMLParsedElement.withParsedCallback(EWCCelleditor));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-celleditor', ExtCelleditorComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-celleditor', HTMLParsedElement.withParsedCallback(ExtCelleditorComponent))

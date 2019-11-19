@@ -1,21 +1,12 @@
-import Ext_sparkline_TriState from './Ext/sparkline/TriState'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_sparkline_TriState from '@sencha/ext-runtime-base/dist/./Ext/sparkline/TriState.js';
+import Ext_sparkline_TriState from './Ext/sparkline/TriState.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtSparklinetristateComponent extends Ext_sparkline_TriState {
+export default class EWCSparklinetristate extends Ext_sparkline_TriState {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'sparklinetristate'
+        super ([], []);
+        this.xtype = 'sparklinetristate';
     }
 }
+window.customElements.define('ext-sparklinetristate', HTMLParsedElement.withParsedCallback(EWCSparklinetristate));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-sparklinetristate', ExtSparklinetristateComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-sparklinetristate', HTMLParsedElement.withParsedCallback(ExtSparklinetristateComponent))

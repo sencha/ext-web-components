@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_panel_DateTitle from './Ext/panel/DateTitle';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtDatetitleComponent =
+//import Ext_panel_DateTitle from '@sencha/ext-runtime-base/dist/./Ext/panel/DateTitle.js';
+import Ext_panel_DateTitle from './Ext/panel/DateTitle.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCDatetitle =
 /*#__PURE__*/
 function (_Ext_panel_DateTitle) {
-  _inheritsLoose(ExtDatetitleComponent, _Ext_panel_DateTitle);
+  _inheritsLoose(EWCDatetitle, _Ext_panel_DateTitle);
 
-  function ExtDatetitleComponent() {
+  function EWCDatetitle() {
     var _this;
 
     _this = _Ext_panel_DateTitle.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_panel_DateTitle) {
     return _this;
   }
 
-  return ExtDatetitleComponent;
-}(Ext_panel_DateTitle); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-datetitle', ExtDatetitleComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCDatetitle;
+}(Ext_panel_DateTitle);
 
-window.customElements.define('ext-datetitle', HTMLParsedElement.withParsedCallback(ExtDatetitleComponent));
+export { EWCDatetitle as default };
+window.customElements.define('ext-datetitle', HTMLParsedElement.withParsedCallback(EWCDatetitle));

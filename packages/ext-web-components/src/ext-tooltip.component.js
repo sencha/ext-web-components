@@ -1,21 +1,12 @@
-import Ext_tip_ToolTip from './Ext/tip/ToolTip'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_tip_ToolTip from '@sencha/ext-runtime-base/dist/./Ext/tip/ToolTip.js';
+import Ext_tip_ToolTip from './Ext/tip/ToolTip.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtTooltipComponent extends Ext_tip_ToolTip {
+export default class EWCTooltip extends Ext_tip_ToolTip {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'tooltip'
+        super ([], []);
+        this.xtype = 'tooltip';
     }
 }
+window.customElements.define('ext-tooltip', HTMLParsedElement.withParsedCallback(EWCTooltip));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-tooltip', ExtTooltipComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-tooltip', HTMLParsedElement.withParsedCallback(ExtTooltipComponent))

@@ -1,21 +1,12 @@
-import Ext_grid_menu_SortAsc from './Ext/grid/menu/SortAsc'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_grid_menu_SortAsc from '@sencha/ext-runtime-base/dist/./Ext/grid/menu/SortAsc.js';
+import Ext_grid_menu_SortAsc from './Ext/grid/menu/SortAsc.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtGridsortascmenuitemComponent extends Ext_grid_menu_SortAsc {
+export default class EWCGridsortascmenuitem extends Ext_grid_menu_SortAsc {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'gridsortascmenuitem'
+        super ([], []);
+        this.xtype = 'gridsortascmenuitem';
     }
 }
+window.customElements.define('ext-gridsortascmenuitem', HTMLParsedElement.withParsedCallback(EWCGridsortascmenuitem));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-gridsortascmenuitem', ExtGridsortascmenuitemComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-gridsortascmenuitem', HTMLParsedElement.withParsedCallback(ExtGridsortascmenuitemComponent))

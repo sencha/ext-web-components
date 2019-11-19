@@ -1,22 +1,20 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import EwcBaseComponent from '../ewc-base';
+import EleBaseComponent from '../ele-base.js';
 
 var Ext_Base =
 /*#__PURE__*/
-function (_EwcBaseComponent) {
-  _inheritsLoose(Ext_Base, _EwcBaseComponent);
+function (_EleBaseComponent) {
+  _inheritsLoose(Ext_Base, _EleBaseComponent);
 
-  //events
-  //get onready(){return this.getAttribute('onready')};set onready(onready){this.setAttribute('onready',onready)}
   Ext_Base.PROPERTIES = function PROPERTIES() {
-    return ['eng', 'viewport', 'align', 'plugins', 'responsiveConfig', 'responsiveFormulas', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['fitToParent', 'tab', 'config', 'platformConfig', 'renderer', 'extname', 'viewport', 'align', 'plugins', 'responsiveConfig', 'responsiveFormulas'];
   };
 
   Ext_Base.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 
@@ -43,17 +41,17 @@ function (_EwcBaseComponent) {
       });
       Ext_Base.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
-      });
-      attrs.push('onready');
+      }); //attrs.push('onready')
+
       return attrs;
     }
   }]);
 
   function Ext_Base(properties, events) {
-    return _EwcBaseComponent.call(this, properties.concat(Ext_Base.PROPERTIES()), events.concat(Ext_Base.EVENTS())) || this;
+    return _EleBaseComponent.call(this, properties.concat(Ext_Base.PROPERTIES()), events.concat(Ext_Base.EVENTS())) || this;
   }
 
   return Ext_Base;
-}(EwcBaseComponent);
+}(EleBaseComponent);
 
 export { Ext_Base as default };

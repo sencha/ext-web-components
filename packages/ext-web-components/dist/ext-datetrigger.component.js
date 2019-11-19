@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_trigger_Date from './Ext/field/trigger/Date';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtDatetriggerComponent =
+//import Ext_field_trigger_Date from '@sencha/ext-runtime-base/dist/./Ext/field/trigger/Date.js';
+import Ext_field_trigger_Date from './Ext/field/trigger/Date.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCDatetrigger =
 /*#__PURE__*/
 function (_Ext_field_trigger_Da) {
-  _inheritsLoose(ExtDatetriggerComponent, _Ext_field_trigger_Da);
+  _inheritsLoose(EWCDatetrigger, _Ext_field_trigger_Da);
 
-  function ExtDatetriggerComponent() {
+  function EWCDatetrigger() {
     var _this;
 
     _this = _Ext_field_trigger_Da.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_field_trigger_Da) {
     return _this;
   }
 
-  return ExtDatetriggerComponent;
-}(Ext_field_trigger_Date); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-datetrigger', ExtDatetriggerComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCDatetrigger;
+}(Ext_field_trigger_Date);
 
-window.customElements.define('ext-datetrigger', HTMLParsedElement.withParsedCallback(ExtDatetriggerComponent));
+export { EWCDatetrigger as default };
+window.customElements.define('ext-datetrigger', HTMLParsedElement.withParsedCallback(EWCDatetrigger));

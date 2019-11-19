@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_cell_Boolean from './Ext/grid/cell/Boolean';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtBooleancellComponent =
+//import Ext_grid_cell_Boolean from '@sencha/ext-runtime-base/dist/./Ext/grid/cell/Boolean.js';
+import Ext_grid_cell_Boolean from './Ext/grid/cell/Boolean.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCBooleancell =
 /*#__PURE__*/
 function (_Ext_grid_cell_Boolea) {
-  _inheritsLoose(ExtBooleancellComponent, _Ext_grid_cell_Boolea);
+  _inheritsLoose(EWCBooleancell, _Ext_grid_cell_Boolea);
 
-  function ExtBooleancellComponent() {
+  function EWCBooleancell() {
     var _this;
 
     _this = _Ext_grid_cell_Boolea.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_grid_cell_Boolea) {
     return _this;
   }
 
-  return ExtBooleancellComponent;
-}(Ext_grid_cell_Boolean); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-booleancell', ExtBooleancellComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCBooleancell;
+}(Ext_grid_cell_Boolean);
 
-window.customElements.define('ext-booleancell', HTMLParsedElement.withParsedCallback(ExtBooleancellComponent));
+export { EWCBooleancell as default };
+window.customElements.define('ext-booleancell', HTMLParsedElement.withParsedCallback(EWCBooleancell));

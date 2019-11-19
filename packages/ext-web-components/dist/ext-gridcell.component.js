@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_cell_Cell from './Ext/grid/cell/Cell';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtGridcellComponent =
+//import Ext_grid_cell_Cell from '@sencha/ext-runtime-base/dist/./Ext/grid/cell/Cell.js';
+import Ext_grid_cell_Cell from './Ext/grid/cell/Cell.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCGridcell =
 /*#__PURE__*/
 function (_Ext_grid_cell_Cell) {
-  _inheritsLoose(ExtGridcellComponent, _Ext_grid_cell_Cell);
+  _inheritsLoose(EWCGridcell, _Ext_grid_cell_Cell);
 
-  function ExtGridcellComponent() {
+  function EWCGridcell() {
     var _this;
 
     _this = _Ext_grid_cell_Cell.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_grid_cell_Cell) {
     return _this;
   }
 
-  return ExtGridcellComponent;
-}(Ext_grid_cell_Cell); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-gridcell', ExtGridcellComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCGridcell;
+}(Ext_grid_cell_Cell);
 
-window.customElements.define('ext-gridcell', HTMLParsedElement.withParsedCallback(ExtGridcellComponent));
+export { EWCGridcell as default };
+window.customElements.define('ext-gridcell', HTMLParsedElement.withParsedCallback(EWCGridcell));

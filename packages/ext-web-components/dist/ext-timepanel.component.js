@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_panel_Time from './Ext/panel/Time';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtTimepanelComponent =
+//import Ext_panel_Time from '@sencha/ext-runtime-base/dist/./Ext/panel/Time.js';
+import Ext_panel_Time from './Ext/panel/Time.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCTimepanel =
 /*#__PURE__*/
 function (_Ext_panel_Time) {
-  _inheritsLoose(ExtTimepanelComponent, _Ext_panel_Time);
+  _inheritsLoose(EWCTimepanel, _Ext_panel_Time);
 
-  function ExtTimepanelComponent() {
+  function EWCTimepanel() {
     var _this;
 
     _this = _Ext_panel_Time.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_panel_Time) {
     return _this;
   }
 
-  return ExtTimepanelComponent;
-}(Ext_panel_Time); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-timepanel', ExtTimepanelComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCTimepanel;
+}(Ext_panel_Time);
 
-window.customElements.define('ext-timepanel', HTMLParsedElement.withParsedCallback(ExtTimepanelComponent));
+export { EWCTimepanel as default };
+window.customElements.define('ext-timepanel', HTMLParsedElement.withParsedCallback(EWCTimepanel));

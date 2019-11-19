@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Container from '../Ext/Container';
+import Ext_Container from '../Ext/Container.js';
 
 var Ext_Editor =
 /*#__PURE__*/
@@ -8,19 +8,19 @@ function (_Ext_Container) {
   _inheritsLoose(Ext_Editor, _Ext_Container);
 
   Ext_Editor.PROPERTIES = function PROPERTIES() {
-    return ['activeChildTabIndex', 'activeItem', 'alignment', 'alignSelf', 'allowBlur', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'cancelOnClear', 'cancelOnEsc', 'cardSwitchAnimation', 'centered', 'cls', 'completeOnEnter', 'constrain', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'disabled', 'displayed', 'docked', 'draggable', 'field', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideEl', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'ignoreNoChange', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'listeners', 'manageBorders', 'margin', 'masked', 'matchFont', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'offset', 'padding', 'parentEl', 'plugins', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'revertInvalid', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'swallowKeys', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'updateEl', 'userCls', 'userSelectable', 'value', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['activeChildTabIndex', 'activeItem', 'alignment', 'alignSelf', 'allowBlur', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'cancelOnClear', 'cancelOnEsc', 'cardSwitchAnimation', 'centered', 'cls', 'completeOnEnter', 'constrain', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'disabled', 'displayed', 'docked', 'draggable', 'field', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideEl', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'ignoreNoChange', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'listeners', 'manageBorders', 'margin', 'masked', 'matchFont', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'offset', 'padding', 'parentEl', 'plugins', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'revertInvalid', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'swallowKeys', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'updateEl', 'userCls', 'userSelectable', 'value', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_Editor.EVENTS = function EVENTS() {
     return [{
       name: 'activate',
-      parameters: 'newActiveItem,editor,oldActiveItem'
+      parameters: 'newActiveItem,sender,oldActiveItem'
     }, {
       name: 'activeItemchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'add',
-      parameters: 'editor,item,index'
+      parameters: 'sender,item,index'
     }, {
       name: 'added',
       parameters: 'sender,container,index'
@@ -35,7 +35,7 @@ function (_Ext_Container) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforecomplete',
-      parameters: 'editor,value,startValue'
+      parameters: 'sender,value,startValue'
     }, {
       name: 'beforedisabledchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -80,10 +80,10 @@ function (_Ext_Container) {
       parameters: 'sender'
     }, {
       name: 'beforestartedit',
-      parameters: 'editor,boundEl,value'
+      parameters: 'sender,boundEl,value'
     }, {
       name: 'beforetofront',
-      parameters: 'editor'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -92,22 +92,22 @@ function (_Ext_Container) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'editor,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'canceledit',
-      parameters: 'editor,value,startValue'
+      parameters: 'sender,value,startValue'
     }, {
       name: 'centeredchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'complete',
-      parameters: 'editor,value,startValue'
+      parameters: 'sender,value,startValue'
     }, {
       name: 'deactivate',
-      parameters: 'oldActiveItem,editor,newActiveItem'
+      parameters: 'oldActiveItem,sender,newActiveItem'
     }, {
       name: 'destroy',
       parameters: ''
@@ -125,13 +125,13 @@ function (_Ext_Container) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'editor,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'editor,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'editor,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -164,7 +164,7 @@ function (_Ext_Container) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'move',
-      parameters: 'editor,item,toIndex,fromIndex'
+      parameters: 'sender,item,toIndex,fromIndex'
     }, {
       name: 'moved',
       parameters: 'sender,container,toIndex,fromIndex'
@@ -179,13 +179,13 @@ function (_Ext_Container) {
       parameters: 'sender,positioned'
     }, {
       name: 'remove',
-      parameters: 'editor,item,index'
+      parameters: 'sender,item,index'
     }, {
       name: 'removed',
       parameters: 'sender,container,index'
     }, {
       name: 'renderedchange',
-      parameters: 'editor,item,rendered'
+      parameters: 'sender,item,rendered'
     }, {
       name: 'resize',
       parameters: 'element,info'
@@ -200,13 +200,13 @@ function (_Ext_Container) {
       parameters: 'sender'
     }, {
       name: 'specialkey',
-      parameters: 'editor,field,event'
+      parameters: 'sender,field,event'
     }, {
       name: 'startedit',
-      parameters: 'editor,boundEl,value'
+      parameters: 'sender,boundEl,value'
     }, {
       name: 'tofront',
-      parameters: 'editor'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -218,7 +218,7 @@ function (_Ext_Container) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

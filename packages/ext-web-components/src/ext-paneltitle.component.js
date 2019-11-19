@@ -1,21 +1,12 @@
-import Ext_panel_Title from './Ext/panel/Title'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_panel_Title from '@sencha/ext-runtime-base/dist/./Ext/panel/Title.js';
+import Ext_panel_Title from './Ext/panel/Title.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtPaneltitleComponent extends Ext_panel_Title {
+export default class EWCPaneltitle extends Ext_panel_Title {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'paneltitle'
+        super ([], []);
+        this.xtype = 'paneltitle';
     }
 }
+window.customElements.define('ext-paneltitle', HTMLParsedElement.withParsedCallback(EWCPaneltitle));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-paneltitle', ExtPaneltitleComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-paneltitle', HTMLParsedElement.withParsedCallback(ExtPaneltitleComponent))

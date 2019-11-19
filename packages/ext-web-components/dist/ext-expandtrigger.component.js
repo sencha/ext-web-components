@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_trigger_Expand from './Ext/field/trigger/Expand';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtExpandtriggerComponent =
+//import Ext_field_trigger_Expand from '@sencha/ext-runtime-base/dist/./Ext/field/trigger/Expand.js';
+import Ext_field_trigger_Expand from './Ext/field/trigger/Expand.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCExpandtrigger =
 /*#__PURE__*/
 function (_Ext_field_trigger_Ex) {
-  _inheritsLoose(ExtExpandtriggerComponent, _Ext_field_trigger_Ex);
+  _inheritsLoose(EWCExpandtrigger, _Ext_field_trigger_Ex);
 
-  function ExtExpandtriggerComponent() {
+  function EWCExpandtrigger() {
     var _this;
 
     _this = _Ext_field_trigger_Ex.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_field_trigger_Ex) {
     return _this;
   }
 
-  return ExtExpandtriggerComponent;
-}(Ext_field_trigger_Expand); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-expandtrigger', ExtExpandtriggerComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCExpandtrigger;
+}(Ext_field_trigger_Expand);
 
-window.customElements.define('ext-expandtrigger', HTMLParsedElement.withParsedCallback(ExtExpandtriggerComponent));
+export { EWCExpandtrigger as default };
+window.customElements.define('ext-expandtrigger', HTMLParsedElement.withParsedCallback(EWCExpandtrigger));

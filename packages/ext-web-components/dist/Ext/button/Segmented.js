@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Container from '../../Ext/Container';
+import Ext_Container from '../../Ext/Container.js';
 
 var Ext_button_Segmented =
 /*#__PURE__*/
@@ -8,19 +8,19 @@ function (_Ext_Container) {
   _inheritsLoose(Ext_button_Segmented, _Ext_Container);
 
   Ext_button_Segmented.PROPERTIES = function PROPERTIES() {
-    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowDepress', 'allowFocusingDisabledChildren', 'allowMultiple', 'allowToggle', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'cardSwitchAnimation', 'centered', 'cls', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'defaultUI', 'disabled', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusableContainer', 'focusCls', 'forceSelection', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'listeners', 'manageBorders', 'margin', 'masked', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'pressedButtons', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'vertical', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowDepress', 'allowFocusingDisabledChildren', 'allowMultiple', 'allowToggle', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'cardSwitchAnimation', 'centered', 'cls', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'defaultUI', 'disabled', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusableContainer', 'focusCls', 'forceSelection', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'listeners', 'manageBorders', 'margin', 'masked', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'pressedButtons', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'vertical', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_button_Segmented.EVENTS = function EVENTS() {
     return [{
       name: 'activate',
-      parameters: 'newActiveItem,segmentedbutton,oldActiveItem'
+      parameters: 'newActiveItem,sender,oldActiveItem'
     }, {
       name: 'activeItemchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'add',
-      parameters: 'segmentedbutton,item,index'
+      parameters: 'sender,item,index'
     }, {
       name: 'added',
       parameters: 'sender,container,index'
@@ -77,7 +77,7 @@ function (_Ext_Container) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'segmentedbutton'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -86,7 +86,7 @@ function (_Ext_Container) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'segmentedbutton,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -95,10 +95,10 @@ function (_Ext_Container) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'change',
-      parameters: 'segmentedbutton,value,oldValue'
+      parameters: 'sender,value,oldValue'
     }, {
       name: 'deactivate',
-      parameters: 'oldActiveItem,segmentedbutton,newActiveItem'
+      parameters: 'oldActiveItem,sender,newActiveItem'
     }, {
       name: 'destroy',
       parameters: ''
@@ -116,13 +116,13 @@ function (_Ext_Container) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'segmentedbutton,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'segmentedbutton,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'segmentedbutton,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -155,7 +155,7 @@ function (_Ext_Container) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'move',
-      parameters: 'segmentedbutton,item,toIndex,fromIndex'
+      parameters: 'sender,item,toIndex,fromIndex'
     }, {
       name: 'moved',
       parameters: 'sender,container,toIndex,fromIndex'
@@ -170,13 +170,13 @@ function (_Ext_Container) {
       parameters: 'sender,positioned'
     }, {
       name: 'remove',
-      parameters: 'segmentedbutton,item,index'
+      parameters: 'sender,item,index'
     }, {
       name: 'removed',
       parameters: 'sender,container,index'
     }, {
       name: 'renderedchange',
-      parameters: 'segmentedbutton,item,rendered'
+      parameters: 'sender,item,rendered'
     }, {
       name: 'resize',
       parameters: 'element,info'
@@ -191,10 +191,10 @@ function (_Ext_Container) {
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'segmentedbutton'
+      parameters: 'sender'
     }, {
       name: 'toggle',
-      parameters: 'segmentedbutton,button,isPressed'
+      parameters: 'sender,button,isPressed'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -206,7 +206,7 @@ function (_Ext_Container) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

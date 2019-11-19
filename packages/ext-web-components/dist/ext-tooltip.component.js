@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_tip_ToolTip from './Ext/tip/ToolTip';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtTooltipComponent =
+//import Ext_tip_ToolTip from '@sencha/ext-runtime-base/dist/./Ext/tip/ToolTip.js';
+import Ext_tip_ToolTip from './Ext/tip/ToolTip.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCTooltip =
 /*#__PURE__*/
 function (_Ext_tip_ToolTip) {
-  _inheritsLoose(ExtTooltipComponent, _Ext_tip_ToolTip);
+  _inheritsLoose(EWCTooltip, _Ext_tip_ToolTip);
 
-  function ExtTooltipComponent() {
+  function EWCTooltip() {
     var _this;
 
     _this = _Ext_tip_ToolTip.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_tip_ToolTip) {
     return _this;
   }
 
-  return ExtTooltipComponent;
-}(Ext_tip_ToolTip); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-tooltip', ExtTooltipComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCTooltip;
+}(Ext_tip_ToolTip);
 
-window.customElements.define('ext-tooltip', HTMLParsedElement.withParsedCallback(ExtTooltipComponent));
+export { EWCTooltip as default };
+window.customElements.define('ext-tooltip', HTMLParsedElement.withParsedCallback(EWCTooltip));

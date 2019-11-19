@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_TitleBar from './Ext/TitleBar';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtTitlebarComponent =
+//import Ext_TitleBar from '@sencha/ext-runtime-base/dist/./Ext/TitleBar.js';
+import Ext_TitleBar from './Ext/TitleBar.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCTitlebar =
 /*#__PURE__*/
 function (_Ext_TitleBar) {
-  _inheritsLoose(ExtTitlebarComponent, _Ext_TitleBar);
+  _inheritsLoose(EWCTitlebar, _Ext_TitleBar);
 
-  function ExtTitlebarComponent() {
+  function EWCTitlebar() {
     var _this;
 
     _this = _Ext_TitleBar.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_TitleBar) {
     return _this;
   }
 
-  return ExtTitlebarComponent;
-}(Ext_TitleBar); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-titlebar', ExtTitlebarComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCTitlebar;
+}(Ext_TitleBar);
 
-window.customElements.define('ext-titlebar', HTMLParsedElement.withParsedCallback(ExtTitlebarComponent));
+export { EWCTitlebar as default };
+window.customElements.define('ext-titlebar', HTMLParsedElement.withParsedCallback(EWCTitlebar));

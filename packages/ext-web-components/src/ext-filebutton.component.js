@@ -1,21 +1,12 @@
-import Ext_field_FileButton from './Ext/field/FileButton'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_field_FileButton from '@sencha/ext-runtime-base/dist/./Ext/field/FileButton.js';
+import Ext_field_FileButton from './Ext/field/FileButton.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtFilebuttonComponent extends Ext_field_FileButton {
+export default class EWCFilebutton extends Ext_field_FileButton {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'filebutton'
+        super ([], []);
+        this.xtype = 'filebutton';
     }
 }
+window.customElements.define('ext-filebutton', HTMLParsedElement.withParsedCallback(EWCFilebutton));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-filebutton', ExtFilebuttonComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-filebutton', HTMLParsedElement.withParsedCallback(ExtFilebuttonComponent))

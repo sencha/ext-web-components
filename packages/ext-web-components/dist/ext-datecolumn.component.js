@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_column_Date from './Ext/grid/column/Date';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtDatecolumnComponent =
+//import Ext_grid_column_Date from '@sencha/ext-runtime-base/dist/./Ext/grid/column/Date.js';
+import Ext_grid_column_Date from './Ext/grid/column/Date.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCDatecolumn =
 /*#__PURE__*/
 function (_Ext_grid_column_Date) {
-  _inheritsLoose(ExtDatecolumnComponent, _Ext_grid_column_Date);
+  _inheritsLoose(EWCDatecolumn, _Ext_grid_column_Date);
 
-  function ExtDatecolumnComponent() {
+  function EWCDatecolumn() {
     var _this;
 
     _this = _Ext_grid_column_Date.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_grid_column_Date) {
     return _this;
   }
 
-  return ExtDatecolumnComponent;
-}(Ext_grid_column_Date); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-datecolumn', ExtDatecolumnComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCDatecolumn;
+}(Ext_grid_column_Date);
 
-window.customElements.define('ext-datecolumn', HTMLParsedElement.withParsedCallback(ExtDatecolumnComponent));
+export { EWCDatecolumn as default };
+window.customElements.define('ext-datecolumn', HTMLParsedElement.withParsedCallback(EWCDatecolumn));

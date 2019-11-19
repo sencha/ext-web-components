@@ -1,19 +1,14 @@
-import Ext_pivot_d3_AbstractContainer from '../../../Ext/pivot/d3/AbstractContainer';
+import Ext_pivot_d3_AbstractContainer from '../../../Ext/pivot/d3/AbstractContainer.js';
 
 export default class Ext_pivot_d3_Container extends Ext_pivot_d3_AbstractContainer {
-
-    static PROPERTIES() { return [
-'configurator',
-'drawing',
-'matrix',
-'platformConfig',
-'responsiveConfig',
-'fitToParent',
-'config'
-]};
-    static EVENTS() { return [
-{name:'ready',parameters:''}
-]};
+    static PROPERTIES() {return [
+        'configurator',
+        'drawing',
+        'matrix',
+    ]};
+    static EVENTS() {return [
+        {name:'ready', parameters:'cmd,cmdAll'}
+    ]};
     static getProperties(properties) {
         properties = properties.concat(Ext_pivot_d3_Container.PROPERTIES());
         return Ext_pivot_d3_AbstractContainer.getProperties(properties);

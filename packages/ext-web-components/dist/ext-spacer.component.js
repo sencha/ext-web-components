@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Spacer from './Ext/Spacer';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtSpacerComponent =
+//import Ext_Spacer from '@sencha/ext-runtime-base/dist/./Ext/Spacer.js';
+import Ext_Spacer from './Ext/Spacer.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCSpacer =
 /*#__PURE__*/
 function (_Ext_Spacer) {
-  _inheritsLoose(ExtSpacerComponent, _Ext_Spacer);
+  _inheritsLoose(EWCSpacer, _Ext_Spacer);
 
-  function ExtSpacerComponent() {
+  function EWCSpacer() {
     var _this;
 
     _this = _Ext_Spacer.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_Spacer) {
     return _this;
   }
 
-  return ExtSpacerComponent;
-}(Ext_Spacer); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-spacer', ExtSpacerComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCSpacer;
+}(Ext_Spacer);
 
-window.customElements.define('ext-spacer', HTMLParsedElement.withParsedCallback(ExtSpacerComponent));
+export { EWCSpacer as default };
+window.customElements.define('ext-spacer', HTMLParsedElement.withParsedCallback(EWCSpacer));

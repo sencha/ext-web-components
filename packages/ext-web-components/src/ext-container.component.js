@@ -1,21 +1,12 @@
-import Ext_container_Container from './Ext/container/Container'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_container_Container from '@sencha/ext-runtime-base/dist/./Ext/container/Container.js';
+import Ext_container_Container from './Ext/container/Container.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtContainerComponent extends Ext_container_Container {
+export default class EWCContainer extends Ext_container_Container {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'container'
+        super ([], []);
+        this.xtype = 'container';
     }
 }
+window.customElements.define('ext-container', HTMLParsedElement.withParsedCallback(EWCContainer));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-container', ExtContainerComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-container', HTMLParsedElement.withParsedCallback(ExtContainerComponent))

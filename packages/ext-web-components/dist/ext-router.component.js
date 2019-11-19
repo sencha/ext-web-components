@@ -1,100 +1,174 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import EwcBaseComponent from './ewc-base';
-export var ExtRouterComponent =
+import EleBaseComponent from './ele-base';
+import HTMLParsedElement from './HTMLParsedElement.js';
+import { //doProp,
+//filterProp,
+isMenu, isRenderercell, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
+export var ExtRouter =
 /*#__PURE__*/
-function (_EwcBaseComponent) {
-  _inheritsLoose(ExtRouterComponent, _EwcBaseComponent);
+function (_EleBaseComponent) {
+  _inheritsLoose(ExtRouter, _EleBaseComponent);
 
-  _createClass(ExtRouterComponent, [{
+  _createClass(ExtRouter, [{
     key: "hidden",
     //prettier-ignore
     get: function get() {
-      return this.getAttribute("hidden");
+      return this.getAttribute('hidden');
     },
     set: function set(hidden) {
-      this.setAttribute("hidden", hidden);
+      this.setAttribute('hidden', hidden);
     }
   }], [{
     key: "observedAttributes",
     get: function get() {
       var attrs = [];
-      attrs.push("hidden");
-      attrs.push("onready");
+      attrs.push('hidden');
+      attrs.push('onready');
       return attrs;
     }
   }]);
 
-  function ExtRouterComponent() {
+  function ExtRouter() {
     var _this;
 
-    _this = _EwcBaseComponent.call(this, {}, [], []) || this;
+    _this = _EleBaseComponent.call(this, {}, [], []) || this;
     _this.router = new Router(window.routes);
-    var div = document.createElement("DIV");
-    div.setAttribute("id", "route"); //div.style.width = "100%";
-    //div.style.height = "100%";
-
-    div.style.width = "400px";
-    div.style.height = "400px";
-    div.style.padding = _this.padding; //div.style.display = "none";
-    //mjg should not be hard coded
-
-    div.style.backgroundSize = "20px 20px"; //div.style.overflow='scroll';
-
-    div.style.borderWidth = "0px";
-    div.style.backgroundColor = "#e8e8e8";
-    div.style.backgroundImage = "linear-gradient( 0deg, #f5f5f5 1.1px, transparent 0)," + "linear-gradient(90deg, #f5f5f5 1.1px, transparent 0)"; //this.insertAdjacentElement('beforebegin', div);
-
-    _this.appendChild(div);
-
-    console.log('router constructor');
     return _this;
   }
 
-  var _proto = ExtRouterComponent.prototype;
+  var _proto = ExtRouter.prototype;
+
+  _proto.connectedCallback = function connectedCallback() {
+    EleBaseComponent.elementcount++; //console.log('added: ' + this.tagName + ': elementcount is now ' + EleBaseComponent.elementcount);
+
+    EleBaseComponent.elements.push(this); //console.log(EleBaseComponent.elements)
+
+    this.base = EleBaseComponent;
+  };
+
+  _proto.parsedCallback = function parsedCallback() {
+    this.createProps();
+  };
 
   _proto.createProps = function createProps() {
     this.props = {};
-    var div = document.createElement("DIV");
-    div.setAttribute("id", "route");
-    div.style.width = "100%";
-    div.style.height = "100%";
+    var div = document.createElement('DIV');
+    div.setAttribute('id', 'route');
+    div.style.width = '100%';
+    div.style.height = '100%';
     div.style.padding = this.padding;
-    div.style.display = "none"; //mjg should not be hard coded
+    div.style.display = 'none'; //mjg should not be hard coded
 
-    div.style.backgroundSize = "20px 20px"; //div.style.overflow='scroll';
+    div.style.backgroundSize = '20px 20px'; //div.style.overflow='scroll';
 
-    div.style.borderWidth = "0px";
-    div.style.backgroundColor = "#e8e8e8";
-    div.style.backgroundImage = "linear-gradient( 0deg, #f5f5f5 1.1px, transparent 0)," + "linear-gradient(90deg, #f5f5f5 1.1px, transparent 0)";
+    div.style.borderWidth = '0px';
+    div.style.backgroundColor = '#e8e8e8';
+    div.style.backgroundImage = 'linear-gradient( 0deg, #f5f5f5 1.1px, transparent 0),' + 'linear-gradient(90deg, #f5f5f5 1.1px, transparent 0)';
     var el = Ext.get(div);
-    this.props["hidden"] = this["hidden"];
+    this.props['hidden'] = this['hidden'];
     this.props.listeners = {};
-    this.setEvent("onready", this.props, this);
-    this.props.xtype = "widget";
-    this.props.ewc = "router";
+    this.setEvent('onready', this.props, this);
+    this.props.xtype = 'widget';
+    this.props.ewc = 'router';
     this.props.element = el;
+    var me = this;
+    me.A = {};
+    me.A.CHILDREN = [];
+    me.A.ITEMS = [];
+    me.A.o = {};
+    Ext.onReady(function () {
+      me.A.ext = Ext.create(me.props);
+
+      if (me.parentNode.nodeName.substring(0, 4) === 'EXT-') {
+        if (me.parentNode.A.ext !== undefined) {
+          me.addTheChild(me.parentNode.A.ext, me.A.ext);
+        } else {
+          me.parentNode.A.CHILDREN.push(me.A.ext);
+        }
+      }
+
+      EleBaseComponent.elementcount--; //console.log('reduced: ' + me.tagName + ' elementcount reduced to ' + EleBaseComponent.elementcount)
+    });
+  };
+
+  _proto.addTheChild = function addTheChild(parentCmp, childCmp, location) {
+    var parentxtype = parentCmp.xtype;
+    var childxtype = childCmp.xtype; //console.log('addTheChild: ' + parentxtype + '(' + parentCmp.ext + ')' + ' - ' + childxtype + '(' + childCmp.ext + ')');
+    //if (childxtype == 'widget')
+
+    if (this.A.ext.initialConfig.align != undefined) {
+      if (parentxtype != 'tooltip' && parentxtype != 'titlebar' && parentxtype != 'grid' && parentxtype != 'lockedgrid' && parentxtype != 'button') {
+        console.error('Can only use align property if parent is a Titlebar or Grid or Button');
+        return;
+      }
+    }
+
+    switch (true) {
+      case isMenu(childxtype):
+        parentCmp.setMenu(childCmp);
+        break;
+
+      case isRenderercell(childxtype):
+        parentCmp.setCell(childCmp);
+        break;
+
+      case isParentGridAndChildColumn(parentxtype, childxtype):
+        if (location == null) {
+          parentCmp.addColumn(childCmp);
+        } else {
+          var regCols = 0;
+
+          if (parentCmp.registeredColumns != undefined) {
+            regCols = parentCmp.registeredColumns.length;
+          }
+
+          if (parentxtype == 'grid') {
+            parentCmp.insertColumn(location + regCols, childCmp);
+          } else {
+            parentCmp.insert(location + regCols, childCmp);
+          }
+        }
+
+        break;
+
+      case isTooltip(childxtype):
+        parentCmp.setTooltip(childCmp);
+        break;
+
+      case isPlugin(childxtype):
+        parentCmp.setPlugin(childCmp);
+        break;
+
+      default:
+        if (location == null) {
+          parentCmp.add(childCmp);
+        } else {
+          parentCmp.insert(location, childCmp);
+        }
+
+    }
   };
 
   _proto.attributeChangedCallback = function attributeChangedCallback(attr, oldVal, newVal) {
-    var route = document.getElementById("route");
+    var route = document.getElementById('route');
 
     if (route != null) {
-      if (attr == "hidden") {
-        if (newVal == "true") {
-          route.style.display = "none";
+      if (attr == 'hidden') {
+        if (newVal == 'true') {
+          route.style.display = 'none';
         } else {
-          route.style.display = "block";
+          route.style.display = 'block';
         }
       }
     } else {//console.log('route null: ' + attr + ' - ' + newVal)
     }
 
-    if (attr == "onready") {
+    if (attr == 'onready') {
       if (newVal) {
         //mjg check if this event exists for this component
         this.addEventListener(attr.slice(2), function (event) {
-          eval(newVal + "(event)");
+          eval(newVal + '(event)');
         });
       } else {//delete this[attr];
         //this.removeEventListener(attr.slice(2), this);
@@ -102,15 +176,9 @@ function (_EwcBaseComponent) {
     }
   };
 
-  return ExtRouterComponent;
-}(EwcBaseComponent);
-
-(function () {
-  Ext.onReady(function () {
-    window.customElements.define("ext-router", ExtRouterComponent);
-  });
-})();
-
+  return ExtRouter;
+}(EleBaseComponent);
+window.customElements.define('ext-router', HTMLParsedElement.withParsedCallback(ExtRouter));
 export function getRoutes(items) {
   //mjg clean this up
   window._routes = [];
@@ -123,8 +191,8 @@ export function getRoutes(items) {
 
 function _getRoutes(items) {
   items.forEach(function (item) {
-    item.leaf = !item.hasOwnProperty("children");
-    item.hash = item.text.replace(/ /g, "");
+    item.leaf = !item.hasOwnProperty('children');
+    item.hash = item.text.replace(/ /g, '');
     item.hashlower = item.hash.toLowerCase();
 
     if (item.children == undefined) {
@@ -142,7 +210,7 @@ function () {
   function Route(hash, hashlower, component, defaultRoute) {
     try {
       if (!hash) {
-        throw "error: hash param is required";
+        throw 'error: hash param is required';
       }
     } catch (e) {
       console.error(e);
@@ -160,7 +228,7 @@ function () {
   var _proto2 = Route.prototype;
 
   _proto2.isActiveRoute = function isActiveRoute(hashedPath) {
-    return hashedPath.replace("#", "") === this.hash;
+    return hashedPath.replace('#', '') === this.hash;
   };
 
   return Route;
@@ -173,7 +241,7 @@ function () {
 
     try {
       if (!routes) {
-        throw "error: routes param is mandatory";
+        throw 'error: routes param is mandatory';
       }
 
       this.routes = routes;
@@ -184,26 +252,32 @@ function () {
 
   var _proto3 = Router.prototype;
 
-  _proto3.init = function init() {
-    var routes = this.routes;
+  _proto3.routeMe = function routeMe() {
+    //console.log('routeMe')
+    this.hasChanged(this, this.routes);
+  };
 
-    (function (scope, routes) {
-      window.addEventListener("hashchange", function (e) {
-        scope.hasChanged(scope, routes);
-      });
-    })(this, routes);
-
-    this.hasChanged(this, routes);
+  _proto3.init = function init() {//var routes = this.routes;
+    //(function(scope, routes) {
+    // window.addEventListener('hashchange', function(e) {
+    //     //console.log('hashChange')
+    //     scope.hasChanged(scope, routes);
+    // });
+    //})(this, routes);
+    //this.hasChanged(this, routes);
   };
 
   _proto3.hasChanged = function hasChanged(scope, routes) {
-    if (window.location.hash.length > 0) {
-      var currentHash = "";
-      var currentHashLower = "";
-      var currentComponent = null;
+    //console.log('hasChanged: ' + window.location.hash);
+    var currentHash = '';
+    var currentHashLower = '';
+    var currentComponent = null;
+    var i;
+    var route;
 
-      for (var i = 0, length = routes.length; i < length; i++) {
-        var route = routes[i];
+    if (window.location.hash.length > 0) {
+      for (i = 0; i < routes.length; i++) {
+        route = routes[i];
 
         if (route.isActiveRoute(window.location.hash.substr(1))) {
           currentHash = route.hash;
@@ -212,19 +286,21 @@ function () {
         }
       }
 
-      scope.rootElem = document.getElementById("route");
-      scope.rootElem.style.display = "block";
+      scope.rootElem = document.getElementById('route');
+      scope.rootElem.style.display = 'block';
       window[currentHashLower] = new currentComponent();
-      var componentHtml = currentHash + "Component.html";
-      var code = window._code[currentHashLower][componentHtml];
+      var componentHtml = currentHash + 'Component.html';
+      var code = window._code[currentHashLower][componentHtml]; //console.log(code)
+      //console.log('hash > 0, setting innerHTML');
+      //console.log(scope.rootElem.innerHTML)
+
       scope.rootElem.innerHTML = code;
     } else {
-      var currentHash = "";
-      var currentHashLower = "";
-      var currentComponent = null;
-
-      for (var i = 0, length = routes.length; i < length; i++) {
-        var route = routes[i];
+      //var currentHash = '';
+      //var currentHashLower = '';
+      //var currentComponent = null;
+      for (i = 0; i < routes.length; i++) {
+        route = routes[i];
 
         if (route["default"] == true) {
           currentHash = route.hash;
@@ -233,12 +309,15 @@ function () {
         }
       }
 
-      if (currentHash == "") {//console.log('no default route specified')
+      if (currentHash == '') {//console.log('no default route specified')
       } else {
-        scope.rootElem.style.display = "block";
+        //console.log(scope)
+        console.log('the else');
+        scope.rootElem = document.getElementById('route'); //mjg
+
+        scope.rootElem.style.display = 'block';
         window[currentHashLower] = new currentComponent();
-        var componentHtml = currentHash + "Component.html";
-        scope.rootElem.innerHTML = window._code[currentHashLower][componentHtml];
+        componentHtml = currentHash + 'Component.html'; //scope.rootElem.innerHTML = window._code[currentHashLower][componentHtml];
       }
     }
   };

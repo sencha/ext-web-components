@@ -1,21 +1,12 @@
-import Ext_TitleBar from './Ext/TitleBar'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_TitleBar from '@sencha/ext-runtime-base/dist/./Ext/TitleBar.js';
+import Ext_TitleBar from './Ext/TitleBar.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtTitlebarComponent extends Ext_TitleBar {
+export default class EWCTitlebar extends Ext_TitleBar {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'titlebar'
+        super ([], []);
+        this.xtype = 'titlebar';
     }
 }
+window.customElements.define('ext-titlebar', HTMLParsedElement.withParsedCallback(EWCTitlebar));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-titlebar', ExtTitlebarComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-titlebar', HTMLParsedElement.withParsedCallback(ExtTitlebarComponent))

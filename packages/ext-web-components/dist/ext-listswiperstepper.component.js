@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_dataview_listswiper_Stepper from './Ext/dataview/listswiper/Stepper';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtListswiperstepperComponent =
+//import Ext_dataview_listswiper_Stepper from '@sencha/ext-runtime-base/dist/./Ext/dataview/listswiper/Stepper.js';
+import Ext_dataview_listswiper_Stepper from './Ext/dataview/listswiper/Stepper.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCListswiperstepper =
 /*#__PURE__*/
 function (_Ext_dataview_listswi) {
-  _inheritsLoose(ExtListswiperstepperComponent, _Ext_dataview_listswi);
+  _inheritsLoose(EWCListswiperstepper, _Ext_dataview_listswi);
 
-  function ExtListswiperstepperComponent() {
+  function EWCListswiperstepper() {
     var _this;
 
     _this = _Ext_dataview_listswi.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_dataview_listswi) {
     return _this;
   }
 
-  return ExtListswiperstepperComponent;
-}(Ext_dataview_listswiper_Stepper); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-listswiperstepper', ExtListswiperstepperComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCListswiperstepper;
+}(Ext_dataview_listswiper_Stepper);
 
-window.customElements.define('ext-listswiperstepper', HTMLParsedElement.withParsedCallback(ExtListswiperstepperComponent));
+export { EWCListswiperstepper as default };
+window.customElements.define('ext-listswiperstepper', HTMLParsedElement.withParsedCallback(EWCListswiperstepper));

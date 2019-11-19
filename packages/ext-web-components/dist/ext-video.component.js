@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Video from './Ext/Video';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtVideoComponent =
+//import Ext_Video from '@sencha/ext-runtime-base/dist/./Ext/Video.js';
+import Ext_Video from './Ext/Video.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCVideo =
 /*#__PURE__*/
 function (_Ext_Video) {
-  _inheritsLoose(ExtVideoComponent, _Ext_Video);
+  _inheritsLoose(EWCVideo, _Ext_Video);
 
-  function ExtVideoComponent() {
+  function EWCVideo() {
     var _this;
 
     _this = _Ext_Video.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_Video) {
     return _this;
   }
 
-  return ExtVideoComponent;
-}(Ext_Video); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-video', ExtVideoComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCVideo;
+}(Ext_Video);
 
-window.customElements.define('ext-video', HTMLParsedElement.withParsedCallback(ExtVideoComponent));
+export { EWCVideo as default };
+window.customElements.define('ext-video', HTMLParsedElement.withParsedCallback(EWCVideo));

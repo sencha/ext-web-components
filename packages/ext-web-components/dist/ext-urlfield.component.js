@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_form_Url from './Ext/form/Url';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtUrlfieldComponent =
+//import Ext_form_Url from '@sencha/ext-runtime-base/dist/./Ext/form/Url.js';
+import Ext_form_Url from './Ext/form/Url.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCUrlfield =
 /*#__PURE__*/
 function (_Ext_form_Url) {
-  _inheritsLoose(ExtUrlfieldComponent, _Ext_form_Url);
+  _inheritsLoose(EWCUrlfield, _Ext_form_Url);
 
-  function ExtUrlfieldComponent() {
+  function EWCUrlfield() {
     var _this;
 
     _this = _Ext_form_Url.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_form_Url) {
     return _this;
   }
 
-  return ExtUrlfieldComponent;
-}(Ext_form_Url); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-urlfield', ExtUrlfieldComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCUrlfield;
+}(Ext_form_Url);
 
-window.customElements.define('ext-urlfield', HTMLParsedElement.withParsedCallback(ExtUrlfieldComponent));
+export { EWCUrlfield as default };
+window.customElements.define('ext-urlfield', HTMLParsedElement.withParsedCallback(EWCUrlfield));

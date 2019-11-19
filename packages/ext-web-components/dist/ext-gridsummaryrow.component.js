@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_SummaryRow from './Ext/grid/SummaryRow';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtGridsummaryrowComponent =
+//import Ext_grid_SummaryRow from '@sencha/ext-runtime-base/dist/./Ext/grid/SummaryRow.js';
+import Ext_grid_SummaryRow from './Ext/grid/SummaryRow.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCGridsummaryrow =
 /*#__PURE__*/
 function (_Ext_grid_SummaryRow) {
-  _inheritsLoose(ExtGridsummaryrowComponent, _Ext_grid_SummaryRow);
+  _inheritsLoose(EWCGridsummaryrow, _Ext_grid_SummaryRow);
 
-  function ExtGridsummaryrowComponent() {
+  function EWCGridsummaryrow() {
     var _this;
 
     _this = _Ext_grid_SummaryRow.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_grid_SummaryRow) {
     return _this;
   }
 
-  return ExtGridsummaryrowComponent;
-}(Ext_grid_SummaryRow); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-gridsummaryrow', ExtGridsummaryrowComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCGridsummaryrow;
+}(Ext_grid_SummaryRow);
 
-window.customElements.define('ext-gridsummaryrow', HTMLParsedElement.withParsedCallback(ExtGridsummaryrowComponent));
+export { EWCGridsummaryrow as default };
+window.customElements.define('ext-gridsummaryrow', HTMLParsedElement.withParsedCallback(EWCGridsummaryrow));

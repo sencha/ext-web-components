@@ -1,5 +1,5 @@
 import './SimpleDragDropComponent.html';
-import { extnameToProperty } from '@sencha/ext-elements-all/src/util.js';
+import { extnameToProperty } from '@sencha/ext-web-components/src/util.js';
 
 export default class SimpleDragDropComponent {
 

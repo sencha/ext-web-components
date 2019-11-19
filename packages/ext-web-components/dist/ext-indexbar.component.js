@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_IndexBar from './Ext/IndexBar';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtIndexbarComponent =
+//import Ext_IndexBar from '@sencha/ext-runtime-base/dist/./Ext/IndexBar.js';
+import Ext_IndexBar from './Ext/IndexBar.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCIndexbar =
 /*#__PURE__*/
 function (_Ext_IndexBar) {
-  _inheritsLoose(ExtIndexbarComponent, _Ext_IndexBar);
+  _inheritsLoose(EWCIndexbar, _Ext_IndexBar);
 
-  function ExtIndexbarComponent() {
+  function EWCIndexbar() {
     var _this;
 
     _this = _Ext_IndexBar.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_IndexBar) {
     return _this;
   }
 
-  return ExtIndexbarComponent;
-}(Ext_IndexBar); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-indexbar', ExtIndexbarComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCIndexbar;
+}(Ext_IndexBar);
 
-window.customElements.define('ext-indexbar', HTMLParsedElement.withParsedCallback(ExtIndexbarComponent));
+export { EWCIndexbar as default };
+window.customElements.define('ext-indexbar', HTMLParsedElement.withParsedCallback(EWCIndexbar));

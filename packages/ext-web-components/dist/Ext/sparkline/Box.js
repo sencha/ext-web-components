@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_sparkline_Base from '../../Ext/sparkline/Base';
+import Ext_sparkline_Base from '../../Ext/sparkline/Base.js';
 
 var Ext_sparkline_Box =
 /*#__PURE__*/
@@ -8,7 +8,7 @@ function (_Ext_sparkline_Base) {
   _inheritsLoose(Ext_sparkline_Box, _Ext_sparkline_Base);
 
   Ext_sparkline_Box.PROPERTIES = function PROPERTIES() {
-    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'boxFillColor', 'boxLineColor', 'centered', 'chartRangeMax', 'chartRangeMin', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'disabled', 'disableTooltips', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'highlightColor', 'highlightLighten', 'html', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'lineColor', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'medianColor', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'outlierFillColor', 'outlierIQR', 'outlierLineColor', 'padding', 'plugins', 'publishes', 'raw', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'showOutliers', 'spotRadius', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'target', 'targetColor', 'tipTpl', 'toFrontOnShow', 'tooltip', 'tooltipPrefix', 'tooltipSkipNull', 'tooltipSuffix', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'values', 'viewModel', 'weight', 'whiskerColor', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'boxFillColor', 'boxLineColor', 'centered', 'chartRangeMax', 'chartRangeMin', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'disabled', 'disableTooltips', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'highlightColor', 'highlightLighten', 'html', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'lineColor', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'medianColor', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'outlierFillColor', 'outlierIQR', 'outlierLineColor', 'padding', 'plugins', 'publishes', 'raw', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'showOutliers', 'spotRadius', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'target', 'targetColor', 'tipTpl', 'toFrontOnShow', 'tooltip', 'tooltipPrefix', 'tooltipSkipNull', 'tooltipSuffix', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'values', 'viewModel', 'weight', 'whiskerColor', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_sparkline_Box.EVENTS = function EVENTS() {
@@ -65,7 +65,7 @@ function (_Ext_sparkline_Base) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'sparklinebox'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -74,7 +74,7 @@ function (_Ext_sparkline_Base) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'sparklinebox,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -98,13 +98,13 @@ function (_Ext_sparkline_Base) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'sparklinebox,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'sparklinebox,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'sparklinebox,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -164,7 +164,7 @@ function (_Ext_sparkline_Base) {
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'sparklinebox'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -176,7 +176,7 @@ function (_Ext_sparkline_Base) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

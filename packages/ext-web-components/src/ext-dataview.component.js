@@ -1,21 +1,12 @@
-import Ext_DataView from './Ext/DataView'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_DataView from '@sencha/ext-runtime-base/dist/./Ext/DataView.js';
+import Ext_DataView from './Ext/DataView.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtDataviewComponent extends Ext_DataView {
+export default class EWCDataview extends Ext_DataView {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'dataview'
+        super ([], []);
+        this.xtype = 'dataview';
     }
 }
+window.customElements.define('ext-dataview', HTMLParsedElement.withParsedCallback(EWCDataview));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-dataview', ExtDataviewComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-dataview', HTMLParsedElement.withParsedCallback(ExtDataviewComponent))

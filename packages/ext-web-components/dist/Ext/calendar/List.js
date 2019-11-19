@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_calendar_AbstractList from '../../Ext/calendar/AbstractList';
+import Ext_calendar_AbstractList from '../../Ext/calendar/AbstractList.js';
 
 var Ext_calendar_List =
 /*#__PURE__*/
@@ -8,13 +8,13 @@ function (_Ext_calendar_Abstrac) {
   _inheritsLoose(Ext_calendar_List, _Ext_calendar_Abstrac);
 
   Ext_calendar_List.PROPERTIES = function PROPERTIES() {
-    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'associatedData', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'cardSwitchAnimation', 'centered', 'cls', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'deferEmptyText', 'deselectOnContainerClick', 'disabled', 'disableSelection', 'displayed', 'docked', 'draggable', 'emptyItemText', 'emptyState', 'emptyText', 'emptyTextDefaults', 'emptyTextProperty', 'enableToggle', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inactiveChildTabIndex', 'inline', 'innerCls', 'instanceCls', 'itemButtonMode', 'itemCls', 'itemId', 'itemRipple', 'items', 'itemsFocusable', 'itemTpl', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'lastSelected', 'layout', 'left', 'listeners', 'loadingHeight', 'loadingText', 'manageBorders', 'margin', 'markDirty', 'masked', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'pressedDelay', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'right', 'ripple', 'scrollable', 'scrollDock', 'scrollToTopOnRefresh', 'selectable', 'selected', 'selection', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'triggerCtEvent', 'triggerEvent', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'associatedData', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'cardSwitchAnimation', 'centered', 'cls', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'deferEmptyText', 'deselectOnContainerClick', 'disabled', 'disableSelection', 'displayed', 'docked', 'draggable', 'emptyItemText', 'emptyState', 'emptyText', 'emptyTextDefaults', 'emptyTextProperty', 'enableToggle', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inactiveChildTabIndex', 'inline', 'innerCls', 'instanceCls', 'itemButtonMode', 'itemCls', 'itemId', 'itemRipple', 'items', 'itemsFocusable', 'itemTpl', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'lastSelected', 'layout', 'left', 'listeners', 'loadingHeight', 'loadingText', 'manageBorders', 'margin', 'markDirty', 'masked', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'pressedDelay', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'right', 'ripple', 'scrollable', 'scrollDock', 'scrollToTopOnRefresh', 'selectable', 'selected', 'selection', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'triggerCtEvent', 'triggerEvent', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_calendar_List.EVENTS = function EVENTS() {
     return [{
       name: 'activate',
-      parameters: 'newActiveItem,calendar-list,oldActiveItem'
+      parameters: 'newActiveItem,sender,oldActiveItem'
     }, {
       name: 'activeItemchange',
       parameters: 'sender,value,oldValue'
@@ -80,7 +80,7 @@ function (_Ext_calendar_Abstrac) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforetofront',
-      parameters: 'calendar-list'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -89,7 +89,7 @@ function (_Ext_calendar_Abstrac) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'calendar-list,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -98,43 +98,43 @@ function (_Ext_calendar_Abstrac) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'childdoubletap',
-      parameters: 'calendar-list,location'
+      parameters: 'sender,location'
     }, {
       name: 'childlongpress',
-      parameters: 'calendar-list,location'
+      parameters: 'sender,location'
     }, {
       name: 'childmouseenter',
-      parameters: 'calendar-list,location'
+      parameters: 'sender,location'
     }, {
       name: 'childmouseleave',
-      parameters: 'calendar-list,location'
+      parameters: 'sender,location'
     }, {
       name: 'childsingletap',
-      parameters: 'calendar-list,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtap',
-      parameters: 'calendar-list,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtaphold',
-      parameters: 'calendar-list,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtouchcancel',
-      parameters: 'calendar-list,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtouchend',
-      parameters: 'calendar-list,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtouchmove',
-      parameters: 'calendar-list,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtouchstart',
-      parameters: 'calendar-list,location'
+      parameters: 'sender,location'
     }, {
       name: 'deactivate',
-      parameters: 'oldActiveItem,calendar-list,newActiveItem'
+      parameters: 'oldActiveItem,sender,newActiveItem'
     }, {
       name: 'deselect',
-      parameters: 'calendar-list,records'
+      parameters: 'sender,records'
     }, {
       name: 'destroy',
       parameters: ''
@@ -152,13 +152,13 @@ function (_Ext_calendar_Abstrac) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'calendar-list,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'calendar-list,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'calendar-list,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -176,40 +176,40 @@ function (_Ext_calendar_Abstrac) {
       parameters: 'sender'
     }, {
       name: 'itemdoubletap',
-      parameters: 'calendar-list,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemlongpress',
-      parameters: 'calendar-list,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemmouseenter',
-      parameters: 'calendar-list,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemmouseleave',
-      parameters: 'calendar-list,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemsingletap',
-      parameters: 'calendar-list,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemswipe',
-      parameters: 'calendar-list,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtap',
-      parameters: 'calendar-list,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtaphold',
-      parameters: 'calendar-list,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtouchcancel',
-      parameters: 'calendar-list,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtouchend',
-      parameters: 'calendar-list,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtouchmove',
-      parameters: 'calendar-list,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtouchstart',
-      parameters: 'calendar-list,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'leftchange',
       parameters: 'sender,value,oldValue'
@@ -233,7 +233,7 @@ function (_Ext_calendar_Abstrac) {
       parameters: 'sender,container,toIndex,fromIndex'
     }, {
       name: 'navigate',
-      parameters: 'calendar-list,to,from'
+      parameters: 'sender,to,from'
     }, {
       name: 'orientationchange',
       parameters: ''
@@ -245,7 +245,7 @@ function (_Ext_calendar_Abstrac) {
       parameters: 'sender,positioned'
     }, {
       name: 'refresh',
-      parameters: 'calendar-list'
+      parameters: 'sender'
     }, {
       name: 'remove',
       parameters: ''
@@ -254,7 +254,7 @@ function (_Ext_calendar_Abstrac) {
       parameters: 'sender,container,index'
     }, {
       name: 'renderedchange',
-      parameters: 'calendar-list,item,rendered'
+      parameters: 'sender,item,rendered'
     }, {
       name: 'resize',
       parameters: 'element,info'
@@ -269,7 +269,7 @@ function (_Ext_calendar_Abstrac) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'select',
-      parameters: 'calendar-list,selected'
+      parameters: 'sender,selected'
     }, {
       name: 'selectionchange',
       parameters: 'view,records,selected,selection'
@@ -281,7 +281,7 @@ function (_Ext_calendar_Abstrac) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'tofront',
-      parameters: 'calendar-list'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -293,7 +293,7 @@ function (_Ext_calendar_Abstrac) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_dataview_ItemHeader from './Ext/dataview/ItemHeader';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtItemheaderComponent =
+//import Ext_dataview_ItemHeader from '@sencha/ext-runtime-base/dist/./Ext/dataview/ItemHeader.js';
+import Ext_dataview_ItemHeader from './Ext/dataview/ItemHeader.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCItemheader =
 /*#__PURE__*/
 function (_Ext_dataview_ItemHea) {
-  _inheritsLoose(ExtItemheaderComponent, _Ext_dataview_ItemHea);
+  _inheritsLoose(EWCItemheader, _Ext_dataview_ItemHea);
 
-  function ExtItemheaderComponent() {
+  function EWCItemheader() {
     var _this;
 
     _this = _Ext_dataview_ItemHea.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_dataview_ItemHea) {
     return _this;
   }
 
-  return ExtItemheaderComponent;
-}(Ext_dataview_ItemHeader); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-itemheader', ExtItemheaderComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCItemheader;
+}(Ext_dataview_ItemHeader);
 
-window.customElements.define('ext-itemheader', HTMLParsedElement.withParsedCallback(ExtItemheaderComponent));
+export { EWCItemheader as default };
+window.customElements.define('ext-itemheader', HTMLParsedElement.withParsedCallback(EWCItemheader));

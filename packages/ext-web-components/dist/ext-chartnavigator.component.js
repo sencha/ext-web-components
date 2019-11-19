@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_chart_navigator_Container from './Ext/chart/navigator/Container';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtChartnavigatorComponent =
+//import Ext_chart_navigator_Container from '@sencha/ext-runtime-base/dist/./Ext/chart/navigator/Container.js';
+import Ext_chart_navigator_Container from './Ext/chart/navigator/Container.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCChartnavigator =
 /*#__PURE__*/
 function (_Ext_chart_navigator_) {
-  _inheritsLoose(ExtChartnavigatorComponent, _Ext_chart_navigator_);
+  _inheritsLoose(EWCChartnavigator, _Ext_chart_navigator_);
 
-  function ExtChartnavigatorComponent() {
+  function EWCChartnavigator() {
     var _this;
 
     _this = _Ext_chart_navigator_.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_chart_navigator_) {
     return _this;
   }
 
-  return ExtChartnavigatorComponent;
-}(Ext_chart_navigator_Container); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-chartnavigator', ExtChartnavigatorComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCChartnavigator;
+}(Ext_chart_navigator_Container);
 
-window.customElements.define('ext-chartnavigator', HTMLParsedElement.withParsedCallback(ExtChartnavigatorComponent));
+export { EWCChartnavigator as default };
+window.customElements.define('ext-chartnavigator', HTMLParsedElement.withParsedCallback(EWCChartnavigator));

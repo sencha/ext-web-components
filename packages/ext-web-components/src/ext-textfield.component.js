@@ -1,21 +1,12 @@
-import Ext_form_Text from './Ext/form/Text'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_form_Text from '@sencha/ext-runtime-base/dist/./Ext/form/Text.js';
+import Ext_form_Text from './Ext/form/Text.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtTextfieldComponent extends Ext_form_Text {
+export default class EWCTextfield extends Ext_form_Text {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'textfield'
+        super ([], []);
+        this.xtype = 'textfield';
     }
 }
+window.customElements.define('ext-textfield', HTMLParsedElement.withParsedCallback(EWCTextfield));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-textfield', ExtTextfieldComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-textfield', HTMLParsedElement.withParsedCallback(ExtTextfieldComponent))

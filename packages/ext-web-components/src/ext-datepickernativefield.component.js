@@ -1,21 +1,12 @@
-import Ext_form_DatePickerNative from './Ext/form/DatePickerNative'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_form_DatePickerNative from '@sencha/ext-runtime-base/dist/./Ext/form/DatePickerNative.js';
+import Ext_form_DatePickerNative from './Ext/form/DatePickerNative.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtDatepickernativefieldComponent extends Ext_form_DatePickerNative {
+export default class EWCDatepickernativefield extends Ext_form_DatePickerNative {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'datepickernativefield'
+        super ([], []);
+        this.xtype = 'datepickernativefield';
     }
 }
+window.customElements.define('ext-datepickernativefield', HTMLParsedElement.withParsedCallback(EWCDatepickernativefield));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-datepickernativefield', ExtDatepickernativefieldComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-datepickernativefield', HTMLParsedElement.withParsedCallback(ExtDatepickernativefieldComponent))

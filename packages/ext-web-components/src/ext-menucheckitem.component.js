@@ -1,21 +1,12 @@
-import Ext_menu_CheckItem from './Ext/menu/CheckItem'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_menu_CheckItem from '@sencha/ext-runtime-base/dist/./Ext/menu/CheckItem.js';
+import Ext_menu_CheckItem from './Ext/menu/CheckItem.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtMenucheckitemComponent extends Ext_menu_CheckItem {
+export default class EWCMenucheckitem extends Ext_menu_CheckItem {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'menucheckitem'
+        super ([], []);
+        this.xtype = 'menucheckitem';
     }
 }
+window.customElements.define('ext-menucheckitem', HTMLParsedElement.withParsedCallback(EWCMenucheckitem));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-menucheckitem', ExtMenucheckitemComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-menucheckitem', HTMLParsedElement.withParsedCallback(ExtMenucheckitemComponent))

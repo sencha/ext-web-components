@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_d3_HeatMap from './Ext/d3/HeatMap';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtD3_heatmapComponent =
+//import Ext_d3_HeatMap from '@sencha/ext-runtime-base/dist/./Ext/d3/HeatMap.js';
+import Ext_d3_HeatMap from './Ext/d3/HeatMap.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCD3_heatmap =
 /*#__PURE__*/
 function (_Ext_d3_HeatMap) {
-  _inheritsLoose(ExtD3_heatmapComponent, _Ext_d3_HeatMap);
+  _inheritsLoose(EWCD3_heatmap, _Ext_d3_HeatMap);
 
-  function ExtD3_heatmapComponent() {
+  function EWCD3_heatmap() {
     var _this;
 
     _this = _Ext_d3_HeatMap.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_d3_HeatMap) {
     return _this;
   }
 
-  return ExtD3_heatmapComponent;
-}(Ext_d3_HeatMap); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-d3-heatmap', ExtD3_heatmapComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCD3_heatmap;
+}(Ext_d3_HeatMap);
 
-window.customElements.define('ext-d3-heatmap', HTMLParsedElement.withParsedCallback(ExtD3_heatmapComponent));
+export { EWCD3_heatmap as default };
+window.customElements.define('ext-d3-heatmap', HTMLParsedElement.withParsedCallback(EWCD3_heatmap));

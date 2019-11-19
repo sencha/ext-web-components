@@ -1,21 +1,12 @@
-import Ext_grid_cell_Check from './Ext/grid/cell/Check'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_grid_cell_Check from '@sencha/ext-runtime-base/dist/./Ext/grid/cell/Check.js';
+import Ext_grid_cell_Check from './Ext/grid/cell/Check.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtCheckcellComponent extends Ext_grid_cell_Check {
+export default class EWCCheckcell extends Ext_grid_cell_Check {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'checkcell'
+        super ([], []);
+        this.xtype = 'checkcell';
     }
 }
+window.customElements.define('ext-checkcell', HTMLParsedElement.withParsedCallback(EWCCheckcell));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-checkcell', ExtCheckcellComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-checkcell', HTMLParsedElement.withParsedCallback(ExtCheckcellComponent))

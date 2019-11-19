@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_form_Checkbox from './Ext/form/Checkbox';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtCheckboxComponent =
+//import Ext_form_Checkbox from '@sencha/ext-runtime-base/dist/./Ext/form/Checkbox.js';
+import Ext_form_Checkbox from './Ext/form/Checkbox.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCCheckbox =
 /*#__PURE__*/
 function (_Ext_form_Checkbox) {
-  _inheritsLoose(ExtCheckboxComponent, _Ext_form_Checkbox);
+  _inheritsLoose(EWCCheckbox, _Ext_form_Checkbox);
 
-  function ExtCheckboxComponent() {
+  function EWCCheckbox() {
     var _this;
 
     _this = _Ext_form_Checkbox.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_form_Checkbox) {
     return _this;
   }
 
-  return ExtCheckboxComponent;
-}(Ext_form_Checkbox); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-checkbox', ExtCheckboxComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCCheckbox;
+}(Ext_form_Checkbox);
 
-window.customElements.define('ext-checkbox', HTMLParsedElement.withParsedCallback(ExtCheckboxComponent));
+export { EWCCheckbox as default };
+window.customElements.define('ext-checkbox', HTMLParsedElement.withParsedCallback(EWCCheckbox));

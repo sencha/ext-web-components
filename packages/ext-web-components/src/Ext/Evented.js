@@ -1,17 +1,12 @@
-import Ext_Base from '../Ext/Base';
+import Ext_Base from '../Ext/Base.js';
 
 export default class Ext_Evented extends Ext_Base {
-
-    static PROPERTIES() { return [
-'listeners',
-'platformConfig',
-'responsiveConfig',
-'fitToParent',
-'config'
-]};
-    static EVENTS() { return [
-{name:'ready',parameters:''}
-]};
+    static PROPERTIES() {return [
+        'listeners',
+    ]};
+    static EVENTS() {return [
+        {name:'ready', parameters:'cmd,cmdAll'}
+    ]};
     static getProperties(properties) {
         properties = properties.concat(Ext_Evented.PROPERTIES());
         return Ext_Base.getProperties(properties);

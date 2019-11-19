@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_dataview_listswiper_Item from './Ext/dataview/listswiper/Item';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtListswiperitemComponent =
+//import Ext_dataview_listswiper_Item from '@sencha/ext-runtime-base/dist/./Ext/dataview/listswiper/Item.js';
+import Ext_dataview_listswiper_Item from './Ext/dataview/listswiper/Item.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCListswiperitem =
 /*#__PURE__*/
 function (_Ext_dataview_listswi) {
-  _inheritsLoose(ExtListswiperitemComponent, _Ext_dataview_listswi);
+  _inheritsLoose(EWCListswiperitem, _Ext_dataview_listswi);
 
-  function ExtListswiperitemComponent() {
+  function EWCListswiperitem() {
     var _this;
 
     _this = _Ext_dataview_listswi.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_dataview_listswi) {
     return _this;
   }
 
-  return ExtListswiperitemComponent;
-}(Ext_dataview_listswiper_Item); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-listswiperitem', ExtListswiperitemComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCListswiperitem;
+}(Ext_dataview_listswiper_Item);
 
-window.customElements.define('ext-listswiperitem', HTMLParsedElement.withParsedCallback(ExtListswiperitemComponent));
+export { EWCListswiperitem as default };
+window.customElements.define('ext-listswiperitem', HTMLParsedElement.withParsedCallback(EWCListswiperitem));

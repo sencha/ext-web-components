@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_cell_Cell from '../../../Ext/grid/cell/Cell';
+import Ext_grid_cell_Cell from '../../../Ext/grid/cell/Cell.js';
 
 var Ext_pivot_cell_Cell =
 /*#__PURE__*/
@@ -8,7 +8,7 @@ function (_Ext_grid_cell_Cell) {
   _inheritsLoose(Ext_pivot_cell_Cell, _Ext_grid_cell_Cell);
 
   Ext_pivot_cell_Cell.PROPERTIES = function PROPERTIES() {
-    return ['align', 'alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'bind', 'bodyCls', 'bodyStyle', 'border', 'cellCls', 'cls', 'column', 'constrainAlign', 'controller', 'defaultListenerScope', 'defaultToolWeights', 'disabled', 'encodeHtml', 'flex', 'floated', 'focusCls', 'formatter', 'height', 'hidden', 'hideMode', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'listeners', 'margin', 'name', 'nameable', 'plugins', 'publishes', 'rawValue', 'record', 'reference', 'relative', 'renderer', 'renderTo', 'ripple', 'scope', 'selectable', 'session', 'shadow', 'shareableName', 'shim', 'style', 'toFrontOnShow', 'toolDefaults', 'tools', 'touchAction', 'tpl', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'value', 'viewModel', 'width', 'x', 'y', 'zeroValue', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['align', 'alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'bind', 'bodyCls', 'bodyStyle', 'border', 'cellCls', 'cls', 'column', 'constrainAlign', 'controller', 'defaultListenerScope', 'defaultToolWeights', 'disabled', 'encodeHtml', 'flex', 'floated', 'focusCls', 'formatter', 'height', 'hidden', 'hideMode', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'listeners', 'margin', 'name', 'nameable', 'plugins', 'publishes', 'rawValue', 'record', 'reference', 'relative', 'renderer', 'renderTo', 'ripple', 'scope', 'selectable', 'session', 'shadow', 'shareableName', 'shim', 'style', 'toFrontOnShow', 'toolDefaults', 'tools', 'touchAction', 'tpl', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'value', 'viewModel', 'width', 'x', 'y', 'zeroValue'];
   };
 
   Ext_pivot_cell_Cell.EVENTS = function EVENTS() {
@@ -23,25 +23,25 @@ function (_Ext_grid_cell_Cell) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforetofront',
-      parameters: 'pivotgridcell'
+      parameters: 'sender'
     }, {
       name: 'beforewidthchange',
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'pivotgridcell,event'
+      parameters: 'sender,event'
     }, {
       name: 'disabledchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'focus',
-      parameters: 'pivotgridcell,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'pivotgridcell,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'pivotgridcell,event'
+      parameters: 'sender,event'
     }, {
       name: 'heightchange',
       parameters: 'sender,value,oldValue'
@@ -50,13 +50,13 @@ function (_Ext_grid_cell_Cell) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'tofront',
-      parameters: 'pivotgridcell'
+      parameters: 'sender'
     }, {
       name: 'widthchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

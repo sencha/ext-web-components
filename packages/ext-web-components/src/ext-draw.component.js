@@ -1,21 +1,12 @@
-import Ext_draw_Component from './Ext/draw/Component'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_draw_Component from '@sencha/ext-runtime-base/dist/./Ext/draw/Component.js';
+import Ext_draw_Component from './Ext/draw/Component.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtDrawComponent extends Ext_draw_Component {
+export default class EWCDraw extends Ext_draw_Component {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'draw'
+        super ([], []);
+        this.xtype = 'draw';
     }
 }
+window.customElements.define('ext-draw', HTMLParsedElement.withParsedCallback(EWCDraw));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-draw', ExtDrawComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-draw', HTMLParsedElement.withParsedCallback(ExtDrawComponent))

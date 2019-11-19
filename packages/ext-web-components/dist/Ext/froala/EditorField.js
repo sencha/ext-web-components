@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_Container from '../../Ext/field/Container';
+import Ext_field_Container from '../../Ext/field/Container.js';
 
 var Ext_froala_EditorField =
 /*#__PURE__*/
@@ -8,7 +8,7 @@ function (_Ext_field_Container) {
   _inheritsLoose(Ext_froala_EditorField, _Ext_field_Container);
 
   Ext_froala_EditorField.PROPERTIES = function PROPERTIES() {
-    return ['activationKey', 'alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoFitErrors', 'autoSize', 'axisLock', 'bind', 'bodyAlign', 'border', 'bottom', 'bubbleDirty', 'centered', 'cls', 'constrainAlign', 'container', 'contentEl', 'controller', 'data', 'dataType', 'defaultEditor', 'defaultListenerScope', 'defaults', 'defaultType', 'dirty', 'disabled', 'displayed', 'docked', 'draggable', 'editor', 'error', 'errorMessage', 'errorTarget', 'errorTip', 'errorTpl', 'fieldDefaults', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inline', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'label', 'labelAlign', 'labelCls', 'labelMinWidth', 'labelTextAlign', 'labelWidth', 'labelWrap', 'layout', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'required', 'requiredMessage', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'sideError', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'tipError', 'titleError', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'underError', 'userCls', 'userSelectable', 'validateDisabled', 'validationMessage', 'validators', 'value', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['activationKey', 'alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoFitErrors', 'autoSize', 'axisLock', 'bind', 'bodyAlign', 'border', 'bottom', 'bubbleDirty', 'centered', 'cls', 'constrainAlign', 'container', 'contentEl', 'controller', 'data', 'dataType', 'defaultEditor', 'defaultListenerScope', 'defaults', 'defaultType', 'dirty', 'disabled', 'displayed', 'docked', 'draggable', 'editor', 'error', 'errorMessage', 'errorTarget', 'errorTip', 'errorTpl', 'fieldDefaults', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inline', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'label', 'labelAlign', 'labelCls', 'labelMinWidth', 'labelTextAlign', 'labelWidth', 'labelWrap', 'layout', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'required', 'requiredMessage', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'sideError', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'tipError', 'titleError', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'underError', 'userCls', 'userSelectable', 'validateDisabled', 'validationMessage', 'validators', 'value', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_froala_EditorField.EVENTS = function EVENTS() {
@@ -65,7 +65,7 @@ function (_Ext_field_Container) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'froalaeditorfield'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -74,7 +74,7 @@ function (_Ext_field_Container) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'froalaeditorfield,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -83,7 +83,7 @@ function (_Ext_field_Container) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'change',
-      parameters: 'froalaeditorfield,the'
+      parameters: 'sender,the'
     }, {
       name: 'click',
       parameters: 'e'
@@ -92,7 +92,7 @@ function (_Ext_field_Container) {
       parameters: ''
     }, {
       name: 'dirtychange',
-      parameters: 'froalaeditorfield,dirty'
+      parameters: 'sender,dirty'
     }, {
       name: 'disabledchange',
       parameters: 'sender,value,oldValue'
@@ -104,19 +104,19 @@ function (_Ext_field_Container) {
       parameters: 'sender'
     }, {
       name: 'errorchange',
-      parameters: 'froalaeditorfield,error'
+      parameters: 'sender,error'
     }, {
       name: 'floatingchange',
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'froalaeditorfield,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'froalaeditorfield,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'froalaeditorfield,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -170,7 +170,7 @@ function (_Ext_field_Container) {
       parameters: 'sender,positioned'
     }, {
       name: 'ready',
-      parameters: 'froalaeditorfield,the'
+      parameters: 'sender,the'
     }, {
       name: 'removed',
       parameters: 'sender,container,index'
@@ -188,7 +188,7 @@ function (_Ext_field_Container) {
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'froalaeditorfield'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -200,7 +200,7 @@ function (_Ext_field_Container) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

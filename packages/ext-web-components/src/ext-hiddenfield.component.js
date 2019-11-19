@@ -1,21 +1,12 @@
-import Ext_form_Hidden from './Ext/form/Hidden'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_form_Hidden from '@sencha/ext-runtime-base/dist/./Ext/form/Hidden.js';
+import Ext_form_Hidden from './Ext/form/Hidden.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtHiddenfieldComponent extends Ext_form_Hidden {
+export default class EWCHiddenfield extends Ext_form_Hidden {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'hiddenfield'
+        super ([], []);
+        this.xtype = 'hiddenfield';
     }
 }
+window.customElements.define('ext-hiddenfield', HTMLParsedElement.withParsedCallback(EWCHiddenfield));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-hiddenfield', ExtHiddenfieldComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-hiddenfield', HTMLParsedElement.withParsedCallback(ExtHiddenfieldComponent))

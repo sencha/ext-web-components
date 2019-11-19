@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Label from './Ext/Label';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtLabelComponent =
+//import Ext_Label from '@sencha/ext-runtime-base/dist/./Ext/Label.js';
+import Ext_Label from './Ext/Label.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCLabel =
 /*#__PURE__*/
 function (_Ext_Label) {
-  _inheritsLoose(ExtLabelComponent, _Ext_Label);
+  _inheritsLoose(EWCLabel, _Ext_Label);
 
-  function ExtLabelComponent() {
+  function EWCLabel() {
     var _this;
 
     _this = _Ext_Label.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_Label) {
     return _this;
   }
 
-  return ExtLabelComponent;
-}(Ext_Label); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-label', ExtLabelComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCLabel;
+}(Ext_Label);
 
-window.customElements.define('ext-label', HTMLParsedElement.withParsedCallback(ExtLabelComponent));
+export { EWCLabel as default };
+window.customElements.define('ext-label', HTMLParsedElement.withParsedCallback(EWCLabel));

@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_DatePicker from './Ext/DatePicker';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtDatepickerComponent =
+//import Ext_DatePicker from '@sencha/ext-runtime-base/dist/./Ext/DatePicker.js';
+import Ext_DatePicker from './Ext/DatePicker.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCDatepicker =
 /*#__PURE__*/
 function (_Ext_DatePicker) {
-  _inheritsLoose(ExtDatepickerComponent, _Ext_DatePicker);
+  _inheritsLoose(EWCDatepicker, _Ext_DatePicker);
 
-  function ExtDatepickerComponent() {
+  function EWCDatepicker() {
     var _this;
 
     _this = _Ext_DatePicker.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_DatePicker) {
     return _this;
   }
 
-  return ExtDatepickerComponent;
-}(Ext_DatePicker); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-datepicker', ExtDatepickerComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCDatepicker;
+}(Ext_DatePicker);
 
-window.customElements.define('ext-datepicker', HTMLParsedElement.withParsedCallback(ExtDatepickerComponent));
+export { EWCDatepicker as default };
+window.customElements.define('ext-datepicker', HTMLParsedElement.withParsedCallback(EWCDatepicker));

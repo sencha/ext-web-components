@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_picker_Tablet from './Ext/picker/Tablet';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtTabletpickerComponent =
+//import Ext_picker_Tablet from '@sencha/ext-runtime-base/dist/./Ext/picker/Tablet.js';
+import Ext_picker_Tablet from './Ext/picker/Tablet.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCTabletpicker =
 /*#__PURE__*/
 function (_Ext_picker_Tablet) {
-  _inheritsLoose(ExtTabletpickerComponent, _Ext_picker_Tablet);
+  _inheritsLoose(EWCTabletpicker, _Ext_picker_Tablet);
 
-  function ExtTabletpickerComponent() {
+  function EWCTabletpicker() {
     var _this;
 
     _this = _Ext_picker_Tablet.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_picker_Tablet) {
     return _this;
   }
 
-  return ExtTabletpickerComponent;
-}(Ext_picker_Tablet); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-tabletpicker', ExtTabletpickerComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCTabletpicker;
+}(Ext_picker_Tablet);
 
-window.customElements.define('ext-tabletpicker', HTMLParsedElement.withParsedCallback(ExtTabletpickerComponent));
+export { EWCTabletpicker as default };
+window.customElements.define('ext-tabletpicker', HTMLParsedElement.withParsedCallback(EWCTabletpicker));

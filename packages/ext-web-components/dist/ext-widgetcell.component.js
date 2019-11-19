@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_cell_Widget from './Ext/grid/cell/Widget';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtWidgetcellComponent =
+//import Ext_grid_cell_Widget from '@sencha/ext-runtime-base/dist/./Ext/grid/cell/Widget.js';
+import Ext_grid_cell_Widget from './Ext/grid/cell/Widget.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCWidgetcell =
 /*#__PURE__*/
 function (_Ext_grid_cell_Widget) {
-  _inheritsLoose(ExtWidgetcellComponent, _Ext_grid_cell_Widget);
+  _inheritsLoose(EWCWidgetcell, _Ext_grid_cell_Widget);
 
-  function ExtWidgetcellComponent() {
+  function EWCWidgetcell() {
     var _this;
 
     _this = _Ext_grid_cell_Widget.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_grid_cell_Widget) {
     return _this;
   }
 
-  return ExtWidgetcellComponent;
-}(Ext_grid_cell_Widget); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-widgetcell', ExtWidgetcellComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCWidgetcell;
+}(Ext_grid_cell_Widget);
 
-window.customElements.define('ext-widgetcell', HTMLParsedElement.withParsedCallback(ExtWidgetcellComponent));
+export { EWCWidgetcell as default };
+window.customElements.define('ext-widgetcell', HTMLParsedElement.withParsedCallback(EWCWidgetcell));

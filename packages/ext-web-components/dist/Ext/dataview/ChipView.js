@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_dataview_DataView from '../../Ext/dataview/DataView';
+import Ext_dataview_DataView from '../../Ext/dataview/DataView.js';
 
 var Ext_dataview_ChipView =
 /*#__PURE__*/
@@ -8,13 +8,13 @@ function (_Ext_dataview_DataVie) {
   _inheritsLoose(Ext_dataview_ChipView, _Ext_dataview_DataVie);
 
   Ext_dataview_ChipView.PROPERTIES = function PROPERTIES() {
-    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'associatedData', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'cardSwitchAnimation', 'centered', 'closable', 'closableField', 'closeHandler', 'cls', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'deferEmptyText', 'deselectOnContainerClick', 'disabled', 'disableSelection', 'displayed', 'displayField', 'displayTpl', 'docked', 'draggable', 'emptyItemText', 'emptyState', 'emptyText', 'emptyTextDefaults', 'emptyTextProperty', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'iconClsField', 'iconField', 'id', 'inactiveChildTabIndex', 'inline', 'innerCls', 'instanceCls', 'itemButtonMode', 'itemCls', 'itemId', 'itemRipple', 'items', 'itemsFocusable', 'itemTpl', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'lastSelected', 'layout', 'left', 'listeners', 'loadingHeight', 'loadingText', 'manageBorders', 'margin', 'markDirty', 'masked', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'pressedDelay', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'right', 'ripple', 'scope', 'scrollable', 'scrollDock', 'scrollToTopOnRefresh', 'selectable', 'selected', 'selection', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'triggerCtEvent', 'triggerEvent', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'associatedData', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'cardSwitchAnimation', 'centered', 'closable', 'closableField', 'closeHandler', 'cls', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'deferEmptyText', 'deselectOnContainerClick', 'disabled', 'disableSelection', 'displayed', 'displayField', 'displayTpl', 'docked', 'draggable', 'emptyItemText', 'emptyState', 'emptyText', 'emptyTextDefaults', 'emptyTextProperty', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'iconClsField', 'iconField', 'id', 'inactiveChildTabIndex', 'inline', 'innerCls', 'instanceCls', 'itemButtonMode', 'itemCls', 'itemId', 'itemRipple', 'items', 'itemsFocusable', 'itemTpl', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'lastSelected', 'layout', 'left', 'listeners', 'loadingHeight', 'loadingText', 'manageBorders', 'margin', 'markDirty', 'masked', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'pressedDelay', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'right', 'ripple', 'scope', 'scrollable', 'scrollDock', 'scrollToTopOnRefresh', 'selectable', 'selected', 'selection', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'triggerCtEvent', 'triggerEvent', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_dataview_ChipView.EVENTS = function EVENTS() {
     return [{
       name: 'activate',
-      parameters: 'newActiveItem,chipview,oldActiveItem'
+      parameters: 'newActiveItem,sender,oldActiveItem'
     }, {
       name: 'activeItemchange',
       parameters: 'sender,value,oldValue'
@@ -80,7 +80,7 @@ function (_Ext_dataview_DataVie) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforetofront',
-      parameters: 'chipview'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -89,7 +89,7 @@ function (_Ext_dataview_DataVie) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'chipview,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -98,43 +98,43 @@ function (_Ext_dataview_DataVie) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'childdoubletap',
-      parameters: 'chipview,location'
+      parameters: 'sender,location'
     }, {
       name: 'childlongpress',
-      parameters: 'chipview,location'
+      parameters: 'sender,location'
     }, {
       name: 'childmouseenter',
-      parameters: 'chipview,location'
+      parameters: 'sender,location'
     }, {
       name: 'childmouseleave',
-      parameters: 'chipview,location'
+      parameters: 'sender,location'
     }, {
       name: 'childsingletap',
-      parameters: 'chipview,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtap',
-      parameters: 'chipview,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtaphold',
-      parameters: 'chipview,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtouchcancel',
-      parameters: 'chipview,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtouchend',
-      parameters: 'chipview,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtouchmove',
-      parameters: 'chipview,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtouchstart',
-      parameters: 'chipview,location'
+      parameters: 'sender,location'
     }, {
       name: 'deactivate',
-      parameters: 'oldActiveItem,chipview,newActiveItem'
+      parameters: 'oldActiveItem,sender,newActiveItem'
     }, {
       name: 'deselect',
-      parameters: 'chipview,records'
+      parameters: 'sender,records'
     }, {
       name: 'destroy',
       parameters: ''
@@ -152,13 +152,13 @@ function (_Ext_dataview_DataVie) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'chipview,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'chipview,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'chipview,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -176,40 +176,40 @@ function (_Ext_dataview_DataVie) {
       parameters: 'sender'
     }, {
       name: 'itemdoubletap',
-      parameters: 'chipview,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemlongpress',
-      parameters: 'chipview,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemmouseenter',
-      parameters: 'chipview,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemmouseleave',
-      parameters: 'chipview,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemsingletap',
-      parameters: 'chipview,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemswipe',
-      parameters: 'chipview,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtap',
-      parameters: 'chipview,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtaphold',
-      parameters: 'chipview,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtouchcancel',
-      parameters: 'chipview,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtouchend',
-      parameters: 'chipview,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtouchmove',
-      parameters: 'chipview,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtouchstart',
-      parameters: 'chipview,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'leftchange',
       parameters: 'sender,value,oldValue'
@@ -233,7 +233,7 @@ function (_Ext_dataview_DataVie) {
       parameters: 'sender,container,toIndex,fromIndex'
     }, {
       name: 'navigate',
-      parameters: 'chipview,to,from'
+      parameters: 'sender,to,from'
     }, {
       name: 'orientationchange',
       parameters: ''
@@ -245,7 +245,7 @@ function (_Ext_dataview_DataVie) {
       parameters: 'sender,positioned'
     }, {
       name: 'refresh',
-      parameters: 'chipview'
+      parameters: 'sender'
     }, {
       name: 'remove',
       parameters: ''
@@ -254,7 +254,7 @@ function (_Ext_dataview_DataVie) {
       parameters: 'sender,container,index'
     }, {
       name: 'renderedchange',
-      parameters: 'chipview,item,rendered'
+      parameters: 'sender,item,rendered'
     }, {
       name: 'resize',
       parameters: 'element,info'
@@ -269,7 +269,7 @@ function (_Ext_dataview_DataVie) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'select',
-      parameters: 'chipview,selected'
+      parameters: 'sender,selected'
     }, {
       name: 'selectionchange',
       parameters: 'view,records,selected,selection'
@@ -281,7 +281,7 @@ function (_Ext_dataview_DataVie) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'tofront',
-      parameters: 'chipview'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -293,7 +293,7 @@ function (_Ext_dataview_DataVie) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

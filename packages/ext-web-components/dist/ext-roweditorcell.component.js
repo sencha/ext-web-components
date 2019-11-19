@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_rowedit_Cell from './Ext/grid/rowedit/Cell';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtRoweditorcellComponent =
+//import Ext_grid_rowedit_Cell from '@sencha/ext-runtime-base/dist/./Ext/grid/rowedit/Cell.js';
+import Ext_grid_rowedit_Cell from './Ext/grid/rowedit/Cell.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCRoweditorcell =
 /*#__PURE__*/
 function (_Ext_grid_rowedit_Cel) {
-  _inheritsLoose(ExtRoweditorcellComponent, _Ext_grid_rowedit_Cel);
+  _inheritsLoose(EWCRoweditorcell, _Ext_grid_rowedit_Cel);
 
-  function ExtRoweditorcellComponent() {
+  function EWCRoweditorcell() {
     var _this;
 
     _this = _Ext_grid_rowedit_Cel.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_grid_rowedit_Cel) {
     return _this;
   }
 
-  return ExtRoweditorcellComponent;
-}(Ext_grid_rowedit_Cell); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-roweditorcell', ExtRoweditorcellComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCRoweditorcell;
+}(Ext_grid_rowedit_Cell);
 
-window.customElements.define('ext-roweditorcell', HTMLParsedElement.withParsedCallback(ExtRoweditorcellComponent));
+export { EWCRoweditorcell as default };
+window.customElements.define('ext-roweditorcell', HTMLParsedElement.withParsedCallback(EWCRoweditorcell));

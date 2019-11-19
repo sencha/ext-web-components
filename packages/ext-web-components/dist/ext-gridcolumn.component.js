@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_column_Template from './Ext/grid/column/Template';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtGridcolumnComponent =
+//import Ext_grid_column_Template from '@sencha/ext-runtime-base/dist/./Ext/grid/column/Template.js';
+import Ext_grid_column_Template from './Ext/grid/column/Template.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCGridcolumn =
 /*#__PURE__*/
 function (_Ext_grid_column_Temp) {
-  _inheritsLoose(ExtGridcolumnComponent, _Ext_grid_column_Temp);
+  _inheritsLoose(EWCGridcolumn, _Ext_grid_column_Temp);
 
-  function ExtGridcolumnComponent() {
+  function EWCGridcolumn() {
     var _this;
 
     _this = _Ext_grid_column_Temp.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_grid_column_Temp) {
     return _this;
   }
 
-  return ExtGridcolumnComponent;
-}(Ext_grid_column_Template); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-gridcolumn', ExtGridcolumnComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCGridcolumn;
+}(Ext_grid_column_Template);
 
-window.customElements.define('ext-gridcolumn', HTMLParsedElement.withParsedCallback(ExtGridcolumnComponent));
+export { EWCGridcolumn as default };
+window.customElements.define('ext-gridcolumn', HTMLParsedElement.withParsedCallback(EWCGridcolumn));

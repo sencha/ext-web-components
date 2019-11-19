@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_sparkline_Line from './Ext/sparkline/Line';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtSparklinelineComponent =
+//import Ext_sparkline_Line from '@sencha/ext-runtime-base/dist/./Ext/sparkline/Line.js';
+import Ext_sparkline_Line from './Ext/sparkline/Line.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCSparklineline =
 /*#__PURE__*/
 function (_Ext_sparkline_Line) {
-  _inheritsLoose(ExtSparklinelineComponent, _Ext_sparkline_Line);
+  _inheritsLoose(EWCSparklineline, _Ext_sparkline_Line);
 
-  function ExtSparklinelineComponent() {
+  function EWCSparklineline() {
     var _this;
 
     _this = _Ext_sparkline_Line.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_sparkline_Line) {
     return _this;
   }
 
-  return ExtSparklinelineComponent;
-}(Ext_sparkline_Line); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-sparklineline', ExtSparklinelineComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCSparklineline;
+}(Ext_sparkline_Line);
 
-window.customElements.define('ext-sparklineline', HTMLParsedElement.withParsedCallback(ExtSparklinelineComponent));
+export { EWCSparklineline as default };
+window.customElements.define('ext-sparklineline', HTMLParsedElement.withParsedCallback(EWCSparklineline));

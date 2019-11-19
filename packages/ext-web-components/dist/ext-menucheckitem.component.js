@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_menu_CheckItem from './Ext/menu/CheckItem';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtMenucheckitemComponent =
+//import Ext_menu_CheckItem from '@sencha/ext-runtime-base/dist/./Ext/menu/CheckItem.js';
+import Ext_menu_CheckItem from './Ext/menu/CheckItem.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCMenucheckitem =
 /*#__PURE__*/
 function (_Ext_menu_CheckItem) {
-  _inheritsLoose(ExtMenucheckitemComponent, _Ext_menu_CheckItem);
+  _inheritsLoose(EWCMenucheckitem, _Ext_menu_CheckItem);
 
-  function ExtMenucheckitemComponent() {
+  function EWCMenucheckitem() {
     var _this;
 
     _this = _Ext_menu_CheckItem.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_menu_CheckItem) {
     return _this;
   }
 
-  return ExtMenucheckitemComponent;
-}(Ext_menu_CheckItem); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-menucheckitem', ExtMenucheckitemComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCMenucheckitem;
+}(Ext_menu_CheckItem);
 
-window.customElements.define('ext-menucheckitem', HTMLParsedElement.withParsedCallback(ExtMenucheckitemComponent));
+export { EWCMenucheckitem as default };
+window.customElements.define('ext-menucheckitem', HTMLParsedElement.withParsedCallback(EWCMenucheckitem));

@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_form_Select from './Ext/form/Select';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtSelectfieldComponent =
+//import Ext_form_Select from '@sencha/ext-runtime-base/dist/./Ext/form/Select.js';
+import Ext_form_Select from './Ext/form/Select.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCSelectfield =
 /*#__PURE__*/
 function (_Ext_form_Select) {
-  _inheritsLoose(ExtSelectfieldComponent, _Ext_form_Select);
+  _inheritsLoose(EWCSelectfield, _Ext_form_Select);
 
-  function ExtSelectfieldComponent() {
+  function EWCSelectfield() {
     var _this;
 
     _this = _Ext_form_Select.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_form_Select) {
     return _this;
   }
 
-  return ExtSelectfieldComponent;
-}(Ext_form_Select); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-selectfield', ExtSelectfieldComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCSelectfield;
+}(Ext_form_Select);
 
-window.customElements.define('ext-selectfield', HTMLParsedElement.withParsedCallback(ExtSelectfieldComponent));
+export { EWCSelectfield as default };
+window.customElements.define('ext-selectfield', HTMLParsedElement.withParsedCallback(EWCSelectfield));

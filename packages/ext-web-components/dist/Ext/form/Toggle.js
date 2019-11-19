@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_SingleSlider from '../../Ext/field/SingleSlider';
+import Ext_field_SingleSlider from '../../Ext/field/SingleSlider.js';
 
 var Ext_form_Toggle =
 /*#__PURE__*/
@@ -8,7 +8,7 @@ function (_Ext_field_SingleSlid) {
   _inheritsLoose(Ext_form_Toggle, _Ext_field_SingleSlid);
 
   Ext_form_Toggle.PROPERTIES = function PROPERTIES() {
-    return ['activeLabel', 'alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoFitErrors', 'axisLock', 'bind', 'bodyAlign', 'border', 'bottom', 'boxLabel', 'boxLabelAlign', 'bubbleDirty', 'centered', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'dataType', 'defaultListenerScope', 'dirty', 'disabled', 'displayed', 'docked', 'draggable', 'error', 'errorMessage', 'errorTarget', 'errorTip', 'errorTpl', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inactiveLabel', 'increment', 'inline', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'label', 'labelAlign', 'labelCls', 'labelMinWidth', 'labelTextAlign', 'labelWidth', 'labelWrap', 'left', 'listeners', 'liveUpdate', 'margin', 'maxHeight', 'maxValue', 'maxWidth', 'minHeight', 'minValue', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'readOnly', 'record', 'reference', 'relative', 'renderTo', 'required', 'requiredMessage', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'sideError', 'slider', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'tipError', 'titleError', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'underError', 'userCls', 'userSelectable', 'validateDisabled', 'validationMessage', 'validators', 'value', 'values', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['activeLabel', 'alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoFitErrors', 'axisLock', 'bind', 'bodyAlign', 'border', 'bottom', 'boxLabel', 'boxLabelAlign', 'bubbleDirty', 'centered', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'dataType', 'defaultListenerScope', 'dirty', 'disabled', 'displayed', 'docked', 'draggable', 'error', 'errorMessage', 'errorTarget', 'errorTip', 'errorTpl', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inactiveLabel', 'increment', 'inline', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'label', 'labelAlign', 'labelCls', 'labelMinWidth', 'labelTextAlign', 'labelWidth', 'labelWrap', 'left', 'listeners', 'liveUpdate', 'margin', 'maxHeight', 'maxValue', 'maxWidth', 'minHeight', 'minValue', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'readOnly', 'record', 'reference', 'relative', 'renderTo', 'required', 'requiredMessage', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'sideError', 'slider', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'tipError', 'titleError', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'underError', 'userCls', 'userSelectable', 'validateDisabled', 'validationMessage', 'validators', 'value', 'values', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_form_Toggle.EVENTS = function EVENTS() {
@@ -65,7 +65,7 @@ function (_Ext_field_SingleSlid) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'togglefield'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -74,7 +74,7 @@ function (_Ext_field_SingleSlid) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'togglefield,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -83,7 +83,7 @@ function (_Ext_field_SingleSlid) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'change',
-      parameters: 'togglefield,newValue,oldValue'
+      parameters: 'sender,newValue,oldValue'
     }, {
       name: 'click',
       parameters: 'e'
@@ -92,7 +92,7 @@ function (_Ext_field_SingleSlid) {
       parameters: ''
     }, {
       name: 'dirtychange',
-      parameters: 'togglefield,dirty'
+      parameters: 'sender,dirty'
     }, {
       name: 'disabledchange',
       parameters: 'sender,value,oldValue'
@@ -116,19 +116,19 @@ function (_Ext_field_SingleSlid) {
       parameters: 'sender'
     }, {
       name: 'errorchange',
-      parameters: 'togglefield,error'
+      parameters: 'sender,error'
     }, {
       name: 'floatingchange',
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'togglefield,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'togglefield,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'togglefield,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -197,7 +197,7 @@ function (_Ext_field_SingleSlid) {
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'togglefield'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -209,7 +209,7 @@ function (_Ext_field_SingleSlid) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

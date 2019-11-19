@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_chart_legend_LegendBase from '../../../Ext/chart/legend/LegendBase';
+import Ext_chart_legend_LegendBase from '../../../Ext/chart/legend/LegendBase.js';
 
 var Ext_chart_legend_Legend =
 /*#__PURE__*/
@@ -8,13 +8,13 @@ function (_Ext_chart_legend_Leg) {
   _inheritsLoose(Ext_chart_legend_Legend, _Ext_chart_legend_Leg);
 
   Ext_chart_legend_Legend.PROPERTIES = function PROPERTIES() {
-    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'associatedData', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'cardSwitchAnimation', 'centered', 'cls', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'deferEmptyText', 'deselectOnContainerClick', 'disabled', 'disableSelection', 'displayed', 'docked', 'draggable', 'emptyItemText', 'emptyState', 'emptyText', 'emptyTextDefaults', 'emptyTextProperty', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inactiveChildTabIndex', 'inline', 'innerCls', 'instanceCls', 'itemButtonMode', 'itemCls', 'itemId', 'itemRipple', 'items', 'itemsFocusable', 'itemTpl', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'lastSelected', 'layout', 'left', 'listeners', 'loadingHeight', 'loadingText', 'manageBorders', 'margin', 'markDirty', 'masked', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'pressedDelay', 'publishes', 'record', 'rect', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'right', 'ripple', 'scrollable', 'scrollDock', 'scrollToTopOnRefresh', 'selectable', 'selected', 'selection', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'toFrontOnShow', 'toggleable', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'triggerCtEvent', 'triggerEvent', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'associatedData', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'cardSwitchAnimation', 'centered', 'cls', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'deferEmptyText', 'deselectOnContainerClick', 'disabled', 'disableSelection', 'displayed', 'docked', 'draggable', 'emptyItemText', 'emptyState', 'emptyText', 'emptyTextDefaults', 'emptyTextProperty', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inactiveChildTabIndex', 'inline', 'innerCls', 'instanceCls', 'itemButtonMode', 'itemCls', 'itemId', 'itemRipple', 'items', 'itemsFocusable', 'itemTpl', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'lastSelected', 'layout', 'left', 'listeners', 'loadingHeight', 'loadingText', 'manageBorders', 'margin', 'markDirty', 'masked', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'pressedDelay', 'publishes', 'record', 'rect', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'right', 'ripple', 'scrollable', 'scrollDock', 'scrollToTopOnRefresh', 'selectable', 'selected', 'selection', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'toFrontOnShow', 'toggleable', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'triggerCtEvent', 'triggerEvent', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_chart_legend_Legend.EVENTS = function EVENTS() {
     return [{
       name: 'activate',
-      parameters: 'newActiveItem,legend,oldActiveItem'
+      parameters: 'newActiveItem,sender,oldActiveItem'
     }, {
       name: 'activeItemchange',
       parameters: 'sender,value,oldValue'
@@ -80,7 +80,7 @@ function (_Ext_chart_legend_Leg) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforetofront',
-      parameters: 'legend'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -89,7 +89,7 @@ function (_Ext_chart_legend_Leg) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'legend,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -98,43 +98,43 @@ function (_Ext_chart_legend_Leg) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'childdoubletap',
-      parameters: 'legend,location'
+      parameters: 'sender,location'
     }, {
       name: 'childlongpress',
-      parameters: 'legend,location'
+      parameters: 'sender,location'
     }, {
       name: 'childmouseenter',
-      parameters: 'legend,location'
+      parameters: 'sender,location'
     }, {
       name: 'childmouseleave',
-      parameters: 'legend,location'
+      parameters: 'sender,location'
     }, {
       name: 'childsingletap',
-      parameters: 'legend,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtap',
-      parameters: 'legend,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtaphold',
-      parameters: 'legend,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtouchcancel',
-      parameters: 'legend,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtouchend',
-      parameters: 'legend,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtouchmove',
-      parameters: 'legend,location'
+      parameters: 'sender,location'
     }, {
       name: 'childtouchstart',
-      parameters: 'legend,location'
+      parameters: 'sender,location'
     }, {
       name: 'deactivate',
-      parameters: 'oldActiveItem,legend,newActiveItem'
+      parameters: 'oldActiveItem,sender,newActiveItem'
     }, {
       name: 'deselect',
-      parameters: 'legend,records'
+      parameters: 'sender,records'
     }, {
       name: 'destroy',
       parameters: ''
@@ -152,13 +152,13 @@ function (_Ext_chart_legend_Leg) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'legend,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'legend,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'legend,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -176,40 +176,40 @@ function (_Ext_chart_legend_Leg) {
       parameters: 'sender'
     }, {
       name: 'itemdoubletap',
-      parameters: 'legend,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemlongpress',
-      parameters: 'legend,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemmouseenter',
-      parameters: 'legend,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemmouseleave',
-      parameters: 'legend,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemsingletap',
-      parameters: 'legend,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemswipe',
-      parameters: 'legend,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtap',
-      parameters: 'legend,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtaphold',
-      parameters: 'legend,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtouchcancel',
-      parameters: 'legend,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtouchend',
-      parameters: 'legend,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtouchmove',
-      parameters: 'legend,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'itemtouchstart',
-      parameters: 'legend,index,target,record,e'
+      parameters: 'sender,index,target,record,e'
     }, {
       name: 'leftchange',
       parameters: 'sender,value,oldValue'
@@ -233,7 +233,7 @@ function (_Ext_chart_legend_Leg) {
       parameters: 'sender,container,toIndex,fromIndex'
     }, {
       name: 'navigate',
-      parameters: 'legend,to,from'
+      parameters: 'sender,to,from'
     }, {
       name: 'orientationchange',
       parameters: ''
@@ -245,7 +245,7 @@ function (_Ext_chart_legend_Leg) {
       parameters: 'sender,positioned'
     }, {
       name: 'refresh',
-      parameters: 'legend'
+      parameters: 'sender'
     }, {
       name: 'remove',
       parameters: ''
@@ -254,7 +254,7 @@ function (_Ext_chart_legend_Leg) {
       parameters: 'sender,container,index'
     }, {
       name: 'renderedchange',
-      parameters: 'legend,item,rendered'
+      parameters: 'sender,item,rendered'
     }, {
       name: 'resize',
       parameters: 'element,info'
@@ -269,7 +269,7 @@ function (_Ext_chart_legend_Leg) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'select',
-      parameters: 'legend,selected'
+      parameters: 'sender,selected'
     }, {
       name: 'selectionchange',
       parameters: 'view,records,selected,selection'
@@ -281,7 +281,7 @@ function (_Ext_chart_legend_Leg) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'tofront',
-      parameters: 'legend'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -293,7 +293,7 @@ function (_Ext_chart_legend_Leg) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_NavigationView from './Ext/NavigationView';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtNavigationviewComponent =
+//import Ext_NavigationView from '@sencha/ext-runtime-base/dist/./Ext/NavigationView.js';
+import Ext_NavigationView from './Ext/NavigationView.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCNavigationview =
 /*#__PURE__*/
 function (_Ext_NavigationView) {
-  _inheritsLoose(ExtNavigationviewComponent, _Ext_NavigationView);
+  _inheritsLoose(EWCNavigationview, _Ext_NavigationView);
 
-  function ExtNavigationviewComponent() {
+  function EWCNavigationview() {
     var _this;
 
     _this = _Ext_NavigationView.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_NavigationView) {
     return _this;
   }
 
-  return ExtNavigationviewComponent;
-}(Ext_NavigationView); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-navigationview', ExtNavigationviewComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCNavigationview;
+}(Ext_NavigationView);
 
-window.customElements.define('ext-navigationview', HTMLParsedElement.withParsedCallback(ExtNavigationviewComponent));
+export { EWCNavigationview as default };
+window.customElements.define('ext-navigationview', HTMLParsedElement.withParsedCallback(EWCNavigationview));

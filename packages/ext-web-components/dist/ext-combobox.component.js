@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_form_field_ComboBox from './Ext/form/field/ComboBox';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtComboboxComponent =
+//import Ext_form_field_ComboBox from '@sencha/ext-runtime-base/dist/./Ext/form/field/ComboBox.js';
+import Ext_form_field_ComboBox from './Ext/form/field/ComboBox.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCCombobox =
 /*#__PURE__*/
 function (_Ext_form_field_Combo) {
-  _inheritsLoose(ExtComboboxComponent, _Ext_form_field_Combo);
+  _inheritsLoose(EWCCombobox, _Ext_form_field_Combo);
 
-  function ExtComboboxComponent() {
+  function EWCCombobox() {
     var _this;
 
     _this = _Ext_form_field_Combo.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_form_field_Combo) {
     return _this;
   }
 
-  return ExtComboboxComponent;
-}(Ext_form_field_ComboBox); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-combobox', ExtComboboxComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCCombobox;
+}(Ext_form_field_ComboBox);
 
-window.customElements.define('ext-combobox', HTMLParsedElement.withParsedCallback(ExtComboboxComponent));
+export { EWCCombobox as default };
+window.customElements.define('ext-combobox', HTMLParsedElement.withParsedCallback(EWCCombobox));

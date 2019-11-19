@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_calendar_EventBase from '../../Ext/calendar/EventBase';
+import Ext_calendar_EventBase from '../../Ext/calendar/EventBase.js';
 
 var Ext_calendar_Event =
 /*#__PURE__*/
@@ -8,7 +8,7 @@ function (_Ext_calendar_EventBa) {
   _inheritsLoose(Ext_calendar_Event, _Ext_calendar_EventBa);
 
   Ext_calendar_Event.PROPERTIES = function PROPERTIES() {
-    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'defaultTitle', 'disabled', 'displayed', 'docked', 'draggable', 'endDate', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'mode', 'model', 'modelValidation', 'name', 'nameable', 'padding', 'palette', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'resize', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'startDate', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'timeFormat', 'title', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'view', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'defaultTitle', 'disabled', 'displayed', 'docked', 'draggable', 'endDate', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'mode', 'model', 'modelValidation', 'name', 'nameable', 'padding', 'palette', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'resize', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'startDate', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'timeFormat', 'title', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'view', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_calendar_Event.EVENTS = function EVENTS() {
@@ -65,7 +65,7 @@ function (_Ext_calendar_EventBa) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'calendar-event'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -74,7 +74,7 @@ function (_Ext_calendar_EventBa) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'calendar-event,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -98,13 +98,13 @@ function (_Ext_calendar_EventBa) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'calendar-event,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'calendar-event,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'calendar-event,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -164,7 +164,7 @@ function (_Ext_calendar_EventBa) {
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'calendar-event'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -176,7 +176,7 @@ function (_Ext_calendar_EventBa) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

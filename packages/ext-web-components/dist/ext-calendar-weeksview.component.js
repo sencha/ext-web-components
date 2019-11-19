@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_calendar_view_Weeks from './Ext/calendar/view/Weeks';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtCalendar_weeksviewComponent =
+//import Ext_calendar_view_Weeks from '@sencha/ext-runtime-base/dist/./Ext/calendar/view/Weeks.js';
+import Ext_calendar_view_Weeks from './Ext/calendar/view/Weeks.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCCalendar_weeksview =
 /*#__PURE__*/
 function (_Ext_calendar_view_We) {
-  _inheritsLoose(ExtCalendar_weeksviewComponent, _Ext_calendar_view_We);
+  _inheritsLoose(EWCCalendar_weeksview, _Ext_calendar_view_We);
 
-  function ExtCalendar_weeksviewComponent() {
+  function EWCCalendar_weeksview() {
     var _this;
 
     _this = _Ext_calendar_view_We.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_calendar_view_We) {
     return _this;
   }
 
-  return ExtCalendar_weeksviewComponent;
-}(Ext_calendar_view_Weeks); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-calendar-weeksview', ExtCalendar_weeksviewComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCCalendar_weeksview;
+}(Ext_calendar_view_Weeks);
 
-window.customElements.define('ext-calendar-weeksview', HTMLParsedElement.withParsedCallback(ExtCalendar_weeksviewComponent));
+export { EWCCalendar_weeksview as default };
+window.customElements.define('ext-calendar-weeksview', HTMLParsedElement.withParsedCallback(EWCCalendar_weeksview));

@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_menu_Separator from './Ext/menu/Separator';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtMenuseparatorComponent =
+//import Ext_menu_Separator from '@sencha/ext-runtime-base/dist/./Ext/menu/Separator.js';
+import Ext_menu_Separator from './Ext/menu/Separator.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCMenuseparator =
 /*#__PURE__*/
 function (_Ext_menu_Separator) {
-  _inheritsLoose(ExtMenuseparatorComponent, _Ext_menu_Separator);
+  _inheritsLoose(EWCMenuseparator, _Ext_menu_Separator);
 
-  function ExtMenuseparatorComponent() {
+  function EWCMenuseparator() {
     var _this;
 
     _this = _Ext_menu_Separator.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_menu_Separator) {
     return _this;
   }
 
-  return ExtMenuseparatorComponent;
-}(Ext_menu_Separator); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-menuseparator', ExtMenuseparatorComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCMenuseparator;
+}(Ext_menu_Separator);
 
-window.customElements.define('ext-menuseparator', HTMLParsedElement.withParsedCallback(ExtMenuseparatorComponent));
+export { EWCMenuseparator as default };
+window.customElements.define('ext-menuseparator', HTMLParsedElement.withParsedCallback(EWCMenuseparator));

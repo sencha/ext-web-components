@@ -1,21 +1,12 @@
-import Ext_menu_Menu from './Ext/menu/Menu'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_menu_Menu from '@sencha/ext-runtime-base/dist/./Ext/menu/Menu.js';
+import Ext_menu_Menu from './Ext/menu/Menu.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtMenuComponent extends Ext_menu_Menu {
+export default class EWCMenu extends Ext_menu_Menu {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'menu'
+        super ([], []);
+        this.xtype = 'menu';
     }
 }
+window.customElements.define('ext-menu', HTMLParsedElement.withParsedCallback(EWCMenu));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-menu', ExtMenuComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-menu', HTMLParsedElement.withParsedCallback(ExtMenuComponent))

@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_picker_Slot from './Ext/picker/Slot';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtPickerslotComponent =
+//import Ext_picker_Slot from '@sencha/ext-runtime-base/dist/./Ext/picker/Slot.js';
+import Ext_picker_Slot from './Ext/picker/Slot.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCPickerslot =
 /*#__PURE__*/
 function (_Ext_picker_Slot) {
-  _inheritsLoose(ExtPickerslotComponent, _Ext_picker_Slot);
+  _inheritsLoose(EWCPickerslot, _Ext_picker_Slot);
 
-  function ExtPickerslotComponent() {
+  function EWCPickerslot() {
     var _this;
 
     _this = _Ext_picker_Slot.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_picker_Slot) {
     return _this;
   }
 
-  return ExtPickerslotComponent;
-}(Ext_picker_Slot); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-pickerslot', ExtPickerslotComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCPickerslot;
+}(Ext_picker_Slot);
 
-window.customElements.define('ext-pickerslot', HTMLParsedElement.withParsedCallback(ExtPickerslotComponent));
+export { EWCPickerslot as default };
+window.customElements.define('ext-pickerslot', HTMLParsedElement.withParsedCallback(EWCPickerslot));

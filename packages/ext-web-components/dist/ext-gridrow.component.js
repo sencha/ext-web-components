@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_Row from './Ext/grid/Row';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtGridrowComponent =
+//import Ext_grid_Row from '@sencha/ext-runtime-base/dist/./Ext/grid/Row.js';
+import Ext_grid_Row from './Ext/grid/Row.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCGridrow =
 /*#__PURE__*/
 function (_Ext_grid_Row) {
-  _inheritsLoose(ExtGridrowComponent, _Ext_grid_Row);
+  _inheritsLoose(EWCGridrow, _Ext_grid_Row);
 
-  function ExtGridrowComponent() {
+  function EWCGridrow() {
     var _this;
 
     _this = _Ext_grid_Row.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_grid_Row) {
     return _this;
   }
 
-  return ExtGridrowComponent;
-}(Ext_grid_Row); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-gridrow', ExtGridrowComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCGridrow;
+}(Ext_grid_Row);
 
-window.customElements.define('ext-gridrow', HTMLParsedElement.withParsedCallback(ExtGridrowComponent));
+export { EWCGridrow as default };
+window.customElements.define('ext-gridrow', HTMLParsedElement.withParsedCallback(EWCGridrow));

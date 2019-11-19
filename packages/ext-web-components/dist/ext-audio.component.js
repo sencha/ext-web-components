@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Audio from './Ext/Audio';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtAudioComponent =
+//import Ext_Audio from '@sencha/ext-runtime-base/dist/./Ext/Audio.js';
+import Ext_Audio from './Ext/Audio.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCAudio =
 /*#__PURE__*/
 function (_Ext_Audio) {
-  _inheritsLoose(ExtAudioComponent, _Ext_Audio);
+  _inheritsLoose(EWCAudio, _Ext_Audio);
 
-  function ExtAudioComponent() {
+  function EWCAudio() {
     var _this;
 
     _this = _Ext_Audio.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_Audio) {
     return _this;
   }
 
-  return ExtAudioComponent;
-}(Ext_Audio); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-audio', ExtAudioComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCAudio;
+}(Ext_Audio);
 
-window.customElements.define('ext-audio', HTMLParsedElement.withParsedCallback(ExtAudioComponent));
+export { EWCAudio as default };
+window.customElements.define('ext-audio', HTMLParsedElement.withParsedCallback(EWCAudio));

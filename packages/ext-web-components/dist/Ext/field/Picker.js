@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_Text from '../../Ext/field/Text';
+import Ext_field_Text from '../../Ext/field/Text.js';
 
 var Ext_field_Picker =
 /*#__PURE__*/
@@ -8,13 +8,13 @@ function (_Ext_field_Text) {
   _inheritsLoose(Ext_field_Picker, _Ext_field_Text);
 
   Ext_field_Picker.PROPERTIES = function PROPERTIES() {
-    return ['alignSelf', 'alignTarget', 'alwaysOnTop', 'animateUnderline', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoCapitalize', 'autoComplete', 'autoCorrect', 'autoFitErrors', 'autoHideInputMask', 'axisLock', 'badFormatMessage', 'bind', 'bodyAlign', 'border', 'bottom', 'bubbleDirty', 'centered', 'clearable', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'dataType', 'defaultListenerScope', 'dirty', 'disabled', 'displayed', 'docked', 'draggable', 'edgePicker', 'editable', 'error', 'errorMessage', 'errorTarget', 'errorTip', 'errorTpl', 'flex', 'floated', 'floatedPicker', 'floatedPickerAlign', 'focusCls', 'focusTrap', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'hideTrigger', 'html', 'id', 'inline', 'inputMask', 'inputType', 'inputValue', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'label', 'labelAlign', 'labelCls', 'labelInPlaceholder', 'labelMinWidth', 'labelTextAlign', 'labelWidth', 'labelWrap', 'left', 'listeners', 'margin', 'matchFieldWidth', 'maxHeight', 'maxLength', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'parseValidator', 'pattern', 'picker', 'pickerSlotAlign', 'placeholder', 'plugins', 'publishes', 'readOnly', 'record', 'reference', 'relative', 'renderTo', 'required', 'requiredMessage', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'sideError', 'stateful', 'statefulDefaults', 'stateId', 'stripCharsRe', 'style', 'tabIndex', 'textAlign', 'tipError', 'titleError', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'triggers', 'twoWayBindable', 'ui', 'underError', 'userCls', 'userSelectable', 'validateDisabled', 'validationMessage', 'validators', 'value', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['alignSelf', 'alignTarget', 'alwaysOnTop', 'animateUnderline', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoCapitalize', 'autoComplete', 'autoCorrect', 'autoFitErrors', 'autoHideInputMask', 'axisLock', 'badFormatMessage', 'bind', 'bodyAlign', 'border', 'bottom', 'bubbleDirty', 'centered', 'clearable', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'dataType', 'defaultListenerScope', 'dirty', 'disabled', 'displayed', 'docked', 'draggable', 'edgePicker', 'editable', 'error', 'errorMessage', 'errorTarget', 'errorTip', 'errorTpl', 'flex', 'floated', 'floatedPicker', 'floatedPickerAlign', 'focusCls', 'focusTrap', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'hideTrigger', 'html', 'id', 'inline', 'inputMask', 'inputType', 'inputValue', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'label', 'labelAlign', 'labelCls', 'labelInPlaceholder', 'labelMinWidth', 'labelTextAlign', 'labelWidth', 'labelWrap', 'left', 'listeners', 'margin', 'matchFieldWidth', 'maxHeight', 'maxLength', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'parseValidator', 'pattern', 'picker', 'pickerSlotAlign', 'placeholder', 'plugins', 'publishes', 'readOnly', 'record', 'reference', 'relative', 'renderTo', 'required', 'requiredMessage', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'sideError', 'stateful', 'statefulDefaults', 'stateId', 'stripCharsRe', 'style', 'tabIndex', 'textAlign', 'tipError', 'titleError', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'triggers', 'twoWayBindable', 'ui', 'underError', 'userCls', 'userSelectable', 'validateDisabled', 'validationMessage', 'validators', 'value', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_field_Picker.EVENTS = function EVENTS() {
     return [{
       name: 'action',
-      parameters: 'pickerfield,e'
+      parameters: 'sender,e'
     }, {
       name: 'added',
       parameters: 'sender,container,index'
@@ -68,7 +68,7 @@ function (_Ext_field_Text) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'pickerfield'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -77,7 +77,7 @@ function (_Ext_field_Text) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'pickerfield,e'
+      parameters: 'sender,e'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -86,10 +86,10 @@ function (_Ext_field_Text) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'change',
-      parameters: 'pickerfield,newValue,oldValue'
+      parameters: 'sender,newValue,oldValue'
     }, {
       name: 'clearicontap',
-      parameters: 'pickerfield,input,e'
+      parameters: 'sender,input,e'
     }, {
       name: 'click',
       parameters: 'e'
@@ -101,7 +101,7 @@ function (_Ext_field_Text) {
       parameters: ''
     }, {
       name: 'dirtychange',
-      parameters: 'pickerfield,dirty'
+      parameters: 'sender,dirty'
     }, {
       name: 'disabledchange',
       parameters: 'sender,value,oldValue'
@@ -113,7 +113,7 @@ function (_Ext_field_Text) {
       parameters: 'sender'
     }, {
       name: 'errorchange',
-      parameters: 'pickerfield,error'
+      parameters: 'sender,error'
     }, {
       name: 'expand',
       parameters: 'field'
@@ -122,13 +122,13 @@ function (_Ext_field_Text) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'pickerfield,e'
+      parameters: 'sender,e'
     }, {
       name: 'focusenter',
-      parameters: 'pickerfield,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'pickerfield,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -146,10 +146,10 @@ function (_Ext_field_Text) {
       parameters: 'sender'
     }, {
       name: 'keydown',
-      parameters: 'pickerfield,e'
+      parameters: 'sender,e'
     }, {
       name: 'keyup',
-      parameters: 'pickerfield,e'
+      parameters: 'sender,e'
     }, {
       name: 'leftchange',
       parameters: 'sender,value,oldValue'
@@ -167,7 +167,7 @@ function (_Ext_field_Text) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'mousedown',
-      parameters: 'pickerfield,e'
+      parameters: 'sender,e'
     }, {
       name: 'moved',
       parameters: 'sender,container,toIndex,fromIndex'
@@ -179,7 +179,7 @@ function (_Ext_field_Text) {
       parameters: 'sender,element'
     }, {
       name: 'paste',
-      parameters: 'pickerfield,e'
+      parameters: 'sender,e'
     }, {
       name: 'positionedchange',
       parameters: 'sender,positioned'
@@ -200,7 +200,7 @@ function (_Ext_field_Text) {
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'pickerfield'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -212,7 +212,7 @@ function (_Ext_field_Text) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_CellEditor from './Ext/grid/CellEditor';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtCelleditorComponent =
+//import Ext_grid_CellEditor from '@sencha/ext-runtime-base/dist/./Ext/grid/CellEditor.js';
+import Ext_grid_CellEditor from './Ext/grid/CellEditor.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCCelleditor =
 /*#__PURE__*/
 function (_Ext_grid_CellEditor) {
-  _inheritsLoose(ExtCelleditorComponent, _Ext_grid_CellEditor);
+  _inheritsLoose(EWCCelleditor, _Ext_grid_CellEditor);
 
-  function ExtCelleditorComponent() {
+  function EWCCelleditor() {
     var _this;
 
     _this = _Ext_grid_CellEditor.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_grid_CellEditor) {
     return _this;
   }
 
-  return ExtCelleditorComponent;
-}(Ext_grid_CellEditor); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-celleditor', ExtCelleditorComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCCelleditor;
+}(Ext_grid_CellEditor);
 
-window.customElements.define('ext-celleditor', HTMLParsedElement.withParsedCallback(ExtCelleditorComponent));
+export { EWCCelleditor as default };
+window.customElements.define('ext-celleditor', HTMLParsedElement.withParsedCallback(EWCCelleditor));

@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_container_Container from '../../../Ext/container/Container';
+import Ext_container_Container from '../../../Ext/container/Container.js';
 
 var Ext_calendar_view_Multi =
 /*#__PURE__*/
@@ -8,13 +8,13 @@ function (_Ext_container_Contai) {
   _inheritsLoose(Ext_calendar_view_Multi, _Ext_container_Contai);
 
   Ext_calendar_view_Multi.PROPERTIES = function PROPERTIES() {
-    return ['compact', 'compactOptions', 'defaultView', 'layout', 'store', 'timezoneOffset', 'value', 'views', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['compact', 'compactOptions', 'defaultView', 'layout', 'store', 'timezoneOffset', 'value', 'views'];
   };
 
   Ext_calendar_view_Multi.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

@@ -1,21 +1,12 @@
-import Ext_panel_YearPicker from './Ext/panel/YearPicker'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_panel_YearPicker from '@sencha/ext-runtime-base/dist/./Ext/panel/YearPicker.js';
+import Ext_panel_YearPicker from './Ext/panel/YearPicker.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtYearpickerComponent extends Ext_panel_YearPicker {
+export default class EWCYearpicker extends Ext_panel_YearPicker {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'yearpicker'
+        super ([], []);
+        this.xtype = 'yearpicker';
     }
 }
+window.customElements.define('ext-yearpicker', HTMLParsedElement.withParsedCallback(EWCYearpicker));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-yearpicker', ExtYearpickerComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-yearpicker', HTMLParsedElement.withParsedCallback(ExtYearpickerComponent))

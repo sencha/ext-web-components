@@ -1,21 +1,12 @@
-import Ext_slider_Thumb from './Ext/slider/Thumb'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_slider_Thumb from '@sencha/ext-runtime-base/dist/./Ext/slider/Thumb.js';
+import Ext_slider_Thumb from './Ext/slider/Thumb.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtThumbComponent extends Ext_slider_Thumb {
+export default class EWCThumb extends Ext_slider_Thumb {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'thumb'
+        super ([], []);
+        this.xtype = 'thumb';
     }
 }
+window.customElements.define('ext-thumb', HTMLParsedElement.withParsedCallback(EWCThumb));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-thumb', ExtThumbComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-thumb', HTMLParsedElement.withParsedCallback(ExtThumbComponent))

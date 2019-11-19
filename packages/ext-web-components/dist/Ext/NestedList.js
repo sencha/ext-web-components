@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Container from '../Ext/Container';
+import Ext_Container from '../Ext/Container.js';
 
 var Ext_NestedList =
 /*#__PURE__*/
@@ -8,25 +8,25 @@ function (_Ext_Container) {
   _inheritsLoose(Ext_NestedList, _Ext_Container);
 
   Ext_NestedList.PROPERTIES = function PROPERTIES() {
-    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowDeselect', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'backButton', 'backText', 'bind', 'bodyCls', 'border', 'bottom', 'cardSwitchAnimation', 'centered', 'cls', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'detailCard', 'detailContainer', 'disabled', 'displayed', 'displayField', 'docked', 'draggable', 'emptyText', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'lastActiveList', 'lastNode', 'layout', 'left', 'listConfig', 'listeners', 'loadingText', 'manageBorders', 'margin', 'masked', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'onItemDisclosure', 'padding', 'plugins', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'title', 'toFrontOnShow', 'toolbar', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'updateTitleText', 'userCls', 'userSelectable', 'useTitleAsBackText', 'variableHeights', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowDeselect', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'backButton', 'backText', 'bind', 'bodyCls', 'border', 'bottom', 'cardSwitchAnimation', 'centered', 'cls', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'detailCard', 'detailContainer', 'disabled', 'displayed', 'displayField', 'docked', 'draggable', 'emptyText', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'lastActiveList', 'lastNode', 'layout', 'left', 'listConfig', 'listeners', 'loadingText', 'manageBorders', 'margin', 'masked', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'onItemDisclosure', 'padding', 'plugins', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'title', 'toFrontOnShow', 'toolbar', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'updateTitleText', 'userCls', 'userSelectable', 'useTitleAsBackText', 'variableHeights', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_NestedList.EVENTS = function EVENTS() {
     return [{
       name: 'activate',
-      parameters: 'newActiveItem,nestedlist,oldActiveItem'
+      parameters: 'newActiveItem,sender,oldActiveItem'
     }, {
       name: 'activeItemchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'add',
-      parameters: 'nestedlist,item,index'
+      parameters: 'sender,item,index'
     }, {
       name: 'added',
       parameters: 'sender,container,index'
     }, {
       name: 'back',
-      parameters: 'nestedlist,node,lastActiveList,detailCardActive'
+      parameters: 'sender,node,lastActiveList,detailCardActive'
     }, {
       name: 'beforeactiveItemchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -56,7 +56,7 @@ function (_Ext_Container) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforeload',
-      parameters: 'nestedlist,store,operation'
+      parameters: 'sender,store,operation'
     }, {
       name: 'beforemaxHeightchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -80,13 +80,13 @@ function (_Ext_Container) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforeselectionchange',
-      parameters: 'nestedlist,list,node,selections'
+      parameters: 'sender,list,node,selections'
     }, {
       name: 'beforeshow',
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'nestedlist'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -95,7 +95,7 @@ function (_Ext_Container) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'nestedlist,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -104,13 +104,13 @@ function (_Ext_Container) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'containertap',
-      parameters: 'nestedlist,list,e'
+      parameters: 'sender,list,e'
     }, {
       name: 'deactivate',
-      parameters: 'oldActiveItem,nestedlist,newActiveItem'
+      parameters: 'oldActiveItem,sender,newActiveItem'
     }, {
       name: 'deselect',
-      parameters: 'nestedlist,list,selections'
+      parameters: 'sender,list,selections'
     }, {
       name: 'destroy',
       parameters: ''
@@ -128,13 +128,13 @@ function (_Ext_Container) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'nestedlist,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'nestedlist,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'nestedlist,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -152,22 +152,22 @@ function (_Ext_Container) {
       parameters: 'sender'
     }, {
       name: 'itemdoubletap',
-      parameters: 'nestedlist,list,index,target,record,e'
+      parameters: 'sender,list,index,target,record,e'
     }, {
       name: 'itemtap',
-      parameters: 'nestedlist,list,index,target,record,e'
+      parameters: 'sender,list,index,target,record,e'
     }, {
       name: 'leafitemtap',
-      parameters: 'nestedlist,list,index,target,record,e'
+      parameters: 'sender,list,index,target,record,e'
     }, {
       name: 'leftchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'listchange',
-      parameters: 'nestedlist,listitem'
+      parameters: 'sender,listitem'
     }, {
       name: 'load',
-      parameters: 'nestedlist,store,records,successful,operation'
+      parameters: 'sender,store,records,successful,operation'
     }, {
       name: 'maxHeightchange',
       parameters: 'sender,value,oldValue'
@@ -182,7 +182,7 @@ function (_Ext_Container) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'move',
-      parameters: 'nestedlist,item,toIndex,fromIndex'
+      parameters: 'sender,item,toIndex,fromIndex'
     }, {
       name: 'moved',
       parameters: 'sender,container,toIndex,fromIndex'
@@ -197,13 +197,13 @@ function (_Ext_Container) {
       parameters: 'sender,positioned'
     }, {
       name: 'remove',
-      parameters: 'nestedlist,item,index'
+      parameters: 'sender,item,index'
     }, {
       name: 'removed',
       parameters: 'sender,container,index'
     }, {
       name: 'renderedchange',
-      parameters: 'nestedlist,item,rendered'
+      parameters: 'sender,item,rendered'
     }, {
       name: 'resize',
       parameters: 'element,info'
@@ -215,16 +215,16 @@ function (_Ext_Container) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'select',
-      parameters: 'nestedlist,list,selections'
+      parameters: 'sender,list,selections'
     }, {
       name: 'selectionchange',
-      parameters: 'nestedlist,list,selections'
+      parameters: 'sender,list,selections'
     }, {
       name: 'show',
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'nestedlist'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -236,7 +236,7 @@ function (_Ext_Container) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

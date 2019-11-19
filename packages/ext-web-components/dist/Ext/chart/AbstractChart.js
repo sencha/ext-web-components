@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_draw_Container from '../../Ext/draw/Container';
+import Ext_draw_Container from '../../Ext/draw/Container.js';
 
 var Ext_chart_AbstractChart =
 /*#__PURE__*/
@@ -8,19 +8,19 @@ function (_Ext_draw_Container) {
   _inheritsLoose(Ext_chart_AbstractChart, _Ext_draw_Container);
 
   Ext_chart_AbstractChart.PROPERTIES = function PROPERTIES() {
-    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'animation', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axes', 'axisLock', 'background', 'bind', 'bodyCls', 'border', 'bottom', 'captions', 'cardSwitchAnimation', 'centered', 'cls', 'colors', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'disabled', 'displayed', 'docked', 'downloadServerUrl', 'draggable', 'engine', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'gradients', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'highlightItem', 'html', 'id', 'inactiveChildTabIndex', 'innerCls', 'insetPadding', 'instanceCls', 'interactions', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'legend', 'listeners', 'mainRect', 'manageBorders', 'margin', 'masked', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'resizeHandler', 'right', 'ripple', 'scrollable', 'series', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'sprites', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'surfaceZIndexes', 'tabIndex', 'theme', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'animation', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axes', 'axisLock', 'background', 'bind', 'bodyCls', 'border', 'bottom', 'captions', 'cardSwitchAnimation', 'centered', 'cls', 'colors', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'disabled', 'displayed', 'docked', 'downloadServerUrl', 'draggable', 'engine', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'gradients', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'highlightItem', 'html', 'id', 'inactiveChildTabIndex', 'innerCls', 'insetPadding', 'instanceCls', 'interactions', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'legend', 'listeners', 'mainRect', 'manageBorders', 'margin', 'masked', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'resizeHandler', 'right', 'ripple', 'scrollable', 'series', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'sprites', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'surfaceZIndexes', 'tabIndex', 'theme', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_chart_AbstractChart.EVENTS = function EVENTS() {
     return [{
       name: 'activate',
-      parameters: 'newActiveItem,undefined,oldActiveItem'
+      parameters: 'newActiveItem,sender,oldActiveItem'
     }, {
       name: 'activeItemchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'add',
-      parameters: 'undefined,item,index'
+      parameters: 'sender,item,index'
     }, {
       name: 'added',
       parameters: 'sender,container,index'
@@ -68,7 +68,7 @@ function (_Ext_draw_Container) {
       parameters: ''
     }, {
       name: 'beforerefresh',
-      parameters: 'undefined'
+      parameters: 'sender'
     }, {
       name: 'beforerightchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -80,7 +80,7 @@ function (_Ext_draw_Container) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'undefined'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -89,7 +89,7 @@ function (_Ext_draw_Container) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'undefined,event'
+      parameters: 'sender,event'
     }, {
       name: 'bodyresize',
       parameters: 'size'
@@ -101,7 +101,7 @@ function (_Ext_draw_Container) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'deactivate',
-      parameters: 'oldActiveItem,undefined,newActiveItem'
+      parameters: 'oldActiveItem,sender,newActiveItem'
     }, {
       name: 'destroy',
       parameters: ''
@@ -119,13 +119,13 @@ function (_Ext_draw_Container) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'undefined,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'undefined,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'undefined,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -149,10 +149,10 @@ function (_Ext_draw_Container) {
       parameters: 'chart,item,event'
     }, {
       name: 'itemhighlight',
-      parameters: 'undefined,newItem,oldItem'
+      parameters: 'sender,newItem,oldItem'
     }, {
       name: 'itemhighlightchange',
-      parameters: 'undefined,newItem,oldItem'
+      parameters: 'sender,newItem,oldItem'
     }, {
       name: 'itemmousedown',
       parameters: 'chart,item,event'
@@ -173,7 +173,7 @@ function (_Ext_draw_Container) {
       parameters: 'chart,item,event'
     }, {
       name: 'layout',
-      parameters: 'undefined'
+      parameters: 'sender'
     }, {
       name: 'leftchange',
       parameters: 'sender,value,oldValue'
@@ -191,7 +191,7 @@ function (_Ext_draw_Container) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'move',
-      parameters: 'undefined,item,toIndex,fromIndex'
+      parameters: 'sender,item,toIndex,fromIndex'
     }, {
       name: 'moved',
       parameters: 'sender,container,toIndex,fromIndex'
@@ -206,19 +206,19 @@ function (_Ext_draw_Container) {
       parameters: 'sender,positioned'
     }, {
       name: 'redraw',
-      parameters: 'undefined'
+      parameters: 'sender'
     }, {
       name: 'refresh',
-      parameters: 'undefined'
+      parameters: 'sender'
     }, {
       name: 'remove',
-      parameters: 'undefined,item,index'
+      parameters: 'sender,item,index'
     }, {
       name: 'removed',
       parameters: 'sender,container,index'
     }, {
       name: 'renderedchange',
-      parameters: 'undefined,item,rendered'
+      parameters: 'sender,item,rendered'
     }, {
       name: 'resize',
       parameters: 'element,info'
@@ -260,7 +260,7 @@ function (_Ext_draw_Container) {
       parameters: 'chart,newStore,oldStore'
     }, {
       name: 'tofront',
-      parameters: 'undefined'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -272,7 +272,7 @@ function (_Ext_draw_Container) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

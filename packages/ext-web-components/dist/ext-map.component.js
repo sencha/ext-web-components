@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Map from './Ext/Map';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtMapComponent =
+//import Ext_Map from '@sencha/ext-runtime-base/dist/./Ext/Map.js';
+import Ext_Map from './Ext/Map.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCMap =
 /*#__PURE__*/
 function (_Ext_Map) {
-  _inheritsLoose(ExtMapComponent, _Ext_Map);
+  _inheritsLoose(EWCMap, _Ext_Map);
 
-  function ExtMapComponent() {
+  function EWCMap() {
     var _this;
 
     _this = _Ext_Map.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_Map) {
     return _this;
   }
 
-  return ExtMapComponent;
-}(Ext_Map); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-map', ExtMapComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCMap;
+}(Ext_Map);
 
-window.customElements.define('ext-map', HTMLParsedElement.withParsedCallback(ExtMapComponent));
+export { EWCMap as default };
+window.customElements.define('ext-map', HTMLParsedElement.withParsedCallback(EWCMap));

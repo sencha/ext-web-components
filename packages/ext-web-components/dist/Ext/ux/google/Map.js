@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Container from '../../../Ext/Container';
+import Ext_Container from '../../../Ext/Container.js';
 
 var Ext_ux_google_Map =
 /*#__PURE__*/
@@ -8,19 +8,19 @@ function (_Ext_Container) {
   _inheritsLoose(Ext_ux_google_Map, _Ext_Container);
 
   Ext_ux_google_Map.PROPERTIES = function PROPERTIES() {
-    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'cardSwitchAnimation', 'centered', 'cls', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'disabled', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'geo', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'listeners', 'manageBorders', 'map', 'mapListeners', 'mapOptions', 'margin', 'markers', 'markerTemplate', 'masked', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'requiredScripts', 'resetFocusPosition', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'useCurrentLocation', 'userCls', 'userSelectable', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'bind', 'bodyCls', 'border', 'bottom', 'cardSwitchAnimation', 'centered', 'cls', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultType', 'disabled', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'geo', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'left', 'listeners', 'manageBorders', 'map', 'mapListeners', 'mapOptions', 'margin', 'markers', 'markerTemplate', 'masked', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'publishes', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'requiredScripts', 'resetFocusPosition', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'useCurrentLocation', 'userCls', 'userSelectable', 'viewModel', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_ux_google_Map.EVENTS = function EVENTS() {
     return [{
       name: 'activate',
-      parameters: 'newActiveItem,map,oldActiveItem'
+      parameters: 'newActiveItem,sender,oldActiveItem'
     }, {
       name: 'activeItemchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'add',
-      parameters: 'map,item,index'
+      parameters: 'sender,item,index'
     }, {
       name: 'added',
       parameters: 'sender,container,index'
@@ -77,7 +77,7 @@ function (_Ext_Container) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'map'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -86,19 +86,19 @@ function (_Ext_Container) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'map,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'centerchange',
-      parameters: 'map,map,center'
+      parameters: 'sender,map,center'
     }, {
       name: 'centeredchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'deactivate',
-      parameters: 'oldActiveItem,map,newActiveItem'
+      parameters: 'oldActiveItem,sender,newActiveItem'
     }, {
       name: 'destroy',
       parameters: ''
@@ -116,13 +116,13 @@ function (_Ext_Container) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'map,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'map,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'map,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -143,7 +143,7 @@ function (_Ext_Container) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'maprender',
-      parameters: 'map,map'
+      parameters: 'sender,map'
     }, {
       name: 'markerclick',
       parameters: 'map,info'
@@ -188,7 +188,7 @@ function (_Ext_Container) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'move',
-      parameters: 'map,item,toIndex,fromIndex'
+      parameters: 'sender,item,toIndex,fromIndex'
     }, {
       name: 'moved',
       parameters: 'sender,container,toIndex,fromIndex'
@@ -203,13 +203,13 @@ function (_Ext_Container) {
       parameters: 'sender,positioned'
     }, {
       name: 'remove',
-      parameters: 'map,item,index'
+      parameters: 'sender,item,index'
     }, {
       name: 'removed',
       parameters: 'sender,container,index'
     }, {
       name: 'renderedchange',
-      parameters: 'map,item,rendered'
+      parameters: 'sender,item,rendered'
     }, {
       name: 'resize',
       parameters: 'element,info'
@@ -224,13 +224,13 @@ function (_Ext_Container) {
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'map'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'typechange',
-      parameters: 'map,map,mapType'
+      parameters: 'sender,map,mapType'
     }, {
       name: 'updatedata',
       parameters: 'sender,newData'
@@ -239,10 +239,10 @@ function (_Ext_Container) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'zoomchange',
-      parameters: 'map,map,zoomLevel'
+      parameters: 'sender,map,zoomLevel'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

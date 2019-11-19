@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_d3_hierarchy_TreeMap from '../../../Ext/d3/hierarchy/TreeMap';
+import Ext_d3_hierarchy_TreeMap from '../../../Ext/d3/hierarchy/TreeMap.js';
 
 var Ext_pivot_d3_TreeMap =
 /*#__PURE__*/
@@ -8,7 +8,7 @@ function (_Ext_d3_hierarchy_Tre) {
   _inheritsLoose(Ext_pivot_d3_TreeMap, _Ext_d3_hierarchy_Tre);
 
   Ext_pivot_d3_TreeMap.PROPERTIES = function PROPERTIES() {
-    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoExpand', 'axisLock', 'bind', 'border', 'bottom', 'busyLayoutText', 'centered', 'clipScene', 'cls', 'colorAxis', 'componentCls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'disabled', 'displayed', 'docked', 'draggable', 'expandEventName', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'hierarchyCls', 'html', 'id', 'instanceCls', 'interactions', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'leafTile', 'left', 'linkKey', 'listeners', 'margin', 'matrix', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nodeChildren', 'nodeClass', 'nodeKey', 'nodeText', 'nodeTransform', 'nodeValue', 'noParentValue', 'noSizeLayout', 'padding', 'parentTile', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderLinks', 'renderTo', 'right', 'ripple', 'rootVisible', 'scaleLabels', 'scrollable', 'selectEventName', 'selection', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'size', 'sorter', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'tiling', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'transitions', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoExpand', 'axisLock', 'bind', 'border', 'bottom', 'busyLayoutText', 'centered', 'clipScene', 'cls', 'colorAxis', 'componentCls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'disabled', 'displayed', 'docked', 'draggable', 'expandEventName', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'hierarchyCls', 'html', 'id', 'instanceCls', 'interactions', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'leafTile', 'left', 'linkKey', 'listeners', 'margin', 'matrix', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nodeChildren', 'nodeClass', 'nodeKey', 'nodeText', 'nodeTransform', 'nodeValue', 'noParentValue', 'noSizeLayout', 'padding', 'parentTile', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderLinks', 'renderTo', 'right', 'ripple', 'rootVisible', 'scaleLabels', 'scrollable', 'selectEventName', 'selection', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'size', 'sorter', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'tiling', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'transitions', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_pivot_d3_TreeMap.EVENTS = function EVENTS() {
@@ -65,7 +65,7 @@ function (_Ext_d3_hierarchy_Tre) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'pivottreemap'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -74,7 +74,7 @@ function (_Ext_d3_hierarchy_Tre) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'pivottreemap,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -98,13 +98,13 @@ function (_Ext_d3_hierarchy_Tre) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'pivottreemap,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'pivottreemap,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'pivottreemap,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -173,7 +173,7 @@ function (_Ext_d3_hierarchy_Tre) {
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'pivottreemap'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -185,7 +185,7 @@ function (_Ext_d3_hierarchy_Tre) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

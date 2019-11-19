@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_rowedit_Gap from './Ext/grid/rowedit/Gap';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtRoweditorgapComponent =
+//import Ext_grid_rowedit_Gap from '@sencha/ext-runtime-base/dist/./Ext/grid/rowedit/Gap.js';
+import Ext_grid_rowedit_Gap from './Ext/grid/rowedit/Gap.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCRoweditorgap =
 /*#__PURE__*/
 function (_Ext_grid_rowedit_Gap) {
-  _inheritsLoose(ExtRoweditorgapComponent, _Ext_grid_rowedit_Gap);
+  _inheritsLoose(EWCRoweditorgap, _Ext_grid_rowedit_Gap);
 
-  function ExtRoweditorgapComponent() {
+  function EWCRoweditorgap() {
     var _this;
 
     _this = _Ext_grid_rowedit_Gap.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_grid_rowedit_Gap) {
     return _this;
   }
 
-  return ExtRoweditorgapComponent;
-}(Ext_grid_rowedit_Gap); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-roweditorgap', ExtRoweditorgapComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCRoweditorgap;
+}(Ext_grid_rowedit_Gap);
 
-window.customElements.define('ext-roweditorgap', HTMLParsedElement.withParsedCallback(ExtRoweditorgapComponent));
+export { EWCRoweditorgap as default };
+window.customElements.define('ext-roweditorgap', HTMLParsedElement.withParsedCallback(EWCRoweditorgap));

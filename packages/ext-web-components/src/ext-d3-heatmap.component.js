@@ -1,21 +1,12 @@
-import Ext_d3_HeatMap from './Ext/d3/HeatMap'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_d3_HeatMap from '@sencha/ext-runtime-base/dist/./Ext/d3/HeatMap.js';
+import Ext_d3_HeatMap from './Ext/d3/HeatMap.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtD3_heatmapComponent extends Ext_d3_HeatMap {
+export default class EWCD3_heatmap extends Ext_d3_HeatMap {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'd3-heatmap'
+        super ([], []);
+        this.xtype = 'd3-heatmap';
     }
 }
+window.customElements.define('ext-d3-heatmap', HTMLParsedElement.withParsedCallback(EWCD3_heatmap));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-d3-heatmap', ExtD3_heatmapComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-d3-heatmap', HTMLParsedElement.withParsedCallback(ExtD3_heatmapComponent))

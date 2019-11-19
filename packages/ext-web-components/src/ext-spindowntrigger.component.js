@@ -1,21 +1,12 @@
-import Ext_field_trigger_SpinDown from './Ext/field/trigger/SpinDown'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_field_trigger_SpinDown from '@sencha/ext-runtime-base/dist/./Ext/field/trigger/SpinDown.js';
+import Ext_field_trigger_SpinDown from './Ext/field/trigger/SpinDown.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtSpindowntriggerComponent extends Ext_field_trigger_SpinDown {
+export default class EWCSpindowntrigger extends Ext_field_trigger_SpinDown {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'spindowntrigger'
+        super ([], []);
+        this.xtype = 'spindowntrigger';
     }
 }
+window.customElements.define('ext-spindowntrigger', HTMLParsedElement.withParsedCallback(EWCSpindowntrigger));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-spindowntrigger', ExtSpindowntriggerComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-spindowntrigger', HTMLParsedElement.withParsedCallback(ExtSpindowntriggerComponent))

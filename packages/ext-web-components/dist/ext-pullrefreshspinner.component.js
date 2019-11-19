@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_dataview_pullrefresh_Spinner from './Ext/dataview/pullrefresh/Spinner';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtPullrefreshspinnerComponent =
+//import Ext_dataview_pullrefresh_Spinner from '@sencha/ext-runtime-base/dist/./Ext/dataview/pullrefresh/Spinner.js';
+import Ext_dataview_pullrefresh_Spinner from './Ext/dataview/pullrefresh/Spinner.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCPullrefreshspinner =
 /*#__PURE__*/
 function (_Ext_dataview_pullref) {
-  _inheritsLoose(ExtPullrefreshspinnerComponent, _Ext_dataview_pullref);
+  _inheritsLoose(EWCPullrefreshspinner, _Ext_dataview_pullref);
 
-  function ExtPullrefreshspinnerComponent() {
+  function EWCPullrefreshspinner() {
     var _this;
 
     _this = _Ext_dataview_pullref.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_dataview_pullref) {
     return _this;
   }
 
-  return ExtPullrefreshspinnerComponent;
-}(Ext_dataview_pullrefresh_Spinner); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-pullrefreshspinner', ExtPullrefreshspinnerComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCPullrefreshspinner;
+}(Ext_dataview_pullrefresh_Spinner);
 
-window.customElements.define('ext-pullrefreshspinner', HTMLParsedElement.withParsedCallback(ExtPullrefreshspinnerComponent));
+export { EWCPullrefreshspinner as default };
+window.customElements.define('ext-pullrefreshspinner', HTMLParsedElement.withParsedCallback(EWCPullrefreshspinner));

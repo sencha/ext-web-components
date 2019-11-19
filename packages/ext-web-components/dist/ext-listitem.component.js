@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_dataview_component_ListItem from './Ext/dataview/component/ListItem';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtListitemComponent =
+//import Ext_dataview_component_ListItem from '@sencha/ext-runtime-base/dist/./Ext/dataview/component/ListItem.js';
+import Ext_dataview_component_ListItem from './Ext/dataview/component/ListItem.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCListitem =
 /*#__PURE__*/
 function (_Ext_dataview_compone) {
-  _inheritsLoose(ExtListitemComponent, _Ext_dataview_compone);
+  _inheritsLoose(EWCListitem, _Ext_dataview_compone);
 
-  function ExtListitemComponent() {
+  function EWCListitem() {
     var _this;
 
     _this = _Ext_dataview_compone.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_dataview_compone) {
     return _this;
   }
 
-  return ExtListitemComponent;
-}(Ext_dataview_component_ListItem); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-listitem', ExtListitemComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCListitem;
+}(Ext_dataview_component_ListItem);
 
-window.customElements.define('ext-listitem', HTMLParsedElement.withParsedCallback(ExtListitemComponent));
+export { EWCListitem as default };
+window.customElements.define('ext-listitem', HTMLParsedElement.withParsedCallback(EWCListitem));

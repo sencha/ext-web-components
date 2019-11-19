@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_calendar_panel_Base from '../../../Ext/calendar/panel/Base';
+import Ext_calendar_panel_Base from '../../../Ext/calendar/panel/Base.js';
 
 var Ext_calendar_panel_Days =
 /*#__PURE__*/
@@ -8,19 +8,19 @@ function (_Ext_calendar_panel_B) {
   _inheritsLoose(Ext_calendar_panel_Days, _Ext_calendar_panel_B);
 
   Ext_calendar_panel_Days.PROPERTIES = function PROPERTIES() {
-    return ['activeChildTabIndex', 'activeItem', 'addForm', 'alignSelf', 'allowFocusingDisabledChildren', 'allowSelection', 'alwaysOnTop', 'anchor', 'anchorPosition', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'bbar', 'bind', 'bodyBorder', 'bodyCls', 'bodyPadding', 'bodyStyle', 'border', 'bottom', 'buttonAlign', 'buttons', 'buttonToolbar', 'cardSwitchAnimation', 'centered', 'closable', 'closeAction', 'closeToolText', 'cls', 'collapsed', 'collapsible', 'compact', 'compactOptions', 'constrainAlign', 'contentEl', 'control', 'controller', 'controlStoreRange', 'data', 'dayHeader', 'dayHeaderFormat', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultToolWeights', 'defaultType', 'disabled', 'displayed', 'displayOverlap', 'docked', 'draggable', 'droppable', 'editForm', 'endTime', 'eventDefaults', 'eventRelayers', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'gestureNavigation', 'header', 'headerPosition', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'highlightToday', 'html', 'icon', 'iconAlign', 'iconCls', 'id', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'lbar', 'left', 'listeners', 'manageBorders', 'margin', 'masked', 'maxHeight', 'maxWidth', 'minButtonWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'publishes', 'rbar', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'resizable', 'resizeEvents', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'showNowMarker', 'standardButtons', 'startTime', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'tbar', 'timeFormat', 'timezoneOffset', 'title', 'titleAlign', 'titleCollapse', 'toFrontOnShow', 'toolDefaults', 'tools', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'view', 'viewModel', 'visibleDays', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['activeChildTabIndex', 'activeItem', 'addForm', 'alignSelf', 'allowFocusingDisabledChildren', 'allowSelection', 'alwaysOnTop', 'anchor', 'anchorPosition', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoSize', 'axisLock', 'bbar', 'bind', 'bodyBorder', 'bodyCls', 'bodyPadding', 'bodyStyle', 'border', 'bottom', 'buttonAlign', 'buttons', 'buttonToolbar', 'cardSwitchAnimation', 'centered', 'closable', 'closeAction', 'closeToolText', 'cls', 'collapsed', 'collapsible', 'compact', 'compactOptions', 'constrainAlign', 'contentEl', 'control', 'controller', 'controlStoreRange', 'data', 'dayHeader', 'dayHeaderFormat', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultToolWeights', 'defaultType', 'disabled', 'displayed', 'displayOverlap', 'docked', 'draggable', 'droppable', 'editForm', 'endTime', 'eventDefaults', 'eventRelayers', 'flex', 'floated', 'focusableContainer', 'focusCls', 'fullscreen', 'gestureNavigation', 'header', 'headerPosition', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'highlightToday', 'html', 'icon', 'iconAlign', 'iconCls', 'id', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'lbar', 'left', 'listeners', 'manageBorders', 'margin', 'masked', 'maxHeight', 'maxWidth', 'minButtonWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'padding', 'plugins', 'publishes', 'rbar', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'resizable', 'resizeEvents', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'showNowMarker', 'standardButtons', 'startTime', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'tbar', 'timeFormat', 'timezoneOffset', 'title', 'titleAlign', 'titleCollapse', 'toFrontOnShow', 'toolDefaults', 'tools', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'view', 'viewModel', 'visibleDays', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_calendar_panel_Days.EVENTS = function EVENTS() {
     return [{
       name: 'activate',
-      parameters: 'newActiveItem,calendar-days,oldActiveItem'
+      parameters: 'newActiveItem,sender,oldActiveItem'
     }, {
       name: 'activeItemchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'add',
-      parameters: 'calendar-days,item,index'
+      parameters: 'sender,item,index'
     }, {
       name: 'added',
       parameters: 'sender,container,index'
@@ -35,7 +35,7 @@ function (_Ext_calendar_panel_B) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforecollapse',
-      parameters: 'calendar-days'
+      parameters: 'sender'
     }, {
       name: 'beforedisabledchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -44,19 +44,19 @@ function (_Ext_calendar_panel_B) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforeeventadd',
-      parameters: 'calendar-days,context'
+      parameters: 'sender,context'
     }, {
       name: 'beforeeventdragstart',
-      parameters: 'calendar-days,context'
+      parameters: 'sender,context'
     }, {
       name: 'beforeeventedit',
-      parameters: 'calendar-days,context'
+      parameters: 'sender,context'
     }, {
       name: 'beforeeventresizestart',
-      parameters: 'calendar-days,context'
+      parameters: 'sender,context'
     }, {
       name: 'beforeexpand',
-      parameters: 'calendar-days'
+      parameters: 'sender'
     }, {
       name: 'beforeheightchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -86,7 +86,7 @@ function (_Ext_calendar_panel_B) {
       parameters: ''
     }, {
       name: 'beforeresizedragstart',
-      parameters: 'calendar-days,context'
+      parameters: 'sender,context'
     }, {
       name: 'beforerightchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -98,7 +98,7 @@ function (_Ext_calendar_panel_B) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'calendar-days'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -107,7 +107,7 @@ function (_Ext_calendar_panel_B) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'calendar-days,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -116,10 +116,10 @@ function (_Ext_calendar_panel_B) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'collapse',
-      parameters: 'calendar-days'
+      parameters: 'sender'
     }, {
       name: 'deactivate',
-      parameters: 'oldActiveItem,calendar-days,newActiveItem'
+      parameters: 'oldActiveItem,sender,newActiveItem'
     }, {
       name: 'destroy',
       parameters: ''
@@ -131,43 +131,43 @@ function (_Ext_calendar_panel_B) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'drawerhide',
-      parameters: 'calendar-days'
+      parameters: 'sender'
     }, {
       name: 'drawershow',
-      parameters: 'calendar-days'
+      parameters: 'sender'
     }, {
       name: 'erased',
       parameters: 'sender'
     }, {
       name: 'eventadd',
-      parameters: 'calendar-days,context'
+      parameters: 'sender,context'
     }, {
       name: 'eventdrop',
-      parameters: 'calendar-days,context'
+      parameters: 'sender,context'
     }, {
       name: 'eventedit',
-      parameters: 'calendar-days,context'
+      parameters: 'sender,context'
     }, {
       name: 'eventresize',
-      parameters: 'calendar-days,context'
+      parameters: 'sender,context'
     }, {
       name: 'eventtap',
-      parameters: 'calendar-days,context'
+      parameters: 'sender,context'
     }, {
       name: 'expand',
-      parameters: 'calendar-days'
+      parameters: 'sender'
     }, {
       name: 'floatingchange',
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'calendar-days,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'calendar-days,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'calendar-days,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -200,7 +200,7 @@ function (_Ext_calendar_panel_B) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'move',
-      parameters: 'calendar-days,item,toIndex,fromIndex'
+      parameters: 'sender,item,toIndex,fromIndex'
     }, {
       name: 'moved',
       parameters: 'sender,container,toIndex,fromIndex'
@@ -215,28 +215,28 @@ function (_Ext_calendar_panel_B) {
       parameters: 'sender,positioned'
     }, {
       name: 'remove',
-      parameters: 'calendar-days,item,index'
+      parameters: 'sender,item,index'
     }, {
       name: 'removed',
       parameters: 'sender,container,index'
     }, {
       name: 'renderedchange',
-      parameters: 'calendar-days,item,rendered'
+      parameters: 'sender,item,rendered'
     }, {
       name: 'resize',
       parameters: 'element,info'
     }, {
       name: 'resizedrag',
-      parameters: 'calendar-days,context'
+      parameters: 'sender,context'
     }, {
       name: 'resizedragcancel',
-      parameters: 'calendar-days,context'
+      parameters: 'sender,context'
     }, {
       name: 'resizedragend',
-      parameters: 'calendar-days,context'
+      parameters: 'sender,context'
     }, {
       name: 'resizedragstart',
-      parameters: 'calendar-days,context'
+      parameters: 'sender,context'
     }, {
       name: 'rightchange',
       parameters: 'sender,value,oldValue'
@@ -248,7 +248,7 @@ function (_Ext_calendar_panel_B) {
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'calendar-days'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -257,25 +257,25 @@ function (_Ext_calendar_panel_B) {
       parameters: 'sender,newData'
     }, {
       name: 'validateeventadd',
-      parameters: 'calendar-days,context'
+      parameters: 'sender,context'
     }, {
       name: 'validateeventdrop',
-      parameters: 'calendar-days,context'
+      parameters: 'sender,context'
     }, {
       name: 'validateeventedit',
-      parameters: 'calendar-days,context'
+      parameters: 'sender,context'
     }, {
       name: 'validateeventresize',
-      parameters: 'calendar-days,context'
+      parameters: 'sender,context'
     }, {
       name: 'valuechange',
-      parameters: 'calendar-days,context'
+      parameters: 'sender,context'
     }, {
       name: 'widthchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

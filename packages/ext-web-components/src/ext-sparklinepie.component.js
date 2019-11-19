@@ -1,21 +1,12 @@
-import Ext_sparkline_Pie from './Ext/sparkline/Pie'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_sparkline_Pie from '@sencha/ext-runtime-base/dist/./Ext/sparkline/Pie.js';
+import Ext_sparkline_Pie from './Ext/sparkline/Pie.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtSparklinepieComponent extends Ext_sparkline_Pie {
+export default class EWCSparklinepie extends Ext_sparkline_Pie {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'sparklinepie'
+        super ([], []);
+        this.xtype = 'sparklinepie';
     }
 }
+window.customElements.define('ext-sparklinepie', HTMLParsedElement.withParsedCallback(EWCSparklinepie));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-sparklinepie', ExtSparklinepieComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-sparklinepie', HTMLParsedElement.withParsedCallback(ExtSparklinepieComponent))

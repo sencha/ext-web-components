@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Widget from '../../Ext/Widget';
+import Ext_Widget from '../../Ext/Widget.js';
 
 var Ext_list_AbstractTreeItem =
 /*#__PURE__*/
@@ -8,7 +8,7 @@ function (_Ext_Widget) {
   _inheritsLoose(Ext_list_AbstractTreeItem, _Ext_Widget);
 
   Ext_list_AbstractTreeItem.PROPERTIES = function PROPERTIES() {
-    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'bind', 'border', 'cls', 'constrainAlign', 'controller', 'defaultListenerScope', 'disabled', 'expandable', 'expanded', 'flex', 'floated', 'focusCls', 'height', 'hidden', 'hideMode', 'iconCls', 'iconClsProperty', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'leaf', 'listeners', 'loading', 'margin', 'name', 'nameable', 'node', 'over', 'owner', 'parentItem', 'plugins', 'publishes', 'reference', 'relative', 'renderTo', 'ripple', 'selected', 'selectedParent', 'session', 'shadow', 'shareableName', 'shim', 'style', 'text', 'textProperty', 'toFrontOnShow', 'touchAction', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'viewModel', 'width', 'x', 'y', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'bind', 'border', 'cls', 'constrainAlign', 'controller', 'defaultListenerScope', 'disabled', 'expandable', 'expanded', 'flex', 'floated', 'focusCls', 'height', 'hidden', 'hideMode', 'iconCls', 'iconClsProperty', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'leaf', 'listeners', 'loading', 'margin', 'name', 'nameable', 'node', 'over', 'owner', 'parentItem', 'plugins', 'publishes', 'reference', 'relative', 'renderTo', 'ripple', 'selected', 'selectedParent', 'session', 'shadow', 'shareableName', 'shim', 'style', 'text', 'textProperty', 'toFrontOnShow', 'touchAction', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'viewModel', 'width', 'x', 'y'];
   };
 
   Ext_list_AbstractTreeItem.EVENTS = function EVENTS() {
@@ -23,25 +23,25 @@ function (_Ext_Widget) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforetofront',
-      parameters: 'undefined'
+      parameters: 'sender'
     }, {
       name: 'beforewidthchange',
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'undefined,event'
+      parameters: 'sender,event'
     }, {
       name: 'disabledchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'focus',
-      parameters: 'undefined,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'undefined,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'undefined,event'
+      parameters: 'sender,event'
     }, {
       name: 'heightchange',
       parameters: 'sender,value,oldValue'
@@ -50,13 +50,13 @@ function (_Ext_Widget) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'tofront',
-      parameters: 'undefined'
+      parameters: 'sender'
     }, {
       name: 'widthchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

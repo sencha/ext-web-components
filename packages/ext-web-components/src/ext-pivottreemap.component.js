@@ -1,21 +1,12 @@
-import Ext_pivot_d3_TreeMap from './Ext/pivot/d3/TreeMap'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_pivot_d3_TreeMap from '@sencha/ext-runtime-base/dist/./Ext/pivot/d3/TreeMap.js';
+import Ext_pivot_d3_TreeMap from './Ext/pivot/d3/TreeMap.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtPivottreemapComponent extends Ext_pivot_d3_TreeMap {
+export default class EWCPivottreemap extends Ext_pivot_d3_TreeMap {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'pivottreemap'
+        super ([], []);
+        this.xtype = 'pivottreemap';
     }
 }
+window.customElements.define('ext-pivottreemap', HTMLParsedElement.withParsedCallback(EWCPivottreemap));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-pivottreemap', ExtPivottreemapComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-pivottreemap', HTMLParsedElement.withParsedCallback(ExtPivottreemapComponent))

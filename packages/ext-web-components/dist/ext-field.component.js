@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_form_Field from './Ext/form/Field';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtFieldComponent =
+//import Ext_form_Field from '@sencha/ext-runtime-base/dist/./Ext/form/Field.js';
+import Ext_form_Field from './Ext/form/Field.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCField =
 /*#__PURE__*/
 function (_Ext_form_Field) {
-  _inheritsLoose(ExtFieldComponent, _Ext_form_Field);
+  _inheritsLoose(EWCField, _Ext_form_Field);
 
-  function ExtFieldComponent() {
+  function EWCField() {
     var _this;
 
     _this = _Ext_form_Field.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_form_Field) {
     return _this;
   }
 
-  return ExtFieldComponent;
-}(Ext_form_Field); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-field', ExtFieldComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCField;
+}(Ext_form_Field);
 
-window.customElements.define('ext-field', HTMLParsedElement.withParsedCallback(ExtFieldComponent));
+export { EWCField as default };
+window.customElements.define('ext-field', HTMLParsedElement.withParsedCallback(EWCField));

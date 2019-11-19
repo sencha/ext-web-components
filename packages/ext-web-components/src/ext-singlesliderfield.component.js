@@ -1,21 +1,12 @@
-import Ext_field_SingleSlider from './Ext/field/SingleSlider'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_field_SingleSlider from '@sencha/ext-runtime-base/dist/./Ext/field/SingleSlider.js';
+import Ext_field_SingleSlider from './Ext/field/SingleSlider.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtSinglesliderfieldComponent extends Ext_field_SingleSlider {
+export default class EWCSinglesliderfield extends Ext_field_SingleSlider {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'singlesliderfield'
+        super ([], []);
+        this.xtype = 'singlesliderfield';
     }
 }
+window.customElements.define('ext-singlesliderfield', HTMLParsedElement.withParsedCallback(EWCSinglesliderfield));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-singlesliderfield', ExtSinglesliderfieldComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-singlesliderfield', HTMLParsedElement.withParsedCallback(ExtSinglesliderfieldComponent))

@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_chart_Chart from './Ext/chart/Chart';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtCartesianComponent =
+//import Ext_chart_Chart from '@sencha/ext-runtime-base/dist/./Ext/chart/Chart.js';
+import Ext_chart_Chart from './Ext/chart/Chart.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCCartesian =
 /*#__PURE__*/
 function (_Ext_chart_Chart) {
-  _inheritsLoose(ExtCartesianComponent, _Ext_chart_Chart);
+  _inheritsLoose(EWCCartesian, _Ext_chart_Chart);
 
-  function ExtCartesianComponent() {
+  function EWCCartesian() {
     var _this;
 
     _this = _Ext_chart_Chart.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_chart_Chart) {
     return _this;
   }
 
-  return ExtCartesianComponent;
-}(Ext_chart_Chart); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-cartesian', ExtCartesianComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCCartesian;
+}(Ext_chart_Chart);
 
-window.customElements.define('ext-cartesian', HTMLParsedElement.withParsedCallback(ExtCartesianComponent));
+export { EWCCartesian as default };
+window.customElements.define('ext-cartesian', HTMLParsedElement.withParsedCallback(EWCCartesian));

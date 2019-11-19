@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_trigger_Menu from './Ext/field/trigger/Menu';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtMenutriggerComponent =
+//import Ext_field_trigger_Menu from '@sencha/ext-runtime-base/dist/./Ext/field/trigger/Menu.js';
+import Ext_field_trigger_Menu from './Ext/field/trigger/Menu.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCMenutrigger =
 /*#__PURE__*/
 function (_Ext_field_trigger_Me) {
-  _inheritsLoose(ExtMenutriggerComponent, _Ext_field_trigger_Me);
+  _inheritsLoose(EWCMenutrigger, _Ext_field_trigger_Me);
 
-  function ExtMenutriggerComponent() {
+  function EWCMenutrigger() {
     var _this;
 
     _this = _Ext_field_trigger_Me.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_field_trigger_Me) {
     return _this;
   }
 
-  return ExtMenutriggerComponent;
-}(Ext_field_trigger_Menu); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-menutrigger', ExtMenutriggerComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCMenutrigger;
+}(Ext_field_trigger_Menu);
 
-window.customElements.define('ext-menutrigger', HTMLParsedElement.withParsedCallback(ExtMenutriggerComponent));
+export { EWCMenutrigger as default };
+window.customElements.define('ext-menutrigger', HTMLParsedElement.withParsedCallback(EWCMenutrigger));

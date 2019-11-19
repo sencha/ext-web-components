@@ -1,21 +1,12 @@
-import Ext_field_RadioGroup from './Ext/field/RadioGroup'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_field_RadioGroup from '@sencha/ext-runtime-base/dist/./Ext/field/RadioGroup.js';
+import Ext_field_RadioGroup from './Ext/field/RadioGroup.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtRadiogroupComponent extends Ext_field_RadioGroup {
+export default class EWCRadiogroup extends Ext_field_RadioGroup {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'radiogroup'
+        super ([], []);
+        this.xtype = 'radiogroup';
     }
 }
+window.customElements.define('ext-radiogroup', HTMLParsedElement.withParsedCallback(EWCRadiogroup));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-radiogroup', ExtRadiogroupComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-radiogroup', HTMLParsedElement.withParsedCallback(ExtRadiogroupComponent))

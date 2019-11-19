@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_form_TextArea from './Ext/form/TextArea';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtTextareafieldComponent =
+//import Ext_form_TextArea from '@sencha/ext-runtime-base/dist/./Ext/form/TextArea.js';
+import Ext_form_TextArea from './Ext/form/TextArea.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCTextareafield =
 /*#__PURE__*/
 function (_Ext_form_TextArea) {
-  _inheritsLoose(ExtTextareafieldComponent, _Ext_form_TextArea);
+  _inheritsLoose(EWCTextareafield, _Ext_form_TextArea);
 
-  function ExtTextareafieldComponent() {
+  function EWCTextareafield() {
     var _this;
 
     _this = _Ext_form_TextArea.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_form_TextArea) {
     return _this;
   }
 
-  return ExtTextareafieldComponent;
-}(Ext_form_TextArea); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-textareafield', ExtTextareafieldComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCTextareafield;
+}(Ext_form_TextArea);
 
-window.customElements.define('ext-textareafield', HTMLParsedElement.withParsedCallback(ExtTextareafieldComponent));
+export { EWCTextareafield as default };
+window.customElements.define('ext-textareafield', HTMLParsedElement.withParsedCallback(EWCTextareafield));

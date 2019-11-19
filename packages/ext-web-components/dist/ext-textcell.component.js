@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_cell_Text from './Ext/grid/cell/Text';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtTextcellComponent =
+//import Ext_grid_cell_Text from '@sencha/ext-runtime-base/dist/./Ext/grid/cell/Text.js';
+import Ext_grid_cell_Text from './Ext/grid/cell/Text.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCTextcell =
 /*#__PURE__*/
 function (_Ext_grid_cell_Text) {
-  _inheritsLoose(ExtTextcellComponent, _Ext_grid_cell_Text);
+  _inheritsLoose(EWCTextcell, _Ext_grid_cell_Text);
 
-  function ExtTextcellComponent() {
+  function EWCTextcell() {
     var _this;
 
     _this = _Ext_grid_cell_Text.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_grid_cell_Text) {
     return _this;
   }
 
-  return ExtTextcellComponent;
-}(Ext_grid_cell_Text); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-textcell', ExtTextcellComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCTextcell;
+}(Ext_grid_cell_Text);
 
-window.customElements.define('ext-textcell', HTMLParsedElement.withParsedCallback(ExtTextcellComponent));
+export { EWCTextcell as default };
+window.customElements.define('ext-textcell', HTMLParsedElement.withParsedCallback(EWCTextcell));

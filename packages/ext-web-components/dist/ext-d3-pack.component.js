@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_d3_hierarchy_Pack from './Ext/d3/hierarchy/Pack';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtD3_packComponent =
+//import Ext_d3_hierarchy_Pack from '@sencha/ext-runtime-base/dist/./Ext/d3/hierarchy/Pack.js';
+import Ext_d3_hierarchy_Pack from './Ext/d3/hierarchy/Pack.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCD3_pack =
 /*#__PURE__*/
 function (_Ext_d3_hierarchy_Pac) {
-  _inheritsLoose(ExtD3_packComponent, _Ext_d3_hierarchy_Pac);
+  _inheritsLoose(EWCD3_pack, _Ext_d3_hierarchy_Pac);
 
-  function ExtD3_packComponent() {
+  function EWCD3_pack() {
     var _this;
 
     _this = _Ext_d3_hierarchy_Pac.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_d3_hierarchy_Pac) {
     return _this;
   }
 
-  return ExtD3_packComponent;
-}(Ext_d3_hierarchy_Pack); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-d3-pack', ExtD3_packComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCD3_pack;
+}(Ext_d3_hierarchy_Pack);
 
-window.customElements.define('ext-d3-pack', HTMLParsedElement.withParsedCallback(ExtD3_packComponent));
+export { EWCD3_pack as default };
+window.customElements.define('ext-d3-pack', HTMLParsedElement.withParsedCallback(EWCD3_pack));

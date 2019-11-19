@@ -1,21 +1,12 @@
-import Ext_ux_Gauge from './Ext/ux/Gauge'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_ux_Gauge from '@sencha/ext-runtime-base/dist/./Ext/ux/Gauge.js';
+import Ext_ux_Gauge from './Ext/ux/Gauge.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtGaugeComponent extends Ext_ux_Gauge {
+export default class EWCGauge extends Ext_ux_Gauge {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'gauge'
+        super ([], []);
+        this.xtype = 'gauge';
     }
 }
+window.customElements.define('ext-gauge', HTMLParsedElement.withParsedCallback(EWCGauge));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-gauge', ExtGaugeComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-gauge', HTMLParsedElement.withParsedCallback(ExtGaugeComponent))

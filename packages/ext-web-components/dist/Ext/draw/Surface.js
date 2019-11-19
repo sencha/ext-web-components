@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_draw_SurfaceBase from '../../Ext/draw/SurfaceBase';
+import Ext_draw_SurfaceBase from '../../Ext/draw/SurfaceBase.js';
 
 var Ext_draw_Surface =
 /*#__PURE__*/
@@ -8,7 +8,7 @@ function (_Ext_draw_SurfaceBase) {
   _inheritsLoose(Ext_draw_Surface, _Ext_draw_SurfaceBase);
 
   Ext_draw_Surface.PROPERTIES = function PROPERTIES() {
-    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'background', 'bind', 'border', 'cls', 'constrainAlign', 'controller', 'defaultListenerScope', 'dirty', 'disabled', 'flex', 'flipRtlText', 'floated', 'focusCls', 'height', 'hidden', 'hideMode', 'id', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'listeners', 'margin', 'name', 'nameable', 'plugins', 'publishes', 'rect', 'reference', 'relative', 'renderTo', 'ripple', 'session', 'shadow', 'shareableName', 'shim', 'style', 'toFrontOnShow', 'touchAction', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'viewModel', 'width', 'x', 'y', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'background', 'bind', 'border', 'cls', 'constrainAlign', 'controller', 'defaultListenerScope', 'dirty', 'disabled', 'flex', 'flipRtlText', 'floated', 'focusCls', 'height', 'hidden', 'hideMode', 'id', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'listeners', 'margin', 'name', 'nameable', 'plugins', 'publishes', 'rect', 'reference', 'relative', 'renderTo', 'ripple', 'session', 'shadow', 'shareableName', 'shim', 'style', 'toFrontOnShow', 'touchAction', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'viewModel', 'width', 'x', 'y'];
   };
 
   Ext_draw_Surface.EVENTS = function EVENTS() {
@@ -23,25 +23,25 @@ function (_Ext_draw_SurfaceBase) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforetofront',
-      parameters: 'surface'
+      parameters: 'sender'
     }, {
       name: 'beforewidthchange',
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'surface,event'
+      parameters: 'sender,event'
     }, {
       name: 'disabledchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'focus',
-      parameters: 'surface,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'surface,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'surface,event'
+      parameters: 'sender,event'
     }, {
       name: 'heightchange',
       parameters: 'sender,value,oldValue'
@@ -50,13 +50,13 @@ function (_Ext_draw_SurfaceBase) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'tofront',
-      parameters: 'surface'
+      parameters: 'sender'
     }, {
       name: 'widthchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Panel from '../../Ext/Panel';
+import Ext_Panel from '../../Ext/Panel.js';
 
 var Ext_panel_Date =
 /*#__PURE__*/
@@ -8,19 +8,19 @@ function (_Ext_Panel) {
   _inheritsLoose(Ext_panel_Date, _Ext_Panel);
 
   Ext_panel_Date.PROPERTIES = function PROPERTIES() {
-    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'anchor', 'anchorPosition', 'animation', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoConfirm', 'autoDestroy', 'autoSize', 'axisLock', 'bbar', 'bind', 'bodyBorder', 'bodyCls', 'bodyPadding', 'bodyStyle', 'border', 'bottom', 'buttonAlign', 'buttons', 'buttonToolbar', 'captionFormat', 'cardSwitchAnimation', 'centered', 'closable', 'closeAction', 'closeToolText', 'cls', 'collapsed', 'collapsible', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'dateCellFormat', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultToolWeights', 'defaultType', 'disabled', 'disabledDates', 'disabledDays', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusableContainer', 'focusableDate', 'focusCls', 'format', 'fullscreen', 'handler', 'header', 'headerFormat', 'headerLength', 'headerPosition', 'height', 'hidden', 'hideAnimation', 'hideCaptions', 'hideMode', 'hideOnMaskTap', 'hideOutside', 'html', 'icon', 'iconAlign', 'iconCls', 'id', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'lbar', 'left', 'listeners', 'manageBorders', 'margin', 'masked', 'maxDate', 'maxHeight', 'maxWidth', 'minButtonWidth', 'minDate', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'navigationPosition', 'nextText', 'padding', 'panes', 'plugins', 'prevText', 'publishes', 'rbar', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'resizable', 'right', 'ripple', 'scope', 'scrollable', 'selectOnNavigate', 'session', 'shadow', 'shareableName', 'shim', 'showAfterMaxDate', 'showAnimation', 'showBeforeMinDate', 'showFooter', 'showTodayButton', 'specialDates', 'specialDays', 'splitTitle', 'standardButtons', 'startDay', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'tbar', 'title', 'titleAlign', 'titleAnimation', 'titleCollapse', 'toFrontOnShow', 'toolDefaults', 'tools', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'transformCellCls', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'viewModel', 'weekendDays', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'yearPicker', 'yearPickerDefaults', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'anchor', 'anchorPosition', 'animation', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoConfirm', 'autoDestroy', 'autoSize', 'axisLock', 'bbar', 'bind', 'bodyBorder', 'bodyCls', 'bodyPadding', 'bodyStyle', 'border', 'bottom', 'buttonAlign', 'buttons', 'buttonToolbar', 'captionFormat', 'cardSwitchAnimation', 'centered', 'closable', 'closeAction', 'closeToolText', 'cls', 'collapsed', 'collapsible', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'dateCellFormat', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultToolWeights', 'defaultType', 'disabled', 'disabledDates', 'disabledDays', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusableContainer', 'focusableDate', 'focusCls', 'format', 'fullscreen', 'handler', 'header', 'headerFormat', 'headerLength', 'headerPosition', 'height', 'hidden', 'hideAnimation', 'hideCaptions', 'hideMode', 'hideOnMaskTap', 'hideOutside', 'html', 'icon', 'iconAlign', 'iconCls', 'id', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'lbar', 'left', 'listeners', 'manageBorders', 'margin', 'masked', 'maxDate', 'maxHeight', 'maxWidth', 'minButtonWidth', 'minDate', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'navigationPosition', 'nextText', 'padding', 'panes', 'plugins', 'prevText', 'publishes', 'rbar', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'resizable', 'right', 'ripple', 'scope', 'scrollable', 'selectOnNavigate', 'session', 'shadow', 'shareableName', 'shim', 'showAfterMaxDate', 'showAnimation', 'showBeforeMinDate', 'showFooter', 'showTodayButton', 'specialDates', 'specialDays', 'splitTitle', 'standardButtons', 'startDay', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'tbar', 'title', 'titleAlign', 'titleAnimation', 'titleCollapse', 'toFrontOnShow', 'toolDefaults', 'tools', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'transformCellCls', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'viewModel', 'weekendDays', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'yearPicker', 'yearPickerDefaults', 'zIndex'];
   };
 
   Ext_panel_Date.EVENTS = function EVENTS() {
     return [{
       name: 'activate',
-      parameters: 'newActiveItem,datepanel,oldActiveItem'
+      parameters: 'newActiveItem,sender,oldActiveItem'
     }, {
       name: 'activeItemchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'add',
-      parameters: 'datepanel,item,index'
+      parameters: 'sender,item,index'
     }, {
       name: 'added',
       parameters: 'sender,container,index'
@@ -35,7 +35,7 @@ function (_Ext_Panel) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforecollapse',
-      parameters: 'datepanel'
+      parameters: 'sender'
     }, {
       name: 'beforedisabledchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -44,7 +44,7 @@ function (_Ext_Panel) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforeexpand',
-      parameters: 'datepanel'
+      parameters: 'sender'
     }, {
       name: 'beforeheightchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -74,7 +74,7 @@ function (_Ext_Panel) {
       parameters: ''
     }, {
       name: 'beforeresizedragstart',
-      parameters: 'datepanel,context'
+      parameters: 'sender,context'
     }, {
       name: 'beforerightchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -86,7 +86,7 @@ function (_Ext_Panel) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'datepanel'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -95,7 +95,7 @@ function (_Ext_Panel) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'datepanel,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -104,10 +104,10 @@ function (_Ext_Panel) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'collapse',
-      parameters: 'datepanel'
+      parameters: 'sender'
     }, {
       name: 'deactivate',
-      parameters: 'oldActiveItem,datepanel,newActiveItem'
+      parameters: 'oldActiveItem,sender,newActiveItem'
     }, {
       name: 'destroy',
       parameters: ''
@@ -119,28 +119,28 @@ function (_Ext_Panel) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'drawerhide',
-      parameters: 'datepanel'
+      parameters: 'sender'
     }, {
       name: 'drawershow',
-      parameters: 'datepanel'
+      parameters: 'sender'
     }, {
       name: 'erased',
       parameters: 'sender'
     }, {
       name: 'expand',
-      parameters: 'datepanel'
+      parameters: 'sender'
     }, {
       name: 'floatingchange',
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'datepanel,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'datepanel,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'datepanel,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -173,7 +173,7 @@ function (_Ext_Panel) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'move',
-      parameters: 'datepanel,item,toIndex,fromIndex'
+      parameters: 'sender,item,toIndex,fromIndex'
     }, {
       name: 'moved',
       parameters: 'sender,container,toIndex,fromIndex'
@@ -188,28 +188,28 @@ function (_Ext_Panel) {
       parameters: 'sender,positioned'
     }, {
       name: 'remove',
-      parameters: 'datepanel,item,index'
+      parameters: 'sender,item,index'
     }, {
       name: 'removed',
       parameters: 'sender,container,index'
     }, {
       name: 'renderedchange',
-      parameters: 'datepanel,item,rendered'
+      parameters: 'sender,item,rendered'
     }, {
       name: 'resize',
       parameters: 'element,info'
     }, {
       name: 'resizedrag',
-      parameters: 'datepanel,context'
+      parameters: 'sender,context'
     }, {
       name: 'resizedragcancel',
-      parameters: 'datepanel,context'
+      parameters: 'sender,context'
     }, {
       name: 'resizedragend',
-      parameters: 'datepanel,context'
+      parameters: 'sender,context'
     }, {
       name: 'resizedragstart',
-      parameters: 'datepanel,context'
+      parameters: 'sender,context'
     }, {
       name: 'rightchange',
       parameters: 'sender,value,oldValue'
@@ -221,7 +221,7 @@ function (_Ext_Panel) {
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'datepanel'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -233,7 +233,7 @@ function (_Ext_Panel) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_form_Slider from './Ext/form/Slider';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtSliderfieldComponent =
+//import Ext_form_Slider from '@sencha/ext-runtime-base/dist/./Ext/form/Slider.js';
+import Ext_form_Slider from './Ext/form/Slider.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCSliderfield =
 /*#__PURE__*/
 function (_Ext_form_Slider) {
-  _inheritsLoose(ExtSliderfieldComponent, _Ext_form_Slider);
+  _inheritsLoose(EWCSliderfield, _Ext_form_Slider);
 
-  function ExtSliderfieldComponent() {
+  function EWCSliderfield() {
     var _this;
 
     _this = _Ext_form_Slider.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_form_Slider) {
     return _this;
   }
 
-  return ExtSliderfieldComponent;
-}(Ext_form_Slider); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-sliderfield', ExtSliderfieldComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCSliderfield;
+}(Ext_form_Slider);
 
-window.customElements.define('ext-sliderfield', HTMLParsedElement.withParsedCallback(ExtSliderfieldComponent));
+export { EWCSliderfield as default };
+window.customElements.define('ext-sliderfield', HTMLParsedElement.withParsedCallback(EWCSliderfield));

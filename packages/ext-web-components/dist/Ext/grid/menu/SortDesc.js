@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_menu_RadioItem from '../../../Ext/menu/RadioItem';
+import Ext_menu_RadioItem from '../../../Ext/menu/RadioItem.js';
 
 var Ext_grid_menu_SortDesc =
 /*#__PURE__*/
@@ -8,7 +8,7 @@ function (_Ext_menu_RadioItem) {
   _inheritsLoose(Ext_grid_menu_SortDesc, _Ext_menu_RadioItem);
 
   Ext_grid_menu_SortDesc.PROPERTIES = function PROPERTIES() {
-    return ['alignSelf', 'allowUncheck', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'checkChangeDisabled', 'checked', 'checkHandler', 'clickHideDelay', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'destroyMenu', 'disabled', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusCls', 'fullscreen', 'group', 'handler', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnClick', 'hideOnMaskTap', 'href', 'html', 'icon', 'iconAlign', 'iconCls', 'id', 'indented', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'menu', 'menuAlign', 'menuExpandDelay', 'menuHideDelay', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scope', 'scrollable', 'separator', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'submenuText', 'tabIndex', 'target', 'text', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['alignSelf', 'allowUncheck', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'checkChangeDisabled', 'checked', 'checkHandler', 'clickHideDelay', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'destroyMenu', 'disabled', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusCls', 'fullscreen', 'group', 'handler', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnClick', 'hideOnMaskTap', 'href', 'html', 'icon', 'iconAlign', 'iconCls', 'id', 'indented', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'menu', 'menuAlign', 'menuExpandDelay', 'menuHideDelay', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scope', 'scrollable', 'separator', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'style', 'submenuText', 'tabIndex', 'target', 'text', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_grid_menu_SortDesc.EVENTS = function EVENTS() {
@@ -23,7 +23,7 @@ function (_Ext_menu_RadioItem) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforecheckchange',
-      parameters: 'gridsortdescmenuitem,checked'
+      parameters: 'sender,checked'
     }, {
       name: 'beforedisabledchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -68,7 +68,7 @@ function (_Ext_menu_RadioItem) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'gridsortdescmenuitem'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -77,7 +77,7 @@ function (_Ext_menu_RadioItem) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'gridsortdescmenuitem,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -86,7 +86,7 @@ function (_Ext_menu_RadioItem) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'checkchange',
-      parameters: 'gridsortdescmenuitem,checked'
+      parameters: 'sender,checked'
     }, {
       name: 'destroy',
       parameters: ''
@@ -104,13 +104,13 @@ function (_Ext_menu_RadioItem) {
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'gridsortdescmenuitem,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'gridsortdescmenuitem,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'gridsortdescmenuitem,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -170,7 +170,7 @@ function (_Ext_menu_RadioItem) {
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'gridsortdescmenuitem'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -182,7 +182,7 @@ function (_Ext_menu_RadioItem) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Indicator from './Ext/Indicator';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtIndicatorComponent =
+//import Ext_Indicator from '@sencha/ext-runtime-base/dist/./Ext/Indicator.js';
+import Ext_Indicator from './Ext/Indicator.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCIndicator =
 /*#__PURE__*/
 function (_Ext_Indicator) {
-  _inheritsLoose(ExtIndicatorComponent, _Ext_Indicator);
+  _inheritsLoose(EWCIndicator, _Ext_Indicator);
 
-  function ExtIndicatorComponent() {
+  function EWCIndicator() {
     var _this;
 
     _this = _Ext_Indicator.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_Indicator) {
     return _this;
   }
 
-  return ExtIndicatorComponent;
-}(Ext_Indicator); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-indicator', ExtIndicatorComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCIndicator;
+}(Ext_Indicator);
 
-window.customElements.define('ext-indicator', HTMLParsedElement.withParsedCallback(ExtIndicatorComponent));
+export { EWCIndicator as default };
+window.customElements.define('ext-indicator', HTMLParsedElement.withParsedCallback(EWCIndicator));

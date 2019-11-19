@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_Gadget from '../../../Ext/Gadget';
+import Ext_Gadget from '../../../Ext/Gadget.js';
 
 var Ext_calendar_view_Base =
 /*#__PURE__*/
@@ -8,7 +8,7 @@ function (_Ext_Gadget) {
   _inheritsLoose(Ext_calendar_view_Base, _Ext_Gadget);
 
   Ext_calendar_view_Base.PROPERTIES = function PROPERTIES() {
-    return ['addForm', 'alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'cls', 'compact', 'compactOptions', 'constrainAlign', 'contentEl', 'controller', 'controlStoreRange', 'data', 'defaultListenerScope', 'disabled', 'displayed', 'docked', 'draggable', 'editForm', 'eventDefaults', 'flex', 'floated', 'focusCls', 'fullscreen', 'gestureNavigation', 'header', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'timezoneOffset', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['addForm', 'alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'centered', 'cls', 'compact', 'compactOptions', 'constrainAlign', 'contentEl', 'controller', 'controlStoreRange', 'data', 'defaultListenerScope', 'disabled', 'displayed', 'docked', 'draggable', 'editForm', 'eventDefaults', 'flex', 'floated', 'focusCls', 'fullscreen', 'gestureNavigation', 'header', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'timezoneOffset', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_calendar_view_Base.EVENTS = function EVENTS() {
@@ -29,10 +29,10 @@ function (_Ext_Gadget) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'beforeeventadd',
-      parameters: 'undefined,context'
+      parameters: 'sender,context'
     }, {
       name: 'beforeeventedit',
-      parameters: 'undefined,context'
+      parameters: 'sender,context'
     }, {
       name: 'beforeheightchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -71,7 +71,7 @@ function (_Ext_Gadget) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'undefined'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -80,7 +80,7 @@ function (_Ext_Gadget) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'undefined,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -101,28 +101,28 @@ function (_Ext_Gadget) {
       parameters: 'sender'
     }, {
       name: 'eventadd',
-      parameters: 'undefined,context'
+      parameters: 'sender,context'
     }, {
       name: 'eventdrop',
-      parameters: 'undefined,context'
+      parameters: 'sender,context'
     }, {
       name: 'eventedit',
-      parameters: 'undefined,context'
+      parameters: 'sender,context'
     }, {
       name: 'eventtap',
-      parameters: 'undefined,context'
+      parameters: 'sender,context'
     }, {
       name: 'floatingchange',
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'undefined,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'undefined,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'undefined,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -182,7 +182,7 @@ function (_Ext_Gadget) {
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'undefined'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -191,22 +191,22 @@ function (_Ext_Gadget) {
       parameters: 'sender,newData'
     }, {
       name: 'validateeventadd',
-      parameters: 'undefined,context'
+      parameters: 'sender,context'
     }, {
       name: 'validateeventdrop',
-      parameters: 'undefined,context'
+      parameters: 'sender,context'
     }, {
       name: 'validateeventedit',
-      parameters: 'undefined,context'
+      parameters: 'sender,context'
     }, {
       name: 'valuechange',
-      parameters: 'undefined,context'
+      parameters: 'sender,context'
     }, {
       name: 'widthchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_Checkbox from '../../Ext/field/Checkbox';
+import Ext_field_Checkbox from '../../Ext/field/Checkbox.js';
 
 var Ext_field_Radio =
 /*#__PURE__*/
@@ -8,7 +8,7 @@ function (_Ext_field_Checkbox) {
   _inheritsLoose(Ext_field_Radio, _Ext_field_Checkbox);
 
   Ext_field_Radio.PROPERTIES = function PROPERTIES() {
-    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoFitErrors', 'axisLock', 'bind', 'bodyAlign', 'border', 'bottom', 'boxLabel', 'boxLabelAlign', 'bubbleDirty', 'centered', 'checked', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'dataType', 'defaultListenerScope', 'dirty', 'disabled', 'displayed', 'docked', 'draggable', 'error', 'errorMessage', 'errorTarget', 'errorTip', 'errorTpl', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inline', 'inputType', 'inputValue', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'label', 'labelAlign', 'labelCls', 'labelMaskTap', 'labelMinWidth', 'labelTextAlign', 'labelWidth', 'labelWrap', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'readOnly', 'record', 'reference', 'relative', 'renderTo', 'required', 'requiredMessage', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'sideError', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'tipError', 'titleError', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'underError', 'userCls', 'userSelectable', 'validateDisabled', 'validationMessage', 'validators', 'value', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoFitErrors', 'axisLock', 'bind', 'bodyAlign', 'border', 'bottom', 'boxLabel', 'boxLabelAlign', 'bubbleDirty', 'centered', 'checked', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'dataType', 'defaultListenerScope', 'dirty', 'disabled', 'displayed', 'docked', 'draggable', 'error', 'errorMessage', 'errorTarget', 'errorTip', 'errorTpl', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inline', 'inputType', 'inputValue', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'label', 'labelAlign', 'labelCls', 'labelMaskTap', 'labelMinWidth', 'labelTextAlign', 'labelWidth', 'labelWrap', 'left', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'plugins', 'publishes', 'readOnly', 'record', 'reference', 'relative', 'renderTo', 'required', 'requiredMessage', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'sideError', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'tipError', 'titleError', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'underError', 'userCls', 'userSelectable', 'validateDisabled', 'validationMessage', 'validators', 'value', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_field_Radio.EVENTS = function EVENTS() {
@@ -65,7 +65,7 @@ function (_Ext_field_Checkbox) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'radio'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -74,7 +74,7 @@ function (_Ext_field_Checkbox) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'radio,event'
+      parameters: 'sender,event'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -83,10 +83,10 @@ function (_Ext_field_Checkbox) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'change',
-      parameters: 'radio,newValue,oldValue'
+      parameters: 'sender,newValue,oldValue'
     }, {
       name: 'check',
-      parameters: 'radio'
+      parameters: 'sender'
     }, {
       name: 'click',
       parameters: 'e'
@@ -95,7 +95,7 @@ function (_Ext_field_Checkbox) {
       parameters: ''
     }, {
       name: 'dirtychange',
-      parameters: 'radio,dirty'
+      parameters: 'sender,dirty'
     }, {
       name: 'disabledchange',
       parameters: 'sender,value,oldValue'
@@ -107,19 +107,19 @@ function (_Ext_field_Checkbox) {
       parameters: 'sender'
     }, {
       name: 'errorchange',
-      parameters: 'radio,error'
+      parameters: 'sender,error'
     }, {
       name: 'floatingchange',
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'radio,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusenter',
-      parameters: 'radio,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'radio,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -188,13 +188,13 @@ function (_Ext_field_Checkbox) {
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'radio'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
     }, {
       name: 'uncheck',
-      parameters: 'radio'
+      parameters: 'sender'
     }, {
       name: 'updatedata',
       parameters: 'sender,newData'
@@ -203,7 +203,7 @@ function (_Ext_field_Checkbox) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

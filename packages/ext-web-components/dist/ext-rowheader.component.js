@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_grid_RowHeader from './Ext/grid/RowHeader';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtRowheaderComponent =
+//import Ext_grid_RowHeader from '@sencha/ext-runtime-base/dist/./Ext/grid/RowHeader.js';
+import Ext_grid_RowHeader from './Ext/grid/RowHeader.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCRowheader =
 /*#__PURE__*/
 function (_Ext_grid_RowHeader) {
-  _inheritsLoose(ExtRowheaderComponent, _Ext_grid_RowHeader);
+  _inheritsLoose(EWCRowheader, _Ext_grid_RowHeader);
 
-  function ExtRowheaderComponent() {
+  function EWCRowheader() {
     var _this;
 
     _this = _Ext_grid_RowHeader.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_grid_RowHeader) {
     return _this;
   }
 
-  return ExtRowheaderComponent;
-}(Ext_grid_RowHeader); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-rowheader', ExtRowheaderComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCRowheader;
+}(Ext_grid_RowHeader);
 
-window.customElements.define('ext-rowheader', HTMLParsedElement.withParsedCallback(ExtRowheaderComponent));
+export { EWCRowheader as default };
+window.customElements.define('ext-rowheader', HTMLParsedElement.withParsedCallback(EWCRowheader));

@@ -1,21 +1,12 @@
-import Ext_grid_column_Selection from './Ext/grid/column/Selection'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_grid_column_Selection from '@sencha/ext-runtime-base/dist/./Ext/grid/column/Selection.js';
+import Ext_grid_column_Selection from './Ext/grid/column/Selection.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtSelectioncolumnComponent extends Ext_grid_column_Selection {
+export default class EWCSelectioncolumn extends Ext_grid_column_Selection {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'selectioncolumn'
+        super ([], []);
+        this.xtype = 'selectioncolumn';
     }
 }
+window.customElements.define('ext-selectioncolumn', HTMLParsedElement.withParsedCallback(EWCSelectioncolumn));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-selectioncolumn', ExtSelectioncolumnComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-selectioncolumn', HTMLParsedElement.withParsedCallback(ExtSelectioncolumnComponent))

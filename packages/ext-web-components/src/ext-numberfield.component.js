@@ -1,21 +1,12 @@
-import Ext_form_Number from './Ext/form/Number'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_form_Number from '@sencha/ext-runtime-base/dist/./Ext/form/Number.js';
+import Ext_form_Number from './Ext/form/Number.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtNumberfieldComponent extends Ext_form_Number {
+export default class EWCNumberfield extends Ext_form_Number {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'numberfield'
+        super ([], []);
+        this.xtype = 'numberfield';
     }
 }
+window.customElements.define('ext-numberfield', HTMLParsedElement.withParsedCallback(EWCNumberfield));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-numberfield', ExtNumberfieldComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-numberfield', HTMLParsedElement.withParsedCallback(ExtNumberfieldComponent))

@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_panel_Tool from './Ext/panel/Tool';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtToolComponent =
+//import Ext_panel_Tool from '@sencha/ext-runtime-base/dist/./Ext/panel/Tool.js';
+import Ext_panel_Tool from './Ext/panel/Tool.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCTool =
 /*#__PURE__*/
 function (_Ext_panel_Tool) {
-  _inheritsLoose(ExtToolComponent, _Ext_panel_Tool);
+  _inheritsLoose(EWCTool, _Ext_panel_Tool);
 
-  function ExtToolComponent() {
+  function EWCTool() {
     var _this;
 
     _this = _Ext_panel_Tool.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_panel_Tool) {
     return _this;
   }
 
-  return ExtToolComponent;
-}(Ext_panel_Tool); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-tool', ExtToolComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCTool;
+}(Ext_panel_Tool);
 
-window.customElements.define('ext-tool', HTMLParsedElement.withParsedCallback(ExtToolComponent));
+export { EWCTool as default };
+window.customElements.define('ext-tool', HTMLParsedElement.withParsedCallback(EWCTool));

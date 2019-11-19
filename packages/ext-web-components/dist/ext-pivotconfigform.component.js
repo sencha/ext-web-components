@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_pivot_plugin_configurator_Form from './Ext/pivot/plugin/configurator/Form';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtPivotconfigformComponent =
+//import Ext_pivot_plugin_configurator_Form from '@sencha/ext-runtime-base/dist/./Ext/pivot/plugin/configurator/Form.js';
+import Ext_pivot_plugin_configurator_Form from './Ext/pivot/plugin/configurator/Form.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCPivotconfigform =
 /*#__PURE__*/
 function (_Ext_pivot_plugin_con) {
-  _inheritsLoose(ExtPivotconfigformComponent, _Ext_pivot_plugin_con);
+  _inheritsLoose(EWCPivotconfigform, _Ext_pivot_plugin_con);
 
-  function ExtPivotconfigformComponent() {
+  function EWCPivotconfigform() {
     var _this;
 
     _this = _Ext_pivot_plugin_con.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_pivot_plugin_con) {
     return _this;
   }
 
-  return ExtPivotconfigformComponent;
-}(Ext_pivot_plugin_configurator_Form); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-pivotconfigform', ExtPivotconfigformComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCPivotconfigform;
+}(Ext_pivot_plugin_configurator_Form);
 
-window.customElements.define('ext-pivotconfigform', HTMLParsedElement.withParsedCallback(ExtPivotconfigformComponent));
+export { EWCPivotconfigform as default };
+window.customElements.define('ext-pivotconfigform', HTMLParsedElement.withParsedCallback(EWCPivotconfigform));

@@ -1,21 +1,12 @@
-import Ext_pivot_plugin_configurator_Form from './Ext/pivot/plugin/configurator/Form'
-import HTMLParsedElement from './HTMLParsedElement'
+//import Ext_pivot_plugin_configurator_Form from '@sencha/ext-runtime-base/dist/./Ext/pivot/plugin/configurator/Form.js';
+import Ext_pivot_plugin_configurator_Form from './Ext/pivot/plugin/configurator/Form.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
 
-export class ExtPivotconfigformComponent extends Ext_pivot_plugin_configurator_Form {
+export default class EWCPivotconfigform extends Ext_pivot_plugin_configurator_Form {
     constructor() {
-        super (
-            [],
-            []
-        )
-        this.xtype = 'pivotconfigform'
+        super ([], []);
+        this.xtype = 'pivotconfigform';
     }
 }
+window.customElements.define('ext-pivotconfigform', HTMLParsedElement.withParsedCallback(EWCPivotconfigform));
 
-//(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-pivotconfigform', ExtPivotconfigformComponent);
-//    });
-//})();
-
-//const  = HTMLParsedElement;
-window.customElements.define('ext-pivotconfigform', HTMLParsedElement.withParsedCallback(ExtPivotconfigformComponent))

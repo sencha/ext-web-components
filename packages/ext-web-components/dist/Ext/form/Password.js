@@ -1,6 +1,6 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_field_Text from '../../Ext/field/Text';
+import Ext_field_Text from '../../Ext/field/Text.js';
 
 var Ext_form_Password =
 /*#__PURE__*/
@@ -8,13 +8,13 @@ function (_Ext_field_Text) {
   _inheritsLoose(Ext_form_Password, _Ext_field_Text);
 
   Ext_form_Password.PROPERTIES = function PROPERTIES() {
-    return ['alignSelf', 'alwaysOnTop', 'animateUnderline', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoCapitalize', 'autoComplete', 'autoCorrect', 'autoFitErrors', 'autoHideInputMask', 'axisLock', 'badFormatMessage', 'bind', 'bodyAlign', 'border', 'bottom', 'bubbleDirty', 'centered', 'clearable', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'dataType', 'defaultListenerScope', 'dirty', 'disabled', 'displayed', 'docked', 'draggable', 'editable', 'error', 'errorMessage', 'errorTarget', 'errorTip', 'errorTpl', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inline', 'inputMask', 'inputType', 'inputValue', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'label', 'labelAlign', 'labelCls', 'labelInPlaceholder', 'labelMinWidth', 'labelTextAlign', 'labelWidth', 'labelWrap', 'left', 'listeners', 'margin', 'maxHeight', 'maxLength', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'parseValidator', 'pattern', 'placeholder', 'plugins', 'publishes', 'readOnly', 'record', 'reference', 'relative', 'renderTo', 'required', 'requiredMessage', 'revealable', 'revealed', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'sideError', 'stateful', 'statefulDefaults', 'stateId', 'stripCharsRe', 'style', 'tabIndex', 'textAlign', 'tipError', 'titleError', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'triggers', 'twoWayBindable', 'ui', 'underError', 'userCls', 'userSelectable', 'validateDisabled', 'validationMessage', 'validators', 'value', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex', 'platformConfig', 'responsiveConfig', 'fitToParent', 'config'];
+    return ['alignSelf', 'alwaysOnTop', 'animateUnderline', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoCapitalize', 'autoComplete', 'autoCorrect', 'autoFitErrors', 'autoHideInputMask', 'axisLock', 'badFormatMessage', 'bind', 'bodyAlign', 'border', 'bottom', 'bubbleDirty', 'centered', 'clearable', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'dataType', 'defaultListenerScope', 'dirty', 'disabled', 'displayed', 'docked', 'draggable', 'editable', 'error', 'errorMessage', 'errorTarget', 'errorTip', 'errorTpl', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'html', 'id', 'inline', 'inputMask', 'inputType', 'inputValue', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'label', 'labelAlign', 'labelCls', 'labelInPlaceholder', 'labelMinWidth', 'labelTextAlign', 'labelWidth', 'labelWrap', 'left', 'listeners', 'margin', 'maxHeight', 'maxLength', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'padding', 'parseValidator', 'pattern', 'placeholder', 'plugins', 'publishes', 'readOnly', 'record', 'reference', 'relative', 'renderTo', 'required', 'requiredMessage', 'revealable', 'revealed', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'sideError', 'stateful', 'statefulDefaults', 'stateId', 'stripCharsRe', 'style', 'tabIndex', 'textAlign', 'tipError', 'titleError', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'triggers', 'twoWayBindable', 'ui', 'underError', 'userCls', 'userSelectable', 'validateDisabled', 'validationMessage', 'validators', 'value', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex'];
   };
 
   Ext_form_Password.EVENTS = function EVENTS() {
     return [{
       name: 'action',
-      parameters: 'passwordfield,e'
+      parameters: 'sender,e'
     }, {
       name: 'added',
       parameters: 'sender,container,index'
@@ -68,7 +68,7 @@ function (_Ext_field_Text) {
       parameters: 'sender'
     }, {
       name: 'beforetofront',
-      parameters: 'passwordfield'
+      parameters: 'sender'
     }, {
       name: 'beforetopchange',
       parameters: 'sender,value,oldValue,undefined'
@@ -77,7 +77,7 @@ function (_Ext_field_Text) {
       parameters: 'sender,value,oldValue,undefined'
     }, {
       name: 'blur',
-      parameters: 'passwordfield,e'
+      parameters: 'sender,e'
     }, {
       name: 'bottomchange',
       parameters: 'sender,value,oldValue'
@@ -86,10 +86,10 @@ function (_Ext_field_Text) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'change',
-      parameters: 'passwordfield,newValue,oldValue'
+      parameters: 'sender,newValue,oldValue'
     }, {
       name: 'clearicontap',
-      parameters: 'passwordfield,input,e'
+      parameters: 'sender,input,e'
     }, {
       name: 'click',
       parameters: 'e'
@@ -98,7 +98,7 @@ function (_Ext_field_Text) {
       parameters: ''
     }, {
       name: 'dirtychange',
-      parameters: 'passwordfield,dirty'
+      parameters: 'sender,dirty'
     }, {
       name: 'disabledchange',
       parameters: 'sender,value,oldValue'
@@ -110,19 +110,19 @@ function (_Ext_field_Text) {
       parameters: 'sender'
     }, {
       name: 'errorchange',
-      parameters: 'passwordfield,error'
+      parameters: 'sender,error'
     }, {
       name: 'floatingchange',
       parameters: 'sender,positioned'
     }, {
       name: 'focus',
-      parameters: 'passwordfield,e'
+      parameters: 'sender,e'
     }, {
       name: 'focusenter',
-      parameters: 'passwordfield,event'
+      parameters: 'sender,event'
     }, {
       name: 'focusleave',
-      parameters: 'passwordfield,event'
+      parameters: 'sender,event'
     }, {
       name: 'fullscreen',
       parameters: 'sender'
@@ -140,10 +140,10 @@ function (_Ext_field_Text) {
       parameters: 'sender'
     }, {
       name: 'keydown',
-      parameters: 'passwordfield,e'
+      parameters: 'sender,e'
     }, {
       name: 'keyup',
-      parameters: 'passwordfield,e'
+      parameters: 'sender,e'
     }, {
       name: 'leftchange',
       parameters: 'sender,value,oldValue'
@@ -161,7 +161,7 @@ function (_Ext_field_Text) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'mousedown',
-      parameters: 'passwordfield,e'
+      parameters: 'sender,e'
     }, {
       name: 'moved',
       parameters: 'sender,container,toIndex,fromIndex'
@@ -173,7 +173,7 @@ function (_Ext_field_Text) {
       parameters: 'sender,element'
     }, {
       name: 'paste',
-      parameters: 'passwordfield,e'
+      parameters: 'sender,e'
     }, {
       name: 'positionedchange',
       parameters: 'sender,positioned'
@@ -194,7 +194,7 @@ function (_Ext_field_Text) {
       parameters: 'sender'
     }, {
       name: 'tofront',
-      parameters: 'passwordfield'
+      parameters: 'sender'
     }, {
       name: 'topchange',
       parameters: 'sender,value,oldValue'
@@ -206,7 +206,7 @@ function (_Ext_field_Text) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: ''
+      parameters: 'cmd,cmdAll'
     }];
   };
 

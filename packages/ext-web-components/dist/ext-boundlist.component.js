@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_dataview_BoundList from './Ext/dataview/BoundList';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtBoundlistComponent =
+//import Ext_dataview_BoundList from '@sencha/ext-runtime-base/dist/./Ext/dataview/BoundList.js';
+import Ext_dataview_BoundList from './Ext/dataview/BoundList.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCBoundlist =
 /*#__PURE__*/
 function (_Ext_dataview_BoundLi) {
-  _inheritsLoose(ExtBoundlistComponent, _Ext_dataview_BoundLi);
+  _inheritsLoose(EWCBoundlist, _Ext_dataview_BoundLi);
 
-  function ExtBoundlistComponent() {
+  function EWCBoundlist() {
     var _this;
 
     _this = _Ext_dataview_BoundLi.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_dataview_BoundLi) {
     return _this;
   }
 
-  return ExtBoundlistComponent;
-}(Ext_dataview_BoundList); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-boundlist', ExtBoundlistComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCBoundlist;
+}(Ext_dataview_BoundList);
 
-window.customElements.define('ext-boundlist', HTMLParsedElement.withParsedCallback(ExtBoundlistComponent));
+export { EWCBoundlist as default };
+window.customElements.define('ext-boundlist', HTMLParsedElement.withParsedCallback(EWCBoundlist));

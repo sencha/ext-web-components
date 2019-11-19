@@ -1,12 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import Ext_form_Hidden from './Ext/form/Hidden';
-import HTMLParsedElement from './HTMLParsedElement';
-export var ExtHiddenfieldComponent =
+//import Ext_form_Hidden from '@sencha/ext-runtime-base/dist/./Ext/form/Hidden.js';
+import Ext_form_Hidden from './Ext/form/Hidden.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCHiddenfield =
 /*#__PURE__*/
 function (_Ext_form_Hidden) {
-  _inheritsLoose(ExtHiddenfieldComponent, _Ext_form_Hidden);
+  _inheritsLoose(EWCHiddenfield, _Ext_form_Hidden);
 
-  function ExtHiddenfieldComponent() {
+  function EWCHiddenfield() {
     var _this;
 
     _this = _Ext_form_Hidden.call(this, [], []) || this;
@@ -14,12 +16,8 @@ function (_Ext_form_Hidden) {
     return _this;
   }
 
-  return ExtHiddenfieldComponent;
-}(Ext_form_Hidden); //(function () {
-//    Ext.onReady(function() {
-//        window.customElements.define('ext-hiddenfield', ExtHiddenfieldComponent);
-//    });
-//})();
-//const  = HTMLParsedElement;
+  return EWCHiddenfield;
+}(Ext_form_Hidden);
 
-window.customElements.define('ext-hiddenfield', HTMLParsedElement.withParsedCallback(ExtHiddenfieldComponent));
+export { EWCHiddenfield as default };
+window.customElements.define('ext-hiddenfield', HTMLParsedElement.withParsedCallback(EWCHiddenfield));
