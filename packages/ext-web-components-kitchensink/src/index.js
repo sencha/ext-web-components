@@ -1,9 +1,9 @@
 //import './ewcSrc.js';
 //import './ewcDist.js';
-import '@sencha/ext-web-components';
+import '@sencha/ext-web-components-modern';
 
-import '@sencha/ext-web-components/dist/ext-router.component.js';
-import { getRoutes } from '@sencha/ext-web-components/dist/ext-router.component.js';
+import '@sencha/ext-web-components-modern/dist/ext-router.component.js';
+import { getRoutes } from '@sencha/ext-web-components-modern/dist/ext-router.component.js';
 
 import getMenu from './menu';
 

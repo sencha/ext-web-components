@@ -11,7 +11,7 @@
     "core-js": "^3.1.4",
       "vue": "^2.6.10",
       "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-      "@sencha/ext-web-components": "^7.0.0",
+      "@sencha/ext-web-components-modern": "~7.1.0",
       "@sencha/ext": "^7.0.0",
       "@sencha/ext-calendar": "^7.0.0",
       "@sencha/ext-d3": "^7.0.0",

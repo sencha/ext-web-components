@@ -63,7 +63,7 @@ Add the following to the dependencies section of package.json:
 "@sencha/ext": "^7.0.0",
 "@sencha/ext-modern": "^7.0.0",
 "@sencha/ext-modern-theme-material": "^7.0.0",
-"@sencha/ext-web-components": "^7.0.0",
+"@sencha/ext-web-components-modern": "~7.1.0",
 "@sencha/ext-webpack-plugin": "^7.0.0",
 "@webcomponents/webcomponentsjs": "^2.2.10",
 "copy-webpack-plugin": "^5.0.4",

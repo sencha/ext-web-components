@@ -17,7 +17,7 @@ To install Vue CLI, bring up a terminal or command window and use the following 
 npm install -g @vue/cli
 ```
 
-### Create a Vue CLI starter application 
+### Create a Vue CLI starter application
 
 more details at: https://cli.vuejs.org/guide/creating-a-project.html#vue-create
 
@@ -63,7 +63,7 @@ either...
 Add the following to the dependencies section of package.json:
 
 ```sh
-"@sencha/ext-web-components": "^7.0.0",
+"@sencha/ext-web-components-modern": "~7.1.0",
 "@sencha/ext": "^7.0.0",
 "@sencha/ext-modern": "^7.0.0",
 "@sencha/ext-modern-theme-material": "^7.0.0",
