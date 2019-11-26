@@ -43,7 +43,6 @@ module.exports = function(env) {
                 script: './extract-code.js',
                 port: port,
                 packages: [
-                    'renderercell',
                     'font-ext',
                     'ux',
                     'd3',
