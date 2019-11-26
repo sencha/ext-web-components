@@ -7,18 +7,18 @@
         "dev": "webpack-dev-server --env.browser=yes --env.verbose=no",
         "build": "npm run clean && npm run webpackprod && npm run gzip && npm run http",
         "xbuildexample2": "npm run clean && npm run webpackprodexample",
-        "buildexample": "cross-env webpack --env.environment=production --env.treeshake=yes --env.basehref=/ExtWebComponents/7.0.0/kitchensink/",
-        "buildexamplegzip": "cross-env webpack --env.environment=production --env.treeshake=yes --env.basehref=/ExtWebComponents/7.0.0/kitchensink/ && npm run gzip",
+        "buildexample": "cross-env webpack --env.environment=production --env.treeshake=yes --env.basehref=/ExtWebComponents/7.1.0/kitchensink/",
+        "buildexamplegzip": "cross-env webpack --env.environment=production --env.treeshake=yes --env.basehref=/ExtWebComponents/7.1.0/kitchensink/ && npm run gzip",
         "clean": "rimraf build",
         "webpackprod": "cross-env webpack --env.environment=production --env.treeshake=yes --env.basehref=/",
-        "xwebpackprodexample": "cross-env webpack --env.environment=production --env.treeshake=yes --env.basehref=/ExtWebComponents/7.0.0/kitchensink/",
+        "xwebpackprodexample": "cross-env webpack --env.environment=production --env.treeshake=yes --env.basehref=/ExtWebComponents/7.1.0/kitchensink/",
         "gzip": "npm run gzipbuild && npm run gzipext && npm run gzipresources",
         "gzipbuild": "npx gzip build/*.js",
         "gzipext": "npx gzip build/ext/*.js",
         "gzipresources": "npx gzip build/resources/*.js",
         "replace": "npx replace-in-file /.js/g .js.gz build/index.html --isRegex",
         "http": "npx http-server build -g -o",
-        "buildexampleold": "npm run clean && cross-env webpack --env.verbose=no --env.environment=production --env.treeshake=yes --env.basehref=/ExtWebComponents/7.0.0/kitchensink/"
+        "buildexampleold": "npm run clean && cross-env webpack --env.verbose=no --env.environment=production --env.treeshake=yes --env.basehref=/ExtWebComponents/7.1.0/kitchensink/"
     },
     "devDependencies": {
         "@sencha/ext-web-components-modern": "~7.1.0",
