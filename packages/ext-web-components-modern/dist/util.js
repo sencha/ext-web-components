@@ -1,6 +1,6 @@
-export function extnameToProperty(event, me, suffix) {
-  var cmpObj = event.detail.cmpObj;
-
+export function extnameToProperty(cmpObj, me, suffix) {
+  //export function extnameToProperty(event, me, suffix) {
+  //  var cmpObj = event.detail.cmpObj
   if (suffix == undefined) {
     suffix = 'Cmp';
   }

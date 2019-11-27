@@ -1,0 +1,23 @@
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+//import Ext_ux_colorpick_Button from '@sencha/ext-runtime-base/dist/./Ext/ux/colorpick/Button.js';
+import Ext_ux_colorpick_Button from './Ext/ux/colorpick/Button.js';
+import HTMLParsedElement from './HTMLParsedElement.js';
+
+var EWCColorbutton =
+/*#__PURE__*/
+function (_Ext_ux_colorpick_But) {
+  _inheritsLoose(EWCColorbutton, _Ext_ux_colorpick_But);
+
+  function EWCColorbutton() {
+    var _this;
+
+    _this = _Ext_ux_colorpick_But.call(this, [], []) || this;
+    _this.xtype = 'colorbutton';
+    return _this;
+  }
+
+  return EWCColorbutton;
+}(Ext_ux_colorpick_Button);
+
+export { EWCColorbutton as default };
+window.customElements.define('ext-colorbutton', HTMLParsedElement.withParsedCallback(EWCColorbutton));
