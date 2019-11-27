@@ -10,7 +10,7 @@
         "buildexample": "cross-env webpack --env.environment=production --env.treeshake=yes --env.basehref=/ExtWebComponents/7.1.0/kitchensink/",
         "buildexamplegzip": "cross-env webpack --env.environment=production --env.treeshake=yes --env.basehref=/ExtWebComponents/7.1.0/kitchensink/ && npm run gzip",
         "clean": "rimraf build",
-        "webpackprod": "cross-env webpack --env.environment=production --env.treeshake=yes --env.basehref=/",
+        "webpackprod": "cross-env webpack --env.environment=production --env.verbose=no --env.treeshake=yes --env.basehref=/",
         "xwebpackprodexample": "cross-env webpack --env.environment=production --env.treeshake=yes --env.basehref=/ExtWebComponents/7.1.0/kitchensink/",
         "gzip": "npm run gzipbuild && npm run gzipext && npm run gzipresources",
         "gzipbuild": "npx gzip build/*.js",
