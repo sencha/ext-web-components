@@ -25,14 +25,15 @@ export default class MainComponent {
     }
 
     viewportReady = event => {
-        console.log("readyViewport - mainComponent");
+        console.log('readyViewport - mainComponent');
         this.navInProcess = false;
 
+        console.log(event)
         //find a way for this to be run automatically
-        extnameToProperty(event, this, "");
+        extnameToProperty(event.detail.cmpObj, this, '');
 
         //extnameToProperty(['all'], event, this, '');
-        this.rightContainer.updateHtml("Build: " + BUILD_VERSION); // eslint-disable-line no-undef
+        this.rightContainer.updateHtml('Build: ' + BUILD_VERSION); // eslint-disable-line no-undef
         this.breadcrumb.setStore(this.treeStore);
         this.navTreelist.setStore(this.treeStore);
         var bodyStyle = `

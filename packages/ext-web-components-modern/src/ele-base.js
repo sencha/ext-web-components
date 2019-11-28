@@ -1,4 +1,4 @@
-//Wed Nov 27 2019 09:28:46 GMT-0500 (Eastern Standard Time)
+//Thu Nov 28 2019 10:00:45 GMT-0500 (Eastern Standard Time)
 
 import {
     doProp,
@@ -19,12 +19,12 @@ export default class EleBaseComponent extends HTMLElement {
         this.eventnames = [];
         var eventnamesall = [];
 
-         if (Ext.isClassic) {
-           console.log('classic')
-         }
-         else {
-           console.log('modern')
-         }
+         //if (Ext.isClassic) {
+         //  console.log('classic')
+         //}
+         //else {
+         //  console.log('modern')
+         //}
 
         const distinct = (value, index, self) => {
             return self.indexOf(value) === index;
