@@ -1,4 +1,4 @@
-//Mon Dec 02 2019 00:00:12 GMT-0500 (Eastern Standard Time)
+//Mon Dec 02 2019 09:14:38 GMT-0500 (Eastern Standard Time)
 
 import {
     doProp,
@@ -247,75 +247,83 @@ export default class EleBaseComponent extends HTMLElement {
         }
       }
       me.A.ext = Ext.create(me.A.o);
-            me.A.CHILDREN.forEach(function(child) {
-                me.addTheChild(me.A.ext, child);
-            });
-            if (me.parentNode != null && me.parentNode.nodeName.substring(0, 4) === 'EXT-') {
-                if (me.parentNode.A.ext !== undefined) {
-                    me.addTheChild(me.parentNode.A.ext, me.A.ext);
-                }
-                else {
-                    me.parentNode.A.CHILDREN.push(me.A.ext);
-                }
-            }
+      me.cmp = me.A.ext;
+      me.ext = me.A.ext;
+      me.dispatchEvent(new CustomEvent('cmpready', {
+        detail: {
+          cmp: me.A.ext
+        }
+      }));
 
-            if (isApplication) {
-              if (Ext.isModern) {
-                Ext.application({
-                  name: 'MyEWCApp',
-                  launch: function launch() {
-                    Ext.Viewport.add([me.A.ext]);
+      me.A.CHILDREN.forEach(function(child) {
+        me.addTheChild(me.A.ext, child);
+      });
+      if (me.parentNode != null && me.parentNode.nodeName.substring(0, 4) === 'EXT-') {
+        if (me.parentNode.A.ext !== undefined) {
+          me.addTheChild(me.parentNode.A.ext, me.A.ext);
+        }
+        else {
+          me.parentNode.A.CHILDREN.push(me.A.ext);
+        }
+      }
+
+      if (isApplication) {
+        if (Ext.isModern) {
+          Ext.application({
+            name: 'MyEWCApp',
+            launch: function launch() {
+              Ext.Viewport.add([me.A.ext]);
+            }
+          });
+        }
+      }
+
+      EleBaseComponent.elementcount--;
+      //console.log('reduced: ' + me.tagName + ': elementcount reduced to ' + EleBaseComponent.elementcount)
+      if (EleBaseComponent.elementcount == 0) {
+          //console.log('done');
+          //console.log(EleBaseComponent.elements);
+          EleBaseComponent.elementsprior = [...EleBaseComponent.elements];
+          EleBaseComponent.elements = [];
+          //console.log(EleBaseComponent.elementsprior);
+          //var allExt = [];
+          var cmpObj = {};
+          EleBaseComponent.elementsprior.forEach(element => {
+              //console.dir(element)
+              if (element.A != undefined) {
+                  for (var i = 0; i < element.A.ITEMS.length; i++) {
+                      //console.log(element.A.ITEMS[i])
+                      if(element.A.ITEMS[i].xtype == 'widget') {
+                          element.addTheChild(element.A.ext,element.A.ITEMS[i],i);
+                      }
                   }
-                });
               }
-            }
+              if (element.getAttribute('extname') != undefined) {
+                  var o = {};
+                  //o.extname = element.getAttribute('extname');
+                  //o.ext = element.A.ext;
+                  o.cmp = element.A.ext;
+                  //allExt.push(o);
+                  cmpObj[element.getAttribute('extname')] = element.A.ext;
+              }
+          });
 
-            EleBaseComponent.elementcount--;
-            //console.log('reduced: ' + me.tagName + ': elementcount reduced to ' + EleBaseComponent.elementcount)
-            if (EleBaseComponent.elementcount == 0) {
-                //console.log('done');
-                //console.log(EleBaseComponent.elements);
-                EleBaseComponent.elementsprior = [...EleBaseComponent.elements];
-                EleBaseComponent.elements = [];
-                //console.log(EleBaseComponent.elementsprior);
-                //var allExt = [];
-                var cmpObj = {};
-                EleBaseComponent.elementsprior.forEach(element => {
-                    //console.dir(element)
-                    if (element.A != undefined) {
-                        for (var i = 0; i < element.A.ITEMS.length; i++) {
-                            //console.log(element.A.ITEMS[i])
-                            if(element.A.ITEMS[i].xtype == 'widget') {
-                                element.addTheChild(element.A.ext,element.A.ITEMS[i],i);
-                            }
-                        }
-                    }
-                    if (element.getAttribute('extname') != undefined) {
-                        var o = {};
-                        //o.extname = element.getAttribute('extname');
-                        //o.ext = element.A.ext;
-                        o.cmp = element.A.ext;
-                        //allExt.push(o);
-                        cmpObj[element.getAttribute('extname')] = element.A.ext;
-                    }
-                });
-
-                //console.log(EleBaseComponent.elementsprior)
-                me.cmp = me.A.ext;
-                me.ext = me.A.ext;
-                EleBaseComponent.elementsprior.forEach(element => {
-                    //console.dir(element)
-                    element.dispatchEvent(new CustomEvent('ready', {
-                        detail: {
-                            cmp: element.A.ext,
-                            //allCmp: allExt,
-                            //ext: element.A.ext,
-                            //allExt: allExt,
-                            cmpObj: cmpObj
-                        }
-                    }));
-                });
-            }
+          //console.log(EleBaseComponent.elementsprior)
+          me.cmp = me.A.ext;
+          me.ext = me.A.ext;
+          EleBaseComponent.elementsprior.forEach(element => {
+              //console.dir(element)
+              element.dispatchEvent(new CustomEvent('ready', {
+                  detail: {
+                      cmp: element.A.ext,
+                      //allCmp: allExt,
+                      //ext: element.A.ext,
+                      //allExt: allExt,
+                      cmpObj: cmpObj
+                  }
+              }));
+          });
+      }
     });
   }
 
@@ -325,7 +333,7 @@ export default class EleBaseComponent extends HTMLElement {
         //console.log('addTheChild: ' + parentxtype + '(' + parentCmp.extname + ')' + ' - ' + childxtype + '(' + childCmp.extname + ')');
         //if (childxtype == 'widget')
         if (this.A.ext.initialConfig.align != undefined) {
-            if (parentxtype != 'container' && parentxtype != 'toolbar' && parentxtype != 'tooltip' && parentxtype != 'titlebar' && parentxtype != 'grid' && parentxtype != 'lockedgrid' && parentxtype != 'button') {
+            if (parentxtype != 'menu' && parentxtype != 'container' && parentxtype != 'toolbar' && parentxtype != 'tooltip' && parentxtype != 'titlebar' && parentxtype != 'grid' && parentxtype != 'lockedgrid' && parentxtype != 'button') {
                 console.error('Can only use align property if parent is a Titlebar or Grid or Button - parent: ' + parentxtype);
                 return;
             }

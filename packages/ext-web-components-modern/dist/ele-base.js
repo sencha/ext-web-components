@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Mon Dec 02 2019 00:00:12 GMT-0500 (Eastern Standard Time)
+//Mon Dec 02 2019 09:14:38 GMT-0500 (Eastern Standard Time)
 import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var EleBaseComponent =
@@ -248,6 +248,13 @@ function (_HTMLElement) {
       }
 
       me.A.ext = Ext.create(me.A.o);
+      me.cmp = me.A.ext;
+      me.ext = me.A.ext;
+      me.dispatchEvent(new CustomEvent('cmpready', {
+        detail: {
+          cmp: me.A.ext
+        }
+      }));
       me.A.CHILDREN.forEach(function (child) {
         me.addTheChild(me.A.ext, child);
       });
@@ -326,7 +333,7 @@ function (_HTMLElement) {
     //if (childxtype == 'widget')
 
     if (this.A.ext.initialConfig.align != undefined) {
-      if (parentxtype != 'container' && parentxtype != 'toolbar' && parentxtype != 'tooltip' && parentxtype != 'titlebar' && parentxtype != 'grid' && parentxtype != 'lockedgrid' && parentxtype != 'button') {
+      if (parentxtype != 'menu' && parentxtype != 'container' && parentxtype != 'toolbar' && parentxtype != 'tooltip' && parentxtype != 'titlebar' && parentxtype != 'grid' && parentxtype != 'lockedgrid' && parentxtype != 'button') {
         console.error('Can only use align property if parent is a Titlebar or Grid or Button - parent: ' + parentxtype);
         return;
       }
