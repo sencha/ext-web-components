@@ -1,4 +1,4 @@
-//Thu Nov 28 2019 10:00:45 GMT-0500 (Eastern Standard Time)
+//Mon Dec 02 2019 00:00:12 GMT-0500 (Eastern Standard Time)
 
 import {
     doProp,
@@ -142,6 +142,14 @@ export default class EleBaseComponent extends HTMLElement {
         }
         for (var i = 0; i < properties.length; i++) {
             var property = properties[i];
+
+            if (property == 'header') { //todo to fix this
+              //console.log(property)
+              //console.dir(this)
+              //console.log(this.getAttribute(property))
+              o[property] = false; //this[property]
+            }
+
             if (this.getAttribute(property) !== null) {
 
                 if (property == 'config') {
@@ -293,6 +301,8 @@ export default class EleBaseComponent extends HTMLElement {
                 });
 
                 //console.log(EleBaseComponent.elementsprior)
+                me.cmp = me.A.ext;
+                me.ext = me.A.ext;
                 EleBaseComponent.elementsprior.forEach(element => {
                     //console.dir(element)
                     element.dispatchEvent(new CustomEvent('ready', {
@@ -315,8 +325,8 @@ export default class EleBaseComponent extends HTMLElement {
         //console.log('addTheChild: ' + parentxtype + '(' + parentCmp.extname + ')' + ' - ' + childxtype + '(' + childCmp.extname + ')');
         //if (childxtype == 'widget')
         if (this.A.ext.initialConfig.align != undefined) {
-            if (parentxtype != 'toolbar' && parentxtype != 'tooltip' && parentxtype != 'titlebar' && parentxtype != 'grid' && parentxtype != 'lockedgrid' && parentxtype != 'button') {
-                console.error('Can only use align property if parent is a Titlebar or Grid or Button');
+            if (parentxtype != 'container' && parentxtype != 'toolbar' && parentxtype != 'tooltip' && parentxtype != 'titlebar' && parentxtype != 'grid' && parentxtype != 'lockedgrid' && parentxtype != 'button') {
+                console.error('Can only use align property if parent is a Titlebar or Grid or Button - parent: ' + parentxtype);
                 return;
             }
         }
@@ -402,43 +412,36 @@ export default class EleBaseComponent extends HTMLElement {
                     ischanged = true
                     var method = 'set' + attr[0].toUpperCase() + attr.substring(1)
                     if (typeof this.A.ext[method] == 'function') {
-                        //console.log(method)
-                        //console.log(newVal)
-                        //console.log(typeof newVal)
-                        if (newVal == null) { return }
-                        //var isTrueSet = (newVal.toLowerCase() === 'true');
-                        //if (newVal.toLowerCase() === 'true') {newVal = true}
-                        if (newVal === 'true') {newVal = true}
-                        if (newVal === 'false') {newVal = false}
-                        //console.dir(this.A.ext)
-                        //console.log(this.A.ext.xtype)
-                        //console.log(method)
-                        //console.log(newVal)
-
-                        //var propertyVal = '';
-                        //if (typeof newVal == 'string') {
-                        //  propertyVal = newVal;
-                        //}
-                        //else {
-                        //  propertyVal = JSON.stringify(newVal);
-                        //}
-                        var propertyVal = newVal
+                      //console.log(method)
+                      //console.log(attr)
+                      //console.log(newVal)
+                      //console.log(this.attributeObjects[attr])
+                      //console.log(typeof newVal)
+                      if (newVal == null) {
+                        return;
+                      }
+                      var propertyVal = newVal;
+                      if (newVal == '[object Object]') {
+                        propertyVal = this.attributeObjects[attr]
+                      }
+                      if (newVal == 'object') {
+                        propertyVal = this.attributeObjects[attr]
+                      }
+                      else if (newVal === 'true') {
+                        propertyVal = true;
+                      }
+                      else if (newVal === 'false') {
+                        propertyVal = false;
+                      }
+                      else {
                         try {
                           propertyVal = JSON.parse(newVal);
-                        }
-                        catch(e) {}
-                        this.A.ext[method](propertyVal);
-
-                        //this.A.ext[method](newVal)
-                        //return
-                        //if (isTrueSet) {
-                        //    this.A.ext.setDisplayed(true)
-                        //    //this.A.ext.show()
-                        //    //this.A.ext.setTitle('hi')
-                        //}
-                        //else {
-                        //    this.A.ext[method](newVal)
-                        //}
+                        } catch (e) {}
+                      }
+                      //console.log(propertyVal)
+                      //console.log(this.A.ext.xtype + ' ' + method)
+                      //console.log(propertyVal)
+                      this.A.ext[method](propertyVal);
                     }
                 }
                 else {

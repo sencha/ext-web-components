@@ -2,12 +2,12 @@ import Ext_pivot_d3_AbstractContainer from '../../../Ext/pivot/d3/AbstractContai
 
 export default class Ext_pivot_d3_Container extends Ext_pivot_d3_AbstractContainer {
     static PROPERTIES() {return [
-        'configurator',
-        'drawing',
-        'matrix',
+    'configurator',
+    'drawing',
+    'matrix',
     ]};
     static EVENTS() {return [
-        {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmd,cmdAll'}
     ]};
     static getProperties(properties) {
         properties = properties.concat(Ext_pivot_d3_Container.PROPERTIES());

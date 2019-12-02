@@ -2,22 +2,22 @@ import Ext_panel_Panel from '../../../Ext/panel/Panel.js';
 
 export default class Ext_ux_colorpick_Selector extends Ext_panel_Panel {
     static PROPERTIES() {return [
-        'alphaDecimalFormat',
-        'cancelButtonText',
-        'color',
-        'fieldPad',
-        'fieldWidth',
-        'format',
-        'okButtonText',
-        'showOkCancelButtons',
-        'showPreviousColor',
-        'value',
+    'alphaDecimalFormat',
+    'cancelButtonText',
+    'color',
+    'fieldPad',
+    'fieldWidth',
+    'format',
+    'okButtonText',
+    'showOkCancelButtons',
+    'showPreviousColor',
+    'value',
     ]};
     static EVENTS() {return [
-        {name:'cancel', parameters:'sender'},
-        {name:'change', parameters:'sender,color,previousColor'},
-        {name:'ok', parameters:'sender,color'},
-        {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'cancel', parameters:'sender'},
+    {name:'change', parameters:'sender,color,previousColor'},
+    {name:'ok', parameters:'sender,color'},
+    {name:'ready', parameters:'cmd,cmdAll'}
     ]};
     static getProperties(properties) {
         properties = properties.concat(Ext_ux_colorpick_Selector.PROPERTIES());
