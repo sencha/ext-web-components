@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Mon Dec 02 2019 09:14:38 GMT-0500 (Eastern Standard Time)
+//Mon Dec 02 2019 10:55:46 GMT-0500 (Eastern Standard Time)
 import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var EleBaseComponent =
@@ -491,7 +491,11 @@ function (_HTMLElement) {
 
   _proto.disconnectedCallback = function disconnectedCallback() {
     //console.log('ExtBase disconnectedCallback ' + this.A.ext.xtype)
-    Ext.destroy(this.A.ext);
+    try {
+      Ext.destroy(this.A.ext);
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   _proto.filterPropertyToDelete = function filterPropertyToDelete(propertyValue) {
