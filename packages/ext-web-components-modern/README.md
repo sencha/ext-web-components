@@ -1,6 +1,6 @@
 ## @sencha/ext-web-components
 
-last run: Thu Nov 28 2019 10:00:45 GMT-0500 (Eastern Standard Time)
+last run: Mon Dec 02 2019 00:00:12 GMT-0500 (Eastern Standard Time)
 
 ## Login to the Sencha early adopter npm repo
 

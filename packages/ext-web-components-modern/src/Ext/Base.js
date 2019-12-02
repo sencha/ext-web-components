@@ -18,7 +18,7 @@ export default class Ext_Base extends EleBaseComponent {
         
 ]};
     static EVENTS() { return [
-        {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmd,cmdAll'}
 ]};
     static getProperties(properties) {
         return properties.concat(Ext_Base.PROPERTIES)

@@ -2,10 +2,10 @@ import Ext_Base from '../Ext/Base.js';
 
 export default class Ext_Evented extends Ext_Base {
     static PROPERTIES() {return [
-        'listeners',
+    'listeners',
     ]};
     static EVENTS() {return [
-        {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmd,cmdAll'}
     ]};
     static getProperties(properties) {
         properties = properties.concat(Ext_Evented.PROPERTIES());
