@@ -1,4 +1,4 @@
-//Mon Dec 02 2019 09:14:38 GMT-0500 (Eastern Standard Time)
+//Mon Dec 02 2019 10:55:46 GMT-0500 (Eastern Standard Time)
 
 import {
     doProp,
@@ -485,8 +485,13 @@ export default class EleBaseComponent extends HTMLElement {
 
 
     disconnectedCallback() {
-        //console.log('ExtBase disconnectedCallback ' + this.A.ext.xtype)
-        Ext.destroy(this.A.ext)
+      //console.log('ExtBase disconnectedCallback ' + this.A.ext.xtype)
+      try {
+      Ext.destroy(this.A.ext);
+      }
+      catch(e) {
+        console.log(e)
+      }
     }
 
 
