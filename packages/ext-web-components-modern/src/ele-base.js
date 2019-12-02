@@ -1,4 +1,4 @@
-//Mon Dec 02 2019 10:55:46 GMT-0500 (Eastern Standard Time)
+//Mon Dec 02 2019 14:48:31 GMT-0500 (Eastern Standard Time)
 
 import {
     doProp,
@@ -125,7 +125,9 @@ export default class EleBaseComponent extends HTMLElement {
             //this.A.o.renderTo = this.newDiv.parentNode;
             //this.newDiv.parentNode.removeChild(this.newDiv);
         }
-        this.newDoExtCreate(me, this.A.o['viewport']);
+        Ext.onReady(function() {
+          me.newDoExtCreate(me, me.A.o['viewport']);
+        })
     }
 
     newCreateProps(properties) {
@@ -142,6 +144,22 @@ export default class EleBaseComponent extends HTMLElement {
         }
         for (var i = 0; i < properties.length; i++) {
             var property = properties[i];
+
+            if (this.getAttribute(property) == '[object Object]') {
+              //console.log(property)
+              o[property] = this.attributeObjects[property];
+              //console.log(o)
+              continue
+            }
+
+
+            if (this.getAttribute(property) == 'object') {
+              //console.log(property)
+              o[property] = this.attributeObjects[property];
+              continue
+            }
+
+
 
             if (property == 'header') { //todo to fix this
               //console.log(property)
@@ -240,7 +258,7 @@ export default class EleBaseComponent extends HTMLElement {
     }
 
   newDoExtCreate(me, isApplication) {
-    Ext.onReady(function() {
+    //Ext.onReady(function() {
       if (isApplication) {
         if (Ext.isClassic) {
           me.A.o.plugins = {viewport: true}
@@ -324,7 +342,7 @@ export default class EleBaseComponent extends HTMLElement {
               }));
           });
       }
-    });
+    //});
   }
 
     addTheChild(parentCmp, childCmp, location) {

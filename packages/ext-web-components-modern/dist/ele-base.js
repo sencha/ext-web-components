@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Mon Dec 02 2019 10:55:46 GMT-0500 (Eastern Standard Time)
+//Mon Dec 02 2019 14:48:31 GMT-0500 (Eastern Standard Time)
 import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var EleBaseComponent =
@@ -139,7 +139,9 @@ function (_HTMLElement) {
 
     }
 
-    this.newDoExtCreate(me, this.A.o['viewport']);
+    Ext.onReady(function () {
+      me.newDoExtCreate(me, me.A.o['viewport']);
+    });
   };
 
   _proto.newCreateProps = function newCreateProps(properties) {
@@ -157,6 +159,19 @@ function (_HTMLElement) {
 
     for (var i = 0; i < properties.length; i++) {
       var property = properties[i];
+
+      if (this.getAttribute(property) == '[object Object]') {
+        //console.log(property)
+        o[property] = this.attributeObjects[property]; //console.log(o)
+
+        continue;
+      }
+
+      if (this.getAttribute(property) == 'object') {
+        //console.log(property)
+        o[property] = this.attributeObjects[property];
+        continue;
+      }
 
       if (property == 'header') {
         //todo to fix this
@@ -238,93 +253,93 @@ function (_HTMLElement) {
   };
 
   _proto.newDoExtCreate = function newDoExtCreate(me, isApplication) {
-    Ext.onReady(function () {
-      if (isApplication) {
-        if (Ext.isClassic) {
-          me.A.o.plugins = {
-            viewport: true
-          };
-        }
+    //Ext.onReady(function() {
+    if (isApplication) {
+      if (Ext.isClassic) {
+        me.A.o.plugins = {
+          viewport: true
+        };
       }
+    }
 
-      me.A.ext = Ext.create(me.A.o);
-      me.cmp = me.A.ext;
-      me.ext = me.A.ext;
-      me.dispatchEvent(new CustomEvent('cmpready', {
-        detail: {
-          cmp: me.A.ext
-        }
-      }));
-      me.A.CHILDREN.forEach(function (child) {
-        me.addTheChild(me.A.ext, child);
-      });
-
-      if (me.parentNode != null && me.parentNode.nodeName.substring(0, 4) === 'EXT-') {
-        if (me.parentNode.A.ext !== undefined) {
-          me.addTheChild(me.parentNode.A.ext, me.A.ext);
-        } else {
-          me.parentNode.A.CHILDREN.push(me.A.ext);
-        }
+    me.A.ext = Ext.create(me.A.o);
+    me.cmp = me.A.ext;
+    me.ext = me.A.ext;
+    me.dispatchEvent(new CustomEvent('cmpready', {
+      detail: {
+        cmp: me.A.ext
       }
+    }));
+    me.A.CHILDREN.forEach(function (child) {
+      me.addTheChild(me.A.ext, child);
+    });
 
-      if (isApplication) {
-        if (Ext.isModern) {
-          Ext.application({
-            name: 'MyEWCApp',
-            launch: function launch() {
-              Ext.Viewport.add([me.A.ext]);
-            }
-          });
-        }
+    if (me.parentNode != null && me.parentNode.nodeName.substring(0, 4) === 'EXT-') {
+      if (me.parentNode.A.ext !== undefined) {
+        me.addTheChild(me.parentNode.A.ext, me.A.ext);
+      } else {
+        me.parentNode.A.CHILDREN.push(me.A.ext);
       }
+    }
 
-      EleBaseComponent.elementcount--; //console.log('reduced: ' + me.tagName + ': elementcount reduced to ' + EleBaseComponent.elementcount)
-
-      if (EleBaseComponent.elementcount == 0) {
-        //console.log('done');
-        //console.log(EleBaseComponent.elements);
-        EleBaseComponent.elementsprior = [].concat(EleBaseComponent.elements);
-        EleBaseComponent.elements = []; //console.log(EleBaseComponent.elementsprior);
-        //var allExt = [];
-
-        var cmpObj = {};
-        EleBaseComponent.elementsprior.forEach(function (element) {
-          //console.dir(element)
-          if (element.A != undefined) {
-            for (var i = 0; i < element.A.ITEMS.length; i++) {
-              //console.log(element.A.ITEMS[i])
-              if (element.A.ITEMS[i].xtype == 'widget') {
-                element.addTheChild(element.A.ext, element.A.ITEMS[i], i);
-              }
-            }
+    if (isApplication) {
+      if (Ext.isModern) {
+        Ext.application({
+          name: 'MyEWCApp',
+          launch: function launch() {
+            Ext.Viewport.add([me.A.ext]);
           }
-
-          if (element.getAttribute('extname') != undefined) {
-            var o = {}; //o.extname = element.getAttribute('extname');
-            //o.ext = element.A.ext;
-
-            o.cmp = element.A.ext; //allExt.push(o);
-
-            cmpObj[element.getAttribute('extname')] = element.A.ext;
-          }
-        }); //console.log(EleBaseComponent.elementsprior)
-
-        me.cmp = me.A.ext;
-        me.ext = me.A.ext;
-        EleBaseComponent.elementsprior.forEach(function (element) {
-          //console.dir(element)
-          element.dispatchEvent(new CustomEvent('ready', {
-            detail: {
-              cmp: element.A.ext,
-              //allCmp: allExt,
-              //ext: element.A.ext,
-              //allExt: allExt,
-              cmpObj: cmpObj
-            }
-          }));
         });
       }
-    });
+    }
+
+    EleBaseComponent.elementcount--; //console.log('reduced: ' + me.tagName + ': elementcount reduced to ' + EleBaseComponent.elementcount)
+
+    if (EleBaseComponent.elementcount == 0) {
+      //console.log('done');
+      //console.log(EleBaseComponent.elements);
+      EleBaseComponent.elementsprior = [].concat(EleBaseComponent.elements);
+      EleBaseComponent.elements = []; //console.log(EleBaseComponent.elementsprior);
+      //var allExt = [];
+
+      var cmpObj = {};
+      EleBaseComponent.elementsprior.forEach(function (element) {
+        //console.dir(element)
+        if (element.A != undefined) {
+          for (var i = 0; i < element.A.ITEMS.length; i++) {
+            //console.log(element.A.ITEMS[i])
+            if (element.A.ITEMS[i].xtype == 'widget') {
+              element.addTheChild(element.A.ext, element.A.ITEMS[i], i);
+            }
+          }
+        }
+
+        if (element.getAttribute('extname') != undefined) {
+          var o = {}; //o.extname = element.getAttribute('extname');
+          //o.ext = element.A.ext;
+
+          o.cmp = element.A.ext; //allExt.push(o);
+
+          cmpObj[element.getAttribute('extname')] = element.A.ext;
+        }
+      }); //console.log(EleBaseComponent.elementsprior)
+
+      me.cmp = me.A.ext;
+      me.ext = me.A.ext;
+      EleBaseComponent.elementsprior.forEach(function (element) {
+        //console.dir(element)
+        element.dispatchEvent(new CustomEvent('ready', {
+          detail: {
+            cmp: element.A.ext,
+            //allCmp: allExt,
+            //ext: element.A.ext,
+            //allExt: allExt,
+            cmpObj: cmpObj
+          }
+        }));
+      });
+    } //});
+
   };
 
   _proto.addTheChild = function addTheChild(parentCmp, childCmp, location) {
