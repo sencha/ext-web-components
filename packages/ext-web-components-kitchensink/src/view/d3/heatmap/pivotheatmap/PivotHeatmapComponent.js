@@ -73,12 +73,16 @@ export default class PivotHeatmapComponent {
                     y: 30
                 }
             }
-        };
+       };
+  }
 
-    }
+  onToolBarReady= (event) => {
+    this.toolbar = event.detail.cmp;
+  }
 
   onPivotReady = (event) => {
       this.pivotCmp = event.detail.cmp;
+      const orientation = Ext.Viewport.getOrientation();
       const tooltip = {
           renderer: this.onTooltip.bind(this)
       };
@@ -86,12 +90,14 @@ export default class PivotHeatmapComponent {
       const legend = this.pivotCmp.getLegend(false);
       legend.setComponent(null);
 
-      if (this.isPhone && window.screen.width < 576) {
+      if (this.isPhone && orientation === 'portrait') {
         this.pivotCmp.setLegend(this.legendVarMobilePotrait);
         this.pivotCmp.setPadding(this.paddingMobilePotrait);
-      } else if (this.isPhone && window.screen.width > 576) {
+      } else if (this.isPhone && orientation === 'landscape') {
         this.pivotCmp.setLegend(this.legendVarMobileLandscape);
         this.pivotCmp.setPadding(this.paddingMobileLandscape);
+        this.toolbar.setHeight(30);
+        this.toolbar.bodyElement.dom.style.minHeight = '0px';
       } else {
         this.pivotCmp.setLegend(this.legendVarAll);
         this.pivotCmp.setPadding(this.padding);
