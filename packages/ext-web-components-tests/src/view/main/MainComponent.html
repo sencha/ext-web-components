@@ -2,12 +2,14 @@
   layout="fit"
   bodyPadding="0"
   onready="main.viewportReady"
+  viewport="true"
 >
   <ext-titlebar docked="top" weight="10">
     <ext-button iconCls="x-fa fa-bars" onReady="main.toggleButtonReady" ontap="main.toggleTree()"></ext-button>
-    <span extjs href="#" class="app-title">Sencha Ext Components 7.0 Test Suite</span>
+    <span extjs href="#" class="app-title">Sencha Ext Components 7.1 Test Suite</span>
   </ext-titlebar>
   <ext-panel
+    title="left"
     docked="left"
     border="true"
     shadow="true"
@@ -16,24 +18,28 @@
     header="false"
     collapsible='{"direction": "left"}'
     collapsed="false"
-    width="300px"
-    extName="navTreePanel"
+    width="375px"
+    extname="navTreePanel"
   >
     <ext-treelist
+      extname="navTreelist"
+      onselectionchange="main.navTreelistSelectionChange"
       ui="nav"
       expanderFirst="false"
-      expanderOnly="false"
-      extName="navTreelist"
-      onselectionchange="main.navTreelistSelectionChange">
+      expanderOnly="true"
+      selectOnExpander="true"
+    >
     </ext-treelist>
   </ext-panel>
+  <!-- Router starts-->
   <ext-container extname="componentsView">
     <ext-router
       hidden=false
-      onready="main.readyRouter"
-      padding="2"
       style="overflow:scroll;"
+      padding="10px"
     >
     </ext-router>
   </ext-container>
+  <!-- Router ends-->
+  <ext-container extname="secondaryComponentsView"></ext-container>
 </ext-panel>
