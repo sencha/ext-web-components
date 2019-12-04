@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Mon Dec 02 2019 14:48:31 GMT-0500 (Eastern Standard Time)
+//Wed Dec 04 2019 16:53:58 GMT-0500 (Eastern Standard Time)
 import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var EleBaseComponent =
@@ -15,12 +15,7 @@ function (_HTMLElement) {
     _this.properties = properties;
     _this.events = events;
     _this.eventnames = [];
-    var eventnamesall = []; //if (Ext.isClassic) {
-    //  console.log('classic')
-    //}
-    //else {
-    //  console.log('modern')
-    //}
+    var eventnamesall = [];
 
     var distinct = function distinct(value, index, self) {
       return self.indexOf(value) === index;
@@ -51,82 +46,36 @@ function (_HTMLElement) {
 
     //console.log('connectedCallback');
     // console.log(this.xtype);
-    var x = this.xtype;
+    var x = this.xtype; //if (this.counted == undefined) {
 
-    if (this.counted == undefined) {
-      var distinct = function distinct(value, index, self) {
-        return self.indexOf(value) === index;
-      };
-
-      this.counted = true;
-      var properties2 = [];
-      var arrayLength = this.properties.length;
-
-      for (var i = 0; i < arrayLength; i++) {
-        properties2.push(this.properties[i]);
-      } //console.dir(this.properties)
-      //console.dir(properties2)
-      //this.propertiesDistinct = this.properties.filter(distinct);
+    var distinct = function distinct(value, index, self) {
+      return self.indexOf(value) === index;
+    }; //    this.counted = true;
 
 
-      this.propertiesDistinct = properties2.filter(distinct);
-      this.propertiesDistinct.forEach(function (prop) {
-        doProp(_this2, prop);
-      });
-      EleBaseComponent.elementcount++;
-      EleBaseComponent.elements.push(this); //console.log('added: ' + this.tagName + ': elementcount is now ' + EleBaseComponent.elementcount);
-    }
+    var properties2 = [];
+    var arrayLength = this.properties.length;
+
+    for (var i = 0; i < arrayLength; i++) {
+      properties2.push(this.properties[i]);
+    } //console.dir(this.properties)
+    //console.dir(properties2)
+    //this.propertiesDistinct = this.properties.filter(distinct);
+
+
+    this.propertiesDistinct = properties2.filter(distinct);
+    this.propertiesDistinct.forEach(function (prop) {
+      doProp(_this2, prop);
+    });
+    EleBaseComponent.elementcount++;
+    EleBaseComponent.elements.push(this); //console.log('added: ' + this.tagName + ': elementcount is now ' + EleBaseComponent.elementcount);
+    //}
 
     this.xtype = x;
+    this.newConnectedCallback();
   };
 
-  _proto.parsedCallback = function parsedCallback() {
-    //console.log('parsedCallback');
-    //console.log(this.xtype);
-    for (var _iterator = this.children, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
-      var _ref;
-
-      if (_isArray) {
-        if (_i >= _iterator.length) break;
-        _ref = _iterator[_i++];
-      } else {
-        _i = _iterator.next();
-        if (_i.done) break;
-        _ref = _i.value;
-      }
-
-      var child = _ref;
-
-      if (child.nodeName.substring(0, 4) !== 'EXT-') {
-        var el = Ext.get(child);
-        var w = Ext.create({
-          xtype: 'widget',
-          element: el
-        });
-        this.A.ITEMS.push(w);
-      } else {
-        var g = {};
-        g.type = 'ext';
-        this.A.ITEMS.push(g);
-      }
-    }
-
-    this.initMe();
-  } //******* base start */
-  ;
-
-  _proto.initMe = function initMe() {
-    this.newParsedCallback();
-    return; //console.log('');console.log('*** initMe for ' + this.currentElName);
-    //this.createRawChildren();
-    //this.setParentType();
-    //this.setDirection();
-    //this.figureOutA();
-    //this.createProps(this.properties, this.events);
-    //this.createExtComponent();
-  };
-
-  _proto.newParsedCallback = function newParsedCallback() {
+  _proto.newConnectedCallback = function newConnectedCallback() {
     var me = this;
     this.newCreateProps(this.properties, this.events);
 
@@ -139,15 +88,23 @@ function (_HTMLElement) {
 
     }
 
-    Ext.onReady(function () {
+    if (Ext.widget == undefined) {
+      Ext.onReady(function () {
+        me.newDoExtCreate(me, me.A.o['viewport']);
+      });
+    } else {
       me.newDoExtCreate(me, me.A.o['viewport']);
-    });
+    }
   };
 
   _proto.newCreateProps = function newCreateProps(properties) {
     var listenersProvided = false;
     var o = {};
     o.xtype = this.xtype;
+
+    if (o.xtype == 'grid' && this.getAttribute('columns') == null) {
+      o.rowHeight = null;
+    }
 
     if (this['config'] !== null) {
       Ext.apply(o, this['config']);
@@ -253,7 +210,6 @@ function (_HTMLElement) {
   };
 
   _proto.newDoExtCreate = function newDoExtCreate(me, isApplication) {
-    //Ext.onReady(function() {
     if (isApplication) {
       if (Ext.isClassic) {
         me.A.o.plugins = {
@@ -264,23 +220,14 @@ function (_HTMLElement) {
 
     me.A.ext = Ext.create(me.A.o);
     me.cmp = me.A.ext;
-    me.ext = me.A.ext;
-    me.dispatchEvent(new CustomEvent('cmpready', {
-      detail: {
-        cmp: me.A.ext
-      }
-    }));
-    me.A.CHILDREN.forEach(function (child) {
-      me.addTheChild(me.A.ext, child);
-    });
-
-    if (me.parentNode != null && me.parentNode.nodeName.substring(0, 4) === 'EXT-') {
-      if (me.parentNode.A.ext !== undefined) {
-        me.addTheChild(me.parentNode.A.ext, me.A.ext);
-      } else {
-        me.parentNode.A.CHILDREN.push(me.A.ext);
-      }
-    }
+    me.ext = me.A.ext; //console.dir(me)
+    //var aMe = me.getAttribute('aMe')
+    //var aMe = me.attributeObjects['aMe']
+    //console.dir(aMe)
+    //aMe.cmp = me.A.ext
+    //me.dispatchEvent(new CustomEvent('cmpready', {
+    //  detail: {cmp: me.A.ext}
+    //}));
 
     if (isApplication) {
       if (Ext.isModern) {
@@ -290,6 +237,54 @@ function (_HTMLElement) {
             Ext.Viewport.add([me.A.ext]);
           }
         });
+      }
+    }
+  };
+
+  _proto.parsedCallback = function parsedCallback() {
+    //console.log('parsedCallback');
+    //console.log(this.xtype);
+    for (var _iterator = this.children, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
+      var _ref;
+
+      if (_isArray) {
+        if (_i >= _iterator.length) break;
+        _ref = _iterator[_i++];
+      } else {
+        _i = _iterator.next();
+        if (_i.done) break;
+        _ref = _i.value;
+      }
+
+      var child = _ref;
+
+      if (child.nodeName.substring(0, 4) !== 'EXT-') {
+        var el = Ext.get(child);
+        var w = Ext.create({
+          xtype: 'widget',
+          element: el
+        });
+        this.A.ITEMS.push(w);
+      } else {
+        var g = {};
+        g.type = 'ext';
+        this.A.ITEMS.push(g);
+      }
+    }
+
+    this.doChildren(this);
+  };
+
+  _proto.doChildren = function doChildren(me) {
+    me.A.CHILDREN.forEach(function (child) {
+      me.addTheChild(me.A.ext, child);
+    });
+
+    if (me.parentNode != null && me.parentNode.nodeName.substring(0, 4) === 'EXT-') {
+      if (me.parentNode.A.ext !== undefined) {
+        me.addTheChild(me.parentNode.A.ext, me.A.ext);
+      } else {
+        me.parentNode.A.CHILDREN.push(me.A.ext);
       }
     }
 
@@ -338,8 +333,7 @@ function (_HTMLElement) {
           }
         }));
       });
-    } //});
-
+    }
   };
 
   _proto.addTheChild = function addTheChild(parentCmp, childCmp, location) {
@@ -490,19 +484,7 @@ function (_HTMLElement) {
       //}
 
     }
-  } //extendObject(obj, src) {
-  //    if (obj == undefined) {obj = {}}
-  //    for (var key in src) {
-  //        if (src.hasOwnProperty(key)) obj[key] = src[key];
-  //    }
-  //    return obj;
-  //}
-  //extendArray(obj, src) {
-  //    if (obj == undefined) {obj = []}
-  //    Array.prototype.push.apply(obj,src);
-  //    return obj;
-  //}
-  ;
+  };
 
   _proto.disconnectedCallback = function disconnectedCallback() {
     //console.log('ExtBase disconnectedCallback ' + this.A.ext.xtype)
@@ -639,6 +621,7 @@ function (_HTMLElement) {
 }(_wrapNativeSuper(HTMLElement));
 
 export { EleBaseComponent as default };
+EleBaseComponent.elementcountnew = 0;
 EleBaseComponent.elementcount = 0;
 EleBaseComponent.elements = [];
 EleBaseComponent.elementsprior = [];
@@ -655,6 +638,18 @@ EleBaseComponent.DIRECTION = ''; //EleBaseComponent.getCmp = function getCmp(eve
 //    return null;
 //};
 //EleBaseComponent.extendArray = function(obj, src) {
+//    if (obj == undefined) {obj = []}
+//    Array.prototype.push.apply(obj,src);
+//    return obj;
+//}
+//extendObject(obj, src) {
+//    if (obj == undefined) {obj = {}}
+//    for (var key in src) {
+//        if (src.hasOwnProperty(key)) obj[key] = src[key];
+//    }
+//    return obj;
+//}
+//extendArray(obj, src) {
 //    if (obj == undefined) {obj = []}
 //    Array.prototype.push.apply(obj,src);
 //    return obj;

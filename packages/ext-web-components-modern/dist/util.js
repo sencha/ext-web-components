@@ -19,10 +19,7 @@ export function doProp(me, prop) {
         doSet(me, prop, val);
       }
     });
-  } catch (e) {//console.log('doProp error: ' + prop)
-    //console.dir(me)
-    //console.dir(e)
-  }
+  } catch (e) {}
 }
 
 function doSet(me, prop, val) {
@@ -30,7 +27,7 @@ function doSet(me, prop, val) {
     var val2;
     var valExt;
 
-    if (typeof val == 'object' || typeof val == 'function') {
+    if (typeof val == 'object' || typeof val == 'function' || typeof val == '[object Object]') {
       me.attributeObjects[prop] = val;
       val2 = typeof val;
       valExt = val;
@@ -53,7 +50,7 @@ function doSet(me, prop, val) {
 
 function doGet(me, prop) {
   //console.log('doGet: ' + prop)
-  if (me.getAttribute(prop) == 'object' || me.getAttribute(prop) == 'function') {
+  if (me.getAttribute(prop) == 'object' || me.getAttribute(prop) == 'function' || me.getAttribute(prop) == '[object Object]') {
     return me.attributeObjects[prop];
   } else if (me.getAttribute(prop) != null) {
     return me.getAttribute(prop);
