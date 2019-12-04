@@ -1,21 +1,21 @@
-import { extnameToProperty } from "@sencha/ext-web-components-modern/src/util.js";
-import hljs from "highlightjs";
-import "highlightjs/styles/atom-one-dark.css";
-import "./MainComponent.css";
-import "./MainComponent.html";
+import { extnameToProperty } from '@sencha/ext-web-components-modern/src/util.js';
+import hljs from 'highlightjs';
+import 'highlightjs/styles/atom-one-dark.css';
+import './MainComponent.css';
+import './MainComponent.html';
 
-Ext.require(["Ext.data.TreeStore"]);
+Ext.require(['Ext.data.TreeStore']);
 
 export default class MainComponent {
     constructor() {
         var navTreeRoot = {
-            hash: "all",
-            iconCls: "x-fa fa-home",
+            hash: 'all',
+            iconCls: 'x-fa fa-home',
             leaf: false,
-            text: "All",
+            text: 'All',
             children: window.menu
         };
-        this.treeStore = Ext.create("Ext.data.TreeStore", {
+        this.treeStore = Ext.create('Ext.data.TreeStore', {
             rootVisible: true,
             root: navTreeRoot
         });
@@ -46,49 +46,49 @@ export default class MainComponent {
         `;
         this.selection.setBodyStyle(bodyStyle);
         this.dataviewNav.setStyle({
-            background: "top",
-            display: "block",
-            "text-align": "center"
+            background: 'top',
+            display: 'block',
+            'text-align': 'center'
         });
         if (Ext.os.is.Phone) {
             this.dataviewNav.setCentered(false);
         }
         var tpl = `
-            <div class="app-thumbnail">
-              <div class="app-thumbnail-icon-wrap">
-                <div class="app-thumbnail-icon {iconCls}"></div>
+            <div class='app-thumbnail'>
+              <div class='app-thumbnail-icon-wrap'>
+                <div class='app-thumbnail-icon {iconCls}'></div>
               </div>
-              <div class="app-thumbnail-text">{text}</div>
-              <div class="{premiumClass}"></div>
+              <div class='app-thumbnail-text'>{text}</div>
+              <div class='{premiumClass}'></div>
             </div>
         `;
         this.dataviewNav.setItemTpl(tpl);
         this.dataviewNav.setStore(this.treeStore);
 
         var hash = window.location.hash.substr(1);
-        if (hash == "") {
-            hash = "all";
+        if (hash == '') {
+            hash = 'all';
         }
-        var node = this.navTreelist.getStore().findNode("hash", hash);
-        this.navigate("load", node);
+        var node = this.navTreelist.getStore().findNode('hash', hash);
+        this.navigate('load', node);
     };
 
     breadcrumbClick = event => {
         //console.log('clickBreadcrumb');
         var node = event.detail.node;
-        this.navigate("breadcrumb", node);
+        this.navigate('breadcrumb', node);
     };
 
     dataviewNavClick = event => {
         //console.log('dataviewNavClick');
         var node = event.detail.location.record;
-        this.navigate("dataview", node);
+        this.navigate('dataview', node);
     };
 
     navTreelistSelectionChange = event => {
         //console.log('navTreelistSelectionChange');
         var node = event.detail.record;
-        this.navigate("tree", node);
+        this.navigate('tree', node);
     };
 
     navigate = (who, node) => {
@@ -109,7 +109,7 @@ export default class MainComponent {
         this.navTreelist.setSelection(node);
 
         if (childNum == 0 && hash != undefined) {
-            window.location.hash = "#" + hash;
+            window.location.hash = '#' + hash;
             //console.log('showRouter');
             this.showRouter();
         } else {
@@ -163,7 +163,7 @@ export default class MainComponent {
         var value = event.detail.newValue;
         this.filterRegex = new RegExp(
             `(${Ext.String.escapeRegex(value)})`,
-            "i"
+            'i'
         );
         this.navTreelist
             .getStore()
@@ -195,7 +195,7 @@ export default class MainComponent {
         var hash = window.location.hash.substr(1);
         var currentRoute = {};
         window.routes.forEach(route => {
-            if (hash == "") {
+            if (hash == '') {
                 if (route.default == true) {
                     currentRoute = route;
                 }
@@ -208,15 +208,15 @@ export default class MainComponent {
 
         var codeMap = window._code[currentRoute.hashlower];
         this.tabPanel.removeAll();
-        var componentName = currentRoute.hash + "Component";
+        var componentName = currentRoute.hash + 'Component';
 
-        this.setTab(codeMap, componentName + ".html");
-        this.setTab(codeMap, componentName + ".js");
-        this.setTab(codeMap, componentName + ".scss");
-        this.setTab(codeMap, componentName + ".css");
-        this.setTab(codeMap, componentName + "Data.js");
-        this.setTab(codeMap, componentName + "Dummy.js");
-        document.querySelectorAll("pre code").forEach(block => {
+        this.setTab(codeMap, componentName + '.html');
+        this.setTab(codeMap, componentName + '.js');
+        this.setTab(codeMap, componentName + '.scss');
+        this.setTab(codeMap, componentName + '.css');
+        this.setTab(codeMap, componentName + 'Data.js');
+        this.setTab(codeMap, componentName + 'Dummy.js');
+        document.querySelectorAll('pre code').forEach(block => {
             hljs.highlightBlock(block);
         });
     };
@@ -225,22 +225,22 @@ export default class MainComponent {
         var codeMapFile = codeMap[file];
         if (codeMapFile != undefined) {
             this.tabPanel.add({
-                xtype: "panel",
+                xtype: 'panel',
                 title: file,
-                ui: "code-panel",
-                layout: "fit",
+                ui: 'code-panel',
+                layout: 'fit',
                 userSelectable: true,
                 scrollable: true,
                 tab: {
-                    ui: "app-code-tab",
+                    ui: 'app-code-tab',
                     flex: 0,
-                    padding: "0 5 0 0",
+                    padding: '0 5 0 0',
                     minWidth: 220,
                     maxWidth: 250
                 },
-                html: `<pre style="user-select: text;"><code class='code'>${codeMapFile
-                    .replace(/</g, "&lt;")
-                    .replace(/>/g, "&gt;")}</code></pre>`
+                html: `<pre style='user-select: text;'><code class='code'>${codeMapFile
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')}</code></pre>`
             });
         }
     };

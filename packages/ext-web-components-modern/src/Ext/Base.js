@@ -3,12 +3,15 @@ import EleBaseComponent from '../ele-base.js'
 export default class Ext_Base extends EleBaseComponent {
 
     static PROPERTIES() { return [
-
+        'aMe',
+        'header',
+        'renderer',
+        'label',
         'fitToParent',
         'tab',
         'config',
         'platformConfig',
-'renderer',
+        'renderer',
         'extname',
         'viewport',
         'align',
