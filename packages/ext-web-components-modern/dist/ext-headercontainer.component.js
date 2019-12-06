@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_grid_HeaderContainer from '@sencha/ext-runtime-base/dist/./Ext/grid/HeaderContainer.js';
 import Ext_grid_HeaderContainer from './Ext/grid/HeaderContainer.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

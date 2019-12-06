@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_form_Toggle from '@sencha/ext-runtime-base/dist/./Ext/form/Toggle.js';
 import Ext_form_Toggle from './Ext/form/Toggle.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

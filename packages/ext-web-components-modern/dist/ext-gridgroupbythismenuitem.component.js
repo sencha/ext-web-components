@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_grid_menu_GroupByThis from '@sencha/ext-runtime-base/dist/./Ext/grid/menu/GroupByThis.js';
 import Ext_grid_menu_GroupByThis from './Ext/grid/menu/GroupByThis.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

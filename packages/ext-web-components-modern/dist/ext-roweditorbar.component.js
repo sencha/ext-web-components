@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_grid_rowedit_Bar from '@sencha/ext-runtime-base/dist/./Ext/grid/rowedit/Bar.js';
 import Ext_grid_rowedit_Bar from './Ext/grid/rowedit/Bar.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

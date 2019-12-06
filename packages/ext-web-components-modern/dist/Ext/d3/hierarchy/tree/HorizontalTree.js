@@ -1,5 +1,5 @@
-import _createClass from "@babel/runtime/helpers/createClass";
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _createClass from "@babel/runtime/helpers/createClass.js";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 import Ext_d3_hierarchy_tree_Tree from '../../../../Ext/d3/hierarchy/tree/Tree.js';
 
 var Ext_d3_hierarchy_tree_HorizontalTree =

@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_slider_Toggle from '@sencha/ext-runtime-base/dist/./Ext/slider/Toggle.js';
 import Ext_slider_Toggle from './Ext/slider/Toggle.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_dataview_EmptyText from '@sencha/ext-runtime-base/dist/./Ext/dataview/EmptyText.js';
 import Ext_dataview_EmptyText from './Ext/dataview/EmptyText.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_grid_column_Selection from '@sencha/ext-runtime-base/dist/./Ext/grid/column/Selection.js';
 import Ext_grid_column_Selection from './Ext/grid/column/Selection.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

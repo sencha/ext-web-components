@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_Button from '@sencha/ext-runtime-base/dist/./Ext/Button.js';
 import Ext_Button from './Ext/Button.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

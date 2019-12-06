@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_field_FieldGroupContainer from '@sencha/ext-runtime-base/dist/./Ext/field/FieldGroupContainer.js';
 import Ext_field_FieldGroupContainer from './Ext/field/FieldGroupContainer.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

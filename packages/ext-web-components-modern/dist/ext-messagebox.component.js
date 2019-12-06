@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_MessageBox from '@sencha/ext-runtime-base/dist/./Ext/MessageBox.js';
 import Ext_MessageBox from './Ext/MessageBox.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

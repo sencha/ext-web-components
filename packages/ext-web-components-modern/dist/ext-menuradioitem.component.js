@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_menu_RadioItem from '@sencha/ext-runtime-base/dist/./Ext/menu/RadioItem.js';
 import Ext_menu_RadioItem from './Ext/menu/RadioItem.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

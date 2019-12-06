@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_field_trigger_Time from '@sencha/ext-runtime-base/dist/./Ext/field/trigger/Time.js';
 import Ext_field_trigger_Time from './Ext/field/trigger/Time.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

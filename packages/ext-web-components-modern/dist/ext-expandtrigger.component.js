@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_field_trigger_Expand from '@sencha/ext-runtime-base/dist/./Ext/field/trigger/Expand.js';
 import Ext_field_trigger_Expand from './Ext/field/trigger/Expand.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

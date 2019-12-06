@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_chart_PolarChart from '@sencha/ext-runtime-base/dist/./Ext/chart/PolarChart.js';
 import Ext_chart_PolarChart from './Ext/chart/PolarChart.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

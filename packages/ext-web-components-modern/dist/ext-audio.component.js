@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_Audio from '@sencha/ext-runtime-base/dist/./Ext/Audio.js';
 import Ext_Audio from './Ext/Audio.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

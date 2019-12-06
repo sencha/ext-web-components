@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_Sheet from '@sencha/ext-runtime-base/dist/./Ext/Sheet.js';
 import Ext_Sheet from './Ext/Sheet.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_ProgressBarWidget from '@sencha/ext-runtime-base/dist/./Ext/ProgressBarWidget.js';
 import Ext_ProgressBarWidget from './Ext/ProgressBarWidget.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

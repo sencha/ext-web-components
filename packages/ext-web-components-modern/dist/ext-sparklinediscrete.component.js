@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_sparkline_Discrete from '@sencha/ext-runtime-base/dist/./Ext/sparkline/Discrete.js';
 import Ext_sparkline_Discrete from './Ext/sparkline/Discrete.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

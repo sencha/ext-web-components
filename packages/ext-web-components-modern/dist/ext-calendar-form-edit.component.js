@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_calendar_form_Edit from '@sencha/ext-runtime-base/dist/./Ext/calendar/form/Edit.js';
 import Ext_calendar_form_Edit from './Ext/calendar/form/Edit.js';
 import HTMLParsedElement from './HTMLParsedElement.js';
