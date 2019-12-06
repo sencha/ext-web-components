@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_ux_Gauge from '@sencha/ext-runtime-base/dist/./Ext/ux/Gauge.js';
 import Ext_ux_Gauge from './Ext/ux/Gauge.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

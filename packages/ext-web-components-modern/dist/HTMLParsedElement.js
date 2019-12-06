@@ -1,5 +1,5 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
+import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper.js";
 
 var HTMLParsedElement = function () {
   var DCL = 'DOMContentLoaded';

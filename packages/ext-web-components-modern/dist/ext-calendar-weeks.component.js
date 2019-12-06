@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_calendar_panel_Weeks from '@sencha/ext-runtime-base/dist/./Ext/calendar/panel/Weeks.js';
 import Ext_calendar_panel_Weeks from './Ext/calendar/panel/Weeks.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

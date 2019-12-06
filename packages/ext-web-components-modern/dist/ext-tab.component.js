@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_Tab from '@sencha/ext-runtime-base/dist/./Ext/Tab.js';
 import Ext_Tab from './Ext/Tab.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

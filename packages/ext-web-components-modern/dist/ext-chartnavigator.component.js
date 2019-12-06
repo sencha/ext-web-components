@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_chart_navigator_Container from '@sencha/ext-runtime-base/dist/./Ext/chart/navigator/Container.js';
 import Ext_chart_navigator_Container from './Ext/chart/navigator/Container.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

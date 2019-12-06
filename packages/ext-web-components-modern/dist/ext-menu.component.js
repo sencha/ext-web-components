@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_menu_Menu from '@sencha/ext-runtime-base/dist/./Ext/menu/Menu.js';
 import Ext_menu_Menu from './Ext/menu/Menu.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

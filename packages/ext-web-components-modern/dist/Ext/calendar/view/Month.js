@@ -1,5 +1,5 @@
-import _createClass from "@babel/runtime/helpers/createClass";
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _createClass from "@babel/runtime/helpers/createClass.js";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 import Ext_calendar_view_Weeks from '../../../Ext/calendar/view/Weeks.js';
 
 var Ext_calendar_view_Month =

@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_ux_colorpick_ColorPreview from '@sencha/ext-runtime-base/dist/./Ext/ux/colorpick/ColorPreview.js';
 import Ext_ux_colorpick_ColorPreview from './Ext/ux/colorpick/ColorPreview.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_SplitButton from '@sencha/ext-runtime-base/dist/./Ext/SplitButton.js';
 import Ext_SplitButton from './Ext/SplitButton.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

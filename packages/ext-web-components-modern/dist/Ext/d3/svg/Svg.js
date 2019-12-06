@@ -1,5 +1,5 @@
-import _createClass from "@babel/runtime/helpers/createClass";
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _createClass from "@babel/runtime/helpers/createClass.js";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 import Ext_d3_Component from '../../../Ext/d3/Component.js';
 
 var Ext_d3_svg_Svg =

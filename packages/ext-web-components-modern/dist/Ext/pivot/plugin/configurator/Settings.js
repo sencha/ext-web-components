@@ -1,5 +1,5 @@
-import _createClass from "@babel/runtime/helpers/createClass";
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _createClass from "@babel/runtime/helpers/createClass.js";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 import Ext_form_Panel from '../../../../Ext/form/Panel.js';
 
 var Ext_pivot_plugin_configurator_Settings =

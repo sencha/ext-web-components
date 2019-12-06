@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_Media from '@sencha/ext-runtime-base/dist/./Ext/Media.js';
 import Ext_Media from './Ext/Media.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

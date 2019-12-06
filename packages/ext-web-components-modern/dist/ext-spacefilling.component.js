@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_chart_SpaceFillingChart from '@sencha/ext-runtime-base/dist/./Ext/chart/SpaceFillingChart.js';
 import Ext_chart_SpaceFillingChart from './Ext/chart/SpaceFillingChart.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

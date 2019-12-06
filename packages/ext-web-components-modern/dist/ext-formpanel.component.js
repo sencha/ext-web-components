@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_form_FormPanel from '@sencha/ext-runtime-base/dist/./Ext/form/FormPanel.js';
 import Ext_form_FormPanel from './Ext/form/FormPanel.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

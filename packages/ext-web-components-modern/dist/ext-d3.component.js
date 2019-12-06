@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_d3_svg_Svg from '@sencha/ext-runtime-base/dist/./Ext/d3/svg/Svg.js';
 import Ext_d3_svg_Svg from './Ext/d3/svg/Svg.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

@@ -1,5 +1,5 @@
-import _createClass from "@babel/runtime/helpers/createClass";
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _createClass from "@babel/runtime/helpers/createClass.js";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 import Ext_field_Picker from '../../Ext/field/Picker.js';
 
 var Ext_form_DatePicker =

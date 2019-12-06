@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_field_trigger_SpinDown from '@sencha/ext-runtime-base/dist/./Ext/field/trigger/SpinDown.js';
 import Ext_field_trigger_SpinDown from './Ext/field/trigger/SpinDown.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

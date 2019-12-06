@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_container_Container from '@sencha/ext-runtime-base/dist/./Ext/container/Container.js';
 import Ext_container_Container from './Ext/container/Container.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

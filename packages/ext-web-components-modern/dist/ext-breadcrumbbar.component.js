@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_BreadcrumbBar from '@sencha/ext-runtime-base/dist/./Ext/BreadcrumbBar.js';
 import Ext_BreadcrumbBar from './Ext/BreadcrumbBar.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

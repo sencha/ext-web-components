@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_TitleBar from '@sencha/ext-runtime-base/dist/./Ext/TitleBar.js';
 import Ext_TitleBar from './Ext/TitleBar.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_panel_YearPicker from '@sencha/ext-runtime-base/dist/./Ext/panel/YearPicker.js';
 import Ext_panel_YearPicker from './Ext/panel/YearPicker.js';
 import HTMLParsedElement from './HTMLParsedElement.js';

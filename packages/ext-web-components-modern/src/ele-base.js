@@ -1,4 +1,4 @@
-//Wed Dec 04 2019 16:53:58 GMT-0500 (Eastern Standard Time)
+//Fri Dec 06 2019 11:44:55 GMT-0500 (Eastern Standard Time)
 
 import {
   doProp,
@@ -71,14 +71,28 @@ export default class EleBaseComponent extends HTMLElement {
         //console.log('added: ' + this.tagName + ': elementcount is now ' + EleBaseComponent.elementcount);
     //}
     this.xtype = x;
-    this.newConnectedCallback();
-  }
+  //  this.newConnectedCallback();
+  //}
 
-  newConnectedCallback() {
+  //newConnectedCallback() {
+
       var me = this;
       this.newCreateProps(this.properties, this.events);
+
+
+      if (me.A.o['viewport'] == 'true') {
+        me.A.o['viewport'] = true
+      }
+      if (me.A.o['viewport'] == 'false') {
+        me.A.o['viewport'] = false
+      }
+      if (this.A.o['viewport'] == undefined) {
+        this.A.o['viewport'] = false;
+      }
+
       if (this.parentNode != null &&
-          this.parentNode.nodeName.substring(0, 4) !== 'EXT-')
+          this.parentNode.nodeName.substring(0, 4) !== 'EXT-' &&
+          this.A.o['viewport'] == false)
       {
         if (this.A.o.xtype != 'dialog') {
           this.A.o.renderTo = this.parentNode; //this;
@@ -88,20 +102,27 @@ export default class EleBaseComponent extends HTMLElement {
           //this.newDiv.parentNode.removeChild(this.newDiv);
       }
 
-      if (Ext.widget == undefined) {
-        Ext.onReady(function() {
-          me.newDoExtCreate(me, me.A.o['viewport']);
-        })
-      }
-      else {
+
+
+    if (Ext.env.Ready.firing == false) {
+      this.onReadyNeeded = true
+      Ext.onReady(function () {
         me.newDoExtCreate(me, me.A.o['viewport']);
-      }
+          me.doChildren(me);
+      });
+    } else {
+      this.onReadyNeeded = false
+      me.newDoExtCreate(me, me.A.o['viewport']);
+    }
   }
 
   newCreateProps(properties) {
       let listenersProvided = false;
       var o = {};
       o.xtype = this.xtype;
+
+
+
 
       if (o.xtype == 'grid' && this.getAttribute('columns') == null) {
         o.rowHeight = null;
@@ -117,6 +138,12 @@ export default class EleBaseComponent extends HTMLElement {
       for (var i = 0; i < properties.length; i++) {
           var property = properties[i];
 
+
+
+
+
+
+
           if (this.getAttribute(property) == '[object Object]') {
             //console.log(property)
             o[property] = this.attributeObjects[property];
@@ -130,12 +157,12 @@ export default class EleBaseComponent extends HTMLElement {
             continue
           }
 
-          if (property == 'header') { //todo to fix this
-            //console.log(property)
-            //console.dir(this)
-            //console.log(this.getAttribute(property))
-            o[property] = false; //this[property]
-          }
+          //if (property == 'header') { //todo to fix this
+          //  //console.log(property)
+          //  //console.dir(this)
+          //  //console.log(this.getAttribute(property))
+          //  o[property] = false; //this[property]
+          //}
 
           if (this.getAttribute(property) !== null) {
 
@@ -233,6 +260,7 @@ export default class EleBaseComponent extends HTMLElement {
         me.A.o.plugins = {viewport: true}
       }
     }
+    console.log(me.A.o);
     me.A.ext = Ext.create(me.A.o);
     me.cmp = me.A.ext;
     me.ext = me.A.ext;
@@ -266,6 +294,20 @@ export default class EleBaseComponent extends HTMLElement {
     //console.log('parsedCallback');
     //console.log(this.xtype);
 
+
+
+    if (this.onReadyNeeded == false) {
+      this.doChildren(this);
+    }
+
+
+
+  }
+
+
+  doChildren(me) {
+
+
     for (let child of this.children) {
       if (child.nodeName.substring(0, 4) !== 'EXT-') {
         var el = Ext.get(child);
@@ -278,11 +320,10 @@ export default class EleBaseComponent extends HTMLElement {
         this.A.ITEMS.push(g);
       }
     }
-    this.doChildren(this);
-  }
 
 
-  doChildren(me) {
+
+
 
     me.A.CHILDREN.forEach(function(child) {
       me.addTheChild(me.A.ext, child);
@@ -365,7 +406,8 @@ export default class EleBaseComponent extends HTMLElement {
               break;
           case isParentGridAndChildColumn(parentxtype,childxtype):
               if (location == null) {
-                  parentCmp.addColumn(childCmp);
+                parentCmp.rowHeight = null;
+                parentCmp.addColumn(childCmp);
               }
               else {
                   var regCols = 0;
@@ -447,6 +489,31 @@ export default class EleBaseComponent extends HTMLElement {
                       return;
                     }
                     var propertyVal = newVal;
+                    if (newVal == 'function') {
+                      if (attr == 'renderer') {
+                        //console.log('renderer')
+                        var cellxtype = '';
+                        if (Ext.ClassManager.getByAlias('widget.reactcell') == undefined) {
+                          cellxtype = 'elementcell';
+                        } else {
+                          cellxtype = 'reactcell';
+                        }
+                        var o = {};
+                        o.xtype = cellxtype;
+                        o.encodeHtml = false;
+                        if (this.attributeObjects['renderer'] != undefined) {
+                          propertyVal = this.attributeObjects['renderer'];
+                        } else {
+                          propertyVal = eval(this['renderer']);
+                        }
+                        //console.log(o)
+                        this.A.ext['setCell'](o);
+                        //console.log(this.A.ext)
+                      }
+                      else {
+                        propertyVal = this.attributeObjects[attr];
+                      }
+                    }
                     if (newVal == '[object Object]') {
                       propertyVal = this.attributeObjects[attr]
                     }

@@ -1,6 +1,6 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Wed Dec 04 2019 16:53:58 GMT-0500 (Eastern Standard Time)
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
+import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper.js";
+//Fri Dec 06 2019 11:44:55 GMT-0500 (Eastern Standard Time)
 import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var EleBaseComponent =
@@ -71,15 +71,26 @@ function (_HTMLElement) {
     EleBaseComponent.elements.push(this); //console.log('added: ' + this.tagName + ': elementcount is now ' + EleBaseComponent.elementcount);
     //}
 
-    this.xtype = x;
-    this.newConnectedCallback();
-  };
+    this.xtype = x; //  this.newConnectedCallback();
+    //}
+    //newConnectedCallback() {
 
-  _proto.newConnectedCallback = function newConnectedCallback() {
     var me = this;
     this.newCreateProps(this.properties, this.events);
 
-    if (this.parentNode != null && this.parentNode.nodeName.substring(0, 4) !== 'EXT-') {
+    if (me.A.o['viewport'] == 'true') {
+      me.A.o['viewport'] = true;
+    }
+
+    if (me.A.o['viewport'] == 'false') {
+      me.A.o['viewport'] = false;
+    }
+
+    if (this.A.o['viewport'] == undefined) {
+      this.A.o['viewport'] = false;
+    }
+
+    if (this.parentNode != null && this.parentNode.nodeName.substring(0, 4) !== 'EXT-' && this.A.o['viewport'] == false) {
       if (this.A.o.xtype != 'dialog') {
         this.A.o.renderTo = this.parentNode; //this;
       } //this.A.o.renderTo = this.parentNode; //this;
@@ -88,11 +99,14 @@ function (_HTMLElement) {
 
     }
 
-    if (Ext.widget == undefined) {
+    if (Ext.env.Ready.firing == false) {
+      this.onReadyNeeded = true;
       Ext.onReady(function () {
         me.newDoExtCreate(me, me.A.o['viewport']);
+        me.doChildren(me);
       });
     } else {
+      this.onReadyNeeded = false;
       me.newDoExtCreate(me, me.A.o['viewport']);
     }
   };
@@ -128,15 +142,13 @@ function (_HTMLElement) {
         //console.log(property)
         o[property] = this.attributeObjects[property];
         continue;
-      }
+      } //if (property == 'header') { //todo to fix this
+      //  //console.log(property)
+      //  //console.dir(this)
+      //  //console.log(this.getAttribute(property))
+      //  o[property] = false; //this[property]
+      //}
 
-      if (property == 'header') {
-        //todo to fix this
-        //console.log(property)
-        //console.dir(this)
-        //console.log(this.getAttribute(property))
-        o[property] = false; //this[property]
-      }
 
       if (this.getAttribute(property) !== null) {
         if (property == 'config') {} //                else if (property == 'config') {
@@ -218,6 +230,7 @@ function (_HTMLElement) {
       }
     }
 
+    console.log(me.A.o);
     me.A.ext = Ext.create(me.A.o);
     me.cmp = me.A.ext;
     me.ext = me.A.ext; //console.dir(me)
@@ -244,6 +257,12 @@ function (_HTMLElement) {
   _proto.parsedCallback = function parsedCallback() {
     //console.log('parsedCallback');
     //console.log(this.xtype);
+    if (this.onReadyNeeded == false) {
+      this.doChildren(this);
+    }
+  };
+
+  _proto.doChildren = function doChildren(me) {
     for (var _iterator = this.children, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
       var _ref;
 
@@ -272,10 +291,6 @@ function (_HTMLElement) {
       }
     }
 
-    this.doChildren(this);
-  };
-
-  _proto.doChildren = function doChildren(me) {
     me.A.CHILDREN.forEach(function (child) {
       me.addTheChild(me.A.ext, child);
     });
@@ -359,6 +374,7 @@ function (_HTMLElement) {
 
       case isParentGridAndChildColumn(parentxtype, childxtype):
         if (location == null) {
+          parentCmp.rowHeight = null;
           parentCmp.addColumn(childCmp);
         } else {
           var regCols = 0;
@@ -448,6 +464,34 @@ function (_HTMLElement) {
             }
 
             var propertyVal = newVal;
+
+            if (newVal == 'function') {
+              if (attr == 'renderer') {
+                //console.log('renderer')
+                var cellxtype = '';
+
+                if (Ext.ClassManager.getByAlias('widget.reactcell') == undefined) {
+                  cellxtype = 'elementcell';
+                } else {
+                  cellxtype = 'reactcell';
+                }
+
+                var o = {};
+                o.xtype = cellxtype;
+                o.encodeHtml = false;
+
+                if (this.attributeObjects['renderer'] != undefined) {
+                  propertyVal = this.attributeObjects['renderer'];
+                } else {
+                  propertyVal = eval(this['renderer']);
+                } //console.log(o)
+
+
+                this.A.ext['setCell'](o); //console.log(this.A.ext)
+              } else {
+                propertyVal = this.attributeObjects[attr];
+              }
+            }
 
             if (newVal == '[object Object]') {
               propertyVal = this.attributeObjects[attr];

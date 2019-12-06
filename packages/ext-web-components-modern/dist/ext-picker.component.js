@@ -1,4 +1,4 @@
-import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose.js";
 //import Ext_Picker from '@sencha/ext-runtime-base/dist/./Ext/Picker.js';
 import Ext_Picker from './Ext/Picker.js';
 import HTMLParsedElement from './HTMLParsedElement.js';
