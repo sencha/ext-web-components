@@ -1,6 +1,6 @@
 //import Ext_Picker from '@sencha/ext-runtime-base/dist/./Ext/Picker.js';
 import Ext_Picker from './Ext/Picker.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCPicker extends Ext_Picker {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCPicker extends Ext_Picker {
     }
 
 }
-window.customElements.define('ext-picker', HTMLParsedElement.withParsedCallback(EWCPicker));
+window.customElements.define('ext-picker', ElementParser.withParsedCallback(EWCPicker));
 

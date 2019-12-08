@@ -1,6 +1,6 @@
 //import Ext_Image from '@sencha/ext-runtime-base/dist/./Ext/Image.js';
 import Ext_Image from './Ext/Image.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCImg extends Ext_Image {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCImg extends Ext_Image {
     }
 
 }
-window.customElements.define('ext-img', HTMLParsedElement.withParsedCallback(EWCImg));
+window.customElements.define('ext-img', ElementParser.withParsedCallback(EWCImg));
 

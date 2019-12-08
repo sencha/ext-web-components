@@ -1,6 +1,6 @@
 //import Ext_field_Picker from '@sencha/ext-runtime-base/dist/./Ext/field/Picker.js';
 import Ext_field_Picker from './Ext/field/Picker.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCPickerfield extends Ext_field_Picker {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCPickerfield extends Ext_field_Picker {
     }
 
 }
-window.customElements.define('ext-pickerfield', HTMLParsedElement.withParsedCallback(EWCPickerfield));
+window.customElements.define('ext-pickerfield', ElementParser.withParsedCallback(EWCPickerfield));
 

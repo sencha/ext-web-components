@@ -1,6 +1,6 @@
 //import Ext_picker_Tablet from '@sencha/ext-runtime-base/dist/./Ext/picker/Tablet.js';
 import Ext_picker_Tablet from './Ext/picker/Tablet.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCTabletpicker extends Ext_picker_Tablet {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCTabletpicker extends Ext_picker_Tablet {
     }
 
 }
-window.customElements.define('ext-tabletpicker', HTMLParsedElement.withParsedCallback(EWCTabletpicker));
+window.customElements.define('ext-tabletpicker', ElementParser.withParsedCallback(EWCTabletpicker));
 

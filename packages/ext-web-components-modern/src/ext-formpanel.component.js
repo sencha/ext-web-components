@@ -1,6 +1,6 @@
 //import Ext_form_FormPanel from '@sencha/ext-runtime-base/dist/./Ext/form/FormPanel.js';
 import Ext_form_FormPanel from './Ext/form/FormPanel.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCFormpanel extends Ext_form_FormPanel {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCFormpanel extends Ext_form_FormPanel {
     }
 
 }
-window.customElements.define('ext-formpanel', HTMLParsedElement.withParsedCallback(EWCFormpanel));
+window.customElements.define('ext-formpanel', ElementParser.withParsedCallback(EWCFormpanel));
 

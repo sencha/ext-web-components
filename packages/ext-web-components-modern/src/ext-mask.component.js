@@ -1,6 +1,6 @@
 //import Ext_Mask from '@sencha/ext-runtime-base/dist/./Ext/Mask.js';
 import Ext_Mask from './Ext/Mask.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCMask extends Ext_Mask {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCMask extends Ext_Mask {
     }
 
 }
-window.customElements.define('ext-mask', HTMLParsedElement.withParsedCallback(EWCMask));
+window.customElements.define('ext-mask', ElementParser.withParsedCallback(EWCMask));
 

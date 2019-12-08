@@ -1,6 +1,6 @@
 //import Ext_form_Slider from '@sencha/ext-runtime-base/dist/./Ext/form/Slider.js';
 import Ext_form_Slider from './Ext/form/Slider.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCSliderfield extends Ext_form_Slider {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCSliderfield extends Ext_form_Slider {
     }
 
 }
-window.customElements.define('ext-sliderfield', HTMLParsedElement.withParsedCallback(EWCSliderfield));
+window.customElements.define('ext-sliderfield', ElementParser.withParsedCallback(EWCSliderfield));
 

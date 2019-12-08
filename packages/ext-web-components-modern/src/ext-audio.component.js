@@ -1,6 +1,6 @@
 //import Ext_Audio from '@sencha/ext-runtime-base/dist/./Ext/Audio.js';
 import Ext_Audio from './Ext/Audio.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCAudio extends Ext_Audio {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCAudio extends Ext_Audio {
     }
 
 }
-window.customElements.define('ext-audio', HTMLParsedElement.withParsedCallback(EWCAudio));
+window.customElements.define('ext-audio', ElementParser.withParsedCallback(EWCAudio));
 

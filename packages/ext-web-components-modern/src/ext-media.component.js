@@ -1,6 +1,6 @@
 //import Ext_Media from '@sencha/ext-runtime-base/dist/./Ext/Media.js';
 import Ext_Media from './Ext/Media.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCMedia extends Ext_Media {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCMedia extends Ext_Media {
     }
 
 }
-window.customElements.define('ext-media', HTMLParsedElement.withParsedCallback(EWCMedia));
+window.customElements.define('ext-media', ElementParser.withParsedCallback(EWCMedia));
 

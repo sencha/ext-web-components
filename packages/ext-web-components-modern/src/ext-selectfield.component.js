@@ -1,6 +1,6 @@
 //import Ext_form_Select from '@sencha/ext-runtime-base/dist/./Ext/form/Select.js';
 import Ext_form_Select from './Ext/form/Select.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCSelectfield extends Ext_form_Select {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCSelectfield extends Ext_form_Select {
     }
 
 }
-window.customElements.define('ext-selectfield', HTMLParsedElement.withParsedCallback(EWCSelectfield));
+window.customElements.define('ext-selectfield', ElementParser.withParsedCallback(EWCSelectfield));
 

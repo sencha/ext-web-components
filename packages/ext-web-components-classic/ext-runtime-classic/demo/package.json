@@ -1,0 +1,15 @@
+{
+  "name": "ewc-button",
+  "version": "1.0.0",
+  "description": "ewc-button",
+  "scripts": {
+    "start": "npx http-server -o"
+  },
+  "devDependencies": {
+    "@sencha/ext-web-components-classic-button": "~7.1.0",
+    "http-server": "^0.11.1"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {}
+}

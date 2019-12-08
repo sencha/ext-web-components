@@ -1,6 +1,6 @@
 //import Ext_field_SingleSlider from '@sencha/ext-runtime-base/dist/./Ext/field/SingleSlider.js';
 import Ext_field_SingleSlider from './Ext/field/SingleSlider.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCSinglesliderfield extends Ext_field_SingleSlider {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCSinglesliderfield extends Ext_field_SingleSlider {
     }
 
 }
-window.customElements.define('ext-singlesliderfield', HTMLParsedElement.withParsedCallback(EWCSinglesliderfield));
+window.customElements.define('ext-singlesliderfield', ElementParser.withParsedCallback(EWCSinglesliderfield));
 

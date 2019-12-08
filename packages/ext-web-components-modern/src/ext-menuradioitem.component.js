@@ -1,6 +1,6 @@
 //import Ext_menu_RadioItem from '@sencha/ext-runtime-base/dist/./Ext/menu/RadioItem.js';
 import Ext_menu_RadioItem from './Ext/menu/RadioItem.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCMenuradioitem extends Ext_menu_RadioItem {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCMenuradioitem extends Ext_menu_RadioItem {
     }
 
 }
-window.customElements.define('ext-menuradioitem', HTMLParsedElement.withParsedCallback(EWCMenuradioitem));
+window.customElements.define('ext-menuradioitem', ElementParser.withParsedCallback(EWCMenuradioitem));
 

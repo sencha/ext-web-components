@@ -1,6 +1,6 @@
 //import Ext_Label from '@sencha/ext-runtime-base/dist/./Ext/Label.js';
 import Ext_Label from './Ext/Label.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCLabel extends Ext_Label {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCLabel extends Ext_Label {
     }
 
 }
-window.customElements.define('ext-label', HTMLParsedElement.withParsedCallback(EWCLabel));
+window.customElements.define('ext-label', ElementParser.withParsedCallback(EWCLabel));
 

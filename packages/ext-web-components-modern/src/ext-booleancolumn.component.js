@@ -1,6 +1,6 @@
 //import Ext_grid_column_Boolean from '@sencha/ext-runtime-base/dist/./Ext/grid/column/Boolean.js';
 import Ext_grid_column_Boolean from './Ext/grid/column/Boolean.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCBooleancolumn extends Ext_grid_column_Boolean {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCBooleancolumn extends Ext_grid_column_Boolean {
     }
 
 }
-window.customElements.define('ext-booleancolumn', HTMLParsedElement.withParsedCallback(EWCBooleancolumn));
+window.customElements.define('ext-booleancolumn', ElementParser.withParsedCallback(EWCBooleancolumn));
 

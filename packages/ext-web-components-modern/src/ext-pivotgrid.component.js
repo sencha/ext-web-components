@@ -1,6 +1,6 @@
 //import Ext_pivot_Grid from '@sencha/ext-runtime-base/dist/./Ext/pivot/Grid.js';
 import Ext_pivot_Grid from './Ext/pivot/Grid.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCPivotgrid extends Ext_pivot_Grid {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCPivotgrid extends Ext_pivot_Grid {
     }
 
 }
-window.customElements.define('ext-pivotgrid', HTMLParsedElement.withParsedCallback(EWCPivotgrid));
+window.customElements.define('ext-pivotgrid', ElementParser.withParsedCallback(EWCPivotgrid));
 

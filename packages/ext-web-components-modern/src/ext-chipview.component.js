@@ -1,6 +1,6 @@
 //import Ext_dataview_ChipView from '@sencha/ext-runtime-base/dist/./Ext/dataview/ChipView.js';
 import Ext_dataview_ChipView from './Ext/dataview/ChipView.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCChipview extends Ext_dataview_ChipView {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCChipview extends Ext_dataview_ChipView {
     }
 
 }
-window.customElements.define('ext-chipview', HTMLParsedElement.withParsedCallback(EWCChipview));
+window.customElements.define('ext-chipview', ElementParser.withParsedCallback(EWCChipview));
 

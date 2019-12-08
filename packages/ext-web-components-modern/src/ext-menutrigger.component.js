@@ -1,6 +1,6 @@
 //import Ext_field_trigger_Menu from '@sencha/ext-runtime-base/dist/./Ext/field/trigger/Menu.js';
 import Ext_field_trigger_Menu from './Ext/field/trigger/Menu.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCMenutrigger extends Ext_field_trigger_Menu {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCMenutrigger extends Ext_field_trigger_Menu {
     }
 
 }
-window.customElements.define('ext-menutrigger', HTMLParsedElement.withParsedCallback(EWCMenutrigger));
+window.customElements.define('ext-menutrigger', ElementParser.withParsedCallback(EWCMenutrigger));
 

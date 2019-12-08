@@ -1,6 +1,6 @@
 //import Ext_form_field_ComboBox from '@sencha/ext-runtime-base/dist/./Ext/form/field/ComboBox.js';
 import Ext_form_field_ComboBox from './Ext/form/field/ComboBox.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCComboboxfield extends Ext_form_field_ComboBox {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCComboboxfield extends Ext_form_field_ComboBox {
     }
 
 }
-window.customElements.define('ext-comboboxfield', HTMLParsedElement.withParsedCallback(EWCComboboxfield));
+window.customElements.define('ext-comboboxfield', ElementParser.withParsedCallback(EWCComboboxfield));
 

@@ -1,6 +1,6 @@
 //import Ext_Gadget from '@sencha/ext-runtime-base/dist/./Ext/Gadget.js';
 import Ext_Gadget from './Ext/Gadget.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCComponent extends Ext_Gadget {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCComponent extends Ext_Gadget {
     }
 
 }
-window.customElements.define('ext-component', HTMLParsedElement.withParsedCallback(EWCComponent));
+window.customElements.define('ext-component', ElementParser.withParsedCallback(EWCComponent));
 

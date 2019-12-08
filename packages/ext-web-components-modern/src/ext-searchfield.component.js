@@ -1,6 +1,6 @@
 //import Ext_form_Search from '@sencha/ext-runtime-base/dist/./Ext/form/Search.js';
 import Ext_form_Search from './Ext/form/Search.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCSearchfield extends Ext_form_Search {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCSearchfield extends Ext_form_Search {
     }
 
 }
-window.customElements.define('ext-searchfield', HTMLParsedElement.withParsedCallback(EWCSearchfield));
+window.customElements.define('ext-searchfield', ElementParser.withParsedCallback(EWCSearchfield));
 

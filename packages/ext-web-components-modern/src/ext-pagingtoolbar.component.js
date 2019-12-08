@@ -1,6 +1,6 @@
 //import Ext_grid_PagingToolbar from '@sencha/ext-runtime-base/dist/./Ext/grid/PagingToolbar.js';
 import Ext_grid_PagingToolbar from './Ext/grid/PagingToolbar.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCPagingtoolbar extends Ext_grid_PagingToolbar {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCPagingtoolbar extends Ext_grid_PagingToolbar {
     }
 
 }
-window.customElements.define('ext-pagingtoolbar', HTMLParsedElement.withParsedCallback(EWCPagingtoolbar));
+window.customElements.define('ext-pagingtoolbar', ElementParser.withParsedCallback(EWCPagingtoolbar));
 

@@ -1,6 +1,6 @@
 //import Ext_panel_Header from '@sencha/ext-runtime-base/dist/./Ext/panel/Header.js';
 import Ext_panel_Header from './Ext/panel/Header.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCPanelheader extends Ext_panel_Header {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCPanelheader extends Ext_panel_Header {
     }
 
 }
-window.customElements.define('ext-panelheader', HTMLParsedElement.withParsedCallback(EWCPanelheader));
+window.customElements.define('ext-panelheader', ElementParser.withParsedCallback(EWCPanelheader));
 

@@ -1,6 +1,6 @@
 //import Ext_dataview_component_SimpleListItem from '@sencha/ext-runtime-base/dist/./Ext/dataview/component/SimpleListItem.js';
 import Ext_dataview_component_SimpleListItem from './Ext/dataview/component/SimpleListItem.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCSimplelistitem extends Ext_dataview_component_SimpleListItem {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCSimplelistitem extends Ext_dataview_component_SimpleList
     }
 
 }
-window.customElements.define('ext-simplelistitem', HTMLParsedElement.withParsedCallback(EWCSimplelistitem));
+window.customElements.define('ext-simplelistitem', ElementParser.withParsedCallback(EWCSimplelistitem));
 

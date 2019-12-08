@@ -1,6 +1,6 @@
 //import Ext_grid_column_Text from '@sencha/ext-runtime-base/dist/./Ext/grid/column/Text.js';
 import Ext_grid_column_Text from './Ext/grid/column/Text.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCTextcolumn extends Ext_grid_column_Text {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCTextcolumn extends Ext_grid_column_Text {
     }
 
 }
-window.customElements.define('ext-textcolumn', HTMLParsedElement.withParsedCallback(EWCTextcolumn));
+window.customElements.define('ext-textcolumn', ElementParser.withParsedCallback(EWCTextcolumn));
 

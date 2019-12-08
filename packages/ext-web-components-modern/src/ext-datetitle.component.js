@@ -1,6 +1,6 @@
 //import Ext_panel_DateTitle from '@sencha/ext-runtime-base/dist/./Ext/panel/DateTitle.js';
 import Ext_panel_DateTitle from './Ext/panel/DateTitle.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCDatetitle extends Ext_panel_DateTitle {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCDatetitle extends Ext_panel_DateTitle {
     }
 
 }
-window.customElements.define('ext-datetitle', HTMLParsedElement.withParsedCallback(EWCDatetitle));
+window.customElements.define('ext-datetitle', ElementParser.withParsedCallback(EWCDatetitle));
 

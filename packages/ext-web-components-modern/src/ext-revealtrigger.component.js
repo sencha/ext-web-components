@@ -1,6 +1,6 @@
 //import Ext_field_trigger_Reveal from '@sencha/ext-runtime-base/dist/./Ext/field/trigger/Reveal.js';
 import Ext_field_trigger_Reveal from './Ext/field/trigger/Reveal.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCRevealtrigger extends Ext_field_trigger_Reveal {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCRevealtrigger extends Ext_field_trigger_Reveal {
     }
 
 }
-window.customElements.define('ext-revealtrigger', HTMLParsedElement.withParsedCallback(EWCRevealtrigger));
+window.customElements.define('ext-revealtrigger', ElementParser.withParsedCallback(EWCRevealtrigger));
 

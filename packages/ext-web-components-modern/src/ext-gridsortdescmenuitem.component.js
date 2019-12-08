@@ -1,6 +1,6 @@
 //import Ext_grid_menu_SortDesc from '@sencha/ext-runtime-base/dist/./Ext/grid/menu/SortDesc.js';
 import Ext_grid_menu_SortDesc from './Ext/grid/menu/SortDesc.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCGridsortdescmenuitem extends Ext_grid_menu_SortDesc {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCGridsortdescmenuitem extends Ext_grid_menu_SortDesc {
     }
 
 }
-window.customElements.define('ext-gridsortdescmenuitem', HTMLParsedElement.withParsedCallback(EWCGridsortdescmenuitem));
+window.customElements.define('ext-gridsortdescmenuitem', ElementParser.withParsedCallback(EWCGridsortdescmenuitem));
 
