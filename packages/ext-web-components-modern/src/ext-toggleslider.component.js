@@ -1,6 +1,6 @@
 //import Ext_slider_Toggle from '@sencha/ext-runtime-base/dist/./Ext/slider/Toggle.js';
 import Ext_slider_Toggle from './Ext/slider/Toggle.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCToggleslider extends Ext_slider_Toggle {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCToggleslider extends Ext_slider_Toggle {
     }
 
 }
-window.customElements.define('ext-toggleslider', HTMLParsedElement.withParsedCallback(EWCToggleslider));
+window.customElements.define('ext-toggleslider', ElementParser.withParsedCallback(EWCToggleslider));
 

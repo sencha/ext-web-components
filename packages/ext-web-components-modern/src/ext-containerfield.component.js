@@ -1,6 +1,6 @@
 //import Ext_field_Container from '@sencha/ext-runtime-base/dist/./Ext/field/Container.js';
 import Ext_field_Container from './Ext/field/Container.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCContainerfield extends Ext_field_Container {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCContainerfield extends Ext_field_Container {
     }
 
 }
-window.customElements.define('ext-containerfield', HTMLParsedElement.withParsedCallback(EWCContainerfield));
+window.customElements.define('ext-containerfield', ElementParser.withParsedCallback(EWCContainerfield));
 

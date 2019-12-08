@@ -1,6 +1,6 @@
 //import Ext_MessageBox from '@sencha/ext-runtime-base/dist/./Ext/MessageBox.js';
 import Ext_MessageBox from './Ext/MessageBox.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCMessagebox extends Ext_MessageBox {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCMessagebox extends Ext_MessageBox {
     }
 
 }
-window.customElements.define('ext-messagebox', HTMLParsedElement.withParsedCallback(EWCMessagebox));
+window.customElements.define('ext-messagebox', ElementParser.withParsedCallback(EWCMessagebox));
 

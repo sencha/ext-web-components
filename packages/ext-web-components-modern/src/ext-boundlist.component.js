@@ -1,6 +1,6 @@
 //import Ext_dataview_BoundList from '@sencha/ext-runtime-base/dist/./Ext/dataview/BoundList.js';
 import Ext_dataview_BoundList from './Ext/dataview/BoundList.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCBoundlist extends Ext_dataview_BoundList {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCBoundlist extends Ext_dataview_BoundList {
     }
 
 }
-window.customElements.define('ext-boundlist', HTMLParsedElement.withParsedCallback(EWCBoundlist));
+window.customElements.define('ext-boundlist', ElementParser.withParsedCallback(EWCBoundlist));
 

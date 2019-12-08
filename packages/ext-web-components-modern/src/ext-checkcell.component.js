@@ -1,6 +1,6 @@
 //import Ext_grid_cell_Check from '@sencha/ext-runtime-base/dist/./Ext/grid/cell/Check.js';
 import Ext_grid_cell_Check from './Ext/grid/cell/Check.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCCheckcell extends Ext_grid_cell_Check {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCCheckcell extends Ext_grid_cell_Check {
     }
 
 }
-window.customElements.define('ext-checkcell', HTMLParsedElement.withParsedCallback(EWCCheckcell));
+window.customElements.define('ext-checkcell', ElementParser.withParsedCallback(EWCCheckcell));
 

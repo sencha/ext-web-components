@@ -1,6 +1,6 @@
 //import Ext_dataview_pullrefresh_Spinner from '@sencha/ext-runtime-base/dist/./Ext/dataview/pullrefresh/Spinner.js';
 import Ext_dataview_pullrefresh_Spinner from './Ext/dataview/pullrefresh/Spinner.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCPullrefreshspinner extends Ext_dataview_pullrefresh_Spinner {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCPullrefreshspinner extends Ext_dataview_pullrefresh_Spin
     }
 
 }
-window.customElements.define('ext-pullrefreshspinner', HTMLParsedElement.withParsedCallback(EWCPullrefreshspinner));
+window.customElements.define('ext-pullrefreshspinner', ElementParser.withParsedCallback(EWCPullrefreshspinner));
 

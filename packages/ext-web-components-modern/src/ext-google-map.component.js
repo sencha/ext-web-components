@@ -1,6 +1,6 @@
 //import Ext_Map from '@sencha/ext-runtime-base/dist/./Ext/Map.js';
 import Ext_Map from './Ext/Map.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCGoogle_map extends Ext_Map {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCGoogle_map extends Ext_Map {
     }
 
 }
-window.customElements.define('ext-google-map', HTMLParsedElement.withParsedCallback(EWCGoogle_map));
+window.customElements.define('ext-google-map', ElementParser.withParsedCallback(EWCGoogle_map));
 

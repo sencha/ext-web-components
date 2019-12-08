@@ -1,6 +1,6 @@
 //import Ext_Title from '@sencha/ext-runtime-base/dist/./Ext/Title.js';
 import Ext_Title from './Ext/Title.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCTitle extends Ext_Title {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCTitle extends Ext_Title {
     }
 
 }
-window.customElements.define('ext-title', HTMLParsedElement.withParsedCallback(EWCTitle));
+window.customElements.define('ext-title', ElementParser.withParsedCallback(EWCTitle));
 

@@ -1,6 +1,6 @@
 //import Ext_grid_column_Selection from '@sencha/ext-runtime-base/dist/./Ext/grid/column/Selection.js';
 import Ext_grid_column_Selection from './Ext/grid/column/Selection.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCSelectioncolumn extends Ext_grid_column_Selection {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCSelectioncolumn extends Ext_grid_column_Selection {
     }
 
 }
-window.customElements.define('ext-selectioncolumn', HTMLParsedElement.withParsedCallback(EWCSelectioncolumn));
+window.customElements.define('ext-selectioncolumn', ElementParser.withParsedCallback(EWCSelectioncolumn));
 

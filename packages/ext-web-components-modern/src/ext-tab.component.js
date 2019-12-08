@@ -1,6 +1,6 @@
 //import Ext_Tab from '@sencha/ext-runtime-base/dist/./Ext/Tab.js';
 import Ext_Tab from './Ext/Tab.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCTab extends Ext_Tab {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCTab extends Ext_Tab {
     }
 
 }
-window.customElements.define('ext-tab', HTMLParsedElement.withParsedCallback(EWCTab));
+window.customElements.define('ext-tab', ElementParser.withParsedCallback(EWCTab));
 

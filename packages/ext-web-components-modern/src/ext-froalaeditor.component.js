@@ -1,6 +1,6 @@
 //import Ext_froala_Editor from '@sencha/ext-runtime-base/dist/./Ext/froala/Editor.js';
 import Ext_froala_Editor from './Ext/froala/Editor.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCFroalaeditor extends Ext_froala_Editor {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCFroalaeditor extends Ext_froala_Editor {
     }
 
 }
-window.customElements.define('ext-froalaeditor', HTMLParsedElement.withParsedCallback(EWCFroalaeditor));
+window.customElements.define('ext-froalaeditor', ElementParser.withParsedCallback(EWCFroalaeditor));
 

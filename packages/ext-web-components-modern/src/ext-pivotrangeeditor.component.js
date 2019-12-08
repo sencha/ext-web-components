@@ -1,6 +1,6 @@
 //import Ext_pivot_plugin_rangeeditor_Panel from '@sencha/ext-runtime-base/dist/./Ext/pivot/plugin/rangeeditor/Panel.js';
 import Ext_pivot_plugin_rangeeditor_Panel from './Ext/pivot/plugin/rangeeditor/Panel.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCPivotrangeeditor extends Ext_pivot_plugin_rangeeditor_Panel {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCPivotrangeeditor extends Ext_pivot_plugin_rangeeditor_Pa
     }
 
 }
-window.customElements.define('ext-pivotrangeeditor', HTMLParsedElement.withParsedCallback(EWCPivotrangeeditor));
+window.customElements.define('ext-pivotrangeeditor', ElementParser.withParsedCallback(EWCPivotrangeeditor));
 

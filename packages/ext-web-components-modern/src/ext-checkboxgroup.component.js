@@ -1,6 +1,6 @@
 //import Ext_field_CheckboxGroup from '@sencha/ext-runtime-base/dist/./Ext/field/CheckboxGroup.js';
 import Ext_field_CheckboxGroup from './Ext/field/CheckboxGroup.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCCheckboxgroup extends Ext_field_CheckboxGroup {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCCheckboxgroup extends Ext_field_CheckboxGroup {
     }
 
 }
-window.customElements.define('ext-checkboxgroup', HTMLParsedElement.withParsedCallback(EWCCheckboxgroup));
+window.customElements.define('ext-checkboxgroup', ElementParser.withParsedCallback(EWCCheckboxgroup));
 

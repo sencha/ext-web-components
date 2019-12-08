@@ -1,6 +1,6 @@
 //import Ext_IndexBar from '@sencha/ext-runtime-base/dist/./Ext/IndexBar.js';
 import Ext_IndexBar from './Ext/IndexBar.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCIndexbar extends Ext_IndexBar {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCIndexbar extends Ext_IndexBar {
     }
 
 }
-window.customElements.define('ext-indexbar', HTMLParsedElement.withParsedCallback(EWCIndexbar));
+window.customElements.define('ext-indexbar', ElementParser.withParsedCallback(EWCIndexbar));
 

@@ -1,6 +1,6 @@
 //import Ext_grid_rowedit_Gap from '@sencha/ext-runtime-base/dist/./Ext/grid/rowedit/Gap.js';
 import Ext_grid_rowedit_Gap from './Ext/grid/rowedit/Gap.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCRoweditorgap extends Ext_grid_rowedit_Gap {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCRoweditorgap extends Ext_grid_rowedit_Gap {
     }
 
 }
-window.customElements.define('ext-roweditorgap', HTMLParsedElement.withParsedCallback(EWCRoweditorgap));
+window.customElements.define('ext-roweditorgap', ElementParser.withParsedCallback(EWCRoweditorgap));
 

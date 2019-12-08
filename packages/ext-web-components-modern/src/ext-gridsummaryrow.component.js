@@ -1,6 +1,6 @@
 //import Ext_grid_SummaryRow from '@sencha/ext-runtime-base/dist/./Ext/grid/SummaryRow.js';
 import Ext_grid_SummaryRow from './Ext/grid/SummaryRow.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCGridsummaryrow extends Ext_grid_SummaryRow {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCGridsummaryrow extends Ext_grid_SummaryRow {
     }
 
 }
-window.customElements.define('ext-gridsummaryrow', HTMLParsedElement.withParsedCallback(EWCGridsummaryrow));
+window.customElements.define('ext-gridsummaryrow', ElementParser.withParsedCallback(EWCGridsummaryrow));
 

@@ -1,6 +1,6 @@
 //import Ext_grid_rowedit_Editor from '@sencha/ext-runtime-base/dist/./Ext/grid/rowedit/Editor.js';
 import Ext_grid_rowedit_Editor from './Ext/grid/rowedit/Editor.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCRoweditor extends Ext_grid_rowedit_Editor {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCRoweditor extends Ext_grid_rowedit_Editor {
     }
 
 }
-window.customElements.define('ext-roweditor', HTMLParsedElement.withParsedCallback(EWCRoweditor));
+window.customElements.define('ext-roweditor', ElementParser.withParsedCallback(EWCRoweditor));
 

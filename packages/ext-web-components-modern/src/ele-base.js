@@ -1,4 +1,4 @@
-//Fri Dec 06 2019 11:44:55 GMT-0500 (Eastern Standard Time)
+//Sun Dec 08 2019 09:27:00 GMT-0500 (Eastern Standard Time)
 
 import {
   doProp,
@@ -406,8 +406,13 @@ export default class EleBaseComponent extends HTMLElement {
               break;
           case isParentGridAndChildColumn(parentxtype,childxtype):
               if (location == null) {
-                parentCmp.rowHeight = null;
-                parentCmp.addColumn(childCmp);
+                if (Ext.isModern) {
+                  parentCmp.rowHeight = null;
+                  parentCmp.addColumn(childCmp);
+                }
+                else {
+                  parentCmp.add(childCmp);
+                }
               }
               else {
                   var regCols = 0;
@@ -415,7 +420,12 @@ export default class EleBaseComponent extends HTMLElement {
                       regCols = parentCmp.registeredColumns.length;
                   }
                   if (parentxtype == 'grid') {
+                    if (Ext.isModern) {
                       parentCmp.insertColumn(location + regCols, childCmp);
+                    }
+                    else {
+                      parentCmp.insert(location + regCols, childCmp);
+                    }
                   }
                   else {
                       parentCmp.insert(location + regCols, childCmp);

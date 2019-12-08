@@ -1,6 +1,6 @@
 //import Ext_container_Container from '@sencha/ext-runtime-base/dist/./Ext/container/Container.js';
 import Ext_container_Container from './Ext/container/Container.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCContainer extends Ext_container_Container {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCContainer extends Ext_container_Container {
     }
 
 }
-window.customElements.define('ext-container', HTMLParsedElement.withParsedCallback(EWCContainer));
+window.customElements.define('ext-container', ElementParser.withParsedCallback(EWCContainer));
 

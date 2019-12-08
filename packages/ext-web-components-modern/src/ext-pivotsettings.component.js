@@ -1,6 +1,6 @@
 //import Ext_pivot_plugin_configurator_Settings from '@sencha/ext-runtime-base/dist/./Ext/pivot/plugin/configurator/Settings.js';
 import Ext_pivot_plugin_configurator_Settings from './Ext/pivot/plugin/configurator/Settings.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCPivotsettings extends Ext_pivot_plugin_configurator_Settings {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCPivotsettings extends Ext_pivot_plugin_configurator_Sett
     }
 
 }
-window.customElements.define('ext-pivotsettings', HTMLParsedElement.withParsedCallback(EWCPivotsettings));
+window.customElements.define('ext-pivotsettings', ElementParser.withParsedCallback(EWCPivotsettings));
 

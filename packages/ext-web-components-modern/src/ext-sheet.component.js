@@ -1,6 +1,6 @@
 //import Ext_Sheet from '@sencha/ext-runtime-base/dist/./Ext/Sheet.js';
 import Ext_Sheet from './Ext/Sheet.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCSheet extends Ext_Sheet {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCSheet extends Ext_Sheet {
     }
 
 }
-window.customElements.define('ext-sheet', HTMLParsedElement.withParsedCallback(EWCSheet));
+window.customElements.define('ext-sheet', ElementParser.withParsedCallback(EWCSheet));
 

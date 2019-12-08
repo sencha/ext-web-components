@@ -1,6 +1,6 @@
 //import Ext_grid_cell_Boolean from '@sencha/ext-runtime-base/dist/./Ext/grid/cell/Boolean.js';
 import Ext_grid_cell_Boolean from './Ext/grid/cell/Boolean.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCBooleancell extends Ext_grid_cell_Boolean {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCBooleancell extends Ext_grid_cell_Boolean {
     }
 
 }
-window.customElements.define('ext-booleancell', HTMLParsedElement.withParsedCallback(EWCBooleancell));
+window.customElements.define('ext-booleancell', ElementParser.withParsedCallback(EWCBooleancell));
 

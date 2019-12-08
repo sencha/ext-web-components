@@ -1,6 +1,6 @@
 //import Ext_form_Field from '@sencha/ext-runtime-base/dist/./Ext/form/Field.js';
 import Ext_form_Field from './Ext/form/Field.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCField extends Ext_form_Field {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCField extends Ext_form_Field {
     }
 
 }
-window.customElements.define('ext-field', HTMLParsedElement.withParsedCallback(EWCField));
+window.customElements.define('ext-field', ElementParser.withParsedCallback(EWCField));
 

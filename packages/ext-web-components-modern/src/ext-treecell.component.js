@@ -1,6 +1,6 @@
 //import Ext_grid_cell_Tree from '@sencha/ext-runtime-base/dist/./Ext/grid/cell/Tree.js';
 import Ext_grid_cell_Tree from './Ext/grid/cell/Tree.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCTreecell extends Ext_grid_cell_Tree {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCTreecell extends Ext_grid_cell_Tree {
     }
 
 }
-window.customElements.define('ext-treecell', HTMLParsedElement.withParsedCallback(EWCTreecell));
+window.customElements.define('ext-treecell', ElementParser.withParsedCallback(EWCTreecell));
 

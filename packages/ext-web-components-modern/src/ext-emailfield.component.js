@@ -1,6 +1,6 @@
 //import Ext_form_Email from '@sencha/ext-runtime-base/dist/./Ext/form/Email.js';
 import Ext_form_Email from './Ext/form/Email.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCEmailfield extends Ext_form_Email {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCEmailfield extends Ext_form_Email {
     }
 
 }
-window.customElements.define('ext-emailfield', HTMLParsedElement.withParsedCallback(EWCEmailfield));
+window.customElements.define('ext-emailfield', ElementParser.withParsedCallback(EWCEmailfield));
 

@@ -1,6 +1,6 @@
 //import Ext_grid_menu_GroupByThis from '@sencha/ext-runtime-base/dist/./Ext/grid/menu/GroupByThis.js';
 import Ext_grid_menu_GroupByThis from './Ext/grid/menu/GroupByThis.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCGridgroupbythismenuitem extends Ext_grid_menu_GroupByThis {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCGridgroupbythismenuitem extends Ext_grid_menu_GroupByThi
     }
 
 }
-window.customElements.define('ext-gridgroupbythismenuitem', HTMLParsedElement.withParsedCallback(EWCGridgroupbythismenuitem));
+window.customElements.define('ext-gridgroupbythismenuitem', ElementParser.withParsedCallback(EWCGridgroupbythismenuitem));
 

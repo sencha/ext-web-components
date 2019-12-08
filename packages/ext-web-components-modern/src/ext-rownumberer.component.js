@@ -1,6 +1,6 @@
 //import Ext_grid_column_RowNumberer from '@sencha/ext-runtime-base/dist/./Ext/grid/column/RowNumberer.js';
 import Ext_grid_column_RowNumberer from './Ext/grid/column/RowNumberer.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCRownumberer extends Ext_grid_column_RowNumberer {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCRownumberer extends Ext_grid_column_RowNumberer {
     }
 
 }
-window.customElements.define('ext-rownumberer', HTMLParsedElement.withParsedCallback(EWCRownumberer));
+window.customElements.define('ext-rownumberer', ElementParser.withParsedCallback(EWCRownumberer));
 

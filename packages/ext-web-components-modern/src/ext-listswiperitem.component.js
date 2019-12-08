@@ -1,6 +1,6 @@
 //import Ext_dataview_listswiper_Item from '@sencha/ext-runtime-base/dist/./Ext/dataview/listswiper/Item.js';
 import Ext_dataview_listswiper_Item from './Ext/dataview/listswiper/Item.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCListswiperitem extends Ext_dataview_listswiper_Item {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCListswiperitem extends Ext_dataview_listswiper_Item {
     }
 
 }
-window.customElements.define('ext-listswiperitem', HTMLParsedElement.withParsedCallback(EWCListswiperitem));
+window.customElements.define('ext-listswiperitem', ElementParser.withParsedCallback(EWCListswiperitem));
 

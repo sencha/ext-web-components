@@ -1,0 +1,23 @@
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+//import Ext_ux_desktop_TaskBar from '@sencha/ext-runtime-base/dist/./Ext/ux/desktop/TaskBar.js';
+import Ext_ux_desktop_TaskBar from './Ext/ux/desktop/TaskBar.js';
+import ElementParser from './ElementParser.js';
+
+var EWCTaskbar =
+/*#__PURE__*/
+function (_Ext_ux_desktop_TaskB) {
+  _inheritsLoose(EWCTaskbar, _Ext_ux_desktop_TaskB);
+
+  function EWCTaskbar() {
+    var _this;
+
+    _this = _Ext_ux_desktop_TaskB.call(this, [], []) || this;
+    _this.xtype = 'taskbar';
+    return _this;
+  }
+
+  return EWCTaskbar;
+}(Ext_ux_desktop_TaskBar);
+
+export { EWCTaskbar as default };
+window.customElements.define('ext-taskbar', ElementParser.withParsedCallback(EWCTaskbar));

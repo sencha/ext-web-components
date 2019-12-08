@@ -1,6 +1,6 @@
-## @sencha/ext-web-components
+## @sencha/ext-web-components-modern
 
-last run: Fri Dec 06 2019 11:44:55 GMT-0500 (Eastern Standard Time)
+last run: Sun Dec 08 2019 09:27:00 GMT-0500 (Eastern Standard Time)
 
 ## Login to the Sencha early adopter npm repo
 
@@ -11,32 +11,32 @@ npm login --registry=https://sencha.myget.org/F/early-adopter/npm/ --scope=@senc
 
 ## Create a JavaScript application
 
-- Create a folder named ext-web-components-demo
+- Create a folder named ext-web-components-modern-demo
 
 mac
 ```sh
-mkdir ext-web-components-demo
-cd ext-web-components-demo
+mkdir ext-web-components-modern-demo
+cd ext-web-components-modern-demo
 ```
 
 windows
 ```sh
-md ext-web-components-demo
-cd ext-web-components-demo
+md ext-web-components-modern-demo
+cd ext-web-components-modern-demo
 ```
 
-- In the ext-web-components-demo folder, create a package.json file with the following:
+- In the ext-web-components-modern-demo folder, create a package.json file with the following:
 
 ```sh
 {
-  "name": "ext-web-components-demo",
+  "name": "ext-web-components-modern-demo",
   "version": "1.0.0",
-  "description": "ext-web-components-demo",
+  "description": "ext-web-components-modern-demo",
   "scripts": {
     "start": "npx http-server -o"
   },
   "devDependencies": {
-    "@sencha/ext-web-components": "~7.1.0",
+    "@sencha/ext-web-components-modern": "~7.1.0",
     "http-server": "^0.11.1"
   },
   "author": "",
@@ -45,7 +45,7 @@ cd ext-web-components-demo
 }
 ```
 
-- In the ext-web-components-demo folder, create an index.html file with the following:
+- In the ext-web-components-modern-demo folder, create an index.html file with the following:
 
 ```sh
 <!DOCTYPE html>
@@ -57,10 +57,10 @@ cd ext-web-components-demo
 </head>
 
 <script type="module"
-  src="./node_modules/@sencha/ext-web-components/src/ext-toolbar.component.js">
+  src="./node_modules/@sencha/ext-web-components-modern/src/ext-toolbar.component.js">
 </script>
 <script type="module"
-  src="./node_modules/@sencha/ext-web-components/src/ext-button.component.js">
+  src="./node_modules/@sencha/ext-web-components-modern/src/ext-button.component.js">
 </script>
 
 <script>
@@ -78,7 +78,7 @@ cd ext-web-components-demo
 </html>
 ```
 
-- Run the following in the ext-web-components-demo folder
+- Run the following in the ext-web-components-modern-demo folder
 
 ```sh
 npm install

@@ -1,0 +1,13 @@
+//import Ext_AbstractContainer from '@sencha/ext-runtime-base/dist/./Ext/AbstractContainer.js';
+import Ext_AbstractContainer from './Ext/AbstractContainer.js';
+import ElementParser from './ElementParser.js';
+
+export default class EWCContainer extends Ext_AbstractContainer {
+    constructor() {
+        super ([], []);
+        this.xtype = 'container';
+    }
+
+}
+window.customElements.define('ext-container', ElementParser.withParsedCallback(EWCContainer));
+

@@ -1,6 +1,6 @@
 //import Ext_grid_cell_Widget from '@sencha/ext-runtime-base/dist/./Ext/grid/cell/Widget.js';
 import Ext_grid_cell_Widget from './Ext/grid/cell/Widget.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCWidgetcell extends Ext_grid_cell_Widget {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCWidgetcell extends Ext_grid_cell_Widget {
     }
 
 }
-window.customElements.define('ext-widgetcell', HTMLParsedElement.withParsedCallback(EWCWidgetcell));
+window.customElements.define('ext-widgetcell', ElementParser.withParsedCallback(EWCWidgetcell));
 

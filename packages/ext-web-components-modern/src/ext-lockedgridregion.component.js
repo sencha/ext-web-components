@@ -1,6 +1,6 @@
 //import Ext_grid_LockedGridRegion from '@sencha/ext-runtime-base/dist/./Ext/grid/LockedGridRegion.js';
 import Ext_grid_LockedGridRegion from './Ext/grid/LockedGridRegion.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCLockedgridregion extends Ext_grid_LockedGridRegion {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCLockedgridregion extends Ext_grid_LockedGridRegion {
     }
 
 }
-window.customElements.define('ext-lockedgridregion', HTMLParsedElement.withParsedCallback(EWCLockedgridregion));
+window.customElements.define('ext-lockedgridregion', ElementParser.withParsedCallback(EWCLockedgridregion));
 

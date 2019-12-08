@@ -1,6 +1,6 @@
 //import Ext_Indicator from '@sencha/ext-runtime-base/dist/./Ext/Indicator.js';
 import Ext_Indicator from './Ext/Indicator.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCIndicator extends Ext_Indicator {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCIndicator extends Ext_Indicator {
     }
 
 }
-window.customElements.define('ext-indicator', HTMLParsedElement.withParsedCallback(EWCIndicator));
+window.customElements.define('ext-indicator', ElementParser.withParsedCallback(EWCIndicator));
 

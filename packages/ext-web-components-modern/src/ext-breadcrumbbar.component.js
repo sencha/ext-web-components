@@ -1,6 +1,6 @@
 //import Ext_BreadcrumbBar from '@sencha/ext-runtime-base/dist/./Ext/BreadcrumbBar.js';
 import Ext_BreadcrumbBar from './Ext/BreadcrumbBar.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCBreadcrumbbar extends Ext_BreadcrumbBar {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCBreadcrumbbar extends Ext_BreadcrumbBar {
     }
 
 }
-window.customElements.define('ext-breadcrumbbar', HTMLParsedElement.withParsedCallback(EWCBreadcrumbbar));
+window.customElements.define('ext-breadcrumbbar', ElementParser.withParsedCallback(EWCBreadcrumbbar));
 

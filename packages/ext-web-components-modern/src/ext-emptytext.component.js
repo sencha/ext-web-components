@@ -1,6 +1,6 @@
 //import Ext_dataview_EmptyText from '@sencha/ext-runtime-base/dist/./Ext/dataview/EmptyText.js';
 import Ext_dataview_EmptyText from './Ext/dataview/EmptyText.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCEmptytext extends Ext_dataview_EmptyText {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCEmptytext extends Ext_dataview_EmptyText {
     }
 
 }
-window.customElements.define('ext-emptytext', HTMLParsedElement.withParsedCallback(EWCEmptytext));
+window.customElements.define('ext-emptytext', ElementParser.withParsedCallback(EWCEmptytext));
 

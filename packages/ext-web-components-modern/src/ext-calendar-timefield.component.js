@@ -1,6 +1,6 @@
 //import Ext_calendar_form_TimeField from '@sencha/ext-runtime-base/dist/./Ext/calendar/form/TimeField.js';
 import Ext_calendar_form_TimeField from './Ext/calendar/form/TimeField.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCCalendar_timefield extends Ext_calendar_form_TimeField {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCCalendar_timefield extends Ext_calendar_form_TimeField {
     }
 
 }
-window.customElements.define('ext-calendar-timefield', HTMLParsedElement.withParsedCallback(EWCCalendar_timefield));
+window.customElements.define('ext-calendar-timefield', ElementParser.withParsedCallback(EWCCalendar_timefield));
 

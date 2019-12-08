@@ -1,6 +1,6 @@
 //import Ext_pivot_cell_Group from '@sencha/ext-runtime-base/dist/./Ext/pivot/cell/Group.js';
 import Ext_pivot_cell_Group from './Ext/pivot/cell/Group.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCPivotgridgroupcell extends Ext_pivot_cell_Group {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCPivotgridgroupcell extends Ext_pivot_cell_Group {
     }
 
 }
-window.customElements.define('ext-pivotgridgroupcell', HTMLParsedElement.withParsedCallback(EWCPivotgridgroupcell));
+window.customElements.define('ext-pivotgridgroupcell', ElementParser.withParsedCallback(EWCPivotgridgroupcell));
 

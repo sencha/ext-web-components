@@ -1,6 +1,6 @@
 //import Ext_field_File from '@sencha/ext-runtime-base/dist/./Ext/field/File.js';
 import Ext_field_File from './Ext/field/File.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCFilefield extends Ext_field_File {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCFilefield extends Ext_field_File {
     }
 
 }
-window.customElements.define('ext-filefield', HTMLParsedElement.withParsedCallback(EWCFilefield));
+window.customElements.define('ext-filefield', ElementParser.withParsedCallback(EWCFilefield));
 

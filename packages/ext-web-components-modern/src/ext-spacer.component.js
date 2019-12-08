@@ -1,6 +1,6 @@
 //import Ext_Spacer from '@sencha/ext-runtime-base/dist/./Ext/Spacer.js';
 import Ext_Spacer from './Ext/Spacer.js';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 
 export default class EWCSpacer extends Ext_Spacer {
     constructor() {
@@ -9,5 +9,5 @@ export default class EWCSpacer extends Ext_Spacer {
     }
 
 }
-window.customElements.define('ext-spacer', HTMLParsedElement.withParsedCallback(EWCSpacer));
+window.customElements.define('ext-spacer', ElementParser.withParsedCallback(EWCSpacer));
 
