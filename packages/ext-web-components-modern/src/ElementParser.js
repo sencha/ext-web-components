@@ -1,8 +1,7 @@
 const ElementParser = (() => {
 
   if (window['Ext'] == undefined) {
-    var msg = ' warning
-  Ext engine and theme not defined in index.html - Deprecation below is expected Click the following link for discussion on how to resolve https://docs.sencha.com/extwebcomponents/7.1.0/guides/deprecation_message.html'
+    var msg = ' warning  Ext engine and theme not defined in index.html - Deprecation below is expected Click the following link for discussion on how to resolve https://docs.sencha.com/extwebcomponents/7.1.0/guides/deprecation_message.html'
     console.warn(msg);
 
     //var baseFolder = "./node_modules/@sencha/ext-web-components-" + framework + "/ext-runtime-" + framework;
