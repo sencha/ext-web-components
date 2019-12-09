@@ -14,11 +14,8 @@
     "prepare": "npm run build"
   },
   "homepage": "https://github.com/sencha/ext-web-components#readme",
-  "peerDependencies": {
-
-  },
+  "peerDependencies": {},
   "dependencies": {
-
     "object-assign": "~4.1.1",
     "pascal-case": "~3.0.0",
     "@babel/runtime": "^7.7.4",
@@ -39,8 +36,7 @@
     "@babel/plugin-transform-runtime": "^7.7.4",
     "@babel/preset-env": "^7.7.4"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sencha/ext-web-components"
@@ -48,4 +44,4 @@
   "keywords": [],
   "author": "Sencha",
   "license": "ISC"
-  }
+}
