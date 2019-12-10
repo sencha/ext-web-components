@@ -212,9 +212,9 @@ function (_Ext_field_Container) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'groupcontainer'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

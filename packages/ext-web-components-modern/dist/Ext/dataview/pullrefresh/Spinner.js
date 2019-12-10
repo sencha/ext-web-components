@@ -191,9 +191,9 @@ function (_Ext_dataview_pullref) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'pullrefreshspinner'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

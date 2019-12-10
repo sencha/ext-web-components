@@ -229,9 +229,9 @@ export default class Ext_picker_Tablet extends Ext_Panel {
 //events
 ////configs
 //
-//static XTYPE() {return 'tabletpicker'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -271,7 +271,7 @@ function (_Ext_calendar_form_Ab) {
   //
   //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

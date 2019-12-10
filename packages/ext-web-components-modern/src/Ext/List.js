@@ -287,9 +287,9 @@ export default class Ext_List extends Ext_dataview_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'list'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

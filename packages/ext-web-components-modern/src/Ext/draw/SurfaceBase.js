@@ -83,7 +83,7 @@ export default class Ext_draw_SurfaceBase extends Ext_Widget {
 //
 //static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

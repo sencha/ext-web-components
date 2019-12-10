@@ -167,9 +167,9 @@ export default class Ext_dataview_pullrefresh_Bar extends Ext_dataview_pullrefre
 //events
 ////configs
 //
-//static XTYPE() {return 'pullrefreshbar'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -197,9 +197,9 @@ function (_Ext_menu_CheckItem) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'menuradioitem'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

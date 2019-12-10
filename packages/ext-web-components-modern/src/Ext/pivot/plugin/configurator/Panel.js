@@ -237,9 +237,9 @@ export default class Ext_pivot_plugin_configurator_Panel extends Ext_Panel {
 //events
 ////configs
 //
-//static XTYPE() {return 'pivotconfigpanel'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

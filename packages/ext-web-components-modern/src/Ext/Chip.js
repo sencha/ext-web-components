@@ -163,9 +163,9 @@ export default class Ext_Chip extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'chip'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

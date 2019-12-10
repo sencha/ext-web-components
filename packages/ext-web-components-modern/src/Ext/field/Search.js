@@ -215,9 +215,9 @@ export default class Ext_field_Search extends Ext_field_Text {
 //events
 ////configs
 //
-//static XTYPE() {return 'searchfield'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -221,9 +221,9 @@ function (_Ext_grid_column_Chec) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'selectioncolumn'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

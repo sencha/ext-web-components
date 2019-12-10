@@ -231,9 +231,9 @@ export default class Ext_grid_column_Drag extends Ext_grid_column_Column {
 //events
 ////configs
 //
-//static XTYPE() {return 'dragcolumn'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

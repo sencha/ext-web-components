@@ -248,7 +248,7 @@ export default class Ext_chart_legend_LegendBase extends Ext_dataview_DataView {
 //
 //static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

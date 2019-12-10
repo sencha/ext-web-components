@@ -242,9 +242,9 @@ export default class Ext_grid_locked_Grid extends Ext_Panel {
 //events
 ////configs
 //
-//static XTYPE() {return 'lockedgrid'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

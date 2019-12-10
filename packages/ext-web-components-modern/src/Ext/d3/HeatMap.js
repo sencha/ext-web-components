@@ -171,9 +171,9 @@ export default class Ext_d3_HeatMap extends Ext_d3_svg_Svg {
 //events
 ////configs
 //
-//static XTYPE() {return 'd3-heatmap'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

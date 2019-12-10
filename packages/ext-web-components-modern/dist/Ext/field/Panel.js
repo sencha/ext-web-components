@@ -254,9 +254,9 @@ function (_Ext_Panel) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'fieldpanel'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

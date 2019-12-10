@@ -196,9 +196,9 @@ export default class Ext_TabBar extends Ext_Toolbar {
 //events
 ////configs
 //
-//static XTYPE() {return 'tabbar'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

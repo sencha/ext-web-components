@@ -236,9 +236,9 @@ export default class Ext_ActionSheet extends Ext_Sheet {
 //events
 ////configs
 //
-//static XTYPE() {return 'actionsheet'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -170,9 +170,9 @@ export default class Ext_sparkline_Pie extends Ext_sparkline_Base {
 //events
 ////configs
 //
-//static XTYPE() {return 'sparklinepie'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

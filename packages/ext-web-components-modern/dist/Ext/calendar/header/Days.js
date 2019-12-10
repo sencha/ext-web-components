@@ -191,9 +191,9 @@ function (_Ext_calendar_header_) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'calendar-daysheader'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

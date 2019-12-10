@@ -308,9 +308,9 @@ function (_Ext_chart_legend_Leg) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'legend'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

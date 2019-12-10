@@ -192,9 +192,9 @@ export default class Ext_grid_HeaderContainer extends Ext_Container {
 //events
 ////configs
 //
-//static XTYPE() {return 'headercontainer'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -215,9 +215,9 @@ export default class Ext_field_Text extends Ext_field_Input {
 //events
 ////configs
 //
-//static XTYPE() {return 'textfield'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

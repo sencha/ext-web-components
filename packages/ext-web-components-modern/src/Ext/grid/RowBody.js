@@ -157,9 +157,9 @@ export default class Ext_grid_RowBody extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'rowbody'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

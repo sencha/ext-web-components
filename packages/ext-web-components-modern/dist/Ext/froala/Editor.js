@@ -197,9 +197,9 @@ function (_Ext_Component) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'froalaeditor'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

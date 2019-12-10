@@ -200,9 +200,9 @@ function (_Ext_d3_hierarchy_Tre) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'pivottreemap'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

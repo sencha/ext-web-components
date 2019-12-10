@@ -165,9 +165,9 @@ export default class Ext_panel_DateTitle extends Ext_panel_Title {
 //events
 ////configs
 //
-//static XTYPE() {return 'datetitle'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

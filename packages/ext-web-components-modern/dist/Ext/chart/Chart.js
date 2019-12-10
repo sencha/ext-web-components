@@ -287,9 +287,9 @@ function (_Ext_chart_AbstractCh) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'chart'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

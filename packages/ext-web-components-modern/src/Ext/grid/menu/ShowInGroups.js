@@ -181,9 +181,9 @@ export default class Ext_grid_menu_ShowInGroups extends Ext_menu_CheckItem {
 //events
 ////configs
 //
-//static XTYPE() {return 'gridshowingroupsmenuitem'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

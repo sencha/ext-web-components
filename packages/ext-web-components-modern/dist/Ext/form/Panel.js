@@ -260,9 +260,9 @@ function (_Ext_field_Panel) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'formpanel'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

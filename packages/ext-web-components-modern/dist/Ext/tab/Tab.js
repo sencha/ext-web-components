@@ -209,9 +209,9 @@ function (_Ext_Button) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'tab'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

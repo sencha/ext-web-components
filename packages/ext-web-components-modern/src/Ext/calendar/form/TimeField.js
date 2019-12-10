@@ -250,9 +250,9 @@ export default class Ext_calendar_form_TimeField extends Ext_field_Select {
 //events
 ////configs
 //
-//static XTYPE() {return 'calendar-timefield'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -191,9 +191,9 @@ function (_Ext_panel_Title) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'datetitle'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

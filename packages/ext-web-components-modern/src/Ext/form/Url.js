@@ -215,9 +215,9 @@ export default class Ext_form_Url extends Ext_field_Text {
 //events
 ////configs
 //
-//static XTYPE() {return 'urlfield'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

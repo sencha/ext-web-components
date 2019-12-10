@@ -199,9 +199,9 @@ export default class Ext_field_Container extends Ext_field_Field {
 //events
 ////configs
 //
-//static XTYPE() {return 'fieldcontainer'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

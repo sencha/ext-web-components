@@ -196,9 +196,9 @@ export default class Ext_dataview_listswiper_Stepper extends Ext_dataview_listsw
 //events
 ////configs
 //
-//static XTYPE() {return 'listswiperstepper'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

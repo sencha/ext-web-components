@@ -200,9 +200,9 @@ function (_Ext_d3_hierarchy_Hie) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'd3-pack'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

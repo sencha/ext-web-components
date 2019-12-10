@@ -171,9 +171,9 @@ export default class Ext_slider_Toggle extends Ext_slider_Slider {
 //events
 ////configs
 //
-//static XTYPE() {return 'toggleslider'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

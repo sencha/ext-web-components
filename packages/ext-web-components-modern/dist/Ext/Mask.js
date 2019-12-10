@@ -194,9 +194,9 @@ function (_Ext_Component) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'mask'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

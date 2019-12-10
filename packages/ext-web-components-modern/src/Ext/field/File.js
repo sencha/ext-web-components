@@ -218,9 +218,9 @@ export default class Ext_field_File extends Ext_field_Text {
 //events
 ////configs
 //
-//static XTYPE() {return 'filefield'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

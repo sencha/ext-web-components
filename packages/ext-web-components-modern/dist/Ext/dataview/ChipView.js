@@ -308,9 +308,9 @@ function (_Ext_dataview_DataVie) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'chipview'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

@@ -197,9 +197,9 @@ function (_Ext_menu_RadioItem) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'gridsortdescmenuitem'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

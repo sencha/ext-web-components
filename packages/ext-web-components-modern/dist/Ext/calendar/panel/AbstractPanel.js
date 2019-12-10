@@ -250,7 +250,7 @@ function (_Ext_Panel) {
   //
   //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

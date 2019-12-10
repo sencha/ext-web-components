@@ -92,9 +92,9 @@ export default class Ext_grid_cell_Base extends Ext_Widget {
 //events
 ////configs
 //
-//static XTYPE() {return 'gridcellbase'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -265,7 +265,7 @@ export default class Ext_calendar_form_AbstractForm extends Ext_form_Panel {
 //
 //static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -90,9 +90,9 @@ export default class Ext_field_trigger_Time extends Ext_field_trigger_Expand {
 //events
 ////configs
 //
-//static XTYPE() {return 'timetrigger'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

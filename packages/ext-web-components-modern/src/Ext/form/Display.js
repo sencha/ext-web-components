@@ -197,9 +197,9 @@ export default class Ext_form_Display extends Ext_field_Field {
 //events
 ////configs
 //
-//static XTYPE() {return 'displayfield'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

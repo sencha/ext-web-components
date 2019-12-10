@@ -217,9 +217,9 @@ export default class Ext_field_Password extends Ext_field_Text {
 //events
 ////configs
 //
-//static XTYPE() {return 'passwordfield'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

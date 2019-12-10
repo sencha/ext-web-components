@@ -320,9 +320,9 @@ function (_Ext_dataview_List) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'boundlist'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

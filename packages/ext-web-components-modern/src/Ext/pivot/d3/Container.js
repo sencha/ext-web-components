@@ -20,9 +20,9 @@ export default class Ext_pivot_d3_Container extends Ext_pivot_d3_AbstractContain
 //events
 ////configs
 //
-//static XTYPE() {return 'pivotd3container'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

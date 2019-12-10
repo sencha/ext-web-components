@@ -224,9 +224,9 @@ function (_Ext_Toolbar) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'tabbar'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

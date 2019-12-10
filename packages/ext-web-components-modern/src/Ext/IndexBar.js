@@ -167,9 +167,9 @@ export default class Ext_IndexBar extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'indexbar'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

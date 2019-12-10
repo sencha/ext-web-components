@@ -257,9 +257,9 @@ function (_Ext_picker_Picker) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'selectpicker'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

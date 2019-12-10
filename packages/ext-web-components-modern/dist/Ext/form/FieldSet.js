@@ -215,9 +215,9 @@ function (_Ext_Container) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'fieldset'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

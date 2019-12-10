@@ -205,9 +205,9 @@ export default class Ext_field_SingleSlider extends Ext_field_Slider {
 //events
 ////configs
 //
-//static XTYPE() {return 'singlesliderfield'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

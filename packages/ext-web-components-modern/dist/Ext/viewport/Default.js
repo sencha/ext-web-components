@@ -221,9 +221,9 @@ function (_Ext_Container) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'viewport'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

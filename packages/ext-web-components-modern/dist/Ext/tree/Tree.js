@@ -407,9 +407,9 @@ function (_Ext_grid_Grid) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'tree'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

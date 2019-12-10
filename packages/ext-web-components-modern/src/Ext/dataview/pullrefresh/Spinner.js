@@ -160,9 +160,9 @@ export default class Ext_dataview_pullrefresh_Spinner extends Ext_dataview_pullr
 //events
 ////configs
 //
-//static XTYPE() {return 'pullrefreshspinner'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

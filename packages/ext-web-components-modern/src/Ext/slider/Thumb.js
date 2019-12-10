@@ -159,9 +159,9 @@ export default class Ext_slider_Thumb extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'thumb'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

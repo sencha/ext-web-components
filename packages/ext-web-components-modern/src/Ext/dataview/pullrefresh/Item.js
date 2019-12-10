@@ -162,7 +162,7 @@ export default class Ext_dataview_pullrefresh_Item extends Ext_Component {
 //
 //static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

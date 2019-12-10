@@ -248,9 +248,9 @@ export default class Ext_chart_legend_Legend extends Ext_chart_legend_LegendBase
 //events
 ////configs
 //
-//static XTYPE() {return 'legend'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

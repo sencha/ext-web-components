@@ -221,9 +221,9 @@ function (_Ext_field_Input) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'textfield'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

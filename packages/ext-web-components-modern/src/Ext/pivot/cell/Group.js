@@ -99,9 +99,9 @@ export default class Ext_pivot_cell_Group extends Ext_pivot_cell_Cell {
 //events
 ////configs
 //
-//static XTYPE() {return 'pivotgridgroupcell'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

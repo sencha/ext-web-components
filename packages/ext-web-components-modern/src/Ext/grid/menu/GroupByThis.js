@@ -174,9 +174,9 @@ export default class Ext_grid_menu_GroupByThis extends Ext_menu_Item {
 //events
 ////configs
 //
-//static XTYPE() {return 'gridgroupbythismenuitem'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

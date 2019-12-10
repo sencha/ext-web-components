@@ -230,9 +230,9 @@ export default class Ext_ux_colorpick_Field extends Ext_field_Picker {
 //events
 ////configs
 //
-//static XTYPE() {return 'colorfield'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

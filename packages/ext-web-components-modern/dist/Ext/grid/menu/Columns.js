@@ -191,9 +191,9 @@ function (_Ext_grid_menu_Shared) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'gridcolumnsmenu'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

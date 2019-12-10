@@ -231,9 +231,9 @@ export default class Ext_field_DatePicker extends Ext_field_Picker {
 //events
 ////configs
 //
-//static XTYPE() {return 'datepickerfield'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

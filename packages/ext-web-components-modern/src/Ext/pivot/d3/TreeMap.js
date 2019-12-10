@@ -191,9 +191,9 @@ export default class Ext_pivot_d3_TreeMap extends Ext_d3_hierarchy_TreeMap {
 //events
 ////configs
 //
-//static XTYPE() {return 'pivottreemap'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

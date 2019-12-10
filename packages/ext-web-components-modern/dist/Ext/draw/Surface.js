@@ -71,9 +71,9 @@ function (_Ext_draw_SurfaceBase) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'surface'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

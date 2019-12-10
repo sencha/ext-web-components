@@ -232,7 +232,7 @@ export default class Ext_chart_AbstractChart extends Ext_draw_Container {
 //
 //static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

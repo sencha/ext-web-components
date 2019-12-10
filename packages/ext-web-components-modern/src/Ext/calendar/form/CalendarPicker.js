@@ -250,9 +250,9 @@ export default class Ext_calendar_form_CalendarPicker extends Ext_field_Select {
 //events
 ////configs
 //
-//static XTYPE() {return 'calendar-calendar-picker'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

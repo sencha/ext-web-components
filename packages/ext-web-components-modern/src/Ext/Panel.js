@@ -229,9 +229,9 @@ export default class Ext_Panel extends Ext_Container {
 //events
 ////configs
 //
-//static XTYPE() {return 'panel'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

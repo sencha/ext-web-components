@@ -254,9 +254,9 @@ export default class Ext_dataview_ChipView extends Ext_dataview_DataView {
 //events
 ////configs
 //
-//static XTYPE() {return 'chipview'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

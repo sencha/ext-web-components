@@ -227,9 +227,9 @@ function (_Ext_field_Text) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'pickerfield'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

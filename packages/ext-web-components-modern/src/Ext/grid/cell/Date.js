@@ -96,9 +96,9 @@ export default class Ext_grid_cell_Date extends Ext_grid_cell_Text {
 //events
 ////configs
 //
-//static XTYPE() {return 'datecell'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

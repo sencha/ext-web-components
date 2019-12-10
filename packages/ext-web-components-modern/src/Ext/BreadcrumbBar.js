@@ -201,9 +201,9 @@ export default class Ext_BreadcrumbBar extends Ext_Toolbar {
 //events
 ////configs
 //
-//static XTYPE() {return 'breadcrumbbar'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

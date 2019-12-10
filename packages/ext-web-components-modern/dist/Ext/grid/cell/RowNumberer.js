@@ -71,9 +71,9 @@ function (_Ext_grid_cell_Number) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'rownumberercell'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

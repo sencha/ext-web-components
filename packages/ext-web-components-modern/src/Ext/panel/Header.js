@@ -195,9 +195,9 @@ export default class Ext_panel_Header extends Ext_Container {
 //events
 ////configs
 //
-//static XTYPE() {return 'panelheader'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

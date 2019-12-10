@@ -203,9 +203,9 @@ export default class Ext_froala_EditorField extends Ext_field_Container {
 //events
 ////configs
 //
-//static XTYPE() {return 'froalaeditorfield'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

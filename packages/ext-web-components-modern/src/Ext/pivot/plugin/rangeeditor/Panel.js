@@ -252,9 +252,9 @@ export default class Ext_pivot_plugin_rangeeditor_Panel extends Ext_form_Panel {
 //events
 ////configs
 //
-//static XTYPE() {return 'pivotrangeeditor'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

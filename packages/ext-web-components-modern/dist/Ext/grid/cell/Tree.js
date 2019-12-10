@@ -77,9 +77,9 @@ function (_Ext_grid_cell_Cell) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'treecell'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

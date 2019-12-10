@@ -173,9 +173,9 @@ export default class Ext_Audio extends Ext_Media {
 //events
 ////configs
 //
-//static XTYPE() {return 'audio'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

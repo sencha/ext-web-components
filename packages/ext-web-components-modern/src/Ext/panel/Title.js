@@ -165,9 +165,9 @@ export default class Ext_panel_Title extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'paneltitle'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

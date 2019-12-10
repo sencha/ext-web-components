@@ -197,9 +197,9 @@ function (_Ext_menu_RadioItem) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'gridsortascmenuitem'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

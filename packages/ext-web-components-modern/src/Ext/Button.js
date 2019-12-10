@@ -183,9 +183,9 @@ export default class Ext_Button extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'button'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

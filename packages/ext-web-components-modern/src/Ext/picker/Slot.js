@@ -254,9 +254,9 @@ export default class Ext_picker_Slot extends Ext_dataview_DataView {
 //events
 ////configs
 //
-//static XTYPE() {return 'pickerslot'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

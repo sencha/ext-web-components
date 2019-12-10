@@ -190,9 +190,9 @@ export default class Ext_dataview_component_DataItem extends Ext_Container {
 //events
 ////configs
 //
-//static XTYPE() {return 'dataitem'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

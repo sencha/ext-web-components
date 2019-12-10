@@ -233,9 +233,9 @@ export default class Ext_grid_LockedGridRegion extends Ext_Panel {
 //events
 ////configs
 //
-//static XTYPE() {return 'lockedgridregion'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}
