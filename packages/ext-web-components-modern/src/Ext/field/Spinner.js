@@ -229,9 +229,9 @@ export default class Ext_field_Spinner extends Ext_field_Number {
 //events
 ////configs
 //
-//static XTYPE() {return 'spinnerfield'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

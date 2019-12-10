@@ -248,7 +248,7 @@ export default class Ext_calendar_AbstractList extends Ext_dataview_DataView {
 //
 //static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -248,9 +248,9 @@ function (_Ext_Panel) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'tooltip'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

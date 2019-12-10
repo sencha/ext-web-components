@@ -224,9 +224,9 @@ function (_Ext_field_SingleSlid) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'togglefield'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

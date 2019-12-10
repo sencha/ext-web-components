@@ -232,9 +232,9 @@ export default class Ext_panel_Accordion extends Ext_Panel {
 //events
 ////configs
 //
-//static XTYPE() {return 'accordion'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

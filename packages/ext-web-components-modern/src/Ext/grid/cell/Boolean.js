@@ -98,9 +98,9 @@ export default class Ext_grid_cell_Boolean extends Ext_grid_cell_Text {
 //events
 ////configs
 //
-//static XTYPE() {return 'booleancell'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

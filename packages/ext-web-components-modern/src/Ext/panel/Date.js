@@ -264,9 +264,9 @@ export default class Ext_panel_Date extends Ext_Panel {
 //events
 ////configs
 //
-//static XTYPE() {return 'datepanel'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

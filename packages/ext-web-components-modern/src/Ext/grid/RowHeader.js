@@ -162,9 +162,9 @@ export default class Ext_grid_RowHeader extends Ext_dataview_ItemHeader {
 //events
 ////configs
 //
-//static XTYPE() {return 'rowheader'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

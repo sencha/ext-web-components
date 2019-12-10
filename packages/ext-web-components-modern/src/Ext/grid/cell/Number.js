@@ -96,9 +96,9 @@ export default class Ext_grid_cell_Number extends Ext_grid_cell_Text {
 //events
 ////configs
 //
-//static XTYPE() {return 'numbercell'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

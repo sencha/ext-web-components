@@ -215,9 +215,9 @@ function (_Ext_chart_navigator_) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'chartnavigator'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

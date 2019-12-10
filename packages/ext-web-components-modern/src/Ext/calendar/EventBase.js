@@ -168,7 +168,7 @@ export default class Ext_calendar_EventBase extends Ext_Gadget {
 //
 //static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

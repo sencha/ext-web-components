@@ -203,9 +203,9 @@ function (_Ext_slider_Slider) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'toggleslider'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

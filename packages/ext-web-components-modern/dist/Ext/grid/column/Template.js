@@ -215,9 +215,9 @@ function (_Ext_grid_HeaderConta) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'templatecolumn'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

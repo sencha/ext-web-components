@@ -215,9 +215,9 @@ function (_Ext_grid_column_Numb) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'rownumberer'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

@@ -231,9 +231,9 @@ export default class Ext_grid_column_Template extends Ext_grid_HeaderContainer {
 //events
 ////configs
 //
-//static XTYPE() {return 'templatecolumn'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

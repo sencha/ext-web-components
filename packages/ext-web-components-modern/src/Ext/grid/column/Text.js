@@ -231,9 +231,9 @@ export default class Ext_grid_column_Text extends Ext_grid_column_Column {
 //events
 ////configs
 //
-//static XTYPE() {return 'textcolumn'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

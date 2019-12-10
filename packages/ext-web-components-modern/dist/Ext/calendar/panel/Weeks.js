@@ -281,9 +281,9 @@ function (_Ext_calendar_panel_B) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'calendar-weeks'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

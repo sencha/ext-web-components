@@ -90,9 +90,9 @@ export default class Ext_field_trigger_SpinDown extends Ext_field_trigger_Trigge
 //events
 ////configs
 //
-//static XTYPE() {return 'spindowntrigger'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

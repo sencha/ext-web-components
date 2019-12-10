@@ -193,9 +193,9 @@ export default class Ext_NavigationView extends Ext_Container {
 //events
 ////configs
 //
-//static XTYPE() {return 'navigationview'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

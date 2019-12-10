@@ -215,9 +215,9 @@ function (_Ext_dataview_ListIte) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'pivotconfigfield'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

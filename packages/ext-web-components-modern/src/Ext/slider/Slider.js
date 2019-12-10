@@ -171,9 +171,9 @@ export default class Ext_slider_Slider extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'slider'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

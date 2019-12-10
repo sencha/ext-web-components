@@ -191,9 +191,9 @@ function (_Ext_Component) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'spacer'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

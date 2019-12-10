@@ -249,9 +249,9 @@ export default class Ext_MessageBox extends Ext_Dialog {
 //events
 ////configs
 //
-//static XTYPE() {return 'messagebox'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

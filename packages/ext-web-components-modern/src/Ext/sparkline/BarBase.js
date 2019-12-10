@@ -168,7 +168,7 @@ export default class Ext_sparkline_BarBase extends Ext_sparkline_Base {
 //
 //static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

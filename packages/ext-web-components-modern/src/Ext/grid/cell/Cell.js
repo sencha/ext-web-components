@@ -99,9 +99,9 @@ export default class Ext_grid_cell_Cell extends Ext_grid_cell_Text {
 //events
 ////configs
 //
-//static XTYPE() {return 'gridcell'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

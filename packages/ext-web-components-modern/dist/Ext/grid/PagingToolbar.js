@@ -215,9 +215,9 @@ function (_Ext_Toolbar) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'pagingtoolbar'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

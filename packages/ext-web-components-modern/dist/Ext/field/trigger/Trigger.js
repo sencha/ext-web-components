@@ -71,9 +71,9 @@ function (_Ext_field_trigger_Ba) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'trigger'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

@@ -162,9 +162,9 @@ export default class Ext_LoadMask extends Ext_Mask {
 //events
 ////configs
 //
-//static XTYPE() {return 'loadmask'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

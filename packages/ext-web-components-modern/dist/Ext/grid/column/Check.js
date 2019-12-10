@@ -221,9 +221,9 @@ function (_Ext_grid_column_Colu) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'checkcolumn'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

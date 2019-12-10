@@ -173,9 +173,9 @@ export default class Ext_Media extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'media'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -25,9 +25,9 @@ export default class Ext_calendar_view_Multi extends Ext_container_Container {
 //events
 ////configs
 //
-//static XTYPE() {return 'calendar-multiview'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

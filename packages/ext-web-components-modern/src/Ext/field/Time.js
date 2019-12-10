@@ -228,9 +228,9 @@ export default class Ext_field_Time extends Ext_field_Picker {
 //events
 ////configs
 //
-//static XTYPE() {return 'timefield'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -203,9 +203,9 @@ export default class Ext_field_CheckboxGroup extends Ext_field_FieldGroupContain
 //events
 ////configs
 //
-//static XTYPE() {return 'checkboxgroup'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

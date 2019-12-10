@@ -180,9 +180,9 @@ export default class Ext_sparkline_Box extends Ext_sparkline_Base {
 //events
 ////configs
 //
-//static XTYPE() {return 'sparklinebox'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -159,7 +159,7 @@ export default class Ext_d3_ComponentBase extends Ext_Component {
 //
 //static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

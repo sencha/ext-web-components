@@ -194,9 +194,9 @@ export default class Ext_dataview_ListItem extends Ext_dataview_DataItem {
 //events
 ////configs
 //
-//static XTYPE() {return 'listitem'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

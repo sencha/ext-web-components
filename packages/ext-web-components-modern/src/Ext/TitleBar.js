@@ -191,9 +191,9 @@ export default class Ext_TitleBar extends Ext_Container {
 //events
 ////configs
 //
-//static XTYPE() {return 'titlebar'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -191,9 +191,9 @@ function (_Ext_grid_Row) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'gridsummaryrow'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

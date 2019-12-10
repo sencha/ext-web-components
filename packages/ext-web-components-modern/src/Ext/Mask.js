@@ -159,9 +159,9 @@ export default class Ext_Mask extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'mask'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

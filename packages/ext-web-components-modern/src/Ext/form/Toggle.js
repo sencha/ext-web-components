@@ -207,9 +207,9 @@ export default class Ext_form_Toggle extends Ext_field_SingleSlider {
 //events
 ////configs
 //
-//static XTYPE() {return 'togglefield'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

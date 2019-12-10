@@ -203,9 +203,9 @@ function (_Ext_Component) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'slider'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

@@ -93,9 +93,9 @@ export default class Ext_field_trigger_Menu extends Ext_field_trigger_Trigger {
 //events
 ////configs
 //
-//static XTYPE() {return 'menutrigger'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

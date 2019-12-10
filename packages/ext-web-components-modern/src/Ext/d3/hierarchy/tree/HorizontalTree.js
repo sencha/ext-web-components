@@ -187,9 +187,9 @@ export default class Ext_d3_hierarchy_tree_HorizontalTree extends Ext_d3_hierarc
 //events
 ////configs
 //
-//static XTYPE() {return 'd3-horizontal-tree'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

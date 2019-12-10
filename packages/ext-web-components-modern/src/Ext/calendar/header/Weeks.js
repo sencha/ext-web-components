@@ -163,9 +163,9 @@ export default class Ext_calendar_header_Weeks extends Ext_calendar_header_Base 
 //events
 ////configs
 //
-//static XTYPE() {return 'calendar-weeksheader'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -233,9 +233,9 @@ function (_Ext_Editor) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'celleditor'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

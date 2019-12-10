@@ -246,9 +246,9 @@ export default class Ext_dataview_DataView extends Ext_dataview_Abstract {
 //events
 ////configs
 //
-//static XTYPE() {return 'dataview'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

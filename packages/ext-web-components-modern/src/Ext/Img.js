@@ -164,9 +164,9 @@ export default class Ext_Img extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'img'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

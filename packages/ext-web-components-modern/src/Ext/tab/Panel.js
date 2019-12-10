@@ -192,9 +192,9 @@ export default class Ext_tab_Panel extends Ext_Container {
 //events
 ////configs
 //
-//static XTYPE() {return 'tabpanel'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

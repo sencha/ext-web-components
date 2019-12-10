@@ -200,9 +200,9 @@ function (_Ext_Component) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'indicator'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

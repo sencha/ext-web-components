@@ -201,9 +201,9 @@ export default class Ext_field_Checkbox extends Ext_field_Input {
 //events
 ////configs
 //
-//static XTYPE() {return 'checkboxfield'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

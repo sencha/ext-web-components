@@ -230,9 +230,9 @@ function (_Ext_field_Picker) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'selectfield'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

@@ -157,9 +157,9 @@ export default class Ext_Component extends Ext_Widget {
 //events
 ////configs
 //
-//static XTYPE() {return 'component'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

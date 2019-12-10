@@ -71,9 +71,9 @@ function (_Ext_field_trigger_Tr) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'cleartrigger'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

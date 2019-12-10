@@ -183,9 +183,9 @@ export default class Ext_grid_menu_SortDesc extends Ext_menu_RadioItem {
 //events
 ////configs
 //
-//static XTYPE() {return 'gridsortdescmenuitem'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

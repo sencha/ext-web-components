@@ -203,9 +203,9 @@ export default class Ext_field_FieldGroupContainer extends Ext_field_Container {
 //events
 ////configs
 //
-//static XTYPE() {return 'groupcontainer'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -71,9 +71,9 @@ function (_Ext_field_trigger_Ex) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'datetrigger'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

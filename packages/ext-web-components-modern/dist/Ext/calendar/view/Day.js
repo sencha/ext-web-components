@@ -233,9 +233,9 @@ function (_Ext_calendar_view_Da) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'calendar-dayview'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

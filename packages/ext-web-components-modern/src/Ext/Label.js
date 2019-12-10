@@ -157,9 +157,9 @@ export default class Ext_Label extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'label'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

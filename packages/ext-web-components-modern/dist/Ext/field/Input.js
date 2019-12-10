@@ -212,9 +212,9 @@ function (_Ext_field_Field) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'inputfield'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

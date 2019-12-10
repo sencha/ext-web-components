@@ -236,9 +236,9 @@ export default class Ext_Sheet extends Ext_Panel {
 //events
 ////configs
 //
-//static XTYPE() {return 'sheet'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

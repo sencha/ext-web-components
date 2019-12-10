@@ -227,9 +227,9 @@ function (_Ext_field_Date) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'datepickernativefield'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

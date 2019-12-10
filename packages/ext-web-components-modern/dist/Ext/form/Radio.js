@@ -218,9 +218,9 @@ function (_Ext_field_Checkbox) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'radiofield'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

@@ -252,9 +252,9 @@ export default class Ext_form_FormPanel extends Ext_field_Panel {
 //events
 ////configs
 //
-//static XTYPE() {return 'formpanel'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

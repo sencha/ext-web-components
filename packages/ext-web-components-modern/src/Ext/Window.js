@@ -245,9 +245,9 @@ export default class Ext_Window extends Ext_Panel {
 //events
 ////configs
 //
-//static XTYPE() {return 'window'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

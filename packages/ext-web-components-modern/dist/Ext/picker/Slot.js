@@ -311,9 +311,9 @@ function (_Ext_dataview_DataVie) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'pickerslot'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

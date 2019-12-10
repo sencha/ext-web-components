@@ -191,9 +191,9 @@ function (_Ext_Gadget) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'rating'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

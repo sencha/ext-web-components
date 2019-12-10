@@ -191,9 +191,9 @@ export default class Ext_dataview_listswiper_Item extends Ext_Container {
 //events
 ////configs
 //
-//static XTYPE() {return 'listswiperitem'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -163,9 +163,9 @@ export default class Ext_grid_Row extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'gridrow'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

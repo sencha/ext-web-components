@@ -175,9 +175,9 @@ export default class Ext_Video extends Ext_Media {
 //events
 ////configs
 //
-//static XTYPE() {return 'video'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

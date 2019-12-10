@@ -189,7 +189,7 @@ export default class Ext_chart_navigator_ContainerBase extends Ext_Container {
 //
 //static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

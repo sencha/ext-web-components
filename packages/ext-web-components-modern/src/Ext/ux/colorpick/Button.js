@@ -163,9 +163,9 @@ export default class Ext_ux_colorpick_Button extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'colorbutton'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

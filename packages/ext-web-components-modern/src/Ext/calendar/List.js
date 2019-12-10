@@ -247,9 +247,9 @@ export default class Ext_calendar_List extends Ext_calendar_AbstractList {
 //events
 ////configs
 //
-//static XTYPE() {return 'calendar-list'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -270,9 +270,9 @@ export default class Ext_calendar_form_Add extends Ext_calendar_form_Form {
 //events
 ////configs
 //
-//static XTYPE() {return 'calendar-form-add'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

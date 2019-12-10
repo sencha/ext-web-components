@@ -71,9 +71,9 @@ function (_Ext_Widget) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'gridcellbase'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

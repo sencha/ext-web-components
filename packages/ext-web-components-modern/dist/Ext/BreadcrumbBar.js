@@ -221,9 +221,9 @@ function (_Ext_Toolbar) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'breadcrumbbar'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

@@ -245,9 +245,9 @@ export default class Ext_picker_Picker extends Ext_Sheet {
 //events
 ////configs
 //
-//static XTYPE() {return 'picker'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

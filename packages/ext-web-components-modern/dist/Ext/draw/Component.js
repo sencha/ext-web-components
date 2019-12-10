@@ -242,9 +242,9 @@ function (_Ext_draw_ContainerBa) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'draw'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

@@ -71,9 +71,9 @@ function (_Ext_grid_cell_Base) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'checkcell'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

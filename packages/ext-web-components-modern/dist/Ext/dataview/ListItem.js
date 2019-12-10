@@ -215,9 +215,9 @@ function (_Ext_dataview_DataIte) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'listitem'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

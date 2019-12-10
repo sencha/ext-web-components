@@ -163,9 +163,9 @@ export default class Ext_pivot_Row extends Ext_grid_Row {
 //events
 ////configs
 //
-//static XTYPE() {return 'pivotgridrow'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

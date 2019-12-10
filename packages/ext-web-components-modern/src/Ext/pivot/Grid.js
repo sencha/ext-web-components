@@ -363,9 +363,9 @@ export default class Ext_pivot_Grid extends Ext_grid_Grid {
 //events
 ////configs
 //
-//static XTYPE() {return 'pivotgrid'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

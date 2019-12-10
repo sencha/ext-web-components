@@ -186,9 +186,9 @@ export default class Ext_d3_hierarchy_partition_Sunburst extends Ext_d3_hierarch
 //events
 ////configs
 //
-//static XTYPE() {return 'd3-sunburst'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

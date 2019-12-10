@@ -209,9 +209,9 @@ export default class Ext_ux_google_Map extends Ext_Container {
 //events
 ////configs
 //
-//static XTYPE() {return 'google-map'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

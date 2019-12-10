@@ -81,9 +81,9 @@ export default class Ext_Widget extends Ext_Evented {
 //events
 ////configs
 //
-//static XTYPE() {return 'widget'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

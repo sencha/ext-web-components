@@ -236,9 +236,9 @@ export default class Ext_grid_column_Selection extends Ext_grid_column_Check {
 //events
 ////configs
 //
-//static XTYPE() {return 'selectioncolumn'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

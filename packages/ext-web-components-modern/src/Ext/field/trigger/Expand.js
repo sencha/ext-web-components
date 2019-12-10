@@ -90,9 +90,9 @@ export default class Ext_field_trigger_Expand extends Ext_field_trigger_Trigger 
 //events
 ////configs
 //
-//static XTYPE() {return 'expandtrigger'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

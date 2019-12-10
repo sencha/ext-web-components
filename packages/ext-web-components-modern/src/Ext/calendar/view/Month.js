@@ -191,9 +191,9 @@ export default class Ext_calendar_view_Month extends Ext_calendar_view_Weeks {
 //events
 ////configs
 //
-//static XTYPE() {return 'calendar-monthview'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

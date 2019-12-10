@@ -287,9 +287,9 @@ export default class Ext_panel_YearPicker extends Ext_dataview_BoundList {
 //events
 ////configs
 //
-//static XTYPE() {return 'yearpicker'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

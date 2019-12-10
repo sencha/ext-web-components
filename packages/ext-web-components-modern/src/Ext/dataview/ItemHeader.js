@@ -162,9 +162,9 @@ export default class Ext_dataview_ItemHeader extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'itemheader'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -191,9 +191,9 @@ function (_Ext_dataview_SimpleL) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'listitemplaceholder'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

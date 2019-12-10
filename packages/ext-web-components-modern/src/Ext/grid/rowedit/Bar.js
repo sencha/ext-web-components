@@ -229,9 +229,9 @@ export default class Ext_grid_rowedit_Bar extends Ext_Panel {
 //events
 ////configs
 //
-//static XTYPE() {return 'roweditorbar'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

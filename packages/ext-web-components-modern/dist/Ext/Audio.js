@@ -212,9 +212,9 @@ function (_Ext_Media) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'audio'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

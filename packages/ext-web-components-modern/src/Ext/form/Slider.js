@@ -205,9 +205,9 @@ export default class Ext_form_Slider extends Ext_field_Field {
 //events
 ////configs
 //
-//static XTYPE() {return 'sliderfield'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

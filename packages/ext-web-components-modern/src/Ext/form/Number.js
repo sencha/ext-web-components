@@ -223,9 +223,9 @@ export default class Ext_form_Number extends Ext_field_Text {
 //events
 ////configs
 //
-//static XTYPE() {return 'numberfield'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

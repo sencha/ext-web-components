@@ -204,9 +204,9 @@ export default class Ext_field_RadioGroup extends Ext_field_FieldGroupContainer 
 //events
 ////configs
 //
-//static XTYPE() {return 'radiogroup'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

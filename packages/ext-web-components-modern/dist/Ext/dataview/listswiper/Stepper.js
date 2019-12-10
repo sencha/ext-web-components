@@ -215,9 +215,9 @@ function (_Ext_dataview_listswi) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'listswiperstepper'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

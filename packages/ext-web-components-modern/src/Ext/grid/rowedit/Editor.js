@@ -201,9 +201,9 @@ export default class Ext_grid_rowedit_Editor extends Ext_dataview_ListItem {
 //events
 ////configs
 //
-//static XTYPE() {return 'roweditor'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

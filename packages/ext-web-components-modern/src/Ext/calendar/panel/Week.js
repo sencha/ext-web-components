@@ -268,9 +268,9 @@ export default class Ext_calendar_panel_Week extends Ext_calendar_panel_Days {
 //events
 ////configs
 //
-//static XTYPE() {return 'calendar-week'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

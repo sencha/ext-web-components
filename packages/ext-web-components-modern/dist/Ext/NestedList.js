@@ -251,9 +251,9 @@ function (_Ext_Container) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'nestedlist'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

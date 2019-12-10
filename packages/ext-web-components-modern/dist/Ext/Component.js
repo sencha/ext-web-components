@@ -191,9 +191,9 @@ function (_Ext_Widget) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'component'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

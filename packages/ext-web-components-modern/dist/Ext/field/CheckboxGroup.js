@@ -212,9 +212,9 @@ function (_Ext_field_FieldGroup) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'checkboxgroup'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

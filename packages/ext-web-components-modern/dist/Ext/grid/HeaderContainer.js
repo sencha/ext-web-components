@@ -215,9 +215,9 @@ function (_Ext_Container) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'headercontainer'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

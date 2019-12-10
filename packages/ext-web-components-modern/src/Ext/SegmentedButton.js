@@ -197,9 +197,9 @@ export default class Ext_SegmentedButton extends Ext_Container {
 //events
 ////configs
 //
-//static XTYPE() {return 'segmentedbutton'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

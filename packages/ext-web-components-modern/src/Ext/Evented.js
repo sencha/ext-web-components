@@ -20,7 +20,7 @@ export default class Ext_Evented extends Ext_Base {
 //
 //static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

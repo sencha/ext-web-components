@@ -195,9 +195,9 @@ export default class Ext_field_Hidden extends Ext_field_Input {
 //events
 ////configs
 //
-//static XTYPE() {return 'hiddenfield'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

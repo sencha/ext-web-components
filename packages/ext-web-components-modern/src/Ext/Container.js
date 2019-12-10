@@ -187,9 +187,9 @@ export default class Ext_Container extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'container'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

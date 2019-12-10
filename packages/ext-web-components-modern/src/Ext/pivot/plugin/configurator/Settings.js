@@ -252,9 +252,9 @@ export default class Ext_pivot_plugin_configurator_Settings extends Ext_form_Pan
 //events
 ////configs
 //
-//static XTYPE() {return 'pivotsettings'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

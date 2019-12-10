@@ -190,9 +190,9 @@ export default class Ext_Tab extends Ext_Button {
 //events
 ////configs
 //
-//static XTYPE() {return 'tab'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

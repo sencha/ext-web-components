@@ -239,9 +239,9 @@ function (_Ext_field_Select) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'comboboxfield'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

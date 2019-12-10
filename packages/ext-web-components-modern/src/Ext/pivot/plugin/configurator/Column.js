@@ -194,9 +194,9 @@ export default class Ext_pivot_plugin_configurator_Column extends Ext_dataview_L
 //events
 ////configs
 //
-//static XTYPE() {return 'pivotconfigfield'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

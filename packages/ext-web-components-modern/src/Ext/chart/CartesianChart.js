@@ -232,9 +232,9 @@ export default class Ext_chart_CartesianChart extends Ext_chart_AbstractChart {
 //events
 ////configs
 //
-//static XTYPE() {return 'chart'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

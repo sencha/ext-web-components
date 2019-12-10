@@ -265,9 +265,9 @@ export default class Ext_calendar_panel_Month extends Ext_calendar_panel_Weeks {
 //events
 ////configs
 //
-//static XTYPE() {return 'calendar-month'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

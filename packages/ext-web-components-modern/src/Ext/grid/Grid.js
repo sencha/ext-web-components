@@ -323,9 +323,9 @@ export default class Ext_grid_Grid extends Ext_dataview_List {
 //events
 ////configs
 //
-//static XTYPE() {return 'grid'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

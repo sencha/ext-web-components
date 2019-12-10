@@ -157,9 +157,9 @@ export default class Ext_grid_rowedit_Cell extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'roweditorcell'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

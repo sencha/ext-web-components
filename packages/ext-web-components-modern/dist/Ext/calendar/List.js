@@ -308,9 +308,9 @@ function (_Ext_calendar_Abstrac) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'calendar-list'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;
