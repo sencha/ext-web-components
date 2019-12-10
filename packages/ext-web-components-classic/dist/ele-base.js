@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Sun Dec 08 2019 08:58:43 GMT-0500 (Eastern Standard Time)
+//Mon Dec 09 2019 10:22:29 GMT-0500 (Eastern Standard Time)
 import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var EleBaseComponent =
@@ -228,9 +228,9 @@ function (_HTMLElement) {
           viewport: true
         };
       }
-    }
+    } //console.log(me.A.o);
 
-    console.log(me.A.o);
+
     me.A.ext = Ext.create(me.A.o);
     me.cmp = me.A.ext;
     me.ext = me.A.ext; //console.dir(me)

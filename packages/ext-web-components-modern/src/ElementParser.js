@@ -1,22 +1,46 @@
 const ElementParser = (() => {
 
   if (window['Ext'] == undefined) {
-    var msg = ' warning  Ext engine and theme not defined in index.html - Deprecation below is expected Click the following link for discussion on how to resolve https://docs.sencha.com/extwebcomponents/7.1.0/guides/deprecation_message.html'
-    console.warn(msg);
+    console.warn('Ext engine and theme not defined in index.html');
+    console.warn('Deprecation below is expected');
+    console.warn('Click the following link for discussion on how to resolve');
+    console.warn('https://docs.sencha.com/extwebcomponents/7.1.0/guides/deprecation_message.html');
 
-    //var baseFolder = "./node_modules/@sencha/ext-web-components-" + framework + "/ext-runtime-" + framework;
+    var toolkit = 'modern';
 
-    var baseFolder = "../ext-runtime-" + framework;
+    function getIndicesOf(searchStr, str, caseSensitive) {
+      var searchStrLen = searchStr.length;
+      if (searchStrLen == 0) {return [];}
+      var startIndex = 0, index, indices = [];
+      if (!caseSensitive) {
+        str = str.toLowerCase();
+        searchStr = searchStr.toLowerCase();
+      }
+      while ((index = str.indexOf(searchStr, startIndex)) > -1) {
+        indices.push(index);
+        startIndex = index + searchStrLen;
+      }
+      return indices;
+    }
+    //var indices = getIndicesOf("/", import.meta.url);
+    //var rootPath = import.meta.url.substring(0,indices[indices.length-2])
+    //var baseFolder = rootPath + "/ext-runtime-" + toolkit;
+
+    var baseFolder = "../ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
+
+
+
     var xhrObj = new XMLHttpRequest();
     xhrObj.open('GET', baseFolder + "/engine.js", false);
     xhrObj.send('');
-    console.log(xhrObj.status)
+
+    // console.log(xhrObj.status)
     if (xhrObj.status == 404) {
-      baseFolder = "./node_modules/@sencha/ext-web-components-" + framework + "/ext-runtime-" + framework;
+      baseFolder = "./node_modules/@sencha/ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
       xhrObj.open('GET', baseFolder + "/engine.js", false);
       xhrObj.send('');
     }
-    console.log(xhrObj.status)
+    // console.log(xhrObj.status)
     if (xhrObj.status != 200) {
       console.warn('cant find Ext engine - see https://docs.sencha.com/extwebcomponents/7.1.0/guides/deprecation_message.html')
       return
