@@ -178,9 +178,9 @@ export default class Ext_tab_Bar extends Ext_panel_Bar {
 //events
 ////configs
 //
-//static XTYPE() {return 'tabbar'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

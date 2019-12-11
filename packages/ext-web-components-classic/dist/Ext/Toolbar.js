@@ -137,9 +137,9 @@ function (_Ext_container_Contai) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'toolbar'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

@@ -200,9 +200,9 @@ function (_Ext_window_Window) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'messagebox'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

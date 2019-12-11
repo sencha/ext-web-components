@@ -392,9 +392,9 @@ export default class Ext_grid_Panel extends Ext_panel_Table {
 //events
 ////configs
 //
-//static XTYPE() {return 'grid'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

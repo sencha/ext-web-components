@@ -146,9 +146,9 @@ export default class Ext_ux_desktop_Wallpaper extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'wallpaper'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

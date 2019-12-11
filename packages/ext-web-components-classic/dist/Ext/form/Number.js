@@ -161,9 +161,9 @@ function (_Ext_form_field_Spinn) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'numberfield'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

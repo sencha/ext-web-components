@@ -152,9 +152,9 @@ export default class Ext_ProgressBar extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'progressbar'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

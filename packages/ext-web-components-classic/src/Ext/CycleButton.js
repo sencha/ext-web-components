@@ -201,9 +201,9 @@ export default class Ext_CycleButton extends Ext_button_Split {
 //events
 ////configs
 //
-//static XTYPE() {return 'cycle'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

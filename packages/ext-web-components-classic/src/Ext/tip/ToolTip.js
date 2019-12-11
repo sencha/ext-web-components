@@ -256,9 +256,9 @@ export default class Ext_tip_ToolTip extends Ext_tip_Tip {
 //events
 ////configs
 //
-//static XTYPE() {return 'tooltip'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -415,9 +415,9 @@ export default class Ext_TreePanel extends Ext_panel_Table {
 //events
 ////configs
 //
-//static XTYPE() {return 'treepanel'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

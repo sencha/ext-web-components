@@ -268,9 +268,9 @@ export default class Ext_view_Table extends Ext_view_View {
 //events
 ////configs
 //
-//static XTYPE() {return 'gridview'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -244,9 +244,9 @@ export default class Ext_chart_navigator_Container extends Ext_chart_navigator_C
 //events
 ////configs
 //
-//static XTYPE() {return 'chartnavigator'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

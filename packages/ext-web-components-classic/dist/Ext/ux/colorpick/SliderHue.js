@@ -134,9 +134,9 @@ function (_Ext_ux_colorpick_Sli) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'colorpickersliderhue'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

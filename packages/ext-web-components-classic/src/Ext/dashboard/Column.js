@@ -172,9 +172,9 @@ export default class Ext_dashboard_Column extends Ext_container_Container {
 //events
 ////configs
 //
-//static XTYPE() {return 'dashboard-column'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

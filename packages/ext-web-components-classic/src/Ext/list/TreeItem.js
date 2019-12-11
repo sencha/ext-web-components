@@ -81,9 +81,9 @@ export default class Ext_list_TreeItem extends Ext_list_AbstractTreeItem {
 //events
 ////configs
 //
-//static XTYPE() {return 'treelistitem'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

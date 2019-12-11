@@ -65,9 +65,9 @@ function (_Ext_calendar_EventBa) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'calendar-event'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

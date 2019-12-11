@@ -431,9 +431,9 @@ export default class Mz_pivot_Table extends Ext_grid_Panel {
 //events
 ////configs
 //
-//static XTYPE() {return 'mzpivotgrid'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

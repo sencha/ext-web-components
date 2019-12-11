@@ -99,9 +99,9 @@ export default class Ext_d3_hierarchy_TreeMap extends Ext_d3_hierarchy_Hierarchy
 //events
 ////configs
 //
-//static XTYPE() {return 'd3-treemap'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

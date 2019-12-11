@@ -206,9 +206,9 @@ export default class Ext_form_Field extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'field'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -243,9 +243,9 @@ export default class Ext_tip_Tip extends Ext_panel_Panel {
 //events
 ////configs
 //
-//static XTYPE() {return 'tip'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

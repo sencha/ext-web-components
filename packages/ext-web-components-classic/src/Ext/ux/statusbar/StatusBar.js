@@ -190,9 +190,9 @@ export default class Ext_ux_statusbar_StatusBar extends Ext_toolbar_Toolbar {
 //events
 ////configs
 //
-//static XTYPE() {return 'statusbar'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -158,9 +158,9 @@ export default class Ext_FlashComponent extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'flash'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

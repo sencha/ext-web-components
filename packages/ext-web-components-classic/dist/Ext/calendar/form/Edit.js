@@ -209,9 +209,9 @@ function (_Ext_calendar_form_Fo) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'calendar-form-edit'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

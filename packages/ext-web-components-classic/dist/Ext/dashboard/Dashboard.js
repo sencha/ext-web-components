@@ -203,9 +203,9 @@ function (_Ext_panel_Panel) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'dashboard'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

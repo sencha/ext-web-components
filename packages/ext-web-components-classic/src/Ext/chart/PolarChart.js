@@ -290,9 +290,9 @@ export default class Ext_chart_PolarChart extends Ext_chart_AbstractChart {
 //events
 ////configs
 //
-//static XTYPE() {return 'polar'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -174,9 +174,9 @@ export default class Ext_container_Viewport extends Ext_container_Container {
 //events
 ////configs
 //
-//static XTYPE() {return 'viewport'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

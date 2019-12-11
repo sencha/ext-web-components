@@ -101,9 +101,9 @@ export default class Ext_calendar_view_Day extends Ext_calendar_view_Days {
 //events
 ////configs
 //
-//static XTYPE() {return 'calendar-dayview'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

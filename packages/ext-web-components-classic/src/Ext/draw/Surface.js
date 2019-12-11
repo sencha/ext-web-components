@@ -70,9 +70,9 @@ export default class Ext_draw_Surface extends Ext_draw_SurfaceBase {
 //events
 ////configs
 //
-//static XTYPE() {return 'surface'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

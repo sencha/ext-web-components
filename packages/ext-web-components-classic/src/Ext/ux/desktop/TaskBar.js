@@ -182,9 +182,9 @@ export default class Ext_ux_desktop_TaskBar extends Ext_toolbar_Toolbar {
 //events
 ////configs
 //
-//static XTYPE() {return 'taskbar'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -404,9 +404,9 @@ function (_Ext_view_Table) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'treeview'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

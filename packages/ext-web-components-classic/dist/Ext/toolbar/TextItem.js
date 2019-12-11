@@ -116,9 +116,9 @@ function (_Ext_toolbar_Item) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'tbtext'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

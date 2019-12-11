@@ -21,9 +21,9 @@ export default class Ext_chart_interactions_Abstract extends Ext_Base {
 //events
 ////configs
 //
-//static XTYPE() {return 'interaction'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

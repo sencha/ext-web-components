@@ -149,9 +149,9 @@ function (_Ext_form_field_Base) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'textfield'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

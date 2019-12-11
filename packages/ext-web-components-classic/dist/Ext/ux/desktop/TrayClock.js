@@ -116,9 +116,9 @@ function (_Ext_toolbar_TextItem) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'trayclock'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

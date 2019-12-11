@@ -54,9 +54,9 @@ export default class Ext_chart_axis_Axis extends Ext_Base {
 //events
 ////configs
 //
-//static XTYPE() {return 'axis'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

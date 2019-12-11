@@ -284,9 +284,9 @@ function (_Ext_view_AbstractVie) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'dataview'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

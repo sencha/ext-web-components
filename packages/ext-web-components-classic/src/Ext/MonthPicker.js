@@ -158,9 +158,9 @@ export default class Ext_MonthPicker extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'monthpicker'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -100,9 +100,9 @@ export default class Ext_calendar_view_Weeks extends Ext_calendar_view_Base {
 //events
 ////configs
 //
-//static XTYPE() {return 'calendar-weeksview'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

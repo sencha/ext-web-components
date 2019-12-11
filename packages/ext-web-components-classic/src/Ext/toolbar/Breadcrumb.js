@@ -182,9 +182,9 @@ export default class Ext_toolbar_Breadcrumb extends Ext_container_Container {
 //events
 ////configs
 //
-//static XTYPE() {return 'breadcrumb'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

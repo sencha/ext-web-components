@@ -253,9 +253,9 @@ export default class Ext_form_HtmlEditor extends Ext_form_FieldContainer {
 //events
 ////configs
 //
-//static XTYPE() {return 'htmleditor'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

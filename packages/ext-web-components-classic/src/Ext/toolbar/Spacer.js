@@ -146,9 +146,9 @@ export default class Ext_toolbar_Spacer extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'tbspacer'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

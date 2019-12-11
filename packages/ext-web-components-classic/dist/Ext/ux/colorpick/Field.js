@@ -158,9 +158,9 @@ function (_Ext_form_field_Picke) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'colorfield'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

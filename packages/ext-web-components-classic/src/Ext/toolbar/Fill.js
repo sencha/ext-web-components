@@ -146,9 +146,9 @@ export default class Ext_toolbar_Fill extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'tbfill'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

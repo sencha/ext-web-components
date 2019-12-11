@@ -71,9 +71,9 @@ export default class Ext_calendar_header_Days extends Ext_calendar_header_Base {
 //events
 ////configs
 //
-//static XTYPE() {return 'calendar-daysheader'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

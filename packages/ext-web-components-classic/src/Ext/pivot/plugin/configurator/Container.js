@@ -243,9 +243,9 @@ export default class Ext_pivot_plugin_configurator_Container extends Ext_panel_P
 //events
 ////configs
 //
-//static XTYPE() {return 'pivotconfigcontainer'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

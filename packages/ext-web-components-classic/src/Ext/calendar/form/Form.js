@@ -281,7 +281,7 @@ export default class Ext_calendar_form_Form extends Ext_calendar_form_AbstractFo
 //
 //static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

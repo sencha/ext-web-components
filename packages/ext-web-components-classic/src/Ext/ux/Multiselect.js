@@ -240,9 +240,9 @@ export default class Ext_ux_Multiselect extends Ext_form_FieldContainer {
 //events
 ////configs
 //
-//static XTYPE() {return 'multiselect'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -160,9 +160,9 @@ export default class Ext_panel_Tool extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'tool'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

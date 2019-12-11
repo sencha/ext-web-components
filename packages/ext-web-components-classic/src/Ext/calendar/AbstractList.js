@@ -228,7 +228,7 @@ export default class Ext_calendar_AbstractList extends Ext_view_View {
 //
 //static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

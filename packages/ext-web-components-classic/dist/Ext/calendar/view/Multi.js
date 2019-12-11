@@ -134,9 +134,9 @@ function (_Ext_container_Contai) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'calendar-multiview'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

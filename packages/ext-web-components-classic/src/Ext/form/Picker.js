@@ -252,9 +252,9 @@ export default class Ext_form_Picker extends Ext_form_field_Text {
 //events
 ////configs
 //
-//static XTYPE() {return 'pickerfield'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

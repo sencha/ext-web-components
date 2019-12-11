@@ -512,9 +512,9 @@ function (_Ext_grid_Panel) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'multiselector'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

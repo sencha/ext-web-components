@@ -71,9 +71,9 @@ function (_Ext_d3_HeatMap) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'pivotheatmap'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

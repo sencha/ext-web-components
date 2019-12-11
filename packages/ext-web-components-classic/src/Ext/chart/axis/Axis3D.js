@@ -55,9 +55,9 @@ export default class Ext_chart_axis_Axis3D extends Ext_chart_axis_Axis {
 //events
 ////configs
 //
-//static XTYPE() {return 'axis3d'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -74,9 +74,9 @@ export default class Ext_sparkline_Base extends Ext_Gadget {
 //events
 ////configs
 //
-//static XTYPE() {return 'sparkline'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

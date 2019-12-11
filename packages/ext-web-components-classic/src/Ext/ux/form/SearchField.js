@@ -244,9 +244,9 @@ export default class Ext_ux_form_SearchField extends Ext_form_field_Text {
 //events
 ////configs
 //
-//static XTYPE() {return 'searchfield'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

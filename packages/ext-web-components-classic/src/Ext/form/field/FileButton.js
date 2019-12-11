@@ -191,9 +191,9 @@ export default class Ext_form_field_FileButton extends Ext_button_Button {
 //events
 ////configs
 //
-//static XTYPE() {return 'filebutton'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

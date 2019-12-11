@@ -287,9 +287,9 @@ export default class Ext_form_field_ComboBox extends Ext_form_field_Picker {
 //events
 ////configs
 //
-//static XTYPE() {return 'combo'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

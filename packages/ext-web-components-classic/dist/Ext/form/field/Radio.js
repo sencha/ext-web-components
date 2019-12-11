@@ -134,9 +134,9 @@ function (_Ext_form_field_Check) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'radio'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

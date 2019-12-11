@@ -307,9 +307,9 @@ export default class Ext_form_field_Tag extends Ext_form_field_ComboBox {
 //events
 ////configs
 //
-//static XTYPE() {return 'tagfield'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

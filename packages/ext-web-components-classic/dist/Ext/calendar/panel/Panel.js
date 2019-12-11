@@ -188,9 +188,9 @@ function (_Ext_calendar_panel_A) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'calendar'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

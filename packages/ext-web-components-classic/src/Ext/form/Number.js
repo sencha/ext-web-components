@@ -266,9 +266,9 @@ export default class Ext_form_Number extends Ext_form_field_Spinner {
 //events
 ////configs
 //
-//static XTYPE() {return 'numberfield'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

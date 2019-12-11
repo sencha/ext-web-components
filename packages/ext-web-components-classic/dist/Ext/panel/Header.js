@@ -140,9 +140,9 @@ function (_Ext_panel_Bar) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'header'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

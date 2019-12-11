@@ -1,7 +1,7 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import EleBaseComponent from './ele-base';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
 import { //doProp,
 //filterProp,
 isMenu, isRenderercell, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
@@ -178,7 +178,7 @@ function (_EleBaseComponent) {
 
   return ExtRouter;
 }(EleBaseComponent);
-window.customElements.define('ext-router', HTMLParsedElement.withParsedCallback(ExtRouter));
+window.customElements.define('ext-router', ElementParser.withParsedCallback(ExtRouter));
 export function getRoutes(items) {
   //mjg clean this up
   window._routes = [];
