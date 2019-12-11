@@ -229,7 +229,7 @@ export default class Ext_chart_legend_LegendBase extends Ext_view_View {
 //
 //static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

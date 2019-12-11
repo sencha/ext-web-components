@@ -80,9 +80,9 @@ export default class Ext_ux_Gauge extends Ext_Gadget {
 //events
 ////configs
 //
-//static XTYPE() {return 'gauge'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

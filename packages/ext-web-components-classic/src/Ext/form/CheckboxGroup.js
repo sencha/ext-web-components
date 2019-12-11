@@ -225,9 +225,9 @@ export default class Ext_form_CheckboxGroup extends Ext_form_FieldContainer {
 //events
 ////configs
 //
-//static XTYPE() {return 'checkboxgroup'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

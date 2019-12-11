@@ -146,9 +146,9 @@ export default class Ext_ux_colorpick_ColorPreview extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'colorpickercolorpreview'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

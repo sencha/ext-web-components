@@ -222,9 +222,9 @@ export default class Ext_grid_RowNumberer extends Ext_grid_column_Column {
 //events
 ////configs
 //
-//static XTYPE() {return 'rownumberer'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

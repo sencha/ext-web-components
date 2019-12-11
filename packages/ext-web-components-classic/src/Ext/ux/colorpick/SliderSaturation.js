@@ -172,9 +172,9 @@ export default class Ext_ux_colorpick_SliderSaturation extends Ext_ux_colorpick_
 //events
 ////configs
 //
-//static XTYPE() {return 'colorpickerslidersaturation'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

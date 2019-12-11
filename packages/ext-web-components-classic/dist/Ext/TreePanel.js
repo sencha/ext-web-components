@@ -554,9 +554,9 @@ function (_Ext_panel_Table) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'treepanel'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

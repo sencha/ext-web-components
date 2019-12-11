@@ -180,9 +180,9 @@ export default class Ext_picker_Date extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'datepicker'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

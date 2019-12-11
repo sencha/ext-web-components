@@ -172,9 +172,9 @@ export default class Ext_ux_colorpick_SliderAlpha extends Ext_ux_colorpick_Slide
 //events
 ////configs
 //
-//static XTYPE() {return 'colorpickerslideralpha'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

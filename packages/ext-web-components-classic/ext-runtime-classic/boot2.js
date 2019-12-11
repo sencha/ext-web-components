@@ -2,6 +2,7 @@
 
 var Ext = Ext || {};
 
+
 //<editor-fold desc="Boot">
 /**
  * @class Ext.Boot
@@ -1942,6 +1943,7 @@ Ext.Microloader = Ext.Microloader || (function () {
         };
 
         var Manifest = function (cfg) {
+          return
             if (typeof cfg.content === "string") {
                 this.content = JSON.parse(cfg.content);
             } else {
@@ -1981,11 +1983,8 @@ Ext.Microloader = Ext.Microloader || (function () {
             }
 
             // Convert all assets into Assets
-            //mjg
-            //this.js = this.processAssets(this.content.js, 'js');
-            //this.css = this.processAssets(this.content.css, 'css');
-            this.js = [];
-            this.css = [];
+            this.js = this.processAssets(this.content.js, 'js');
+            this.css = this.processAssets(this.content.css, 'css');
         };
 
         Manifest.prototype = {
@@ -2019,6 +2018,7 @@ Ext.Microloader = Ext.Microloader || (function () {
 
             // Concatenate all assets for easy access
             getAssets: function () {
+              return []
                 return this.css.concat(this.js);
             },
 
@@ -2104,6 +2104,8 @@ Ext.Microloader = Ext.Microloader || (function () {
             run: function() {
                 Microloader.init();
                 var manifest = Ext.manifest;
+                Microloader.setManifest({});
+                return
 
                 if (typeof manifest === "string") {
                     var extension = ".json",
@@ -2136,12 +2138,11 @@ Ext.Microloader = Ext.Microloader || (function () {
                             Boot.load(Manifest.url);
                         }
                         else {
-                            Manifest.url = url;
-                            //mjg
-                            // Boot.fetch(Microloader.applyCacheBuster(url), function(result) {
-                            //     Microloader.setManifest(result.content);
-                            // });
-                            Microloader.setManifest({})
+                          //Manifest.url = url;
+                          Microloader.setManifest({});
+                          // Boot.fetch(Microloader.applyCacheBuster(url), function(result) {
+                          //     Microloader.setManifest(result.content);
+                          // });
                         }
                     }
 

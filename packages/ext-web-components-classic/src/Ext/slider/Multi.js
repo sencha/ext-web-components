@@ -226,9 +226,9 @@ export default class Ext_slider_Multi extends Ext_form_field_Base {
 //events
 ////configs
 //
-//static XTYPE() {return 'multislider'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

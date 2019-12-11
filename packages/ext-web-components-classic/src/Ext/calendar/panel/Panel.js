@@ -261,9 +261,9 @@ export default class Ext_calendar_panel_Panel extends Ext_calendar_panel_Abstrac
 //events
 ////configs
 //
-//static XTYPE() {return 'calendar'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -255,9 +255,9 @@ export default class Ext_menu_ColorPicker extends Ext_menu_Menu {
 //events
 ////configs
 //
-//static XTYPE() {return 'colormenu'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

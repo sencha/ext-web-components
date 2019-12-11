@@ -152,9 +152,9 @@ function (_Ext_ux_form_MultiSel) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'itemselector'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

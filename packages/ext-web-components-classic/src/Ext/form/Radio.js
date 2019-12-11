@@ -222,9 +222,9 @@ export default class Ext_form_Radio extends Ext_form_field_Checkbox {
 //events
 ////configs
 //
-//static XTYPE() {return 'radio'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

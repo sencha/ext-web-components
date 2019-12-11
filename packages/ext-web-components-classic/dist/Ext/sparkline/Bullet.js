@@ -65,9 +65,9 @@ function (_Ext_sparkline_Base) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'sparklinebullet'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

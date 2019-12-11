@@ -266,9 +266,9 @@ export default class Ext_form_Panel extends Ext_panel_Panel {
 //events
 ////configs
 //
-//static XTYPE() {return 'form'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

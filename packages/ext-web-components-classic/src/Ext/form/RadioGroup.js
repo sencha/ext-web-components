@@ -227,9 +227,9 @@ export default class Ext_form_RadioGroup extends Ext_form_CheckboxGroup {
 //events
 ////configs
 //
-//static XTYPE() {return 'radiogroup'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

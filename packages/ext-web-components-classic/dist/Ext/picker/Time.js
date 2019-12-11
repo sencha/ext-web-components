@@ -284,9 +284,9 @@ function (_Ext_view_BoundList) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'timepicker'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

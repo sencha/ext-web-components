@@ -76,7 +76,7 @@ function (_Ext_d3_hierarchy_Hie) {
   //
   //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

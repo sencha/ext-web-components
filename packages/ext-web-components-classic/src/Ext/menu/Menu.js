@@ -252,9 +252,9 @@ export default class Ext_menu_Menu extends Ext_panel_Panel {
 //events
 ////configs
 //
-//static XTYPE() {return 'menu'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

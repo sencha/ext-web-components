@@ -246,9 +246,9 @@ export default class Ext_slider_Tip extends Ext_tip_Tip {
 //events
 ////configs
 //
-//static XTYPE() {return 'slidertip'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

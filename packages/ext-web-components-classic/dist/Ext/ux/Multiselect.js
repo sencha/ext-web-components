@@ -152,9 +152,9 @@ function (_Ext_form_FieldContai) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'multiselect'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

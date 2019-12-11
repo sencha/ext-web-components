@@ -74,9 +74,9 @@ function (_Ext_d3_hierarchy_Hie) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'd3-partition'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

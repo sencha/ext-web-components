@@ -222,9 +222,9 @@ export default class Ext_grid_column_Column extends Ext_grid_header_Container {
 //events
 ////configs
 //
-//static XTYPE() {return 'gridcolumn'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

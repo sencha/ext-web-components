@@ -75,9 +75,9 @@ export default class Ext_calendar_Event extends Ext_calendar_EventBase {
 //events
 ////configs
 //
-//static XTYPE() {return 'calendar-event'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

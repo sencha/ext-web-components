@@ -253,9 +253,9 @@ export default class Ext_menu_Bar extends Ext_menu_Menu {
 //events
 ////configs
 //
-//static XTYPE() {return 'menubar'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

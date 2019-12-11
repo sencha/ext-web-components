@@ -167,9 +167,9 @@ function (_Ext_form_field_Picke) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'combo'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

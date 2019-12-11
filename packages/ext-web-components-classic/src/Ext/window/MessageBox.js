@@ -259,9 +259,9 @@ export default class Ext_window_MessageBox extends Ext_window_Window {
 //events
 ////configs
 //
-//static XTYPE() {return 'messagebox'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

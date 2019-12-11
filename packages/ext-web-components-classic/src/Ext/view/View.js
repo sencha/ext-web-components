@@ -226,9 +226,9 @@ export default class Ext_view_View extends Ext_view_AbstractView {
 //events
 ////configs
 //
-//static XTYPE() {return 'dataview'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

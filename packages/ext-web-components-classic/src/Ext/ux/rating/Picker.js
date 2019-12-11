@@ -79,9 +79,9 @@ export default class Ext_ux_rating_Picker extends Ext_Gadget {
 //events
 ////configs
 //
-//static XTYPE() {return 'rating'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

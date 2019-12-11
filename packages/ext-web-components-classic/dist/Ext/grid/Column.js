@@ -164,9 +164,9 @@ function (_Ext_grid_header_Cont) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'gridcolumn'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

@@ -287,9 +287,9 @@ export default class Ext_calendar_form_CalendarPicker extends Ext_form_field_Com
 //events
 ////configs
 //
-//static XTYPE() {return 'calendar-calendar-picker'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

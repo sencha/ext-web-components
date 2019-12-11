@@ -1,5 +1,6 @@
 import EleBaseComponent from './ele-base';
-import HTMLParsedElement from './HTMLParsedElement.js';
+import ElementParser from './ElementParser.js';
+
 import {
     //doProp,
     //filterProp,
@@ -171,7 +172,7 @@ export class ExtRouter extends EleBaseComponent {
         }
     }
 }
-window.customElements.define('ext-router', HTMLParsedElement.withParsedCallback(ExtRouter))
+window.customElements.define('ext-router', ElementParser.withParsedCallback(ExtRouter))
 
 export function getRoutes(items) {
     //mjg clean this up

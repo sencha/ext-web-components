@@ -125,9 +125,9 @@ function (_Ext_menu_Item) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'menuseparator'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

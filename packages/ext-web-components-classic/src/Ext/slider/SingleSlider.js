@@ -227,9 +227,9 @@ export default class Ext_slider_SingleSlider extends Ext_slider_Multi {
 //events
 ////configs
 //
-//static XTYPE() {return 'sliderfield'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -181,9 +181,9 @@ export default class Ext_toolbar_Toolbar extends Ext_container_Container {
 //events
 ////configs
 //
-//static XTYPE() {return 'toolbar'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

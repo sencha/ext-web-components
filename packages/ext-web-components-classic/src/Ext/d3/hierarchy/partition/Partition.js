@@ -94,9 +94,9 @@ export default class Ext_d3_hierarchy_partition_Partition extends Ext_d3_hierarc
 //events
 ////configs
 //
-//static XTYPE() {return 'd3-partition'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

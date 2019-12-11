@@ -174,7 +174,7 @@ export default class Ext_panel_Bar extends Ext_container_Container {
 //
 //static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -154,9 +154,9 @@ export default class Ext_ColorPalette extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'colorpicker'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

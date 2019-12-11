@@ -178,7 +178,7 @@ export default class Ext_view_AbstractView extends Ext_Component {
 //
 //static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

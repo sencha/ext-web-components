@@ -152,9 +152,9 @@ function (_Ext_form_CheckboxGro) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'radiogroup'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

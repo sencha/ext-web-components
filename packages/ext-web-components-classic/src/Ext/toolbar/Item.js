@@ -147,9 +147,9 @@ export default class Ext_toolbar_Item extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'tbitem'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -209,9 +209,9 @@ function (_Ext_form_Panel) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'roweditor'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

@@ -258,9 +258,9 @@ export default class Ext_ux_TreePicker extends Ext_form_field_Picker {
 //events
 ////configs
 //
-//static XTYPE() {return 'treepicker'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

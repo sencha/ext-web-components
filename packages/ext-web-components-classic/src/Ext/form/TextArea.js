@@ -247,9 +247,9 @@ export default class Ext_form_TextArea extends Ext_form_field_Text {
 //events
 ////configs
 //
-//static XTYPE() {return 'textarea'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

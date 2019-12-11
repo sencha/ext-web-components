@@ -245,9 +245,9 @@ export default class Ext_view_MultiSelectorSearch extends Ext_panel_Panel {
 //events
 ////configs
 //
-//static XTYPE() {return 'multiselector-search'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

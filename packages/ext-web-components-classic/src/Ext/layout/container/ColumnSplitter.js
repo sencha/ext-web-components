@@ -155,9 +155,9 @@ export default class Ext_layout_container_ColumnSplitter extends Ext_resizer_Spl
 //events
 ////configs
 //
-//static XTYPE() {return 'columnsplitter'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

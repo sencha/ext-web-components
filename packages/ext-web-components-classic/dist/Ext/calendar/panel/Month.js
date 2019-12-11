@@ -221,9 +221,9 @@ function (_Ext_calendar_panel_W) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'calendar-month'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

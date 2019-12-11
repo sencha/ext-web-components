@@ -230,9 +230,9 @@ function (_Ext_calendar_panel_D) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'calendar-day'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

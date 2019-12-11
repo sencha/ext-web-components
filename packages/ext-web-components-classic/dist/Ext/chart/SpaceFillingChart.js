@@ -260,9 +260,9 @@ function (_Ext_chart_AbstractCh) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'spacefilling'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

@@ -298,9 +298,9 @@ export default class Ext_form_field_Time extends Ext_form_field_ComboBox {
 //events
 ////configs
 //
-//static XTYPE() {return 'timefield'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

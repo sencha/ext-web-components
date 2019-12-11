@@ -155,9 +155,9 @@ export default class Ext_resizer_Splitter extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'splitter'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

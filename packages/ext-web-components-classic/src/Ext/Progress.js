@@ -69,9 +69,9 @@ export default class Ext_Progress extends Ext_Gadget {
 //events
 ////configs
 //
-//static XTYPE() {return 'progressbarwidget'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

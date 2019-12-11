@@ -223,9 +223,9 @@ export default class Ext_grid_NumberColumn extends Ext_grid_column_Column {
 //events
 ////configs
 //
-//static XTYPE() {return 'numbercolumn'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

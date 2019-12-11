@@ -65,9 +65,9 @@ function (_Ext_list_AbstractTre) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'treelistitem'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

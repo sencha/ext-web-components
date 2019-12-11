@@ -140,9 +140,9 @@ function (_Ext_container_Contai) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'segmentedbutton'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

@@ -72,9 +72,9 @@ export default class Ext_d3_canvas_Canvas extends Ext_d3_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'd3-canvas'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

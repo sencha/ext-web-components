@@ -172,9 +172,9 @@ export default class Ext_ux_colorpick_SliderHue extends Ext_ux_colorpick_Slider 
 //events
 ////configs
 //
-//static XTYPE() {return 'colorpickersliderhue'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

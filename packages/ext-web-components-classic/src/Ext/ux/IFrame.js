@@ -146,9 +146,9 @@ export default class Ext_ux_IFrame extends Ext_Component {
 //events
 ////configs
 //
-//static XTYPE() {return 'uxiframe'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

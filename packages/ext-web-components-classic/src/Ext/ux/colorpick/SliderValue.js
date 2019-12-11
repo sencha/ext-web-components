@@ -172,9 +172,9 @@ export default class Ext_ux_colorpick_SliderValue extends Ext_ux_colorpick_Slide
 //events
 ////configs
 //
-//static XTYPE() {return 'colorpickerslidervalue'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

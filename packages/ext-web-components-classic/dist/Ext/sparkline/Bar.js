@@ -65,9 +65,9 @@ function (_Ext_sparkline_BarBas) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'sparklinebar'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

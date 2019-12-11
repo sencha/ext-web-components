@@ -272,9 +272,9 @@ export default class Ext_form_Date extends Ext_form_field_Picker {
 //events
 ////configs
 //
-//static XTYPE() {return 'datefield'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

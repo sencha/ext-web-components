@@ -80,9 +80,9 @@ export default class Ext_sparkline_TriState extends Ext_sparkline_BarBase {
 //events
 ////configs
 //
-//static XTYPE() {return 'sparklinetristate'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

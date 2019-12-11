@@ -99,7 +99,7 @@ export default class Ext_d3_hierarchy_tree_Tree extends Ext_d3_hierarchy_Hierarc
 //
 //static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

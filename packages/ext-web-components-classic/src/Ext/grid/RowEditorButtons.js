@@ -172,9 +172,9 @@ export default class Ext_grid_RowEditorButtons extends Ext_container_Container {
 //events
 ////configs
 //
-//static XTYPE() {return 'roweditorbuttons'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

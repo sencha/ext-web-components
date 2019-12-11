@@ -116,9 +116,9 @@ function (_Ext_resizer_Splitter) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'bordersplitter'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

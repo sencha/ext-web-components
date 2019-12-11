@@ -79,9 +79,9 @@ export default class Ext_list_Tree extends Ext_Gadget {
 //events
 ////configs
 //
-//static XTYPE() {return 'treelist'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

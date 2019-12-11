@@ -188,9 +188,9 @@ export default class Ext_form_FieldSet extends Ext_container_Container {
 //events
 ////configs
 //
-//static XTYPE() {return 'fieldset'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -400,9 +400,9 @@ export default class Ext_grid_property_Grid extends Ext_grid_Panel {
 //events
 ////configs
 //
-//static XTYPE() {return 'propertygrid'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

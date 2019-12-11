@@ -284,9 +284,9 @@ function (_Ext_view_View) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'boundlist'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

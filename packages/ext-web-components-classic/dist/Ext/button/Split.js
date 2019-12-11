@@ -155,9 +155,9 @@ function (_Ext_button_Button) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'splitbutton'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

@@ -167,9 +167,9 @@ function (_Ext_form_field_Combo) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'calendar-calendar-picker'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

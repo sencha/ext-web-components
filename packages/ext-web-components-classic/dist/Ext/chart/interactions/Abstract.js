@@ -29,9 +29,9 @@ function (_Ext_Base) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'interaction'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

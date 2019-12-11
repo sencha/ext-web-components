@@ -220,7 +220,7 @@ function (_Ext_calendar_panel_A) {
   //
   //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

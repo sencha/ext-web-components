@@ -259,9 +259,9 @@ export default class Ext_draw_Container extends Ext_draw_ContainerBase {
 //events
 ////configs
 //
-//static XTYPE() {return 'draw'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

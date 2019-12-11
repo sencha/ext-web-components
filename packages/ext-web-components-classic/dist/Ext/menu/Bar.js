@@ -200,9 +200,9 @@ function (_Ext_menu_Menu) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'menubar'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

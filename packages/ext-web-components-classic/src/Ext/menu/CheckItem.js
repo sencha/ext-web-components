@@ -178,9 +178,9 @@ export default class Ext_menu_CheckItem extends Ext_menu_Item {
 //events
 ////configs
 //
-//static XTYPE() {return 'menucheckitem'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -183,9 +183,9 @@ export default class Ext_ux_colorpick_Selector extends Ext_container_Container {
 //events
 ////configs
 //
-//static XTYPE() {return 'colorselector'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

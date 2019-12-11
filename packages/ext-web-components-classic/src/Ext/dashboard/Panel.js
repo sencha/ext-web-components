@@ -242,9 +242,9 @@ export default class Ext_dashboard_Panel extends Ext_panel_Panel {
 //events
 ////configs
 //
-//static XTYPE() {return 'dashboard-panel'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

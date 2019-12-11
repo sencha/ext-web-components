@@ -188,9 +188,9 @@ function (_Ext_pivot_d3_Abstrac) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'pivotd3container'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

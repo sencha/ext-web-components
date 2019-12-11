@@ -116,9 +116,9 @@ function (_Ext_Base) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'box'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

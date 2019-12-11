@@ -104,9 +104,9 @@ function (_Ext_calendar_view_Ba) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'calendar-weeksview'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

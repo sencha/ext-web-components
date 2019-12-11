@@ -206,9 +206,9 @@ export default class Ext_form_field_Hidden extends Ext_form_field_Base {
 //events
 ////configs
 //
-//static XTYPE() {return 'hidden'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

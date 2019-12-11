@@ -71,9 +71,9 @@ export default class Ext_slider_Widget extends Ext_Widget {
 //events
 ////configs
 //
-//static XTYPE() {return 'sliderwidget'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

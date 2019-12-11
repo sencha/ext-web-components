@@ -71,9 +71,9 @@ function (_Ext_d3_Component) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'd3'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;

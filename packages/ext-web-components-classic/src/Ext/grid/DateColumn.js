@@ -223,9 +223,9 @@ export default class Ext_grid_DateColumn extends Ext_grid_column_Column {
 //events
 ////configs
 //
-//static XTYPE() {return 'datecolumn'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

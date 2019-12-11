@@ -226,9 +226,9 @@ export default class Ext_grid_column_Widget extends Ext_grid_column_Column {
 //events
 ////configs
 //
-//static XTYPE() {return 'widgetcolumn'}
+//static XTYPE() {return ''}
 //static PROPERTIESOBJECT() { return {
-//[object Object]}}
+//}}
 
 //static METHODS() { return [
 //]}

@@ -35,9 +35,9 @@ function (_Ext_chart_axis_Axis) {
   } //events
   ////configs
   //
-  //static XTYPE() {return 'axis3d'}
+  //static XTYPE() {return ''}
   //static PROPERTIESOBJECT() { return {
-  //[object Object]}}
+  //}}
   //static METHODS() { return [
   //]}
   ;
