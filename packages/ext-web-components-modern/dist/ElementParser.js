@@ -104,10 +104,10 @@ var ElementParser = function () {
         connectedCallback: {
           configurable: true,
           value: function value() {
-            if (connectedCallback) var me = this;
-            Ext.onReady(function () {
-              connectedCallback.apply(me, arguments);
-            }); //connectedCallback.apply(this, arguments);
+            if (connectedCallback) var me = this; //Ext.onReady(function() {
+
+            connectedCallback.apply(me, arguments); //});
+            //connectedCallback.apply(this, arguments);
 
             if (method in this && !init.has(this)) {
               var self = this;
@@ -115,9 +115,9 @@ var ElementParser = function () {
               init.set(self, false);
 
               if (ownerDocument.readyState === 'complete' || isParsed(self)) {
-                Ext.onReady(function () {
-                  parsedCallback(self);
-                }); //parsedCallback(self);
+                //Ext.onReady(function() {
+                parsedCallback(self); //});
+                //parsedCallback(self);
               } else {
                 var onDCL = function onDCL() {
                   return cleanUp(self, observer, ownerDocument, onDCL);
