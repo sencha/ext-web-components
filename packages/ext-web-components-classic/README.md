@@ -1,6 +1,6 @@
 ## @sencha/ext-web-components-classic
 
-last run: Wed Dec 11 2019 07:38:00 GMT-0500 (Eastern Standard Time)
+last run: Wed Dec 11 2019 08:41:06 GMT-0500 (Eastern Standard Time)
 
 ## Login to the Sencha early adopter npm repo
 
@@ -37,7 +37,7 @@ cd ext-web-components-classic-demo
   },
   "devDependencies": {
     "@sencha/ext-web-components-classic": "~7.1.0",
-    "http-server": "^0.11.1"
+    "http-server": "^0.12.0"
   },
   "author": "",
   "license": "ISC",

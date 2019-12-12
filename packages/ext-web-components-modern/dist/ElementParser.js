@@ -3,33 +3,6 @@ import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
 
 var ElementParser = function () {
   if (window['Ext'] == undefined) {
-    var getIndicesOf = function getIndicesOf(searchStr, str, caseSensitive) {
-      var searchStrLen = searchStr.length;
-
-      if (searchStrLen == 0) {
-        return [];
-      }
-
-      var startIndex = 0,
-          index,
-          indices = [];
-
-      if (!caseSensitive) {
-        str = str.toLowerCase();
-        searchStr = searchStr.toLowerCase();
-      }
-
-      while ((index = str.indexOf(searchStr, startIndex)) > -1) {
-        indices.push(index);
-        startIndex = index + searchStrLen;
-      }
-
-      return indices;
-    }; //var indices = getIndicesOf("/", import.meta.url);
-    //var rootPath = import.meta.url.substring(0,indices[indices.length-2])
-    //var baseFolder = rootPath + "/ext-runtime-" + toolkit;
-
-
     console.warn('Ext engine and theme not defined in index.html');
     console.warn('Deprecation below is expected');
     console.warn('Click the following link for discussion on how to resolve');
@@ -37,12 +10,12 @@ var ElementParser = function () {
     var toolkit = 'modern';
     var baseFolder = "../ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
     var xhrObj = new XMLHttpRequest();
-    xhrObj.open('GET', baseFolder + "/engine.js", false);
+    xhrObj.open('GET', baseFolder + "/boot.js", false);
     xhrObj.send(''); // console.log(xhrObj.status)
 
     if (xhrObj.status == 404) {
       baseFolder = "./node_modules/@sencha/ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
-      xhrObj.open('GET', baseFolder + "/engine.js", false);
+      xhrObj.open('GET', baseFolder + "/boot.js", false);
       xhrObj.send('');
     } // console.log(xhrObj.status)
 
@@ -56,12 +29,21 @@ var ElementParser = function () {
     se.type = "text/javascript";
     se.text = xhrObj.responseText;
     document.getElementsByTagName('head')[0].appendChild(se);
+    console.warn(baseFolder + "/boot.js" + " " + "was dynamically loaded");
+    xhrObj.open('GET', baseFolder + "/engine.js", false);
+    xhrObj.send('');
+    var se1 = document.createElement('script');
+    se1.type = "text/javascript";
+    se1.text = xhrObj.responseText;
+    document.getElementsByTagName('head')[0].appendChild(se1);
+    console.warn(baseFolder + "/engine.js" + " " + "was dynamically loaded");
     xhrObj.open('GET', baseFolder + "/css.prod.js", false);
     xhrObj.send('');
     var se2 = document.createElement('script');
     se2.type = "text/javascript";
     se2.text = xhrObj.responseText;
     document.getElementsByTagName('head')[0].appendChild(se2);
+    console.warn(baseFolder + "/css.prod.js" + " " + "was dynamically loaded");
   }
 
   var DCL = 'DOMContentLoaded';
@@ -209,3 +191,20 @@ var framework = 'modern'; //var list= document.all;
 //    }
 //  }
 //}
+//function getIndicesOf(searchStr, str, caseSensitive) {
+//  var searchStrLen = searchStr.length;
+//  if (searchStrLen == 0) {return [];}
+//  var startIndex = 0, index, indices = [];
+//  if (!caseSensitive) {
+//    str = str.toLowerCase();
+//    searchStr = searchStr.toLowerCase();
+//  }
+//  while ((index = str.indexOf(searchStr, startIndex)) > -1) {
+//    indices.push(index);
+//    startIndex = index + searchStrLen;
+//  }
+//  return indices;
+//}
+//var indices = getIndicesOf("/", import.meta.url);
+//var rootPath = import.meta.url.substring(0,indices[indices.length-2])
+//var baseFolder = rootPath + "/ext-runtime-" + toolkit;
