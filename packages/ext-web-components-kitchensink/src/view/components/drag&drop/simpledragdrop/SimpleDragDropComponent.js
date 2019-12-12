@@ -1,9 +1,17 @@
 import './SimpleDragDropComponent.html';
-import { extnameToProperty } from '@sencha/ext-web-components-modern/src/util.js';
 
 export default class SimpleDragDropComponent {
+    extnameToProperty = (cmpObj, me, suffix) => {
+        if (suffix == undefined) {
+            suffix = 'Cmp';
+        }
+        for (var prop in cmpObj) {
+            me[prop+suffix] = cmpObj[prop];
+        }
+    }
+
     onReadyParent = ({ detail: { cmpObj } }) => {
-        extnameToProperty(cmpObj, this);
+        this.extnameToProperty(cmpObj, this);
         this.source = new Ext.drag.Source({
             element: this.itemCmp.el,
             constrain: this.parentCmp.el,
