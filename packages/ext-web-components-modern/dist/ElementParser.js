@@ -104,7 +104,10 @@ var ElementParser = function () {
         connectedCallback: {
           configurable: true,
           value: function value() {
-            if (connectedCallback) connectedCallback.apply(this, arguments);
+            if (connectedCallback) var me = this;
+            Ext.onReady(function () {
+              connectedCallback.apply(me, arguments);
+            }); //connectedCallback.apply(this, arguments);
 
             if (method in this && !init.has(this)) {
               var self = this;
@@ -112,39 +115,9 @@ var ElementParser = function () {
               init.set(self, false);
 
               if (ownerDocument.readyState === 'complete' || isParsed(self)) {
-                parsedCallback(self); // //console.log(window.Ext);
-                // if (window.Ext == undefined) {
-                //     var striptTag = document.createElement('script');
-                //     striptTag.type = 'text/javascript';
-                //     striptTag.src = './node_modules/@sencha/ext-runtime-modern-base/engine.js';
-                //     striptTag.onload = function() {
-                //       var cssStriptTag = document.createElement('script');
-                //       cssStriptTag.type = 'text/javascript';
-                //       cssStriptTag.src = './node_modules/@sencha/ext-runtime-modern-base/css.prod.js';
-                //       cssStriptTag.onload = function() {
-                //         console.log('load done');
-                //         Ext.onReady(function() {
-                //             parsedCallback(self);
-                //         });
-                //     };
-                //     document.getElementsByTagName('head')[0].appendChild(cssStriptTag);
-                //         // var linkTag = document.createElement('link');
-                //         // linkTag.rel = 'stylesheet';
-                //         // linkTag.type = 'text/css';
-                //         // linkTag.href = './node_modules/@sencha/ext-runtime-base/theme/material/material-all.css';
-                //         // linkTag.onload = function() {
-                //         //     console.log('load done');
-                //         //     Ext.onReady(function() {
-                //         //         parsedCallback(self);
-                //         //     });
-                //         // };
-                //         // document.getElementsByTagName('head')[0].appendChild(linkTag);
-                //     };
-                //     document.getElementsByTagName('head')[0].appendChild(striptTag);
-                // }
-                // else {
-                //     parsedCallback(self);
-                // }
+                Ext.onReady(function () {
+                  parsedCallback(self);
+                }); //parsedCallback(self);
               } else {
                 var onDCL = function onDCL() {
                   return cleanUp(self, observer, ownerDocument, onDCL);

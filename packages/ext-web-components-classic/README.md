@@ -1,6 +1,6 @@
 ## @sencha/ext-web-components-classic
 
-last run: Wed Dec 11 2019 08:41:06 GMT-0500 (Eastern Standard Time)
+last run: Thu Dec 12 2019 07:05:40 GMT-0500 (Eastern Standard Time)
 
 ## Login to the Sencha early adopter npm repo
 
@@ -70,8 +70,8 @@ cd ext-web-components-classic-demo
 </script>
 
 <body>
-  <ext-toolbar>
-    <ext-button text="get now" shadow="true" ontap="getNow"></ext-button>
+  <ext-toolbar border="1">
+    <ext-button text="get now" border="1" onclick="getNow"></ext-button>
     <div id='updateDiv' style="margin-left:20px;"></div>
   </ext-toolbar>
 </body>
