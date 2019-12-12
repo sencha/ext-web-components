@@ -1,4 +1,4 @@
-//Wed Dec 11 2019 07:12:52 GMT-0500 (Eastern Standard Time)
+//Thu Dec 12 2019 05:39:03 GMT-0500 (Eastern Standard Time)
 
 import {
   doProp,
@@ -103,17 +103,19 @@ export default class EleBaseComponent extends HTMLElement {
       }
 
 
+    me.newDoExtCreate(me, me.A.o['viewport']);
+    //me.doChildren(me);
 
-    if (Ext.env.Ready.firing == false) {
-      this.onReadyNeeded = true
-      Ext.onReady(function () {
-        me.newDoExtCreate(me, me.A.o['viewport']);
-          me.doChildren(me);
-      });
-    } else {
-      this.onReadyNeeded = false
-      me.newDoExtCreate(me, me.A.o['viewport']);
-    }
+    //if (Ext.env.Ready.firing == false) {
+    //  this.onReadyNeeded = true
+    //  Ext.onReady(function () {
+    //    me.newDoExtCreate(me, me.A.o['viewport']);
+    //      me.doChildren(me);
+    //  });
+    //} else {
+    //  this.onReadyNeeded = false
+    //  me.newDoExtCreate(me, me.A.o['viewport']);
+    //}
   }
 
   newCreateProps(properties) {
@@ -292,9 +294,9 @@ export default class EleBaseComponent extends HTMLElement {
 
 
 
-    if (this.onReadyNeeded == false) {
+    //if (this.onReadyNeeded == false) {
       this.doChildren(this);
-    }
+    //}
 
 
 
