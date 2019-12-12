@@ -89,56 +89,25 @@ const ElementParser = (() => {
                         configurable: true,
                         value() {
                             if (connectedCallback)
-                                connectedCallback.apply(this, arguments);
+
+                                var me = this;
+                                //Ext.onReady(function() {
+                                  connectedCallback.apply(me, arguments);
+                                //});
+                                //connectedCallback.apply(this, arguments);
+
                             if (method in this && !init.has(this)) {
                                 const self = this;
                                 const { ownerDocument } = self;
                                 init.set(self, false);
                                 if (ownerDocument.readyState === 'complete' || isParsed(self))
                                 {
-                                  parsedCallback(self);
 
-                                    // //console.log(window.Ext);
-                                    // if (window.Ext == undefined) {
-                                    //     var striptTag = document.createElement('script');
-                                    //     striptTag.type = 'text/javascript';
-                                    //     striptTag.src = './node_modules/@sencha/ext-runtime-modern-base/engine.js';
-                                    //     striptTag.onload = function() {
+                                  //Ext.onReady(function() {
+                                    parsedCallback(self);
+                                  //});
+                                  //parsedCallback(self);
 
-                                    //       var cssStriptTag = document.createElement('script');
-                                    //       cssStriptTag.type = 'text/javascript';
-                                    //       cssStriptTag.src = './node_modules/@sencha/ext-runtime-modern-base/css.prod.js';
-                                    //       cssStriptTag.onload = function() {
-                                    //         console.log('load done');
-                                    //         Ext.onReady(function() {
-                                    //             parsedCallback(self);
-                                    //         });
-                                    //     };
-                                    //     document.getElementsByTagName('head')[0].appendChild(cssStriptTag);
-
-
-
-
-                                    //         // var linkTag = document.createElement('link');
-                                    //         // linkTag.rel = 'stylesheet';
-                                    //         // linkTag.type = 'text/css';
-                                    //         // linkTag.href = './node_modules/@sencha/ext-runtime-base/theme/material/material-all.css';
-                                    //         // linkTag.onload = function() {
-                                    //         //     console.log('load done');
-                                    //         //     Ext.onReady(function() {
-                                    //         //         parsedCallback(self);
-                                    //         //     });
-                                    //         // };
-                                    //         // document.getElementsByTagName('head')[0].appendChild(linkTag);
-
-
-
-                                    //     };
-                                    //     document.getElementsByTagName('head')[0].appendChild(striptTag);
-                                    // }
-                                    // else {
-                                    //     parsedCallback(self);
-                                    // }
                                 }
                                 else {
                                     const onDCL = () => cleanUp(self, observer, ownerDocument, onDCL);
