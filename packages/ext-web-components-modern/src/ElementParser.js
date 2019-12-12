@@ -91,9 +91,9 @@ const ElementParser = (() => {
                             if (connectedCallback)
 
                                 var me = this;
-                                Ext.onReady(function() {
+                                //Ext.onReady(function() {
                                   connectedCallback.apply(me, arguments);
-                                });
+                                //});
                                 //connectedCallback.apply(this, arguments);
 
                             if (method in this && !init.has(this)) {
@@ -103,11 +103,11 @@ const ElementParser = (() => {
                                 if (ownerDocument.readyState === 'complete' || isParsed(self))
                                 {
 
-                                  Ext.onReady(function() {
+                                  //Ext.onReady(function() {
                                     parsedCallback(self);
-                                  });
+                                  //});
                                   //parsedCallback(self);
-                                  
+
                                 }
                                 else {
                                     const onDCL = () => cleanUp(self, observer, ownerDocument, onDCL);
