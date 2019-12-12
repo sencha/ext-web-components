@@ -1,13 +1,13 @@
-export function extnameToProperty(cmpObj, me, suffix) {
-//export function extnameToProperty(event, me, suffix) {
-//  var cmpObj = event.detail.cmpObj
-  if (suffix == undefined) {
-    suffix = 'Cmp'
-  }
-  for (var prop in cmpObj) {
-      me[prop+suffix] = cmpObj[prop];
-  }
-}
+// export function extnameToProperty(cmpObj, me, suffix) {
+// //export function extnameToProperty(event, me, suffix) {
+// //  var cmpObj = event.detail.cmpObj
+//   if (suffix == undefined) {
+//     suffix = 'Cmp'
+//   }
+//   for (var prop in cmpObj) {
+//       me[prop+suffix] = cmpObj[prop];
+//   }
+// }
 
 export function doProp(me, prop) {
   try {

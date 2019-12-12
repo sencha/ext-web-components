@@ -1,4 +1,3 @@
-import { extnameToProperty } from '@sencha/ext-web-components-modern/src/util.js';
 import hljs from 'highlightjs';
 import 'highlightjs/styles/atom-one-dark.css';
 import './MainComponent.css';
@@ -24,13 +23,22 @@ export default class MainComponent {
         }
     }
 
+    extnameToProperty = (cmpObj, me, suffix) => {
+        if (suffix == undefined) {
+            suffix = 'Cmp';
+        }
+        for (var prop in cmpObj) {
+            me[prop+suffix] = cmpObj[prop];
+        }
+    }
+
     viewportReady = event => {
         console.log('readyViewport - mainComponent');
         this.navInProcess = false;
 
-        console.log(event)
+        console.log(event);
         //find a way for this to be run automatically
-        extnameToProperty(event.detail.cmpObj, this, '');
+        this.extnameToProperty(event.detail.cmpObj, this, '');
 
         //extnameToProperty(['all'], event, this, '');
         this.rightContainer.updateHtml('Build: ' + BUILD_VERSION); // eslint-disable-line no-undef
