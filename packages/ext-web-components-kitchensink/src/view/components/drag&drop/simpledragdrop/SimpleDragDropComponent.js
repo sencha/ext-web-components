@@ -1,17 +1,14 @@
 import './SimpleDragDropComponent.html';
 
 export default class SimpleDragDropComponent {
-    extnameToProperty = (cmpObj, me, suffix) => {
-        if (suffix == undefined) {
-            suffix = 'Cmp';
-        }
+    extnameToProperty = (cmpObj) => {
         for (var prop in cmpObj) {
-            me[prop+suffix] = cmpObj[prop];
+            this[prop] = cmpObj[prop];
         }
     }
 
     onReadyParent = ({ detail: { cmpObj } }) => {
-        this.extnameToProperty(cmpObj, this);
+        this.extnameToProperty(cmpObj);
         this.source = new Ext.drag.Source({
             element: this.itemCmp.el,
             constrain: this.parentCmp.el,
@@ -30,7 +27,7 @@ export default class SimpleDragDropComponent {
     onDragMove = (source, info) => {
         const pos = info.element.current;
         const html = Ext.String.format(
-            "X: {0}, Y: {1}",
+            'X: {0}, Y: {1}',
             Math.round(pos.x),
             Math.round(pos.y)
         );
