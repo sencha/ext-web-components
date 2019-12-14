@@ -1,6 +1,6 @@
 ## @sencha/ext-web-components-modern
 
-last run: Thu Dec 12 2019 14:33:18 GMT-0500 (Eastern Standard Time)
+last run: Sat Dec 14 2019 10:37:03 GMT-0500 (Eastern Standard Time)
 
 ## Login to the Sencha early adopter npm repo
 
@@ -57,10 +57,10 @@ cd ext-web-components-modern-demo
 </head>
 
 <script type="module"
-  src="./node_modules/@sencha/ext-web-components-modern/src/ext-toolbar.component.js">
+src="./node_modules/@sencha/ext-web-components-modern/src/ext-toolbar.component.js">
 </script>
 <script type="module"
-  src="./node_modules/@sencha/ext-web-components-modern/src/ext-button.component.js">
+src="./node_modules/@sencha/ext-web-components-modern/src/ext-button.component.js">
 </script>
 
 <script>
