@@ -5,8 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, user-scalable=yes">
   <title>ExtWebComponents 7.1 Kitchen Sink</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.6.11/core.min.js"></script>
-  <script src="webcomponents-bundle.js"></script>
+  <script>
+    function isIE11() {
+      return !!window.MSInputMethodContext && !!document.documentMode;
+    }
+
+    function addWebComponents() {
+      var scriptTemp2 = document.createElement( 'script' );
+      scriptTemp2.setAttribute( 'src', 'webcomponents-bundle.js' );
+      document.head.appendChild(scriptTemp2);
+    }
+
+    if (isIE11()) {
+      var scriptTemp1 = document.createElement( 'script' );
+      scriptTemp1.setAttribute( 'src', 'https://cdnjs.cloudflare.com/ajax/libs/core-js/2.6.11/core.min.js' );
+      scriptTemp1.onload=addWebComponents;
+      document.head.appendChild(scriptTemp1);
+    } else {
+      addWebComponents();
+    }
+  </script>
   <script src="resources/code.js"></script>
   <link rel="icon" type="image/x-icon" href="resources/favicon.ico">
   <link href="resources/loader.css" rel='stylesheet'/>
