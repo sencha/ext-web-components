@@ -10,8 +10,8 @@ export default class SimpleDragDropComponent {
     onReadyParent = ({ detail: { cmpObj } }) => {
         this.extnameToProperty(cmpObj);
         this.source = new Ext.drag.Source({
-            element: this.itemCmp.el,
-            constrain: this.parentCmp.el,
+            element: this.item.el,
+            constrain: this.parent.el,
             listeners: {
                 dragstart: this.onDragStart,
                 dragmove: this.onDragMove,
@@ -31,11 +31,11 @@ export default class SimpleDragDropComponent {
             Math.round(pos.x),
             Math.round(pos.y)
         );
-        this.itemCmp.setHtml(html);
+        this.item.setHtml(html);
     };
 
     onDragEnd = () => {
-        this.itemCmp.setHtml("Drag Me!");
+        this.item.setHtml("Drag Me!");
     };
 
     doDestroy = () => {

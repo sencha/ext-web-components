@@ -22,23 +22,23 @@ export default class NeedleGaugeComponent {
     }
 
     item1Ready = (event) => {
-        console.log(event)
+        //console.log(event)
         this.gauge1Cmp = event.detail.cmp;
         this.gauge1Cmp.setNeedle(this.outerradius);
     }
 
     item2Ready = (event) => {
-        console.log(event)
+        //console.log(event)
         this.gauge2Cmp = event.detail.cmp;
     }
 
     item3Ready = (event) => {
-        console.log(event)
+        //console.log(event)
         this.gauge3Cmp = event.detail.cmp;
     }
 
     item4Ready = (event) => {
-        console.log(event)
+        //console.log(event)
         this.gauge4Cmp = event.detail.cmp;
         this.gauge4Cmp.setNeedle(this.innerradius);
     }
