@@ -235,6 +235,7 @@ export default class MainComponent {
             this.tabPanel.add({
                 xtype: 'panel',
                 title: file,
+
                 ui: 'code-panel',
                 layout: 'fit',
                 userSelectable: true,

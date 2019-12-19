@@ -2,7 +2,6 @@ import './ConstraintsDragDropComponent.scss';
 import './ConstraintsDragDropComponent.html';
 
 export default class ConstraintsDragDropComponent {
-    constructor() {}
 
     doDestroy = () => {
         this.sources.forEach(Ext.destroy.bind(Ext));
