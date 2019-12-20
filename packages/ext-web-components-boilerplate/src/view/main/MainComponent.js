@@ -14,9 +14,9 @@ export default class MainComponent {
         });
         this.collapsed = false;
         this.isInitial = true;
-        if (Ext.os.is.Phone) {
-            this.collapsed = true;
-        }
+        // if (Ext.os.is.Phone) {
+        //     this.collapsed = true;
+        // }
     }
 
     extnameToProperty = (cmpObj, me, suffix) => {
@@ -26,56 +26,25 @@ export default class MainComponent {
       for (var prop in cmpObj) {
           me[prop+suffix] = cmpObj[prop];
       }
-  }
-
-
-    // getCmp(event, value) {
-    //     var array = event.detail.allCmp;
-    //     for (var i = 0; i < array.length; i++) {
-    //         if (array[i]['extname'] === value) {
-    //             return array[i].ext;
-    //         }
-    //     }
-    //     return null;
-    // }
+    }
 
     readyMainPanel = (event) => {
         console.log('readyMainPanel');
         this.extnameToProperty(event.detail.cmpObj, this, '');
-        //console.log(event);
-        //this.navTreelist = this.getCmp(event, 'navTreelist');
-        //this.navButton = this.getCmp(event, 'navButton');
-
-        //if (Ext.os.is.Phone) {
-        //    console.log('h');
         this.navButton.setHidden(false);
-        //} else {
-        //    this.navButton.setHidden(true);
-        //}
-        //console.log(this.navTreelist);
         this.navTreelist.setStore(this.treeStore);
         let hash = window.location.hash.substr(1);
         if (hash == '') {
-            hash = 'home';
+            hash = 'about';
         }
         const node = this.navTreelist.getStore().findNode('hash', hash);
         this.navTreelist.setSelection(node);
-
-      if (Ext.os.is.Phone) {
-          navButton.setHidden(false);
-      } else {
-          navButton.setHidden(true);
-      }
+      // if (Ext.os.is.Phone) {
+      //     navButton.setHidden(false);
+      // } else {
+      //     navButton.setHidden(true);
+      // }
     }
-
-    // readyToggleButton = (event) => {
-    //     const navButton = event.detail.cmp;
-    //     if (Ext.os.is.Phone) {
-    //         navButton.setHidden(false);
-    //     } else {
-    //         navButton.setHidden(true);
-    //     }
-    // }
 
     navTreelistSelectionChange = (event) => {
         const record = event.detail.record;
@@ -97,14 +66,14 @@ export default class MainComponent {
         }
 
         if(Ext.os.is.Phone) {
-            let collapsed = this.navTreePanelCmp.getCollapsed();
+            let collapsed = this.navTreePanel.getCollapsed();
 
             if (collapsed === true) {
                 collapsed = false;
             } else {
                 collapsed = true;
             }
-            this.navTreePanelCmp.setCollapsed(collapsed);
+            this.navTreepanel.setCollapsed(collapsed);
         }
     }
 
@@ -113,85 +82,17 @@ export default class MainComponent {
         if (found) {
             node.expand();
         }
-
         node.data.text = node.data.name.replace(this.filterRegex, '<span style="color:#2196F3;font-weight:bold">$1</span>');
         return found;
     }
 
     toggleTree = () => {
-        let collapsed = this.navTreePanelCmp.getCollapsed();
-
+        let collapsed = this.navTreepanel.getCollapsed();
         if (collapsed == true) {
             collapsed = false;
         } else {
             collapsed = true;
         }
-        this.navTreePanelCmp.setCollapsed(collapsed);
+        this.navTreepanel.setCollapsed(collapsed);
     }
-
-
-    // readyNavTreelist = (event) => {
-    //     console.log(event);
-    //     // console.log('readyNavTreelist');
-    //     // this.navTreelist = event.detail.cmp;
-    //     // this.navTreelist.setStore(this.treeStore);
-
-
-    //     // let hash = window.location.hash.substr(1);
-
-    //     // if (hash == '') {
-    //     //     hash = 'home';
-    //     // }
-
-    //     // const node = this.navTreelist.getStore().findNode('hash', hash);
-    //     // this.navTreelist.setSelection(node);
-    //     //this.navigate(node);
-
-
-
-
-
-
-    //     //this.afterAllLoaded('readyNavTreelist');
-    // }
-
-
-    // afterAllLoaded = () => {
-    //     // this.wait = this.wait - 1;
-
-    //     // if (this.wait == 0) {
-    //     //     let hash = window.location.hash.substr(1);
-
-    //     //     if (hash == '') {
-    //     //         hash = 'home';
-    //     //     }
-
-    //     //     const node = this.navTreelist.getStore().findNode('hash', hash);
-    //     //     this.navTreelist.setSelection(node);
-    //     //     this.navigate(node);
-    //     // }
-    // }
-
-    // readyNavTreePanel = (event) => {
-    //     // this.navTreePanelCmp = event.detail.cmp;
-    //     // this.afterAllLoaded('readyNavTreePanel');
-    //     // if(Ext.os.is.Phone) {
-    //     //     let collapsed = this.navTreePanelCmp.getCollapsed();
-
-    //     //     if (collapsed === true) {
-    //     //         collapsed = false;
-    //     //     } else {
-    //     //         collapsed = true;
-    //     //     }
-    //     //     this.navTreePanelCmp.setCollapsed(collapsed);
-    //     // }
-    // }
-
-
-
-    // readyRouter = (event) => {
-    //     this.router = event.target;
-    //     this.afterAllLoaded('readyRouter');
-    // }
-
 }
