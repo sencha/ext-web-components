@@ -3,38 +3,34 @@ import './HomeComponent.html';
 
 export default class HomeComponent {
 
-    getCmp(event, value) {
-        var array = event.detail.allCmp;
-        for (var i = 0; i < array.length; i++) {
-            if (array[i]['extname'] === value) {
-                return array[i].ext;
-            }
+    extnameToProperty = (cmpObj, me, suffix) => {
+        if (suffix == undefined) {
+            suffix = 'Cmp';
         }
-        return null;
+        for (var prop in cmpObj) {
+            me[prop+suffix] = cmpObj[prop];
+        }
     }
 
     readyGrid = (event) => {
-        console.log('home.readyGrid');
-        console.log(event);
-        this.gridCmp = this.getCmp(event, 'mainGrid');
-        //this.gridCmp = event.detail.cmp;
+        //console.log('home.readyGrid');
+        //console.log(event);
+        this.extnameToProperty(event.detail.cmpObj, this, '');
         const store = Ext.create('Ext.data.Store', {
             fields: ['name', 'email', 'phone', 'hoursTaken', 'hoursRemaining'],
             data,
         });
-
-        console.log(this.gridCmp);
-        this.gridCmp.setStore(store);
+        this.mainGrid.setStore(store);
     }
 
     onSearch = (event) => {
-        this.gridCmp.getStore().clearFilter();
+        this.mainGrid.getStore().clearFilter();
         const newValue = event.detail.newValue;
 
         if (newValue.length) {
             const newValueStr = newValue.toLowerCase();
 
-            this.gridCmp.getStore().filterBy((record) => {
+            this.mainGrid.getStore().filterBy((record) => {
                 const { name, email, phone } = record.data;
                 return name.toLowerCase().indexOf(newValueStr) > -1
             || email.toLowerCase().indexOf(newValueStr) > -1

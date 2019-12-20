@@ -19,22 +19,32 @@ export default class MainComponent {
         }
     }
 
-    
-    getCmp(event, value) {
-        var array = event.detail.allCmp;
-        for (var i = 0; i < array.length; i++) {
-            if (array[i]['extname'] === value) {
-                return array[i].ext;
-            }
-        }
-        return null;
-    }
+    extnameToProperty = (cmpObj, me, suffix) => {
+      if (suffix == undefined) {
+          suffix = 'Cmp';
+      }
+      for (var prop in cmpObj) {
+          me[prop+suffix] = cmpObj[prop];
+      }
+  }
+
+
+    // getCmp(event, value) {
+    //     var array = event.detail.allCmp;
+    //     for (var i = 0; i < array.length; i++) {
+    //         if (array[i]['extname'] === value) {
+    //             return array[i].ext;
+    //         }
+    //     }
+    //     return null;
+    // }
 
     readyMainPanel = (event) => {
         console.log('readyMainPanel');
+        this.extnameToProperty(event.detail.cmpObj, this, '');
         //console.log(event);
-        this.navTreelistCmp = this.getCmp(event, 'navTreelist');
-        this.navButton = this.getCmp(event, 'navButton');
+        //this.navTreelist = this.getCmp(event, 'navTreelist');
+        //this.navButton = this.getCmp(event, 'navButton');
 
         //if (Ext.os.is.Phone) {
         //    console.log('h');
@@ -42,24 +52,30 @@ export default class MainComponent {
         //} else {
         //    this.navButton.setHidden(true);
         //}
-        //console.log(this.navTreelistCmp);
-        this.navTreelistCmp.setStore(this.treeStore);
+        //console.log(this.navTreelist);
+        this.navTreelist.setStore(this.treeStore);
         let hash = window.location.hash.substr(1);
         if (hash == '') {
             hash = 'home';
         }
-        const node = this.navTreelistCmp.getStore().findNode('hash', hash);
-        this.navTreelistCmp.setSelection(node);
+        const node = this.navTreelist.getStore().findNode('hash', hash);
+        this.navTreelist.setSelection(node);
+
+      if (Ext.os.is.Phone) {
+          navButton.setHidden(false);
+      } else {
+          navButton.setHidden(true);
+      }
     }
 
-    readyToggleButton = (event) => {
-        const navButton = event.detail.cmp;
-        if (Ext.os.is.Phone) {
-            navButton.setHidden(false);
-        } else {
-            navButton.setHidden(true);
-        }
-    }
+    // readyToggleButton = (event) => {
+    //     const navButton = event.detail.cmp;
+    //     if (Ext.os.is.Phone) {
+    //         navButton.setHidden(false);
+    //     } else {
+    //         navButton.setHidden(true);
+    //     }
+    // }
 
     navTreelistSelectionChange = (event) => {
         const record = event.detail.record;
@@ -117,8 +133,8 @@ export default class MainComponent {
     // readyNavTreelist = (event) => {
     //     console.log(event);
     //     // console.log('readyNavTreelist');
-    //     // this.navTreelistCmp = event.detail.cmp;
-    //     // this.navTreelistCmp.setStore(this.treeStore);
+    //     // this.navTreelist = event.detail.cmp;
+    //     // this.navTreelist.setStore(this.treeStore);
 
 
     //     // let hash = window.location.hash.substr(1);
@@ -127,8 +143,8 @@ export default class MainComponent {
     //     //     hash = 'home';
     //     // }
 
-    //     // const node = this.navTreelistCmp.getStore().findNode('hash', hash);
-    //     // this.navTreelistCmp.setSelection(node);
+    //     // const node = this.navTreelist.getStore().findNode('hash', hash);
+    //     // this.navTreelist.setSelection(node);
     //     //this.navigate(node);
 
 
@@ -150,8 +166,8 @@ export default class MainComponent {
     //     //         hash = 'home';
     //     //     }
 
-    //     //     const node = this.navTreelistCmp.getStore().findNode('hash', hash);
-    //     //     this.navTreelistCmp.setSelection(node);
+    //     //     const node = this.navTreelist.getStore().findNode('hash', hash);
+    //     //     this.navTreelist.setSelection(node);
     //     //     this.navigate(node);
     //     // }
     // }
