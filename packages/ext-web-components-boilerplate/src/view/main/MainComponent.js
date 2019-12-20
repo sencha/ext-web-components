@@ -35,7 +35,7 @@ export default class MainComponent {
         this.navTreelist.setStore(this.treeStore);
         let hash = window.location.hash.substr(1);
         if (hash == '') {
-            hash = 'about';
+            hash = 'home';
         }
         const node = this.navTreelist.getStore().findNode('hash', hash);
         this.navTreelist.setSelection(node);
