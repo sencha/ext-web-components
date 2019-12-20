@@ -273,15 +273,28 @@ export class Router {
                     currentComponent = route.component;
                 }
             }
+            var componentHtml;
+            var code;
             scope.rootElem = document.getElementById('route');
-            scope.rootElem.style.display = 'block';
-            window[currentHashLower] = new currentComponent();
-            var componentHtml = currentHash + 'Component.html';
-            var code = window._code[currentHashLower][componentHtml];
-            //console.log(code)
-            //console.log('hash > 0, setting innerHTML');
-            //console.log(scope.rootElem.innerHTML)
-            scope.rootElem.innerHTML = code;
+
+            if (scope.rootElem == null) {
+              setTimeout(function(){
+                scope.rootElem = document.getElementById('route');
+                scope.rootElem.style.display = 'block';
+                window[currentHashLower] = new currentComponent();
+                componentHtml = currentHash + 'Component.html';
+                code = window._code[currentHashLower][componentHtml];
+                scope.rootElem.innerHTML = code;
+                }, 0);
+            }
+            else {
+              //scope.rootElem = document.getElementById('route');
+              scope.rootElem.style.display = 'block';
+              window[currentHashLower] = new currentComponent();
+              componentHtml = currentHash + 'Component.html';
+              code = window._code[currentHashLower][componentHtml];
+              scope.rootElem.innerHTML = code;
+            }
         } else {
             //var currentHash = '';
             //var currentHashLower = '';
