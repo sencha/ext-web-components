@@ -1,4 +1,4 @@
-import { extnameToProperty } from "@sencha/ext-web-components-modern/src/util.js";
+//import { extnameToProperty } from "@sencha/ext-web-components-modern/src/util.js";
 import 'highlightjs/styles/atom-one-dark.css';
 import './MainComponent.html';
 export default class MainComponent {
@@ -17,9 +17,19 @@ export default class MainComponent {
         this.wait = 3;
     }
 
+    extnameToProperty = (cmpObj, me, suffix) => {
+      if (suffix == undefined) {
+          suffix = 'Cmp';
+      }
+      for (var prop in cmpObj) {
+          me[prop+suffix] = cmpObj[prop];
+      }
+  }
+
     viewportReady = event => {
+      console.log(event)
         this.navInProcess = false;
-        extnameToProperty(event.detail.cmpObj, this, '');
+        this.extnameToProperty(event.detail.cmpObj, this, '');
         this.navTreelist.setStore(this.treeStore);
         var hash = window.location.hash.substr(1);
         if (hash == '') {hash = 'all';}
