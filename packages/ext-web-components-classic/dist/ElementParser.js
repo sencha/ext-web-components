@@ -7,14 +7,16 @@ var ElementParser = function () {
     console.warn('Deprecation below is expected');
     console.warn('Click the following link for discussion on how to resolve');
     console.warn('https://docs.sencha.com/extwebcomponents/7.1.0/guides/deprecation_message.html');
-    var toolkit = 'classic';
-    var baseFolder = "../ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
+    var toolkit = 'classic'; //var baseFolder = "../ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
+
+    var baseFolder = "./node_modules/@sencha/ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
     var xhrObj = new XMLHttpRequest();
     xhrObj.open('GET', baseFolder + "/boot.js", false);
     xhrObj.send(''); // console.log(xhrObj.status)
 
     if (xhrObj.status == 404) {
-      baseFolder = "./node_modules/@sencha/ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
+      //baseFolder = "./node_modules/@sencha/ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
+      baseFolder = "../ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
       xhrObj.open('GET', baseFolder + "/boot.js", false);
       xhrObj.send('');
     } // console.log(xhrObj.status)

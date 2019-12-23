@@ -1,6 +1,6 @@
 ## @sencha/ext-web-components-classic
 
-last run: Thu Dec 12 2019 13:57:25 GMT-0500 (Eastern Standard Time)
+last run: Mon Dec 23 2019 10:31:54 GMT+0000 (Greenwich Mean Time)
 
 ## Login to the Sencha early adopter npm repo
 
@@ -57,10 +57,10 @@ cd ext-web-components-classic-demo
 </head>
 
 <script type="module"
-  src="./node_modules/@sencha/ext-web-components-classic/src/ext-toolbar.component.js">
+src="./node_modules/@sencha/ext-web-components-classic/src/ext-toolbar.component.js">
 </script>
 <script type="module"
-  src="./node_modules/@sencha/ext-web-components-classic/src/ext-button.component.js">
+src="./node_modules/@sencha/ext-web-components-classic/src/ext-button.component.js">
 </script>
 
 <script>
