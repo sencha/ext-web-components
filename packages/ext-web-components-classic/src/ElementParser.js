@@ -8,14 +8,16 @@ const ElementParser = (() => {
 
     var toolkit = 'classic';
 
-    var baseFolder = "../ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
+    //var baseFolder = "../ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
+    var baseFolder = "./node_modules/@sencha/ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
     var xhrObj = new XMLHttpRequest();
     xhrObj.open('GET', baseFolder + "/boot.js", false);
     xhrObj.send('');
 
     // console.log(xhrObj.status)
     if (xhrObj.status == 404) {
-      baseFolder = "./node_modules/@sencha/ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
+      //baseFolder = "./node_modules/@sencha/ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
+      baseFolder = "../ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
       xhrObj.open('GET', baseFolder + "/boot.js", false);
       xhrObj.send('');
     }
