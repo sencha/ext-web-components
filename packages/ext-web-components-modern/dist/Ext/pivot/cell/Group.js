@@ -68,23 +68,12 @@ function (_Ext_pivot_cell_Cell) {
   Ext_pivot_cell_Group.getEvents = function getEvents(events) {
     events = events.concat(Ext_pivot_cell_Group.EVENTS());
     return Ext_pivot_cell_Cell.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_pivot_cell_Group, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_pivot_cell_Cell.observedAttributes; //for (var property in Ext_pivot_cell_Group.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_pivot_cell_Cell.observedAttributes;
       Ext_pivot_cell_Group.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

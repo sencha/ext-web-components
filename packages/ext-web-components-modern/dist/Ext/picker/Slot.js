@@ -308,23 +308,12 @@ function (_Ext_dataview_DataVie) {
   Ext_picker_Slot.getEvents = function getEvents(events) {
     events = events.concat(Ext_picker_Slot.EVENTS());
     return Ext_dataview_DataView.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_picker_Slot, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_dataview_DataVie.observedAttributes; //for (var property in Ext_picker_Slot.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_dataview_DataVie.observedAttributes;
       Ext_picker_Slot.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

@@ -245,23 +245,12 @@ function (_Ext_Panel) {
   Ext_grid_locked_Grid.getEvents = function getEvents(events) {
     events = events.concat(Ext_grid_locked_Grid.EVENTS());
     return Ext_Panel.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_grid_locked_Grid, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Panel.observedAttributes; //for (var property in Ext_grid_locked_Grid.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_Panel.observedAttributes;
       Ext_grid_locked_Grid.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

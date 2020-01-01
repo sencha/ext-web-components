@@ -230,23 +230,12 @@ function (_Ext_Editor) {
   Ext_grid_CellEditor.getEvents = function getEvents(events) {
     events = events.concat(Ext_grid_CellEditor.EVENTS());
     return Ext_Editor.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_grid_CellEditor, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Editor.observedAttributes; //for (var property in Ext_grid_CellEditor.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_Editor.observedAttributes;
       Ext_grid_CellEditor.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

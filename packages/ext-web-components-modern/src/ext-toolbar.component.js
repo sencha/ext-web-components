@@ -1,13 +1,10 @@
-//import Ext_Toolbar from '@sencha/ext-runtime-base/dist/./Ext/Toolbar.js';
 import Ext_Toolbar from './Ext/Toolbar.js';
 import ElementParser from './ElementParser.js';
 
 export default class EWCToolbar extends Ext_Toolbar {
-    constructor() {
-        super ([], []);
-        this.xtype = 'toolbar';
-    }
-
+  constructor() {
+    super ([], []);
+    this.xtype = 'toolbar';
+  }
 }
 window.customElements.define('ext-toolbar', ElementParser.withParsedCallback(EWCToolbar));
-

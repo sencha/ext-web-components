@@ -1,7 +1,7 @@
 import Ext_dataview_ItemHeader from '../../Ext/dataview/ItemHeader.js';
 
 export default class Ext_grid_RowHeader extends Ext_dataview_ItemHeader {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'alignSelf',
     'alwaysOnTop',
     'ariaAttributes',
@@ -93,8 +93,8 @@ export default class Ext_grid_RowHeader extends Ext_dataview_ItemHeader {
     'xtype',
     'y',
     'zIndex',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'added', parameters:'sender,container,index'},
     {name:'beforebottomchange', parameters:'sender,value,oldValue,undefined'},
     {name:'beforecenteredchange', parameters:'sender,value,oldValue,undefined'},
@@ -150,52 +150,40 @@ export default class Ext_grid_RowHeader extends Ext_dataview_ItemHeader {
     {name:'updatedata', parameters:'sender,newData'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_grid_RowHeader.PROPERTIES());
-        return Ext_dataview_ItemHeader.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_grid_RowHeader.EVENTS());
-        return Ext_dataview_ItemHeader.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_grid_RowHeader.PROPERTIES());
+    return Ext_dataview_ItemHeader.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_grid_RowHeader.EVENTS());
+    return Ext_dataview_ItemHeader.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_grid_RowHeader.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_grid_RowHeader.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_grid_RowHeader.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_grid_RowHeader.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_grid_RowHeader.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_grid_RowHeader.PROPERTIES()),
+      events.concat(Ext_grid_RowHeader.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_grid_RowHeader.PROPERTIES()),
-            events.concat(Ext_grid_RowHeader.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

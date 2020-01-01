@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_pivot_Row from '@sencha/ext-runtime-base/dist/./Ext/pivot/Row.js';
 import Ext_pivot_Row from './Ext/pivot/Row.js';
 import ElementParser from './ElementParser.js';
 

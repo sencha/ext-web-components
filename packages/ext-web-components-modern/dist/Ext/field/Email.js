@@ -218,23 +218,12 @@ function (_Ext_field_Text) {
   Ext_field_Email.getEvents = function getEvents(events) {
     events = events.concat(Ext_field_Email.EVENTS());
     return Ext_field_Text.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_field_Email, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_field_Text.observedAttributes; //for (var property in Ext_field_Email.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_field_Text.observedAttributes;
       Ext_field_Email.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

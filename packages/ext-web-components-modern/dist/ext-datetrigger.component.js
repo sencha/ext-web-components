@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_field_trigger_Date from '@sencha/ext-runtime-base/dist/./Ext/field/trigger/Date.js';
 import Ext_field_trigger_Date from './Ext/field/trigger/Date.js';
 import ElementParser from './ElementParser.js';
 

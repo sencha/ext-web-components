@@ -218,23 +218,12 @@ function (_Ext_Toolbar) {
   Ext_BreadcrumbBar.getEvents = function getEvents(events) {
     events = events.concat(Ext_BreadcrumbBar.EVENTS());
     return Ext_Toolbar.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_BreadcrumbBar, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Toolbar.observedAttributes; //for (var property in Ext_BreadcrumbBar.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_Toolbar.observedAttributes;
       Ext_BreadcrumbBar.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

@@ -200,23 +200,12 @@ function (_Ext_slider_Slider) {
   Ext_slider_Toggle.getEvents = function getEvents(events) {
     events = events.concat(Ext_slider_Toggle.EVENTS());
     return Ext_slider_Slider.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_slider_Toggle, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_slider_Slider.observedAttributes; //for (var property in Ext_slider_Toggle.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_slider_Slider.observedAttributes;
       Ext_slider_Toggle.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

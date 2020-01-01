@@ -224,23 +224,12 @@ function (_Ext_field_Picker) {
   Ext_field_DatePicker.getEvents = function getEvents(events) {
     events = events.concat(Ext_field_DatePicker.EVENTS());
     return Ext_field_Picker.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_field_DatePicker, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_field_Picker.observedAttributes; //for (var property in Ext_field_DatePicker.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_field_Picker.observedAttributes;
       Ext_field_DatePicker.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

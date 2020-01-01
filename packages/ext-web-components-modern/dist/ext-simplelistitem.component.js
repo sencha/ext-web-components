@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_dataview_component_SimpleListItem from '@sencha/ext-runtime-base/dist/./Ext/dataview/component/SimpleListItem.js';
 import Ext_dataview_component_SimpleListItem from './Ext/dataview/component/SimpleListItem.js';
 import ElementParser from './ElementParser.js';
 

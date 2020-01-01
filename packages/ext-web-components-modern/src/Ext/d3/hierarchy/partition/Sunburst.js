@@ -1,7 +1,7 @@
 import Ext_d3_hierarchy_partition_Partition from '../../../../Ext/d3/hierarchy/partition/Partition.js';
 
 export default class Ext_d3_hierarchy_partition_Sunburst extends Ext_d3_hierarchy_partition_Partition {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'alignSelf',
     'alwaysOnTop',
     'ariaAttributes',
@@ -114,8 +114,8 @@ export default class Ext_d3_hierarchy_partition_Sunburst extends Ext_d3_hierarch
     'y',
     'zIndex',
     'zoomParentDotRadius',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'added', parameters:'sender,container,index'},
     {name:'beforebottomchange', parameters:'sender,value,oldValue,undefined'},
     {name:'beforecenteredchange', parameters:'sender,value,oldValue,undefined'},
@@ -174,52 +174,40 @@ export default class Ext_d3_hierarchy_partition_Sunburst extends Ext_d3_hierarch
     {name:'updatedata', parameters:'sender,newData'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_d3_hierarchy_partition_Sunburst.PROPERTIES());
-        return Ext_d3_hierarchy_partition_Partition.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_d3_hierarchy_partition_Sunburst.EVENTS());
-        return Ext_d3_hierarchy_partition_Partition.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_d3_hierarchy_partition_Sunburst.PROPERTIES());
+    return Ext_d3_hierarchy_partition_Partition.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_d3_hierarchy_partition_Sunburst.EVENTS());
+    return Ext_d3_hierarchy_partition_Partition.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_d3_hierarchy_partition_Sunburst.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_d3_hierarchy_partition_Sunburst.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_d3_hierarchy_partition_Sunburst.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_d3_hierarchy_partition_Sunburst.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_d3_hierarchy_partition_Sunburst.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_d3_hierarchy_partition_Sunburst.PROPERTIES()),
+      events.concat(Ext_d3_hierarchy_partition_Sunburst.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_d3_hierarchy_partition_Sunburst.PROPERTIES()),
-            events.concat(Ext_d3_hierarchy_partition_Sunburst.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

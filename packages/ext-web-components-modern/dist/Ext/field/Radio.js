@@ -215,23 +215,12 @@ function (_Ext_field_Checkbox) {
   Ext_field_Radio.getEvents = function getEvents(events) {
     events = events.concat(Ext_field_Radio.EVENTS());
     return Ext_field_Checkbox.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_field_Radio, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_field_Checkbox.observedAttributes; //for (var property in Ext_field_Radio.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_field_Checkbox.observedAttributes;
       Ext_field_Radio.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

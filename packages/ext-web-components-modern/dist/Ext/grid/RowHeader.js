@@ -188,23 +188,12 @@ function (_Ext_dataview_ItemHea) {
   Ext_grid_RowHeader.getEvents = function getEvents(events) {
     events = events.concat(Ext_grid_RowHeader.EVENTS());
     return Ext_dataview_ItemHeader.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_grid_RowHeader, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_dataview_ItemHea.observedAttributes; //for (var property in Ext_grid_RowHeader.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_dataview_ItemHea.observedAttributes;
       Ext_grid_RowHeader.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

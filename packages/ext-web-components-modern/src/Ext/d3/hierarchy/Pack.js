@@ -1,7 +1,7 @@
 import Ext_d3_hierarchy_Hierarchy from '../../../Ext/d3/hierarchy/Hierarchy.js';
 
 export default class Ext_d3_hierarchy_Pack extends Ext_d3_hierarchy_Hierarchy {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'alignSelf',
     'alwaysOnTop',
     'ariaAttributes',
@@ -114,8 +114,8 @@ export default class Ext_d3_hierarchy_Pack extends Ext_d3_hierarchy_Hierarchy {
     'xtype',
     'y',
     'zIndex',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'added', parameters:'sender,container,index'},
     {name:'beforebottomchange', parameters:'sender,value,oldValue,undefined'},
     {name:'beforecenteredchange', parameters:'sender,value,oldValue,undefined'},
@@ -174,52 +174,40 @@ export default class Ext_d3_hierarchy_Pack extends Ext_d3_hierarchy_Hierarchy {
     {name:'updatedata', parameters:'sender,newData'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_d3_hierarchy_Pack.PROPERTIES());
-        return Ext_d3_hierarchy_Hierarchy.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_d3_hierarchy_Pack.EVENTS());
-        return Ext_d3_hierarchy_Hierarchy.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_d3_hierarchy_Pack.PROPERTIES());
+    return Ext_d3_hierarchy_Hierarchy.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_d3_hierarchy_Pack.EVENTS());
+    return Ext_d3_hierarchy_Hierarchy.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_d3_hierarchy_Pack.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_d3_hierarchy_Pack.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_d3_hierarchy_Pack.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_d3_hierarchy_Pack.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_d3_hierarchy_Pack.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_d3_hierarchy_Pack.PROPERTIES()),
+      events.concat(Ext_d3_hierarchy_Pack.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_d3_hierarchy_Pack.PROPERTIES()),
-            events.concat(Ext_d3_hierarchy_Pack.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

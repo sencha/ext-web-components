@@ -68,23 +68,12 @@ function (_Ext_field_trigger_Tr) {
   Ext_field_trigger_Reveal.getEvents = function getEvents(events) {
     events = events.concat(Ext_field_trigger_Reveal.EVENTS());
     return Ext_field_trigger_Trigger.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_field_trigger_Reveal, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_field_trigger_Tr.observedAttributes; //for (var property in Ext_field_trigger_Reveal.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_field_trigger_Tr.observedAttributes;
       Ext_field_trigger_Reveal.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

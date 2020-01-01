@@ -1,13 +1,10 @@
-//import Ext_grid_column_Drag from '@sencha/ext-runtime-base/dist/./Ext/grid/column/Drag.js';
 import Ext_grid_column_Drag from './Ext/grid/column/Drag.js';
 import ElementParser from './ElementParser.js';
 
 export default class EWCDragcolumn extends Ext_grid_column_Drag {
-    constructor() {
-        super ([], []);
-        this.xtype = 'dragcolumn';
-    }
-
+  constructor() {
+    super ([], []);
+    this.xtype = 'dragcolumn';
+  }
 }
 window.customElements.define('ext-dragcolumn', ElementParser.withParsedCallback(EWCDragcolumn));
-

@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_sparkline_Base from '@sencha/ext-runtime-base/dist/./Ext/sparkline/Base.js';
 import Ext_sparkline_Base from './Ext/sparkline/Base.js';
 import ElementParser from './ElementParser.js';
 

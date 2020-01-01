@@ -191,23 +191,12 @@ function (_Ext_Mask) {
   Ext_LoadMask.getEvents = function getEvents(events) {
     events = events.concat(Ext_LoadMask.EVENTS());
     return Ext_Mask.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_LoadMask, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Mask.observedAttributes; //for (var property in Ext_LoadMask.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_Mask.observedAttributes;
       Ext_LoadMask.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

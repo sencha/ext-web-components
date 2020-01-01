@@ -1,7 +1,7 @@
 import Ext_Media from '../Ext/Media.js';
 
 export default class Ext_Video extends Ext_Media {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'alignSelf',
     'alwaysOnTop',
     'ariaAttributes',
@@ -99,8 +99,8 @@ export default class Ext_Video extends Ext_Media {
     'xtype',
     'y',
     'zIndex',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'added', parameters:'sender,container,index'},
     {name:'beforebottomchange', parameters:'sender,value,oldValue,undefined'},
     {name:'beforecenteredchange', parameters:'sender,value,oldValue,undefined'},
@@ -163,52 +163,40 @@ export default class Ext_Video extends Ext_Media {
     {name:'volumechange', parameters:'sender,volume'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_Video.PROPERTIES());
-        return Ext_Media.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_Video.EVENTS());
-        return Ext_Media.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_Video.PROPERTIES());
+    return Ext_Media.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_Video.EVENTS());
+    return Ext_Media.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_Video.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_Video.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_Video.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_Video.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_Video.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_Video.PROPERTIES()),
+      events.concat(Ext_Video.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_Video.PROPERTIES()),
-            events.concat(Ext_Video.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

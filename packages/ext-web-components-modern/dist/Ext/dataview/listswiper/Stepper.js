@@ -212,23 +212,12 @@ function (_Ext_dataview_listswi) {
   Ext_dataview_listswiper_Stepper.getEvents = function getEvents(events) {
     events = events.concat(Ext_dataview_listswiper_Stepper.EVENTS());
     return Ext_dataview_listswiper_Item.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_dataview_listswiper_Stepper, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_dataview_listswi.observedAttributes; //for (var property in Ext_dataview_listswiper_Stepper.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_dataview_listswi.observedAttributes;
       Ext_dataview_listswiper_Stepper.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

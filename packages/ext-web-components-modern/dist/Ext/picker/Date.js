@@ -254,23 +254,12 @@ function (_Ext_picker_Picker) {
   Ext_picker_Date.getEvents = function getEvents(events) {
     events = events.concat(Ext_picker_Date.EVENTS());
     return Ext_picker_Picker.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_picker_Date, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_picker_Picker.observedAttributes; //for (var property in Ext_picker_Date.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_picker_Picker.observedAttributes;
       Ext_picker_Date.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

@@ -1,7 +1,7 @@
 import Ext_field_Field from '../../Ext/field/Field.js';
 
 export default class Ext_field_Slider extends Ext_field_Field {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'alignSelf',
     'alwaysOnTop',
     'ariaAttributes',
@@ -125,8 +125,8 @@ export default class Ext_field_Slider extends Ext_field_Field {
     'xtype',
     'y',
     'zIndex',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'added', parameters:'sender,container,index'},
     {name:'beforebottomchange', parameters:'sender,value,oldValue,undefined'},
     {name:'beforecenteredchange', parameters:'sender,value,oldValue,undefined'},
@@ -193,52 +193,40 @@ export default class Ext_field_Slider extends Ext_field_Field {
     {name:'updatedata', parameters:'sender,newData'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_field_Slider.PROPERTIES());
-        return Ext_field_Field.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_field_Slider.EVENTS());
-        return Ext_field_Field.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_field_Slider.PROPERTIES());
+    return Ext_field_Field.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_field_Slider.EVENTS());
+    return Ext_field_Field.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_field_Slider.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_field_Slider.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_field_Slider.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_field_Slider.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_field_Slider.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_field_Slider.PROPERTIES()),
+      events.concat(Ext_field_Slider.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_field_Slider.PROPERTIES()),
-            events.concat(Ext_field_Slider.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

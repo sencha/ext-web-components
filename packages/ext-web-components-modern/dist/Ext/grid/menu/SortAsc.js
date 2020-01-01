@@ -194,23 +194,12 @@ function (_Ext_menu_RadioItem) {
   Ext_grid_menu_SortAsc.getEvents = function getEvents(events) {
     events = events.concat(Ext_grid_menu_SortAsc.EVENTS());
     return Ext_menu_RadioItem.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_grid_menu_SortAsc, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_menu_RadioItem.observedAttributes; //for (var property in Ext_grid_menu_SortAsc.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_menu_RadioItem.observedAttributes;
       Ext_grid_menu_SortAsc.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

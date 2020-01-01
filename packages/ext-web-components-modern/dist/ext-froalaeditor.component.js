@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_froala_Editor from '@sencha/ext-runtime-base/dist/./Ext/froala/Editor.js';
 import Ext_froala_Editor from './Ext/froala/Editor.js';
 import ElementParser from './ElementParser.js';
 

@@ -1,7 +1,7 @@
 import Ext_grid_Grid from '../../Ext/grid/Grid.js';
 
 export default class Ext_pivot_Grid extends Ext_grid_Grid {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'activeChildTabIndex',
     'activeItem',
     'alignSelf',
@@ -198,8 +198,8 @@ export default class Ext_pivot_Grid extends Ext_grid_Grid {
     'xtype',
     'y',
     'zIndex',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'newActiveItem,sender,oldActiveItem'},
     {name:'activeItemchange', parameters:'sender,value,oldValue'},
     {name:'add', parameters:''},
@@ -351,52 +351,40 @@ export default class Ext_pivot_Grid extends Ext_grid_Grid {
     {name:'validateedit', parameters:'sender,location'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_pivot_Grid.PROPERTIES());
-        return Ext_grid_Grid.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_pivot_Grid.EVENTS());
-        return Ext_grid_Grid.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_pivot_Grid.PROPERTIES());
+    return Ext_grid_Grid.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_pivot_Grid.EVENTS());
+    return Ext_grid_Grid.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_pivot_Grid.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_pivot_Grid.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_pivot_Grid.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_pivot_Grid.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_pivot_Grid.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_pivot_Grid.PROPERTIES()),
+      events.concat(Ext_pivot_Grid.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_pivot_Grid.PROPERTIES()),
-            events.concat(Ext_pivot_Grid.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

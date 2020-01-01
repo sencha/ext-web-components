@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_Indicator from '@sencha/ext-runtime-base/dist/./Ext/Indicator.js';
 import Ext_Indicator from './Ext/Indicator.js';
 import ElementParser from './ElementParser.js';
 

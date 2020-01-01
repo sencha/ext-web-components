@@ -1,7 +1,7 @@
 import Ext_Component from '../Ext/Component.js';
 
 export default class Ext_Button extends Ext_Component {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'alignSelf',
     'allowDepress',
     'alwaysOnTop',
@@ -110,8 +110,8 @@ export default class Ext_Button extends Ext_Component {
     'xtype',
     'y',
     'zIndex',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'added', parameters:'sender,container,index'},
     {name:'beforebottomchange', parameters:'sender,value,oldValue,undefined'},
     {name:'beforecenteredchange', parameters:'sender,value,oldValue,undefined'},
@@ -171,52 +171,40 @@ export default class Ext_Button extends Ext_Component {
     {name:'updatedata', parameters:'sender,newData'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_Button.PROPERTIES());
-        return Ext_Component.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_Button.EVENTS());
-        return Ext_Component.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_Button.PROPERTIES());
+    return Ext_Component.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_Button.EVENTS());
+    return Ext_Component.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_Button.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_Button.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_Button.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_Button.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_Button.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_Button.PROPERTIES()),
+      events.concat(Ext_Button.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_Button.PROPERTIES()),
-            events.concat(Ext_Button.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

@@ -317,23 +317,12 @@ function (_Ext_dataview_List) {
   Ext_dataview_BoundList.getEvents = function getEvents(events) {
     events = events.concat(Ext_dataview_BoundList.EVENTS());
     return Ext_dataview_List.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_dataview_BoundList, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_dataview_List.observedAttributes; //for (var property in Ext_dataview_BoundList.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_dataview_List.observedAttributes;
       Ext_dataview_BoundList.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

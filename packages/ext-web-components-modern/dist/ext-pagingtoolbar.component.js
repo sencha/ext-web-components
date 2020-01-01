@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_grid_PagingToolbar from '@sencha/ext-runtime-base/dist/./Ext/grid/PagingToolbar.js';
 import Ext_grid_PagingToolbar from './Ext/grid/PagingToolbar.js';
 import ElementParser from './ElementParser.js';
 

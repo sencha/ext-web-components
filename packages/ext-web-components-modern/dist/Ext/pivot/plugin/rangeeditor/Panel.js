@@ -257,23 +257,12 @@ function (_Ext_form_Panel) {
   Ext_pivot_plugin_rangeeditor_Panel.getEvents = function getEvents(events) {
     events = events.concat(Ext_pivot_plugin_rangeeditor_Panel.EVENTS());
     return Ext_form_Panel.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_pivot_plugin_rangeeditor_Panel, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_form_Panel.observedAttributes; //for (var property in Ext_pivot_plugin_rangeeditor_Panel.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_form_Panel.observedAttributes;
       Ext_pivot_plugin_rangeeditor_Panel.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

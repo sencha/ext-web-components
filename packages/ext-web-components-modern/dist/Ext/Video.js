@@ -209,23 +209,12 @@ function (_Ext_Media) {
   Ext_Video.getEvents = function getEvents(events) {
     events = events.concat(Ext_Video.EVENTS());
     return Ext_Media.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_Video, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Media.observedAttributes; //for (var property in Ext_Video.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_Media.observedAttributes;
       Ext_Video.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

@@ -1,7 +1,7 @@
 import Ext_Widget from '../../Ext/Widget.js';
 
 export default class Ext_draw_SurfaceBase extends Ext_Widget {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'alignSelf',
     'alwaysOnTop',
     'ariaAttributes',
@@ -52,8 +52,8 @@ export default class Ext_draw_SurfaceBase extends Ext_Widget {
     'width',
     'x',
     'y',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'beforedisabledchange', parameters:'sender,value,oldValue,undefined'},
     {name:'beforeheightchange', parameters:'sender,value,oldValue,undefined'},
     {name:'beforehiddenchange', parameters:'sender,value,oldValue,undefined'},
@@ -69,52 +69,40 @@ export default class Ext_draw_SurfaceBase extends Ext_Widget {
     {name:'tofront', parameters:'sender'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_draw_SurfaceBase.PROPERTIES());
-        return Ext_Widget.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_draw_SurfaceBase.EVENTS());
-        return Ext_Widget.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_draw_SurfaceBase.PROPERTIES());
+    return Ext_Widget.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_draw_SurfaceBase.EVENTS());
+    return Ext_Widget.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_draw_SurfaceBase.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_draw_SurfaceBase.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_draw_SurfaceBase.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_draw_SurfaceBase.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_draw_SurfaceBase.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_draw_SurfaceBase.PROPERTIES()),
+      events.concat(Ext_draw_SurfaceBase.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_draw_SurfaceBase.PROPERTIES()),
-            events.concat(Ext_draw_SurfaceBase.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

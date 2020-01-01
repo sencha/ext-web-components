@@ -1,7 +1,7 @@
 import Ext_Toolbar from '../Ext/Toolbar.js';
 
 export default class Ext_BreadcrumbBar extends Ext_Toolbar {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'activeChildTabIndex',
     'activeItem',
     'alignSelf',
@@ -122,8 +122,8 @@ export default class Ext_BreadcrumbBar extends Ext_Toolbar {
     'xtype',
     'y',
     'zIndex',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'newActiveItem,sender,oldActiveItem'},
     {name:'activeItemchange', parameters:'sender,value,oldValue'},
     {name:'add', parameters:'sender,item,index'},
@@ -189,52 +189,40 @@ export default class Ext_BreadcrumbBar extends Ext_Toolbar {
     {name:'updatedata', parameters:'sender,newData'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_BreadcrumbBar.PROPERTIES());
-        return Ext_Toolbar.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_BreadcrumbBar.EVENTS());
-        return Ext_Toolbar.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_BreadcrumbBar.PROPERTIES());
+    return Ext_Toolbar.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_BreadcrumbBar.EVENTS());
+    return Ext_Toolbar.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_BreadcrumbBar.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_BreadcrumbBar.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_BreadcrumbBar.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_BreadcrumbBar.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_BreadcrumbBar.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_BreadcrumbBar.PROPERTIES()),
+      events.concat(Ext_BreadcrumbBar.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_BreadcrumbBar.PROPERTIES()),
-            events.concat(Ext_BreadcrumbBar.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

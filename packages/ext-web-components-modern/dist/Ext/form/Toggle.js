@@ -221,23 +221,12 @@ function (_Ext_field_SingleSlid) {
   Ext_form_Toggle.getEvents = function getEvents(events) {
     events = events.concat(Ext_form_Toggle.EVENTS());
     return Ext_field_SingleSlider.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_form_Toggle, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_field_SingleSlid.observedAttributes; //for (var property in Ext_form_Toggle.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_field_SingleSlid.observedAttributes;
       Ext_form_Toggle.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

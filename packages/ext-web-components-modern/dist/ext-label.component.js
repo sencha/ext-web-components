@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_Label from '@sencha/ext-runtime-base/dist/./Ext/Label.js';
 import Ext_Label from './Ext/Label.js';
 import ElementParser from './ElementParser.js';
 

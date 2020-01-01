@@ -1,7 +1,7 @@
 import Ext_calendar_view_Days from '../../../Ext/calendar/view/Days.js';
 
 export default class Ext_calendar_view_Day extends Ext_calendar_view_Days {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'addForm',
     'alignSelf',
     'allowSelection',
@@ -109,8 +109,8 @@ export default class Ext_calendar_view_Day extends Ext_calendar_view_Days {
     'xtype',
     'y',
     'zIndex',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'added', parameters:'sender,container,index'},
     {name:'beforebottomchange', parameters:'sender,value,oldValue,undefined'},
     {name:'beforecenteredchange', parameters:'sender,value,oldValue,undefined'},
@@ -180,52 +180,40 @@ export default class Ext_calendar_view_Day extends Ext_calendar_view_Days {
     {name:'valuechange', parameters:'sender,context'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_calendar_view_Day.PROPERTIES());
-        return Ext_calendar_view_Days.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_calendar_view_Day.EVENTS());
-        return Ext_calendar_view_Days.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_calendar_view_Day.PROPERTIES());
+    return Ext_calendar_view_Days.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_calendar_view_Day.EVENTS());
+    return Ext_calendar_view_Days.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_calendar_view_Day.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_calendar_view_Day.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_calendar_view_Day.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_calendar_view_Day.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_calendar_view_Day.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_calendar_view_Day.PROPERTIES()),
+      events.concat(Ext_calendar_view_Day.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_calendar_view_Day.PROPERTIES()),
-            events.concat(Ext_calendar_view_Day.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }
