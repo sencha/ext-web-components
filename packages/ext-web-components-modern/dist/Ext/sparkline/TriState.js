@@ -188,23 +188,12 @@ function (_Ext_sparkline_BarBas) {
   Ext_sparkline_TriState.getEvents = function getEvents(events) {
     events = events.concat(Ext_sparkline_TriState.EVENTS());
     return Ext_sparkline_BarBase.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_sparkline_TriState, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_sparkline_BarBas.observedAttributes; //for (var property in Ext_sparkline_TriState.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_sparkline_BarBas.observedAttributes;
       Ext_sparkline_TriState.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

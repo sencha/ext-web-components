@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_pivot_plugin_rangeeditor_Panel from '@sencha/ext-runtime-base/dist/./Ext/pivot/plugin/rangeeditor/Panel.js';
 import Ext_pivot_plugin_rangeeditor_Panel from './Ext/pivot/plugin/rangeeditor/Panel.js';
 import ElementParser from './ElementParser.js';
 

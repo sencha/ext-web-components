@@ -194,23 +194,12 @@ function (_Ext_d3_HeatMap) {
   Ext_pivot_d3_HeatMap.getEvents = function getEvents(events) {
     events = events.concat(Ext_pivot_d3_HeatMap.EVENTS());
     return Ext_d3_HeatMap.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_pivot_d3_HeatMap, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_d3_HeatMap.observedAttributes; //for (var property in Ext_pivot_d3_HeatMap.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_d3_HeatMap.observedAttributes;
       Ext_pivot_d3_HeatMap.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

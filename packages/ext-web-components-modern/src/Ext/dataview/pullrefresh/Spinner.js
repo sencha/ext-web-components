@@ -1,7 +1,7 @@
 import Ext_dataview_pullrefresh_Item from '../../../Ext/dataview/pullrefresh/Item.js';
 
 export default class Ext_dataview_pullrefresh_Spinner extends Ext_dataview_pullrefresh_Item {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'alignSelf',
     'alwaysOnTop',
     'ariaAttributes',
@@ -91,8 +91,8 @@ export default class Ext_dataview_pullrefresh_Spinner extends Ext_dataview_pullr
     'xtype',
     'y',
     'zIndex',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'added', parameters:'sender,container,index'},
     {name:'beforebottomchange', parameters:'sender,value,oldValue,undefined'},
     {name:'beforecenteredchange', parameters:'sender,value,oldValue,undefined'},
@@ -148,52 +148,40 @@ export default class Ext_dataview_pullrefresh_Spinner extends Ext_dataview_pullr
     {name:'updatedata', parameters:'sender,newData'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_dataview_pullrefresh_Spinner.PROPERTIES());
-        return Ext_dataview_pullrefresh_Item.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_dataview_pullrefresh_Spinner.EVENTS());
-        return Ext_dataview_pullrefresh_Item.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_dataview_pullrefresh_Spinner.PROPERTIES());
+    return Ext_dataview_pullrefresh_Item.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_dataview_pullrefresh_Spinner.EVENTS());
+    return Ext_dataview_pullrefresh_Item.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_dataview_pullrefresh_Spinner.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_dataview_pullrefresh_Spinner.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_dataview_pullrefresh_Spinner.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_dataview_pullrefresh_Spinner.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_dataview_pullrefresh_Spinner.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_dataview_pullrefresh_Spinner.PROPERTIES()),
+      events.concat(Ext_dataview_pullrefresh_Spinner.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_dataview_pullrefresh_Spinner.PROPERTIES()),
-            events.concat(Ext_dataview_pullrefresh_Spinner.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

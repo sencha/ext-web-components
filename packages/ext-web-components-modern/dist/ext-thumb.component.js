@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_slider_Thumb from '@sencha/ext-runtime-base/dist/./Ext/slider/Thumb.js';
 import Ext_slider_Thumb from './Ext/slider/Thumb.js';
 import ElementParser from './ElementParser.js';
 

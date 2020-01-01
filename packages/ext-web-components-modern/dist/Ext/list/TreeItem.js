@@ -68,23 +68,12 @@ function (_Ext_list_AbstractTre) {
   Ext_list_TreeItem.getEvents = function getEvents(events) {
     events = events.concat(Ext_list_TreeItem.EVENTS());
     return Ext_list_AbstractTreeItem.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_list_TreeItem, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_list_AbstractTre.observedAttributes; //for (var property in Ext_list_TreeItem.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_list_AbstractTre.observedAttributes;
       Ext_list_TreeItem.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

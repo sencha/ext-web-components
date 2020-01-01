@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_field_DatePicker from '@sencha/ext-runtime-base/dist/./Ext/field/DatePicker.js';
 import Ext_field_DatePicker from './Ext/field/DatePicker.js';
 import ElementParser from './ElementParser.js';
 

@@ -1,7 +1,7 @@
 import Ext_Evented from '../Ext/Evented.js';
 
 export default class Ext_Widget extends Ext_Evented {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'alignSelf',
     'alwaysOnTop',
     'ariaAttributes',
@@ -52,8 +52,8 @@ export default class Ext_Widget extends Ext_Evented {
     'width',
     'x',
     'y',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'beforedisabledchange', parameters:'sender,value,oldValue,undefined'},
     {name:'beforeheightchange', parameters:'sender,value,oldValue,undefined'},
     {name:'beforehiddenchange', parameters:'sender,value,oldValue,undefined'},
@@ -69,52 +69,40 @@ export default class Ext_Widget extends Ext_Evented {
     {name:'tofront', parameters:'sender'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_Widget.PROPERTIES());
-        return Ext_Evented.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_Widget.EVENTS());
-        return Ext_Evented.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_Widget.PROPERTIES());
+    return Ext_Evented.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_Widget.EVENTS());
+    return Ext_Evented.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_Widget.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_Widget.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_Widget.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_Widget.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_Widget.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_Widget.PROPERTIES()),
+      events.concat(Ext_Widget.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_Widget.PROPERTIES()),
-            events.concat(Ext_Widget.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

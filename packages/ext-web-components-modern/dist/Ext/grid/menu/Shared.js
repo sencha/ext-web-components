@@ -188,23 +188,12 @@ function (_Ext_menu_Item) {
   Ext_grid_menu_Shared.getEvents = function getEvents(events) {
     events = events.concat(Ext_grid_menu_Shared.EVENTS());
     return Ext_menu_Item.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_grid_menu_Shared, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_menu_Item.observedAttributes; //for (var property in Ext_grid_menu_Shared.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_menu_Item.observedAttributes;
       Ext_grid_menu_Shared.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

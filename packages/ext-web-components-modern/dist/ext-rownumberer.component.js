@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_grid_column_RowNumberer from '@sencha/ext-runtime-base/dist/./Ext/grid/column/RowNumberer.js';
 import Ext_grid_column_RowNumberer from './Ext/grid/column/RowNumberer.js';
 import ElementParser from './ElementParser.js';
 

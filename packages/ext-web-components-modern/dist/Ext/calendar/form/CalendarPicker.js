@@ -227,23 +227,12 @@ function (_Ext_field_Select) {
   Ext_calendar_form_CalendarPicker.getEvents = function getEvents(events) {
     events = events.concat(Ext_calendar_form_CalendarPicker.EVENTS());
     return Ext_field_Select.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_calendar_form_CalendarPicker, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_field_Select.observedAttributes; //for (var property in Ext_calendar_form_CalendarPicker.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_field_Select.observedAttributes;
       Ext_calendar_form_CalendarPicker.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

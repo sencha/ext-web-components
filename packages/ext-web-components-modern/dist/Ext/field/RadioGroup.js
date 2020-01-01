@@ -209,23 +209,12 @@ function (_Ext_field_FieldGroup) {
   Ext_field_RadioGroup.getEvents = function getEvents(events) {
     events = events.concat(Ext_field_RadioGroup.EVENTS());
     return Ext_field_FieldGroupContainer.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_field_RadioGroup, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_field_FieldGroup.observedAttributes; //for (var property in Ext_field_RadioGroup.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_field_FieldGroup.observedAttributes;
       Ext_field_RadioGroup.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

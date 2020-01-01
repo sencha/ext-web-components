@@ -317,23 +317,12 @@ function (_Ext_dataview_BoundLi) {
   Ext_panel_YearPicker.getEvents = function getEvents(events) {
     events = events.concat(Ext_panel_YearPicker.EVENTS());
     return Ext_dataview_BoundList.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_panel_YearPicker, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_dataview_BoundLi.observedAttributes; //for (var property in Ext_panel_YearPicker.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_dataview_BoundLi.observedAttributes;
       Ext_panel_YearPicker.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

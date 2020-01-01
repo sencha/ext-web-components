@@ -1,7 +1,7 @@
 import Ext_grid_column_Column from '../../../Ext/grid/column/Column.js';
 
 export default class Ext_grid_column_Text extends Ext_grid_column_Column {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'activeChildTabIndex',
     'activeItem',
     'align',
@@ -154,8 +154,8 @@ export default class Ext_grid_column_Text extends Ext_grid_column_Column {
     'xtype',
     'y',
     'zIndex',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'newActiveItem,sender,oldActiveItem'},
     {name:'activeItemchange', parameters:'sender,value,oldValue'},
     {name:'add', parameters:'sender,item,index'},
@@ -219,52 +219,40 @@ export default class Ext_grid_column_Text extends Ext_grid_column_Column {
     {name:'updatedata', parameters:'sender,newData'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_grid_column_Text.PROPERTIES());
-        return Ext_grid_column_Column.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_grid_column_Text.EVENTS());
-        return Ext_grid_column_Column.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_grid_column_Text.PROPERTIES());
+    return Ext_grid_column_Column.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_grid_column_Text.EVENTS());
+    return Ext_grid_column_Column.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_grid_column_Text.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_grid_column_Text.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_grid_column_Text.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_grid_column_Text.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_grid_column_Text.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_grid_column_Text.PROPERTIES()),
+      events.concat(Ext_grid_column_Text.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_grid_column_Text.PROPERTIES()),
-            events.concat(Ext_grid_column_Text.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

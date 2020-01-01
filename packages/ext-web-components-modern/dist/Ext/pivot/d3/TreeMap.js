@@ -197,23 +197,12 @@ function (_Ext_d3_hierarchy_Tre) {
   Ext_pivot_d3_TreeMap.getEvents = function getEvents(events) {
     events = events.concat(Ext_pivot_d3_TreeMap.EVENTS());
     return Ext_d3_hierarchy_TreeMap.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_pivot_d3_TreeMap, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_d3_hierarchy_Tre.observedAttributes; //for (var property in Ext_pivot_d3_TreeMap.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_d3_hierarchy_Tre.observedAttributes;
       Ext_pivot_d3_TreeMap.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

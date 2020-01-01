@@ -1,7 +1,7 @@
 import Ext_dataview_List from '../../Ext/dataview/List.js';
 
 export default class Ext_dataview_BoundList extends Ext_dataview_List {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'activeChildTabIndex',
     'activeItem',
     'alignSelf',
@@ -175,8 +175,8 @@ export default class Ext_dataview_BoundList extends Ext_dataview_List {
     'xtype',
     'y',
     'zIndex',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'newActiveItem,sender,oldActiveItem'},
     {name:'activeItemchange', parameters:'sender,value,oldValue'},
     {name:'add', parameters:''},
@@ -275,52 +275,40 @@ export default class Ext_dataview_BoundList extends Ext_dataview_List {
     {name:'updatedata', parameters:'sender,newData'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_dataview_BoundList.PROPERTIES());
-        return Ext_dataview_List.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_dataview_BoundList.EVENTS());
-        return Ext_dataview_List.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_dataview_BoundList.PROPERTIES());
+    return Ext_dataview_List.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_dataview_BoundList.EVENTS());
+    return Ext_dataview_List.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_dataview_BoundList.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_dataview_BoundList.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_dataview_BoundList.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_dataview_BoundList.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_dataview_BoundList.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_dataview_BoundList.PROPERTIES()),
+      events.concat(Ext_dataview_BoundList.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_dataview_BoundList.PROPERTIES()),
-            events.concat(Ext_dataview_BoundList.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

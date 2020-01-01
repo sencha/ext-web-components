@@ -1,7 +1,7 @@
 import Ext_grid_menu_Shared from '../../../Ext/grid/menu/Shared.js';
 
 export default class Ext_grid_menu_Columns extends Ext_grid_menu_Shared {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'alignSelf',
     'alwaysOnTop',
     'ariaAttributes',
@@ -105,8 +105,8 @@ export default class Ext_grid_menu_Columns extends Ext_grid_menu_Shared {
     'xtype',
     'y',
     'zIndex',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'added', parameters:'sender,container,index'},
     {name:'beforebottomchange', parameters:'sender,value,oldValue,undefined'},
     {name:'beforecenteredchange', parameters:'sender,value,oldValue,undefined'},
@@ -162,52 +162,40 @@ export default class Ext_grid_menu_Columns extends Ext_grid_menu_Shared {
     {name:'updatedata', parameters:'sender,newData'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_grid_menu_Columns.PROPERTIES());
-        return Ext_grid_menu_Shared.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_grid_menu_Columns.EVENTS());
-        return Ext_grid_menu_Shared.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_grid_menu_Columns.PROPERTIES());
+    return Ext_grid_menu_Shared.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_grid_menu_Columns.EVENTS());
+    return Ext_grid_menu_Shared.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_grid_menu_Columns.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_grid_menu_Columns.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_grid_menu_Columns.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_grid_menu_Columns.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_grid_menu_Columns.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_grid_menu_Columns.PROPERTIES()),
+      events.concat(Ext_grid_menu_Columns.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_grid_menu_Columns.PROPERTIES()),
-            events.concat(Ext_grid_menu_Columns.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

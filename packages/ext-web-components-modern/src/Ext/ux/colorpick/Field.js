@@ -1,7 +1,7 @@
 import Ext_field_Picker from '../../../Ext/field/Picker.js';
 
 export default class Ext_ux_colorpick_Field extends Ext_field_Picker {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'alignSelf',
     'alignTarget',
     'alphaDecimalFormat',
@@ -149,8 +149,8 @@ export default class Ext_ux_colorpick_Field extends Ext_field_Picker {
     'xtype',
     'y',
     'zIndex',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'action', parameters:'sender,e'},
     {name:'added', parameters:'sender,container,index'},
     {name:'beforebottomchange', parameters:'sender,value,oldValue,undefined'},
@@ -218,52 +218,40 @@ export default class Ext_ux_colorpick_Field extends Ext_field_Picker {
     {name:'updatedata', parameters:'sender,newData'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_ux_colorpick_Field.PROPERTIES());
-        return Ext_field_Picker.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_ux_colorpick_Field.EVENTS());
-        return Ext_field_Picker.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_ux_colorpick_Field.PROPERTIES());
+    return Ext_field_Picker.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_ux_colorpick_Field.EVENTS());
+    return Ext_field_Picker.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_ux_colorpick_Field.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_ux_colorpick_Field.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_ux_colorpick_Field.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_ux_colorpick_Field.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_ux_colorpick_Field.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_ux_colorpick_Field.PROPERTIES()),
+      events.concat(Ext_ux_colorpick_Field.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_ux_colorpick_Field.PROPERTIES()),
-            events.concat(Ext_ux_colorpick_Field.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

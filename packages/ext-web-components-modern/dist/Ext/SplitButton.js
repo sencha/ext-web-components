@@ -203,23 +203,12 @@ function (_Ext_Button) {
   Ext_SplitButton.getEvents = function getEvents(events) {
     events = events.concat(Ext_SplitButton.EVENTS());
     return Ext_Button.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_SplitButton, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Button.observedAttributes; //for (var property in Ext_SplitButton.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_Button.observedAttributes;
       Ext_SplitButton.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

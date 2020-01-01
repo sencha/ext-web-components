@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_field_Time from '@sencha/ext-runtime-base/dist/./Ext/field/Time.js';
 import Ext_field_Time from './Ext/field/Time.js';
 import ElementParser from './ElementParser.js';
 

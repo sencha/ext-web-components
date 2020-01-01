@@ -188,23 +188,12 @@ function (_Ext_dataview_pullref) {
   Ext_dataview_pullrefresh_Bar.getEvents = function getEvents(events) {
     events = events.concat(Ext_dataview_pullrefresh_Bar.EVENTS());
     return Ext_dataview_pullrefresh_Item.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_dataview_pullrefresh_Bar, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_dataview_pullref.observedAttributes; //for (var property in Ext_dataview_pullrefresh_Bar.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_dataview_pullref.observedAttributes;
       Ext_dataview_pullrefresh_Bar.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

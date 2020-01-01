@@ -221,23 +221,12 @@ function (_Ext_Toolbar) {
   Ext_tab_Bar.getEvents = function getEvents(events) {
     events = events.concat(Ext_tab_Bar.EVENTS());
     return Ext_Toolbar.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_tab_Bar, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Toolbar.observedAttributes; //for (var property in Ext_tab_Bar.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_Toolbar.observedAttributes;
       Ext_tab_Bar.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

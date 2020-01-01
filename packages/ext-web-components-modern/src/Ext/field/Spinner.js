@@ -1,7 +1,7 @@
 import Ext_field_Number from '../../Ext/field/Number.js';
 
 export default class Ext_field_Spinner extends Ext_field_Number {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'accelerateOnTapHold',
     'alignSelf',
     'alwaysOnTop',
@@ -147,8 +147,8 @@ export default class Ext_field_Spinner extends Ext_field_Number {
     'xtype',
     'y',
     'zIndex',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'action', parameters:''},
     {name:'added', parameters:'sender,container,index'},
     {name:'beforebottomchange', parameters:'sender,value,oldValue,undefined'},
@@ -217,52 +217,40 @@ export default class Ext_field_Spinner extends Ext_field_Number {
     {name:'updatedata', parameters:''},
     {name:'widthchange', parameters:'sender,value,oldValue'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_field_Spinner.PROPERTIES());
-        return Ext_field_Number.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_field_Spinner.EVENTS());
-        return Ext_field_Number.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_field_Spinner.PROPERTIES());
+    return Ext_field_Number.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_field_Spinner.EVENTS());
+    return Ext_field_Number.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_field_Spinner.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_field_Spinner.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_field_Spinner.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_field_Spinner.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_field_Spinner.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_field_Spinner.PROPERTIES()),
+      events.concat(Ext_field_Spinner.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_field_Spinner.PROPERTIES()),
-            events.concat(Ext_field_Spinner.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

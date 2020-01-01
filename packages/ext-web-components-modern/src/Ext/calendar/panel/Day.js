@@ -1,7 +1,7 @@
 import Ext_calendar_panel_Days from '../../../Ext/calendar/panel/Days.js';
 
 export default class Ext_calendar_panel_Day extends Ext_calendar_panel_Days {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'activeChildTabIndex',
     'activeItem',
     'addForm',
@@ -165,8 +165,8 @@ export default class Ext_calendar_panel_Day extends Ext_calendar_panel_Days {
     'xtype',
     'y',
     'zIndex',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'newActiveItem,sender,oldActiveItem'},
     {name:'activeItemchange', parameters:'sender,value,oldValue'},
     {name:'add', parameters:'sender,item,index'},
@@ -255,52 +255,40 @@ export default class Ext_calendar_panel_Day extends Ext_calendar_panel_Days {
     {name:'valuechange', parameters:'sender,context'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_calendar_panel_Day.PROPERTIES());
-        return Ext_calendar_panel_Days.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_calendar_panel_Day.EVENTS());
-        return Ext_calendar_panel_Days.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_calendar_panel_Day.PROPERTIES());
+    return Ext_calendar_panel_Days.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_calendar_panel_Day.EVENTS());
+    return Ext_calendar_panel_Days.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_calendar_panel_Day.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_calendar_panel_Day.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_calendar_panel_Day.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_calendar_panel_Day.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_calendar_panel_Day.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_calendar_panel_Day.PROPERTIES()),
+      events.concat(Ext_calendar_panel_Day.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_calendar_panel_Day.PROPERTIES()),
-            events.concat(Ext_calendar_panel_Day.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

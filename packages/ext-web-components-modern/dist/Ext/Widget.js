@@ -68,23 +68,12 @@ function (_Ext_Evented) {
   Ext_Widget.getEvents = function getEvents(events) {
     events = events.concat(Ext_Widget.EVENTS());
     return Ext_Evented.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_Widget, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Evented.observedAttributes; //for (var property in Ext_Widget.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_Evented.observedAttributes;
       Ext_Widget.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

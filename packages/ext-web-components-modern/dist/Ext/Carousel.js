@@ -212,23 +212,12 @@ function (_Ext_Container) {
   Ext_Carousel.getEvents = function getEvents(events) {
     events = events.concat(Ext_Carousel.EVENTS());
     return Ext_Container.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_Carousel, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Container.observedAttributes; //for (var property in Ext_Carousel.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_Container.observedAttributes;
       Ext_Carousel.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

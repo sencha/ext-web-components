@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_field_trigger_Reveal from '@sencha/ext-runtime-base/dist/./Ext/field/trigger/Reveal.js';
 import Ext_field_trigger_Reveal from './Ext/field/trigger/Reveal.js';
 import ElementParser from './ElementParser.js';
 

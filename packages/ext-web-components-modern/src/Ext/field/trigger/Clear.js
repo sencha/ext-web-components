@@ -1,7 +1,7 @@
 import Ext_field_trigger_Trigger from '../../../Ext/field/trigger/Trigger.js';
 
 export default class Ext_field_trigger_Clear extends Ext_field_trigger_Trigger {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'alignSelf',
     'alwaysOnTop',
     'ariaAttributes',
@@ -61,8 +61,8 @@ export default class Ext_field_trigger_Clear extends Ext_field_trigger_Trigger {
     'width',
     'x',
     'y',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'beforedisabledchange', parameters:'sender,value,oldValue,undefined'},
     {name:'beforeheightchange', parameters:'sender,value,oldValue,undefined'},
     {name:'beforehiddenchange', parameters:'sender,value,oldValue,undefined'},
@@ -78,52 +78,40 @@ export default class Ext_field_trigger_Clear extends Ext_field_trigger_Trigger {
     {name:'tofront', parameters:'sender'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_field_trigger_Clear.PROPERTIES());
-        return Ext_field_trigger_Trigger.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_field_trigger_Clear.EVENTS());
-        return Ext_field_trigger_Trigger.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_field_trigger_Clear.PROPERTIES());
+    return Ext_field_trigger_Trigger.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_field_trigger_Clear.EVENTS());
+    return Ext_field_trigger_Trigger.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_field_trigger_Clear.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_field_trigger_Clear.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_field_trigger_Clear.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_field_trigger_Clear.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_field_trigger_Clear.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_field_trigger_Clear.PROPERTIES()),
+      events.concat(Ext_field_trigger_Clear.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_field_trigger_Clear.PROPERTIES()),
-            events.concat(Ext_field_trigger_Clear.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

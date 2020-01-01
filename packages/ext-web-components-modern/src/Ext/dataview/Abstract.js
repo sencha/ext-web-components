@@ -1,7 +1,7 @@
 import Ext_Container from '../../Ext/Container.js';
 
 export default class Ext_dataview_Abstract extends Ext_Container {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'activeChildTabIndex',
     'activeItem',
     'alignSelf',
@@ -136,8 +136,8 @@ export default class Ext_dataview_Abstract extends Ext_Container {
     'xtype',
     'y',
     'zIndex',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'newActiveItem,sender,oldActiveItem'},
     {name:'activeItemchange', parameters:'sender,value,oldValue'},
     {name:'add', parameters:''},
@@ -219,52 +219,40 @@ export default class Ext_dataview_Abstract extends Ext_Container {
     {name:'updatedata', parameters:'sender,newData'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_dataview_Abstract.PROPERTIES());
-        return Ext_Container.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_dataview_Abstract.EVENTS());
-        return Ext_Container.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_dataview_Abstract.PROPERTIES());
+    return Ext_Container.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_dataview_Abstract.EVENTS());
+    return Ext_Container.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_dataview_Abstract.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_dataview_Abstract.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_dataview_Abstract.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_dataview_Abstract.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_dataview_Abstract.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_dataview_Abstract.PROPERTIES()),
+      events.concat(Ext_dataview_Abstract.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_dataview_Abstract.PROPERTIES()),
-            events.concat(Ext_dataview_Abstract.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

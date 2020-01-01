@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_pivot_d3_Container from '@sencha/ext-runtime-base/dist/./Ext/pivot/d3/Container.js';
 import Ext_pivot_d3_Container from './Ext/pivot/d3/Container.js';
 import ElementParser from './ElementParser.js';
 

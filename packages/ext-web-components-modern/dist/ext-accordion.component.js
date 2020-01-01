@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_panel_Accordion from '@sencha/ext-runtime-base/dist/./Ext/panel/Accordion.js';
 import Ext_panel_Accordion from './Ext/panel/Accordion.js';
 import ElementParser from './ElementParser.js';
 

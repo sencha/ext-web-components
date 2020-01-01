@@ -245,23 +245,12 @@ function (_Ext_Panel) {
   Ext_picker_Tablet.getEvents = function getEvents(events) {
     events = events.concat(Ext_picker_Tablet.EVENTS());
     return Ext_Panel.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_picker_Tablet, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Panel.observedAttributes; //for (var property in Ext_picker_Tablet.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_Panel.observedAttributes;
       Ext_picker_Tablet.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

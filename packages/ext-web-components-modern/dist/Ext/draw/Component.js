@@ -239,23 +239,12 @@ function (_Ext_draw_ContainerBa) {
   Ext_draw_Component.getEvents = function getEvents(events) {
     events = events.concat(Ext_draw_Component.EVENTS());
     return Ext_draw_ContainerBase.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_draw_Component, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_draw_ContainerBa.observedAttributes; //for (var property in Ext_draw_Component.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_draw_ContainerBa.observedAttributes;
       Ext_draw_Component.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

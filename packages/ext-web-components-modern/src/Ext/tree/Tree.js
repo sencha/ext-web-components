@@ -1,7 +1,7 @@
 import Ext_grid_Grid from '../../Ext/grid/Grid.js';
 
 export default class Ext_tree_Tree extends Ext_grid_Grid {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'activeChildTabIndex',
     'activeItem',
     'alignSelf',
@@ -194,8 +194,8 @@ export default class Ext_tree_Tree extends Ext_grid_Grid {
     'xtype',
     'y',
     'zIndex',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'newActiveItem,sender,oldActiveItem'},
     {name:'activeItemchange', parameters:'sender,value,oldValue'},
     {name:'add', parameters:''},
@@ -323,52 +323,40 @@ export default class Ext_tree_Tree extends Ext_grid_Grid {
     {name:'validateedit', parameters:'sender,location'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_tree_Tree.PROPERTIES());
-        return Ext_grid_Grid.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_tree_Tree.EVENTS());
-        return Ext_grid_Grid.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_tree_Tree.PROPERTIES());
+    return Ext_grid_Grid.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_tree_Tree.EVENTS());
+    return Ext_grid_Grid.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_tree_Tree.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_tree_Tree.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_tree_Tree.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_tree_Tree.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_tree_Tree.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_tree_Tree.PROPERTIES()),
+      events.concat(Ext_tree_Tree.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_tree_Tree.PROPERTIES()),
-            events.concat(Ext_tree_Tree.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_field_SingleSlider from '@sencha/ext-runtime-base/dist/./Ext/field/SingleSlider.js';
 import Ext_field_SingleSlider from './Ext/field/SingleSlider.js';
 import ElementParser from './ElementParser.js';
 

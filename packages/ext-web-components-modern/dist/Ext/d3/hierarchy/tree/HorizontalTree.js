@@ -197,23 +197,12 @@ function (_Ext_d3_hierarchy_tre) {
   Ext_d3_hierarchy_tree_HorizontalTree.getEvents = function getEvents(events) {
     events = events.concat(Ext_d3_hierarchy_tree_HorizontalTree.EVENTS());
     return Ext_d3_hierarchy_tree_Tree.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_d3_hierarchy_tree_HorizontalTree, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_d3_hierarchy_tre.observedAttributes; //for (var property in Ext_d3_hierarchy_tree_HorizontalTree.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_d3_hierarchy_tre.observedAttributes;
       Ext_d3_hierarchy_tree_HorizontalTree.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

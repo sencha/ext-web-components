@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_dataview_listswiper_Item from '@sencha/ext-runtime-base/dist/./Ext/dataview/listswiper/Item.js';
 import Ext_dataview_listswiper_Item from './Ext/dataview/listswiper/Item.js';
 import ElementParser from './ElementParser.js';
 

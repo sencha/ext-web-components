@@ -191,23 +191,12 @@ function (_Ext_Component) {
   Ext_Mask.getEvents = function getEvents(events) {
     events = events.concat(Ext_Mask.EVENTS());
     return Ext_Component.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_Mask, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Component.observedAttributes; //for (var property in Ext_Mask.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_Component.observedAttributes;
       Ext_Mask.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

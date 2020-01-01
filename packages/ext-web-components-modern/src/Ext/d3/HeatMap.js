@@ -1,7 +1,7 @@
 import Ext_d3_svg_Svg from '../../Ext/d3/svg/Svg.js';
 
 export default class Ext_d3_HeatMap extends Ext_d3_svg_Svg {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'alignSelf',
     'alwaysOnTop',
     'ariaAttributes',
@@ -100,8 +100,8 @@ export default class Ext_d3_HeatMap extends Ext_d3_svg_Svg {
     'y',
     'yAxis',
     'zIndex',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'added', parameters:'sender,container,index'},
     {name:'beforebottomchange', parameters:'sender,value,oldValue,undefined'},
     {name:'beforecenteredchange', parameters:'sender,value,oldValue,undefined'},
@@ -159,52 +159,40 @@ export default class Ext_d3_HeatMap extends Ext_d3_svg_Svg {
     {name:'updatedata', parameters:'sender,newData'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_d3_HeatMap.PROPERTIES());
-        return Ext_d3_svg_Svg.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_d3_HeatMap.EVENTS());
-        return Ext_d3_svg_Svg.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_d3_HeatMap.PROPERTIES());
+    return Ext_d3_svg_Svg.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_d3_HeatMap.EVENTS());
+    return Ext_d3_svg_Svg.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_d3_HeatMap.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_d3_HeatMap.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_d3_HeatMap.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_d3_HeatMap.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_d3_HeatMap.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_d3_HeatMap.PROPERTIES()),
+      events.concat(Ext_d3_HeatMap.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_d3_HeatMap.PROPERTIES()),
-            events.concat(Ext_d3_HeatMap.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

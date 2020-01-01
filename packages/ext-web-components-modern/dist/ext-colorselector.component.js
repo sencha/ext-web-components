@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ux_colorpick_Selector from '@sencha/ext-runtime-base/dist/./Ext/ux/colorpick/Selector.js';
 import Ext_ux_colorpick_Selector from './Ext/ux/colorpick/Selector.js';
 import ElementParser from './ElementParser.js';
 

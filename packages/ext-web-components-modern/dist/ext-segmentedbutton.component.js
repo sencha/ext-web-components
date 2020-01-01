@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_button_Segmented from '@sencha/ext-runtime-base/dist/./Ext/button/Segmented.js';
 import Ext_button_Segmented from './Ext/button/Segmented.js';
 import ElementParser from './ElementParser.js';
 

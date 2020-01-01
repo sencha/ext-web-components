@@ -188,23 +188,12 @@ function (_Ext_d3_ComponentBase) {
   Ext_d3_Component.getEvents = function getEvents(events) {
     events = events.concat(Ext_d3_Component.EVENTS());
     return Ext_d3_ComponentBase.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_d3_Component, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_d3_ComponentBase.observedAttributes; //for (var property in Ext_d3_Component.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_d3_ComponentBase.observedAttributes;
       Ext_d3_Component.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

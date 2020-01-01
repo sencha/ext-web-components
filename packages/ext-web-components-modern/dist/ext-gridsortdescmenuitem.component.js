@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_grid_menu_SortDesc from '@sencha/ext-runtime-base/dist/./Ext/grid/menu/SortDesc.js';
 import Ext_grid_menu_SortDesc from './Ext/grid/menu/SortDesc.js';
 import ElementParser from './ElementParser.js';
 

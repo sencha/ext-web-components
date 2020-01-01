@@ -1,7 +1,7 @@
 import Ext_chart_AbstractChart from '../../Ext/chart/AbstractChart.js';
 
 export default class Ext_chart_SpaceFillingChart extends Ext_chart_AbstractChart {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'activeChildTabIndex',
     'activeItem',
     'alignSelf',
@@ -129,8 +129,8 @@ export default class Ext_chart_SpaceFillingChart extends Ext_chart_AbstractChart
     'xtype',
     'y',
     'zIndex',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'newActiveItem,sender,oldActiveItem'},
     {name:'activeItemchange', parameters:'sender,value,oldValue'},
     {name:'add', parameters:'sender,item,index'},
@@ -218,52 +218,40 @@ export default class Ext_chart_SpaceFillingChart extends Ext_chart_AbstractChart
     {name:'updatedata', parameters:'sender,newData'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_chart_SpaceFillingChart.PROPERTIES());
-        return Ext_chart_AbstractChart.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_chart_SpaceFillingChart.EVENTS());
-        return Ext_chart_AbstractChart.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_chart_SpaceFillingChart.PROPERTIES());
+    return Ext_chart_AbstractChart.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_chart_SpaceFillingChart.EVENTS());
+    return Ext_chart_AbstractChart.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_chart_SpaceFillingChart.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_chart_SpaceFillingChart.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_chart_SpaceFillingChart.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_chart_SpaceFillingChart.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_chart_SpaceFillingChart.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_chart_SpaceFillingChart.PROPERTIES()),
+      events.concat(Ext_chart_SpaceFillingChart.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_chart_SpaceFillingChart.PROPERTIES()),
-            events.concat(Ext_chart_SpaceFillingChart.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

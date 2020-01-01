@@ -245,23 +245,12 @@ function (_Ext_Panel) {
   Ext_panel_Accordion.getEvents = function getEvents(events) {
     events = events.concat(Ext_panel_Accordion.EVENTS());
     return Ext_Panel.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_panel_Accordion, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Panel.observedAttributes; //for (var property in Ext_panel_Accordion.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_Panel.observedAttributes;
       Ext_panel_Accordion.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

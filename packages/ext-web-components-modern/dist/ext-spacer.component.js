@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_Spacer from '@sencha/ext-runtime-base/dist/./Ext/Spacer.js';
 import Ext_Spacer from './Ext/Spacer.js';
 import ElementParser from './ElementParser.js';
 

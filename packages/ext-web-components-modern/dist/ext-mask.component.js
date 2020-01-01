@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_Mask from '@sencha/ext-runtime-base/dist/./Ext/Mask.js';
 import Ext_Mask from './Ext/Mask.js';
 import ElementParser from './ElementParser.js';
 

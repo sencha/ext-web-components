@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_IndexBar from '@sencha/ext-runtime-base/dist/./Ext/IndexBar.js';
 import Ext_IndexBar from './Ext/IndexBar.js';
 import ElementParser from './ElementParser.js';
 

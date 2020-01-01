@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_form_Spinner from '@sencha/ext-runtime-base/dist/./Ext/form/Spinner.js';
 import Ext_form_Spinner from './Ext/form/Spinner.js';
 import ElementParser from './ElementParser.js';
 
