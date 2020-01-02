@@ -1,22 +1,22 @@
-import { getRoutes } from '@sencha/ext-web-components/lib/ext-router.component';
-import '@sencha/ext-web-components/lib/ext-button.component';
-import '@sencha/ext-web-components/lib/ext-sheet.component';
-import '@sencha/ext-web-components/lib/ext-dataview.component';
-import '@sencha/ext-web-components/lib/ext-searchfield.component';
-import '@sencha/ext-web-components/lib/ext-treelist.component';
-import '@sencha/ext-web-components/lib/ext-panel.component';
-import '@sencha/ext-web-components/lib/ext-tab.component';
-import '@sencha/ext-web-components/lib/ext-tabpanel.component';
-import '@sencha/ext-web-components/lib/ext-tabbar.component';
+import { getRoutes } from '@sencha/ext-web-components-modern/dist/ext-router.component';
+import '@sencha/ext-web-components-modern/dist/ext-button.component';
+import '@sencha/ext-web-components-modern/dist/ext-sheet.component';
+import '@sencha/ext-web-components-modern/dist/ext-dataview.component';
+import '@sencha/ext-web-components-modern/dist/ext-searchfield.component';
+import '@sencha/ext-web-components-modern/dist/ext-treelist.component';
+import '@sencha/ext-web-components-modern/dist/ext-panel.component';
+import '@sencha/ext-web-components-modern/dist/ext-tab.component';
+import '@sencha/ext-web-components-modern/dist/ext-tabpanel.component';
+import '@sencha/ext-web-components-modern/dist/ext-tabbar.component';
 
-import '@sencha/ext-web-components/lib/ext-titlebar.component';
-import '@sencha/ext-web-components/lib/ext-toolbar.component';
-import '@sencha/ext-web-components/lib/ext-column.component';
-import '@sencha/ext-web-components/lib/ext-grid.component';
-import '@sencha/ext-web-components/lib/ext-combobox.component';
-import '@sencha/ext-web-components/lib/ext-list.component';
-import '@sencha/ext-web-components/lib/ext-container.component';
-import '@sencha/ext-web-components/lib/ext-calendar-days.component';
+import '@sencha/ext-web-components-modern/dist/ext-titlebar.component';
+import '@sencha/ext-web-components-modern/dist/ext-toolbar.component';
+import '@sencha/ext-web-components-modern/dist/ext-column.component';
+import '@sencha/ext-web-components-modern/dist/ext-grid.component';
+import '@sencha/ext-web-components-modern/dist/ext-combobox.component';
+import '@sencha/ext-web-components-modern/dist/ext-list.component';
+import '@sencha/ext-web-components-modern/dist/ext-container.component';
+import '@sencha/ext-web-components-modern/dist/ext-calendar-days.component';
 
 import getMenu from './menu';
 import MainComponent from './view/main/MainComponent.js';
@@ -35,4 +35,6 @@ function init() {
     document.body.innerHTML = window._code['main']['MainComponent.html'];
 }
 
-init();
+Ext.onReady(function() {
+    init();
+});

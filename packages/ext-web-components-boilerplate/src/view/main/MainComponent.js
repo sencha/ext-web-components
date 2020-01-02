@@ -39,11 +39,11 @@ export default class MainComponent {
         }
         const node = this.navTreelist.getStore().findNode('hash', hash);
         this.navTreelist.setSelection(node);
-      // if (Ext.os.is.Phone) {
-      //     navButton.setHidden(false);
-      // } else {
-      //     navButton.setHidden(true);
-      // }
+        // if (Ext.os.is.Phone) {
+        //     navButton.setHidden(false);
+        // } else {
+        //     navButton.setHidden(true);
+        // }
     }
 
     navTreelistSelectionChange = (event) => {
