@@ -1,4 +1,3 @@
-//import './ewc';
 import '@sencha/ext-web-components-modern';
 import getMenu from './menu';
 import { getRoutes } from '@sencha/ext-web-components-modern/src/ext-router.component';
@@ -12,5 +11,5 @@ function init() {
 }
 
 Ext.onReady(function() {
-  init();
+    init();
 });
