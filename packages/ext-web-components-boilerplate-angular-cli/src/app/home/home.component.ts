@@ -1,5 +1,5 @@
 declare var Ext: any;
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import data from './data';
 
 @Component({
@@ -8,6 +8,7 @@ import data from './data';
     templateUrl: 'home.component.html'
   })
   export default class HomeComponent {
+    @HostBinding('style.height') public height: string = '100%';
     gridCmp:any;
     store:any;
 
