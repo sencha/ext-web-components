@@ -2,7 +2,7 @@
 
 ## Release Notes
 
-### 7.0.0
+### 7.1.0
 
 ## Overview
 

@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Thu Jan 02 2020 06:58:52 GMT-0500 (Eastern Standard Time)
+//Fri Jan 03 2020 15:16:14 GMT-0500 (Eastern Standard Time)
 import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var EleBaseComponent =
@@ -38,6 +38,12 @@ function (_HTMLElement) {
   var _proto = EleBaseComponent.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
+    //console.log('connectedCallback: ' + this.xtype);
+    EleBaseComponent.elementcount++;
+    EleBaseComponent.elements.push(this); //console.log('added: ' + this.tagName + ': elementcount is now ' + EleBaseComponent.elementcount);
+  };
+
+  _proto.connectedCallback2 = function connectedCallback2() {
     var _this2 = this;
 
     //console.log('connectedCallback: ' + this.xtype);
@@ -58,9 +64,6 @@ function (_HTMLElement) {
     this.propertiesDistinct.forEach(function (prop) {
       doProp(_this2, prop);
     });
-    EleBaseComponent.elementcount++;
-    EleBaseComponent.elements.push(this); //console.log('added: ' + this.tagName + ': elementcount is now ' + EleBaseComponent.elementcount);
-
     this.xtype = x;
     var me = this;
     this.newCreateProps(this.properties, this.events);
@@ -178,17 +181,10 @@ function (_HTMLElement) {
           viewport: true
         };
       }
-    }
+    } //console.log(me.A.o);
 
-    if(me.A.o.xtype == 'panel') {
-      console.log(me.A.o);
-    }
+
     me.A.ext = Ext.create(me.A.o);
-    if(me.A.o.xtype == 'panel') {
-      console.log(me.A.ext);
-    }
-
-
     me.cmp = me.A.ext;
     me.ext = me.A.ext;
 
@@ -206,6 +202,7 @@ function (_HTMLElement) {
 
   _proto.parsedCallback = function parsedCallback() {
     //console.log('parsedCallback: ' + this.xtype);
+    this.connectedCallback2();
     this.doChildren(this);
   };
 
@@ -239,20 +236,11 @@ function (_HTMLElement) {
     }
 
     me.A.CHILDREN.forEach(function (child) {
-      console.log('a')
       me.addTheChild(me.A.ext, child);
     });
 
     if (me.parentNode != null && me.parentNode.nodeName.substring(0, 4) === 'EXT-') {
       if (me.parentNode.A.ext !== undefined) {
-        console.log('b')
-
-        if(me.parentNode.A.o.xtype == 'panel') {
-          console.log(me.parentNode.A);
-          console.log(me.parentNode.A.ext);
-        }
-
-
         me.addTheChild(me.parentNode.A.ext, me.A.ext);
       } else {
         me.parentNode.A.CHILDREN.push(me.A.ext);
@@ -366,11 +354,6 @@ function (_HTMLElement) {
 
       default:
         if (location == null) {
-          //console.log('here')
-          //console.dir(parentCmp.xtype)
-          //console.dir(childCmp.xtype)
-          console.log(parentCmp)
-          //console.dir(childCmp)
           parentCmp.add(childCmp);
         } else {
           parentCmp.insert(location, childCmp);
