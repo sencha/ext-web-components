@@ -100,25 +100,19 @@ export default class MainComponent {
     };
 
     navigate = (who, node) => {
-        if (this.navInProcess) {
+        if (this.navInProcess == true) {
             //console.log('nav in process, request from ' + who);
             return;
         }
         if (node == null) {
             return;
         }
-
         this.navInProcess = true;
-
         var hash = node.data.hash;
         var childNum = node.childNodes.length;
 
-        this.breadcrumb.setSelection(node);
-        this.navTreelist.setSelection(node);
-
         if (childNum == 0 && hash != undefined) {
             window.location.hash = '#' + hash;
-            //console.log('showRouter');
             this.showRouter();
         } else {
             this.componentsView.setHidden(true);
@@ -126,19 +120,21 @@ export default class MainComponent {
             this.showSelection();
         }
 
+        this.breadcrumb.setSelection(node);
+        this.navTreelist.setSelection(node);
+
         //if(Ext.os.is.Phone) {this.navTreePanel.setCollapsed(true);}
 
         this.navInProcess = false;
-        //console.log('nav ended');
     };
 
     showRouter = () => {
         this.selection.setHidden(true);
-        window.router.hidden = false;
+        window['router'].hidden = false;
         this.codeButton.setHidden(false);
         this.componentsView.setHidden(false);
         //console.log('routeMe in MainComponent');
-        window.router.routeMe();
+        window['router'].routeMe();
 
         this.setCodeTabs();
     };

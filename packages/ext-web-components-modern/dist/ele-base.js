@@ -178,10 +178,17 @@ function (_HTMLElement) {
           viewport: true
         };
       }
-    } //console.log(me.A.o);
+    }
 
-
+    if(me.A.o.xtype == 'panel') {
+      console.log(me.A.o);
+    }
     me.A.ext = Ext.create(me.A.o);
+    if(me.A.o.xtype == 'panel') {
+      console.log(me.A.ext);
+    }
+
+
     me.cmp = me.A.ext;
     me.ext = me.A.ext;
 
@@ -232,11 +239,20 @@ function (_HTMLElement) {
     }
 
     me.A.CHILDREN.forEach(function (child) {
+      console.log('a')
       me.addTheChild(me.A.ext, child);
     });
 
     if (me.parentNode != null && me.parentNode.nodeName.substring(0, 4) === 'EXT-') {
       if (me.parentNode.A.ext !== undefined) {
+        console.log('b')
+
+        if(me.parentNode.A.o.xtype == 'panel') {
+          console.log(me.parentNode.A);
+          console.log(me.parentNode.A.ext);
+        }
+
+
         me.addTheChild(me.parentNode.A.ext, me.A.ext);
       } else {
         me.parentNode.A.CHILDREN.push(me.A.ext);
@@ -350,6 +366,11 @@ function (_HTMLElement) {
 
       default:
         if (location == null) {
+          //console.log('here')
+          //console.dir(parentCmp.xtype)
+          //console.dir(childCmp.xtype)
+          console.log(parentCmp)
+          //console.dir(childCmp)
           parentCmp.add(childCmp);
         } else {
           parentCmp.insert(location, childCmp);

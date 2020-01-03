@@ -1,40 +1,44 @@
-<ext-container layout="fit" height="100%"
+<ext-container
+  layout="fit"
+  height="100%"
   platformConfig='{
     "!phone": {
-        "layout": "hbox"
+      "layout": "hbox"
     },
     "phone": {
-        "layout": {
-            "type": "card",
-            "animation": "slide"
-        }
+      "layout": {
+        "type": "card",
+        "animation": "slide"
+      }
     }
   }'
   activeItem="0"
+  onReady="schedule.readyPage"
 >
 
   <ext-container
-    onready="schedule.bannerReady"
+    extname="banner"
     docked="top"
     cls="app-banner"
   >
-    <span>Sencha Ext Web Components Conference App</span>
+    <span>Sencha Ext Web Components Modern Conference App</span>
   </ext-container>
 
   <ext-tabpanel
-      onready="schedule.tabpanelReady"
-      flex="1"
-      tabBar='{"shadow": "true"}'
-      activeItem="0"
-      platformConfig='{"!phone": { "flex": "1" } }'
-      height="100%"
+    extname="tabPanel"
+    flex="1"
+    tabBar='{"shadow": "true"}'
+    activeItem="0"
+    platformConfig='{"!phone": { "flex": "1" } }'
+    height="100%"
   >
     <ext-panel
-    title="Mon"
-        platformConfig='{"!phone": { "title": "MONDAY" },"phone": {"title": "MON" } }'
-        height="100%"
+      title="Mon"
+      platformConfig='{"!phone": { "title": "MONDAY" },"phone": {"title": "MON" } }'
+      height="100%"
     >
       <ext-list
+        extname="list1"
         height="100%"
         onready="schedule.firstListReady"
         hideMode="offsets"
@@ -51,11 +55,12 @@
       </ext-list>
     </ext-panel>
     <ext-panel
-    title="Tue"
-    platformConfig='{"!phone": { "title": "TUESDAY" },"phone": {"title": "TUE" } }'
+      title="Tue"
+      platformConfig='{"!phone": { "title": "TUESDAY" },"phone": {"title": "TUE" } }'
       height="100%"
     >
       <ext-list
+        extname="list2"
         height="100%"
         onready="schedule.secondListReady"
         hideMode="offsets"
@@ -72,11 +77,12 @@
       </ext-list>
     </ext-panel>
     <ext-panel
-    title="Wed"
+      title="Wed"
       height="100%"
       platformConfig='{"!phone": { "title": "WEDNESDAY" },"phone": {"title": "WED" } }'
     >
       <ext-list
+        extname="list3"
         height="100%"
         onready="schedule.thirdListReady"
         hideMode="offsets"
@@ -97,7 +103,8 @@
     height="100%"
     >
       <ext-list
-      height="100%"
+        extname="listStar"
+        height="100%"
         onready="schedule.starListReady"
         hideMode="offsets"
         grouped="true"
@@ -115,13 +122,14 @@
     </ext-panel>
   </ext-tabpanel>
   <ext-panel
-      flex="1"
-      padding="20"
-      xheader="true"
-      hidden="true"
-      onready="schedule.scheduleSidePanelReady"
+    extname="sidePanel"
+    flex="1"
+    padding="20"
+    xheader="true"
+    hidden="true"
+    xonready="schedule.scheduleSidePanelReady"
   >
-    <ext-container onready="schedule.scheduleSideContainerReady"></ext-container>
+    <ext-container extname="sideContainer"></ext-container>
   </ext-panel>
   </ext-tabpanel>
 
