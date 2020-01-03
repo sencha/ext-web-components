@@ -64,6 +64,8 @@ var ElementParser = function () {
     queue.splice(0).forEach(function (info) {
       if (init.get(info[0]) !== true) {
         init.set(info[0], true);
+        //console.dir(info[0])
+        //console.dir(info[1])
         info[0][info[1]]();
       }
     });
@@ -99,6 +101,9 @@ var ElementParser = function () {
 
       var parsedCallback = function parsedCallback(el) {
         if (!queue.length) requestAnimationFrame(upgrade);
+        //console.log('push:');
+        //console.log(el)
+        //console.log(method)
         queue.push([el, method]);
       };
 

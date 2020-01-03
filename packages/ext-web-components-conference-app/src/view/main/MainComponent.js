@@ -1,54 +1,54 @@
 import './MainComponent.html';
 
 export default class MainComponent {
-    constructor() {
-        const navTreeRoot = {
-            hash: 'all',
-            iconCls: 'x-fa fa-home',
-            leaf: false,
-            text: 'All',
-            children: window.menu
-        };
-        this.treeStore = Ext.create('Ext.data.TreeStore', {
-            rootVisible: true,
-            root: navTreeRoot
-        });
-        //this.wait = 3;
-        this.back = false;
-        this.collapsed = false;
-        this.isInitial = true;
+  constructor() {
+      this.navInProcess = false;
+      const navTreeRoot = {
+        hash: 'all',
+        iconCls: 'x-fa fa-home',
+        leaf: false,
+        text: 'All',
+        children: window.menu
+      };
+      this.treeStore = Ext.create('Ext.data.TreeStore', {
+        rootVisible: true,
+        root: navTreeRoot
+      });
+      this.back = false;
+      this.collapsed = false;
+      this.isInitial = true;
 
-        this.favorites = JSON.parse(localStorage.getItem('favoriteEvents'));
-        this.store = Ext.create('Ext.data.Store', {
-            autoLoad: true,
-            proxy: {
-                type: 'ajax',
-                url: 'resources/schedule.json'
-            },
-            listeners: {
-                load: store => store.each(record => {
-                    if (this.favorites != null) {
-                        record.set('favorite', this.favorites.indexOf(record.getId()) !== -1);
-                    }
-                })
-            }
-        });
+      this.favorites = JSON.parse(localStorage.getItem('favoriteEvents'));
+      this.store = Ext.create('Ext.data.Store', {
+          autoLoad: true,
+          proxy: {
+              type: 'ajax',
+              url: 'resources/schedule.json'
+          },
+          listeners: {
+              load: store => store.each(record => {
+                  if (this.favorites != null) {
+                      record.set('favorite', this.favorites.indexOf(record.getId()) !== -1);
+                  }
+              })
+          }
+      });
 
-        this.searchStore = Ext.create('Ext.data.Store', {
-            autoLoad: true,
-            proxy: {
-                type: 'ajax',
-                url: 'resources/schedule.json'
-            },
-            listeners: {
-                load: store => store.each(record => {
-                    if (this.favorites != null) {
-                        record.set('favorite', this.favorites.indexOf(record.getId()) !== -1);
-                    }
-                })
-            }
-        });
-    }
+      this.searchStore = Ext.create('Ext.data.Store', {
+          autoLoad: true,
+          proxy: {
+              type: 'ajax',
+              url: 'resources/schedule.json'
+          },
+          listeners: {
+              load: store => store.each(record => {
+                  if (this.favorites != null) {
+                      record.set('favorite', this.favorites.indexOf(record.getId()) !== -1);
+                  }
+              })
+          }
+      });
+  }
 
     extnameToProperty = (cmpObj, me, suffix) => {
       if (suffix == undefined) {
@@ -62,6 +62,7 @@ export default class MainComponent {
     readyPage = (event) => {
         console.log('pageReady');
         console.log(event.detail.cmpObj)
+
         this.extnameToProperty(event.detail.cmpObj, this, '');
 
         this.navButtonIcon = this.navButton.initialConfig.iconCls;
@@ -119,11 +120,6 @@ export default class MainComponent {
         `;
         this.mobileList.setItemTpl(itemTpl);
         this.mobileList.setStore(this.store);
-
-
-
-
-
         this.navTreelist.setStore(this.treeStore);
 
         let hash = window.location.hash.substr(1);
@@ -148,8 +144,8 @@ export default class MainComponent {
 
 
 
-        this.navTreelist.setSelection(node);
-        this.navigate(node);
+        //this.navTreelist.setSelection(node);
+        this.navigate('ready', node);
     }
 
     // afterAllLoaded = () => {
@@ -197,7 +193,7 @@ export default class MainComponent {
 
     navTreelistSelectionChange = (event) => {
         const record = event.detail.record;
-        this.navigate(record);
+        this.navigate('tree', record);
     }
 
     scheduleTitle = (title, titleOriginator) => {
@@ -211,32 +207,41 @@ export default class MainComponent {
         this.navButton.setIconCls('md-icon-arrow-back');
     }
 
-    navigate = (record) => {
-        console.log('navigate');
-        if (record == null) {
-            console.log('it was null');
-            return;
-        }
-        const hash = record.data.hash;
-        const childNum = record.childNodes.length;
+    navigate = (who, record) => {
+      //console.log(this.navInProcess)
+      if (this.navInProcess == true) {
+        console.log('nav in process, request from ' + who);
+        return;
+      }
+      if (record == null) {
+        //console.log('it was null');
+        return;
+      }
+      this.navInProcess = true;
+      const hash = record.data.hash;
+      const childNum = record.childNodes.length;
 
-        if (childNum == 0 && hash != undefined) {
-            window.location.hash = '#' + hash;
-            if (window['router']) {window['router'].routeMe();}
-        }
+      if (childNum == 0 && hash != undefined) {
+          window.location.hash = '#' + hash;
+          if (window['router']) {window['router'].routeMe();}
+      }
 
-        if(Ext.os.is.Phone) {
-            this.title.setTitle(record.data.text);
-            this.title.setTitleAlign('center');
-            let collapsed = this.navTreePanel.getCollapsed();
+      this.navTreelist.setSelection(record);
 
-            if (collapsed === true) {
-                collapsed = false;
-            } else {
-                collapsed = true;
-            }
-            this.navTreePanel.setCollapsed(collapsed);
-        }
+      if(Ext.os.is.Phone) {
+          this.title.setTitle(record.data.text);
+          this.title.setTitleAlign('center');
+          let collapsed = this.navTreePanel.getCollapsed();
+
+          if (collapsed === true) {
+              collapsed = false;
+          } else {
+              collapsed = true;
+          }
+          this.navTreePanel.setCollapsed(collapsed);
+      }
+      
+      this.navInProcess = false;
     }
 
 
@@ -298,20 +303,20 @@ export default class MainComponent {
 
                 if (tempTitle ==='Schedule') {
                     const scheduleNode = this.navTreelist.getStore().findNode('hash', 'schedule');
-                    this.navigate(scheduleNode);
-                    this.navTreelist.setSelection(scheduleNode);
+                    this.navigate('Schedule', scheduleNode);
+                    //this.navTreelist.setSelection(scheduleNode);
                     window.schedule.resetSchedule();
                     this.back = false;
                 } else if (tempTitle === 'Speakers') {
                     const speakersNode = this.navTreelist.getStore().findNode('hash', 'speakers');
-                    this.navigate(speakersNode);
-                    this.navTreelist.setSelection(speakersNode);
+                    this.navigate('Speaker', speakersNode);
+                    //this.navTreelist.setSelection(speakersNode);
                     window.speakers.resetSpeakers();
                     this.back = false;
                 } else if (tempTitle === 'Calendar') {
                     const calendarNode = this.navTreelist.getStore().findNode('hash', 'calendar');
-                    this.navigate(calendarNode);
-                    this.navTreelist.setSelection(calendarNode);
+                    this.navigate('Calendar', calendarNode);
+                    //this.navTreelist.setSelection(calendarNode);
                     window.calendar.resetCalendar();
                     this.back = false;
                 }
@@ -379,8 +384,8 @@ export default class MainComponent {
             } else {
                 const scheduleNode = this.navTreelist.getStore().findNode('hash', 'schedule');
                 console.log(scheduleNode, 'schedule');
-                this.navigate(scheduleNode);
-                this.navTreelist.setSelection(scheduleNode);
+                this.navigate('Schedule', scheduleNode);
+                //this.navTreelist.setSelection(scheduleNode);
             }
         }
     }
@@ -507,7 +512,7 @@ export default class MainComponent {
         localStorage.setItem('record', JSON.stringify(event.detail.record.data));
         const scheduleNode = this.navTreelist.getStore().findNode('hash', 'schedule');
         this.navigate(scheduleNode);
-        this.navTreelist.setSelection(scheduleNode);
+        //this.navTreelist.setSelection(scheduleNode);
         window.schedule.sideContainer.setData(JSON.parse(localStorage.getItem('record')));
         this.title.setTitle('Schedule');
     }
