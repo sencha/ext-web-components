@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <ext-container viewport="true">
     <ext-titlebar height="52px" docked="top" weight="10">
       <ext-button iconCls="x-fa fa-bars" v-on:tap="toggleTree($event)" v-on:ready="readyToggleButton($event)" ></ext-button>
-      <span href="#" class="app-title">Sencha ExtWebComponents Vue 7.0 Boilerplate</span>
+      <span href="#" class="app-title">Sencha ExtWebComponentsModern Vue 7.1 Boilerplate</span>
     </ext-titlebar>
     <div style="width:100vw; height: calc(100vh - 52px); display: flex;">
       <div :style="panelStyle">
@@ -32,13 +32,13 @@
         <router-view></router-view>
       </div>
     </div>
-  </div>
+  </ext-container>
 </template>
 
 <script>
   import getMenu from './menu.js';
   const menu = getMenu();
-  
+
   export default {
       name: 'app',
       data() {
@@ -70,13 +70,13 @@
                   } else {
                       this.collapsed = true;
                   }
-              } 
+              }
           },
           readyNavTreelist: function(event) {
               this.navTreelistCmp = event.detail.cmp;
               this.navTreelistCmp.setStore(this.treeStore);
               const node = this.treeStore.findNode('hash', 'home');
-              this.navTreelistCmp.setSelection(node);  
+              this.navTreelistCmp.setSelection(node);
           },
           readyToggleButton: function(event) {
               this.navButton = event.detail.cmp;
@@ -97,7 +97,7 @@
                   console.log('it was null');
                   return;
               }
-            
+
               this.$router.push( `/${record}`);
 
               if(Ext.os.is.Phone) {
@@ -113,7 +113,7 @@
                   this.collapsed = false;
               } else {
                   this.collapsed = true;
-              } 
+              }
           }
       }
   }

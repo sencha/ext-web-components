@@ -1,4 +1,4 @@
-//Thu Jan 02 2020 06:58:52 GMT-0500 (Eastern Standard Time)
+//Fri Jan 03 2020 15:16:14 GMT-0500 (Eastern Standard Time)
 
 import {
   doProp,
@@ -38,7 +38,14 @@ export default class EleBaseComponent extends HTMLElement {
     this.base = EleBaseComponent;
   }
 
-  connectedCallback() {
+    connectedCallback() {
+      //console.log('connectedCallback: ' + this.xtype);
+      EleBaseComponent.elementcount++;
+      EleBaseComponent.elements.push(this);
+      //console.log('added: ' + this.tagName + ': elementcount is now ' + EleBaseComponent.elementcount);
+    }
+
+  connectedCallback2() {
     //console.log('connectedCallback: ' + this.xtype);
     var x = this.xtype;
 
@@ -55,10 +62,6 @@ export default class EleBaseComponent extends HTMLElement {
     this.propertiesDistinct.forEach(prop => {
         doProp(this, prop);
     });
-
-    EleBaseComponent.elementcount++;
-    EleBaseComponent.elements.push(this);
-    //console.log('added: ' + this.tagName + ': elementcount is now ' + EleBaseComponent.elementcount);
 
     this.xtype = x;
 
@@ -209,7 +212,10 @@ export default class EleBaseComponent extends HTMLElement {
 
   parsedCallback() {
     //console.log('parsedCallback: ' + this.xtype);
+    this.connectedCallback2()
     this.doChildren(this);
+
+    
   }
 
   doChildren(me) {
