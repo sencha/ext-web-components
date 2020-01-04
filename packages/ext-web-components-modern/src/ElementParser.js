@@ -114,9 +114,12 @@ const ElementParser = (() => {
                           }
                       }
                       else {
-                        setTimeout(function(){
+                        requestAnimationFrame(function () {
                           self['parsedCallback']();
-                        }, 0);
+                        });
+                        //setTimeout(function(){
+                        //  self['parsedCallback']();
+                        //}, 0);
                       }
                   }
               },
