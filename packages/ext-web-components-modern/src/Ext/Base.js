@@ -11,7 +11,7 @@ export default class Ext_Base extends EleBaseComponent {
         'tab',
         'config',
         'platformConfig',
-        'renderer',
+        'summaryRenderer',
         'extname',
         'viewport',
         'align',
