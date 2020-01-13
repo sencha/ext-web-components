@@ -1,7 +1,7 @@
 import Ext_sparkline_BarBase from '../../Ext/sparkline/BarBase.js';
 
 export default class Ext_sparkline_TriState extends Ext_sparkline_BarBase {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'ariaAttributes',
     'ariaDescribedBy',
     'ariaLabel',
@@ -53,8 +53,8 @@ export default class Ext_sparkline_TriState extends Ext_sparkline_BarBase {
     'viewModel',
     'width',
     'zeroBarColor',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'beforedisabledchange', parameters:'sender,value,oldValue,undefined'},
     {name:'beforeheightchange', parameters:'sender,value,oldValue,undefined'},
     {name:'beforehiddenchange', parameters:'sender,value,oldValue,undefined'},
@@ -68,52 +68,40 @@ export default class Ext_sparkline_TriState extends Ext_sparkline_BarBase {
     {name:'hiddenchange', parameters:'sender,value,oldValue'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_sparkline_TriState.PROPERTIES());
-        return Ext_sparkline_BarBase.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_sparkline_TriState.EVENTS());
-        return Ext_sparkline_BarBase.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_sparkline_TriState.PROPERTIES());
+    return Ext_sparkline_BarBase.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_sparkline_TriState.EVENTS());
+    return Ext_sparkline_BarBase.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_sparkline_TriState.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_sparkline_TriState.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_sparkline_TriState.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_sparkline_TriState.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_sparkline_TriState.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_sparkline_TriState.PROPERTIES()),
+      events.concat(Ext_sparkline_TriState.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_sparkline_TriState.PROPERTIES()),
-            events.concat(Ext_sparkline_TriState.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

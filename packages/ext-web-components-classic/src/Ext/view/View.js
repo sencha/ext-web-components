@@ -1,7 +1,7 @@
 import Ext_view_AbstractView from '../../Ext/view/AbstractView.js';
 
 export default class Ext_view_View extends Ext_view_AbstractView {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'activeCounter',
     'alignOnScroll',
     'alignTarget',
@@ -126,8 +126,8 @@ export default class Ext_view_View extends Ext_view_AbstractView {
     'weight',
     'width',
     'xtype',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'sender'},
     {name:'added', parameters:'sender,container,pos'},
     {name:'afterlayoutanimation', parameters:'sender'},
@@ -214,52 +214,40 @@ export default class Ext_view_View extends Ext_view_AbstractView {
     {name:'unhighlightitem', parameters:'view,node'},
     {name:'viewready', parameters:'sender'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_view_View.PROPERTIES());
-        return Ext_view_AbstractView.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_view_View.EVENTS());
-        return Ext_view_AbstractView.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_view_View.PROPERTIES());
+    return Ext_view_AbstractView.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_view_View.EVENTS());
+    return Ext_view_AbstractView.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_view_View.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_view_View.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_view_View.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_view_View.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_view_View.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_view_View.PROPERTIES()),
+      events.concat(Ext_view_View.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_view_View.PROPERTIES()),
-            events.concat(Ext_view_View.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

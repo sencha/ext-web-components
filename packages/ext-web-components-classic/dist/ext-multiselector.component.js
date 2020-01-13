@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_view_MultiSelector from '@sencha/ext-runtime-base/dist/./Ext/view/MultiSelector.js';
 import Ext_view_MultiSelector from './Ext/view/MultiSelector.js';
 import ElementParser from './ElementParser.js';
 

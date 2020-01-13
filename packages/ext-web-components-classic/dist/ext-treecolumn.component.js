@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_tree_Column from '@sencha/ext-runtime-base/dist/./Ext/tree/Column.js';
 import Ext_tree_Column from './Ext/tree/Column.js';
 import ElementParser from './ElementParser.js';
 

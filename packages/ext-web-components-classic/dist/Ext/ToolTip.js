@@ -185,23 +185,12 @@ function (_Ext_tip_Tip) {
   Ext_ToolTip.getEvents = function getEvents(events) {
     events = events.concat(Ext_ToolTip.EVENTS());
     return Ext_tip_Tip.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_ToolTip, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_tip_Tip.observedAttributes; //for (var property in Ext_ToolTip.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_tip_Tip.observedAttributes;
       Ext_ToolTip.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

@@ -140,23 +140,12 @@ function (_Ext_toolbar_Toolbar) {
   Ext_toolbar_Paging.getEvents = function getEvents(events) {
     events = events.concat(Ext_toolbar_Paging.EVENTS());
     return Ext_toolbar_Toolbar.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_toolbar_Paging, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_toolbar_Toolbar.observedAttributes; //for (var property in Ext_toolbar_Paging.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_toolbar_Toolbar.observedAttributes;
       Ext_toolbar_Paging.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

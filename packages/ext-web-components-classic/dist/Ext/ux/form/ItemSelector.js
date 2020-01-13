@@ -149,23 +149,12 @@ function (_Ext_ux_form_MultiSel) {
   Ext_ux_form_ItemSelector.getEvents = function getEvents(events) {
     events = events.concat(Ext_ux_form_ItemSelector.EVENTS());
     return Ext_ux_form_MultiSelect.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_ux_form_ItemSelector, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_ux_form_MultiSel.observedAttributes; //for (var property in Ext_ux_form_ItemSelector.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_ux_form_MultiSel.observedAttributes;
       Ext_ux_form_ItemSelector.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

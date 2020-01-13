@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_grid_View from '@sencha/ext-runtime-base/dist/./Ext/grid/View.js';
 import Ext_grid_View from './Ext/grid/View.js';
 import ElementParser from './ElementParser.js';
 

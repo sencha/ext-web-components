@@ -173,23 +173,12 @@ function (_Ext_grid_column_Colu) {
   Ext_grid_column_Check.getEvents = function getEvents(events) {
     events = events.concat(Ext_grid_column_Check.EVENTS());
     return Ext_grid_column_Column.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_grid_column_Check, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_grid_column_Colu.observedAttributes; //for (var property in Ext_grid_column_Check.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_grid_column_Colu.observedAttributes;
       Ext_grid_column_Check.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

@@ -116,23 +116,12 @@ function (_Ext_Component) {
   Ext_ProgressBar.getEvents = function getEvents(events) {
     events = events.concat(Ext_ProgressBar.EVENTS());
     return Ext_Component.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_ProgressBar, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Component.observedAttributes; //for (var property in Ext_ProgressBar.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_Component.observedAttributes;
       Ext_ProgressBar.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

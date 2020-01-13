@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ProgressBar from '@sencha/ext-runtime-base/dist/./Ext/ProgressBar.js';
 import Ext_ProgressBar from './Ext/ProgressBar.js';
 import ElementParser from './ElementParser.js';
 

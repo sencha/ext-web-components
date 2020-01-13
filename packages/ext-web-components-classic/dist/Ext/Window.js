@@ -197,23 +197,12 @@ function (_Ext_panel_Panel) {
   Ext_Window.getEvents = function getEvents(events) {
     events = events.concat(Ext_Window.EVENTS());
     return Ext_panel_Panel.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_Window, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_panel_Panel.observedAttributes; //for (var property in Ext_Window.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_panel_Panel.observedAttributes;
       Ext_Window.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

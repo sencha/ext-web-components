@@ -149,23 +149,12 @@ function (_Ext_container_Contai) {
   Ext_form_FieldSet.getEvents = function getEvents(events) {
     events = events.concat(Ext_form_FieldSet.EVENTS());
     return Ext_container_Container.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_form_FieldSet, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_container_Contai.observedAttributes; //for (var property in Ext_form_FieldSet.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_container_Contai.observedAttributes;
       Ext_form_FieldSet.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

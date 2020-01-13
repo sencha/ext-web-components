@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_calendar_panel_Day from '@sencha/ext-runtime-base/dist/./Ext/calendar/panel/Day.js';
 import Ext_calendar_panel_Day from './Ext/calendar/panel/Day.js';
 import ElementParser from './ElementParser.js';
 

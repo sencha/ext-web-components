@@ -1,7 +1,7 @@
 import Ext_Component from '../../Ext/Component.js';
 
 export default class Ext_picker_Date extends Ext_Component {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'activeCounter',
     'alignOnScroll',
     'alignTarget',
@@ -135,8 +135,8 @@ export default class Ext_picker_Date extends Ext_Component {
     'weight',
     'width',
     'xtype',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'sender'},
     {name:'added', parameters:'sender,container,pos'},
     {name:'afterlayoutanimation', parameters:'sender'},
@@ -168,52 +168,40 @@ export default class Ext_picker_Date extends Ext_Component {
     {name:'staterestore', parameters:'sender,state'},
     {name:'statesave', parameters:'sender,state'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_picker_Date.PROPERTIES());
-        return Ext_Component.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_picker_Date.EVENTS());
-        return Ext_Component.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_picker_Date.PROPERTIES());
+    return Ext_Component.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_picker_Date.EVENTS());
+    return Ext_Component.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_picker_Date.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_picker_Date.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_picker_Date.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_picker_Date.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_picker_Date.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_picker_Date.PROPERTIES()),
+      events.concat(Ext_picker_Date.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_picker_Date.PROPERTIES()),
-            events.concat(Ext_picker_Date.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

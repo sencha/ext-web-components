@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_draw_Component from '@sencha/ext-runtime-base/dist/./Ext/draw/Component.js';
 import Ext_draw_Component from './Ext/draw/Component.js';
 import ElementParser from './ElementParser.js';
 

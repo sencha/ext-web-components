@@ -1,7 +1,7 @@
 import Ext_window_Window from '../../Ext/window/Window.js';
 
 export default class Ext_window_MessageBox extends Ext_window_Window {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'actions',
     'activeChildTabIndex',
     'activeCounter',
@@ -187,8 +187,8 @@ export default class Ext_window_MessageBox extends Ext_window_Window {
     'x',
     'xtype',
     'y',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'sender'},
     {name:'add', parameters:'sender,component,index'},
     {name:'added', parameters:'sender,container,pos'},
@@ -247,52 +247,40 @@ export default class Ext_window_MessageBox extends Ext_window_Window {
     {name:'titlerotationchange', parameters:'sender,newTitleRotation,oldTitleRotation'},
     {name:'unfloat', parameters:''},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_window_MessageBox.PROPERTIES());
-        return Ext_window_Window.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_window_MessageBox.EVENTS());
-        return Ext_window_Window.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_window_MessageBox.PROPERTIES());
+    return Ext_window_Window.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_window_MessageBox.EVENTS());
+    return Ext_window_Window.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_window_MessageBox.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_window_MessageBox.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_window_MessageBox.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_window_MessageBox.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_window_MessageBox.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_window_MessageBox.PROPERTIES()),
+      events.concat(Ext_window_MessageBox.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_window_MessageBox.PROPERTIES()),
-            events.concat(Ext_window_MessageBox.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_grid_BooleanColumn from '@sencha/ext-runtime-base/dist/./Ext/grid/BooleanColumn.js';
 import Ext_grid_BooleanColumn from './Ext/grid/BooleanColumn.js';
 import ElementParser from './ElementParser.js';
 

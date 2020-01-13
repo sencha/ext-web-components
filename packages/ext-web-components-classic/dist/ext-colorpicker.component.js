@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ColorPalette from '@sencha/ext-runtime-base/dist/./Ext/ColorPalette.js';
 import Ext_ColorPalette from './Ext/ColorPalette.js';
 import ElementParser from './ElementParser.js';
 

@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ux_desktop_Desktop from '@sencha/ext-runtime-base/dist/./Ext/ux/desktop/Desktop.js';
 import Ext_ux_desktop_Desktop from './Ext/ux/desktop/Desktop.js';
 import ElementParser from './ElementParser.js';
 

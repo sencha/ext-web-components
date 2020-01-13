@@ -185,23 +185,12 @@ function (_Ext_panel_Panel) {
   Ext_ux_desktop_Desktop.getEvents = function getEvents(events) {
     events = events.concat(Ext_ux_desktop_Desktop.EVENTS());
     return Ext_panel_Panel.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_ux_desktop_Desktop, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_panel_Panel.observedAttributes; //for (var property in Ext_ux_desktop_Desktop.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_panel_Panel.observedAttributes;
       Ext_ux_desktop_Desktop.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_panel_Header from '@sencha/ext-runtime-base/dist/./Ext/panel/Header.js';
 import Ext_panel_Header from './Ext/panel/Header.js';
 import ElementParser from './ElementParser.js';
 

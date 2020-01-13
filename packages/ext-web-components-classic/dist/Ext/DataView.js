@@ -281,23 +281,12 @@ function (_Ext_view_AbstractVie) {
   Ext_DataView.getEvents = function getEvents(events) {
     events = events.concat(Ext_DataView.EVENTS());
     return Ext_view_AbstractView.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_DataView, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_view_AbstractVie.observedAttributes; //for (var property in Ext_DataView.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_view_AbstractVie.observedAttributes;
       Ext_DataView.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

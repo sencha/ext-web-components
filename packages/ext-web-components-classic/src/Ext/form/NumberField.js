@@ -1,7 +1,7 @@
 import Ext_form_field_Spinner from '../../Ext/form/field/Spinner.js';
 
 export default class Ext_form_NumberField extends Ext_form_field_Spinner {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'activeCounter',
     'activeError',
     'activeErrorsTpl',
@@ -207,8 +207,8 @@ export default class Ext_form_NumberField extends Ext_form_field_Spinner {
     'weight',
     'width',
     'xtype',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'sender'},
     {name:'added', parameters:'sender,container,pos'},
     {name:'afterlayoutanimation', parameters:'sender'},
@@ -254,52 +254,40 @@ export default class Ext_form_NumberField extends Ext_form_field_Spinner {
     {name:'validitychange', parameters:'sender,isValid'},
     {name:'writeablechange', parameters:'sender,Read'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_form_NumberField.PROPERTIES());
-        return Ext_form_field_Spinner.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_form_NumberField.EVENTS());
-        return Ext_form_field_Spinner.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_form_NumberField.PROPERTIES());
+    return Ext_form_field_Spinner.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_form_NumberField.EVENTS());
+    return Ext_form_field_Spinner.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_form_NumberField.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_form_NumberField.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_form_NumberField.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_form_NumberField.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_form_NumberField.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_form_NumberField.PROPERTIES()),
+      events.concat(Ext_form_NumberField.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_form_NumberField.PROPERTIES()),
-            events.concat(Ext_form_NumberField.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

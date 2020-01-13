@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_form_Trigger from '@sencha/ext-runtime-base/dist/./Ext/form/Trigger.js';
 import Ext_form_Trigger from './Ext/form/Trigger.js';
 import ElementParser from './ElementParser.js';
 

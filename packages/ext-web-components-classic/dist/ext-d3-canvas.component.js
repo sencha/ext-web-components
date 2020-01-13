@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_d3_canvas_Canvas from '@sencha/ext-runtime-base/dist/./Ext/d3/canvas/Canvas.js';
 import Ext_d3_canvas_Canvas from './Ext/d3/canvas/Canvas.js';
 import ElementParser from './ElementParser.js';
 

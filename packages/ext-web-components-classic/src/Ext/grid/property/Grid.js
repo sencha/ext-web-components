@@ -1,7 +1,7 @@
 import Ext_grid_Panel from '../../../Ext/grid/Panel.js';
 
 export default class Ext_grid_property_Grid extends Ext_grid_Panel {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'actions',
     'activeChildTabIndex',
     'activeCounter',
@@ -222,8 +222,8 @@ export default class Ext_grid_property_Grid extends Ext_grid_Panel {
     'weight',
     'width',
     'xtype',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'sender'},
     {name:'add', parameters:'sender,component,index'},
     {name:'added', parameters:'sender,container,pos'},
@@ -388,52 +388,40 @@ export default class Ext_grid_property_Grid extends Ext_grid_Panel {
     {name:'unlockcolumn', parameters:'sender,column'},
     {name:'viewready', parameters:'sender'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_grid_property_Grid.PROPERTIES());
-        return Ext_grid_Panel.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_grid_property_Grid.EVENTS());
-        return Ext_grid_Panel.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_grid_property_Grid.PROPERTIES());
+    return Ext_grid_Panel.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_grid_property_Grid.EVENTS());
+    return Ext_grid_Panel.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_grid_property_Grid.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_grid_property_Grid.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_grid_property_Grid.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_grid_property_Grid.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_grid_property_Grid.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_grid_property_Grid.PROPERTIES()),
+      events.concat(Ext_grid_property_Grid.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_grid_property_Grid.PROPERTIES()),
-            events.concat(Ext_grid_property_Grid.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

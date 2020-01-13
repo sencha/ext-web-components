@@ -1,7 +1,7 @@
 import Ext_Base from '../Ext/Base.js';
 
 export default class Ext_Component extends Ext_Base {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'activeCounter',
     'alignOnScroll',
     'alignTarget',
@@ -102,8 +102,8 @@ export default class Ext_Component extends Ext_Base {
     'weight',
     'width',
     'xtype',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'sender'},
     {name:'added', parameters:'sender,container,pos'},
     {name:'afterlayoutanimation', parameters:'sender'},
@@ -134,52 +134,40 @@ export default class Ext_Component extends Ext_Base {
     {name:'staterestore', parameters:'sender,state'},
     {name:'statesave', parameters:'sender,state'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_Component.PROPERTIES());
-        return Ext_Base.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_Component.EVENTS());
-        return Ext_Base.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_Component.PROPERTIES());
+    return Ext_Base.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_Component.EVENTS());
+    return Ext_Base.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_Component.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_Component.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_Component.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_Component.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_Component.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_Component.PROPERTIES()),
+      events.concat(Ext_Component.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_Component.PROPERTIES()),
-            events.concat(Ext_Component.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

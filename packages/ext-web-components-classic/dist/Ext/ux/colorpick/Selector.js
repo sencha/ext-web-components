@@ -140,23 +140,12 @@ function (_Ext_container_Contai) {
   Ext_ux_colorpick_Selector.getEvents = function getEvents(events) {
     events = events.concat(Ext_ux_colorpick_Selector.EVENTS());
     return Ext_container_Container.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_ux_colorpick_Selector, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_container_Contai.observedAttributes; //for (var property in Ext_ux_colorpick_Selector.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_container_Contai.observedAttributes;
       Ext_ux_colorpick_Selector.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

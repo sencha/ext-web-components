@@ -1,7 +1,7 @@
 import Ext_Component from '../../Ext/Component.js';
 
 export default class Ext_form_Field extends Ext_Component {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'activeCounter',
     'activeError',
     'activeErrorsTpl',
@@ -156,8 +156,8 @@ export default class Ext_form_Field extends Ext_Component {
     'weight',
     'width',
     'xtype',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'sender'},
     {name:'added', parameters:'sender,container,pos'},
     {name:'afterlayoutanimation', parameters:'sender'},
@@ -194,52 +194,40 @@ export default class Ext_form_Field extends Ext_Component {
     {name:'validitychange', parameters:'sender,isValid'},
     {name:'writeablechange', parameters:'sender,Read'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_form_Field.PROPERTIES());
-        return Ext_Component.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_form_Field.EVENTS());
-        return Ext_Component.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_form_Field.PROPERTIES());
+    return Ext_Component.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_form_Field.EVENTS());
+    return Ext_Component.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_form_Field.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_form_Field.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_form_Field.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_form_Field.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_form_Field.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_form_Field.PROPERTIES()),
+      events.concat(Ext_form_Field.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_form_Field.PROPERTIES()),
-            events.concat(Ext_form_Field.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

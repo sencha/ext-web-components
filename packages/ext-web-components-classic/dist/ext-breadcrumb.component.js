@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_toolbar_Breadcrumb from '@sencha/ext-runtime-base/dist/./Ext/toolbar/Breadcrumb.js';
 import Ext_toolbar_Breadcrumb from './Ext/toolbar/Breadcrumb.js';
 import ElementParser from './ElementParser.js';
 

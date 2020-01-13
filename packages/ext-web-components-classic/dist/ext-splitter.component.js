@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_resizer_Splitter from '@sencha/ext-runtime-base/dist/./Ext/resizer/Splitter.js';
 import Ext_resizer_Splitter from './Ext/resizer/Splitter.js';
 import ElementParser from './ElementParser.js';
 

@@ -1,7 +1,7 @@
 import Ext_form_Panel from '../../Ext/form/Panel.js';
 
 export default class Ext_grid_RowEditor extends Ext_form_Panel {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'actions',
     'activeChildTabIndex',
     'activeCounter',
@@ -196,8 +196,8 @@ export default class Ext_grid_RowEditor extends Ext_form_Panel {
     'weight',
     'width',
     'xtype',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'actioncomplete', parameters:'sender,action'},
     {name:'actionfailed', parameters:'sender,action'},
     {name:'activate', parameters:'sender'},
@@ -259,52 +259,40 @@ export default class Ext_grid_RowEditor extends Ext_form_Panel {
     {name:'unfloat', parameters:''},
     {name:'validitychange', parameters:'sender,valid'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_grid_RowEditor.PROPERTIES());
-        return Ext_form_Panel.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_grid_RowEditor.EVENTS());
-        return Ext_form_Panel.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_grid_RowEditor.PROPERTIES());
+    return Ext_form_Panel.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_grid_RowEditor.EVENTS());
+    return Ext_form_Panel.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_grid_RowEditor.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_grid_RowEditor.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_grid_RowEditor.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_grid_RowEditor.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_grid_RowEditor.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_grid_RowEditor.PROPERTIES()),
+      events.concat(Ext_grid_RowEditor.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_grid_RowEditor.PROPERTIES()),
-            events.concat(Ext_grid_RowEditor.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

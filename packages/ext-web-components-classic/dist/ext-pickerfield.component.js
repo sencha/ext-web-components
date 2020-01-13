@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_form_Picker from '@sencha/ext-runtime-base/dist/./Ext/form/Picker.js';
 import Ext_form_Picker from './Ext/form/Picker.js';
 import ElementParser from './ElementParser.js';
 

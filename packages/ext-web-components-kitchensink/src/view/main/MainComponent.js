@@ -40,6 +40,8 @@ export default class MainComponent {
         //find a way for this to be run automatically
         this.extnameToProperty(event.detail.cmpObj, this, '');
 
+        //this.breadcrumb = event.detail.cmpObj['breadcrumb'];
+
         //extnameToProperty(['all'], event, this, '');
         this.rightContainer.updateHtml('Build: ' + BUILD_VERSION); // eslint-disable-line no-undef
         this.breadcrumb.setStore(this.treeStore);
@@ -81,9 +83,11 @@ export default class MainComponent {
         this.navigate('load', node);
     };
 
-    breadcrumbClick = event => {
+    //breadcrumbClick = event => {
+    changeBreadcrumb = ({detail: {sender, node, prevNode, eOpts}}) => {
+
         //console.log('clickBreadcrumb');
-        var node = event.detail.node;
+        //var node = event.detail.node;
         this.navigate('breadcrumb', node);
     };
 

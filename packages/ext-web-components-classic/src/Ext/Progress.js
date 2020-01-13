@@ -1,7 +1,7 @@
 import Ext_Gadget from '../Ext/Gadget.js';
 
 export default class Ext_Progress extends Ext_Gadget {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'animate',
     'ariaAttributes',
     'ariaDescribedBy',
@@ -42,8 +42,8 @@ export default class Ext_Progress extends Ext_Gadget {
     'value',
     'viewModel',
     'width',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'beforedisabledchange', parameters:'sender,value,oldValue,undefined'},
     {name:'beforeheightchange', parameters:'sender,value,oldValue,undefined'},
     {name:'beforehiddenchange', parameters:'sender,value,oldValue,undefined'},
@@ -57,52 +57,40 @@ export default class Ext_Progress extends Ext_Gadget {
     {name:'hiddenchange', parameters:'sender,value,oldValue'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_Progress.PROPERTIES());
-        return Ext_Gadget.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_Progress.EVENTS());
-        return Ext_Gadget.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_Progress.PROPERTIES());
+    return Ext_Gadget.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_Progress.EVENTS());
+    return Ext_Gadget.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_Progress.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_Progress.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_Progress.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_Progress.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_Progress.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_Progress.PROPERTIES()),
+      events.concat(Ext_Progress.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_Progress.PROPERTIES()),
-            events.concat(Ext_Progress.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

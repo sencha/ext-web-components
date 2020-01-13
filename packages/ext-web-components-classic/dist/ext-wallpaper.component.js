@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ux_desktop_Wallpaper from '@sencha/ext-runtime-base/dist/./Ext/ux/desktop/Wallpaper.js';
 import Ext_ux_desktop_Wallpaper from './Ext/ux/desktop/Wallpaper.js';
 import ElementParser from './ElementParser.js';
 

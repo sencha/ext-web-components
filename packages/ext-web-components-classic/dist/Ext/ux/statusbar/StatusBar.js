@@ -134,23 +134,12 @@ function (_Ext_toolbar_Toolbar) {
   Ext_ux_statusbar_StatusBar.getEvents = function getEvents(events) {
     events = events.concat(Ext_ux_statusbar_StatusBar.EVENTS());
     return Ext_toolbar_Toolbar.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_ux_statusbar_StatusBar, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_toolbar_Toolbar.observedAttributes; //for (var property in Ext_ux_statusbar_StatusBar.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_toolbar_Toolbar.observedAttributes;
       Ext_ux_statusbar_StatusBar.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ux_Explorer from '@sencha/ext-runtime-base/dist/./Ext/ux/Explorer.js';
 import Ext_ux_Explorer from './Ext/ux/Explorer.js';
 import ElementParser from './ElementParser.js';
 

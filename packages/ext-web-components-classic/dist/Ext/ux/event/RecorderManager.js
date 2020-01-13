@@ -185,23 +185,12 @@ function (_Ext_panel_Panel) {
   Ext_ux_event_RecorderManager.getEvents = function getEvents(events) {
     events = events.concat(Ext_ux_event_RecorderManager.EVENTS());
     return Ext_panel_Panel.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_ux_event_RecorderManager, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_panel_Panel.observedAttributes; //for (var property in Ext_ux_event_RecorderManager.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_panel_Panel.observedAttributes;
       Ext_ux_event_RecorderManager.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

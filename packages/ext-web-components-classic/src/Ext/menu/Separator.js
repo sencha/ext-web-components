@@ -1,7 +1,7 @@
 import Ext_menu_Item from '../../Ext/menu/Item.js';
 
 export default class Ext_menu_Separator extends Ext_menu_Item {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'activeCls',
     'activeCounter',
     'alignOnScroll',
@@ -122,8 +122,8 @@ export default class Ext_menu_Separator extends Ext_menu_Item {
     'weight',
     'width',
     'xtype',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'item'},
     {name:'added', parameters:'sender,container,pos'},
     {name:'afterlayoutanimation', parameters:'sender'},
@@ -157,52 +157,40 @@ export default class Ext_menu_Separator extends Ext_menu_Item {
     {name:'statesave', parameters:'sender,state'},
     {name:'textchange', parameters:'sender,oldText,newText'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_menu_Separator.PROPERTIES());
-        return Ext_menu_Item.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_menu_Separator.EVENTS());
-        return Ext_menu_Item.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_menu_Separator.PROPERTIES());
+    return Ext_menu_Item.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_menu_Separator.EVENTS());
+    return Ext_menu_Item.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_menu_Separator.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_menu_Separator.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_menu_Separator.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_menu_Separator.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_menu_Separator.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_menu_Separator.PROPERTIES()),
+      events.concat(Ext_menu_Separator.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_menu_Separator.PROPERTIES()),
-            events.concat(Ext_menu_Separator.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

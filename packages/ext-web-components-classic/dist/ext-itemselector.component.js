@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ux_ItemSelector from '@sencha/ext-runtime-base/dist/./Ext/ux/ItemSelector.js';
 import Ext_ux_ItemSelector from './Ext/ux/ItemSelector.js';
 import ElementParser from './ElementParser.js';
 

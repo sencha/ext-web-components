@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ux_IFrame from '@sencha/ext-runtime-base/dist/./Ext/ux/IFrame.js';
 import Ext_ux_IFrame from './Ext/ux/IFrame.js';
 import ElementParser from './ElementParser.js';
 

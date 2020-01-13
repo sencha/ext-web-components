@@ -185,23 +185,12 @@ function (_Ext_tip_ToolTip) {
   Ext_tip_QuickTip.getEvents = function getEvents(events) {
     events = events.concat(Ext_tip_QuickTip.EVENTS());
     return Ext_tip_ToolTip.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_tip_QuickTip, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_tip_ToolTip.observedAttributes; //for (var property in Ext_tip_QuickTip.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_tip_ToolTip.observedAttributes;
       Ext_tip_QuickTip.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

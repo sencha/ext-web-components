@@ -1,7 +1,7 @@
 import Ext_button_Split from '../../Ext/button/Split.js';
 
 export default class Ext_button_Cycle extends Ext_button_Split {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'activeCounter',
     'alignOnScroll',
     'alignTarget',
@@ -143,8 +143,8 @@ export default class Ext_button_Cycle extends Ext_button_Split {
     'weight',
     'width',
     'xtype',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'sender'},
     {name:'added', parameters:'sender,container,pos'},
     {name:'afterlayoutanimation', parameters:'sender'},
@@ -189,52 +189,40 @@ export default class Ext_button_Cycle extends Ext_button_Split {
     {name:'textchange', parameters:'sender,oldText,newText'},
     {name:'toggle', parameters:'sender,pressed'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_button_Cycle.PROPERTIES());
-        return Ext_button_Split.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_button_Cycle.EVENTS());
-        return Ext_button_Split.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_button_Cycle.PROPERTIES());
+    return Ext_button_Split.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_button_Cycle.EVENTS());
+    return Ext_button_Split.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_button_Cycle.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_button_Cycle.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_button_Cycle.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_button_Cycle.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_button_Cycle.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_button_Cycle.PROPERTIES()),
+      events.concat(Ext_button_Cycle.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_button_Cycle.PROPERTIES()),
-            events.concat(Ext_button_Cycle.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

@@ -185,23 +185,12 @@ function (_Ext_panel_Panel) {
   Ext_pivot_d3_AbstractContainer.getEvents = function getEvents(events) {
     events = events.concat(Ext_pivot_d3_AbstractContainer.EVENTS());
     return Ext_panel_Panel.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_pivot_d3_AbstractContainer, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_panel_Panel.observedAttributes; //for (var property in Ext_pivot_d3_AbstractContainer.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_panel_Panel.observedAttributes;
       Ext_pivot_d3_AbstractContainer.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

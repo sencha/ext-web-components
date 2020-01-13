@@ -1,7 +1,7 @@
 import Ext_grid_column_Column from '../../Ext/grid/column/Column.js';
 
 export default class Ext_ux_CheckColumn extends Ext_grid_column_Column {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'actions',
     'activeChildTabIndex',
     'activeCounter',
@@ -167,8 +167,8 @@ export default class Ext_ux_CheckColumn extends Ext_grid_column_Column {
     'weight',
     'width',
     'xtype',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'sender'},
     {name:'add', parameters:'sender,component,index'},
     {name:'added', parameters:'sender,container,pos'},
@@ -219,52 +219,40 @@ export default class Ext_ux_CheckColumn extends Ext_grid_column_Column {
     {name:'staterestore', parameters:'sender,state'},
     {name:'statesave', parameters:'sender,state'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_ux_CheckColumn.PROPERTIES());
-        return Ext_grid_column_Column.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_ux_CheckColumn.EVENTS());
-        return Ext_grid_column_Column.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_ux_CheckColumn.PROPERTIES());
+    return Ext_grid_column_Column.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_ux_CheckColumn.EVENTS());
+    return Ext_grid_column_Column.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_ux_CheckColumn.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_ux_CheckColumn.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_ux_CheckColumn.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_ux_CheckColumn.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_ux_CheckColumn.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_ux_CheckColumn.PROPERTIES()),
+      events.concat(Ext_ux_CheckColumn.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_ux_CheckColumn.PROPERTIES()),
-            events.concat(Ext_ux_CheckColumn.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

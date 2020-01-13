@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_chart_Chart from '@sencha/ext-runtime-base/dist/./Ext/chart/Chart.js';
 import Ext_chart_Chart from './Ext/chart/Chart.js';
 import ElementParser from './ElementParser.js';
 

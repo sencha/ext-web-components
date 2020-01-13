@@ -1,7 +1,7 @@
 import Ext_Component from '../Ext/Component.js';
 
 export default class Ext_FlashComponent extends Ext_Component {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'activeCounter',
     'alignOnScroll',
     'alignTarget',
@@ -112,8 +112,8 @@ export default class Ext_FlashComponent extends Ext_Component {
     'width',
     'wmode',
     'xtype',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'sender'},
     {name:'added', parameters:'sender,container,pos'},
     {name:'afterlayoutanimation', parameters:'sender'},
@@ -146,52 +146,40 @@ export default class Ext_FlashComponent extends Ext_Component {
     {name:'statesave', parameters:'sender,state'},
     {name:'success', parameters:'sender'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_FlashComponent.PROPERTIES());
-        return Ext_Component.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_FlashComponent.EVENTS());
-        return Ext_Component.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_FlashComponent.PROPERTIES());
+    return Ext_Component.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_FlashComponent.EVENTS());
+    return Ext_Component.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_FlashComponent.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_FlashComponent.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_FlashComponent.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_FlashComponent.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_FlashComponent.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_FlashComponent.PROPERTIES()),
+      events.concat(Ext_FlashComponent.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_FlashComponent.PROPERTIES()),
-            events.concat(Ext_FlashComponent.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

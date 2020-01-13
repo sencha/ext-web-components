@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ux_desktop_TaskBar from '@sencha/ext-runtime-base/dist/./Ext/ux/desktop/TaskBar.js';
 import Ext_ux_desktop_TaskBar from './Ext/ux/desktop/TaskBar.js';
 import ElementParser from './ElementParser.js';
 

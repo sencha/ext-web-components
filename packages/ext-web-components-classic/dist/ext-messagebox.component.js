@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_window_MessageBox from '@sencha/ext-runtime-base/dist/./Ext/window/MessageBox.js';
 import Ext_window_MessageBox from './Ext/window/MessageBox.js';
 import ElementParser from './ElementParser.js';
 

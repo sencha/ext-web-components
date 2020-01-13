@@ -50,97 +50,101 @@ const ElementParser = (() => {
     console.warn(baseFolder + "/css.prod.js" + " " + "was dynamically loaded");
   }
 
-    const DCL = 'DOMContentLoaded';
-    const init = new window.WeakMap;
-    const queue = [];
-    const isParsed = el => {
-        do {
-            if (el.nextSibling)
-                return true;
-        } while (el = el.parentNode);
-        return false;
-    };
-    const upgrade = () => {
-        queue.splice(0).forEach(info => {
-            if (init.get(info[0]) !== true) {
-                init.set(info[0], true);
-                info[0][info[1]]();
-            }
-        });
-    };
-    document.addEventListener(DCL, upgrade);
-    class ElementParser extends HTMLElement {
-        static withParsedCallback(Class, name = 'parsed') {
-            const { prototype } = Class;
-            const { connectedCallback } = prototype;
-            const method = name + 'Callback';
-            const cleanUp = (el, observer, ownerDocument, onDCL) => {
-                observer.disconnect();
-                ownerDocument.removeEventListener(DCL, onDCL);
-                parsedCallback(el);
-            };
-            const parsedCallback = el => {
-                if (!queue.length)
-                    requestAnimationFrame(upgrade);
-                queue.push([el, method]);
-            };
-            Object.defineProperties(
-                prototype,
-                {
-                    connectedCallback: {
-                        configurable: true,
-                        value() {
-                            if (connectedCallback)
+  const DCL = 'DOMContentLoaded';
+  const init = new window.WeakMap;
+  const queue = [];
+  const isParsed = el => {
+      do {
+          if (el.nextSibling)
+              return true;
+      } while (el = el.parentNode);
+      return false;
+  };
+  const upgrade = () => {
+      queue.splice(0).forEach(info => {
+          if (init.get(info[0]) !== true) {
+              init.set(info[0], true);
+              info[0][info[1]]();
+          }
+      });
+  };
+  document.addEventListener(DCL, upgrade);
+  class ElementParser extends HTMLElement {
+    static withParsedCallback(Class, name = 'parsed') {
+      const { prototype } = Class;
+      const { connectedCallback } = prototype;
+      const method = name + 'Callback';
+      const cleanUp = (el, observer, ownerDocument, onDCL) => {
+          observer.disconnect();
+          ownerDocument.removeEventListener(DCL, onDCL);
+          parsedCallback(el);
+      };
+      const parsedCallback = el => {
+          if (!queue.length)
+              requestAnimationFrame(upgrade);
+          queue.push([el, method]);
+      };
+      Object.defineProperties(
+          prototype,
+          {
+              connectedCallback: {
+                  configurable: true,
+                  value() {
+                      if (connectedCallback) {
+                        connectedCallback.apply(this, arguments);
+                      }
+                      const self = this;
+                      if (method in this && !init.has(this)) {
 
-                                var me = this;
-                                //Ext.onReady(function() {
-                                  connectedCallback.apply(me, arguments);
-                                //});
-                                //connectedCallback.apply(this, arguments);
-
-                            if (method in this && !init.has(this)) {
-                                const self = this;
-                                const { ownerDocument } = self;
-                                init.set(self, false);
-                                if (ownerDocument.readyState === 'complete' || isParsed(self))
-                                {
-
-                                  //Ext.onReady(function() {
-                                    parsedCallback(self);
-                                  //});
-                                  //parsedCallback(self);
-
-                                }
-                                else {
-                                    const onDCL = () => cleanUp(self, observer, ownerDocument, onDCL);
-                                    ownerDocument.addEventListener(DCL, onDCL);
-                                    const observer = new MutationObserver(() => {
-                                        /* istanbul ignore else */
-                                        if (isParsed(self))
-                                            cleanUp(self, observer, ownerDocument, onDCL);
-                                    });
-                                    observer.observe(self.parentNode, { childList: true, subtree: true });
-                                }
-                            }
-                        }
-                    },
-                    [name]: {
-                        configurable: true,
-                        get() {
-                            return init.get(this) === true;
-                        }
-                    }
-                }
-            );
-            return Class;
-        }
+                          const { ownerDocument } = self;
+                          init.set(self, false);
+                          if (ownerDocument.readyState === 'complete' || isParsed(self))
+                          {
+                            parsedCallback(self);
+                          }
+                          else {
+                              const onDCL = () => cleanUp(self, observer, ownerDocument, onDCL);
+                              ownerDocument.addEventListener(DCL, onDCL);
+                              const observer = new MutationObserver(() => {
+                                  /* istanbul ignore else */
+                                  if (isParsed(self))
+                                      cleanUp(self, observer, ownerDocument, onDCL);
+                              });
+                              observer.observe(self.parentNode, { childList: true, subtree: true });
+                          }
+                      }
+                      else {
+                        requestAnimationFrame(function () {
+                          self['parsedCallback']();
+                        });
+                        //setTimeout(function(){
+                        //  self['parsedCallback']();
+                        //}, 0);
+                      }
+                  }
+              },
+              [name]: {
+                  configurable: true,
+                  get() {
+                      return init.get(this) === true;
+                  }
+              }
+          }
+      );
+      return Class;
     }
-    return ElementParser.withParsedCallback(ElementParser);
+  }
+  return ElementParser.withParsedCallback(ElementParser);
 })();
 export default ElementParser;
 
 
-    var framework = 'classic'
+
+
+
+
+
+    //var framework = 'classic'
     //var list= document.all;
     //for (var i = 0; i < list.length; i++) {
     //  if (list[i].tagName == 'SCRIPT') {

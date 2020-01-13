@@ -1,13 +1,10 @@
-//import Ext_d3_hierarchy_partition_Partition from '@sencha/ext-runtime-base/dist/./Ext/d3/hierarchy/partition/Partition.js';
 import Ext_d3_hierarchy_partition_Partition from './Ext/d3/hierarchy/partition/Partition.js';
 import ElementParser from './ElementParser.js';
 
 export default class EWCD3_partition extends Ext_d3_hierarchy_partition_Partition {
-    constructor() {
-        super ([], []);
-        this.xtype = 'd3-partition';
-    }
-
+  constructor() {
+    super ([], []);
+    this.xtype = 'd3-partition';
+  }
 }
 window.customElements.define('ext-d3-partition', ElementParser.withParsedCallback(EWCD3_partition));
-

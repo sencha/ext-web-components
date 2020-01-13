@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_d3_HeatMap from '@sencha/ext-runtime-base/dist/./Ext/d3/HeatMap.js';
 import Ext_d3_HeatMap from './Ext/d3/HeatMap.js';
 import ElementParser from './ElementParser.js';
 
