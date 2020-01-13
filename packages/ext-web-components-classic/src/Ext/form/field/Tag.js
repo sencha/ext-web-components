@@ -162,6 +162,7 @@ export default class Ext_form_field_Tag extends Ext_form_field_ComboBox {
     'multiSelect',
     'name',
     'nameable',
+    'notEditableCls',
     'openCls',
     'overCls',
     'padding',

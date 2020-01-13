@@ -1,6 +1,6 @@
 ## @sencha/ext-web-components-classic
 
-last run: Fri Jan 10 2020 09:55:13 GMT-0500 (Eastern Standard Time)
+last run: Mon Jan 13 2020 13:38:25 GMT-0500 (Eastern Standard Time)
 
 ## Login to the Sencha early adopter npm repo
 
