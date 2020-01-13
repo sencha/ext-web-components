@@ -106,20 +106,18 @@ var ElementParser = function () {
         connectedCallback: {
           configurable: true,
           value: function value() {
-            if (connectedCallback) var me = this; //Ext.onReady(function() {
+            if (connectedCallback) {
+              connectedCallback.apply(this, arguments);
+            }
 
-            connectedCallback.apply(me, arguments); //});
-            //connectedCallback.apply(this, arguments);
+            var self = this;
 
             if (method in this && !init.has(this)) {
-              var self = this;
               var ownerDocument = self.ownerDocument;
               init.set(self, false);
 
               if (ownerDocument.readyState === 'complete' || isParsed(self)) {
-                //Ext.onReady(function() {
-                parsedCallback(self); //});
-                //parsedCallback(self);
+                parsedCallback(self);
               } else {
                 var onDCL = function onDCL() {
                   return cleanUp(self, observer, ownerDocument, onDCL);
@@ -135,6 +133,12 @@ var ElementParser = function () {
                   subtree: true
                 });
               }
+            } else {
+              requestAnimationFrame(function () {
+                self['parsedCallback']();
+              }); //setTimeout(function(){
+              //  self['parsedCallback']();
+              //}, 0);
             }
           }
         }
@@ -153,8 +157,8 @@ var ElementParser = function () {
   return ElementParser.withParsedCallback(ElementParser);
 }();
 
-export default ElementParser;
-var framework = 'classic'; //var list= document.all;
+export default ElementParser; //var framework = 'classic'
+//var list= document.all;
 //for (var i = 0; i < list.length; i++) {
 //  if (list[i].tagName == 'SCRIPT') {
 //    if (list[i].type == 'module') {

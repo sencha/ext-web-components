@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_QuickTip from '@sencha/ext-runtime-base/dist/./Ext/QuickTip.js';
 import Ext_QuickTip from './Ext/QuickTip.js';
 import ElementParser from './ElementParser.js';
 

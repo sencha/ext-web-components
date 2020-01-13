@@ -155,23 +155,12 @@ function (_Ext_button_Split) {
   Ext_button_Cycle.getEvents = function getEvents(events) {
     events = events.concat(Ext_button_Cycle.EVENTS());
     return Ext_button_Split.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_button_Cycle, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_button_Split.observedAttributes; //for (var property in Ext_button_Cycle.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_button_Split.observedAttributes;
       Ext_button_Cycle.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

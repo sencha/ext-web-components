@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_form_CheckboxGroup from '@sencha/ext-runtime-base/dist/./Ext/form/CheckboxGroup.js';
 import Ext_form_CheckboxGroup from './Ext/form/CheckboxGroup.js';
 import ElementParser from './ElementParser.js';
 

@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_form_ComboBox from '@sencha/ext-runtime-base/dist/./Ext/form/ComboBox.js';
 import Ext_form_ComboBox from './Ext/form/ComboBox.js';
 import ElementParser from './ElementParser.js';
 

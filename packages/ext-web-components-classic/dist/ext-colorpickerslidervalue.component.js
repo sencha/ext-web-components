@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ux_colorpick_SliderValue from '@sencha/ext-runtime-base/dist/./Ext/ux/colorpick/SliderValue.js';
 import Ext_ux_colorpick_SliderValue from './Ext/ux/colorpick/SliderValue.js';
 import ElementParser from './ElementParser.js';
 

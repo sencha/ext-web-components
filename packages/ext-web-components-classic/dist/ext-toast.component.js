@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_window_Toast from '@sencha/ext-runtime-base/dist/./Ext/window/Toast.js';
 import Ext_window_Toast from './Ext/window/Toast.js';
 import ElementParser from './ElementParser.js';
 

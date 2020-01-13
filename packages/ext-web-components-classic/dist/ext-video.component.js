@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ux_desktop_Video from '@sencha/ext-runtime-base/dist/./Ext/ux/desktop/Video.js';
 import Ext_ux_desktop_Video from './Ext/ux/desktop/Video.js';
 import ElementParser from './ElementParser.js';
 

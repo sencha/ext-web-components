@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_CycleButton from '@sencha/ext-runtime-base/dist/./Ext/CycleButton.js';
 import Ext_CycleButton from './Ext/CycleButton.js';
 import ElementParser from './ElementParser.js';
 

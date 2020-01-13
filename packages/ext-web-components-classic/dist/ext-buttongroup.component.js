@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ButtonGroup from '@sencha/ext-runtime-base/dist/./Ext/ButtonGroup.js';
 import Ext_ButtonGroup from './Ext/ButtonGroup.js';
 import ElementParser from './ElementParser.js';
 

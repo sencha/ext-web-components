@@ -40,10 +40,10 @@ function (_EleBaseComponent) {
   var _proto = ExtRouter.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    EleBaseComponent.elementcount++; //console.log('added: ' + this.tagName + ': elementcount is now ' + EleBaseComponent.elementcount);
-
-    EleBaseComponent.elements.push(this); //console.log(EleBaseComponent.elements)
-
+    //EleBaseComponent.elementcount++;
+    //console.log('added: ' + this.tagName + ': elementcount is now ' + EleBaseComponent.elementcount);
+    //EleBaseComponent.elements.push(this);
+    //console.log(EleBaseComponent.elements)
     this.base = EleBaseComponent;
   };
 
@@ -76,20 +76,20 @@ function (_EleBaseComponent) {
     me.A = {};
     me.A.CHILDREN = [];
     me.A.ITEMS = [];
-    me.A.o = {};
-    Ext.onReady(function () {
-      me.A.ext = Ext.create(me.props);
+    me.A.o = {}; //Ext.onReady(function() {
 
-      if (me.parentNode.nodeName.substring(0, 4) === 'EXT-') {
-        if (me.parentNode.A.ext !== undefined) {
-          me.addTheChild(me.parentNode.A.ext, me.A.ext);
-        } else {
-          me.parentNode.A.CHILDREN.push(me.A.ext);
-        }
+    me.A.ext = Ext.create(me.props);
+
+    if (me.parentNode.nodeName.substring(0, 4) === 'EXT-') {
+      if (me.parentNode.A.ext !== undefined) {
+        me.addTheChild(me.parentNode.A.ext, me.A.ext);
+      } else {
+        me.parentNode.A.CHILDREN.push(me.A.ext);
       }
+    } //EleBaseComponent.elementcount--;
+    //console.log('reduced: ' + me.tagName + ' elementcount reduced to ' + EleBaseComponent.elementcount)
+    //});
 
-      EleBaseComponent.elementcount--; //console.log('reduced: ' + me.tagName + ' elementcount reduced to ' + EleBaseComponent.elementcount)
-    });
   };
 
   _proto.addTheChild = function addTheChild(parentCmp, childCmp, location) {

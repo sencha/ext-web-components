@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ux_TreePicker from '@sencha/ext-runtime-base/dist/./Ext/ux/TreePicker.js';
 import Ext_ux_TreePicker from './Ext/ux/TreePicker.js';
 import ElementParser from './ElementParser.js';
 

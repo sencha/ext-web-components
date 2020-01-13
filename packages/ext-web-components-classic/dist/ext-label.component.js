@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_form_Label from '@sencha/ext-runtime-base/dist/./Ext/form/Label.js';
 import Ext_form_Label from './Ext/form/Label.js';
 import ElementParser from './ElementParser.js';
 

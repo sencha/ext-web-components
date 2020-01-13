@@ -71,23 +71,12 @@ function (_Ext_d3_hierarchy_Hie) {
   Ext_d3_hierarchy_tree_Tree.getEvents = function getEvents(events) {
     events = events.concat(Ext_d3_hierarchy_tree_Tree.EVENTS());
     return Ext_d3_hierarchy_Hierarchy.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_d3_hierarchy_tree_Tree, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_d3_hierarchy_Hie.observedAttributes; //for (var property in Ext_d3_hierarchy_tree_Tree.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_d3_hierarchy_Hie.observedAttributes;
       Ext_d3_hierarchy_tree_Tree.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

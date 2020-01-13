@@ -1,7 +1,7 @@
 import Ext_Gadget from '../../../Ext/Gadget.js';
 
 export default class Ext_ux_gauge_Gauge extends Ext_Gadget {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'angleOffset',
     'animation',
     'ariaAttributes',
@@ -53,8 +53,8 @@ export default class Ext_ux_gauge_Gauge extends Ext_Gadget {
     'valueStyle',
     'viewModel',
     'width',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'beforedisabledchange', parameters:'sender,value,oldValue,undefined'},
     {name:'beforeheightchange', parameters:'sender,value,oldValue,undefined'},
     {name:'beforehiddenchange', parameters:'sender,value,oldValue,undefined'},
@@ -68,52 +68,40 @@ export default class Ext_ux_gauge_Gauge extends Ext_Gadget {
     {name:'hiddenchange', parameters:'sender,value,oldValue'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_ux_gauge_Gauge.PROPERTIES());
-        return Ext_Gadget.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_ux_gauge_Gauge.EVENTS());
-        return Ext_Gadget.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_ux_gauge_Gauge.PROPERTIES());
+    return Ext_Gadget.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_ux_gauge_Gauge.EVENTS());
+    return Ext_Gadget.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_ux_gauge_Gauge.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_ux_gauge_Gauge.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_ux_gauge_Gauge.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_ux_gauge_Gauge.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_ux_gauge_Gauge.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_ux_gauge_Gauge.PROPERTIES()),
+      events.concat(Ext_ux_gauge_Gauge.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_ux_gauge_Gauge.PROPERTIES()),
-            events.concat(Ext_ux_gauge_Gauge.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

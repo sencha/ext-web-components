@@ -281,23 +281,12 @@ function (_Ext_chart_legend_Leg) {
   Ext_chart_legend_Legend.getEvents = function getEvents(events) {
     events = events.concat(Ext_chart_legend_Legend.EVENTS());
     return Ext_chart_legend_LegendBase.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_chart_legend_Legend, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_chart_legend_Leg.observedAttributes; //for (var property in Ext_chart_legend_Legend.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_chart_legend_Leg.observedAttributes;
       Ext_chart_legend_Legend.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

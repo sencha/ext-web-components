@@ -1,7 +1,7 @@
 import Ext_tip_ToolTip from '../Ext/tip/ToolTip.js';
 
 export default class Ext_QuickTip extends Ext_tip_ToolTip {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'actions',
     'activeChildTabIndex',
     'activeCounter',
@@ -190,8 +190,8 @@ export default class Ext_QuickTip extends Ext_tip_ToolTip {
     'weight',
     'width',
     'xtype',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'sender'},
     {name:'add', parameters:'sender,component,index'},
     {name:'added', parameters:'sender,container,pos'},
@@ -246,52 +246,40 @@ export default class Ext_QuickTip extends Ext_tip_ToolTip {
     {name:'titlerotationchange', parameters:'sender,newTitleRotation,oldTitleRotation'},
     {name:'unfloat', parameters:''},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_QuickTip.PROPERTIES());
-        return Ext_tip_ToolTip.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_QuickTip.EVENTS());
-        return Ext_tip_ToolTip.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_QuickTip.PROPERTIES());
+    return Ext_tip_ToolTip.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_QuickTip.EVENTS());
+    return Ext_tip_ToolTip.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_QuickTip.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_QuickTip.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_QuickTip.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_QuickTip.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_QuickTip.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_QuickTip.PROPERTIES()),
+      events.concat(Ext_QuickTip.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_QuickTip.PROPERTIES()),
-            events.concat(Ext_QuickTip.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

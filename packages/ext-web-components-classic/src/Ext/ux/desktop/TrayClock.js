@@ -1,7 +1,7 @@
 import Ext_toolbar_TextItem from '../../../Ext/toolbar/TextItem.js';
 
 export default class Ext_ux_desktop_TrayClock extends Ext_toolbar_TextItem {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'activeCounter',
     'alignOnScroll',
     'alignTarget',
@@ -103,8 +103,8 @@ export default class Ext_ux_desktop_TrayClock extends Ext_toolbar_TextItem {
     'weight',
     'width',
     'xtype',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'sender'},
     {name:'added', parameters:'sender,container,pos'},
     {name:'afterlayoutanimation', parameters:'sender'},
@@ -135,52 +135,40 @@ export default class Ext_ux_desktop_TrayClock extends Ext_toolbar_TextItem {
     {name:'staterestore', parameters:'sender,state'},
     {name:'statesave', parameters:'sender,state'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_ux_desktop_TrayClock.PROPERTIES());
-        return Ext_toolbar_TextItem.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_ux_desktop_TrayClock.EVENTS());
-        return Ext_toolbar_TextItem.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_ux_desktop_TrayClock.PROPERTIES());
+    return Ext_toolbar_TextItem.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_ux_desktop_TrayClock.EVENTS());
+    return Ext_toolbar_TextItem.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_ux_desktop_TrayClock.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_ux_desktop_TrayClock.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_ux_desktop_TrayClock.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_ux_desktop_TrayClock.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_ux_desktop_TrayClock.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_ux_desktop_TrayClock.PROPERTIES()),
+      events.concat(Ext_ux_desktop_TrayClock.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_ux_desktop_TrayClock.PROPERTIES()),
-            events.concat(Ext_ux_desktop_TrayClock.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

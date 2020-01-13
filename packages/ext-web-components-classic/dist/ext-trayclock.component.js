@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ux_desktop_TrayClock from '@sencha/ext-runtime-base/dist/./Ext/ux/desktop/TrayClock.js';
 import Ext_ux_desktop_TrayClock from './Ext/ux/desktop/TrayClock.js';
 import ElementParser from './ElementParser.js';
 

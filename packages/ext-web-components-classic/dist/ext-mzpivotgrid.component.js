@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Mz_pivot_Table from '@sencha/ext-runtime-base/dist/./Mz/pivot/Table.js';
 import Mz_pivot_Table from './Mz/pivot/Table.js';
 import ElementParser from './ElementParser.js';
 

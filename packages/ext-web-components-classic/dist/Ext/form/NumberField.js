@@ -158,23 +158,12 @@ function (_Ext_form_field_Spinn) {
   Ext_form_NumberField.getEvents = function getEvents(events) {
     events = events.concat(Ext_form_NumberField.EVENTS());
     return Ext_form_field_Spinner.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_form_NumberField, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_form_field_Spinn.observedAttributes; //for (var property in Ext_form_NumberField.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_form_field_Spinn.observedAttributes;
       Ext_form_NumberField.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

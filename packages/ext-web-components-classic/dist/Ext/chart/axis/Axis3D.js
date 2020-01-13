@@ -32,23 +32,12 @@ function (_Ext_chart_axis_Axis) {
   Ext_chart_axis_Axis3D.getEvents = function getEvents(events) {
     events = events.concat(Ext_chart_axis_Axis3D.EVENTS());
     return Ext_chart_axis_Axis.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_chart_axis_Axis3D, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_chart_axis_Axis.observedAttributes; //for (var property in Ext_chart_axis_Axis3D.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_chart_axis_Axis.observedAttributes;
       Ext_chart_axis_Axis3D.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

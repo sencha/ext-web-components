@@ -281,23 +281,12 @@ function (_Ext_view_View) {
   Ext_view_BoundList.getEvents = function getEvents(events) {
     events = events.concat(Ext_view_BoundList.EVENTS());
     return Ext_view_View.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_view_BoundList, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_view_View.observedAttributes; //for (var property in Ext_view_BoundList.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_view_View.observedAttributes;
       Ext_view_BoundList.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

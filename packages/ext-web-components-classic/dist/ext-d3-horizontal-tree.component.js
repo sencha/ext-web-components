@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_d3_hierarchy_tree_HorizontalTree from '@sencha/ext-runtime-base/dist/./Ext/d3/hierarchy/tree/HorizontalTree.js';
 import Ext_d3_hierarchy_tree_HorizontalTree from './Ext/d3/hierarchy/tree/HorizontalTree.js';
 import ElementParser from './ElementParser.js';
 

@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_MonthPicker from '@sencha/ext-runtime-base/dist/./Ext/MonthPicker.js';
 import Ext_MonthPicker from './Ext/MonthPicker.js';
 import ElementParser from './ElementParser.js';
 

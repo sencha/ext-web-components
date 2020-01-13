@@ -1,7 +1,7 @@
 import Ext_d3_ComponentBase from '../../Ext/d3/ComponentBase.js';
 
 export default class Ext_d3_Component extends Ext_d3_ComponentBase {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'ariaAttributes',
     'ariaDescribedBy',
     'ariaLabel',
@@ -42,8 +42,8 @@ export default class Ext_d3_Component extends Ext_d3_ComponentBase {
     'userCls',
     'viewModel',
     'width',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'beforedisabledchange', parameters:'sender,value,oldValue,undefined'},
     {name:'beforeheightchange', parameters:'sender,value,oldValue,undefined'},
     {name:'beforehiddenchange', parameters:'sender,value,oldValue,undefined'},
@@ -57,52 +57,40 @@ export default class Ext_d3_Component extends Ext_d3_ComponentBase {
     {name:'hiddenchange', parameters:'sender,value,oldValue'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_d3_Component.PROPERTIES());
-        return Ext_d3_ComponentBase.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_d3_Component.EVENTS());
-        return Ext_d3_ComponentBase.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_d3_Component.PROPERTIES());
+    return Ext_d3_ComponentBase.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_d3_Component.EVENTS());
+    return Ext_d3_ComponentBase.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_d3_Component.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_d3_Component.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_d3_Component.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_d3_Component.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_d3_Component.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_d3_Component.PROPERTIES()),
+      events.concat(Ext_d3_Component.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_d3_Component.PROPERTIES()),
-            events.concat(Ext_d3_Component.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

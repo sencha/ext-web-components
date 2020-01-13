@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_slider_MultiSlider from '@sencha/ext-runtime-base/dist/./Ext/slider/MultiSlider.js';
 import Ext_slider_MultiSlider from './Ext/slider/MultiSlider.js';
 import ElementParser from './ElementParser.js';
 

@@ -1,7 +1,7 @@
 import Ext_view_Table from '../../Ext/view/Table.js';
 
 export default class Ext_tree_View extends Ext_view_Table {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'activeCounter',
     'alignOnScroll',
     'alignTarget',
@@ -134,8 +134,8 @@ export default class Ext_tree_View extends Ext_view_Table {
     'weight',
     'width',
     'xtype',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'sender'},
     {name:'added', parameters:'sender,container,pos'},
     {name:'afteritemcollapse', parameters:'node,index,item'},
@@ -262,52 +262,40 @@ export default class Ext_tree_View extends Ext_view_Table {
     {name:'unhighlightitem', parameters:'view,node'},
     {name:'viewready', parameters:'sender'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_tree_View.PROPERTIES());
-        return Ext_view_Table.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_tree_View.EVENTS());
-        return Ext_view_Table.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_tree_View.PROPERTIES());
+    return Ext_view_Table.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_tree_View.EVENTS());
+    return Ext_view_Table.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_tree_View.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_tree_View.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_tree_View.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_tree_View.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_tree_View.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_tree_View.PROPERTIES()),
+      events.concat(Ext_tree_View.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_tree_View.PROPERTIES()),
-            events.concat(Ext_tree_View.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

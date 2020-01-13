@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_form_RadioGroup from '@sencha/ext-runtime-base/dist/./Ext/form/RadioGroup.js';
 import Ext_form_RadioGroup from './Ext/form/RadioGroup.js';
 import ElementParser from './ElementParser.js';
 

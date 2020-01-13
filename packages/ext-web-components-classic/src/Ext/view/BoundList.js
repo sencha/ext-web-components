@@ -1,7 +1,7 @@
 import Ext_view_View from '../../Ext/view/View.js';
 
 export default class Ext_view_BoundList extends Ext_view_View {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'activeCounter',
     'alignOnScroll',
     'alignTarget',
@@ -128,8 +128,8 @@ export default class Ext_view_BoundList extends Ext_view_View {
     'weight',
     'width',
     'xtype',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'sender'},
     {name:'added', parameters:'sender,container,pos'},
     {name:'afterlayoutanimation', parameters:'sender'},
@@ -216,52 +216,40 @@ export default class Ext_view_BoundList extends Ext_view_View {
     {name:'unhighlightitem', parameters:'view,node'},
     {name:'viewready', parameters:'sender'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_view_BoundList.PROPERTIES());
-        return Ext_view_View.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_view_BoundList.EVENTS());
-        return Ext_view_View.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_view_BoundList.PROPERTIES());
+    return Ext_view_View.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_view_BoundList.EVENTS());
+    return Ext_view_View.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_view_BoundList.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_view_BoundList.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_view_BoundList.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_view_BoundList.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_view_BoundList.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_view_BoundList.PROPERTIES()),
+      events.concat(Ext_view_BoundList.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_view_BoundList.PROPERTIES()),
-            events.concat(Ext_view_BoundList.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

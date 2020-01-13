@@ -131,23 +131,12 @@ function (_Ext_container_Contai) {
   Ext_grid_RowEditorButtons.getEvents = function getEvents(events) {
     events = events.concat(Ext_grid_RowEditorButtons.EVENTS());
     return Ext_container_Container.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_grid_RowEditorButtons, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_container_Contai.observedAttributes; //for (var property in Ext_grid_RowEditorButtons.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_container_Contai.observedAttributes;
       Ext_grid_RowEditorButtons.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

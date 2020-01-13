@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ToolTip from '@sencha/ext-runtime-base/dist/./Ext/ToolTip.js';
 import Ext_ToolTip from './Ext/ToolTip.js';
 import ElementParser from './ElementParser.js';
 

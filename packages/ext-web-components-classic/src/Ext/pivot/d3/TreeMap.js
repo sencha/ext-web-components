@@ -1,7 +1,7 @@
 import Ext_d3_hierarchy_TreeMap from '../../../Ext/d3/hierarchy/TreeMap.js';
 
 export default class Ext_pivot_d3_TreeMap extends Ext_d3_hierarchy_TreeMap {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'ariaAttributes',
     'ariaDescribedBy',
     'ariaLabel',
@@ -71,8 +71,8 @@ export default class Ext_pivot_d3_TreeMap extends Ext_d3_hierarchy_TreeMap {
     'userCls',
     'viewModel',
     'width',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'beforedisabledchange', parameters:'sender,value,oldValue,undefined'},
     {name:'beforeheightchange', parameters:'sender,value,oldValue,undefined'},
     {name:'beforehiddenchange', parameters:'sender,value,oldValue,undefined'},
@@ -89,52 +89,40 @@ export default class Ext_pivot_d3_TreeMap extends Ext_d3_hierarchy_TreeMap {
     {name:'scenesetup', parameters:'component,scene'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_pivot_d3_TreeMap.PROPERTIES());
-        return Ext_d3_hierarchy_TreeMap.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_pivot_d3_TreeMap.EVENTS());
-        return Ext_d3_hierarchy_TreeMap.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_pivot_d3_TreeMap.PROPERTIES());
+    return Ext_d3_hierarchy_TreeMap.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_pivot_d3_TreeMap.EVENTS());
+    return Ext_d3_hierarchy_TreeMap.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_pivot_d3_TreeMap.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_pivot_d3_TreeMap.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_pivot_d3_TreeMap.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_pivot_d3_TreeMap.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_pivot_d3_TreeMap.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_pivot_d3_TreeMap.PROPERTIES()),
+      events.concat(Ext_pivot_d3_TreeMap.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_pivot_d3_TreeMap.PROPERTIES()),
-            events.concat(Ext_pivot_d3_TreeMap.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

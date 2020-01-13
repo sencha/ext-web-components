@@ -185,23 +185,12 @@ function (_Ext_panel_Panel) {
   Ext_draw_ContainerBase.getEvents = function getEvents(events) {
     events = events.concat(Ext_draw_ContainerBase.EVENTS());
     return Ext_panel_Panel.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_draw_ContainerBase, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_panel_Panel.observedAttributes; //for (var property in Ext_draw_ContainerBase.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_panel_Panel.observedAttributes;
       Ext_draw_ContainerBase.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

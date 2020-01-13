@@ -8,6 +8,9 @@
   "binx": {
     "ext-web-components-modern": "./bin/ext-web-components-modern.js"
   },
+  "bin": {
+    "ext-web-components": "./bin/ext-web-components.js"
+  },
   "scripts": {
     "watch": "npx babel ./src --out-dir ./dist --watch",
     "build": "npx babel ./src --out-dir ./dist",

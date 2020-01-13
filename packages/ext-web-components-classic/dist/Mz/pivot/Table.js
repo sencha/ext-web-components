@@ -605,23 +605,12 @@ function (_Ext_grid_Panel) {
   Mz_pivot_Table.getEvents = function getEvents(events) {
     events = events.concat(Mz_pivot_Table.EVENTS());
     return Ext_grid_Panel.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Mz_pivot_Table, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_grid_Panel.observedAttributes; //for (var property in Mz_pivot_Table.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_grid_Panel.observedAttributes;
       Mz_pivot_Table.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

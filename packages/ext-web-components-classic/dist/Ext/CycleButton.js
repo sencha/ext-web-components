@@ -155,23 +155,12 @@ function (_Ext_button_Split) {
   Ext_CycleButton.getEvents = function getEvents(events) {
     events = events.concat(Ext_CycleButton.EVENTS());
     return Ext_button_Split.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_CycleButton, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_button_Split.observedAttributes; //for (var property in Ext_CycleButton.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_button_Split.observedAttributes;
       Ext_CycleButton.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

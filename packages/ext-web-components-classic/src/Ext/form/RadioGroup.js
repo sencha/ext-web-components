@@ -1,7 +1,7 @@
 import Ext_form_CheckboxGroup from '../../Ext/form/CheckboxGroup.js';
 
 export default class Ext_form_RadioGroup extends Ext_form_CheckboxGroup {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'actions',
     'activeChildTabIndex',
     'activeCounter',
@@ -171,8 +171,8 @@ export default class Ext_form_RadioGroup extends Ext_form_CheckboxGroup {
     'weight',
     'width',
     'xtype',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'sender'},
     {name:'add', parameters:'sender,component,index'},
     {name:'added', parameters:'sender,container,pos'},
@@ -215,52 +215,40 @@ export default class Ext_form_RadioGroup extends Ext_form_CheckboxGroup {
     {name:'statesave', parameters:'sender,state'},
     {name:'validitychange', parameters:'sender,isValid'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_form_RadioGroup.PROPERTIES());
-        return Ext_form_CheckboxGroup.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_form_RadioGroup.EVENTS());
-        return Ext_form_CheckboxGroup.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_form_RadioGroup.PROPERTIES());
+    return Ext_form_CheckboxGroup.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_form_RadioGroup.EVENTS());
+    return Ext_form_CheckboxGroup.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_form_RadioGroup.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_form_RadioGroup.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_form_RadioGroup.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_form_RadioGroup.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_form_RadioGroup.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_form_RadioGroup.PROPERTIES()),
+      events.concat(Ext_form_RadioGroup.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_form_RadioGroup.PROPERTIES()),
-            events.concat(Ext_form_RadioGroup.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

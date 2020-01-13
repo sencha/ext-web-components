@@ -1,7 +1,7 @@
 import Ext_form_field_Picker from '../../Ext/form/field/Picker.js';
 
 export default class Ext_form_ComboBox extends Ext_form_field_Picker {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'activeCounter',
     'activeError',
     'activeErrorsTpl',
@@ -226,8 +226,8 @@ export default class Ext_form_ComboBox extends Ext_form_field_Picker {
     'weight',
     'width',
     'xtype',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'sender'},
     {name:'added', parameters:'sender,container,pos'},
     {name:'afterlayoutanimation', parameters:'sender'},
@@ -275,52 +275,40 @@ export default class Ext_form_ComboBox extends Ext_form_field_Picker {
     {name:'validitychange', parameters:'sender,isValid'},
     {name:'writeablechange', parameters:'sender,Read'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_form_ComboBox.PROPERTIES());
-        return Ext_form_field_Picker.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_form_ComboBox.EVENTS());
-        return Ext_form_field_Picker.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_form_ComboBox.PROPERTIES());
+    return Ext_form_field_Picker.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_form_ComboBox.EVENTS());
+    return Ext_form_field_Picker.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_form_ComboBox.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_form_ComboBox.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_form_ComboBox.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_form_ComboBox.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_form_ComboBox.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_form_ComboBox.PROPERTIES()),
+      events.concat(Ext_form_ComboBox.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_form_ComboBox.PROPERTIES()),
-            events.concat(Ext_form_ComboBox.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

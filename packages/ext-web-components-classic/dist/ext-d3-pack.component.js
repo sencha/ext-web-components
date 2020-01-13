@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_d3_hierarchy_Pack from '@sencha/ext-runtime-base/dist/./Ext/d3/hierarchy/Pack.js';
 import Ext_d3_hierarchy_Pack from './Ext/d3/hierarchy/Pack.js';
 import ElementParser from './ElementParser.js';
 

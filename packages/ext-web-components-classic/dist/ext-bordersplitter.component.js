@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_resizer_BorderSplitter from '@sencha/ext-runtime-base/dist/./Ext/resizer/BorderSplitter.js';
 import Ext_resizer_BorderSplitter from './Ext/resizer/BorderSplitter.js';
 import ElementParser from './ElementParser.js';
 

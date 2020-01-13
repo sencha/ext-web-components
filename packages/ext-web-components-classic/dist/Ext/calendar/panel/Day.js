@@ -227,23 +227,12 @@ function (_Ext_calendar_panel_D) {
   Ext_calendar_panel_Day.getEvents = function getEvents(events) {
     events = events.concat(Ext_calendar_panel_Day.EVENTS());
     return Ext_calendar_panel_Days.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_calendar_panel_Day, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_calendar_panel_D.observedAttributes; //for (var property in Ext_calendar_panel_Day.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_calendar_panel_D.observedAttributes;
       Ext_calendar_panel_Day.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

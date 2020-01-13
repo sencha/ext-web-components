@@ -113,23 +113,12 @@ function (_Ext_toolbar_TextItem) {
   Ext_ux_desktop_TrayClock.getEvents = function getEvents(events) {
     events = events.concat(Ext_ux_desktop_TrayClock.EVENTS());
     return Ext_toolbar_TextItem.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_ux_desktop_TrayClock, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_toolbar_TextItem.observedAttributes; //for (var property in Ext_ux_desktop_TrayClock.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_toolbar_TextItem.observedAttributes;
       Ext_ux_desktop_TrayClock.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

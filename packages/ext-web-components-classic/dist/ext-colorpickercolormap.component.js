@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ux_colorpick_ColorMap from '@sencha/ext-runtime-base/dist/./Ext/ux/colorpick/ColorMap.js';
 import Ext_ux_colorpick_ColorMap from './Ext/ux/colorpick/ColorMap.js';
 import ElementParser from './ElementParser.js';
 
