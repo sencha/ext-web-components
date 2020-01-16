@@ -1,10 +1,11 @@
-//Wed Jan 15 2020 20:51:50 GMT-0500 (Eastern Standard Time)
+//Thu Jan 16 2020 14:53:15 GMT-0500 (Eastern Standard Time)
 
 import {
   doProp,
   filterProp,
   isMenu,
   isRenderercell,
+  isParentGridAndChildToolbar,
   isParentGridAndChildColumn,
   isTooltip,
   isPlugin
@@ -338,6 +339,14 @@ export default class EleBaseComponent extends HTMLElement {
         break;
       case isRenderercell(childxtype):
         parentCmp.setCell(childCmp);
+        break;
+      case isParentGridAndChildToolbar(parentxtype, childxtype):
+        if(parentCmp.items.items[0].xtype == 'titlebar') {
+          parentCmp.insert(1, childCmp);
+        }
+        else {
+          parentCmp.insert(0, childCmp);
+        }
         break;
       case isParentGridAndChildColumn(parentxtype,childxtype):
         if (location == null) {

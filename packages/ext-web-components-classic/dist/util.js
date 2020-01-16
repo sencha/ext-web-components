@@ -89,6 +89,13 @@ export function isRenderercell(childxtype) {
     return false;
   }
 }
+export function isParentGridAndChildToolbar(parentxtype, childxtype) {
+  if (parentxtype === 'grid' && childxtype === 'toolbar') {
+    return true;
+  } else {
+    return false;
+  }
+}
 export function isParentGridAndChildColumn(parentxtype, childxtype) {
   if (parentxtype === 'grid' && childxtype.includes("column")) {
     return true;
