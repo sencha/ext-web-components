@@ -1,3 +1,5 @@
+test
+
 
 ng new ng-gwc-all --minimal=true --interactive=false --routing=false -g=true --skipInstall=true
 

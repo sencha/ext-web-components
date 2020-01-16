@@ -1,7 +1,7 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Wed Jan 15 2020 20:47:51 GMT-0500 (Eastern Standard Time)
-import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
+//Thu Jan 16 2020 14:57:40 GMT-0500 (Eastern Standard Time)
+import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildToolbar, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var EleBaseComponent =
 /*#__PURE__*/
@@ -338,6 +338,15 @@ function (_HTMLElement) {
 
       case isRenderercell(childxtype):
         parentCmp.setCell(childCmp);
+        break;
+
+      case isParentGridAndChildToolbar(parentxtype, childxtype):
+        if (parentCmp.items.items[0].xtype == 'titlebar') {
+          parentCmp.insert(1, childCmp);
+        } else {
+          parentCmp.insert(0, childCmp);
+        }
+
         break;
 
       case isParentGridAndChildColumn(parentxtype, childxtype):
