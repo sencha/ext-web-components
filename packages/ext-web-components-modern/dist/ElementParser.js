@@ -4,9 +4,9 @@ import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
 var ElementParser = function () {
   if (window['Ext'] == undefined) {
     console.warn('Ext engine and theme not defined in index.html');
-    console.warn('Deprecation below is expected');
-    console.warn('Click the following link for discussion on how to resolve');
-    console.warn('https://docs.sencha.com/extwebcomponents/7.1.0/guides/deprecation_message.html');
+    console.warn('Deprecation below is expected'); //console.warn('Click the following link for discussion on how to resolve');
+    //console.warn('https://docs.sencha.com/extwebcomponents/7.1.0/guides/deprecation_message.html');
+
     var toolkit = 'modern'; //var baseFolder = "../ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
 
     var baseFolder = "./node_modules/@sencha/ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
@@ -39,13 +39,13 @@ var ElementParser = function () {
     se1.text = xhrObj.responseText;
     document.getElementsByTagName('head')[0].appendChild(se1);
     console.warn(baseFolder + "/engine.js" + " " + "was dynamically loaded");
-    xhrObj.open('GET', baseFolder + "/css.prod.js", false);
+    xhrObj.open('GET', baseFolder + "/themes/css." + toolkit + ".material.js", false);
     xhrObj.send('');
     var se2 = document.createElement('script');
     se2.type = "text/javascript";
     se2.text = xhrObj.responseText;
     document.getElementsByTagName('head')[0].appendChild(se2);
-    console.warn(baseFolder + "/css.prod.js" + " " + "was dynamically loaded");
+    console.warn(baseFolder + "/themes/css." + toolkit + ".material.js" + " " + "was dynamically loaded");
   }
 
   var DCL = 'DOMContentLoaded';
