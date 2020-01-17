@@ -202,7 +202,8 @@ function (_HTMLElement) {
           viewport: true
         };
       }
-    } //console.log(me.A.o);
+    }
+    //console.log(me.A.o);
 
 
     me.A.ext = Ext.create(me.A.o);

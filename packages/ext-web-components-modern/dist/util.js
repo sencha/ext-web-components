@@ -22,6 +22,7 @@ export function doProp(me, prop) {
 }
 
 function doSet(me, prop, val) {
+  //console.log('doSet: ' + prop)
   if (val) {
     var val2;
     var valExt;
@@ -36,6 +37,7 @@ function doSet(me, prop, val) {
     }
 
     var method = 'set' + prop[0].toUpperCase() + prop.substring(1);
+    //console.log(method)
 
     try {
       me.A.ext[method](valExt);
