@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Thu Jan 16 2020 15:31:50 GMT-0500 (Eastern Standard Time)
+//Sun Jan 19 2020 16:14:32 GMT-0500 (Eastern Standard Time)
 import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildToolbar, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var EleBaseComponent =
@@ -202,8 +202,7 @@ function (_HTMLElement) {
           viewport: true
         };
       }
-    }
-    //console.log(me.A.o);
+    } //console.log(me.A.o);
 
 
     me.A.ext = Ext.create(me.A.o);
