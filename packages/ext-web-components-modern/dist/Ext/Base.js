@@ -8,7 +8,7 @@ function (_EleBaseComponent) {
   _inheritsLoose(Ext_Base, _EleBaseComponent);
 
   Ext_Base.PROPERTIES = function PROPERTIES() {
-    return ['title', 'header', 'renderer', 'label', 'fitToParent', 'tab', 'config', 'platformConfig', 'summaryRenderer', 'extname', 'viewport', 'align', 'plugins', 'responsiveConfig', 'responsiveFormulas'];
+    return ['closable', 'title', 'header', 'renderer', 'label', 'fitToParent', 'tab', 'config', 'platformConfig', 'summaryRenderer', 'extname', 'viewport', 'align', 'plugins', 'responsiveConfig', 'responsiveFormulas'];
   };
 
   Ext_Base.EVENTS = function EVENTS() {
