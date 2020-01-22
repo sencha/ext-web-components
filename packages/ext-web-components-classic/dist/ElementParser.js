@@ -2,12 +2,24 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
 
 var ElementParser = function () {
-  if (window['Ext'] == undefined) {
+  if (window['Ext'] == 'bad') {
     console.warn('Ext engine and theme not defined in index.html');
     console.warn('Deprecation below is expected'); //console.warn('Click the following link for discussion on how to resolve');
     //console.warn('https://docs.sencha.com/extwebcomponents/7.1.0/guides/deprecation_message.html');
 
     var toolkit = 'classic'; //var baseFolder = "../ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
+
+    var baseFolder = "./node_modules/@sencha/ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
+    var xhrObj = new XMLHttpRequest();
+    xhrObj.open('GET', baseFolder + "/" + toolkit + ".material.js", false);
+    xhrObj.send('');
+
+    if (xhrObj.status != 200) {
+      //console.warn('cant find Ext engine - see https://docs.sencha.com/extwebcomponents/7.1.0/guides/deprecation_message.html')
+      console.warn('cant find Ext engine - see https://docs.sencha.com');
+      return;
+    } //var baseFolder = "../ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
+
 
     var baseFolder = "./node_modules/@sencha/ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
     var xhrObj = new XMLHttpRequest();
@@ -46,6 +58,25 @@ var ElementParser = function () {
     se2.text = xhrObj.responseText;
     document.getElementsByTagName('head')[0].appendChild(se2);
     console.warn(baseFolder + "/themes/css." + toolkit + ".material.js" + " " + "was dynamically loaded");
+  }
+
+  if (window['Ext'] == undefined) {
+    console.warn('Ext engine and theme not defined in index.html');
+    console.warn('Deprecation below is expected'); //console.warn('Click the following link for discussion on how to resolve');
+    //console.warn('https://docs.sencha.com/extwebcomponents/7.1.0/guides/deprecation_message.html');
+
+    var toolkit = 'classic';
+    console.log(process.cwd());
+    var baseFolder = "./node_modules/@sencha/ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
+    var xhrObj = new XMLHttpRequest();
+    xhrObj.open('GET', baseFolder + "/" + toolkit + ".material.js", false);
+    xhrObj.send('');
+
+    if (xhrObj.status != 200) {
+      //console.warn('cant find Ext engine - see https://docs.sencha.com/extwebcomponents/7.1.0/guides/deprecation_message.html')
+      console.warn('cant find Ext engine - see https://docs.sencha.com');
+      return;
+    }
   }
 
   var DCL = 'DOMContentLoaded';
