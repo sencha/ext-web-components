@@ -3,7 +3,8 @@ import EleBaseComponent from '../ele-base.js'
 export default class Ext_Base extends EleBaseComponent {
 
     static PROPERTIES() { return [
-        'aMe',
+        'closable',
+        'title',
         'header',
         'renderer',
         'label',
