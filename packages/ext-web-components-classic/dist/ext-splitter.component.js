@@ -23,6 +23,5 @@ export { EWCSplitter as default };
 try {
   window.customElements.define('ext-splitter', ElementParser.withParsedCallback(EWCSplitter));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-splitter', EWCSplitter);
 }

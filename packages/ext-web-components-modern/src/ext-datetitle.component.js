@@ -7,4 +7,9 @@ export default class EWCDatetitle extends Ext_panel_DateTitle {
     this.xtype = 'datetitle';
   }
 }
-window.customElements.define('ext-datetitle', ElementParser.withParsedCallback(EWCDatetitle));
+try {
+  window.customElements.define('ext-datetitle', ElementParser.withParsedCallback(EWCDatetitle));
+}
+catch(e) {
+  window.customElements.define('ext-datetitle', EWCDatetitle);
+}

@@ -19,4 +19,9 @@ function (_Ext_field_DatePicker) {
 }(Ext_field_DatePicker);
 
 export { EWCDatepickerfield as default };
-window.customElements.define('ext-datepickerfield', ElementParser.withParsedCallback(EWCDatepickerfield));
+
+try {
+  window.customElements.define('ext-datepickerfield', ElementParser.withParsedCallback(EWCDatepickerfield));
+} catch (e) {
+  window.customElements.define('ext-datepickerfield', EWCDatepickerfield);
+}

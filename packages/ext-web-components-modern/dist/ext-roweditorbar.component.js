@@ -19,4 +19,9 @@ function (_Ext_grid_rowedit_Bar) {
 }(Ext_grid_rowedit_Bar);
 
 export { EWCRoweditorbar as default };
-window.customElements.define('ext-roweditorbar', ElementParser.withParsedCallback(EWCRoweditorbar));
+
+try {
+  window.customElements.define('ext-roweditorbar', ElementParser.withParsedCallback(EWCRoweditorbar));
+} catch (e) {
+  window.customElements.define('ext-roweditorbar', EWCRoweditorbar);
+}

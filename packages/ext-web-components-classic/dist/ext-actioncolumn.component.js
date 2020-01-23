@@ -23,6 +23,5 @@ export { EWCActioncolumn as default };
 try {
   window.customElements.define('ext-actioncolumn', ElementParser.withParsedCallback(EWCActioncolumn));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-actioncolumn', EWCActioncolumn);
 }

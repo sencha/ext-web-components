@@ -19,4 +19,9 @@ function (_Ext_grid_cell_Number) {
 }(Ext_grid_cell_Number);
 
 export { EWCNumbercell as default };
-window.customElements.define('ext-numbercell', ElementParser.withParsedCallback(EWCNumbercell));
+
+try {
+  window.customElements.define('ext-numbercell', ElementParser.withParsedCallback(EWCNumbercell));
+} catch (e) {
+  window.customElements.define('ext-numbercell', EWCNumbercell);
+}

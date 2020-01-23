@@ -19,4 +19,9 @@ function (_Ext_grid_column_Sele) {
 }(Ext_grid_column_Selection);
 
 export { EWCSelectioncolumn as default };
-window.customElements.define('ext-selectioncolumn', ElementParser.withParsedCallback(EWCSelectioncolumn));
+
+try {
+  window.customElements.define('ext-selectioncolumn', ElementParser.withParsedCallback(EWCSelectioncolumn));
+} catch (e) {
+  window.customElements.define('ext-selectioncolumn', EWCSelectioncolumn);
+}

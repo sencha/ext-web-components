@@ -7,4 +7,9 @@ export default class EWCTree extends Ext_tree_Tree {
     this.xtype = 'tree';
   }
 }
-window.customElements.define('ext-tree', ElementParser.withParsedCallback(EWCTree));
+try {
+  window.customElements.define('ext-tree', ElementParser.withParsedCallback(EWCTree));
+}
+catch(e) {
+  window.customElements.define('ext-tree', EWCTree);
+}

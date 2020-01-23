@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-tab', ElementParser.withParsedCallback(EWCTab));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-tab', EWCTab);
 }

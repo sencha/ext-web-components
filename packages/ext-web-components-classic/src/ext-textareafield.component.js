@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-textareafield', ElementParser.withParsedCallback(EWCTextareafield));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-textareafield', EWCTextareafield);
 }

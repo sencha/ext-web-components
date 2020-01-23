@@ -23,6 +23,5 @@ export { EWCUxiframe as default };
 try {
   window.customElements.define('ext-uxiframe', ElementParser.withParsedCallback(EWCUxiframe));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-uxiframe', EWCUxiframe);
 }

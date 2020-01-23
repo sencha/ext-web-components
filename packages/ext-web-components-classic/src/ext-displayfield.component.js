@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-displayfield', ElementParser.withParsedCallback(EWCDisplayfield));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-displayfield', EWCDisplayfield);
 }

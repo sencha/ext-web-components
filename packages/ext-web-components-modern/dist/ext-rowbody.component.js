@@ -19,4 +19,9 @@ function (_Ext_grid_RowBody) {
 }(Ext_grid_RowBody);
 
 export { EWCRowbody as default };
-window.customElements.define('ext-rowbody', ElementParser.withParsedCallback(EWCRowbody));
+
+try {
+  window.customElements.define('ext-rowbody', ElementParser.withParsedCallback(EWCRowbody));
+} catch (e) {
+  window.customElements.define('ext-rowbody', EWCRowbody);
+}

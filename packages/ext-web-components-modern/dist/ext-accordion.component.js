@@ -19,4 +19,9 @@ function (_Ext_panel_Accordion) {
 }(Ext_panel_Accordion);
 
 export { EWCAccordion as default };
-window.customElements.define('ext-accordion', ElementParser.withParsedCallback(EWCAccordion));
+
+try {
+  window.customElements.define('ext-accordion', ElementParser.withParsedCallback(EWCAccordion));
+} catch (e) {
+  window.customElements.define('ext-accordion', EWCAccordion);
+}

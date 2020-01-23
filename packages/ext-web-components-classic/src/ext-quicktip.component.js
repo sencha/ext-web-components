@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-quicktip', ElementParser.withParsedCallback(EWCQuicktip));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-quicktip', EWCQuicktip);
 }

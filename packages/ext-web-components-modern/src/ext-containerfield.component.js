@@ -7,4 +7,9 @@ export default class EWCContainerfield extends Ext_field_Container {
     this.xtype = 'containerfield';
   }
 }
-window.customElements.define('ext-containerfield', ElementParser.withParsedCallback(EWCContainerfield));
+try {
+  window.customElements.define('ext-containerfield', ElementParser.withParsedCallback(EWCContainerfield));
+}
+catch(e) {
+  window.customElements.define('ext-containerfield', EWCContainerfield);
+}

@@ -19,4 +19,9 @@ function (_Ext_viewport_Default) {
 }(Ext_viewport_Default);
 
 export { EWCViewport as default };
-window.customElements.define('ext-viewport', ElementParser.withParsedCallback(EWCViewport));
+
+try {
+  window.customElements.define('ext-viewport', ElementParser.withParsedCallback(EWCViewport));
+} catch (e) {
+  window.customElements.define('ext-viewport', EWCViewport);
+}

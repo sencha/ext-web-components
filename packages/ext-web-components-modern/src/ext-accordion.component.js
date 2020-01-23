@@ -7,4 +7,9 @@ export default class EWCAccordion extends Ext_panel_Accordion {
     this.xtype = 'accordion';
   }
 }
-window.customElements.define('ext-accordion', ElementParser.withParsedCallback(EWCAccordion));
+try {
+  window.customElements.define('ext-accordion', ElementParser.withParsedCallback(EWCAccordion));
+}
+catch(e) {
+  window.customElements.define('ext-accordion', EWCAccordion);
+}

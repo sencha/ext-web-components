@@ -7,4 +7,9 @@ export default class EWCMenuradioitem extends Ext_menu_RadioItem {
     this.xtype = 'menuradioitem';
   }
 }
-window.customElements.define('ext-menuradioitem', ElementParser.withParsedCallback(EWCMenuradioitem));
+try {
+  window.customElements.define('ext-menuradioitem', ElementParser.withParsedCallback(EWCMenuradioitem));
+}
+catch(e) {
+  window.customElements.define('ext-menuradioitem', EWCMenuradioitem);
+}

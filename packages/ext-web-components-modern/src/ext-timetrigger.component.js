@@ -7,4 +7,9 @@ export default class EWCTimetrigger extends Ext_field_trigger_Time {
     this.xtype = 'timetrigger';
   }
 }
-window.customElements.define('ext-timetrigger', ElementParser.withParsedCallback(EWCTimetrigger));
+try {
+  window.customElements.define('ext-timetrigger', ElementParser.withParsedCallback(EWCTimetrigger));
+}
+catch(e) {
+  window.customElements.define('ext-timetrigger', EWCTimetrigger);
+}

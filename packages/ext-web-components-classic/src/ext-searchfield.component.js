@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-searchfield', ElementParser.withParsedCallback(EWCSearchfield));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-searchfield', EWCSearchfield);
 }

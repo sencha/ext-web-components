@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-checkcolumn', ElementParser.withParsedCallback(EWCCheckcolumn));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-checkcolumn', EWCCheckcolumn);
 }

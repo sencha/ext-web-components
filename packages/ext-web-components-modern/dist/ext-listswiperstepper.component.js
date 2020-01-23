@@ -19,4 +19,9 @@ function (_Ext_dataview_listswi) {
 }(Ext_dataview_listswiper_Stepper);
 
 export { EWCListswiperstepper as default };
-window.customElements.define('ext-listswiperstepper', ElementParser.withParsedCallback(EWCListswiperstepper));
+
+try {
+  window.customElements.define('ext-listswiperstepper', ElementParser.withParsedCallback(EWCListswiperstepper));
+} catch (e) {
+  window.customElements.define('ext-listswiperstepper', EWCListswiperstepper);
+}

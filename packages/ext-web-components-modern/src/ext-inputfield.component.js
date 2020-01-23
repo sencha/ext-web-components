@@ -7,4 +7,9 @@ export default class EWCInputfield extends Ext_field_Input {
     this.xtype = 'inputfield';
   }
 }
-window.customElements.define('ext-inputfield', ElementParser.withParsedCallback(EWCInputfield));
+try {
+  window.customElements.define('ext-inputfield', ElementParser.withParsedCallback(EWCInputfield));
+}
+catch(e) {
+  window.customElements.define('ext-inputfield', EWCInputfield);
+}

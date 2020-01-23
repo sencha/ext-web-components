@@ -7,4 +7,9 @@ export default class EWCSparkline extends Ext_sparkline_Base {
     this.xtype = 'sparkline';
   }
 }
-window.customElements.define('ext-sparkline', ElementParser.withParsedCallback(EWCSparkline));
+try {
+  window.customElements.define('ext-sparkline', ElementParser.withParsedCallback(EWCSparkline));
+}
+catch(e) {
+  window.customElements.define('ext-sparkline', EWCSparkline);
+}

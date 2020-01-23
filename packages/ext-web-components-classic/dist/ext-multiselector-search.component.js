@@ -23,6 +23,5 @@ export { EWCMultiselector_search as default };
 try {
   window.customElements.define('ext-multiselector-search', ElementParser.withParsedCallback(EWCMultiselector_search));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-multiselector-search', EWCMultiselector_search);
 }

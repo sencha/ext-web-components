@@ -19,4 +19,9 @@ function (_Ext_grid_menu_SortDe) {
 }(Ext_grid_menu_SortDesc);
 
 export { EWCGridsortdescmenuitem as default };
-window.customElements.define('ext-gridsortdescmenuitem', ElementParser.withParsedCallback(EWCGridsortdescmenuitem));
+
+try {
+  window.customElements.define('ext-gridsortdescmenuitem', ElementParser.withParsedCallback(EWCGridsortdescmenuitem));
+} catch (e) {
+  window.customElements.define('ext-gridsortdescmenuitem', EWCGridsortdescmenuitem);
+}

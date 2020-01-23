@@ -19,4 +19,9 @@ function (_Ext_slider_Thumb) {
 }(Ext_slider_Thumb);
 
 export { EWCThumb as default };
-window.customElements.define('ext-thumb', ElementParser.withParsedCallback(EWCThumb));
+
+try {
+  window.customElements.define('ext-thumb', ElementParser.withParsedCallback(EWCThumb));
+} catch (e) {
+  window.customElements.define('ext-thumb', EWCThumb);
+}

@@ -7,4 +7,9 @@ export default class EWCSplitbutton extends Ext_SplitButton {
     this.xtype = 'splitbutton';
   }
 }
-window.customElements.define('ext-splitbutton', ElementParser.withParsedCallback(EWCSplitbutton));
+try {
+  window.customElements.define('ext-splitbutton', ElementParser.withParsedCallback(EWCSplitbutton));
+}
+catch(e) {
+  window.customElements.define('ext-splitbutton', EWCSplitbutton);
+}

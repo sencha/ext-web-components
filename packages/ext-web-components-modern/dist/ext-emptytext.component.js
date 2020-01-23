@@ -19,4 +19,9 @@ function (_Ext_dataview_EmptyTe) {
 }(Ext_dataview_EmptyText);
 
 export { EWCEmptytext as default };
-window.customElements.define('ext-emptytext', ElementParser.withParsedCallback(EWCEmptytext));
+
+try {
+  window.customElements.define('ext-emptytext', ElementParser.withParsedCallback(EWCEmptytext));
+} catch (e) {
+  window.customElements.define('ext-emptytext', EWCEmptytext);
+}

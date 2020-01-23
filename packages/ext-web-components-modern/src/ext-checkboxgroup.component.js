@@ -7,4 +7,9 @@ export default class EWCCheckboxgroup extends Ext_field_CheckboxGroup {
     this.xtype = 'checkboxgroup';
   }
 }
-window.customElements.define('ext-checkboxgroup', ElementParser.withParsedCallback(EWCCheckboxgroup));
+try {
+  window.customElements.define('ext-checkboxgroup', ElementParser.withParsedCallback(EWCCheckboxgroup));
+}
+catch(e) {
+  window.customElements.define('ext-checkboxgroup', EWCCheckboxgroup);
+}

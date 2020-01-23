@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-menuitem', ElementParser.withParsedCallback(EWCMenuitem));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-menuitem', EWCMenuitem);
 }

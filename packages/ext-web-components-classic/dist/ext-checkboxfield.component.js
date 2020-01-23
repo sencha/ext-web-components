@@ -23,6 +23,5 @@ export { EWCCheckboxfield as default };
 try {
   window.customElements.define('ext-checkboxfield', ElementParser.withParsedCallback(EWCCheckboxfield));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-checkboxfield', EWCCheckboxfield);
 }

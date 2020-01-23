@@ -19,4 +19,9 @@ function (_Ext_dataview_compone) {
 }(Ext_dataview_component_SimpleListItem);
 
 export { EWCSimplelistitem as default };
-window.customElements.define('ext-simplelistitem', ElementParser.withParsedCallback(EWCSimplelistitem));
+
+try {
+  window.customElements.define('ext-simplelistitem', ElementParser.withParsedCallback(EWCSimplelistitem));
+} catch (e) {
+  window.customElements.define('ext-simplelistitem', EWCSimplelistitem);
+}

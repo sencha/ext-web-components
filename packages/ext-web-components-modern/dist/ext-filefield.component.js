@@ -19,4 +19,9 @@ function (_Ext_field_File) {
 }(Ext_field_File);
 
 export { EWCFilefield as default };
-window.customElements.define('ext-filefield', ElementParser.withParsedCallback(EWCFilefield));
+
+try {
+  window.customElements.define('ext-filefield', ElementParser.withParsedCallback(EWCFilefield));
+} catch (e) {
+  window.customElements.define('ext-filefield', EWCFilefield);
+}

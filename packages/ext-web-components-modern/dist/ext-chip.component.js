@@ -19,4 +19,9 @@ function (_Ext_Chip) {
 }(Ext_Chip);
 
 export { EWCChip as default };
-window.customElements.define('ext-chip', ElementParser.withParsedCallback(EWCChip));
+
+try {
+  window.customElements.define('ext-chip', ElementParser.withParsedCallback(EWCChip));
+} catch (e) {
+  window.customElements.define('ext-chip', EWCChip);
+}

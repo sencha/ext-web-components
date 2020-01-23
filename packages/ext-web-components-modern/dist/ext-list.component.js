@@ -19,4 +19,9 @@ function (_Ext_List) {
 }(Ext_List);
 
 export { EWCList as default };
-window.customElements.define('ext-list', ElementParser.withParsedCallback(EWCList));
+
+try {
+  window.customElements.define('ext-list', ElementParser.withParsedCallback(EWCList));
+} catch (e) {
+  window.customElements.define('ext-list', EWCList);
+}

@@ -7,4 +7,9 @@ export default class EWCRownumberercell extends Ext_grid_cell_RowNumberer {
     this.xtype = 'rownumberercell';
   }
 }
-window.customElements.define('ext-rownumberercell', ElementParser.withParsedCallback(EWCRownumberercell));
+try {
+  window.customElements.define('ext-rownumberercell', ElementParser.withParsedCallback(EWCRownumberercell));
+}
+catch(e) {
+  window.customElements.define('ext-rownumberercell', EWCRownumberercell);
+}

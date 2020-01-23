@@ -23,6 +23,5 @@ export { EWCCalendar_calendar_picker as default };
 try {
   window.customElements.define('ext-calendar-calendar-picker', ElementParser.withParsedCallback(EWCCalendar_calendar_picker));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-calendar-calendar-picker', EWCCalendar_calendar_picker);
 }

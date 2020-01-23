@@ -7,4 +7,9 @@ export default class EWCExpandtrigger extends Ext_field_trigger_Expand {
     this.xtype = 'expandtrigger';
   }
 }
-window.customElements.define('ext-expandtrigger', ElementParser.withParsedCallback(EWCExpandtrigger));
+try {
+  window.customElements.define('ext-expandtrigger', ElementParser.withParsedCallback(EWCExpandtrigger));
+}
+catch(e) {
+  window.customElements.define('ext-expandtrigger', EWCExpandtrigger);
+}

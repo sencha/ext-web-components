@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-sparklinepie', ElementParser.withParsedCallback(EWCSparklinepie));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-sparklinepie', EWCSparklinepie);
 }

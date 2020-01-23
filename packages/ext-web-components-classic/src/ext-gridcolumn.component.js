@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-gridcolumn', ElementParser.withParsedCallback(EWCGridcolumn));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-gridcolumn', EWCGridcolumn);
 }

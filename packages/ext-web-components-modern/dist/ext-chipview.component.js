@@ -19,4 +19,9 @@ function (_Ext_dataview_ChipVie) {
 }(Ext_dataview_ChipView);
 
 export { EWCChipview as default };
-window.customElements.define('ext-chipview', ElementParser.withParsedCallback(EWCChipview));
+
+try {
+  window.customElements.define('ext-chipview', ElementParser.withParsedCallback(EWCChipview));
+} catch (e) {
+  window.customElements.define('ext-chipview', EWCChipview);
+}

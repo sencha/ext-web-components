@@ -7,4 +7,9 @@ export default class EWCPanelheader extends Ext_panel_Header {
     this.xtype = 'panelheader';
   }
 }
-window.customElements.define('ext-panelheader', ElementParser.withParsedCallback(EWCPanelheader));
+try {
+  window.customElements.define('ext-panelheader', ElementParser.withParsedCallback(EWCPanelheader));
+}
+catch(e) {
+  window.customElements.define('ext-panelheader', EWCPanelheader);
+}

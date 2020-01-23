@@ -19,4 +19,9 @@ function (_Ext_form_Number) {
 }(Ext_form_Number);
 
 export { EWCNumberfield as default };
-window.customElements.define('ext-numberfield', ElementParser.withParsedCallback(EWCNumberfield));
+
+try {
+  window.customElements.define('ext-numberfield', ElementParser.withParsedCallback(EWCNumberfield));
+} catch (e) {
+  window.customElements.define('ext-numberfield', EWCNumberfield);
+}

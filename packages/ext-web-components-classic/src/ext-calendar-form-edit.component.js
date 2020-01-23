@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-calendar-form-edit', ElementParser.withParsedCallback(EWCCalendar_form_edit));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-calendar-form-edit', EWCCalendar_form_edit);
 }

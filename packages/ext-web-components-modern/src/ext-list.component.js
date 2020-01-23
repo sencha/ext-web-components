@@ -7,4 +7,9 @@ export default class EWCList extends Ext_List {
     this.xtype = 'list';
   }
 }
-window.customElements.define('ext-list', ElementParser.withParsedCallback(EWCList));
+try {
+  window.customElements.define('ext-list', ElementParser.withParsedCallback(EWCList));
+}
+catch(e) {
+  window.customElements.define('ext-list', EWCList);
+}

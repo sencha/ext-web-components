@@ -23,6 +23,5 @@ export { EWCComponent as default };
 try {
   window.customElements.define('ext-component', ElementParser.withParsedCallback(EWCComponent));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-component', EWCComponent);
 }

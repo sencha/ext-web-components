@@ -7,4 +7,9 @@ export default class EWCGridcell extends Ext_grid_cell_Cell {
     this.xtype = 'gridcell';
   }
 }
-window.customElements.define('ext-gridcell', ElementParser.withParsedCallback(EWCGridcell));
+try {
+  window.customElements.define('ext-gridcell', ElementParser.withParsedCallback(EWCGridcell));
+}
+catch(e) {
+  window.customElements.define('ext-gridcell', EWCGridcell);
+}

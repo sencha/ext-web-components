@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-calendar-weeksview', ElementParser.withParsedCallback(EWCCalendar_weeksview));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-calendar-weeksview', EWCCalendar_weeksview);
 }

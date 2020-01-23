@@ -7,4 +7,9 @@ export default class EWCIndicator extends Ext_Indicator {
     this.xtype = 'indicator';
   }
 }
-window.customElements.define('ext-indicator', ElementParser.withParsedCallback(EWCIndicator));
+try {
+  window.customElements.define('ext-indicator', ElementParser.withParsedCallback(EWCIndicator));
+}
+catch(e) {
+  window.customElements.define('ext-indicator', EWCIndicator);
+}

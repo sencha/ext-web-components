@@ -7,4 +7,9 @@ export default class EWCDatecolumn extends Ext_grid_column_Date {
     this.xtype = 'datecolumn';
   }
 }
-window.customElements.define('ext-datecolumn', ElementParser.withParsedCallback(EWCDatecolumn));
+try {
+  window.customElements.define('ext-datecolumn', ElementParser.withParsedCallback(EWCDatecolumn));
+}
+catch(e) {
+  window.customElements.define('ext-datecolumn', EWCDatecolumn);
+}

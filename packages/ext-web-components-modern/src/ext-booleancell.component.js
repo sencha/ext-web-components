@@ -7,4 +7,9 @@ export default class EWCBooleancell extends Ext_grid_cell_Boolean {
     this.xtype = 'booleancell';
   }
 }
-window.customElements.define('ext-booleancell', ElementParser.withParsedCallback(EWCBooleancell));
+try {
+  window.customElements.define('ext-booleancell', ElementParser.withParsedCallback(EWCBooleancell));
+}
+catch(e) {
+  window.customElements.define('ext-booleancell', EWCBooleancell);
+}

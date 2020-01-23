@@ -7,4 +7,9 @@ export default class EWCGridsortdescmenuitem extends Ext_grid_menu_SortDesc {
     this.xtype = 'gridsortdescmenuitem';
   }
 }
-window.customElements.define('ext-gridsortdescmenuitem', ElementParser.withParsedCallback(EWCGridsortdescmenuitem));
+try {
+  window.customElements.define('ext-gridsortdescmenuitem', ElementParser.withParsedCallback(EWCGridsortdescmenuitem));
+}
+catch(e) {
+  window.customElements.define('ext-gridsortdescmenuitem', EWCGridsortdescmenuitem);
+}

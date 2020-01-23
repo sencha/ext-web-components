@@ -19,4 +19,9 @@ function (_Ext_Mask) {
 }(Ext_Mask);
 
 export { EWCMask as default };
-window.customElements.define('ext-mask', ElementParser.withParsedCallback(EWCMask));
+
+try {
+  window.customElements.define('ext-mask', ElementParser.withParsedCallback(EWCMask));
+} catch (e) {
+  window.customElements.define('ext-mask', EWCMask);
+}

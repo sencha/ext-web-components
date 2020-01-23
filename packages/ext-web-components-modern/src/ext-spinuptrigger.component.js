@@ -7,4 +7,9 @@ export default class EWCSpinuptrigger extends Ext_field_trigger_SpinUp {
     this.xtype = 'spinuptrigger';
   }
 }
-window.customElements.define('ext-spinuptrigger', ElementParser.withParsedCallback(EWCSpinuptrigger));
+try {
+  window.customElements.define('ext-spinuptrigger', ElementParser.withParsedCallback(EWCSpinuptrigger));
+}
+catch(e) {
+  window.customElements.define('ext-spinuptrigger', EWCSpinuptrigger);
+}

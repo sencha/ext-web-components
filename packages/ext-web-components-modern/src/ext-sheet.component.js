@@ -7,4 +7,9 @@ export default class EWCSheet extends Ext_Sheet {
     this.xtype = 'sheet';
   }
 }
-window.customElements.define('ext-sheet', ElementParser.withParsedCallback(EWCSheet));
+try {
+  window.customElements.define('ext-sheet', ElementParser.withParsedCallback(EWCSheet));
+}
+catch(e) {
+  window.customElements.define('ext-sheet', EWCSheet);
+}

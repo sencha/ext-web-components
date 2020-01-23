@@ -19,4 +19,9 @@ function (_Ext_pivot_d3_Contain) {
 }(Ext_pivot_d3_Container);
 
 export { EWCPivotd3container as default };
-window.customElements.define('ext-pivotd3container', ElementParser.withParsedCallback(EWCPivotd3container));
+
+try {
+  window.customElements.define('ext-pivotd3container', ElementParser.withParsedCallback(EWCPivotd3container));
+} catch (e) {
+  window.customElements.define('ext-pivotd3container', EWCPivotd3container);
+}

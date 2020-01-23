@@ -19,4 +19,9 @@ function (_Ext_grid_column_Text) {
 }(Ext_grid_column_Text);
 
 export { EWCTextcolumn as default };
-window.customElements.define('ext-textcolumn', ElementParser.withParsedCallback(EWCTextcolumn));
+
+try {
+  window.customElements.define('ext-textcolumn', ElementParser.withParsedCallback(EWCTextcolumn));
+} catch (e) {
+  window.customElements.define('ext-textcolumn', EWCTextcolumn);
+}

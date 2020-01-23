@@ -7,4 +7,9 @@ export default class EWCMask extends Ext_Mask {
     this.xtype = 'mask';
   }
 }
-window.customElements.define('ext-mask', ElementParser.withParsedCallback(EWCMask));
+try {
+  window.customElements.define('ext-mask', ElementParser.withParsedCallback(EWCMask));
+}
+catch(e) {
+  window.customElements.define('ext-mask', EWCMask);
+}

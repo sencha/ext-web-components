@@ -19,4 +19,9 @@ function (_Ext_grid_Row) {
 }(Ext_grid_Row);
 
 export { EWCGridrow as default };
-window.customElements.define('ext-gridrow', ElementParser.withParsedCallback(EWCGridrow));
+
+try {
+  window.customElements.define('ext-gridrow', ElementParser.withParsedCallback(EWCGridrow));
+} catch (e) {
+  window.customElements.define('ext-gridrow', EWCGridrow);
+}

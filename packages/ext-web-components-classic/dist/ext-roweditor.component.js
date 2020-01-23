@@ -23,6 +23,5 @@ export { EWCRoweditor as default };
 try {
   window.customElements.define('ext-roweditor', ElementParser.withParsedCallback(EWCRoweditor));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-roweditor', EWCRoweditor);
 }

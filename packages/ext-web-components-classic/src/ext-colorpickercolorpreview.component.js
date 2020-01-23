@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-colorpickercolorpreview', ElementParser.withParsedCallback(EWCColorpickercolorpreview));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-colorpickercolorpreview', EWCColorpickercolorpreview);
 }

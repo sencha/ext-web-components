@@ -23,6 +23,5 @@ export { EWCCalendar_weekview as default };
 try {
   window.customElements.define('ext-calendar-weekview', ElementParser.withParsedCallback(EWCCalendar_weekview));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-calendar-weekview', EWCCalendar_weekview);
 }

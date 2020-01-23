@@ -19,4 +19,9 @@ function (_Ext_field_Input) {
 }(Ext_field_Input);
 
 export { EWCInputfield as default };
-window.customElements.define('ext-inputfield', ElementParser.withParsedCallback(EWCInputfield));
+
+try {
+  window.customElements.define('ext-inputfield', ElementParser.withParsedCallback(EWCInputfield));
+} catch (e) {
+  window.customElements.define('ext-inputfield', EWCInputfield);
+}

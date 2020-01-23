@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-filebutton', ElementParser.withParsedCallback(EWCFilebutton));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-filebutton', EWCFilebutton);
 }

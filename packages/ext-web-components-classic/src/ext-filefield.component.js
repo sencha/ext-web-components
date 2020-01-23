@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-filefield', ElementParser.withParsedCallback(EWCFilefield));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-filefield', EWCFilefield);
 }

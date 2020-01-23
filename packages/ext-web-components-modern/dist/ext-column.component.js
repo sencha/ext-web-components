@@ -19,4 +19,9 @@ function (_Ext_grid_column_Temp) {
 }(Ext_grid_column_Template);
 
 export { EWCColumn as default };
-window.customElements.define('ext-column', ElementParser.withParsedCallback(EWCColumn));
+
+try {
+  window.customElements.define('ext-column', ElementParser.withParsedCallback(EWCColumn));
+} catch (e) {
+  window.customElements.define('ext-column', EWCColumn);
+}

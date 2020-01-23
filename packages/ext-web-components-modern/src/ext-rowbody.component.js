@@ -7,4 +7,9 @@ export default class EWCRowbody extends Ext_grid_RowBody {
     this.xtype = 'rowbody';
   }
 }
-window.customElements.define('ext-rowbody', ElementParser.withParsedCallback(EWCRowbody));
+try {
+  window.customElements.define('ext-rowbody', ElementParser.withParsedCallback(EWCRowbody));
+}
+catch(e) {
+  window.customElements.define('ext-rowbody', EWCRowbody);
+}

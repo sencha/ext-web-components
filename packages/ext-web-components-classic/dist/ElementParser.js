@@ -37,19 +37,24 @@ var ElementParser = function () {
 
     switch (window['ExtFramework']) {
       case 'react':
+        console.log('react');
         console.warn('ext-react runtime not defined in index.html');
         console.warn('to fix, add following to public/index.html');
         console.warn('<script src="%PUBLIC_URL%/ext-runtime-classic/classic.material.js"></script>');
         console.warn('or');
-        console.warn('<script src="%PUBLIC_URL%/ext-runtime-modern/modern.material.js"></script>');
+        console.warn('<script src="%PUBLIC_URL%/ext-runtime-modern/modern.material.js"></script>'); // mjg need to determine toolkit
+
+        xhrObj.open('GET', '/ext-runtime-classic/' + 'classic' + '.material.js', false);
         break;
 
       case 'angular':
+        console.log('angular');
         console.warn('ext-angular runtime not defined in index.html');
         console.warn('to fix, add following to angular.json');
         console.warn('"scripts": ["ext-runtime-classic/classic.material.js"]');
         console.warn('or');
-        console.warn('"scripts": ["ext-runtime-modern/classic.modern.js"]');
+        console.warn('"scripts": ["ext-runtime-modern/classic.modern.js"]'); //?? xhrObj.open('GET', '/ext-runtime-classic/' + 'classic' + '.material.js', false);
+
         break;
 
       case 'vue':
@@ -67,6 +72,7 @@ var ElementParser = function () {
         console.warn('ext-web-comonents runtime not defined in index.html');
         console.warn('to fix, add following to index.html');
         console.warn('<script src="./node_modules/@sencha/ext-web-components-' + toolkit + '/ext-runtime-classic/' + toolkit + '.material.js"></script>');
+        xhrObj.open('GET', 'node_modules/@sencha/ext-web-components-' + toolkit + '/ext-runtime-classic/' + toolkit + '.material.js', false);
         break;
 
       default:
@@ -74,7 +80,6 @@ var ElementParser = function () {
         break;
     }
 
-    xhrObj.open('GET', 'node_modules/@sencha/ext-web-components-' + toolkit + '/ext-runtime-classic/' + toolkit + '.material.js', false);
     xhrObj.send('');
 
     if (xhrObj.responseText.substring(0, 3) != 'var') {

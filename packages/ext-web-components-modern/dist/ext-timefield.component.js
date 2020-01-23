@@ -19,4 +19,9 @@ function (_Ext_field_Time) {
 }(Ext_field_Time);
 
 export { EWCTimefield as default };
-window.customElements.define('ext-timefield', ElementParser.withParsedCallback(EWCTimefield));
+
+try {
+  window.customElements.define('ext-timefield', ElementParser.withParsedCallback(EWCTimefield));
+} catch (e) {
+  window.customElements.define('ext-timefield', EWCTimefield);
+}

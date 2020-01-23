@@ -7,4 +7,9 @@ export default class EWCCalendar_event extends Ext_calendar_Event {
     this.xtype = 'calendar-event';
   }
 }
-window.customElements.define('ext-calendar-event', ElementParser.withParsedCallback(EWCCalendar_event));
+try {
+  window.customElements.define('ext-calendar-event', ElementParser.withParsedCallback(EWCCalendar_event));
+}
+catch(e) {
+  window.customElements.define('ext-calendar-event', EWCCalendar_event);
+}

@@ -7,4 +7,9 @@ export default class EWCPivotrangeeditor extends Ext_pivot_plugin_rangeeditor_Pa
     this.xtype = 'pivotrangeeditor';
   }
 }
-window.customElements.define('ext-pivotrangeeditor', ElementParser.withParsedCallback(EWCPivotrangeeditor));
+try {
+  window.customElements.define('ext-pivotrangeeditor', ElementParser.withParsedCallback(EWCPivotrangeeditor));
+}
+catch(e) {
+  window.customElements.define('ext-pivotrangeeditor', EWCPivotrangeeditor);
+}

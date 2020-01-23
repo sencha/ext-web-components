@@ -7,4 +7,9 @@ export default class EWCFilefield extends Ext_field_File {
     this.xtype = 'filefield';
   }
 }
-window.customElements.define('ext-filefield', ElementParser.withParsedCallback(EWCFilefield));
+try {
+  window.customElements.define('ext-filefield', ElementParser.withParsedCallback(EWCFilefield));
+}
+catch(e) {
+  window.customElements.define('ext-filefield', EWCFilefield);
+}

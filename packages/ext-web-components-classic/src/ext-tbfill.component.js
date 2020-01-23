@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-tbfill', ElementParser.withParsedCallback(EWCTbfill));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-tbfill', EWCTbfill);
 }

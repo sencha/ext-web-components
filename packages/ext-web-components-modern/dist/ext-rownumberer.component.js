@@ -19,4 +19,9 @@ function (_Ext_grid_column_RowN) {
 }(Ext_grid_column_RowNumberer);
 
 export { EWCRownumberer as default };
-window.customElements.define('ext-rownumberer', ElementParser.withParsedCallback(EWCRownumberer));
+
+try {
+  window.customElements.define('ext-rownumberer', ElementParser.withParsedCallback(EWCRownumberer));
+} catch (e) {
+  window.customElements.define('ext-rownumberer', EWCRownumberer);
+}

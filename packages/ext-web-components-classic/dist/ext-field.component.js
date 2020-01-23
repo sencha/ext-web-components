@@ -23,6 +23,5 @@ export { EWCField as default };
 try {
   window.customElements.define('ext-field', ElementParser.withParsedCallback(EWCField));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-field', EWCField);
 }

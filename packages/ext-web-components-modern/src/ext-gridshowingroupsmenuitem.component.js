@@ -7,4 +7,9 @@ export default class EWCGridshowingroupsmenuitem extends Ext_grid_menu_ShowInGro
     this.xtype = 'gridshowingroupsmenuitem';
   }
 }
-window.customElements.define('ext-gridshowingroupsmenuitem', ElementParser.withParsedCallback(EWCGridshowingroupsmenuitem));
+try {
+  window.customElements.define('ext-gridshowingroupsmenuitem', ElementParser.withParsedCallback(EWCGridshowingroupsmenuitem));
+}
+catch(e) {
+  window.customElements.define('ext-gridshowingroupsmenuitem', EWCGridshowingroupsmenuitem);
+}

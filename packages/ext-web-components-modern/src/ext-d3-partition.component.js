@@ -7,4 +7,9 @@ export default class EWCD3_partition extends Ext_d3_hierarchy_partition_Partitio
     this.xtype = 'd3-partition';
   }
 }
-window.customElements.define('ext-d3-partition', ElementParser.withParsedCallback(EWCD3_partition));
+try {
+  window.customElements.define('ext-d3-partition', ElementParser.withParsedCallback(EWCD3_partition));
+}
+catch(e) {
+  window.customElements.define('ext-d3-partition', EWCD3_partition);
+}

@@ -23,6 +23,5 @@ export { EWCMultiselector as default };
 try {
   window.customElements.define('ext-multiselector', ElementParser.withParsedCallback(EWCMultiselector));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-multiselector', EWCMultiselector);
 }

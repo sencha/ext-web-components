@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-boundlist', ElementParser.withParsedCallback(EWCBoundlist));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-boundlist', EWCBoundlist);
 }

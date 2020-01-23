@@ -7,4 +7,9 @@ export default class EWCIndexbar extends Ext_IndexBar {
     this.xtype = 'indexbar';
   }
 }
-window.customElements.define('ext-indexbar', ElementParser.withParsedCallback(EWCIndexbar));
+try {
+  window.customElements.define('ext-indexbar', ElementParser.withParsedCallback(EWCIndexbar));
+}
+catch(e) {
+  window.customElements.define('ext-indexbar', EWCIndexbar);
+}

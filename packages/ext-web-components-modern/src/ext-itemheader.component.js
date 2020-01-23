@@ -7,4 +7,9 @@ export default class EWCItemheader extends Ext_dataview_ItemHeader {
     this.xtype = 'itemheader';
   }
 }
-window.customElements.define('ext-itemheader', ElementParser.withParsedCallback(EWCItemheader));
+try {
+  window.customElements.define('ext-itemheader', ElementParser.withParsedCallback(EWCItemheader));
+}
+catch(e) {
+  window.customElements.define('ext-itemheader', EWCItemheader);
+}

@@ -19,4 +19,9 @@ function (_Ext_Audio) {
 }(Ext_Audio);
 
 export { EWCAudio as default };
-window.customElements.define('ext-audio', ElementParser.withParsedCallback(EWCAudio));
+
+try {
+  window.customElements.define('ext-audio', ElementParser.withParsedCallback(EWCAudio));
+} catch (e) {
+  window.customElements.define('ext-audio', EWCAudio);
+}

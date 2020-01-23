@@ -19,4 +19,9 @@ function (_Ext_field_Panel) {
 }(Ext_field_Panel);
 
 export { EWCFieldpanel as default };
-window.customElements.define('ext-fieldpanel', ElementParser.withParsedCallback(EWCFieldpanel));
+
+try {
+  window.customElements.define('ext-fieldpanel', ElementParser.withParsedCallback(EWCFieldpanel));
+} catch (e) {
+  window.customElements.define('ext-fieldpanel', EWCFieldpanel);
+}

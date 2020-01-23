@@ -23,6 +23,5 @@ export { EWCTemplatecolumn as default };
 try {
   window.customElements.define('ext-templatecolumn', ElementParser.withParsedCallback(EWCTemplatecolumn));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-templatecolumn', EWCTemplatecolumn);
 }

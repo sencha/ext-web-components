@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-statusbar', ElementParser.withParsedCallback(EWCStatusbar));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-statusbar', EWCStatusbar);
 }

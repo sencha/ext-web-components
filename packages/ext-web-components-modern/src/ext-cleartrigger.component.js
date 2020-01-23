@@ -7,4 +7,9 @@ export default class EWCCleartrigger extends Ext_field_trigger_Clear {
     this.xtype = 'cleartrigger';
   }
 }
-window.customElements.define('ext-cleartrigger', ElementParser.withParsedCallback(EWCCleartrigger));
+try {
+  window.customElements.define('ext-cleartrigger', ElementParser.withParsedCallback(EWCCleartrigger));
+}
+catch(e) {
+  window.customElements.define('ext-cleartrigger', EWCCleartrigger);
+}

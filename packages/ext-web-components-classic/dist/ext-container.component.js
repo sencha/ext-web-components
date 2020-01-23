@@ -23,6 +23,5 @@ export { EWCContainer as default };
 try {
   window.customElements.define('ext-container', ElementParser.withParsedCallback(EWCContainer));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-container', EWCContainer);
 }

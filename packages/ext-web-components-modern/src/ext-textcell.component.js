@@ -7,4 +7,9 @@ export default class EWCTextcell extends Ext_grid_cell_Text {
     this.xtype = 'textcell';
   }
 }
-window.customElements.define('ext-textcell', ElementParser.withParsedCallback(EWCTextcell));
+try {
+  window.customElements.define('ext-textcell', ElementParser.withParsedCallback(EWCTextcell));
+}
+catch(e) {
+  window.customElements.define('ext-textcell', EWCTextcell);
+}

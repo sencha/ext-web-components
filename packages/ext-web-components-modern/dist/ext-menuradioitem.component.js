@@ -19,4 +19,9 @@ function (_Ext_menu_RadioItem) {
 }(Ext_menu_RadioItem);
 
 export { EWCMenuradioitem as default };
-window.customElements.define('ext-menuradioitem', ElementParser.withParsedCallback(EWCMenuradioitem));
+
+try {
+  window.customElements.define('ext-menuradioitem', ElementParser.withParsedCallback(EWCMenuradioitem));
+} catch (e) {
+  window.customElements.define('ext-menuradioitem', EWCMenuradioitem);
+}

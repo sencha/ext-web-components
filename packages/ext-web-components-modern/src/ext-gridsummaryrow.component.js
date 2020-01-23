@@ -7,4 +7,9 @@ export default class EWCGridsummaryrow extends Ext_grid_SummaryRow {
     this.xtype = 'gridsummaryrow';
   }
 }
-window.customElements.define('ext-gridsummaryrow', ElementParser.withParsedCallback(EWCGridsummaryrow));
+try {
+  window.customElements.define('ext-gridsummaryrow', ElementParser.withParsedCallback(EWCGridsummaryrow));
+}
+catch(e) {
+  window.customElements.define('ext-gridsummaryrow', EWCGridsummaryrow);
+}

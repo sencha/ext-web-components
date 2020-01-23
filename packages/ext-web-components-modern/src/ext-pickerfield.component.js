@@ -7,4 +7,9 @@ export default class EWCPickerfield extends Ext_field_Picker {
     this.xtype = 'pickerfield';
   }
 }
-window.customElements.define('ext-pickerfield', ElementParser.withParsedCallback(EWCPickerfield));
+try {
+  window.customElements.define('ext-pickerfield', ElementParser.withParsedCallback(EWCPickerfield));
+}
+catch(e) {
+  window.customElements.define('ext-pickerfield', EWCPickerfield);
+}

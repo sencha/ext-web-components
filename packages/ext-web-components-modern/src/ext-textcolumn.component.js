@@ -7,4 +7,9 @@ export default class EWCTextcolumn extends Ext_grid_column_Text {
     this.xtype = 'textcolumn';
   }
 }
-window.customElements.define('ext-textcolumn', ElementParser.withParsedCallback(EWCTextcolumn));
+try {
+  window.customElements.define('ext-textcolumn', ElementParser.withParsedCallback(EWCTextcolumn));
+}
+catch(e) {
+  window.customElements.define('ext-textcolumn', EWCTextcolumn);
+}

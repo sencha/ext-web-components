@@ -7,4 +7,9 @@ export default class EWCUrlfield extends Ext_form_Url {
     this.xtype = 'urlfield';
   }
 }
-window.customElements.define('ext-urlfield', ElementParser.withParsedCallback(EWCUrlfield));
+try {
+  window.customElements.define('ext-urlfield', ElementParser.withParsedCallback(EWCUrlfield));
+}
+catch(e) {
+  window.customElements.define('ext-urlfield', EWCUrlfield);
+}

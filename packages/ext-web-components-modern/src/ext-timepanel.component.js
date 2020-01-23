@@ -7,4 +7,9 @@ export default class EWCTimepanel extends Ext_panel_Time {
     this.xtype = 'timepanel';
   }
 }
-window.customElements.define('ext-timepanel', ElementParser.withParsedCallback(EWCTimepanel));
+try {
+  window.customElements.define('ext-timepanel', ElementParser.withParsedCallback(EWCTimepanel));
+}
+catch(e) {
+  window.customElements.define('ext-timepanel', EWCTimepanel);
+}

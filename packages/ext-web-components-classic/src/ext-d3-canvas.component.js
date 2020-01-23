@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-d3-canvas', ElementParser.withParsedCallback(EWCD3_canvas));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-d3-canvas', EWCD3_canvas);
 }

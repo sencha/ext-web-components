@@ -7,4 +7,9 @@ export default class EWCDatefield extends Ext_field_DatePicker {
     this.xtype = 'datefield';
   }
 }
-window.customElements.define('ext-datefield', ElementParser.withParsedCallback(EWCDatefield));
+try {
+  window.customElements.define('ext-datefield', ElementParser.withParsedCallback(EWCDatefield));
+}
+catch(e) {
+  window.customElements.define('ext-datefield', EWCDatefield);
+}

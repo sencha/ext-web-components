@@ -7,4 +7,9 @@ export default class EWCTabletpicker extends Ext_picker_Tablet {
     this.xtype = 'tabletpicker';
   }
 }
-window.customElements.define('ext-tabletpicker', ElementParser.withParsedCallback(EWCTabletpicker));
+try {
+  window.customElements.define('ext-tabletpicker', ElementParser.withParsedCallback(EWCTabletpicker));
+}
+catch(e) {
+  window.customElements.define('ext-tabletpicker', EWCTabletpicker);
+}

@@ -7,4 +7,9 @@ export default class EWCFieldset extends Ext_form_FieldSet {
     this.xtype = 'fieldset';
   }
 }
-window.customElements.define('ext-fieldset', ElementParser.withParsedCallback(EWCFieldset));
+try {
+  window.customElements.define('ext-fieldset', ElementParser.withParsedCallback(EWCFieldset));
+}
+catch(e) {
+  window.customElements.define('ext-fieldset', EWCFieldset);
+}

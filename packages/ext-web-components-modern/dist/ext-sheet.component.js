@@ -19,4 +19,9 @@ function (_Ext_Sheet) {
 }(Ext_Sheet);
 
 export { EWCSheet as default };
-window.customElements.define('ext-sheet', ElementParser.withParsedCallback(EWCSheet));
+
+try {
+  window.customElements.define('ext-sheet', ElementParser.withParsedCallback(EWCSheet));
+} catch (e) {
+  window.customElements.define('ext-sheet', EWCSheet);
+}

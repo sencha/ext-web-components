@@ -7,4 +7,9 @@ export default class EWCFieldpanel extends Ext_field_Panel {
     this.xtype = 'fieldpanel';
   }
 }
-window.customElements.define('ext-fieldpanel', ElementParser.withParsedCallback(EWCFieldpanel));
+try {
+  window.customElements.define('ext-fieldpanel', ElementParser.withParsedCallback(EWCFieldpanel));
+}
+catch(e) {
+  window.customElements.define('ext-fieldpanel', EWCFieldpanel);
+}

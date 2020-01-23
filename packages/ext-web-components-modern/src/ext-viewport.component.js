@@ -7,4 +7,9 @@ export default class EWCViewport extends Ext_viewport_Default {
     this.xtype = 'viewport';
   }
 }
-window.customElements.define('ext-viewport', ElementParser.withParsedCallback(EWCViewport));
+try {
+  window.customElements.define('ext-viewport', ElementParser.withParsedCallback(EWCViewport));
+}
+catch(e) {
+  window.customElements.define('ext-viewport', EWCViewport);
+}

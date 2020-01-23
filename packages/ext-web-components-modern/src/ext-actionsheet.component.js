@@ -7,4 +7,9 @@ export default class EWCActionsheet extends Ext_ActionSheet {
     this.xtype = 'actionsheet';
   }
 }
-window.customElements.define('ext-actionsheet', ElementParser.withParsedCallback(EWCActionsheet));
+try {
+  window.customElements.define('ext-actionsheet', ElementParser.withParsedCallback(EWCActionsheet));
+}
+catch(e) {
+  window.customElements.define('ext-actionsheet', EWCActionsheet);
+}

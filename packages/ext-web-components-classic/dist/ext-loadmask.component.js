@@ -23,6 +23,5 @@ export { EWCLoadmask as default };
 try {
   window.customElements.define('ext-loadmask', ElementParser.withParsedCallback(EWCLoadmask));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-loadmask', EWCLoadmask);
 }

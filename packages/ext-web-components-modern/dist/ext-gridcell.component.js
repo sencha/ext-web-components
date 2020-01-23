@@ -19,4 +19,9 @@ function (_Ext_grid_cell_Cell) {
 }(Ext_grid_cell_Cell);
 
 export { EWCGridcell as default };
-window.customElements.define('ext-gridcell', ElementParser.withParsedCallback(EWCGridcell));
+
+try {
+  window.customElements.define('ext-gridcell', ElementParser.withParsedCallback(EWCGridcell));
+} catch (e) {
+  window.customElements.define('ext-gridcell', EWCGridcell);
+}

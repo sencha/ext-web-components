@@ -23,6 +23,5 @@ export { EWCSparkline as default };
 try {
   window.customElements.define('ext-sparkline', ElementParser.withParsedCallback(EWCSparkline));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-sparkline', EWCSparkline);
 }

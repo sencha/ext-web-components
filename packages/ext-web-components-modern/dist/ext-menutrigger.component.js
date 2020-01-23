@@ -19,4 +19,9 @@ function (_Ext_field_trigger_Me) {
 }(Ext_field_trigger_Menu);
 
 export { EWCMenutrigger as default };
-window.customElements.define('ext-menutrigger', ElementParser.withParsedCallback(EWCMenutrigger));
+
+try {
+  window.customElements.define('ext-menutrigger', ElementParser.withParsedCallback(EWCMenutrigger));
+} catch (e) {
+  window.customElements.define('ext-menutrigger', EWCMenutrigger);
+}

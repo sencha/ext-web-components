@@ -7,4 +7,9 @@ export default class EWCTabpanel extends Ext_TabPanel {
     this.xtype = 'tabpanel';
   }
 }
-window.customElements.define('ext-tabpanel', ElementParser.withParsedCallback(EWCTabpanel));
+try {
+  window.customElements.define('ext-tabpanel', ElementParser.withParsedCallback(EWCTabpanel));
+}
+catch(e) {
+  window.customElements.define('ext-tabpanel', EWCTabpanel);
+}

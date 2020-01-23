@@ -7,4 +7,9 @@ export default class EWCDataitem extends Ext_dataview_component_DataItem {
     this.xtype = 'dataitem';
   }
 }
-window.customElements.define('ext-dataitem', ElementParser.withParsedCallback(EWCDataitem));
+try {
+  window.customElements.define('ext-dataitem', ElementParser.withParsedCallback(EWCDataitem));
+}
+catch(e) {
+  window.customElements.define('ext-dataitem', EWCDataitem);
+}

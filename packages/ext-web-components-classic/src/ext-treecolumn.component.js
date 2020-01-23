@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-treecolumn', ElementParser.withParsedCallback(EWCTreecolumn));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-treecolumn', EWCTreecolumn);
 }

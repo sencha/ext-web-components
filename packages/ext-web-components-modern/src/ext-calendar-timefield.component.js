@@ -7,4 +7,9 @@ export default class EWCCalendar_timefield extends Ext_calendar_form_TimeField {
     this.xtype = 'calendar-timefield';
   }
 }
-window.customElements.define('ext-calendar-timefield', ElementParser.withParsedCallback(EWCCalendar_timefield));
+try {
+  window.customElements.define('ext-calendar-timefield', ElementParser.withParsedCallback(EWCCalendar_timefield));
+}
+catch(e) {
+  window.customElements.define('ext-calendar-timefield', EWCCalendar_timefield);
+}

@@ -7,4 +7,9 @@ export default class EWCGridgroupbythismenuitem extends Ext_grid_menu_GroupByThi
     this.xtype = 'gridgroupbythismenuitem';
   }
 }
-window.customElements.define('ext-gridgroupbythismenuitem', ElementParser.withParsedCallback(EWCGridgroupbythismenuitem));
+try {
+  window.customElements.define('ext-gridgroupbythismenuitem', ElementParser.withParsedCallback(EWCGridgroupbythismenuitem));
+}
+catch(e) {
+  window.customElements.define('ext-gridgroupbythismenuitem', EWCGridgroupbythismenuitem);
+}

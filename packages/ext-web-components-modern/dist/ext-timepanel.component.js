@@ -19,4 +19,9 @@ function (_Ext_panel_Time) {
 }(Ext_panel_Time);
 
 export { EWCTimepanel as default };
-window.customElements.define('ext-timepanel', ElementParser.withParsedCallback(EWCTimepanel));
+
+try {
+  window.customElements.define('ext-timepanel', ElementParser.withParsedCallback(EWCTimepanel));
+} catch (e) {
+  window.customElements.define('ext-timepanel', EWCTimepanel);
+}

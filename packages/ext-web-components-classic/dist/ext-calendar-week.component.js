@@ -23,6 +23,5 @@ export { EWCCalendar_week as default };
 try {
   window.customElements.define('ext-calendar-week', ElementParser.withParsedCallback(EWCCalendar_week));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-calendar-week', EWCCalendar_week);
 }

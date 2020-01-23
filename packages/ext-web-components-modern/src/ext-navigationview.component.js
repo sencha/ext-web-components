@@ -7,4 +7,9 @@ export default class EWCNavigationview extends Ext_NavigationView {
     this.xtype = 'navigationview';
   }
 }
-window.customElements.define('ext-navigationview', ElementParser.withParsedCallback(EWCNavigationview));
+try {
+  window.customElements.define('ext-navigationview', ElementParser.withParsedCallback(EWCNavigationview));
+}
+catch(e) {
+  window.customElements.define('ext-navigationview', EWCNavigationview);
+}

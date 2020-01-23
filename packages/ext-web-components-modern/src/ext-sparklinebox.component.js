@@ -7,4 +7,9 @@ export default class EWCSparklinebox extends Ext_sparkline_Box {
     this.xtype = 'sparklinebox';
   }
 }
-window.customElements.define('ext-sparklinebox', ElementParser.withParsedCallback(EWCSparklinebox));
+try {
+  window.customElements.define('ext-sparklinebox', ElementParser.withParsedCallback(EWCSparklinebox));
+}
+catch(e) {
+  window.customElements.define('ext-sparklinebox', EWCSparklinebox);
+}

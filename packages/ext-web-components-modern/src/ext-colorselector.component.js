@@ -7,4 +7,9 @@ export default class EWCColorselector extends Ext_ux_colorpick_Selector {
     this.xtype = 'colorselector';
   }
 }
-window.customElements.define('ext-colorselector', ElementParser.withParsedCallback(EWCColorselector));
+try {
+  window.customElements.define('ext-colorselector', ElementParser.withParsedCallback(EWCColorselector));
+}
+catch(e) {
+  window.customElements.define('ext-colorselector', EWCColorselector);
+}

@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-propertygrid', ElementParser.withParsedCallback(EWCPropertygrid));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-propertygrid', EWCPropertygrid);
 }

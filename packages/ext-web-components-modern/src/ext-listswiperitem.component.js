@@ -7,4 +7,9 @@ export default class EWCListswiperitem extends Ext_dataview_listswiper_Item {
     this.xtype = 'listswiperitem';
   }
 }
-window.customElements.define('ext-listswiperitem', ElementParser.withParsedCallback(EWCListswiperitem));
+try {
+  window.customElements.define('ext-listswiperitem', ElementParser.withParsedCallback(EWCListswiperitem));
+}
+catch(e) {
+  window.customElements.define('ext-listswiperitem', EWCListswiperitem);
+}

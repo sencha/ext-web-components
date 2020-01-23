@@ -23,6 +23,5 @@ export { EWCSplitbutton as default };
 try {
   window.customElements.define('ext-splitbutton', ElementParser.withParsedCallback(EWCSplitbutton));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-splitbutton', EWCSplitbutton);
 }

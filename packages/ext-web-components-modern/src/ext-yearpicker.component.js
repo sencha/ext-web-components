@@ -7,4 +7,9 @@ export default class EWCYearpicker extends Ext_panel_YearPicker {
     this.xtype = 'yearpicker';
   }
 }
-window.customElements.define('ext-yearpicker', ElementParser.withParsedCallback(EWCYearpicker));
+try {
+  window.customElements.define('ext-yearpicker', ElementParser.withParsedCallback(EWCYearpicker));
+}
+catch(e) {
+  window.customElements.define('ext-yearpicker', EWCYearpicker);
+}

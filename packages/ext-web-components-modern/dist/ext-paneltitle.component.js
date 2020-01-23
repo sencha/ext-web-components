@@ -19,4 +19,9 @@ function (_Ext_panel_Title) {
 }(Ext_panel_Title);
 
 export { EWCPaneltitle as default };
-window.customElements.define('ext-paneltitle', ElementParser.withParsedCallback(EWCPaneltitle));
+
+try {
+  window.customElements.define('ext-paneltitle', ElementParser.withParsedCallback(EWCPaneltitle));
+} catch (e) {
+  window.customElements.define('ext-paneltitle', EWCPaneltitle);
+}

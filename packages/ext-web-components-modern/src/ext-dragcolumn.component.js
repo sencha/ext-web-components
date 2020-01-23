@@ -7,4 +7,9 @@ export default class EWCDragcolumn extends Ext_grid_column_Drag {
     this.xtype = 'dragcolumn';
   }
 }
-window.customElements.define('ext-dragcolumn', ElementParser.withParsedCallback(EWCDragcolumn));
+try {
+  window.customElements.define('ext-dragcolumn', ElementParser.withParsedCallback(EWCDragcolumn));
+}
+catch(e) {
+  window.customElements.define('ext-dragcolumn', EWCDragcolumn);
+}

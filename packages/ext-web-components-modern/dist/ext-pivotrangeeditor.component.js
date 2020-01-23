@@ -19,4 +19,9 @@ function (_Ext_pivot_plugin_ran) {
 }(Ext_pivot_plugin_rangeeditor_Panel);
 
 export { EWCPivotrangeeditor as default };
-window.customElements.define('ext-pivotrangeeditor', ElementParser.withParsedCallback(EWCPivotrangeeditor));
+
+try {
+  window.customElements.define('ext-pivotrangeeditor', ElementParser.withParsedCallback(EWCPivotrangeeditor));
+} catch (e) {
+  window.customElements.define('ext-pivotrangeeditor', EWCPivotrangeeditor);
+}

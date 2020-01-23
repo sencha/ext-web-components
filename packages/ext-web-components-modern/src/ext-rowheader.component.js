@@ -7,4 +7,9 @@ export default class EWCRowheader extends Ext_grid_RowHeader {
     this.xtype = 'rowheader';
   }
 }
-window.customElements.define('ext-rowheader', ElementParser.withParsedCallback(EWCRowheader));
+try {
+  window.customElements.define('ext-rowheader', ElementParser.withParsedCallback(EWCRowheader));
+}
+catch(e) {
+  window.customElements.define('ext-rowheader', EWCRowheader);
+}

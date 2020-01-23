@@ -19,4 +19,9 @@ function (_Ext_dataview_ListIte) {
 }(Ext_dataview_ListItemPlaceholder);
 
 export { EWCListitemplaceholder as default };
-window.customElements.define('ext-listitemplaceholder', ElementParser.withParsedCallback(EWCListitemplaceholder));
+
+try {
+  window.customElements.define('ext-listitemplaceholder', ElementParser.withParsedCallback(EWCListitemplaceholder));
+} catch (e) {
+  window.customElements.define('ext-listitemplaceholder', EWCListitemplaceholder);
+}

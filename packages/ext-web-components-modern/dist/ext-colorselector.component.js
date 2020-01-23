@@ -19,4 +19,9 @@ function (_Ext_ux_colorpick_Sel) {
 }(Ext_ux_colorpick_Selector);
 
 export { EWCColorselector as default };
-window.customElements.define('ext-colorselector', ElementParser.withParsedCallback(EWCColorselector));
+
+try {
+  window.customElements.define('ext-colorselector', ElementParser.withParsedCallback(EWCColorselector));
+} catch (e) {
+  window.customElements.define('ext-colorselector', EWCColorselector);
+}

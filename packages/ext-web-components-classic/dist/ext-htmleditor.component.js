@@ -23,6 +23,5 @@ export { EWCHtmleditor as default };
 try {
   window.customElements.define('ext-htmleditor', ElementParser.withParsedCallback(EWCHtmleditor));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-htmleditor', EWCHtmleditor);
 }

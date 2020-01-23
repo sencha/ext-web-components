@@ -19,4 +19,9 @@ function (_Ext_form_Password) {
 }(Ext_form_Password);
 
 export { EWCPasswordfield as default };
-window.customElements.define('ext-passwordfield', ElementParser.withParsedCallback(EWCPasswordfield));
+
+try {
+  window.customElements.define('ext-passwordfield', ElementParser.withParsedCallback(EWCPasswordfield));
+} catch (e) {
+  window.customElements.define('ext-passwordfield', EWCPasswordfield);
+}

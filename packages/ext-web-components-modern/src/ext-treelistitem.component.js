@@ -7,4 +7,9 @@ export default class EWCTreelistitem extends Ext_list_TreeItem {
     this.xtype = 'treelistitem';
   }
 }
-window.customElements.define('ext-treelistitem', ElementParser.withParsedCallback(EWCTreelistitem));
+try {
+  window.customElements.define('ext-treelistitem', ElementParser.withParsedCallback(EWCTreelistitem));
+}
+catch(e) {
+  window.customElements.define('ext-treelistitem', EWCTreelistitem);
+}

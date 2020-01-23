@@ -7,4 +7,9 @@ export default class EWCLockedgrid extends Ext_grid_LockedGrid {
     this.xtype = 'lockedgrid';
   }
 }
-window.customElements.define('ext-lockedgrid', ElementParser.withParsedCallback(EWCLockedgrid));
+try {
+  window.customElements.define('ext-lockedgrid', ElementParser.withParsedCallback(EWCLockedgrid));
+}
+catch(e) {
+  window.customElements.define('ext-lockedgrid', EWCLockedgrid);
+}

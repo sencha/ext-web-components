@@ -7,4 +7,9 @@ export default class EWCBoundlist extends Ext_dataview_BoundList {
     this.xtype = 'boundlist';
   }
 }
-window.customElements.define('ext-boundlist', ElementParser.withParsedCallback(EWCBoundlist));
+try {
+  window.customElements.define('ext-boundlist', ElementParser.withParsedCallback(EWCBoundlist));
+}
+catch(e) {
+  window.customElements.define('ext-boundlist', EWCBoundlist);
+}

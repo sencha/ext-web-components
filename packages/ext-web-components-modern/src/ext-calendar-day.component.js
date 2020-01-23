@@ -7,4 +7,9 @@ export default class EWCCalendar_day extends Ext_calendar_panel_Day {
     this.xtype = 'calendar-day';
   }
 }
-window.customElements.define('ext-calendar-day', ElementParser.withParsedCallback(EWCCalendar_day));
+try {
+  window.customElements.define('ext-calendar-day', ElementParser.withParsedCallback(EWCCalendar_day));
+}
+catch(e) {
+  window.customElements.define('ext-calendar-day', EWCCalendar_day);
+}

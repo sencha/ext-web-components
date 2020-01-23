@@ -7,4 +7,9 @@ export default class EWCRadio extends Ext_form_Radio {
     this.xtype = 'radio';
   }
 }
-window.customElements.define('ext-radio', ElementParser.withParsedCallback(EWCRadio));
+try {
+  window.customElements.define('ext-radio', ElementParser.withParsedCallback(EWCRadio));
+}
+catch(e) {
+  window.customElements.define('ext-radio', EWCRadio);
+}

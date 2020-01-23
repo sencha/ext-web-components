@@ -7,4 +7,9 @@ export default class EWCPullrefreshbar extends Ext_dataview_pullrefresh_Bar {
     this.xtype = 'pullrefreshbar';
   }
 }
-window.customElements.define('ext-pullrefreshbar', ElementParser.withParsedCallback(EWCPullrefreshbar));
+try {
+  window.customElements.define('ext-pullrefreshbar', ElementParser.withParsedCallback(EWCPullrefreshbar));
+}
+catch(e) {
+  window.customElements.define('ext-pullrefreshbar', EWCPullrefreshbar);
+}

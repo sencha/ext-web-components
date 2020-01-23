@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-widget', ElementParser.withParsedCallback(EWCWidget));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-widget', EWCWidget);
 }

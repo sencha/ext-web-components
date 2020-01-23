@@ -23,6 +23,5 @@ export { EWCBreadcrumb as default };
 try {
   window.customElements.define('ext-breadcrumb', ElementParser.withParsedCallback(EWCBreadcrumb));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-breadcrumb', EWCBreadcrumb);
 }

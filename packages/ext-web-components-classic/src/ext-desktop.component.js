@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-desktop', ElementParser.withParsedCallback(EWCDesktop));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-desktop', EWCDesktop);
 }

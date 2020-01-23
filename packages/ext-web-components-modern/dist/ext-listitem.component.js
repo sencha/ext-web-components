@@ -19,4 +19,9 @@ function (_Ext_dataview_compone) {
 }(Ext_dataview_component_ListItem);
 
 export { EWCListitem as default };
-window.customElements.define('ext-listitem', ElementParser.withParsedCallback(EWCListitem));
+
+try {
+  window.customElements.define('ext-listitem', ElementParser.withParsedCallback(EWCListitem));
+} catch (e) {
+  window.customElements.define('ext-listitem', EWCListitem);
+}

@@ -23,6 +23,5 @@ export { EWCTaskbar as default };
 try {
   window.customElements.define('ext-taskbar', ElementParser.withParsedCallback(EWCTaskbar));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-taskbar', EWCTaskbar);
 }

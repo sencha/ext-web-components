@@ -7,4 +7,9 @@ export default class EWCPaneltool extends Ext_panel_Tool {
     this.xtype = 'paneltool';
   }
 }
-window.customElements.define('ext-paneltool', ElementParser.withParsedCallback(EWCPaneltool));
+try {
+  window.customElements.define('ext-paneltool', ElementParser.withParsedCallback(EWCPaneltool));
+}
+catch(e) {
+  window.customElements.define('ext-paneltool', EWCPaneltool);
+}

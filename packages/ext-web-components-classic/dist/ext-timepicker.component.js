@@ -23,6 +23,5 @@ export { EWCTimepicker as default };
 try {
   window.customElements.define('ext-timepicker', ElementParser.withParsedCallback(EWCTimepicker));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-timepicker', EWCTimepicker);
 }

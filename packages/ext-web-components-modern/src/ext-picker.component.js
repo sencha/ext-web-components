@@ -7,4 +7,9 @@ export default class EWCPicker extends Ext_Picker {
     this.xtype = 'picker';
   }
 }
-window.customElements.define('ext-picker', ElementParser.withParsedCallback(EWCPicker));
+try {
+  window.customElements.define('ext-picker', ElementParser.withParsedCallback(EWCPicker));
+}
+catch(e) {
+  window.customElements.define('ext-picker', EWCPicker);
+}

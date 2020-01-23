@@ -19,4 +19,9 @@ function (_Ext_NestedList) {
 }(Ext_NestedList);
 
 export { EWCNestedlist as default };
-window.customElements.define('ext-nestedlist', ElementParser.withParsedCallback(EWCNestedlist));
+
+try {
+  window.customElements.define('ext-nestedlist', ElementParser.withParsedCallback(EWCNestedlist));
+} catch (e) {
+  window.customElements.define('ext-nestedlist', EWCNestedlist);
+}

@@ -7,4 +7,9 @@ export default class EWCProgress extends Ext_ProgressBarWidget {
     this.xtype = 'progress';
   }
 }
-window.customElements.define('ext-progress', ElementParser.withParsedCallback(EWCProgress));
+try {
+  window.customElements.define('ext-progress', ElementParser.withParsedCallback(EWCProgress));
+}
+catch(e) {
+  window.customElements.define('ext-progress', EWCProgress);
+}

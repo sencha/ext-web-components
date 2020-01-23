@@ -19,4 +19,9 @@ function (_Ext_field_trigger_Cl) {
 }(Ext_field_trigger_Clear);
 
 export { EWCCleartrigger as default };
-window.customElements.define('ext-cleartrigger', ElementParser.withParsedCallback(EWCCleartrigger));
+
+try {
+  window.customElements.define('ext-cleartrigger', ElementParser.withParsedCallback(EWCCleartrigger));
+} catch (e) {
+  window.customElements.define('ext-cleartrigger', EWCCleartrigger);
+}

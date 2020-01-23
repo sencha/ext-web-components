@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-title', ElementParser.withParsedCallback(EWCTitle));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-title', EWCTitle);
 }

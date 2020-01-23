@@ -7,4 +7,9 @@ export default class EWCDatepickernativefield extends Ext_form_DatePickerNative 
     this.xtype = 'datepickernativefield';
   }
 }
-window.customElements.define('ext-datepickernativefield', ElementParser.withParsedCallback(EWCDatepickernativefield));
+try {
+  window.customElements.define('ext-datepickernativefield', ElementParser.withParsedCallback(EWCDatepickernativefield));
+}
+catch(e) {
+  window.customElements.define('ext-datepickernativefield', EWCDatepickernativefield);
+}

@@ -7,4 +7,9 @@ export default class EWCListitem extends Ext_dataview_component_ListItem {
     this.xtype = 'listitem';
   }
 }
-window.customElements.define('ext-listitem', ElementParser.withParsedCallback(EWCListitem));
+try {
+  window.customElements.define('ext-listitem', ElementParser.withParsedCallback(EWCListitem));
+}
+catch(e) {
+  window.customElements.define('ext-listitem', EWCListitem);
+}

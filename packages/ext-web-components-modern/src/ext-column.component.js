@@ -7,4 +7,9 @@ export default class EWCColumn extends Ext_grid_column_Template {
     this.xtype = 'column';
   }
 }
-window.customElements.define('ext-column', ElementParser.withParsedCallback(EWCColumn));
+try {
+  window.customElements.define('ext-column', ElementParser.withParsedCallback(EWCColumn));
+}
+catch(e) {
+  window.customElements.define('ext-column', EWCColumn);
+}

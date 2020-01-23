@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-segmentedbutton', ElementParser.withParsedCallback(EWCSegmentedbutton));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-segmentedbutton', EWCSegmentedbutton);
 }

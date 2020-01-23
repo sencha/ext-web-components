@@ -7,4 +7,9 @@ export default class EWCNestedlist extends Ext_NestedList {
     this.xtype = 'nestedlist';
   }
 }
-window.customElements.define('ext-nestedlist', ElementParser.withParsedCallback(EWCNestedlist));
+try {
+  window.customElements.define('ext-nestedlist', ElementParser.withParsedCallback(EWCNestedlist));
+}
+catch(e) {
+  window.customElements.define('ext-nestedlist', EWCNestedlist);
+}

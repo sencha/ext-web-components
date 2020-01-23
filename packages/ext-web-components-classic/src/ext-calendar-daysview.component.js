@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-calendar-daysview', ElementParser.withParsedCallback(EWCCalendar_daysview));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-calendar-daysview', EWCCalendar_daysview);
 }

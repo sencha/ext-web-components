@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-calendar-day', ElementParser.withParsedCallback(EWCCalendar_day));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-calendar-day', EWCCalendar_day);
 }

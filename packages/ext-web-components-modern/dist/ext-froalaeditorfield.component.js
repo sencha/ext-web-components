@@ -19,4 +19,9 @@ function (_Ext_froala_EditorFie) {
 }(Ext_froala_EditorField);
 
 export { EWCFroalaeditorfield as default };
-window.customElements.define('ext-froalaeditorfield', ElementParser.withParsedCallback(EWCFroalaeditorfield));
+
+try {
+  window.customElements.define('ext-froalaeditorfield', ElementParser.withParsedCallback(EWCFroalaeditorfield));
+} catch (e) {
+  window.customElements.define('ext-froalaeditorfield', EWCFroalaeditorfield);
+}

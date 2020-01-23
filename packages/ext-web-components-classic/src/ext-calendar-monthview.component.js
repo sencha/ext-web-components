@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-calendar-monthview', ElementParser.withParsedCallback(EWCCalendar_monthview));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-calendar-monthview', EWCCalendar_monthview);
 }

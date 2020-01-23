@@ -19,4 +19,9 @@ function (_Ext_grid_LockedGridR) {
 }(Ext_grid_LockedGridRegion);
 
 export { EWCLockedgridregion as default };
-window.customElements.define('ext-lockedgridregion', ElementParser.withParsedCallback(EWCLockedgridregion));
+
+try {
+  window.customElements.define('ext-lockedgridregion', ElementParser.withParsedCallback(EWCLockedgridregion));
+} catch (e) {
+  window.customElements.define('ext-lockedgridregion', EWCLockedgridregion);
+}

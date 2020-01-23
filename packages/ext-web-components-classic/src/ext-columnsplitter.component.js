@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-columnsplitter', ElementParser.withParsedCallback(EWCColumnsplitter));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-columnsplitter', EWCColumnsplitter);
 }

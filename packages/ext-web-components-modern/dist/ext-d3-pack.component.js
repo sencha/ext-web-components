@@ -19,4 +19,9 @@ function (_Ext_d3_hierarchy_Pac) {
 }(Ext_d3_hierarchy_Pack);
 
 export { EWCD3_pack as default };
-window.customElements.define('ext-d3-pack', ElementParser.withParsedCallback(EWCD3_pack));
+
+try {
+  window.customElements.define('ext-d3-pack', ElementParser.withParsedCallback(EWCD3_pack));
+} catch (e) {
+  window.customElements.define('ext-d3-pack', EWCD3_pack);
+}

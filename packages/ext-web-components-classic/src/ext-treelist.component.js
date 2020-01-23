@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-treelist', ElementParser.withParsedCallback(EWCTreelist));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-treelist', EWCTreelist);
 }

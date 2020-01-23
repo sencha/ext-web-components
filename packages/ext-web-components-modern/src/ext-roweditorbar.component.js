@@ -7,4 +7,9 @@ export default class EWCRoweditorbar extends Ext_grid_rowedit_Bar {
     this.xtype = 'roweditorbar';
   }
 }
-window.customElements.define('ext-roweditorbar', ElementParser.withParsedCallback(EWCRoweditorbar));
+try {
+  window.customElements.define('ext-roweditorbar', ElementParser.withParsedCallback(EWCRoweditorbar));
+}
+catch(e) {
+  window.customElements.define('ext-roweditorbar', EWCRoweditorbar);
+}

@@ -7,4 +7,9 @@ export default class EWCFilebutton extends Ext_field_FileButton {
     this.xtype = 'filebutton';
   }
 }
-window.customElements.define('ext-filebutton', ElementParser.withParsedCallback(EWCFilebutton));
+try {
+  window.customElements.define('ext-filebutton', ElementParser.withParsedCallback(EWCFilebutton));
+}
+catch(e) {
+  window.customElements.define('ext-filebutton', EWCFilebutton);
+}

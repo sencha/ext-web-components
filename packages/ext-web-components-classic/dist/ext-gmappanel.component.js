@@ -23,6 +23,5 @@ export { EWCGmappanel as default };
 try {
   window.customElements.define('ext-gmappanel', ElementParser.withParsedCallback(EWCGmappanel));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-gmappanel', EWCGmappanel);
 }

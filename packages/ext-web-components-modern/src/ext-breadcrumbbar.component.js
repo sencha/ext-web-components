@@ -7,4 +7,9 @@ export default class EWCBreadcrumbbar extends Ext_BreadcrumbBar {
     this.xtype = 'breadcrumbbar';
   }
 }
-window.customElements.define('ext-breadcrumbbar', ElementParser.withParsedCallback(EWCBreadcrumbbar));
+try {
+  window.customElements.define('ext-breadcrumbbar', ElementParser.withParsedCallback(EWCBreadcrumbbar));
+}
+catch(e) {
+  window.customElements.define('ext-breadcrumbbar', EWCBreadcrumbbar);
+}

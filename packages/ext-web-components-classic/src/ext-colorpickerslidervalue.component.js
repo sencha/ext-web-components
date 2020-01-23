@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-colorpickerslidervalue', ElementParser.withParsedCallback(EWCColorpickerslidervalue));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-colorpickerslidervalue', EWCColorpickerslidervalue);
 }

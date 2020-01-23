@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-sliderwidget', ElementParser.withParsedCallback(EWCSliderwidget));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-sliderwidget', EWCSliderwidget);
 }

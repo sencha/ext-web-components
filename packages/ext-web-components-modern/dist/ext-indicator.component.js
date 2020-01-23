@@ -19,4 +19,9 @@ function (_Ext_Indicator) {
 }(Ext_Indicator);
 
 export { EWCIndicator as default };
-window.customElements.define('ext-indicator', ElementParser.withParsedCallback(EWCIndicator));
+
+try {
+  window.customElements.define('ext-indicator', ElementParser.withParsedCallback(EWCIndicator));
+} catch (e) {
+  window.customElements.define('ext-indicator', EWCIndicator);
+}

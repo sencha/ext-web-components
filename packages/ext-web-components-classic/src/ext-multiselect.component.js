@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-multiselect', ElementParser.withParsedCallback(EWCMultiselect));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-multiselect', EWCMultiselect);
 }

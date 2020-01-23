@@ -19,4 +19,9 @@ function (_Ext_pivot_d3_TreeMap) {
 }(Ext_pivot_d3_TreeMap);
 
 export { EWCPivottreemap as default };
-window.customElements.define('ext-pivottreemap', ElementParser.withParsedCallback(EWCPivottreemap));
+
+try {
+  window.customElements.define('ext-pivottreemap', ElementParser.withParsedCallback(EWCPivottreemap));
+} catch (e) {
+  window.customElements.define('ext-pivottreemap', EWCPivottreemap);
+}

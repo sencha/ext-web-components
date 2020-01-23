@@ -7,4 +7,9 @@ export default class EWCColorpickercolorpreview extends Ext_ux_colorpick_ColorPr
     this.xtype = 'colorpickercolorpreview';
   }
 }
-window.customElements.define('ext-colorpickercolorpreview', ElementParser.withParsedCallback(EWCColorpickercolorpreview));
+try {
+  window.customElements.define('ext-colorpickercolorpreview', ElementParser.withParsedCallback(EWCColorpickercolorpreview));
+}
+catch(e) {
+  window.customElements.define('ext-colorpickercolorpreview', EWCColorpickercolorpreview);
+}

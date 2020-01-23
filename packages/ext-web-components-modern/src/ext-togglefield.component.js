@@ -7,4 +7,9 @@ export default class EWCTogglefield extends Ext_form_Toggle {
     this.xtype = 'togglefield';
   }
 }
-window.customElements.define('ext-togglefield', ElementParser.withParsedCallback(EWCTogglefield));
+try {
+  window.customElements.define('ext-togglefield', ElementParser.withParsedCallback(EWCTogglefield));
+}
+catch(e) {
+  window.customElements.define('ext-togglefield', EWCTogglefield);
+}

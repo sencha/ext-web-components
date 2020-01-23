@@ -19,4 +19,9 @@ function (_Ext_dataview_pullref) {
 }(Ext_dataview_pullrefresh_Spinner);
 
 export { EWCPullrefreshspinner as default };
-window.customElements.define('ext-pullrefreshspinner', ElementParser.withParsedCallback(EWCPullrefreshspinner));
+
+try {
+  window.customElements.define('ext-pullrefreshspinner', ElementParser.withParsedCallback(EWCPullrefreshspinner));
+} catch (e) {
+  window.customElements.define('ext-pullrefreshspinner', EWCPullrefreshspinner);
+}

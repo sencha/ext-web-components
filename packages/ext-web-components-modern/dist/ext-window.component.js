@@ -19,4 +19,9 @@ function (_Ext_window_Window) {
 }(Ext_window_Window);
 
 export { EWCWindow as default };
-window.customElements.define('ext-window', ElementParser.withParsedCallback(EWCWindow));
+
+try {
+  window.customElements.define('ext-window', ElementParser.withParsedCallback(EWCWindow));
+} catch (e) {
+  window.customElements.define('ext-window', EWCWindow);
+}

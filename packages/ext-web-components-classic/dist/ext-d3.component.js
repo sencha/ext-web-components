@@ -23,6 +23,5 @@ export { EWCD3 as default };
 try {
   window.customElements.define('ext-d3', ElementParser.withParsedCallback(EWCD3));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-d3', EWCD3);
 }

@@ -23,6 +23,5 @@ export { EWCSparklinebullet as default };
 try {
   window.customElements.define('ext-sparklinebullet', ElementParser.withParsedCallback(EWCSparklinebullet));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-sparklinebullet', EWCSparklinebullet);
 }

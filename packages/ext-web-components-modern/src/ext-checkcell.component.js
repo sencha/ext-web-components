@@ -7,4 +7,9 @@ export default class EWCCheckcell extends Ext_grid_cell_Check {
     this.xtype = 'checkcell';
   }
 }
-window.customElements.define('ext-checkcell', ElementParser.withParsedCallback(EWCCheckcell));
+try {
+  window.customElements.define('ext-checkcell', ElementParser.withParsedCallback(EWCCheckcell));
+}
+catch(e) {
+  window.customElements.define('ext-checkcell', EWCCheckcell);
+}

@@ -7,4 +7,9 @@ export default class EWCRevealtrigger extends Ext_field_trigger_Reveal {
     this.xtype = 'revealtrigger';
   }
 }
-window.customElements.define('ext-revealtrigger', ElementParser.withParsedCallback(EWCRevealtrigger));
+try {
+  window.customElements.define('ext-revealtrigger', ElementParser.withParsedCallback(EWCRevealtrigger));
+}
+catch(e) {
+  window.customElements.define('ext-revealtrigger', EWCRevealtrigger);
+}

@@ -19,4 +19,9 @@ function (_Ext_field_Picker) {
 }(Ext_field_Picker);
 
 export { EWCPickerfield as default };
-window.customElements.define('ext-pickerfield', ElementParser.withParsedCallback(EWCPickerfield));
+
+try {
+  window.customElements.define('ext-pickerfield', ElementParser.withParsedCallback(EWCPickerfield));
+} catch (e) {
+  window.customElements.define('ext-pickerfield', EWCPickerfield);
+}
