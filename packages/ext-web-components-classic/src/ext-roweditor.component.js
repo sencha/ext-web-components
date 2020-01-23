@@ -7,4 +7,10 @@ export default class EWCRoweditor extends Ext_grid_RowEditor {
     this.xtype = 'roweditor';
   }
 }
-window.customElements.define('ext-roweditor', ElementParser.withParsedCallback(EWCRoweditor));
+try {
+  window.customElements.define('ext-roweditor', ElementParser.withParsedCallback(EWCRoweditor));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-roweditor', EWCRoweditor);
+}

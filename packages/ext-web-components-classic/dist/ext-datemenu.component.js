@@ -19,4 +19,10 @@ function (_Ext_menu_DatePicker) {
 }(Ext_menu_DatePicker);
 
 export { EWCDatemenu as default };
-window.customElements.define('ext-datemenu', ElementParser.withParsedCallback(EWCDatemenu));
+
+try {
+  window.customElements.define('ext-datemenu', ElementParser.withParsedCallback(EWCDatemenu));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-datemenu', EWCDatemenu);
+}

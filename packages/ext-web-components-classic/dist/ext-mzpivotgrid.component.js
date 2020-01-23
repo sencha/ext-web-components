@@ -19,4 +19,10 @@ function (_Mz_pivot_Table) {
 }(Mz_pivot_Table);
 
 export { EWCMzpivotgrid as default };
-window.customElements.define('ext-mzpivotgrid', ElementParser.withParsedCallback(EWCMzpivotgrid));
+
+try {
+  window.customElements.define('ext-mzpivotgrid', ElementParser.withParsedCallback(EWCMzpivotgrid));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-mzpivotgrid', EWCMzpivotgrid);
+}

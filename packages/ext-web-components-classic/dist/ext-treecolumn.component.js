@@ -19,4 +19,10 @@ function (_Ext_tree_Column) {
 }(Ext_tree_Column);
 
 export { EWCTreecolumn as default };
-window.customElements.define('ext-treecolumn', ElementParser.withParsedCallback(EWCTreecolumn));
+
+try {
+  window.customElements.define('ext-treecolumn', ElementParser.withParsedCallback(EWCTreecolumn));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-treecolumn', EWCTreecolumn);
+}

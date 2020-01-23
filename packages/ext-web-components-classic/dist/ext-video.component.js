@@ -19,4 +19,10 @@ function (_Ext_ux_desktop_Video) {
 }(Ext_ux_desktop_Video);
 
 export { EWCVideo as default };
-window.customElements.define('ext-video', ElementParser.withParsedCallback(EWCVideo));
+
+try {
+  window.customElements.define('ext-video', ElementParser.withParsedCallback(EWCVideo));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-video', EWCVideo);
+}

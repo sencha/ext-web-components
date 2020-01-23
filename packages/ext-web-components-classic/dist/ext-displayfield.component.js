@@ -19,4 +19,10 @@ function (_Ext_form_Display) {
 }(Ext_form_Display);
 
 export { EWCDisplayfield as default };
-window.customElements.define('ext-displayfield', ElementParser.withParsedCallback(EWCDisplayfield));
+
+try {
+  window.customElements.define('ext-displayfield', ElementParser.withParsedCallback(EWCDisplayfield));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-displayfield', EWCDisplayfield);
+}

@@ -7,4 +7,10 @@ export default class EWCCalendar_list extends Ext_calendar_List {
     this.xtype = 'calendar-list';
   }
 }
-window.customElements.define('ext-calendar-list', ElementParser.withParsedCallback(EWCCalendar_list));
+try {
+  window.customElements.define('ext-calendar-list', ElementParser.withParsedCallback(EWCCalendar_list));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-calendar-list', EWCCalendar_list);
+}

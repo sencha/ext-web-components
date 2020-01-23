@@ -7,4 +7,10 @@ export default class EWCTitle extends Ext_panel_Title {
     this.xtype = 'title';
   }
 }
-window.customElements.define('ext-title', ElementParser.withParsedCallback(EWCTitle));
+try {
+  window.customElements.define('ext-title', ElementParser.withParsedCallback(EWCTitle));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-title', EWCTitle);
+}

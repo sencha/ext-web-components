@@ -7,4 +7,10 @@ export default class EWCPanel extends Ext_Panel {
     this.xtype = 'panel';
   }
 }
-window.customElements.define('ext-panel', ElementParser.withParsedCallback(EWCPanel));
+try {
+  window.customElements.define('ext-panel', ElementParser.withParsedCallback(EWCPanel));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-panel', EWCPanel);
+}

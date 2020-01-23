@@ -7,4 +7,10 @@ export default class EWCUxiframe extends Ext_ux_IFrame {
     this.xtype = 'uxiframe';
   }
 }
-window.customElements.define('ext-uxiframe', ElementParser.withParsedCallback(EWCUxiframe));
+try {
+  window.customElements.define('ext-uxiframe', ElementParser.withParsedCallback(EWCUxiframe));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-uxiframe', EWCUxiframe);
+}

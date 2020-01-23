@@ -7,4 +7,10 @@ export default class EWCTab extends Ext_tab_Tab {
     this.xtype = 'tab';
   }
 }
-window.customElements.define('ext-tab', ElementParser.withParsedCallback(EWCTab));
+try {
+  window.customElements.define('ext-tab', ElementParser.withParsedCallback(EWCTab));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-tab', EWCTab);
+}

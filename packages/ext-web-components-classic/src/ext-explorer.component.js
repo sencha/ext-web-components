@@ -7,4 +7,10 @@ export default class EWCExplorer extends Ext_ux_Explorer {
     this.xtype = 'explorer';
   }
 }
-window.customElements.define('ext-explorer', ElementParser.withParsedCallback(EWCExplorer));
+try {
+  window.customElements.define('ext-explorer', ElementParser.withParsedCallback(EWCExplorer));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-explorer', EWCExplorer);
+}

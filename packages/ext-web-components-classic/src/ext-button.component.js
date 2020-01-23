@@ -7,4 +7,10 @@ export default class EWCButton extends Ext_Button {
     this.xtype = 'button';
   }
 }
-window.customElements.define('ext-button', ElementParser.withParsedCallback(EWCButton));
+try {
+  window.customElements.define('ext-button', ElementParser.withParsedCallback(EWCButton));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-button', EWCButton);
+}

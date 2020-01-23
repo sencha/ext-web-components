@@ -7,4 +7,10 @@ export default class EWCCombo extends Ext_form_ComboBox {
     this.xtype = 'combo';
   }
 }
-window.customElements.define('ext-combo', ElementParser.withParsedCallback(EWCCombo));
+try {
+  window.customElements.define('ext-combo', ElementParser.withParsedCallback(EWCCombo));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-combo', EWCCombo);
+}

@@ -7,4 +7,10 @@ export default class EWCColorfield extends Ext_ux_colorpick_Field {
     this.xtype = 'colorfield';
   }
 }
-window.customElements.define('ext-colorfield', ElementParser.withParsedCallback(EWCColorfield));
+try {
+  window.customElements.define('ext-colorfield', ElementParser.withParsedCallback(EWCColorfield));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-colorfield', EWCColorfield);
+}

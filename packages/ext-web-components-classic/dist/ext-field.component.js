@@ -19,4 +19,10 @@ function (_Ext_form_BaseField) {
 }(Ext_form_BaseField);
 
 export { EWCField as default };
-window.customElements.define('ext-field', ElementParser.withParsedCallback(EWCField));
+
+try {
+  window.customElements.define('ext-field', ElementParser.withParsedCallback(EWCField));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-field', EWCField);
+}

@@ -19,4 +19,10 @@ function (_Ext_form_field_FileB) {
 }(Ext_form_field_FileButton);
 
 export { EWCFilebutton as default };
-window.customElements.define('ext-filebutton', ElementParser.withParsedCallback(EWCFilebutton));
+
+try {
+  window.customElements.define('ext-filebutton', ElementParser.withParsedCallback(EWCFilebutton));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-filebutton', EWCFilebutton);
+}

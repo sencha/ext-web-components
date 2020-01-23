@@ -19,4 +19,10 @@ function (_Ext_slider_MultiSlid) {
 }(Ext_slider_MultiSlider);
 
 export { EWCMultislider as default };
-window.customElements.define('ext-multislider', ElementParser.withParsedCallback(EWCMultislider));
+
+try {
+  window.customElements.define('ext-multislider', ElementParser.withParsedCallback(EWCMultislider));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-multislider', EWCMultislider);
+}

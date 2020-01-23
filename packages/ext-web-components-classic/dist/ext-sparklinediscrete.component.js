@@ -19,4 +19,10 @@ function (_Ext_sparkline_Discre) {
 }(Ext_sparkline_Discrete);
 
 export { EWCSparklinediscrete as default };
-window.customElements.define('ext-sparklinediscrete', ElementParser.withParsedCallback(EWCSparklinediscrete));
+
+try {
+  window.customElements.define('ext-sparklinediscrete', ElementParser.withParsedCallback(EWCSparklinediscrete));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-sparklinediscrete', EWCSparklinediscrete);
+}

@@ -19,4 +19,10 @@ function (_Ext_ToolTip) {
 }(Ext_ToolTip);
 
 export { EWCTooltip as default };
-window.customElements.define('ext-tooltip', ElementParser.withParsedCallback(EWCTooltip));
+
+try {
+  window.customElements.define('ext-tooltip', ElementParser.withParsedCallback(EWCTooltip));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-tooltip', EWCTooltip);
+}

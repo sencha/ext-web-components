@@ -19,4 +19,10 @@ function (_Ext_form_Trigger) {
 }(Ext_form_Trigger);
 
 export { EWCTriggerfield as default };
-window.customElements.define('ext-triggerfield', ElementParser.withParsedCallback(EWCTriggerfield));
+
+try {
+  window.customElements.define('ext-triggerfield', ElementParser.withParsedCallback(EWCTriggerfield));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-triggerfield', EWCTriggerfield);
+}

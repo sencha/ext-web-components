@@ -19,4 +19,10 @@ function (_Ext_draw_Surface) {
 }(Ext_draw_Surface);
 
 export { EWCSurface as default };
-window.customElements.define('ext-surface', ElementParser.withParsedCallback(EWCSurface));
+
+try {
+  window.customElements.define('ext-surface', ElementParser.withParsedCallback(EWCSurface));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-surface', EWCSurface);
+}

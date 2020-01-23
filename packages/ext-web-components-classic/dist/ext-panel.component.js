@@ -19,4 +19,10 @@ function (_Ext_Panel) {
 }(Ext_Panel);
 
 export { EWCPanel as default };
-window.customElements.define('ext-panel', ElementParser.withParsedCallback(EWCPanel));
+
+try {
+  window.customElements.define('ext-panel', ElementParser.withParsedCallback(EWCPanel));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-panel', EWCPanel);
+}

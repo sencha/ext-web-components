@@ -7,4 +7,10 @@ export default class EWCCheckcolumn extends Ext_grid_column_CheckColumn {
     this.xtype = 'checkcolumn';
   }
 }
-window.customElements.define('ext-checkcolumn', ElementParser.withParsedCallback(EWCCheckcolumn));
+try {
+  window.customElements.define('ext-checkcolumn', ElementParser.withParsedCallback(EWCCheckcolumn));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-checkcolumn', EWCCheckcolumn);
+}

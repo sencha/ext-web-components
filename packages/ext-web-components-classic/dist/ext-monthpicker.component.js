@@ -19,4 +19,10 @@ function (_Ext_MonthPicker) {
 }(Ext_MonthPicker);
 
 export { EWCMonthpicker as default };
-window.customElements.define('ext-monthpicker', ElementParser.withParsedCallback(EWCMonthpicker));
+
+try {
+  window.customElements.define('ext-monthpicker', ElementParser.withParsedCallback(EWCMonthpicker));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-monthpicker', EWCMonthpicker);
+}

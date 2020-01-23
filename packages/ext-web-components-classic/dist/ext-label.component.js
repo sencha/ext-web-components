@@ -19,4 +19,10 @@ function (_Ext_form_Label) {
 }(Ext_form_Label);
 
 export { EWCLabel as default };
-window.customElements.define('ext-label', ElementParser.withParsedCallback(EWCLabel));
+
+try {
+  window.customElements.define('ext-label', ElementParser.withParsedCallback(EWCLabel));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-label', EWCLabel);
+}

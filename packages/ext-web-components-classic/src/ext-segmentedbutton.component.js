@@ -7,4 +7,10 @@ export default class EWCSegmentedbutton extends Ext_button_Segmented {
     this.xtype = 'segmentedbutton';
   }
 }
-window.customElements.define('ext-segmentedbutton', ElementParser.withParsedCallback(EWCSegmentedbutton));
+try {
+  window.customElements.define('ext-segmentedbutton', ElementParser.withParsedCallback(EWCSegmentedbutton));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-segmentedbutton', EWCSegmentedbutton);
+}

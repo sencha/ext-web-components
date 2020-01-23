@@ -7,4 +7,10 @@ export default class EWCInteraction extends Ext_chart_interactions_Abstract {
     this.xtype = 'interaction';
   }
 }
-window.customElements.define('ext-interaction', ElementParser.withParsedCallback(EWCInteraction));
+try {
+  window.customElements.define('ext-interaction', ElementParser.withParsedCallback(EWCInteraction));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-interaction', EWCInteraction);
+}

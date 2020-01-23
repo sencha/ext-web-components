@@ -7,4 +7,10 @@ export default class EWCDatepicker extends Ext_DatePicker {
     this.xtype = 'datepicker';
   }
 }
-window.customElements.define('ext-datepicker', ElementParser.withParsedCallback(EWCDatepicker));
+try {
+  window.customElements.define('ext-datepicker', ElementParser.withParsedCallback(EWCDatepicker));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-datepicker', EWCDatepicker);
+}

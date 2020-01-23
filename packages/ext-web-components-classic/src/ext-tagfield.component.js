@@ -7,4 +7,10 @@ export default class EWCTagfield extends Ext_form_field_Tag {
     this.xtype = 'tagfield';
   }
 }
-window.customElements.define('ext-tagfield', ElementParser.withParsedCallback(EWCTagfield));
+try {
+  window.customElements.define('ext-tagfield', ElementParser.withParsedCallback(EWCTagfield));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-tagfield', EWCTagfield);
+}

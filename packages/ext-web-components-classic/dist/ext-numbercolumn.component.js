@@ -19,4 +19,10 @@ function (_Ext_grid_NumberColum) {
 }(Ext_grid_NumberColumn);
 
 export { EWCNumbercolumn as default };
-window.customElements.define('ext-numbercolumn', ElementParser.withParsedCallback(EWCNumbercolumn));
+
+try {
+  window.customElements.define('ext-numbercolumn', ElementParser.withParsedCallback(EWCNumbercolumn));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-numbercolumn', EWCNumbercolumn);
+}

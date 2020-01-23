@@ -19,4 +19,10 @@ function (_Ext_ColorPalette) {
 }(Ext_ColorPalette);
 
 export { EWCColorpicker as default };
-window.customElements.define('ext-colorpicker', ElementParser.withParsedCallback(EWCColorpicker));
+
+try {
+  window.customElements.define('ext-colorpicker', ElementParser.withParsedCallback(EWCColorpicker));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-colorpicker', EWCColorpicker);
+}

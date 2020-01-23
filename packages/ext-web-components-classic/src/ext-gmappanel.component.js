@@ -7,4 +7,10 @@ export default class EWCGmappanel extends Ext_ux_GMapPanel {
     this.xtype = 'gmappanel';
   }
 }
-window.customElements.define('ext-gmappanel', ElementParser.withParsedCallback(EWCGmappanel));
+try {
+  window.customElements.define('ext-gmappanel', ElementParser.withParsedCallback(EWCGmappanel));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-gmappanel', EWCGmappanel);
+}

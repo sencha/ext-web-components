@@ -7,4 +7,10 @@ export default class EWCHtmleditor extends Ext_form_HtmlEditor {
     this.xtype = 'htmleditor';
   }
 }
-window.customElements.define('ext-htmleditor', ElementParser.withParsedCallback(EWCHtmleditor));
+try {
+  window.customElements.define('ext-htmleditor', ElementParser.withParsedCallback(EWCHtmleditor));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-htmleditor', EWCHtmleditor);
+}

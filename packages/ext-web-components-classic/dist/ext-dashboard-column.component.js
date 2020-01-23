@@ -19,4 +19,10 @@ function (_Ext_dashboard_Column) {
 }(Ext_dashboard_Column);
 
 export { EWCDashboard_column as default };
-window.customElements.define('ext-dashboard-column', ElementParser.withParsedCallback(EWCDashboard_column));
+
+try {
+  window.customElements.define('ext-dashboard-column', ElementParser.withParsedCallback(EWCDashboard_column));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-dashboard-column', EWCDashboard_column);
+}

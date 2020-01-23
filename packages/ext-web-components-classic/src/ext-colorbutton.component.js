@@ -7,4 +7,10 @@ export default class EWCColorbutton extends Ext_ux_colorpick_Button {
     this.xtype = 'colorbutton';
   }
 }
-window.customElements.define('ext-colorbutton', ElementParser.withParsedCallback(EWCColorbutton));
+try {
+  window.customElements.define('ext-colorbutton', ElementParser.withParsedCallback(EWCColorbutton));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-colorbutton', EWCColorbutton);
+}

@@ -19,4 +19,10 @@ function (_Ext_calendar_Event) {
 }(Ext_calendar_Event);
 
 export { EWCCalendar_event as default };
-window.customElements.define('ext-calendar-event', ElementParser.withParsedCallback(EWCCalendar_event));
+
+try {
+  window.customElements.define('ext-calendar-event', ElementParser.withParsedCallback(EWCCalendar_event));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-calendar-event', EWCCalendar_event);
+}

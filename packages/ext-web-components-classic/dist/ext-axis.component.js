@@ -19,4 +19,10 @@ function (_Ext_chart_axis_Axis) {
 }(Ext_chart_axis_Axis);
 
 export { EWCAxis as default };
-window.customElements.define('ext-axis', ElementParser.withParsedCallback(EWCAxis));
+
+try {
+  window.customElements.define('ext-axis', ElementParser.withParsedCallback(EWCAxis));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-axis', EWCAxis);
+}

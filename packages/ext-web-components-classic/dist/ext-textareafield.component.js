@@ -19,4 +19,10 @@ function (_Ext_form_TextArea) {
 }(Ext_form_TextArea);
 
 export { EWCTextareafield as default };
-window.customElements.define('ext-textareafield', ElementParser.withParsedCallback(EWCTextareafield));
+
+try {
+  window.customElements.define('ext-textareafield', ElementParser.withParsedCallback(EWCTextareafield));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-textareafield', EWCTextareafield);
+}

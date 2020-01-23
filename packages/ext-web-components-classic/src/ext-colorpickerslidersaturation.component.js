@@ -7,4 +7,10 @@ export default class EWCColorpickerslidersaturation extends Ext_ux_colorpick_Sli
     this.xtype = 'colorpickerslidersaturation';
   }
 }
-window.customElements.define('ext-colorpickerslidersaturation', ElementParser.withParsedCallback(EWCColorpickerslidersaturation));
+try {
+  window.customElements.define('ext-colorpickerslidersaturation', ElementParser.withParsedCallback(EWCColorpickerslidersaturation));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-colorpickerslidersaturation', EWCColorpickerslidersaturation);
+}

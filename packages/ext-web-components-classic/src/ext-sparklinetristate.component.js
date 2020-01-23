@@ -7,4 +7,10 @@ export default class EWCSparklinetristate extends Ext_sparkline_TriState {
     this.xtype = 'sparklinetristate';
   }
 }
-window.customElements.define('ext-sparklinetristate', ElementParser.withParsedCallback(EWCSparklinetristate));
+try {
+  window.customElements.define('ext-sparklinetristate', ElementParser.withParsedCallback(EWCSparklinetristate));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-sparklinetristate', EWCSparklinetristate);
+}

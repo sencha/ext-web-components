@@ -19,4 +19,10 @@ function (_Ext_grid_DateColumn) {
 }(Ext_grid_DateColumn);
 
 export { EWCDatecolumn as default };
-window.customElements.define('ext-datecolumn', ElementParser.withParsedCallback(EWCDatecolumn));
+
+try {
+  window.customElements.define('ext-datecolumn', ElementParser.withParsedCallback(EWCDatecolumn));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-datecolumn', EWCDatecolumn);
+}

@@ -7,4 +7,10 @@ export default class EWCFileuploadfield extends Ext_form_File {
     this.xtype = 'fileuploadfield';
   }
 }
-window.customElements.define('ext-fileuploadfield', ElementParser.withParsedCallback(EWCFileuploadfield));
+try {
+  window.customElements.define('ext-fileuploadfield', ElementParser.withParsedCallback(EWCFileuploadfield));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-fileuploadfield', EWCFileuploadfield);
+}

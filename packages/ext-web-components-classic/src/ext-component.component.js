@@ -7,4 +7,10 @@ export default class EWCComponent extends Ext_AbstractComponent {
     this.xtype = 'component';
   }
 }
-window.customElements.define('ext-component', ElementParser.withParsedCallback(EWCComponent));
+try {
+  window.customElements.define('ext-component', ElementParser.withParsedCallback(EWCComponent));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-component', EWCComponent);
+}

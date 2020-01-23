@@ -7,4 +7,10 @@ export default class EWCDatemenu extends Ext_menu_DatePicker {
     this.xtype = 'datemenu';
   }
 }
-window.customElements.define('ext-datemenu', ElementParser.withParsedCallback(EWCDatemenu));
+try {
+  window.customElements.define('ext-datemenu', ElementParser.withParsedCallback(EWCDatemenu));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-datemenu', EWCDatemenu);
+}

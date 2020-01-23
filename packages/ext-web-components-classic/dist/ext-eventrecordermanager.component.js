@@ -19,4 +19,10 @@ function (_Ext_ux_event_Recorde) {
 }(Ext_ux_event_RecorderManager);
 
 export { EWCEventrecordermanager as default };
-window.customElements.define('ext-eventrecordermanager', ElementParser.withParsedCallback(EWCEventrecordermanager));
+
+try {
+  window.customElements.define('ext-eventrecordermanager', ElementParser.withParsedCallback(EWCEventrecordermanager));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-eventrecordermanager', EWCEventrecordermanager);
+}

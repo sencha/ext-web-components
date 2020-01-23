@@ -7,4 +7,10 @@ export default class EWCTip extends Ext_Tip {
     this.xtype = 'tip';
   }
 }
-window.customElements.define('ext-tip', ElementParser.withParsedCallback(EWCTip));
+try {
+  window.customElements.define('ext-tip', ElementParser.withParsedCallback(EWCTip));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-tip', EWCTip);
+}

@@ -7,4 +7,10 @@ export default class EWCNumbercolumn extends Ext_grid_NumberColumn {
     this.xtype = 'numbercolumn';
   }
 }
-window.customElements.define('ext-numbercolumn', ElementParser.withParsedCallback(EWCNumbercolumn));
+try {
+  window.customElements.define('ext-numbercolumn', ElementParser.withParsedCallback(EWCNumbercolumn));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-numbercolumn', EWCNumbercolumn);
+}

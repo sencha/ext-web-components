@@ -19,4 +19,10 @@ function (_Ext_chart_axis_Axis) {
 }(Ext_chart_axis_Axis3D);
 
 export { EWCAxis3d as default };
-window.customElements.define('ext-axis3d', ElementParser.withParsedCallback(EWCAxis3d));
+
+try {
+  window.customElements.define('ext-axis3d', ElementParser.withParsedCallback(EWCAxis3d));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-axis3d', EWCAxis3d);
+}

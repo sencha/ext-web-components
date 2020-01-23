@@ -7,4 +7,10 @@ export default class EWCTrigger extends Ext_form_Trigger {
     this.xtype = 'trigger';
   }
 }
-window.customElements.define('ext-trigger', ElementParser.withParsedCallback(EWCTrigger));
+try {
+  window.customElements.define('ext-trigger', ElementParser.withParsedCallback(EWCTrigger));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-trigger', EWCTrigger);
+}

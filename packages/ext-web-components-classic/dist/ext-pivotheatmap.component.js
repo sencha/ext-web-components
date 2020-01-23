@@ -19,4 +19,10 @@ function (_Ext_pivot_d3_HeatMap) {
 }(Ext_pivot_d3_HeatMap);
 
 export { EWCPivotheatmap as default };
-window.customElements.define('ext-pivotheatmap', ElementParser.withParsedCallback(EWCPivotheatmap));
+
+try {
+  window.customElements.define('ext-pivotheatmap', ElementParser.withParsedCallback(EWCPivotheatmap));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-pivotheatmap', EWCPivotheatmap);
+}

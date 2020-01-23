@@ -19,4 +19,10 @@ function (_Ext_form_CheckboxGro) {
 }(Ext_form_CheckboxGroup);
 
 export { EWCCheckboxgroup as default };
-window.customElements.define('ext-checkboxgroup', ElementParser.withParsedCallback(EWCCheckboxgroup));
+
+try {
+  window.customElements.define('ext-checkboxgroup', ElementParser.withParsedCallback(EWCCheckboxgroup));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-checkboxgroup', EWCCheckboxgroup);
+}

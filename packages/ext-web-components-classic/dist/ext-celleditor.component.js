@@ -19,4 +19,10 @@ function (_Ext_grid_CellEditor) {
 }(Ext_grid_CellEditor);
 
 export { EWCCelleditor as default };
-window.customElements.define('ext-celleditor', ElementParser.withParsedCallback(EWCCelleditor));
+
+try {
+  window.customElements.define('ext-celleditor', ElementParser.withParsedCallback(EWCCelleditor));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-celleditor', EWCCelleditor);
+}

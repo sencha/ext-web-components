@@ -7,4 +7,10 @@ export default class EWCBreadcrumb extends Ext_toolbar_Breadcrumb {
     this.xtype = 'breadcrumb';
   }
 }
-window.customElements.define('ext-breadcrumb', ElementParser.withParsedCallback(EWCBreadcrumb));
+try {
+  window.customElements.define('ext-breadcrumb', ElementParser.withParsedCallback(EWCBreadcrumb));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-breadcrumb', EWCBreadcrumb);
+}

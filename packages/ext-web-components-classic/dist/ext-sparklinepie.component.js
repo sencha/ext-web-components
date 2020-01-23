@@ -19,4 +19,10 @@ function (_Ext_sparkline_Pie) {
 }(Ext_sparkline_Pie);
 
 export { EWCSparklinepie as default };
-window.customElements.define('ext-sparklinepie', ElementParser.withParsedCallback(EWCSparklinepie));
+
+try {
+  window.customElements.define('ext-sparklinepie', ElementParser.withParsedCallback(EWCSparklinepie));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-sparklinepie', EWCSparklinepie);
+}

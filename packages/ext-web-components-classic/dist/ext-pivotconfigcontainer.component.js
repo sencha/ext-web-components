@@ -19,4 +19,10 @@ function (_Ext_pivot_plugin_con) {
 }(Ext_pivot_plugin_configurator_Container);
 
 export { EWCPivotconfigcontainer as default };
-window.customElements.define('ext-pivotconfigcontainer', ElementParser.withParsedCallback(EWCPivotconfigcontainer));
+
+try {
+  window.customElements.define('ext-pivotconfigcontainer', ElementParser.withParsedCallback(EWCPivotconfigcontainer));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-pivotconfigcontainer', EWCPivotconfigcontainer);
+}

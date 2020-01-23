@@ -7,4 +7,10 @@ export default class EWCBox extends Ext_AbstractComponent {
     this.xtype = 'box';
   }
 }
-window.customElements.define('ext-box', ElementParser.withParsedCallback(EWCBox));
+try {
+  window.customElements.define('ext-box', ElementParser.withParsedCallback(EWCBox));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-box', EWCBox);
+}

@@ -7,4 +7,10 @@ export default class EWCTaskbar extends Ext_ux_desktop_TaskBar {
     this.xtype = 'taskbar';
   }
 }
-window.customElements.define('ext-taskbar', ElementParser.withParsedCallback(EWCTaskbar));
+try {
+  window.customElements.define('ext-taskbar', ElementParser.withParsedCallback(EWCTaskbar));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-taskbar', EWCTaskbar);
+}

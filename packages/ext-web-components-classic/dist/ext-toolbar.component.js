@@ -19,4 +19,10 @@ function (_Ext_Toolbar) {
 }(Ext_Toolbar);
 
 export { EWCToolbar as default };
-window.customElements.define('ext-toolbar', ElementParser.withParsedCallback(EWCToolbar));
+
+try {
+  window.customElements.define('ext-toolbar', ElementParser.withParsedCallback(EWCToolbar));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-toolbar', EWCToolbar);
+}

@@ -19,4 +19,10 @@ function (_Ext_calendar_view_We) {
 }(Ext_calendar_view_Weeks);
 
 export { EWCCalendar_weeksview as default };
-window.customElements.define('ext-calendar-weeksview', ElementParser.withParsedCallback(EWCCalendar_weeksview));
+
+try {
+  window.customElements.define('ext-calendar-weeksview', ElementParser.withParsedCallback(EWCCalendar_weeksview));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-calendar-weeksview', EWCCalendar_weeksview);
+}

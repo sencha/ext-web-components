@@ -19,4 +19,10 @@ function (_Ext_d3_svg_Svg) {
 }(Ext_d3_svg_Svg);
 
 export { EWCD3_svg as default };
-window.customElements.define('ext-d3-svg', ElementParser.withParsedCallback(EWCD3_svg));
+
+try {
+  window.customElements.define('ext-d3-svg', ElementParser.withParsedCallback(EWCD3_svg));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-d3-svg', EWCD3_svg);
+}

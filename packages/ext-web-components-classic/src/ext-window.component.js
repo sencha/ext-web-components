@@ -7,4 +7,10 @@ export default class EWCWindow extends Ext_Window {
     this.xtype = 'window';
   }
 }
-window.customElements.define('ext-window', ElementParser.withParsedCallback(EWCWindow));
+try {
+  window.customElements.define('ext-window', ElementParser.withParsedCallback(EWCWindow));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-window', EWCWindow);
+}

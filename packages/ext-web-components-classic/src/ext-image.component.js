@@ -7,4 +7,10 @@ export default class EWCImage extends Ext_Img {
     this.xtype = 'image';
   }
 }
-window.customElements.define('ext-image', ElementParser.withParsedCallback(EWCImage));
+try {
+  window.customElements.define('ext-image', ElementParser.withParsedCallback(EWCImage));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-image', EWCImage);
+}

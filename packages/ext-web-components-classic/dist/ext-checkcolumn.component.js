@@ -19,4 +19,10 @@ function (_Ext_grid_column_Chec) {
 }(Ext_grid_column_CheckColumn);
 
 export { EWCCheckcolumn as default };
-window.customElements.define('ext-checkcolumn', ElementParser.withParsedCallback(EWCCheckcolumn));
+
+try {
+  window.customElements.define('ext-checkcolumn', ElementParser.withParsedCallback(EWCCheckcolumn));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-checkcolumn', EWCCheckcolumn);
+}

@@ -7,4 +7,10 @@ export default class EWCMultislider extends Ext_slider_MultiSlider {
     this.xtype = 'multislider';
   }
 }
-window.customElements.define('ext-multislider', ElementParser.withParsedCallback(EWCMultislider));
+try {
+  window.customElements.define('ext-multislider', ElementParser.withParsedCallback(EWCMultislider));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-multislider', EWCMultislider);
+}

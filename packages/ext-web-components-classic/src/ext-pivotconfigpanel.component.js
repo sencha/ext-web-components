@@ -7,4 +7,10 @@ export default class EWCPivotconfigpanel extends Ext_pivot_plugin_configurator_P
     this.xtype = 'pivotconfigpanel';
   }
 }
-window.customElements.define('ext-pivotconfigpanel', ElementParser.withParsedCallback(EWCPivotconfigpanel));
+try {
+  window.customElements.define('ext-pivotconfigpanel', ElementParser.withParsedCallback(EWCPivotconfigpanel));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-pivotconfigpanel', EWCPivotconfigpanel);
+}

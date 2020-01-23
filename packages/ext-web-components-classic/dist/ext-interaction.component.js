@@ -19,4 +19,10 @@ function (_Ext_chart_interactio) {
 }(Ext_chart_interactions_Abstract);
 
 export { EWCInteraction as default };
-window.customElements.define('ext-interaction', ElementParser.withParsedCallback(EWCInteraction));
+
+try {
+  window.customElements.define('ext-interaction', ElementParser.withParsedCallback(EWCInteraction));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-interaction', EWCInteraction);
+}

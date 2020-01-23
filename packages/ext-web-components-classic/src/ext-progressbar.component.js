@@ -7,4 +7,10 @@ export default class EWCProgressbar extends Ext_ProgressBar {
     this.xtype = 'progressbar';
   }
 }
-window.customElements.define('ext-progressbar', ElementParser.withParsedCallback(EWCProgressbar));
+try {
+  window.customElements.define('ext-progressbar', ElementParser.withParsedCallback(EWCProgressbar));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-progressbar', EWCProgressbar);
+}

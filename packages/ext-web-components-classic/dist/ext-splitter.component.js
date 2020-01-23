@@ -19,4 +19,10 @@ function (_Ext_resizer_Splitter) {
 }(Ext_resizer_Splitter);
 
 export { EWCSplitter as default };
-window.customElements.define('ext-splitter', ElementParser.withParsedCallback(EWCSplitter));
+
+try {
+  window.customElements.define('ext-splitter', ElementParser.withParsedCallback(EWCSplitter));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-splitter', EWCSplitter);
+}

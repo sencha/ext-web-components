@@ -7,4 +7,10 @@ export default class EWCToolbar extends Ext_Toolbar {
     this.xtype = 'toolbar';
   }
 }
-window.customElements.define('ext-toolbar', ElementParser.withParsedCallback(EWCToolbar));
+try {
+  window.customElements.define('ext-toolbar', ElementParser.withParsedCallback(EWCToolbar));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-toolbar', EWCToolbar);
+}

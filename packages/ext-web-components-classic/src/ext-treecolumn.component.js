@@ -7,4 +7,10 @@ export default class EWCTreecolumn extends Ext_tree_Column {
     this.xtype = 'treecolumn';
   }
 }
-window.customElements.define('ext-treecolumn', ElementParser.withParsedCallback(EWCTreecolumn));
+try {
+  window.customElements.define('ext-treecolumn', ElementParser.withParsedCallback(EWCTreecolumn));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-treecolumn', EWCTreecolumn);
+}

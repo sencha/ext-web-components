@@ -19,4 +19,10 @@ function (_Ext_form_Checkbox) {
 }(Ext_form_Checkbox);
 
 export { EWCCheckbox as default };
-window.customElements.define('ext-checkbox', ElementParser.withParsedCallback(EWCCheckbox));
+
+try {
+  window.customElements.define('ext-checkbox', ElementParser.withParsedCallback(EWCCheckbox));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-checkbox', EWCCheckbox);
+}

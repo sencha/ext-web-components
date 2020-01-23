@@ -7,4 +7,10 @@ export default class EWCEventrecordermanager extends Ext_ux_event_RecorderManage
     this.xtype = 'eventrecordermanager';
   }
 }
-window.customElements.define('ext-eventrecordermanager', ElementParser.withParsedCallback(EWCEventrecordermanager));
+try {
+  window.customElements.define('ext-eventrecordermanager', ElementParser.withParsedCallback(EWCEventrecordermanager));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-eventrecordermanager', EWCEventrecordermanager);
+}

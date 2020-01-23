@@ -7,4 +7,10 @@ export default class EWCDashboard extends Ext_dashboard_Dashboard {
     this.xtype = 'dashboard';
   }
 }
-window.customElements.define('ext-dashboard', ElementParser.withParsedCallback(EWCDashboard));
+try {
+  window.customElements.define('ext-dashboard', ElementParser.withParsedCallback(EWCDashboard));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-dashboard', EWCDashboard);
+}

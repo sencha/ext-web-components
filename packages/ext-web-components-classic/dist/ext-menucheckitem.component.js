@@ -19,4 +19,10 @@ function (_Ext_menu_CheckItem) {
 }(Ext_menu_CheckItem);
 
 export { EWCMenucheckitem as default };
-window.customElements.define('ext-menucheckitem', ElementParser.withParsedCallback(EWCMenucheckitem));
+
+try {
+  window.customElements.define('ext-menucheckitem', ElementParser.withParsedCallback(EWCMenucheckitem));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-menucheckitem', EWCMenucheckitem);
+}

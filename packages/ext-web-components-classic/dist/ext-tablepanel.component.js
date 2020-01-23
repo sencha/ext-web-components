@@ -19,4 +19,10 @@ function (_Ext_panel_Table) {
 }(Ext_panel_Table);
 
 export { EWCTablepanel as default };
-window.customElements.define('ext-tablepanel', ElementParser.withParsedCallback(EWCTablepanel));
+
+try {
+  window.customElements.define('ext-tablepanel', ElementParser.withParsedCallback(EWCTablepanel));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-tablepanel', EWCTablepanel);
+}

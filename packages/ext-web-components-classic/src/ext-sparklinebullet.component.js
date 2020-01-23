@@ -7,4 +7,10 @@ export default class EWCSparklinebullet extends Ext_sparkline_Bullet {
     this.xtype = 'sparklinebullet';
   }
 }
-window.customElements.define('ext-sparklinebullet', ElementParser.withParsedCallback(EWCSparklinebullet));
+try {
+  window.customElements.define('ext-sparklinebullet', ElementParser.withParsedCallback(EWCSparklinebullet));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-sparklinebullet', EWCSparklinebullet);
+}

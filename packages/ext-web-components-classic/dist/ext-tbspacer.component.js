@@ -19,4 +19,10 @@ function (_Ext_toolbar_Spacer) {
 }(Ext_toolbar_Spacer);
 
 export { EWCTbspacer as default };
-window.customElements.define('ext-tbspacer', ElementParser.withParsedCallback(EWCTbspacer));
+
+try {
+  window.customElements.define('ext-tbspacer', ElementParser.withParsedCallback(EWCTbspacer));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-tbspacer', EWCTbspacer);
+}

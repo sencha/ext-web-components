@@ -7,4 +7,10 @@ export default class EWCColorpickercolormap extends Ext_ux_colorpick_ColorMap {
     this.xtype = 'colorpickercolormap';
   }
 }
-window.customElements.define('ext-colorpickercolormap', ElementParser.withParsedCallback(EWCColorpickercolormap));
+try {
+  window.customElements.define('ext-colorpickercolormap', ElementParser.withParsedCallback(EWCColorpickercolormap));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-colorpickercolormap', EWCColorpickercolormap);
+}

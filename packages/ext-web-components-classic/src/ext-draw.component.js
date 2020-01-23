@@ -7,4 +7,10 @@ export default class EWCDraw extends Ext_draw_Component {
     this.xtype = 'draw';
   }
 }
-window.customElements.define('ext-draw', ElementParser.withParsedCallback(EWCDraw));
+try {
+  window.customElements.define('ext-draw', ElementParser.withParsedCallback(EWCDraw));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-draw', EWCDraw);
+}

@@ -7,4 +7,10 @@ export default class EWCEditor extends Ext_Editor {
     this.xtype = 'editor';
   }
 }
-window.customElements.define('ext-editor', ElementParser.withParsedCallback(EWCEditor));
+try {
+  window.customElements.define('ext-editor', ElementParser.withParsedCallback(EWCEditor));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-editor', EWCEditor);
+}

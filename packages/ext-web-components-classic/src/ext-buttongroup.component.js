@@ -7,4 +7,10 @@ export default class EWCButtongroup extends Ext_ButtonGroup {
     this.xtype = 'buttongroup';
   }
 }
-window.customElements.define('ext-buttongroup', ElementParser.withParsedCallback(EWCButtongroup));
+try {
+  window.customElements.define('ext-buttongroup', ElementParser.withParsedCallback(EWCButtongroup));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-buttongroup', EWCButtongroup);
+}

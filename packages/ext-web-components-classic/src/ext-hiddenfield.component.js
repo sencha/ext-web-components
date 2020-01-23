@@ -7,4 +7,10 @@ export default class EWCHiddenfield extends Ext_form_Hidden {
     this.xtype = 'hiddenfield';
   }
 }
-window.customElements.define('ext-hiddenfield', ElementParser.withParsedCallback(EWCHiddenfield));
+try {
+  window.customElements.define('ext-hiddenfield', ElementParser.withParsedCallback(EWCHiddenfield));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-hiddenfield', EWCHiddenfield);
+}

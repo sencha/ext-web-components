@@ -19,4 +19,10 @@ function (_Ext_form_FieldSet) {
 }(Ext_form_FieldSet);
 
 export { EWCFieldset as default };
-window.customElements.define('ext-fieldset', ElementParser.withParsedCallback(EWCFieldset));
+
+try {
+  window.customElements.define('ext-fieldset', ElementParser.withParsedCallback(EWCFieldset));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-fieldset', EWCFieldset);
+}

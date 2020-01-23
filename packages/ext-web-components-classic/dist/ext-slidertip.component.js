@@ -19,4 +19,10 @@ function (_Ext_slider_Tip) {
 }(Ext_slider_Tip);
 
 export { EWCSlidertip as default };
-window.customElements.define('ext-slidertip', ElementParser.withParsedCallback(EWCSlidertip));
+
+try {
+  window.customElements.define('ext-slidertip', ElementParser.withParsedCallback(EWCSlidertip));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-slidertip', EWCSlidertip);
+}

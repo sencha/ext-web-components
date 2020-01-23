@@ -19,4 +19,10 @@ function (_Ext_grid_View) {
 }(Ext_grid_View);
 
 export { EWCTableview as default };
-window.customElements.define('ext-tableview', ElementParser.withParsedCallback(EWCTableview));
+
+try {
+  window.customElements.define('ext-tableview', ElementParser.withParsedCallback(EWCTableview));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-tableview', EWCTableview);
+}

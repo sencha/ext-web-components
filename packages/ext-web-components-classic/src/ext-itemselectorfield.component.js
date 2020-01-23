@@ -7,4 +7,10 @@ export default class EWCItemselectorfield extends Ext_ux_ItemSelector {
     this.xtype = 'itemselectorfield';
   }
 }
-window.customElements.define('ext-itemselectorfield', ElementParser.withParsedCallback(EWCItemselectorfield));
+try {
+  window.customElements.define('ext-itemselectorfield', ElementParser.withParsedCallback(EWCItemselectorfield));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-itemselectorfield', EWCItemselectorfield);
+}

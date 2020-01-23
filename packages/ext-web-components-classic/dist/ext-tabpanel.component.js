@@ -19,4 +19,10 @@ function (_Ext_TabPanel) {
 }(Ext_TabPanel);
 
 export { EWCTabpanel as default };
-window.customElements.define('ext-tabpanel', ElementParser.withParsedCallback(EWCTabpanel));
+
+try {
+  window.customElements.define('ext-tabpanel', ElementParser.withParsedCallback(EWCTabpanel));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-tabpanel', EWCTabpanel);
+}

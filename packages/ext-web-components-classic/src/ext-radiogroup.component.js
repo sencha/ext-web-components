@@ -7,4 +7,10 @@ export default class EWCRadiogroup extends Ext_form_RadioGroup {
     this.xtype = 'radiogroup';
   }
 }
-window.customElements.define('ext-radiogroup', ElementParser.withParsedCallback(EWCRadiogroup));
+try {
+  window.customElements.define('ext-radiogroup', ElementParser.withParsedCallback(EWCRadiogroup));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-radiogroup', EWCRadiogroup);
+}

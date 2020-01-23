@@ -19,4 +19,10 @@ function (_Ext_ux_desktop_TrayC) {
 }(Ext_ux_desktop_TrayClock);
 
 export { EWCTrayclock as default };
-window.customElements.define('ext-trayclock', ElementParser.withParsedCallback(EWCTrayclock));
+
+try {
+  window.customElements.define('ext-trayclock', ElementParser.withParsedCallback(EWCTrayclock));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-trayclock', EWCTrayclock);
+}

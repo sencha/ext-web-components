@@ -7,4 +7,10 @@ export default class EWCColorpickerslider extends Ext_ux_colorpick_Slider {
     this.xtype = 'colorpickerslider';
   }
 }
-window.customElements.define('ext-colorpickerslider', ElementParser.withParsedCallback(EWCColorpickerslider));
+try {
+  window.customElements.define('ext-colorpickerslider', ElementParser.withParsedCallback(EWCColorpickerslider));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-colorpickerslider', EWCColorpickerslider);
+}

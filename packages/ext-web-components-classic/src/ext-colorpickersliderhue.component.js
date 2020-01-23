@@ -7,4 +7,10 @@ export default class EWCColorpickersliderhue extends Ext_ux_colorpick_SliderHue 
     this.xtype = 'colorpickersliderhue';
   }
 }
-window.customElements.define('ext-colorpickersliderhue', ElementParser.withParsedCallback(EWCColorpickersliderhue));
+try {
+  window.customElements.define('ext-colorpickersliderhue', ElementParser.withParsedCallback(EWCColorpickersliderhue));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-colorpickersliderhue', EWCColorpickersliderhue);
+}

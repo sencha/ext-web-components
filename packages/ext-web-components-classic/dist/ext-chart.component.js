@@ -19,4 +19,10 @@ function (_Ext_chart_Chart) {
 }(Ext_chart_Chart);
 
 export { EWCChart as default };
-window.customElements.define('ext-chart', ElementParser.withParsedCallback(EWCChart));
+
+try {
+  window.customElements.define('ext-chart', ElementParser.withParsedCallback(EWCChart));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-chart', EWCChart);
+}

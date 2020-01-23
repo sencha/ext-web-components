@@ -19,4 +19,10 @@ function (_Ext_form_Spinner) {
 }(Ext_form_Spinner);
 
 export { EWCSpinnerfield as default };
-window.customElements.define('ext-spinnerfield', ElementParser.withParsedCallback(EWCSpinnerfield));
+
+try {
+  window.customElements.define('ext-spinnerfield', ElementParser.withParsedCallback(EWCSpinnerfield));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-spinnerfield', EWCSpinnerfield);
+}

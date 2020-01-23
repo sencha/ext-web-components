@@ -7,4 +7,10 @@ export default class EWCColumnsplitter extends Ext_layout_container_ColumnSplitt
     this.xtype = 'columnsplitter';
   }
 }
-window.customElements.define('ext-columnsplitter', ElementParser.withParsedCallback(EWCColumnsplitter));
+try {
+  window.customElements.define('ext-columnsplitter', ElementParser.withParsedCallback(EWCColumnsplitter));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-columnsplitter', EWCColumnsplitter);
+}

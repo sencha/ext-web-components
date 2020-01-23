@@ -7,4 +7,10 @@ export default class EWCTbtext extends Ext_toolbar_TextItem {
     this.xtype = 'tbtext';
   }
 }
-window.customElements.define('ext-tbtext', ElementParser.withParsedCallback(EWCTbtext));
+try {
+  window.customElements.define('ext-tbtext', ElementParser.withParsedCallback(EWCTbtext));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-tbtext', EWCTbtext);
+}

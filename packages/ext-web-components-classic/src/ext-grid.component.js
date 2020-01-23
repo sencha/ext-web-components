@@ -7,4 +7,10 @@ export default class EWCGrid extends Ext_grid_GridPanel {
     this.xtype = 'grid';
   }
 }
-window.customElements.define('ext-grid', ElementParser.withParsedCallback(EWCGrid));
+try {
+  window.customElements.define('ext-grid', ElementParser.withParsedCallback(EWCGrid));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-grid', EWCGrid);
+}

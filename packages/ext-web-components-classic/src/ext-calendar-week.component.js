@@ -7,4 +7,10 @@ export default class EWCCalendar_week extends Ext_calendar_panel_Week {
     this.xtype = 'calendar-week';
   }
 }
-window.customElements.define('ext-calendar-week', ElementParser.withParsedCallback(EWCCalendar_week));
+try {
+  window.customElements.define('ext-calendar-week', ElementParser.withParsedCallback(EWCCalendar_week));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-calendar-week', EWCCalendar_week);
+}

@@ -7,4 +7,10 @@ export default class EWCMultiselector extends Ext_view_MultiSelector {
     this.xtype = 'multiselector';
   }
 }
-window.customElements.define('ext-multiselector', ElementParser.withParsedCallback(EWCMultiselector));
+try {
+  window.customElements.define('ext-multiselector', ElementParser.withParsedCallback(EWCMultiselector));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-multiselector', EWCMultiselector);
+}

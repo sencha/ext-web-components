@@ -19,4 +19,10 @@ function (_Ext_list_TreeItem) {
 }(Ext_list_TreeItem);
 
 export { EWCTreelistitem as default };
-window.customElements.define('ext-treelistitem', ElementParser.withParsedCallback(EWCTreelistitem));
+
+try {
+  window.customElements.define('ext-treelistitem', ElementParser.withParsedCallback(EWCTreelistitem));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-treelistitem', EWCTreelistitem);
+}

@@ -7,4 +7,10 @@ export default class EWCD3 extends Ext_d3_svg_Svg {
     this.xtype = 'd3';
   }
 }
-window.customElements.define('ext-d3', ElementParser.withParsedCallback(EWCD3));
+try {
+  window.customElements.define('ext-d3', ElementParser.withParsedCallback(EWCD3));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-d3', EWCD3);
+}
