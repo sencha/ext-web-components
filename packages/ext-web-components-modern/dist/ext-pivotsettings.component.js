@@ -19,4 +19,9 @@ function (_Ext_pivot_plugin_con) {
 }(Ext_pivot_plugin_configurator_Settings);
 
 export { EWCPivotsettings as default };
-window.customElements.define('ext-pivotsettings', ElementParser.withParsedCallback(EWCPivotsettings));
+
+try {
+  window.customElements.define('ext-pivotsettings', ElementParser.withParsedCallback(EWCPivotsettings));
+} catch (e) {
+  window.customElements.define('ext-pivotsettings', EWCPivotsettings);
+}

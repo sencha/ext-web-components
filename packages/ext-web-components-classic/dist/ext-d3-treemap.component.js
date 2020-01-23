@@ -23,6 +23,5 @@ export { EWCD3_treemap as default };
 try {
   window.customElements.define('ext-d3-treemap', ElementParser.withParsedCallback(EWCD3_treemap));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-d3-treemap', EWCD3_treemap);
 }

@@ -23,6 +23,5 @@ export { EWCTool as default };
 try {
   window.customElements.define('ext-tool', ElementParser.withParsedCallback(EWCTool));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-tool', EWCTool);
 }

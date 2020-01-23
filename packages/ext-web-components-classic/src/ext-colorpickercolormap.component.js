@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-colorpickercolormap', ElementParser.withParsedCallback(EWCColorpickercolormap));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-colorpickercolormap', EWCColorpickercolormap);
 }

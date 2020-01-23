@@ -19,4 +19,9 @@ function (_Ext_Title) {
 }(Ext_Title);
 
 export { EWCTitle as default };
-window.customElements.define('ext-title', ElementParser.withParsedCallback(EWCTitle));
+
+try {
+  window.customElements.define('ext-title', ElementParser.withParsedCallback(EWCTitle));
+} catch (e) {
+  window.customElements.define('ext-title', EWCTitle);
+}

@@ -19,4 +19,9 @@ function (_Ext_calendar_panel_D) {
 }(Ext_calendar_panel_Day);
 
 export { EWCCalendar_day as default };
-window.customElements.define('ext-calendar-day', ElementParser.withParsedCallback(EWCCalendar_day));
+
+try {
+  window.customElements.define('ext-calendar-day', ElementParser.withParsedCallback(EWCCalendar_day));
+} catch (e) {
+  window.customElements.define('ext-calendar-day', EWCCalendar_day);
+}

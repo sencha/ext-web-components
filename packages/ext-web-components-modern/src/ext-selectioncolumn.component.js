@@ -7,4 +7,9 @@ export default class EWCSelectioncolumn extends Ext_grid_column_Selection {
     this.xtype = 'selectioncolumn';
   }
 }
-window.customElements.define('ext-selectioncolumn', ElementParser.withParsedCallback(EWCSelectioncolumn));
+try {
+  window.customElements.define('ext-selectioncolumn', ElementParser.withParsedCallback(EWCSelectioncolumn));
+}
+catch(e) {
+  window.customElements.define('ext-selectioncolumn', EWCSelectioncolumn);
+}

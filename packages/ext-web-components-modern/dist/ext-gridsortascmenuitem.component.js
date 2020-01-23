@@ -19,4 +19,9 @@ function (_Ext_grid_menu_SortAs) {
 }(Ext_grid_menu_SortAsc);
 
 export { EWCGridsortascmenuitem as default };
-window.customElements.define('ext-gridsortascmenuitem', ElementParser.withParsedCallback(EWCGridsortascmenuitem));
+
+try {
+  window.customElements.define('ext-gridsortascmenuitem', ElementParser.withParsedCallback(EWCGridsortascmenuitem));
+} catch (e) {
+  window.customElements.define('ext-gridsortascmenuitem', EWCGridsortascmenuitem);
+}

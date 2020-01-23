@@ -23,6 +23,5 @@ export { EWCMenu as default };
 try {
   window.customElements.define('ext-menu', ElementParser.withParsedCallback(EWCMenu));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-menu', EWCMenu);
 }

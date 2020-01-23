@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-fieldcontainer', ElementParser.withParsedCallback(EWCFieldcontainer));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-fieldcontainer', EWCFieldcontainer);
 }

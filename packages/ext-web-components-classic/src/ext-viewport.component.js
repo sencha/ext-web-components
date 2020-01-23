@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-viewport', ElementParser.withParsedCallback(EWCViewport));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-viewport', EWCViewport);
 }

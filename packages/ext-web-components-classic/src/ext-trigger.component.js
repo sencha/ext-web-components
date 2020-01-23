@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-trigger', ElementParser.withParsedCallback(EWCTrigger));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-trigger', EWCTrigger);
 }

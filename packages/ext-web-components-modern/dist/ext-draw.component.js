@@ -19,4 +19,9 @@ function (_Ext_draw_Component) {
 }(Ext_draw_Component);
 
 export { EWCDraw as default };
-window.customElements.define('ext-draw', ElementParser.withParsedCallback(EWCDraw));
+
+try {
+  window.customElements.define('ext-draw', ElementParser.withParsedCallback(EWCDraw));
+} catch (e) {
+  window.customElements.define('ext-draw', EWCDraw);
+}

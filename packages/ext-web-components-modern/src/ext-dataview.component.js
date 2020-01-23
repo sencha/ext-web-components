@@ -7,4 +7,9 @@ export default class EWCDataview extends Ext_DataView {
     this.xtype = 'dataview';
   }
 }
-window.customElements.define('ext-dataview', ElementParser.withParsedCallback(EWCDataview));
+try {
+  window.customElements.define('ext-dataview', ElementParser.withParsedCallback(EWCDataview));
+}
+catch(e) {
+  window.customElements.define('ext-dataview', EWCDataview);
+}

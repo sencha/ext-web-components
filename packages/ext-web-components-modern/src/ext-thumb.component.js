@@ -7,4 +7,9 @@ export default class EWCThumb extends Ext_slider_Thumb {
     this.xtype = 'thumb';
   }
 }
-window.customElements.define('ext-thumb', ElementParser.withParsedCallback(EWCThumb));
+try {
+  window.customElements.define('ext-thumb', ElementParser.withParsedCallback(EWCThumb));
+}
+catch(e) {
+  window.customElements.define('ext-thumb', EWCThumb);
+}

@@ -7,4 +7,9 @@ export default class EWCCarousel extends Ext_Carousel {
     this.xtype = 'carousel';
   }
 }
-window.customElements.define('ext-carousel', ElementParser.withParsedCallback(EWCCarousel));
+try {
+  window.customElements.define('ext-carousel', ElementParser.withParsedCallback(EWCCarousel));
+}
+catch(e) {
+  window.customElements.define('ext-carousel', EWCCarousel);
+}

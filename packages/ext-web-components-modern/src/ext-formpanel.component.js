@@ -7,4 +7,9 @@ export default class EWCFormpanel extends Ext_form_FormPanel {
     this.xtype = 'formpanel';
   }
 }
-window.customElements.define('ext-formpanel', ElementParser.withParsedCallback(EWCFormpanel));
+try {
+  window.customElements.define('ext-formpanel', ElementParser.withParsedCallback(EWCFormpanel));
+}
+catch(e) {
+  window.customElements.define('ext-formpanel', EWCFormpanel);
+}

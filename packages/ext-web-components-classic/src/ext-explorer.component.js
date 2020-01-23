@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-explorer', ElementParser.withParsedCallback(EWCExplorer));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-explorer', EWCExplorer);
 }

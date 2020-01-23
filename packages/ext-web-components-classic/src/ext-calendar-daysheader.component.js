@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-calendar-daysheader', ElementParser.withParsedCallback(EWCCalendar_daysheader));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-calendar-daysheader', EWCCalendar_daysheader);
 }

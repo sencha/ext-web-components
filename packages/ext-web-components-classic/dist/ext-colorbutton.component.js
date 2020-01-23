@@ -23,6 +23,5 @@ export { EWCColorbutton as default };
 try {
   window.customElements.define('ext-colorbutton', ElementParser.withParsedCallback(EWCColorbutton));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-colorbutton', EWCColorbutton);
 }

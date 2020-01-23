@@ -7,4 +7,9 @@ export default class EWCDialog extends Ext_window_Window {
     this.xtype = 'dialog';
   }
 }
-window.customElements.define('ext-dialog', ElementParser.withParsedCallback(EWCDialog));
+try {
+  window.customElements.define('ext-dialog', ElementParser.withParsedCallback(EWCDialog));
+}
+catch(e) {
+  window.customElements.define('ext-dialog', EWCDialog);
+}

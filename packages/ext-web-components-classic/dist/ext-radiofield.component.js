@@ -23,6 +23,5 @@ export { EWCRadiofield as default };
 try {
   window.customElements.define('ext-radiofield', ElementParser.withParsedCallback(EWCRadiofield));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-radiofield', EWCRadiofield);
 }

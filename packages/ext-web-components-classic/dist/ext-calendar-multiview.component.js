@@ -23,6 +23,5 @@ export { EWCCalendar_multiview as default };
 try {
   window.customElements.define('ext-calendar-multiview', ElementParser.withParsedCallback(EWCCalendar_multiview));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-calendar-multiview', EWCCalendar_multiview);
 }

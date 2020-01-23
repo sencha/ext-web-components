@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-datecolumn', ElementParser.withParsedCallback(EWCDatecolumn));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-datecolumn', EWCDatecolumn);
 }

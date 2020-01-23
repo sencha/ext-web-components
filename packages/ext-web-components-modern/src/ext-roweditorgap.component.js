@@ -7,4 +7,9 @@ export default class EWCRoweditorgap extends Ext_grid_rowedit_Gap {
     this.xtype = 'roweditorgap';
   }
 }
-window.customElements.define('ext-roweditorgap', ElementParser.withParsedCallback(EWCRoweditorgap));
+try {
+  window.customElements.define('ext-roweditorgap', ElementParser.withParsedCallback(EWCRoweditorgap));
+}
+catch(e) {
+  window.customElements.define('ext-roweditorgap', EWCRoweditorgap);
+}

@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-pivotd3container', ElementParser.withParsedCallback(EWCPivotd3container));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-pivotd3container', EWCPivotd3container);
 }

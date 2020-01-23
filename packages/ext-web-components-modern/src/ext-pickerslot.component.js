@@ -7,4 +7,9 @@ export default class EWCPickerslot extends Ext_picker_Slot {
     this.xtype = 'pickerslot';
   }
 }
-window.customElements.define('ext-pickerslot', ElementParser.withParsedCallback(EWCPickerslot));
+try {
+  window.customElements.define('ext-pickerslot', ElementParser.withParsedCallback(EWCPickerslot));
+}
+catch(e) {
+  window.customElements.define('ext-pickerslot', EWCPickerslot);
+}

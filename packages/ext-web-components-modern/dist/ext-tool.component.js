@@ -19,4 +19,9 @@ function (_Ext_panel_Tool) {
 }(Ext_panel_Tool);
 
 export { EWCTool as default };
-window.customElements.define('ext-tool', ElementParser.withParsedCallback(EWCTool));
+
+try {
+  window.customElements.define('ext-tool', ElementParser.withParsedCallback(EWCTool));
+} catch (e) {
+  window.customElements.define('ext-tool', EWCTool);
+}

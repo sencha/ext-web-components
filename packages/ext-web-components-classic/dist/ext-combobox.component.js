@@ -23,6 +23,5 @@ export { EWCCombobox as default };
 try {
   window.customElements.define('ext-combobox', ElementParser.withParsedCallback(EWCCombobox));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-combobox', EWCCombobox);
 }

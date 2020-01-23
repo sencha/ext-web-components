@@ -23,6 +23,5 @@ export { EWCDatepicker as default };
 try {
   window.customElements.define('ext-datepicker', ElementParser.withParsedCallback(EWCDatepicker));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-datepicker', EWCDatepicker);
 }

@@ -23,6 +23,5 @@ export { EWCColorpickerslider as default };
 try {
   window.customElements.define('ext-colorpickerslider', ElementParser.withParsedCallback(EWCColorpickerslider));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-colorpickerslider', EWCColorpickerslider);
 }

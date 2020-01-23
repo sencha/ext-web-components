@@ -23,6 +23,5 @@ export { EWCSurface as default };
 try {
   window.customElements.define('ext-surface', ElementParser.withParsedCallback(EWCSurface));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-surface', EWCSurface);
 }

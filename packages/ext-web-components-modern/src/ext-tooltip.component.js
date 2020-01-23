@@ -7,4 +7,9 @@ export default class EWCTooltip extends Ext_tip_ToolTip {
     this.xtype = 'tooltip';
   }
 }
-window.customElements.define('ext-tooltip', ElementParser.withParsedCallback(EWCTooltip));
+try {
+  window.customElements.define('ext-tooltip', ElementParser.withParsedCallback(EWCTooltip));
+}
+catch(e) {
+  window.customElements.define('ext-tooltip', EWCTooltip);
+}

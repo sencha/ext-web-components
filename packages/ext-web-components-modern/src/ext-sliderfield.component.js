@@ -7,4 +7,9 @@ export default class EWCSliderfield extends Ext_form_Slider {
     this.xtype = 'sliderfield';
   }
 }
-window.customElements.define('ext-sliderfield', ElementParser.withParsedCallback(EWCSliderfield));
+try {
+  window.customElements.define('ext-sliderfield', ElementParser.withParsedCallback(EWCSliderfield));
+}
+catch(e) {
+  window.customElements.define('ext-sliderfield', EWCSliderfield);
+}

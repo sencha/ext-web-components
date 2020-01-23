@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-combo', ElementParser.withParsedCallback(EWCCombo));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-combo', EWCCombo);
 }

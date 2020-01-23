@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-multislider', ElementParser.withParsedCallback(EWCMultislider));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-multislider', EWCMultislider);
 }

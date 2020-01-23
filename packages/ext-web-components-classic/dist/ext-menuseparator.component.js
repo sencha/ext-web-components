@@ -23,6 +23,5 @@ export { EWCMenuseparator as default };
 try {
   window.customElements.define('ext-menuseparator', ElementParser.withParsedCallback(EWCMenuseparator));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-menuseparator', EWCMenuseparator);
 }

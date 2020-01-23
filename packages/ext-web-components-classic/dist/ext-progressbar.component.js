@@ -23,6 +23,5 @@ export { EWCProgressbar as default };
 try {
   window.customElements.define('ext-progressbar', ElementParser.withParsedCallback(EWCProgressbar));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-progressbar', EWCProgressbar);
 }

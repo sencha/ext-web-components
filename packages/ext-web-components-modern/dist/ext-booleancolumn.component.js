@@ -19,4 +19,9 @@ function (_Ext_grid_column_Bool) {
 }(Ext_grid_column_Boolean);
 
 export { EWCBooleancolumn as default };
-window.customElements.define('ext-booleancolumn', ElementParser.withParsedCallback(EWCBooleancolumn));
+
+try {
+  window.customElements.define('ext-booleancolumn', ElementParser.withParsedCallback(EWCBooleancolumn));
+} catch (e) {
+  window.customElements.define('ext-booleancolumn', EWCBooleancolumn);
+}

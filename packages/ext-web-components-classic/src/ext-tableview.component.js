@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-tableview', ElementParser.withParsedCallback(EWCTableview));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-tableview', EWCTableview);
 }

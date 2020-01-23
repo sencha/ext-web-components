@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-toolbar', ElementParser.withParsedCallback(EWCToolbar));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-toolbar', EWCToolbar);
 }

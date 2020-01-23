@@ -7,4 +7,9 @@ export default class EWCPasswordfield extends Ext_form_Password {
     this.xtype = 'passwordfield';
   }
 }
-window.customElements.define('ext-passwordfield', ElementParser.withParsedCallback(EWCPasswordfield));
+try {
+  window.customElements.define('ext-passwordfield', ElementParser.withParsedCallback(EWCPasswordfield));
+}
+catch(e) {
+  window.customElements.define('ext-passwordfield', EWCPasswordfield);
+}

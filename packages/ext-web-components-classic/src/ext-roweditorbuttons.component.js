@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-roweditorbuttons', ElementParser.withParsedCallback(EWCRoweditorbuttons));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-roweditorbuttons', EWCRoweditorbuttons);
 }

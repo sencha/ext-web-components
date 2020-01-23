@@ -7,4 +7,9 @@ export default class EWCPolar extends Ext_chart_PolarChart {
     this.xtype = 'polar';
   }
 }
-window.customElements.define('ext-polar', ElementParser.withParsedCallback(EWCPolar));
+try {
+  window.customElements.define('ext-polar', ElementParser.withParsedCallback(EWCPolar));
+}
+catch(e) {
+  window.customElements.define('ext-polar', EWCPolar);
+}

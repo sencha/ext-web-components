@@ -19,4 +19,9 @@ function (_Ext_form_Email) {
 }(Ext_form_Email);
 
 export { EWCEmailfield as default };
-window.customElements.define('ext-emailfield', ElementParser.withParsedCallback(EWCEmailfield));
+
+try {
+  window.customElements.define('ext-emailfield', ElementParser.withParsedCallback(EWCEmailfield));
+} catch (e) {
+  window.customElements.define('ext-emailfield', EWCEmailfield);
+}

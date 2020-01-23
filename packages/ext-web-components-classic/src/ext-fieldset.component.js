@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-fieldset', ElementParser.withParsedCallback(EWCFieldset));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-fieldset', EWCFieldset);
 }

@@ -7,4 +7,9 @@ export default class EWCCalendar_month extends Ext_calendar_panel_Month {
     this.xtype = 'calendar-month';
   }
 }
-window.customElements.define('ext-calendar-month', ElementParser.withParsedCallback(EWCCalendar_month));
+try {
+  window.customElements.define('ext-calendar-month', ElementParser.withParsedCallback(EWCCalendar_month));
+}
+catch(e) {
+  window.customElements.define('ext-calendar-month', EWCCalendar_month);
+}

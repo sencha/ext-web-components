@@ -7,4 +7,9 @@ export default class EWCGridcellbase extends Ext_grid_cell_Base {
     this.xtype = 'gridcellbase';
   }
 }
-window.customElements.define('ext-gridcellbase', ElementParser.withParsedCallback(EWCGridcellbase));
+try {
+  window.customElements.define('ext-gridcellbase', ElementParser.withParsedCallback(EWCGridcellbase));
+}
+catch(e) {
+  window.customElements.define('ext-gridcellbase', EWCGridcellbase);
+}

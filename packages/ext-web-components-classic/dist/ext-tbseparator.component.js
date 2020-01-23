@@ -23,6 +23,5 @@ export { EWCTbseparator as default };
 try {
   window.customElements.define('ext-tbseparator', ElementParser.withParsedCallback(EWCTbseparator));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-tbseparator', EWCTbseparator);
 }

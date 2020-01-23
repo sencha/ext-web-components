@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-header', ElementParser.withParsedCallback(EWCHeader));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-header', EWCHeader);
 }

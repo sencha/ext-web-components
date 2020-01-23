@@ -19,4 +19,9 @@ function (_Ext_ActionSheet) {
 }(Ext_ActionSheet);
 
 export { EWCActionsheet as default };
-window.customElements.define('ext-actionsheet', ElementParser.withParsedCallback(EWCActionsheet));
+
+try {
+  window.customElements.define('ext-actionsheet', ElementParser.withParsedCallback(EWCActionsheet));
+} catch (e) {
+  window.customElements.define('ext-actionsheet', EWCActionsheet);
+}

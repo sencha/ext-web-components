@@ -7,4 +7,9 @@ export default class EWCSinglesliderfield extends Ext_field_SingleSlider {
     this.xtype = 'singlesliderfield';
   }
 }
-window.customElements.define('ext-singlesliderfield', ElementParser.withParsedCallback(EWCSinglesliderfield));
+try {
+  window.customElements.define('ext-singlesliderfield', ElementParser.withParsedCallback(EWCSinglesliderfield));
+}
+catch(e) {
+  window.customElements.define('ext-singlesliderfield', EWCSinglesliderfield);
+}

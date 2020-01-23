@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-video', ElementParser.withParsedCallback(EWCVideo));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-video', EWCVideo);
 }

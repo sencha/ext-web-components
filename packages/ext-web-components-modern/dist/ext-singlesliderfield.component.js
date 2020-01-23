@@ -19,4 +19,9 @@ function (_Ext_field_SingleSlid) {
 }(Ext_field_SingleSlider);
 
 export { EWCSinglesliderfield as default };
-window.customElements.define('ext-singlesliderfield', ElementParser.withParsedCallback(EWCSinglesliderfield));
+
+try {
+  window.customElements.define('ext-singlesliderfield', ElementParser.withParsedCallback(EWCSinglesliderfield));
+} catch (e) {
+  window.customElements.define('ext-singlesliderfield', EWCSinglesliderfield);
+}

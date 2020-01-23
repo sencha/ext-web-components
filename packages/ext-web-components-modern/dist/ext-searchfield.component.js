@@ -19,4 +19,9 @@ function (_Ext_form_Search) {
 }(Ext_form_Search);
 
 export { EWCSearchfield as default };
-window.customElements.define('ext-searchfield', ElementParser.withParsedCallback(EWCSearchfield));
+
+try {
+  window.customElements.define('ext-searchfield', ElementParser.withParsedCallback(EWCSearchfield));
+} catch (e) {
+  window.customElements.define('ext-searchfield', EWCSearchfield);
+}

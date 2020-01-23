@@ -19,4 +19,9 @@ function (_Ext_NavigationView) {
 }(Ext_NavigationView);
 
 export { EWCNavigationview as default };
-window.customElements.define('ext-navigationview', ElementParser.withParsedCallback(EWCNavigationview));
+
+try {
+  window.customElements.define('ext-navigationview', ElementParser.withParsedCallback(EWCNavigationview));
+} catch (e) {
+  window.customElements.define('ext-navigationview', EWCNavigationview);
+}

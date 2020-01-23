@@ -19,4 +19,9 @@ function (_Ext_ProgressBarWidge) {
 }(Ext_ProgressBarWidget);
 
 export { EWCProgressbarwidget as default };
-window.customElements.define('ext-progressbarwidget', ElementParser.withParsedCallback(EWCProgressbarwidget));
+
+try {
+  window.customElements.define('ext-progressbarwidget', ElementParser.withParsedCallback(EWCProgressbarwidget));
+} catch (e) {
+  window.customElements.define('ext-progressbarwidget', EWCProgressbarwidget);
+}

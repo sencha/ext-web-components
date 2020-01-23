@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-tablepanel', ElementParser.withParsedCallback(EWCTablepanel));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-tablepanel', EWCTablepanel);
 }

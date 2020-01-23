@@ -23,6 +23,5 @@ export { EWCLabel as default };
 try {
   window.customElements.define('ext-label', ElementParser.withParsedCallback(EWCLabel));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-label', EWCLabel);
 }

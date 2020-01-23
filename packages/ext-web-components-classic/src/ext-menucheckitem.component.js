@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-menucheckitem', ElementParser.withParsedCallback(EWCMenucheckitem));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-menucheckitem', EWCMenucheckitem);
 }

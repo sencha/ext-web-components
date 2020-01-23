@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-form', ElementParser.withParsedCallback(EWCForm));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-form', EWCForm);
 }

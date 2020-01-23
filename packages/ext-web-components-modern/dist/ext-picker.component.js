@@ -19,4 +19,9 @@ function (_Ext_Picker) {
 }(Ext_Picker);
 
 export { EWCPicker as default };
-window.customElements.define('ext-picker', ElementParser.withParsedCallback(EWCPicker));
+
+try {
+  window.customElements.define('ext-picker', ElementParser.withParsedCallback(EWCPicker));
+} catch (e) {
+  window.customElements.define('ext-picker', EWCPicker);
+}

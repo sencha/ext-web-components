@@ -23,6 +23,5 @@ export { EWCDataview as default };
 try {
   window.customElements.define('ext-dataview', ElementParser.withParsedCallback(EWCDataview));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-dataview', EWCDataview);
 }

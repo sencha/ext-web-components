@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-wallpaper', ElementParser.withParsedCallback(EWCWallpaper));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-wallpaper', EWCWallpaper);
 }

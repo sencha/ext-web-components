@@ -7,4 +7,9 @@ export default class EWCChip extends Ext_Chip {
     this.xtype = 'chip';
   }
 }
-window.customElements.define('ext-chip', ElementParser.withParsedCallback(EWCChip));
+try {
+  window.customElements.define('ext-chip', ElementParser.withParsedCallback(EWCChip));
+}
+catch(e) {
+  window.customElements.define('ext-chip', EWCChip);
+}

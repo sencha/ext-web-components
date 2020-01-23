@@ -23,6 +23,5 @@ export { EWCTbitem as default };
 try {
   window.customElements.define('ext-tbitem', ElementParser.withParsedCallback(EWCTbitem));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-tbitem', EWCTbitem);
 }

@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-d3-horizontal-tree', ElementParser.withParsedCallback(EWCD3_horizontal_tree));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-d3-horizontal-tree', EWCD3_horizontal_tree);
 }

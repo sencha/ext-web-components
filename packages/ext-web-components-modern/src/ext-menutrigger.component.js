@@ -7,4 +7,9 @@ export default class EWCMenutrigger extends Ext_field_trigger_Menu {
     this.xtype = 'menutrigger';
   }
 }
-window.customElements.define('ext-menutrigger', ElementParser.withParsedCallback(EWCMenutrigger));
+try {
+  window.customElements.define('ext-menutrigger', ElementParser.withParsedCallback(EWCMenutrigger));
+}
+catch(e) {
+  window.customElements.define('ext-menutrigger', EWCMenutrigger);
+}

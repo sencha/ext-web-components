@@ -7,4 +7,9 @@ export default class EWCRownumberer extends Ext_grid_column_RowNumberer {
     this.xtype = 'rownumberer';
   }
 }
-window.customElements.define('ext-rownumberer', ElementParser.withParsedCallback(EWCRownumberer));
+try {
+  window.customElements.define('ext-rownumberer', ElementParser.withParsedCallback(EWCRownumberer));
+}
+catch(e) {
+  window.customElements.define('ext-rownumberer', EWCRownumberer);
+}

@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-rownumberer', ElementParser.withParsedCallback(EWCRownumberer));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-rownumberer', EWCRownumberer);
 }

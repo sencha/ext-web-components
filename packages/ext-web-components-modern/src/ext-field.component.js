@@ -7,4 +7,9 @@ export default class EWCField extends Ext_form_Field {
     this.xtype = 'field';
   }
 }
-window.customElements.define('ext-field', ElementParser.withParsedCallback(EWCField));
+try {
+  window.customElements.define('ext-field', ElementParser.withParsedCallback(EWCField));
+}
+catch(e) {
+  window.customElements.define('ext-field', EWCField);
+}

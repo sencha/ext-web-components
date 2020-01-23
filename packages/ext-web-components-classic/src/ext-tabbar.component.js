@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-tabbar', ElementParser.withParsedCallback(EWCTabbar));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-tabbar', EWCTabbar);
 }

@@ -23,6 +23,5 @@ export { EWCTbspacer as default };
 try {
   window.customElements.define('ext-tbspacer', ElementParser.withParsedCallback(EWCTbspacer));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-tbspacer', EWCTbspacer);
 }

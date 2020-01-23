@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-axis3d', ElementParser.withParsedCallback(EWCAxis3d));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-axis3d', EWCAxis3d);
 }

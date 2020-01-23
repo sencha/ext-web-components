@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-gridpanel', ElementParser.withParsedCallback(EWCGridpanel));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-gridpanel', EWCGridpanel);
 }

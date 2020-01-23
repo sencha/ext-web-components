@@ -23,6 +23,5 @@ export { EWCCheckboxgroup as default };
 try {
   window.customElements.define('ext-checkboxgroup', ElementParser.withParsedCallback(EWCCheckboxgroup));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-checkboxgroup', EWCCheckboxgroup);
 }

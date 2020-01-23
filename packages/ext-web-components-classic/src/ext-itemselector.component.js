@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-itemselector', ElementParser.withParsedCallback(EWCItemselector));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-itemselector', EWCItemselector);
 }

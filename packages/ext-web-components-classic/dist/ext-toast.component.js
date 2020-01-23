@@ -23,6 +23,5 @@ export { EWCToast as default };
 try {
   window.customElements.define('ext-toast', ElementParser.withParsedCallback(EWCToast));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-toast', EWCToast);
 }

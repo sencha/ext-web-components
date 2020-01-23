@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-image', ElementParser.withParsedCallback(EWCImage));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-image', EWCImage);
 }

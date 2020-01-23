@@ -19,4 +19,9 @@ function (_Ext_dataview_ItemHea) {
 }(Ext_dataview_ItemHeader);
 
 export { EWCItemheader as default };
-window.customElements.define('ext-itemheader', ElementParser.withParsedCallback(EWCItemheader));
+
+try {
+  window.customElements.define('ext-itemheader', ElementParser.withParsedCallback(EWCItemheader));
+} catch (e) {
+  window.customElements.define('ext-itemheader', EWCItemheader);
+}

@@ -19,4 +19,9 @@ function (_Ext_panel_Date) {
 }(Ext_panel_Date);
 
 export { EWCDatepanel as default };
-window.customElements.define('ext-datepanel', ElementParser.withParsedCallback(EWCDatepanel));
+
+try {
+  window.customElements.define('ext-datepanel', ElementParser.withParsedCallback(EWCDatepanel));
+} catch (e) {
+  window.customElements.define('ext-datepanel', EWCDatepanel);
+}

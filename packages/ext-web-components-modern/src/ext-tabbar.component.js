@@ -7,4 +7,9 @@ export default class EWCTabbar extends Ext_TabBar {
     this.xtype = 'tabbar';
   }
 }
-window.customElements.define('ext-tabbar', ElementParser.withParsedCallback(EWCTabbar));
+try {
+  window.customElements.define('ext-tabbar', ElementParser.withParsedCallback(EWCTabbar));
+}
+catch(e) {
+  window.customElements.define('ext-tabbar', EWCTabbar);
+}

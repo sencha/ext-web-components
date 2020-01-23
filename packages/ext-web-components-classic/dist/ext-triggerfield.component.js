@@ -23,6 +23,5 @@ export { EWCTriggerfield as default };
 try {
   window.customElements.define('ext-triggerfield', ElementParser.withParsedCallback(EWCTriggerfield));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-triggerfield', EWCTriggerfield);
 }

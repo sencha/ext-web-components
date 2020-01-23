@@ -7,4 +7,9 @@ export default class EWCNumbercell extends Ext_grid_cell_Number {
     this.xtype = 'numbercell';
   }
 }
-window.customElements.define('ext-numbercell', ElementParser.withParsedCallback(EWCNumbercell));
+try {
+  window.customElements.define('ext-numbercell', ElementParser.withParsedCallback(EWCNumbercell));
+}
+catch(e) {
+  window.customElements.define('ext-numbercell', EWCNumbercell);
+}

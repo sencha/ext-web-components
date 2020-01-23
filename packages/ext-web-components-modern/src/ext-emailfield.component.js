@@ -7,4 +7,9 @@ export default class EWCEmailfield extends Ext_form_Email {
     this.xtype = 'emailfield';
   }
 }
-window.customElements.define('ext-emailfield', ElementParser.withParsedCallback(EWCEmailfield));
+try {
+  window.customElements.define('ext-emailfield', ElementParser.withParsedCallback(EWCEmailfield));
+}
+catch(e) {
+  window.customElements.define('ext-emailfield', EWCEmailfield);
+}

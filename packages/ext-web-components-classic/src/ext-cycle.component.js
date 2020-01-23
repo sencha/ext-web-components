@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-cycle', ElementParser.withParsedCallback(EWCCycle));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-cycle', EWCCycle);
 }

@@ -23,6 +23,5 @@ export { EWCPagingtoolbar as default };
 try {
   window.customElements.define('ext-pagingtoolbar', ElementParser.withParsedCallback(EWCPagingtoolbar));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-pagingtoolbar', EWCPagingtoolbar);
 }

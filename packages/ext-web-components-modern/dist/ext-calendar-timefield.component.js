@@ -19,4 +19,9 @@ function (_Ext_calendar_form_Ti) {
 }(Ext_calendar_form_TimeField);
 
 export { EWCCalendar_timefield as default };
-window.customElements.define('ext-calendar-timefield', ElementParser.withParsedCallback(EWCCalendar_timefield));
+
+try {
+  window.customElements.define('ext-calendar-timefield', ElementParser.withParsedCallback(EWCCalendar_timefield));
+} catch (e) {
+  window.customElements.define('ext-calendar-timefield', EWCCalendar_timefield);
+}

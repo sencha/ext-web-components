@@ -7,4 +7,9 @@ export default class EWCGroupcontainer extends Ext_field_FieldGroupContainer {
     this.xtype = 'groupcontainer';
   }
 }
-window.customElements.define('ext-groupcontainer', ElementParser.withParsedCallback(EWCGroupcontainer));
+try {
+  window.customElements.define('ext-groupcontainer', ElementParser.withParsedCallback(EWCGroupcontainer));
+}
+catch(e) {
+  window.customElements.define('ext-groupcontainer', EWCGroupcontainer);
+}

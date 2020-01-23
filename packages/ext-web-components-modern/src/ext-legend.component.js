@@ -7,4 +7,9 @@ export default class EWCLegend extends Ext_chart_Legend {
     this.xtype = 'legend';
   }
 }
-window.customElements.define('ext-legend', ElementParser.withParsedCallback(EWCLegend));
+try {
+  window.customElements.define('ext-legend', ElementParser.withParsedCallback(EWCLegend));
+}
+catch(e) {
+  window.customElements.define('ext-legend', EWCLegend);
+}

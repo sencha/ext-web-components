@@ -7,4 +7,9 @@ export default class EWCTitle extends Ext_Title {
     this.xtype = 'title';
   }
 }
-window.customElements.define('ext-title', ElementParser.withParsedCallback(EWCTitle));
+try {
+  window.customElements.define('ext-title', ElementParser.withParsedCallback(EWCTitle));
+}
+catch(e) {
+  window.customElements.define('ext-title', EWCTitle);
+}

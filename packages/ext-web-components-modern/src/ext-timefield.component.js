@@ -7,4 +7,9 @@ export default class EWCTimefield extends Ext_field_Time {
     this.xtype = 'timefield';
   }
 }
-window.customElements.define('ext-timefield', ElementParser.withParsedCallback(EWCTimefield));
+try {
+  window.customElements.define('ext-timefield', ElementParser.withParsedCallback(EWCTimefield));
+}
+catch(e) {
+  window.customElements.define('ext-timefield', EWCTimefield);
+}

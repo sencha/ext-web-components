@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-chartnavigator', ElementParser.withParsedCallback(EWCChartnavigator));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-chartnavigator', EWCChartnavigator);
 }

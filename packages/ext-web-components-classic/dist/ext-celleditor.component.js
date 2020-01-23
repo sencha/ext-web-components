@@ -23,6 +23,5 @@ export { EWCCelleditor as default };
 try {
   window.customElements.define('ext-celleditor', ElementParser.withParsedCallback(EWCCelleditor));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-celleditor', EWCCelleditor);
 }

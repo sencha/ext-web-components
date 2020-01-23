@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-sliderfield', ElementParser.withParsedCallback(EWCSliderfield));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-sliderfield', EWCSliderfield);
 }

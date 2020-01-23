@@ -19,4 +19,9 @@ function (_Ext_Tab) {
 }(Ext_Tab);
 
 export { EWCTab as default };
-window.customElements.define('ext-tab', ElementParser.withParsedCallback(EWCTab));
+
+try {
+  window.customElements.define('ext-tab', ElementParser.withParsedCallback(EWCTab));
+} catch (e) {
+  window.customElements.define('ext-tab', EWCTab);
+}

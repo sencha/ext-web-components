@@ -7,4 +7,9 @@ export default class EWCSelectfield extends Ext_form_Select {
     this.xtype = 'selectfield';
   }
 }
-window.customElements.define('ext-selectfield', ElementParser.withParsedCallback(EWCSelectfield));
+try {
+  window.customElements.define('ext-selectfield', ElementParser.withParsedCallback(EWCSelectfield));
+}
+catch(e) {
+  window.customElements.define('ext-selectfield', EWCSelectfield);
+}

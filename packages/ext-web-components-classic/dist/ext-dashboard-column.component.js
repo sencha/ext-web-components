@@ -23,6 +23,5 @@ export { EWCDashboard_column as default };
 try {
   window.customElements.define('ext-dashboard-column', ElementParser.withParsedCallback(EWCDashboard_column));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-dashboard-column', EWCDashboard_column);
 }

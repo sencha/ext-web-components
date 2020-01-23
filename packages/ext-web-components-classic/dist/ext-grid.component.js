@@ -23,6 +23,5 @@ export { EWCGrid as default };
 try {
   window.customElements.define('ext-grid', ElementParser.withParsedCallback(EWCGrid));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-grid', EWCGrid);
 }

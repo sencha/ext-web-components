@@ -23,6 +23,5 @@ export { EWCSlidertip as default };
 try {
   window.customElements.define('ext-slidertip', ElementParser.withParsedCallback(EWCSlidertip));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-slidertip', EWCSlidertip);
 }

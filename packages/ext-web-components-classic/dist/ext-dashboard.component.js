@@ -23,6 +23,5 @@ export { EWCDashboard as default };
 try {
   window.customElements.define('ext-dashboard', ElementParser.withParsedCallback(EWCDashboard));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-dashboard', EWCDashboard);
 }

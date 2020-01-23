@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-fileuploadfield', ElementParser.withParsedCallback(EWCFileuploadfield));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-fileuploadfield', EWCFileuploadfield);
 }

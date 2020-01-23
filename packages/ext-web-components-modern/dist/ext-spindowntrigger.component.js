@@ -19,4 +19,9 @@ function (_Ext_field_trigger_Sp) {
 }(Ext_field_trigger_SpinDown);
 
 export { EWCSpindowntrigger as default };
-window.customElements.define('ext-spindowntrigger', ElementParser.withParsedCallback(EWCSpindowntrigger));
+
+try {
+  window.customElements.define('ext-spindowntrigger', ElementParser.withParsedCallback(EWCSpindowntrigger));
+} catch (e) {
+  window.customElements.define('ext-spindowntrigger', EWCSpindowntrigger);
+}

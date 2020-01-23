@@ -23,6 +23,5 @@ export { EWCColormenu as default };
 try {
   window.customElements.define('ext-colormenu', ElementParser.withParsedCallback(EWCColormenu));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-colormenu', EWCColormenu);
 }

@@ -19,4 +19,9 @@ function (_Ext_grid_menu_Column) {
 }(Ext_grid_menu_Columns);
 
 export { EWCGridcolumnsmenu as default };
-window.customElements.define('ext-gridcolumnsmenu', ElementParser.withParsedCallback(EWCGridcolumnsmenu));
+
+try {
+  window.customElements.define('ext-gridcolumnsmenu', ElementParser.withParsedCallback(EWCGridcolumnsmenu));
+} catch (e) {
+  window.customElements.define('ext-gridcolumnsmenu', EWCGridcolumnsmenu);
+}

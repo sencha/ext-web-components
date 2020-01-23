@@ -19,4 +19,9 @@ function (_Ext_Carousel) {
 }(Ext_Carousel);
 
 export { EWCCarousel as default };
-window.customElements.define('ext-carousel', ElementParser.withParsedCallback(EWCCarousel));
+
+try {
+  window.customElements.define('ext-carousel', ElementParser.withParsedCallback(EWCCarousel));
+} catch (e) {
+  window.customElements.define('ext-carousel', EWCCarousel);
+}

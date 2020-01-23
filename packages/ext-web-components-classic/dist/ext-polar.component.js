@@ -23,6 +23,5 @@ export { EWCPolar as default };
 try {
   window.customElements.define('ext-polar', ElementParser.withParsedCallback(EWCPolar));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-polar', EWCPolar);
 }

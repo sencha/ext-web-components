@@ -19,4 +19,9 @@ function (_Ext_field_trigger_Tr) {
 }(Ext_field_trigger_Trigger);
 
 export { EWCTrigger as default };
-window.customElements.define('ext-trigger', ElementParser.withParsedCallback(EWCTrigger));
+
+try {
+  window.customElements.define('ext-trigger', ElementParser.withParsedCallback(EWCTrigger));
+} catch (e) {
+  window.customElements.define('ext-trigger', EWCTrigger);
+}

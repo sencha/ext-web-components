@@ -23,6 +23,5 @@ export { EWCColorselector as default };
 try {
   window.customElements.define('ext-colorselector', ElementParser.withParsedCallback(EWCColorselector));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-colorselector', EWCColorselector);
 }

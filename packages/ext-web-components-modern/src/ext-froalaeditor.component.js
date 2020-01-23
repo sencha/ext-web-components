@@ -7,4 +7,9 @@ export default class EWCFroalaeditor extends Ext_froala_Editor {
     this.xtype = 'froalaeditor';
   }
 }
-window.customElements.define('ext-froalaeditor', ElementParser.withParsedCallback(EWCFroalaeditor));
+try {
+  window.customElements.define('ext-froalaeditor', ElementParser.withParsedCallback(EWCFroalaeditor));
+}
+catch(e) {
+  window.customElements.define('ext-froalaeditor', EWCFroalaeditor);
+}

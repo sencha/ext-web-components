@@ -7,4 +7,9 @@ export default class EWCGridrow extends Ext_grid_Row {
     this.xtype = 'gridrow';
   }
 }
-window.customElements.define('ext-gridrow', ElementParser.withParsedCallback(EWCGridrow));
+try {
+  window.customElements.define('ext-gridrow', ElementParser.withParsedCallback(EWCGridrow));
+}
+catch(e) {
+  window.customElements.define('ext-gridrow', EWCGridrow);
+}

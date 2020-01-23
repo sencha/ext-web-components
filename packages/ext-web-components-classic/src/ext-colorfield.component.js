@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-colorfield', ElementParser.withParsedCallback(EWCColorfield));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-colorfield', EWCColorfield);
 }

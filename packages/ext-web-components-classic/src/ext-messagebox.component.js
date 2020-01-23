@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-messagebox', ElementParser.withParsedCallback(EWCMessagebox));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-messagebox', EWCMessagebox);
 }

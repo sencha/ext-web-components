@@ -23,6 +23,5 @@ export { EWCPivotconfigfield as default };
 try {
   window.customElements.define('ext-pivotconfigfield', ElementParser.withParsedCallback(EWCPivotconfigfield));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-pivotconfigfield', EWCPivotconfigfield);
 }

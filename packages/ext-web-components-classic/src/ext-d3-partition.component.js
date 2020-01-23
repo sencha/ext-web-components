@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-d3-partition', ElementParser.withParsedCallback(EWCD3_partition));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-d3-partition', EWCD3_partition);
 }

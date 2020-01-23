@@ -19,4 +19,9 @@ function (_Ext_grid_PagingToolb) {
 }(Ext_grid_PagingToolbar);
 
 export { EWCPagingtoolbar as default };
-window.customElements.define('ext-pagingtoolbar', ElementParser.withParsedCallback(EWCPagingtoolbar));
+
+try {
+  window.customElements.define('ext-pagingtoolbar', ElementParser.withParsedCallback(EWCPagingtoolbar));
+} catch (e) {
+  window.customElements.define('ext-pagingtoolbar', EWCPagingtoolbar);
+}

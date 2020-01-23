@@ -23,6 +23,5 @@ export { EWCEventrecordermanager as default };
 try {
   window.customElements.define('ext-eventrecordermanager', ElementParser.withParsedCallback(EWCEventrecordermanager));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-eventrecordermanager', EWCEventrecordermanager);
 }

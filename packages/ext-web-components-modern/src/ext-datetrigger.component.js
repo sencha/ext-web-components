@@ -7,4 +7,9 @@ export default class EWCDatetrigger extends Ext_field_trigger_Date {
     this.xtype = 'datetrigger';
   }
 }
-window.customElements.define('ext-datetrigger', ElementParser.withParsedCallback(EWCDatetrigger));
+try {
+  window.customElements.define('ext-datetrigger', ElementParser.withParsedCallback(EWCDatetrigger));
+}
+catch(e) {
+  window.customElements.define('ext-datetrigger', EWCDatetrigger);
+}

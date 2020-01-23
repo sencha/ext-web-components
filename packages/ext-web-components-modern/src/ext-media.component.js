@@ -7,4 +7,9 @@ export default class EWCMedia extends Ext_Media {
     this.xtype = 'media';
   }
 }
-window.customElements.define('ext-media', ElementParser.withParsedCallback(EWCMedia));
+try {
+  window.customElements.define('ext-media', ElementParser.withParsedCallback(EWCMedia));
+}
+catch(e) {
+  window.customElements.define('ext-media', EWCMedia);
+}

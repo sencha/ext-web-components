@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-legend', ElementParser.withParsedCallback(EWCLegend));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-legend', EWCLegend);
 }

@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-draw', ElementParser.withParsedCallback(EWCDraw));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-draw', EWCDraw);
 }

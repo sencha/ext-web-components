@@ -7,4 +7,9 @@ export default class EWCPaneltitle extends Ext_panel_Title {
     this.xtype = 'paneltitle';
   }
 }
-window.customElements.define('ext-paneltitle', ElementParser.withParsedCallback(EWCPaneltitle));
+try {
+  window.customElements.define('ext-paneltitle', ElementParser.withParsedCallback(EWCPaneltitle));
+}
+catch(e) {
+  window.customElements.define('ext-paneltitle', EWCPaneltitle);
+}

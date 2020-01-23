@@ -23,6 +23,5 @@ export { EWCDatefield as default };
 try {
   window.customElements.define('ext-datefield', ElementParser.withParsedCallback(EWCDatefield));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-datefield', EWCDatefield);
 }

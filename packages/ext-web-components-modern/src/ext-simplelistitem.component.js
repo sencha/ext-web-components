@@ -7,4 +7,9 @@ export default class EWCSimplelistitem extends Ext_dataview_component_SimpleList
     this.xtype = 'simplelistitem';
   }
 }
-window.customElements.define('ext-simplelistitem', ElementParser.withParsedCallback(EWCSimplelistitem));
+try {
+  window.customElements.define('ext-simplelistitem', ElementParser.withParsedCallback(EWCSimplelistitem));
+}
+catch(e) {
+  window.customElements.define('ext-simplelistitem', EWCSimplelistitem);
+}

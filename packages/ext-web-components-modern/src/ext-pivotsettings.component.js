@@ -7,4 +7,9 @@ export default class EWCPivotsettings extends Ext_pivot_plugin_configurator_Sett
     this.xtype = 'pivotsettings';
   }
 }
-window.customElements.define('ext-pivotsettings', ElementParser.withParsedCallback(EWCPivotsettings));
+try {
+  window.customElements.define('ext-pivotsettings', ElementParser.withParsedCallback(EWCPivotsettings));
+}
+catch(e) {
+  window.customElements.define('ext-pivotsettings', EWCPivotsettings);
+}

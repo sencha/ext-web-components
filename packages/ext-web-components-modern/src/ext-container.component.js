@@ -7,4 +7,9 @@ export default class EWCContainer extends Ext_container_Container {
     this.xtype = 'container';
   }
 }
-window.customElements.define('ext-container', ElementParser.withParsedCallback(EWCContainer));
+try {
+  window.customElements.define('ext-container', ElementParser.withParsedCallback(EWCContainer));
+}
+catch(e) {
+  window.customElements.define('ext-container', EWCContainer);
+}

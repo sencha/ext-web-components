@@ -7,4 +7,9 @@ export default class EWCComponent extends Ext_Gadget {
     this.xtype = 'component';
   }
 }
-window.customElements.define('ext-component', ElementParser.withParsedCallback(EWCComponent));
+try {
+  window.customElements.define('ext-component', ElementParser.withParsedCallback(EWCComponent));
+}
+catch(e) {
+  window.customElements.define('ext-component', EWCComponent);
+}

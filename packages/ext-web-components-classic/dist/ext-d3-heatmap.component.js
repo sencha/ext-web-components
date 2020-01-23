@@ -23,6 +23,5 @@ export { EWCD3_heatmap as default };
 try {
   window.customElements.define('ext-d3-heatmap', ElementParser.withParsedCallback(EWCD3_heatmap));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-d3-heatmap', EWCD3_heatmap);
 }

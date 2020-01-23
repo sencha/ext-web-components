@@ -7,4 +7,9 @@ export default class EWCLockedgridregion extends Ext_grid_LockedGridRegion {
     this.xtype = 'lockedgridregion';
   }
 }
-window.customElements.define('ext-lockedgridregion', ElementParser.withParsedCallback(EWCLockedgridregion));
+try {
+  window.customElements.define('ext-lockedgridregion', ElementParser.withParsedCallback(EWCLockedgridregion));
+}
+catch(e) {
+  window.customElements.define('ext-lockedgridregion', EWCLockedgridregion);
+}

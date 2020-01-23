@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-d3-tree', ElementParser.withParsedCallback(EWCD3_tree));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-d3-tree', EWCD3_tree);
 }

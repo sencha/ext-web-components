@@ -7,4 +7,9 @@ export default class EWCMenuseparator extends Ext_menu_Separator {
     this.xtype = 'menuseparator';
   }
 }
-window.customElements.define('ext-menuseparator', ElementParser.withParsedCallback(EWCMenuseparator));
+try {
+  window.customElements.define('ext-menuseparator', ElementParser.withParsedCallback(EWCMenuseparator));
+}
+catch(e) {
+  window.customElements.define('ext-menuseparator', EWCMenuseparator);
+}

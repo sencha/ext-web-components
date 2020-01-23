@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-numberfield', ElementParser.withParsedCallback(EWCNumberfield));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-numberfield', EWCNumberfield);
 }

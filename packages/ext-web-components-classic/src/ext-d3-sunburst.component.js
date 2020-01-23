@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-d3-sunburst', ElementParser.withParsedCallback(EWCD3_sunburst));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-d3-sunburst', EWCD3_sunburst);
 }

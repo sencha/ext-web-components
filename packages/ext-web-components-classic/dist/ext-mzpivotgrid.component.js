@@ -23,6 +23,5 @@ export { EWCMzpivotgrid as default };
 try {
   window.customElements.define('ext-mzpivotgrid', ElementParser.withParsedCallback(EWCMzpivotgrid));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-mzpivotgrid', EWCMzpivotgrid);
 }

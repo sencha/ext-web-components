@@ -7,4 +7,9 @@ export default class EWCChipview extends Ext_dataview_ChipView {
     this.xtype = 'chipview';
   }
 }
-window.customElements.define('ext-chipview', ElementParser.withParsedCallback(EWCChipview));
+try {
+  window.customElements.define('ext-chipview', ElementParser.withParsedCallback(EWCChipview));
+}
+catch(e) {
+  window.customElements.define('ext-chipview', EWCChipview);
+}

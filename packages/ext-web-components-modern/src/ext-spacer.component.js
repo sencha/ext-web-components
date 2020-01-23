@@ -7,4 +7,9 @@ export default class EWCSpacer extends Ext_Spacer {
     this.xtype = 'spacer';
   }
 }
-window.customElements.define('ext-spacer', ElementParser.withParsedCallback(EWCSpacer));
+try {
+  window.customElements.define('ext-spacer', ElementParser.withParsedCallback(EWCSpacer));
+}
+catch(e) {
+  window.customElements.define('ext-spacer', EWCSpacer);
+}

@@ -7,4 +7,9 @@ export default class EWCMap extends Ext_Map {
     this.xtype = 'map';
   }
 }
-window.customElements.define('ext-map', ElementParser.withParsedCallback(EWCMap));
+try {
+  window.customElements.define('ext-map', ElementParser.withParsedCallback(EWCMap));
+}
+catch(e) {
+  window.customElements.define('ext-map', EWCMap);
+}

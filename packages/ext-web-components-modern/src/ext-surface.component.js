@@ -7,4 +7,9 @@ export default class EWCSurface extends Ext_draw_Surface {
     this.xtype = 'surface';
   }
 }
-window.customElements.define('ext-surface', ElementParser.withParsedCallback(EWCSurface));
+try {
+  window.customElements.define('ext-surface', ElementParser.withParsedCallback(EWCSurface));
+}
+catch(e) {
+  window.customElements.define('ext-surface', EWCSurface);
+}

@@ -23,6 +23,5 @@ export { EWCSparklinediscrete as default };
 try {
   window.customElements.define('ext-sparklinediscrete', ElementParser.withParsedCallback(EWCSparklinediscrete));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-sparklinediscrete', EWCSparklinediscrete);
 }

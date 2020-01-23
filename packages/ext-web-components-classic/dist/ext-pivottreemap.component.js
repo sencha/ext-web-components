@@ -23,6 +23,5 @@ export { EWCPivottreemap as default };
 try {
   window.customElements.define('ext-pivottreemap', ElementParser.withParsedCallback(EWCPivottreemap));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-pivottreemap', EWCPivottreemap);
 }

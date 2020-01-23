@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-cartesian', ElementParser.withParsedCallback(EWCCartesian));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-cartesian', EWCCartesian);
 }

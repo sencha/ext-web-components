@@ -23,6 +23,5 @@ export { EWCBordersplitter as default };
 try {
   window.customElements.define('ext-bordersplitter', ElementParser.withParsedCallback(EWCBordersplitter));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-bordersplitter', EWCBordersplitter);
 }

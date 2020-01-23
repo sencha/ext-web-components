@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-dashboard-panel', ElementParser.withParsedCallback(EWCDashboard_panel));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-dashboard-panel', EWCDashboard_panel);
 }

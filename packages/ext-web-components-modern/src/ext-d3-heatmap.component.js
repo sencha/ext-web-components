@@ -7,4 +7,9 @@ export default class EWCD3_heatmap extends Ext_d3_HeatMap {
     this.xtype = 'd3-heatmap';
   }
 }
-window.customElements.define('ext-d3-heatmap', ElementParser.withParsedCallback(EWCD3_heatmap));
+try {
+  window.customElements.define('ext-d3-heatmap', ElementParser.withParsedCallback(EWCD3_heatmap));
+}
+catch(e) {
+  window.customElements.define('ext-d3-heatmap', EWCD3_heatmap);
+}

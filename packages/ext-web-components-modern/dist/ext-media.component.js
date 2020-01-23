@@ -19,4 +19,9 @@ function (_Ext_Media) {
 }(Ext_Media);
 
 export { EWCMedia as default };
-window.customElements.define('ext-media', ElementParser.withParsedCallback(EWCMedia));
+
+try {
+  window.customElements.define('ext-media', ElementParser.withParsedCallback(EWCMedia));
+} catch (e) {
+  window.customElements.define('ext-media', EWCMedia);
+}

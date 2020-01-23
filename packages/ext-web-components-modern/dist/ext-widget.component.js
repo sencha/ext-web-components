@@ -19,4 +19,9 @@ function (_Ext_Gadget) {
 }(Ext_Gadget);
 
 export { EWCWidget as default };
-window.customElements.define('ext-widget', ElementParser.withParsedCallback(EWCWidget));
+
+try {
+  window.customElements.define('ext-widget', ElementParser.withParsedCallback(EWCWidget));
+} catch (e) {
+  window.customElements.define('ext-widget', EWCWidget);
+}

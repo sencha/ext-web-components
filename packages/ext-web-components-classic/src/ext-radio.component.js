@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-radio', ElementParser.withParsedCallback(EWCRadio));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-radio', EWCRadio);
 }

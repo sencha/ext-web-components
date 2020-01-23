@@ -19,4 +19,9 @@ function (_Ext_grid_SummaryRow) {
 }(Ext_grid_SummaryRow);
 
 export { EWCGridsummaryrow as default };
-window.customElements.define('ext-gridsummaryrow', ElementParser.withParsedCallback(EWCGridsummaryrow));
+
+try {
+  window.customElements.define('ext-gridsummaryrow', ElementParser.withParsedCallback(EWCGridsummaryrow));
+} catch (e) {
+  window.customElements.define('ext-gridsummaryrow', EWCGridsummaryrow);
+}

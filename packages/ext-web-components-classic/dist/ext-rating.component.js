@@ -23,6 +23,5 @@ export { EWCRating as default };
 try {
   window.customElements.define('ext-rating', ElementParser.withParsedCallback(EWCRating));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-rating', EWCRating);
 }

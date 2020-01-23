@@ -7,4 +7,9 @@ export default class EWCVideo extends Ext_Video {
     this.xtype = 'video';
   }
 }
-window.customElements.define('ext-video', ElementParser.withParsedCallback(EWCVideo));
+try {
+  window.customElements.define('ext-video', ElementParser.withParsedCallback(EWCVideo));
+}
+catch(e) {
+  window.customElements.define('ext-video', EWCVideo);
+}

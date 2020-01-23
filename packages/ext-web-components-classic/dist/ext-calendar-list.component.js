@@ -23,6 +23,5 @@ export { EWCCalendar_list as default };
 try {
   window.customElements.define('ext-calendar-list', ElementParser.withParsedCallback(EWCCalendar_list));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-calendar-list', EWCCalendar_list);
 }

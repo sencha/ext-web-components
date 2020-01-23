@@ -7,4 +7,9 @@ export default class EWCAudio extends Ext_Audio {
     this.xtype = 'audio';
   }
 }
-window.customElements.define('ext-audio', ElementParser.withParsedCallback(EWCAudio));
+try {
+  window.customElements.define('ext-audio', ElementParser.withParsedCallback(EWCAudio));
+}
+catch(e) {
+  window.customElements.define('ext-audio', EWCAudio);
+}

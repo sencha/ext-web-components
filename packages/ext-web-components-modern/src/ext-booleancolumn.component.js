@@ -7,4 +7,9 @@ export default class EWCBooleancolumn extends Ext_grid_column_Boolean {
     this.xtype = 'booleancolumn';
   }
 }
-window.customElements.define('ext-booleancolumn', ElementParser.withParsedCallback(EWCBooleancolumn));
+try {
+  window.customElements.define('ext-booleancolumn', ElementParser.withParsedCallback(EWCBooleancolumn));
+}
+catch(e) {
+  window.customElements.define('ext-booleancolumn', EWCBooleancolumn);
+}

@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-trayclock', ElementParser.withParsedCallback(EWCTrayclock));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-trayclock', EWCTrayclock);
 }

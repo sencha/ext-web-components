@@ -23,6 +23,5 @@ export { EWCProgress as default };
 try {
   window.customElements.define('ext-progress', ElementParser.withParsedCallback(EWCProgress));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-progress', EWCProgress);
 }

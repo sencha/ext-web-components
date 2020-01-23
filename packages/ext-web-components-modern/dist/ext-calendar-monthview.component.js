@@ -19,4 +19,9 @@ function (_Ext_calendar_view_Mo) {
 }(Ext_calendar_view_Month);
 
 export { EWCCalendar_monthview as default };
-window.customElements.define('ext-calendar-monthview', ElementParser.withParsedCallback(EWCCalendar_monthview));
+
+try {
+  window.customElements.define('ext-calendar-monthview', ElementParser.withParsedCallback(EWCCalendar_monthview));
+} catch (e) {
+  window.customElements.define('ext-calendar-monthview', EWCCalendar_monthview);
+}

@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-spacefilling', ElementParser.withParsedCallback(EWCSpacefilling));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-spacefilling', EWCSpacefilling);
 }

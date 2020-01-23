@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-sparklinebar', ElementParser.withParsedCallback(EWCSparklinebar));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-sparklinebar', EWCSparklinebar);
 }

@@ -7,4 +7,9 @@ export default class EWCGridcolumnsmenu extends Ext_grid_menu_Columns {
     this.xtype = 'gridcolumnsmenu';
   }
 }
-window.customElements.define('ext-gridcolumnsmenu', ElementParser.withParsedCallback(EWCGridcolumnsmenu));
+try {
+  window.customElements.define('ext-gridcolumnsmenu', ElementParser.withParsedCallback(EWCGridcolumnsmenu));
+}
+catch(e) {
+  window.customElements.define('ext-gridcolumnsmenu', EWCGridcolumnsmenu);
+}

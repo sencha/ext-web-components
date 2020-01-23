@@ -23,6 +23,5 @@ export { EWCEditor as default };
 try {
   window.customElements.define('ext-editor', ElementParser.withParsedCallback(EWCEditor));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-editor', EWCEditor);
 }

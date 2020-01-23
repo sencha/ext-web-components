@@ -19,4 +19,9 @@ function (_Ext_slider_Toggle) {
 }(Ext_slider_Toggle);
 
 export { EWCToggleslider as default };
-window.customElements.define('ext-toggleslider', ElementParser.withParsedCallback(EWCToggleslider));
+
+try {
+  window.customElements.define('ext-toggleslider', ElementParser.withParsedCallback(EWCToggleslider));
+} catch (e) {
+  window.customElements.define('ext-toggleslider', EWCToggleslider);
+}

@@ -19,4 +19,9 @@ function (_Ext_grid_cell_Boolea) {
 }(Ext_grid_cell_Boolean);
 
 export { EWCBooleancell as default };
-window.customElements.define('ext-booleancell', ElementParser.withParsedCallback(EWCBooleancell));
+
+try {
+  window.customElements.define('ext-booleancell', ElementParser.withParsedCallback(EWCBooleancell));
+} catch (e) {
+  window.customElements.define('ext-booleancell', EWCBooleancell);
+}

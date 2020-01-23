@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-tagfield', ElementParser.withParsedCallback(EWCTagfield));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-tagfield', EWCTagfield);
 }

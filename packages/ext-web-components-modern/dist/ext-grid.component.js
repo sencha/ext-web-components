@@ -19,5 +19,11 @@ function (_Ext_grid_Grid) {
 }(Ext_grid_Grid);
 
 export { EWCGrid as default };
-window.customElements.define('ext-grid', ElementParser.withParsedCallback(EWCGrid));
+
+try {
+  window.customElements.define('ext-grid', ElementParser.withParsedCallback(EWCGrid));
+} catch (e) {
+  window.customElements.define('ext-grid', EWCGrid);
+}
+
 import './ElementCell';

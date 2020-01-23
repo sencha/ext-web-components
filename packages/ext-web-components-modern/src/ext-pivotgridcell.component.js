@@ -7,4 +7,9 @@ export default class EWCPivotgridcell extends Ext_pivot_cell_Cell {
     this.xtype = 'pivotgridcell';
   }
 }
-window.customElements.define('ext-pivotgridcell', ElementParser.withParsedCallback(EWCPivotgridcell));
+try {
+  window.customElements.define('ext-pivotgridcell', ElementParser.withParsedCallback(EWCPivotgridcell));
+}
+catch(e) {
+  window.customElements.define('ext-pivotgridcell', EWCPivotgridcell);
+}

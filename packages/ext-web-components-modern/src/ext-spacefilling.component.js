@@ -7,4 +7,9 @@ export default class EWCSpacefilling extends Ext_chart_SpaceFillingChart {
     this.xtype = 'spacefilling';
   }
 }
-window.customElements.define('ext-spacefilling', ElementParser.withParsedCallback(EWCSpacefilling));
+try {
+  window.customElements.define('ext-spacefilling', ElementParser.withParsedCallback(EWCSpacefilling));
+}
+catch(e) {
+  window.customElements.define('ext-spacefilling', EWCSpacefilling);
+}

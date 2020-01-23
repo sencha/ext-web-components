@@ -19,4 +19,9 @@ function (_Ext_Image) {
 }(Ext_Image);
 
 export { EWCImg as default };
-window.customElements.define('ext-img', ElementParser.withParsedCallback(EWCImg));
+
+try {
+  window.customElements.define('ext-img', ElementParser.withParsedCallback(EWCImg));
+} catch (e) {
+  window.customElements.define('ext-img', EWCImg);
+}

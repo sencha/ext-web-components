@@ -23,6 +23,5 @@ export { EWCGridview as default };
 try {
   window.customElements.define('ext-gridview', ElementParser.withParsedCallback(EWCGridview));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-gridview', EWCGridview);
 }

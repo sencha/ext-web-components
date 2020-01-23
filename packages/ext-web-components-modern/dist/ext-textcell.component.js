@@ -19,4 +19,9 @@ function (_Ext_grid_cell_Text) {
 }(Ext_grid_cell_Text);
 
 export { EWCTextcell as default };
-window.customElements.define('ext-textcell', ElementParser.withParsedCallback(EWCTextcell));
+
+try {
+  window.customElements.define('ext-textcell', ElementParser.withParsedCallback(EWCTextcell));
+} catch (e) {
+  window.customElements.define('ext-textcell', EWCTextcell);
+}

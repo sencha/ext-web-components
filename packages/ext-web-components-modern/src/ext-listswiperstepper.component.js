@@ -7,4 +7,9 @@ export default class EWCListswiperstepper extends Ext_dataview_listswiper_Steppe
     this.xtype = 'listswiperstepper';
   }
 }
-window.customElements.define('ext-listswiperstepper', ElementParser.withParsedCallback(EWCListswiperstepper));
+try {
+  window.customElements.define('ext-listswiperstepper', ElementParser.withParsedCallback(EWCListswiperstepper));
+}
+catch(e) {
+  window.customElements.define('ext-listswiperstepper', EWCListswiperstepper);
+}

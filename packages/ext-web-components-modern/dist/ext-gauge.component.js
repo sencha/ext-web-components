@@ -19,4 +19,9 @@ function (_Ext_ux_Gauge) {
 }(Ext_ux_Gauge);
 
 export { EWCGauge as default };
-window.customElements.define('ext-gauge', ElementParser.withParsedCallback(EWCGauge));
+
+try {
+  window.customElements.define('ext-gauge', ElementParser.withParsedCallback(EWCGauge));
+} catch (e) {
+  window.customElements.define('ext-gauge', EWCGauge);
+}

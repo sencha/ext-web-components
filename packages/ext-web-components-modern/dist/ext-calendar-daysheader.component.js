@@ -19,4 +19,9 @@ function (_Ext_calendar_header_) {
 }(Ext_calendar_header_Days);
 
 export { EWCCalendar_daysheader as default };
-window.customElements.define('ext-calendar-daysheader', ElementParser.withParsedCallback(EWCCalendar_daysheader));
+
+try {
+  window.customElements.define('ext-calendar-daysheader', ElementParser.withParsedCallback(EWCCalendar_daysheader));
+} catch (e) {
+  window.customElements.define('ext-calendar-daysheader', EWCCalendar_daysheader);
+}

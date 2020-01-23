@@ -19,4 +19,9 @@ function (_Ext_picker_SelectPic) {
 }(Ext_picker_SelectPicker);
 
 export { EWCSelectpicker as default };
-window.customElements.define('ext-selectpicker', ElementParser.withParsedCallback(EWCSelectpicker));
+
+try {
+  window.customElements.define('ext-selectpicker', ElementParser.withParsedCallback(EWCSelectpicker));
+} catch (e) {
+  window.customElements.define('ext-selectpicker', EWCSelectpicker);
+}

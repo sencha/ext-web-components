@@ -19,4 +19,9 @@ function (_Ext_form_Url) {
 }(Ext_form_Url);
 
 export { EWCUrlfield as default };
-window.customElements.define('ext-urlfield', ElementParser.withParsedCallback(EWCUrlfield));
+
+try {
+  window.customElements.define('ext-urlfield', ElementParser.withParsedCallback(EWCUrlfield));
+} catch (e) {
+  window.customElements.define('ext-urlfield', EWCUrlfield);
+}

@@ -7,4 +7,9 @@ export default class EWCLabel extends Ext_Label {
     this.xtype = 'label';
   }
 }
-window.customElements.define('ext-label', ElementParser.withParsedCallback(EWCLabel));
+try {
+  window.customElements.define('ext-label', ElementParser.withParsedCallback(EWCLabel));
+}
+catch(e) {
+  window.customElements.define('ext-label', EWCLabel);
+}

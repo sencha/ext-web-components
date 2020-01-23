@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-tip', ElementParser.withParsedCallback(EWCTip));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-tip', EWCTip);
 }

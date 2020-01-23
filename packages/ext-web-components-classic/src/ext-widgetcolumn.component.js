@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-widgetcolumn', ElementParser.withParsedCallback(EWCWidgetcolumn));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-widgetcolumn', EWCWidgetcolumn);
 }

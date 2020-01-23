@@ -7,4 +7,9 @@ export default class EWCDatepanel extends Ext_panel_Date {
     this.xtype = 'datepanel';
   }
 }
-window.customElements.define('ext-datepanel', ElementParser.withParsedCallback(EWCDatepanel));
+try {
+  window.customElements.define('ext-datepanel', ElementParser.withParsedCallback(EWCDatepanel));
+}
+catch(e) {
+  window.customElements.define('ext-datepanel', EWCDatepanel);
+}

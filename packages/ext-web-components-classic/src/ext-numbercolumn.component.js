@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-numbercolumn', ElementParser.withParsedCallback(EWCNumbercolumn));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-numbercolumn', EWCNumbercolumn);
 }

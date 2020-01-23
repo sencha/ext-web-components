@@ -19,4 +19,9 @@ function (_Ext_grid_rowedit_Gap) {
 }(Ext_grid_rowedit_Gap);
 
 export { EWCRoweditorgap as default };
-window.customElements.define('ext-roweditorgap', ElementParser.withParsedCallback(EWCRoweditorgap));
+
+try {
+  window.customElements.define('ext-roweditorgap', ElementParser.withParsedCallback(EWCRoweditorgap));
+} catch (e) {
+  window.customElements.define('ext-roweditorgap', EWCRoweditorgap);
+}

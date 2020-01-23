@@ -23,6 +23,5 @@ export { EWCButton as default };
 try {
   window.customElements.define('ext-button', ElementParser.withParsedCallback(EWCButton));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-button', EWCButton);
 }

@@ -7,4 +7,9 @@ export default class EWCCalendar_weeks extends Ext_calendar_panel_Weeks {
     this.xtype = 'calendar-weeks';
   }
 }
-window.customElements.define('ext-calendar-weeks', ElementParser.withParsedCallback(EWCCalendar_weeks));
+try {
+  window.customElements.define('ext-calendar-weeks', ElementParser.withParsedCallback(EWCCalendar_weeks));
+}
+catch(e) {
+  window.customElements.define('ext-calendar-weeks', EWCCalendar_weeks);
+}

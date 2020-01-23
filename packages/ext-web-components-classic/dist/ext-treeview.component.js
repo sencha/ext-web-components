@@ -23,6 +23,5 @@ export { EWCTreeview as default };
 try {
   window.customElements.define('ext-treeview', ElementParser.withParsedCallback(EWCTreeview));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-treeview', EWCTreeview);
 }

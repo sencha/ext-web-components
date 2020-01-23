@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-axis', ElementParser.withParsedCallback(EWCAxis));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-axis', EWCAxis);
 }

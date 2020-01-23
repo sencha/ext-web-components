@@ -19,4 +19,9 @@ function (_Ext_pivot_Grid) {
 }(Ext_pivot_Grid);
 
 export { EWCPivotgrid as default };
-window.customElements.define('ext-pivotgrid', ElementParser.withParsedCallback(EWCPivotgrid));
+
+try {
+  window.customElements.define('ext-pivotgrid', ElementParser.withParsedCallback(EWCPivotgrid));
+} catch (e) {
+  window.customElements.define('ext-pivotgrid', EWCPivotgrid);
+}

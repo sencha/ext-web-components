@@ -7,4 +7,9 @@ export default class EWCPullrefreshspinner extends Ext_dataview_pullrefresh_Spin
     this.xtype = 'pullrefreshspinner';
   }
 }
-window.customElements.define('ext-pullrefreshspinner', ElementParser.withParsedCallback(EWCPullrefreshspinner));
+try {
+  window.customElements.define('ext-pullrefreshspinner', ElementParser.withParsedCallback(EWCPullrefreshspinner));
+}
+catch(e) {
+  window.customElements.define('ext-pullrefreshspinner', EWCPullrefreshspinner);
+}

@@ -7,4 +7,9 @@ export default class EWCTreecell extends Ext_grid_cell_Tree {
     this.xtype = 'treecell';
   }
 }
-window.customElements.define('ext-treecell', ElementParser.withParsedCallback(EWCTreecell));
+try {
+  window.customElements.define('ext-treecell', ElementParser.withParsedCallback(EWCTreecell));
+}
+catch(e) {
+  window.customElements.define('ext-treecell', EWCTreecell);
+}

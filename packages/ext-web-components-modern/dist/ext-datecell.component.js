@@ -19,4 +19,9 @@ function (_Ext_grid_cell_Date) {
 }(Ext_grid_cell_Date);
 
 export { EWCDatecell as default };
-window.customElements.define('ext-datecell', ElementParser.withParsedCallback(EWCDatecell));
+
+try {
+  window.customElements.define('ext-datecell', ElementParser.withParsedCallback(EWCDatecell));
+} catch (e) {
+  window.customElements.define('ext-datecell', EWCDatecell);
+}

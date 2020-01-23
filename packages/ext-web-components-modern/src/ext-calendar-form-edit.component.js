@@ -7,4 +7,9 @@ export default class EWCCalendar_form_edit extends Ext_calendar_form_Edit {
     this.xtype = 'calendar-form-edit';
   }
 }
-window.customElements.define('ext-calendar-form-edit', ElementParser.withParsedCallback(EWCCalendar_form_edit));
+try {
+  window.customElements.define('ext-calendar-form-edit', ElementParser.withParsedCallback(EWCCalendar_form_edit));
+}
+catch(e) {
+  window.customElements.define('ext-calendar-form-edit', EWCCalendar_form_edit);
+}

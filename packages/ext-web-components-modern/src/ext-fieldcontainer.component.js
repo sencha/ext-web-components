@@ -7,4 +7,9 @@ export default class EWCFieldcontainer extends Ext_field_Container {
     this.xtype = 'fieldcontainer';
   }
 }
-window.customElements.define('ext-fieldcontainer', ElementParser.withParsedCallback(EWCFieldcontainer));
+try {
+  window.customElements.define('ext-fieldcontainer', ElementParser.withParsedCallback(EWCFieldcontainer));
+}
+catch(e) {
+  window.customElements.define('ext-fieldcontainer', EWCFieldcontainer);
+}

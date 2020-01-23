@@ -23,6 +23,5 @@ export { EWCSlider as default };
 try {
   window.customElements.define('ext-slider', ElementParser.withParsedCallback(EWCSlider));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-slider', EWCSlider);
 }

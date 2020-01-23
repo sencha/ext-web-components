@@ -19,4 +19,9 @@ function (_Ext_Map) {
 }(Ext_Map);
 
 export { EWCMap as default };
-window.customElements.define('ext-map', ElementParser.withParsedCallback(EWCMap));
+
+try {
+  window.customElements.define('ext-map', ElementParser.withParsedCallback(EWCMap));
+} catch (e) {
+  window.customElements.define('ext-map', EWCMap);
+}

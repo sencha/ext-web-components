@@ -7,4 +7,9 @@ export default class EWCEmptytext extends Ext_dataview_EmptyText {
     this.xtype = 'emptytext';
   }
 }
-window.customElements.define('ext-emptytext', ElementParser.withParsedCallback(EWCEmptytext));
+try {
+  window.customElements.define('ext-emptytext', ElementParser.withParsedCallback(EWCEmptytext));
+}
+catch(e) {
+  window.customElements.define('ext-emptytext', EWCEmptytext);
+}

@@ -19,4 +19,9 @@ function (_Ext_field_trigger_Re) {
 }(Ext_field_trigger_Reveal);
 
 export { EWCRevealtrigger as default };
-window.customElements.define('ext-revealtrigger', ElementParser.withParsedCallback(EWCRevealtrigger));
+
+try {
+  window.customElements.define('ext-revealtrigger', ElementParser.withParsedCallback(EWCRevealtrigger));
+} catch (e) {
+  window.customElements.define('ext-revealtrigger', EWCRevealtrigger);
+}

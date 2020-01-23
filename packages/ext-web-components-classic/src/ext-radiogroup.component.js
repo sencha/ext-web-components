@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-radiogroup', ElementParser.withParsedCallback(EWCRadiogroup));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-radiogroup', EWCRadiogroup);
 }

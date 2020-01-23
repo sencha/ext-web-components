@@ -7,4 +7,9 @@ export default class EWCDatecell extends Ext_grid_cell_Date {
     this.xtype = 'datecell';
   }
 }
-window.customElements.define('ext-datecell', ElementParser.withParsedCallback(EWCDatecell));
+try {
+  window.customElements.define('ext-datecell', ElementParser.withParsedCallback(EWCDatecell));
+}
+catch(e) {
+  window.customElements.define('ext-datecell', EWCDatecell);
+}

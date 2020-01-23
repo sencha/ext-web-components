@@ -7,4 +7,9 @@ export default class EWCPivotconfigfield extends Ext_pivot_plugin_configurator_C
     this.xtype = 'pivotconfigfield';
   }
 }
-window.customElements.define('ext-pivotconfigfield', ElementParser.withParsedCallback(EWCPivotconfigfield));
+try {
+  window.customElements.define('ext-pivotconfigfield', ElementParser.withParsedCallback(EWCPivotconfigfield));
+}
+catch(e) {
+  window.customElements.define('ext-pivotconfigfield', EWCPivotconfigfield);
+}

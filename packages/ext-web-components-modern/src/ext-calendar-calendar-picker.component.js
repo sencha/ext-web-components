@@ -7,4 +7,9 @@ export default class EWCCalendar_calendar_picker extends Ext_calendar_form_Calen
     this.xtype = 'calendar-calendar-picker';
   }
 }
-window.customElements.define('ext-calendar-calendar-picker', ElementParser.withParsedCallback(EWCCalendar_calendar_picker));
+try {
+  window.customElements.define('ext-calendar-calendar-picker', ElementParser.withParsedCallback(EWCCalendar_calendar_picker));
+}
+catch(e) {
+  window.customElements.define('ext-calendar-calendar-picker', EWCCalendar_calendar_picker);
+}

@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-colorpickerslidersaturation', ElementParser.withParsedCallback(EWCColorpickerslidersaturation));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-colorpickerslidersaturation', EWCColorpickerslidersaturation);
 }

@@ -23,6 +23,5 @@ export { EWCFlash as default };
 try {
   window.customElements.define('ext-flash', ElementParser.withParsedCallback(EWCFlash));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-flash', EWCFlash);
 }

@@ -19,4 +19,9 @@ function (_Ext_ux_colorpick_But) {
 }(Ext_ux_colorpick_Button);
 
 export { EWCColorbutton as default };
-window.customElements.define('ext-colorbutton', ElementParser.withParsedCallback(EWCColorbutton));
+
+try {
+  window.customElements.define('ext-colorbutton', ElementParser.withParsedCallback(EWCColorbutton));
+} catch (e) {
+  window.customElements.define('ext-colorbutton', EWCColorbutton);
+}

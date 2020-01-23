@@ -19,4 +19,9 @@ function (_Ext_sparkline_TriSta) {
 }(Ext_sparkline_TriState);
 
 export { EWCSparklinetristate as default };
-window.customElements.define('ext-sparklinetristate', ElementParser.withParsedCallback(EWCSparklinetristate));
+
+try {
+  window.customElements.define('ext-sparklinetristate', ElementParser.withParsedCallback(EWCSparklinetristate));
+} catch (e) {
+  window.customElements.define('ext-sparklinetristate', EWCSparklinetristate);
+}

@@ -23,6 +23,5 @@ export { EWCSpinnerfield as default };
 try {
   window.customElements.define('ext-spinnerfield', ElementParser.withParsedCallback(EWCSpinnerfield));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-spinnerfield', EWCSpinnerfield);
 }

@@ -23,6 +23,5 @@ export { EWCTreepanel as default };
 try {
   window.customElements.define('ext-treepanel', ElementParser.withParsedCallback(EWCTreepanel));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-treepanel', EWCTreepanel);
 }

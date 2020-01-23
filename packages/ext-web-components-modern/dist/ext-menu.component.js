@@ -19,4 +19,9 @@ function (_Ext_menu_Menu) {
 }(Ext_menu_Menu);
 
 export { EWCMenu as default };
-window.customElements.define('ext-menu', ElementParser.withParsedCallback(EWCMenu));
+
+try {
+  window.customElements.define('ext-menu', ElementParser.withParsedCallback(EWCMenu));
+} catch (e) {
+  window.customElements.define('ext-menu', EWCMenu);
+}

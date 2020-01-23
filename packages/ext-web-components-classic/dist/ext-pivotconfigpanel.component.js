@@ -23,6 +23,5 @@ export { EWCPivotconfigpanel as default };
 try {
   window.customElements.define('ext-pivotconfigpanel', ElementParser.withParsedCallback(EWCPivotconfigpanel));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-pivotconfigpanel', EWCPivotconfigpanel);
 }

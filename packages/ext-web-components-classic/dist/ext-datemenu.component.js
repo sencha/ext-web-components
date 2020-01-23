@@ -23,6 +23,5 @@ export { EWCDatemenu as default };
 try {
   window.customElements.define('ext-datemenu', ElementParser.withParsedCallback(EWCDatemenu));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-datemenu', EWCDatemenu);
 }

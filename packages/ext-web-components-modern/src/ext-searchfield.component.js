@@ -7,4 +7,9 @@ export default class EWCSearchfield extends Ext_form_Search {
     this.xtype = 'searchfield';
   }
 }
-window.customElements.define('ext-searchfield', ElementParser.withParsedCallback(EWCSearchfield));
+try {
+  window.customElements.define('ext-searchfield', ElementParser.withParsedCallback(EWCSearchfield));
+}
+catch(e) {
+  window.customElements.define('ext-searchfield', EWCSearchfield);
+}

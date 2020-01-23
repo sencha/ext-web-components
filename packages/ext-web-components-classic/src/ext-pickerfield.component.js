@@ -11,6 +11,5 @@ try {
   window.customElements.define('ext-pickerfield', ElementParser.withParsedCallback(EWCPickerfield));
 }
 catch(e) {
-  console.log(e)
   window.customElements.define('ext-pickerfield', EWCPickerfield);
 }

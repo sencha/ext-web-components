@@ -7,4 +7,9 @@ export default class EWCPivotgridrow extends Ext_pivot_Row {
     this.xtype = 'pivotgridrow';
   }
 }
-window.customElements.define('ext-pivotgridrow', ElementParser.withParsedCallback(EWCPivotgridrow));
+try {
+  window.customElements.define('ext-pivotgridrow', ElementParser.withParsedCallback(EWCPivotgridrow));
+}
+catch(e) {
+  window.customElements.define('ext-pivotgridrow', EWCPivotgridrow);
+}

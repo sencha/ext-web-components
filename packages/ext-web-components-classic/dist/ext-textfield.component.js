@@ -23,6 +23,5 @@ export { EWCTextfield as default };
 try {
   window.customElements.define('ext-textfield', ElementParser.withParsedCallback(EWCTextfield));
 } catch (e) {
-  console.log(e);
   window.customElements.define('ext-textfield', EWCTextfield);
 }
