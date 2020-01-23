@@ -19,4 +19,10 @@ function (_Ext_grid_ActionColum) {
 }(Ext_grid_ActionColumn);
 
 export { EWCActioncolumn as default };
-window.customElements.define('ext-actioncolumn', ElementParser.withParsedCallback(EWCActioncolumn));
+
+try {
+  window.customElements.define('ext-actioncolumn', ElementParser.withParsedCallback(EWCActioncolumn));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-actioncolumn', EWCActioncolumn);
+}

@@ -19,4 +19,10 @@ function (_Ext_form_Date) {
 }(Ext_form_Date);
 
 export { EWCDatefield as default };
-window.customElements.define('ext-datefield', ElementParser.withParsedCallback(EWCDatefield));
+
+try {
+  window.customElements.define('ext-datefield', ElementParser.withParsedCallback(EWCDatefield));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-datefield', EWCDatefield);
+}

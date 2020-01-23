@@ -7,4 +7,10 @@ export default class EWCDesktop extends Ext_ux_desktop_Desktop {
     this.xtype = 'desktop';
   }
 }
-window.customElements.define('ext-desktop', ElementParser.withParsedCallback(EWCDesktop));
+try {
+  window.customElements.define('ext-desktop', ElementParser.withParsedCallback(EWCDesktop));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-desktop', EWCDesktop);
+}

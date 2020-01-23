@@ -7,4 +7,10 @@ export default class EWCTablepanel extends Ext_panel_Table {
     this.xtype = 'tablepanel';
   }
 }
-window.customElements.define('ext-tablepanel', ElementParser.withParsedCallback(EWCTablepanel));
+try {
+  window.customElements.define('ext-tablepanel', ElementParser.withParsedCallback(EWCTablepanel));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-tablepanel', EWCTablepanel);
+}

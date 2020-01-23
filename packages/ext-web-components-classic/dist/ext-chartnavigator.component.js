@@ -19,4 +19,10 @@ function (_Ext_chart_navigator_) {
 }(Ext_chart_navigator_Container);
 
 export { EWCChartnavigator as default };
-window.customElements.define('ext-chartnavigator', ElementParser.withParsedCallback(EWCChartnavigator));
+
+try {
+  window.customElements.define('ext-chartnavigator', ElementParser.withParsedCallback(EWCChartnavigator));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-chartnavigator', EWCChartnavigator);
+}

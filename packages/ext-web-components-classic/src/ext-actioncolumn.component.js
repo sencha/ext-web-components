@@ -7,4 +7,10 @@ export default class EWCActioncolumn extends Ext_grid_ActionColumn {
     this.xtype = 'actioncolumn';
   }
 }
-window.customElements.define('ext-actioncolumn', ElementParser.withParsedCallback(EWCActioncolumn));
+try {
+  window.customElements.define('ext-actioncolumn', ElementParser.withParsedCallback(EWCActioncolumn));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-actioncolumn', EWCActioncolumn);
+}

@@ -7,4 +7,10 @@ export default class EWCSparklinebar extends Ext_sparkline_Bar {
     this.xtype = 'sparklinebar';
   }
 }
-window.customElements.define('ext-sparklinebar', ElementParser.withParsedCallback(EWCSparklinebar));
+try {
+  window.customElements.define('ext-sparklinebar', ElementParser.withParsedCallback(EWCSparklinebar));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-sparklinebar', EWCSparklinebar);
+}

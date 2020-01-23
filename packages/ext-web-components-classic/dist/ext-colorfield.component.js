@@ -19,4 +19,10 @@ function (_Ext_ux_colorpick_Fie) {
 }(Ext_ux_colorpick_Field);
 
 export { EWCColorfield as default };
-window.customElements.define('ext-colorfield', ElementParser.withParsedCallback(EWCColorfield));
+
+try {
+  window.customElements.define('ext-colorfield', ElementParser.withParsedCallback(EWCColorfield));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-colorfield', EWCColorfield);
+}

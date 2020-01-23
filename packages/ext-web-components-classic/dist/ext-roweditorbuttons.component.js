@@ -19,4 +19,10 @@ function (_Ext_grid_RowEditorBu) {
 }(Ext_grid_RowEditorButtons);
 
 export { EWCRoweditorbuttons as default };
-window.customElements.define('ext-roweditorbuttons', ElementParser.withParsedCallback(EWCRoweditorbuttons));
+
+try {
+  window.customElements.define('ext-roweditorbuttons', ElementParser.withParsedCallback(EWCRoweditorbuttons));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-roweditorbuttons', EWCRoweditorbuttons);
+}

@@ -7,4 +7,10 @@ export default class EWCMenu extends Ext_menu_Menu {
     this.xtype = 'menu';
   }
 }
-window.customElements.define('ext-menu', ElementParser.withParsedCallback(EWCMenu));
+try {
+  window.customElements.define('ext-menu', ElementParser.withParsedCallback(EWCMenu));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-menu', EWCMenu);
+}

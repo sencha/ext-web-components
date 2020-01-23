@@ -7,4 +7,10 @@ export default class EWCFlash extends Ext_FlashComponent {
     this.xtype = 'flash';
   }
 }
-window.customElements.define('ext-flash', ElementParser.withParsedCallback(EWCFlash));
+try {
+  window.customElements.define('ext-flash', ElementParser.withParsedCallback(EWCFlash));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-flash', EWCFlash);
+}

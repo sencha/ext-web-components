@@ -19,4 +19,10 @@ function (_Ext_resizer_BorderSp) {
 }(Ext_resizer_BorderSplitter);
 
 export { EWCBordersplitter as default };
-window.customElements.define('ext-bordersplitter', ElementParser.withParsedCallback(EWCBordersplitter));
+
+try {
+  window.customElements.define('ext-bordersplitter', ElementParser.withParsedCallback(EWCBordersplitter));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-bordersplitter', EWCBordersplitter);
+}

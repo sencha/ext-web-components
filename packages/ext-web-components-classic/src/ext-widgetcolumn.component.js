@@ -7,4 +7,10 @@ export default class EWCWidgetcolumn extends Ext_grid_column_Widget {
     this.xtype = 'widgetcolumn';
   }
 }
-window.customElements.define('ext-widgetcolumn', ElementParser.withParsedCallback(EWCWidgetcolumn));
+try {
+  window.customElements.define('ext-widgetcolumn', ElementParser.withParsedCallback(EWCWidgetcolumn));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-widgetcolumn', EWCWidgetcolumn);
+}

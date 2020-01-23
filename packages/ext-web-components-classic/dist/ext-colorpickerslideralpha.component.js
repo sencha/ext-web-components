@@ -19,4 +19,10 @@ function (_Ext_ux_colorpick_Sli) {
 }(Ext_ux_colorpick_SliderAlpha);
 
 export { EWCColorpickerslideralpha as default };
-window.customElements.define('ext-colorpickerslideralpha', ElementParser.withParsedCallback(EWCColorpickerslideralpha));
+
+try {
+  window.customElements.define('ext-colorpickerslideralpha', ElementParser.withParsedCallback(EWCColorpickerslideralpha));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-colorpickerslideralpha', EWCColorpickerslideralpha);
+}

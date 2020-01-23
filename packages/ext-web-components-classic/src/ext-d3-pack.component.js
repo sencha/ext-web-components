@@ -7,4 +7,10 @@ export default class EWCD3_pack extends Ext_d3_hierarchy_Pack {
     this.xtype = 'd3-pack';
   }
 }
-window.customElements.define('ext-d3-pack', ElementParser.withParsedCallback(EWCD3_pack));
+try {
+  window.customElements.define('ext-d3-pack', ElementParser.withParsedCallback(EWCD3_pack));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-d3-pack', EWCD3_pack);
+}

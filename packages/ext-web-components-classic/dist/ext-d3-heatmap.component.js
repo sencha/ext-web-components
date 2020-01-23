@@ -19,4 +19,10 @@ function (_Ext_d3_HeatMap) {
 }(Ext_d3_HeatMap);
 
 export { EWCD3_heatmap as default };
-window.customElements.define('ext-d3-heatmap', ElementParser.withParsedCallback(EWCD3_heatmap));
+
+try {
+  window.customElements.define('ext-d3-heatmap', ElementParser.withParsedCallback(EWCD3_heatmap));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-d3-heatmap', EWCD3_heatmap);
+}

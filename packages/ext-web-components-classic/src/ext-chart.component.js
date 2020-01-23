@@ -7,4 +7,10 @@ export default class EWCChart extends Ext_chart_Chart {
     this.xtype = 'chart';
   }
 }
-window.customElements.define('ext-chart', ElementParser.withParsedCallback(EWCChart));
+try {
+  window.customElements.define('ext-chart', ElementParser.withParsedCallback(EWCChart));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-chart', EWCChart);
+}

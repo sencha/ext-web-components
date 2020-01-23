@@ -7,4 +7,10 @@ export default class EWCAxis extends Ext_chart_axis_Axis {
     this.xtype = 'axis';
   }
 }
-window.customElements.define('ext-axis', ElementParser.withParsedCallback(EWCAxis));
+try {
+  window.customElements.define('ext-axis', ElementParser.withParsedCallback(EWCAxis));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-axis', EWCAxis);
+}

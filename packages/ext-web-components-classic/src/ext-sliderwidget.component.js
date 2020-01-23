@@ -7,4 +7,10 @@ export default class EWCSliderwidget extends Ext_slider_Widget {
     this.xtype = 'sliderwidget';
   }
 }
-window.customElements.define('ext-sliderwidget', ElementParser.withParsedCallback(EWCSliderwidget));
+try {
+  window.customElements.define('ext-sliderwidget', ElementParser.withParsedCallback(EWCSliderwidget));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-sliderwidget', EWCSliderwidget);
+}

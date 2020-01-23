@@ -19,4 +19,10 @@ function (_Ext_toolbar_TextItem) {
 }(Ext_toolbar_TextItem);
 
 export { EWCTbtext as default };
-window.customElements.define('ext-tbtext', ElementParser.withParsedCallback(EWCTbtext));
+
+try {
+  window.customElements.define('ext-tbtext', ElementParser.withParsedCallback(EWCTbtext));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-tbtext', EWCTbtext);
+}

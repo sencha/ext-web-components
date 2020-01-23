@@ -19,4 +19,10 @@ function (_Ext_form_File) {
 }(Ext_form_File);
 
 export { EWCFileuploadfield as default };
-window.customElements.define('ext-fileuploadfield', ElementParser.withParsedCallback(EWCFileuploadfield));
+
+try {
+  window.customElements.define('ext-fileuploadfield', ElementParser.withParsedCallback(EWCFileuploadfield));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-fileuploadfield', EWCFileuploadfield);
+}

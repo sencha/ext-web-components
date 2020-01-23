@@ -19,4 +19,10 @@ function (_Ext_panel_Title) {
 }(Ext_panel_Title);
 
 export { EWCTitle as default };
-window.customElements.define('ext-title', ElementParser.withParsedCallback(EWCTitle));
+
+try {
+  window.customElements.define('ext-title', ElementParser.withParsedCallback(EWCTitle));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-title', EWCTitle);
+}

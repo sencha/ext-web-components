@@ -7,4 +7,10 @@ export default class EWCRating extends Ext_ux_rating_Picker {
     this.xtype = 'rating';
   }
 }
-window.customElements.define('ext-rating', ElementParser.withParsedCallback(EWCRating));
+try {
+  window.customElements.define('ext-rating', ElementParser.withParsedCallback(EWCRating));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-rating', EWCRating);
+}

@@ -19,4 +19,10 @@ function (_Ext_ux_GMapPanel) {
 }(Ext_ux_GMapPanel);
 
 export { EWCGmappanel as default };
-window.customElements.define('ext-gmappanel', ElementParser.withParsedCallback(EWCGmappanel));
+
+try {
+  window.customElements.define('ext-gmappanel', ElementParser.withParsedCallback(EWCGmappanel));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-gmappanel', EWCGmappanel);
+}

@@ -19,4 +19,10 @@ function (_Ext_view_MultiSelect) {
 }(Ext_view_MultiSelectorSearch);
 
 export { EWCMultiselector_search as default };
-window.customElements.define('ext-multiselector-search', ElementParser.withParsedCallback(EWCMultiselector_search));
+
+try {
+  window.customElements.define('ext-multiselector-search', ElementParser.withParsedCallback(EWCMultiselector_search));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-multiselector-search', EWCMultiselector_search);
+}

@@ -7,4 +7,10 @@ export default class EWCTbspacer extends Ext_toolbar_Spacer {
     this.xtype = 'tbspacer';
   }
 }
-window.customElements.define('ext-tbspacer', ElementParser.withParsedCallback(EWCTbspacer));
+try {
+  window.customElements.define('ext-tbspacer', ElementParser.withParsedCallback(EWCTbspacer));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-tbspacer', EWCTbspacer);
+}

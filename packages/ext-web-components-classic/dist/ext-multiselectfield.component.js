@@ -19,4 +19,10 @@ function (_Ext_ux_Multiselect) {
 }(Ext_ux_Multiselect);
 
 export { EWCMultiselectfield as default };
-window.customElements.define('ext-multiselectfield', ElementParser.withParsedCallback(EWCMultiselectfield));
+
+try {
+  window.customElements.define('ext-multiselectfield', ElementParser.withParsedCallback(EWCMultiselectfield));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-multiselectfield', EWCMultiselectfield);
+}

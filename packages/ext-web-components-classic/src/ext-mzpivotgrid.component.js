@@ -7,4 +7,10 @@ export default class EWCMzpivotgrid extends Mz_pivot_Table {
     this.xtype = 'mzpivotgrid';
   }
 }
-window.customElements.define('ext-mzpivotgrid', ElementParser.withParsedCallback(EWCMzpivotgrid));
+try {
+  window.customElements.define('ext-mzpivotgrid', ElementParser.withParsedCallback(EWCMzpivotgrid));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-mzpivotgrid', EWCMzpivotgrid);
+}

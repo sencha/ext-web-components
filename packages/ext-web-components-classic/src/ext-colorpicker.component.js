@@ -7,4 +7,10 @@ export default class EWCColorpicker extends Ext_ColorPalette {
     this.xtype = 'colorpicker';
   }
 }
-window.customElements.define('ext-colorpicker', ElementParser.withParsedCallback(EWCColorpicker));
+try {
+  window.customElements.define('ext-colorpicker', ElementParser.withParsedCallback(EWCColorpicker));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-colorpicker', EWCColorpicker);
+}

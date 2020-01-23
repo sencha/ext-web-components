@@ -7,4 +7,10 @@ export default class EWCTreeview extends Ext_tree_View {
     this.xtype = 'treeview';
   }
 }
-window.customElements.define('ext-treeview', ElementParser.withParsedCallback(EWCTreeview));
+try {
+  window.customElements.define('ext-treeview', ElementParser.withParsedCallback(EWCTreeview));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-treeview', EWCTreeview);
+}

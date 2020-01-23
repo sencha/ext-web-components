@@ -19,4 +19,10 @@ function (_Ext_form_HtmlEditor) {
 }(Ext_form_HtmlEditor);
 
 export { EWCHtmleditor as default };
-window.customElements.define('ext-htmleditor', ElementParser.withParsedCallback(EWCHtmleditor));
+
+try {
+  window.customElements.define('ext-htmleditor', ElementParser.withParsedCallback(EWCHtmleditor));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-htmleditor', EWCHtmleditor);
+}

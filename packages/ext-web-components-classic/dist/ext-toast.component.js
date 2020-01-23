@@ -19,4 +19,10 @@ function (_Ext_window_Toast) {
 }(Ext_window_Toast);
 
 export { EWCToast as default };
-window.customElements.define('ext-toast', ElementParser.withParsedCallback(EWCToast));
+
+try {
+  window.customElements.define('ext-toast', ElementParser.withParsedCallback(EWCToast));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-toast', EWCToast);
+}

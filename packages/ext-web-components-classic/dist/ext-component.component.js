@@ -19,4 +19,10 @@ function (_Ext_AbstractComponen) {
 }(Ext_AbstractComponent);
 
 export { EWCComponent as default };
-window.customElements.define('ext-component', ElementParser.withParsedCallback(EWCComponent));
+
+try {
+  window.customElements.define('ext-component', ElementParser.withParsedCallback(EWCComponent));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-component', EWCComponent);
+}

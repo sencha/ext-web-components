@@ -7,4 +7,10 @@ export default class EWCNumberfield extends Ext_form_Number {
     this.xtype = 'numberfield';
   }
 }
-window.customElements.define('ext-numberfield', ElementParser.withParsedCallback(EWCNumberfield));
+try {
+  window.customElements.define('ext-numberfield', ElementParser.withParsedCallback(EWCNumberfield));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-numberfield', EWCNumberfield);
+}

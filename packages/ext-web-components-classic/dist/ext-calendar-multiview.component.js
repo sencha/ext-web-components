@@ -19,4 +19,10 @@ function (_Ext_calendar_view_Mu) {
 }(Ext_calendar_view_Multi);
 
 export { EWCCalendar_multiview as default };
-window.customElements.define('ext-calendar-multiview', ElementParser.withParsedCallback(EWCCalendar_multiview));
+
+try {
+  window.customElements.define('ext-calendar-multiview', ElementParser.withParsedCallback(EWCCalendar_multiview));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-calendar-multiview', EWCCalendar_multiview);
+}

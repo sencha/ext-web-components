@@ -7,4 +7,10 @@ export default class EWCD3_horizontal_tree extends Ext_d3_hierarchy_tree_Horizon
     this.xtype = 'd3-horizontal-tree';
   }
 }
-window.customElements.define('ext-d3-horizontal-tree', ElementParser.withParsedCallback(EWCD3_horizontal_tree));
+try {
+  window.customElements.define('ext-d3-horizontal-tree', ElementParser.withParsedCallback(EWCD3_horizontal_tree));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-d3-horizontal-tree', EWCD3_horizontal_tree);
+}

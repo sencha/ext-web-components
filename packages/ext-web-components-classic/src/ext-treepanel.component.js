@@ -7,4 +7,10 @@ export default class EWCTreepanel extends Ext_TreePanel {
     this.xtype = 'treepanel';
   }
 }
-window.customElements.define('ext-treepanel', ElementParser.withParsedCallback(EWCTreepanel));
+try {
+  window.customElements.define('ext-treepanel', ElementParser.withParsedCallback(EWCTreepanel));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-treepanel', EWCTreepanel);
+}

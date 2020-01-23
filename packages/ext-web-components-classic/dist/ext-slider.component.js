@@ -19,4 +19,10 @@ function (_Ext_slider_Slider) {
 }(Ext_slider_Slider);
 
 export { EWCSlider as default };
-window.customElements.define('ext-slider', ElementParser.withParsedCallback(EWCSlider));
+
+try {
+  window.customElements.define('ext-slider', ElementParser.withParsedCallback(EWCSlider));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-slider', EWCSlider);
+}

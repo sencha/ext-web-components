@@ -7,4 +7,10 @@ export default class EWCCalendar_daysheader extends Ext_calendar_header_Days {
     this.xtype = 'calendar-daysheader';
   }
 }
-window.customElements.define('ext-calendar-daysheader', ElementParser.withParsedCallback(EWCCalendar_daysheader));
+try {
+  window.customElements.define('ext-calendar-daysheader', ElementParser.withParsedCallback(EWCCalendar_daysheader));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-calendar-daysheader', EWCCalendar_daysheader);
+}

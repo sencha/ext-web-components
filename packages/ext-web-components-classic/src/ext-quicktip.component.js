@@ -7,4 +7,10 @@ export default class EWCQuicktip extends Ext_QuickTip {
     this.xtype = 'quicktip';
   }
 }
-window.customElements.define('ext-quicktip', ElementParser.withParsedCallback(EWCQuicktip));
+try {
+  window.customElements.define('ext-quicktip', ElementParser.withParsedCallback(EWCQuicktip));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-quicktip', EWCQuicktip);
+}

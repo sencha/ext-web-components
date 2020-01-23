@@ -19,4 +19,10 @@ function (_Ext_Button) {
 }(Ext_Button);
 
 export { EWCButton as default };
-window.customElements.define('ext-button', ElementParser.withParsedCallback(EWCButton));
+
+try {
+  window.customElements.define('ext-button', ElementParser.withParsedCallback(EWCButton));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-button', EWCButton);
+}

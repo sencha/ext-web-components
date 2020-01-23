@@ -19,4 +19,10 @@ function (_Ext_form_ComboBox) {
 }(Ext_form_ComboBox);
 
 export { EWCCombobox as default };
-window.customElements.define('ext-combobox', ElementParser.withParsedCallback(EWCCombobox));
+
+try {
+  window.customElements.define('ext-combobox', ElementParser.withParsedCallback(EWCCombobox));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-combobox', EWCCombobox);
+}

@@ -19,4 +19,10 @@ function (_Ext_grid_Column) {
 }(Ext_grid_Column);
 
 export { EWCGridcolumn as default };
-window.customElements.define('ext-gridcolumn', ElementParser.withParsedCallback(EWCGridcolumn));
+
+try {
+  window.customElements.define('ext-gridcolumn', ElementParser.withParsedCallback(EWCGridcolumn));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-gridcolumn', EWCGridcolumn);
+}

@@ -19,4 +19,10 @@ function (_Ext_ux_IFrame) {
 }(Ext_ux_IFrame);
 
 export { EWCUxiframe as default };
-window.customElements.define('ext-uxiframe', ElementParser.withParsedCallback(EWCUxiframe));
+
+try {
+  window.customElements.define('ext-uxiframe', ElementParser.withParsedCallback(EWCUxiframe));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-uxiframe', EWCUxiframe);
+}

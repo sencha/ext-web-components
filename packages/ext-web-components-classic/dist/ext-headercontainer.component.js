@@ -19,4 +19,10 @@ function (_Ext_grid_header_Cont) {
 }(Ext_grid_header_Container);
 
 export { EWCHeadercontainer as default };
-window.customElements.define('ext-headercontainer', ElementParser.withParsedCallback(EWCHeadercontainer));
+
+try {
+  window.customElements.define('ext-headercontainer', ElementParser.withParsedCallback(EWCHeadercontainer));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-headercontainer', EWCHeadercontainer);
+}

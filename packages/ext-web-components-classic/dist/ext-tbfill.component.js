@@ -19,4 +19,10 @@ function (_Ext_toolbar_Fill) {
 }(Ext_toolbar_Fill);
 
 export { EWCTbfill as default };
-window.customElements.define('ext-tbfill', ElementParser.withParsedCallback(EWCTbfill));
+
+try {
+  window.customElements.define('ext-tbfill', ElementParser.withParsedCallback(EWCTbfill));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-tbfill', EWCTbfill);
+}

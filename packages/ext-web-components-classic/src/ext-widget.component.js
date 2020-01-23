@@ -7,4 +7,10 @@ export default class EWCWidget extends Ext_Gadget {
     this.xtype = 'widget';
   }
 }
-window.customElements.define('ext-widget', ElementParser.withParsedCallback(EWCWidget));
+try {
+  window.customElements.define('ext-widget', ElementParser.withParsedCallback(EWCWidget));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-widget', EWCWidget);
+}

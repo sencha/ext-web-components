@@ -7,4 +7,10 @@ export default class EWCSplitter extends Ext_resizer_Splitter {
     this.xtype = 'splitter';
   }
 }
-window.customElements.define('ext-splitter', ElementParser.withParsedCallback(EWCSplitter));
+try {
+  window.customElements.define('ext-splitter', ElementParser.withParsedCallback(EWCSplitter));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-splitter', EWCSplitter);
+}

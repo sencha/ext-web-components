@@ -19,4 +19,10 @@ function (_Ext_chart_PolarChart) {
 }(Ext_chart_PolarChart);
 
 export { EWCPolar as default };
-window.customElements.define('ext-polar', ElementParser.withParsedCallback(EWCPolar));
+
+try {
+  window.customElements.define('ext-polar', ElementParser.withParsedCallback(EWCPolar));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-polar', EWCPolar);
+}

@@ -7,4 +7,10 @@ export default class EWCColormenu extends Ext_menu_ColorPicker {
     this.xtype = 'colormenu';
   }
 }
-window.customElements.define('ext-colormenu', ElementParser.withParsedCallback(EWCColormenu));
+try {
+  window.customElements.define('ext-colormenu', ElementParser.withParsedCallback(EWCColormenu));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-colormenu', EWCColormenu);
+}

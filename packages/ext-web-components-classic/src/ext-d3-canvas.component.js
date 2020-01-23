@@ -7,4 +7,10 @@ export default class EWCD3_canvas extends Ext_d3_canvas_Canvas {
     this.xtype = 'd3-canvas';
   }
 }
-window.customElements.define('ext-d3-canvas', ElementParser.withParsedCallback(EWCD3_canvas));
+try {
+  window.customElements.define('ext-d3-canvas', ElementParser.withParsedCallback(EWCD3_canvas));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-d3-canvas', EWCD3_canvas);
+}

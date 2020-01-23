@@ -7,4 +7,10 @@ export default class EWCSpinnerfield extends Ext_form_Spinner {
     this.xtype = 'spinnerfield';
   }
 }
-window.customElements.define('ext-spinnerfield', ElementParser.withParsedCallback(EWCSpinnerfield));
+try {
+  window.customElements.define('ext-spinnerfield', ElementParser.withParsedCallback(EWCSpinnerfield));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-spinnerfield', EWCSpinnerfield);
+}

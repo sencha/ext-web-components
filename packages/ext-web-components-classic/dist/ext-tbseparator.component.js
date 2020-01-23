@@ -19,4 +19,10 @@ function (_Ext_toolbar_Separato) {
 }(Ext_toolbar_Separator);
 
 export { EWCTbseparator as default };
-window.customElements.define('ext-tbseparator', ElementParser.withParsedCallback(EWCTbseparator));
+
+try {
+  window.customElements.define('ext-tbseparator', ElementParser.withParsedCallback(EWCTbseparator));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-tbseparator', EWCTbseparator);
+}

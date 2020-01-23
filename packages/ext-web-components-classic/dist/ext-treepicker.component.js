@@ -19,4 +19,10 @@ function (_Ext_ux_TreePicker) {
 }(Ext_ux_TreePicker);
 
 export { EWCTreepicker as default };
-window.customElements.define('ext-treepicker', ElementParser.withParsedCallback(EWCTreepicker));
+
+try {
+  window.customElements.define('ext-treepicker', ElementParser.withParsedCallback(EWCTreepicker));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-treepicker', EWCTreepicker);
+}

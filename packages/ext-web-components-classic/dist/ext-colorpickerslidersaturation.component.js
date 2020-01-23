@@ -19,4 +19,10 @@ function (_Ext_ux_colorpick_Sli) {
 }(Ext_ux_colorpick_SliderSaturation);
 
 export { EWCColorpickerslidersaturation as default };
-window.customElements.define('ext-colorpickerslidersaturation', ElementParser.withParsedCallback(EWCColorpickerslidersaturation));
+
+try {
+  window.customElements.define('ext-colorpickerslidersaturation', ElementParser.withParsedCallback(EWCColorpickerslidersaturation));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-colorpickerslidersaturation', EWCColorpickerslidersaturation);
+}

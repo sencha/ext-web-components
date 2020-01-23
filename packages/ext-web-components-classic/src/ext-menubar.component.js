@@ -7,4 +7,10 @@ export default class EWCMenubar extends Ext_menu_Bar {
     this.xtype = 'menubar';
   }
 }
-window.customElements.define('ext-menubar', ElementParser.withParsedCallback(EWCMenubar));
+try {
+  window.customElements.define('ext-menubar', ElementParser.withParsedCallback(EWCMenubar));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-menubar', EWCMenubar);
+}

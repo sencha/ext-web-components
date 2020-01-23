@@ -7,4 +7,10 @@ export default class EWCHeadercontainer extends Ext_grid_header_Container {
     this.xtype = 'headercontainer';
   }
 }
-window.customElements.define('ext-headercontainer', ElementParser.withParsedCallback(EWCHeadercontainer));
+try {
+  window.customElements.define('ext-headercontainer', ElementParser.withParsedCallback(EWCHeadercontainer));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-headercontainer', EWCHeadercontainer);
+}

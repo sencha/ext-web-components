@@ -19,4 +19,10 @@ function (_Ext_form_Hidden) {
 }(Ext_form_Hidden);
 
 export { EWCHidden as default };
-window.customElements.define('ext-hidden', ElementParser.withParsedCallback(EWCHidden));
+
+try {
+  window.customElements.define('ext-hidden', ElementParser.withParsedCallback(EWCHidden));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-hidden', EWCHidden);
+}

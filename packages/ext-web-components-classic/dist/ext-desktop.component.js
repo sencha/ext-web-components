@@ -19,4 +19,10 @@ function (_Ext_ux_desktop_Deskt) {
 }(Ext_ux_desktop_Desktop);
 
 export { EWCDesktop as default };
-window.customElements.define('ext-desktop', ElementParser.withParsedCallback(EWCDesktop));
+
+try {
+  window.customElements.define('ext-desktop', ElementParser.withParsedCallback(EWCDesktop));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-desktop', EWCDesktop);
+}

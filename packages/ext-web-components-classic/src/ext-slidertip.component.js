@@ -7,4 +7,10 @@ export default class EWCSlidertip extends Ext_slider_Tip {
     this.xtype = 'slidertip';
   }
 }
-window.customElements.define('ext-slidertip', ElementParser.withParsedCallback(EWCSlidertip));
+try {
+  window.customElements.define('ext-slidertip', ElementParser.withParsedCallback(EWCSlidertip));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-slidertip', EWCSlidertip);
+}

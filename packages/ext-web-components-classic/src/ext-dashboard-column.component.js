@@ -7,4 +7,10 @@ export default class EWCDashboard_column extends Ext_dashboard_Column {
     this.xtype = 'dashboard-column';
   }
 }
-window.customElements.define('ext-dashboard-column', ElementParser.withParsedCallback(EWCDashboard_column));
+try {
+  window.customElements.define('ext-dashboard-column', ElementParser.withParsedCallback(EWCDashboard_column));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-dashboard-column', EWCDashboard_column);
+}

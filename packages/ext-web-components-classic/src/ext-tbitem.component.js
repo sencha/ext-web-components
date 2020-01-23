@@ -7,4 +7,10 @@ export default class EWCTbitem extends Ext_toolbar_Item {
     this.xtype = 'tbitem';
   }
 }
-window.customElements.define('ext-tbitem', ElementParser.withParsedCallback(EWCTbitem));
+try {
+  window.customElements.define('ext-tbitem', ElementParser.withParsedCallback(EWCTbitem));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-tbitem', EWCTbitem);
+}

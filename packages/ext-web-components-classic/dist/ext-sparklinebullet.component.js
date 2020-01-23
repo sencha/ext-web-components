@@ -19,4 +19,10 @@ function (_Ext_sparkline_Bullet) {
 }(Ext_sparkline_Bullet);
 
 export { EWCSparklinebullet as default };
-window.customElements.define('ext-sparklinebullet', ElementParser.withParsedCallback(EWCSparklinebullet));
+
+try {
+  window.customElements.define('ext-sparklinebullet', ElementParser.withParsedCallback(EWCSparklinebullet));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-sparklinebullet', EWCSparklinebullet);
+}

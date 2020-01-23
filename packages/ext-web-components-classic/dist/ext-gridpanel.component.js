@@ -19,4 +19,10 @@ function (_Ext_grid_GridPanel) {
 }(Ext_grid_GridPanel);
 
 export { EWCGridpanel as default };
-window.customElements.define('ext-gridpanel', ElementParser.withParsedCallback(EWCGridpanel));
+
+try {
+  window.customElements.define('ext-gridpanel', ElementParser.withParsedCallback(EWCGridpanel));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-gridpanel', EWCGridpanel);
+}

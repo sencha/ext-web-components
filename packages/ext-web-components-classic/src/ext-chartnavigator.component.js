@@ -7,4 +7,10 @@ export default class EWCChartnavigator extends Ext_chart_navigator_Container {
     this.xtype = 'chartnavigator';
   }
 }
-window.customElements.define('ext-chartnavigator', ElementParser.withParsedCallback(EWCChartnavigator));
+try {
+  window.customElements.define('ext-chartnavigator', ElementParser.withParsedCallback(EWCChartnavigator));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-chartnavigator', EWCChartnavigator);
+}

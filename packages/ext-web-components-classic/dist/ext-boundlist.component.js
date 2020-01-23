@@ -19,4 +19,10 @@ function (_Ext_BoundList) {
 }(Ext_BoundList);
 
 export { EWCBoundlist as default };
-window.customElements.define('ext-boundlist', ElementParser.withParsedCallback(EWCBoundlist));
+
+try {
+  window.customElements.define('ext-boundlist', ElementParser.withParsedCallback(EWCBoundlist));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-boundlist', EWCBoundlist);
+}

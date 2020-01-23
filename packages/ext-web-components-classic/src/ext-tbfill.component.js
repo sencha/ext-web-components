@@ -7,4 +7,10 @@ export default class EWCTbfill extends Ext_toolbar_Fill {
     this.xtype = 'tbfill';
   }
 }
-window.customElements.define('ext-tbfill', ElementParser.withParsedCallback(EWCTbfill));
+try {
+  window.customElements.define('ext-tbfill', ElementParser.withParsedCallback(EWCTbfill));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-tbfill', EWCTbfill);
+}

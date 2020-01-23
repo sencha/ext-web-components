@@ -7,4 +7,10 @@ export default class EWCPagingtoolbar extends Ext_PagingToolbar {
     this.xtype = 'pagingtoolbar';
   }
 }
-window.customElements.define('ext-pagingtoolbar', ElementParser.withParsedCallback(EWCPagingtoolbar));
+try {
+  window.customElements.define('ext-pagingtoolbar', ElementParser.withParsedCallback(EWCPagingtoolbar));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-pagingtoolbar', EWCPagingtoolbar);
+}

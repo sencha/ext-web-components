@@ -19,4 +19,10 @@ function (_Ext_toolbar_Item) {
 }(Ext_toolbar_Item);
 
 export { EWCTbitem as default };
-window.customElements.define('ext-tbitem', ElementParser.withParsedCallback(EWCTbitem));
+
+try {
+  window.customElements.define('ext-tbitem', ElementParser.withParsedCallback(EWCTbitem));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-tbitem', EWCTbitem);
+}

@@ -7,4 +7,10 @@ export default class EWCTableview extends Ext_grid_View {
     this.xtype = 'tableview';
   }
 }
-window.customElements.define('ext-tableview', ElementParser.withParsedCallback(EWCTableview));
+try {
+  window.customElements.define('ext-tableview', ElementParser.withParsedCallback(EWCTableview));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-tableview', EWCTableview);
+}

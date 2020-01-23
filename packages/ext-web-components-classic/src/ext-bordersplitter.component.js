@@ -7,4 +7,10 @@ export default class EWCBordersplitter extends Ext_resizer_BorderSplitter {
     this.xtype = 'bordersplitter';
   }
 }
-window.customElements.define('ext-bordersplitter', ElementParser.withParsedCallback(EWCBordersplitter));
+try {
+  window.customElements.define('ext-bordersplitter', ElementParser.withParsedCallback(EWCBordersplitter));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-bordersplitter', EWCBordersplitter);
+}

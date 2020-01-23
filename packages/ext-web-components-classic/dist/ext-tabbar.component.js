@@ -19,4 +19,10 @@ function (_Ext_tab_Bar) {
 }(Ext_tab_Bar);
 
 export { EWCTabbar as default };
-window.customElements.define('ext-tabbar', ElementParser.withParsedCallback(EWCTabbar));
+
+try {
+  window.customElements.define('ext-tabbar', ElementParser.withParsedCallback(EWCTabbar));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-tabbar', EWCTabbar);
+}

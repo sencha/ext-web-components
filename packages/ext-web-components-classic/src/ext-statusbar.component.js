@@ -7,4 +7,10 @@ export default class EWCStatusbar extends Ext_ux_StatusBar {
     this.xtype = 'statusbar';
   }
 }
-window.customElements.define('ext-statusbar', ElementParser.withParsedCallback(EWCStatusbar));
+try {
+  window.customElements.define('ext-statusbar', ElementParser.withParsedCallback(EWCStatusbar));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-statusbar', EWCStatusbar);
+}

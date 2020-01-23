@@ -7,4 +7,10 @@ export default class EWCTbseparator extends Ext_toolbar_Separator {
     this.xtype = 'tbseparator';
   }
 }
-window.customElements.define('ext-tbseparator', ElementParser.withParsedCallback(EWCTbseparator));
+try {
+  window.customElements.define('ext-tbseparator', ElementParser.withParsedCallback(EWCTbseparator));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-tbseparator', EWCTbseparator);
+}

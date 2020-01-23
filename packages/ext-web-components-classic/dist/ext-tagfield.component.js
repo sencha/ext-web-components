@@ -19,4 +19,10 @@ function (_Ext_form_field_Tag) {
 }(Ext_form_field_Tag);
 
 export { EWCTagfield as default };
-window.customElements.define('ext-tagfield', ElementParser.withParsedCallback(EWCTagfield));
+
+try {
+  window.customElements.define('ext-tagfield', ElementParser.withParsedCallback(EWCTagfield));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-tagfield', EWCTagfield);
+}

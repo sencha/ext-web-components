@@ -7,4 +7,10 @@ export default class EWCTextarea extends Ext_form_TextArea {
     this.xtype = 'textarea';
   }
 }
-window.customElements.define('ext-textarea', ElementParser.withParsedCallback(EWCTextarea));
+try {
+  window.customElements.define('ext-textarea', ElementParser.withParsedCallback(EWCTextarea));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-textarea', EWCTextarea);
+}

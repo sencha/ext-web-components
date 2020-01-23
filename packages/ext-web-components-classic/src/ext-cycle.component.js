@@ -7,4 +7,10 @@ export default class EWCCycle extends Ext_CycleButton {
     this.xtype = 'cycle';
   }
 }
-window.customElements.define('ext-cycle', ElementParser.withParsedCallback(EWCCycle));
+try {
+  window.customElements.define('ext-cycle', ElementParser.withParsedCallback(EWCCycle));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-cycle', EWCCycle);
+}

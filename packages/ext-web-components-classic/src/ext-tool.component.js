@@ -7,4 +7,10 @@ export default class EWCTool extends Ext_panel_Tool {
     this.xtype = 'tool';
   }
 }
-window.customElements.define('ext-tool', ElementParser.withParsedCallback(EWCTool));
+try {
+  window.customElements.define('ext-tool', ElementParser.withParsedCallback(EWCTool));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-tool', EWCTool);
+}

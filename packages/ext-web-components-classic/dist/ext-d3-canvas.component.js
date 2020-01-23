@@ -19,4 +19,10 @@ function (_Ext_d3_canvas_Canvas) {
 }(Ext_d3_canvas_Canvas);
 
 export { EWCD3_canvas as default };
-window.customElements.define('ext-d3-canvas', ElementParser.withParsedCallback(EWCD3_canvas));
+
+try {
+  window.customElements.define('ext-d3-canvas', ElementParser.withParsedCallback(EWCD3_canvas));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-d3-canvas', EWCD3_canvas);
+}

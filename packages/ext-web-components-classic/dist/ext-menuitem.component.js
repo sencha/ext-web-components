@@ -19,4 +19,10 @@ function (_Ext_menu_TextItem) {
 }(Ext_menu_TextItem);
 
 export { EWCMenuitem as default };
-window.customElements.define('ext-menuitem', ElementParser.withParsedCallback(EWCMenuitem));
+
+try {
+  window.customElements.define('ext-menuitem', ElementParser.withParsedCallback(EWCMenuitem));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-menuitem', EWCMenuitem);
+}

@@ -19,4 +19,10 @@ function (_Ext_QuickTip) {
 }(Ext_QuickTip);
 
 export { EWCQuicktip as default };
-window.customElements.define('ext-quicktip', ElementParser.withParsedCallback(EWCQuicktip));
+
+try {
+  window.customElements.define('ext-quicktip', ElementParser.withParsedCallback(EWCQuicktip));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-quicktip', EWCQuicktip);
+}

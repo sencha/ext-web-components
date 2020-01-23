@@ -19,4 +19,10 @@ function (_Ext_sparkline_Bar) {
 }(Ext_sparkline_Bar);
 
 export { EWCSparklinebar as default };
-window.customElements.define('ext-sparklinebar', ElementParser.withParsedCallback(EWCSparklinebar));
+
+try {
+  window.customElements.define('ext-sparklinebar', ElementParser.withParsedCallback(EWCSparklinebar));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-sparklinebar', EWCSparklinebar);
+}

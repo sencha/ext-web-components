@@ -19,4 +19,10 @@ function (_Ext_d3_hierarchy_tre) {
 }(Ext_d3_hierarchy_tree_HorizontalTree);
 
 export { EWCD3_horizontal_tree as default };
-window.customElements.define('ext-d3-horizontal-tree', ElementParser.withParsedCallback(EWCD3_horizontal_tree));
+
+try {
+  window.customElements.define('ext-d3-horizontal-tree', ElementParser.withParsedCallback(EWCD3_horizontal_tree));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-d3-horizontal-tree', EWCD3_horizontal_tree);
+}

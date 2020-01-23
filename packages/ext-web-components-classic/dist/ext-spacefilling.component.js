@@ -19,4 +19,10 @@ function (_Ext_chart_SpaceFilli) {
 }(Ext_chart_SpaceFillingChart);
 
 export { EWCSpacefilling as default };
-window.customElements.define('ext-spacefilling', ElementParser.withParsedCallback(EWCSpacefilling));
+
+try {
+  window.customElements.define('ext-spacefilling', ElementParser.withParsedCallback(EWCSpacefilling));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-spacefilling', EWCSpacefilling);
+}

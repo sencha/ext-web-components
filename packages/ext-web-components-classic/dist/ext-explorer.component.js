@@ -19,4 +19,10 @@ function (_Ext_ux_Explorer) {
 }(Ext_ux_Explorer);
 
 export { EWCExplorer as default };
-window.customElements.define('ext-explorer', ElementParser.withParsedCallback(EWCExplorer));
+
+try {
+  window.customElements.define('ext-explorer', ElementParser.withParsedCallback(EWCExplorer));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-explorer', EWCExplorer);
+}

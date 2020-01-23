@@ -19,4 +19,10 @@ function (_Ext_ux_colorpick_Col) {
 }(Ext_ux_colorpick_ColorPreview);
 
 export { EWCColorpickercolorpreview as default };
-window.customElements.define('ext-colorpickercolorpreview', ElementParser.withParsedCallback(EWCColorpickercolorpreview));
+
+try {
+  window.customElements.define('ext-colorpickercolorpreview', ElementParser.withParsedCallback(EWCColorpickercolorpreview));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-colorpickercolorpreview', EWCColorpickercolorpreview);
+}

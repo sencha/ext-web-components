@@ -19,4 +19,10 @@ function (_Ext_grid_View) {
 }(Ext_grid_View);
 
 export { EWCGridview as default };
-window.customElements.define('ext-gridview', ElementParser.withParsedCallback(EWCGridview));
+
+try {
+  window.customElements.define('ext-gridview', ElementParser.withParsedCallback(EWCGridview));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-gridview', EWCGridview);
+}

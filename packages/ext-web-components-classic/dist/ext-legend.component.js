@@ -19,4 +19,10 @@ function (_Ext_chart_Legend) {
 }(Ext_chart_Legend);
 
 export { EWCLegend as default };
-window.customElements.define('ext-legend', ElementParser.withParsedCallback(EWCLegend));
+
+try {
+  window.customElements.define('ext-legend', ElementParser.withParsedCallback(EWCLegend));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-legend', EWCLegend);
+}

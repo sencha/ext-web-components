@@ -19,4 +19,10 @@ function (_Ext_Img) {
 }(Ext_Img);
 
 export { EWCImagecomponent as default };
-window.customElements.define('ext-imagecomponent', ElementParser.withParsedCallback(EWCImagecomponent));
+
+try {
+  window.customElements.define('ext-imagecomponent', ElementParser.withParsedCallback(EWCImagecomponent));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-imagecomponent', EWCImagecomponent);
+}

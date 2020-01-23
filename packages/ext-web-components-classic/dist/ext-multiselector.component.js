@@ -19,4 +19,10 @@ function (_Ext_view_MultiSelect) {
 }(Ext_view_MultiSelector);
 
 export { EWCMultiselector as default };
-window.customElements.define('ext-multiselector', ElementParser.withParsedCallback(EWCMultiselector));
+
+try {
+  window.customElements.define('ext-multiselector', ElementParser.withParsedCallback(EWCMultiselector));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-multiselector', EWCMultiselector);
+}

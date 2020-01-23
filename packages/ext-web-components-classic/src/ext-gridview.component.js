@@ -7,4 +7,10 @@ export default class EWCGridview extends Ext_grid_View {
     this.xtype = 'gridview';
   }
 }
-window.customElements.define('ext-gridview', ElementParser.withParsedCallback(EWCGridview));
+try {
+  window.customElements.define('ext-gridview', ElementParser.withParsedCallback(EWCGridview));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-gridview', EWCGridview);
+}

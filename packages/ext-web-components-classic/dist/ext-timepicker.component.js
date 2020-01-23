@@ -19,4 +19,10 @@ function (_Ext_picker_Time) {
 }(Ext_picker_Time);
 
 export { EWCTimepicker as default };
-window.customElements.define('ext-timepicker', ElementParser.withParsedCallback(EWCTimepicker));
+
+try {
+  window.customElements.define('ext-timepicker', ElementParser.withParsedCallback(EWCTimepicker));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-timepicker', EWCTimepicker);
+}

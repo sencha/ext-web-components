@@ -7,4 +7,10 @@ export default class EWCTimepicker extends Ext_picker_Time {
     this.xtype = 'timepicker';
   }
 }
-window.customElements.define('ext-timepicker', ElementParser.withParsedCallback(EWCTimepicker));
+try {
+  window.customElements.define('ext-timepicker', ElementParser.withParsedCallback(EWCTimepicker));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-timepicker', EWCTimepicker);
+}

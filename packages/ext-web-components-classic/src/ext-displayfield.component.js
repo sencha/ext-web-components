@@ -7,4 +7,10 @@ export default class EWCDisplayfield extends Ext_form_Display {
     this.xtype = 'displayfield';
   }
 }
-window.customElements.define('ext-displayfield', ElementParser.withParsedCallback(EWCDisplayfield));
+try {
+  window.customElements.define('ext-displayfield', ElementParser.withParsedCallback(EWCDisplayfield));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-displayfield', EWCDisplayfield);
+}

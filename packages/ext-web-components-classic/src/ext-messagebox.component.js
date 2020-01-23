@@ -7,4 +7,10 @@ export default class EWCMessagebox extends Ext_window_MessageBox {
     this.xtype = 'messagebox';
   }
 }
-window.customElements.define('ext-messagebox', ElementParser.withParsedCallback(EWCMessagebox));
+try {
+  window.customElements.define('ext-messagebox', ElementParser.withParsedCallback(EWCMessagebox));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-messagebox', EWCMessagebox);
+}

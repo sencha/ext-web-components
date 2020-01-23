@@ -7,4 +7,10 @@ export default class EWCMultiselectfield extends Ext_ux_Multiselect {
     this.xtype = 'multiselectfield';
   }
 }
-window.customElements.define('ext-multiselectfield', ElementParser.withParsedCallback(EWCMultiselectfield));
+try {
+  window.customElements.define('ext-multiselectfield', ElementParser.withParsedCallback(EWCMultiselectfield));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-multiselectfield', EWCMultiselectfield);
+}

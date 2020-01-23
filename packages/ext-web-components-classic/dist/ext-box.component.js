@@ -19,4 +19,10 @@ function (_Ext_AbstractComponen) {
 }(Ext_AbstractComponent);
 
 export { EWCBox as default };
-window.customElements.define('ext-box', ElementParser.withParsedCallback(EWCBox));
+
+try {
+  window.customElements.define('ext-box', ElementParser.withParsedCallback(EWCBox));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-box', EWCBox);
+}

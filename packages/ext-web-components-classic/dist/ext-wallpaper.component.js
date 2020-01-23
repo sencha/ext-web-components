@@ -19,4 +19,10 @@ function (_Ext_ux_desktop_Wallp) {
 }(Ext_ux_desktop_Wallpaper);
 
 export { EWCWallpaper as default };
-window.customElements.define('ext-wallpaper', ElementParser.withParsedCallback(EWCWallpaper));
+
+try {
+  window.customElements.define('ext-wallpaper', ElementParser.withParsedCallback(EWCWallpaper));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-wallpaper', EWCWallpaper);
+}

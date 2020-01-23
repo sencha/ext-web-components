@@ -7,4 +7,10 @@ export default class EWCAxis3d extends Ext_chart_axis_Axis3D {
     this.xtype = 'axis3d';
   }
 }
-window.customElements.define('ext-axis3d', ElementParser.withParsedCallback(EWCAxis3d));
+try {
+  window.customElements.define('ext-axis3d', ElementParser.withParsedCallback(EWCAxis3d));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-axis3d', EWCAxis3d);
+}

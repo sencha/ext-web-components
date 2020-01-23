@@ -7,4 +7,10 @@ export default class EWCTrayclock extends Ext_ux_desktop_TrayClock {
     this.xtype = 'trayclock';
   }
 }
-window.customElements.define('ext-trayclock', ElementParser.withParsedCallback(EWCTrayclock));
+try {
+  window.customElements.define('ext-trayclock', ElementParser.withParsedCallback(EWCTrayclock));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-trayclock', EWCTrayclock);
+}

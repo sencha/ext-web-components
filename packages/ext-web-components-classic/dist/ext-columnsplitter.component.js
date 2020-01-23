@@ -19,4 +19,10 @@ function (_Ext_layout_container) {
 }(Ext_layout_container_ColumnSplitter);
 
 export { EWCColumnsplitter as default };
-window.customElements.define('ext-columnsplitter', ElementParser.withParsedCallback(EWCColumnsplitter));
+
+try {
+  window.customElements.define('ext-columnsplitter', ElementParser.withParsedCallback(EWCColumnsplitter));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-columnsplitter', EWCColumnsplitter);
+}

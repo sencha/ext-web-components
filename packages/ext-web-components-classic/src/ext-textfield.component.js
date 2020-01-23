@@ -7,4 +7,10 @@ export default class EWCTextfield extends Ext_form_Text {
     this.xtype = 'textfield';
   }
 }
-window.customElements.define('ext-textfield', ElementParser.withParsedCallback(EWCTextfield));
+try {
+  window.customElements.define('ext-textfield', ElementParser.withParsedCallback(EWCTextfield));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-textfield', EWCTextfield);
+}

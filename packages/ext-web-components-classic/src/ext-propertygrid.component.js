@@ -7,4 +7,10 @@ export default class EWCPropertygrid extends Ext_grid_PropertyGrid {
     this.xtype = 'propertygrid';
   }
 }
-window.customElements.define('ext-propertygrid', ElementParser.withParsedCallback(EWCPropertygrid));
+try {
+  window.customElements.define('ext-propertygrid', ElementParser.withParsedCallback(EWCPropertygrid));
+}
+catch(e) {
+  console.log(e)
+  window.customElements.define('ext-propertygrid', EWCPropertygrid);
+}

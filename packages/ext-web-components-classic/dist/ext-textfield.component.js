@@ -19,4 +19,10 @@ function (_Ext_form_Text) {
 }(Ext_form_Text);
 
 export { EWCTextfield as default };
-window.customElements.define('ext-textfield', ElementParser.withParsedCallback(EWCTextfield));
+
+try {
+  window.customElements.define('ext-textfield', ElementParser.withParsedCallback(EWCTextfield));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-textfield', EWCTextfield);
+}

@@ -19,4 +19,10 @@ function (_Ext_ux_ItemSelector) {
 }(Ext_ux_ItemSelector);
 
 export { EWCItemselector as default };
-window.customElements.define('ext-itemselector', ElementParser.withParsedCallback(EWCItemselector));
+
+try {
+  window.customElements.define('ext-itemselector', ElementParser.withParsedCallback(EWCItemselector));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-itemselector', EWCItemselector);
+}

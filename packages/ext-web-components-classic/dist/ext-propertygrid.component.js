@@ -19,4 +19,10 @@ function (_Ext_grid_PropertyGri) {
 }(Ext_grid_PropertyGrid);
 
 export { EWCPropertygrid as default };
-window.customElements.define('ext-propertygrid', ElementParser.withParsedCallback(EWCPropertygrid));
+
+try {
+  window.customElements.define('ext-propertygrid', ElementParser.withParsedCallback(EWCPropertygrid));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-propertygrid', EWCPropertygrid);
+}

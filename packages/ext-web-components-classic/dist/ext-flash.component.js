@@ -19,4 +19,10 @@ function (_Ext_FlashComponent) {
 }(Ext_FlashComponent);
 
 export { EWCFlash as default };
-window.customElements.define('ext-flash', ElementParser.withParsedCallback(EWCFlash));
+
+try {
+  window.customElements.define('ext-flash', ElementParser.withParsedCallback(EWCFlash));
+} catch (e) {
+  console.log(e);
+  window.customElements.define('ext-flash', EWCFlash);
+}
