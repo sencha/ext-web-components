@@ -1,6 +1,6 @@
 ## @sencha/ext-web-components-classic
 
-last run: Mon Jan 27 2020 13:41:46 GMT-0500 (Eastern Standard Time)
+last run: Mon Jan 27 2020 15:24:17 GMT-0500 (Eastern Standard Time)
 
 ## Login to the Sencha early adopter npm repo
 
@@ -55,6 +55,10 @@ cd ext-web-components-classic-demo
     content="width=device-width,initial-scale=1,maximum-scale=10,user-scalable=yes"
   >
 </head>
+<!--
+<script src="./node_modules/@sencha/ext-web-components-classic/ext-runtime-classic/classic.engine.js"></script>
+<link rel="stylesheet" type="text/css" href="node_modules/@sencha/ext-web-components-classic/ext-runtime-classic/graphite/graphite-all.css"></link>
+-->
 
 <script type="module"
 src="./node_modules/@sencha/ext-web-components-classic/src/ext-toolbar.component.js">
