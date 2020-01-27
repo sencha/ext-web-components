@@ -1,60 +1,61 @@
 const ElementParser = (() => {
+  var toolkit = 'modern';
+  var theme = 'material';
 
   if (window['Ext'] == undefined) {
+    var xhrObj = new XMLHttpRequest();
+
+    function linkIt(num) {
+      var xhrLink = new XMLHttpRequest();
+      xhrLink.open('GET', `node_modules/@sencha/ext-web-components-$modern/ext-runtime-$modern/$/$-all_$.css`, false);
+      xhrLink.send('');
+      var style = document.createElement('style');
+      style.type = 'text/css';
+      style.innerHTML = xhrLink.responseText;
+      document.getElementsByTagName('head')[0].appendChild(style);
+    }
+
+    function scriptIt() {
+      var se;
+      xhrObj.open('GET', `node_modules/@sencha/ext-web-components-$modern/ext-runtime-$modern/$modern.engine.js`, false);
+      xhrObj.send('');
+      if (xhrObj.responseText.substring(0, 3) != 'var') {showError();return;}
+      se = document.createElement('script');
+      se.type = "text/javascript";
+      se.text = xhrObj.responseText;
+      document.getElementsByTagName('head')[0].appendChild(se);
+    }
+
     var showError = function showError() {
       console.error('error');
       document.body.innerHTML = "<div>" + "<h1>An error has occurred</h1>" + "The ExtWebComponents runtime cannot be found<p>" + "Possible reasons:<br>" + "<ul>" + "<li>node_modules folder is not found or corrupted (rerun npm install)" + "</ul>" + "</div>";
       window.stop();
     };
 
-    var getToolkit = function getToolkit() {
-      var folder = 'node_modules/@sencha/ext-web-components-';
-      var classicfolder = folder + 'classic';
-      var modernfolder = folder + 'modern';
-      var xhr = new XMLHttpRequest();
-      var toolkit = 'none';
-      xhr.open('HEAD', classicfolder, false);
-      xhr.send();
-
-      if (xhr.status == "200") {
-        toolkit = 'classic';
-      }
-
-      xhr.open('HEAD', modernfolder, false);
-      xhr.send();
-
-      if (xhr.status == "200") {
-        toolkit = 'modern';
-      }
-
-      return toolkit;
-    };
-
-    var xhrObj = new XMLHttpRequest();
-    console.warn('[Deprecation] and HEAD 404 (Not Found) errors below are expected');
+    console.warn('[Deprecation] error below is expected');
 
     switch (window['ExtFramework']) {
       case 'react':
         console.log('react')
         console.warn('ext-react runtime not defined in index.html');
         console.warn('to fix, add following to public/index.html');
-        console.warn('<script src="%PUBLIC_URL%/ext-runtime-classic/classic.material.js"></script>');
-        console.warn('or');
-        console.warn('<script src="%PUBLIC_URL%/ext-runtime-modern/modern.material.js"></script>');
-// mjg need to determine toolkit
-        xhrObj.open('GET', '/ext-runtime-classic/' + 'classic' + '.material.js', false);
+        console.warn('<link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/ext-runtime-$modern/$/$-all.css"></link>');
+        console.warn('<script src="%PUBLIC_URL%/ext-runtime-$modern/$modern.engine.js"></script>');
+        //xhrObj.open('GET', '/ext-runtime-classic/' + 'classic' + '.material.js', false);
+        linkIt(1)
+        linkIt(2)
+        scriptIt()
         break;
 
       case 'angular':
         console.log('angular')
         console.warn('ext-angular runtime not defined in index.html');
         console.warn('to fix, add following to angular.json');
-        console.warn('"scripts": ["ext-runtime-classic/classic.material.js"]');
-        console.warn('or');
-        console.warn('"scripts": ["ext-runtime-modern/classic.modern.js"]');
-
-        //?? xhrObj.open('GET', '/ext-runtime-classic/' + 'classic' + '.material.js', false);
-
+        console.warn('"styles": ["ext-runtime-$modern/$/$-all.css]');
+        console.warn('"scripts": ["ext-runtime-$modern/$modern.engine.js]');
+        linkIt(1)
+        linkIt(2)
+        scriptIt()
         break;
 
       case 'vue':
@@ -62,35 +63,20 @@ const ElementParser = (() => {
         break;
 
       case undefined:
-        var toolkit = getToolkit();
-        if (toolkit == 'none') {
-          showError();
-          return;
-        }
-        console.warn('ext-web-comonents runtime not defined in index.html');
+        console.warn('ext-web-components runtime not defined in index.html');
         console.warn('to fix, add following to index.html');
-        console.warn('<script src="./node_modules/@sencha/ext-web-components-' + toolkit + '/ext-runtime-classic/' + toolkit + '.material.js"></script>');
-        xhrObj.open('GET', 'node_modules/@sencha/ext-web-components-' + toolkit + '/ext-runtime-classic/' + toolkit + '.material.js', false);
+        console.warn(`<script src="./node_modules/@sencha/ext-web-components-$modern/ext-runtime-$modern/$modern.engine.js"></script>`);
+        console.warn(`<link rel="stylesheet" type="text/css" href="node_modules/@sencha/ext-web-components-$modern/ext-runtime-$modern/$/$-all.css"></link>`);
+        linkIt(1)
+        linkIt(2)
+        scriptIt()
         break;
 
       default:
         console.error('ERROR');
         break;
     }
-
-    xhrObj.send('');
-
-    if (xhrObj.responseText.substring(0, 3) != 'var') {
-      showError();
-      return;
-    }
-
-    var se = document.createElement('script');
-    se.type = "text/javascript";
-    se.text = xhrObj.responseText;
-    document.getElementsByTagName('head')[0].appendChild(se);
   }
-
 
   const DCL = 'DOMContentLoaded';
   const init = new window.WeakMap;
