@@ -2,7 +2,7 @@
 
 ## Release Notes
 
-### 7.1.0
+### 7.1.1
 
 ## Overview
 
@@ -41,7 +41,7 @@ When this product is in production...
 
 ExtWebComponents and all related packages are hosted on Sencha's private NPM registry.
 
-To gain access to this registry, [sign up for a trial of ExtWebComponent](https://www.sencha.com/products/extwebcomponents/evaluate).  
+To gain access to this registry, [sign up for a trial of ExtWebComponent](https://www.sencha.com/products/extwebcomponents/evaluate).
 
 Once you have received your credentials, you can authenticate by running the following command:
 
