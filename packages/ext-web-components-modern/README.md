@@ -1,6 +1,6 @@
 ## @sencha/ext-web-components-modern
 
-last run: Mon Jan 27 2020 16:48:19 GMT-0500 (Eastern Standard Time)
+last run: Tue Jan 28 2020 08:04:07 GMT-0500 (Eastern Standard Time)
 
 ### Login to the Sencha npm repo
 
@@ -46,7 +46,7 @@ cd ext-web-components-modern-demo
   },
   "devDependencies": {
     "@sencha/ext-web-components-modern": "~7.1.0",
-    "http-server": "^0.12.0"
+    "http-server": "^0.12.1"
   },
   "author": "",
   "license": "ISC",
