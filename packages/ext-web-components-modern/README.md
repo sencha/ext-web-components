@@ -1,12 +1,21 @@
 ## @sencha/ext-web-components-modern
 
-last run: Mon Jan 27 2020 15:14:39 GMT-0500 (Eastern Standard Time)
+last run: Mon Jan 27 2020 16:48:19 GMT-0500 (Eastern Standard Time)
 
-## Login to the Sencha early adopter npm repo
+### Login to the Sencha npm repo
+
+* Note, you must be signed into the Sencha npm registry to access packages.
+
+production:
+
+```sh
+npm login --registry=https://npm.sencha.com/ --scope=@sencha
+```
+
+early adopter:
 
 ```sh
 npm login --registry=https://sencha.myget.org/F/early-adopter/npm/ --scope=@sencha
-
 ```
 
 ## Create a JavaScript application
@@ -55,9 +64,16 @@ cd ext-web-components-modern-demo
     content="width=device-width,initial-scale=1,maximum-scale=10,user-scalable=yes"
   >
 </head>
+
 <!--
-<script src="./node_modules/@sencha/ext-web-components-modern/ext-runtime-modern/modern.engine.js"></script>
-<link rel="stylesheet" type="text/css" href="node_modules/@sencha/ext-web-components-modern/ext-runtime-modern/graphite/graphite-all.css"></link>
+<script
+ src="./node_modules/@sencha/ext-web-components-modern/ext-runtime-modern/modern.engine.js">
+</script>
+<link
+ rel="stylesheet"
+ type="text/css"
+ href="node_modules/@sencha/ext-web-components-modern/ext-runtime-modern/material/material-all.css">
+</link>
 -->
 
 <script type="module"

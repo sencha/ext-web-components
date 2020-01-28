@@ -1,12 +1,21 @@
 ## @sencha/ext-web-components-classic
 
-last run: Mon Jan 27 2020 15:24:17 GMT-0500 (Eastern Standard Time)
+last run: Mon Jan 27 2020 17:00:00 GMT-0500 (Eastern Standard Time)
 
-## Login to the Sencha early adopter npm repo
+### Login to the Sencha npm repo
+
+* Note, you must be signed into the Sencha npm registry to access packages.
+
+production:
+
+```sh
+npm login --registry=https://npm.sencha.com/ --scope=@sencha
+```
+
+early adopter:
 
 ```sh
 npm login --registry=https://sencha.myget.org/F/early-adopter/npm/ --scope=@sencha
-
 ```
 
 ## Create a JavaScript application
@@ -37,7 +46,7 @@ cd ext-web-components-classic-demo
   },
   "devDependencies": {
     "@sencha/ext-web-components-classic": "~7.1.0",
-    "http-server": "^0.12.0"
+    "http-server": "^0.12.1"
   },
   "author": "",
   "license": "ISC",
@@ -55,9 +64,16 @@ cd ext-web-components-classic-demo
     content="width=device-width,initial-scale=1,maximum-scale=10,user-scalable=yes"
   >
 </head>
+
 <!--
-<script src="./node_modules/@sencha/ext-web-components-classic/ext-runtime-classic/classic.engine.js"></script>
-<link rel="stylesheet" type="text/css" href="node_modules/@sencha/ext-web-components-classic/ext-runtime-classic/graphite/graphite-all.css"></link>
+<script
+ src="./node_modules/@sencha/ext-web-components-classic/ext-runtime-classic/classic.engine.js">
+</script>
+<link
+ rel="stylesheet"
+ type="text/css"
+ href="node_modules/@sencha/ext-web-components-classic/ext-runtime-classic/material/material-all.css">
+</link>
 -->
 
 <script type="module"
