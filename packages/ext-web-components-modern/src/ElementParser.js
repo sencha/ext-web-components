@@ -7,7 +7,7 @@ const ElementParser = (() => {
 
     function linkIt(num) {
       var xhrLink = new XMLHttpRequest();
-      xhrLink.open('GET', `node_modules/@sencha/ext-web-components-$modern/ext-runtime-$modern/$/$-all_$.css`, false);
+      xhrLink.open('GET', `node_modules/@sencha/ext-web-components-${ toolkit }/ext-runtime-${ toolkit }/${ theme }/${ theme }-all_${ num }.css`, false);
       xhrLink.send('');
       var style = document.createElement('style');
       style.type = 'text/css';
@@ -17,7 +17,7 @@ const ElementParser = (() => {
 
     function scriptIt() {
       var se;
-      xhrObj.open('GET', `node_modules/@sencha/ext-web-components-$modern/ext-runtime-$modern/$modern.engine.js`, false);
+      xhrObj.open('GET', `node_modules/@sencha/ext-web-components-${ toolkit }/ext-runtime-${ toolkit }/${ toolkit }.engine.js`, false);
       xhrObj.send('');
       if (xhrObj.responseText.substring(0, 3) != 'var') {showError();return;}
       se = document.createElement('script');
@@ -39,8 +39,8 @@ const ElementParser = (() => {
         console.log('react')
         console.warn('ext-react runtime not defined in index.html');
         console.warn('to fix, add following to public/index.html');
-        console.warn('<link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/ext-runtime-$modern/$/$-all.css"></link>');
-        console.warn('<script src="%PUBLIC_URL%/ext-runtime-$modern/$modern.engine.js"></script>');
+        console.warn('<link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/ext-runtime-${ toolkit }/${ theme }/${ theme }-all.css"></link>');
+        console.warn('<script src="%PUBLIC_URL%/ext-runtime-${ toolkit }/${ toolkit }.engine.js"></script>');
         //xhrObj.open('GET', '/ext-runtime-classic/' + 'classic' + '.material.js', false);
         linkIt(1)
         linkIt(2)
@@ -51,8 +51,8 @@ const ElementParser = (() => {
         console.log('angular')
         console.warn('ext-angular runtime not defined in index.html');
         console.warn('to fix, add following to angular.json');
-        console.warn('"styles": ["ext-runtime-$modern/$/$-all.css]');
-        console.warn('"scripts": ["ext-runtime-$modern/$modern.engine.js]');
+        console.warn('"styles": ["ext-runtime-${ toolkit }/${ theme }/${ theme }-all.css]');
+        console.warn('"scripts": ["ext-runtime-${ toolkit }/${ toolkit }.engine.js]');
         linkIt(1)
         linkIt(2)
         scriptIt()
@@ -65,8 +65,8 @@ const ElementParser = (() => {
       case undefined:
         console.warn('ext-web-components runtime not defined in index.html');
         console.warn('to fix, add following to index.html');
-        console.warn(`<script src="./node_modules/@sencha/ext-web-components-$modern/ext-runtime-$modern/$modern.engine.js"></script>`);
-        console.warn(`<link rel="stylesheet" type="text/css" href="node_modules/@sencha/ext-web-components-$modern/ext-runtime-$modern/$/$-all.css"></link>`);
+        console.warn(`<script src="./node_modules/@sencha/ext-web-components-${ toolkit }/ext-runtime-${ toolkit }/${ toolkit }.engine.js"></script>`);
+        console.warn(`<link rel="stylesheet" type="text/css" href="node_modules/@sencha/ext-web-components-${ toolkit }/ext-runtime-${ toolkit }/${ theme }/${ theme }-all.css"></link>`);
         linkIt(1)
         linkIt(2)
         scriptIt()
