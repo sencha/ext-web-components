@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Tue Jan 28 2020 10:19:26 GMT-0500 (Eastern Standard Time)
+//Wed Jan 29 2020 09:15:26 GMT-0500 (Eastern Standard Time)
 import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildToolbar, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var EleBaseComponent =
@@ -81,8 +81,9 @@ function (_HTMLElement) {
       doProp(_this2, prop);
     });
     this.xtype = x;
-    var me = this;
-    this.newCreateProps(this.properties, this.events);
+    var me = this; //this.newCreateProps(this.properties, this.events);
+
+    this.newCreateProps(this.properties);
 
     if (me.A.o['viewport'] == 'true') {
       me.A.o['viewport'] = true;

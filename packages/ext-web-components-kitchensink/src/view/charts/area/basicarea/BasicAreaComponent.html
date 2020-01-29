@@ -11,9 +11,12 @@
     padding="0 10 0 10"
   >
     <chart-toolbar
-      onItemReady="basicarea.onMenuItemReady"
+      onItemReady="true"
       theme="default"
-      onRefreshButtonReady="basicarea.onRefreshButtonReady"
+      onlyMidnight="false"
+      onRefreshButtonReady="true"
+      onThemeChange="basicarea.onThemeChange"
+      onRefreshTap="basicarea.onRefreshTap"
     >
     </chart-toolbar>
   </ext-toolbar>

@@ -26,6 +26,7 @@ export default class ChartToolbar extends HTMLElement {
         const onCrosshair = this.getAttribute('onCrosshairButtonReady') || false;
         const supportsTouch = this.getAttribute('supportsTouch');
         const onMenuItemReady = this.getAttribute('onItemReady');
+        const onThemeChange = this.getAttribute('onThemeChange');
         this.innerHTML = `
             <ext-container layout="hbox">
                 <ext-button
@@ -37,54 +38,54 @@ export default class ChartToolbar extends HTMLElement {
                 >
                     <ext-menu>
                         <ext-menuitem
-                            onready=${onMenuItemReady}
+
                             text="Default"
                             iconCls="x-font-icon md-icon-done"
                             itemId="0"
                         >
                         </ext-menuitem>
                         <ext-menuitem
-                            onready=${onMenuItemReady}
+
                             text="Green"
                             hidden=${onlyMidnight}
                             itemId="1"
                         >
                         </ext-menuitem>
                         <ext-menuitem
-                            onready=${onMenuItemReady}
+
+                            onclick=${this.getAttribute('onThemeChange')}
                             text="Midnight"
                             itemId="2"
                         >
                         </ext-menuitem>
                         <ext-menuitem
-                            onready=${onMenuItemReady}
+
                             hidden=${onlyMidnight}
                             text="Muted"
                             itemId="3">
                         </ext-menuitem>
                         <ext-menuitem
                             hidden=${onlyMidnight}
-                            onready=${onMenuItemReady}
+
                             text="Red"
                             itemId="4">
                         </ext-menuitem>
                         <ext-menuitem
                             hidden=${onlyMidnight}
-                            onready=${onMenuItemReady}
+
                             text="Sky"
                             itemId="5">
                         </ext-menuitem>
                         <ext-menuitem
                             text="Yellow"
                             hidden=${onlyMidnight}
-                            onready=${onMenuItemReady}
                             itemId="6"
                         >
                         </ext-menuitem>
                     </ext-menu>
                 </ext-button>
                 <ext-button
-                    onready=${preview}
+      
                     hidden=${!preview}
                     margin="0 10 0 0"
                     ui="action"
@@ -98,7 +99,8 @@ export default class ChartToolbar extends HTMLElement {
                 >
                 </ext-button>
                 <ext-button
-                    onready=${refresh}
+             
+                    ontap=${this.getAttribute('onRefreshTap')}
                     hidden=${!refresh}
                     ui="action"
                     margin="0 10 0 0"
@@ -112,13 +114,13 @@ export default class ChartToolbar extends HTMLElement {
                     margin="0 10 0 0"
                 >
                     <ext-button
-                        onready=${onStack}
+                        xonready=${onStack}
                         iconCls="x-fa fa-bars"
                         text="STACK"
                     >
                     </ext-button>
                     <ext-button
-                        onready=${onGroup}
+                        xonready=${onGroup}
                         iconCls="x-fa fa-bar-chart"
                         text="GROUP"
                     >
@@ -129,14 +131,14 @@ export default class ChartToolbar extends HTMLElement {
                     hidden=${!(onPan || onZoom) || supportsTouch}
                 >
                     <ext-button
-                        onready=${onPan}
+                        xonready=${onPan}
                         iconCls="x-fa fa-arrows"
                         text="PAN"
                         value="false"
                     >
                     </ext-button>
                     <ext-button
-                        onready=${onZoom}
+                        xonready=${onZoom}
                         iconCls="x-fa fa-search-plus"
                         text="ZOOM"
                         value="true"
@@ -144,7 +146,7 @@ export default class ChartToolbar extends HTMLElement {
                     </ext-button>
                     <ext-button
                         hidden=${!onCrosshair}
-                        onready=${onCrosshair}
+                        xonready=${onCrosshair}
                         iconCls="x-fa fa-crosshairs"
                         text="CROSSHAIR"
                         value="crosshair"

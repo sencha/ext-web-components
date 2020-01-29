@@ -1,4 +1,4 @@
-//Tue Jan 28 2020 10:11:04 GMT-0500 (Eastern Standard Time)
+//Wed Jan 29 2020 09:10:03 GMT-0500 (Eastern Standard Time)
 
 import {
   doProp,
@@ -85,7 +85,8 @@ export default class EleBaseComponent extends HTMLElement {
     this.xtype = x;
 
     var me = this;
-    this.newCreateProps(this.properties, this.events);
+    //this.newCreateProps(this.properties, this.events);
+    this.newCreateProps(this.properties);
 
     if (me.A.o['viewport'] == 'true') {
       me.A.o['viewport'] = true
