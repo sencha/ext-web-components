@@ -1,6 +1,6 @@
 ## Getting started for @sencha/ext-web-components-modern
 
-last run: Wed Jan 29 2020 17:32:21 GMT-0500 (Eastern Standard Time)
+last run: Fri Jan 31 2020 13:20:21 GMT-0500 (Eastern Standard Time)
 
 ### Login to the Sencha npm repo
 
@@ -45,7 +45,7 @@ cd ext-web-components-modern-demo
     "start": "npx http-server -o"
   },
   "devDependencies": {
-    "@sencha/ext-web-components-modern": "~7.1.0",
+    "@sencha/ext-web-components-modern": "~7.1.1",
     "http-server": "^0.12.1"
   },
   "author": "",
@@ -63,6 +63,7 @@ cd ext-web-components-modern-demo
   <meta name="viewport"
     content="width=device-width,initial-scale=1,maximum-scale=10,user-scalable=yes"
   >
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 </head>
 
 <!--
