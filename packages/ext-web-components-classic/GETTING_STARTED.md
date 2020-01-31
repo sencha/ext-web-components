@@ -1,6 +1,6 @@
 ## Getting started for @sencha/ext-web-components-classic
 
-last run: Wed Jan 29 2020 17:19:32 GMT-0500 (Eastern Standard Time)
+last run: Fri Jan 31 2020 11:36:31 GMT-0500 (Eastern Standard Time)
 
 ### Login to the Sencha npm repo
 
@@ -45,7 +45,7 @@ cd ext-web-components-classic-demo
     "start": "npx http-server -o"
   },
   "devDependencies": {
-    "@sencha/ext-web-components-classic": "~7.1.0",
+    "@sencha/ext-web-components-classic": "~7.1.1",
     "http-server": "^0.12.1"
   },
   "author": "",
@@ -63,6 +63,7 @@ cd ext-web-components-classic-demo
   <meta name="viewport"
     content="width=device-width,initial-scale=1,maximum-scale=10,user-scalable=yes"
   >
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 </head>
 
 <!--
