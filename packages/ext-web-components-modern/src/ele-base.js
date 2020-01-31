@@ -1,4 +1,4 @@
-//Wed Jan 29 2020 17:32:21 GMT-0500 (Eastern Standard Time)
+//Fri Jan 31 2020 13:20:21 GMT-0500 (Eastern Standard Time)
 
 import {
   doProp,
@@ -16,14 +16,17 @@ export default class EleBaseComponent extends HTMLElement {
   constructor(properties, events) {
     super ();
 
-    this.properties = properties;
+    const distinct = (value, index, self) => {
+        return self.indexOf(value) === index;
+    };
+    this.properties = properties.filter(distinct);
+
+    //this.properties = properties;
     this.events = events;
     this.eventnames = [];
     var eventnamesall = [];
 
-    const distinct = (value, index, self) => {
-        return self.indexOf(value) === index;
-    };
+
 
     this.events.forEach((event) => {
         eventnamesall.push(event.name);

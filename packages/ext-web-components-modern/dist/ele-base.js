@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Wed Jan 29 2020 17:32:21 GMT-0500 (Eastern Standard Time)
+//Fri Jan 31 2020 13:20:21 GMT-0500 (Eastern Standard Time)
 import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildToolbar, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var EleBaseComponent =
@@ -12,14 +12,16 @@ function (_HTMLElement) {
     var _this;
 
     _this = _HTMLElement.call(this) || this;
-    _this.properties = properties;
-    _this.events = events;
-    _this.eventnames = [];
-    var eventnamesall = [];
 
     var distinct = function distinct(value, index, self) {
       return self.indexOf(value) === index;
     };
+
+    _this.properties = properties.filter(distinct); //this.properties = properties;
+
+    _this.events = events;
+    _this.eventnames = [];
+    var eventnamesall = [];
 
     _this.events.forEach(function (event) {
       eventnamesall.push(event.name);
