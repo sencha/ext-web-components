@@ -1,11 +1,11 @@
 ## Readme for @sencha/ext-web-components-classic
 
-last run: Mon Feb 03 2020 09:53:43 GMT-0500 (Eastern Standard Time)
+last run: Mon Feb 03 2020 12:40:32 GMT-0500 (Eastern Standard Time)
 
 This npm package contains the needed files to add the @sencha/ext-web-components-classic package to a web-components application
 
 - [Getting Started](https://github.com/sencha/ext-web-components/blob/ext-web-components-7.1.1/packages/ext-web-components-classic/GETTING_STARTED.md)
-- [Migrate](https://github.com/sencha/ext-web-components/blob/ext-web-components-7.1.1/packages/ext-web-components-classic/MIGRATE.md)
+- [Migrate/Upgrade from a previous version](https://github.com/sencha/ext-web-components/blob/ext-web-components-7.1.1/packages/ext-web-components-classic/MIGRATE.md)
 - [Understanding An App](https://github.com/sencha/ext-web-components/blob/ext-web-components-7.1.1/packages/ext-web-components-classic/UNDERSTANDING_AN_APP.md)
 - [Using ext-webpack-plugin](https://github.com/sencha/ext-web-components/blob/ext-web-components-7.1.1/packages/ext-web-components-classic/USING_EXT_WEBPACK_PLUGIN.md)
 - [What's New](https://github.com/sencha/ext-web-components/blob/ext-web-components-7.1.1/packages/ext-web-components-classic/WHATS_NEW.md)
