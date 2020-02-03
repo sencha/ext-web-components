@@ -1,6 +1,6 @@
 ## Migrate for @sencha/ext-web-components-classic
 
-last run: Mon Feb 03 2020 12:40:32 GMT-0500 (Eastern Standard Time)
+last run: Mon Feb 03 2020 13:09:01 GMT-0500 (Eastern Standard Time)
 
 ## migrating/upgrading an ext-web-components application
 
