@@ -1,3 +1,6 @@
 ## Using Vue.js for @sencha/ext-web-components-modern
 
-last run: Fri Jan 31 2020 14:32:37 GMT-0500 (Eastern Standard Time)
+last run: Mon Feb 03 2020 08:45:59 GMT-0500 (Eastern Standard Time)
+
+
+[A VUE CLI example is available here](https://github.com/sencha/ext-web-components/tree/ext-web-components-7.1.1/packages/ext-web-components-boilerplate-vue-cli).
