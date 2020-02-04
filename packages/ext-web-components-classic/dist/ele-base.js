@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Mon Feb 03 2020 12:40:32 GMT-0500 (Eastern Standard Time)
+//Mon Feb 03 2020 14:14:43 GMT-0500 (Eastern Standard Time)
 import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildToolbar, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var EleBaseComponent =
