@@ -19,4 +19,9 @@ function (_Ext_list_Tree) {
 }(Ext_list_Tree);
 
 export { EWCTreelist as default };
-window.customElements.define('ext-treelist', ElementParser.withParsedCallback(EWCTreelist));
+
+try {
+  window.customElements.define('ext-treelist', ElementParser.withParsedCallback(EWCTreelist));
+} catch (e) {
+  window.customElements.define('ext-treelist', EWCTreelist);
+}

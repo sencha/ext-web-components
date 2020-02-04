@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_form_Time from '@sencha/ext-runtime-base/dist/./Ext/form/Time.js';
 import Ext_form_Time from './Ext/form/Time.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_form_Time) {
 }(Ext_form_Time);
 
 export { EWCTimefield as default };
-window.customElements.define('ext-timefield', ElementParser.withParsedCallback(EWCTimefield));
+
+try {
+  window.customElements.define('ext-timefield', ElementParser.withParsedCallback(EWCTimefield));
+} catch (e) {
+  window.customElements.define('ext-timefield', EWCTimefield);
+}

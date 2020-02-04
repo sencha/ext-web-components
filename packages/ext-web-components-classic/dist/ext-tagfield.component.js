@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_form_field_Tag from '@sencha/ext-runtime-base/dist/./Ext/form/field/Tag.js';
 import Ext_form_field_Tag from './Ext/form/field/Tag.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_form_field_Tag) {
 }(Ext_form_field_Tag);
 
 export { EWCTagfield as default };
-window.customElements.define('ext-tagfield', ElementParser.withParsedCallback(EWCTagfield));
+
+try {
+  window.customElements.define('ext-tagfield', ElementParser.withParsedCallback(EWCTagfield));
+} catch (e) {
+  window.customElements.define('ext-tagfield', EWCTagfield);
+}

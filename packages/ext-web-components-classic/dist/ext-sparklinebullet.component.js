@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_sparkline_Bullet from '@sencha/ext-runtime-base/dist/./Ext/sparkline/Bullet.js';
 import Ext_sparkline_Bullet from './Ext/sparkline/Bullet.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_sparkline_Bullet) {
 }(Ext_sparkline_Bullet);
 
 export { EWCSparklinebullet as default };
-window.customElements.define('ext-sparklinebullet', ElementParser.withParsedCallback(EWCSparklinebullet));
+
+try {
+  window.customElements.define('ext-sparklinebullet', ElementParser.withParsedCallback(EWCSparklinebullet));
+} catch (e) {
+  window.customElements.define('ext-sparklinebullet', EWCSparklinebullet);
+}

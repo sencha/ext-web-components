@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_form_field_FileButton from '@sencha/ext-runtime-base/dist/./Ext/form/field/FileButton.js';
 import Ext_form_field_FileButton from './Ext/form/field/FileButton.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_form_field_FileB) {
 }(Ext_form_field_FileButton);
 
 export { EWCFilebutton as default };
-window.customElements.define('ext-filebutton', ElementParser.withParsedCallback(EWCFilebutton));
+
+try {
+  window.customElements.define('ext-filebutton', ElementParser.withParsedCallback(EWCFilebutton));
+} catch (e) {
+  window.customElements.define('ext-filebutton', EWCFilebutton);
+}

@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_form_Picker from '@sencha/ext-runtime-base/dist/./Ext/form/Picker.js';
 import Ext_form_Picker from './Ext/form/Picker.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_form_Picker) {
 }(Ext_form_Picker);
 
 export { EWCPickerfield as default };
-window.customElements.define('ext-pickerfield', ElementParser.withParsedCallback(EWCPickerfield));
+
+try {
+  window.customElements.define('ext-pickerfield', ElementParser.withParsedCallback(EWCPickerfield));
+} catch (e) {
+  window.customElements.define('ext-pickerfield', EWCPickerfield);
+}

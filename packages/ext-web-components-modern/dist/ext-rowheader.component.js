@@ -19,4 +19,9 @@ function (_Ext_grid_RowHeader) {
 }(Ext_grid_RowHeader);
 
 export { EWCRowheader as default };
-window.customElements.define('ext-rowheader', ElementParser.withParsedCallback(EWCRowheader));
+
+try {
+  window.customElements.define('ext-rowheader', ElementParser.withParsedCallback(EWCRowheader));
+} catch (e) {
+  window.customElements.define('ext-rowheader', EWCRowheader);
+}

@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_grid_RowNumberer from '@sencha/ext-runtime-base/dist/./Ext/grid/RowNumberer.js';
 import Ext_grid_RowNumberer from './Ext/grid/RowNumberer.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_grid_RowNumberer) {
 }(Ext_grid_RowNumberer);
 
 export { EWCRownumberer as default };
-window.customElements.define('ext-rownumberer', ElementParser.withParsedCallback(EWCRownumberer));
+
+try {
+  window.customElements.define('ext-rownumberer', ElementParser.withParsedCallback(EWCRownumberer));
+} catch (e) {
+  window.customElements.define('ext-rownumberer', EWCRownumberer);
+}

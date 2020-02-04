@@ -113,23 +113,12 @@ function (_Ext_Component) {
   Ext_pivot_plugin_configurator_Column.getEvents = function getEvents(events) {
     events = events.concat(Ext_pivot_plugin_configurator_Column.EVENTS());
     return Ext_Component.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_pivot_plugin_configurator_Column, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Component.observedAttributes; //for (var property in Ext_pivot_plugin_configurator_Column.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_Component.observedAttributes;
       Ext_pivot_plugin_configurator_Column.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

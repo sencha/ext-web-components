@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_chart_navigator_Container from '@sencha/ext-runtime-base/dist/./Ext/chart/navigator/Container.js';
 import Ext_chart_navigator_Container from './Ext/chart/navigator/Container.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_chart_navigator_) {
 }(Ext_chart_navigator_Container);
 
 export { EWCChartnavigator as default };
-window.customElements.define('ext-chartnavigator', ElementParser.withParsedCallback(EWCChartnavigator));
+
+try {
+  window.customElements.define('ext-chartnavigator', ElementParser.withParsedCallback(EWCChartnavigator));
+} catch (e) {
+  window.customElements.define('ext-chartnavigator', EWCChartnavigator);
+}

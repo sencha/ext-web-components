@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_form_ComboBox from '@sencha/ext-runtime-base/dist/./Ext/form/ComboBox.js';
 import Ext_form_ComboBox from './Ext/form/ComboBox.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_form_ComboBox) {
 }(Ext_form_ComboBox);
 
 export { EWCCombobox as default };
-window.customElements.define('ext-combobox', ElementParser.withParsedCallback(EWCCombobox));
+
+try {
+  window.customElements.define('ext-combobox', ElementParser.withParsedCallback(EWCCombobox));
+} catch (e) {
+  window.customElements.define('ext-combobox', EWCCombobox);
+}

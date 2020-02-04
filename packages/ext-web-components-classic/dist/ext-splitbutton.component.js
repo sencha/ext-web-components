@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_SplitButton from '@sencha/ext-runtime-base/dist/./Ext/SplitButton.js';
 import Ext_SplitButton from './Ext/SplitButton.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_SplitButton) {
 }(Ext_SplitButton);
 
 export { EWCSplitbutton as default };
-window.customElements.define('ext-splitbutton', ElementParser.withParsedCallback(EWCSplitbutton));
+
+try {
+  window.customElements.define('ext-splitbutton', ElementParser.withParsedCallback(EWCSplitbutton));
+} catch (e) {
+  window.customElements.define('ext-splitbutton', EWCSplitbutton);
+}

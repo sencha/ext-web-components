@@ -2,50 +2,88 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
 
 var ElementParser = function () {
+  var toolkit = 'modern';
+  var theme = 'material';
+
   if (window['Ext'] == undefined) {
-    console.warn('Ext engine and theme not defined in index.html');
-    console.warn('Deprecation below is expected');
-    console.warn('Click the following link for discussion on how to resolve');
-    console.warn('https://docs.sencha.com/extwebcomponents/7.1.0/guides/deprecation_message.html');
-    var toolkit = 'modern'; //var baseFolder = "../ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
+    var linkIt = function linkIt(num) {
+      var xhrLink = new XMLHttpRequest();
+      xhrLink.open('GET', "node_modules/@sencha/ext-web-components-" + toolkit + "/ext-runtime-" + toolkit + "/" + theme + "/" + theme + "-all_" + num + ".css", false);
+      xhrLink.send('');
+      var style = document.createElement('style');
+      style.type = 'text/css';
+      style.innerHTML = xhrLink.responseText;
+      document.getElementsByTagName('head')[0].appendChild(style);
+    };
 
-    var baseFolder = "./node_modules/@sencha/ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
-    var xhrObj = new XMLHttpRequest();
-    xhrObj.open('GET', baseFolder + "/boot.js", false);
-    xhrObj.send(''); // console.log(xhrObj.status)
-
-    if (xhrObj.status == 404) {
-      //baseFolder = "./node_modules/@sencha/ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
-      baseFolder = "../ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
-      xhrObj.open('GET', baseFolder + "/boot.js", false);
+    var scriptIt = function scriptIt() {
+      var se;
+      xhrObj.open('GET', "node_modules/@sencha/ext-web-components-" + toolkit + "/ext-runtime-" + toolkit + "/" + toolkit + ".engine.js", false);
       xhrObj.send('');
-    } // console.log(xhrObj.status)
 
+      if (xhrObj.responseText.substring(0, 3) != 'var') {
+        showError();
+        return;
+      }
 
-    if (xhrObj.status != 200) {
-      console.warn('cant find Ext engine - see https://docs.sencha.com/extwebcomponents/7.1.0/guides/deprecation_message.html');
-      return;
+      se = document.createElement('script');
+      se.type = "text/javascript";
+      se.text = xhrObj.responseText;
+      document.getElementsByTagName('head')[0].appendChild(se);
+    };
+
+    var xhrObj = new XMLHttpRequest();
+
+    var showError = function showError() {
+      console.error('error');
+      document.body.innerHTML = "<div>" + "<h1>An error has occurred</h1>" + "The ExtWebComponents runtime cannot be found<p>" + "Possible reasons:<br>" + "<ul>" + "<li>node_modules folder is not found or corrupted (rerun npm install)" + "</ul>" + "</div>";
+      window.stop();
+    };
+
+    console.warn('[Deprecation] error below is expected');
+
+    switch (window['ExtFramework']) {
+      case 'react':
+        console.log('react');
+        console.warn('ext-react runtime not defined in index.html');
+        console.warn('to fix, add following 2 lines to public/index.html');
+        console.warn('<link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/ext-runtime-${ toolkit }/${ theme }/${ theme }-all.css"></link>');
+        console.warn('<script src="%PUBLIC_URL%/ext-runtime-${ toolkit }/${ toolkit }.engine.js"></script>'); //xhrObj.open('GET', '/ext-runtime-classic/' + 'classic' + '.material.js', false);
+
+        linkIt(1);
+        linkIt(2);
+        scriptIt();
+        break;
+
+      case 'angular':
+        console.log('angular');
+        console.warn('ext-angular runtime not defined in index.html');
+        console.warn('to fix, add following 2 items to angular.json');
+        console.warn('"styles": ["ext-runtime-${ toolkit }/${ theme }/${ theme }-all.css]');
+        console.warn('"scripts": ["ext-runtime-${ toolkit }/${ toolkit }.engine.js]');
+        linkIt(1);
+        linkIt(2);
+        scriptIt();
+        break;
+
+      case 'vue':
+        console.warn('native vue not yet supported, use ext-web-components');
+        break;
+
+      case undefined:
+        console.warn('ext-web-components runtime not defined in index.html');
+        console.warn('to fix, add following 2 lines to index.html');
+        console.warn("<script src=\"./node_modules/@sencha/ext-web-components-" + toolkit + "/ext-runtime-" + toolkit + "/" + toolkit + ".engine.js\"></script>");
+        console.warn("<link rel=\"stylesheet\" type=\"text/css\" href=\"node_modules/@sencha/ext-web-components-" + toolkit + "/ext-runtime-" + toolkit + "/" + theme + "/" + theme + "-all.css\"></link>");
+        linkIt(1);
+        linkIt(2);
+        scriptIt();
+        break;
+
+      default:
+        console.error('ERROR');
+        break;
     }
-
-    var se = document.createElement('script');
-    se.type = "text/javascript";
-    se.text = xhrObj.responseText;
-    document.getElementsByTagName('head')[0].appendChild(se);
-    console.warn(baseFolder + "/boot.js" + " " + "was dynamically loaded");
-    xhrObj.open('GET', baseFolder + "/engine.js", false);
-    xhrObj.send('');
-    var se1 = document.createElement('script');
-    se1.type = "text/javascript";
-    se1.text = xhrObj.responseText;
-    document.getElementsByTagName('head')[0].appendChild(se1);
-    console.warn(baseFolder + "/engine.js" + " " + "was dynamically loaded");
-    xhrObj.open('GET', baseFolder + "/css.prod.js", false);
-    xhrObj.send('');
-    var se2 = document.createElement('script');
-    se2.type = "text/javascript";
-    se2.text = xhrObj.responseText;
-    document.getElementsByTagName('head')[0].appendChild(se2);
-    console.warn(baseFolder + "/css.prod.js" + " " + "was dynamically loaded");
   }
 
   var DCL = 'DOMContentLoaded';

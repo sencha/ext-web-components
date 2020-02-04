@@ -62,23 +62,12 @@ function (_Ext_sparkline_Base) {
   Ext_sparkline_Bullet.getEvents = function getEvents(events) {
     events = events.concat(Ext_sparkline_Bullet.EVENTS());
     return Ext_sparkline_Base.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_sparkline_Bullet, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_sparkline_Base.observedAttributes; //for (var property in Ext_sparkline_Bullet.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_sparkline_Base.observedAttributes;
       Ext_sparkline_Bullet.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

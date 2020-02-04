@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_calendar_form_Edit from '@sencha/ext-runtime-base/dist/./Ext/calendar/form/Edit.js';
 import Ext_calendar_form_Edit from './Ext/calendar/form/Edit.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_calendar_form_Ed) {
 }(Ext_calendar_form_Edit);
 
 export { EWCCalendar_form_edit as default };
-window.customElements.define('ext-calendar-form-edit', ElementParser.withParsedCallback(EWCCalendar_form_edit));
+
+try {
+  window.customElements.define('ext-calendar-form-edit', ElementParser.withParsedCallback(EWCCalendar_form_edit));
+} catch (e) {
+  window.customElements.define('ext-calendar-form-edit', EWCCalendar_form_edit);
+}

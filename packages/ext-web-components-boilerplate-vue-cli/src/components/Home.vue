@@ -48,6 +48,7 @@
       name: 'Home',
       methods: {
         readyGrid: function(event) {
+        console.log(event)
             this.gridCmp = event.detail.cmp;
             const store = Ext.create('Ext.data.Store', {
               fields: ['name', 'email', 'phone', 'hoursTaken', 'hoursRemaining'],

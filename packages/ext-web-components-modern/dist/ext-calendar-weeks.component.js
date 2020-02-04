@@ -19,4 +19,9 @@ function (_Ext_calendar_panel_W) {
 }(Ext_calendar_panel_Weeks);
 
 export { EWCCalendar_weeks as default };
-window.customElements.define('ext-calendar-weeks', ElementParser.withParsedCallback(EWCCalendar_weeks));
+
+try {
+  window.customElements.define('ext-calendar-weeks', ElementParser.withParsedCallback(EWCCalendar_weeks));
+} catch (e) {
+  window.customElements.define('ext-calendar-weeks', EWCCalendar_weeks);
+}

@@ -71,23 +71,12 @@ function (_Ext_d3_hierarchy_par) {
   Ext_d3_hierarchy_partition_Sunburst.getEvents = function getEvents(events) {
     events = events.concat(Ext_d3_hierarchy_partition_Sunburst.EVENTS());
     return Ext_d3_hierarchy_partition_Partition.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_d3_hierarchy_partition_Sunburst, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_d3_hierarchy_par.observedAttributes; //for (var property in Ext_d3_hierarchy_partition_Sunburst.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_d3_hierarchy_par.observedAttributes;
       Ext_d3_hierarchy_partition_Sunburst.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

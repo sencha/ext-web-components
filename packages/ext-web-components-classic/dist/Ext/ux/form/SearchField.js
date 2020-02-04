@@ -146,23 +146,12 @@ function (_Ext_form_field_Text) {
   Ext_ux_form_SearchField.getEvents = function getEvents(events) {
     events = events.concat(Ext_ux_form_SearchField.EVENTS());
     return Ext_form_field_Text.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_ux_form_SearchField, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_form_field_Text.observedAttributes; //for (var property in Ext_ux_form_SearchField.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_form_field_Text.observedAttributes;
       Ext_ux_form_SearchField.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

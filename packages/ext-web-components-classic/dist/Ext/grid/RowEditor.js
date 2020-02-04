@@ -206,23 +206,12 @@ function (_Ext_form_Panel) {
   Ext_grid_RowEditor.getEvents = function getEvents(events) {
     events = events.concat(Ext_grid_RowEditor.EVENTS());
     return Ext_form_Panel.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_grid_RowEditor, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_form_Panel.observedAttributes; //for (var property in Ext_grid_RowEditor.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_form_Panel.observedAttributes;
       Ext_grid_RowEditor.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

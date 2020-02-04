@@ -19,4 +19,9 @@ function (_Ext_calendar_form_Ad) {
 }(Ext_calendar_form_Add);
 
 export { EWCCalendar_form_add as default };
-window.customElements.define('ext-calendar-form-add', ElementParser.withParsedCallback(EWCCalendar_form_add));
+
+try {
+  window.customElements.define('ext-calendar-form-add', ElementParser.withParsedCallback(EWCCalendar_form_add));
+} catch (e) {
+  window.customElements.define('ext-calendar-form-add', EWCCalendar_form_add);
+}

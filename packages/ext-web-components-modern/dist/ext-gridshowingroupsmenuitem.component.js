@@ -19,4 +19,9 @@ function (_Ext_grid_menu_ShowIn) {
 }(Ext_grid_menu_ShowInGroups);
 
 export { EWCGridshowingroupsmenuitem as default };
-window.customElements.define('ext-gridshowingroupsmenuitem', ElementParser.withParsedCallback(EWCGridshowingroupsmenuitem));
+
+try {
+  window.customElements.define('ext-gridshowingroupsmenuitem', ElementParser.withParsedCallback(EWCGridshowingroupsmenuitem));
+} catch (e) {
+  window.customElements.define('ext-gridshowingroupsmenuitem', EWCGridshowingroupsmenuitem);
+}

@@ -1,13 +1,3 @@
-// export function extnameToProperty(cmpObj, me, suffix) {
-// //export function extnameToProperty(event, me, suffix) {
-// //  var cmpObj = event.detail.cmpObj
-//   if (suffix == undefined) {
-//     suffix = 'Cmp'
-//   }
-//   for (var prop in cmpObj) {
-//       me[prop+suffix] = cmpObj[prop];
-//   }
-// }
 export function doProp(me, prop) {
   try {
     Object.defineProperty(me, prop, {
@@ -22,6 +12,11 @@ export function doProp(me, prop) {
 }
 
 function doSet(me, prop, val) {
+  //console.log('doSet: ' + prop)
+  if (prop == 'plugins') {
+    return;
+  }
+
   if (val) {
     var val2;
     var valExt;
@@ -84,6 +79,13 @@ export function isMenu(childxtype) {
 }
 export function isRenderercell(childxtype) {
   if (childxtype === 'renderercell') {
+    return true;
+  } else {
+    return false;
+  }
+}
+export function isParentGridAndChildToolbar(parentxtype, childxtype) {
+  if (parentxtype === 'grid' && childxtype === 'toolbar') {
     return true;
   } else {
     return false;

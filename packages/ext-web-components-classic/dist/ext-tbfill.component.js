@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_toolbar_Fill from '@sencha/ext-runtime-base/dist/./Ext/toolbar/Fill.js';
 import Ext_toolbar_Fill from './Ext/toolbar/Fill.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_toolbar_Fill) {
 }(Ext_toolbar_Fill);
 
 export { EWCTbfill as default };
-window.customElements.define('ext-tbfill', ElementParser.withParsedCallback(EWCTbfill));
+
+try {
+  window.customElements.define('ext-tbfill', ElementParser.withParsedCallback(EWCTbfill));
+} catch (e) {
+  window.customElements.define('ext-tbfill', EWCTbfill);
+}

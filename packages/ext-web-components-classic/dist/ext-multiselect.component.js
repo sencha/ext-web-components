@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ux_Multiselect from '@sencha/ext-runtime-base/dist/./Ext/ux/Multiselect.js';
 import Ext_ux_Multiselect from './Ext/ux/Multiselect.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_ux_Multiselect) {
 }(Ext_ux_Multiselect);
 
 export { EWCMultiselect as default };
-window.customElements.define('ext-multiselect', ElementParser.withParsedCallback(EWCMultiselect));
+
+try {
+  window.customElements.define('ext-multiselect', ElementParser.withParsedCallback(EWCMultiselect));
+} catch (e) {
+  window.customElements.define('ext-multiselect', EWCMultiselect);
+}

@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_Tip from '@sencha/ext-runtime-base/dist/./Ext/Tip.js';
 import Ext_Tip from './Ext/Tip.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_Tip) {
 }(Ext_Tip);
 
 export { EWCTip as default };
-window.customElements.define('ext-tip', ElementParser.withParsedCallback(EWCTip));
+
+try {
+  window.customElements.define('ext-tip', ElementParser.withParsedCallback(EWCTip));
+} catch (e) {
+  window.customElements.define('ext-tip', EWCTip);
+}

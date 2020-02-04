@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_form_Display from '@sencha/ext-runtime-base/dist/./Ext/form/Display.js';
 import Ext_form_Display from './Ext/form/Display.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_form_Display) {
 }(Ext_form_Display);
 
 export { EWCDisplayfield as default };
-window.customElements.define('ext-displayfield', ElementParser.withParsedCallback(EWCDisplayfield));
+
+try {
+  window.customElements.define('ext-displayfield', ElementParser.withParsedCallback(EWCDisplayfield));
+} catch (e) {
+  window.customElements.define('ext-displayfield', EWCDisplayfield);
+}

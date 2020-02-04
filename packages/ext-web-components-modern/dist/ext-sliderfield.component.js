@@ -19,4 +19,9 @@ function (_Ext_form_Slider) {
 }(Ext_form_Slider);
 
 export { EWCSliderfield as default };
-window.customElements.define('ext-sliderfield', ElementParser.withParsedCallback(EWCSliderfield));
+
+try {
+  window.customElements.define('ext-sliderfield', ElementParser.withParsedCallback(EWCSliderfield));
+} catch (e) {
+  window.customElements.define('ext-sliderfield', EWCSliderfield);
+}

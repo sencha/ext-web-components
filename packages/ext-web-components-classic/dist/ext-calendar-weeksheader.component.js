@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_calendar_header_Weeks from '@sencha/ext-runtime-base/dist/./Ext/calendar/header/Weeks.js';
 import Ext_calendar_header_Weeks from './Ext/calendar/header/Weeks.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_calendar_header_) {
 }(Ext_calendar_header_Weeks);
 
 export { EWCCalendar_weeksheader as default };
-window.customElements.define('ext-calendar-weeksheader', ElementParser.withParsedCallback(EWCCalendar_weeksheader));
+
+try {
+  window.customElements.define('ext-calendar-weeksheader', ElementParser.withParsedCallback(EWCCalendar_weeksheader));
+} catch (e) {
+  window.customElements.define('ext-calendar-weeksheader', EWCCalendar_weeksheader);
+}

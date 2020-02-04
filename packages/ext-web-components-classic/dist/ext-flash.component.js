@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_FlashComponent from '@sencha/ext-runtime-base/dist/./Ext/FlashComponent.js';
 import Ext_FlashComponent from './Ext/FlashComponent.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_FlashComponent) {
 }(Ext_FlashComponent);
 
 export { EWCFlash as default };
-window.customElements.define('ext-flash', ElementParser.withParsedCallback(EWCFlash));
+
+try {
+  window.customElements.define('ext-flash', ElementParser.withParsedCallback(EWCFlash));
+} catch (e) {
+  window.customElements.define('ext-flash', EWCFlash);
+}

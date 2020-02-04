@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_MonthPicker from '@sencha/ext-runtime-base/dist/./Ext/MonthPicker.js';
 import Ext_MonthPicker from './Ext/MonthPicker.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_MonthPicker) {
 }(Ext_MonthPicker);
 
 export { EWCMonthpicker as default };
-window.customElements.define('ext-monthpicker', ElementParser.withParsedCallback(EWCMonthpicker));
+
+try {
+  window.customElements.define('ext-monthpicker', ElementParser.withParsedCallback(EWCMonthpicker));
+} catch (e) {
+  window.customElements.define('ext-monthpicker', EWCMonthpicker);
+}

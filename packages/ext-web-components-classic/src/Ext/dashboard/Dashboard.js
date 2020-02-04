@@ -1,7 +1,7 @@
 import Ext_panel_Panel from '../../Ext/panel/Panel.js';
 
 export default class Ext_dashboard_Dashboard extends Ext_panel_Panel {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'actions',
     'activeChildTabIndex',
     'activeCounter',
@@ -178,8 +178,8 @@ export default class Ext_dashboard_Dashboard extends Ext_panel_Panel {
     'weight',
     'width',
     'xtype',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'sender'},
     {name:'add', parameters:'sender,component,index'},
     {name:'added', parameters:'sender,container,pos'},
@@ -239,52 +239,40 @@ export default class Ext_dashboard_Dashboard extends Ext_panel_Panel {
     {name:'unfloat', parameters:''},
     {name:'validatedrop', parameters:''},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_dashboard_Dashboard.PROPERTIES());
-        return Ext_panel_Panel.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_dashboard_Dashboard.EVENTS());
-        return Ext_panel_Panel.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_dashboard_Dashboard.PROPERTIES());
+    return Ext_panel_Panel.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_dashboard_Dashboard.EVENTS());
+    return Ext_panel_Panel.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_dashboard_Dashboard.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_dashboard_Dashboard.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_dashboard_Dashboard.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_dashboard_Dashboard.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_dashboard_Dashboard.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_dashboard_Dashboard.PROPERTIES()),
+      events.concat(Ext_dashboard_Dashboard.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_dashboard_Dashboard.PROPERTIES()),
-            events.concat(Ext_dashboard_Dashboard.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

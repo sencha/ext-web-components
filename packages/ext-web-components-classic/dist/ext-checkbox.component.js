@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_form_Checkbox from '@sencha/ext-runtime-base/dist/./Ext/form/Checkbox.js';
 import Ext_form_Checkbox from './Ext/form/Checkbox.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_form_Checkbox) {
 }(Ext_form_Checkbox);
 
 export { EWCCheckbox as default };
-window.customElements.define('ext-checkbox', ElementParser.withParsedCallback(EWCCheckbox));
+
+try {
+  window.customElements.define('ext-checkbox', ElementParser.withParsedCallback(EWCCheckbox));
+} catch (e) {
+  window.customElements.define('ext-checkbox', EWCCheckbox);
+}

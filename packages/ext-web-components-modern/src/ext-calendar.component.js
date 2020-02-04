@@ -7,4 +7,9 @@ export default class EWCCalendar extends Ext_calendar_panel_Panel {
     this.xtype = 'calendar';
   }
 }
-window.customElements.define('ext-calendar', ElementParser.withParsedCallback(EWCCalendar));
+try {
+  window.customElements.define('ext-calendar', ElementParser.withParsedCallback(EWCCalendar));
+}
+catch(e) {
+  window.customElements.define('ext-calendar', EWCCalendar);
+}

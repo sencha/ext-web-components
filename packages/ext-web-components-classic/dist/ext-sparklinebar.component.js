@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_sparkline_Bar from '@sencha/ext-runtime-base/dist/./Ext/sparkline/Bar.js';
 import Ext_sparkline_Bar from './Ext/sparkline/Bar.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_sparkline_Bar) {
 }(Ext_sparkline_Bar);
 
 export { EWCSparklinebar as default };
-window.customElements.define('ext-sparklinebar', ElementParser.withParsedCallback(EWCSparklinebar));
+
+try {
+  window.customElements.define('ext-sparklinebar', ElementParser.withParsedCallback(EWCSparklinebar));
+} catch (e) {
+  window.customElements.define('ext-sparklinebar', EWCSparklinebar);
+}

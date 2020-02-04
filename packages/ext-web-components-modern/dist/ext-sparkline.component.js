@@ -19,4 +19,9 @@ function (_Ext_sparkline_Base) {
 }(Ext_sparkline_Base);
 
 export { EWCSparkline as default };
-window.customElements.define('ext-sparkline', ElementParser.withParsedCallback(EWCSparkline));
+
+try {
+  window.customElements.define('ext-sparkline', ElementParser.withParsedCallback(EWCSparkline));
+} catch (e) {
+  window.customElements.define('ext-sparkline', EWCSparkline);
+}

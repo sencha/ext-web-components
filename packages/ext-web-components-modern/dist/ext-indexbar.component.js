@@ -19,4 +19,9 @@ function (_Ext_IndexBar) {
 }(Ext_IndexBar);
 
 export { EWCIndexbar as default };
-window.customElements.define('ext-indexbar', ElementParser.withParsedCallback(EWCIndexbar));
+
+try {
+  window.customElements.define('ext-indexbar', ElementParser.withParsedCallback(EWCIndexbar));
+} catch (e) {
+  window.customElements.define('ext-indexbar', EWCIndexbar);
+}

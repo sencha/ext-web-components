@@ -19,4 +19,9 @@ function (_Ext_tree_Tree) {
 }(Ext_tree_Tree);
 
 export { EWCTree as default };
-window.customElements.define('ext-tree', ElementParser.withParsedCallback(EWCTree));
+
+try {
+  window.customElements.define('ext-tree', ElementParser.withParsedCallback(EWCTree));
+} catch (e) {
+  window.customElements.define('ext-tree', EWCTree);
+}

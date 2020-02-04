@@ -113,23 +113,12 @@ function (_Ext_toolbar_Item) {
   Ext_toolbar_Separator.getEvents = function getEvents(events) {
     events = events.concat(Ext_toolbar_Separator.EVENTS());
     return Ext_toolbar_Item.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_toolbar_Separator, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_toolbar_Item.observedAttributes; //for (var property in Ext_toolbar_Separator.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_toolbar_Item.observedAttributes;
       Ext_toolbar_Separator.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

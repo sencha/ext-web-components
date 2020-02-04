@@ -1,146 +1,178 @@
 const ElementParser = (() => {
+  var toolkit = 'classic';
+  var theme = 'material';
 
   if (window['Ext'] == undefined) {
-    console.warn('Ext engine and theme not defined in index.html');
-    console.warn('Deprecation below is expected');
-    console.warn('Click the following link for discussion on how to resolve');
-    console.warn('https://docs.sencha.com/extwebcomponents/7.1.0/guides/deprecation_message.html');
-
-    var toolkit = 'classic';
-
-    //var baseFolder = "../ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
-    var baseFolder = "./node_modules/@sencha/ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
     var xhrObj = new XMLHttpRequest();
-    xhrObj.open('GET', baseFolder + "/boot.js", false);
-    xhrObj.send('');
 
-    // console.log(xhrObj.status)
-    if (xhrObj.status == 404) {
-      //baseFolder = "./node_modules/@sencha/ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
-      baseFolder = "../ext-web-components-" + toolkit + "/ext-runtime-" + toolkit;
-      xhrObj.open('GET', baseFolder + "/boot.js", false);
+    function linkIt(num) {
+      var xhrLink = new XMLHttpRequest();
+      xhrLink.open('GET', `node_modules/@sencha/ext-web-components-${ toolkit }/ext-runtime-${ toolkit }/${ theme }/${ theme }-all_${ num }.css`, false);
+      xhrLink.send('');
+      var style = document.createElement('style');
+      style.type = 'text/css';
+      style.innerHTML = xhrLink.responseText;
+      document.getElementsByTagName('head')[0].appendChild(style);
+    }
+
+    function scriptIt() {
+      var se;
+      xhrObj.open('GET', `node_modules/@sencha/ext-web-components-${ toolkit }/ext-runtime-${ toolkit }/${ toolkit }.engine.js`, false);
       xhrObj.send('');
+      if (xhrObj.responseText.substring(0, 3) != 'var') {showError();return;}
+      se = document.createElement('script');
+      se.type = "text/javascript";
+      se.text = xhrObj.responseText;
+      document.getElementsByTagName('head')[0].appendChild(se);
     }
-    // console.log(xhrObj.status)
-    if (xhrObj.status != 200) {
-      console.warn('cant find Ext engine - see https://docs.sencha.com/extwebcomponents/7.1.0/guides/deprecation_message.html')
-      return
+
+    var showError = function showError() {
+      console.error('error');
+      document.body.innerHTML = "<div>" + "<h1>An error has occurred</h1>" + "The ExtWebComponents runtime cannot be found<p>" + "Possible reasons:<br>" + "<ul>" + "<li>node_modules folder is not found or corrupted (rerun npm install)" + "</ul>" + "</div>";
+      window.stop();
+    };
+
+    console.warn('[Deprecation] error below is expected');
+
+    switch (window['ExtFramework']) {
+      case 'react':
+        console.log('react')
+        console.warn('ext-react runtime not defined in index.html');
+        console.warn('to fix, add following 2 lines to public/index.html');
+        console.warn('<link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/ext-runtime-${ toolkit }/${ theme }/${ theme }-all.css"></link>');
+        console.warn('<script src="%PUBLIC_URL%/ext-runtime-${ toolkit }/${ toolkit }.engine.js"></script>');
+        //xhrObj.open('GET', '/ext-runtime-classic/' + 'classic' + '.material.js', false);
+        linkIt(1)
+        linkIt(2)
+        scriptIt()
+        break;
+
+      case 'angular':
+        console.log('angular')
+        console.warn('ext-angular runtime not defined in index.html');
+        console.warn('to fix, add following 2 items to angular.json');
+        console.warn('"styles": ["ext-runtime-${ toolkit }/${ theme }/${ theme }-all.css]');
+        console.warn('"scripts": ["ext-runtime-${ toolkit }/${ toolkit }.engine.js]');
+        linkIt(1)
+        linkIt(2)
+        scriptIt()
+        break;
+
+      case 'vue':
+        console.warn('native vue not yet supported, use ext-web-components');
+        break;
+
+      case undefined:
+        console.warn('ext-web-components runtime not defined in index.html');
+        console.warn('to fix, add following 2 lines to index.html');
+        console.warn(`<script src="./node_modules/@sencha/ext-web-components-${ toolkit }/ext-runtime-${ toolkit }/${ toolkit }.engine.js"></script>`);
+        console.warn(`<link rel="stylesheet" type="text/css" href="node_modules/@sencha/ext-web-components-${ toolkit }/ext-runtime-${ toolkit }/${ theme }/${ theme }-all.css"></link>`);
+        linkIt(1)
+        linkIt(2)
+        scriptIt()
+        break;
+
+      default:
+        console.error('ERROR');
+        break;
     }
-
-    var se = document.createElement('script');
-    se.type = "text/javascript";
-    se.text = xhrObj.responseText;
-    document.getElementsByTagName('head')[0].appendChild(se);
-    console.warn(baseFolder + "/boot.js" + " " + "was dynamically loaded");
-
-    xhrObj.open('GET', baseFolder + "/engine.js", false);
-    xhrObj.send('');
-    var se1 = document.createElement('script');
-    se1.type = "text/javascript";
-    se1.text = xhrObj.responseText;
-    document.getElementsByTagName('head')[0].appendChild(se1);
-    console.warn(baseFolder + "/engine.js" + " " + "was dynamically loaded");
-
-    xhrObj.open('GET', baseFolder + "/css.prod.js", false);
-    xhrObj.send('');
-    var se2 = document.createElement('script');
-    se2.type = "text/javascript";
-    se2.text = xhrObj.responseText;
-    document.getElementsByTagName('head')[0].appendChild(se2);
-    console.warn(baseFolder + "/css.prod.js" + " " + "was dynamically loaded");
   }
 
-    const DCL = 'DOMContentLoaded';
-    const init = new window.WeakMap;
-    const queue = [];
-    const isParsed = el => {
-        do {
-            if (el.nextSibling)
-                return true;
-        } while (el = el.parentNode);
-        return false;
-    };
-    const upgrade = () => {
-        queue.splice(0).forEach(info => {
-            if (init.get(info[0]) !== true) {
-                init.set(info[0], true);
-                info[0][info[1]]();
-            }
-        });
-    };
-    document.addEventListener(DCL, upgrade);
-    class ElementParser extends HTMLElement {
-        static withParsedCallback(Class, name = 'parsed') {
-            const { prototype } = Class;
-            const { connectedCallback } = prototype;
-            const method = name + 'Callback';
-            const cleanUp = (el, observer, ownerDocument, onDCL) => {
-                observer.disconnect();
-                ownerDocument.removeEventListener(DCL, onDCL);
-                parsedCallback(el);
-            };
-            const parsedCallback = el => {
-                if (!queue.length)
-                    requestAnimationFrame(upgrade);
-                queue.push([el, method]);
-            };
-            Object.defineProperties(
-                prototype,
-                {
-                    connectedCallback: {
-                        configurable: true,
-                        value() {
-                            if (connectedCallback)
+  const DCL = 'DOMContentLoaded';
+  const init = new window.WeakMap;
+  const queue = [];
+  const isParsed = el => {
+      do {
+          if (el.nextSibling)
+              return true;
+      } while (el = el.parentNode);
+      return false;
+  };
+  const upgrade = () => {
+      queue.splice(0).forEach(info => {
+          if (init.get(info[0]) !== true) {
+              init.set(info[0], true);
+              info[0][info[1]]();
+          }
+      });
+  };
+  document.addEventListener(DCL, upgrade);
+  class ElementParser extends HTMLElement {
+    static withParsedCallback(Class, name = 'parsed') {
+      const { prototype } = Class;
+      const { connectedCallback } = prototype;
+      const method = name + 'Callback';
+      const cleanUp = (el, observer, ownerDocument, onDCL) => {
+          observer.disconnect();
+          ownerDocument.removeEventListener(DCL, onDCL);
+          parsedCallback(el);
+      };
+      const parsedCallback = el => {
+          if (!queue.length)
+              requestAnimationFrame(upgrade);
+          queue.push([el, method]);
+      };
+      Object.defineProperties(
+          prototype,
+          {
+              connectedCallback: {
+                  configurable: true,
+                  value() {
+                      if (connectedCallback) {
+                        connectedCallback.apply(this, arguments);
+                      }
+                      const self = this;
+                      if (method in this && !init.has(this)) {
 
-                                var me = this;
-                                //Ext.onReady(function() {
-                                  connectedCallback.apply(me, arguments);
-                                //});
-                                //connectedCallback.apply(this, arguments);
-
-                            if (method in this && !init.has(this)) {
-                                const self = this;
-                                const { ownerDocument } = self;
-                                init.set(self, false);
-                                if (ownerDocument.readyState === 'complete' || isParsed(self))
-                                {
-
-                                  //Ext.onReady(function() {
-                                    parsedCallback(self);
-                                  //});
-                                  //parsedCallback(self);
-
-                                }
-                                else {
-                                    const onDCL = () => cleanUp(self, observer, ownerDocument, onDCL);
-                                    ownerDocument.addEventListener(DCL, onDCL);
-                                    const observer = new MutationObserver(() => {
-                                        /* istanbul ignore else */
-                                        if (isParsed(self))
-                                            cleanUp(self, observer, ownerDocument, onDCL);
-                                    });
-                                    observer.observe(self.parentNode, { childList: true, subtree: true });
-                                }
-                            }
-                        }
-                    },
-                    [name]: {
-                        configurable: true,
-                        get() {
-                            return init.get(this) === true;
-                        }
-                    }
-                }
-            );
-            return Class;
-        }
+                          const { ownerDocument } = self;
+                          init.set(self, false);
+                          if (ownerDocument.readyState === 'complete' || isParsed(self))
+                          {
+                            parsedCallback(self);
+                          }
+                          else {
+                              const onDCL = () => cleanUp(self, observer, ownerDocument, onDCL);
+                              ownerDocument.addEventListener(DCL, onDCL);
+                              const observer = new MutationObserver(() => {
+                                  /* istanbul ignore else */
+                                  if (isParsed(self))
+                                      cleanUp(self, observer, ownerDocument, onDCL);
+                              });
+                              observer.observe(self.parentNode, { childList: true, subtree: true });
+                          }
+                      }
+                      else {
+                        requestAnimationFrame(function () {
+                          self['parsedCallback']();
+                        });
+                        //setTimeout(function(){
+                        //  self['parsedCallback']();
+                        //}, 0);
+                      }
+                  }
+              },
+              [name]: {
+                  configurable: true,
+                  get() {
+                      return init.get(this) === true;
+                  }
+              }
+          }
+      );
+      return Class;
     }
-    return ElementParser.withParsedCallback(ElementParser);
+  }
+  return ElementParser.withParsedCallback(ElementParser);
 })();
 export default ElementParser;
 
 
-    var framework = 'classic'
+
+
+
+
+
+    //var framework = 'classic'
     //var list= document.all;
     //for (var i = 0; i < list.length; i++) {
     //  if (list[i].tagName == 'SCRIPT') {

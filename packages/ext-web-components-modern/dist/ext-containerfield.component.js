@@ -19,4 +19,9 @@ function (_Ext_field_Container) {
 }(Ext_field_Container);
 
 export { EWCContainerfield as default };
-window.customElements.define('ext-containerfield', ElementParser.withParsedCallback(EWCContainerfield));
+
+try {
+  window.customElements.define('ext-containerfield', ElementParser.withParsedCallback(EWCContainerfield));
+} catch (e) {
+  window.customElements.define('ext-containerfield', EWCContainerfield);
+}

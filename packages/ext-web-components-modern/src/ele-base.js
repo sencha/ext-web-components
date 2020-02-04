@@ -1,10 +1,11 @@
-//Mon Jan 06 2020 09:06:54 GMT-0500 (Eastern Standard Time)
+//Mon Feb 03 2020 13:19:12 GMT-0500 (Eastern Standard Time)
 
 import {
   doProp,
   filterProp,
   isMenu,
   isRenderercell,
+  isParentGridAndChildToolbar,
   isParentGridAndChildColumn,
   isTooltip,
   isPlugin
@@ -15,14 +16,17 @@ export default class EleBaseComponent extends HTMLElement {
   constructor(properties, events) {
     super ();
 
-    this.properties = properties;
+    const distinct = (value, index, self) => {
+        return self.indexOf(value) === index;
+    };
+    this.properties = properties.filter(distinct);
+
+    //this.properties = properties;
     this.events = events;
     this.eventnames = [];
     var eventnamesall = [];
 
-    const distinct = (value, index, self) => {
-        return self.indexOf(value) === index;
-    };
+
 
     this.events.forEach((event) => {
         eventnamesall.push(event.name);
@@ -84,7 +88,8 @@ export default class EleBaseComponent extends HTMLElement {
     this.xtype = x;
 
     var me = this;
-    this.newCreateProps(this.properties, this.events);
+    //this.newCreateProps(this.properties, this.events);
+    this.newCreateProps(this.properties);
 
     if (me.A.o['viewport'] == 'true') {
       me.A.o['viewport'] = true
@@ -338,6 +343,14 @@ export default class EleBaseComponent extends HTMLElement {
         break;
       case isRenderercell(childxtype):
         parentCmp.setCell(childCmp);
+        break;
+      case isParentGridAndChildToolbar(parentxtype, childxtype):
+        if(parentCmp.items.items[0].xtype == 'titlebar') {
+          parentCmp.insert(1, childCmp);
+        }
+        else {
+          parentCmp.insert(0, childCmp);
+        }
         break;
       case isParentGridAndChildColumn(parentxtype,childxtype):
         if (location == null) {

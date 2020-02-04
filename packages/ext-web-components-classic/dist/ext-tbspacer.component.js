@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_toolbar_Spacer from '@sencha/ext-runtime-base/dist/./Ext/toolbar/Spacer.js';
 import Ext_toolbar_Spacer from './Ext/toolbar/Spacer.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_toolbar_Spacer) {
 }(Ext_toolbar_Spacer);
 
 export { EWCTbspacer as default };
-window.customElements.define('ext-tbspacer', ElementParser.withParsedCallback(EWCTbspacer));
+
+try {
+  window.customElements.define('ext-tbspacer', ElementParser.withParsedCallback(EWCTbspacer));
+} catch (e) {
+  window.customElements.define('ext-tbspacer', EWCTbspacer);
+}

@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_grid_View from '@sencha/ext-runtime-base/dist/./Ext/grid/View.js';
 import Ext_grid_View from './Ext/grid/View.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_grid_View) {
 }(Ext_grid_View);
 
 export { EWCTableview as default };
-window.customElements.define('ext-tableview', ElementParser.withParsedCallback(EWCTableview));
+
+try {
+  window.customElements.define('ext-tableview', ElementParser.withParsedCallback(EWCTableview));
+} catch (e) {
+  window.customElements.define('ext-tableview', EWCTableview);
+}

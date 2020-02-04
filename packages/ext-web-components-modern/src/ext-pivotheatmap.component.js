@@ -7,4 +7,9 @@ export default class EWCPivotheatmap extends Ext_pivot_d3_HeatMap {
     this.xtype = 'pivotheatmap';
   }
 }
-window.customElements.define('ext-pivotheatmap', ElementParser.withParsedCallback(EWCPivotheatmap));
+try {
+  window.customElements.define('ext-pivotheatmap', ElementParser.withParsedCallback(EWCPivotheatmap));
+}
+catch(e) {
+  window.customElements.define('ext-pivotheatmap', EWCPivotheatmap);
+}

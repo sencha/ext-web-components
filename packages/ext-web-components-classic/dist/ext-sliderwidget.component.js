@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_slider_Widget from '@sencha/ext-runtime-base/dist/./Ext/slider/Widget.js';
 import Ext_slider_Widget from './Ext/slider/Widget.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_slider_Widget) {
 }(Ext_slider_Widget);
 
 export { EWCSliderwidget as default };
-window.customElements.define('ext-sliderwidget', ElementParser.withParsedCallback(EWCSliderwidget));
+
+try {
+  window.customElements.define('ext-sliderwidget', ElementParser.withParsedCallback(EWCSliderwidget));
+} catch (e) {
+  window.customElements.define('ext-sliderwidget', EWCSliderwidget);
+}

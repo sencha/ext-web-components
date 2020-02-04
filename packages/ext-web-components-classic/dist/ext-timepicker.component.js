@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_picker_Time from '@sencha/ext-runtime-base/dist/./Ext/picker/Time.js';
 import Ext_picker_Time from './Ext/picker/Time.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_picker_Time) {
 }(Ext_picker_Time);
 
 export { EWCTimepicker as default };
-window.customElements.define('ext-timepicker', ElementParser.withParsedCallback(EWCTimepicker));
+
+try {
+  window.customElements.define('ext-timepicker', ElementParser.withParsedCallback(EWCTimepicker));
+} catch (e) {
+  window.customElements.define('ext-timepicker', EWCTimepicker);
+}

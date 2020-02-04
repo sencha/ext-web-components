@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ux_desktop_Video from '@sencha/ext-runtime-base/dist/./Ext/ux/desktop/Video.js';
 import Ext_ux_desktop_Video from './Ext/ux/desktop/Video.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_ux_desktop_Video) {
 }(Ext_ux_desktop_Video);
 
 export { EWCVideo as default };
-window.customElements.define('ext-video', ElementParser.withParsedCallback(EWCVideo));
+
+try {
+  window.customElements.define('ext-video', ElementParser.withParsedCallback(EWCVideo));
+} catch (e) {
+  window.customElements.define('ext-video', EWCVideo);
+}

@@ -19,4 +19,9 @@ function (_Ext_Map) {
 }(Ext_Map);
 
 export { EWCGoogle_map as default };
-window.customElements.define('ext-google-map', ElementParser.withParsedCallback(EWCGoogle_map));
+
+try {
+  window.customElements.define('ext-google-map', ElementParser.withParsedCallback(EWCGoogle_map));
+} catch (e) {
+  window.customElements.define('ext-google-map', EWCGoogle_map);
+}

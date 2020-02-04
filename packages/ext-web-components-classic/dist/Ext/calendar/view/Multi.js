@@ -131,23 +131,12 @@ function (_Ext_container_Contai) {
   Ext_calendar_view_Multi.getEvents = function getEvents(events) {
     events = events.concat(Ext_calendar_view_Multi.EVENTS());
     return Ext_container_Container.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_calendar_view_Multi, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_container_Contai.observedAttributes; //for (var property in Ext_calendar_view_Multi.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_container_Contai.observedAttributes;
       Ext_calendar_view_Multi.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

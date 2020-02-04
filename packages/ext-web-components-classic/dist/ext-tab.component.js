@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_tab_Tab from '@sencha/ext-runtime-base/dist/./Ext/tab/Tab.js';
 import Ext_tab_Tab from './Ext/tab/Tab.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_tab_Tab) {
 }(Ext_tab_Tab);
 
 export { EWCTab as default };
-window.customElements.define('ext-tab', ElementParser.withParsedCallback(EWCTab));
+
+try {
+  window.customElements.define('ext-tab', ElementParser.withParsedCallback(EWCTab));
+} catch (e) {
+  window.customElements.define('ext-tab', EWCTab);
+}

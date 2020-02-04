@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_sparkline_Pie from '@sencha/ext-runtime-base/dist/./Ext/sparkline/Pie.js';
 import Ext_sparkline_Pie from './Ext/sparkline/Pie.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_sparkline_Pie) {
 }(Ext_sparkline_Pie);
 
 export { EWCSparklinepie as default };
-window.customElements.define('ext-sparklinepie', ElementParser.withParsedCallback(EWCSparklinepie));
+
+try {
+  window.customElements.define('ext-sparklinepie', ElementParser.withParsedCallback(EWCSparklinepie));
+} catch (e) {
+  window.customElements.define('ext-sparklinepie', EWCSparklinepie);
+}

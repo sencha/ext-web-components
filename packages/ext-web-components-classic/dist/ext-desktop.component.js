@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ux_desktop_Desktop from '@sencha/ext-runtime-base/dist/./Ext/ux/desktop/Desktop.js';
 import Ext_ux_desktop_Desktop from './Ext/ux/desktop/Desktop.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_ux_desktop_Deskt) {
 }(Ext_ux_desktop_Desktop);
 
 export { EWCDesktop as default };
-window.customElements.define('ext-desktop', ElementParser.withParsedCallback(EWCDesktop));
+
+try {
+  window.customElements.define('ext-desktop', ElementParser.withParsedCallback(EWCDesktop));
+} catch (e) {
+  window.customElements.define('ext-desktop', EWCDesktop);
+}

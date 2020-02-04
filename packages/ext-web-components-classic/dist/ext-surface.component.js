@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_draw_Surface from '@sencha/ext-runtime-base/dist/./Ext/draw/Surface.js';
 import Ext_draw_Surface from './Ext/draw/Surface.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_draw_Surface) {
 }(Ext_draw_Surface);
 
 export { EWCSurface as default };
-window.customElements.define('ext-surface', ElementParser.withParsedCallback(EWCSurface));
+
+try {
+  window.customElements.define('ext-surface', ElementParser.withParsedCallback(EWCSurface));
+} catch (e) {
+  window.customElements.define('ext-surface', EWCSurface);
+}

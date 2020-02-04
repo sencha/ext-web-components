@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ButtonGroup from '@sencha/ext-runtime-base/dist/./Ext/ButtonGroup.js';
 import Ext_ButtonGroup from './Ext/ButtonGroup.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_ButtonGroup) {
 }(Ext_ButtonGroup);
 
 export { EWCButtongroup as default };
-window.customElements.define('ext-buttongroup', ElementParser.withParsedCallback(EWCButtongroup));
+
+try {
+  window.customElements.define('ext-buttongroup', ElementParser.withParsedCallback(EWCButtongroup));
+} catch (e) {
+  window.customElements.define('ext-buttongroup', EWCButtongroup);
+}

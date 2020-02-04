@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_slider_Tip from '@sencha/ext-runtime-base/dist/./Ext/slider/Tip.js';
 import Ext_slider_Tip from './Ext/slider/Tip.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_slider_Tip) {
 }(Ext_slider_Tip);
 
 export { EWCSlidertip as default };
-window.customElements.define('ext-slidertip', ElementParser.withParsedCallback(EWCSlidertip));
+
+try {
+  window.customElements.define('ext-slidertip', ElementParser.withParsedCallback(EWCSlidertip));
+} catch (e) {
+  window.customElements.define('ext-slidertip', EWCSlidertip);
+}

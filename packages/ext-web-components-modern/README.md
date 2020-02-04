@@ -1,88 +1,16 @@
-## @sencha/ext-web-components-modern
+## Readme for @sencha/ext-web-components-modern
 
-last run: Mon Jan 06 2020 09:06:54 GMT-0500 (Eastern Standard Time)
+last run: Mon Feb 03 2020 13:19:12 GMT-0500 (Eastern Standard Time)
 
-## Login to the Sencha early adopter npm repo
+This npm package contains the needed files to add the @sencha/ext-web-components-modern package to a web-components application
 
-```sh
-npm login --registry=https://sencha.myget.org/F/early-adopter/npm/ --scope=@sencha
+- [Getting Started](https://github.com/sencha/ext-web-components/blob/ext-web-components-7.1.1/packages/ext-web-components-modern/GETTING_STARTED.md)
+- [Migrate/Upgrade from a previous version](https://github.com/sencha/ext-web-components/blob/ext-web-components-7.1.1/packages/ext-web-components-modern/MIGRATE.md)
+- [Understanding An App](https://github.com/sencha/ext-web-components/blob/ext-web-components-7.1.1/packages/ext-web-components-modern/UNDERSTANDING_AN_APP.md)
+- [Using ext-webpack-plugin](https://github.com/sencha/ext-web-components/blob/ext-web-components-7.1.1/packages/ext-web-components-modern/USING_EXT_WEBPACK_PLUGIN.md)
+- [What's New](https://github.com/sencha/ext-web-components/blob/ext-web-components-7.1.1/packages/ext-web-components-modern/WHATS_NEW.md)
 
-```
+Information for other frameworks:
 
-## Create a JavaScript application
-
-- Create a folder named ext-web-components-modern-demo
-
-mac
-```sh
-mkdir ext-web-components-modern-demo
-cd ext-web-components-modern-demo
-```
-
-windows
-```sh
-md ext-web-components-modern-demo
-cd ext-web-components-modern-demo
-```
-
-- In the ext-web-components-modern-demo folder, create a package.json file with the following:
-
-```sh
-{
-  "name": "ext-web-components-modern-demo",
-  "version": "1.0.0",
-  "description": "ext-web-components-modern-demo",
-  "scripts": {
-    "start": "npx http-server -o"
-  },
-  "devDependencies": {
-    "@sencha/ext-web-components-modern": "~7.1.0",
-    "http-server": "^0.12.0"
-  },
-  "author": "",
-  "license": "ISC",
-  "repository": {}
-}
-```
-
-- In the ext-web-components-modern-demo folder, create an index.html file with the following:
-
-```sh
-<!DOCTYPE html>
-<html>
-<head>
-  <meta name="viewport"
-    content="width=device-width,initial-scale=1,maximum-scale=10,user-scalable=yes"
-  >
-</head>
-
-<script type="module"
-src="./node_modules/@sencha/ext-web-components-modern/src/ext-toolbar.component.js">
-</script>
-<script type="module"
-src="./node_modules/@sencha/ext-web-components-modern/src/ext-button.component.js">
-</script>
-
-<script>
-  getNow = function() {
-    document.querySelector('#updateDiv').innerText = new Date();
-  }
-</script>
-
-<body>
-  <ext-toolbar>
-    <ext-button text="get now" shadow="true" ontap="getNow"></ext-button>
-    <div id='updateDiv' style="margin-left:20px;"></div>
-  </ext-toolbar>
-</body>
-</html>
-```
-
-- Run the following in the ext-web-components-modern-demo folder
-
-```sh
-npm install
-npm start
-```
-
-A browser window at http://127.0.0.1:8080 will display
+- [Using Svelte](https://github.com/sencha/ext-web-components/blob/ext-web-components-7.1.1/packages/ext-web-components-modern/USING_SVELTE.md)
+- [Using Vue](https://github.com/sencha/ext-web-components/blob/ext-web-components-7.1.1/packages/ext-web-components-modern/USING_VUE.md)

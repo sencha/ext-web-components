@@ -1,12 +1,14 @@
 {
   "name": "@sencha/ext-web-components-classic",
-  "mjg": "marc",
-  "version": "7.1.0",
+  "version": "7.1.1",
   "main2wc": "ext-web-components-classic.module.js",
   "main": "index.js",
   "private": false,
   "binx": {
     "ext-web-components-classic": "./bin/ext-web-components-classic.js"
+  },
+  "bin": {
+    "ext-web-components": "./bin/ext-web-components.js"
   },
   "scripts": {
     "watch": "npx babel ./src --out-dir ./dist --watch",

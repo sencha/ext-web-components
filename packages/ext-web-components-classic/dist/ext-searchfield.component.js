@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ux_form_SearchField from '@sencha/ext-runtime-base/dist/./Ext/ux/form/SearchField.js';
 import Ext_ux_form_SearchField from './Ext/ux/form/SearchField.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_ux_form_SearchFi) {
 }(Ext_ux_form_SearchField);
 
 export { EWCSearchfield as default };
-window.customElements.define('ext-searchfield', ElementParser.withParsedCallback(EWCSearchfield));
+
+try {
+  window.customElements.define('ext-searchfield', ElementParser.withParsedCallback(EWCSearchfield));
+} catch (e) {
+  window.customElements.define('ext-searchfield', EWCSearchfield);
+}

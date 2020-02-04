@@ -19,4 +19,9 @@ function (_Ext_form_Radio) {
 }(Ext_form_Radio);
 
 export { EWCRadio as default };
-window.customElements.define('ext-radio', ElementParser.withParsedCallback(EWCRadio));
+
+try {
+  window.customElements.define('ext-radio', ElementParser.withParsedCallback(EWCRadio));
+} catch (e) {
+  window.customElements.define('ext-radio', EWCRadio);
+}

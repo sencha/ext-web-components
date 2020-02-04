@@ -7,4 +7,9 @@ export default class EWCCheckboxfield extends Ext_form_Checkbox {
     this.xtype = 'checkboxfield';
   }
 }
-window.customElements.define('ext-checkboxfield', ElementParser.withParsedCallback(EWCCheckboxfield));
+try {
+  window.customElements.define('ext-checkboxfield', ElementParser.withParsedCallback(EWCCheckboxfield));
+}
+catch(e) {
+  window.customElements.define('ext-checkboxfield', EWCCheckboxfield);
+}

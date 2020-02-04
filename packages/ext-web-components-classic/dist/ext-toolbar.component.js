@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_Toolbar from '@sencha/ext-runtime-base/dist/./Ext/Toolbar.js';
 import Ext_Toolbar from './Ext/Toolbar.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_Toolbar) {
 }(Ext_Toolbar);
 
 export { EWCToolbar as default };
-window.customElements.define('ext-toolbar', ElementParser.withParsedCallback(EWCToolbar));
+
+try {
+  window.customElements.define('ext-toolbar', ElementParser.withParsedCallback(EWCToolbar));
+} catch (e) {
+  window.customElements.define('ext-toolbar', EWCToolbar);
+}

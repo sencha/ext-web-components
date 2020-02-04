@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_pivot_plugin_configurator_Container from '@sencha/ext-runtime-base/dist/./Ext/pivot/plugin/configurator/Container.js';
 import Ext_pivot_plugin_configurator_Container from './Ext/pivot/plugin/configurator/Container.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_pivot_plugin_con) {
 }(Ext_pivot_plugin_configurator_Container);
 
 export { EWCPivotconfigcontainer as default };
-window.customElements.define('ext-pivotconfigcontainer', ElementParser.withParsedCallback(EWCPivotconfigcontainer));
+
+try {
+  window.customElements.define('ext-pivotconfigcontainer', ElementParser.withParsedCallback(EWCPivotconfigcontainer));
+} catch (e) {
+  window.customElements.define('ext-pivotconfigcontainer', EWCPivotconfigcontainer);
+}

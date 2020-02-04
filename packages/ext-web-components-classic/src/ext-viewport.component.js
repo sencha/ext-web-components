@@ -1,13 +1,15 @@
-//import Ext_Viewport from '@sencha/ext-runtime-base/dist/./Ext/Viewport.js';
 import Ext_Viewport from './Ext/Viewport.js';
 import ElementParser from './ElementParser.js';
 
 export default class EWCViewport extends Ext_Viewport {
-    constructor() {
-        super ([], []);
-        this.xtype = 'viewport';
-    }
-
+  constructor() {
+    super ([], []);
+    this.xtype = 'viewport';
+  }
 }
-window.customElements.define('ext-viewport', ElementParser.withParsedCallback(EWCViewport));
-
+try {
+  window.customElements.define('ext-viewport', ElementParser.withParsedCallback(EWCViewport));
+}
+catch(e) {
+  window.customElements.define('ext-viewport', EWCViewport);
+}

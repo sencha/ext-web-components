@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_pivot_d3_TreeMap from '@sencha/ext-runtime-base/dist/./Ext/pivot/d3/TreeMap.js';
 import Ext_pivot_d3_TreeMap from './Ext/pivot/d3/TreeMap.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_pivot_d3_TreeMap) {
 }(Ext_pivot_d3_TreeMap);
 
 export { EWCPivottreemap as default };
-window.customElements.define('ext-pivottreemap', ElementParser.withParsedCallback(EWCPivottreemap));
+
+try {
+  window.customElements.define('ext-pivottreemap', ElementParser.withParsedCallback(EWCPivottreemap));
+} catch (e) {
+  window.customElements.define('ext-pivottreemap', EWCPivottreemap);
+}

@@ -19,4 +19,9 @@ function (_Ext_field_FieldGroup) {
 }(Ext_field_FieldGroupContainer);
 
 export { EWCGroupcontainer as default };
-window.customElements.define('ext-groupcontainer', ElementParser.withParsedCallback(EWCGroupcontainer));
+
+try {
+  window.customElements.define('ext-groupcontainer', ElementParser.withParsedCallback(EWCGroupcontainer));
+} catch (e) {
+  window.customElements.define('ext-groupcontainer', EWCGroupcontainer);
+}

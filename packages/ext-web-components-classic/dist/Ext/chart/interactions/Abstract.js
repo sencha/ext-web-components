@@ -26,23 +26,12 @@ function (_Ext_Base) {
   Ext_chart_interactions_Abstract.getEvents = function getEvents(events) {
     events = events.concat(Ext_chart_interactions_Abstract.EVENTS());
     return Ext_Base.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_chart_interactions_Abstract, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Base.observedAttributes; //for (var property in Ext_chart_interactions_Abstract.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_Base.observedAttributes;
       Ext_chart_interactions_Abstract.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

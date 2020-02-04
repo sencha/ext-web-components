@@ -113,23 +113,12 @@ function (_Ext_resizer_Splitter) {
   Ext_resizer_BorderSplitter.getEvents = function getEvents(events) {
     events = events.concat(Ext_resizer_BorderSplitter.EVENTS());
     return Ext_resizer_Splitter.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_resizer_BorderSplitter, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_resizer_Splitter.observedAttributes; //for (var property in Ext_resizer_BorderSplitter.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_resizer_Splitter.observedAttributes;
       Ext_resizer_BorderSplitter.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

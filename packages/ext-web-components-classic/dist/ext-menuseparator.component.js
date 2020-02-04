@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_menu_Separator from '@sencha/ext-runtime-base/dist/./Ext/menu/Separator.js';
 import Ext_menu_Separator from './Ext/menu/Separator.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_menu_Separator) {
 }(Ext_menu_Separator);
 
 export { EWCMenuseparator as default };
-window.customElements.define('ext-menuseparator', ElementParser.withParsedCallback(EWCMenuseparator));
+
+try {
+  window.customElements.define('ext-menuseparator', ElementParser.withParsedCallback(EWCMenuseparator));
+} catch (e) {
+  window.customElements.define('ext-menuseparator', EWCMenuseparator);
+}

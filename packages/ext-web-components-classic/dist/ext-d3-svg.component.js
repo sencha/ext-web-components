@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_d3_svg_Svg from '@sencha/ext-runtime-base/dist/./Ext/d3/svg/Svg.js';
 import Ext_d3_svg_Svg from './Ext/d3/svg/Svg.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_d3_svg_Svg) {
 }(Ext_d3_svg_Svg);
 
 export { EWCD3_svg as default };
-window.customElements.define('ext-d3-svg', ElementParser.withParsedCallback(EWCD3_svg));
+
+try {
+  window.customElements.define('ext-d3-svg', ElementParser.withParsedCallback(EWCD3_svg));
+} catch (e) {
+  window.customElements.define('ext-d3-svg', EWCD3_svg);
+}

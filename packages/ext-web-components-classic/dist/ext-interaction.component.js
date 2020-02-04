@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_chart_interactions_Abstract from '@sencha/ext-runtime-base/dist/./Ext/chart/interactions/Abstract.js';
 import Ext_chart_interactions_Abstract from './Ext/chart/interactions/Abstract.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_chart_interactio) {
 }(Ext_chart_interactions_Abstract);
 
 export { EWCInteraction as default };
-window.customElements.define('ext-interaction', ElementParser.withParsedCallback(EWCInteraction));
+
+try {
+  window.customElements.define('ext-interaction', ElementParser.withParsedCallback(EWCInteraction));
+} catch (e) {
+  window.customElements.define('ext-interaction', EWCInteraction);
+}

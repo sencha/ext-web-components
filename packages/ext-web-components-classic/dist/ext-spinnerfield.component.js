@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_form_Spinner from '@sencha/ext-runtime-base/dist/./Ext/form/Spinner.js';
 import Ext_form_Spinner from './Ext/form/Spinner.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_form_Spinner) {
 }(Ext_form_Spinner);
 
 export { EWCSpinnerfield as default };
-window.customElements.define('ext-spinnerfield', ElementParser.withParsedCallback(EWCSpinnerfield));
+
+try {
+  window.customElements.define('ext-spinnerfield', ElementParser.withParsedCallback(EWCSpinnerfield));
+} catch (e) {
+  window.customElements.define('ext-spinnerfield', EWCSpinnerfield);
+}

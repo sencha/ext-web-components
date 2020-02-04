@@ -7,4 +7,9 @@ export default class EWCCalendar_weeksheader extends Ext_calendar_header_Weeks {
     this.xtype = 'calendar-weeksheader';
   }
 }
-window.customElements.define('ext-calendar-weeksheader', ElementParser.withParsedCallback(EWCCalendar_weeksheader));
+try {
+  window.customElements.define('ext-calendar-weeksheader', ElementParser.withParsedCallback(EWCCalendar_weeksheader));
+}
+catch(e) {
+  window.customElements.define('ext-calendar-weeksheader', EWCCalendar_weeksheader);
+}

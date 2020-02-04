@@ -63,12 +63,12 @@ either...
 Add the following to the dependencies section of package.json:
 
 ```sh
-"@sencha/ext-web-components-modern": "~7.1.0",
-"@sencha/ext": "^7.0.0",
-"@sencha/ext-modern": "^7.0.0",
-"@sencha/ext-modern-theme-material": "^7.0.0",
-"@sencha/ext-webpack-plugin": "^7.0.0",
-"@webcomponents/webcomponentsjs": "^2.2.10"
+"@sencha/ext-web-components-modern": "~7.1.1",
+"@sencha/ext": "^7.1.0",
+"@sencha/ext-modern": "^7.1.0",
+"@sencha/ext-modern-theme-material": "^7.1.0",
+"@sencha/ext-webpack-plugin": "^7.1.0",
+"@webcomponents/webcomponentsjs": "^2.4.1"
 ```
 
 To install the npm dependencies, in the terminal or command window run the following:
@@ -81,7 +81,8 @@ or...
 Run the following commands in the terminal/command window:
 
 ```sh
-npm install --save @sencha/ext-web-components @sencha/ext @sencha/ext-modern @sencha/ext-modern-theme-material
+npm install --save @sencha/ext-web-components-modern
+npm install --save @sencha/ext @sencha/ext-modern @sencha/ext-modern-theme-material
 npm install --save @sencha/ext-webpack-plugin
 npm install --save @webcomponents/webcomponentsjs
 ```
@@ -127,14 +128,23 @@ module.exports = {
 Replace src/main.js with the following:
 
 ```sh
-/*global Ext*/
 import Vue from 'vue'
 import App from './App.vue'
-import '@sencha/ext-web-components/lib/ext-panel.component';
+import router from './router'
+
+import '@sencha/ext-web-components-modern';
+
+Ext.require([
+  'Ext.layout.*',
+  'Ext.data.TreeStore'
+]);
+
+Vue.config.productionTip = false
 
 Ext.onReady(function() {
   new Vue({
-    render: h => h(App)
+    render: h => h(App),
+    router,
   }).$mount('#app')
 });
 ```

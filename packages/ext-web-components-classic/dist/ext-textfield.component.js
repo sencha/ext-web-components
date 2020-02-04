@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_form_Text from '@sencha/ext-runtime-base/dist/./Ext/form/Text.js';
 import Ext_form_Text from './Ext/form/Text.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_form_Text) {
 }(Ext_form_Text);
 
 export { EWCTextfield as default };
-window.customElements.define('ext-textfield', ElementParser.withParsedCallback(EWCTextfield));
+
+try {
+  window.customElements.define('ext-textfield', ElementParser.withParsedCallback(EWCTextfield));
+} catch (e) {
+  window.customElements.define('ext-textfield', EWCTextfield);
+}

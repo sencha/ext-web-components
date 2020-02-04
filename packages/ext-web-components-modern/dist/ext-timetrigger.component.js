@@ -19,4 +19,9 @@ function (_Ext_field_trigger_Ti) {
 }(Ext_field_trigger_Time);
 
 export { EWCTimetrigger as default };
-window.customElements.define('ext-timetrigger', ElementParser.withParsedCallback(EWCTimetrigger));
+
+try {
+  window.customElements.define('ext-timetrigger', ElementParser.withParsedCallback(EWCTimetrigger));
+} catch (e) {
+  window.customElements.define('ext-timetrigger', EWCTimetrigger);
+}

@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_slider_Slider from '@sencha/ext-runtime-base/dist/./Ext/slider/Slider.js';
 import Ext_slider_Slider from './Ext/slider/Slider.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_slider_Slider) {
 }(Ext_slider_Slider);
 
 export { EWCSliderfield as default };
-window.customElements.define('ext-sliderfield', ElementParser.withParsedCallback(EWCSliderfield));
+
+try {
+  window.customElements.define('ext-sliderfield', ElementParser.withParsedCallback(EWCSliderfield));
+} catch (e) {
+  window.customElements.define('ext-sliderfield', EWCSliderfield);
+}

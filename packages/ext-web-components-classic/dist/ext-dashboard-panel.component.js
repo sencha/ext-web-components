@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_dashboard_Panel from '@sencha/ext-runtime-base/dist/./Ext/dashboard/Panel.js';
 import Ext_dashboard_Panel from './Ext/dashboard/Panel.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_dashboard_Panel) {
 }(Ext_dashboard_Panel);
 
 export { EWCDashboard_panel as default };
-window.customElements.define('ext-dashboard-panel', ElementParser.withParsedCallback(EWCDashboard_panel));
+
+try {
+  window.customElements.define('ext-dashboard-panel', ElementParser.withParsedCallback(EWCDashboard_panel));
+} catch (e) {
+  window.customElements.define('ext-dashboard-panel', EWCDashboard_panel);
+}

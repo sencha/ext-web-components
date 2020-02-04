@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_slider_MultiSlider from '@sencha/ext-runtime-base/dist/./Ext/slider/MultiSlider.js';
 import Ext_slider_MultiSlider from './Ext/slider/MultiSlider.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_slider_MultiSlid) {
 }(Ext_slider_MultiSlider);
 
 export { EWCMultislider as default };
-window.customElements.define('ext-multislider', ElementParser.withParsedCallback(EWCMultislider));
+
+try {
+  window.customElements.define('ext-multislider', ElementParser.withParsedCallback(EWCMultislider));
+} catch (e) {
+  window.customElements.define('ext-multislider', EWCMultislider);
+}

@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_DataView from '@sencha/ext-runtime-base/dist/./Ext/DataView.js';
 import Ext_DataView from './Ext/DataView.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_DataView) {
 }(Ext_DataView);
 
 export { EWCDataview as default };
-window.customElements.define('ext-dataview', ElementParser.withParsedCallback(EWCDataview));
+
+try {
+  window.customElements.define('ext-dataview', ElementParser.withParsedCallback(EWCDataview));
+} catch (e) {
+  window.customElements.define('ext-dataview', EWCDataview);
+}

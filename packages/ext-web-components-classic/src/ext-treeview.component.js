@@ -1,13 +1,15 @@
-//import Ext_tree_View from '@sencha/ext-runtime-base/dist/./Ext/tree/View.js';
 import Ext_tree_View from './Ext/tree/View.js';
 import ElementParser from './ElementParser.js';
 
 export default class EWCTreeview extends Ext_tree_View {
-    constructor() {
-        super ([], []);
-        this.xtype = 'treeview';
-    }
-
+  constructor() {
+    super ([], []);
+    this.xtype = 'treeview';
+  }
 }
-window.customElements.define('ext-treeview', ElementParser.withParsedCallback(EWCTreeview));
-
+try {
+  window.customElements.define('ext-treeview', ElementParser.withParsedCallback(EWCTreeview));
+}
+catch(e) {
+  window.customElements.define('ext-treeview', EWCTreeview);
+}

@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_grid_header_Container from '@sencha/ext-runtime-base/dist/./Ext/grid/header/Container.js';
 import Ext_grid_header_Container from './Ext/grid/header/Container.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_grid_header_Cont) {
 }(Ext_grid_header_Container);
 
 export { EWCHeadercontainer as default };
-window.customElements.define('ext-headercontainer', ElementParser.withParsedCallback(EWCHeadercontainer));
+
+try {
+  window.customElements.define('ext-headercontainer', ElementParser.withParsedCallback(EWCHeadercontainer));
+} catch (e) {
+  window.customElements.define('ext-headercontainer', EWCHeadercontainer);
+}

@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_LoadMask from '@sencha/ext-runtime-base/dist/./Ext/LoadMask.js';
 import Ext_LoadMask from './Ext/LoadMask.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_LoadMask) {
 }(Ext_LoadMask);
 
 export { EWCLoadmask as default };
-window.customElements.define('ext-loadmask', ElementParser.withParsedCallback(EWCLoadmask));
+
+try {
+  window.customElements.define('ext-loadmask', ElementParser.withParsedCallback(EWCLoadmask));
+} catch (e) {
+  window.customElements.define('ext-loadmask', EWCLoadmask);
+}

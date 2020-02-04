@@ -24,24 +24,25 @@ export default class BasicAreaComponent {
         this.menuCmpArray = [];
     }
 
-    onMenuItemReady = (event) => {
-        if (event.detail.cmp) {
-          this.menuCmpArray.push(event.detail.cmp);
-          event.detail.cmp.on('click', this.onThemeChange.bind(this));
-        }
-    }
+    // onMenuItemReady = (event) => {
+    //     if (event.detail.cmp) {
+    //         this.menuCmpArray.push(event.detail.cmp);
+    //         event.detail.cmp.on('click', this.onThemeChange.bind(this));
+    //     }
+    // }
 
-    onRefreshButtonReady = (event) => {
-        this.refreshButtonCmp = event.detail.cmp;
-        this.refreshButtonCmp.on('tap', this.onRefreshClick.bind(this));
-    }
+    // onRefreshButtonReady = (event) => {
+    //     this.refreshButtonCmp = event.detail.cmp;
+    //     this.refreshButtonCmp.on('tap', this.onRefreshClick.bind(this));
+    // }
 
-    onRefreshClick = () => {
+    onRefreshTap = () => {
         this.store.loadData(createData(25));
         this.cartesianCmp.setStore(this.store);
     }
 
     onThemeChange = (event) => {
+      console.log('hi')
         this.theme = event.config.text.toLowerCase();
         this.menuCmpArray.forEach((cmp, index) => {
             if (index == parseInt(event.config.itemId)) {

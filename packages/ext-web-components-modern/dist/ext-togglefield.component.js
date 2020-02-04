@@ -19,4 +19,9 @@ function (_Ext_form_Toggle) {
 }(Ext_form_Toggle);
 
 export { EWCTogglefield as default };
-window.customElements.define('ext-togglefield', ElementParser.withParsedCallback(EWCTogglefield));
+
+try {
+  window.customElements.define('ext-togglefield', ElementParser.withParsedCallback(EWCTogglefield));
+} catch (e) {
+  window.customElements.define('ext-togglefield', EWCTogglefield);
+}

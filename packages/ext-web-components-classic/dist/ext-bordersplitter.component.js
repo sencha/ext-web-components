@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_resizer_BorderSplitter from '@sencha/ext-runtime-base/dist/./Ext/resizer/BorderSplitter.js';
 import Ext_resizer_BorderSplitter from './Ext/resizer/BorderSplitter.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_resizer_BorderSp) {
 }(Ext_resizer_BorderSplitter);
 
 export { EWCBordersplitter as default };
-window.customElements.define('ext-bordersplitter', ElementParser.withParsedCallback(EWCBordersplitter));
+
+try {
+  window.customElements.define('ext-bordersplitter', ElementParser.withParsedCallback(EWCBordersplitter));
+} catch (e) {
+  window.customElements.define('ext-bordersplitter', EWCBordersplitter);
+}

@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_grid_column_Widget from '@sencha/ext-runtime-base/dist/./Ext/grid/column/Widget.js';
 import Ext_grid_column_Widget from './Ext/grid/column/Widget.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_grid_column_Widg) {
 }(Ext_grid_column_Widget);
 
 export { EWCWidgetcolumn as default };
-window.customElements.define('ext-widgetcolumn', ElementParser.withParsedCallback(EWCWidgetcolumn));
+
+try {
+  window.customElements.define('ext-widgetcolumn', ElementParser.withParsedCallback(EWCWidgetcolumn));
+} catch (e) {
+  window.customElements.define('ext-widgetcolumn', EWCWidgetcolumn);
+}

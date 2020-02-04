@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_BoundList from '@sencha/ext-runtime-base/dist/./Ext/BoundList.js';
 import Ext_BoundList from './Ext/BoundList.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_BoundList) {
 }(Ext_BoundList);
 
 export { EWCBoundlist as default };
-window.customElements.define('ext-boundlist', ElementParser.withParsedCallback(EWCBoundlist));
+
+try {
+  window.customElements.define('ext-boundlist', ElementParser.withParsedCallback(EWCBoundlist));
+} catch (e) {
+  window.customElements.define('ext-boundlist', EWCBoundlist);
+}

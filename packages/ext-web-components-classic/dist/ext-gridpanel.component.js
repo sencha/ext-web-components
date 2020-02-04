@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_grid_GridPanel from '@sencha/ext-runtime-base/dist/./Ext/grid/GridPanel.js';
 import Ext_grid_GridPanel from './Ext/grid/GridPanel.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_grid_GridPanel) {
 }(Ext_grid_GridPanel);
 
 export { EWCGridpanel as default };
-window.customElements.define('ext-gridpanel', ElementParser.withParsedCallback(EWCGridpanel));
+
+try {
+  window.customElements.define('ext-gridpanel', ElementParser.withParsedCallback(EWCGridpanel));
+} catch (e) {
+  window.customElements.define('ext-gridpanel', EWCGridpanel);
+}

@@ -7,4 +7,9 @@ export default class EWCLoadmask extends Ext_LoadMask {
     this.xtype = 'loadmask';
   }
 }
-window.customElements.define('ext-loadmask', ElementParser.withParsedCallback(EWCLoadmask));
+try {
+  window.customElements.define('ext-loadmask', ElementParser.withParsedCallback(EWCLoadmask));
+}
+catch(e) {
+  window.customElements.define('ext-loadmask', EWCLoadmask);
+}

@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_grid_CellEditor from '@sencha/ext-runtime-base/dist/./Ext/grid/CellEditor.js';
 import Ext_grid_CellEditor from './Ext/grid/CellEditor.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_grid_CellEditor) {
 }(Ext_grid_CellEditor);
 
 export { EWCCelleditor as default };
-window.customElements.define('ext-celleditor', ElementParser.withParsedCallback(EWCCelleditor));
+
+try {
+  window.customElements.define('ext-celleditor', ElementParser.withParsedCallback(EWCCelleditor));
+} catch (e) {
+  window.customElements.define('ext-celleditor', EWCCelleditor);
+}

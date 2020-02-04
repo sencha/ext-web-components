@@ -1,13 +1,15 @@
-//import Ext_panel_Title from '@sencha/ext-runtime-base/dist/./Ext/panel/Title.js';
 import Ext_panel_Title from './Ext/panel/Title.js';
 import ElementParser from './ElementParser.js';
 
 export default class EWCTitle extends Ext_panel_Title {
-    constructor() {
-        super ([], []);
-        this.xtype = 'title';
-    }
-
+  constructor() {
+    super ([], []);
+    this.xtype = 'title';
+  }
 }
-window.customElements.define('ext-title', ElementParser.withParsedCallback(EWCTitle));
-
+try {
+  window.customElements.define('ext-title', ElementParser.withParsedCallback(EWCTitle));
+}
+catch(e) {
+  window.customElements.define('ext-title', EWCTitle);
+}

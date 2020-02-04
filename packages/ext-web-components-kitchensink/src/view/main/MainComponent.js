@@ -33,14 +33,9 @@ export default class MainComponent {
     }
 
     viewportReady = event => {
-        console.log('readyViewport - mainComponent');
         this.navInProcess = false;
-
-        console.log(event);
-        //find a way for this to be run automatically
+        //mjg be good to find a way for this to be run automatically
         this.extnameToProperty(event.detail.cmpObj, this, '');
-
-        //extnameToProperty(['all'], event, this, '');
         this.rightContainer.updateHtml('Build: ' + BUILD_VERSION); // eslint-disable-line no-undef
         this.breadcrumb.setStore(this.treeStore);
         this.navTreelist.setStore(this.treeStore);
@@ -81,20 +76,16 @@ export default class MainComponent {
         this.navigate('load', node);
     };
 
-    breadcrumbClick = event => {
-        //console.log('clickBreadcrumb');
-        var node = event.detail.node;
+    changeBreadcrumb = ({detail: {sender, node, prevNode, eOpts}}) => {
         this.navigate('breadcrumb', node);
     };
 
     dataviewNavClick = event => {
-        //console.log('dataviewNavClick');
         var node = event.detail.location.record;
         this.navigate('dataview', node);
     };
 
     navTreelistSelectionChange = event => {
-        //console.log('navTreelistSelectionChange');
         var node = event.detail.record;
         this.navigate('tree', node);
     };
@@ -133,9 +124,7 @@ export default class MainComponent {
         window['router'].hidden = false;
         this.codeButton.setHidden(false);
         this.componentsView.setHidden(false);
-        //console.log('routeMe in MainComponent');
         window['router'].routeMe();
-
         this.setCodeTabs();
     };
 

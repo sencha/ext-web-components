@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ux_desktop_TrayClock from '@sencha/ext-runtime-base/dist/./Ext/ux/desktop/TrayClock.js';
 import Ext_ux_desktop_TrayClock from './Ext/ux/desktop/TrayClock.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_ux_desktop_TrayC) {
 }(Ext_ux_desktop_TrayClock);
 
 export { EWCTrayclock as default };
-window.customElements.define('ext-trayclock', ElementParser.withParsedCallback(EWCTrayclock));
+
+try {
+  window.customElements.define('ext-trayclock', ElementParser.withParsedCallback(EWCTrayclock));
+} catch (e) {
+  window.customElements.define('ext-trayclock', EWCTrayclock);
+}

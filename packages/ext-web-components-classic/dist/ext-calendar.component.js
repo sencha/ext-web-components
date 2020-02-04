@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_calendar_panel_Panel from '@sencha/ext-runtime-base/dist/./Ext/calendar/panel/Panel.js';
 import Ext_calendar_panel_Panel from './Ext/calendar/panel/Panel.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_calendar_panel_P) {
 }(Ext_calendar_panel_Panel);
 
 export { EWCCalendar as default };
-window.customElements.define('ext-calendar', ElementParser.withParsedCallback(EWCCalendar));
+
+try {
+  window.customElements.define('ext-calendar', ElementParser.withParsedCallback(EWCCalendar));
+} catch (e) {
+  window.customElements.define('ext-calendar', EWCCalendar);
+}

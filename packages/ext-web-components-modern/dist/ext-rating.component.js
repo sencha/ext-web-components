@@ -19,4 +19,9 @@ function (_Ext_ux_rating_Picker) {
 }(Ext_ux_rating_Picker);
 
 export { EWCRating as default };
-window.customElements.define('ext-rating', ElementParser.withParsedCallback(EWCRating));
+
+try {
+  window.customElements.define('ext-rating', ElementParser.withParsedCallback(EWCRating));
+} catch (e) {
+  window.customElements.define('ext-rating', EWCRating);
+}

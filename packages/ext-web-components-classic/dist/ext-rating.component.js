@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ux_rating_Picker from '@sencha/ext-runtime-base/dist/./Ext/ux/rating/Picker.js';
 import Ext_ux_rating_Picker from './Ext/ux/rating/Picker.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_ux_rating_Picker) {
 }(Ext_ux_rating_Picker);
 
 export { EWCRating as default };
-window.customElements.define('ext-rating', ElementParser.withParsedCallback(EWCRating));
+
+try {
+  window.customElements.define('ext-rating', ElementParser.withParsedCallback(EWCRating));
+} catch (e) {
+  window.customElements.define('ext-rating', EWCRating);
+}

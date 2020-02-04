@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_calendar_panel_Days from '@sencha/ext-runtime-base/dist/./Ext/calendar/panel/Days.js';
 import Ext_calendar_panel_Days from './Ext/calendar/panel/Days.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_calendar_panel_D) {
 }(Ext_calendar_panel_Days);
 
 export { EWCCalendar_days as default };
-window.customElements.define('ext-calendar-days', ElementParser.withParsedCallback(EWCCalendar_days));
+
+try {
+  window.customElements.define('ext-calendar-days', ElementParser.withParsedCallback(EWCCalendar_days));
+} catch (e) {
+  window.customElements.define('ext-calendar-days', EWCCalendar_days);
+}

@@ -19,4 +19,9 @@ function (_Ext_panel_DateTitle) {
 }(Ext_panel_DateTitle);
 
 export { EWCDatetitle as default };
-window.customElements.define('ext-datetitle', ElementParser.withParsedCallback(EWCDatetitle));
+
+try {
+  window.customElements.define('ext-datetitle', ElementParser.withParsedCallback(EWCDatetitle));
+} catch (e) {
+  window.customElements.define('ext-datetitle', EWCDatetitle);
+}

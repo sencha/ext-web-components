@@ -19,4 +19,9 @@ function (_Ext_field_trigger_Da) {
 }(Ext_field_trigger_Date);
 
 export { EWCDatetrigger as default };
-window.customElements.define('ext-datetrigger', ElementParser.withParsedCallback(EWCDatetrigger));
+
+try {
+  window.customElements.define('ext-datetrigger', ElementParser.withParsedCallback(EWCDatetrigger));
+} catch (e) {
+  window.customElements.define('ext-datetrigger', EWCDatetrigger);
+}

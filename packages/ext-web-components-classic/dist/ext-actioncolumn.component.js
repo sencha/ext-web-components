@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_grid_ActionColumn from '@sencha/ext-runtime-base/dist/./Ext/grid/ActionColumn.js';
 import Ext_grid_ActionColumn from './Ext/grid/ActionColumn.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_grid_ActionColum) {
 }(Ext_grid_ActionColumn);
 
 export { EWCActioncolumn as default };
-window.customElements.define('ext-actioncolumn', ElementParser.withParsedCallback(EWCActioncolumn));
+
+try {
+  window.customElements.define('ext-actioncolumn', ElementParser.withParsedCallback(EWCActioncolumn));
+} catch (e) {
+  window.customElements.define('ext-actioncolumn', EWCActioncolumn);
+}

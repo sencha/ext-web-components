@@ -19,4 +19,9 @@ function (_Ext_picker_Tablet) {
 }(Ext_picker_Tablet);
 
 export { EWCTabletpicker as default };
-window.customElements.define('ext-tabletpicker', ElementParser.withParsedCallback(EWCTabletpicker));
+
+try {
+  window.customElements.define('ext-tabletpicker', ElementParser.withParsedCallback(EWCTabletpicker));
+} catch (e) {
+  window.customElements.define('ext-tabletpicker', EWCTabletpicker);
+}

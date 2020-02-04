@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_AbstractContainer from '@sencha/ext-runtime-base/dist/./Ext/AbstractContainer.js';
 import Ext_AbstractContainer from './Ext/AbstractContainer.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_AbstractContaine) {
 }(Ext_AbstractContainer);
 
 export { EWCContainer as default };
-window.customElements.define('ext-container', ElementParser.withParsedCallback(EWCContainer));
+
+try {
+  window.customElements.define('ext-container', ElementParser.withParsedCallback(EWCContainer));
+} catch (e) {
+  window.customElements.define('ext-container', EWCContainer);
+}

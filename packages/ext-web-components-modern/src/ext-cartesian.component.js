@@ -7,4 +7,9 @@ export default class EWCCartesian extends Ext_chart_Chart {
     this.xtype = 'cartesian';
   }
 }
-window.customElements.define('ext-cartesian', ElementParser.withParsedCallback(EWCCartesian));
+try {
+  window.customElements.define('ext-cartesian', ElementParser.withParsedCallback(EWCCartesian));
+}
+catch(e) {
+  window.customElements.define('ext-cartesian', EWCCartesian);
+}

@@ -1,7 +1,7 @@
 import Ext_panel_Panel from '../Ext/panel/Panel.js';
 
 export default class Ext_FormPanel extends Ext_panel_Panel {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'actions',
     'activeChildTabIndex',
     'activeCounter',
@@ -191,8 +191,8 @@ export default class Ext_FormPanel extends Ext_panel_Panel {
     'weight',
     'width',
     'xtype',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'actioncomplete', parameters:'sender,action'},
     {name:'actionfailed', parameters:'sender,action'},
     {name:'activate', parameters:'sender'},
@@ -254,52 +254,40 @@ export default class Ext_FormPanel extends Ext_panel_Panel {
     {name:'unfloat', parameters:''},
     {name:'validitychange', parameters:'sender,valid'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_FormPanel.PROPERTIES());
-        return Ext_panel_Panel.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_FormPanel.EVENTS());
-        return Ext_panel_Panel.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_FormPanel.PROPERTIES());
+    return Ext_panel_Panel.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_FormPanel.EVENTS());
+    return Ext_panel_Panel.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_FormPanel.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_FormPanel.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_FormPanel.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_FormPanel.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_FormPanel.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_FormPanel.PROPERTIES()),
+      events.concat(Ext_FormPanel.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_FormPanel.PROPERTIES()),
-            events.concat(Ext_FormPanel.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

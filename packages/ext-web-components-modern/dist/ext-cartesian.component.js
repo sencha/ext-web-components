@@ -19,4 +19,9 @@ function (_Ext_chart_Chart) {
 }(Ext_chart_Chart);
 
 export { EWCCartesian as default };
-window.customElements.define('ext-cartesian', ElementParser.withParsedCallback(EWCCartesian));
+
+try {
+  window.customElements.define('ext-cartesian', ElementParser.withParsedCallback(EWCCartesian));
+} catch (e) {
+  window.customElements.define('ext-cartesian', EWCCartesian);
+}

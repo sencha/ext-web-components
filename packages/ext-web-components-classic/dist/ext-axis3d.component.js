@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_chart_axis_Axis3D from '@sencha/ext-runtime-base/dist/./Ext/chart/axis/Axis3D.js';
 import Ext_chart_axis_Axis3D from './Ext/chart/axis/Axis3D.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_chart_axis_Axis) {
 }(Ext_chart_axis_Axis3D);
 
 export { EWCAxis3d as default };
-window.customElements.define('ext-axis3d', ElementParser.withParsedCallback(EWCAxis3d));
+
+try {
+  window.customElements.define('ext-axis3d', ElementParser.withParsedCallback(EWCAxis3d));
+} catch (e) {
+  window.customElements.define('ext-axis3d', EWCAxis3d);
+}

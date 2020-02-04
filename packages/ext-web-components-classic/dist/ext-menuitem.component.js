@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_menu_TextItem from '@sencha/ext-runtime-base/dist/./Ext/menu/TextItem.js';
 import Ext_menu_TextItem from './Ext/menu/TextItem.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_menu_TextItem) {
 }(Ext_menu_TextItem);
 
 export { EWCMenuitem as default };
-window.customElements.define('ext-menuitem', ElementParser.withParsedCallback(EWCMenuitem));
+
+try {
+  window.customElements.define('ext-menuitem', ElementParser.withParsedCallback(EWCMenuitem));
+} catch (e) {
+  window.customElements.define('ext-menuitem', EWCMenuitem);
+}

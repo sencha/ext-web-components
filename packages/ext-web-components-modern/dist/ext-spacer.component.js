@@ -19,4 +19,9 @@ function (_Ext_Spacer) {
 }(Ext_Spacer);
 
 export { EWCSpacer as default };
-window.customElements.define('ext-spacer', ElementParser.withParsedCallback(EWCSpacer));
+
+try {
+  window.customElements.define('ext-spacer', ElementParser.withParsedCallback(EWCSpacer));
+} catch (e) {
+  window.customElements.define('ext-spacer', EWCSpacer);
+}

@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_grid_PropertyGrid from '@sencha/ext-runtime-base/dist/./Ext/grid/PropertyGrid.js';
 import Ext_grid_PropertyGrid from './Ext/grid/PropertyGrid.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_grid_PropertyGri) {
 }(Ext_grid_PropertyGrid);
 
 export { EWCPropertygrid as default };
-window.customElements.define('ext-propertygrid', ElementParser.withParsedCallback(EWCPropertygrid));
+
+try {
+  window.customElements.define('ext-propertygrid', ElementParser.withParsedCallback(EWCPropertygrid));
+} catch (e) {
+  window.customElements.define('ext-propertygrid', EWCPropertygrid);
+}

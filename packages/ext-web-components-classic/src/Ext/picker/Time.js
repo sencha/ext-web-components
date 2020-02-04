@@ -1,7 +1,7 @@
 import Ext_view_BoundList from '../../Ext/view/BoundList.js';
 
 export default class Ext_picker_Time extends Ext_view_BoundList {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'activeCounter',
     'alignOnScroll',
     'alignTarget',
@@ -132,8 +132,8 @@ export default class Ext_picker_Time extends Ext_view_BoundList {
     'weight',
     'width',
     'xtype',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'sender'},
     {name:'added', parameters:'sender,container,pos'},
     {name:'afterlayoutanimation', parameters:'sender'},
@@ -220,52 +220,40 @@ export default class Ext_picker_Time extends Ext_view_BoundList {
     {name:'unhighlightitem', parameters:'view,node'},
     {name:'viewready', parameters:'sender'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_picker_Time.PROPERTIES());
-        return Ext_view_BoundList.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_picker_Time.EVENTS());
-        return Ext_view_BoundList.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_picker_Time.PROPERTIES());
+    return Ext_view_BoundList.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_picker_Time.EVENTS());
+    return Ext_view_BoundList.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_picker_Time.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_picker_Time.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_picker_Time.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_picker_Time.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_picker_Time.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_picker_Time.PROPERTIES()),
+      events.concat(Ext_picker_Time.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_picker_Time.PROPERTIES()),
-            events.concat(Ext_picker_Time.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

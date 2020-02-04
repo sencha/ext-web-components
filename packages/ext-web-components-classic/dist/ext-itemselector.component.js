@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ux_ItemSelector from '@sencha/ext-runtime-base/dist/./Ext/ux/ItemSelector.js';
 import Ext_ux_ItemSelector from './Ext/ux/ItemSelector.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_ux_ItemSelector) {
 }(Ext_ux_ItemSelector);
 
 export { EWCItemselector as default };
-window.customElements.define('ext-itemselector', ElementParser.withParsedCallback(EWCItemselector));
+
+try {
+  window.customElements.define('ext-itemselector', ElementParser.withParsedCallback(EWCItemselector));
+} catch (e) {
+  window.customElements.define('ext-itemselector', EWCItemselector);
+}

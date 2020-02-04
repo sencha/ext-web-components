@@ -19,4 +19,9 @@ function (_Ext_dataview_pullref) {
 }(Ext_dataview_pullrefresh_Bar);
 
 export { EWCPullrefreshbar as default };
-window.customElements.define('ext-pullrefreshbar', ElementParser.withParsedCallback(EWCPullrefreshbar));
+
+try {
+  window.customElements.define('ext-pullrefreshbar', ElementParser.withParsedCallback(EWCPullrefreshbar));
+} catch (e) {
+  window.customElements.define('ext-pullrefreshbar', EWCPullrefreshbar);
+}

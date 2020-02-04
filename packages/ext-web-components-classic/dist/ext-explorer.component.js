@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ux_Explorer from '@sencha/ext-runtime-base/dist/./Ext/ux/Explorer.js';
 import Ext_ux_Explorer from './Ext/ux/Explorer.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_ux_Explorer) {
 }(Ext_ux_Explorer);
 
 export { EWCExplorer as default };
-window.customElements.define('ext-explorer', ElementParser.withParsedCallback(EWCExplorer));
+
+try {
+  window.customElements.define('ext-explorer', ElementParser.withParsedCallback(EWCExplorer));
+} catch (e) {
+  window.customElements.define('ext-explorer', EWCExplorer);
+}

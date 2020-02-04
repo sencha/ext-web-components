@@ -7,4 +7,9 @@ export default class EWCSparklinepie extends Ext_sparkline_Pie {
     this.xtype = 'sparklinepie';
   }
 }
-window.customElements.define('ext-sparklinepie', ElementParser.withParsedCallback(EWCSparklinepie));
+try {
+  window.customElements.define('ext-sparklinepie', ElementParser.withParsedCallback(EWCSparklinepie));
+}
+catch(e) {
+  window.customElements.define('ext-sparklinepie', EWCSparklinepie);
+}

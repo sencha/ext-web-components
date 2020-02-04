@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_form_FieldContainer from '@sencha/ext-runtime-base/dist/./Ext/form/FieldContainer.js';
 import Ext_form_FieldContainer from './Ext/form/FieldContainer.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_form_FieldContai) {
 }(Ext_form_FieldContainer);
 
 export { EWCFieldcontainer as default };
-window.customElements.define('ext-fieldcontainer', ElementParser.withParsedCallback(EWCFieldcontainer));
+
+try {
+  window.customElements.define('ext-fieldcontainer', ElementParser.withParsedCallback(EWCFieldcontainer));
+} catch (e) {
+  window.customElements.define('ext-fieldcontainer', EWCFieldcontainer);
+}

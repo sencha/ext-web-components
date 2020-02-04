@@ -155,23 +155,12 @@ function (_Ext_form_field_Picke) {
   Ext_ux_TreePicker.getEvents = function getEvents(events) {
     events = events.concat(Ext_ux_TreePicker.EVENTS());
     return Ext_form_field_Picker.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_ux_TreePicker, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_form_field_Picke.observedAttributes; //for (var property in Ext_ux_TreePicker.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_form_field_Picke.observedAttributes;
       Ext_ux_TreePicker.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

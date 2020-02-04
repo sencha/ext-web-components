@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_view_MultiSelectorSearch from '@sencha/ext-runtime-base/dist/./Ext/view/MultiSelectorSearch.js';
 import Ext_view_MultiSelectorSearch from './Ext/view/MultiSelectorSearch.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_view_MultiSelect) {
 }(Ext_view_MultiSelectorSearch);
 
 export { EWCMultiselector_search as default };
-window.customElements.define('ext-multiselector-search', ElementParser.withParsedCallback(EWCMultiselector_search));
+
+try {
+  window.customElements.define('ext-multiselector-search', ElementParser.withParsedCallback(EWCMultiselector_search));
+} catch (e) {
+  window.customElements.define('ext-multiselector-search', EWCMultiselector_search);
+}

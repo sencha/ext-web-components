@@ -7,4 +7,9 @@ export default class EWCSparklinediscrete extends Ext_sparkline_Discrete {
     this.xtype = 'sparklinediscrete';
   }
 }
-window.customElements.define('ext-sparklinediscrete', ElementParser.withParsedCallback(EWCSparklinediscrete));
+try {
+  window.customElements.define('ext-sparklinediscrete', ElementParser.withParsedCallback(EWCSparklinediscrete));
+}
+catch(e) {
+  window.customElements.define('ext-sparklinediscrete', EWCSparklinediscrete);
+}

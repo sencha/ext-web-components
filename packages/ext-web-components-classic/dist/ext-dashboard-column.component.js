@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_dashboard_Column from '@sencha/ext-runtime-base/dist/./Ext/dashboard/Column.js';
 import Ext_dashboard_Column from './Ext/dashboard/Column.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_dashboard_Column) {
 }(Ext_dashboard_Column);
 
 export { EWCDashboard_column as default };
-window.customElements.define('ext-dashboard-column', ElementParser.withParsedCallback(EWCDashboard_column));
+
+try {
+  window.customElements.define('ext-dashboard-column', ElementParser.withParsedCallback(EWCDashboard_column));
+} catch (e) {
+  window.customElements.define('ext-dashboard-column', EWCDashboard_column);
+}

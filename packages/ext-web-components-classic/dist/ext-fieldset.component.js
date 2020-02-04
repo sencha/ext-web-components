@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_form_FieldSet from '@sencha/ext-runtime-base/dist/./Ext/form/FieldSet.js';
 import Ext_form_FieldSet from './Ext/form/FieldSet.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_form_FieldSet) {
 }(Ext_form_FieldSet);
 
 export { EWCFieldset as default };
-window.customElements.define('ext-fieldset', ElementParser.withParsedCallback(EWCFieldset));
+
+try {
+  window.customElements.define('ext-fieldset', ElementParser.withParsedCallback(EWCFieldset));
+} catch (e) {
+  window.customElements.define('ext-fieldset', EWCFieldset);
+}

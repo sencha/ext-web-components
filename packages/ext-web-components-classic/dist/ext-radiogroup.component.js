@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_form_RadioGroup from '@sencha/ext-runtime-base/dist/./Ext/form/RadioGroup.js';
 import Ext_form_RadioGroup from './Ext/form/RadioGroup.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_form_RadioGroup) {
 }(Ext_form_RadioGroup);
 
 export { EWCRadiogroup as default };
-window.customElements.define('ext-radiogroup', ElementParser.withParsedCallback(EWCRadiogroup));
+
+try {
+  window.customElements.define('ext-radiogroup', ElementParser.withParsedCallback(EWCRadiogroup));
+} catch (e) {
+  window.customElements.define('ext-radiogroup', EWCRadiogroup);
+}

@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_Window from '@sencha/ext-runtime-base/dist/./Ext/Window.js';
 import Ext_Window from './Ext/Window.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_Window) {
 }(Ext_Window);
 
 export { EWCWindow as default };
-window.customElements.define('ext-window', ElementParser.withParsedCallback(EWCWindow));
+
+try {
+  window.customElements.define('ext-window', ElementParser.withParsedCallback(EWCWindow));
+} catch (e) {
+  window.customElements.define('ext-window', EWCWindow);
+}

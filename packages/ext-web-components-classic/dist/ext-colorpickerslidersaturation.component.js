@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ux_colorpick_SliderSaturation from '@sencha/ext-runtime-base/dist/./Ext/ux/colorpick/SliderSaturation.js';
 import Ext_ux_colorpick_SliderSaturation from './Ext/ux/colorpick/SliderSaturation.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_ux_colorpick_Sli) {
 }(Ext_ux_colorpick_SliderSaturation);
 
 export { EWCColorpickerslidersaturation as default };
-window.customElements.define('ext-colorpickerslidersaturation', ElementParser.withParsedCallback(EWCColorpickerslidersaturation));
+
+try {
+  window.customElements.define('ext-colorpickerslidersaturation', ElementParser.withParsedCallback(EWCColorpickerslidersaturation));
+} catch (e) {
+  window.customElements.define('ext-colorpickerslidersaturation', EWCColorpickerslidersaturation);
+}

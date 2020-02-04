@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_menu_CheckItem from '@sencha/ext-runtime-base/dist/./Ext/menu/CheckItem.js';
 import Ext_menu_CheckItem from './Ext/menu/CheckItem.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_menu_CheckItem) {
 }(Ext_menu_CheckItem);
 
 export { EWCMenucheckitem as default };
-window.customElements.define('ext-menucheckitem', ElementParser.withParsedCallback(EWCMenucheckitem));
+
+try {
+  window.customElements.define('ext-menucheckitem', ElementParser.withParsedCallback(EWCMenucheckitem));
+} catch (e) {
+  window.customElements.define('ext-menucheckitem', EWCMenucheckitem);
+}

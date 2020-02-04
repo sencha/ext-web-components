@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_window_Toast from '@sencha/ext-runtime-base/dist/./Ext/window/Toast.js';
 import Ext_window_Toast from './Ext/window/Toast.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_window_Toast) {
 }(Ext_window_Toast);
 
 export { EWCToast as default };
-window.customElements.define('ext-toast', ElementParser.withParsedCallback(EWCToast));
+
+try {
+  window.customElements.define('ext-toast', ElementParser.withParsedCallback(EWCToast));
+} catch (e) {
+  window.customElements.define('ext-toast', EWCToast);
+}

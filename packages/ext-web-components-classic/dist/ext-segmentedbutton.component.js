@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_button_Segmented from '@sencha/ext-runtime-base/dist/./Ext/button/Segmented.js';
 import Ext_button_Segmented from './Ext/button/Segmented.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_button_Segmented) {
 }(Ext_button_Segmented);
 
 export { EWCSegmentedbutton as default };
-window.customElements.define('ext-segmentedbutton', ElementParser.withParsedCallback(EWCSegmentedbutton));
+
+try {
+  window.customElements.define('ext-segmentedbutton', ElementParser.withParsedCallback(EWCSegmentedbutton));
+} catch (e) {
+  window.customElements.define('ext-segmentedbutton', EWCSegmentedbutton);
+}

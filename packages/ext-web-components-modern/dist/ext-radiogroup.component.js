@@ -19,4 +19,9 @@ function (_Ext_field_RadioGroup) {
 }(Ext_field_RadioGroup);
 
 export { EWCRadiogroup as default };
-window.customElements.define('ext-radiogroup', ElementParser.withParsedCallback(EWCRadiogroup));
+
+try {
+  window.customElements.define('ext-radiogroup', ElementParser.withParsedCallback(EWCRadiogroup));
+} catch (e) {
+  window.customElements.define('ext-radiogroup', EWCRadiogroup);
+}

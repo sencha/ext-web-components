@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ColorPalette from '@sencha/ext-runtime-base/dist/./Ext/ColorPalette.js';
 import Ext_ColorPalette from './Ext/ColorPalette.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_ColorPalette) {
 }(Ext_ColorPalette);
 
 export { EWCColorpicker as default };
-window.customElements.define('ext-colorpicker', ElementParser.withParsedCallback(EWCColorpicker));
+
+try {
+  window.customElements.define('ext-colorpicker', ElementParser.withParsedCallback(EWCColorpicker));
+} catch (e) {
+  window.customElements.define('ext-colorpicker', EWCColorpicker);
+}

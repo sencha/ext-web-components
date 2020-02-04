@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_d3_canvas_Canvas from '@sencha/ext-runtime-base/dist/./Ext/d3/canvas/Canvas.js';
 import Ext_d3_canvas_Canvas from './Ext/d3/canvas/Canvas.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_d3_canvas_Canvas) {
 }(Ext_d3_canvas_Canvas);
 
 export { EWCD3_canvas as default };
-window.customElements.define('ext-d3-canvas', ElementParser.withParsedCallback(EWCD3_canvas));
+
+try {
+  window.customElements.define('ext-d3-canvas', ElementParser.withParsedCallback(EWCD3_canvas));
+} catch (e) {
+  window.customElements.define('ext-d3-canvas', EWCD3_canvas);
+}

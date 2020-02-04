@@ -19,4 +19,9 @@ function (_Ext_grid_cell_Widget) {
 }(Ext_grid_cell_Widget);
 
 export { EWCWidgetcell as default };
-window.customElements.define('ext-widgetcell', ElementParser.withParsedCallback(EWCWidgetcell));
+
+try {
+  window.customElements.define('ext-widgetcell', ElementParser.withParsedCallback(EWCWidgetcell));
+} catch (e) {
+  window.customElements.define('ext-widgetcell', EWCWidgetcell);
+}

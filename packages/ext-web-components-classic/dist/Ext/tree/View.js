@@ -401,23 +401,12 @@ function (_Ext_view_Table) {
   Ext_tree_View.getEvents = function getEvents(events) {
     events = events.concat(Ext_tree_View.EVENTS());
     return Ext_view_Table.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_tree_View, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_view_Table.observedAttributes; //for (var property in Ext_tree_View.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_view_Table.observedAttributes;
       Ext_tree_View.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

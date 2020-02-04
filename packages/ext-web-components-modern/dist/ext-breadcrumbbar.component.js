@@ -19,4 +19,9 @@ function (_Ext_BreadcrumbBar) {
 }(Ext_BreadcrumbBar);
 
 export { EWCBreadcrumbbar as default };
-window.customElements.define('ext-breadcrumbbar', ElementParser.withParsedCallback(EWCBreadcrumbbar));
+
+try {
+  window.customElements.define('ext-breadcrumbbar', ElementParser.withParsedCallback(EWCBreadcrumbbar));
+} catch (e) {
+  window.customElements.define('ext-breadcrumbbar', EWCBreadcrumbbar);
+}

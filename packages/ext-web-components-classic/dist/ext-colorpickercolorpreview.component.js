@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ux_colorpick_ColorPreview from '@sencha/ext-runtime-base/dist/./Ext/ux/colorpick/ColorPreview.js';
 import Ext_ux_colorpick_ColorPreview from './Ext/ux/colorpick/ColorPreview.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_ux_colorpick_Col) {
 }(Ext_ux_colorpick_ColorPreview);
 
 export { EWCColorpickercolorpreview as default };
-window.customElements.define('ext-colorpickercolorpreview', ElementParser.withParsedCallback(EWCColorpickercolorpreview));
+
+try {
+  window.customElements.define('ext-colorpickercolorpreview', ElementParser.withParsedCallback(EWCColorpickercolorpreview));
+} catch (e) {
+  window.customElements.define('ext-colorpickercolorpreview', EWCColorpickercolorpreview);
+}

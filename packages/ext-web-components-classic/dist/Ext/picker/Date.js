@@ -116,23 +116,12 @@ function (_Ext_Component) {
   Ext_picker_Date.getEvents = function getEvents(events) {
     events = events.concat(Ext_picker_Date.EVENTS());
     return Ext_Component.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_picker_Date, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Component.observedAttributes; //for (var property in Ext_picker_Date.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_Component.observedAttributes;
       Ext_picker_Date.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

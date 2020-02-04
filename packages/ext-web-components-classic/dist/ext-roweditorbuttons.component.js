@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_grid_RowEditorButtons from '@sencha/ext-runtime-base/dist/./Ext/grid/RowEditorButtons.js';
 import Ext_grid_RowEditorButtons from './Ext/grid/RowEditorButtons.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_grid_RowEditorBu) {
 }(Ext_grid_RowEditorButtons);
 
 export { EWCRoweditorbuttons as default };
-window.customElements.define('ext-roweditorbuttons', ElementParser.withParsedCallback(EWCRoweditorbuttons));
+
+try {
+  window.customElements.define('ext-roweditorbuttons', ElementParser.withParsedCallback(EWCRoweditorbuttons));
+} catch (e) {
+  window.customElements.define('ext-roweditorbuttons', EWCRoweditorbuttons);
+}

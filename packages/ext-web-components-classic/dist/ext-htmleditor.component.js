@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_form_HtmlEditor from '@sencha/ext-runtime-base/dist/./Ext/form/HtmlEditor.js';
 import Ext_form_HtmlEditor from './Ext/form/HtmlEditor.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_form_HtmlEditor) {
 }(Ext_form_HtmlEditor);
 
 export { EWCHtmleditor as default };
-window.customElements.define('ext-htmleditor', ElementParser.withParsedCallback(EWCHtmleditor));
+
+try {
+  window.customElements.define('ext-htmleditor', ElementParser.withParsedCallback(EWCHtmleditor));
+} catch (e) {
+  window.customElements.define('ext-htmleditor', EWCHtmleditor);
+}

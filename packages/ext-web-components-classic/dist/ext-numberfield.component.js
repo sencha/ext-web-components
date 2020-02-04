@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_form_Number from '@sencha/ext-runtime-base/dist/./Ext/form/Number.js';
 import Ext_form_Number from './Ext/form/Number.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_form_Number) {
 }(Ext_form_Number);
 
 export { EWCNumberfield as default };
-window.customElements.define('ext-numberfield', ElementParser.withParsedCallback(EWCNumberfield));
+
+try {
+  window.customElements.define('ext-numberfield', ElementParser.withParsedCallback(EWCNumberfield));
+} catch (e) {
+  window.customElements.define('ext-numberfield', EWCNumberfield);
+}

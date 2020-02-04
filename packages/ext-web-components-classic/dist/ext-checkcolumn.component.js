@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_grid_column_CheckColumn from '@sencha/ext-runtime-base/dist/./Ext/grid/column/CheckColumn.js';
 import Ext_grid_column_CheckColumn from './Ext/grid/column/CheckColumn.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_grid_column_Chec) {
 }(Ext_grid_column_CheckColumn);
 
 export { EWCCheckcolumn as default };
-window.customElements.define('ext-checkcolumn', ElementParser.withParsedCallback(EWCCheckcolumn));
+
+try {
+  window.customElements.define('ext-checkcolumn', ElementParser.withParsedCallback(EWCCheckcolumn));
+} catch (e) {
+  window.customElements.define('ext-checkcolumn', EWCCheckcolumn);
+}

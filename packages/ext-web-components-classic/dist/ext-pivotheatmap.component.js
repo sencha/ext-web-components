@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_pivot_d3_HeatMap from '@sencha/ext-runtime-base/dist/./Ext/pivot/d3/HeatMap.js';
 import Ext_pivot_d3_HeatMap from './Ext/pivot/d3/HeatMap.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_pivot_d3_HeatMap) {
 }(Ext_pivot_d3_HeatMap);
 
 export { EWCPivotheatmap as default };
-window.customElements.define('ext-pivotheatmap', ElementParser.withParsedCallback(EWCPivotheatmap));
+
+try {
+  window.customElements.define('ext-pivotheatmap', ElementParser.withParsedCallback(EWCPivotheatmap));
+} catch (e) {
+  window.customElements.define('ext-pivotheatmap', EWCPivotheatmap);
+}

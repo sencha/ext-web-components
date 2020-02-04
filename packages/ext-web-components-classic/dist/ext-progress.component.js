@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ProgressBarWidget from '@sencha/ext-runtime-base/dist/./Ext/ProgressBarWidget.js';
 import Ext_ProgressBarWidget from './Ext/ProgressBarWidget.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_ProgressBarWidge) {
 }(Ext_ProgressBarWidget);
 
 export { EWCProgress as default };
-window.customElements.define('ext-progress', ElementParser.withParsedCallback(EWCProgress));
+
+try {
+  window.customElements.define('ext-progress', ElementParser.withParsedCallback(EWCProgress));
+} catch (e) {
+  window.customElements.define('ext-progress', EWCProgress);
+}

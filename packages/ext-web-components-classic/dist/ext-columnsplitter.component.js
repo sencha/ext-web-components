@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_layout_container_ColumnSplitter from '@sencha/ext-runtime-base/dist/./Ext/layout/container/ColumnSplitter.js';
 import Ext_layout_container_ColumnSplitter from './Ext/layout/container/ColumnSplitter.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_layout_container) {
 }(Ext_layout_container_ColumnSplitter);
 
 export { EWCColumnsplitter as default };
-window.customElements.define('ext-columnsplitter', ElementParser.withParsedCallback(EWCColumnsplitter));
+
+try {
+  window.customElements.define('ext-columnsplitter', ElementParser.withParsedCallback(EWCColumnsplitter));
+} catch (e) {
+  window.customElements.define('ext-columnsplitter', EWCColumnsplitter);
+}

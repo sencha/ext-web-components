@@ -7,4 +7,9 @@ export default class EWCD3_treemap extends Ext_d3_hierarchy_TreeMap {
     this.xtype = 'd3-treemap';
   }
 }
-window.customElements.define('ext-d3-treemap', ElementParser.withParsedCallback(EWCD3_treemap));
+try {
+  window.customElements.define('ext-d3-treemap', ElementParser.withParsedCallback(EWCD3_treemap));
+}
+catch(e) {
+  window.customElements.define('ext-d3-treemap', EWCD3_treemap);
+}

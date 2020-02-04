@@ -19,4 +19,9 @@ function (_Ext_form_Select) {
 }(Ext_form_Select);
 
 export { EWCSelectfield as default };
-window.customElements.define('ext-selectfield', ElementParser.withParsedCallback(EWCSelectfield));
+
+try {
+  window.customElements.define('ext-selectfield', ElementParser.withParsedCallback(EWCSelectfield));
+} catch (e) {
+  window.customElements.define('ext-selectfield', EWCSelectfield);
+}

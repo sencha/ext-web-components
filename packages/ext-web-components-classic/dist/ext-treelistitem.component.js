@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_list_TreeItem from '@sencha/ext-runtime-base/dist/./Ext/list/TreeItem.js';
 import Ext_list_TreeItem from './Ext/list/TreeItem.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_list_TreeItem) {
 }(Ext_list_TreeItem);
 
 export { EWCTreelistitem as default };
-window.customElements.define('ext-treelistitem', ElementParser.withParsedCallback(EWCTreelistitem));
+
+try {
+  window.customElements.define('ext-treelistitem', ElementParser.withParsedCallback(EWCTreelistitem));
+} catch (e) {
+  window.customElements.define('ext-treelistitem', EWCTreelistitem);
+}

@@ -19,4 +19,9 @@ function (_Ext_grid_cell_Check) {
 }(Ext_grid_cell_Check);
 
 export { EWCCheckcell as default };
-window.customElements.define('ext-checkcell', ElementParser.withParsedCallback(EWCCheckcell));
+
+try {
+  window.customElements.define('ext-checkcell', ElementParser.withParsedCallback(EWCCheckcell));
+} catch (e) {
+  window.customElements.define('ext-checkcell', EWCCheckcell);
+}

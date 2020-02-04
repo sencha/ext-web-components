@@ -19,4 +19,9 @@ function (_Ext_grid_cell_Tree) {
 }(Ext_grid_cell_Tree);
 
 export { EWCTreecell as default };
-window.customElements.define('ext-treecell', ElementParser.withParsedCallback(EWCTreecell));
+
+try {
+  window.customElements.define('ext-treecell', ElementParser.withParsedCallback(EWCTreecell));
+} catch (e) {
+  window.customElements.define('ext-treecell', EWCTreecell);
+}

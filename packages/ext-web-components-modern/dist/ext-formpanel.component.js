@@ -19,4 +19,9 @@ function (_Ext_form_FormPanel) {
 }(Ext_form_FormPanel);
 
 export { EWCFormpanel as default };
-window.customElements.define('ext-formpanel', ElementParser.withParsedCallback(EWCFormpanel));
+
+try {
+  window.customElements.define('ext-formpanel', ElementParser.withParsedCallback(EWCFormpanel));
+} catch (e) {
+  window.customElements.define('ext-formpanel', EWCFormpanel);
+}

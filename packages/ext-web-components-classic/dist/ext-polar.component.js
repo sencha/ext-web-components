@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_chart_PolarChart from '@sencha/ext-runtime-base/dist/./Ext/chart/PolarChart.js';
 import Ext_chart_PolarChart from './Ext/chart/PolarChart.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_chart_PolarChart) {
 }(Ext_chart_PolarChart);
 
 export { EWCPolar as default };
-window.customElements.define('ext-polar', ElementParser.withParsedCallback(EWCPolar));
+
+try {
+  window.customElements.define('ext-polar', ElementParser.withParsedCallback(EWCPolar));
+} catch (e) {
+  window.customElements.define('ext-polar', EWCPolar);
+}

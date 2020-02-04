@@ -62,23 +62,12 @@ function (_Ext_Widget) {
   Ext_draw_SurfaceBase.getEvents = function getEvents(events) {
     events = events.concat(Ext_draw_SurfaceBase.EVENTS());
     return Ext_Widget.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_draw_SurfaceBase, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_Widget.observedAttributes; //for (var property in Ext_draw_SurfaceBase.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_Widget.observedAttributes;
       Ext_draw_SurfaceBase.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

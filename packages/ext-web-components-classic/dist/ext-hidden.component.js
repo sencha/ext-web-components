@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_form_Hidden from '@sencha/ext-runtime-base/dist/./Ext/form/Hidden.js';
 import Ext_form_Hidden from './Ext/form/Hidden.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_form_Hidden) {
 }(Ext_form_Hidden);
 
 export { EWCHidden as default };
-window.customElements.define('ext-hidden', ElementParser.withParsedCallback(EWCHidden));
+
+try {
+  window.customElements.define('ext-hidden', ElementParser.withParsedCallback(EWCHidden));
+} catch (e) {
+  window.customElements.define('ext-hidden', EWCHidden);
+}

@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_Editor from '@sencha/ext-runtime-base/dist/./Ext/Editor.js';
 import Ext_Editor from './Ext/Editor.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_Editor) {
 }(Ext_Editor);
 
 export { EWCEditor as default };
-window.customElements.define('ext-editor', ElementParser.withParsedCallback(EWCEditor));
+
+try {
+  window.customElements.define('ext-editor', ElementParser.withParsedCallback(EWCEditor));
+} catch (e) {
+  window.customElements.define('ext-editor', EWCEditor);
+}

@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ux_desktop_Wallpaper from '@sencha/ext-runtime-base/dist/./Ext/ux/desktop/Wallpaper.js';
 import Ext_ux_desktop_Wallpaper from './Ext/ux/desktop/Wallpaper.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_ux_desktop_Wallp) {
 }(Ext_ux_desktop_Wallpaper);
 
 export { EWCWallpaper as default };
-window.customElements.define('ext-wallpaper', ElementParser.withParsedCallback(EWCWallpaper));
+
+try {
+  window.customElements.define('ext-wallpaper', ElementParser.withParsedCallback(EWCWallpaper));
+} catch (e) {
+  window.customElements.define('ext-wallpaper', EWCWallpaper);
+}

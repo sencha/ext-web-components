@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ux_IFrame from '@sencha/ext-runtime-base/dist/./Ext/ux/IFrame.js';
 import Ext_ux_IFrame from './Ext/ux/IFrame.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_ux_IFrame) {
 }(Ext_ux_IFrame);
 
 export { EWCUxiframe as default };
-window.customElements.define('ext-uxiframe', ElementParser.withParsedCallback(EWCUxiframe));
+
+try {
+  window.customElements.define('ext-uxiframe', ElementParser.withParsedCallback(EWCUxiframe));
+} catch (e) {
+  window.customElements.define('ext-uxiframe', EWCUxiframe);
+}

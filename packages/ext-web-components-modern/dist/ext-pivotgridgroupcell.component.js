@@ -19,4 +19,9 @@ function (_Ext_pivot_cell_Group) {
 }(Ext_pivot_cell_Group);
 
 export { EWCPivotgridgroupcell as default };
-window.customElements.define('ext-pivotgridgroupcell', ElementParser.withParsedCallback(EWCPivotgridgroupcell));
+
+try {
+  window.customElements.define('ext-pivotgridgroupcell', ElementParser.withParsedCallback(EWCPivotgridgroupcell));
+} catch (e) {
+  window.customElements.define('ext-pivotgridgroupcell', EWCPivotgridgroupcell);
+}

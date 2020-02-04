@@ -1,7 +1,7 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Mon Jan 06 2020 09:06:54 GMT-0500 (Eastern Standard Time)
-import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
+//Mon Feb 03 2020 13:19:12 GMT-0500 (Eastern Standard Time)
+import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildToolbar, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var EleBaseComponent =
 /*#__PURE__*/
@@ -12,14 +12,16 @@ function (_HTMLElement) {
     var _this;
 
     _this = _HTMLElement.call(this) || this;
-    _this.properties = properties;
-    _this.events = events;
-    _this.eventnames = [];
-    var eventnamesall = [];
 
     var distinct = function distinct(value, index, self) {
       return self.indexOf(value) === index;
     };
+
+    _this.properties = properties.filter(distinct); //this.properties = properties;
+
+    _this.events = events;
+    _this.eventnames = [];
+    var eventnamesall = [];
 
     _this.events.forEach(function (event) {
       eventnamesall.push(event.name);
@@ -81,8 +83,9 @@ function (_HTMLElement) {
       doProp(_this2, prop);
     });
     this.xtype = x;
-    var me = this;
-    this.newCreateProps(this.properties, this.events);
+    var me = this; //this.newCreateProps(this.properties, this.events);
+
+    this.newCreateProps(this.properties);
 
     if (me.A.o['viewport'] == 'true') {
       me.A.o['viewport'] = true;
@@ -338,6 +341,15 @@ function (_HTMLElement) {
 
       case isRenderercell(childxtype):
         parentCmp.setCell(childCmp);
+        break;
+
+      case isParentGridAndChildToolbar(parentxtype, childxtype):
+        if (parentCmp.items.items[0].xtype == 'titlebar') {
+          parentCmp.insert(1, childCmp);
+        } else {
+          parentCmp.insert(0, childCmp);
+        }
+
         break;
 
       case isParentGridAndChildColumn(parentxtype, childxtype):

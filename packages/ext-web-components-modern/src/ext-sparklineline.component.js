@@ -7,4 +7,9 @@ export default class EWCSparklineline extends Ext_sparkline_Line {
     this.xtype = 'sparklineline';
   }
 }
-window.customElements.define('ext-sparklineline', ElementParser.withParsedCallback(EWCSparklineline));
+try {
+  window.customElements.define('ext-sparklineline', ElementParser.withParsedCallback(EWCSparklineline));
+}
+catch(e) {
+  window.customElements.define('ext-sparklineline', EWCSparklineline);
+}

@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ux_TreePicker from '@sencha/ext-runtime-base/dist/./Ext/ux/TreePicker.js';
 import Ext_ux_TreePicker from './Ext/ux/TreePicker.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_ux_TreePicker) {
 }(Ext_ux_TreePicker);
 
 export { EWCTreepicker as default };
-window.customElements.define('ext-treepicker', ElementParser.withParsedCallback(EWCTreepicker));
+
+try {
+  window.customElements.define('ext-treepicker', ElementParser.withParsedCallback(EWCTreepicker));
+} catch (e) {
+  window.customElements.define('ext-treepicker', EWCTreepicker);
+}

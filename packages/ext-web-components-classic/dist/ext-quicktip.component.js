@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_QuickTip from '@sencha/ext-runtime-base/dist/./Ext/QuickTip.js';
 import Ext_QuickTip from './Ext/QuickTip.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_QuickTip) {
 }(Ext_QuickTip);
 
 export { EWCQuicktip as default };
-window.customElements.define('ext-quicktip', ElementParser.withParsedCallback(EWCQuicktip));
+
+try {
+  window.customElements.define('ext-quicktip', ElementParser.withParsedCallback(EWCQuicktip));
+} catch (e) {
+  window.customElements.define('ext-quicktip', EWCQuicktip);
+}

@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_chart_Legend from '@sencha/ext-runtime-base/dist/./Ext/chart/Legend.js';
 import Ext_chart_Legend from './Ext/chart/Legend.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_chart_Legend) {
 }(Ext_chart_Legend);
 
 export { EWCLegend as default };
-window.customElements.define('ext-legend', ElementParser.withParsedCallback(EWCLegend));
+
+try {
+  window.customElements.define('ext-legend', ElementParser.withParsedCallback(EWCLegend));
+} catch (e) {
+  window.customElements.define('ext-legend', EWCLegend);
+}

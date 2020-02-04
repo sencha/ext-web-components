@@ -19,4 +19,9 @@ function (_Ext_calendar_List) {
 }(Ext_calendar_List);
 
 export { EWCCalendar_list as default };
-window.customElements.define('ext-calendar-list', ElementParser.withParsedCallback(EWCCalendar_list));
+
+try {
+  window.customElements.define('ext-calendar-list', ElementParser.withParsedCallback(EWCCalendar_list));
+} catch (e) {
+  window.customElements.define('ext-calendar-list', EWCCalendar_list);
+}

@@ -19,4 +19,9 @@ function (_Ext_panel_YearPicker) {
 }(Ext_panel_YearPicker);
 
 export { EWCYearpicker as default };
-window.customElements.define('ext-yearpicker', ElementParser.withParsedCallback(EWCYearpicker));
+
+try {
+  window.customElements.define('ext-yearpicker', ElementParser.withParsedCallback(EWCYearpicker));
+} catch (e) {
+  window.customElements.define('ext-yearpicker', EWCYearpicker);
+}

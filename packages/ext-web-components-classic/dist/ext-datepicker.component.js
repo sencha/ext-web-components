@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_DatePicker from '@sencha/ext-runtime-base/dist/./Ext/DatePicker.js';
 import Ext_DatePicker from './Ext/DatePicker.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_DatePicker) {
 }(Ext_DatePicker);
 
 export { EWCDatepicker as default };
-window.customElements.define('ext-datepicker', ElementParser.withParsedCallback(EWCDatepicker));
+
+try {
+  window.customElements.define('ext-datepicker', ElementParser.withParsedCallback(EWCDatepicker));
+} catch (e) {
+  window.customElements.define('ext-datepicker', EWCDatepicker);
+}

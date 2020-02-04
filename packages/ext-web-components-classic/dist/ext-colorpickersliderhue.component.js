@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ux_colorpick_SliderHue from '@sencha/ext-runtime-base/dist/./Ext/ux/colorpick/SliderHue.js';
 import Ext_ux_colorpick_SliderHue from './Ext/ux/colorpick/SliderHue.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_ux_colorpick_Sli) {
 }(Ext_ux_colorpick_SliderHue);
 
 export { EWCColorpickersliderhue as default };
-window.customElements.define('ext-colorpickersliderhue', ElementParser.withParsedCallback(EWCColorpickersliderhue));
+
+try {
+  window.customElements.define('ext-colorpickersliderhue', ElementParser.withParsedCallback(EWCColorpickersliderhue));
+} catch (e) {
+  window.customElements.define('ext-colorpickersliderhue', EWCColorpickersliderhue);
+}

@@ -19,4 +19,9 @@ function (_Ext_dataview_compone) {
 }(Ext_dataview_component_DataItem);
 
 export { EWCDataitem as default };
-window.customElements.define('ext-dataitem', ElementParser.withParsedCallback(EWCDataitem));
+
+try {
+  window.customElements.define('ext-dataitem', ElementParser.withParsedCallback(EWCDataitem));
+} catch (e) {
+  window.customElements.define('ext-dataitem', EWCDataitem);
+}

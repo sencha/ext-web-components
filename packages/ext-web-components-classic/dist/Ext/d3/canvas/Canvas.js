@@ -65,23 +65,12 @@ function (_Ext_d3_Component) {
   Ext_d3_canvas_Canvas.getEvents = function getEvents(events) {
     events = events.concat(Ext_d3_canvas_Canvas.EVENTS());
     return Ext_d3_Component.getEvents(events);
-  } //events
-  ////configs
-  //
-  //static XTYPE() {return ''}
-  //static PROPERTIESOBJECT() { return {
-  //}}
-  //static METHODS() { return [
-  //]}
-  ;
+  };
 
   _createClass(Ext_d3_canvas_Canvas, null, [{
     key: "observedAttributes",
     get: function get() {
-      var attrs = _Ext_d3_Component.observedAttributes; //for (var property in Ext_d3_canvas_Canvas.PROPERTIESOBJECT()) {
-      //    attrs.push(property)
-      //}
-
+      var attrs = _Ext_d3_Component.observedAttributes;
       Ext_d3_canvas_Canvas.PROPERTIES().forEach(function (property, index, array) {
         attrs.push(property);
       });

@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_d3_hierarchy_partition_Partition from '@sencha/ext-runtime-base/dist/./Ext/d3/hierarchy/partition/Partition.js';
 import Ext_d3_hierarchy_partition_Partition from './Ext/d3/hierarchy/partition/Partition.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_d3_hierarchy_par) {
 }(Ext_d3_hierarchy_partition_Partition);
 
 export { EWCD3_partition as default };
-window.customElements.define('ext-d3-partition', ElementParser.withParsedCallback(EWCD3_partition));
+
+try {
+  window.customElements.define('ext-d3-partition', ElementParser.withParsedCallback(EWCD3_partition));
+} catch (e) {
+  window.customElements.define('ext-d3-partition', EWCD3_partition);
+}

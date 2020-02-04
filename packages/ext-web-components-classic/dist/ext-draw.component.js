@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_draw_Component from '@sencha/ext-runtime-base/dist/./Ext/draw/Component.js';
 import Ext_draw_Component from './Ext/draw/Component.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_draw_Component) {
 }(Ext_draw_Component);
 
 export { EWCDraw as default };
-window.customElements.define('ext-draw', ElementParser.withParsedCallback(EWCDraw));
+
+try {
+  window.customElements.define('ext-draw', ElementParser.withParsedCallback(EWCDraw));
+} catch (e) {
+  window.customElements.define('ext-draw', EWCDraw);
+}

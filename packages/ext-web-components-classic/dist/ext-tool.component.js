@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_panel_Tool from '@sencha/ext-runtime-base/dist/./Ext/panel/Tool.js';
 import Ext_panel_Tool from './Ext/panel/Tool.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_panel_Tool) {
 }(Ext_panel_Tool);
 
 export { EWCTool as default };
-window.customElements.define('ext-tool', ElementParser.withParsedCallback(EWCTool));
+
+try {
+  window.customElements.define('ext-tool', ElementParser.withParsedCallback(EWCTool));
+} catch (e) {
+  window.customElements.define('ext-tool', EWCTool);
+}

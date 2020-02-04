@@ -19,4 +19,9 @@ function (_Ext_pivot_Row) {
 }(Ext_pivot_Row);
 
 export { EWCPivotgridrow as default };
-window.customElements.define('ext-pivotgridrow', ElementParser.withParsedCallback(EWCPivotgridrow));
+
+try {
+  window.customElements.define('ext-pivotgridrow', ElementParser.withParsedCallback(EWCPivotgridrow));
+} catch (e) {
+  window.customElements.define('ext-pivotgridrow', EWCPivotgridrow);
+}

@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_TreePanel from '@sencha/ext-runtime-base/dist/./Ext/TreePanel.js';
 import Ext_TreePanel from './Ext/TreePanel.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_TreePanel) {
 }(Ext_TreePanel);
 
 export { EWCTreepanel as default };
-window.customElements.define('ext-treepanel', ElementParser.withParsedCallback(EWCTreepanel));
+
+try {
+  window.customElements.define('ext-treepanel', ElementParser.withParsedCallback(EWCTreepanel));
+} catch (e) {
+  window.customElements.define('ext-treepanel', EWCTreepanel);
+}

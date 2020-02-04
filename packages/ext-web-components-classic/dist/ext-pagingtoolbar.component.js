@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_PagingToolbar from '@sencha/ext-runtime-base/dist/./Ext/PagingToolbar.js';
 import Ext_PagingToolbar from './Ext/PagingToolbar.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_PagingToolbar) {
 }(Ext_PagingToolbar);
 
 export { EWCPagingtoolbar as default };
-window.customElements.define('ext-pagingtoolbar', ElementParser.withParsedCallback(EWCPagingtoolbar));
+
+try {
+  window.customElements.define('ext-pagingtoolbar', ElementParser.withParsedCallback(EWCPagingtoolbar));
+} catch (e) {
+  window.customElements.define('ext-pagingtoolbar', EWCPagingtoolbar);
+}

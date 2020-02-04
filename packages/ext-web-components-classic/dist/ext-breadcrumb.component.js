@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_toolbar_Breadcrumb from '@sencha/ext-runtime-base/dist/./Ext/toolbar/Breadcrumb.js';
 import Ext_toolbar_Breadcrumb from './Ext/toolbar/Breadcrumb.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_toolbar_Breadcru) {
 }(Ext_toolbar_Breadcrumb);
 
 export { EWCBreadcrumb as default };
-window.customElements.define('ext-breadcrumb', ElementParser.withParsedCallback(EWCBreadcrumb));
+
+try {
+  window.customElements.define('ext-breadcrumb', ElementParser.withParsedCallback(EWCBreadcrumb));
+} catch (e) {
+  window.customElements.define('ext-breadcrumb', EWCBreadcrumb);
+}

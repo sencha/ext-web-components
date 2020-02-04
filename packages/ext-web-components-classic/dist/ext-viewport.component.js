@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_Viewport from '@sencha/ext-runtime-base/dist/./Ext/Viewport.js';
 import Ext_Viewport from './Ext/Viewport.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_Viewport) {
 }(Ext_Viewport);
 
 export { EWCViewport as default };
-window.customElements.define('ext-viewport', ElementParser.withParsedCallback(EWCViewport));
+
+try {
+  window.customElements.define('ext-viewport', ElementParser.withParsedCallback(EWCViewport));
+} catch (e) {
+  window.customElements.define('ext-viewport', EWCViewport);
+}

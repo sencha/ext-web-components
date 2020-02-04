@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ux_StatusBar from '@sencha/ext-runtime-base/dist/./Ext/ux/StatusBar.js';
 import Ext_ux_StatusBar from './Ext/ux/StatusBar.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_ux_StatusBar) {
 }(Ext_ux_StatusBar);
 
 export { EWCStatusbar as default };
-window.customElements.define('ext-statusbar', ElementParser.withParsedCallback(EWCStatusbar));
+
+try {
+  window.customElements.define('ext-statusbar', ElementParser.withParsedCallback(EWCStatusbar));
+} catch (e) {
+  window.customElements.define('ext-statusbar', EWCStatusbar);
+}

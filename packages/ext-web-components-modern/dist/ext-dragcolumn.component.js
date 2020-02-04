@@ -19,4 +19,9 @@ function (_Ext_grid_column_Drag) {
 }(Ext_grid_column_Drag);
 
 export { EWCDragcolumn as default };
-window.customElements.define('ext-dragcolumn', ElementParser.withParsedCallback(EWCDragcolumn));
+
+try {
+  window.customElements.define('ext-dragcolumn', ElementParser.withParsedCallback(EWCDragcolumn));
+} catch (e) {
+  window.customElements.define('ext-dragcolumn', EWCDragcolumn);
+}

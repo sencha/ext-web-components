@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ux_event_RecorderManager from '@sencha/ext-runtime-base/dist/./Ext/ux/event/RecorderManager.js';
 import Ext_ux_event_RecorderManager from './Ext/ux/event/RecorderManager.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_ux_event_Recorde) {
 }(Ext_ux_event_RecorderManager);
 
 export { EWCEventrecordermanager as default };
-window.customElements.define('ext-eventrecordermanager', ElementParser.withParsedCallback(EWCEventrecordermanager));
+
+try {
+  window.customElements.define('ext-eventrecordermanager', ElementParser.withParsedCallback(EWCEventrecordermanager));
+} catch (e) {
+  window.customElements.define('ext-eventrecordermanager', EWCEventrecordermanager);
+}

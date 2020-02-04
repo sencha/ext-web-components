@@ -19,4 +19,9 @@ function (_Ext_calendar_view_Da) {
 }(Ext_calendar_view_Day);
 
 export { EWCCalendar_dayview as default };
-window.customElements.define('ext-calendar-dayview', ElementParser.withParsedCallback(EWCCalendar_dayview));
+
+try {
+  window.customElements.define('ext-calendar-dayview', ElementParser.withParsedCallback(EWCCalendar_dayview));
+} catch (e) {
+  window.customElements.define('ext-calendar-dayview', EWCCalendar_dayview);
+}

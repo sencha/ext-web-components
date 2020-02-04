@@ -7,4 +7,9 @@ export default class EWCCelleditor extends Ext_grid_CellEditor {
     this.xtype = 'celleditor';
   }
 }
-window.customElements.define('ext-celleditor', ElementParser.withParsedCallback(EWCCelleditor));
+try {
+  window.customElements.define('ext-celleditor', ElementParser.withParsedCallback(EWCCelleditor));
+}
+catch(e) {
+  window.customElements.define('ext-celleditor', EWCCelleditor);
+}

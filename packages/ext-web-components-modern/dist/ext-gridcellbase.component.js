@@ -19,4 +19,9 @@ function (_Ext_grid_cell_Base) {
 }(Ext_grid_cell_Base);
 
 export { EWCGridcellbase as default };
-window.customElements.define('ext-gridcellbase', ElementParser.withParsedCallback(EWCGridcellbase));
+
+try {
+  window.customElements.define('ext-gridcellbase', ElementParser.withParsedCallback(EWCGridcellbase));
+} catch (e) {
+  window.customElements.define('ext-gridcellbase', EWCGridcellbase);
+}

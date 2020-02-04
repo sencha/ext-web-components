@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_form_File from '@sencha/ext-runtime-base/dist/./Ext/form/File.js';
 import Ext_form_File from './Ext/form/File.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_form_File) {
 }(Ext_form_File);
 
 export { EWCFileuploadfield as default };
-window.customElements.define('ext-fileuploadfield', ElementParser.withParsedCallback(EWCFileuploadfield));
+
+try {
+  window.customElements.define('ext-fileuploadfield', ElementParser.withParsedCallback(EWCFileuploadfield));
+} catch (e) {
+  window.customElements.define('ext-fileuploadfield', EWCFileuploadfield);
+}

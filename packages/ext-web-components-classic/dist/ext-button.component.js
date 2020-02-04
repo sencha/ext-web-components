@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_Button from '@sencha/ext-runtime-base/dist/./Ext/Button.js';
 import Ext_Button from './Ext/Button.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_Button) {
 }(Ext_Button);
 
 export { EWCButton as default };
-window.customElements.define('ext-button', ElementParser.withParsedCallback(EWCButton));
+
+try {
+  window.customElements.define('ext-button', ElementParser.withParsedCallback(EWCButton));
+} catch (e) {
+  window.customElements.define('ext-button', EWCButton);
+}

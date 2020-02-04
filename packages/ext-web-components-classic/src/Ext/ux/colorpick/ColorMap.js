@@ -1,7 +1,7 @@
 import Ext_container_Container from '../../../Ext/container/Container.js';
 
 export default class Ext_ux_colorpick_ColorMap extends Ext_container_Container {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'actions',
     'activeChildTabIndex',
     'activeCounter',
@@ -122,8 +122,8 @@ export default class Ext_ux_colorpick_ColorMap extends Ext_container_Container {
     'weight',
     'width',
     'xtype',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'sender'},
     {name:'add', parameters:'sender,component,index'},
     {name:'added', parameters:'sender,container,pos'},
@@ -160,52 +160,40 @@ export default class Ext_ux_colorpick_ColorMap extends Ext_container_Container {
     {name:'staterestore', parameters:'sender,state'},
     {name:'statesave', parameters:'sender,state'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_ux_colorpick_ColorMap.PROPERTIES());
-        return Ext_container_Container.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_ux_colorpick_ColorMap.EVENTS());
-        return Ext_container_Container.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_ux_colorpick_ColorMap.PROPERTIES());
+    return Ext_container_Container.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_ux_colorpick_ColorMap.EVENTS());
+    return Ext_container_Container.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_ux_colorpick_ColorMap.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_ux_colorpick_ColorMap.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_ux_colorpick_ColorMap.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_ux_colorpick_ColorMap.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_ux_colorpick_ColorMap.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_ux_colorpick_ColorMap.PROPERTIES()),
+      events.concat(Ext_ux_colorpick_ColorMap.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_ux_colorpick_ColorMap.PROPERTIES()),
-            events.concat(Ext_ux_colorpick_ColorMap.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

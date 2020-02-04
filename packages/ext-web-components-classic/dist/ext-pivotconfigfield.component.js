@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_pivot_plugin_configurator_Column from '@sencha/ext-runtime-base/dist/./Ext/pivot/plugin/configurator/Column.js';
 import Ext_pivot_plugin_configurator_Column from './Ext/pivot/plugin/configurator/Column.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_pivot_plugin_con) {
 }(Ext_pivot_plugin_configurator_Column);
 
 export { EWCPivotconfigfield as default };
-window.customElements.define('ext-pivotconfigfield', ElementParser.withParsedCallback(EWCPivotconfigfield));
+
+try {
+  window.customElements.define('ext-pivotconfigfield', ElementParser.withParsedCallback(EWCPivotconfigfield));
+} catch (e) {
+  window.customElements.define('ext-pivotconfigfield', EWCPivotconfigfield);
+}

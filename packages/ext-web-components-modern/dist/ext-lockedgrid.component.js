@@ -19,4 +19,9 @@ function (_Ext_grid_LockedGrid) {
 }(Ext_grid_LockedGrid);
 
 export { EWCLockedgrid as default };
-window.customElements.define('ext-lockedgrid', ElementParser.withParsedCallback(EWCLockedgrid));
+
+try {
+  window.customElements.define('ext-lockedgrid', ElementParser.withParsedCallback(EWCLockedgrid));
+} catch (e) {
+  window.customElements.define('ext-lockedgrid', EWCLockedgrid);
+}

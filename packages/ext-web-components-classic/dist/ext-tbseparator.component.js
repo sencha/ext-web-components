@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_toolbar_Separator from '@sencha/ext-runtime-base/dist/./Ext/toolbar/Separator.js';
 import Ext_toolbar_Separator from './Ext/toolbar/Separator.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_toolbar_Separato) {
 }(Ext_toolbar_Separator);
 
 export { EWCTbseparator as default };
-window.customElements.define('ext-tbseparator', ElementParser.withParsedCallback(EWCTbseparator));
+
+try {
+  window.customElements.define('ext-tbseparator', ElementParser.withParsedCallback(EWCTbseparator));
+} catch (e) {
+  window.customElements.define('ext-tbseparator', EWCTbseparator);
+}

@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_panel_Table from '@sencha/ext-runtime-base/dist/./Ext/panel/Table.js';
 import Ext_panel_Table from './Ext/panel/Table.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_panel_Table) {
 }(Ext_panel_Table);
 
 export { EWCTablepanel as default };
-window.customElements.define('ext-tablepanel', ElementParser.withParsedCallback(EWCTablepanel));
+
+try {
+  window.customElements.define('ext-tablepanel', ElementParser.withParsedCallback(EWCTablepanel));
+} catch (e) {
+  window.customElements.define('ext-tablepanel', EWCTablepanel);
+}

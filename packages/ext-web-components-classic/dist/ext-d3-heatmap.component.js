@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_d3_HeatMap from '@sencha/ext-runtime-base/dist/./Ext/d3/HeatMap.js';
 import Ext_d3_HeatMap from './Ext/d3/HeatMap.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_d3_HeatMap) {
 }(Ext_d3_HeatMap);
 
 export { EWCD3_heatmap as default };
-window.customElements.define('ext-d3-heatmap', ElementParser.withParsedCallback(EWCD3_heatmap));
+
+try {
+  window.customElements.define('ext-d3-heatmap', ElementParser.withParsedCallback(EWCD3_heatmap));
+} catch (e) {
+  window.customElements.define('ext-d3-heatmap', EWCD3_heatmap);
+}

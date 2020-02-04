@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_toolbar_Item from '@sencha/ext-runtime-base/dist/./Ext/toolbar/Item.js';
 import Ext_toolbar_Item from './Ext/toolbar/Item.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_toolbar_Item) {
 }(Ext_toolbar_Item);
 
 export { EWCTbitem as default };
-window.customElements.define('ext-tbitem', ElementParser.withParsedCallback(EWCTbitem));
+
+try {
+  window.customElements.define('ext-tbitem', ElementParser.withParsedCallback(EWCTbitem));
+} catch (e) {
+  window.customElements.define('ext-tbitem', EWCTbitem);
+}

@@ -19,4 +19,9 @@ function (_Ext_TitleBar) {
 }(Ext_TitleBar);
 
 export { EWCTitlebar as default };
-window.customElements.define('ext-titlebar', ElementParser.withParsedCallback(EWCTitlebar));
+
+try {
+  window.customElements.define('ext-titlebar', ElementParser.withParsedCallback(EWCTitlebar));
+} catch (e) {
+  window.customElements.define('ext-titlebar', EWCTitlebar);
+}

@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_grid_NumberColumn from '@sencha/ext-runtime-base/dist/./Ext/grid/NumberColumn.js';
 import Ext_grid_NumberColumn from './Ext/grid/NumberColumn.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_grid_NumberColum) {
 }(Ext_grid_NumberColumn);
 
 export { EWCNumbercolumn as default };
-window.customElements.define('ext-numbercolumn', ElementParser.withParsedCallback(EWCNumbercolumn));
+
+try {
+  window.customElements.define('ext-numbercolumn', ElementParser.withParsedCallback(EWCNumbercolumn));
+} catch (e) {
+  window.customElements.define('ext-numbercolumn', EWCNumbercolumn);
+}

@@ -19,4 +19,9 @@ function (_Ext_MessageBox) {
 }(Ext_MessageBox);
 
 export { EWCMessagebox as default };
-window.customElements.define('ext-messagebox', ElementParser.withParsedCallback(EWCMessagebox));
+
+try {
+  window.customElements.define('ext-messagebox', ElementParser.withParsedCallback(EWCMessagebox));
+} catch (e) {
+  window.customElements.define('ext-messagebox', EWCMessagebox);
+}

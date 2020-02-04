@@ -19,4 +19,9 @@ function (_Ext_panel_Header) {
 }(Ext_panel_Header);
 
 export { EWCPanelheader as default };
-window.customElements.define('ext-panelheader', ElementParser.withParsedCallback(EWCPanelheader));
+
+try {
+  window.customElements.define('ext-panelheader', ElementParser.withParsedCallback(EWCPanelheader));
+} catch (e) {
+  window.customElements.define('ext-panelheader', EWCPanelheader);
+}

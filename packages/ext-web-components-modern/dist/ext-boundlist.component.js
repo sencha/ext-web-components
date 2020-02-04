@@ -19,4 +19,9 @@ function (_Ext_dataview_BoundLi) {
 }(Ext_dataview_BoundList);
 
 export { EWCBoundlist as default };
-window.customElements.define('ext-boundlist', ElementParser.withParsedCallback(EWCBoundlist));
+
+try {
+  window.customElements.define('ext-boundlist', ElementParser.withParsedCallback(EWCBoundlist));
+} catch (e) {
+  window.customElements.define('ext-boundlist', EWCBoundlist);
+}

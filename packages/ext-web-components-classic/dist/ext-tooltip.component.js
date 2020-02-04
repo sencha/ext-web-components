@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_ToolTip from '@sencha/ext-runtime-base/dist/./Ext/ToolTip.js';
 import Ext_ToolTip from './Ext/ToolTip.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_ToolTip) {
 }(Ext_ToolTip);
 
 export { EWCTooltip as default };
-window.customElements.define('ext-tooltip', ElementParser.withParsedCallback(EWCTooltip));
+
+try {
+  window.customElements.define('ext-tooltip', ElementParser.withParsedCallback(EWCTooltip));
+} catch (e) {
+  window.customElements.define('ext-tooltip', EWCTooltip);
+}

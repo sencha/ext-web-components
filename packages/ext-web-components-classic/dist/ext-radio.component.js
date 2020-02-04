@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_form_Radio from '@sencha/ext-runtime-base/dist/./Ext/form/Radio.js';
 import Ext_form_Radio from './Ext/form/Radio.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_form_Radio) {
 }(Ext_form_Radio);
 
 export { EWCRadio as default };
-window.customElements.define('ext-radio', ElementParser.withParsedCallback(EWCRadio));
+
+try {
+  window.customElements.define('ext-radio', ElementParser.withParsedCallback(EWCRadio));
+} catch (e) {
+  window.customElements.define('ext-radio', EWCRadio);
+}

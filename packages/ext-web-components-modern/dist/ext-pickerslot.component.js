@@ -19,4 +19,9 @@ function (_Ext_picker_Slot) {
 }(Ext_picker_Slot);
 
 export { EWCPickerslot as default };
-window.customElements.define('ext-pickerslot', ElementParser.withParsedCallback(EWCPickerslot));
+
+try {
+  window.customElements.define('ext-pickerslot', ElementParser.withParsedCallback(EWCPickerslot));
+} catch (e) {
+  window.customElements.define('ext-pickerslot', EWCPickerslot);
+}

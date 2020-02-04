@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_sparkline_Discrete from '@sencha/ext-runtime-base/dist/./Ext/sparkline/Discrete.js';
 import Ext_sparkline_Discrete from './Ext/sparkline/Discrete.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_sparkline_Discre) {
 }(Ext_sparkline_Discrete);
 
 export { EWCSparklinediscrete as default };
-window.customElements.define('ext-sparklinediscrete', ElementParser.withParsedCallback(EWCSparklinediscrete));
+
+try {
+  window.customElements.define('ext-sparklinediscrete', ElementParser.withParsedCallback(EWCSparklinediscrete));
+} catch (e) {
+  window.customElements.define('ext-sparklinediscrete', EWCSparklinediscrete);
+}

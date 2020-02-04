@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_grid_DateColumn from '@sencha/ext-runtime-base/dist/./Ext/grid/DateColumn.js';
 import Ext_grid_DateColumn from './Ext/grid/DateColumn.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_grid_DateColumn) {
 }(Ext_grid_DateColumn);
 
 export { EWCDatecolumn as default };
-window.customElements.define('ext-datecolumn', ElementParser.withParsedCallback(EWCDatecolumn));
+
+try {
+  window.customElements.define('ext-datecolumn', ElementParser.withParsedCallback(EWCDatecolumn));
+} catch (e) {
+  window.customElements.define('ext-datecolumn', EWCDatecolumn);
+}

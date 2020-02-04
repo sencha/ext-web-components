@@ -1,7 +1,7 @@
 import Ext_chart_legend_LegendBase from '../../../Ext/chart/legend/LegendBase.js';
 
 export default class Ext_chart_legend_Legend extends Ext_chart_legend_LegendBase {
-    static PROPERTIES() {return [
+  static PROPERTIES() { return [
     'activeCounter',
     'alignOnScroll',
     'alignTarget',
@@ -129,8 +129,8 @@ export default class Ext_chart_legend_Legend extends Ext_chart_legend_LegendBase
     'weight',
     'width',
     'xtype',
-    ]};
-    static EVENTS() {return [
+  ]};
+  static EVENTS() { return [
     {name:'activate', parameters:'sender'},
     {name:'added', parameters:'sender,container,pos'},
     {name:'afterlayoutanimation', parameters:'sender'},
@@ -217,52 +217,40 @@ export default class Ext_chart_legend_Legend extends Ext_chart_legend_LegendBase
     {name:'unhighlightitem', parameters:'view,node'},
     {name:'viewready', parameters:'sender'},
     {name:'ready', parameters:'cmd,cmdAll'}
-    ]};
-    static getProperties(properties) {
-        properties = properties.concat(Ext_chart_legend_Legend.PROPERTIES());
-        return Ext_chart_legend_LegendBase.getProperties(properties);
-    }
-    static getEvents(events) {
-        events = events.concat(Ext_chart_legend_Legend.EVENTS());
-        return Ext_chart_legend_LegendBase.getEvents(events);
-    }
-//events
-////configs
-//
-//static XTYPE() {return ''}
-//static PROPERTIESOBJECT() { return {
-//}}
+  ]};
+  static getProperties(properties) {
+    properties = properties.concat(Ext_chart_legend_Legend.PROPERTIES());
+    return Ext_chart_legend_LegendBase.getProperties(properties);
+  }
+  static getEvents(events) {
+    events = events.concat(Ext_chart_legend_Legend.EVENTS());
+    return Ext_chart_legend_LegendBase.getEvents(events);
+  }
 
-//static METHODS() { return [
-//]}
+  static get observedAttributes() {
+    var attrs = super.observedAttributes
+    Ext_chart_legend_Legend.PROPERTIES().forEach(function (property, index, array) {
+        attrs.push(property)
+    })
+    Ext_chart_legend_Legend.EVENTS().forEach(function (eventparameter, index, array) {
+        attrs.push('on' + eventparameter.name)
+    })
+    return attrs
+  }
 
-    static get observedAttributes() {
-        var attrs = super.observedAttributes
-        //for (var property in Ext_chart_legend_Legend.PROPERTIESOBJECT()) {
-        //    attrs.push(property)
-        //}
-        Ext_chart_legend_Legend.PROPERTIES().forEach(function (property, index, array) {
-            attrs.push(property)
-        })
-        Ext_chart_legend_Legend.EVENTS().forEach(function (eventparameter, index, array) {
-            attrs.push('on' + eventparameter.name)
-        })
-        return attrs
-    }
+  constructor(properties, events) {
+    super (
+      properties.concat(Ext_chart_legend_Legend.PROPERTIES()),
+      events.concat(Ext_chart_legend_Legend.EVENTS())
+    )
+  }
 
-    constructor(properties, events) {
-        super (
-            properties.concat(Ext_chart_legend_Legend.PROPERTIES()),
-            events.concat(Ext_chart_legend_Legend.EVENTS())
-        )
-    }
+  connectedCallback() {
+    super.connectedCallback()
+  }
 
-    connectedCallback() {
-        super.connectedCallback()
-    }
-
-    attributeChangedCallback(attrName, oldVal, newVal) {
-        super.attributeChangedCallback(attrName, oldVal, newVal)
-    }
+  attributeChangedCallback(attrName, oldVal, newVal) {
+    super.attributeChangedCallback(attrName, oldVal, newVal)
+  }
 
 }

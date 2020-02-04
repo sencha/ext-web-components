@@ -1,5 +1,4 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-//import Ext_d3_hierarchy_TreeMap from '@sencha/ext-runtime-base/dist/./Ext/d3/hierarchy/TreeMap.js';
 import Ext_d3_hierarchy_TreeMap from './Ext/d3/hierarchy/TreeMap.js';
 import ElementParser from './ElementParser.js';
 
@@ -20,4 +19,9 @@ function (_Ext_d3_hierarchy_Tre) {
 }(Ext_d3_hierarchy_TreeMap);
 
 export { EWCD3_treemap as default };
-window.customElements.define('ext-d3-treemap', ElementParser.withParsedCallback(EWCD3_treemap));
+
+try {
+  window.customElements.define('ext-d3-treemap', ElementParser.withParsedCallback(EWCD3_treemap));
+} catch (e) {
+  window.customElements.define('ext-d3-treemap', EWCD3_treemap);
+}
