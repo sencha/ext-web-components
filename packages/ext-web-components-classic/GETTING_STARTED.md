@@ -78,9 +78,7 @@ cd ext-web-components-classic-demo
 
 <body>
   <ext-toolbar border="1">
-
     <ext-button text="get now" border="1" onclick="getNow"></ext-button>
-
 
     <div id='updateDiv' style="margin-left:20px;"></div>
   </ext-toolbar>
