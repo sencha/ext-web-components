@@ -18,6 +18,10 @@ git merge upstream/ext-7.0.x
 rm ~/.npmrc
 cat ~/.npmrc
 
+npm config set package-lock false
+
+
+
 npm login --registry=https://sencha.myget.org/F/early-adopter/npm/ --scope=@sencha
 npm login --registry=https://sencha.myget.org/F/commercial-test/npm/ --scope=@sencha
 npm login --registry=https://npm.sencha.com/ --scope=@sencha

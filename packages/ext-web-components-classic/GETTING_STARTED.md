@@ -1,6 +1,6 @@
 ## Getting started for @sencha/ext-web-components-classic
 
-last run: Mon Feb 03 2020 14:14:43 GMT-0500 (Eastern Standard Time)
+last run: Thu Feb 06 2020 05:59:03 GMT-0500 (Eastern Standard Time)
 
 ### Login to the Sencha npm repo
 
@@ -60,29 +60,17 @@ cd ext-web-components-classic-demo
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="viewport"
-    content="width=device-width,initial-scale=1,maximum-scale=10,user-scalable=yes"
-  >
-  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=10,user-scalable=yes">
 </head>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
 
 <!--
-<script
- src="./node_modules/@sencha/ext-web-components-classic/ext-runtime-classic/classic.engine.js">
-</script>
-<link
- rel="stylesheet"
- type="text/css"
- href="node_modules/@sencha/ext-web-components-classic/ext-runtime-classic/material/material-all.css">
-</link>
+<script src="./node_modules/@sencha/ext-web-components-classic/ext-runtime-classic/classic.engine.js"></script>
+<link rel="stylesheet" type="text/css" href="node_modules/@sencha/ext-web-components-classic/ext-runtime-classic/material/material-all.css"></link>
 -->
 
-<script type="module"
-src="./node_modules/@sencha/ext-web-components-classic/src/ext-toolbar.component.js">
-</script>
-<script type="module"
-src="./node_modules/@sencha/ext-web-components-classic/src/ext-button.component.js">
-</script>
+<script type="module" src="./node_modules/@sencha/ext-web-components-classic/src/ext-toolbar.component.js"></script>
+<script type="module" src="./node_modules/@sencha/ext-web-components-classic/src/ext-button.component.js"></script>
 
 <script>
   getNow = function() {
@@ -92,7 +80,10 @@ src="./node_modules/@sencha/ext-web-components-classic/src/ext-button.component.
 
 <body>
   <ext-toolbar border="1">
+
     <ext-button text="get now" border="1" onclick="getNow"></ext-button>
+
+
     <div id='updateDiv' style="margin-left:20px;"></div>
   </ext-toolbar>
 </body>

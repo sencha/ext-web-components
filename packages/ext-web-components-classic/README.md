@@ -1,6 +1,6 @@
 ## Readme for @sencha/ext-web-components-classic
 
-last run: Mon Feb 03 2020 14:14:43 GMT-0500 (Eastern Standard Time)
+last run: Thu Feb 06 2020 05:59:03 GMT-0500 (Eastern Standard Time)
 
 This npm package contains the needed files to add the @sencha/ext-web-components-classic package to a web-components application
 
