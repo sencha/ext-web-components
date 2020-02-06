@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Mon Feb 03 2020 13:19:12 GMT-0500 (Eastern Standard Time)
+//Thu Feb 06 2020 09:18:38 GMT-0500 (Eastern Standard Time)
 import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildToolbar, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var EleBaseComponent =
@@ -234,6 +234,15 @@ function (_HTMLElement) {
   };
 
   _proto.doChildren = function doChildren(me) {
+    //https://docs.sencha.com/extjs/7.1.0/classic/Ext.dom.Helper.html
+    //https://docs.sencha.com/extjs/7.1.0/classic/src/Date.js-6.html
+    //var w = Ext.create({})
+    //var tree = w.getRenderTree()
+    //console.log(tree)
+    //var out = []
+    //var d = Ext.DomHelper.generateMarkup(tree, out);
+    //console.log(d)
+    //console.log(Ext.DomHelper.createDom(d))
     for (var _iterator = this.children, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
       var _ref;
 
@@ -249,11 +258,25 @@ function (_HTMLElement) {
       var child = _ref;
 
       if (child.nodeName.substring(0, 4) !== 'EXT-') {
+        var w;
         var el = Ext.get(child);
-        var w = Ext.create({
-          xtype: 'widget',
-          element: el
-        });
+
+        if (Ext.isClassic) {
+          w = Ext.create({
+            xtype: 'component',
+            listeners: {
+              'afterrender': function afterrender(cmp) {
+                cmp.el.dom.appendChild(el.dom);
+              }
+            }
+          });
+        } else {
+          w = Ext.create({
+            xtype: 'widget',
+            element: el
+          });
+        }
+
         this.A.ITEMS.push(w);
       } else {
         var g = {};
@@ -285,11 +308,10 @@ function (_HTMLElement) {
 
       var cmpObj = {};
       EleBaseComponent.elementsprior.forEach(function (element) {
-        //console.dir(element)
         if (element.A != undefined) {
           for (var i = 0; i < element.A.ITEMS.length; i++) {
-            //console.log(element.A.ITEMS[i])
-            if (element.A.ITEMS[i].xtype == 'widget') {
+            //if(element.A.ITEMS[i].xtype == 'widget') {
+            if (element.A.ITEMS[i].type != 'ext') {
               element.addTheChild(element.A.ext, element.A.ITEMS[i], i);
             }
           }
@@ -308,7 +330,6 @@ function (_HTMLElement) {
       me.cmp = me.A.ext;
       me.ext = me.A.ext;
       EleBaseComponent.elementsprior.forEach(function (element) {
-        //console.dir(element)
         element.dispatchEvent(new CustomEvent('ready', {
           detail: {
             cmp: element.A.ext,
