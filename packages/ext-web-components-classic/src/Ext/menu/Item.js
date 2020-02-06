@@ -38,6 +38,7 @@ export default class Ext_menu_Item extends Ext_Component {
     'disabledCls',
     'dock',
     'draggable',
+    'emptyText',
     'fixed',
     'flex',
     'floating',

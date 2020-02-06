@@ -35,6 +35,7 @@ export default class Ext_tip_QuickTip extends Ext_tip_ToolTip {
     'bubbleEvents',
     'buttonAlign',
     'buttons',
+    'checkNestedDelegates',
     'childEls',
     'closable',
     'closeAction',

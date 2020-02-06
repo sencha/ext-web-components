@@ -1,4 +1,4 @@
-//Mon Feb 03 2020 14:14:43 GMT-0500 (Eastern Standard Time)
+//Thu Feb 06 2020 05:59:03 GMT-0500 (Eastern Standard Time)
 
 import {
   doProp,
@@ -252,11 +252,33 @@ export default class EleBaseComponent extends HTMLElement {
   }
 
   doChildren(me) {
+    //https://docs.sencha.com/extjs/7.1.0/classic/Ext.dom.Helper.html
+    //https://docs.sencha.com/extjs/7.1.0/classic/src/Date.js-6.html
+    //var w = Ext.create({})
+    //var tree = w.getRenderTree()
+    //console.log(tree)
+    //var out = []
+    //var d = Ext.DomHelper.generateMarkup(tree, out);
+    //console.log(d)
+    //console.log(Ext.DomHelper.createDom(d))
 
     for (let child of this.children) {
       if (child.nodeName.substring(0, 4) !== 'EXT-') {
+        var w;
         var el = Ext.get(child);
-        var w = Ext.create({xtype:'widget', element: el});
+        if (Ext.isClassic) {
+          w = Ext.create({
+            xtype:'component',
+              listeners: {
+                'afterrender': function(cmp) {
+                  cmp.el.dom.appendChild(el.dom)
+                }
+              }
+          });
+        }
+        else {
+          w = Ext.create({xtype:'widget', element: el});
+        }
         this.A.ITEMS.push(w);
       }
       else {
@@ -269,6 +291,7 @@ export default class EleBaseComponent extends HTMLElement {
     me.A.CHILDREN.forEach(function(child) {
       me.addTheChild(me.A.ext, child);
     });
+
     if (me.parentNode != null && me.parentNode.nodeName.substring(0, 4) === 'EXT-') {
       if (me.parentNode.A.ext !== undefined) {
         me.addTheChild(me.parentNode.A.ext, me.A.ext);
@@ -289,13 +312,12 @@ export default class EleBaseComponent extends HTMLElement {
       //var allExt = [];
       var cmpObj = {};
       EleBaseComponent.elementsprior.forEach(element => {
-          //console.dir(element)
           if (element.A != undefined) {
               for (var i = 0; i < element.A.ITEMS.length; i++) {
-                  //console.log(element.A.ITEMS[i])
-                  if(element.A.ITEMS[i].xtype == 'widget') {
-                      element.addTheChild(element.A.ext,element.A.ITEMS[i],i);
-                  }
+                //if(element.A.ITEMS[i].xtype == 'widget') {
+                if(element.A.ITEMS[i].type != 'ext') {
+                  element.addTheChild(element.A.ext,element.A.ITEMS[i],i);
+                }
               }
           }
           if (element.getAttribute('extname') != undefined) {
@@ -312,7 +334,6 @@ export default class EleBaseComponent extends HTMLElement {
       me.cmp = me.A.ext;
       me.ext = me.A.ext;
       EleBaseComponent.elementsprior.forEach(element => {
-          //console.dir(element)
           element.dispatchEvent(new CustomEvent('ready', {
               detail: {
                   cmp: element.A.ext,
