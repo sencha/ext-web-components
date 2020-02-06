@@ -1,7 +1,5 @@
 ## Getting started for @sencha/ext-web-components-classic
 
-last run: Thu Feb 06 2020 05:59:03 GMT-0500 (Eastern Standard Time)
-
 ### Login to the Sencha npm repo
 
 * Note, you must be signed into the Sencha npm registry to access packages.
@@ -45,7 +43,7 @@ cd ext-web-components-classic-demo
     "start": "npx http-server -o"
   },
   "devDependencies": {
-    "@sencha/ext-web-components-classic": "~7.1.1",
+    "@sencha/ext-web-components-classic": "~7.2.0",
     "http-server": "^0.12.1"
   },
   "author": "",
