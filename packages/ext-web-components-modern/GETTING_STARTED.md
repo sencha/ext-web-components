@@ -1,7 +1,5 @@
 ## Getting started for @sencha/ext-web-components-modern
 
-last run: Mon Feb 03 2020 13:19:12 GMT-0500 (Eastern Standard Time)
-
 ### Login to the Sencha npm repo
 
 * Note, you must be signed into the Sencha npm registry to access packages.
@@ -45,7 +43,7 @@ cd ext-web-components-modern-demo
     "start": "npx http-server -o"
   },
   "devDependencies": {
-    "@sencha/ext-web-components-modern": "~7.1.1",
+    "@sencha/ext-web-components-modern": "~7.2.0",
     "http-server": "^0.12.1"
   },
   "author": "",
@@ -60,29 +58,17 @@ cd ext-web-components-modern-demo
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="viewport"
-    content="width=device-width,initial-scale=1,maximum-scale=10,user-scalable=yes"
-  >
-  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=10,user-scalable=yes">
 </head>
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
 
 <!--
-<script
- src="./node_modules/@sencha/ext-web-components-modern/ext-runtime-modern/modern.engine.js">
-</script>
-<link
- rel="stylesheet"
- type="text/css"
- href="node_modules/@sencha/ext-web-components-modern/ext-runtime-modern/material/material-all.css">
-</link>
+<script src="./node_modules/@sencha/ext-web-components-modern/ext-runtime-modern/modern.engine.js"></script>
+<link rel="stylesheet" type="text/css" href="node_modules/@sencha/ext-web-components-modern/ext-runtime-modern/material/material-all.css"></link>
 -->
 
-<script type="module"
-src="./node_modules/@sencha/ext-web-components-modern/src/ext-toolbar.component.js">
-</script>
-<script type="module"
-src="./node_modules/@sencha/ext-web-components-modern/src/ext-button.component.js">
-</script>
+<script type="module" src="./node_modules/@sencha/ext-web-components-modern/src/ext-toolbar.component.js"></script>
+<script type="module" src="./node_modules/@sencha/ext-web-components-modern/src/ext-button.component.js"></script>
 
 <script>
   getNow = function() {
@@ -92,7 +78,8 @@ src="./node_modules/@sencha/ext-web-components-modern/src/ext-button.component.j
 
 <body>
   <ext-toolbar border="1">
-    <ext-button text="get now" border="1" onclick="getNow"></ext-button>
+
+    <ext-button text="get now" border="1" ontap="getNow"></ext-button>
     <div id='updateDiv' style="margin-left:20px;"></div>
   </ext-toolbar>
 </body>
