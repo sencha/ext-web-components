@@ -1,7 +1,5 @@
 ## Understanding an app for @sencha/ext-web-components-classic
 
-last run: Thu Feb 06 2020 05:59:03 GMT-0500 (Eastern Standard Time)
-
 This guide will illustrate some of the key features of ExtWebComponents within a JavaScript application.
 To get a starter application created,
 follow the [Getting Started guide](https://github.com/sencha/ext-web-components/blob/ext-web-components-7.1.1/packages/ext-web-components-classic/GETTING_STARTED.md).
