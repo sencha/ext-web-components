@@ -1,22 +1,22 @@
 {
-  "name": "ext-web-components-boilerplate-svelte",
-  "version": "7.1.1",
-  "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "start": "sirv public"
-  },
-  "devDependencies": {
-    "@sencha/ext-web-components-modern": "~7.1.1",
-    "@rollup/plugin-commonjs": "^11.0.0",
-    "@rollup/plugin-node-resolve": "^7.0.0",
-    "rollup": "^1.20.0",
-    "rollup-plugin-livereload": "^1.0.0",
-    "rollup-plugin-svelte": "^5.0.3",
-    "rollup-plugin-terser": "^5.1.2",
-    "svelte": "^3.0.0"
-  },
-  "dependencies": {
-    "sirv-cli": "^0.4.4"
-  }
+    "name": "ext-web-components-boilerplate-svelte",
+    "version": "7.2.0",
+    "scripts": {
+        "build": "rollup -c",
+        "dev": "rollup -c -w",
+        "start": "sirv public"
+    },
+    "devDependencies": {
+        "@sencha/ext-web-components-modern": "~7.2.0",
+        "@rollup/plugin-commonjs": "^11.0.0",
+        "@rollup/plugin-node-resolve": "^7.0.0",
+        "rollup": "^1.20.0",
+        "rollup-plugin-livereload": "^1.0.0",
+        "rollup-plugin-svelte": "^5.0.3",
+        "rollup-plugin-terser": "^5.1.2",
+        "svelte": "^3.0.0"
+    },
+    "dependencies": {
+        "sirv-cli": "^0.4.4"
+    }
 }

@@ -1,34 +1,34 @@
 {
-  "name": "ext-web-components-boilerplate-vue-cli",
-  "version": "7.1.1",
-  "description": "ext-web-components-boilerplate-vue-cli",
-  "private": true,
-  "scripts": {
-      "serve": "vue-cli-service serve",
-      "build": "vue-cli-service build"
-  },
-  "dependencies": {
-    "core-js": "^3.6.4",
-    "vue": "^2.6.11",
-    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
-    "@sencha/ext-web-components-modern": "~7.1.1",
-    "@sencha/ext": "^7.1.0",
-    "@sencha/ext-calendar": "^7.1.0",
-    "@sencha/ext-d3": "^7.1.0",
-    "@sencha/ext-exporter": "^7.1.0",
-    "@sencha/ext-modern": "^7.1.0",
-    "@sencha/ext-modern-theme-material": "^7.1.0",
-    "@sencha/ext-modern-treegrid": "^7.1.0",
-    "@sencha/ext-ux": "^7.1.0",
-    "@sencha/ext-webpack-plugin": "^7.1.0",
-    "history": "^4.10.1",
-    "vue-router": "^3.1.5"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.1.2",
-    "@vue/cli-service": "^4.1.2",
-    "@webcomponents/webcomponentsjs": "^2.4.1",
-    "copy-webpack-plugin": "^5.1.1",
-    "vue-template-compiler": "^2.6.11"
-  }
+    "name": "ext-web-components-boilerplate-vue-cli",
+    "version": "7.2.0",
+    "description": "ext-web-components-boilerplate-vue-cli",
+    "private": true,
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build"
+    },
+    "dependencies": {
+        "core-js": "^3.6.4",
+        "vue": "^2.6.11",
+        "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+        "@sencha/ext-web-components-modern": "~7.2.0",
+        "@sencha/ext": "^7.1.0",
+        "@sencha/ext-calendar": "^7.1.0",
+        "@sencha/ext-d3": "^7.1.0",
+        "@sencha/ext-exporter": "^7.1.0",
+        "@sencha/ext-modern": "^7.1.0",
+        "@sencha/ext-modern-theme-material": "^7.1.0",
+        "@sencha/ext-modern-treegrid": "^7.1.0",
+        "@sencha/ext-ux": "^7.1.0",
+        "@sencha/ext-webpack-plugin": "^7.1.0",
+        "history": "^4.10.1",
+        "vue-router": "^3.1.5"
+    },
+    "devDependencies": {
+        "@vue/cli-plugin-babel": "^4.1.2",
+        "@vue/cli-service": "^4.1.2",
+        "@webcomponents/webcomponentsjs": "^2.4.1",
+        "copy-webpack-plugin": "^5.1.1",
+        "vue-template-compiler": "^2.6.11"
+    }
 }
