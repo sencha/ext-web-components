@@ -13,4 +13,3 @@ try {
 catch(e) {
   window.customElements.define('ext-grid', EWCGrid);
 }
-import './ElementCell';

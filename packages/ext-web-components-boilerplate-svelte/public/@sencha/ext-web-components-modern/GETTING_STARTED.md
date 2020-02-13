@@ -4,7 +4,7 @@ last run: Fri Jan 31 2020 14:32:37 GMT-0500 (Eastern Standard Time)
 
 ### Login to the Sencha npm repo
 
-* Note, you must be signed into the Sencha npm registry to access packages.
+-   Note, you must be signed into the Sencha npm registry to access packages.
 
 production:
 
@@ -20,21 +20,23 @@ npm login --registry=https://sencha.myget.org/F/early-adopter/npm/ --scope=@senc
 
 ## Create a JavaScript application
 
-- Create a folder named ext-web-components-modern-demo
+-   Create a folder named ext-web-components-modern-demo
 
 mac
+
 ```sh
 mkdir ext-web-components-modern-demo
 cd ext-web-components-modern-demo
 ```
 
 windows
+
 ```sh
 md ext-web-components-modern-demo
 cd ext-web-components-modern-demo
 ```
 
-- In the ext-web-components-modern-demo folder, create a package.json file with the following:
+-   In the ext-web-components-modern-demo folder, create a package.json file with the following:
 
 ```sh
 {
@@ -45,7 +47,7 @@ cd ext-web-components-modern-demo
     "start": "npx http-server -o"
   },
   "devDependencies": {
-    "@sencha/ext-web-components-modern": "~7.1.1",
+    "@sencha/ext-web-components-modern": "~7.2.0",
     "http-server": "^0.12.1"
   },
   "author": "",
@@ -54,7 +56,7 @@ cd ext-web-components-modern-demo
 }
 ```
 
-- In the ext-web-components-modern-demo folder, create an index.html file with the following:
+-   In the ext-web-components-modern-demo folder, create an index.html file with the following:
 
 ```sh
 <!DOCTYPE html>
@@ -99,7 +101,7 @@ src="./node_modules/@sencha/ext-web-components-modern/src/ext-button.component.j
 </html>
 ```
 
-- Run the following in the ext-web-components-modern-demo folder
+-   Run the following in the ext-web-components-modern-demo folder
 
 ```sh
 npm install
