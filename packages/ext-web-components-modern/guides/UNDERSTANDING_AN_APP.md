@@ -2,7 +2,7 @@
 
 This guide will illustrate some of the key features of ExtWebComponents within a JavaScript application.
 To get a starter application created,
-follow the [Getting Started guide](https://github.com/sencha/ext-web-components/blob/ext-web-components-7.2.0/packages/ext-web-components-modern/GETTING_STARTED.md).
+follow the [Getting Started guide](https://github.com/sencha/ext-web-components/blob/ext-web-components-7.1.1/packages/ext-web-components-modern/GETTING_STARTED.md).
 
 ## adding ExtWebComponents to an existing JavaScript application
 
@@ -17,7 +17,6 @@ You will need to add several entries in the 'index.html'
 file.
 
 ```
-
 <script
  src="./node_modules/@sencha/ext-web-components-modern/ext-runtime-modern/modern.engine.js">
 </script>
@@ -28,9 +27,10 @@ file.
 </link>
 ```
 
+
 ## Changing the theme for an ExtWebComponents app
 
-in the './node_modules/@sencha/ext-web-components-modern/ext-runtime-modern' folder, you will notice several theme folders. To change
+in the './node_modules/@sencha/ext-web-components-modern/ext-runtime-modern' folder, you will notice several theme folders.  To change
 and use one of these themes, find the following section in index.html:
 
 ```
@@ -41,7 +41,7 @@ and use one of these themes, find the following section in index.html:
 </link>
 ```
 
-notice that this line points to the material folder and material-all.css file. For example, to change to triton, update to the following:
+notice that this line points to the material folder and material-all.css file.  For example, to change to triton, update to the following:
 
 ```
 <link
@@ -51,6 +51,10 @@ notice that this line points to the material folder and material-all.css file. F
 </link>
 ```
 
+
+
+
+
 ## understanding the ExtWebComponents 'ready' event
 
 When using ExtWebComponents components, you want to make sure that the components are completely available
@@ -58,7 +62,7 @@ before calling any component methods or updating properties in code.
 For this reason, every componenthas a 'ready' event.
 
 This event, when listened to, will indicate to your app that ALL ExtWebComponents components on the page are
-ready and available. With this event, 2 parameters are sent (event.detail.cmp and event.detail.cmpObj), the first is the ExtWebComponents component of
+ready and available.  With this event, 2 parameters are sent (event.detail.cmp and event.detail.cmpObj), the first is the ExtWebComponents component of
 the calling ready event,
 the second is an array of components on your page that have the 'extname' property applied to it.
 
