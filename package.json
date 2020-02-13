@@ -1,26 +1,26 @@
 {
-  "name": "ext-web-components",
-  "version": "7.1.0",
-  "description": "Use Ext JS with Web Components",
-  "main": "index.js",
-  "scripts": {
-    "postinstall": "npx lerna bootstrap --loglevel warn",
-    "increment": "npx lerna publish --skip-git --skip-npm --force-publish",
-    "clean": "npx lerna clean",
-    "install:clean": "npm cache clear --force && npx lerna clean && npm install",
-    "kitchensink": "cd packages/ext-web-components-kitchensink && npm start",
-    "boilerplate": "cd packages/ext-web-components-boilerplate && npm start",
-    "serve-tests": "cd packages/ext-web-components-tests && npm start"
-  },
-  "keywords": [
-    "Ext",
-    "JS",
-    "Sencha",
-    "Web Components"
-  ],
-  "author": "Sencha, Inc.",
-  "license": "MIT",
-  "devDependencies": {
-    "lerna": "^3.20.1"
-  }
+    "name": "ext-web-components",
+    "version": "7.2.0",
+    "description": "Use Ext JS with Web Components",
+    "main": "index.js",
+    "scripts": {
+        "postinstall": "npx lerna bootstrap --loglevel warn",
+        "increment": "npx lerna publish --skip-git --skip-npm --force-publish",
+        "clean": "npx lerna clean",
+        "install:clean": "npm cache clear --force && npx lerna clean && npm install",
+        "kitchensink": "cd packages/ext-web-components-kitchensink && npm start",
+        "boilerplate": "cd packages/ext-web-components-boilerplate && npm start",
+        "serve-tests": "cd packages/ext-web-components-tests && npm start"
+    },
+    "keywords": [
+        "Ext",
+        "JS",
+        "Sencha",
+        "Web Components"
+    ],
+    "author": "Sencha, Inc.",
+    "license": "MIT",
+    "devDependencies": {
+        "lerna": "^3.20.1"
+    }
 }

@@ -1,4 +1,3 @@
-
 ## Adding Sencha ExtWebComponents to a React application created using Create React App
 
 This document defines the steps needed to add Sencha ExtWebComponents to a React application generated with Create React App. Create React App is described in the [Create React App Overview](https://facebook.github.io/create-react-app/)
@@ -7,7 +6,7 @@ If you don’t want to follow the below mentioned steps, then you can consume th
 
 ### Create a Create React App starter application
 
-To create a Create React App application, continue in the terminal or command window and 'cd' to the folder where you want to create your new application.  Then, use the following command to create your new Create React App application.
+To create a Create React App application, continue in the terminal or command window and 'cd' to the folder where you want to create your new application. Then, use the following command to create your new Create React App application.
 
 ```sh
 npx create-react-app ext-web-components-boilerplate-create-react-app
@@ -22,11 +21,11 @@ cd  ext-web-components-boilerplate-create-react-app
 npm start
 ```
 
-A browser window should appear at http://localhost:3000/ (or go to http://localhost:3000/ in your browser).  You should see a page with a React logo and a message: 'Edit src/App.js and save to reload.' in the browser.
+A browser window should appear at http://localhost:3000/ (or go to http://localhost:3000/ in your browser). You should see a page with a React logo and a message: 'Edit src/App.js and save to reload.' in the browser.
 
 more details at: https://facebook.github.io/create-react-app/docs/getting-started
 
-Now, stop the 'npm start' app from running in the terminal/command window (ctrl-c).  This prepares you for the next steps.
+Now, stop the 'npm start' app from running in the terminal/command window (ctrl-c). This prepares you for the next steps.
 
 ### Perform Eject.
 
@@ -40,7 +39,7 @@ To run eject, type the following command in the terminal window:
 npm run eject
 ```
 
-* For the question: 'Are you sure you want to eject? This action is permanent.', type 'y' and press 'enter'
+-   For the question: 'Are you sure you want to eject? This action is permanent.', type 'y' and press 'enter'
 
 This command copies all the config files and dependencies into your project and now you can make appropriate changes to consume the ext-webpack-plugin.
 
@@ -63,7 +62,7 @@ Add the following to the dependencies section of package.json:
 "@sencha/ext": "^7.0.0",
 "@sencha/ext-modern": "^7.0.0",
 "@sencha/ext-modern-theme-material": "^7.0.0",
-"@sencha/ext-web-components-modern": "~7.1.0",
+"@sencha/ext-web-components-modern": "~7.2.0",
 "@sencha/ext-webpack-plugin": "^7.0.0",
 "@webcomponents/webcomponentsjs": "^2.2.10",
 "copy-webpack-plugin": "^5.0.4",
@@ -92,6 +91,7 @@ To configure the ext-webpack-plugin inside application, we update **config/webpa
 
 1. open config/webpack.config.js in your editor
 2. At the top of the file, after the 'use strict' statement, add the following to look like this:
+
 ```sh
 'use strict';
 
@@ -102,7 +102,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 3. do a search for this string:
 
 new HtmlWebpackPlugin
-
 
 4. below the definition for the HtmlWebpack plugin (should be around or on line 506, the line that contains '),' ), add the following:
 
@@ -130,16 +129,18 @@ new CopyWebpackPlugin([{
 path: isEnvProduction ? paths.appBuild : undefined,
 
 6. Update this line with the following line:
+
 ```sh
 path: isEnvProduction ? paths.appBuild : paths.appPublic,
 ```
+
 7. save config/webpack.config.js in your editor
 
 8. open public/index.html in your editor
 
 **Now after configuration, you are ready to use Ext-Web-Components inside the application.**
 
-9. Add Ext.js and Ext.css inside the inside public/index.html and also webcomponents-bundle.js for the compatibility of Web Components with all major browsers.  the file should look like this (the example below has removed the comments from the original public/index.html file):
+9. Add Ext.js and Ext.css inside the inside public/index.html and also webcomponents-bundle.js for the compatibility of Web Components with all major browsers. the file should look like this (the example below has removed the comments from the original public/index.html file):
 
 ```sh
 <!DOCTYPE html>
@@ -201,6 +202,6 @@ In the terminal or command window, run the application:
 npm start
 ```
 
-Browse to http://localhost:3000 in your browser.  You should see the React starter application with an ExtWebComponents Panel in the browser.
+Browse to http://localhost:3000 in your browser. You should see the React starter application with an ExtWebComponents Panel in the browser.
 
 ![React with ExtWebComponents](React.png)
