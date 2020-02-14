@@ -84,6 +84,20 @@ var ElementParser = function () {
         console.error('ERROR');
         break;
     }
+
+    if (Ext.isModern == true) {
+      var ElementCell = Ext.define('Ext.ElementCell', {
+        extend: 'Ext.grid.cell.Cell',
+        xtype: 'elementcell'
+      });
+    }
+  } else {
+    if (Ext.isModern == true) {
+      var _ElementCell = Ext.define('Ext.ElementCell', {
+        extend: 'Ext.grid.cell.Cell',
+        xtype: 'elementcell'
+      });
+    }
   }
 
   var DCL = 'DOMContentLoaded';
