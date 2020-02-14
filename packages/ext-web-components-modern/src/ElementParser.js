@@ -76,6 +76,23 @@ const ElementParser = (() => {
         console.error('ERROR');
         break;
     }
+
+
+    if (Ext.isModern == true) {
+      const ElementCell = Ext.define('Ext.ElementCell', {
+        extend: 'Ext.grid.cell.Cell',
+        xtype: 'elementcell'
+      });
+    }
+
+  }
+  else {
+    if (Ext.isModern == true) {
+      const ElementCell = Ext.define('Ext.ElementCell', {
+        extend: 'Ext.grid.cell.Cell',
+        xtype: 'elementcell'
+      });
+    }
   }
 
   const DCL = 'DOMContentLoaded';
