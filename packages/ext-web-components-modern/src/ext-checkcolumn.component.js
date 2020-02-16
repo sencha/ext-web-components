@@ -1,5 +1,5 @@
 import Ext_grid_column_Check from './Ext/grid/column/Check.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCCheckcolumn extends Ext_grid_column_Check {
   constructor() {

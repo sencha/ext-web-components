@@ -1,5 +1,5 @@
 import Ext_sparkline_Bar from './Ext/sparkline/Bar.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCSparklinebar extends Ext_sparkline_Bar {
   constructor() {

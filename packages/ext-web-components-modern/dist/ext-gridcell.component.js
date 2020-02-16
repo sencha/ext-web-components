@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_cell_Cell from './Ext/grid/cell/Cell.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 var EWCGridcell =
 /*#__PURE__*/

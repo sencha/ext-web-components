@@ -1,5 +1,5 @@
 import Ext_field_Time from './Ext/field/Time.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTimefield extends Ext_field_Time {
   constructor() {

@@ -1,5 +1,5 @@
 import Ext_form_Hidden from './Ext/form/Hidden.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCHiddenfield extends Ext_form_Hidden {
   constructor() {

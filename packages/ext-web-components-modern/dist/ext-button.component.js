@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Button from './Ext/Button.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 var EWCButton =
 /*#__PURE__*/

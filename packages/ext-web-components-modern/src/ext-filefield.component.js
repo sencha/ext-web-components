@@ -1,5 +1,5 @@
 import Ext_field_File from './Ext/field/File.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCFilefield extends Ext_field_File {
   constructor() {

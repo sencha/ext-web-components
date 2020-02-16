@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_menu_RadioItem from './Ext/menu/RadioItem.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 var EWCMenuradioitem =
 /*#__PURE__*/

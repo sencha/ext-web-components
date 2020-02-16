@@ -1,5 +1,5 @@
 import Ext_NavigationView from './Ext/NavigationView.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCNavigationview extends Ext_NavigationView {
   constructor() {

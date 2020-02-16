@@ -1,5 +1,5 @@
 import Ext_grid_cell_Number from './Ext/grid/cell/Number.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCNumbercell extends Ext_grid_cell_Number {
   constructor() {

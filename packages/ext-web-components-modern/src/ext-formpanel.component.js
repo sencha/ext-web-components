@@ -1,5 +1,5 @@
 import Ext_form_FormPanel from './Ext/form/FormPanel.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCFormpanel extends Ext_form_FormPanel {
   constructor() {

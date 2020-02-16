@@ -1,5 +1,5 @@
 import Ext_BreadcrumbBar from './Ext/BreadcrumbBar.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCBreadcrumbbar extends Ext_BreadcrumbBar {
   constructor() {

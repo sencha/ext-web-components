@@ -1,14 +1,14 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import EleBaseComponent from '../ele-base.js';
+import WebComponentsBaseComponent from '../runtime/webcomponentsbase.js';
 
 var Ext_Base =
 /*#__PURE__*/
-function (_EleBaseComponent) {
-  _inheritsLoose(Ext_Base, _EleBaseComponent);
+function (_WebComponentsBaseCom) {
+  _inheritsLoose(Ext_Base, _WebComponentsBaseCom);
 
   Ext_Base.PROPERTIES = function PROPERTIES() {
-    return ['closable', 'title', 'header', 'renderer', 'label', 'fitToParent', 'tab', 'config', 'platformConfig', 'summaryRenderer', 'extname', 'viewport', 'align', 'plugins', 'responsiveConfig', 'responsiveFormulas'];
+    return ['createExtComponentDefer', 'createExtComponent', 'closable', 'title', 'header', 'renderer', 'label', 'fitToParent', 'tab', 'config', 'platformConfig', 'summaryRenderer', 'extname', 'viewport', 'align', 'plugins', 'responsiveConfig', 'responsiveFormulas'];
   };
 
   Ext_Base.EVENTS = function EVENTS() {
@@ -48,10 +48,10 @@ function (_EleBaseComponent) {
   }]);
 
   function Ext_Base(properties, events) {
-    return _EleBaseComponent.call(this, properties.concat(Ext_Base.PROPERTIES()), events.concat(Ext_Base.EVENTS())) || this;
+    return _WebComponentsBaseCom.call(this, properties.concat(Ext_Base.PROPERTIES()), events.concat(Ext_Base.EVENTS())) || this;
   }
 
   return Ext_Base;
-}(EleBaseComponent);
+}(WebComponentsBaseComponent);
 
 export { Ext_Base as default };

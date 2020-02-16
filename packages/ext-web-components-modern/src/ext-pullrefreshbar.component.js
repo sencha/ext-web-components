@@ -1,5 +1,5 @@
 import Ext_dataview_pullrefresh_Bar from './Ext/dataview/pullrefresh/Bar.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCPullrefreshbar extends Ext_dataview_pullrefresh_Bar {
   constructor() {

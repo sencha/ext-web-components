@@ -1,5 +1,5 @@
 import Ext_dataview_BoundList from './Ext/dataview/BoundList.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCBoundlist extends Ext_dataview_BoundList {
   constructor() {

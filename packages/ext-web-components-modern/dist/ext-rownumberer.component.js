@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_column_RowNumberer from './Ext/grid/column/RowNumberer.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 var EWCRownumberer =
 /*#__PURE__*/

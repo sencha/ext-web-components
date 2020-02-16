@@ -1,5 +1,5 @@
 import Ext_calendar_panel_Week from './Ext/calendar/panel/Week.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCCalendar_week extends Ext_calendar_panel_Week {
   constructor() {

@@ -1,5 +1,5 @@
 import Ext_form_Email from './Ext/form/Email.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCEmailfield extends Ext_form_Email {
   constructor() {

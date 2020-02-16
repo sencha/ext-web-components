@@ -1,5 +1,5 @@
 import Ext_pivot_plugin_configurator_Form from './Ext/pivot/plugin/configurator/Form.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCPivotconfigform extends Ext_pivot_plugin_configurator_Form {
   constructor() {

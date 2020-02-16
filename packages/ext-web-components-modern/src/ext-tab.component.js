@@ -1,5 +1,5 @@
 import Ext_Tab from './Ext/Tab.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTab extends Ext_Tab {
   constructor() {

@@ -1,5 +1,5 @@
 import Ext_slider_Toggle from './Ext/slider/Toggle.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCToggleslider extends Ext_slider_Toggle {
   constructor() {

@@ -1,5 +1,5 @@
 import Ext_panel_Title from './Ext/panel/Title.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCPaneltitle extends Ext_panel_Title {
   constructor() {

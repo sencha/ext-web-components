@@ -1,5 +1,5 @@
 import Ext_list_Tree from './Ext/list/Tree.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTreelist extends Ext_list_Tree {
   constructor() {

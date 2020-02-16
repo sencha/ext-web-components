@@ -1,5 +1,5 @@
 import Ext_tip_ToolTip from './Ext/tip/ToolTip.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTooltip extends Ext_tip_ToolTip {
   constructor() {

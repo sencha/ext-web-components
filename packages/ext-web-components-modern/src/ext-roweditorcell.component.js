@@ -1,5 +1,5 @@
 import Ext_grid_rowedit_Cell from './Ext/grid/rowedit/Cell.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCRoweditorcell extends Ext_grid_rowedit_Cell {
   constructor() {

@@ -1,5 +1,5 @@
 import Ext_menu_Separator from './Ext/menu/Separator.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCMenuseparator extends Ext_menu_Separator {
   constructor() {

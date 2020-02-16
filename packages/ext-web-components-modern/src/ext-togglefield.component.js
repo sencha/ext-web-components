@@ -1,5 +1,5 @@
 import Ext_form_Toggle from './Ext/form/Toggle.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTogglefield extends Ext_form_Toggle {
   constructor() {

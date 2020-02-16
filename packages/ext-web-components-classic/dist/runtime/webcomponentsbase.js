@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Sun Feb 16 2020 10:56:16 GMT-0500 (Eastern Standard Time)
+//Sun Feb 16 2020 15:44:48 GMT-0500 (Eastern Standard Time)
 import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildToolbar, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var WebComponentsBaseComponent =
@@ -33,7 +33,7 @@ function (_HTMLElement) {
     _this.A.ITEMS = [];
     _this.A.o = {};
     _this.attributeObjects = {};
-    _this.base = EleBaseComponent;
+    _this.base = WebComponentsBaseComponent;
     return _this;
   }
 
@@ -41,22 +41,22 @@ function (_HTMLElement) {
 
   _proto.connectedCallback = function connectedCallback() {
     //console.log('connectedCallback: ' + this.xtype);
-    EleBaseComponent.elementcount++;
-    EleBaseComponent.elements.push(this); //console.log('added: ' + this.tagName + ': elementcount is now ' + EleBaseComponent.elementcount);
+    WebComponentsBaseComponent.elementcount++;
+    WebComponentsBaseComponent.elements.push(this); //console.log('added: ' + this.tagName + ': elementcount is now ' + WebComponentsBaseComponent.elementcount);
 
-    if (BaseComponent.attributeFirst == true) {
-      BaseComponent.attributeFirst = false; //console.log(this.attributes.length)
+    if (WebComponentsBaseComponent.attributeFirst == true) {
+      WebComponentsBaseComponent.attributeFirst = false; //console.log(this.attributes.length)
 
       if (this.attributes.length > 1) {
         //console.log('Early')
-        BaseComponent.attributeEarly = true;
+        WebComponentsBaseComponent.attributeEarly = true;
       } else {
         //console.log('Late')
-        BaseComponent.attributeEarly = false;
+        WebComponentsBaseComponent.attributeEarly = false;
       }
     }
 
-    if (BaseComponent.attributeEarly == true) {
+    if (WebComponentsBaseComponent.attributeEarly == true) {
       this.connectedCallback2();
     }
   };
@@ -228,7 +228,7 @@ function (_HTMLElement) {
 
   _proto.parsedCallback = function parsedCallback() {
     //console.log('parsedCallback: ' + this.xtype);
-    if (BaseComponent.attributeEarly == false) {
+    if (WebComponentsBaseComponent.attributeEarly == false) {
       this.connectedCallback2();
     }
 
@@ -299,17 +299,17 @@ function (_HTMLElement) {
       }
     }
 
-    BaseComponent.elementcount--; //console.log('reduced: ' + me.tagName + ': elementcount reduced to ' + BaseComponent.elementcount)
+    WebComponentsBaseComponent.elementcount--; //console.log('reduced: ' + me.tagName + ': elementcount reduced to ' + WebComponentsBaseComponent.elementcount)
 
-    if (BaseComponent.elementcount == 0) {
+    if (WebComponentsBaseComponent.elementcount == 0) {
       //console.log('done');
-      //console.log(BaseComponent.elements);
-      BaseComponent.elementsprior = [].concat(BaseComponent.elements);
-      BaseComponent.elements = []; //console.log(BaseComponent.elementsprior);
+      //console.log(WebComponentsBaseComponent.elements);
+      WebComponentsBaseComponent.elementsprior = [].concat(WebComponentsBaseComponent.elements);
+      WebComponentsBaseComponent.elements = []; //console.log(WebComponentsBaseComponent.elementsprior);
       //var allExt = [];
 
       var cmpObj = {};
-      BaseComponent.elementsprior.forEach(function (element) {
+      WebComponentsBaseComponent.elementsprior.forEach(function (element) {
         if (element.A != undefined) {
           for (var i = 0; i < element.A.ITEMS.length; i++) {
             //if(element.A.ITEMS[i].xtype == 'widget') {
@@ -327,11 +327,11 @@ function (_HTMLElement) {
 
           cmpObj[element.getAttribute('extname')] = element.A.ext;
         }
-      }); //console.log(BaseComponent.elementsprior)
+      }); //console.log(WebComponentsBaseComponent.elementsprior)
 
       me.cmp = me.A.ext;
       me.ext = me.A.ext;
-      BaseComponent.elementsprior.forEach(function (element) {
+      WebComponentsBaseComponent.elementsprior.forEach(function (element) {
         element.dispatchEvent(new CustomEvent('ready', {
           detail: {
             cmp: element.A.ext,
@@ -549,13 +549,13 @@ function (_HTMLElement) {
 }(_wrapNativeSuper(HTMLElement));
 
 export { WebComponentsBaseComponent as default };
-BaseComponent.attributeFirst = true;
-BaseComponent.attributeEarly = true;
-BaseComponent.elementcountnew = 0;
-BaseComponent.elementcount = 0;
-BaseComponent.elements = [];
-BaseComponent.elementsprior = [];
-BaseComponent.isLoading = false;
-BaseComponent.isDone = false;
-BaseComponent.count = 0;
-BaseComponent.DIRECTION = '';
+WebComponentsBaseComponent.attributeFirst = true;
+WebComponentsBaseComponent.attributeEarly = true;
+WebComponentsBaseComponent.elementcountnew = 0;
+WebComponentsBaseComponent.elementcount = 0;
+WebComponentsBaseComponent.elements = [];
+WebComponentsBaseComponent.elementsprior = [];
+WebComponentsBaseComponent.isLoading = false;
+WebComponentsBaseComponent.isDone = false;
+WebComponentsBaseComponent.count = 0;
+WebComponentsBaseComponent.DIRECTION = '';

@@ -1,5 +1,5 @@
 import Ext_window_Window from './Ext/window/Window.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCDialog extends Ext_window_Window {
   constructor() {

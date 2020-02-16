@@ -1,5 +1,5 @@
 import Ext_Editor from './Ext/Editor.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCEditor extends Ext_Editor {
   constructor() {

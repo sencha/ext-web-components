@@ -1,5 +1,5 @@
 import Ext_IndexBar from './Ext/IndexBar.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCIndexbar extends Ext_IndexBar {
   constructor() {

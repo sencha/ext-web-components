@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_rowedit_Gap from './Ext/grid/rowedit/Gap.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 var EWCRoweditorgap =
 /*#__PURE__*/

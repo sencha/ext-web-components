@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_pullrefresh_Bar from './Ext/dataview/pullrefresh/Bar.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 var EWCPullrefreshbar =
 /*#__PURE__*/

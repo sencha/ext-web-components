@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_menu_SortAsc from './Ext/grid/menu/SortAsc.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 var EWCGridsortascmenuitem =
 /*#__PURE__*/

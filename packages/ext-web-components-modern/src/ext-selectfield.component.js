@@ -1,5 +1,5 @@
 import Ext_form_Select from './Ext/form/Select.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCSelectfield extends Ext_form_Select {
   constructor() {

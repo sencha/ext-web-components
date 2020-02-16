@@ -1,5 +1,5 @@
 import Ext_field_FieldGroupContainer from './Ext/field/FieldGroupContainer.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCGroupcontainer extends Ext_field_FieldGroupContainer {
   constructor() {

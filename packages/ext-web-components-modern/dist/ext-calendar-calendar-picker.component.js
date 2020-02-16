@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_calendar_form_CalendarPicker from './Ext/calendar/form/CalendarPicker.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 var EWCCalendar_calendar_picker =
 /*#__PURE__*/

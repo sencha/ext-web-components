@@ -1,5 +1,5 @@
 import Ext_field_trigger_Clear from './Ext/field/trigger/Clear.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCCleartrigger extends Ext_field_trigger_Clear {
   constructor() {

@@ -1,5 +1,5 @@
 import Ext_d3_hierarchy_partition_Partition from './Ext/d3/hierarchy/partition/Partition.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCD3_partition extends Ext_d3_hierarchy_partition_Partition {
   constructor() {

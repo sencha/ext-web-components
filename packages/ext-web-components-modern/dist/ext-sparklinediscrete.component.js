@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_sparkline_Discrete from './Ext/sparkline/Discrete.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 var EWCSparklinediscrete =
 /*#__PURE__*/

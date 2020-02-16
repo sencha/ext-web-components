@@ -1,5 +1,5 @@
 import Ext_form_FieldSet from './Ext/form/FieldSet.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCFieldset extends Ext_form_FieldSet {
   constructor() {

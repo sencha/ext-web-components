@@ -1,5 +1,5 @@
 import Ext_field_trigger_Date from './Ext/field/trigger/Date.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCDatetrigger extends Ext_field_trigger_Date {
   constructor() {

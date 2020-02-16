@@ -1,5 +1,5 @@
 import Ext_Sheet from './Ext/Sheet.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCSheet extends Ext_Sheet {
   constructor() {

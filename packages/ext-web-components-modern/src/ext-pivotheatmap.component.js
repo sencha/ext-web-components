@@ -1,5 +1,5 @@
 import Ext_pivot_d3_HeatMap from './Ext/pivot/d3/HeatMap.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCPivotheatmap extends Ext_pivot_d3_HeatMap {
   constructor() {

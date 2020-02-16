@@ -1,5 +1,5 @@
 import Ext_form_Password from './Ext/form/Password.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCPasswordfield extends Ext_form_Password {
   constructor() {

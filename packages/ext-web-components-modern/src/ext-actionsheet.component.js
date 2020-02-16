@@ -1,5 +1,5 @@
 import Ext_ActionSheet from './Ext/ActionSheet.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCActionsheet extends Ext_ActionSheet {
   constructor() {

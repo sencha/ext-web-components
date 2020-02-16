@@ -1,5 +1,5 @@
 import Ext_panel_Date from './Ext/panel/Date.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCDatepanel extends Ext_panel_Date {
   constructor() {

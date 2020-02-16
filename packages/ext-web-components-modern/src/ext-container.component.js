@@ -1,5 +1,5 @@
 import Ext_container_Container from './Ext/container/Container.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCContainer extends Ext_container_Container {
   constructor() {

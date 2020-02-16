@@ -1,5 +1,5 @@
 import Ext_grid_RowHeader from './Ext/grid/RowHeader.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCRowheader extends Ext_grid_RowHeader {
   constructor() {

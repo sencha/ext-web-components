@@ -1,5 +1,5 @@
 import Ext_grid_menu_SortAsc from './Ext/grid/menu/SortAsc.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCGridsortascmenuitem extends Ext_grid_menu_SortAsc {
   constructor() {

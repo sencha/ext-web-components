@@ -1,5 +1,5 @@
 import Ext_field_RadioGroup from './Ext/field/RadioGroup.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCRadiogroup extends Ext_field_RadioGroup {
   constructor() {

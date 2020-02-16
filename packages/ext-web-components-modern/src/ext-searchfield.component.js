@@ -1,5 +1,5 @@
 import Ext_form_Search from './Ext/form/Search.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCSearchfield extends Ext_form_Search {
   constructor() {

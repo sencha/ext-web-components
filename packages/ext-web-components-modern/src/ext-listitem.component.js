@@ -1,5 +1,5 @@
 import Ext_dataview_component_ListItem from './Ext/dataview/component/ListItem.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCListitem extends Ext_dataview_component_ListItem {
   constructor() {

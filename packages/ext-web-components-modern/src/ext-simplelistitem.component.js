@@ -1,5 +1,5 @@
 import Ext_dataview_component_SimpleListItem from './Ext/dataview/component/SimpleListItem.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCSimplelistitem extends Ext_dataview_component_SimpleListItem {
   constructor() {

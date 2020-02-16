@@ -1,5 +1,5 @@
 import Ext_chart_navigator_Container from './Ext/chart/navigator/Container.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCChartnavigator extends Ext_chart_navigator_Container {
   constructor() {

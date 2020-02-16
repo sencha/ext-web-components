@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_calendar_panel_Weeks from './Ext/calendar/panel/Weeks.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 var EWCCalendar_weeks =
 /*#__PURE__*/

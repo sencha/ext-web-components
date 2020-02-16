@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_pivot_cell_Group from './Ext/pivot/cell/Group.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 var EWCPivotgridgroupcell =
 /*#__PURE__*/

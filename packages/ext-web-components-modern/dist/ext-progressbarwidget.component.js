@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ProgressBarWidget from './Ext/ProgressBarWidget.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 var EWCProgressbarwidget =
 /*#__PURE__*/

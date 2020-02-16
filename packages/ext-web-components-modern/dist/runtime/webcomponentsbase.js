@@ -1,14 +1,14 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Sat Feb 15 2020 09:34:24 GMT-0500 (Eastern Standard Time)
+//Sun Feb 16 2020 15:30:31 GMT-0500 (Eastern Standard Time)
 import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildToolbar, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
-var EleBaseComponent =
+var WebComponentsBaseComponent =
 /*#__PURE__*/
 function (_HTMLElement) {
-  _inheritsLoose(EleBaseComponent, _HTMLElement);
+  _inheritsLoose(WebComponentsBaseComponent, _HTMLElement);
 
-  function EleBaseComponent(properties, events) {
+  function WebComponentsBaseComponent(properties, events) {
     var _this;
 
     _this = _HTMLElement.call(this) || this;
@@ -33,30 +33,30 @@ function (_HTMLElement) {
     _this.A.ITEMS = [];
     _this.A.o = {};
     _this.attributeObjects = {};
-    _this.base = EleBaseComponent;
+    _this.base = WebComponentsBaseComponent;
     return _this;
   }
 
-  var _proto = EleBaseComponent.prototype;
+  var _proto = WebComponentsBaseComponent.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
     //console.log('connectedCallback: ' + this.xtype);
-    EleBaseComponent.elementcount++;
-    EleBaseComponent.elements.push(this); //console.log('added: ' + this.tagName + ': elementcount is now ' + EleBaseComponent.elementcount);
+    WebComponentsBaseComponent.elementcount++;
+    WebComponentsBaseComponent.elements.push(this); //console.log('added: ' + this.tagName + ': elementcount is now ' + WebComponentsBaseComponent.elementcount);
 
-    if (EleBaseComponent.attributeFirst == true) {
-      EleBaseComponent.attributeFirst = false; //console.log(this.attributes.length)
+    if (WebComponentsBaseComponent.attributeFirst == true) {
+      WebComponentsBaseComponent.attributeFirst = false; //console.log(this.attributes.length)
 
       if (this.attributes.length > 1) {
         //console.log('Early')
-        EleBaseComponent.attributeEarly = true;
+        WebComponentsBaseComponent.attributeEarly = true;
       } else {
         //console.log('Late')
-        EleBaseComponent.attributeEarly = false;
+        WebComponentsBaseComponent.attributeEarly = false;
       }
     }
 
-    if (EleBaseComponent.attributeEarly == true) {
+    if (WebComponentsBaseComponent.attributeEarly == true) {
       this.connectedCallback2();
     }
   };
@@ -105,7 +105,9 @@ function (_HTMLElement) {
       }
     }
 
-    me.newDoExtCreate(me, me.A.o['viewport']);
+    if (me.A.o.createExtComponentDefer != true) {
+      me.newDoExtCreate(me, me.A.o['viewport']);
+    }
   };
 
   _proto.newCreateProps = function newCreateProps(properties) {
@@ -226,7 +228,7 @@ function (_HTMLElement) {
 
   _proto.parsedCallback = function parsedCallback() {
     //console.log('parsedCallback: ' + this.xtype);
-    if (EleBaseComponent.attributeEarly == false) {
+    if (WebComponentsBaseComponent.attributeEarly == false) {
       this.connectedCallback2();
     }
 
@@ -297,17 +299,17 @@ function (_HTMLElement) {
       }
     }
 
-    EleBaseComponent.elementcount--; //console.log('reduced: ' + me.tagName + ': elementcount reduced to ' + EleBaseComponent.elementcount)
+    WebComponentsBaseComponent.elementcount--; //console.log('reduced: ' + me.tagName + ': elementcount reduced to ' + WebComponentsBaseComponent.elementcount)
 
-    if (EleBaseComponent.elementcount == 0) {
+    if (WebComponentsBaseComponent.elementcount == 0) {
       //console.log('done');
-      //console.log(EleBaseComponent.elements);
-      EleBaseComponent.elementsprior = [].concat(EleBaseComponent.elements);
-      EleBaseComponent.elements = []; //console.log(EleBaseComponent.elementsprior);
+      //console.log(WebComponentsBaseComponent.elements);
+      WebComponentsBaseComponent.elementsprior = [].concat(WebComponentsBaseComponent.elements);
+      WebComponentsBaseComponent.elements = []; //console.log(WebComponentsBaseComponent.elementsprior);
       //var allExt = [];
 
       var cmpObj = {};
-      EleBaseComponent.elementsprior.forEach(function (element) {
+      WebComponentsBaseComponent.elementsprior.forEach(function (element) {
         if (element.A != undefined) {
           for (var i = 0; i < element.A.ITEMS.length; i++) {
             //if(element.A.ITEMS[i].xtype == 'widget') {
@@ -325,11 +327,11 @@ function (_HTMLElement) {
 
           cmpObj[element.getAttribute('extname')] = element.A.ext;
         }
-      }); //console.log(EleBaseComponent.elementsprior)
+      }); //console.log(WebComponentsBaseComponent.elementsprior)
 
       me.cmp = me.A.ext;
       me.ext = me.A.ext;
-      EleBaseComponent.elementsprior.forEach(function (element) {
+      WebComponentsBaseComponent.elementsprior.forEach(function (element) {
         element.dispatchEvent(new CustomEvent('ready', {
           detail: {
             cmp: element.A.ext,
@@ -543,17 +545,17 @@ function (_HTMLElement) {
     }
   };
 
-  return EleBaseComponent;
+  return WebComponentsBaseComponent;
 }(_wrapNativeSuper(HTMLElement));
 
-export { EleBaseComponent as default };
-EleBaseComponent.attributeFirst = true;
-EleBaseComponent.attributeEarly = true;
-EleBaseComponent.elementcountnew = 0;
-EleBaseComponent.elementcount = 0;
-EleBaseComponent.elements = [];
-EleBaseComponent.elementsprior = [];
-EleBaseComponent.isLoading = false;
-EleBaseComponent.isDone = false;
-EleBaseComponent.count = 0;
-EleBaseComponent.DIRECTION = '';
+export { WebComponentsBaseComponent as default };
+WebComponentsBaseComponent.attributeFirst = true;
+WebComponentsBaseComponent.attributeEarly = true;
+WebComponentsBaseComponent.elementcountnew = 0;
+WebComponentsBaseComponent.elementcount = 0;
+WebComponentsBaseComponent.elements = [];
+WebComponentsBaseComponent.elementsprior = [];
+WebComponentsBaseComponent.isLoading = false;
+WebComponentsBaseComponent.isDone = false;
+WebComponentsBaseComponent.count = 0;
+WebComponentsBaseComponent.DIRECTION = '';

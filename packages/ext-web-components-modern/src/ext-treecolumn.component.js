@@ -1,5 +1,5 @@
 import Ext_grid_column_Tree from './Ext/grid/column/Tree.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTreecolumn extends Ext_grid_column_Tree {
   constructor() {

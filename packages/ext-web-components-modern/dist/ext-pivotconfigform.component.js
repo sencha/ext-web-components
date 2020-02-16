@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_pivot_plugin_configurator_Form from './Ext/pivot/plugin/configurator/Form.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 var EWCPivotconfigform =
 /*#__PURE__*/
