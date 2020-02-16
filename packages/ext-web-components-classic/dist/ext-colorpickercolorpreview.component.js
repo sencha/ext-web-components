@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ux_colorpick_ColorPreview from './Ext/ux/colorpick/ColorPreview.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 var EWCColorpickercolorpreview =
 /*#__PURE__*/

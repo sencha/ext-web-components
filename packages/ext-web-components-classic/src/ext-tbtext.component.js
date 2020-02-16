@@ -1,5 +1,5 @@
 import Ext_toolbar_TextItem from './Ext/toolbar/TextItem.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTbtext extends Ext_toolbar_TextItem {
   constructor() {

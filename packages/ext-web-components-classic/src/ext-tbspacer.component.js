@@ -1,5 +1,5 @@
 import Ext_toolbar_Spacer from './Ext/toolbar/Spacer.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTbspacer extends Ext_toolbar_Spacer {
   constructor() {

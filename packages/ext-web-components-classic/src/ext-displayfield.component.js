@@ -1,5 +1,5 @@
 import Ext_form_Display from './Ext/form/Display.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCDisplayfield extends Ext_form_Display {
   constructor() {

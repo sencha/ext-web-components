@@ -1,5 +1,5 @@
 import Ext_button_Segmented from './Ext/button/Segmented.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCSegmentedbutton extends Ext_button_Segmented {
   constructor() {

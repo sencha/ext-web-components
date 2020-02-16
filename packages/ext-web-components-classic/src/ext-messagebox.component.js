@@ -1,5 +1,5 @@
 import Ext_window_MessageBox from './Ext/window/MessageBox.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCMessagebox extends Ext_window_MessageBox {
   constructor() {

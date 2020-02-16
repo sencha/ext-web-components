@@ -1,5 +1,5 @@
 import Ext_grid_PropertyGrid from './Ext/grid/PropertyGrid.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCPropertygrid extends Ext_grid_PropertyGrid {
   constructor() {

@@ -1,5 +1,5 @@
 import Ext_calendar_panel_Day from './Ext/calendar/panel/Day.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCCalendar_day extends Ext_calendar_panel_Day {
   constructor() {

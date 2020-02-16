@@ -1,5 +1,5 @@
 import Ext_ux_event_RecorderManager from './Ext/ux/event/RecorderManager.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCEventrecordermanager extends Ext_ux_event_RecorderManager {
   constructor() {

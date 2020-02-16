@@ -1,5 +1,5 @@
 import Ext_toolbar_Separator from './Ext/toolbar/Separator.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTbseparator extends Ext_toolbar_Separator {
   constructor() {

@@ -1,5 +1,5 @@
 import Ext_ux_desktop_Wallpaper from './Ext/ux/desktop/Wallpaper.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCWallpaper extends Ext_ux_desktop_Wallpaper {
   constructor() {

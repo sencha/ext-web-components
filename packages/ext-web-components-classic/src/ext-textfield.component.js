@@ -1,5 +1,5 @@
 import Ext_form_Text from './Ext/form/Text.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTextfield extends Ext_form_Text {
   constructor() {

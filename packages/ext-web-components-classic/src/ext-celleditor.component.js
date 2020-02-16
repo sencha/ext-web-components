@@ -1,5 +1,5 @@
 import Ext_grid_CellEditor from './Ext/grid/CellEditor.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCCelleditor extends Ext_grid_CellEditor {
   constructor() {

@@ -1,5 +1,5 @@
 import Ext_form_File from './Ext/form/File.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCFileuploadfield extends Ext_form_File {
   constructor() {

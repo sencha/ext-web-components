@@ -1,5 +1,5 @@
 import Ext_sparkline_Pie from './Ext/sparkline/Pie.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCSparklinepie extends Ext_sparkline_Pie {
   constructor() {

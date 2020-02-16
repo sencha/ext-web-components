@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_resizer_BorderSplitter from './Ext/resizer/BorderSplitter.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 var EWCBordersplitter =
 /*#__PURE__*/

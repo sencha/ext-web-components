@@ -1,5 +1,5 @@
 import Ext_d3_HeatMap from './Ext/d3/HeatMap.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCD3_heatmap extends Ext_d3_HeatMap {
   constructor() {

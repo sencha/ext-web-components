@@ -1,5 +1,5 @@
 import Ext_form_field_Tag from './Ext/form/field/Tag.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTagfield extends Ext_form_field_Tag {
   constructor() {

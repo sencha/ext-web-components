@@ -1,5 +1,5 @@
 import Ext_ux_colorpick_SliderSaturation from './Ext/ux/colorpick/SliderSaturation.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCColorpickerslidersaturation extends Ext_ux_colorpick_SliderSaturation {
   constructor() {

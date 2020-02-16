@@ -1,5 +1,5 @@
 import Ext_MonthPicker from './Ext/MonthPicker.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCMonthpicker extends Ext_MonthPicker {
   constructor() {

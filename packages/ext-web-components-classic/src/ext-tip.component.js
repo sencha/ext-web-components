@@ -1,5 +1,5 @@
 import Ext_Tip from './Ext/Tip.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTip extends Ext_Tip {
   constructor() {

@@ -1,5 +1,5 @@
 import Ext_sparkline_Discrete from './Ext/sparkline/Discrete.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCSparklinediscrete extends Ext_sparkline_Discrete {
   constructor() {

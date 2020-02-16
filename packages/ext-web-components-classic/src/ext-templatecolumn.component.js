@@ -1,5 +1,5 @@
 import Ext_grid_TemplateColumn from './Ext/grid/TemplateColumn.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTemplatecolumn extends Ext_grid_TemplateColumn {
   constructor() {

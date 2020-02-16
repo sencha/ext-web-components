@@ -1,5 +1,5 @@
 import Ext_Img from './Ext/Img.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCImagecomponent extends Ext_Img {
   constructor() {

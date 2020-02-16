@@ -1,5 +1,5 @@
 import Ext_Viewport from './Ext/Viewport.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCViewport extends Ext_Viewport {
   constructor() {

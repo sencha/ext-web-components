@@ -1,5 +1,5 @@
 import Ext_form_Picker from './Ext/form/Picker.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCPickerfield extends Ext_form_Picker {
   constructor() {

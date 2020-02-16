@@ -1,5 +1,5 @@
 import Ext_ux_colorpick_SliderAlpha from './Ext/ux/colorpick/SliderAlpha.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCColorpickerslideralpha extends Ext_ux_colorpick_SliderAlpha {
   constructor() {

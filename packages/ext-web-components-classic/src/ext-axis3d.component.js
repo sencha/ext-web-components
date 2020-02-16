@@ -1,5 +1,5 @@
 import Ext_chart_axis_Axis3D from './Ext/chart/axis/Axis3D.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCAxis3d extends Ext_chart_axis_Axis3D {
   constructor() {

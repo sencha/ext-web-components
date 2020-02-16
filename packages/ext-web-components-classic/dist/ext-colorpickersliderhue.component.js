@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ux_colorpick_SliderHue from './Ext/ux/colorpick/SliderHue.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 var EWCColorpickersliderhue =
 /*#__PURE__*/

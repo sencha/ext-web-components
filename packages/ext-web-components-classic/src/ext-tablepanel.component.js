@@ -1,5 +1,5 @@
 import Ext_panel_Table from './Ext/panel/Table.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTablepanel extends Ext_panel_Table {
   constructor() {

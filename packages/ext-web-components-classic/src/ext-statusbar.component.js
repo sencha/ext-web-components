@@ -1,5 +1,5 @@
 import Ext_ux_StatusBar from './Ext/ux/StatusBar.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCStatusbar extends Ext_ux_StatusBar {
   constructor() {

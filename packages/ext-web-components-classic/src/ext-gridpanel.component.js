@@ -1,5 +1,5 @@
 import Ext_grid_GridPanel from './Ext/grid/GridPanel.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCGridpanel extends Ext_grid_GridPanel {
   constructor() {

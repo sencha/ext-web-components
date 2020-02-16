@@ -1,5 +1,5 @@
 import Ext_BoundList from './Ext/BoundList.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCBoundlist extends Ext_BoundList {
   constructor() {

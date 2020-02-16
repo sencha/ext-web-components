@@ -1,5 +1,5 @@
 import Ext_form_Trigger from './Ext/form/Trigger.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTrigger extends Ext_form_Trigger {
   constructor() {

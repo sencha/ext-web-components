@@ -1,5 +1,5 @@
 import Ext_ux_GMapPanel from './Ext/ux/GMapPanel.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCGmappanel extends Ext_ux_GMapPanel {
   constructor() {

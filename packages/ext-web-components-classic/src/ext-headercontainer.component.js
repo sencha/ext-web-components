@@ -1,5 +1,5 @@
 import Ext_grid_header_Container from './Ext/grid/header/Container.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCHeadercontainer extends Ext_grid_header_Container {
   constructor() {

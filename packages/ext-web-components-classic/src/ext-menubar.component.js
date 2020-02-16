@@ -1,5 +1,5 @@
 import Ext_menu_Bar from './Ext/menu/Bar.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCMenubar extends Ext_menu_Bar {
   constructor() {

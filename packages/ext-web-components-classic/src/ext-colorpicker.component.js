@@ -1,5 +1,5 @@
 import Ext_ColorPalette from './Ext/ColorPalette.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCColorpicker extends Ext_ColorPalette {
   constructor() {

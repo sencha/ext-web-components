@@ -1,5 +1,5 @@
 import Ext_window_Toast from './Ext/window/Toast.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCToast extends Ext_window_Toast {
   constructor() {

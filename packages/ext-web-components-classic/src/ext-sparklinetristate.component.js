@@ -1,5 +1,5 @@
 import Ext_sparkline_TriState from './Ext/sparkline/TriState.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCSparklinetristate extends Ext_sparkline_TriState {
   constructor() {

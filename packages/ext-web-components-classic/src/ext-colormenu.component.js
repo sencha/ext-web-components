@@ -1,5 +1,5 @@
 import Ext_menu_ColorPicker from './Ext/menu/ColorPicker.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCColormenu extends Ext_menu_ColorPicker {
   constructor() {

@@ -1,5 +1,5 @@
 import Ext_ProgressBarWidget from './Ext/ProgressBarWidget.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCProgress extends Ext_ProgressBarWidget {
   constructor() {

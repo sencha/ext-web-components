@@ -1,5 +1,5 @@
 import Ext_ux_colorpick_Button from './Ext/ux/colorpick/Button.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCColorbutton extends Ext_ux_colorpick_Button {
   constructor() {

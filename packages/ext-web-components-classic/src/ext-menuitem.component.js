@@ -1,5 +1,5 @@
 import Ext_menu_TextItem from './Ext/menu/TextItem.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCMenuitem extends Ext_menu_TextItem {
   constructor() {
