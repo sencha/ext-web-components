@@ -1,5 +1,5 @@
 import Ext_slider_Thumb from './Ext/slider/Thumb.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCThumb extends Ext_slider_Thumb {
   constructor() {

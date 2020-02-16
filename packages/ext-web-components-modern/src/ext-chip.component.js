@@ -1,5 +1,5 @@
 import Ext_Chip from './Ext/Chip.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCChip extends Ext_Chip {
   constructor() {

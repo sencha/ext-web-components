@@ -1,5 +1,5 @@
 import Ext_calendar_form_CalendarPicker from './Ext/calendar/form/CalendarPicker.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCCalendar_calendar_picker extends Ext_calendar_form_CalendarPicker {
   constructor() {

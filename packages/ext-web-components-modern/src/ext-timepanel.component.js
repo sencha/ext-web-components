@@ -1,5 +1,5 @@
 import Ext_panel_Time from './Ext/panel/Time.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTimepanel extends Ext_panel_Time {
   constructor() {

@@ -1,5 +1,5 @@
 import Ext_field_trigger_Reveal from './Ext/field/trigger/Reveal.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCRevealtrigger extends Ext_field_trigger_Reveal {
   constructor() {

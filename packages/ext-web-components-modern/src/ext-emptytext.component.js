@@ -1,5 +1,5 @@
 import Ext_dataview_EmptyText from './Ext/dataview/EmptyText.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCEmptytext extends Ext_dataview_EmptyText {
   constructor() {

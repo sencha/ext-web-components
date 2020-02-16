@@ -1,5 +1,5 @@
 import Ext_grid_Row from './Ext/grid/Row.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCGridrow extends Ext_grid_Row {
   constructor() {

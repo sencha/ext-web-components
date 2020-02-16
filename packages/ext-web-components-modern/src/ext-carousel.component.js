@@ -1,5 +1,5 @@
 import Ext_Carousel from './Ext/Carousel.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCCarousel extends Ext_Carousel {
   constructor() {

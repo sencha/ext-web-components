@@ -1,5 +1,5 @@
 import Ext_NestedList from './Ext/NestedList.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCNestedlist extends Ext_NestedList {
   constructor() {

@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_listswiper_Stepper from './Ext/dataview/listswiper/Stepper.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 var EWCListswiperstepper =
 /*#__PURE__*/

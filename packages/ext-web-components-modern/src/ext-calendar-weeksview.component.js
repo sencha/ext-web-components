@@ -1,5 +1,5 @@
 import Ext_calendar_view_Weeks from './Ext/calendar/view/Weeks.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCCalendar_weeksview extends Ext_calendar_view_Weeks {
   constructor() {

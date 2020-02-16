@@ -1,5 +1,5 @@
 import Ext_Spacer from './Ext/Spacer.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCSpacer extends Ext_Spacer {
   constructor() {

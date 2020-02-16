@@ -1,5 +1,5 @@
 import Ext_froala_Editor from './Ext/froala/Editor.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCFroalaeditor extends Ext_froala_Editor {
   constructor() {

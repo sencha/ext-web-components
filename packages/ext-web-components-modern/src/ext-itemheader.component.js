@@ -1,5 +1,5 @@
 import Ext_dataview_ItemHeader from './Ext/dataview/ItemHeader.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCItemheader extends Ext_dataview_ItemHeader {
   constructor() {

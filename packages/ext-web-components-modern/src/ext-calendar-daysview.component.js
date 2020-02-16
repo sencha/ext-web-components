@@ -1,5 +1,5 @@
 import Ext_calendar_view_Days from './Ext/calendar/view/Days.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCCalendar_daysview extends Ext_calendar_view_Days {
   constructor() {

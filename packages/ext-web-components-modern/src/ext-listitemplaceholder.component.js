@@ -1,5 +1,5 @@
 import Ext_dataview_ListItemPlaceholder from './Ext/dataview/ListItemPlaceholder.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCListitemplaceholder extends Ext_dataview_ListItemPlaceholder {
   constructor() {

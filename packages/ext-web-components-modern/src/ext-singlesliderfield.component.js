@@ -1,5 +1,5 @@
 import Ext_field_SingleSlider from './Ext/field/SingleSlider.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCSinglesliderfield extends Ext_field_SingleSlider {
   constructor() {

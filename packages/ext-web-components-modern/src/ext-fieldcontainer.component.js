@@ -1,5 +1,5 @@
 import Ext_field_Container from './Ext/field/Container.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCFieldcontainer extends Ext_field_Container {
   constructor() {

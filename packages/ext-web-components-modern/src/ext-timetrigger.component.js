@@ -1,5 +1,5 @@
 import Ext_field_trigger_Time from './Ext/field/trigger/Time.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTimetrigger extends Ext_field_trigger_Time {
   constructor() {

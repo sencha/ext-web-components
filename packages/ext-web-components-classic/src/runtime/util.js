@@ -12,15 +12,7 @@ export function doProp(me, prop) {
 function doSet(me,prop,val) {
 
   if (prop == 'createExtComponent') {
-    // console.log('createExtComponent')
-    // console.dir(me)
-    // console.dir(me.attributeObjects)
-    // console.dir(me.attributeObjects)
-    // console.dir(me.A.o)
-
     Object.keys(me.attributeObjects).forEach(function (name) {
-      // console.log(name)
-      // console.log(me.attributeObjects[name])
       me.A.o[name] = me.attributeObjects[name]
     });
     me.newDoExtCreate(me, me.A.o['viewport']);

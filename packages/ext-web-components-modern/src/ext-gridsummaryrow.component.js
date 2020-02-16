@@ -1,5 +1,5 @@
 import Ext_grid_SummaryRow from './Ext/grid/SummaryRow.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCGridsummaryrow extends Ext_grid_SummaryRow {
   constructor() {

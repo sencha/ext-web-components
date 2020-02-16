@@ -1,5 +1,5 @@
 import Ext_DatePicker from './Ext/DatePicker.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCDatepicker extends Ext_DatePicker {
   constructor() {

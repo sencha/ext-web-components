@@ -1,5 +1,5 @@
 import Ext_field_Panel from './Ext/field/Panel.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCFieldpanel extends Ext_field_Panel {
   constructor() {

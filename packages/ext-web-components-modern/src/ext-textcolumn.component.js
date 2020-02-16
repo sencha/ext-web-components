@@ -1,5 +1,5 @@
 import Ext_grid_column_Text from './Ext/grid/column/Text.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTextcolumn extends Ext_grid_column_Text {
   constructor() {

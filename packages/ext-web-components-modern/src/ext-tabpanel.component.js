@@ -1,5 +1,5 @@
 import Ext_TabPanel from './Ext/TabPanel.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTabpanel extends Ext_TabPanel {
   constructor() {

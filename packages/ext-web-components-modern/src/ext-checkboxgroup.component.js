@@ -1,5 +1,5 @@
 import Ext_field_CheckboxGroup from './Ext/field/CheckboxGroup.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCCheckboxgroup extends Ext_field_CheckboxGroup {
   constructor() {

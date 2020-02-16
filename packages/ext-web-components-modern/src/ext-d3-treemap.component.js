@@ -1,5 +1,5 @@
 import Ext_d3_hierarchy_TreeMap from './Ext/d3/hierarchy/TreeMap.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCD3_treemap extends Ext_d3_hierarchy_TreeMap {
   constructor() {

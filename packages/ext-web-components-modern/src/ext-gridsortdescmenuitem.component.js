@@ -1,5 +1,5 @@
 import Ext_grid_menu_SortDesc from './Ext/grid/menu/SortDesc.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCGridsortdescmenuitem extends Ext_grid_menu_SortDesc {
   constructor() {

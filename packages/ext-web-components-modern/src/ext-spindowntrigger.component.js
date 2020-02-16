@@ -1,5 +1,5 @@
 import Ext_field_trigger_SpinDown from './Ext/field/trigger/SpinDown.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCSpindowntrigger extends Ext_field_trigger_SpinDown {
   constructor() {

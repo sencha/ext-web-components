@@ -1,8 +1,10 @@
-import EleBaseComponent from '../ele-base.js'
+import WebComponentsBaseComponent from '../runtime/webcomponentsbase.js'
 
-export default class Ext_Base extends EleBaseComponent {
+export default class Ext_Base extends WebComponentsBaseComponent {
 
     static PROPERTIES() { return [
+        'createExtComponentDefer',
+        'createExtComponent',
         'closable',
         'title',
         'header',

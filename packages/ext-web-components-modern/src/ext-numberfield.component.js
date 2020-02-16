@@ -1,5 +1,5 @@
 import Ext_form_Number from './Ext/form/Number.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCNumberfield extends Ext_form_Number {
   constructor() {

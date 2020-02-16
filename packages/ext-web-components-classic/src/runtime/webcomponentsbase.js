@@ -1,4 +1,4 @@
-//Sun Feb 16 2020 10:56:16 GMT-0500 (Eastern Standard Time)
+//Sun Feb 16 2020 15:44:48 GMT-0500 (Eastern Standard Time)
 
 import {
   doProp,
@@ -40,28 +40,28 @@ export default class WebComponentsBaseComponent extends HTMLElement {
     this.A.o = {};
     this.attributeObjects = {};
 
-    this.base = EleBaseComponent;
+    this.base = WebComponentsBaseComponent;
   }
 
   connectedCallback() {
     //console.log('connectedCallback: ' + this.xtype);
-    EleBaseComponent.elementcount++;
-    EleBaseComponent.elements.push(this);
-    //console.log('added: ' + this.tagName + ': elementcount is now ' + EleBaseComponent.elementcount);
+    WebComponentsBaseComponent.elementcount++;
+    WebComponentsBaseComponent.elements.push(this);
+    //console.log('added: ' + this.tagName + ': elementcount is now ' + WebComponentsBaseComponent.elementcount);
 
-    if (BaseComponent.attributeFirst == true) {
-      BaseComponent.attributeFirst = false;
+    if (WebComponentsBaseComponent.attributeFirst == true) {
+      WebComponentsBaseComponent.attributeFirst = false;
       //console.log(this.attributes.length)
       if (this.attributes.length > 1) {
         //console.log('Early')
-        BaseComponent.attributeEarly = true;
+        WebComponentsBaseComponent.attributeEarly = true;
       } else {
         //console.log('Late')
-        BaseComponent.attributeEarly = false;
+        WebComponentsBaseComponent.attributeEarly = false;
       }
     }
 
-    if (BaseComponent.attributeEarly == true) {
+    if (WebComponentsBaseComponent.attributeEarly == true) {
       this.connectedCallback2()
     }
 
@@ -245,7 +245,7 @@ export default class WebComponentsBaseComponent extends HTMLElement {
 
   parsedCallback() {
     //console.log('parsedCallback: ' + this.xtype);
-    if (BaseComponent.attributeEarly == false) {
+    if (WebComponentsBaseComponent.attributeEarly == false) {
       this.connectedCallback2()
     }
     this.doChildren(this);
@@ -303,17 +303,17 @@ export default class WebComponentsBaseComponent extends HTMLElement {
       }
     }
 
-    BaseComponent.elementcount--;
-    //console.log('reduced: ' + me.tagName + ': elementcount reduced to ' + BaseComponent.elementcount)
-    if (BaseComponent.elementcount == 0) {
+    WebComponentsBaseComponent.elementcount--;
+    //console.log('reduced: ' + me.tagName + ': elementcount reduced to ' + WebComponentsBaseComponent.elementcount)
+    if (WebComponentsBaseComponent.elementcount == 0) {
       //console.log('done');
-      //console.log(BaseComponent.elements);
-      BaseComponent.elementsprior = [...BaseComponent.elements];
-      BaseComponent.elements = [];
-      //console.log(BaseComponent.elementsprior);
+      //console.log(WebComponentsBaseComponent.elements);
+      WebComponentsBaseComponent.elementsprior = [...WebComponentsBaseComponent.elements];
+      WebComponentsBaseComponent.elements = [];
+      //console.log(WebComponentsBaseComponent.elementsprior);
       //var allExt = [];
       var cmpObj = {};
-      BaseComponent.elementsprior.forEach(element => {
+      WebComponentsBaseComponent.elementsprior.forEach(element => {
           if (element.A != undefined) {
               for (var i = 0; i < element.A.ITEMS.length; i++) {
                 //if(element.A.ITEMS[i].xtype == 'widget') {
@@ -332,10 +332,10 @@ export default class WebComponentsBaseComponent extends HTMLElement {
           }
       });
 
-      //console.log(BaseComponent.elementsprior)
+      //console.log(WebComponentsBaseComponent.elementsprior)
       me.cmp = me.A.ext;
       me.ext = me.A.ext;
-      BaseComponent.elementsprior.forEach(element => {
+      WebComponentsBaseComponent.elementsprior.forEach(element => {
           element.dispatchEvent(new CustomEvent('ready', {
               detail: {
                   cmp: element.A.ext,
@@ -539,17 +539,17 @@ export default class WebComponentsBaseComponent extends HTMLElement {
 
 }
 
-BaseComponent.attributeFirst = true;
-BaseComponent.attributeEarly = true;
+WebComponentsBaseComponent.attributeFirst = true;
+WebComponentsBaseComponent.attributeEarly = true;
 
-BaseComponent.elementcountnew = 0;
+WebComponentsBaseComponent.elementcountnew = 0;
 
-BaseComponent.elementcount = 0;
-BaseComponent.elements = [];
-BaseComponent.elementsprior = [];
+WebComponentsBaseComponent.elementcount = 0;
+WebComponentsBaseComponent.elements = [];
+WebComponentsBaseComponent.elementsprior = [];
 
-BaseComponent.isLoading = false;
-BaseComponent.isDone = false;
+WebComponentsBaseComponent.isLoading = false;
+WebComponentsBaseComponent.isDone = false;
 
-BaseComponent.count = 0;
-BaseComponent.DIRECTION = '';
+WebComponentsBaseComponent.count = 0;
+WebComponentsBaseComponent.DIRECTION = '';

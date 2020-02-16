@@ -1,5 +1,5 @@
 import Ext_sparkline_Line from './Ext/sparkline/Line.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCSparklineline extends Ext_sparkline_Line {
   constructor() {

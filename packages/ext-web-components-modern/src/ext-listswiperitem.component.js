@@ -1,5 +1,5 @@
 import Ext_dataview_listswiper_Item from './Ext/dataview/listswiper/Item.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCListswiperitem extends Ext_dataview_listswiper_Item {
   constructor() {

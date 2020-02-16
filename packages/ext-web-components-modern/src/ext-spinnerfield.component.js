@@ -1,5 +1,5 @@
 import Ext_form_Spinner from './Ext/form/Spinner.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCSpinnerfield extends Ext_form_Spinner {
   constructor() {

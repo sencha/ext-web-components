@@ -1,5 +1,5 @@
 import Ext_grid_column_Selection from './Ext/grid/column/Selection.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCSelectioncolumn extends Ext_grid_column_Selection {
   constructor() {

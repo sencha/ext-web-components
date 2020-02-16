@@ -1,5 +1,5 @@
 import Ext_pivot_Grid from './Ext/pivot/Grid.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCPivotgrid extends Ext_pivot_Grid {
   constructor() {

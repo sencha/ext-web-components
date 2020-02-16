@@ -1,5 +1,5 @@
 import Ext_grid_cell_RowNumberer from './Ext/grid/cell/RowNumberer.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCRownumberercell extends Ext_grid_cell_RowNumberer {
   constructor() {

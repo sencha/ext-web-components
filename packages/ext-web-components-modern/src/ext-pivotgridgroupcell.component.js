@@ -1,5 +1,5 @@
 import Ext_pivot_cell_Group from './Ext/pivot/cell/Group.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCPivotgridgroupcell extends Ext_pivot_cell_Group {
   constructor() {

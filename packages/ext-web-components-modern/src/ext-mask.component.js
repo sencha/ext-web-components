@@ -1,5 +1,5 @@
 import Ext_Mask from './Ext/Mask.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCMask extends Ext_Mask {
   constructor() {

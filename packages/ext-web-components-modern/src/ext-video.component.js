@@ -1,5 +1,5 @@
 import Ext_Video from './Ext/Video.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCVideo extends Ext_Video {
   constructor() {

@@ -1,5 +1,5 @@
 import Ext_TitleBar from './Ext/TitleBar.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTitlebar extends Ext_TitleBar {
   constructor() {

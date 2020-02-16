@@ -1,5 +1,5 @@
 import Ext_grid_column_Number from './Ext/grid/column/Number.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCNumbercolumn extends Ext_grid_column_Number {
   constructor() {

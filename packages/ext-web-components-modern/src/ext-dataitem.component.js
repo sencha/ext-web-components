@@ -1,5 +1,5 @@
 import Ext_dataview_component_DataItem from './Ext/dataview/component/DataItem.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCDataitem extends Ext_dataview_component_DataItem {
   constructor() {

@@ -1,5 +1,5 @@
 import Ext_pivot_plugin_configurator_Panel from './Ext/pivot/plugin/configurator/Panel.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCPivotconfigpanel extends Ext_pivot_plugin_configurator_Panel {
   constructor() {
