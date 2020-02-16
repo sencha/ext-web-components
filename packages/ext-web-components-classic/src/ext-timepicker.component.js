@@ -1,5 +1,5 @@
 import Ext_picker_Time from './Ext/picker/Time.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTimepicker extends Ext_picker_Time {
   constructor() {

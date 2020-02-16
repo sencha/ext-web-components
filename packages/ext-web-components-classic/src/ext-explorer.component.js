@@ -1,5 +1,5 @@
 import Ext_ux_Explorer from './Ext/ux/Explorer.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCExplorer extends Ext_ux_Explorer {
   constructor() {

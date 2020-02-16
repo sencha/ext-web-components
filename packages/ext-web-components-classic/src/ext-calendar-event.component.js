@@ -1,5 +1,5 @@
 import Ext_calendar_Event from './Ext/calendar/Event.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCCalendar_event extends Ext_calendar_Event {
   constructor() {

@@ -1,5 +1,5 @@
 import Ext_PagingToolbar from './Ext/PagingToolbar.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCPagingtoolbar extends Ext_PagingToolbar {
   constructor() {

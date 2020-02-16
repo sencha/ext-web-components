@@ -1,5 +1,5 @@
 import Ext_toolbar_Fill from './Ext/toolbar/Fill.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTbfill extends Ext_toolbar_Fill {
   constructor() {

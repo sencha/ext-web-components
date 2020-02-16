@@ -1,5 +1,5 @@
 import Ext_slider_Tip from './Ext/slider/Tip.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCSlidertip extends Ext_slider_Tip {
   constructor() {

@@ -1,5 +1,5 @@
 import Ext_ux_colorpick_SliderValue from './Ext/ux/colorpick/SliderValue.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCColorpickerslidervalue extends Ext_ux_colorpick_SliderValue {
   constructor() {

@@ -1,5 +1,5 @@
 import Ext_grid_RowEditorButtons from './Ext/grid/RowEditorButtons.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCRoweditorbuttons extends Ext_grid_RowEditorButtons {
   constructor() {

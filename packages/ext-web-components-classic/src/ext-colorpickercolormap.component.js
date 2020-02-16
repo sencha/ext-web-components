@@ -1,5 +1,5 @@
 import Ext_ux_colorpick_ColorMap from './Ext/ux/colorpick/ColorMap.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCColorpickercolormap extends Ext_ux_colorpick_ColorMap {
   constructor() {

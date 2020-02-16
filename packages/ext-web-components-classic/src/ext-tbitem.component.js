@@ -1,5 +1,5 @@
 import Ext_toolbar_Item from './Ext/toolbar/Item.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTbitem extends Ext_toolbar_Item {
   constructor() {

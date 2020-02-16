@@ -1,5 +1,5 @@
 import Ext_ux_TreePicker from './Ext/ux/TreePicker.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTreepicker extends Ext_ux_TreePicker {
   constructor() {

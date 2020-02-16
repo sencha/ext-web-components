@@ -1,5 +1,5 @@
 import Ext_ux_ItemSelector from './Ext/ux/ItemSelector.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCItemselector extends Ext_ux_ItemSelector {
   constructor() {

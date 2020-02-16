@@ -1,5 +1,5 @@
 import Ext_grid_BooleanColumn from './Ext/grid/BooleanColumn.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCBooleancolumn extends Ext_grid_BooleanColumn {
   constructor() {

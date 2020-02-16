@@ -1,5 +1,5 @@
 import Ext_QuickTip from './Ext/QuickTip.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCQuicktip extends Ext_QuickTip {
   constructor() {

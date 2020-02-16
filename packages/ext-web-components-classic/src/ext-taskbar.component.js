@@ -1,5 +1,5 @@
 import Ext_ux_desktop_TaskBar from './Ext/ux/desktop/TaskBar.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTaskbar extends Ext_ux_desktop_TaskBar {
   constructor() {

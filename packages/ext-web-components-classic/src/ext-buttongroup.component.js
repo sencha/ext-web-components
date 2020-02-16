@@ -1,5 +1,5 @@
 import Ext_ButtonGroup from './Ext/ButtonGroup.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCButtongroup extends Ext_ButtonGroup {
   constructor() {

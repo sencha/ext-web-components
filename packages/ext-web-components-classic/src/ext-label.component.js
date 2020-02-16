@@ -1,5 +1,5 @@
 import Ext_form_Label from './Ext/form/Label.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCLabel extends Ext_form_Label {
   constructor() {

@@ -1,5 +1,5 @@
 import Ext_draw_Component from './Ext/draw/Component.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCDraw extends Ext_draw_Component {
   constructor() {

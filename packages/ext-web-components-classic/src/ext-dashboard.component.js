@@ -1,5 +1,5 @@
 import Ext_dashboard_Dashboard from './Ext/dashboard/Dashboard.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCDashboard extends Ext_dashboard_Dashboard {
   constructor() {

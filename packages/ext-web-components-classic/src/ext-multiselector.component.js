@@ -1,5 +1,5 @@
 import Ext_view_MultiSelector from './Ext/view/MultiSelector.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCMultiselector extends Ext_view_MultiSelector {
   constructor() {

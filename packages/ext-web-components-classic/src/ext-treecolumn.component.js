@@ -1,5 +1,5 @@
 import Ext_tree_Column from './Ext/tree/Column.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTreecolumn extends Ext_tree_Column {
   constructor() {

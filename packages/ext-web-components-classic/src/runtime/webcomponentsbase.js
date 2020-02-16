@@ -1,4 +1,4 @@
-//Sat Feb 15 2020 09:38:41 GMT-0500 (Eastern Standard Time)
+//Sun Feb 16 2020 10:56:16 GMT-0500 (Eastern Standard Time)
 
 import {
   doProp,
@@ -11,7 +11,7 @@ import {
   isPlugin
 } from './util.js';
 
-export default class EleBaseComponent extends HTMLElement {
+export default class WebComponentsBaseComponent extends HTMLElement {
 
   constructor(properties, events) {
     super ();
@@ -49,19 +49,19 @@ export default class EleBaseComponent extends HTMLElement {
     EleBaseComponent.elements.push(this);
     //console.log('added: ' + this.tagName + ': elementcount is now ' + EleBaseComponent.elementcount);
 
-    if (EleBaseComponent.attributeFirst == true) {
-      EleBaseComponent.attributeFirst = false;
+    if (BaseComponent.attributeFirst == true) {
+      BaseComponent.attributeFirst = false;
       //console.log(this.attributes.length)
       if (this.attributes.length > 1) {
         //console.log('Early')
-        EleBaseComponent.attributeEarly = true;
+        BaseComponent.attributeEarly = true;
       } else {
         //console.log('Late')
-        EleBaseComponent.attributeEarly = false;
+        BaseComponent.attributeEarly = false;
       }
     }
 
-    if (EleBaseComponent.attributeEarly == true) {
+    if (BaseComponent.attributeEarly == true) {
       this.connectedCallback2()
     }
 
@@ -110,7 +110,9 @@ export default class EleBaseComponent extends HTMLElement {
       }
     }
 
+    if (me.A.o.createExtComponentDefer != true) {
     me.newDoExtCreate(me, me.A.o['viewport']);
+   }
   }
 
   newCreateProps(properties) {
@@ -243,7 +245,7 @@ export default class EleBaseComponent extends HTMLElement {
 
   parsedCallback() {
     //console.log('parsedCallback: ' + this.xtype);
-    if (EleBaseComponent.attributeEarly == false) {
+    if (BaseComponent.attributeEarly == false) {
       this.connectedCallback2()
     }
     this.doChildren(this);
@@ -301,17 +303,17 @@ export default class EleBaseComponent extends HTMLElement {
       }
     }
 
-    EleBaseComponent.elementcount--;
-    //console.log('reduced: ' + me.tagName + ': elementcount reduced to ' + EleBaseComponent.elementcount)
-    if (EleBaseComponent.elementcount == 0) {
+    BaseComponent.elementcount--;
+    //console.log('reduced: ' + me.tagName + ': elementcount reduced to ' + BaseComponent.elementcount)
+    if (BaseComponent.elementcount == 0) {
       //console.log('done');
-      //console.log(EleBaseComponent.elements);
-      EleBaseComponent.elementsprior = [...EleBaseComponent.elements];
-      EleBaseComponent.elements = [];
-      //console.log(EleBaseComponent.elementsprior);
+      //console.log(BaseComponent.elements);
+      BaseComponent.elementsprior = [...BaseComponent.elements];
+      BaseComponent.elements = [];
+      //console.log(BaseComponent.elementsprior);
       //var allExt = [];
       var cmpObj = {};
-      EleBaseComponent.elementsprior.forEach(element => {
+      BaseComponent.elementsprior.forEach(element => {
           if (element.A != undefined) {
               for (var i = 0; i < element.A.ITEMS.length; i++) {
                 //if(element.A.ITEMS[i].xtype == 'widget') {
@@ -330,10 +332,10 @@ export default class EleBaseComponent extends HTMLElement {
           }
       });
 
-      //console.log(EleBaseComponent.elementsprior)
+      //console.log(BaseComponent.elementsprior)
       me.cmp = me.A.ext;
       me.ext = me.A.ext;
-      EleBaseComponent.elementsprior.forEach(element => {
+      BaseComponent.elementsprior.forEach(element => {
           element.dispatchEvent(new CustomEvent('ready', {
               detail: {
                   cmp: element.A.ext,
@@ -537,17 +539,17 @@ export default class EleBaseComponent extends HTMLElement {
 
 }
 
-EleBaseComponent.attributeFirst = true;
-EleBaseComponent.attributeEarly = true;
+BaseComponent.attributeFirst = true;
+BaseComponent.attributeEarly = true;
 
-EleBaseComponent.elementcountnew = 0;
+BaseComponent.elementcountnew = 0;
 
-EleBaseComponent.elementcount = 0;
-EleBaseComponent.elements = [];
-EleBaseComponent.elementsprior = [];
+BaseComponent.elementcount = 0;
+BaseComponent.elements = [];
+BaseComponent.elementsprior = [];
 
-EleBaseComponent.isLoading = false;
-EleBaseComponent.isDone = false;
+BaseComponent.isLoading = false;
+BaseComponent.isDone = false;
 
-EleBaseComponent.count = 0;
-EleBaseComponent.DIRECTION = '';
+BaseComponent.count = 0;
+BaseComponent.DIRECTION = '';

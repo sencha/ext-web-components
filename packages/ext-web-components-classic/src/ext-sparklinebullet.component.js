@@ -1,5 +1,5 @@
 import Ext_sparkline_Bullet from './Ext/sparkline/Bullet.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCSparklinebullet extends Ext_sparkline_Bullet {
   constructor() {

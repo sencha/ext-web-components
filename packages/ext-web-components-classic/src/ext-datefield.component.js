@@ -1,5 +1,5 @@
 import Ext_form_Date from './Ext/form/Date.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCDatefield extends Ext_form_Date {
   constructor() {

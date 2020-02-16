@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ux_desktop_Wallpaper from './Ext/ux/desktop/Wallpaper.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 var EWCWallpaper =
 /*#__PURE__*/

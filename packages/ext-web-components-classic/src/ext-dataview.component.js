@@ -1,5 +1,5 @@
 import Ext_DataView from './Ext/DataView.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCDataview extends Ext_DataView {
   constructor() {

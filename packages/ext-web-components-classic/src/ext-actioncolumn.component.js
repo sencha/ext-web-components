@@ -1,5 +1,5 @@
 import Ext_grid_ActionColumn from './Ext/grid/ActionColumn.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCActioncolumn extends Ext_grid_ActionColumn {
   constructor() {

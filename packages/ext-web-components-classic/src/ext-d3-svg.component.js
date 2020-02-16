@@ -1,5 +1,5 @@
 import Ext_d3_svg_Svg from './Ext/d3/svg/Svg.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCD3_svg extends Ext_d3_svg_Svg {
   constructor() {

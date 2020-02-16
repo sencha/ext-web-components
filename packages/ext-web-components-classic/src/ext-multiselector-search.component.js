@@ -1,5 +1,5 @@
 import Ext_view_MultiSelectorSearch from './Ext/view/MultiSelectorSearch.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCMultiselector_search extends Ext_view_MultiSelectorSearch {
   constructor() {

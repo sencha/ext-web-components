@@ -1,5 +1,5 @@
 import Ext_chart_PolarChart from './Ext/chart/PolarChart.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCPolar extends Ext_chart_PolarChart {
   constructor() {

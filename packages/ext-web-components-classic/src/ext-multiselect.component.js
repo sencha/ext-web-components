@@ -1,5 +1,5 @@
 import Ext_ux_Multiselect from './Ext/ux/Multiselect.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCMultiselect extends Ext_ux_Multiselect {
   constructor() {

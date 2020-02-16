@@ -1,5 +1,5 @@
 import Ext_TreePanel from './Ext/TreePanel.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTreepanel extends Ext_TreePanel {
   constructor() {

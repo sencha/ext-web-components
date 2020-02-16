@@ -1,5 +1,5 @@
 import Ext_CycleButton from './Ext/CycleButton.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCCycle extends Ext_CycleButton {
   constructor() {

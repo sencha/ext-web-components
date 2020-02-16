@@ -1,5 +1,5 @@
 import Ext_ux_desktop_TrayClock from './Ext/ux/desktop/TrayClock.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTrayclock extends Ext_ux_desktop_TrayClock {
   constructor() {

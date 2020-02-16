@@ -1,5 +1,5 @@
 import Ext_tree_View from './Ext/tree/View.js';
-import ElementParser from './ElementParser.js';
+import ElementParser from './runtime/ElementParser.js';
 
 export default class EWCTreeview extends Ext_tree_View {
   constructor() {
