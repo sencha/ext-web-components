@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Sun Feb 16 2020 18:17:44 GMT-0500 (Eastern Standard Time)
+//Mon Feb 17 2020 12:01:02 GMT-0500 (Eastern Standard Time)
 import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildToolbar, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var WebComponentsBaseComponent =
@@ -198,6 +198,15 @@ function (_HTMLElement) {
     }
 
     this.A.o = o;
+  };
+
+  _proto.doCreateExtComponent = function doCreateExtComponent() {
+    var me = this;
+    Object.keys(me.attributeObjects).forEach(function (name) {
+      me.A.o[name] = me.attributeObjects[name];
+    });
+    me.A.o['xtype'] = me.xtype;
+    me.newDoExtCreate(me, me.A.o['viewport']);
   };
 
   _proto.newDoExtCreate = function newDoExtCreate(me, isApplication) {

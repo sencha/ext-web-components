@@ -1,4 +1,4 @@
-//Sun Feb 16 2020 18:17:44 GMT-0500 (Eastern Standard Time)
+//Mon Feb 17 2020 12:01:02 GMT-0500 (Eastern Standard Time)
 
 import {
   doProp,
@@ -111,8 +111,9 @@ export default class WebComponentsBaseComponent extends HTMLElement {
     }
 
     if (me.A.o.createExtComponentDefer != true) {
-    me.newDoExtCreate(me, me.A.o['viewport']);
-   }
+      me.newDoExtCreate(me, me.A.o['viewport']);
+    }
+
   }
 
   newCreateProps(properties) {
@@ -217,6 +218,15 @@ export default class WebComponentsBaseComponent extends HTMLElement {
       }
     }
     this.A.o = o;
+  }
+
+  doCreateExtComponent() {
+    var me = this
+    Object.keys(me.attributeObjects).forEach(function (name) {
+      me.A.o[name] = me.attributeObjects[name];
+    });
+    me.A.o['xtype'] = me.xtype
+    me.newDoExtCreate(me, me.A.o['viewport']);
   }
 
   newDoExtCreate(me, isApplication) {
