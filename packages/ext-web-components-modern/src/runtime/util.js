@@ -11,13 +11,13 @@ export function doProp(me, prop) {
 
 function doSet(me,prop,val) {
 
-  if (prop == 'createExtComponent') {
-    Object.keys(me.attributeObjects).forEach(function (name) {
-      me.A.o[name] = me.attributeObjects[name]
-    });
-    me.newDoExtCreate(me, me.A.o['viewport']);
-    return
-  }
+  // if (prop == 'createExtComponent') {
+  //   Object.keys(me.attributeObjects).forEach(function (name) {
+  //     me.A.o[name] = me.attributeObjects[name]
+  //   });
+  //   me.newDoExtCreate(me, me.A.o['viewport']);
+  //   return
+  // }
 
   //console.log('doSet: ' + prop)
   if (prop == 'plugins') {
