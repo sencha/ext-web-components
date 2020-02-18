@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Mon Feb 17 2020 12:01:02 GMT-0500 (Eastern Standard Time)
+//Tue Feb 18 2020 09:50:41 GMT-0500 (Eastern Standard Time)
 import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildToolbar, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var WebComponentsBaseComponent =
@@ -17,17 +17,20 @@ function (_HTMLElement) {
       return self.indexOf(value) === index;
     };
 
-    _this.properties = properties.filter(distinct); //this.properties = properties;
+    _this.properties = properties.filter(distinct);
+    var unique = [];
+    _this.events = [];
 
-    _this.events = events;
-    _this.eventnames = [];
-    var eventnamesall = [];
+    for (var i = 0; i < events.length; i++) {
+      if (!unique[events[i].name]) {
+        _this.events.push(events[i]);
 
-    _this.events.forEach(function (event) {
-      eventnamesall.push(event.name);
-    });
+        unique[events[i].name] = 1;
+      }
+    } //console.log(this.events)
+    //console.log(this.events.length)
 
-    _this.eventnames = eventnamesall.filter(distinct);
+
     _this.A = {};
     _this.A.CHILDREN = [];
     _this.A.ITEMS = [];
@@ -65,26 +68,24 @@ function (_HTMLElement) {
     var _this2 = this;
 
     //console.log('connectedCallback: ' + this.xtype);
-    var x = this.xtype;
+    var x = this.xtype; // var distinct = function distinct(value, index, self) {
+    //   return self.indexOf(value) === index;
+    // };
+    // var properties2 = [];
+    // var arrayLength = this.properties.length;
+    // for (var i = 0; i < arrayLength; i++) {
+    //   properties2.push(this.properties[i]);
+    // }
+    // this.propertiesDistinct = properties2.filter(distinct);
+    // this.propertiesDistinct.forEach(function (prop) {
+    //   doProp(_this2, prop);
+    // });
 
-    var distinct = function distinct(value, index, self) {
-      return self.indexOf(value) === index;
-    };
-
-    var properties2 = [];
-    var arrayLength = this.properties.length;
-
-    for (var i = 0; i < arrayLength; i++) {
-      properties2.push(this.properties[i]);
-    }
-
-    this.propertiesDistinct = properties2.filter(distinct);
-    this.propertiesDistinct.forEach(function (prop) {
+    this.properties.forEach(function (prop) {
       doProp(_this2, prop);
     });
     this.xtype = x;
-    var me = this; //this.newCreateProps(this.properties, this.events);
-
+    var me = this;
     this.newCreateProps(this.properties);
 
     if (me.A.o['viewport'] == 'true') {
@@ -222,6 +223,7 @@ function (_HTMLElement) {
     me.A.ext = Ext.create(me.A.o);
     me.cmp = me.A.ext;
     me.ext = me.A.ext;
+    this.doChildren(this);
 
     if (isApplication) {
       if (Ext.isModern) {
@@ -240,8 +242,6 @@ function (_HTMLElement) {
     if (WebComponentsBaseComponent.attributeEarly == false) {
       this.connectedCallback2();
     }
-
-    this.doChildren(this);
   };
 
   _proto.doChildren = function doChildren(me) {

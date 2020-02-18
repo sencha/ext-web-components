@@ -1,4 +1,4 @@
-//Mon Feb 17 2020 11:42:20 GMT-0500 (Eastern Standard Time)
+//Tue Feb 18 2020 10:01:12 GMT-0500 (Eastern Standard Time)
 
 import {
   doProp,
@@ -21,18 +21,17 @@ export default class WebComponentsBaseComponent extends HTMLElement {
     };
     this.properties = properties.filter(distinct);
 
-    //this.properties = properties;
-    this.events = events;
-    this.eventnames = [];
-    var eventnamesall = [];
 
-
-
-    this.events.forEach((event) => {
-        eventnamesall.push(event.name);
-    });
-
-    this.eventnames = eventnamesall.filter(distinct);
+    var unique = [];
+    this.events = [];
+    for( let i = 0; i < events.length; i++ ){
+      if( !unique[events[i].name]){
+        this.events.push(events[i]);
+        unique[events[i].name] = 1;
+      }
+    }
+    //console.log(this.events)
+    //console.log(this.events.length)
 
     this.A = {};
     this.A.CHILDREN = [];
@@ -71,24 +70,30 @@ export default class WebComponentsBaseComponent extends HTMLElement {
     //console.log('connectedCallback: ' + this.xtype);
     var x = this.xtype;
 
-    const distinct = (value, index, self) => {
-        return self.indexOf(value) === index;
-    };
+    // var distinct = function distinct(value, index, self) {
+    //   return self.indexOf(value) === index;
+    // };
 
-    var properties2 = [];
-    var arrayLength = this.properties.length;
-    for (var i = 0; i < arrayLength; i++) {
-        properties2.push(this.properties[i]);
-    }
-    this.propertiesDistinct = properties2.filter(distinct);
-    this.propertiesDistinct.forEach(prop => {
+    // var properties2 = [];
+    // var arrayLength = this.properties.length;
+
+    // for (var i = 0; i < arrayLength; i++) {
+    //   properties2.push(this.properties[i]);
+    // }
+
+    // this.propertiesDistinct = properties2.filter(distinct);
+    // this.propertiesDistinct.forEach(function (prop) {
+    //   doProp(_this2, prop);
+    // });
+
+
+    this.properties.forEach(prop => {
         doProp(this, prop);
     });
 
     this.xtype = x;
 
     var me = this;
-    //this.newCreateProps(this.properties, this.events);
     this.newCreateProps(this.properties);
 
     if (me.A.o['viewport'] == 'true') {
@@ -240,6 +245,7 @@ export default class WebComponentsBaseComponent extends HTMLElement {
     me.A.ext = Ext.create(me.A.o);
     me.cmp = me.A.ext;
     me.ext = me.A.ext;
+    this.doChildren(this);
 
     if (isApplication) {
       if (Ext.isModern) {
@@ -258,9 +264,6 @@ export default class WebComponentsBaseComponent extends HTMLElement {
     if (WebComponentsBaseComponent.attributeEarly == false) {
       this.connectedCallback2()
     }
-    this.doChildren(this);
-
-
   }
 
   doChildren(me) {
