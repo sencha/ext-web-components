@@ -8,7 +8,7 @@ function (_WebComponentsBaseCom) {
   _inheritsLoose(Ext_Base, _WebComponentsBaseCom);
 
   Ext_Base.PROPERTIES = function PROPERTIES() {
-    return ['createExtComponentDefer', 'createExtComponent', 'closable', 'title', 'header', 'renderer', 'label', 'fitToParent', 'tab', 'config', 'platformConfig', 'summaryRenderer', 'extname', 'viewport', 'align', 'plugins', 'responsiveConfig', 'responsiveFormulas'];
+    return ['group', 'value', 'createExtComponentDefer', 'createExtComponent', 'closable', 'title', 'header', 'renderer', 'label', 'fitToParent', 'tab', 'config', 'platformConfig', 'summaryRenderer', 'extname', 'viewport', 'align', 'plugins', 'responsiveConfig', 'responsiveFormulas'];
   };
 
   Ext_Base.EVENTS = function EVENTS() {
@@ -41,8 +41,7 @@ function (_WebComponentsBaseCom) {
       });
       Ext_Base.EVENTS().forEach(function (eventparameter, index, array) {
         attrs.push('on' + eventparameter.name);
-      }); //attrs.push('onready')
-
+      });
       return attrs;
     }
   }]);
