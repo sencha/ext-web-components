@@ -18,11 +18,16 @@ function doSet(me, prop, val) {
   }
 
   var prev = JSON.stringify(me.attributeObjects[prop]);
-  var curr = JSON.stringify(val);
+  var curr = JSON.stringify(val); // if (prop == 'activeItem') {
+  //   console.log('doSet: ' + prop)
+  //   console.log(prev)
+  //   console.log(curr)
+  // }
 
   if (prev == curr) {
     //console.log('same')
     return;
+  } else {//console.log('different')
   }
 
   if (val) {
@@ -34,6 +39,7 @@ function doSet(me, prop, val) {
       val2 = typeof val;
       valExt = val;
     } else {
+      me.attributeObjects[prop] = val;
       val2 = val;
       valExt = val;
     }
