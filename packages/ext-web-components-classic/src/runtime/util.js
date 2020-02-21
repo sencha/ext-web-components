@@ -16,24 +16,15 @@ function doSet(me,prop,val) {
     return;
   }
 
-  //var prev = JSON.stringify(me.attributeObjects[prop]);
-  //var curr = JSON.stringify(val);
-
-  var prev = me.attributeObjects[prop];
-  var curr = val;
-
-  // if (prop == 'activeItem') {
-  //   console.log('doSet: ' + prop)
-  //   console.log(prev)
-  //   console.log(curr)
-  // }
-
-  if (prev ==curr) {
-    //console.log('same')
-    return
+  try {
+    var prev = JSON.stringify(me.attributeObjects[prop]);
+    var curr = JSON.stringify(val);
+    if (prev == curr) {
+      return;
+    }
   }
-  else {
-    //console.log('different')
+  catch(e) {
+    //console.log(e)
   }
 
   if (val) {

@@ -1,6 +1,10 @@
 const ElementParser = (() => {
   var toolkit = 'classic';
   var theme = 'material';
+  var origCwd = process.cwd();
+  var target = 'node_modules'
+  var v
+  var n
 
   if (window['Ext'] == undefined) {
     var xhrObj = new XMLHttpRequest();
@@ -31,6 +35,17 @@ const ElementParser = (() => {
       document.body.innerHTML = "<div>" + "<h1>An error has occurred</h1>" + "The ExtWebComponents runtime cannot be found<p>" + "Possible reasons:<br>" + "<ul>" + "<li>node_modules folder is not found or corrupted (rerun npm install)" + "</ul>" + "</div>";
       window.stop();
     };
+
+    v = process.cwd()
+    console.log(v)
+    n = v.includes(target)
+    console.log(n)
+    while (n == true) {
+      process.chdir('../');
+      v = process.cwd()
+      console.log(v)
+      n = v.includes(target)
+    }
 
     console.warn('[Deprecation] error below is expected');
 
@@ -76,6 +91,8 @@ const ElementParser = (() => {
         console.error('ERROR');
         break;
     }
+
+    process.chdir(origCwd);
 
 
     if (Ext.isModern == true) {
