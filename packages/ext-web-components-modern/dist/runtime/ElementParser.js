@@ -4,6 +4,10 @@ import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
 var ElementParser = function () {
   var toolkit = 'modern';
   var theme = 'material';
+  var origCwd = process.cwd();
+  var target = 'node_modules';
+  var v;
+  var n;
 
   if (window['Ext'] == undefined) {
     var linkIt = function linkIt(num) {
@@ -39,6 +43,18 @@ var ElementParser = function () {
       document.body.innerHTML = "<div>" + "<h1>An error has occurred</h1>" + "The ExtWebComponents runtime cannot be found<p>" + "Possible reasons:<br>" + "<ul>" + "<li>node_modules folder is not found or corrupted (rerun npm install)" + "</ul>" + "</div>";
       window.stop();
     };
+
+    v = process.cwd();
+    console.log(v);
+    n = v.includes(target);
+    console.log(n);
+
+    while (n == true) {
+      process.chdir('../');
+      v = process.cwd();
+      console.log(v);
+      n = v.includes(target);
+    }
 
     console.warn('[Deprecation] error below is expected');
 
@@ -84,6 +100,8 @@ var ElementParser = function () {
         console.error('ERROR');
         break;
     }
+
+    process.chdir(origCwd);
 
     if (Ext.isModern == true) {
       var ElementCell = Ext.define('Ext.ElementCell', {
