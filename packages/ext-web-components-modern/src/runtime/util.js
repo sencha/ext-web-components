@@ -16,8 +16,11 @@ function doSet(me,prop,val) {
     return;
   }
 
-  var prev = JSON.stringify(me.attributeObjects[prop]);
-  var curr = JSON.stringify(val);
+  //var prev = JSON.stringify(me.attributeObjects[prop]);
+  //var curr = JSON.stringify(val);
+
+  var prev = me.attributeObjects[prop];
+  var curr = val;
 
   // if (prop == 'activeItem') {
   //   console.log('doSet: ' + prop)
