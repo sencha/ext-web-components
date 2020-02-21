@@ -15,10 +15,12 @@ function doSet(me, prop, val) {
   //console.log('doSet: ' + prop)
   if (prop == 'plugins') {
     return;
-  }
+  } //var prev = JSON.stringify(me.attributeObjects[prop]);
+  //var curr = JSON.stringify(val);
 
-  var prev = JSON.stringify(me.attributeObjects[prop]);
-  var curr = JSON.stringify(val); // if (prop == 'activeItem') {
+
+  var prev = me.attributeObjects[prop];
+  var curr = val; // if (prop == 'activeItem') {
   //   console.log('doSet: ' + prop)
   //   console.log(prev)
   //   console.log(curr)
