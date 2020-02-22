@@ -1,10 +1,10 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import EleBaseComponent from './ele-base';
-import ElementParser from './ElementParser.js';
+import EleBaseComponent from './runtime/webcomponentsbase';
+import ElementParser from './runtime/ElementParser.js';
 import { //doProp,
 //filterProp,
-isMenu, isRenderercell, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
+isMenu, isRenderercell, isParentGridAndChildColumn, isTooltip, isPlugin } from './runtime/util.js';
 export var ExtRouter =
 /*#__PURE__*/
 function (_EleBaseComponent) {

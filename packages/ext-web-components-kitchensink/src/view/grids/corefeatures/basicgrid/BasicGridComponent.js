@@ -1,4 +1,4 @@
-import { getCmp } from '../../../../util.js';
+//import { getCmp } from '../../../../util.js';
 import './BasicGridComponent.scss';
 import './BasicGridComponent.html';
 import model from '../../data/CompanyModel';
@@ -22,8 +22,8 @@ export default class BasicGridComponent {
     }
 
     onPageReady(event) {
-      this.gridCmp = event.detail.cmp
-      this.gridCmp.setStore(this.store);
+        this.gridCmp = event.detail.cmp;
+        this.gridCmp.setStore(this.store);
     }
 
     changeColumnReady = (event) => {
