@@ -33,6 +33,7 @@ export default class MainComponent {
     }
 
     viewportReady = event => {
+        console.log('viewportReady');
         this.navInProcess = false;
         //mjg be good to find a way for this to be run automatically
         this.extnameToProperty(event.detail.cmpObj, this, '');

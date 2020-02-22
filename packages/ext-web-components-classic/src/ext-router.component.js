@@ -9,7 +9,7 @@ import {
     isParentGridAndChildColumn,
     isTooltip,
     isPlugin
-} from './util.js';
+} from './runtime/util.js';
 
 export class ExtRouter extends EleBaseComponent {
     //prettier-ignore
