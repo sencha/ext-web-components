@@ -5,7 +5,8 @@ export default class Ext_ux_google_Api extends Ext_Base {
     'requiredScripts',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_ux_google_Api.PROPERTIES());

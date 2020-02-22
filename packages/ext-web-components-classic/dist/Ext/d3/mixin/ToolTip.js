@@ -14,7 +14,10 @@ function (_Ext_Mixin) {
   Ext_d3_mixin_ToolTip.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

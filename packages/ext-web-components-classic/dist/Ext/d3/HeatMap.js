@@ -56,7 +56,10 @@ function (_Ext_d3_svg_Svg) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

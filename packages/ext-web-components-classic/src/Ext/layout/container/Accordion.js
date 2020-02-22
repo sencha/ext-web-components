@@ -25,7 +25,8 @@ export default class Ext_layout_container_Accordion extends Ext_layout_container
     'wrapOver',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_layout_container_Accordion.PROPERTIES());

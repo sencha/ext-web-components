@@ -9,7 +9,8 @@ export default class Ext_util_Sortable extends Ext_Base {
   ]};
   static EVENTS() { return [
     {name:'beforesort', parameters:'me,sorters'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_util_Sortable.PROPERTIES());

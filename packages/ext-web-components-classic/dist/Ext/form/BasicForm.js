@@ -32,7 +32,10 @@ function (_Ext_util_Observable) {
       parameters: 'sender,valid'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

@@ -77,7 +77,10 @@ function (_Ext_data_Store) {
       parameters: 'store,operation'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

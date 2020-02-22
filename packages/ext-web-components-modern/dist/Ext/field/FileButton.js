@@ -191,7 +191,10 @@ function (_Ext_Button) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

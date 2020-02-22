@@ -14,7 +14,10 @@ function (_Ext_draw_modifier_Mo) {
   Ext_draw_modifier_Animation.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

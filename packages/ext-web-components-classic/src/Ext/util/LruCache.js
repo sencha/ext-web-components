@@ -11,7 +11,8 @@ export default class Ext_util_LruCache extends Ext_util_HashMap {
     {name:'clear', parameters:'sender'},
     {name:'remove', parameters:'sender,key,value'},
     {name:'replace', parameters:'sender,key,value,old'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_util_LruCache.PROPERTIES());

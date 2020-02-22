@@ -23,7 +23,8 @@ export default class Ext_resizer_BorderSplitterTracker extends Ext_resizer_Split
     {name:'mouseout', parameters:'sender,e'},
     {name:'mouseover', parameters:'sender,e,target'},
     {name:'mouseup', parameters:'sender,e'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_resizer_BorderSplitterTracker.PROPERTIES());

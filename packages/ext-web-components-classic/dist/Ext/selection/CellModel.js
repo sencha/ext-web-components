@@ -32,7 +32,10 @@ function (_Ext_selection_DataVi) {
       parameters: 'sender,selected'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

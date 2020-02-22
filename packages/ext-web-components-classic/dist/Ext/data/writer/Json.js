@@ -14,7 +14,10 @@ function (_Ext_data_writer_Writ) {
   Ext_data_writer_Json.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

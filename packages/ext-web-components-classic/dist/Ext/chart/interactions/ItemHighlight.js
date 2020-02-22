@@ -14,7 +14,10 @@ function (_Ext_chart_interactio) {
   Ext_chart_interactions_ItemHighlight.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

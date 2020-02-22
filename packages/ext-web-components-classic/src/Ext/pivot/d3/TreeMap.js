@@ -88,7 +88,8 @@ export default class Ext_pivot_d3_TreeMap extends Ext_d3_hierarchy_TreeMap {
     {name:'sceneresize', parameters:'component,scene,size'},
     {name:'scenesetup', parameters:'component,scene'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_pivot_d3_TreeMap.PROPERTIES());

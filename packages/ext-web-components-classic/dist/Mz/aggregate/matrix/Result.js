@@ -14,7 +14,10 @@ function (_Ext_pivot_result_Bas) {
   Mz_aggregate_matrix_Result.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

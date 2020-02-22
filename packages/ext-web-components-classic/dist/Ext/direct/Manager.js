@@ -26,7 +26,10 @@ function (_Ext_Base) {
       parameters: 'url,error'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

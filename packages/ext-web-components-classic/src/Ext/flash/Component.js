@@ -145,7 +145,8 @@ export default class Ext_flash_Component extends Ext_Component {
     {name:'staterestore', parameters:'sender,state'},
     {name:'statesave', parameters:'sender,state'},
     {name:'success', parameters:'sender'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_flash_Component.PROPERTIES());

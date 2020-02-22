@@ -23,7 +23,10 @@ function (_Ext_data_Connection) {
       parameters: 'conn,response,options'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

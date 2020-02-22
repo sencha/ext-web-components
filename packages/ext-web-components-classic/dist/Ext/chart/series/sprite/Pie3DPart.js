@@ -14,7 +14,10 @@ function (_Ext_draw_sprite_Path) {
   Ext_chart_series_sprite_Pie3DPart.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

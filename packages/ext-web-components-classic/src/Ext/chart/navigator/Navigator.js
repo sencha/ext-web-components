@@ -284,7 +284,8 @@ export default class Ext_chart_navigator_Navigator extends Ext_chart_navigator_N
     {name:'titlepositionchange', parameters:'sender,newTitlePosition,oldTitlePosition'},
     {name:'titlerotationchange', parameters:'sender,newTitleRotation,oldTitleRotation'},
     {name:'unfloat', parameters:''},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_chart_navigator_Navigator.PROPERTIES());

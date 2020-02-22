@@ -200,7 +200,10 @@ function (_Ext_draw_ContainerBa) {
       parameters: ''
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

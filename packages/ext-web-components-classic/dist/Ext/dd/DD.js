@@ -14,7 +14,10 @@ function (_Ext_dd_DragDrop) {
   Ext_dd_DD.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

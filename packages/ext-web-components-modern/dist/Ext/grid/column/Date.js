@@ -200,7 +200,10 @@ function (_Ext_grid_column_Colu) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

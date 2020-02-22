@@ -14,7 +14,10 @@ function (_Ext_fx_target_Elemen) {
   Ext_fx_target_ElementCSS.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

@@ -14,7 +14,10 @@ function (_Ext_container_Contai) {
   Ext_calendar_view_Multi.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

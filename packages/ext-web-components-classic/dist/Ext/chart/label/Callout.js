@@ -14,7 +14,10 @@ function (_Ext_draw_modifier_Mo) {
   Ext_chart_label_Callout.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

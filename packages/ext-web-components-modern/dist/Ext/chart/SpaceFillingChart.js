@@ -272,7 +272,10 @@ function (_Ext_chart_AbstractCh) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

@@ -14,7 +14,10 @@ function (_Ext_chart_series_spr) {
   Ext_chart_series_sprite_Line.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

@@ -19,7 +19,8 @@ export default class Ext_data_operation_Create extends Ext_data_operation_Operat
     'url',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_data_operation_Create.PROPERTIES());

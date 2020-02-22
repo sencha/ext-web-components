@@ -5,7 +5,8 @@ export default class Ext_field_InputMask extends Ext_Base {
     'pattern',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_field_InputMask.PROPERTIES());

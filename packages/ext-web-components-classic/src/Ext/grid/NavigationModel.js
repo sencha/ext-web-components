@@ -7,7 +7,8 @@ export default class Ext_grid_NavigationModel extends Ext_view_NavigationModel {
   static EVENTS() { return [
     {name:'cellactivate', parameters:'grid,position,event'},
     {name:'navigate', parameters:'event'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_grid_NavigationModel.PROPERTIES());

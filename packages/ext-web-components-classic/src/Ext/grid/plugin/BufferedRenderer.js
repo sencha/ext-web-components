@@ -11,7 +11,8 @@ export default class Ext_grid_plugin_BufferedRenderer extends Ext_plugin_Abstrac
     'trailingBufferZone',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_grid_plugin_BufferedRenderer.PROPERTIES());

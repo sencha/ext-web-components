@@ -14,7 +14,10 @@ function (_Ext_plugin_Abstract) {
   Ext_chart_plugin_ItemEvents.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

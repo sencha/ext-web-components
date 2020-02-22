@@ -9,7 +9,8 @@ export default class Ext_grid_filters_Filters extends Ext_plugin_Abstract {
     'stateId',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_grid_filters_Filters.PROPERTIES());

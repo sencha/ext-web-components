@@ -65,7 +65,8 @@ export default class Ext_chart_series_Pie extends Ext_chart_series_Polar {
     {name:'itemmouseup', parameters:'series,item,event'},
     {name:'itemtap', parameters:'series,item,event'},
     {name:'storechange', parameters:'series,newStore,oldStore'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_chart_series_Pie.PROPERTIES());

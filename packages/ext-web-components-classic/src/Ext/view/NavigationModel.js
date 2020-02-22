@@ -6,7 +6,8 @@ export default class Ext_view_NavigationModel extends Ext_Base {
   ]};
   static EVENTS() { return [
     {name:'navigate', parameters:'event,keyEvent'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_view_NavigationModel.PROPERTIES());

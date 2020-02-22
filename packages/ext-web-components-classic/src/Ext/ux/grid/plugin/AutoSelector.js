@@ -6,7 +6,8 @@ export default class Ext_ux_grid_plugin_AutoSelector extends Ext_plugin_Abstract
     'stateEvents',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_ux_grid_plugin_AutoSelector.PROPERTIES());

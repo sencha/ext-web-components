@@ -14,7 +14,10 @@ function (_Ext_drag_proxy_None) {
   Ext_drag_proxy_Original.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

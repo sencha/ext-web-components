@@ -26,7 +26,10 @@ function (_Ext_chart_interactio) {
       parameters: 'sender,angle'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

@@ -25,7 +25,8 @@ export default class Mz_pivot_plugin_RangeEditor extends Ext_plugin_Abstract {
     {name:'pivotbeforeupdate', parameters:'updater'},
     {name:'pivotupdate', parameters:'updater'},
     {name:'showrangeeditorpanel', parameters:'panel'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Mz_pivot_plugin_RangeEditor.PROPERTIES());

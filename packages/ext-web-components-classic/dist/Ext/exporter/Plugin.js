@@ -23,7 +23,10 @@ function (_Ext_plugin_Abstract) {
       parameters: 'component,params'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

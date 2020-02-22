@@ -14,7 +14,10 @@ function (_Ext_chart_grid_Verti) {
   Ext_chart_grid_VerticalGrid3D.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

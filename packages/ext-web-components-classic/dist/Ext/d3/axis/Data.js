@@ -14,7 +14,10 @@ function (_Ext_d3_axis_Axis) {
   Ext_d3_axis_Data.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

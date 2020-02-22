@@ -14,7 +14,10 @@ function (_Ext_dd_DragSource) {
   Ext_dd_DragZone.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

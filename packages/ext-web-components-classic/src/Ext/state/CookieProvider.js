@@ -11,7 +11,8 @@ export default class Ext_state_CookieProvider extends Ext_state_Provider {
   ]};
   static EVENTS() { return [
     {name:'statechange', parameters:'sender,key,value'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_state_CookieProvider.PROPERTIES());

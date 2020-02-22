@@ -18,7 +18,8 @@ export default class Ext_pivot_plugin_CellEditing extends Ext_grid_plugin_CellEd
     {name:'pivotbeforeupdate', parameters:'updater'},
     {name:'pivotupdate', parameters:'updater'},
     {name:'validateedit', parameters:'editor,context'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_pivot_plugin_CellEditing.PROPERTIES());

@@ -23,7 +23,10 @@ function (_Ext_util_translatabl) {
       parameters: 'sender,x,y'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

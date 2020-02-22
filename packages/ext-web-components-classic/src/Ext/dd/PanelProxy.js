@@ -6,7 +6,8 @@ export default class Ext_dd_PanelProxy extends Ext_Base {
     'moveOnDrag',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_dd_PanelProxy.PROPERTIES());

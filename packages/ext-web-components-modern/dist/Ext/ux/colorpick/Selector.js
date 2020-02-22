@@ -23,7 +23,10 @@ function (_Ext_panel_Panel) {
       parameters: 'sender,color'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

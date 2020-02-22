@@ -26,7 +26,10 @@ function (_Ext_Evented) {
       parameters: 'sender,x,y'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

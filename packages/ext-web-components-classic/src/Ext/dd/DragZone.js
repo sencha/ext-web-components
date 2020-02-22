@@ -11,7 +11,8 @@ export default class Ext_dd_DragZone extends Ext_dd_DragSource {
     'scrollEl',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_dd_DragZone.PROPERTIES());

@@ -21,7 +21,8 @@ export default class Ext_calendar_dd_DaysBodySource extends Ext_drag_Source {
     {name:'dragend', parameters:'sender,info,event'},
     {name:'dragmove', parameters:'sender,info,event'},
     {name:'dragstart', parameters:'sender,info,event'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_calendar_dd_DaysBodySource.PROPERTIES());

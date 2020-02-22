@@ -14,7 +14,10 @@ function (_Ext_Base) {
   Ext_data_flash_BinaryXhr.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

@@ -53,7 +53,8 @@ export default class Ext_dom_Element_Fly extends Ext_dom_Element {
     {name:'swipe', parameters:'event,node,options'},
     {name:'taphold', parameters:'event,node,options'},
     {name:'unload', parameters:'e,t'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_dom_Element_Fly.PROPERTIES());

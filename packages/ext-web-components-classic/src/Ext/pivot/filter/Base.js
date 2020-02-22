@@ -8,7 +8,8 @@ export default class Ext_pivot_filter_Base extends Ext_Base {
     'value',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_pivot_filter_Base.PROPERTIES());

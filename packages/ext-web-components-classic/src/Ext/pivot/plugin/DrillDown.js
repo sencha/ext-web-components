@@ -15,7 +15,8 @@ export default class Ext_pivot_plugin_DrillDown extends Ext_plugin_Abstract {
   static EVENTS() { return [
     {name:'hidedrilldownpanel', parameters:'panel'},
     {name:'showdrilldownpanel', parameters:'panel'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_pivot_plugin_DrillDown.PROPERTIES());

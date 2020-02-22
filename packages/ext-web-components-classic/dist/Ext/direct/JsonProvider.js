@@ -26,7 +26,10 @@ function (_Ext_direct_Provider) {
       parameters: 'provider,e'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

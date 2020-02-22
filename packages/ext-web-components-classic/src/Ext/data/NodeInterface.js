@@ -42,7 +42,8 @@ export default class Ext_data_NodeInterface extends Ext_Base {
     {name:'move', parameters:'sender,oldParent,newParent,index'},
     {name:'remove', parameters:'sender,node,isMove,context'},
     {name:'sort', parameters:'sender,childNodes'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_data_NodeInterface.PROPERTIES());

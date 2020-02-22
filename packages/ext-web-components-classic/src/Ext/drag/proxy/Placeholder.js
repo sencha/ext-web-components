@@ -9,7 +9,8 @@ export default class Ext_drag_proxy_Placeholder extends Ext_drag_proxy_None {
     'validCls',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_drag_proxy_Placeholder.PROPERTIES());

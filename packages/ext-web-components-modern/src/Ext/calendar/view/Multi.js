@@ -12,7 +12,8 @@ export default class Ext_calendar_view_Multi extends Ext_container_Container {
     'views',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_calendar_view_Multi.PROPERTIES());

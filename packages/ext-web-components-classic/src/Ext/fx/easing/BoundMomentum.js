@@ -8,7 +8,8 @@ export default class Ext_fx_easing_BoundMomentum extends Ext_fx_easing_Abstract 
     'startVelocity',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_fx_easing_BoundMomentum.PROPERTIES());

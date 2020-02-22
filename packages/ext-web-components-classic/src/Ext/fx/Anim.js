@@ -23,7 +23,8 @@ export default class Ext_fx_Anim extends Ext_Base {
     {name:'afteranimate', parameters:'sender,startTime'},
     {name:'beforeanimate', parameters:'sender'},
     {name:'lastframe', parameters:'sender,startTime'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_fx_Anim.PROPERTIES());

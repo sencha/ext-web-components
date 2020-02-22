@@ -14,7 +14,10 @@ function (_Ext_Base) {
   Ext_grid_column_ActionProxy.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

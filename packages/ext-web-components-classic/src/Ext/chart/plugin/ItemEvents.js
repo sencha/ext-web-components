@@ -7,7 +7,8 @@ export default class Ext_chart_plugin_ItemEvents extends Ext_plugin_Abstract {
     'stateEvents',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_chart_plugin_ItemEvents.PROPERTIES());

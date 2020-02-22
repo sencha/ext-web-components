@@ -182,7 +182,8 @@ export default class Ext_grid_PropertyColumnModel extends Ext_grid_header_Contai
     {name:'sortchange', parameters:'ct,column,direction'},
     {name:'staterestore', parameters:'sender,state'},
     {name:'statesave', parameters:'sender,state'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_grid_PropertyColumnModel.PROPERTIES());

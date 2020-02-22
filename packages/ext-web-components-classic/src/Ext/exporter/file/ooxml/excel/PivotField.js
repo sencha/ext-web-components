@@ -60,7 +60,8 @@ export default class Ext_exporter_file_ooxml_excel_PivotField extends Ext_export
     'varSubtotal',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_exporter_file_ooxml_excel_PivotField.PROPERTIES());

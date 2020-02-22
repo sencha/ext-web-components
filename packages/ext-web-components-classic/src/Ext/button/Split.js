@@ -182,7 +182,8 @@ export default class Ext_button_Split extends Ext_button_Button {
     {name:'statesave', parameters:'sender,state'},
     {name:'textchange', parameters:'sender,oldText,newText'},
     {name:'toggle', parameters:'sender,pressed'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_button_Split.PROPERTIES());

@@ -14,7 +14,10 @@ function (_Ext_chart_axis_sprit) {
   Ext_chart_axis_sprite_Axis3D.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

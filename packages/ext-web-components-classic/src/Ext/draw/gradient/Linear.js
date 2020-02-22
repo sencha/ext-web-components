@@ -7,7 +7,8 @@ export default class Ext_draw_gradient_Linear extends Ext_draw_gradient_Gradient
     'stops',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_draw_gradient_Linear.PROPERTIES());

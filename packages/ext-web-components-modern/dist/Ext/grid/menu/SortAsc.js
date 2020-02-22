@@ -182,7 +182,10 @@ function (_Ext_menu_RadioItem) {
       parameters: 'sender,value,oldValue'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

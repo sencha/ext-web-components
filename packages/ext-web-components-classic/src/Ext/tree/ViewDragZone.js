@@ -11,7 +11,8 @@ export default class Ext_tree_ViewDragZone extends Ext_view_DragZone {
     'scrollEl',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_tree_ViewDragZone.PROPERTIES());

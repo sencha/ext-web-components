@@ -253,7 +253,8 @@ export default class Ext_form_Number extends Ext_form_field_Spinner {
     {name:'statesave', parameters:'sender,state'},
     {name:'validitychange', parameters:'sender,isValid'},
     {name:'writeablechange', parameters:'sender,Read'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_form_Number.PROPERTIES());

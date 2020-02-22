@@ -30,7 +30,8 @@ export default class Ext_google_data_EventsProxy extends Ext_google_data_Abstrac
   static EVENTS() { return [
     {name:'exception', parameters:'sender,response,operation'},
     {name:'metachange', parameters:'sender,meta'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_google_data_EventsProxy.PROPERTIES());

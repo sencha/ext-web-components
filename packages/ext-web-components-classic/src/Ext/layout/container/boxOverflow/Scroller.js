@@ -11,7 +11,8 @@ export default class Ext_layout_container_boxOverflow_Scroller extends Ext_layou
   ]};
   static EVENTS() { return [
     {name:'scroll', parameters:'scroller,newPosition'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_layout_container_boxOverflow_Scroller.PROPERTIES());

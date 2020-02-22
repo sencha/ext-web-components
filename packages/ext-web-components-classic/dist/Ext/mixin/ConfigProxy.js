@@ -14,7 +14,10 @@ function (_Ext_Mixin) {
   Ext_mixin_ConfigProxy.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

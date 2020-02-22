@@ -20,7 +20,10 @@ function (_Ext_plugin_Abstract) {
       parameters: 'panel'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

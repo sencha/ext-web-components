@@ -8,7 +8,8 @@ export default class Ext_fx_animation_Pop extends Ext_fx_animation_Abstract {
     'out',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_fx_animation_Pop.PROPERTIES());

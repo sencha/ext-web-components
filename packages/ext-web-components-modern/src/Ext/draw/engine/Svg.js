@@ -74,7 +74,8 @@ export default class Ext_draw_engine_Svg extends Ext_draw_Surface {
     {name:'hiddenchange', parameters:'sender,value,oldValue'},
     {name:'tofront', parameters:'sender'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_draw_engine_Svg.PROPERTIES());

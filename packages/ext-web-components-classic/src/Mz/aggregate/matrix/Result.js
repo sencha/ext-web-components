@@ -6,7 +6,8 @@ export default class Mz_aggregate_matrix_Result extends Ext_pivot_result_Base {
     'topKey',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Mz_aggregate_matrix_Result.PROPERTIES());

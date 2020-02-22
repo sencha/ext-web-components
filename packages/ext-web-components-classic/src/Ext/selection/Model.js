@@ -15,7 +15,8 @@ export default class Ext_selection_Model extends Ext_mixin_Observable {
   static EVENTS() { return [
     {name:'focuschange', parameters:'sender,oldFocused,newFocused'},
     {name:'selectionchange', parameters:'sender,selected'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_selection_Model.PROPERTIES());

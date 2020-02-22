@@ -13,7 +13,8 @@ export default class Ext_ux_TabReorderer extends Ext_ux_BoxReorderer {
     {name:'Drag', parameters:'sender,container,dragCmp,startIdx,idx'},
     {name:'Drop', parameters:'sender,container,dragCmp,startIdx,idx'},
     {name:'StartDrag', parameters:'sender,container,dragCmp,idx'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_ux_TabReorderer.PROPERTIES());

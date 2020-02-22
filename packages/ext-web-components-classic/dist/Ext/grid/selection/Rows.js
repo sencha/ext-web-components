@@ -14,7 +14,10 @@ function (_Ext_grid_selection_S) {
   Ext_grid_selection_Rows.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

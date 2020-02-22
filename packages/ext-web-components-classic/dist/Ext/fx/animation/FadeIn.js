@@ -14,7 +14,10 @@ function (_Ext_fx_animation_Abs) {
   Ext_fx_animation_FadeIn.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

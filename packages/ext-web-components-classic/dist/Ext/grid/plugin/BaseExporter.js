@@ -23,7 +23,10 @@ function (_Ext_exporter_Plugin) {
       parameters: 'grid,params'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

@@ -20,7 +20,8 @@ export default class Ext_scroll_Scroller extends Ext_Evented {
     {name:'scroll', parameters:'sender,x,y,deltaX,deltaY'},
     {name:'scrollend', parameters:'sender,x,y,deltaX,deltaY'},
     {name:'scrollstart', parameters:'sender,x,y'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_scroll_Scroller.PROPERTIES());

@@ -14,7 +14,10 @@ function (_Ext_data_operation_O) {
   Ext_data_operation_Read.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

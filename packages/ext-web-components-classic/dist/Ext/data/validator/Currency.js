@@ -14,7 +14,10 @@ function (_Ext_data_validator_N) {
   Ext_data_validator_Currency.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

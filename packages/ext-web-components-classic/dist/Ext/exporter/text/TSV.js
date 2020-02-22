@@ -14,7 +14,10 @@ function (_Ext_exporter_text_CS) {
   Ext_exporter_text_TSV.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

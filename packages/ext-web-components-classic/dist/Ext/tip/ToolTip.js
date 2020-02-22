@@ -173,7 +173,10 @@ function (_Ext_tip_Tip) {
       parameters: ''
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

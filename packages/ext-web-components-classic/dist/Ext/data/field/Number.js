@@ -14,7 +14,10 @@ function (_Ext_data_field_Integ) {
   Ext_data_field_Number.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

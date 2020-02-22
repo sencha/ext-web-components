@@ -38,7 +38,10 @@ function (_Ext_plugin_Abstract) {
       parameters: 'sprite,event'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

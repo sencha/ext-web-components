@@ -168,7 +168,8 @@ export default class Ext_button_Segmented extends Ext_container_Container {
     {name:'staterestore', parameters:'sender,state'},
     {name:'statesave', parameters:'sender,state'},
     {name:'toggle', parameters:'sender,button,isPressed'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_button_Segmented.PROPERTIES());

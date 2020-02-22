@@ -13,7 +13,8 @@ export default class Ext_chart_interactions_Rotate extends Ext_chart_interaction
     {name:'rotateend', parameters:'sender,angle'},
     {name:'rotatestart', parameters:'sender,angle'},
     {name:'rotationEnd', parameters:'sender,angle'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_chart_interactions_Rotate.PROPERTIES());

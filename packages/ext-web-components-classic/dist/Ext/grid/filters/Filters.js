@@ -14,7 +14,10 @@ function (_Ext_plugin_Abstract) {
   Ext_grid_filters_Filters.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

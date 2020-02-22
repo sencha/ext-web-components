@@ -29,7 +29,10 @@ function (_Ext_util_MixedCollec) {
       parameters: 'key,old,new'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

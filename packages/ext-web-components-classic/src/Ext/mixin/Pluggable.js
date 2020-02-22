@@ -5,7 +5,8 @@ export default class Ext_mixin_Pluggable extends Ext_Base {
     'plugins',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_mixin_Pluggable.PROPERTIES());

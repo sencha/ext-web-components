@@ -9,7 +9,8 @@ export default class Ext_calendar_view_WeeksRenderer extends Ext_Base {
     'start',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_calendar_view_WeeksRenderer.PROPERTIES());

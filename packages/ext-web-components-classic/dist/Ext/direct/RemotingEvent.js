@@ -14,7 +14,10 @@ function (_Ext_direct_Event) {
   Ext_direct_RemotingEvent.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

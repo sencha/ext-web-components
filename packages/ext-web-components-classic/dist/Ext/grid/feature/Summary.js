@@ -14,7 +14,10 @@ function (_Ext_grid_feature_Abs) {
   Ext_grid_feature_Summary.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

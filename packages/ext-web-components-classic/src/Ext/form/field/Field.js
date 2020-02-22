@@ -16,7 +16,8 @@ export default class Ext_form_field_Field extends Ext_Base {
     {name:'change', parameters:'sender,newValue,oldValue'},
     {name:'dirtychange', parameters:'sender,isDirty'},
     {name:'validitychange', parameters:'sender,isValid'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_form_field_Field.PROPERTIES());

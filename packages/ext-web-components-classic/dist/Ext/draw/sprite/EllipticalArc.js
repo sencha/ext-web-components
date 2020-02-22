@@ -14,7 +14,10 @@ function (_Ext_draw_sprite_Elli) {
   Ext_draw_sprite_EllipticalArc.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

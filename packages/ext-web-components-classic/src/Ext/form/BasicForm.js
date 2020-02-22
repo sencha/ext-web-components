@@ -26,7 +26,8 @@ export default class Ext_form_BasicForm extends Ext_util_Observable {
     {name:'dirtychange', parameters:'sender,dirty'},
     {name:'errorchange', parameters:'sender'},
     {name:'validitychange', parameters:'sender,valid'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_form_BasicForm.PROPERTIES());

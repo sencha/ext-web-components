@@ -14,7 +14,10 @@ function (_Ext_draw_sprite_Line) {
   Ext_draw_sprite_Tick.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

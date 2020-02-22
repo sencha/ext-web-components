@@ -21,7 +21,8 @@ export default class Ext_drag_Source extends Ext_drag_Item {
     {name:'dragend', parameters:'sender,info,event'},
     {name:'dragmove', parameters:'sender,info,event'},
     {name:'dragstart', parameters:'sender,info,event'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_drag_Source.PROPERTIES());

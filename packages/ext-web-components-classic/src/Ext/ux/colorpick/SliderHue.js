@@ -159,7 +159,8 @@ export default class Ext_ux_colorpick_SliderHue extends Ext_ux_colorpick_Slider 
     {name:'show', parameters:'sender'},
     {name:'staterestore', parameters:'sender,state'},
     {name:'statesave', parameters:'sender,state'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_ux_colorpick_SliderHue.PROPERTIES());

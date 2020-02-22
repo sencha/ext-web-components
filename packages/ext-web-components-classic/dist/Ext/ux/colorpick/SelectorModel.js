@@ -14,7 +14,10 @@ function (_Ext_app_ViewModel) {
   Ext_ux_colorpick_SelectorModel.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

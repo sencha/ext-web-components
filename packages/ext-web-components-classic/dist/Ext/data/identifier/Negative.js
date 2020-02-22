@@ -14,7 +14,10 @@ function (_Ext_data_identifier_) {
   Ext_data_identifier_Negative.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

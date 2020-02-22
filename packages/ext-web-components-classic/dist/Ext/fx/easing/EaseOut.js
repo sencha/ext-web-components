@@ -14,7 +14,10 @@ function (_Ext_fx_easing_Linear) {
   Ext_fx_easing_EaseOut.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

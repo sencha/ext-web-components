@@ -173,7 +173,10 @@ function (_Ext_pivot_d3_Abstrac) {
       parameters: ''
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

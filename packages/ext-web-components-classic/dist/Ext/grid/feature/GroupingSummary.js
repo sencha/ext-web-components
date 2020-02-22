@@ -29,7 +29,10 @@ function (_Ext_grid_feature_Gro) {
       parameters: 'view,node,group'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

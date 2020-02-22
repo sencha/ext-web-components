@@ -14,7 +14,10 @@ function (_Ext_chart_axis_layou) {
   Ext_chart_axis_layout_CombineDuplicate.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

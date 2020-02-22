@@ -269,7 +269,10 @@ function (_Ext_chart_legend_Leg) {
       parameters: 'sender'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

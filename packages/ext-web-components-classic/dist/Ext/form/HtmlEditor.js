@@ -158,7 +158,10 @@ function (_Ext_form_FieldContai) {
       parameters: 'sender,isValid'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

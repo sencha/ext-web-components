@@ -50,7 +50,8 @@ export default class Ext_chart_sprite_Bar3D extends Ext_draw_sprite_Sprite {
     'zIndex',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_chart_sprite_Bar3D.PROPERTIES());

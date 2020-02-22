@@ -322,7 +322,8 @@ export default class Ext_tree_Tree extends Ext_grid_Grid {
     {name:'updatedata', parameters:'sender,newData'},
     {name:'validateedit', parameters:'sender,location'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_tree_Tree.PROPERTIES());

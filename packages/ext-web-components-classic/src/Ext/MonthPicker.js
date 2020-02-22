@@ -145,7 +145,8 @@ export default class Ext_MonthPicker extends Ext_Component {
     {name:'statesave', parameters:'sender,state'},
     {name:'yearclick', parameters:'sender,value'},
     {name:'yeardblclick', parameters:'sender,value'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_MonthPicker.PROPERTIES());

@@ -14,7 +14,10 @@ function (_Ext_pivot_d3_Abstrac) {
   Ext_pivot_d3_Container.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

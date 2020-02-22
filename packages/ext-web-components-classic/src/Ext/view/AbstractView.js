@@ -163,7 +163,8 @@ export default class Ext_view_AbstractView extends Ext_Component {
     {name:'staterestore', parameters:'sender,state'},
     {name:'statesave', parameters:'sender,state'},
     {name:'viewready', parameters:'sender'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_view_AbstractView.PROPERTIES());

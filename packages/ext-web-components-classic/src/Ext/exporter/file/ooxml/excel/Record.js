@@ -11,7 +11,8 @@ export default class Ext_exporter_file_ooxml_excel_Record extends Ext_exporter_f
     'tplNonAttributes',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_exporter_file_ooxml_excel_Record.PROPERTIES());

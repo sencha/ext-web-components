@@ -14,7 +14,10 @@ function (_Ext_chart_axis_segme) {
   Ext_chart_axis_segmenter_Names.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

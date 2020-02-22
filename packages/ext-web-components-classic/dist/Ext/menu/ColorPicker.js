@@ -188,7 +188,10 @@ function (_Ext_menu_Menu) {
       parameters: ''
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

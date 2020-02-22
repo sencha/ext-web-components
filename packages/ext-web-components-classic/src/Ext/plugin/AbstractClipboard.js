@@ -10,7 +10,8 @@ export default class Ext_plugin_AbstractClipboard extends Ext_plugin_Abstract {
     'system',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_plugin_AbstractClipboard.PROPERTIES());

@@ -14,7 +14,10 @@ function (_Ext_ux_ajax_JsonSiml) {
   Ext_ux_ajax_PivotSimlet.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

@@ -5,7 +5,8 @@ export default class Ext_mixin_ItemRippler extends Ext_Base {
     'itemRipple',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_mixin_ItemRippler.PROPERTIES());

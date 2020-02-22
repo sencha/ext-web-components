@@ -252,7 +252,8 @@ export default class Ext_calendar_panel_Base extends Ext_calendar_panel_Abstract
     {name:'validateeventdrop', parameters:'sender,context'},
     {name:'validateeventedit', parameters:'sender,context'},
     {name:'valuechange', parameters:'sender,context'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_calendar_panel_Base.PROPERTIES());

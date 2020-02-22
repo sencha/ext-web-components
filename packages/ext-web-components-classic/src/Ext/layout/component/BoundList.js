@@ -7,7 +7,8 @@ export default class Ext_layout_component_BoundList extends Ext_layout_component
     'setWidthInDom',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_layout_component_BoundList.PROPERTIES());

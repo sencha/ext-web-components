@@ -21,7 +21,8 @@ export default class Ext_exporter_excel_Xml extends Ext_exporter_Base {
     'windowWidth',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_exporter_excel_Xml.PROPERTIES());

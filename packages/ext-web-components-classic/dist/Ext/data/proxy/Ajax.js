@@ -20,7 +20,10 @@ function (_Ext_data_proxy_Serve) {
       parameters: 'sender,meta'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

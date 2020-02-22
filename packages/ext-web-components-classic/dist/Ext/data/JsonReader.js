@@ -17,7 +17,10 @@ function (_Ext_data_reader_Read) {
       parameters: 'reader,response,error'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

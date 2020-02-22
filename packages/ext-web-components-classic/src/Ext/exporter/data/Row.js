@@ -9,7 +9,8 @@ export default class Ext_exporter_data_Row extends Ext_exporter_data_Base {
     'idPrefix',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_exporter_data_Row.PROPERTIES());

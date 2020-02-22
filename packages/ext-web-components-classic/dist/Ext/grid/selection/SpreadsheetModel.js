@@ -20,7 +20,10 @@ function (_Ext_selection_Model) {
       parameters: 'grid,selection'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

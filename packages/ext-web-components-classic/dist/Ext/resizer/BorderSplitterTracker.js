@@ -41,7 +41,10 @@ function (_Ext_resizer_Splitter) {
       parameters: 'sender,e'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

@@ -19,7 +19,8 @@ export default class Ext_grid_property_Reader extends Ext_data_reader_Reader {
   ]};
   static EVENTS() { return [
     {name:'exception', parameters:'reader,response,error'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_grid_property_Reader.PROPERTIES());

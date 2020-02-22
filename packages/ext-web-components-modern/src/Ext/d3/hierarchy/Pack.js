@@ -173,7 +173,8 @@ export default class Ext_d3_hierarchy_Pack extends Ext_d3_hierarchy_Hierarchy {
     {name:'topchange', parameters:'sender,value,oldValue'},
     {name:'updatedata', parameters:'sender,newData'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_d3_hierarchy_Pack.PROPERTIES());

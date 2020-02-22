@@ -20,7 +20,10 @@ function (_Ext_Mixin) {
       parameters: 'sender,field,isValid'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

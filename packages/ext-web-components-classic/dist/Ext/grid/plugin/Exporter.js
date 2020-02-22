@@ -23,7 +23,10 @@ function (_Ext_grid_plugin_Base) {
       parameters: 'grid,params'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

@@ -53,7 +53,10 @@ function (_Ext_Base) {
       parameters: 'sender,childNodes'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

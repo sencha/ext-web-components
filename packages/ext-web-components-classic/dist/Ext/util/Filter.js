@@ -14,7 +14,10 @@ function (_Ext_util_BasicFilter) {
   Ext_util_Filter.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

@@ -14,7 +14,10 @@ function (_Ext_util_paintmonito) {
   Ext_util_paintmonitor_OverflowChange.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

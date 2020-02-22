@@ -14,7 +14,10 @@ function (_Ext_d3_legend_Legend) {
   Ext_d3_legend_Color.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

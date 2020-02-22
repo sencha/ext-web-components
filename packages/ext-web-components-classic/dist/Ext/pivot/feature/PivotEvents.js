@@ -14,7 +14,10 @@ function (_Ext_grid_feature_Fea) {
   Ext_pivot_feature_PivotEvents.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

@@ -14,7 +14,10 @@ function (_Ext_dd_DDProxy) {
   Ext_dd_DragSource.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

@@ -14,7 +14,10 @@ function (_Ext_util_Schedulable) {
   Ext_app_bind_BaseBinding.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

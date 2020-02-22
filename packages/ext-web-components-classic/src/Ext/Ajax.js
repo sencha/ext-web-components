@@ -25,7 +25,8 @@ export default class Ext_Ajax extends Ext_data_Connection {
     {name:'beforerequest', parameters:'conn,options'},
     {name:'requestcomplete', parameters:'conn,response,options'},
     {name:'requestexception', parameters:'conn,response,options'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_Ajax.PROPERTIES());

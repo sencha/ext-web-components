@@ -14,7 +14,10 @@ function (_Ext_fx_target_Compos) {
   Ext_fx_target_CompositeElementCSS.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

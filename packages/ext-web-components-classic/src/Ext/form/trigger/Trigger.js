@@ -16,7 +16,8 @@ export default class Ext_form_trigger_Trigger extends Ext_Base {
     'width',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_form_trigger_Trigger.PROPERTIES());

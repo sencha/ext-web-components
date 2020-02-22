@@ -17,7 +17,8 @@ export default class Ext_form_Action extends Ext_Base {
     'waitTitle',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_form_Action.PROPERTIES());

@@ -269,7 +269,10 @@ function (_Ext_view_AbstractVie) {
       parameters: 'sender'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

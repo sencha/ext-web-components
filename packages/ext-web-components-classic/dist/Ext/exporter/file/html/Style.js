@@ -14,7 +14,10 @@ function (_Ext_exporter_file_St) {
   Ext_exporter_file_html_Style.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

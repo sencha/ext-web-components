@@ -5,7 +5,8 @@ export default class Mz_pivot_feature_PivotEvents extends Ext_grid_feature_Featu
     'listeners',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Mz_pivot_feature_PivotEvents.PROPERTIES());

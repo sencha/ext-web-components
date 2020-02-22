@@ -60,7 +60,8 @@ export default class Ext_chart_series_Bar extends Ext_chart_series_StackedCartes
     {name:'itemmouseup', parameters:'series,item,event'},
     {name:'itemtap', parameters:'series,item,event'},
     {name:'storechange', parameters:'series,newStore,oldStore'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_chart_series_Bar.PROPERTIES());

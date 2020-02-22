@@ -233,7 +233,8 @@ export default class Ext_slider_Tip extends Ext_tip_Tip {
     {name:'titlepositionchange', parameters:'sender,newTitlePosition,oldTitlePosition'},
     {name:'titlerotationchange', parameters:'sender,newTitleRotation,oldTitleRotation'},
     {name:'unfloat', parameters:''},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_slider_Tip.PROPERTIES());

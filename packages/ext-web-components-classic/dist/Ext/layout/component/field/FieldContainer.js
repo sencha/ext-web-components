@@ -14,7 +14,10 @@ function (_Ext_layout_component) {
   Ext_layout_component_field_FieldContainer.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

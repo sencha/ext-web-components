@@ -14,7 +14,10 @@ function (_Ext_Base) {
   Ext_grid_locking_RowSynchronizer.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

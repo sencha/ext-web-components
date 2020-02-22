@@ -6,7 +6,8 @@ export default class Ext_chart_axis_layout_Discrete extends Ext_chart_axis_layou
     'listeners',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_chart_axis_layout_Discrete.PROPERTIES());

@@ -160,7 +160,8 @@ export default class Ext_Media extends Ext_Component {
     {name:'updatedata', parameters:'sender,newData'},
     {name:'volumechange', parameters:'sender,volume'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_Media.PROPERTIES());

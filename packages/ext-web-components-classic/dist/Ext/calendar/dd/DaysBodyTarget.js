@@ -29,7 +29,10 @@ function (_Ext_drag_Target) {
       parameters: 'sender,info'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

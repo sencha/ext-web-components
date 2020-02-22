@@ -68,7 +68,8 @@ export default class Ext_d3_HeatMap extends Ext_d3_svg_Svg {
     {name:'sceneresize', parameters:'component,scene,size'},
     {name:'scenesetup', parameters:'component,scene'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_d3_HeatMap.PROPERTIES());

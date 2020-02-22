@@ -14,7 +14,10 @@ function (_Ext_event_gesture_Mu) {
   Ext_event_gesture_Rotate.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

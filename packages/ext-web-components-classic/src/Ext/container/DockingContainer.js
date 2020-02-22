@@ -7,7 +7,8 @@ export default class Ext_container_DockingContainer extends Ext_Base {
   static EVENTS() { return [
     {name:'dockedadd', parameters:'sender,component,index'},
     {name:'dockedremove', parameters:'sender,component'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_container_DockingContainer.PROPERTIES());

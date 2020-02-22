@@ -6,7 +6,8 @@ export default class Ext_slider_Thumb extends Ext_Base {
     'slider',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_slider_Thumb.PROPERTIES());

@@ -54,7 +54,8 @@ export default class Ext_chart_series_sprite_Cartesian extends Ext_chart_series_
     'zIndex',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_chart_series_sprite_Cartesian.PROPERTIES());
