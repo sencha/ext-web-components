@@ -1,10 +1,10 @@
 const ElementParser = (() => {
   var toolkit = 'classic';
   var theme = 'material';
-  var origCwd = process.cwd();
-  var target = 'node_modules'
-  var v
-  var n
+  //var origCwd = process.cwd();
+  //var target = 'node_modules'
+  //var v
+  //var n
 
   if (window['Ext'] == undefined) {
     var xhrObj = new XMLHttpRequest();
@@ -36,16 +36,16 @@ const ElementParser = (() => {
       window.stop();
     };
 
-    v = process.cwd()
-    console.log(v)
-    n = v.includes(target)
-    console.log(n)
-    while (n == true) {
-      process.chdir('../');
-      v = process.cwd()
-      console.log(v)
-      n = v.includes(target)
-    }
+    //v = process.cwd()
+    //console.log(v)
+    //n = v.includes(target)
+    //console.log(n)
+    //while (n == true) {
+    //  process.chdir('../');
+    //  v = process.cwd()
+    //  console.log(v)
+    //  n = v.includes(target)
+    //}
 
     console.warn('[Deprecation] error below is expected');
 
@@ -92,7 +92,7 @@ const ElementParser = (() => {
         break;
     }
 
-    process.chdir(origCwd);
+    //process.chdir(origCwd);
 
 
     if (Ext.isModern == true) {
