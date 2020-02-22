@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Sat Feb 22 2020 12:10:13 GMT-0500 (Eastern Standard Time)
+//Sat Feb 22 2020 14:28:54 GMT-0500 (Eastern Standard Time)
 import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildToolbar, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var WebComponentsBaseComponent =
@@ -48,14 +48,28 @@ function (_HTMLElement) {
     WebComponentsBaseComponent.elements.push(this); //console.log('added: ' + this.tagName + ': elementcount is now ' + WebComponentsBaseComponent.elementcount);
 
     if (WebComponentsBaseComponent.attributeFirst == true) {
-      WebComponentsBaseComponent.attributeFirst = false; //console.log(this.attributes.length)
+      WebComponentsBaseComponent.attributeFirst = false;
+      var isEWC = true;
 
-      if (this.attributes.length > 1) {
-        //console.log('Early')
-        WebComponentsBaseComponent.attributeEarly = true;
-      } else {
-        //console.log('Late')
+      if (window['ExtAngular'] == 'loaded') {
+        isEWC = false;
+      }
+
+      if (window['ExtReact'] == 'loaded') {
+        isEWC = false;
+      }
+
+      if (isEWC == true) {
         WebComponentsBaseComponent.attributeEarly = false;
+      } else {
+        //console.log(this.attributes.length)
+        if (this.attributes.length > 1) {
+          //console.log('Early')
+          WebComponentsBaseComponent.attributeEarly = true;
+        } else {
+          //console.log('Late')
+          WebComponentsBaseComponent.attributeEarly = false;
+        }
       }
     }
 

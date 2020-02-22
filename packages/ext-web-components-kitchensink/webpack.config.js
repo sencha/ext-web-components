@@ -25,13 +25,13 @@ module.exports = function(env) {
     var watch= get('watch', 'yes');
     var verbose= get('verbose', 'no');
     var basehref= get('basehref', '/');
-    var build_v= get('build_v', '7.1.0.0');
+    var build_v= get('build_v', '7.2.0.0');
 
     const isProd = environment === 'production';
     const outputFolder = 'build';
     portfinder.basePort = (env && env.port) || 1962;
 
-    return portfinder.getPortPromise().then(port => {{}
+    return portfinder.getPortPromise().then(port => {
         const plugins = [
             new HtmlWebpackPlugin({template: 'index.html', hash: false, inject: 'body'}),
             new BaseHrefWebpackPlugin({ baseHref: basehref }),
