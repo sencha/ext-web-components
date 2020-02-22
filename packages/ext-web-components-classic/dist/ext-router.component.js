@@ -32,7 +32,7 @@ function (_WebComponentsBaseCom) {
   function ExtRouter() {
     var _this;
 
-    _this = _WebComponentsBaseCom.call(this, {}, [], []) || this;
+    _this = _WebComponentsBaseCom.call(this, [], []) || this;
     _this.router = new Router(window.routes);
     return _this;
   }
