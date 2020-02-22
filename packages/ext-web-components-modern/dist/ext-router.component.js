@@ -1,14 +1,14 @@
 import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-import EleBaseComponent from './runtime/webcomponentsbase';
+import WebComponentsBaseComponent from './runtime/webcomponentsbase';
 import ElementParser from './runtime/ElementParser.js';
 import { //doProp,
 //filterProp,
 isMenu, isRenderercell, isParentGridAndChildColumn, isTooltip, isPlugin } from './runtime/util.js';
 export var ExtRouter =
 /*#__PURE__*/
-function (_EleBaseComponent) {
-  _inheritsLoose(ExtRouter, _EleBaseComponent);
+function (_WebComponentsBaseCom) {
+  _inheritsLoose(ExtRouter, _WebComponentsBaseCom);
 
   _createClass(ExtRouter, [{
     key: "hidden",
@@ -32,7 +32,7 @@ function (_EleBaseComponent) {
   function ExtRouter() {
     var _this;
 
-    _this = _EleBaseComponent.call(this, {}, [], []) || this;
+    _this = _WebComponentsBaseCom.call(this, {}, [], []) || this;
     _this.router = new Router(window.routes);
     return _this;
   }
@@ -40,11 +40,11 @@ function (_EleBaseComponent) {
   var _proto = ExtRouter.prototype;
 
   _proto.connectedCallback = function connectedCallback() {
-    //EleBaseComponent.elementcount++;
-    //console.log('added: ' + this.tagName + ': elementcount is now ' + EleBaseComponent.elementcount);
-    //EleBaseComponent.elements.push(this);
-    //console.log(EleBaseComponent.elements)
-    this.base = EleBaseComponent;
+    //WebComponentsBaseComponent.elementcount++;
+    //console.log('added: ' + this.tagName + ': elementcount is now ' + WebComponentsBaseComponent.elementcount);
+    //WebComponentsBaseComponent.elements.push(this);
+    //console.log(WebComponentsBaseComponent.elements)
+    this.base = WebComponentsBaseComponent;
   };
 
   _proto.parsedCallback = function parsedCallback() {
@@ -86,8 +86,8 @@ function (_EleBaseComponent) {
       } else {
         me.parentNode.A.CHILDREN.push(me.A.ext);
       }
-    } //EleBaseComponent.elementcount--;
-    //console.log('reduced: ' + me.tagName + ' elementcount reduced to ' + EleBaseComponent.elementcount)
+    } //WebComponentsBaseComponent.elementcount--;
+    //console.log('reduced: ' + me.tagName + ' elementcount reduced to ' + WebComponentsBaseComponent.elementcount)
     //});
 
   };
@@ -177,7 +177,7 @@ function (_EleBaseComponent) {
   };
 
   return ExtRouter;
-}(EleBaseComponent);
+}(WebComponentsBaseComponent);
 window.customElements.define('ext-router', ElementParser.withParsedCallback(ExtRouter));
 export function getRoutes(items) {
   //mjg clean this up
