@@ -27,7 +27,6 @@ export class ExtRouter extends WebComponentsBaseComponent {
 
     constructor() {
         super (
-            {},
             [],
             []
         )
