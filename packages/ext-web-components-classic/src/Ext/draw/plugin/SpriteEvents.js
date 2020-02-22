@@ -14,7 +14,8 @@ export default class Ext_draw_plugin_SpriteEvents extends Ext_plugin_Abstract {
     {name:'spritemouseover', parameters:'sprite,event'},
     {name:'spritemouseup', parameters:'sprite,event'},
     {name:'spritetap', parameters:'sprite,event'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_draw_plugin_SpriteEvents.PROPERTIES());

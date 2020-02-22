@@ -35,7 +35,10 @@ function (_Ext_direct_JsonProvi) {
       parameters: 'provider,e'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

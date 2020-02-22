@@ -119,7 +119,10 @@ function (_Ext_Component) {
       parameters: 'sender,state'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

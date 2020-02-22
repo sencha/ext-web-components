@@ -20,7 +20,10 @@ function (_Ext_Base) {
       parameters: 'sender,component'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

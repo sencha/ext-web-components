@@ -14,7 +14,10 @@ function (_Ext_app_EventDomain) {
   Ext_app_domain_View.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

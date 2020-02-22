@@ -15,7 +15,8 @@ export default class Mz_aggregate_MixedCollection extends Ext_util_MixedCollecti
     {name:'clear', parameters:''},
     {name:'remove', parameters:'o,key'},
     {name:'replace', parameters:'key,old,new'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Mz_aggregate_MixedCollection.PROPERTIES());

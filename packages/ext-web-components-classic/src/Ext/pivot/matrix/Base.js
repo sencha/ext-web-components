@@ -41,7 +41,8 @@ export default class Ext_pivot_matrix_Base extends Ext_util_Observable {
     {name:'recordbuilt', parameters:'matrix,record,item'},
     {name:'start', parameters:'matrix'},
     {name:'storebuilt', parameters:'matrix,store'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_pivot_matrix_Base.PROPERTIES());

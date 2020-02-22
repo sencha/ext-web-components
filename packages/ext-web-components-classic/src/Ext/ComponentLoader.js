@@ -23,7 +23,8 @@ export default class Ext_ComponentLoader extends Ext_ElementLoader {
     {name:'beforeload', parameters:'sender,options'},
     {name:'exception', parameters:'sender,response,options'},
     {name:'load', parameters:'sender,response,options'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_ComponentLoader.PROPERTIES());

@@ -14,7 +14,10 @@ function (_Ext_util_Fly) {
   Ext_parse_Tokenizer.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

@@ -14,7 +14,10 @@ function (_Ext_form_trigger_Tri) {
   Ext_form_trigger_Spinner.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

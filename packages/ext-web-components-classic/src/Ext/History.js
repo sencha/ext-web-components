@@ -7,7 +7,8 @@ export default class Ext_History extends Ext_Base {
   static EVENTS() { return [
     {name:'change', parameters:'token'},
     {name:'ready', parameters:'history'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_History.PROPERTIES());

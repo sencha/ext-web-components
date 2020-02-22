@@ -14,7 +14,10 @@ function (_Ext_pivot_dimension_) {
   Ext_pivot_plugin_configurator_Field.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

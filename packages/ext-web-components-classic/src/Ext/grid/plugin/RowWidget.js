@@ -20,7 +20,8 @@ export default class Ext_grid_plugin_RowWidget extends Ext_grid_plugin_RowExpand
   static EVENTS() { return [
     {name:'collapsebody', parameters:'rowNode,record,expandRow'},
     {name:'expandbody', parameters:'rowNode,record,expandRow'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_grid_plugin_RowWidget.PROPERTIES());

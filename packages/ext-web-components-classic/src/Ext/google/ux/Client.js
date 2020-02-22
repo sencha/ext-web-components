@@ -5,7 +5,8 @@ export default class Ext_google_ux_Client extends Ext_Mixin {
     'requiredScripts',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_google_ux_Client.PROPERTIES());

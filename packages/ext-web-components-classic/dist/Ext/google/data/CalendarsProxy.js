@@ -20,7 +20,10 @@ function (_Ext_google_data_Abst) {
       parameters: 'sender,meta'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

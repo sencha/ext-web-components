@@ -12,7 +12,8 @@ export default class Ext_pivot_update_Base extends Ext_mixin_Observable {
   static EVENTS() { return [
     {name:'beforeupdate', parameters:'updater'},
     {name:'update', parameters:'updater'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_pivot_update_Base.PROPERTIES());

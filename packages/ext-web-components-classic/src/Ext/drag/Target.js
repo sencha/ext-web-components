@@ -17,7 +17,8 @@ export default class Ext_drag_Target extends Ext_drag_Item {
     {name:'dragleave', parameters:'sender,info'},
     {name:'dragmove', parameters:'sender,info'},
     {name:'drop', parameters:'sender,info'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_drag_Target.PROPERTIES());

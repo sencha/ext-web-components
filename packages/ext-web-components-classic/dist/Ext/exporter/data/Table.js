@@ -14,7 +14,10 @@ function (_Ext_exporter_data_Gr) {
   Ext_exporter_data_Table.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

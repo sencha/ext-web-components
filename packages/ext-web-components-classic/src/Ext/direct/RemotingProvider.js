@@ -24,7 +24,8 @@ export default class Ext_direct_RemotingProvider extends Ext_direct_JsonProvider
     {name:'data', parameters:'provider,e'},
     {name:'disconnect', parameters:'provider'},
     {name:'exception', parameters:'provider,e'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_direct_RemotingProvider.PROPERTIES());

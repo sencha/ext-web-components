@@ -59,7 +59,8 @@ export default class Ext_d3_canvas_Canvas extends Ext_d3_Component {
     {name:'hiddenchange', parameters:'sender,value,oldValue'},
     {name:'sceneresize', parameters:'component,canvas,size'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_d3_canvas_Canvas.PROPERTIES());

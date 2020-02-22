@@ -52,7 +52,8 @@ export default class Ext_Gadget extends Ext_Evented {
     {name:'heightchange', parameters:'sender,value,oldValue'},
     {name:'hiddenchange', parameters:'sender,value,oldValue'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_Gadget.PROPERTIES());

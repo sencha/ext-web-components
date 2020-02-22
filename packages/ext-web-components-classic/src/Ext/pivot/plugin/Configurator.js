@@ -26,7 +26,8 @@ export default class Ext_pivot_plugin_Configurator extends Ext_plugin_Abstract {
     {name:'showconfigfieldsettings', parameters:'panel,config'},
     {name:'showconfigpanel', parameters:'panel'},
     {name:'showpivotsettings', parameters:'panel,config'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_pivot_plugin_Configurator.PROPERTIES());

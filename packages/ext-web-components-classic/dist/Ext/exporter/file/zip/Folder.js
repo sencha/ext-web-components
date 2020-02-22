@@ -14,7 +14,10 @@ function (_Ext_exporter_file_zi) {
   Ext_exporter_file_zip_Folder.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

@@ -14,7 +14,10 @@ function (_Ext_pivot_result_Bas) {
   Ext_pivot_result_Local.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

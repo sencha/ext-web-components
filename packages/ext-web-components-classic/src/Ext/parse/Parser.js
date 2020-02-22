@@ -11,7 +11,8 @@ export default class Ext_parse_Parser extends Ext_util_Fly {
     'tokenizer',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_parse_Parser.PROPERTIES());

@@ -37,7 +37,8 @@ export default class Ext_data_amf_Proxy extends Ext_data_proxy_Ajax {
   static EVENTS() { return [
     {name:'exception', parameters:'sender,response,operation'},
     {name:'metachange', parameters:'sender,meta'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_data_amf_Proxy.PROPERTIES());

@@ -7,7 +7,8 @@ export default class Ext_route_Router extends Ext_Base {
     'queueRoutes',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_route_Router.PROPERTIES());

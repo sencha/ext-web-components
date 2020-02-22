@@ -14,7 +14,10 @@ function (_Ext_parse_Parser) {
   Ext_data_query_Parser.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

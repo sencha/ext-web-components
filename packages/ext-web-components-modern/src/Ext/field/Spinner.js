@@ -216,7 +216,8 @@ export default class Ext_field_Spinner extends Ext_field_Number {
     {name:'topchange', parameters:'sender,value,oldValue'},
     {name:'updatedata', parameters:''},
     {name:'widthchange', parameters:'sender,value,oldValue'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_field_Spinner.PROPERTIES());

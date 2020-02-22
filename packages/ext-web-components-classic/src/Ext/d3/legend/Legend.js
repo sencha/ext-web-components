@@ -7,7 +7,8 @@ export default class Ext_d3_legend_Legend extends Ext_Base {
     'listeners',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_d3_legend_Legend.PROPERTIES());

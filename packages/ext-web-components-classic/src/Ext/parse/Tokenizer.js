@@ -6,7 +6,8 @@ export default class Ext_parse_Tokenizer extends Ext_util_Fly {
     'operators',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_parse_Tokenizer.PROPERTIES());

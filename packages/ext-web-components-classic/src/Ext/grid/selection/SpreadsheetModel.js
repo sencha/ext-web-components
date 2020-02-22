@@ -27,7 +27,8 @@ export default class Ext_grid_selection_SpreadsheetModel extends Ext_selection_M
   static EVENTS() { return [
     {name:'focuschange', parameters:'sender,oldFocused,newFocused'},
     {name:'selectionchange', parameters:'grid,selection'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_grid_selection_SpreadsheetModel.PROPERTIES());

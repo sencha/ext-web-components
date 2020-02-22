@@ -29,7 +29,8 @@ export default class Ext_data_ChainedStore extends Ext_data_AbstractStore {
     {name:'remove', parameters:'store,records,index,isMove'},
     {name:'sort', parameters:'store'},
     {name:'update', parameters:'sender,record,operation,modifiedFieldNames,details'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_data_ChainedStore.PROPERTIES());

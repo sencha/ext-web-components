@@ -497,7 +497,10 @@ function (_Ext_panel_Table) {
       parameters: 'sender'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

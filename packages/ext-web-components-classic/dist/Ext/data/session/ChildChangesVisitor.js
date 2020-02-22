@@ -14,7 +14,10 @@ function (_Ext_data_session_Cha) {
   Ext_data_session_ChildChangesVisitor.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

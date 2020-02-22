@@ -84,7 +84,8 @@ export default class Ext_d3_hierarchy_tree_Tree extends Ext_d3_hierarchy_Hierarc
     {name:'sceneresize', parameters:'component,scene,size'},
     {name:'scenesetup', parameters:'component,scene'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_d3_hierarchy_tree_Tree.PROPERTIES());

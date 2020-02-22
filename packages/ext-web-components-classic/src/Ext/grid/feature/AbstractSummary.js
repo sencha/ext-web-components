@@ -6,7 +6,8 @@ export default class Ext_grid_feature_AbstractSummary extends Ext_grid_feature_F
     'showSummaryRow',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_grid_feature_AbstractSummary.PROPERTIES());

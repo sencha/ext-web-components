@@ -9,7 +9,8 @@ export default class Ext_data_Batch extends Ext_Base {
     {name:'complete', parameters:'batch,operation'},
     {name:'exception', parameters:'batch,operation'},
     {name:'operationcomplete', parameters:'batch,operation'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_data_Batch.PROPERTIES());

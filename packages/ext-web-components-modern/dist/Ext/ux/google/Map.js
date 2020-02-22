@@ -242,7 +242,10 @@ function (_Ext_Container) {
       parameters: 'sender,map,zoomLevel'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

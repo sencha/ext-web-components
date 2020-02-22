@@ -12,7 +12,8 @@ export default class Ext_state_Stateful extends Ext_Base {
     {name:'beforestatesave', parameters:'sender,state'},
     {name:'staterestore', parameters:'sender,state'},
     {name:'statesave', parameters:'sender,state'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_state_Stateful.PROPERTIES());

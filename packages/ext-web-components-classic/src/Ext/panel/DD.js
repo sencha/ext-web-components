@@ -9,7 +9,8 @@ export default class Ext_panel_DD extends Ext_dd_DragSource {
     'repairHighlightColor',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_panel_DD.PROPERTIES());

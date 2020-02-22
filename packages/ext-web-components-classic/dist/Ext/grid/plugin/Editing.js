@@ -26,7 +26,10 @@ function (_Ext_plugin_Abstract) {
       parameters: 'editor,context'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

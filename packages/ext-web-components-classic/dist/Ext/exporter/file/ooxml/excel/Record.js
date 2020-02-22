@@ -14,7 +14,10 @@ function (_Ext_exporter_file_oo) {
   Ext_exporter_file_ooxml_excel_Record.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

@@ -19,7 +19,8 @@ export default class Ext_grid_property_Property extends Ext_data_Model {
     'versionProperty',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_grid_property_Property.PROPERTIES());

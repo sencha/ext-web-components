@@ -230,7 +230,8 @@ export default class Ext_pivot_plugin_configurator_Container extends Ext_panel_P
     {name:'titlepositionchange', parameters:'sender,newTitlePosition,oldTitlePosition'},
     {name:'titlerotationchange', parameters:'sender,newTitleRotation,oldTitleRotation'},
     {name:'unfloat', parameters:''},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_pivot_plugin_configurator_Container.PROPERTIES());

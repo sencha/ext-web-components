@@ -14,7 +14,10 @@ function (_Ext_dom_Underlay) {
   Ext_dom_Shim.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

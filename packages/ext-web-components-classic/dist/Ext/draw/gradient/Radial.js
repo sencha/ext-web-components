@@ -14,7 +14,10 @@ function (_Ext_draw_gradient_Gr) {
   Ext_draw_gradient_Radial.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

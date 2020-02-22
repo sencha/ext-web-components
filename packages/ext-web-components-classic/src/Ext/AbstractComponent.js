@@ -133,7 +133,8 @@ export default class Ext_AbstractComponent extends Ext_Base {
     {name:'show', parameters:'sender'},
     {name:'staterestore', parameters:'sender,state'},
     {name:'statesave', parameters:'sender,state'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_AbstractComponent.PROPERTIES());

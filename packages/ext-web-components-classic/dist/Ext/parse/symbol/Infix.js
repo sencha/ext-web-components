@@ -14,7 +14,10 @@ function (_Ext_parse_Symbol) {
   Ext_parse_symbol_Infix.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

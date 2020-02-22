@@ -4,7 +4,8 @@ export default class Ext_event_gesture_SingleTouch extends Ext_event_gesture_Rec
   static PROPERTIES() { return [
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_event_gesture_SingleTouch.PROPERTIES());

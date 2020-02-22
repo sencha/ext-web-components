@@ -26,7 +26,10 @@ function (_Ext_util_HashMap) {
       parameters: 'sender,key,value,old'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

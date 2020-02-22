@@ -15,7 +15,8 @@ export default class Ext_data_StoreMgr extends Ext_util_MixedCollection {
     {name:'clear', parameters:''},
     {name:'remove', parameters:'o,key'},
     {name:'replace', parameters:'key,old,new'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_data_StoreMgr.PROPERTIES());

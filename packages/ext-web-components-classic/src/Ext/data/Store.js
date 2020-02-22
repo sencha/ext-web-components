@@ -54,7 +54,8 @@ export default class Ext_data_Store extends Ext_data_ProxyStore {
     {name:'sort', parameters:'store'},
     {name:'update', parameters:'sender,record,operation,modifiedFieldNames,details'},
     {name:'write', parameters:'store,operation'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_data_Store.PROPERTIES());

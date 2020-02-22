@@ -14,7 +14,10 @@ function (_Ext_plugin_AbstractC) {
   Ext_grid_plugin_Clipboard.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

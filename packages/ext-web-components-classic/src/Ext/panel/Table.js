@@ -377,7 +377,8 @@ export default class Ext_panel_Table extends Ext_panel_Panel {
     {name:'unfloat', parameters:''},
     {name:'unlockcolumn', parameters:'sender,column'},
     {name:'viewready', parameters:'sender'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_panel_Table.PROPERTIES());

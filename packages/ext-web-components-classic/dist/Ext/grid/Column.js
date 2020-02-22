@@ -149,7 +149,10 @@ function (_Ext_grid_header_Cont) {
       parameters: 'sender,state'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

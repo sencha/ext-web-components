@@ -9,7 +9,8 @@ export default class Ext_exporter_Plugin extends Ext_plugin_Abstract {
     {name:'beforedocumentsave', parameters:'component,params'},
     {name:'dataready', parameters:'component,params'},
     {name:'documentsave', parameters:'component,params'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_exporter_Plugin.PROPERTIES());

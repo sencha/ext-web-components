@@ -1,4 +1,4 @@
-//Fri Feb 21 2020 19:00:32 GMT-0500 (Eastern Standard Time)
+//Fri Feb 21 2020 21:05:44 GMT-0500 (Eastern Standard Time)
 
 import {
   doProp,
@@ -245,6 +245,13 @@ export default class WebComponentsBaseComponent extends HTMLElement {
     me.A.ext = Ext.create(me.A.o);
     me.cmp = me.A.ext;
     me.ext = me.A.ext;
+
+    me.dispatchEvent(new CustomEvent('created', {
+       detail: {
+         cmp: me.A.ext,
+       }
+    }))
+
     this.doChildren(this);
 
     if (isApplication) {

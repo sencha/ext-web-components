@@ -213,7 +213,8 @@ export default class Ext_slider_MultiSlider extends Ext_form_field_Base {
     {name:'statesave', parameters:'sender,state'},
     {name:'validitychange', parameters:'sender,isValid'},
     {name:'writeablechange', parameters:'sender,Read'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_slider_MultiSlider.PROPERTIES());

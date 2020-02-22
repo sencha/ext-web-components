@@ -227,7 +227,8 @@ export default class Ext_ux_Multiselect extends Ext_form_FieldContainer {
     {name:'staterestore', parameters:'sender,state'},
     {name:'statesave', parameters:'sender,state'},
     {name:'validitychange', parameters:'sender,isValid'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_ux_Multiselect.PROPERTIES());

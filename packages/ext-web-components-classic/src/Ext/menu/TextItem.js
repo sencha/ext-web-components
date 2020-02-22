@@ -155,7 +155,8 @@ export default class Ext_menu_TextItem extends Ext_Component {
     {name:'staterestore', parameters:'sender,state'},
     {name:'statesave', parameters:'sender,state'},
     {name:'textchange', parameters:'sender,oldText,newText'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_menu_TextItem.PROPERTIES());

@@ -14,7 +14,10 @@ function (_Ext_app_bind_BaseBin) {
   Ext_app_bind_Multi.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

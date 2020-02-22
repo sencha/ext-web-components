@@ -14,7 +14,10 @@ function (_Ext_dd_DropZone) {
   Ext_ux_dd_CellFieldDropZone.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

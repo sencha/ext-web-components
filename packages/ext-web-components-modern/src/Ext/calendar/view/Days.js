@@ -179,7 +179,8 @@ export default class Ext_calendar_view_Days extends Ext_calendar_view_Base {
     {name:'validateeventresize', parameters:'sender,context'},
     {name:'valuechange', parameters:'sender,context'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_calendar_view_Days.PROPERTIES());

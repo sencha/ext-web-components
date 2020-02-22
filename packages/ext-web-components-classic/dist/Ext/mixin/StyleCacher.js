@@ -14,7 +14,10 @@ function (_Ext_Mixin) {
   Ext_mixin_StyleCacher.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

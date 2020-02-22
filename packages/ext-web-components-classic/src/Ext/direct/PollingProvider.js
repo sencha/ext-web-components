@@ -18,7 +18,8 @@ export default class Ext_direct_PollingProvider extends Ext_direct_JsonProvider 
     {name:'disconnect', parameters:'provider'},
     {name:'exception', parameters:'provider,e'},
     {name:'poll', parameters:'sender'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_direct_PollingProvider.PROPERTIES());

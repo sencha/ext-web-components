@@ -5,7 +5,8 @@ export default class Ext_event_gesture_Drag extends Ext_event_gesture_SingleTouc
     'minDistance',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_event_gesture_Drag.PROPERTIES());

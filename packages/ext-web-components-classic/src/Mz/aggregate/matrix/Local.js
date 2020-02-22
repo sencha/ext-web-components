@@ -46,7 +46,8 @@ export default class Mz_aggregate_matrix_Local extends Ext_pivot_matrix_Base {
     {name:'recordbuilt', parameters:'matrix,record,item'},
     {name:'start', parameters:'matrix'},
     {name:'storebuilt', parameters:'matrix,store'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Mz_aggregate_matrix_Local.PROPERTIES());

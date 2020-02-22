@@ -20,7 +20,8 @@ export default class Ext_data_TreeModel extends Ext_data_Model {
     'versionProperty',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_data_TreeModel.PROPERTIES());

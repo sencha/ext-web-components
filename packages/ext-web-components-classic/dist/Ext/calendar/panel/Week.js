@@ -215,7 +215,10 @@ function (_Ext_calendar_panel_D) {
       parameters: 'sender,context'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

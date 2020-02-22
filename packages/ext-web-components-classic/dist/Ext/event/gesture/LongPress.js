@@ -14,7 +14,10 @@ function (_Ext_event_gesture_Si) {
   Ext_event_gesture_LongPress.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

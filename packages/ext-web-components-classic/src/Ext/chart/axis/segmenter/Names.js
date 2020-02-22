@@ -5,7 +5,8 @@ export default class Ext_chart_axis_segmenter_Names extends Ext_chart_axis_segme
     'axis',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_chart_axis_segmenter_Names.PROPERTIES());

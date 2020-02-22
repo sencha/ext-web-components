@@ -59,7 +59,10 @@ function (_Ext_data_AbstractSto) {
       parameters: 'store,operation'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

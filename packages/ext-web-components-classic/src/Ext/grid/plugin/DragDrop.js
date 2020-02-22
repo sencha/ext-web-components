@@ -19,7 +19,8 @@ export default class Ext_grid_plugin_DragDrop extends Ext_plugin_Abstract {
   static EVENTS() { return [
     {name:'beforedrop', parameters:'node,data,overModel,dropPosition,dropHandlers'},
     {name:'drop', parameters:'node,data,overModel,dropPosition'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_grid_plugin_DragDrop.PROPERTIES());

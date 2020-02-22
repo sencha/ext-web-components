@@ -14,7 +14,10 @@ function (_Ext_draw_sprite_Rect) {
   Ext_chart_legend_sprite_Border.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

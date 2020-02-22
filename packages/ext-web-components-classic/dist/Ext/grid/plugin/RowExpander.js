@@ -20,7 +20,10 @@ function (_Ext_plugin_Abstract) {
       parameters: 'rowNode,record,expandRow'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

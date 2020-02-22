@@ -418,7 +418,8 @@ export default class Mz_pivot_Grid extends Ext_grid_Panel {
     {name:'unfloat', parameters:''},
     {name:'unlockcolumn', parameters:'sender,column'},
     {name:'viewready', parameters:'sender'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Mz_pivot_Grid.PROPERTIES());

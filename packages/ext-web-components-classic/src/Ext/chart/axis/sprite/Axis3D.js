@@ -71,7 +71,8 @@ export default class Ext_chart_axis_sprite_Axis3D extends Ext_chart_axis_sprite_
     'zIndex',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_chart_axis_sprite_Axis3D.PROPERTIES());

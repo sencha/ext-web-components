@@ -17,7 +17,8 @@ export default class Ext_exporter_file_ooxml_Relationships extends Ext_exporter_
     'tplNonAttributes',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_exporter_file_ooxml_Relationships.PROPERTIES());

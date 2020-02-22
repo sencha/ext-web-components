@@ -14,7 +14,10 @@ function (_Ext_Base) {
   Mz_aggregate_dimension_Item.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

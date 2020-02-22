@@ -10,7 +10,8 @@ export default class Ext_Direct extends Ext_Base {
     {name:'exception', parameters:'event,provider'},
     {name:'providerload', parameters:'url,provider'},
     {name:'providerloaderror', parameters:'url,error'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_Direct.PROPERTIES());

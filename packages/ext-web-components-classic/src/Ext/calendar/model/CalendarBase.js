@@ -5,7 +5,8 @@ export default class Ext_calendar_model_CalendarBase extends Ext_Mixin {
     'eventStoreDefaults',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_calendar_model_CalendarBase.PROPERTIES());

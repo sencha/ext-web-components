@@ -42,7 +42,8 @@ export default class Ext_chart_axis_Numeric3D extends Ext_chart_axis_Axis3D {
   static EVENTS() { return [
     {name:'rangechange', parameters:'axis,range,oldRange'},
     {name:'visiblerangechange', parameters:'axis,visibleRange'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_chart_axis_Numeric3D.PROPERTIES());

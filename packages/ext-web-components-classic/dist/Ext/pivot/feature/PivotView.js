@@ -14,7 +14,10 @@ function (_Ext_pivot_feature_Pi) {
   Ext_pivot_feature_PivotView.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

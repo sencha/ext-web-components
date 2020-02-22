@@ -101,7 +101,10 @@ function (_Ext_toolbar_Item) {
       parameters: 'sender,state'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

@@ -25,7 +25,8 @@ export default class Ext_GlobalEvents extends Ext_mixin_Observable {
     {name:'resumelayouts', parameters:''},
     {name:'routereject', parameters:'route'},
     {name:'show', parameters:'component'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_GlobalEvents.PROPERTIES());

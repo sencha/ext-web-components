@@ -9,7 +9,8 @@ export default class Ext_ux_event_Recorder extends Ext_ux_event_Driver {
     {name:'coalesce', parameters:'sender,eventDescriptor'},
     {name:'start', parameters:'sender'},
     {name:'stop', parameters:'sender'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_ux_event_Recorder.PROPERTIES());

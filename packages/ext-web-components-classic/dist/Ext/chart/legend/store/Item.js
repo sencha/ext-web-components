@@ -14,7 +14,10 @@ function (_Ext_data_Model) {
   Ext_chart_legend_store_Item.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

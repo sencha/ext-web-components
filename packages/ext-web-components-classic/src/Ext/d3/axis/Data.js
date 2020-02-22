@@ -12,7 +12,8 @@ export default class Ext_d3_axis_Data extends Ext_d3_axis_Axis {
     'title',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_d3_axis_Data.PROPERTIES());

@@ -14,7 +14,10 @@ function (_Ext_sparkline_Canvas) {
   Ext_sparkline_VmlCanvas.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

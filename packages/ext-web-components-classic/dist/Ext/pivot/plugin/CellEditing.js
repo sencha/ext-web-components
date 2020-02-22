@@ -32,7 +32,10 @@ function (_Ext_grid_plugin_Cell) {
       parameters: 'editor,context'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

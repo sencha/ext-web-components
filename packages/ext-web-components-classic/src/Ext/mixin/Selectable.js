@@ -16,7 +16,8 @@ export default class Ext_mixin_Selectable extends Ext_Mixin {
   ]};
   static EVENTS() { return [
     {name:'selectionchange', parameters:'sender,records'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_mixin_Selectable.PROPERTIES());

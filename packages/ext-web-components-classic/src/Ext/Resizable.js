@@ -23,7 +23,8 @@ export default class Ext_Resizable extends Ext_Base {
     {name:'beforeresize', parameters:'sender,width,height,e'},
     {name:'resize', parameters:'sender,width,height,e'},
     {name:'resizedrag', parameters:'sender,width,height,e'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_Resizable.PROPERTIES());

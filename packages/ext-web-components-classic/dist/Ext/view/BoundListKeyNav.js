@@ -17,7 +17,10 @@ function (_Ext_view_NavigationM) {
       parameters: 'event,keyEvent'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

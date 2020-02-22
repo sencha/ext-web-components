@@ -13,7 +13,8 @@ export default class Ext_tree_ViewDropZone extends Ext_view_DropZone {
     'overClass',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_tree_ViewDropZone.PROPERTIES());

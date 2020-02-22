@@ -22,7 +22,8 @@ export default class Ext_selection_TreeModel extends Ext_selection_RowModel {
     {name:'focuschange', parameters:'sender,oldFocused,newFocused'},
     {name:'select', parameters:'sender,record,index'},
     {name:'selectionchange', parameters:'sender,selected'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_selection_TreeModel.PROPERTIES());

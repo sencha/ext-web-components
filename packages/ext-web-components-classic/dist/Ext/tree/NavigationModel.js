@@ -20,7 +20,10 @@ function (_Ext_grid_NavigationM) {
       parameters: 'event'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

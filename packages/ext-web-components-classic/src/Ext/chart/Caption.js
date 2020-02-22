@@ -27,7 +27,8 @@ export default class Ext_chart_Caption extends Ext_Base {
     'weight',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_chart_Caption.PROPERTIES());

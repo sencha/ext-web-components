@@ -258,7 +258,8 @@ export default class Ext_grid_RowEditor extends Ext_form_Panel {
     {name:'titlerotationchange', parameters:'sender,newTitleRotation,oldTitleRotation'},
     {name:'unfloat', parameters:''},
     {name:'validitychange', parameters:'sender,valid'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_grid_RowEditor.PROPERTIES());

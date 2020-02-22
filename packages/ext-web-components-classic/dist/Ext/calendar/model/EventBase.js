@@ -14,7 +14,10 @@ function (_Ext_Mixin) {
   Ext_calendar_model_EventBase.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

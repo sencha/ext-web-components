@@ -5,7 +5,8 @@ export default class Ext_EventedBase extends Ext_Base {
     'listeners',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_EventedBase.PROPERTIES());

@@ -13,7 +13,8 @@ export default class Ext_app_Profile extends Ext_Base {
     'views',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_app_Profile.PROPERTIES());

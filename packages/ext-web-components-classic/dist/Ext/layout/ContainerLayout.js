@@ -14,7 +14,10 @@ function (_Ext_layout_Layout) {
   Ext_layout_ContainerLayout.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

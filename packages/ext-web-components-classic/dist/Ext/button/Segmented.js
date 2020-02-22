@@ -125,7 +125,10 @@ function (_Ext_container_Contai) {
       parameters: 'sender,button,isPressed'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

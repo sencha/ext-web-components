@@ -4,7 +4,8 @@ export default class Ext_dd_DDProxy extends Ext_dd_DD {
   static PROPERTIES() { return [
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_dd_DDProxy.PROPERTIES());

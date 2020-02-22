@@ -45,7 +45,8 @@ export default class Ext_pivot_matrix_Remote extends Ext_pivot_matrix_Base {
     {name:'requestexception', parameters:'matrix,response'},
     {name:'start', parameters:'matrix'},
     {name:'storebuilt', parameters:'matrix,store'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_pivot_matrix_Remote.PROPERTIES());

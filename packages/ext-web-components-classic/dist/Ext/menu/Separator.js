@@ -110,7 +110,10 @@ function (_Ext_menu_Item) {
       parameters: 'sender,oldText,newText'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

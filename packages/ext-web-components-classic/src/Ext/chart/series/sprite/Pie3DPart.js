@@ -56,7 +56,8 @@ export default class Ext_chart_series_sprite_Pie3DPart extends Ext_draw_sprite_P
     'zIndex',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_chart_series_sprite_Pie3DPart.PROPERTIES());

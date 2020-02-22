@@ -17,7 +17,10 @@ function (_Ext_layout_container) {
       parameters: 'scroller,newPosition'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

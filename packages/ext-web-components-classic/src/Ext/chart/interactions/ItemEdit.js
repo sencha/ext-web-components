@@ -15,7 +15,8 @@ export default class Ext_chart_interactions_ItemEdit extends Ext_chart_interacti
   static EVENTS() { return [
     {name:'beginitemedit', parameters:'chart,interaction,item'},
     {name:'enditemedit', parameters:'chart,interaction,item,target'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_chart_interactions_ItemEdit.PROPERTIES());

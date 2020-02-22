@@ -16,7 +16,8 @@ export default class Ext_data_writer_Xml extends Ext_data_writer_Writer {
     'writeRecordId',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_data_writer_Xml.PROPERTIES());

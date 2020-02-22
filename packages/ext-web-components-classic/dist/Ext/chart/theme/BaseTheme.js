@@ -14,7 +14,10 @@ function (_Ext_Base) {
   Ext_chart_theme_BaseTheme.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

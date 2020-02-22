@@ -14,7 +14,10 @@ function (_Ext_ux_ajax_Simlet) {
   Ext_ux_ajax_DataSimlet.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

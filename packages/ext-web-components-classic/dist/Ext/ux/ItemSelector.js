@@ -137,7 +137,10 @@ function (_Ext_ux_form_MultiSel) {
       parameters: 'sender,isValid'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

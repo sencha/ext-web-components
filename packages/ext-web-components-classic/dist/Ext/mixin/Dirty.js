@@ -17,7 +17,10 @@ function (_Ext_Base) {
       parameters: 'sender,dirty'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

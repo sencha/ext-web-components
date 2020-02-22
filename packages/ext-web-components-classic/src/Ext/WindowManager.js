@@ -4,7 +4,8 @@ export default class Ext_WindowManager extends Ext_ZIndexManager {
   static PROPERTIES() { return [
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_WindowManager.PROPERTIES());

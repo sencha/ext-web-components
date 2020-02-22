@@ -229,7 +229,8 @@ export default class Ext_panel_Panel extends Ext_container_Container {
     {name:'titlepositionchange', parameters:'sender,newTitlePosition,oldTitlePosition'},
     {name:'titlerotationchange', parameters:'sender,newTitleRotation,oldTitleRotation'},
     {name:'unfloat', parameters:''},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_panel_Panel.PROPERTIES());

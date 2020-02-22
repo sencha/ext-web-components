@@ -5,7 +5,8 @@ export default class Ext_app_bind_TemplateBinding extends Ext_app_bind_BaseBindi
     'single',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_app_bind_TemplateBinding.PROPERTIES());

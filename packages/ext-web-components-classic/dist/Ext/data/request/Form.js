@@ -14,7 +14,10 @@ function (_Ext_data_request_Bas) {
   Ext_data_request_Form.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

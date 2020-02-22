@@ -17,7 +17,10 @@ function (_Ext_state_Provider) {
       parameters: 'sender,key,value'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

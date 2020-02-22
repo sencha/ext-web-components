@@ -14,7 +14,10 @@ function (_Ext_data_summary_Bas) {
   Ext_data_summary_None.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

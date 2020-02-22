@@ -10,7 +10,8 @@ export default class Ext_layout_AnchorLayout extends Ext_layout_container_Auto {
     'reserveScrollbar',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_layout_AnchorLayout.PROPERTIES());

@@ -26,7 +26,8 @@ export default class Ext_Base extends WebComponentsBaseComponent {
         
 ]};
     static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
 ]};
     static getProperties(properties) {
         return properties.concat(Ext_Base.PROPERTIES)

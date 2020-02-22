@@ -14,7 +14,10 @@ function (_Ext_chart_grid_Horiz) {
   Ext_chart_grid_HorizontalGrid3D.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

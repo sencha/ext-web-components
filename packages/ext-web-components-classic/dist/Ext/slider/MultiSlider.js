@@ -134,7 +134,10 @@ function (_Ext_form_field_Base) {
       parameters: 'sender,Read'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

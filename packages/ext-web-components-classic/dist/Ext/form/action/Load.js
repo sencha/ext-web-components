@@ -14,7 +14,10 @@ function (_Ext_form_action_Acti) {
   Ext_form_action_Load.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

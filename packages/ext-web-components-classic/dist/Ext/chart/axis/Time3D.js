@@ -20,7 +20,10 @@ function (_Ext_chart_axis_Numer) {
       parameters: 'axis,visibleRange'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

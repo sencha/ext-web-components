@@ -12,7 +12,8 @@ export default class Ext_pivot_update_Increment extends Ext_pivot_update_Base {
   static EVENTS() { return [
     {name:'beforeupdate', parameters:'updater'},
     {name:'update', parameters:'updater'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_pivot_update_Increment.PROPERTIES());

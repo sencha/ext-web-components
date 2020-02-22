@@ -14,7 +14,10 @@ function (_Ext_pivot_filter_Bas) {
   Ext_pivot_filter_Label.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

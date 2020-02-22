@@ -14,7 +14,10 @@ function (_Ext_fx_animation_Wip) {
   Ext_fx_animation_WipeOut.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

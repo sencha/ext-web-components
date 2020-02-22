@@ -17,7 +17,10 @@ function (_Ext_d3_interaction_A) {
       parameters: 'interaction'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

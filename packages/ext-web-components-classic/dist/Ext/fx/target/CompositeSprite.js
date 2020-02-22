@@ -14,7 +14,10 @@ function (_Ext_fx_target_Sprite) {
   Ext_fx_target_CompositeSprite.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

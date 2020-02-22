@@ -14,7 +14,10 @@ function (_Ext_util_XTemplatePa) {
   Ext_util_XTemplateCompiler.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

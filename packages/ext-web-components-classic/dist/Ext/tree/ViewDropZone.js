@@ -14,7 +14,10 @@ function (_Ext_view_DropZone) {
   Ext_tree_ViewDropZone.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

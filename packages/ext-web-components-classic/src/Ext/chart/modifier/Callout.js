@@ -8,7 +8,8 @@ export default class Ext_chart_modifier_Callout extends Ext_draw_modifier_Modifi
     'upper',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_chart_modifier_Callout.PROPERTIES());

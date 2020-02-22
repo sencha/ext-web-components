@@ -119,7 +119,10 @@ function (_Ext_ux_colorpick_Sli) {
       parameters: 'sender,state'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

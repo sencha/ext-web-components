@@ -158,7 +158,10 @@ function (_Ext_dom_CompositeEle) {
       parameters: 'e,t'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

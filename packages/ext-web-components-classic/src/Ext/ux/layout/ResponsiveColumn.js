@@ -9,7 +9,8 @@ export default class Ext_ux_layout_ResponsiveColumn extends Ext_layout_container
     'states',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_ux_layout_ResponsiveColumn.PROPERTIES());

@@ -14,7 +14,10 @@ function (_Ext_data_schema_Asso) {
   Ext_data_schema_ManyToOne.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

@@ -14,7 +14,10 @@ function (_Ext_event_publisher_) {
   Ext_event_publisher_Focus.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

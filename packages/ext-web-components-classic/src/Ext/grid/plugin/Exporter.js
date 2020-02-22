@@ -9,7 +9,8 @@ export default class Ext_grid_plugin_Exporter extends Ext_grid_plugin_BaseExport
     {name:'beforedocumentsave', parameters:'grid,params'},
     {name:'dataready', parameters:'grid,params'},
     {name:'documentsave', parameters:'grid,params'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_grid_plugin_Exporter.PROPERTIES());

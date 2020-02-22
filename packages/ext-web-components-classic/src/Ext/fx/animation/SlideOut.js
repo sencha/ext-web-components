@@ -10,7 +10,8 @@ export default class Ext_fx_animation_SlideOut extends Ext_fx_animation_Slide {
     'out',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_fx_animation_SlideOut.PROPERTIES());

@@ -17,7 +17,10 @@ function (_Ext_data_proxy_WebSt) {
       parameters: 'sender,meta'
     }, {
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

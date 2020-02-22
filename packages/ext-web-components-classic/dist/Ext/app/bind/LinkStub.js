@@ -14,7 +14,10 @@ function (_Ext_app_bind_Stub) {
   Ext_app_bind_LinkStub.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

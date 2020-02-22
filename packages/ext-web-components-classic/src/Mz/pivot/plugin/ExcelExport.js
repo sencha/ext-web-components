@@ -9,7 +9,8 @@ export default class Mz_pivot_plugin_ExcelExport extends Ext_exporter_Plugin {
     {name:'beforedocumentsave', parameters:'pivotGrid,params'},
     {name:'dataready', parameters:'pivotGrid,params'},
     {name:'documentsave', parameters:'pivotGrid,params'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Mz_pivot_plugin_ExcelExport.PROPERTIES());

@@ -10,7 +10,8 @@ export default class Ext_chart_interactions_ItemInfo extends Ext_chart_interacti
   ]};
   static EVENTS() { return [
     {name:'show', parameters:'sender,item,panel'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_chart_interactions_ItemInfo.PROPERTIES());

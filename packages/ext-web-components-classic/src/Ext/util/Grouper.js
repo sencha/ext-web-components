@@ -12,7 +12,8 @@ export default class Ext_util_Grouper extends Ext_util_Sorter {
     'transform',
   ]};
   static EVENTS() { return [
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_util_Grouper.PROPERTIES());

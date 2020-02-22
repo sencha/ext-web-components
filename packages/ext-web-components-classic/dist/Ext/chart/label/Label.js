@@ -14,7 +14,10 @@ function (_Ext_draw_sprite_Text) {
   Ext_chart_label_Label.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

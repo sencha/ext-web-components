@@ -14,7 +14,10 @@ function (_Ext_draw_sprite_Spri) {
   Ext_draw_sprite_Text.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

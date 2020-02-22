@@ -188,7 +188,8 @@ export default class Ext_grid_rowedit_Editor extends Ext_dataview_ListItem {
     {name:'topchange', parameters:'sender,value,oldValue'},
     {name:'updatedata', parameters:'dataItem,newData'},
     {name:'widthchange', parameters:'sender,value,oldValue'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_grid_rowedit_Editor.PROPERTIES());

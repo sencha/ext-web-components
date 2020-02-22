@@ -23,7 +23,8 @@ export default class Ext_grid_Lockable extends Ext_Base {
     {name:'processcolumns', parameters:'lockedColumns,normalColumns'},
     {name:'unlockcolumn', parameters:'sender,column'},
     {name:'viewready', parameters:'sender'},
-    {name:'ready', parameters:'cmd,cmdAll'}
+    {name:'ready', parameters:'cmp,cmpObj'},
+    {name:'created', parameters:'cmp'}
   ]};
   static getProperties(properties) {
     properties = properties.concat(Ext_grid_Lockable.PROPERTIES());

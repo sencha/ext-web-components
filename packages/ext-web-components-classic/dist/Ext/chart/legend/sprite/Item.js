@@ -14,7 +14,10 @@ function (_Ext_draw_sprite_Comp) {
   Ext_chart_legend_sprite_Item.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

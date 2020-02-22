@@ -14,7 +14,10 @@ function (_Ext_fx_animation_Sli) {
   Ext_fx_animation_SlideOut.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 

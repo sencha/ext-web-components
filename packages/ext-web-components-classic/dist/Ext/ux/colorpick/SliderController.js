@@ -14,7 +14,10 @@ function (_Ext_app_ViewControll) {
   Ext_ux_colorpick_SliderController.EVENTS = function EVENTS() {
     return [{
       name: 'ready',
-      parameters: 'cmd,cmdAll'
+      parameters: 'cmp,cmpObj'
+    }, {
+      name: 'created',
+      parameters: 'cmp'
     }];
   };
 
