@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Sat Feb 22 2020 15:19:49 GMT-0500 (Eastern Standard Time)
+//Sun Feb 23 2020 12:16:40 GMT-0500 (Eastern Standard Time)
 import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildToolbar, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var WebComponentsBaseComponent =
@@ -550,12 +550,17 @@ function (_HTMLElement) {
               try {
                 propertyVal = JSON.parse(newVal);
               } catch (e) {}
-            } //console.log(propertyVal)
-            //console.log(this.A.ext.xtype + ' ' + method)
-            //console.log(propertyVal)
+            }
 
-
-            this.A.ext[method](propertyVal);
+            if ((this.A.ext.xtype == 'calendar-day' || this.A.ext.xtype == 'calendar-week' || this.A.ext.xtype == 'calendar-month') && method == 'setValue') {
+              //console.log('here')
+              //console.log(propertyVal)
+              //console.log(this.A.ext.xtype + ' ' + method)
+              //console.log(propertyVal)
+              this.A.ext[method](new Date(propertyVal));
+            } else {
+              this.A.ext[method](propertyVal);
+            }
           }
         } else {
           ischanged = false;
