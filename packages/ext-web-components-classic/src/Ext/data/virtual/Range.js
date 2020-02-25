@@ -11,6 +11,7 @@ export default class Ext_data_virtual_Range extends Ext_data_Range {
     'scope',
     'store',
     'trailingBufferZone',
+    'waitTimeout',
   ]};
   static EVENTS() { return [
     {name:'ready', parameters:'cmp,cmpObj'},

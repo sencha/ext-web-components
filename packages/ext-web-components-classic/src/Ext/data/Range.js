@@ -6,6 +6,7 @@ export default class Ext_data_Range extends Ext_Base {
     'buffer',
     'end',
     'store',
+    'waitTimeout',
   ]};
   static EVENTS() { return [
     {name:'ready', parameters:'cmp,cmpObj'},

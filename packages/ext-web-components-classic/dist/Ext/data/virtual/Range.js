@@ -8,7 +8,7 @@ function (_Ext_data_Range) {
   _inheritsLoose(Ext_data_virtual_Range, _Ext_data_Range);
 
   Ext_data_virtual_Range.PROPERTIES = function PROPERTIES() {
-    return ['begin', 'buffer', 'callback', 'end', 'leadingBufferZone', 'prefetch', 'scope', 'store', 'trailingBufferZone'];
+    return ['begin', 'buffer', 'callback', 'end', 'leadingBufferZone', 'prefetch', 'scope', 'store', 'trailingBufferZone', 'waitTimeout'];
   };
 
   Ext_data_virtual_Range.EVENTS = function EVENTS() {
