@@ -8,7 +8,7 @@ function (_Ext_chart_series_Car) {
   _inheritsLoose(Ext_chart_series_Line, _Ext_chart_series_Car);
 
   Ext_chart_series_Line.PROPERTIES = function PROPERTIES() {
-    return ['animation', 'background', 'bind', 'chart', 'colors', 'controller', 'curve', 'defaultListenerScope', 'fill', 'hidden', 'highlight', 'highlightCfg', 'itemInstancing', 'label', 'labelOverflowPadding', 'listeners', 'marker', 'markerSubStyle', 'nameable', 'nullStyle', 'overlaySurface', 'publishes', 'reference', 'renderer', 'selectionTolerance', 'session', 'shareableName', 'showInLegend', 'showMarkers', 'store', 'style', 'subStyle', 'surface', 'theme', 'themeStyle', 'title', 'tooltip', 'triggerAfterDraw', 'twoWayBindable', 'useDarkerStrokeColor', 'viewModel', 'xAxis', 'xField', 'yAxis', 'yField'];
+    return ['animation', 'background', 'bind', 'chart', 'colors', 'controller', 'curve', 'defaultListenerScope', 'fill', 'hidden', 'highlight', 'highlightCfg', 'itemInstancing', 'label', 'labelOverflowPadding', 'listeners', 'marker', 'markerSubStyle', 'nameable', 'nullStyle', 'overlaySurface', 'publishes', 'reference', 'renderer', 'selectionTolerance', 'session', 'shareableName', 'showInLegend', 'showMarkers', 'store', 'style', 'style', 'subStyle', 'surface', 'theme', 'themeStyle', 'title', 'tooltip', 'triggerAfterDraw', 'twoWayBindable', 'useDarkerStrokeColor', 'viewModel', 'xAxis', 'xField', 'yAxis', 'yField'];
   };
 
   Ext_chart_series_Line.EVENTS = function EVENTS() {

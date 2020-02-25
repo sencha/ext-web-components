@@ -33,6 +33,7 @@ export default class Ext_chart_series_Line extends Ext_chart_series_Cartesian {
     'showMarkers',
     'store',
     'style',
+    'style',
     'subStyle',
     'surface',
     'theme',

@@ -8,7 +8,7 @@ function (_Ext_Base) {
   _inheritsLoose(Ext_data_Range, _Ext_Base);
 
   Ext_data_Range.PROPERTIES = function PROPERTIES() {
-    return ['begin', 'buffer', 'end', 'store'];
+    return ['begin', 'buffer', 'end', 'store', 'waitTimeout'];
   };
 
   Ext_data_Range.EVENTS = function EVENTS() {
