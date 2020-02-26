@@ -87,6 +87,7 @@ import EWCCelleditor from './dist/ext-celleditor.component.js';export { EWCCelle
 import EWCActioncolumn from './dist/ext-actioncolumn.component.js';export { EWCActioncolumn };
 import EWCBooleancolumn from './dist/ext-booleancolumn.component.js';export { EWCBooleancolumn };
 import EWCCheckcolumn from './dist/ext-checkcolumn.component.js';export { EWCCheckcolumn };
+import EWCGridcolumn from './dist/ext-gridcolumn.component.js';export { EWCGridcolumn };
 import EWCDatecolumn from './dist/ext-datecolumn.component.js';export { EWCDatecolumn };
 import EWCNumbercolumn from './dist/ext-numbercolumn.component.js';export { EWCNumbercolumn };
 import EWCRownumberer from './dist/ext-rownumberer.component.js';export { EWCRownumberer };
