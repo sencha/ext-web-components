@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_drag_Source from '../../../Ext/drag/Source.js';
 
-var Ext_calendar_dd_DaysBodySource =
-/*#__PURE__*/
-function (_Ext_drag_Source) {
+var Ext_calendar_dd_DaysBodySource = /*#__PURE__*/function (_Ext_drag_Source) {
   _inheritsLoose(Ext_calendar_dd_DaysBodySource, _Ext_drag_Source);
 
   Ext_calendar_dd_DaysBodySource.PROPERTIES = function PROPERTIES() {

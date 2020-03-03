@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_Time from './Ext/field/Time.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCTimefield =
-/*#__PURE__*/
-function (_Ext_field_Time) {
+var EWCTimefield = /*#__PURE__*/function (_Ext_field_Time) {
   _inheritsLoose(EWCTimefield, _Ext_field_Time);
 
   function EWCTimefield() {

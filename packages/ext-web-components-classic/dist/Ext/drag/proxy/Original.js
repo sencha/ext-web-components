@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_drag_proxy_None from '../../../Ext/drag/proxy/None.js';
 
-var Ext_drag_proxy_Original =
-/*#__PURE__*/
-function (_Ext_drag_proxy_None) {
+var Ext_drag_proxy_Original = /*#__PURE__*/function (_Ext_drag_proxy_None) {
   _inheritsLoose(Ext_drag_proxy_Original, _Ext_drag_proxy_None);
 
   Ext_drag_proxy_Original.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ux_event_Driver from '../../../Ext/ux/event/Driver.js';
 
-var Ext_ux_event_Player =
-/*#__PURE__*/
-function (_Ext_ux_event_Driver) {
+var Ext_ux_event_Player = /*#__PURE__*/function (_Ext_ux_event_Driver) {
   _inheritsLoose(Ext_ux_event_Player, _Ext_ux_event_Driver);
 
   Ext_ux_event_Player.PROPERTIES = function PROPERTIES() {

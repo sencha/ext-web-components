@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_menu_Separator from './Ext/menu/Separator.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCMenuseparator =
-/*#__PURE__*/
-function (_Ext_menu_Separator) {
+var EWCMenuseparator = /*#__PURE__*/function (_Ext_menu_Separator) {
   _inheritsLoose(EWCMenuseparator, _Ext_menu_Separator);
 
   function EWCMenuseparator() {

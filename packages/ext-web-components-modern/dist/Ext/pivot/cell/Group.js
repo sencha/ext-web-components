@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_pivot_cell_Cell from '../../../Ext/pivot/cell/Cell.js';
 
-var Ext_pivot_cell_Group =
-/*#__PURE__*/
-function (_Ext_pivot_cell_Cell) {
+var Ext_pivot_cell_Group = /*#__PURE__*/function (_Ext_pivot_cell_Cell) {
   _inheritsLoose(Ext_pivot_cell_Group, _Ext_pivot_cell_Cell);
 
   Ext_pivot_cell_Group.PROPERTIES = function PROPERTIES() {

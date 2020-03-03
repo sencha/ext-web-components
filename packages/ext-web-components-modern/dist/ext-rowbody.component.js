@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_RowBody from './Ext/grid/RowBody.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCRowbody =
-/*#__PURE__*/
-function (_Ext_grid_RowBody) {
+var EWCRowbody = /*#__PURE__*/function (_Ext_grid_RowBody) {
   _inheritsLoose(EWCRowbody, _Ext_grid_RowBody);
 
   function EWCRowbody() {

@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ColorPalette from './Ext/ColorPalette.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCColorpicker =
-/*#__PURE__*/
-function (_Ext_ColorPalette) {
+var EWCColorpicker = /*#__PURE__*/function (_Ext_ColorPalette) {
   _inheritsLoose(EWCColorpicker, _Ext_ColorPalette);
 
   function EWCColorpicker() {

@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_CheckboxGroup from './Ext/form/CheckboxGroup.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCCheckboxgroup =
-/*#__PURE__*/
-function (_Ext_form_CheckboxGro) {
+var EWCCheckboxgroup = /*#__PURE__*/function (_Ext_form_CheckboxGro) {
   _inheritsLoose(EWCCheckboxgroup, _Ext_form_CheckboxGro);
 
   function EWCCheckboxgroup() {

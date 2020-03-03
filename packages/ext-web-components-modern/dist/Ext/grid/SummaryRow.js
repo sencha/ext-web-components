@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_Row from '../../Ext/grid/Row.js';
 
-var Ext_grid_SummaryRow =
-/*#__PURE__*/
-function (_Ext_grid_Row) {
+var Ext_grid_SummaryRow = /*#__PURE__*/function (_Ext_grid_Row) {
   _inheritsLoose(Ext_grid_SummaryRow, _Ext_grid_Row);
 
   Ext_grid_SummaryRow.PROPERTIES = function PROPERTIES() {

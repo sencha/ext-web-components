@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_sparkline_Bar from './Ext/sparkline/Bar.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCSparklinebar =
-/*#__PURE__*/
-function (_Ext_sparkline_Bar) {
+var EWCSparklinebar = /*#__PURE__*/function (_Ext_sparkline_Bar) {
   _inheritsLoose(EWCSparklinebar, _Ext_sparkline_Bar);
 
   function EWCSparklinebar() {

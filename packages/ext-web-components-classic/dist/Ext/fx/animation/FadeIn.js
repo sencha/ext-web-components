@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_fx_animation_Abstract from '../../../Ext/fx/animation/Abstract.js';
 
-var Ext_fx_animation_FadeIn =
-/*#__PURE__*/
-function (_Ext_fx_animation_Abs) {
+var Ext_fx_animation_FadeIn = /*#__PURE__*/function (_Ext_fx_animation_Abs) {
   _inheritsLoose(Ext_fx_animation_FadeIn, _Ext_fx_animation_Abs);
 
   Ext_fx_animation_FadeIn.PROPERTIES = function PROPERTIES() {

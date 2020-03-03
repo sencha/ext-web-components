@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Dialog from '../Ext/Dialog.js';
 
-var Ext_MessageBox =
-/*#__PURE__*/
-function (_Ext_Dialog) {
+var Ext_MessageBox = /*#__PURE__*/function (_Ext_Dialog) {
   _inheritsLoose(Ext_MessageBox, _Ext_Dialog);
 
   Ext_MessageBox.PROPERTIES = function PROPERTIES() {

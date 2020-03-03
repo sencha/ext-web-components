@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_Date from '../../Ext/field/Date.js';
 
-var Ext_form_DatePickerNative =
-/*#__PURE__*/
-function (_Ext_field_Date) {
+var Ext_form_DatePickerNative = /*#__PURE__*/function (_Ext_field_Date) {
   _inheritsLoose(Ext_form_DatePickerNative, _Ext_field_Date);
 
   Ext_form_DatePickerNative.PROPERTIES = function PROPERTIES() {

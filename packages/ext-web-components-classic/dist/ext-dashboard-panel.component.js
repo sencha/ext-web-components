@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dashboard_Panel from './Ext/dashboard/Panel.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCDashboard_panel =
-/*#__PURE__*/
-function (_Ext_dashboard_Panel) {
+var EWCDashboard_panel = /*#__PURE__*/function (_Ext_dashboard_Panel) {
   _inheritsLoose(EWCDashboard_panel, _Ext_dashboard_Panel);
 
   function EWCDashboard_panel() {

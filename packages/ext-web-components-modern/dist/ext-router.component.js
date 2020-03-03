@@ -5,9 +5,7 @@ import ElementParser from './runtime/ElementParser.js';
 import { //doProp,
 //filterProp,
 isMenu, isRenderercell, isParentGridAndChildColumn, isTooltip, isPlugin } from './runtime/util.js';
-export var ExtRouter =
-/*#__PURE__*/
-function (_WebComponentsBaseCom) {
+export var ExtRouter = /*#__PURE__*/function (_WebComponentsBaseCom) {
   _inheritsLoose(ExtRouter, _WebComponentsBaseCom);
 
   _createClass(ExtRouter, [{
@@ -204,9 +202,7 @@ function _getRoutes(items) {
   return window._routes;
 }
 
-export var Route =
-/*#__PURE__*/
-function () {
+export var Route = /*#__PURE__*/function () {
   function Route(hash, hashlower, component, defaultRoute) {
     try {
       if (!hash) {
@@ -233,9 +229,7 @@ function () {
 
   return Route;
 }();
-export var Router =
-/*#__PURE__*/
-function () {
+export var Router = /*#__PURE__*/function () {
   function Router(routes) {
     window.router = this;
 

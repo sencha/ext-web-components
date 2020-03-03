@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_Panel from '../../Ext/field/Panel.js';
 
-var Ext_form_FormPanel =
-/*#__PURE__*/
-function (_Ext_field_Panel) {
+var Ext_form_FormPanel = /*#__PURE__*/function (_Ext_field_Panel) {
   _inheritsLoose(Ext_form_FormPanel, _Ext_field_Panel);
 
   Ext_form_FormPanel.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_exporter_text_CSV from '../../../Ext/exporter/text/CSV.js';
 
-var Ext_exporter_text_TSV =
-/*#__PURE__*/
-function (_Ext_exporter_text_CS) {
+var Ext_exporter_text_TSV = /*#__PURE__*/function (_Ext_exporter_text_CS) {
   _inheritsLoose(Ext_exporter_text_TSV, _Ext_exporter_text_CS);
 
   Ext_exporter_text_TSV.PROPERTIES = function PROPERTIES() {

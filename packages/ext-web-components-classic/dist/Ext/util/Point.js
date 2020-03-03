@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_util_Region from '../../Ext/util/Region.js';
 
-var Ext_util_Point =
-/*#__PURE__*/
-function (_Ext_util_Region) {
+var Ext_util_Point = /*#__PURE__*/function (_Ext_util_Region) {
   _inheritsLoose(Ext_util_Point, _Ext_util_Region);
 
   Ext_util_Point.PROPERTIES = function PROPERTIES() {

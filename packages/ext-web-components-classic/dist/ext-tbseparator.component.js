@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_toolbar_Separator from './Ext/toolbar/Separator.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCTbseparator =
-/*#__PURE__*/
-function (_Ext_toolbar_Separato) {
+var EWCTbseparator = /*#__PURE__*/function (_Ext_toolbar_Separato) {
   _inheritsLoose(EWCTbseparator, _Ext_toolbar_Separato);
 
   function EWCTbseparator() {

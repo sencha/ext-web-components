@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Evented from '../Ext/Evented.js';
 
-var Ext_Gadget =
-/*#__PURE__*/
-function (_Ext_Evented) {
+var Ext_Gadget = /*#__PURE__*/function (_Ext_Evented) {
   _inheritsLoose(Ext_Gadget, _Ext_Evented);
 
   Ext_Gadget.PROPERTIES = function PROPERTIES() {

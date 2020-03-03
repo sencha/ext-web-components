@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_fx_runner_Css from '../Ext/fx/runner/Css.js';
 
-var Ext_Animator =
-/*#__PURE__*/
-function (_Ext_fx_runner_Css) {
+var Ext_Animator = /*#__PURE__*/function (_Ext_fx_runner_Css) {
   _inheritsLoose(Ext_Animator, _Ext_fx_runner_Css);
 
   Ext_Animator.PROPERTIES = function PROPERTIES() {

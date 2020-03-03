@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_data_reader_Json from '../../Ext/data/reader/Json.js';
 
-var Ext_data_ArrayReader =
-/*#__PURE__*/
-function (_Ext_data_reader_Json) {
+var Ext_data_ArrayReader = /*#__PURE__*/function (_Ext_data_reader_Json) {
   _inheritsLoose(Ext_data_ArrayReader, _Ext_data_reader_Json);
 
   Ext_data_ArrayReader.PROPERTIES = function PROPERTIES() {

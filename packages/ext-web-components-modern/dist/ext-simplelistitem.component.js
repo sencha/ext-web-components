@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_component_SimpleListItem from './Ext/dataview/component/SimpleListItem.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCSimplelistitem =
-/*#__PURE__*/
-function (_Ext_dataview_compone) {
+var EWCSimplelistitem = /*#__PURE__*/function (_Ext_dataview_compone) {
   _inheritsLoose(EWCSimplelistitem, _Ext_dataview_compone);
 
   function EWCSimplelistitem() {

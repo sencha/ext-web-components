@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_AbstractComponent from './Ext/AbstractComponent.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCComponent =
-/*#__PURE__*/
-function (_Ext_AbstractComponen) {
+var EWCComponent = /*#__PURE__*/function (_Ext_AbstractComponen) {
   _inheritsLoose(EWCComponent, _Ext_AbstractComponen);
 
   function EWCComponent() {

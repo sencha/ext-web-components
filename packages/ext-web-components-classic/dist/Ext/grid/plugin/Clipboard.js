@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_plugin_AbstractClipboard from '../../../Ext/plugin/AbstractClipboard.js';
 
-var Ext_grid_plugin_Clipboard =
-/*#__PURE__*/
-function (_Ext_plugin_AbstractC) {
+var Ext_grid_plugin_Clipboard = /*#__PURE__*/function (_Ext_plugin_AbstractC) {
   _inheritsLoose(Ext_grid_plugin_Clipboard, _Ext_plugin_AbstractC);
 
   Ext_grid_plugin_Clipboard.PROPERTIES = function PROPERTIES() {

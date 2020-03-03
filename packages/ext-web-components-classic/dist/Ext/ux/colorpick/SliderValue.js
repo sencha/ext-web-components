@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ux_colorpick_Slider from '../../../Ext/ux/colorpick/Slider.js';
 
-var Ext_ux_colorpick_SliderValue =
-/*#__PURE__*/
-function (_Ext_ux_colorpick_Sli) {
+var Ext_ux_colorpick_SliderValue = /*#__PURE__*/function (_Ext_ux_colorpick_Sli) {
   _inheritsLoose(Ext_ux_colorpick_SliderValue, _Ext_ux_colorpick_Sli);
 
   Ext_ux_colorpick_SliderValue.PROPERTIES = function PROPERTIES() {

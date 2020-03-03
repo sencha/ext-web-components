@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_menu_CheckItem from '../../Ext/menu/CheckItem.js';
 
-var Ext_menu_RadioItem =
-/*#__PURE__*/
-function (_Ext_menu_CheckItem) {
+var Ext_menu_RadioItem = /*#__PURE__*/function (_Ext_menu_CheckItem) {
   _inheritsLoose(Ext_menu_RadioItem, _Ext_menu_CheckItem);
 
   Ext_menu_RadioItem.PROPERTIES = function PROPERTIES() {

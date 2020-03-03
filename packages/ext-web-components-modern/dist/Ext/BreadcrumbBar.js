@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Toolbar from '../Ext/Toolbar.js';
 
-var Ext_BreadcrumbBar =
-/*#__PURE__*/
-function (_Ext_Toolbar) {
+var Ext_BreadcrumbBar = /*#__PURE__*/function (_Ext_Toolbar) {
   _inheritsLoose(Ext_BreadcrumbBar, _Ext_Toolbar);
 
   Ext_BreadcrumbBar.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_draw_sprite_Sector from '../../../../Ext/draw/sprite/Sector.js';
 
-var Ext_chart_series_sprite_PieSlice =
-/*#__PURE__*/
-function (_Ext_draw_sprite_Sect) {
+var Ext_chart_series_sprite_PieSlice = /*#__PURE__*/function (_Ext_draw_sprite_Sect) {
   _inheritsLoose(Ext_chart_series_sprite_PieSlice, _Ext_draw_sprite_Sect);
 
   Ext_chart_series_sprite_PieSlice.PROPERTIES = function PROPERTIES() {

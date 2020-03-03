@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_action_Submit from '../../../Ext/form/action/Submit.js';
 
-var Ext_form_action_DirectSubmit =
-/*#__PURE__*/
-function (_Ext_form_action_Subm) {
+var Ext_form_action_DirectSubmit = /*#__PURE__*/function (_Ext_form_action_Subm) {
   _inheritsLoose(Ext_form_action_DirectSubmit, _Ext_form_action_Subm);
 
   Ext_form_action_DirectSubmit.PROPERTIES = function PROPERTIES() {

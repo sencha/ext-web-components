@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_plugin_Abstract from '../../../Ext/plugin/Abstract.js';
 
-var Mz_pivot_plugin_Configurator =
-/*#__PURE__*/
-function (_Ext_plugin_Abstract) {
+var Mz_pivot_plugin_Configurator = /*#__PURE__*/function (_Ext_plugin_Abstract) {
   _inheritsLoose(Mz_pivot_plugin_Configurator, _Ext_plugin_Abstract);
 
   Mz_pivot_plugin_Configurator.PROPERTIES = function PROPERTIES() {

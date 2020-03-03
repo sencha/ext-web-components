@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_calendar_panel_Week from './Ext/calendar/panel/Week.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCCalendar_week =
-/*#__PURE__*/
-function (_Ext_calendar_panel_W) {
+var EWCCalendar_week = /*#__PURE__*/function (_Ext_calendar_panel_W) {
   _inheritsLoose(EWCCalendar_week, _Ext_calendar_panel_W);
 
   function EWCCalendar_week() {

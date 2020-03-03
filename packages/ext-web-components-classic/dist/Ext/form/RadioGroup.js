@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_CheckboxGroup from '../../Ext/form/CheckboxGroup.js';
 
-var Ext_form_RadioGroup =
-/*#__PURE__*/
-function (_Ext_form_CheckboxGro) {
+var Ext_form_RadioGroup = /*#__PURE__*/function (_Ext_form_CheckboxGro) {
   _inheritsLoose(Ext_form_RadioGroup, _Ext_form_CheckboxGro);
 
   Ext_form_RadioGroup.PROPERTIES = function PROPERTIES() {

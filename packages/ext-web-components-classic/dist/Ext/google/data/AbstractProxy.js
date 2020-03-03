@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_data_proxy_Server from '../../../Ext/data/proxy/Server.js';
 
-var Ext_google_data_AbstractProxy =
-/*#__PURE__*/
-function (_Ext_data_proxy_Serve) {
+var Ext_google_data_AbstractProxy = /*#__PURE__*/function (_Ext_data_proxy_Serve) {
   _inheritsLoose(Ext_google_data_AbstractProxy, _Ext_data_proxy_Serve);
 
   Ext_google_data_AbstractProxy.PROPERTIES = function PROPERTIES() {

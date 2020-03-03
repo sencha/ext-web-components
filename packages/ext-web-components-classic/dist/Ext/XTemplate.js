@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Template from '../Ext/Template.js';
 
-var Ext_XTemplate =
-/*#__PURE__*/
-function (_Ext_Template) {
+var Ext_XTemplate = /*#__PURE__*/function (_Ext_Template) {
   _inheritsLoose(Ext_XTemplate, _Ext_Template);
 
   Ext_XTemplate.PROPERTIES = function PROPERTIES() {

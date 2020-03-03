@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_DataItem from '../../Ext/dataview/DataItem.js';
 
-var Ext_dataview_ListItem =
-/*#__PURE__*/
-function (_Ext_dataview_DataIte) {
+var Ext_dataview_ListItem = /*#__PURE__*/function (_Ext_dataview_DataIte) {
   _inheritsLoose(Ext_dataview_ListItem, _Ext_dataview_DataIte);
 
   Ext_dataview_ListItem.PROPERTIES = function PROPERTIES() {

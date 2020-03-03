@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_cell_Text from './Ext/grid/cell/Text.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCTextcell =
-/*#__PURE__*/
-function (_Ext_grid_cell_Text) {
+var EWCTextcell = /*#__PURE__*/function (_Ext_grid_cell_Text) {
   _inheritsLoose(EWCTextcell, _Ext_grid_cell_Text);
 
   function EWCTextcell() {

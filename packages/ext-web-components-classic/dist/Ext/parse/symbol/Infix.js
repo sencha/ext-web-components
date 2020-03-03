@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_parse_Symbol from '../../../Ext/parse/Symbol.js';
 
-var Ext_parse_symbol_Infix =
-/*#__PURE__*/
-function (_Ext_parse_Symbol) {
+var Ext_parse_symbol_Infix = /*#__PURE__*/function (_Ext_parse_Symbol) {
   _inheritsLoose(Ext_parse_symbol_Infix, _Ext_parse_Symbol);
 
   Ext_parse_symbol_Infix.PROPERTIES = function PROPERTIES() {

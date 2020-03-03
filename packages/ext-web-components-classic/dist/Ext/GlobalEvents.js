@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_mixin_Observable from '../Ext/mixin/Observable.js';
 
-var Ext_GlobalEvents =
-/*#__PURE__*/
-function (_Ext_mixin_Observable) {
+var Ext_GlobalEvents = /*#__PURE__*/function (_Ext_mixin_Observable) {
   _inheritsLoose(Ext_GlobalEvents, _Ext_mixin_Observable);
 
   Ext_GlobalEvents.PROPERTIES = function PROPERTIES() {

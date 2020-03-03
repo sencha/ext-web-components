@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_data_Range from '../../../Ext/data/Range.js';
 
-var Ext_data_virtual_Range =
-/*#__PURE__*/
-function (_Ext_data_Range) {
+var Ext_data_virtual_Range = /*#__PURE__*/function (_Ext_data_Range) {
   _inheritsLoose(Ext_data_virtual_Range, _Ext_data_Range);
 
   Ext_data_virtual_Range.PROPERTIES = function PROPERTIES() {

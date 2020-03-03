@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_menu_SortDesc from './Ext/grid/menu/SortDesc.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCGridsortdescmenuitem =
-/*#__PURE__*/
-function (_Ext_grid_menu_SortDe) {
+var EWCGridsortdescmenuitem = /*#__PURE__*/function (_Ext_grid_menu_SortDe) {
   _inheritsLoose(EWCGridsortdescmenuitem, _Ext_grid_menu_SortDe);
 
   function EWCGridsortdescmenuitem() {

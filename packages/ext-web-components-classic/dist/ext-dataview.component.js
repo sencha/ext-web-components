@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_DataView from './Ext/DataView.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCDataview =
-/*#__PURE__*/
-function (_Ext_DataView) {
+var EWCDataview = /*#__PURE__*/function (_Ext_DataView) {
   _inheritsLoose(EWCDataview, _Ext_DataView);
 
   function EWCDataview() {

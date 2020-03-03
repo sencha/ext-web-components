@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_fx_animation_Pop from '../../../Ext/fx/animation/Pop.js';
 
-var Ext_fx_animation_PopOut =
-/*#__PURE__*/
-function (_Ext_fx_animation_Pop) {
+var Ext_fx_animation_PopOut = /*#__PURE__*/function (_Ext_fx_animation_Pop) {
   _inheritsLoose(Ext_fx_animation_PopOut, _Ext_fx_animation_Pop);
 
   Ext_fx_animation_PopOut.PROPERTIES = function PROPERTIES() {

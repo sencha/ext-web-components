@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_listswiper_Item from './Ext/dataview/listswiper/Item.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCListswiperitem =
-/*#__PURE__*/
-function (_Ext_dataview_listswi) {
+var EWCListswiperitem = /*#__PURE__*/function (_Ext_dataview_listswi) {
   _inheritsLoose(EWCListswiperitem, _Ext_dataview_listswi);
 
   function EWCListswiperitem() {

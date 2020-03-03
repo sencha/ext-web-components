@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_draw_sprite_Ellipse from '../../../Ext/draw/sprite/Ellipse.js';
 
-var Ext_draw_sprite_EllipticalArc =
-/*#__PURE__*/
-function (_Ext_draw_sprite_Elli) {
+var Ext_draw_sprite_EllipticalArc = /*#__PURE__*/function (_Ext_draw_sprite_Elli) {
   _inheritsLoose(Ext_draw_sprite_EllipticalArc, _Ext_draw_sprite_Elli);
 
   Ext_draw_sprite_EllipticalArc.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_layout_container_ColumnSplitter from './Ext/layout/container/ColumnSplitter.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCColumnsplitter =
-/*#__PURE__*/
-function (_Ext_layout_container) {
+var EWCColumnsplitter = /*#__PURE__*/function (_Ext_layout_container) {
   _inheritsLoose(EWCColumnsplitter, _Ext_layout_container);
 
   function EWCColumnsplitter() {

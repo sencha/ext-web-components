@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_Field from '../../Ext/field/Field.js';
 
-var Ext_form_Display =
-/*#__PURE__*/
-function (_Ext_field_Field) {
+var Ext_form_Display = /*#__PURE__*/function (_Ext_field_Field) {
   _inheritsLoose(Ext_form_Display, _Ext_field_Field);
 
   Ext_form_Display.PROPERTIES = function PROPERTIES() {

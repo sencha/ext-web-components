@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_column_Number from '../../../Ext/grid/column/Number.js';
 
-var Ext_grid_column_RowNumberer =
-/*#__PURE__*/
-function (_Ext_grid_column_Numb) {
+var Ext_grid_column_RowNumberer = /*#__PURE__*/function (_Ext_grid_column_Numb) {
   _inheritsLoose(Ext_grid_column_RowNumberer, _Ext_grid_column_Numb);
 
   Ext_grid_column_RowNumberer.PROPERTIES = function PROPERTIES() {

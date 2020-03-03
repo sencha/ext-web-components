@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dashboard_Column from './Ext/dashboard/Column.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCDashboard_column =
-/*#__PURE__*/
-function (_Ext_dashboard_Column) {
+var EWCDashboard_column = /*#__PURE__*/function (_Ext_dashboard_Column) {
   _inheritsLoose(EWCDashboard_column, _Ext_dashboard_Column);
 
   function EWCDashboard_column() {

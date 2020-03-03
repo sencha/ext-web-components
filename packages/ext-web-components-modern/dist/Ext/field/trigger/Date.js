@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_trigger_Expand from '../../../Ext/field/trigger/Expand.js';
 
-var Ext_field_trigger_Date =
-/*#__PURE__*/
-function (_Ext_field_trigger_Ex) {
+var Ext_field_trigger_Date = /*#__PURE__*/function (_Ext_field_trigger_Ex) {
   _inheritsLoose(Ext_field_trigger_Date, _Ext_field_trigger_Ex);
 
   Ext_field_trigger_Date.PROPERTIES = function PROPERTIES() {

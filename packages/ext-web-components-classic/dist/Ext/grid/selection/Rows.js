@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_selection_Selection from '../../../Ext/grid/selection/Selection.js';
 
-var Ext_grid_selection_Rows =
-/*#__PURE__*/
-function (_Ext_grid_selection_S) {
+var Ext_grid_selection_Rows = /*#__PURE__*/function (_Ext_grid_selection_S) {
   _inheritsLoose(Ext_grid_selection_Rows, _Ext_grid_selection_S);
 
   Ext_grid_selection_Rows.PROPERTIES = function PROPERTIES() {

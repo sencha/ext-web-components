@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dom_Element from '../../Ext/dom/Element.js';
 
-var Ext_dom_ButtonElement =
-/*#__PURE__*/
-function (_Ext_dom_Element) {
+var Ext_dom_ButtonElement = /*#__PURE__*/function (_Ext_dom_Element) {
   _inheritsLoose(Ext_dom_ButtonElement, _Ext_dom_Element);
 
   Ext_dom_ButtonElement.PROPERTIES = function PROPERTIES() {

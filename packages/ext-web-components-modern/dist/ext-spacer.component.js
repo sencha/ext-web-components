@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Spacer from './Ext/Spacer.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCSpacer =
-/*#__PURE__*/
-function (_Ext_Spacer) {
+var EWCSpacer = /*#__PURE__*/function (_Ext_Spacer) {
   _inheritsLoose(EWCSpacer, _Ext_Spacer);
 
   function EWCSpacer() {

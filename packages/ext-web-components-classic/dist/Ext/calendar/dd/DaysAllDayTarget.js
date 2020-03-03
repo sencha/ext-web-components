@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_drag_Target from '../../../Ext/drag/Target.js';
 
-var Ext_calendar_dd_DaysAllDayTarget =
-/*#__PURE__*/
-function (_Ext_drag_Target) {
+var Ext_calendar_dd_DaysAllDayTarget = /*#__PURE__*/function (_Ext_drag_Target) {
   _inheritsLoose(Ext_calendar_dd_DaysAllDayTarget, _Ext_drag_Target);
 
   Ext_calendar_dd_DaysAllDayTarget.PROPERTIES = function PROPERTIES() {

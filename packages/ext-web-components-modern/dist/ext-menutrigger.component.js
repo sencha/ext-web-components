@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_trigger_Menu from './Ext/field/trigger/Menu.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCMenutrigger =
-/*#__PURE__*/
-function (_Ext_field_trigger_Me) {
+var EWCMenutrigger = /*#__PURE__*/function (_Ext_field_trigger_Me) {
   _inheritsLoose(EWCMenutrigger, _Ext_field_trigger_Me);
 
   function EWCMenutrigger() {

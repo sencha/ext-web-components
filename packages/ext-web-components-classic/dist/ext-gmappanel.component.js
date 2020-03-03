@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ux_GMapPanel from './Ext/ux/GMapPanel.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCGmappanel =
-/*#__PURE__*/
-function (_Ext_ux_GMapPanel) {
+var EWCGmappanel = /*#__PURE__*/function (_Ext_ux_GMapPanel) {
   _inheritsLoose(EWCGmappanel, _Ext_ux_GMapPanel);
 
   function EWCGmappanel() {

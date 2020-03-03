@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ButtonGroup from './Ext/ButtonGroup.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCButtongroup =
-/*#__PURE__*/
-function (_Ext_ButtonGroup) {
+var EWCButtongroup = /*#__PURE__*/function (_Ext_ButtonGroup) {
   _inheritsLoose(EWCButtongroup, _Ext_ButtonGroup);
 
   function EWCButtongroup() {

@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_BooleanColumn from './Ext/grid/BooleanColumn.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCBooleancolumn =
-/*#__PURE__*/
-function (_Ext_grid_BooleanColu) {
+var EWCBooleancolumn = /*#__PURE__*/function (_Ext_grid_BooleanColu) {
   _inheritsLoose(EWCBooleancolumn, _Ext_grid_BooleanColu);
 
   function EWCBooleancolumn() {

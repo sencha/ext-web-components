@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Media from '../Ext/Media.js';
 
-var Ext_Video =
-/*#__PURE__*/
-function (_Ext_Media) {
+var Ext_Video = /*#__PURE__*/function (_Ext_Media) {
   _inheritsLoose(Ext_Video, _Ext_Media);
 
   Ext_Video.PROPERTIES = function PROPERTIES() {

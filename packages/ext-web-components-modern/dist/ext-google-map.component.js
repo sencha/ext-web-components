@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Map from './Ext/Map.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCGoogle_map =
-/*#__PURE__*/
-function (_Ext_Map) {
+var EWCGoogle_map = /*#__PURE__*/function (_Ext_Map) {
   _inheritsLoose(EWCGoogle_map, _Ext_Map);
 
   function EWCGoogle_map() {

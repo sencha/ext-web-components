@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_plugin_Abstract from '../../../Ext/plugin/Abstract.js';
 
-var Ext_tree_plugin_TreeViewDragDrop =
-/*#__PURE__*/
-function (_Ext_plugin_Abstract) {
+var Ext_tree_plugin_TreeViewDragDrop = /*#__PURE__*/function (_Ext_plugin_Abstract) {
   _inheritsLoose(Ext_tree_plugin_TreeViewDragDrop, _Ext_plugin_Abstract);
 
   Ext_tree_plugin_TreeViewDragDrop.PROPERTIES = function PROPERTIES() {

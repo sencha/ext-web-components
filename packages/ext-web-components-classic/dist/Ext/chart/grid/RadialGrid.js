@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_draw_sprite_Path from '../../../Ext/draw/sprite/Path.js';
 
-var Ext_chart_grid_RadialGrid =
-/*#__PURE__*/
-function (_Ext_draw_sprite_Path) {
+var Ext_chart_grid_RadialGrid = /*#__PURE__*/function (_Ext_draw_sprite_Path) {
   _inheritsLoose(Ext_chart_grid_RadialGrid, _Ext_draw_sprite_Path);
 
   Ext_chart_grid_RadialGrid.PROPERTIES = function PROPERTIES() {

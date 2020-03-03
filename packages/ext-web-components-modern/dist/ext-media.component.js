@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Media from './Ext/Media.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCMedia =
-/*#__PURE__*/
-function (_Ext_Media) {
+var EWCMedia = /*#__PURE__*/function (_Ext_Media) {
   _inheritsLoose(EWCMedia, _Ext_Media);
 
   function EWCMedia() {

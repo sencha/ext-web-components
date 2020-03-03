@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_draw_sprite_Rect from '../../../../Ext/draw/sprite/Rect.js';
 
-var Ext_chart_legend_sprite_Border =
-/*#__PURE__*/
-function (_Ext_draw_sprite_Rect) {
+var Ext_chart_legend_sprite_Border = /*#__PURE__*/function (_Ext_draw_sprite_Rect) {
   _inheritsLoose(Ext_chart_legend_sprite_Border, _Ext_draw_sprite_Rect);
 
   Ext_chart_legend_sprite_Border.PROPERTIES = function PROPERTIES() {

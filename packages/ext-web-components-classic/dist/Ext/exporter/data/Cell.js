@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_exporter_data_Base from '../../../Ext/exporter/data/Base.js';
 
-var Ext_exporter_data_Cell =
-/*#__PURE__*/
-function (_Ext_exporter_data_Ba) {
+var Ext_exporter_data_Cell = /*#__PURE__*/function (_Ext_exporter_data_Ba) {
   _inheritsLoose(Ext_exporter_data_Cell, _Ext_exporter_data_Ba);
 
   Ext_exporter_data_Cell.PROPERTIES = function PROPERTIES() {

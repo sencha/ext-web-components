@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dd_DropTarget from '../../Ext/dd/DropTarget.js';
 
-var Ext_dashboard_DropZone =
-/*#__PURE__*/
-function (_Ext_dd_DropTarget) {
+var Ext_dashboard_DropZone = /*#__PURE__*/function (_Ext_dd_DropTarget) {
   _inheritsLoose(Ext_dashboard_DropZone, _Ext_dd_DropTarget);
 
   Ext_dashboard_DropZone.PROPERTIES = function PROPERTIES() {

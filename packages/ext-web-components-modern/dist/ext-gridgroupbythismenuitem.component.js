@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_menu_GroupByThis from './Ext/grid/menu/GroupByThis.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCGridgroupbythismenuitem =
-/*#__PURE__*/
-function (_Ext_grid_menu_GroupB) {
+var EWCGridgroupbythismenuitem = /*#__PURE__*/function (_Ext_grid_menu_GroupB) {
   _inheritsLoose(EWCGridgroupbythismenuitem, _Ext_grid_menu_GroupB);
 
   function EWCGridgroupbythismenuitem() {

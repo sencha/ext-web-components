@@ -21,7 +21,7 @@ const ElementParser = (() => {
 
     function scriptIt() {
       var se;
-      xhrObj.open('GET', `node_modules/@sencha/ext-web-components-${ toolkit }/ext-runtime-${ toolkit }/${ toolkit }.engine.js`, false);
+      xhrObj.open('GET', `node_modules/@sencha/ext-web-components-${ toolkit }/ext-runtime-${ toolkit }/${ toolkit }.engine.enterprise.js`, false);
       xhrObj.send('');
       if (xhrObj.responseText.substring(0, 3) != 'var') {showError();return;}
       se = document.createElement('script');
@@ -55,7 +55,7 @@ const ElementParser = (() => {
         console.warn('ext-react runtime not defined in index.html');
         console.warn('to fix, add following 2 lines to public/index.html');
         console.warn('<link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/ext-runtime-${ toolkit }/${ theme }/${ theme }-all.css"></link>');
-        console.warn('<script src="%PUBLIC_URL%/ext-runtime-${ toolkit }/${ toolkit }.engine.js"></script>');
+        console.warn('<script src="%PUBLIC_URL%/ext-runtime-${ toolkit }/${ toolkit }.engine.enterprise.js"></script>');
         //xhrObj.open('GET', '/ext-runtime-classic/' + 'classic' + '.material.js', false);
         linkIt(1)
         linkIt(2)
@@ -67,7 +67,7 @@ const ElementParser = (() => {
         console.warn('ext-angular runtime not defined in index.html');
         console.warn('to fix, add following 2 items to angular.json');
         console.warn('"styles": ["ext-runtime-${ toolkit }/${ theme }/${ theme }-all.css]');
-        console.warn('"scripts": ["ext-runtime-${ toolkit }/${ toolkit }.engine.js]');
+        console.warn('"scripts": ["ext-runtime-${ toolkit }/${ toolkit }.engine.enterprise.js]');
         linkIt(1)
         linkIt(2)
         scriptIt()
@@ -80,7 +80,7 @@ const ElementParser = (() => {
       case undefined:
         console.warn('ext-web-components runtime not defined in index.html');
         console.warn('to fix, add following 2 lines to index.html');
-        console.warn(`<script src="./node_modules/@sencha/ext-web-components-${ toolkit }/ext-runtime-${ toolkit }/${ toolkit }.engine.js"></script>`);
+        console.warn(`<script src="./node_modules/@sencha/ext-web-components-${ toolkit }/ext-runtime-${ toolkit }/${ toolkit }.engine.enterprise.js"></script>`);
         console.warn(`<link rel="stylesheet" type="text/css" href="node_modules/@sencha/ext-web-components-${ toolkit }/ext-runtime-${ toolkit }/${ theme }/${ theme }-all.css"></link>`);
         linkIt(1)
         linkIt(2)

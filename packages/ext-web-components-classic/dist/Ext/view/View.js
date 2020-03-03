@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_view_AbstractView from '../../Ext/view/AbstractView.js';
 
-var Ext_view_View =
-/*#__PURE__*/
-function (_Ext_view_AbstractVie) {
+var Ext_view_View = /*#__PURE__*/function (_Ext_view_AbstractVie) {
   _inheritsLoose(Ext_view_View, _Ext_view_AbstractVie);
 
   Ext_view_View.PROPERTIES = function PROPERTIES() {

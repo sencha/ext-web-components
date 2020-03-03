@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_plugin_Abstract from '../../../Ext/plugin/Abstract.js';
 
-var Ext_chart_plugin_ItemEvents =
-/*#__PURE__*/
-function (_Ext_plugin_Abstract) {
+var Ext_chart_plugin_ItemEvents = /*#__PURE__*/function (_Ext_plugin_Abstract) {
   _inheritsLoose(Ext_chart_plugin_ItemEvents, _Ext_plugin_Abstract);
 
   Ext_chart_plugin_ItemEvents.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_selection_RowModel from '../../Ext/selection/RowModel.js';
 
-var Ext_selection_CheckboxModel =
-/*#__PURE__*/
-function (_Ext_selection_RowMod) {
+var Ext_selection_CheckboxModel = /*#__PURE__*/function (_Ext_selection_RowMod) {
   _inheritsLoose(Ext_selection_CheckboxModel, _Ext_selection_RowMod);
 
   Ext_selection_CheckboxModel.PROPERTIES = function PROPERTIES() {

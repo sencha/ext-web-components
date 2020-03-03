@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_MessageBox from './Ext/MessageBox.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCMessagebox =
-/*#__PURE__*/
-function (_Ext_MessageBox) {
+var EWCMessagebox = /*#__PURE__*/function (_Ext_MessageBox) {
   _inheritsLoose(EWCMessagebox, _Ext_MessageBox);
 
   function EWCMessagebox() {

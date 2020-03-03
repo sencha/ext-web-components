@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_ItemHeader from '../../Ext/dataview/ItemHeader.js';
 
-var Ext_grid_RowHeader =
-/*#__PURE__*/
-function (_Ext_dataview_ItemHea) {
+var Ext_grid_RowHeader = /*#__PURE__*/function (_Ext_dataview_ItemHea) {
   _inheritsLoose(Ext_grid_RowHeader, _Ext_dataview_ItemHea);
 
   Ext_grid_RowHeader.PROPERTIES = function PROPERTIES() {

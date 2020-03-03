@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dd_DDProxy from '../../Ext/dd/DDProxy.js';
 
-var Ext_dd_DragSource =
-/*#__PURE__*/
-function (_Ext_dd_DDProxy) {
+var Ext_dd_DragSource = /*#__PURE__*/function (_Ext_dd_DDProxy) {
   _inheritsLoose(Ext_dd_DragSource, _Ext_dd_DDProxy);
 
   Ext_dd_DragSource.PROPERTIES = function PROPERTIES() {

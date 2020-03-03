@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_calendar_Event from './Ext/calendar/Event.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCCalendar_event =
-/*#__PURE__*/
-function (_Ext_calendar_Event) {
+var EWCCalendar_event = /*#__PURE__*/function (_Ext_calendar_Event) {
   _inheritsLoose(EWCCalendar_event, _Ext_calendar_Event);
 
   function EWCCalendar_event() {

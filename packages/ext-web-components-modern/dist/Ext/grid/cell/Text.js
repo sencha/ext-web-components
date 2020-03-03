@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_cell_Base from '../../../Ext/grid/cell/Base.js';
 
-var Ext_grid_cell_Text =
-/*#__PURE__*/
-function (_Ext_grid_cell_Base) {
+var Ext_grid_cell_Text = /*#__PURE__*/function (_Ext_grid_cell_Base) {
   _inheritsLoose(Ext_grid_cell_Text, _Ext_grid_cell_Base);
 
   Ext_grid_cell_Text.PROPERTIES = function PROPERTIES() {

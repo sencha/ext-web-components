@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_d3_hierarchy_Pack from './Ext/d3/hierarchy/Pack.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCD3_pack =
-/*#__PURE__*/
-function (_Ext_d3_hierarchy_Pac) {
+var EWCD3_pack = /*#__PURE__*/function (_Ext_d3_hierarchy_Pac) {
   _inheritsLoose(EWCD3_pack, _Ext_d3_hierarchy_Pac);
 
   function EWCD3_pack() {

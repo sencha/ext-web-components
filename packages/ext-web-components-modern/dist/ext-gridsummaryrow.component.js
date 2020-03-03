@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_SummaryRow from './Ext/grid/SummaryRow.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCGridsummaryrow =
-/*#__PURE__*/
-function (_Ext_grid_SummaryRow) {
+var EWCGridsummaryrow = /*#__PURE__*/function (_Ext_grid_SummaryRow) {
   _inheritsLoose(EWCGridsummaryrow, _Ext_grid_SummaryRow);
 
   function EWCGridsummaryrow() {

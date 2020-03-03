@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_ListItem from '../../../../Ext/dataview/ListItem.js';
 
-var Ext_pivot_plugin_configurator_Column =
-/*#__PURE__*/
-function (_Ext_dataview_ListIte) {
+var Ext_pivot_plugin_configurator_Column = /*#__PURE__*/function (_Ext_dataview_ListIte) {
   _inheritsLoose(Ext_pivot_plugin_configurator_Column, _Ext_dataview_ListIte);
 
   Ext_pivot_plugin_configurator_Column.PROPERTIES = function PROPERTIES() {

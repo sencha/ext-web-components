@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_menu_Menu from '../../Ext/menu/Menu.js';
 
-var Ext_menu_ColorPicker =
-/*#__PURE__*/
-function (_Ext_menu_Menu) {
+var Ext_menu_ColorPicker = /*#__PURE__*/function (_Ext_menu_Menu) {
   _inheritsLoose(Ext_menu_ColorPicker, _Ext_menu_Menu);
 
   Ext_menu_ColorPicker.PROPERTIES = function PROPERTIES() {

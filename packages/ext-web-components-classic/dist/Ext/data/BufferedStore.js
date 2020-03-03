@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_data_ProxyStore from '../../Ext/data/ProxyStore.js';
 
-var Ext_data_BufferedStore =
-/*#__PURE__*/
-function (_Ext_data_ProxyStore) {
+var Ext_data_BufferedStore = /*#__PURE__*/function (_Ext_data_ProxyStore) {
   _inheritsLoose(Ext_data_BufferedStore, _Ext_data_ProxyStore);
 
   Ext_data_BufferedStore.PROPERTIES = function PROPERTIES() {

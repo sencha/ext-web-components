@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Toolbar from './Ext/Toolbar.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCToolbar =
-/*#__PURE__*/
-function (_Ext_Toolbar) {
+var EWCToolbar = /*#__PURE__*/function (_Ext_Toolbar) {
   _inheritsLoose(EWCToolbar, _Ext_Toolbar);
 
   function EWCToolbar() {

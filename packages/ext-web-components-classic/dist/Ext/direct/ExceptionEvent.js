@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_direct_RemotingEvent from '../../Ext/direct/RemotingEvent.js';
 
-var Ext_direct_ExceptionEvent =
-/*#__PURE__*/
-function (_Ext_direct_RemotingE) {
+var Ext_direct_ExceptionEvent = /*#__PURE__*/function (_Ext_direct_RemotingE) {
   _inheritsLoose(Ext_direct_ExceptionEvent, _Ext_direct_RemotingE);
 
   Ext_direct_ExceptionEvent.PROPERTIES = function PROPERTIES() {

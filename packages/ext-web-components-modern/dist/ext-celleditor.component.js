@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_CellEditor from './Ext/grid/CellEditor.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCCelleditor =
-/*#__PURE__*/
-function (_Ext_grid_CellEditor) {
+var EWCCelleditor = /*#__PURE__*/function (_Ext_grid_CellEditor) {
   _inheritsLoose(EWCCelleditor, _Ext_grid_CellEditor);
 
   function EWCCelleditor() {

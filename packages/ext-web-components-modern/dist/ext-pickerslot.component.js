@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_picker_Slot from './Ext/picker/Slot.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCPickerslot =
-/*#__PURE__*/
-function (_Ext_picker_Slot) {
+var EWCPickerslot = /*#__PURE__*/function (_Ext_picker_Slot) {
   _inheritsLoose(EWCPickerslot, _Ext_picker_Slot);
 
   function EWCPickerslot() {

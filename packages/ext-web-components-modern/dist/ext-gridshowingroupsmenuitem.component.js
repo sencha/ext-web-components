@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_menu_ShowInGroups from './Ext/grid/menu/ShowInGroups.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCGridshowingroupsmenuitem =
-/*#__PURE__*/
-function (_Ext_grid_menu_ShowIn) {
+var EWCGridshowingroupsmenuitem = /*#__PURE__*/function (_Ext_grid_menu_ShowIn) {
   _inheritsLoose(EWCGridshowingroupsmenuitem, _Ext_grid_menu_ShowIn);
 
   function EWCGridshowingroupsmenuitem() {

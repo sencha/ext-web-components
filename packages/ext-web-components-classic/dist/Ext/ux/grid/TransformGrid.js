@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_Panel from '../../../Ext/grid/Panel.js';
 
-var Ext_ux_grid_TransformGrid =
-/*#__PURE__*/
-function (_Ext_grid_Panel) {
+var Ext_ux_grid_TransformGrid = /*#__PURE__*/function (_Ext_grid_Panel) {
   _inheritsLoose(Ext_ux_grid_TransformGrid, _Ext_grid_Panel);
 
   Ext_ux_grid_TransformGrid.PROPERTIES = function PROPERTIES() {

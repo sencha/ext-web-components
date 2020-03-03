@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_util_translatable_Dom from '../../../Ext/util/translatable/Dom.js';
 
-var Ext_util_translatable_CssTransform =
-/*#__PURE__*/
-function (_Ext_util_translatabl) {
+var Ext_util_translatable_CssTransform = /*#__PURE__*/function (_Ext_util_translatabl) {
   _inheritsLoose(Ext_util_translatable_CssTransform, _Ext_util_translatabl);
 
   Ext_util_translatable_CssTransform.PROPERTIES = function PROPERTIES() {

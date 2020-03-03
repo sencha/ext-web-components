@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_froala_EditorField from './Ext/froala/EditorField.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCFroalaeditorfield =
-/*#__PURE__*/
-function (_Ext_froala_EditorFie) {
+var EWCFroalaeditorfield = /*#__PURE__*/function (_Ext_froala_EditorFie) {
   _inheritsLoose(EWCFroalaeditorfield, _Ext_froala_EditorFie);
 
   function EWCFroalaeditorfield() {

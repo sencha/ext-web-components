@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_util_MixedCollection from '../Ext/util/MixedCollection.js';
 
-var Ext_StoreMgr =
-/*#__PURE__*/
-function (_Ext_util_MixedCollec) {
+var Ext_StoreMgr = /*#__PURE__*/function (_Ext_util_MixedCollec) {
   _inheritsLoose(Ext_StoreMgr, _Ext_util_MixedCollec);
 
   Ext_StoreMgr.PROPERTIES = function PROPERTIES() {

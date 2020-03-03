@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_menu_Shared from '../../../Ext/grid/menu/Shared.js';
 
-var Ext_grid_menu_Columns =
-/*#__PURE__*/
-function (_Ext_grid_menu_Shared) {
+var Ext_grid_menu_Columns = /*#__PURE__*/function (_Ext_grid_menu_Shared) {
   _inheritsLoose(Ext_grid_menu_Columns, _Ext_grid_menu_Shared);
 
   Ext_grid_menu_Columns.PROPERTIES = function PROPERTIES() {

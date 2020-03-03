@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_NavigationView from './Ext/NavigationView.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCNavigationview =
-/*#__PURE__*/
-function (_Ext_NavigationView) {
+var EWCNavigationview = /*#__PURE__*/function (_Ext_NavigationView) {
   _inheritsLoose(EWCNavigationview, _Ext_NavigationView);
 
   function EWCNavigationview() {

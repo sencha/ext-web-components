@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_toolbar_TextItem from '../../../Ext/toolbar/TextItem.js';
 
-var Ext_ux_desktop_TrayClock =
-/*#__PURE__*/
-function (_Ext_toolbar_TextItem) {
+var Ext_ux_desktop_TrayClock = /*#__PURE__*/function (_Ext_toolbar_TextItem) {
   _inheritsLoose(Ext_ux_desktop_TrayClock, _Ext_toolbar_TextItem);
 
   Ext_ux_desktop_TrayClock.PROPERTIES = function PROPERTIES() {

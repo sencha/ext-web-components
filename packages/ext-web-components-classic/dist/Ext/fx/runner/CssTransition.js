@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_fx_runner_Css from '../../../Ext/fx/runner/Css.js';
 
-var Ext_fx_runner_CssTransition =
-/*#__PURE__*/
-function (_Ext_fx_runner_Css) {
+var Ext_fx_runner_CssTransition = /*#__PURE__*/function (_Ext_fx_runner_Css) {
   _inheritsLoose(Ext_fx_runner_CssTransition, _Ext_fx_runner_Css);
 
   Ext_fx_runner_CssTransition.PROPERTIES = function PROPERTIES() {

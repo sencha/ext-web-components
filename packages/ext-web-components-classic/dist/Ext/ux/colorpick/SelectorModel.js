@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_app_ViewModel from '../../../Ext/app/ViewModel.js';
 
-var Ext_ux_colorpick_SelectorModel =
-/*#__PURE__*/
-function (_Ext_app_ViewModel) {
+var Ext_ux_colorpick_SelectorModel = /*#__PURE__*/function (_Ext_app_ViewModel) {
   _inheritsLoose(Ext_ux_colorpick_SelectorModel, _Ext_app_ViewModel);
 
   Ext_ux_colorpick_SelectorModel.PROPERTIES = function PROPERTIES() {

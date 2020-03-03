@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_Number from '../../Ext/field/Number.js';
 
-var Ext_field_Spinner =
-/*#__PURE__*/
-function (_Ext_field_Number) {
+var Ext_field_Spinner = /*#__PURE__*/function (_Ext_field_Number) {
   _inheritsLoose(Ext_field_Spinner, _Ext_field_Number);
 
   Ext_field_Spinner.PROPERTIES = function PROPERTIES() {

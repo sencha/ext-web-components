@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Viewport from './Ext/Viewport.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCViewport =
-/*#__PURE__*/
-function (_Ext_Viewport) {
+var EWCViewport = /*#__PURE__*/function (_Ext_Viewport) {
   _inheritsLoose(EWCViewport, _Ext_Viewport);
 
   function EWCViewport() {

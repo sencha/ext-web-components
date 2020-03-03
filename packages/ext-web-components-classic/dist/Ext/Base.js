@@ -2,13 +2,11 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import WebComponentsBaseComponent from '../runtime/webcomponentsbase.js';
 
-var Ext_Base =
-/*#__PURE__*/
-function (_WebComponentsBaseCom) {
+var Ext_Base = /*#__PURE__*/function (_WebComponentsBaseCom) {
   _inheritsLoose(Ext_Base, _WebComponentsBaseCom);
 
   Ext_Base.PROPERTIES = function PROPERTIES() {
-    return ['group', 'value', 'createExtComponentDefer', 'createExtComponent', 'closable', 'title', 'header', 'renderer', 'label', 'fitToParent', 'tab', 'config', 'platformConfig', 'summaryRenderer', 'extname', 'viewport', 'align', 'plugins', 'responsiveConfig', 'responsiveFormulas'];
+    return ['badgeText', 'group', 'value', 'createExtComponentDefer', 'createExtComponent', 'closable', 'title', 'header', 'renderer', 'label', 'fitToParent', 'tab', 'config', 'platformConfig', 'summaryRenderer', 'extname', 'viewport', 'align', 'plugins', 'responsiveConfig', 'responsiveFormulas'];
   };
 
   Ext_Base.EVENTS = function EVENTS() {

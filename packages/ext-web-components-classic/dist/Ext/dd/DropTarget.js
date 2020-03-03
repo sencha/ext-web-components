@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dd_DDTarget from '../../Ext/dd/DDTarget.js';
 
-var Ext_dd_DropTarget =
-/*#__PURE__*/
-function (_Ext_dd_DDTarget) {
+var Ext_dd_DropTarget = /*#__PURE__*/function (_Ext_dd_DDTarget) {
   _inheritsLoose(Ext_dd_DropTarget, _Ext_dd_DDTarget);
 
   Ext_dd_DropTarget.PROPERTIES = function PROPERTIES() {

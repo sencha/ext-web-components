@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_view_DragZone from '../../Ext/view/DragZone.js';
 
-var Ext_tree_ViewDragZone =
-/*#__PURE__*/
-function (_Ext_view_DragZone) {
+var Ext_tree_ViewDragZone = /*#__PURE__*/function (_Ext_view_DragZone) {
   _inheritsLoose(Ext_tree_ViewDragZone, _Ext_view_DragZone);
 
   Ext_tree_ViewDragZone.PROPERTIES = function PROPERTIES() {

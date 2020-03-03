@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_pivot_filter_Base from '../../../Ext/pivot/filter/Base.js';
 
-var Mz_aggregate_filter_Label =
-/*#__PURE__*/
-function (_Ext_pivot_filter_Bas) {
+var Mz_aggregate_filter_Label = /*#__PURE__*/function (_Ext_pivot_filter_Bas) {
   _inheritsLoose(Mz_aggregate_filter_Label, _Ext_pivot_filter_Bas);
 
   Mz_aggregate_filter_Label.PROPERTIES = function PROPERTIES() {

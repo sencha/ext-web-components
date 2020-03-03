@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dd_DragTracker from '../../Ext/dd/DragTracker.js';
 
-var Ext_resizer_SplitterTracker =
-/*#__PURE__*/
-function (_Ext_dd_DragTracker) {
+var Ext_resizer_SplitterTracker = /*#__PURE__*/function (_Ext_dd_DragTracker) {
   _inheritsLoose(Ext_resizer_SplitterTracker, _Ext_dd_DragTracker);
 
   Ext_resizer_SplitterTracker.PROPERTIES = function PROPERTIES() {

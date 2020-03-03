@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Mask from '../Ext/Mask.js';
 
-var Ext_LoadMask =
-/*#__PURE__*/
-function (_Ext_Mask) {
+var Ext_LoadMask = /*#__PURE__*/function (_Ext_Mask) {
   _inheritsLoose(Ext_LoadMask, _Ext_Mask);
 
   Ext_LoadMask.PROPERTIES = function PROPERTIES() {

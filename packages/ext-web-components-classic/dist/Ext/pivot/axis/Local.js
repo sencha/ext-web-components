@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_pivot_axis_Base from '../../../Ext/pivot/axis/Base.js';
 
-var Ext_pivot_axis_Local =
-/*#__PURE__*/
-function (_Ext_pivot_axis_Base) {
+var Ext_pivot_axis_Local = /*#__PURE__*/function (_Ext_pivot_axis_Base) {
   _inheritsLoose(Ext_pivot_axis_Local, _Ext_pivot_axis_Base);
 
   Ext_pivot_axis_Local.PROPERTIES = function PROPERTIES() {

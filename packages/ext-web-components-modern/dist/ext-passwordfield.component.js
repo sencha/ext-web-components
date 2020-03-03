@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_Password from './Ext/form/Password.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCPasswordfield =
-/*#__PURE__*/
-function (_Ext_form_Password) {
+var EWCPasswordfield = /*#__PURE__*/function (_Ext_form_Password) {
   _inheritsLoose(EWCPasswordfield, _Ext_form_Password);
 
   function EWCPasswordfield() {

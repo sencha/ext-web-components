@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_util_Observable from '../../../Ext/util/Observable.js';
 
-var Ext_grid_feature_Feature =
-/*#__PURE__*/
-function (_Ext_util_Observable) {
+var Ext_grid_feature_Feature = /*#__PURE__*/function (_Ext_util_Observable) {
   _inheritsLoose(Ext_grid_feature_Feature, _Ext_util_Observable);
 
   Ext_grid_feature_Feature.PROPERTIES = function PROPERTIES() {

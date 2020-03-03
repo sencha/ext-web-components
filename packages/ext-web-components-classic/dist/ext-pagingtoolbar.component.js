@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_PagingToolbar from './Ext/PagingToolbar.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCPagingtoolbar =
-/*#__PURE__*/
-function (_Ext_PagingToolbar) {
+var EWCPagingtoolbar = /*#__PURE__*/function (_Ext_PagingToolbar) {
   _inheritsLoose(EWCPagingtoolbar, _Ext_PagingToolbar);
 
   function EWCPagingtoolbar() {

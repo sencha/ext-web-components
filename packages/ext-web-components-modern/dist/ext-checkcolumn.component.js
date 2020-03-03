@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_column_Check from './Ext/grid/column/Check.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCCheckcolumn =
-/*#__PURE__*/
-function (_Ext_grid_column_Chec) {
+var EWCCheckcolumn = /*#__PURE__*/function (_Ext_grid_column_Chec) {
   _inheritsLoose(EWCCheckcolumn, _Ext_grid_column_Chec);
 
   function EWCCheckcolumn() {

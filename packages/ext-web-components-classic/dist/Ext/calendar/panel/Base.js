@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_calendar_panel_AbstractBase from '../../../Ext/calendar/panel/AbstractBase.js';
 
-var Ext_calendar_panel_Base =
-/*#__PURE__*/
-function (_Ext_calendar_panel_A) {
+var Ext_calendar_panel_Base = /*#__PURE__*/function (_Ext_calendar_panel_A) {
   _inheritsLoose(Ext_calendar_panel_Base, _Ext_calendar_panel_A);
 
   Ext_calendar_panel_Base.PROPERTIES = function PROPERTIES() {

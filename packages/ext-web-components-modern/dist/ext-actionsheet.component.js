@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ActionSheet from './Ext/ActionSheet.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCActionsheet =
-/*#__PURE__*/
-function (_Ext_ActionSheet) {
+var EWCActionsheet = /*#__PURE__*/function (_Ext_ActionSheet) {
   _inheritsLoose(EWCActionsheet, _Ext_ActionSheet);
 
   function EWCActionsheet() {

@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_util_Event from '../../Ext/util/Event.js';
 
-var Ext_dom_ElementEvent =
-/*#__PURE__*/
-function (_Ext_util_Event) {
+var Ext_dom_ElementEvent = /*#__PURE__*/function (_Ext_util_Event) {
   _inheritsLoose(Ext_dom_ElementEvent, _Ext_util_Event);
 
   Ext_dom_ElementEvent.PROPERTIES = function PROPERTIES() {

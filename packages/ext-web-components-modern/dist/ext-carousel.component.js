@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Carousel from './Ext/Carousel.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCCarousel =
-/*#__PURE__*/
-function (_Ext_Carousel) {
+var EWCCarousel = /*#__PURE__*/function (_Ext_Carousel) {
   _inheritsLoose(EWCCarousel, _Ext_Carousel);
 
   function EWCCarousel() {

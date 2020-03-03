@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Component from '../../Ext/Component.js';
 
-var Ext_container_Container =
-/*#__PURE__*/
-function (_Ext_Component) {
+var Ext_container_Container = /*#__PURE__*/function (_Ext_Component) {
   _inheritsLoose(Ext_container_Container, _Ext_Component);
 
   Ext_container_Container.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ux_colorpick_Button from './Ext/ux/colorpick/Button.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCColorbutton =
-/*#__PURE__*/
-function (_Ext_ux_colorpick_But) {
+var EWCColorbutton = /*#__PURE__*/function (_Ext_ux_colorpick_But) {
   _inheritsLoose(EWCColorbutton, _Ext_ux_colorpick_But);
 
   function EWCColorbutton() {

@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_EmptyText from './Ext/dataview/EmptyText.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCEmptytext =
-/*#__PURE__*/
-function (_Ext_dataview_EmptyTe) {
+var EWCEmptytext = /*#__PURE__*/function (_Ext_dataview_EmptyTe) {
   _inheritsLoose(EWCEmptytext, _Ext_dataview_EmptyTe);
 
   function EWCEmptytext() {

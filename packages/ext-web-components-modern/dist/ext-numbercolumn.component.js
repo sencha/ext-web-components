@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_column_Number from './Ext/grid/column/Number.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCNumbercolumn =
-/*#__PURE__*/
-function (_Ext_grid_column_Numb) {
+var EWCNumbercolumn = /*#__PURE__*/function (_Ext_grid_column_Numb) {
   _inheritsLoose(EWCNumbercolumn, _Ext_grid_column_Numb);
 
   function EWCNumbercolumn() {

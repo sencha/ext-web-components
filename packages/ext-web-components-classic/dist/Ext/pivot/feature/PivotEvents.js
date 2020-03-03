@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_feature_Feature from '../../../Ext/grid/feature/Feature.js';
 
-var Ext_pivot_feature_PivotEvents =
-/*#__PURE__*/
-function (_Ext_grid_feature_Fea) {
+var Ext_pivot_feature_PivotEvents = /*#__PURE__*/function (_Ext_grid_feature_Fea) {
   _inheritsLoose(Ext_pivot_feature_PivotEvents, _Ext_grid_feature_Fea);
 
   Ext_pivot_feature_PivotEvents.PROPERTIES = function PROPERTIES() {

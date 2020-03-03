@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_util_Schedulable from '../../../Ext/util/Schedulable.js';
 
-var Ext_app_bind_AbstractStub =
-/*#__PURE__*/
-function (_Ext_util_Schedulable) {
+var Ext_app_bind_AbstractStub = /*#__PURE__*/function (_Ext_util_Schedulable) {
   _inheritsLoose(Ext_app_bind_AbstractStub, _Ext_util_Schedulable);
 
   Ext_app_bind_AbstractStub.PROPERTIES = function PROPERTIES() {

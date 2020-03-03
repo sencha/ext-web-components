@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_DatePicker from './Ext/DatePicker.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCDatepicker =
-/*#__PURE__*/
-function (_Ext_DatePicker) {
+var EWCDatepicker = /*#__PURE__*/function (_Ext_DatePicker) {
   _inheritsLoose(EWCDatepicker, _Ext_DatePicker);
 
   function EWCDatepicker() {

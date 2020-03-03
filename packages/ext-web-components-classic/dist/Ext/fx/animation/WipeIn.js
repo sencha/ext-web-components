@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_fx_Animation from '../../../Ext/fx/Animation.js';
 
-var Ext_fx_animation_WipeIn =
-/*#__PURE__*/
-function (_Ext_fx_Animation) {
+var Ext_fx_animation_WipeIn = /*#__PURE__*/function (_Ext_fx_Animation) {
   _inheritsLoose(Ext_fx_animation_WipeIn, _Ext_fx_Animation);
 
   Ext_fx_animation_WipeIn.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_column_Drag from './Ext/grid/column/Drag.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCDragcolumn =
-/*#__PURE__*/
-function (_Ext_grid_column_Drag) {
+var EWCDragcolumn = /*#__PURE__*/function (_Ext_grid_column_Drag) {
   _inheritsLoose(EWCDragcolumn, _Ext_grid_column_Drag);
 
   function EWCDragcolumn() {

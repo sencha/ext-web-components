@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_chart_series_Cartesian from '../../../Ext/chart/series/Cartesian.js';
 
-var Ext_chart_series_CandleStick =
-/*#__PURE__*/
-function (_Ext_chart_series_Car) {
+var Ext_chart_series_CandleStick = /*#__PURE__*/function (_Ext_chart_series_Car) {
   _inheritsLoose(Ext_chart_series_CandleStick, _Ext_chart_series_Car);
 
   Ext_chart_series_CandleStick.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_Panel from '../../Ext/grid/Panel.js';
 
-var Ext_view_MultiSelector =
-/*#__PURE__*/
-function (_Ext_grid_Panel) {
+var Ext_view_MultiSelector = /*#__PURE__*/function (_Ext_grid_Panel) {
   _inheritsLoose(Ext_view_MultiSelector, _Ext_grid_Panel);
 
   Ext_view_MultiSelector.PROPERTIES = function PROPERTIES() {

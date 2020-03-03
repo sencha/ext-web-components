@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_chart_theme_Base from '../../../Ext/chart/theme/Base.js';
 
-var Ext_chart_theme_Default =
-/*#__PURE__*/
-function (_Ext_chart_theme_Base) {
+var Ext_chart_theme_Default = /*#__PURE__*/function (_Ext_chart_theme_Base) {
   _inheritsLoose(Ext_chart_theme_Default, _Ext_chart_theme_Base);
 
   Ext_chart_theme_Default.PROPERTIES = function PROPERTIES() {

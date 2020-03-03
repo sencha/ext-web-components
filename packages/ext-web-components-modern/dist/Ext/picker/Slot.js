@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_DataView from '../../Ext/dataview/DataView.js';
 
-var Ext_picker_Slot =
-/*#__PURE__*/
-function (_Ext_dataview_DataVie) {
+var Ext_picker_Slot = /*#__PURE__*/function (_Ext_dataview_DataVie) {
   _inheritsLoose(Ext_picker_Slot, _Ext_dataview_DataVie);
 
   Ext_picker_Slot.PROPERTIES = function PROPERTIES() {

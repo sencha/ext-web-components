@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_exporter_file_ooxml_Xml from '../../../../Ext/exporter/file/ooxml/Xml.js';
 
-var Ext_exporter_file_ooxml_XmlRels =
-/*#__PURE__*/
-function (_Ext_exporter_file_oo) {
+var Ext_exporter_file_ooxml_XmlRels = /*#__PURE__*/function (_Ext_exporter_file_oo) {
   _inheritsLoose(Ext_exporter_file_ooxml_XmlRels, _Ext_exporter_file_oo);
 
   Ext_exporter_file_ooxml_XmlRels.PROPERTIES = function PROPERTIES() {

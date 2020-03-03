@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_menu_TextItem from './Ext/menu/TextItem.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCMenuitem =
-/*#__PURE__*/
-function (_Ext_menu_TextItem) {
+var EWCMenuitem = /*#__PURE__*/function (_Ext_menu_TextItem) {
   _inheritsLoose(EWCMenuitem, _Ext_menu_TextItem);
 
   function EWCMenuitem() {

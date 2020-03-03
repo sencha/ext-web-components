@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_Panel from '../../Ext/form/Panel.js';
 
-var Ext_grid_RowEditor =
-/*#__PURE__*/
-function (_Ext_form_Panel) {
+var Ext_grid_RowEditor = /*#__PURE__*/function (_Ext_form_Panel) {
   _inheritsLoose(Ext_grid_RowEditor, _Ext_form_Panel);
 
   Ext_grid_RowEditor.PROPERTIES = function PROPERTIES() {

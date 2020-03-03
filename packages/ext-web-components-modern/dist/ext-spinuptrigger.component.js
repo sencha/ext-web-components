@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_trigger_SpinUp from './Ext/field/trigger/SpinUp.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCSpinuptrigger =
-/*#__PURE__*/
-function (_Ext_field_trigger_Sp) {
+var EWCSpinuptrigger = /*#__PURE__*/function (_Ext_field_trigger_Sp) {
   _inheritsLoose(EWCSpinuptrigger, _Ext_field_trigger_Sp);
 
   function EWCSpinuptrigger() {

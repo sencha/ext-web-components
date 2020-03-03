@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_Select from '../../../Ext/field/Select.js';
 
-var Ext_calendar_form_CalendarPicker =
-/*#__PURE__*/
-function (_Ext_field_Select) {
+var Ext_calendar_form_CalendarPicker = /*#__PURE__*/function (_Ext_field_Select) {
   _inheritsLoose(Ext_calendar_form_CalendarPicker, _Ext_field_Select);
 
   Ext_calendar_form_CalendarPicker.PROPERTIES = function PROPERTIES() {

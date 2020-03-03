@@ -21,7 +21,7 @@ var ElementParser = function () {
 
     var scriptIt = function scriptIt() {
       var se;
-      xhrObj.open('GET', "node_modules/@sencha/ext-web-components-" + toolkit + "/ext-runtime-" + toolkit + "/" + toolkit + ".engine.js", false);
+      xhrObj.open('GET', "node_modules/@sencha/ext-web-components-" + toolkit + "/ext-runtime-" + toolkit + "/" + toolkit + ".engine.enterprise.js", false);
       xhrObj.send('');
 
       if (xhrObj.responseText.substring(0, 3) != 'var') {
@@ -61,7 +61,7 @@ var ElementParser = function () {
         console.warn('ext-react runtime not defined in index.html');
         console.warn('to fix, add following 2 lines to public/index.html');
         console.warn('<link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/ext-runtime-${ toolkit }/${ theme }/${ theme }-all.css"></link>');
-        console.warn('<script src="%PUBLIC_URL%/ext-runtime-${ toolkit }/${ toolkit }.engine.js"></script>'); //xhrObj.open('GET', '/ext-runtime-classic/' + 'classic' + '.material.js', false);
+        console.warn('<script src="%PUBLIC_URL%/ext-runtime-${ toolkit }/${ toolkit }.engine.enterprise.js"></script>'); //xhrObj.open('GET', '/ext-runtime-classic/' + 'classic' + '.material.js', false);
 
         linkIt(1);
         linkIt(2);
@@ -73,7 +73,7 @@ var ElementParser = function () {
         console.warn('ext-angular runtime not defined in index.html');
         console.warn('to fix, add following 2 items to angular.json');
         console.warn('"styles": ["ext-runtime-${ toolkit }/${ theme }/${ theme }-all.css]');
-        console.warn('"scripts": ["ext-runtime-${ toolkit }/${ toolkit }.engine.js]');
+        console.warn('"scripts": ["ext-runtime-${ toolkit }/${ toolkit }.engine.enterprise.js]');
         linkIt(1);
         linkIt(2);
         scriptIt();
@@ -86,7 +86,7 @@ var ElementParser = function () {
       case undefined:
         console.warn('ext-web-components runtime not defined in index.html');
         console.warn('to fix, add following 2 lines to index.html');
-        console.warn("<script src=\"./node_modules/@sencha/ext-web-components-" + toolkit + "/ext-runtime-" + toolkit + "/" + toolkit + ".engine.js\"></script>");
+        console.warn("<script src=\"./node_modules/@sencha/ext-web-components-" + toolkit + "/ext-runtime-" + toolkit + "/" + toolkit + ".engine.enterprise.js\"></script>");
         console.warn("<link rel=\"stylesheet\" type=\"text/css\" href=\"node_modules/@sencha/ext-web-components-" + toolkit + "/ext-runtime-" + toolkit + "/" + theme + "/" + theme + "-all.css\"></link>");
         linkIt(1);
         linkIt(2);
@@ -137,9 +137,7 @@ var ElementParser = function () {
 
   document.addEventListener(DCL, upgrade);
 
-  var ElementParser =
-  /*#__PURE__*/
-  function (_HTMLElement) {
+  var ElementParser = /*#__PURE__*/function (_HTMLElement) {
     _inheritsLoose(ElementParser, _HTMLElement);
 
     function ElementParser() {
@@ -218,7 +216,7 @@ var ElementParser = function () {
     };
 
     return ElementParser;
-  }(_wrapNativeSuper(HTMLElement));
+  }( /*#__PURE__*/_wrapNativeSuper(HTMLElement));
 
   return ElementParser.withParsedCallback(ElementParser);
 }();

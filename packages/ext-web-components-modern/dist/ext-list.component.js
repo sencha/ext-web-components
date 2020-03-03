@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_List from './Ext/List.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCList =
-/*#__PURE__*/
-function (_Ext_List) {
+var EWCList = /*#__PURE__*/function (_Ext_List) {
   _inheritsLoose(EWCList, _Ext_List);
 
   function EWCList() {

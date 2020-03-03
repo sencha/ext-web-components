@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_data_schema_Association from '../../../Ext/data/schema/Association.js';
 
-var Ext_data_schema_ManyToMany =
-/*#__PURE__*/
-function (_Ext_data_schema_Asso) {
+var Ext_data_schema_ManyToMany = /*#__PURE__*/function (_Ext_data_schema_Asso) {
   _inheritsLoose(Ext_data_schema_ManyToMany, _Ext_data_schema_Asso);
 
   Ext_data_schema_ManyToMany.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Label from './Ext/Label.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCLabel =
-/*#__PURE__*/
-function (_Ext_Label) {
+var EWCLabel = /*#__PURE__*/function (_Ext_Label) {
   _inheritsLoose(EWCLabel, _Ext_Label);
 
   function EWCLabel() {

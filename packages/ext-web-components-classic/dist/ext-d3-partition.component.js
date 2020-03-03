@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_d3_hierarchy_partition_Partition from './Ext/d3/hierarchy/partition/Partition.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCD3_partition =
-/*#__PURE__*/
-function (_Ext_d3_hierarchy_par) {
+var EWCD3_partition = /*#__PURE__*/function (_Ext_d3_hierarchy_par) {
   _inheritsLoose(EWCD3_partition, _Ext_d3_hierarchy_par);
 
   function EWCD3_partition() {

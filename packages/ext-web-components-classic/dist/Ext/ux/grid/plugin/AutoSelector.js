@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_plugin_Abstract from '../../../../Ext/plugin/Abstract.js';
 
-var Ext_ux_grid_plugin_AutoSelector =
-/*#__PURE__*/
-function (_Ext_plugin_Abstract) {
+var Ext_ux_grid_plugin_AutoSelector = /*#__PURE__*/function (_Ext_plugin_Abstract) {
   _inheritsLoose(Ext_ux_grid_plugin_AutoSelector, _Ext_plugin_Abstract);
 
   Ext_ux_grid_plugin_AutoSelector.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_tree_Column from './Ext/tree/Column.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCTreecolumn =
-/*#__PURE__*/
-function (_Ext_tree_Column) {
+var EWCTreecolumn = /*#__PURE__*/function (_Ext_tree_Column) {
   _inheritsLoose(EWCTreecolumn, _Ext_tree_Column);
 
   function EWCTreecolumn() {

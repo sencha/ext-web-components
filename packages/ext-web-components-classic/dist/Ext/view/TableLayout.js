@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_layout_component_Auto from '../../Ext/layout/component/Auto.js';
 
-var Ext_view_TableLayout =
-/*#__PURE__*/
-function (_Ext_layout_component) {
+var Ext_view_TableLayout = /*#__PURE__*/function (_Ext_layout_component) {
   _inheritsLoose(Ext_view_TableLayout, _Ext_layout_component);
 
   Ext_view_TableLayout.PROPERTIES = function PROPERTIES() {

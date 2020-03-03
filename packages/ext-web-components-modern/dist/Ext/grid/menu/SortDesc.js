@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_menu_RadioItem from '../../../Ext/menu/RadioItem.js';
 
-var Ext_grid_menu_SortDesc =
-/*#__PURE__*/
-function (_Ext_menu_RadioItem) {
+var Ext_grid_menu_SortDesc = /*#__PURE__*/function (_Ext_menu_RadioItem) {
   _inheritsLoose(Ext_grid_menu_SortDesc, _Ext_menu_RadioItem);
 
   Ext_grid_menu_SortDesc.PROPERTIES = function PROPERTIES() {

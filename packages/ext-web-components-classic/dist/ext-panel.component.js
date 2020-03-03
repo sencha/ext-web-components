@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Panel from './Ext/Panel.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCPanel =
-/*#__PURE__*/
-function (_Ext_Panel) {
+var EWCPanel = /*#__PURE__*/function (_Ext_Panel) {
   _inheritsLoose(EWCPanel, _Ext_Panel);
 
   function EWCPanel() {

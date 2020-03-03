@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_event_gesture_Swipe from '../../../Ext/event/gesture/Swipe.js';
 
-var Ext_event_gesture_EdgeSwipe =
-/*#__PURE__*/
-function (_Ext_event_gesture_Sw) {
+var Ext_event_gesture_EdgeSwipe = /*#__PURE__*/function (_Ext_event_gesture_Sw) {
   _inheritsLoose(Ext_event_gesture_EdgeSwipe, _Ext_event_gesture_Sw);
 
   Ext_event_gesture_EdgeSwipe.PROPERTIES = function PROPERTIES() {

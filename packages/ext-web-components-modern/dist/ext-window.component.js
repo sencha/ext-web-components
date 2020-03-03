@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_window_Window from './Ext/window/Window.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCWindow =
-/*#__PURE__*/
-function (_Ext_window_Window) {
+var EWCWindow = /*#__PURE__*/function (_Ext_window_Window) {
   _inheritsLoose(EWCWindow, _Ext_window_Window);
 
   function EWCWindow() {

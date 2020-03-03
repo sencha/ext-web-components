@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_data_reader_Reader from '../../../Ext/data/reader/Reader.js';
 
-var Ext_grid_property_Reader =
-/*#__PURE__*/
-function (_Ext_data_reader_Read) {
+var Ext_grid_property_Reader = /*#__PURE__*/function (_Ext_data_reader_Read) {
   _inheritsLoose(Ext_grid_property_Reader, _Ext_data_reader_Read);
 
   Ext_grid_property_Reader.PROPERTIES = function PROPERTIES() {

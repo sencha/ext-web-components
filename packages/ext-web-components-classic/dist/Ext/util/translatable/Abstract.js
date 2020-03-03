@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Evented from '../../../Ext/Evented.js';
 
-var Ext_util_translatable_Abstract =
-/*#__PURE__*/
-function (_Ext_Evented) {
+var Ext_util_translatable_Abstract = /*#__PURE__*/function (_Ext_Evented) {
   _inheritsLoose(Ext_util_translatable_Abstract, _Ext_Evented);
 
   Ext_util_translatable_Abstract.PROPERTIES = function PROPERTIES() {

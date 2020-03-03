@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_panel_Date from './Ext/panel/Date.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCDatepanel =
-/*#__PURE__*/
-function (_Ext_panel_Date) {
+var EWCDatepanel = /*#__PURE__*/function (_Ext_panel_Date) {
   _inheritsLoose(EWCDatepanel, _Ext_panel_Date);
 
   function EWCDatepanel() {

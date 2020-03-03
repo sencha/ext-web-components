@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_exporter_Plugin from '../../../Ext/exporter/Plugin.js';
 
-var Mz_pivot_plugin_ExcelExport =
-/*#__PURE__*/
-function (_Ext_exporter_Plugin) {
+var Mz_pivot_plugin_ExcelExport = /*#__PURE__*/function (_Ext_exporter_Plugin) {
   _inheritsLoose(Mz_pivot_plugin_ExcelExport, _Ext_exporter_Plugin);
 
   Mz_pivot_plugin_ExcelExport.PROPERTIES = function PROPERTIES() {

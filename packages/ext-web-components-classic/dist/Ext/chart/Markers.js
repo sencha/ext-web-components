@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_draw_sprite_Instancing from '../../Ext/draw/sprite/Instancing.js';
 
-var Ext_chart_Markers =
-/*#__PURE__*/
-function (_Ext_draw_sprite_Inst) {
+var Ext_chart_Markers = /*#__PURE__*/function (_Ext_draw_sprite_Inst) {
   _inheritsLoose(Ext_chart_Markers, _Ext_draw_sprite_Inst);
 
   Ext_chart_Markers.PROPERTIES = function PROPERTIES() {

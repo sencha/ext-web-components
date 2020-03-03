@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_selection_DataViewModel from '../../Ext/selection/DataViewModel.js';
 
-var Ext_selection_CellModel =
-/*#__PURE__*/
-function (_Ext_selection_DataVi) {
+var Ext_selection_CellModel = /*#__PURE__*/function (_Ext_selection_DataVi) {
   _inheritsLoose(Ext_selection_CellModel, _Ext_selection_DataVi);
 
   Ext_selection_CellModel.PROPERTIES = function PROPERTIES() {

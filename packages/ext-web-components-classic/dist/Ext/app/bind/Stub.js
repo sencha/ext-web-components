@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_app_bind_AbstractStub from '../../../Ext/app/bind/AbstractStub.js';
 
-var Ext_app_bind_Stub =
-/*#__PURE__*/
-function (_Ext_app_bind_Abstrac) {
+var Ext_app_bind_Stub = /*#__PURE__*/function (_Ext_app_bind_Abstrac) {
   _inheritsLoose(Ext_app_bind_Stub, _Ext_app_bind_Abstrac);
 
   Ext_app_bind_Stub.PROPERTIES = function PROPERTIES() {

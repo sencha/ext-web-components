@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_container_Container from '../../Ext/container/Container.js';
 
-var Ext_panel_Bar =
-/*#__PURE__*/
-function (_Ext_container_Contai) {
+var Ext_panel_Bar = /*#__PURE__*/function (_Ext_container_Contai) {
   _inheritsLoose(Ext_panel_Bar, _Ext_container_Contai);
 
   Ext_panel_Bar.PROPERTIES = function PROPERTIES() {

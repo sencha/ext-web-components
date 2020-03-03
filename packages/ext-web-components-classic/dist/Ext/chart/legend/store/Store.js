@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_data_Store from '../../../../Ext/data/Store.js';
 
-var Ext_chart_legend_store_Store =
-/*#__PURE__*/
-function (_Ext_data_Store) {
+var Ext_chart_legend_store_Store = /*#__PURE__*/function (_Ext_data_Store) {
   _inheritsLoose(Ext_chart_legend_store_Store, _Ext_data_Store);
 
   Ext_chart_legend_store_Store.PROPERTIES = function PROPERTIES() {

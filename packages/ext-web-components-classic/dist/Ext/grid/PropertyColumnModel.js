@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_header_Container from '../../Ext/grid/header/Container.js';
 
-var Ext_grid_PropertyColumnModel =
-/*#__PURE__*/
-function (_Ext_grid_header_Cont) {
+var Ext_grid_PropertyColumnModel = /*#__PURE__*/function (_Ext_grid_header_Cont) {
   _inheritsLoose(Ext_grid_PropertyColumnModel, _Ext_grid_header_Cont);
 
   Ext_grid_PropertyColumnModel.PROPERTIES = function PROPERTIES() {

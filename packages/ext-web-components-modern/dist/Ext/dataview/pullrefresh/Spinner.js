@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_pullrefresh_Item from '../../../Ext/dataview/pullrefresh/Item.js';
 
-var Ext_dataview_pullrefresh_Spinner =
-/*#__PURE__*/
-function (_Ext_dataview_pullref) {
+var Ext_dataview_pullrefresh_Spinner = /*#__PURE__*/function (_Ext_dataview_pullref) {
   _inheritsLoose(Ext_dataview_pullrefresh_Spinner, _Ext_dataview_pullref);
 
   Ext_dataview_pullrefresh_Spinner.PROPERTIES = function PROPERTIES() {

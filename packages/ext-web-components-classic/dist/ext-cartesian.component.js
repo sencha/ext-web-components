@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_chart_Chart from './Ext/chart/Chart.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCCartesian =
-/*#__PURE__*/
-function (_Ext_chart_Chart) {
+var EWCCartesian = /*#__PURE__*/function (_Ext_chart_Chart) {
   _inheritsLoose(EWCCartesian, _Ext_chart_Chart);
 
   function EWCCartesian() {

@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_resizer_Splitter from './Ext/resizer/Splitter.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCSplitter =
-/*#__PURE__*/
-function (_Ext_resizer_Splitter) {
+var EWCSplitter = /*#__PURE__*/function (_Ext_resizer_Splitter) {
   _inheritsLoose(EWCSplitter, _Ext_resizer_Splitter);
 
   function EWCSplitter() {

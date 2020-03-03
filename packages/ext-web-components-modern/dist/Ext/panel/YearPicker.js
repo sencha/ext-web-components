@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_BoundList from '../../Ext/dataview/BoundList.js';
 
-var Ext_panel_YearPicker =
-/*#__PURE__*/
-function (_Ext_dataview_BoundLi) {
+var Ext_panel_YearPicker = /*#__PURE__*/function (_Ext_dataview_BoundLi) {
   _inheritsLoose(Ext_panel_YearPicker, _Ext_dataview_BoundLi);
 
   Ext_panel_YearPicker.PROPERTIES = function PROPERTIES() {

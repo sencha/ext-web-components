@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_event_gesture_Recognizer from '../../../Ext/event/gesture/Recognizer.js';
 
-var Ext_event_gesture_SingleTouch =
-/*#__PURE__*/
-function (_Ext_event_gesture_Re) {
+var Ext_event_gesture_SingleTouch = /*#__PURE__*/function (_Ext_event_gesture_Re) {
   _inheritsLoose(Ext_event_gesture_SingleTouch, _Ext_event_gesture_Re);
 
   Ext_event_gesture_SingleTouch.PROPERTIES = function PROPERTIES() {

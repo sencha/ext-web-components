@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_plugin_Abstract from '../../Ext/plugin/Abstract.js';
 
-var Ext_plugin_LazyItems =
-/*#__PURE__*/
-function (_Ext_plugin_Abstract) {
+var Ext_plugin_LazyItems = /*#__PURE__*/function (_Ext_plugin_Abstract) {
   _inheritsLoose(Ext_plugin_LazyItems, _Ext_plugin_Abstract);
 
   Ext_plugin_LazyItems.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_field_ComboBox from './Ext/form/field/ComboBox.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCCombobox =
-/*#__PURE__*/
-function (_Ext_form_field_Combo) {
+var EWCCombobox = /*#__PURE__*/function (_Ext_form_field_Combo) {
   _inheritsLoose(EWCCombobox, _Ext_form_field_Combo);
 
   function EWCCombobox() {

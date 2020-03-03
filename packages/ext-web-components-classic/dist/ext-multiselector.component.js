@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_view_MultiSelector from './Ext/view/MultiSelector.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCMultiselector =
-/*#__PURE__*/
-function (_Ext_view_MultiSelect) {
+var EWCMultiselector = /*#__PURE__*/function (_Ext_view_MultiSelect) {
   _inheritsLoose(EWCMultiselector, _Ext_view_MultiSelect);
 
   function EWCMultiselector() {

@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_PropertyGrid from './Ext/grid/PropertyGrid.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCPropertygrid =
-/*#__PURE__*/
-function (_Ext_grid_PropertyGri) {
+var EWCPropertygrid = /*#__PURE__*/function (_Ext_grid_PropertyGri) {
   _inheritsLoose(EWCPropertygrid, _Ext_grid_PropertyGri);
 
   function EWCPropertygrid() {

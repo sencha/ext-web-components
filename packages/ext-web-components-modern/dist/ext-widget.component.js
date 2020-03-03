@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Gadget from './Ext/Gadget.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCWidget =
-/*#__PURE__*/
-function (_Ext_Gadget) {
+var EWCWidget = /*#__PURE__*/function (_Ext_Gadget) {
   _inheritsLoose(EWCWidget, _Ext_Gadget);
 
   function EWCWidget() {

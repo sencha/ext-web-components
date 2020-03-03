@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_ChipView from './Ext/dataview/ChipView.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCChipview =
-/*#__PURE__*/
-function (_Ext_dataview_ChipVie) {
+var EWCChipview = /*#__PURE__*/function (_Ext_dataview_ChipVie) {
   _inheritsLoose(EWCChipview, _Ext_dataview_ChipVie);
 
   function EWCChipview() {

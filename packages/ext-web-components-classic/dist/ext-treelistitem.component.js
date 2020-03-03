@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_list_TreeItem from './Ext/list/TreeItem.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCTreelistitem =
-/*#__PURE__*/
-function (_Ext_list_TreeItem) {
+var EWCTreelistitem = /*#__PURE__*/function (_Ext_list_TreeItem) {
   _inheritsLoose(EWCTreelistitem, _Ext_list_TreeItem);
 
   function EWCTreelistitem() {

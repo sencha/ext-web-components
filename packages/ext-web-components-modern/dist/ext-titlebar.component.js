@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_TitleBar from './Ext/TitleBar.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCTitlebar =
-/*#__PURE__*/
-function (_Ext_TitleBar) {
+var EWCTitlebar = /*#__PURE__*/function (_Ext_TitleBar) {
   _inheritsLoose(EWCTitlebar, _Ext_TitleBar);
 
   function EWCTitlebar() {

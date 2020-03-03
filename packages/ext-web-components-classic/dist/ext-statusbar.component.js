@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ux_StatusBar from './Ext/ux/StatusBar.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCStatusbar =
-/*#__PURE__*/
-function (_Ext_ux_StatusBar) {
+var EWCStatusbar = /*#__PURE__*/function (_Ext_ux_StatusBar) {
   _inheritsLoose(EWCStatusbar, _Ext_ux_StatusBar);
 
   function EWCStatusbar() {

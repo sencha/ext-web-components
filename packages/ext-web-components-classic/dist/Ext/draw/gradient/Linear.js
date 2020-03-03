@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_draw_gradient_Gradient from '../../../Ext/draw/gradient/Gradient.js';
 
-var Ext_draw_gradient_Linear =
-/*#__PURE__*/
-function (_Ext_draw_gradient_Gr) {
+var Ext_draw_gradient_Linear = /*#__PURE__*/function (_Ext_draw_gradient_Gr) {
   _inheritsLoose(Ext_draw_gradient_Linear, _Ext_draw_gradient_Gr);
 
   Ext_draw_gradient_Linear.PROPERTIES = function PROPERTIES() {

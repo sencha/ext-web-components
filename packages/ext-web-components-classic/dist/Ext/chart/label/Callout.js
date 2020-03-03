@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_draw_modifier_Modifier from '../../../Ext/draw/modifier/Modifier.js';
 
-var Ext_chart_label_Callout =
-/*#__PURE__*/
-function (_Ext_draw_modifier_Mo) {
+var Ext_chart_label_Callout = /*#__PURE__*/function (_Ext_draw_modifier_Mo) {
   _inheritsLoose(Ext_chart_label_Callout, _Ext_draw_modifier_Mo);
 
   Ext_chart_label_Callout.PROPERTIES = function PROPERTIES() {

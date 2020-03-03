@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_fx_target_Target from '../../../Ext/fx/target/Target.js';
 
-var Ext_fx_target_Sprite =
-/*#__PURE__*/
-function (_Ext_fx_target_Target) {
+var Ext_fx_target_Sprite = /*#__PURE__*/function (_Ext_fx_target_Target) {
   _inheritsLoose(Ext_fx_target_Sprite, _Ext_fx_target_Target);
 
   Ext_fx_target_Sprite.PROPERTIES = function PROPERTIES() {

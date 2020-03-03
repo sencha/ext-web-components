@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_util_LruCache from '../../Ext/util/LruCache.js';
 
-var Ext_data_PageMap =
-/*#__PURE__*/
-function (_Ext_util_LruCache) {
+var Ext_data_PageMap = /*#__PURE__*/function (_Ext_util_LruCache) {
   _inheritsLoose(Ext_data_PageMap, _Ext_util_LruCache);
 
   Ext_data_PageMap.PROPERTIES = function PROPERTIES() {

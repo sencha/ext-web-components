@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_sparkline_Base from '../../Ext/sparkline/Base.js';
 
-var Ext_sparkline_Box =
-/*#__PURE__*/
-function (_Ext_sparkline_Base) {
+var Ext_sparkline_Box = /*#__PURE__*/function (_Ext_sparkline_Base) {
   _inheritsLoose(Ext_sparkline_Box, _Ext_sparkline_Base);
 
   Ext_sparkline_Box.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_data_validator_Number from '../../../Ext/data/validator/Number.js';
 
-var Ext_data_validator_Currency =
-/*#__PURE__*/
-function (_Ext_data_validator_N) {
+var Ext_data_validator_Currency = /*#__PURE__*/function (_Ext_data_validator_N) {
   _inheritsLoose(Ext_data_validator_Currency, _Ext_data_validator_N);
 
   Ext_data_validator_Currency.PROPERTIES = function PROPERTIES() {

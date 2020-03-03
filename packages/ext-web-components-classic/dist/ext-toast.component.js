@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_window_Toast from './Ext/window/Toast.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCToast =
-/*#__PURE__*/
-function (_Ext_window_Toast) {
+var EWCToast = /*#__PURE__*/function (_Ext_window_Toast) {
   _inheritsLoose(EWCToast, _Ext_window_Toast);
 
   function EWCToast() {

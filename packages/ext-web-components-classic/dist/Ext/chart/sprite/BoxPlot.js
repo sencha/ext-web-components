@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_draw_sprite_Sprite from '../../../Ext/draw/sprite/Sprite.js';
 
-var Ext_chart_sprite_BoxPlot =
-/*#__PURE__*/
-function (_Ext_draw_sprite_Spri) {
+var Ext_chart_sprite_BoxPlot = /*#__PURE__*/function (_Ext_draw_sprite_Spri) {
   _inheritsLoose(Ext_chart_sprite_BoxPlot, _Ext_draw_sprite_Spri);
 
   Ext_chart_sprite_BoxPlot.PROPERTIES = function PROPERTIES() {

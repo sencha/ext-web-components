@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_calendar_form_TimeField from './Ext/calendar/form/TimeField.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCCalendar_timefield =
-/*#__PURE__*/
-function (_Ext_calendar_form_Ti) {
+var EWCCalendar_timefield = /*#__PURE__*/function (_Ext_calendar_form_Ti) {
   _inheritsLoose(EWCCalendar_timefield, _Ext_calendar_form_Ti);
 
   function EWCCalendar_timefield() {

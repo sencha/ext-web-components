@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_event_publisher_Publisher from '../../../Ext/event/publisher/Publisher.js';
 
-var Ext_event_publisher_ElementPaint =
-/*#__PURE__*/
-function (_Ext_event_publisher_) {
+var Ext_event_publisher_ElementPaint = /*#__PURE__*/function (_Ext_event_publisher_) {
   _inheritsLoose(Ext_event_publisher_ElementPaint, _Ext_event_publisher_);
 
   Ext_event_publisher_ElementPaint.PROPERTIES = function PROPERTIES() {

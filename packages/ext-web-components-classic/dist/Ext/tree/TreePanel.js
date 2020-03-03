@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_panel_Table from '../../Ext/panel/Table.js';
 
-var Ext_tree_TreePanel =
-/*#__PURE__*/
-function (_Ext_panel_Table) {
+var Ext_tree_TreePanel = /*#__PURE__*/function (_Ext_panel_Table) {
   _inheritsLoose(Ext_tree_TreePanel, _Ext_panel_Table);
 
   Ext_tree_TreePanel.PROPERTIES = function PROPERTIES() {

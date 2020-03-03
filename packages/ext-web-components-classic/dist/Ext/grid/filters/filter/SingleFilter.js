@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_filters_filter_Base from '../../../../Ext/grid/filters/filter/Base.js';
 
-var Ext_grid_filters_filter_SingleFilter =
-/*#__PURE__*/
-function (_Ext_grid_filters_fil) {
+var Ext_grid_filters_filter_SingleFilter = /*#__PURE__*/function (_Ext_grid_filters_fil) {
   _inheritsLoose(Ext_grid_filters_filter_SingleFilter, _Ext_grid_filters_fil);
 
   Ext_grid_filters_filter_SingleFilter.PROPERTIES = function PROPERTIES() {

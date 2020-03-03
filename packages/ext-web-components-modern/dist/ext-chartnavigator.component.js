@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_chart_navigator_Container from './Ext/chart/navigator/Container.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCChartnavigator =
-/*#__PURE__*/
-function (_Ext_chart_navigator_) {
+var EWCChartnavigator = /*#__PURE__*/function (_Ext_chart_navigator_) {
   _inheritsLoose(EWCChartnavigator, _Ext_chart_navigator_);
 
   function EWCChartnavigator() {

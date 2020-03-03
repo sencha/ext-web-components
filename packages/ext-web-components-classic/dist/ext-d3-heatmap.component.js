@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_d3_HeatMap from './Ext/d3/HeatMap.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCD3_heatmap =
-/*#__PURE__*/
-function (_Ext_d3_HeatMap) {
+var EWCD3_heatmap = /*#__PURE__*/function (_Ext_d3_HeatMap) {
   _inheritsLoose(EWCD3_heatmap, _Ext_d3_HeatMap);
 
   function EWCD3_heatmap() {

@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ux_Explorer from './Ext/ux/Explorer.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCExplorer =
-/*#__PURE__*/
-function (_Ext_ux_Explorer) {
+var EWCExplorer = /*#__PURE__*/function (_Ext_ux_Explorer) {
   _inheritsLoose(EWCExplorer, _Ext_ux_Explorer);
 
   function EWCExplorer() {

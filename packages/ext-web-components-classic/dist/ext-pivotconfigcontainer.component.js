@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_pivot_plugin_configurator_Container from './Ext/pivot/plugin/configurator/Container.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCPivotconfigcontainer =
-/*#__PURE__*/
-function (_Ext_pivot_plugin_con) {
+var EWCPivotconfigcontainer = /*#__PURE__*/function (_Ext_pivot_plugin_con) {
   _inheritsLoose(EWCPivotconfigcontainer, _Ext_pivot_plugin_con);
 
   function EWCPivotconfigcontainer() {

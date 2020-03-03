@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_layout_component_Component from '../../../Ext/layout/component/Component.js';
 
-var Ext_layout_component_Dock =
-/*#__PURE__*/
-function (_Ext_layout_component) {
+var Ext_layout_component_Dock = /*#__PURE__*/function (_Ext_layout_component) {
   _inheritsLoose(Ext_layout_component_Dock, _Ext_layout_component);
 
   Ext_layout_component_Dock.PROPERTIES = function PROPERTIES() {

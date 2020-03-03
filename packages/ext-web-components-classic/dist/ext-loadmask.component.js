@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_LoadMask from './Ext/LoadMask.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCLoadmask =
-/*#__PURE__*/
-function (_Ext_LoadMask) {
+var EWCLoadmask = /*#__PURE__*/function (_Ext_LoadMask) {
   _inheritsLoose(EWCLoadmask, _Ext_LoadMask);
 
   function EWCLoadmask() {

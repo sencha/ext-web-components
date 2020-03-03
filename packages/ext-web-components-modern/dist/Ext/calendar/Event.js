@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_calendar_EventBase from '../../Ext/calendar/EventBase.js';
 
-var Ext_calendar_Event =
-/*#__PURE__*/
-function (_Ext_calendar_EventBa) {
+var Ext_calendar_Event = /*#__PURE__*/function (_Ext_calendar_EventBa) {
   _inheritsLoose(Ext_calendar_Event, _Ext_calendar_EventBa);
 
   Ext_calendar_Event.PROPERTIES = function PROPERTIES() {

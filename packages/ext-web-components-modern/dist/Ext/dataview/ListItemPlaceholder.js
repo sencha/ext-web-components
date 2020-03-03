@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_SimpleListItem from '../../Ext/dataview/SimpleListItem.js';
 
-var Ext_dataview_ListItemPlaceholder =
-/*#__PURE__*/
-function (_Ext_dataview_SimpleL) {
+var Ext_dataview_ListItemPlaceholder = /*#__PURE__*/function (_Ext_dataview_SimpleL) {
   _inheritsLoose(Ext_dataview_ListItemPlaceholder, _Ext_dataview_SimpleL);
 
   Ext_dataview_ListItemPlaceholder.PROPERTIES = function PROPERTIES() {

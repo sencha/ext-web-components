@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_Date from './Ext/form/Date.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCDatefield =
-/*#__PURE__*/
-function (_Ext_form_Date) {
+var EWCDatefield = /*#__PURE__*/function (_Ext_form_Date) {
   _inheritsLoose(EWCDatefield, _Ext_form_Date);
 
   function EWCDatefield() {

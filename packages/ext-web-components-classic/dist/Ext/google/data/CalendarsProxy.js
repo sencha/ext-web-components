@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_google_data_AbstractProxy from '../../../Ext/google/data/AbstractProxy.js';
 
-var Ext_google_data_CalendarsProxy =
-/*#__PURE__*/
-function (_Ext_google_data_Abst) {
+var Ext_google_data_CalendarsProxy = /*#__PURE__*/function (_Ext_google_data_Abst) {
   _inheritsLoose(Ext_google_data_CalendarsProxy, _Ext_google_data_Abst);
 
   Ext_google_data_CalendarsProxy.PROPERTIES = function PROPERTIES() {

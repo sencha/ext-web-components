@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_app_bind_Stub from '../../../Ext/app/bind/Stub.js';
 
-var Ext_app_bind_LinkStub =
-/*#__PURE__*/
-function (_Ext_app_bind_Stub) {
+var Ext_app_bind_LinkStub = /*#__PURE__*/function (_Ext_app_bind_Stub) {
   _inheritsLoose(Ext_app_bind_LinkStub, _Ext_app_bind_Stub);
 
   Ext_app_bind_LinkStub.PROPERTIES = function PROPERTIES() {

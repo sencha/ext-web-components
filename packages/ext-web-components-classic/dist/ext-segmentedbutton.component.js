@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_button_Segmented from './Ext/button/Segmented.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCSegmentedbutton =
-/*#__PURE__*/
-function (_Ext_button_Segmented) {
+var EWCSegmentedbutton = /*#__PURE__*/function (_Ext_button_Segmented) {
   _inheritsLoose(EWCSegmentedbutton, _Ext_button_Segmented);
 
   function EWCSegmentedbutton() {

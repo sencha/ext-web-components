@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_util_AbstractMixedCollection from '../../Ext/util/AbstractMixedCollection.js';
 
-var Ext_util_MixedCollection =
-/*#__PURE__*/
-function (_Ext_util_AbstractMix) {
+var Ext_util_MixedCollection = /*#__PURE__*/function (_Ext_util_AbstractMix) {
   _inheritsLoose(Ext_util_MixedCollection, _Ext_util_AbstractMix);
 
   Ext_util_MixedCollection.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_direct_JsonProvider from '../../Ext/direct/JsonProvider.js';
 
-var Ext_direct_PollingProvider =
-/*#__PURE__*/
-function (_Ext_direct_JsonProvi) {
+var Ext_direct_PollingProvider = /*#__PURE__*/function (_Ext_direct_JsonProvi) {
   _inheritsLoose(Ext_direct_PollingProvider, _Ext_direct_JsonProvi);
 
   Ext_direct_PollingProvider.PROPERTIES = function PROPERTIES() {

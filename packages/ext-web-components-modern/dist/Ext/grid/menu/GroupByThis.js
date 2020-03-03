@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_menu_Item from '../../../Ext/menu/Item.js';
 
-var Ext_grid_menu_GroupByThis =
-/*#__PURE__*/
-function (_Ext_menu_Item) {
+var Ext_grid_menu_GroupByThis = /*#__PURE__*/function (_Ext_menu_Item) {
   _inheritsLoose(Ext_grid_menu_GroupByThis, _Ext_menu_Item);
 
   Ext_grid_menu_GroupByThis.PROPERTIES = function PROPERTIES() {

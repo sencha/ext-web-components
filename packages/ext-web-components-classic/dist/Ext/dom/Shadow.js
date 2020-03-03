@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dom_Underlay from '../../Ext/dom/Underlay.js';
 
-var Ext_dom_Shadow =
-/*#__PURE__*/
-function (_Ext_dom_Underlay) {
+var Ext_dom_Shadow = /*#__PURE__*/function (_Ext_dom_Underlay) {
   _inheritsLoose(Ext_dom_Shadow, _Ext_dom_Underlay);
 
   Ext_dom_Shadow.PROPERTIES = function PROPERTIES() {

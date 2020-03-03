@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Chip from './Ext/Chip.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCChip =
-/*#__PURE__*/
-function (_Ext_Chip) {
+var EWCChip = /*#__PURE__*/function (_Ext_Chip) {
   _inheritsLoose(EWCChip, _Ext_Chip);
 
   function EWCChip() {

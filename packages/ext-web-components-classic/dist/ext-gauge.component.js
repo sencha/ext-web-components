@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ux_Gauge from './Ext/ux/Gauge.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCGauge =
-/*#__PURE__*/
-function (_Ext_ux_Gauge) {
+var EWCGauge = /*#__PURE__*/function (_Ext_ux_Gauge) {
   _inheritsLoose(EWCGauge, _Ext_ux_Gauge);
 
   function EWCGauge() {

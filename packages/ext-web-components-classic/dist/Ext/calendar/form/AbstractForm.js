@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_window_Window from '../../../Ext/window/Window.js';
 
-var Ext_calendar_form_AbstractForm =
-/*#__PURE__*/
-function (_Ext_window_Window) {
+var Ext_calendar_form_AbstractForm = /*#__PURE__*/function (_Ext_window_Window) {
   _inheritsLoose(Ext_calendar_form_AbstractForm, _Ext_window_Window);
 
   Ext_calendar_form_AbstractForm.PROPERTIES = function PROPERTIES() {

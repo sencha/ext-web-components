@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_NestedList from './Ext/NestedList.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCNestedlist =
-/*#__PURE__*/
-function (_Ext_NestedList) {
+var EWCNestedlist = /*#__PURE__*/function (_Ext_NestedList) {
   _inheritsLoose(EWCNestedlist, _Ext_NestedList);
 
   function EWCNestedlist() {

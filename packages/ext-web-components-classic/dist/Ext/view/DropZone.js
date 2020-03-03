@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dd_DropZone from '../../Ext/dd/DropZone.js';
 
-var Ext_view_DropZone =
-/*#__PURE__*/
-function (_Ext_dd_DropZone) {
+var Ext_view_DropZone = /*#__PURE__*/function (_Ext_dd_DropZone) {
   _inheritsLoose(Ext_view_DropZone, _Ext_dd_DropZone);
 
   Ext_view_DropZone.PROPERTIES = function PROPERTIES() {

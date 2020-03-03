@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_RadioGroup from './Ext/field/RadioGroup.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCRadiogroup =
-/*#__PURE__*/
-function (_Ext_field_RadioGroup) {
+var EWCRadiogroup = /*#__PURE__*/function (_Ext_field_RadioGroup) {
   _inheritsLoose(EWCRadiogroup, _Ext_field_RadioGroup);
 
   function EWCRadiogroup() {

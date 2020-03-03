@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_column_Check from '../../../Ext/grid/column/Check.js';
 
-var Ext_grid_column_Selection =
-/*#__PURE__*/
-function (_Ext_grid_column_Chec) {
+var Ext_grid_column_Selection = /*#__PURE__*/function (_Ext_grid_column_Chec) {
   _inheritsLoose(Ext_grid_column_Selection, _Ext_grid_column_Chec);
 
   Ext_grid_column_Selection.PROPERTIES = function PROPERTIES() {

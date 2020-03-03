@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_d3_HeatMap from '../../../Ext/d3/HeatMap.js';
 
-var Ext_pivot_d3_HeatMap =
-/*#__PURE__*/
-function (_Ext_d3_HeatMap) {
+var Ext_pivot_d3_HeatMap = /*#__PURE__*/function (_Ext_d3_HeatMap) {
   _inheritsLoose(Ext_pivot_d3_HeatMap, _Ext_d3_HeatMap);
 
   Ext_pivot_d3_HeatMap.PROPERTIES = function PROPERTIES() {

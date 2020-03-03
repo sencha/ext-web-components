@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_feature_Grouping from '../../../Ext/grid/feature/Grouping.js';
 
-var Ext_grid_feature_GroupingSummary =
-/*#__PURE__*/
-function (_Ext_grid_feature_Gro) {
+var Ext_grid_feature_GroupingSummary = /*#__PURE__*/function (_Ext_grid_feature_Gro) {
   _inheritsLoose(Ext_grid_feature_GroupingSummary, _Ext_grid_feature_Gro);
 
   Ext_grid_feature_GroupingSummary.PROPERTIES = function PROPERTIES() {

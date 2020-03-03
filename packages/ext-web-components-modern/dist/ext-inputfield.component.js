@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_Input from './Ext/field/Input.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCInputfield =
-/*#__PURE__*/
-function (_Ext_field_Input) {
+var EWCInputfield = /*#__PURE__*/function (_Ext_field_Input) {
   _inheritsLoose(EWCInputfield, _Ext_field_Input);
 
   function EWCInputfield() {

@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ux_desktop_TaskBar from './Ext/ux/desktop/TaskBar.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCTaskbar =
-/*#__PURE__*/
-function (_Ext_ux_desktop_TaskB) {
+var EWCTaskbar = /*#__PURE__*/function (_Ext_ux_desktop_TaskB) {
   _inheritsLoose(EWCTaskbar, _Ext_ux_desktop_TaskB);
 
   function EWCTaskbar() {

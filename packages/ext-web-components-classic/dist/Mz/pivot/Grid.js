@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_Panel from '../../Ext/grid/Panel.js';
 
-var Mz_pivot_Grid =
-/*#__PURE__*/
-function (_Ext_grid_Panel) {
+var Mz_pivot_Grid = /*#__PURE__*/function (_Ext_grid_Panel) {
   _inheritsLoose(Mz_pivot_Grid, _Ext_grid_Panel);
 
   Mz_pivot_Grid.PROPERTIES = function PROPERTIES() {
