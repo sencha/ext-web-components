@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Image from './Ext/Image.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCImage =
-/*#__PURE__*/
-function (_Ext_Image) {
+var EWCImage = /*#__PURE__*/function (_Ext_Image) {
   _inheritsLoose(EWCImage, _Ext_Image);
 
   function EWCImage() {

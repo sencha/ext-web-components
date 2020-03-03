@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_d3_axis_Axis from '../../../Ext/d3/axis/Axis.js';
 
-var Ext_d3_axis_Data =
-/*#__PURE__*/
-function (_Ext_d3_axis_Axis) {
+var Ext_d3_axis_Data = /*#__PURE__*/function (_Ext_d3_axis_Axis) {
   _inheritsLoose(Ext_d3_axis_Data, _Ext_d3_axis_Axis);
 
   Ext_d3_axis_Data.PROPERTIES = function PROPERTIES() {

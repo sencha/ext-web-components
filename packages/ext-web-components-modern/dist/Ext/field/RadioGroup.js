@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_FieldGroupContainer from '../../Ext/field/FieldGroupContainer.js';
 
-var Ext_field_RadioGroup =
-/*#__PURE__*/
-function (_Ext_field_FieldGroup) {
+var Ext_field_RadioGroup = /*#__PURE__*/function (_Ext_field_FieldGroup) {
   _inheritsLoose(Ext_field_RadioGroup, _Ext_field_FieldGroup);
 
   Ext_field_RadioGroup.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_column_RowNumberer from './Ext/grid/column/RowNumberer.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCRownumberer =
-/*#__PURE__*/
-function (_Ext_grid_column_RowN) {
+var EWCRownumberer = /*#__PURE__*/function (_Ext_grid_column_RowN) {
   _inheritsLoose(EWCRownumberer, _Ext_grid_column_RowN);
 
   function EWCRownumberer() {

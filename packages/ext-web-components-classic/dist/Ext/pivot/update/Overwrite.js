@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_pivot_update_Base from '../../../Ext/pivot/update/Base.js';
 
-var Ext_pivot_update_Overwrite =
-/*#__PURE__*/
-function (_Ext_pivot_update_Bas) {
+var Ext_pivot_update_Overwrite = /*#__PURE__*/function (_Ext_pivot_update_Bas) {
   _inheritsLoose(Ext_pivot_update_Overwrite, _Ext_pivot_update_Bas);
 
   Ext_pivot_update_Overwrite.PROPERTIES = function PROPERTIES() {

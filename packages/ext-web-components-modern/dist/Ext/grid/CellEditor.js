@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Editor from '../../Ext/Editor.js';
 
-var Ext_grid_CellEditor =
-/*#__PURE__*/
-function (_Ext_Editor) {
+var Ext_grid_CellEditor = /*#__PURE__*/function (_Ext_Editor) {
   _inheritsLoose(Ext_grid_CellEditor, _Ext_Editor);
 
   Ext_grid_CellEditor.PROPERTIES = function PROPERTIES() {

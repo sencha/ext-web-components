@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_chart_series_Series from '../../../Ext/chart/series/Series.js';
 
-var Ext_chart_series_Cartesian =
-/*#__PURE__*/
-function (_Ext_chart_series_Ser) {
+var Ext_chart_series_Cartesian = /*#__PURE__*/function (_Ext_chart_series_Ser) {
   _inheritsLoose(Ext_chart_series_Cartesian, _Ext_chart_series_Ser);
 
   Ext_chart_series_Cartesian.PROPERTIES = function PROPERTIES() {

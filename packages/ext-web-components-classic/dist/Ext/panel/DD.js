@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dd_DragSource from '../../Ext/dd/DragSource.js';
 
-var Ext_panel_DD =
-/*#__PURE__*/
-function (_Ext_dd_DragSource) {
+var Ext_panel_DD = /*#__PURE__*/function (_Ext_dd_DragSource) {
   _inheritsLoose(Ext_panel_DD, _Ext_dd_DragSource);
 
   Ext_panel_DD.PROPERTIES = function PROPERTIES() {

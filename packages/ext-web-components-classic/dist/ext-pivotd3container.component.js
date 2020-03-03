@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_pivot_d3_Container from './Ext/pivot/d3/Container.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCPivotd3container =
-/*#__PURE__*/
-function (_Ext_pivot_d3_Contain) {
+var EWCPivotd3container = /*#__PURE__*/function (_Ext_pivot_d3_Contain) {
   _inheritsLoose(EWCPivotd3container, _Ext_pivot_d3_Contain);
 
   function EWCPivotd3container() {

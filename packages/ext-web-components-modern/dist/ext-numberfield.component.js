@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_Number from './Ext/form/Number.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCNumberfield =
-/*#__PURE__*/
-function (_Ext_form_Number) {
+var EWCNumberfield = /*#__PURE__*/function (_Ext_form_Number) {
   _inheritsLoose(EWCNumberfield, _Ext_form_Number);
 
   function EWCNumberfield() {

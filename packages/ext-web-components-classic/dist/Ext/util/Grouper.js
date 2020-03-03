@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_util_Sorter from '../../Ext/util/Sorter.js';
 
-var Ext_util_Grouper =
-/*#__PURE__*/
-function (_Ext_util_Sorter) {
+var Ext_util_Grouper = /*#__PURE__*/function (_Ext_util_Sorter) {
   _inheritsLoose(Ext_util_Grouper, _Ext_util_Sorter);
 
   Ext_util_Grouper.PROPERTIES = function PROPERTIES() {

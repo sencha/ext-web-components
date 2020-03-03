@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_panel_Title from '../../Ext/panel/Title.js';
 
-var Ext_panel_DateTitle =
-/*#__PURE__*/
-function (_Ext_panel_Title) {
+var Ext_panel_DateTitle = /*#__PURE__*/function (_Ext_panel_Title) {
   _inheritsLoose(Ext_panel_DateTitle, _Ext_panel_Title);
 
   Ext_panel_DateTitle.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_trigger_Trigger from '../../../Ext/field/trigger/Trigger.js';
 
-var Ext_field_trigger_SpinDown =
-/*#__PURE__*/
-function (_Ext_field_trigger_Tr) {
+var Ext_field_trigger_SpinDown = /*#__PURE__*/function (_Ext_field_trigger_Tr) {
   _inheritsLoose(Ext_field_trigger_SpinDown, _Ext_field_trigger_Tr);
 
   Ext_field_trigger_SpinDown.PROPERTIES = function PROPERTIES() {

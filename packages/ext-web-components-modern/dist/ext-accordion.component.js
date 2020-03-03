@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_panel_Accordion from './Ext/panel/Accordion.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCAccordion =
-/*#__PURE__*/
-function (_Ext_panel_Accordion) {
+var EWCAccordion = /*#__PURE__*/function (_Ext_panel_Accordion) {
   _inheritsLoose(EWCAccordion, _Ext_panel_Accordion);
 
   function EWCAccordion() {

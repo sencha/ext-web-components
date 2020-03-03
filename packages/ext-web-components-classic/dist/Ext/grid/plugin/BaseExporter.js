@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_exporter_Plugin from '../../../Ext/exporter/Plugin.js';
 
-var Ext_grid_plugin_BaseExporter =
-/*#__PURE__*/
-function (_Ext_exporter_Plugin) {
+var Ext_grid_plugin_BaseExporter = /*#__PURE__*/function (_Ext_exporter_Plugin) {
   _inheritsLoose(Ext_grid_plugin_BaseExporter, _Ext_exporter_Plugin);
 
   Ext_grid_plugin_BaseExporter.PROPERTIES = function PROPERTIES() {

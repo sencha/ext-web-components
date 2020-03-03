@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ux_Multiselect from './Ext/ux/Multiselect.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCMultiselectfield =
-/*#__PURE__*/
-function (_Ext_ux_Multiselect) {
+var EWCMultiselectfield = /*#__PURE__*/function (_Ext_ux_Multiselect) {
   _inheritsLoose(EWCMultiselectfield, _Ext_ux_Multiselect);
 
   function EWCMultiselectfield() {

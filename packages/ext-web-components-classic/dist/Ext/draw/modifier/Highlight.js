@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_draw_modifier_Modifier from '../../../Ext/draw/modifier/Modifier.js';
 
-var Ext_draw_modifier_Highlight =
-/*#__PURE__*/
-function (_Ext_draw_modifier_Mo) {
+var Ext_draw_modifier_Highlight = /*#__PURE__*/function (_Ext_draw_modifier_Mo) {
   _inheritsLoose(Ext_draw_modifier_Highlight, _Ext_draw_modifier_Mo);
 
   Ext_draw_modifier_Highlight.PROPERTIES = function PROPERTIES() {

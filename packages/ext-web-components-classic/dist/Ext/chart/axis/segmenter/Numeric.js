@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_chart_axis_segmenter_Segmenter from '../../../../Ext/chart/axis/segmenter/Segmenter.js';
 
-var Ext_chart_axis_segmenter_Numeric =
-/*#__PURE__*/
-function (_Ext_chart_axis_segme) {
+var Ext_chart_axis_segmenter_Numeric = /*#__PURE__*/function (_Ext_chart_axis_segme) {
   _inheritsLoose(Ext_chart_axis_segmenter_Numeric, _Ext_chart_axis_segme);
 
   Ext_chart_axis_segmenter_Numeric.PROPERTIES = function PROPERTIES() {

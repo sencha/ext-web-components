@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_chart_SpaceFillingChart from './Ext/chart/SpaceFillingChart.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCSpacefilling =
-/*#__PURE__*/
-function (_Ext_chart_SpaceFilli) {
+var EWCSpacefilling = /*#__PURE__*/function (_Ext_chart_SpaceFilli) {
   _inheritsLoose(EWCSpacefilling, _Ext_chart_SpaceFilli);
 
   function EWCSpacefilling() {

@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_data_summary_Base from '../../../Ext/data/summary/Base.js';
 
-var Ext_data_summary_Max =
-/*#__PURE__*/
-function (_Ext_data_summary_Bas) {
+var Ext_data_summary_Max = /*#__PURE__*/function (_Ext_data_summary_Bas) {
   _inheritsLoose(Ext_data_summary_Max, _Ext_data_summary_Bas);
 
   Ext_data_summary_Max.PROPERTIES = function PROPERTIES() {

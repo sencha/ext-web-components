@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ux_ajax_JsonSimlet from '../../../Ext/ux/ajax/JsonSimlet.js';
 
-var Ext_ux_ajax_PivotSimlet =
-/*#__PURE__*/
-function (_Ext_ux_ajax_JsonSiml) {
+var Ext_ux_ajax_PivotSimlet = /*#__PURE__*/function (_Ext_ux_ajax_JsonSiml) {
   _inheritsLoose(Ext_ux_ajax_PivotSimlet, _Ext_ux_ajax_JsonSiml);
 
   Ext_ux_ajax_PivotSimlet.PROPERTIES = function PROPERTIES() {

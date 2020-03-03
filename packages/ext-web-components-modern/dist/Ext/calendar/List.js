@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_calendar_AbstractList from '../../Ext/calendar/AbstractList.js';
 
-var Ext_calendar_List =
-/*#__PURE__*/
-function (_Ext_calendar_Abstrac) {
+var Ext_calendar_List = /*#__PURE__*/function (_Ext_calendar_Abstrac) {
   _inheritsLoose(Ext_calendar_List, _Ext_calendar_Abstrac);
 
   Ext_calendar_List.PROPERTIES = function PROPERTIES() {

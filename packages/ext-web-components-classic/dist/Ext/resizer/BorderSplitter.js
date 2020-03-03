@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_resizer_Splitter from '../../Ext/resizer/Splitter.js';
 
-var Ext_resizer_BorderSplitter =
-/*#__PURE__*/
-function (_Ext_resizer_Splitter) {
+var Ext_resizer_BorderSplitter = /*#__PURE__*/function (_Ext_resizer_Splitter) {
   _inheritsLoose(Ext_resizer_BorderSplitter, _Ext_resizer_Splitter);
 
   Ext_resizer_BorderSplitter.PROPERTIES = function PROPERTIES() {

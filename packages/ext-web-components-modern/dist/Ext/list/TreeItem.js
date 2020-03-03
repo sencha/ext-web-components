@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_list_AbstractTreeItem from '../../Ext/list/AbstractTreeItem.js';
 
-var Ext_list_TreeItem =
-/*#__PURE__*/
-function (_Ext_list_AbstractTre) {
+var Ext_list_TreeItem = /*#__PURE__*/function (_Ext_list_AbstractTre) {
   _inheritsLoose(Ext_list_TreeItem, _Ext_list_AbstractTre);
 
   Ext_list_TreeItem.PROPERTIES = function PROPERTIES() {

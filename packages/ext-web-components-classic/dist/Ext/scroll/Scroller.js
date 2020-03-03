@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Evented from '../../Ext/Evented.js';
 
-var Ext_scroll_Scroller =
-/*#__PURE__*/
-function (_Ext_Evented) {
+var Ext_scroll_Scroller = /*#__PURE__*/function (_Ext_Evented) {
   _inheritsLoose(Ext_scroll_Scroller, _Ext_Evented);
 
   Ext_scroll_Scroller.PROPERTIES = function PROPERTIES() {

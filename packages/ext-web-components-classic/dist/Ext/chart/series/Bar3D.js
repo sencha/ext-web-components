@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_chart_series_Bar from '../../../Ext/chart/series/Bar.js';
 
-var Ext_chart_series_Bar3D =
-/*#__PURE__*/
-function (_Ext_chart_series_Bar) {
+var Ext_chart_series_Bar3D = /*#__PURE__*/function (_Ext_chart_series_Bar) {
   _inheritsLoose(Ext_chart_series_Bar3D, _Ext_chart_series_Bar);
 
   Ext_chart_series_Bar3D.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_util_Observable from '../../../Ext/util/Observable.js';
 
-var Mz_aggregate_matrix_Abstract =
-/*#__PURE__*/
-function (_Ext_util_Observable) {
+var Mz_aggregate_matrix_Abstract = /*#__PURE__*/function (_Ext_util_Observable) {
   _inheritsLoose(Mz_aggregate_matrix_Abstract, _Ext_util_Observable);
 
   Mz_aggregate_matrix_Abstract.PROPERTIES = function PROPERTIES() {

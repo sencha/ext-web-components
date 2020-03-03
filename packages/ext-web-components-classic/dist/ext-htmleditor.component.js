@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_HtmlEditor from './Ext/form/HtmlEditor.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCHtmleditor =
-/*#__PURE__*/
-function (_Ext_form_HtmlEditor) {
+var EWCHtmleditor = /*#__PURE__*/function (_Ext_form_HtmlEditor) {
   _inheritsLoose(EWCHtmleditor, _Ext_form_HtmlEditor);
 
   function EWCHtmleditor() {

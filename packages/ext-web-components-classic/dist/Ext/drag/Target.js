@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_drag_Item from '../../Ext/drag/Item.js';
 
-var Ext_drag_Target =
-/*#__PURE__*/
-function (_Ext_drag_Item) {
+var Ext_drag_Target = /*#__PURE__*/function (_Ext_drag_Item) {
   _inheritsLoose(Ext_drag_Target, _Ext_drag_Item);
 
   Ext_drag_Target.PROPERTIES = function PROPERTIES() {

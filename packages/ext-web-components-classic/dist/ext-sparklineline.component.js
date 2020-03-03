@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_sparkline_Line from './Ext/sparkline/Line.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCSparklineline =
-/*#__PURE__*/
-function (_Ext_sparkline_Line) {
+var EWCSparklineline = /*#__PURE__*/function (_Ext_sparkline_Line) {
   _inheritsLoose(EWCSparklineline, _Ext_sparkline_Line);
 
   function EWCSparklineline() {

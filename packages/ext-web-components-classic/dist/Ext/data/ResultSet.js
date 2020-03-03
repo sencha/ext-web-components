@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Base from '../../Ext/Base.js';
 
-var Ext_data_ResultSet =
-/*#__PURE__*/
-function (_Ext_Base) {
+var Ext_data_ResultSet = /*#__PURE__*/function (_Ext_Base) {
   _inheritsLoose(Ext_data_ResultSet, _Ext_Base);
 
   Ext_data_ResultSet.PROPERTIES = function PROPERTIES() {

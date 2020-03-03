@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_Text from '../../Ext/field/Text.js';
 
-var Ext_field_Picker =
-/*#__PURE__*/
-function (_Ext_field_Text) {
+var Ext_field_Picker = /*#__PURE__*/function (_Ext_field_Text) {
   _inheritsLoose(Ext_field_Picker, _Ext_field_Text);
 
   Ext_field_Picker.PROPERTIES = function PROPERTIES() {

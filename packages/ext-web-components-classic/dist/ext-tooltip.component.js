@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ToolTip from './Ext/ToolTip.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCTooltip =
-/*#__PURE__*/
-function (_Ext_ToolTip) {
+var EWCTooltip = /*#__PURE__*/function (_Ext_ToolTip) {
   _inheritsLoose(EWCTooltip, _Ext_ToolTip);
 
   function EWCTooltip() {

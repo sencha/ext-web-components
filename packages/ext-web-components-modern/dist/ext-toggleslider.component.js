@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_slider_Toggle from './Ext/slider/Toggle.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCToggleslider =
-/*#__PURE__*/
-function (_Ext_slider_Toggle) {
+var EWCToggleslider = /*#__PURE__*/function (_Ext_slider_Toggle) {
   _inheritsLoose(EWCToggleslider, _Ext_slider_Toggle);
 
   function EWCToggleslider() {

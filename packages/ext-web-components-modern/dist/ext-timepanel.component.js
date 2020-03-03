@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_panel_Time from './Ext/panel/Time.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCTimepanel =
-/*#__PURE__*/
-function (_Ext_panel_Time) {
+var EWCTimepanel = /*#__PURE__*/function (_Ext_panel_Time) {
   _inheritsLoose(EWCTimepanel, _Ext_panel_Time);
 
   function EWCTimepanel() {

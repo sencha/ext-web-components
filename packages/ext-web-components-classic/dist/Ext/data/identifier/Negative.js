@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_data_identifier_Sequential from '../../../Ext/data/identifier/Sequential.js';
 
-var Ext_data_identifier_Negative =
-/*#__PURE__*/
-function (_Ext_data_identifier_) {
+var Ext_data_identifier_Negative = /*#__PURE__*/function (_Ext_data_identifier_) {
   _inheritsLoose(Ext_data_identifier_Negative, _Ext_data_identifier_);
 
   Ext_data_identifier_Negative.PROPERTIES = function PROPERTIES() {

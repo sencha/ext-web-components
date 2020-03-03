@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_DateColumn from './Ext/grid/DateColumn.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCDatecolumn =
-/*#__PURE__*/
-function (_Ext_grid_DateColumn) {
+var EWCDatecolumn = /*#__PURE__*/function (_Ext_grid_DateColumn) {
   _inheritsLoose(EWCDatecolumn, _Ext_grid_DateColumn);
 
   function EWCDatecolumn() {

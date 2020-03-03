@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_Spinner from './Ext/form/Spinner.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCSpinnerfield =
-/*#__PURE__*/
-function (_Ext_form_Spinner) {
+var EWCSpinnerfield = /*#__PURE__*/function (_Ext_form_Spinner) {
   _inheritsLoose(EWCSpinnerfield, _Ext_form_Spinner);
 
   function EWCSpinnerfield() {

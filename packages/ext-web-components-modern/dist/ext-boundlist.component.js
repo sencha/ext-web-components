@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_BoundList from './Ext/dataview/BoundList.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCBoundlist =
-/*#__PURE__*/
-function (_Ext_dataview_BoundLi) {
+var EWCBoundlist = /*#__PURE__*/function (_Ext_dataview_BoundLi) {
   _inheritsLoose(EWCBoundlist, _Ext_dataview_BoundLi);
 
   function EWCBoundlist() {

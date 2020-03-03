@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_NavigationModel from '../../Ext/grid/NavigationModel.js';
 
-var Ext_tree_NavigationModel =
-/*#__PURE__*/
-function (_Ext_grid_NavigationM) {
+var Ext_tree_NavigationModel = /*#__PURE__*/function (_Ext_grid_NavigationM) {
   _inheritsLoose(Ext_tree_NavigationModel, _Ext_grid_NavigationM);
 
   Ext_tree_NavigationModel.PROPERTIES = function PROPERTIES() {

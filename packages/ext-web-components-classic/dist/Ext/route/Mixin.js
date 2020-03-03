@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Mixin from '../../Ext/Mixin.js';
 
-var Ext_route_Mixin =
-/*#__PURE__*/
-function (_Ext_Mixin) {
+var Ext_route_Mixin = /*#__PURE__*/function (_Ext_Mixin) {
   _inheritsLoose(Ext_route_Mixin, _Ext_Mixin);
 
   Ext_route_Mixin.PROPERTIES = function PROPERTIES() {

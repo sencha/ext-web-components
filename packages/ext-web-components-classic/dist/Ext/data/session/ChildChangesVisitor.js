@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_data_session_ChangesVisitor from '../../../Ext/data/session/ChangesVisitor.js';
 
-var Ext_data_session_ChildChangesVisitor =
-/*#__PURE__*/
-function (_Ext_data_session_Cha) {
+var Ext_data_session_ChildChangesVisitor = /*#__PURE__*/function (_Ext_data_session_Cha) {
   _inheritsLoose(Ext_data_session_ChildChangesVisitor, _Ext_data_session_Cha);
 
   Ext_data_session_ChildChangesVisitor.PROPERTIES = function PROPERTIES() {

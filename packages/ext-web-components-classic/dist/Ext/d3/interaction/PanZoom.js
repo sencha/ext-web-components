@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_d3_interaction_Abstract from '../../../Ext/d3/interaction/Abstract.js';
 
-var Ext_d3_interaction_PanZoom =
-/*#__PURE__*/
-function (_Ext_d3_interaction_A) {
+var Ext_d3_interaction_PanZoom = /*#__PURE__*/function (_Ext_d3_interaction_A) {
   _inheritsLoose(Ext_d3_interaction_PanZoom, _Ext_d3_interaction_A);
 
   Ext_d3_interaction_PanZoom.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Widget from '../../Ext/Widget.js';
 
-var Ext_d3_ComponentBase =
-/*#__PURE__*/
-function (_Ext_Widget) {
+var Ext_d3_ComponentBase = /*#__PURE__*/function (_Ext_Widget) {
   _inheritsLoose(Ext_d3_ComponentBase, _Ext_Widget);
 
   Ext_d3_ComponentBase.PROPERTIES = function PROPERTIES() {

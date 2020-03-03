@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_d3_svg_Svg from '../../../Ext/d3/svg/Svg.js';
 
-var Ext_d3_hierarchy_Hierarchy =
-/*#__PURE__*/
-function (_Ext_d3_svg_Svg) {
+var Ext_d3_hierarchy_Hierarchy = /*#__PURE__*/function (_Ext_d3_svg_Svg) {
   _inheritsLoose(Ext_d3_hierarchy_Hierarchy, _Ext_d3_svg_Svg);
 
   Ext_d3_hierarchy_Hierarchy.PROPERTIES = function PROPERTIES() {

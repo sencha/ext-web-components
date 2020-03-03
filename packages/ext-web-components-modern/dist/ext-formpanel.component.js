@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_FormPanel from './Ext/form/FormPanel.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCFormpanel =
-/*#__PURE__*/
-function (_Ext_form_FormPanel) {
+var EWCFormpanel = /*#__PURE__*/function (_Ext_form_FormPanel) {
   _inheritsLoose(EWCFormpanel, _Ext_form_FormPanel);
 
   function EWCFormpanel() {

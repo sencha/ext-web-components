@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_data_validator_AbstractDate from '../../../Ext/data/validator/AbstractDate.js';
 
-var Ext_data_validator_Time =
-/*#__PURE__*/
-function (_Ext_data_validator_A) {
+var Ext_data_validator_Time = /*#__PURE__*/function (_Ext_data_validator_A) {
   _inheritsLoose(Ext_data_validator_Time, _Ext_data_validator_A);
 
   Ext_data_validator_Time.PROPERTIES = function PROPERTIES() {

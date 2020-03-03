@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_LockedGridRegion from './Ext/grid/LockedGridRegion.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCLockedgridregion =
-/*#__PURE__*/
-function (_Ext_grid_LockedGridR) {
+var EWCLockedgridregion = /*#__PURE__*/function (_Ext_grid_LockedGridR) {
   _inheritsLoose(EWCLockedgridregion, _Ext_grid_LockedGridR);
 
   function EWCLockedgridregion() {

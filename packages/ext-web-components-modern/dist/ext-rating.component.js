@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ux_rating_Picker from './Ext/ux/rating/Picker.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCRating =
-/*#__PURE__*/
-function (_Ext_ux_rating_Picker) {
+var EWCRating = /*#__PURE__*/function (_Ext_ux_rating_Picker) {
   _inheritsLoose(EWCRating, _Ext_ux_rating_Picker);
 
   function EWCRating() {

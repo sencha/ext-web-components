@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_util_Fly from '../../Ext/util/Fly.js';
 
-var Ext_parse_Tokenizer =
-/*#__PURE__*/
-function (_Ext_util_Fly) {
+var Ext_parse_Tokenizer = /*#__PURE__*/function (_Ext_util_Fly) {
   _inheritsLoose(Ext_parse_Tokenizer, _Ext_util_Fly);
 
   Ext_parse_Tokenizer.PROPERTIES = function PROPERTIES() {

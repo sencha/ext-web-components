@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Sheet from './Ext/Sheet.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCSheet =
-/*#__PURE__*/
-function (_Ext_Sheet) {
+var EWCSheet = /*#__PURE__*/function (_Ext_Sheet) {
   _inheritsLoose(EWCSheet, _Ext_Sheet);
 
   function EWCSheet() {

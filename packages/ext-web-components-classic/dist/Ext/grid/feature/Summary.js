@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_feature_AbstractSummary from '../../../Ext/grid/feature/AbstractSummary.js';
 
-var Ext_grid_feature_Summary =
-/*#__PURE__*/
-function (_Ext_grid_feature_Abs) {
+var Ext_grid_feature_Summary = /*#__PURE__*/function (_Ext_grid_feature_Abs) {
   _inheritsLoose(Ext_grid_feature_Summary, _Ext_grid_feature_Abs);
 
   Ext_grid_feature_Summary.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_util_Collection from '../../Ext/util/Collection.js';
 
-var Ext_util_FilterCollection =
-/*#__PURE__*/
-function (_Ext_util_Collection) {
+var Ext_util_FilterCollection = /*#__PURE__*/function (_Ext_util_Collection) {
   _inheritsLoose(Ext_util_FilterCollection, _Ext_util_Collection);
 
   Ext_util_FilterCollection.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_data_validator_Format from '../../../Ext/data/validator/Format.js';
 
-var Ext_data_validator_CIDRv6 =
-/*#__PURE__*/
-function (_Ext_data_validator_F) {
+var Ext_data_validator_CIDRv6 = /*#__PURE__*/function (_Ext_data_validator_F) {
   _inheritsLoose(Ext_data_validator_CIDRv6, _Ext_data_validator_F);
 
   Ext_data_validator_CIDRv6.PROPERTIES = function PROPERTIES() {

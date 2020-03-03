@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_util_TaskRunner from '../Ext/util/TaskRunner.js';
 
-var Ext_TaskManager =
-/*#__PURE__*/
-function (_Ext_util_TaskRunner) {
+var Ext_TaskManager = /*#__PURE__*/function (_Ext_util_TaskRunner) {
   _inheritsLoose(Ext_TaskManager, _Ext_util_TaskRunner);
 
   Ext_TaskManager.PROPERTIES = function PROPERTIES() {

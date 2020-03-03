@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_toolbar_Toolbar from '../../../Ext/toolbar/Toolbar.js';
 
-var Ext_ux_statusbar_StatusBar =
-/*#__PURE__*/
-function (_Ext_toolbar_Toolbar) {
+var Ext_ux_statusbar_StatusBar = /*#__PURE__*/function (_Ext_toolbar_Toolbar) {
   _inheritsLoose(Ext_ux_statusbar_StatusBar, _Ext_toolbar_Toolbar);
 
   Ext_ux_statusbar_StatusBar.PROPERTIES = function PROPERTIES() {

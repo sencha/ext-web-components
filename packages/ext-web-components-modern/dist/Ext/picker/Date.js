@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_picker_Picker from '../../Ext/picker/Picker.js';
 
-var Ext_picker_Date =
-/*#__PURE__*/
-function (_Ext_picker_Picker) {
+var Ext_picker_Date = /*#__PURE__*/function (_Ext_picker_Picker) {
   _inheritsLoose(Ext_picker_Date, _Ext_picker_Picker);
 
   Ext_picker_Date.PROPERTIES = function PROPERTIES() {

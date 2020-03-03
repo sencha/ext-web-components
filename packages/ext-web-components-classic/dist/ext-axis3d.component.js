@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_chart_axis_Axis3D from './Ext/chart/axis/Axis3D.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCAxis3d =
-/*#__PURE__*/
-function (_Ext_chart_axis_Axis) {
+var EWCAxis3d = /*#__PURE__*/function (_Ext_chart_axis_Axis) {
   _inheritsLoose(EWCAxis3d, _Ext_chart_axis_Axis);
 
   function EWCAxis3d() {

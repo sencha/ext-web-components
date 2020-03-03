@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_Toggle from './Ext/form/Toggle.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCTogglefield =
-/*#__PURE__*/
-function (_Ext_form_Toggle) {
+var EWCTogglefield = /*#__PURE__*/function (_Ext_form_Toggle) {
   _inheritsLoose(EWCTogglefield, _Ext_form_Toggle);
 
   function EWCTogglefield() {

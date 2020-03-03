@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_column_Selection from './Ext/grid/column/Selection.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCSelectioncolumn =
-/*#__PURE__*/
-function (_Ext_grid_column_Sele) {
+var EWCSelectioncolumn = /*#__PURE__*/function (_Ext_grid_column_Sele) {
   _inheritsLoose(EWCSelectioncolumn, _Ext_grid_column_Sele);
 
   function EWCSelectioncolumn() {

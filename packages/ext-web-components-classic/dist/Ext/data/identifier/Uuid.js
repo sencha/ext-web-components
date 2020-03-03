@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_data_identifier_Generator from '../../../Ext/data/identifier/Generator.js';
 
-var Ext_data_identifier_Uuid =
-/*#__PURE__*/
-function (_Ext_data_identifier_) {
+var Ext_data_identifier_Uuid = /*#__PURE__*/function (_Ext_data_identifier_) {
   _inheritsLoose(Ext_data_identifier_Uuid, _Ext_data_identifier_);
 
   Ext_data_identifier_Uuid.PROPERTIES = function PROPERTIES() {

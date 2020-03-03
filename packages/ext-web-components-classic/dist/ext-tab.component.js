@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_tab_Tab from './Ext/tab/Tab.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCTab =
-/*#__PURE__*/
-function (_Ext_tab_Tab) {
+var EWCTab = /*#__PURE__*/function (_Ext_tab_Tab) {
   _inheritsLoose(EWCTab, _Ext_tab_Tab);
 
   function EWCTab() {

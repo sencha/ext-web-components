@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_FlashComponent from './Ext/FlashComponent.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCFlash =
-/*#__PURE__*/
-function (_Ext_FlashComponent) {
+var EWCFlash = /*#__PURE__*/function (_Ext_FlashComponent) {
   _inheritsLoose(EWCFlash, _Ext_FlashComponent);
 
   function EWCFlash() {

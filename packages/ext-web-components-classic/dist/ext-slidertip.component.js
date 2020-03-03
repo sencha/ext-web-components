@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_slider_Tip from './Ext/slider/Tip.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCSlidertip =
-/*#__PURE__*/
-function (_Ext_slider_Tip) {
+var EWCSlidertip = /*#__PURE__*/function (_Ext_slider_Tip) {
   _inheritsLoose(EWCSlidertip, _Ext_slider_Tip);
 
   function EWCSlidertip() {

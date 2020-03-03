@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_Picker from './Ext/field/Picker.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCPickerfield =
-/*#__PURE__*/
-function (_Ext_field_Picker) {
+var EWCPickerfield = /*#__PURE__*/function (_Ext_field_Picker) {
   _inheritsLoose(EWCPickerfield, _Ext_field_Picker);
 
   function EWCPickerfield() {

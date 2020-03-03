@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_SplitButton from './Ext/SplitButton.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCSplitbutton =
-/*#__PURE__*/
-function (_Ext_SplitButton) {
+var EWCSplitbutton = /*#__PURE__*/function (_Ext_SplitButton) {
   _inheritsLoose(EWCSplitbutton, _Ext_SplitButton);
 
   function EWCSplitbutton() {

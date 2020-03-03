@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_View from './Ext/grid/View.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCGridview =
-/*#__PURE__*/
-function (_Ext_grid_View) {
+var EWCGridview = /*#__PURE__*/function (_Ext_grid_View) {
   _inheritsLoose(EWCGridview, _Ext_grid_View);
 
   function EWCGridview() {

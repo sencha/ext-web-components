@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_pivot_feature_PivotEvents from '../../../Ext/pivot/feature/PivotEvents.js';
 
-var Ext_pivot_feature_PivotView =
-/*#__PURE__*/
-function (_Ext_pivot_feature_Pi) {
+var Ext_pivot_feature_PivotView = /*#__PURE__*/function (_Ext_pivot_feature_Pi) {
   _inheritsLoose(Ext_pivot_feature_PivotView, _Ext_pivot_feature_Pi);
 
   Ext_pivot_feature_PivotView.PROPERTIES = function PROPERTIES() {

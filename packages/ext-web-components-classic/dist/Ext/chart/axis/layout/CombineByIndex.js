@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_chart_axis_layout_Discrete from '../../../../Ext/chart/axis/layout/Discrete.js';
 
-var Ext_chart_axis_layout_CombineByIndex =
-/*#__PURE__*/
-function (_Ext_chart_axis_layou) {
+var Ext_chart_axis_layout_CombineByIndex = /*#__PURE__*/function (_Ext_chart_axis_layou) {
   _inheritsLoose(Ext_chart_axis_layout_CombineByIndex, _Ext_chart_axis_layou);
 
   Ext_chart_axis_layout_CombineByIndex.PROPERTIES = function PROPERTIES() {

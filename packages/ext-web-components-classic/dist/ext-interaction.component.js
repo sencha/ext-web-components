@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_chart_interactions_Abstract from './Ext/chart/interactions/Abstract.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCInteraction =
-/*#__PURE__*/
-function (_Ext_chart_interactio) {
+var EWCInteraction = /*#__PURE__*/function (_Ext_chart_interactio) {
   _inheritsLoose(EWCInteraction, _Ext_chart_interactio);
 
   function EWCInteraction() {

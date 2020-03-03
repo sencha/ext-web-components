@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_rowedit_Bar from './Ext/grid/rowedit/Bar.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCRoweditorbar =
-/*#__PURE__*/
-function (_Ext_grid_rowedit_Bar) {
+var EWCRoweditorbar = /*#__PURE__*/function (_Ext_grid_rowedit_Bar) {
   _inheritsLoose(EWCRoweditorbar, _Ext_grid_rowedit_Bar);
 
   function EWCRoweditorbar() {

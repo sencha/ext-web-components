@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_calendar_view_Days from '../../../Ext/calendar/view/Days.js';
 
-var Ext_calendar_view_Day =
-/*#__PURE__*/
-function (_Ext_calendar_view_Da) {
+var Ext_calendar_view_Day = /*#__PURE__*/function (_Ext_calendar_view_Da) {
   _inheritsLoose(Ext_calendar_view_Day, _Ext_calendar_view_Da);
 
   Ext_calendar_view_Day.PROPERTIES = function PROPERTIES() {

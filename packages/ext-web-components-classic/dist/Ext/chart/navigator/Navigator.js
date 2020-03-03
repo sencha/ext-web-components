@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_chart_navigator_NavigatorBase from '../../../Ext/chart/navigator/NavigatorBase.js';
 
-var Ext_chart_navigator_Navigator =
-/*#__PURE__*/
-function (_Ext_chart_navigator_) {
+var Ext_chart_navigator_Navigator = /*#__PURE__*/function (_Ext_chart_navigator_) {
   _inheritsLoose(Ext_chart_navigator_Navigator, _Ext_chart_navigator_);
 
   Ext_chart_navigator_Navigator.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_fx_target_CompositeElement from '../../../Ext/fx/target/CompositeElement.js';
 
-var Ext_fx_target_CompositeElementCSS =
-/*#__PURE__*/
-function (_Ext_fx_target_Compos) {
+var Ext_fx_target_CompositeElementCSS = /*#__PURE__*/function (_Ext_fx_target_Compos) {
   _inheritsLoose(Ext_fx_target_CompositeElementCSS, _Ext_fx_target_Compos);
 
   Ext_fx_target_CompositeElementCSS.PROPERTIES = function PROPERTIES() {

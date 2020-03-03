@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_parse_Parser from '../../../Ext/parse/Parser.js';
 
-var Ext_data_query_Parser =
-/*#__PURE__*/
-function (_Ext_parse_Parser) {
+var Ext_data_query_Parser = /*#__PURE__*/function (_Ext_parse_Parser) {
   _inheritsLoose(Ext_data_query_Parser, _Ext_parse_Parser);
 
   Ext_data_query_Parser.PROPERTIES = function PROPERTIES() {

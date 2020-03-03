@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_d3_legend_Legend from '../../../Ext/d3/legend/Legend.js';
 
-var Ext_d3_legend_Color =
-/*#__PURE__*/
-function (_Ext_d3_legend_Legend) {
+var Ext_d3_legend_Color = /*#__PURE__*/function (_Ext_d3_legend_Legend) {
   _inheritsLoose(Ext_d3_legend_Color, _Ext_d3_legend_Legend);
 
   Ext_d3_legend_Color.PROPERTIES = function PROPERTIES() {

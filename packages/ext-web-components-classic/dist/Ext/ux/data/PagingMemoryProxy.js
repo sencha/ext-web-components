@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_data_proxy_Memory from '../../../Ext/data/proxy/Memory.js';
 
-var Ext_ux_data_PagingMemoryProxy =
-/*#__PURE__*/
-function (_Ext_data_proxy_Memor) {
+var Ext_ux_data_PagingMemoryProxy = /*#__PURE__*/function (_Ext_data_proxy_Memor) {
   _inheritsLoose(Ext_ux_data_PagingMemoryProxy, _Ext_data_proxy_Memor);
 
   Ext_ux_data_PagingMemoryProxy.PROPERTIES = function PROPERTIES() {

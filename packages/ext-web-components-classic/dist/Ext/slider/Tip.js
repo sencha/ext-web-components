@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_tip_Tip from '../../Ext/tip/Tip.js';
 
-var Ext_slider_Tip =
-/*#__PURE__*/
-function (_Ext_tip_Tip) {
+var Ext_slider_Tip = /*#__PURE__*/function (_Ext_tip_Tip) {
   _inheritsLoose(Ext_slider_Tip, _Ext_tip_Tip);
 
   Ext_slider_Tip.PROPERTIES = function PROPERTIES() {

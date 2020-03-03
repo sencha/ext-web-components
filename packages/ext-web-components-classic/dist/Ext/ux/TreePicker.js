@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_field_Picker from '../../Ext/form/field/Picker.js';
 
-var Ext_ux_TreePicker =
-/*#__PURE__*/
-function (_Ext_form_field_Picke) {
+var Ext_ux_TreePicker = /*#__PURE__*/function (_Ext_form_field_Picke) {
   _inheritsLoose(Ext_ux_TreePicker, _Ext_form_field_Picke);
 
   Ext_ux_TreePicker.PROPERTIES = function PROPERTIES() {

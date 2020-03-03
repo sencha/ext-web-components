@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_field_Checkbox from '../../../Ext/form/field/Checkbox.js';
 
-var Ext_form_field_Radio =
-/*#__PURE__*/
-function (_Ext_form_field_Check) {
+var Ext_form_field_Radio = /*#__PURE__*/function (_Ext_form_field_Check) {
   _inheritsLoose(Ext_form_field_Radio, _Ext_form_field_Check);
 
   Ext_form_field_Radio.PROPERTIES = function PROPERTIES() {

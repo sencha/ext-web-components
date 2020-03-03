@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_data_operation_Operation from '../../../Ext/data/operation/Operation.js';
 
-var Ext_data_operation_Destroy =
-/*#__PURE__*/
-function (_Ext_data_operation_O) {
+var Ext_data_operation_Destroy = /*#__PURE__*/function (_Ext_data_operation_O) {
   _inheritsLoose(Ext_data_operation_Destroy, _Ext_data_operation_O);
 
   Ext_data_operation_Destroy.PROPERTIES = function PROPERTIES() {

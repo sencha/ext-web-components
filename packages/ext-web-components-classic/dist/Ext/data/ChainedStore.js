@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_data_AbstractStore from '../../Ext/data/AbstractStore.js';
 
-var Ext_data_ChainedStore =
-/*#__PURE__*/
-function (_Ext_data_AbstractSto) {
+var Ext_data_ChainedStore = /*#__PURE__*/function (_Ext_data_AbstractSto) {
   _inheritsLoose(Ext_data_ChainedStore, _Ext_data_AbstractSto);
 
   Ext_data_ChainedStore.PROPERTIES = function PROPERTIES() {

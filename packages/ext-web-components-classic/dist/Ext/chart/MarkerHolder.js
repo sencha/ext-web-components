@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Mixin from '../../Ext/Mixin.js';
 
-var Ext_chart_MarkerHolder =
-/*#__PURE__*/
-function (_Ext_Mixin) {
+var Ext_chart_MarkerHolder = /*#__PURE__*/function (_Ext_Mixin) {
   _inheritsLoose(Ext_chart_MarkerHolder, _Ext_Mixin);
 
   Ext_chart_MarkerHolder.PROPERTIES = function PROPERTIES() {

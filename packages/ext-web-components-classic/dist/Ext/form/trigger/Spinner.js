@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_trigger_Trigger from '../../../Ext/form/trigger/Trigger.js';
 
-var Ext_form_trigger_Spinner =
-/*#__PURE__*/
-function (_Ext_form_trigger_Tri) {
+var Ext_form_trigger_Spinner = /*#__PURE__*/function (_Ext_form_trigger_Tri) {
   _inheritsLoose(Ext_form_trigger_Spinner, _Ext_form_trigger_Tri);
 
   Ext_form_trigger_Spinner.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_Trigger from './Ext/form/Trigger.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCTriggerfield =
-/*#__PURE__*/
-function (_Ext_form_Trigger) {
+var EWCTriggerfield = /*#__PURE__*/function (_Ext_form_Trigger) {
   _inheritsLoose(EWCTriggerfield, _Ext_form_Trigger);
 
   function EWCTriggerfield() {

@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ux_form_MultiSelect from '../../../Ext/ux/form/MultiSelect.js';
 
-var Ext_ux_form_ItemSelector =
-/*#__PURE__*/
-function (_Ext_ux_form_MultiSel) {
+var Ext_ux_form_ItemSelector = /*#__PURE__*/function (_Ext_ux_form_MultiSel) {
   _inheritsLoose(Ext_ux_form_ItemSelector, _Ext_ux_form_MultiSel);
 
   Ext_ux_form_ItemSelector.PROPERTIES = function PROPERTIES() {

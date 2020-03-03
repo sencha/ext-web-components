@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_d3_hierarchy_TreeMap from '../../../Ext/d3/hierarchy/TreeMap.js';
 
-var Ext_pivot_d3_TreeMap =
-/*#__PURE__*/
-function (_Ext_d3_hierarchy_Tre) {
+var Ext_pivot_d3_TreeMap = /*#__PURE__*/function (_Ext_d3_hierarchy_Tre) {
   _inheritsLoose(Ext_pivot_d3_TreeMap, _Ext_d3_hierarchy_Tre);
 
   Ext_pivot_d3_TreeMap.PROPERTIES = function PROPERTIES() {

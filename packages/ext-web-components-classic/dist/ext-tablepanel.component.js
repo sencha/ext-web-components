@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_panel_Table from './Ext/panel/Table.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCTablepanel =
-/*#__PURE__*/
-function (_Ext_panel_Table) {
+var EWCTablepanel = /*#__PURE__*/function (_Ext_panel_Table) {
   _inheritsLoose(EWCTablepanel, _Ext_panel_Table);
 
   function EWCTablepanel() {

@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_picker_Time from './Ext/picker/Time.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCTimepicker =
-/*#__PURE__*/
-function (_Ext_picker_Time) {
+var EWCTimepicker = /*#__PURE__*/function (_Ext_picker_Time) {
   _inheritsLoose(EWCTimepicker, _Ext_picker_Time);
 
   function EWCTimepicker() {

@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_d3_hierarchy_TreeMap from './Ext/d3/hierarchy/TreeMap.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCD3_treemap =
-/*#__PURE__*/
-function (_Ext_d3_hierarchy_Tre) {
+var EWCD3_treemap = /*#__PURE__*/function (_Ext_d3_hierarchy_Tre) {
   _inheritsLoose(EWCD3_treemap, _Ext_d3_hierarchy_Tre);
 
   function EWCD3_treemap() {

@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_Slider from '../../Ext/field/Slider.js';
 
-var Ext_field_SingleSlider =
-/*#__PURE__*/
-function (_Ext_field_Slider) {
+var Ext_field_SingleSlider = /*#__PURE__*/function (_Ext_field_Slider) {
   _inheritsLoose(Ext_field_SingleSlider, _Ext_field_Slider);
 
   Ext_field_SingleSlider.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_pivot_plugin_configurator_window_Window from '../../../../../Ext/pivot/plugin/configurator/window/Window.js';
 
-var Ext_pivot_plugin_configurator_window_FilterTop =
-/*#__PURE__*/
-function (_Ext_pivot_plugin_con) {
+var Ext_pivot_plugin_configurator_window_FilterTop = /*#__PURE__*/function (_Ext_pivot_plugin_con) {
   _inheritsLoose(Ext_pivot_plugin_configurator_window_FilterTop, _Ext_pivot_plugin_con);
 
   Ext_pivot_plugin_configurator_window_FilterTop.PROPERTIES = function PROPERTIES() {

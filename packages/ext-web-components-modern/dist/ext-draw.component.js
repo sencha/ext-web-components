@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_draw_Component from './Ext/draw/Component.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCDraw =
-/*#__PURE__*/
-function (_Ext_draw_Component) {
+var EWCDraw = /*#__PURE__*/function (_Ext_draw_Component) {
   _inheritsLoose(EWCDraw, _Ext_draw_Component);
 
   function EWCDraw() {

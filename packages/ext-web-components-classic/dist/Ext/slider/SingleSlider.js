@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_slider_Multi from '../../Ext/slider/Multi.js';
 
-var Ext_slider_SingleSlider =
-/*#__PURE__*/
-function (_Ext_slider_Multi) {
+var Ext_slider_SingleSlider = /*#__PURE__*/function (_Ext_slider_Multi) {
   _inheritsLoose(Ext_slider_SingleSlider, _Ext_slider_Multi);
 
   Ext_slider_SingleSlider.PROPERTIES = function PROPERTIES() {

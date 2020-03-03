@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_ItemHeader from './Ext/dataview/ItemHeader.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCItemheader =
-/*#__PURE__*/
-function (_Ext_dataview_ItemHea) {
+var EWCItemheader = /*#__PURE__*/function (_Ext_dataview_ItemHea) {
   _inheritsLoose(EWCItemheader, _Ext_dataview_ItemHea);
 
   function EWCItemheader() {

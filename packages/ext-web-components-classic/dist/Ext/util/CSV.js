@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_util_DelimitedValue from '../../Ext/util/DelimitedValue.js';
 
-var Ext_util_CSV =
-/*#__PURE__*/
-function (_Ext_util_DelimitedVa) {
+var Ext_util_CSV = /*#__PURE__*/function (_Ext_util_DelimitedVa) {
   _inheritsLoose(Ext_util_CSV, _Ext_util_DelimitedVa);
 
   Ext_util_CSV.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Base from '../../../../Ext/Base.js';
 
-var Ext_ux_gauge_needle_Abstract =
-/*#__PURE__*/
-function (_Ext_Base) {
+var Ext_ux_gauge_needle_Abstract = /*#__PURE__*/function (_Ext_Base) {
   _inheritsLoose(Ext_ux_gauge_needle_Abstract, _Ext_Base);
 
   Ext_ux_gauge_needle_Abstract.PROPERTIES = function PROPERTIES() {

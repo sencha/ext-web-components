@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Base from '../Ext/Base.js';
 
-var Ext_KeyMap =
-/*#__PURE__*/
-function (_Ext_Base) {
+var Ext_KeyMap = /*#__PURE__*/function (_Ext_Base) {
   _inheritsLoose(Ext_KeyMap, _Ext_Base);
 
   Ext_KeyMap.PROPERTIES = function PROPERTIES() {

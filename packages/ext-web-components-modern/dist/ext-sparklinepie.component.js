@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_sparkline_Pie from './Ext/sparkline/Pie.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCSparklinepie =
-/*#__PURE__*/
-function (_Ext_sparkline_Pie) {
+var EWCSparklinepie = /*#__PURE__*/function (_Ext_sparkline_Pie) {
   _inheritsLoose(EWCSparklinepie, _Ext_sparkline_Pie);
 
   function EWCSparklinepie() {

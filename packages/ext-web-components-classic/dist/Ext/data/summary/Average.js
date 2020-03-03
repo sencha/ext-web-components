@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_data_summary_Sum from '../../../Ext/data/summary/Sum.js';
 
-var Ext_data_summary_Average =
-/*#__PURE__*/
-function (_Ext_data_summary_Sum) {
+var Ext_data_summary_Average = /*#__PURE__*/function (_Ext_data_summary_Sum) {
   _inheritsLoose(Ext_data_summary_Average, _Ext_data_summary_Sum);
 
   Ext_data_summary_Average.PROPERTIES = function PROPERTIES() {

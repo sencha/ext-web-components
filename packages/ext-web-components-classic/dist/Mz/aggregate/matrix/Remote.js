@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_pivot_matrix_Base from '../../../Ext/pivot/matrix/Base.js';
 
-var Mz_aggregate_matrix_Remote =
-/*#__PURE__*/
-function (_Ext_pivot_matrix_Bas) {
+var Mz_aggregate_matrix_Remote = /*#__PURE__*/function (_Ext_pivot_matrix_Bas) {
   _inheritsLoose(Mz_aggregate_matrix_Remote, _Ext_pivot_matrix_Bas);
 
   Mz_aggregate_matrix_Remote.PROPERTIES = function PROPERTIES() {

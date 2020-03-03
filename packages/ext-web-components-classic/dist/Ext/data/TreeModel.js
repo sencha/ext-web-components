@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_data_Model from '../../Ext/data/Model.js';
 
-var Ext_data_TreeModel =
-/*#__PURE__*/
-function (_Ext_data_Model) {
+var Ext_data_TreeModel = /*#__PURE__*/function (_Ext_data_Model) {
   _inheritsLoose(Ext_data_TreeModel, _Ext_data_Model);
 
   Ext_data_TreeModel.PROPERTIES = function PROPERTIES() {

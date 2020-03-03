@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_tree_View from './Ext/tree/View.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCTreeview =
-/*#__PURE__*/
-function (_Ext_tree_View) {
+var EWCTreeview = /*#__PURE__*/function (_Ext_tree_View) {
   _inheritsLoose(EWCTreeview, _Ext_tree_View);
 
   function EWCTreeview() {

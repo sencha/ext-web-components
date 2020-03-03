@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ux_ajax_Simlet from '../../../Ext/ux/ajax/Simlet.js';
 
-var Ext_ux_ajax_DataSimlet =
-/*#__PURE__*/
-function (_Ext_ux_ajax_Simlet) {
+var Ext_ux_ajax_DataSimlet = /*#__PURE__*/function (_Ext_ux_ajax_Simlet) {
   _inheritsLoose(Ext_ux_ajax_DataSimlet, _Ext_ux_ajax_Simlet);
 
   Ext_ux_ajax_DataSimlet.PROPERTIES = function PROPERTIES() {

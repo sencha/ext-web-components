@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_QuickTip from './Ext/QuickTip.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCQuicktip =
-/*#__PURE__*/
-function (_Ext_QuickTip) {
+var EWCQuicktip = /*#__PURE__*/function (_Ext_QuickTip) {
   _inheritsLoose(EWCQuicktip, _Ext_QuickTip);
 
   function EWCQuicktip() {

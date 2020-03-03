@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_slider_Widget from './Ext/slider/Widget.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCSliderwidget =
-/*#__PURE__*/
-function (_Ext_slider_Widget) {
+var EWCSliderwidget = /*#__PURE__*/function (_Ext_slider_Widget) {
   _inheritsLoose(EWCSliderwidget, _Ext_slider_Widget);
 
   function EWCSliderwidget() {

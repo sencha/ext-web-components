@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_view_BoundListKeyNav from '../../Ext/view/BoundListKeyNav.js';
 
-var Ext_view_TagKeyNav =
-/*#__PURE__*/
-function (_Ext_view_BoundListKe) {
+var Ext_view_TagKeyNav = /*#__PURE__*/function (_Ext_view_BoundListKe) {
   _inheritsLoose(Ext_view_TagKeyNav, _Ext_view_BoundListKe);
 
   Ext_view_TagKeyNav.PROPERTIES = function PROPERTIES() {

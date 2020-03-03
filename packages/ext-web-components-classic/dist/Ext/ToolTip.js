@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_tip_Tip from '../Ext/tip/Tip.js';
 
-var Ext_ToolTip =
-/*#__PURE__*/
-function (_Ext_tip_Tip) {
+var Ext_ToolTip = /*#__PURE__*/function (_Ext_tip_Tip) {
   _inheritsLoose(Ext_ToolTip, _Ext_tip_Tip);
 
   Ext_ToolTip.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_calendar_view_Month from './Ext/calendar/view/Month.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCCalendar_monthview =
-/*#__PURE__*/
-function (_Ext_calendar_view_Mo) {
+var EWCCalendar_monthview = /*#__PURE__*/function (_Ext_calendar_view_Mo) {
   _inheritsLoose(EWCCalendar_monthview, _Ext_calendar_view_Mo);
 
   function EWCCalendar_monthview() {

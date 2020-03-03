@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_Panel from './Ext/field/Panel.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCFieldpanel =
-/*#__PURE__*/
-function (_Ext_field_Panel) {
+var EWCFieldpanel = /*#__PURE__*/function (_Ext_field_Panel) {
   _inheritsLoose(EWCFieldpanel, _Ext_field_Panel);
 
   function EWCFieldpanel() {

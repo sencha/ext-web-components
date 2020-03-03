@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Gadget from '../../../Ext/Gadget.js';
 
-var Ext_ux_rating_Picker =
-/*#__PURE__*/
-function (_Ext_Gadget) {
+var Ext_ux_rating_Picker = /*#__PURE__*/function (_Ext_Gadget) {
   _inheritsLoose(Ext_ux_rating_Picker, _Ext_Gadget);
 
   Ext_ux_rating_Picker.PROPERTIES = function PROPERTIES() {

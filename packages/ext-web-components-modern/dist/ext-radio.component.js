@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_Radio from './Ext/form/Radio.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCRadio =
-/*#__PURE__*/
-function (_Ext_form_Radio) {
+var EWCRadio = /*#__PURE__*/function (_Ext_form_Radio) {
   _inheritsLoose(EWCRadio, _Ext_form_Radio);
 
   function EWCRadio() {

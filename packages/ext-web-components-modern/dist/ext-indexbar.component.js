@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_IndexBar from './Ext/IndexBar.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCIndexbar =
-/*#__PURE__*/
-function (_Ext_IndexBar) {
+var EWCIndexbar = /*#__PURE__*/function (_Ext_IndexBar) {
   _inheritsLoose(EWCIndexbar, _Ext_IndexBar);
 
   function EWCIndexbar() {

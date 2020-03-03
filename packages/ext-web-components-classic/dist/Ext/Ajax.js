@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_data_Connection from '../Ext/data/Connection.js';
 
-var Ext_Ajax =
-/*#__PURE__*/
-function (_Ext_data_Connection) {
+var Ext_Ajax = /*#__PURE__*/function (_Ext_data_Connection) {
   _inheritsLoose(Ext_Ajax, _Ext_data_Connection);
 
   Ext_Ajax.PROPERTIES = function PROPERTIES() {

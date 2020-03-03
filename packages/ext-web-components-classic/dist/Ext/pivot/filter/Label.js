@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_pivot_filter_Base from '../../../Ext/pivot/filter/Base.js';
 
-var Ext_pivot_filter_Label =
-/*#__PURE__*/
-function (_Ext_pivot_filter_Bas) {
+var Ext_pivot_filter_Label = /*#__PURE__*/function (_Ext_pivot_filter_Bas) {
   _inheritsLoose(Ext_pivot_filter_Label, _Ext_pivot_filter_Bas);
 
   Ext_pivot_filter_Label.PROPERTIES = function PROPERTIES() {

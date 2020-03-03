@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_draw_sprite_Circle from '../../../Ext/draw/sprite/Circle.js';
 
-var Ext_draw_sprite_Arc =
-/*#__PURE__*/
-function (_Ext_draw_sprite_Circ) {
+var Ext_draw_sprite_Arc = /*#__PURE__*/function (_Ext_draw_sprite_Circ) {
   _inheritsLoose(Ext_draw_sprite_Arc, _Ext_draw_sprite_Circ);
 
   Ext_draw_sprite_Arc.PROPERTIES = function PROPERTIES() {

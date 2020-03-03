@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ux_colorpick_SliderValue from './Ext/ux/colorpick/SliderValue.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCColorpickerslidervalue =
-/*#__PURE__*/
-function (_Ext_ux_colorpick_Sli) {
+var EWCColorpickerslidervalue = /*#__PURE__*/function (_Ext_ux_colorpick_Sli) {
   _inheritsLoose(EWCColorpickerslidervalue, _Ext_ux_colorpick_Sli);
 
   function EWCColorpickerslidervalue() {

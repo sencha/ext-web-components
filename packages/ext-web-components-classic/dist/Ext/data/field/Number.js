@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_data_field_Integer from '../../../Ext/data/field/Integer.js';
 
-var Ext_data_field_Number =
-/*#__PURE__*/
-function (_Ext_data_field_Integ) {
+var Ext_data_field_Number = /*#__PURE__*/function (_Ext_data_field_Integ) {
   _inheritsLoose(Ext_data_field_Number, _Ext_data_field_Integ);
 
   Ext_data_field_Number.PROPERTIES = function PROPERTIES() {

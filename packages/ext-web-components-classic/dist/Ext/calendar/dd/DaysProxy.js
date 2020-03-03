@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_drag_proxy_Placeholder from '../../../Ext/drag/proxy/Placeholder.js';
 
-var Ext_calendar_dd_DaysProxy =
-/*#__PURE__*/
-function (_Ext_drag_proxy_Place) {
+var Ext_calendar_dd_DaysProxy = /*#__PURE__*/function (_Ext_drag_proxy_Place) {
   _inheritsLoose(Ext_calendar_dd_DaysProxy, _Ext_drag_proxy_Place);
 
   Ext_calendar_dd_DaysProxy.PROPERTIES = function PROPERTIES() {

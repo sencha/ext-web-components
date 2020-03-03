@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_d3_hierarchy_partition_Partition from '../../../../Ext/d3/hierarchy/partition/Partition.js';
 
-var Ext_d3_hierarchy_partition_Sunburst =
-/*#__PURE__*/
-function (_Ext_d3_hierarchy_par) {
+var Ext_d3_hierarchy_partition_Sunburst = /*#__PURE__*/function (_Ext_d3_hierarchy_par) {
   _inheritsLoose(Ext_d3_hierarchy_partition_Sunburst, _Ext_d3_hierarchy_par);
 
   Ext_d3_hierarchy_partition_Sunburst.PROPERTIES = function PROPERTIES() {

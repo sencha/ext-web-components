@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_app_EventDomain from '../../../Ext/app/EventDomain.js';
 
-var Ext_app_domain_View =
-/*#__PURE__*/
-function (_Ext_app_EventDomain) {
+var Ext_app_domain_View = /*#__PURE__*/function (_Ext_app_EventDomain) {
   _inheritsLoose(Ext_app_domain_View, _Ext_app_EventDomain);
 
   Ext_app_domain_View.PROPERTIES = function PROPERTIES() {

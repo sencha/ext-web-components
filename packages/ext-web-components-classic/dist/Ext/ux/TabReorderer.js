@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ux_BoxReorderer from '../../Ext/ux/BoxReorderer.js';
 
-var Ext_ux_TabReorderer =
-/*#__PURE__*/
-function (_Ext_ux_BoxReorderer) {
+var Ext_ux_TabReorderer = /*#__PURE__*/function (_Ext_ux_BoxReorderer) {
   _inheritsLoose(Ext_ux_TabReorderer, _Ext_ux_BoxReorderer);
 
   Ext_ux_TabReorderer.PROPERTIES = function PROPERTIES() {

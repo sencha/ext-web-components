@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ProgressBar from './Ext/ProgressBar.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCProgressbar =
-/*#__PURE__*/
-function (_Ext_ProgressBar) {
+var EWCProgressbar = /*#__PURE__*/function (_Ext_ProgressBar) {
   _inheritsLoose(EWCProgressbar, _Ext_ProgressBar);
 
   function EWCProgressbar() {

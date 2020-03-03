@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_toolbar_Spacer from './Ext/toolbar/Spacer.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCTbspacer =
-/*#__PURE__*/
-function (_Ext_toolbar_Spacer) {
+var EWCTbspacer = /*#__PURE__*/function (_Ext_toolbar_Spacer) {
   _inheritsLoose(EWCTbspacer, _Ext_toolbar_Spacer);
 
   function EWCTbspacer() {

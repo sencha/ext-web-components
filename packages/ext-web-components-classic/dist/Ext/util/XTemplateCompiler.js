@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_util_XTemplateParser from '../../Ext/util/XTemplateParser.js';
 
-var Ext_util_XTemplateCompiler =
-/*#__PURE__*/
-function (_Ext_util_XTemplatePa) {
+var Ext_util_XTemplateCompiler = /*#__PURE__*/function (_Ext_util_XTemplatePa) {
   _inheritsLoose(Ext_util_XTemplateCompiler, _Ext_util_XTemplatePa);
 
   Ext_util_XTemplateCompiler.PROPERTIES = function PROPERTIES() {

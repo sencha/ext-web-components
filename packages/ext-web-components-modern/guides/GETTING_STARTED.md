@@ -63,7 +63,7 @@ cd ext-web-components-modern-demo
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 
 <!--
-<script src="./node_modules/@sencha/ext-web-components-modern/ext-runtime-modern/modern.engine.js"></script>
+<script src="./node_modules/@sencha/ext-web-components-modern/ext-runtime-modern/modern.engine.enterprise.js"></script>
 <link rel="stylesheet" type="text/css" href="node_modules/@sencha/ext-web-components-modern/ext-runtime-modern/material/material-all.css"></link>
 -->
 

@@ -3,6 +3,7 @@ import WebComponentsBaseComponent from '../runtime/webcomponentsbase.js'
 export default class Ext_Base extends WebComponentsBaseComponent {
 
     static PROPERTIES() { return [
+        'badgeText',
         'group',
         'value',
         'createExtComponentDefer',

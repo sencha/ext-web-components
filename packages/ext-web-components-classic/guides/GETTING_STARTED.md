@@ -63,7 +63,7 @@ cd ext-web-components-classic-demo
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 
 <!--
-<script src="./node_modules/@sencha/ext-web-components-classic/ext-runtime-classic/classic.engine.js"></script>
+<script src="./node_modules/@sencha/ext-web-components-classic/ext-runtime-classic/classic.engine.enterprise.js"></script>
 <link rel="stylesheet" type="text/css" href="node_modules/@sencha/ext-web-components-classic/ext-runtime-classic/material/material-all.css"></link>
 -->
 

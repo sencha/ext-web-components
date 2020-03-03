@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Sheet from '../Ext/Sheet.js';
 
-var Ext_ActionSheet =
-/*#__PURE__*/
-function (_Ext_Sheet) {
+var Ext_ActionSheet = /*#__PURE__*/function (_Ext_Sheet) {
   _inheritsLoose(Ext_ActionSheet, _Ext_Sheet);
 
   Ext_ActionSheet.PROPERTIES = function PROPERTIES() {

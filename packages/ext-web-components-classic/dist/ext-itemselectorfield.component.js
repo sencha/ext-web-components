@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ux_ItemSelector from './Ext/ux/ItemSelector.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCItemselectorfield =
-/*#__PURE__*/
-function (_Ext_ux_ItemSelector) {
+var EWCItemselectorfield = /*#__PURE__*/function (_Ext_ux_ItemSelector) {
   _inheritsLoose(EWCItemselectorfield, _Ext_ux_ItemSelector);
 
   function EWCItemselectorfield() {

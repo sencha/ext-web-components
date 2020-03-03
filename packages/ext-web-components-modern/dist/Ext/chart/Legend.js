@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_chart_legend_LegendBase from '../../Ext/chart/legend/LegendBase.js';
 
-var Ext_chart_Legend =
-/*#__PURE__*/
-function (_Ext_chart_legend_Leg) {
+var Ext_chart_Legend = /*#__PURE__*/function (_Ext_chart_legend_Leg) {
   _inheritsLoose(Ext_chart_Legend, _Ext_chart_legend_Leg);
 
   Ext_chart_Legend.PROPERTIES = function PROPERTIES() {

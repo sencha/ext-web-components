@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_window_MessageBox from '../Ext/window/MessageBox.js';
 
-var Ext_Msg =
-/*#__PURE__*/
-function (_Ext_window_MessageBo) {
+var Ext_Msg = /*#__PURE__*/function (_Ext_window_MessageBo) {
   _inheritsLoose(Ext_Msg, _Ext_window_MessageBo);
 
   Ext_Msg.PROPERTIES = function PROPERTIES() {

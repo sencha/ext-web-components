@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_event_publisher_Dom from '../../../Ext/event/publisher/Dom.js';
 
-var Ext_event_publisher_MouseEnterLeave =
-/*#__PURE__*/
-function (_Ext_event_publisher_) {
+var Ext_event_publisher_MouseEnterLeave = /*#__PURE__*/function (_Ext_event_publisher_) {
   _inheritsLoose(Ext_event_publisher_MouseEnterLeave, _Ext_event_publisher_);
 
   Ext_event_publisher_MouseEnterLeave.PROPERTIES = function PROPERTIES() {

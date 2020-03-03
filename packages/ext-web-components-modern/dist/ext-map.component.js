@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Map from './Ext/Map.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCMap =
-/*#__PURE__*/
-function (_Ext_Map) {
+var EWCMap = /*#__PURE__*/function (_Ext_Map) {
   _inheritsLoose(EWCMap, _Ext_Map);
 
   function EWCMap() {

@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_util_paintmonitor_Abstract from '../../../Ext/util/paintmonitor/Abstract.js';
 
-var Ext_util_paintmonitor_CssAnimation =
-/*#__PURE__*/
-function (_Ext_util_paintmonito) {
+var Ext_util_paintmonitor_CssAnimation = /*#__PURE__*/function (_Ext_util_paintmonito) {
   _inheritsLoose(Ext_util_paintmonitor_CssAnimation, _Ext_util_paintmonito);
 
   Ext_util_paintmonitor_CssAnimation.PROPERTIES = function PROPERTIES() {

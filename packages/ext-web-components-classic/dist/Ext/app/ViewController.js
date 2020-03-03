@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_app_BaseController from '../../Ext/app/BaseController.js';
 
-var Ext_app_ViewController =
-/*#__PURE__*/
-function (_Ext_app_BaseControll) {
+var Ext_app_ViewController = /*#__PURE__*/function (_Ext_app_BaseControll) {
   _inheritsLoose(Ext_app_ViewController, _Ext_app_BaseControll);
 
   Ext_app_ViewController.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_FieldContainer from '../../Ext/form/FieldContainer.js';
 
-var Ext_form_CheckboxGroup =
-/*#__PURE__*/
-function (_Ext_form_FieldContai) {
+var Ext_form_CheckboxGroup = /*#__PURE__*/function (_Ext_form_FieldContai) {
   _inheritsLoose(Ext_form_CheckboxGroup, _Ext_form_FieldContai);
 
   Ext_form_CheckboxGroup.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_Hidden from './Ext/form/Hidden.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCHiddenfield =
-/*#__PURE__*/
-function (_Ext_form_Hidden) {
+var EWCHiddenfield = /*#__PURE__*/function (_Ext_form_Hidden) {
   _inheritsLoose(EWCHiddenfield, _Ext_form_Hidden);
 
   function EWCHiddenfield() {

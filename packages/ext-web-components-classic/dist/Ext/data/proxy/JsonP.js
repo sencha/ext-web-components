@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_data_proxy_Server from '../../../Ext/data/proxy/Server.js';
 
-var Ext_data_proxy_JsonP =
-/*#__PURE__*/
-function (_Ext_data_proxy_Serve) {
+var Ext_data_proxy_JsonP = /*#__PURE__*/function (_Ext_data_proxy_Serve) {
   _inheritsLoose(Ext_data_proxy_JsonP, _Ext_data_proxy_Serve);
 
   Ext_data_proxy_JsonP.PROPERTIES = function PROPERTIES() {

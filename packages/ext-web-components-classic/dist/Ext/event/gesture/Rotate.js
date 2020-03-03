@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_event_gesture_MultiTouch from '../../../Ext/event/gesture/MultiTouch.js';
 
-var Ext_event_gesture_Rotate =
-/*#__PURE__*/
-function (_Ext_event_gesture_Mu) {
+var Ext_event_gesture_Rotate = /*#__PURE__*/function (_Ext_event_gesture_Mu) {
   _inheritsLoose(Ext_event_gesture_Rotate, _Ext_event_gesture_Mu);
 
   Ext_event_gesture_Rotate.PROPERTIES = function PROPERTIES() {

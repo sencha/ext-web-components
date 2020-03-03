@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_header_Container from './Ext/grid/header/Container.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCHeadercontainer =
-/*#__PURE__*/
-function (_Ext_grid_header_Cont) {
+var EWCHeadercontainer = /*#__PURE__*/function (_Ext_grid_header_Cont) {
   _inheritsLoose(EWCHeadercontainer, _Ext_grid_header_Cont);
 
   function EWCHeadercontainer() {

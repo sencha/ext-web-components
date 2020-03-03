@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_layout_container_HBox from '../../Ext/layout/container/HBox.js';
 
-var Ext_grid_ColumnLayout =
-/*#__PURE__*/
-function (_Ext_layout_container) {
+var Ext_grid_ColumnLayout = /*#__PURE__*/function (_Ext_layout_container) {
   _inheritsLoose(Ext_grid_ColumnLayout, _Ext_layout_container);
 
   Ext_grid_ColumnLayout.PROPERTIES = function PROPERTIES() {

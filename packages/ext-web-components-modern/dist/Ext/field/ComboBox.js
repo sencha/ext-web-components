@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_Select from '../../Ext/field/Select.js';
 
-var Ext_field_ComboBox =
-/*#__PURE__*/
-function (_Ext_field_Select) {
+var Ext_field_ComboBox = /*#__PURE__*/function (_Ext_field_Select) {
   _inheritsLoose(Ext_field_ComboBox, _Ext_field_Select);
 
   Ext_field_ComboBox.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_promise_Deferred from '../Ext/promise/Deferred.js';
 
-var Ext_Deferred =
-/*#__PURE__*/
-function (_Ext_promise_Deferred) {
+var Ext_Deferred = /*#__PURE__*/function (_Ext_promise_Deferred) {
   _inheritsLoose(Ext_Deferred, _Ext_promise_Deferred);
 
   Ext_Deferred.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_FieldContainer from './Ext/form/FieldContainer.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCFieldcontainer =
-/*#__PURE__*/
-function (_Ext_form_FieldContai) {
+var EWCFieldcontainer = /*#__PURE__*/function (_Ext_form_FieldContai) {
   _inheritsLoose(EWCFieldcontainer, _Ext_form_FieldContai);
 
   function EWCFieldcontainer() {

@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Video from './Ext/Video.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCVideo =
-/*#__PURE__*/
-function (_Ext_Video) {
+var EWCVideo = /*#__PURE__*/function (_Ext_Video) {
   _inheritsLoose(EWCVideo, _Ext_Video);
 
   function EWCVideo() {

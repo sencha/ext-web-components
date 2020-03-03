@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dataview_component_ListItem from './Ext/dataview/component/ListItem.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCListitem =
-/*#__PURE__*/
-function (_Ext_dataview_compone) {
+var EWCListitem = /*#__PURE__*/function (_Ext_dataview_compone) {
   _inheritsLoose(EWCListitem, _Ext_dataview_compone);
 
   function EWCListitem() {

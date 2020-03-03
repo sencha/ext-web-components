@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_data_request_Base from '../../../Ext/data/request/Base.js';
 
-var Ext_data_request_Form =
-/*#__PURE__*/
-function (_Ext_data_request_Bas) {
+var Ext_data_request_Form = /*#__PURE__*/function (_Ext_data_request_Bas) {
   _inheritsLoose(Ext_data_request_Form, _Ext_data_request_Bas);
 
   Ext_data_request_Form.PROPERTIES = function PROPERTIES() {

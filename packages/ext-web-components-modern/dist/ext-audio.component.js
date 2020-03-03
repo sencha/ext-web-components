@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Audio from './Ext/Audio.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCAudio =
-/*#__PURE__*/
-function (_Ext_Audio) {
+var EWCAudio = /*#__PURE__*/function (_Ext_Audio) {
   _inheritsLoose(EWCAudio, _Ext_Audio);
 
   function EWCAudio() {

@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_pivot_cell_Group from './Ext/pivot/cell/Group.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCPivotgridgroupcell =
-/*#__PURE__*/
-function (_Ext_pivot_cell_Group) {
+var EWCPivotgridgroupcell = /*#__PURE__*/function (_Ext_pivot_cell_Group) {
   _inheritsLoose(EWCPivotgridgroupcell, _Ext_pivot_cell_Group);
 
   function EWCPivotgridgroupcell() {

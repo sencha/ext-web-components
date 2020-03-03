@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Toolbar from '../Ext/Toolbar.js';
 
-var Ext_TabBar =
-/*#__PURE__*/
-function (_Ext_Toolbar) {
+var Ext_TabBar = /*#__PURE__*/function (_Ext_Toolbar) {
   _inheritsLoose(Ext_TabBar, _Ext_Toolbar);
 
   Ext_TabBar.PROPERTIES = function PROPERTIES() {

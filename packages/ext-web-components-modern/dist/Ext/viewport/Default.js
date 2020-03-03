@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Container from '../../Ext/Container.js';
 
-var Ext_viewport_Default =
-/*#__PURE__*/
-function (_Ext_Container) {
+var Ext_viewport_Default = /*#__PURE__*/function (_Ext_Container) {
   _inheritsLoose(Ext_viewport_Default, _Ext_Container);
 
   Ext_viewport_Default.PROPERTIES = function PROPERTIES() {

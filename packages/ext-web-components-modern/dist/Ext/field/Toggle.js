@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_field_SingleSlider from '../../Ext/field/SingleSlider.js';
 
-var Ext_field_Toggle =
-/*#__PURE__*/
-function (_Ext_field_SingleSlid) {
+var Ext_field_Toggle = /*#__PURE__*/function (_Ext_field_SingleSlid) {
   _inheritsLoose(Ext_field_Toggle, _Ext_field_SingleSlid);
 
   Ext_field_Toggle.PROPERTIES = function PROPERTIES() {

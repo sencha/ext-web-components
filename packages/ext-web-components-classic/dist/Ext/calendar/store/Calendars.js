@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_data_Store from '../../../Ext/data/Store.js';
 
-var Ext_calendar_store_Calendars =
-/*#__PURE__*/
-function (_Ext_data_Store) {
+var Ext_calendar_store_Calendars = /*#__PURE__*/function (_Ext_data_Store) {
   _inheritsLoose(Ext_calendar_store_Calendars, _Ext_data_Store);
 
   Ext_calendar_store_Calendars.PROPERTIES = function PROPERTIES() {

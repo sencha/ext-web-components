@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_exporter_file_zip_File from '../../../../Ext/exporter/file/zip/File.js';
 
-var Ext_exporter_file_zip_Folder =
-/*#__PURE__*/
-function (_Ext_exporter_file_zi) {
+var Ext_exporter_file_zip_Folder = /*#__PURE__*/function (_Ext_exporter_file_zi) {
   _inheritsLoose(Ext_exporter_file_zip_Folder, _Ext_exporter_file_zi);
 
   Ext_exporter_file_zip_Folder.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_slider_MultiSlider from './Ext/slider/MultiSlider.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCMultislider =
-/*#__PURE__*/
-function (_Ext_slider_MultiSlid) {
+var EWCMultislider = /*#__PURE__*/function (_Ext_slider_MultiSlid) {
   _inheritsLoose(EWCMultislider, _Ext_slider_MultiSlid);
 
   function EWCMultislider() {

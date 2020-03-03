@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Base from '../../Ext/Base.js';
 
-var Ext_dashboard_Part =
-/*#__PURE__*/
-function (_Ext_Base) {
+var Ext_dashboard_Part = /*#__PURE__*/function (_Ext_Base) {
   _inheritsLoose(Ext_dashboard_Part, _Ext_Base);
 
   Ext_dashboard_Part.PROPERTIES = function PROPERTIES() {

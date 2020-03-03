@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_sparkline_Discrete from './Ext/sparkline/Discrete.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCSparklinediscrete =
-/*#__PURE__*/
-function (_Ext_sparkline_Discre) {
+var EWCSparklinediscrete = /*#__PURE__*/function (_Ext_sparkline_Discre) {
   _inheritsLoose(EWCSparklinediscrete, _Ext_sparkline_Discre);
 
   function EWCSparklinediscrete() {

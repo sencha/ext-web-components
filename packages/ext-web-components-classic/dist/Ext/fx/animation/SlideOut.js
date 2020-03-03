@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_fx_animation_Slide from '../../../Ext/fx/animation/Slide.js';
 
-var Ext_fx_animation_SlideOut =
-/*#__PURE__*/
-function (_Ext_fx_animation_Sli) {
+var Ext_fx_animation_SlideOut = /*#__PURE__*/function (_Ext_fx_animation_Sli) {
   _inheritsLoose(Ext_fx_animation_SlideOut, _Ext_fx_animation_Sli);
 
   Ext_fx_animation_SlideOut.PROPERTIES = function PROPERTIES() {

@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_slider_Thumb from './Ext/slider/Thumb.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCThumb =
-/*#__PURE__*/
-function (_Ext_slider_Thumb) {
+var EWCThumb = /*#__PURE__*/function (_Ext_slider_Thumb) {
   _inheritsLoose(EWCThumb, _Ext_slider_Thumb);
 
   function EWCThumb() {

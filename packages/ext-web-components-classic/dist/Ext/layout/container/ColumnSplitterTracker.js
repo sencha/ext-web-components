@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_resizer_SplitterTracker from '../../../Ext/resizer/SplitterTracker.js';
 
-var Ext_layout_container_ColumnSplitterTracker =
-/*#__PURE__*/
-function (_Ext_resizer_Splitter) {
+var Ext_layout_container_ColumnSplitterTracker = /*#__PURE__*/function (_Ext_resizer_Splitter) {
   _inheritsLoose(Ext_layout_container_ColumnSplitterTracker, _Ext_resizer_Splitter);
 
   Ext_layout_container_ColumnSplitterTracker.PROPERTIES = function PROPERTIES() {

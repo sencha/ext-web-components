@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_BreadcrumbBar from './Ext/BreadcrumbBar.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCBreadcrumbbar =
-/*#__PURE__*/
-function (_Ext_BreadcrumbBar) {
+var EWCBreadcrumbbar = /*#__PURE__*/function (_Ext_BreadcrumbBar) {
   _inheritsLoose(EWCBreadcrumbbar, _Ext_BreadcrumbBar);
 
   function EWCBreadcrumbbar() {

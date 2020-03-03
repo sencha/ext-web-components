@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_panel_YearPicker from './Ext/panel/YearPicker.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCYearpicker =
-/*#__PURE__*/
-function (_Ext_panel_YearPicker) {
+var EWCYearpicker = /*#__PURE__*/function (_Ext_panel_YearPicker) {
   _inheritsLoose(EWCYearpicker, _Ext_panel_YearPicker);
 
   function EWCYearpicker() {

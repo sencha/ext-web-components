@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_draw_Surface from '../../../Ext/draw/Surface.js';
 
-var Ext_draw_engine_Svg =
-/*#__PURE__*/
-function (_Ext_draw_Surface) {
+var Ext_draw_engine_Svg = /*#__PURE__*/function (_Ext_draw_Surface) {
   _inheritsLoose(Ext_draw_engine_Svg, _Ext_draw_Surface);
 
   Ext_draw_engine_Svg.PROPERTIES = function PROPERTIES() {

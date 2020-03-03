@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_exporter_data_Group from '../../../Ext/exporter/data/Group.js';
 
-var Ext_exporter_data_Table =
-/*#__PURE__*/
-function (_Ext_exporter_data_Gr) {
+var Ext_exporter_data_Table = /*#__PURE__*/function (_Ext_exporter_data_Gr) {
   _inheritsLoose(Ext_exporter_data_Table, _Ext_exporter_data_Gr);
 
   Ext_exporter_data_Table.PROPERTIES = function PROPERTIES() {

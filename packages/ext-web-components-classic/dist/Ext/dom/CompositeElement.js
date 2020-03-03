@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_dom_CompositeElementLite from '../../Ext/dom/CompositeElementLite.js';
 
-var Ext_dom_CompositeElement =
-/*#__PURE__*/
-function (_Ext_dom_CompositeEle) {
+var Ext_dom_CompositeElement = /*#__PURE__*/function (_Ext_dom_CompositeEle) {
   _inheritsLoose(Ext_dom_CompositeElement, _Ext_dom_CompositeEle);
 
   Ext_dom_CompositeElement.PROPERTIES = function PROPERTIES() {

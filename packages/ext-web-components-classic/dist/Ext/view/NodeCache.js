@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_Base from '../../Ext/Base.js';
 
-var Ext_view_NodeCache =
-/*#__PURE__*/
-function (_Ext_Base) {
+var Ext_view_NodeCache = /*#__PURE__*/function (_Ext_Base) {
   _inheritsLoose(Ext_view_NodeCache, _Ext_Base);
 
   Ext_view_NodeCache.PROPERTIES = function PROPERTIES() {

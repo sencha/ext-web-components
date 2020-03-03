@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_form_field_Base from '../../Ext/form/field/Base.js';
 
-var Ext_slider_Multi =
-/*#__PURE__*/
-function (_Ext_form_field_Base) {
+var Ext_slider_Multi = /*#__PURE__*/function (_Ext_form_field_Base) {
   _inheritsLoose(Ext_slider_Multi, _Ext_form_field_Base);
 
   Ext_slider_Multi.PROPERTIES = function PROPERTIES() {

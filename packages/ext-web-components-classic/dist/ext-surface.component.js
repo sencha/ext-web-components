@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_draw_Surface from './Ext/draw/Surface.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCSurface =
-/*#__PURE__*/
-function (_Ext_draw_Surface) {
+var EWCSurface = /*#__PURE__*/function (_Ext_draw_Surface) {
   _inheritsLoose(EWCSurface, _Ext_draw_Surface);
 
   function EWCSurface() {

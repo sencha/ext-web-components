@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_toolbar_Item from './Ext/toolbar/Item.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCTbitem =
-/*#__PURE__*/
-function (_Ext_toolbar_Item) {
+var EWCTbitem = /*#__PURE__*/function (_Ext_toolbar_Item) {
   _inheritsLoose(EWCTbitem, _Ext_toolbar_Item);
 
   function EWCTbitem() {

@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_ux_IFrame from './Ext/ux/IFrame.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCUxiframe =
-/*#__PURE__*/
-function (_Ext_ux_IFrame) {
+var EWCUxiframe = /*#__PURE__*/function (_Ext_ux_IFrame) {
   _inheritsLoose(EWCUxiframe, _Ext_ux_IFrame);
 
   function EWCUxiframe() {

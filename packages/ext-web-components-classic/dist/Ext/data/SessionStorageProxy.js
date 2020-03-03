@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_data_proxy_WebStorage from '../../Ext/data/proxy/WebStorage.js';
 
-var Ext_data_SessionStorageProxy =
-/*#__PURE__*/
-function (_Ext_data_proxy_WebSt) {
+var Ext_data_SessionStorageProxy = /*#__PURE__*/function (_Ext_data_proxy_WebSt) {
   _inheritsLoose(Ext_data_SessionStorageProxy, _Ext_data_proxy_WebSt);
 
   Ext_data_SessionStorageProxy.PROPERTIES = function PROPERTIES() {

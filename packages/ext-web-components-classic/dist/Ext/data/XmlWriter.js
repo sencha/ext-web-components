@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_data_writer_Writer from '../../Ext/data/writer/Writer.js';
 
-var Ext_data_XmlWriter =
-/*#__PURE__*/
-function (_Ext_data_writer_Writ) {
+var Ext_data_XmlWriter = /*#__PURE__*/function (_Ext_data_writer_Writ) {
   _inheritsLoose(Ext_data_XmlWriter, _Ext_data_writer_Writ);
 
   Ext_data_XmlWriter.PROPERTIES = function PROPERTIES() {

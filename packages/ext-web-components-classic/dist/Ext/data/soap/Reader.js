@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_data_reader_Xml from '../../../Ext/data/reader/Xml.js';
 
-var Ext_data_soap_Reader =
-/*#__PURE__*/
-function (_Ext_data_reader_Xml) {
+var Ext_data_soap_Reader = /*#__PURE__*/function (_Ext_data_reader_Xml) {
   _inheritsLoose(Ext_data_soap_Reader, _Ext_data_reader_Xml);
 
   Ext_data_soap_Reader.PROPERTIES = function PROPERTIES() {

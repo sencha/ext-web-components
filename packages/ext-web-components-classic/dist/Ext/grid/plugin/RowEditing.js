@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_plugin_Editing from '../../../Ext/grid/plugin/Editing.js';
 
-var Ext_grid_plugin_RowEditing =
-/*#__PURE__*/
-function (_Ext_grid_plugin_Edit) {
+var Ext_grid_plugin_RowEditing = /*#__PURE__*/function (_Ext_grid_plugin_Edit) {
   _inheritsLoose(Ext_grid_plugin_RowEditing, _Ext_grid_plugin_Edit);
 
   Ext_grid_plugin_RowEditing.PROPERTIES = function PROPERTIES() {

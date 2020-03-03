@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_button_Split from '../Ext/button/Split.js';
 
-var Ext_CycleButton =
-/*#__PURE__*/
-function (_Ext_button_Split) {
+var Ext_CycleButton = /*#__PURE__*/function (_Ext_button_Split) {
   _inheritsLoose(Ext_CycleButton, _Ext_button_Split);
 
   Ext_CycleButton.PROPERTIES = function PROPERTIES() {

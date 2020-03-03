@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_d3_svg_Svg from './Ext/d3/svg/Svg.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCD3 =
-/*#__PURE__*/
-function (_Ext_d3_svg_Svg) {
+var EWCD3 = /*#__PURE__*/function (_Ext_d3_svg_Svg) {
   _inheritsLoose(EWCD3, _Ext_d3_svg_Svg);
 
   function EWCD3() {

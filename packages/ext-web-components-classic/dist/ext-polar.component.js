@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_chart_PolarChart from './Ext/chart/PolarChart.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCPolar =
-/*#__PURE__*/
-function (_Ext_chart_PolarChart) {
+var EWCPolar = /*#__PURE__*/function (_Ext_chart_PolarChart) {
   _inheritsLoose(EWCPolar, _Ext_chart_PolarChart);
 
   function EWCPolar() {

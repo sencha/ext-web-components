@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_grid_menu_Columns from './Ext/grid/menu/Columns.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCGridcolumnsmenu =
-/*#__PURE__*/
-function (_Ext_grid_menu_Column) {
+var EWCGridcolumnsmenu = /*#__PURE__*/function (_Ext_grid_menu_Column) {
   _inheritsLoose(EWCGridcolumnsmenu, _Ext_grid_menu_Column);
 
   function EWCGridcolumnsmenu() {

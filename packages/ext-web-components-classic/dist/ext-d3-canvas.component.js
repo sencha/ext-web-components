@@ -2,9 +2,7 @@ import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_d3_canvas_Canvas from './Ext/d3/canvas/Canvas.js';
 import ElementParser from './runtime/ElementParser.js';
 
-var EWCD3_canvas =
-/*#__PURE__*/
-function (_Ext_d3_canvas_Canvas) {
+var EWCD3_canvas = /*#__PURE__*/function (_Ext_d3_canvas_Canvas) {
   _inheritsLoose(EWCD3_canvas, _Ext_d3_canvas_Canvas);
 
   function EWCD3_canvas() {

@@ -2,9 +2,7 @@ import _createClass from "@babel/runtime/helpers/createClass";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import Ext_util_sizemonitor_Abstract from '../../../Ext/util/sizemonitor/Abstract.js';
 
-var Ext_util_sizemonitor_OverflowChange =
-/*#__PURE__*/
-function (_Ext_util_sizemonitor) {
+var Ext_util_sizemonitor_OverflowChange = /*#__PURE__*/function (_Ext_util_sizemonitor) {
   _inheritsLoose(Ext_util_sizemonitor_OverflowChange, _Ext_util_sizemonitor);
 
   Ext_util_sizemonitor_OverflowChange.PROPERTIES = function PROPERTIES() {
