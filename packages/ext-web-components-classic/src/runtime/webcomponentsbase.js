@@ -1,4 +1,4 @@
-//Tue Mar 03 2020 10:36:04 GMT-0500 (Eastern Standard Time)
+//Fri Mar 06 2020 09:44:42 GMT-0500 (Eastern Standard Time)
 
 import {
   doProp,
@@ -260,6 +260,7 @@ export default class WebComponentsBaseComponent extends HTMLElement {
     me.A.ext = Ext.create(me.A.o);
     me.cmp = me.A.ext;
     me.ext = me.A.ext;
+    me.ext.childouterHTML = me.outerHTML;
 
     me.dispatchEvent(new CustomEvent('created', {
        detail: {
@@ -331,7 +332,11 @@ export default class WebComponentsBaseComponent extends HTMLElement {
 
     if (me.parentNode != null && me.parentNode.nodeName.substring(0, 4) === 'EXT-') {
       if (me.parentNode.A.ext !== undefined) {
-        me.addTheChild(me.parentNode.A.ext, me.A.ext);
+        for (var i = 0; i < me.parentNode.A.ITEMS.length; i++) {
+          if (me.parentNode.A.ITEMS[i].child.outerHTML == me.A.ext.childouterHTML) {
+            me.addTheChild(me.parentNode.A.ext, me.A.ext, i);
+          }
+        }
       }
       else {
         me.parentNode.A.CHILDREN.push(me.A.ext);

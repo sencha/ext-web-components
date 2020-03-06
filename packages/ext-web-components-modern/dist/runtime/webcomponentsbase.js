@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Tue Mar 03 2020 10:29:08 GMT-0500 (Eastern Standard Time)
+//Fri Mar 06 2020 09:52:03 GMT-0500 (Eastern Standard Time)
 import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildToolbar, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var WebComponentsBaseComponent = /*#__PURE__*/function (_HTMLElement) {
@@ -235,6 +235,7 @@ var WebComponentsBaseComponent = /*#__PURE__*/function (_HTMLElement) {
     me.A.ext = Ext.create(me.A.o);
     me.cmp = me.A.ext;
     me.ext = me.A.ext;
+    me.ext.childouterHTML = me.outerHTML;
     me.dispatchEvent(new CustomEvent('created', {
       detail: {
         cmp: me.A.ext
@@ -319,7 +320,11 @@ var WebComponentsBaseComponent = /*#__PURE__*/function (_HTMLElement) {
 
     if (me.parentNode != null && me.parentNode.nodeName.substring(0, 4) === 'EXT-') {
       if (me.parentNode.A.ext !== undefined) {
-        me.addTheChild(me.parentNode.A.ext, me.A.ext);
+        for (var i = 0; i < me.parentNode.A.ITEMS.length; i++) {
+          if (me.parentNode.A.ITEMS[i].child.outerHTML == me.A.ext.childouterHTML) {
+            me.addTheChild(me.parentNode.A.ext, me.A.ext, i);
+          }
+        }
       } else {
         me.parentNode.A.CHILDREN.push(me.A.ext);
       }
