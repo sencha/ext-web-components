@@ -1,4 +1,4 @@
-//Fri Mar 06 2020 09:52:03 GMT-0500 (Eastern Standard Time)
+//Fri Mar 06 2020 10:19:53 GMT-0500 (Eastern Standard Time)
 
 import {
   doProp,
@@ -322,6 +322,7 @@ export default class WebComponentsBaseComponent extends HTMLElement {
       else {
         var g = {};
         g.type = 'ext';
+        g.child = child;
         this.A.ITEMS.push(g);
       }
     }
