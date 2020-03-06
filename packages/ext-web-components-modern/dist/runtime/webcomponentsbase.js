@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Fri Mar 06 2020 09:52:03 GMT-0500 (Eastern Standard Time)
+//Fri Mar 06 2020 10:19:53 GMT-0500 (Eastern Standard Time)
 import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildToolbar, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var WebComponentsBaseComponent = /*#__PURE__*/function (_HTMLElement) {
@@ -310,6 +310,7 @@ var WebComponentsBaseComponent = /*#__PURE__*/function (_HTMLElement) {
       } else {
         var g = {};
         g.type = 'ext';
+        g.child = child;
         this.A.ITEMS.push(g);
       }
     }
