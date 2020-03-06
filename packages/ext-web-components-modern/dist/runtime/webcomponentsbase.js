@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Fri Mar 06 2020 10:19:53 GMT-0500 (Eastern Standard Time)
+//Fri Mar 06 2020 15:17:29 GMT-0500 (Eastern Standard Time)
 import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildToolbar, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var WebComponentsBaseComponent = /*#__PURE__*/function (_HTMLElement) {
@@ -306,6 +306,8 @@ var WebComponentsBaseComponent = /*#__PURE__*/function (_HTMLElement) {
           });
         }
 
+        w.child = ''; //temp mjg
+
         this.A.ITEMS.push(w);
       } else {
         var g = {};
@@ -321,10 +323,17 @@ var WebComponentsBaseComponent = /*#__PURE__*/function (_HTMLElement) {
 
     if (me.parentNode != null && me.parentNode.nodeName.substring(0, 4) === 'EXT-') {
       if (me.parentNode.A.ext !== undefined) {
+        var found = false;
+
         for (var i = 0; i < me.parentNode.A.ITEMS.length; i++) {
           if (me.parentNode.A.ITEMS[i].child.outerHTML == me.A.ext.childouterHTML) {
+            found = true;
             me.addTheChild(me.parentNode.A.ext, me.A.ext, i);
           }
+        }
+
+        if (found == false) {
+          me.addTheChild(me.parentNode.A.ext, me.A.ext);
         }
       } else {
         me.parentNode.A.CHILDREN.push(me.A.ext);
