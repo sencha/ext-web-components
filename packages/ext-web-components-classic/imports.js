@@ -1,3 +1,6 @@
+import './src/runtime/classic.engine.pro.import.js';
+import './src/runtime/themes/classic/classic.material.fewest.js';
+
 import './src/ext-button.component.js';
 import './src/ext-cycle.component.js';
 import './src/ext-segmentedbutton.component.js';
