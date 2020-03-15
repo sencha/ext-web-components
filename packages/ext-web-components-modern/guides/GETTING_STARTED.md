@@ -63,8 +63,8 @@ cd ext-web-components-modern-demo
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 
 <!--
-<script src="./node_modules/@sencha/ext-web-components-modern/ext-runtime-modern/modern.engine.enterprise.js"></script>
-<link rel="stylesheet" type="text/css" href="node_modules/@sencha/ext-web-components-modern/ext-runtime-modern/material/material-all.css"></link>
+<script src="node_modules/@sencha/ext-web-components-classic/ext-runtime-classic/classic.engine.enterprise.js"></script>
+<link  href="node_modules/@sencha/ext-web-components-classic/ext-runtime-classic/material/material-all.css" rel="stylesheet" type="text/css"></link>
 -->
 
 <script type="module" src="./node_modules/@sencha/ext-web-components-modern/src/ext-toolbar.component.js"></script>
