@@ -29,7 +29,6 @@ export default class MainComponent {
     }
 
     readyMainPanel = (event) => {
-        console.log('readyMainPanel');
         this.extnameToProperty(event.detail.cmpObj, this, '');
         this.navButton.setHidden(false);
         this.navTreelist.setStore(this.treeStore);
@@ -52,7 +51,6 @@ export default class MainComponent {
     }
 
     navigate = (record) => {
-        console.log('navigate');
         if (record == null) {
             console.log('it was null');
             return;

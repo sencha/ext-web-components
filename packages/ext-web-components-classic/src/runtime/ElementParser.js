@@ -1,115 +1,20 @@
+//import './classic.engine.pro.import.js';
+//import './themes/classic/classic.material.fewest.js';
+import { addRuntime} from './util.js';
+
 const ElementParser = (() => {
   var toolkit = 'classic';
   var theme = 'material';
-  //var origCwd = process.cwd();
-  //var target = 'node_modules'
-  //var v
-  //var n
 
   if (window['Ext'] == undefined) {
-    var xhrObj = new XMLHttpRequest();
-
-    function linkIt(num) {
-      var xhrLink = new XMLHttpRequest();
-      xhrLink.open('GET', `node_modules/@sencha/ext-web-components-${ toolkit }/ext-runtime-${ toolkit }/${ theme }/${ theme }-all_${ num }.css`, false);
-      xhrLink.send('');
-      var style = document.createElement('style');
-      style.type = 'text/css';
-      style.innerHTML = xhrLink.responseText;
-      document.getElementsByTagName('head')[0].appendChild(style);
-    }
-
-    function scriptIt() {
-      var se;
-      xhrObj.open('GET', `node_modules/@sencha/ext-web-components-${ toolkit }/ext-runtime-${ toolkit }/${ toolkit }.engine.enterprise.js`, false);
-      xhrObj.send('');
-      if (xhrObj.responseText.substring(0, 3) != 'var') {showError();return;}
-      se = document.createElement('script');
-      se.type = "text/javascript";
-      se.text = xhrObj.responseText;
-      document.getElementsByTagName('head')[0].appendChild(se);
-    }
-
-    var showError = function showError() {
-      console.error('error');
-      document.body.innerHTML = "<div>" + "<h1>An error has occurred</h1>" + "The ExtWebComponents runtime cannot be found<p>" + "Possible reasons:<br>" + "<ul>" + "<li>node_modules folder is not found or corrupted (rerun npm install)" + "</ul>" + "</div>";
-      window.stop();
-    };
-
-    //v = process.cwd()
-    //console.log(v)
-    //n = v.includes(target)
-    //console.log(n)
-    //while (n == true) {
-    //  process.chdir('../');
-    //  v = process.cwd()
-    //  console.log(v)
-    //  n = v.includes(target)
-    //}
-
-    console.warn('[Deprecation] error below is expected');
-
-    switch (window['ExtFramework']) {
-      case 'react':
-        console.log('react')
-        console.warn('ext-react runtime not defined in index.html');
-        console.warn('to fix, add following 2 lines to public/index.html');
-        console.warn('<link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/ext-runtime-${ toolkit }/${ theme }/${ theme }-all.css"></link>');
-        console.warn('<script src="%PUBLIC_URL%/ext-runtime-${ toolkit }/${ toolkit }.engine.enterprise.js"></script>');
-        //xhrObj.open('GET', '/ext-runtime-classic/' + 'classic' + '.material.js', false);
-        linkIt(1)
-        linkIt(2)
-        scriptIt()
-        break;
-
-      case 'angular':
-        console.log('angular')
-        console.warn('ext-angular runtime not defined in index.html');
-        console.warn('to fix, add following 2 items to angular.json');
-        console.warn('"styles": ["ext-runtime-${ toolkit }/${ theme }/${ theme }-all.css]');
-        console.warn('"scripts": ["ext-runtime-${ toolkit }/${ toolkit }.engine.enterprise.js]');
-        linkIt(1)
-        linkIt(2)
-        scriptIt()
-        break;
-
-      case 'vue':
-        console.warn('native vue not yet supported, use ext-web-components');
-        break;
-
-      case undefined:
-        console.warn('ext-web-components runtime not defined in index.html');
-        console.warn('to fix, add following 2 lines to index.html');
-        console.warn(`<script src="./node_modules/@sencha/ext-web-components-${ toolkit }/ext-runtime-${ toolkit }/${ toolkit }.engine.enterprise.js"></script>`);
-        console.warn(`<link rel="stylesheet" type="text/css" href="node_modules/@sencha/ext-web-components-${ toolkit }/ext-runtime-${ toolkit }/${ theme }/${ theme }-all.css"></link>`);
-        linkIt(1)
-        linkIt(2)
-        scriptIt()
-        break;
-
-      default:
-        console.error('ERROR');
-        break;
-    }
-
-    //process.chdir(origCwd);
-
-
-    if (Ext.isModern == true) {
-      const ElementCell = Ext.define('Ext.ElementCell', {
-        extend: 'Ext.grid.cell.Cell',
-        xtype: 'elementcell'
-      });
-    }
-
+    addRuntime(toolkit, theme);
   }
-  else {
-    if (Ext.isModern == true) {
-      const ElementCell = Ext.define('Ext.ElementCell', {
-        extend: 'Ext.grid.cell.Cell',
-        xtype: 'elementcell'
-      });
-    }
+
+  if (Ext.isModern == true) {
+    const ElementCell = Ext.define('Ext.ElementCell', {
+      extend: 'Ext.grid.cell.Cell',
+      xtype: 'elementcell'
+    });
   }
 
   const DCL = 'DOMContentLoaded';
@@ -160,7 +65,7 @@ const ElementParser = (() => {
 
                           const { ownerDocument } = self;
                           init.set(self, false);
-                          if (ownerDocument.readyState === 'complete' || isParsed(self))
+                          if (ownerDocument.readyState === 'interactive' || ownerDocument.readyState === 'complete' || isParsed(self))
                           {
                             parsedCallback(self);
                           }

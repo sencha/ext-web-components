@@ -14,7 +14,7 @@ module.exports = function(env) {
 
     var profile = get('profile', '');
     var emit = get('emit', 'yes');
-    var environment = get('environment', 'development');
+    var environment = get('environment', 'production');
     var treeshake = get('treeshake', 'no');
     var browser = get('browser', 'yes');
     var watch = get('watch', 'yes');
@@ -57,6 +57,10 @@ module.exports = function(env) {
             // new Visualizer({
             //     filename: './statistics.html'
             // }),
+            new CopyWebpackPlugin([{
+                from: './resources',
+                to: './resources'
+            }]),
             new CopyWebpackPlugin([{
                 from: '../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js',
                 to: './webcomponents-bundle.js'
