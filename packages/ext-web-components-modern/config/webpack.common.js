@@ -4,7 +4,7 @@ module.exports = {
     entry: {
         //'demo/index' : './src/demo/index.js',
         //'ext-web-components-modern-with-runtime': './imports.js',
-        'index': './imports.js',
+        //'index': './imports.js',
         //'ext-web-components-modern-no-runtime-docapp': './src/mainDocApp.js',
 
         // 'ext-panel': './src/components/ext-panel.component.js',
