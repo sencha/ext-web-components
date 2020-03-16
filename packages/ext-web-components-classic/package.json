@@ -14,7 +14,7 @@
     "watch": "npx babel ./src --out-dir ./dist --watch",
     "build": "npx babel ./src --out-dir ./dist",
     "buildwebpack": "webpack --config config/webpack.prod.js",
-    "prepare": "npm run build && npm run buildwebpack"
+    "prepare": "npm run build"
   },
   "homepage": "https://github.com/sencha/ext-web-components#readme",
   "peerDependencies": {},
