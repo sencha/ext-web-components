@@ -1,6 +1,6 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
-//Mon Mar 16 2020 11:42:12 GMT-0400 (Eastern Daylight Time)
+//Thu Mar 19 2020 08:56:45 GMT-0400 (Eastern Daylight Time)
 import { doProp, filterProp, isMenu, isRenderercell, isParentGridAndChildToolbar, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var WebComponentsBaseComponent = /*#__PURE__*/function (_HTMLElement) {
@@ -322,6 +322,11 @@ var WebComponentsBaseComponent = /*#__PURE__*/function (_HTMLElement) {
     });
 
     if (me.parentNode != null && me.parentNode.nodeName.substring(0, 4) === 'EXT-') {
+      if (me.parentNode.A === undefined) {
+        console.error('import for ' + me.parentNode.nodeName.toLowerCase() + ' is missing');
+        return;
+      }
+
       if (me.parentNode.A.ext !== undefined) {
         var found = false;
 
@@ -547,9 +552,10 @@ var WebComponentsBaseComponent = /*#__PURE__*/function (_HTMLElement) {
               } else {
                 propertyVal = this.attributeObjects[attr];
               }
-            }
+            } //if (newVal == '[object Object]') {
 
-            if (newVal == '[object Object]') {
+
+            if (newVal.includes('[object Object]')) {
               propertyVal = this.attributeObjects[attr];
             }
 
