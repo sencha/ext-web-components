@@ -1,9 +1,18 @@
 import _createClass from "@babel/runtime/helpers/createClass";
+import _possibleConstructorReturn from "@babel/runtime/helpers/possibleConstructorReturn";
+import _getPrototypeOf from "@babel/runtime/helpers/getPrototypeOf";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
 import Ext_toolbar_Toolbar from '../../Ext/toolbar/Toolbar.js';
 
 var Ext_toolbar_Paging = /*#__PURE__*/function (_Ext_toolbar_Toolbar) {
   _inheritsLoose(Ext_toolbar_Paging, _Ext_toolbar_Toolbar);
+
+  var _super = _createSuper(Ext_toolbar_Paging);
 
   Ext_toolbar_Paging.PROPERTIES = function PROPERTIES() {
     return ['actions', 'activeChildTabIndex', 'activeCounter', 'activeItem', 'afterPageText', 'alignOnScroll', 'alignTarget', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'anchor', 'anchorSize', 'animateShadow', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoDestroy', 'autoEl', 'autoRender', 'autoShow', 'baseCls', 'beforePageText', 'bind', 'border', 'bubbleEvents', 'childEls', 'cls', 'columnWidth', 'componentCls', 'componentLayout', 'constrain', 'constraintInsets', 'constrainTo', 'contentEl', 'controller', 'data', 'defaultAlign', 'defaultButtonUI', 'defaultFieldUI', 'defaultFocus', 'defaultFooterButtonUI', 'defaultFooterFieldUI', 'defaultListenerScope', 'defaults', 'defaultType', 'detachOnRemove', 'disabled', 'disabledCls', 'displayInfo', 'displayMsg', 'dock', 'draggable', 'emptyMsg', 'enableOverflow', 'firstText', 'fixed', 'flex', 'floating', 'focusableContainer', 'focusCls', 'focusOnToFront', 'formBind', 'frame', 'height', 'hidden', 'hideMode', 'html', 'id', 'inactiveChildTabIndex', 'inputItemWidth', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'lastText', 'layout', 'liquidLayout', 'listeners', 'liveDrag', 'loader', 'margin', 'maskDefaults', 'maskElement', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'nameable', 'nameHolder', 'nextText', 'overCls', 'overflowHandler', 'padding', 'plugins', 'prependButtons', 'prevText', 'publishes', 'reference', 'referenceHolder', 'refreshText', 'region', 'renderConfig', 'renderData', 'renderTo', 'renderTpl', 'resetFocusPosition', 'resizable', 'resizeHandles', 'saveDelay', 'scrollable', 'session', 'shadow', 'shadowOffset', 'shareableName', 'shim', 'shrinkWrap', 'stateEvents', 'stateful', 'stateId', 'store', 'style', 'suspendLayout', 'tabGuard', 'tabIndex', 'toFrontOnShow', 'touchAction', 'tpl', 'tplWriteMode', 'trackMenus', 'twoWayBindable', 'ui', 'uiCls', 'userCls', 'vertical', 'viewModel', 'weight', 'width', 'xtype'];

@@ -1,9 +1,18 @@
 import _createClass from "@babel/runtime/helpers/createClass";
+import _possibleConstructorReturn from "@babel/runtime/helpers/possibleConstructorReturn";
+import _getPrototypeOf from "@babel/runtime/helpers/getPrototypeOf";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
 import Ext_d3_hierarchy_Hierarchy from '../../../Ext/d3/hierarchy/Hierarchy.js';
 
 var Ext_d3_hierarchy_TreeMap = /*#__PURE__*/function (_Ext_d3_hierarchy_Hie) {
   _inheritsLoose(Ext_d3_hierarchy_TreeMap, _Ext_d3_hierarchy_Hie);
+
+  var _super = _createSuper(Ext_d3_hierarchy_TreeMap);
 
   Ext_d3_hierarchy_TreeMap.PROPERTIES = function PROPERTIES() {
     return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'busyLayoutText', 'centered', 'clipScene', 'cls', 'colorAxis', 'componentCls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'disabled', 'displayed', 'docked', 'draggable', 'expandEventName', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'hierarchyCls', 'html', 'id', 'instanceCls', 'interactions', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'leafTile', 'left', 'linkKey', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nodeChildren', 'nodeClass', 'nodeKey', 'nodeText', 'nodeTransform', 'nodeValue', 'noParentValue', 'noSizeLayout', 'padding', 'parentTile', 'plugins', 'publishes', 'record', 'reference', 'relative', 'renderLinks', 'renderTo', 'right', 'ripple', 'rootVisible', 'scaleLabels', 'scrollable', 'selectEventName', 'selection', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'size', 'sorter', 'stateful', 'statefulDefaults', 'stateId', 'store', 'style', 'tabIndex', 'tiling', 'toFrontOnShow', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'transitions', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'viewModel', 'weight', 'width', 'x', 'xtype', 'y', 'zIndex'];

@@ -1,9 +1,18 @@
 import _createClass from "@babel/runtime/helpers/createClass";
+import _possibleConstructorReturn from "@babel/runtime/helpers/possibleConstructorReturn";
+import _getPrototypeOf from "@babel/runtime/helpers/getPrototypeOf";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
 import Ext_Component from '../Ext/Component.js';
 
 var Ext_DatePicker = /*#__PURE__*/function (_Ext_Component) {
   _inheritsLoose(Ext_DatePicker, _Ext_Component);
+
+  var _super = _createSuper(Ext_DatePicker);
 
   Ext_DatePicker.PROPERTIES = function PROPERTIES() {
     return ['activeCounter', 'alignOnScroll', 'alignTarget', 'alwaysOnTop', 'anchor', 'animateShadow', 'ariaAttributes', 'ariaDescribedBy', 'ariaDisabledDatesText', 'ariaDisabledDaysText', 'ariaLabel', 'ariaLabelledBy', 'ariaMaxText', 'ariaMinText', 'ariaTitle', 'ariaTitleDateFormat', 'autoEl', 'autoRender', 'autoShow', 'baseCls', 'bind', 'border', 'childEls', 'cls', 'columnWidth', 'componentCls', 'componentLayout', 'constrain', 'constraintInsets', 'constrainTo', 'contentEl', 'controller', 'data', 'defaultAlign', 'defaultListenerScope', 'defaultValue', 'disableAnim', 'disabled', 'disabledCellCls', 'disabledCls', 'disabledDates', 'disabledDatesRE', 'disabledDatesText', 'disabledDays', 'disabledDaysText', 'dock', 'draggable', 'fixed', 'flex', 'floating', 'focusCls', 'focusOnToFront', 'footerButtonUI', 'format', 'formBind', 'frame', 'handler', 'height', 'hidden', 'hideMode', 'html', 'id', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'keyNavConfig', 'liquidLayout', 'listeners', 'liveDrag', 'loader', 'longDayFormat', 'margin', 'maskDefaults', 'maskElement', 'maxDate', 'maxHeight', 'maxText', 'maxWidth', 'minDate', 'minHeight', 'minText', 'minWidth', 'modal', 'modelValidation', 'monthYearFormat', 'monthYearText', 'nameable', 'nextText', 'overCls', 'padding', 'plugins', 'prevText', 'publishes', 'reference', 'region', 'renderConfig', 'renderData', 'renderTo', 'renderTpl', 'resizable', 'resizeHandles', 'saveDelay', 'scope', 'scrollable', 'selectedCls', 'session', 'shadow', 'shadowOffset', 'shareableName', 'shim', 'showToday', 'shrinkWrap', 'startDay', 'stateEvents', 'stateful', 'stateId', 'style', 'tabIndex', 'todayText', 'todayTip', 'toFrontOnShow', 'touchAction', 'tpl', 'tplWriteMode', 'twoWayBindable', 'ui', 'uiCls', 'userCls', 'viewModel', 'weight', 'width', 'xtype'];

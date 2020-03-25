@@ -1,9 +1,18 @@
 import _createClass from "@babel/runtime/helpers/createClass";
+import _possibleConstructorReturn from "@babel/runtime/helpers/possibleConstructorReturn";
+import _getPrototypeOf from "@babel/runtime/helpers/getPrototypeOf";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
 import Ext_chart_axis_Numeric3D from '../../../Ext/chart/axis/Numeric3D.js';
 
 var Ext_chart_axis_Time3D = /*#__PURE__*/function (_Ext_chart_axis_Numer) {
   _inheritsLoose(Ext_chart_axis_Time3D, _Ext_chart_axis_Numer);
+
+  var _super = _createSuper(Ext_chart_axis_Time3D);
 
   Ext_chart_axis_Time3D.PROPERTIES = function PROPERTIES() {
     return ['adjustByMajorUnit', 'background', 'center', 'chart', 'dateFormat', 'depth', 'expandRangeBy', 'fields', 'floating', 'fromDate', 'grid', 'hidden', 'id', 'label', 'layout', 'length', 'limits', 'linkedTo', 'listeners', 'majorTickSteps', 'margin', 'maximum', 'maxZoom', 'minimum', 'minorTickSteps', 'minZoom', 'needHighPrecision', 'position', 'radius', 'reconcileRange', 'renderer', 'rotation', 'segmenter', 'style', 'title', 'titleMargin', 'toDate', 'totalAngle', 'visibleRange'];
