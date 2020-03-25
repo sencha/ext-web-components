@@ -1,9 +1,18 @@
 import _createClass from "@babel/runtime/helpers/createClass";
+import _possibleConstructorReturn from "@babel/runtime/helpers/possibleConstructorReturn";
+import _getPrototypeOf from "@babel/runtime/helpers/getPrototypeOf";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
 import Ext_Panel from '../../Ext/Panel.js';
 
 var Ext_panel_Date = /*#__PURE__*/function (_Ext_Panel) {
   _inheritsLoose(Ext_panel_Date, _Ext_Panel);
+
+  var _super = _createSuper(Ext_panel_Date);
 
   Ext_panel_Date.PROPERTIES = function PROPERTIES() {
     return ['activeChildTabIndex', 'activeItem', 'alignSelf', 'allowFocusingDisabledChildren', 'alwaysOnTop', 'anchor', 'anchorPosition', 'animation', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'autoConfirm', 'autoDestroy', 'autoSize', 'axisLock', 'bbar', 'bind', 'bodyBorder', 'bodyCls', 'bodyPadding', 'bodyStyle', 'border', 'bottom', 'buttonAlign', 'buttons', 'buttonToolbar', 'captionFormat', 'cardSwitchAnimation', 'centered', 'closable', 'closeAction', 'closeToolText', 'cls', 'collapsed', 'collapsible', 'constrainAlign', 'contentEl', 'control', 'controller', 'data', 'dateCellFormat', 'defaultFocus', 'defaultListenerScope', 'defaults', 'defaultToolWeights', 'defaultType', 'disabled', 'disabledDates', 'disabledDays', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusableContainer', 'focusableDate', 'focusCls', 'format', 'fullscreen', 'handler', 'header', 'headerFormat', 'headerLength', 'headerPosition', 'height', 'hidden', 'hideAnimation', 'hideCaptions', 'hideMode', 'hideOnMaskTap', 'hideOutside', 'html', 'icon', 'iconAlign', 'iconCls', 'id', 'inactiveChildTabIndex', 'innerCls', 'instanceCls', 'itemId', 'items', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'layout', 'lbar', 'left', 'listeners', 'manageBorders', 'margin', 'masked', 'maxDate', 'maxHeight', 'maxWidth', 'minButtonWidth', 'minDate', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'nameHolder', 'navigationPosition', 'nextText', 'padding', 'panes', 'plugins', 'prevText', 'publishes', 'rbar', 'record', 'reference', 'referenceHolder', 'relative', 'renderTo', 'resetFocusPosition', 'resizable', 'right', 'ripple', 'scope', 'scrollable', 'selectOnNavigate', 'session', 'shadow', 'shareableName', 'shim', 'showAfterMaxDate', 'showAnimation', 'showBeforeMinDate', 'showFooter', 'showTodayButton', 'specialDates', 'specialDays', 'splitTitle', 'standardButtons', 'startDay', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'tbar', 'title', 'titleAlign', 'titleAnimation', 'titleCollapse', 'toFrontOnShow', 'toolDefaults', 'tools', 'tooltip', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'transformCellCls', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'value', 'viewModel', 'weekendDays', 'weight', 'weighted', 'width', 'x', 'xtype', 'y', 'yearPicker', 'yearPickerDefaults', 'zIndex'];

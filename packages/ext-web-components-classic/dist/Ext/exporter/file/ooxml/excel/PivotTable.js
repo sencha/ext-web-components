@@ -1,9 +1,18 @@
 import _createClass from "@babel/runtime/helpers/createClass";
+import _possibleConstructorReturn from "@babel/runtime/helpers/possibleConstructorReturn";
+import _getPrototypeOf from "@babel/runtime/helpers/getPrototypeOf";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
 import Ext_exporter_file_ooxml_XmlRels from '../../../../../Ext/exporter/file/ooxml/XmlRels.js';
 
 var Ext_exporter_file_ooxml_excel_PivotTable = /*#__PURE__*/function (_Ext_exporter_file_oo) {
   _inheritsLoose(Ext_exporter_file_ooxml_excel_PivotTable, _Ext_exporter_file_oo);
+
+  var _super = _createSuper(Ext_exporter_file_ooxml_excel_PivotTable);
 
   Ext_exporter_file_ooxml_excel_PivotTable.PROPERTIES = function PROPERTIES() {
     return ['applyAlignmentFormats', 'applyBorderFormats', 'applyFontFormats', 'applyNumberFormats', 'applyPatternFormats', 'applyWidthHeightFormats', 'asteriskTotals', 'autoFormatId', 'autoGenerateId', 'autoGenerateKey', 'cacheDefinition', 'cacheId', 'chartFormat', 'colFields', 'colGrandTotals', 'colHeaderCaption', 'colItems', 'compact', 'compactData', 'contentType', 'createdVersion', 'customListSort', 'dataCaption', 'dataFields', 'dataOnRows', 'dataPosition', 'disableFieldList', 'editData', 'enableDrill', 'enableFieldProperties', 'enableWizard', 'errorCaption', 'fieldListSortAscending', 'fieldPrintTitles', 'fileName', 'fileNameTemplate', 'folder', 'generateTplAttributes', 'grandTotalCaption', 'gridDropZones', 'id', 'idPrefix', 'immersive', 'indent', 'index', 'itemPrintTitles', 'location', 'mdxSubqueries', 'mergeItem', 'minRefreshableVersion', 'missingCaption', 'multipleFieldFilters', 'name', 'nameTemplate', 'outline', 'outlineData', 'pageFields', 'pageOverThenDown', 'pageStyle', 'pageWrap', 'path', 'pivotFields', 'pivotTableStyle', 'pivotTableStyleInfo', 'preserveFormatting', 'printDrill', 'published', 'relationship', 'rowFields', 'rowGrandTotals', 'rowHeaderCaption', 'rowItems', 'showCalcMbrs', 'showDataDropDown', 'showDataTips', 'showDrill', 'showDropZones', 'showEmptyCol', 'showEmptyRow', 'showError', 'showHeaders', 'showItems', 'showMemberPropertyTips', 'showMissing', 'showMultipleLabel', 'subtotalHiddenItems', 'tag', 'tplAttributes', 'tplNonAttributes', 'updatedVersion', 'useAutoFormatting', 'vacatedStyle', 'viewLayoutType', 'visualTotals', 'worksheet'];

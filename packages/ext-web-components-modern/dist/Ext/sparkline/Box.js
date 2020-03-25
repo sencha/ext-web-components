@@ -1,9 +1,18 @@
 import _createClass from "@babel/runtime/helpers/createClass";
+import _possibleConstructorReturn from "@babel/runtime/helpers/possibleConstructorReturn";
+import _getPrototypeOf from "@babel/runtime/helpers/getPrototypeOf";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+
+function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
 import Ext_sparkline_Base from '../../Ext/sparkline/Base.js';
 
 var Ext_sparkline_Box = /*#__PURE__*/function (_Ext_sparkline_Base) {
   _inheritsLoose(Ext_sparkline_Box, _Ext_sparkline_Base);
+
+  var _super = _createSuper(Ext_sparkline_Box);
 
   Ext_sparkline_Box.PROPERTIES = function PROPERTIES() {
     return ['alignSelf', 'alwaysOnTop', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'axisLock', 'bind', 'border', 'bottom', 'boxFillColor', 'boxLineColor', 'centered', 'chartRangeMax', 'chartRangeMin', 'cls', 'constrainAlign', 'contentEl', 'controller', 'data', 'defaultListenerScope', 'disabled', 'disableTooltips', 'displayed', 'docked', 'draggable', 'flex', 'floated', 'focusCls', 'fullscreen', 'height', 'hidden', 'hideAnimation', 'hideMode', 'hideOnMaskTap', 'highlightColor', 'highlightLighten', 'html', 'id', 'instanceCls', 'itemId', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'left', 'lineColor', 'listeners', 'margin', 'maxHeight', 'maxWidth', 'medianColor', 'minHeight', 'minWidth', 'modal', 'modelValidation', 'name', 'nameable', 'outlierFillColor', 'outlierIQR', 'outlierLineColor', 'padding', 'plugins', 'publishes', 'raw', 'record', 'reference', 'relative', 'renderTo', 'right', 'ripple', 'scrollable', 'session', 'shadow', 'shareableName', 'shim', 'showAnimation', 'showOutliers', 'spotRadius', 'stateful', 'statefulDefaults', 'stateId', 'style', 'tabIndex', 'target', 'targetColor', 'tipTpl', 'toFrontOnShow', 'tooltip', 'tooltipPrefix', 'tooltipSkipNull', 'tooltipSuffix', 'top', 'touchAction', 'tpl', 'tplWriteMode', 'translatable', 'twoWayBindable', 'ui', 'userCls', 'userSelectable', 'values', 'viewModel', 'weight', 'whiskerColor', 'width', 'x', 'xtype', 'y', 'zIndex'];
