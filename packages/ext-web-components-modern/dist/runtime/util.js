@@ -184,6 +184,10 @@ export function isClassicDock(childcmp) {
     return false;
   }
 
+  if (childcmp.config == undefined) {
+    return false;
+  }
+
   if (childcmp.config.dock != undefined) {
     return true;
   } else {
