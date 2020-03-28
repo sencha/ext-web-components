@@ -1,13 +1,32 @@
-//import './classic.engine.pro.import.js';
-//import './themes/classic/classic.material.fewest.js';
-import { addRuntime} from './util.js';
+import { doIt } from './engine/classic/classic.enterprise.js';
+//import './engine/classic/themes/classicmaterialsmallest/classic.material.smallest.js';
+import './engine/classic/themes/classicmaterialsmallest/classic.material.smallest.js';
+//import { addRuntime} from './util.js';
 
 const ElementParser = (() => {
   var toolkit = 'classic';
-  var theme = 'material';
+  //var theme = 'material';
+
+  //var themedefined = false
+  //for (var i = 0; i < document.styleSheets.length; i++) {
+  //  if (document.styleSheets[i].href.includes('material-all.css') == true) {
+  //    themedefined = true;
+  //  }
+  //  if (document.styleSheets[i].href.includes('material-all.css') == true) {
+  //    themedefined = true;
+  //  }
+  //}
+  //if (!themedefined) {
+  //  import('./engine/modern/themes/modern.material.fewest.js')
+  //  .then((something) => {
+  //     console.log('importing theme');
+  //  });
+  //}
 
   if (window['Ext'] == undefined) {
-    addRuntime(toolkit, theme);
+    console.log('importing engine')
+    doIt()
+    //addRuntime(toolkit, theme);
   }
 
   if (Ext.isModern == true) {
