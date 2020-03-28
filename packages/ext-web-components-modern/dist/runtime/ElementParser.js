@@ -7,16 +7,31 @@ function _createSuper(Derived) { return function () { var Super = _getPrototypeO
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
-//import './modern.engine.pro.import.js';
-//import './themes/modern/modern.material.fewest.js';
-import { addRuntime } from './util.js';
+import { doIt } from './engine/modern/modern.enterprise.js'; //import './engine/modern/themes/modernmaterialsmallest/modern.material.smallest.js';
+
+import './engine/modern/themes/modernmaterialsmallest/modern.material.smallest.js'; //import { addRuntime} from './util.js';
 
 var ElementParser = function () {
-  var toolkit = 'modern';
-  var theme = 'material';
+  var toolkit = 'modern'; //var theme = 'material';
+  //var themedefined = false
+  //for (var i = 0; i < document.styleSheets.length; i++) {
+  //  if (document.styleSheets[i].href.includes('material-all.css') == true) {
+  //    themedefined = true;
+  //  }
+  //  if (document.styleSheets[i].href.includes('material-all.css') == true) {
+  //    themedefined = true;
+  //  }
+  //}
+  //if (!themedefined) {
+  //  import('./engine/modern/themes/modern.material.fewest.js')
+  //  .then((something) => {
+  //     console.log('importing theme');
+  //  });
+  //}
 
   if (window['Ext'] == undefined) {
-    addRuntime(toolkit, theme);
+    console.log('importing engine');
+    doIt(); //addRuntime(toolkit, theme);
   }
 
   if (Ext.isModern == true) {

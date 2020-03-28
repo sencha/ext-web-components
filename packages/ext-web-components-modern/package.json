@@ -11,9 +11,10 @@
     "ext-web-components": "./bin/ext-web-components.js"
   },
   "scripts": {
+    "build": "npm run babel & npm run buildwebpack",
     "watch": "npx babel ./src --out-dir ./dist --watch",
-    "build": "npx babel ./src --out-dir ./dist",
-    "buildwebpack": "webpack --config config/webpack.prod.js",
+    "babel": "npx babel ./src --out-dir ./dist",
+    "buildwebpack": "webpack --production",
     "prepare": "npm run build"
   },
   "homepage": "https://github.com/sencha/ext-web-components#readme",
@@ -48,9 +49,9 @@
     "css-loader": "^1.0.0",
     "url-loader": "^1.1.2",
     "webpack-merge": "^4.1.4",
-    "webpack": "^4.22.0",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.9"
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   },
   "repository": {
     "type": "git",
