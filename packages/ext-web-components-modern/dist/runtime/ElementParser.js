@@ -7,9 +7,11 @@ function _createSuper(Derived) { return function () { var Super = _getPrototypeO
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
-import { doIt } from './engine/modern/modern.enterprise.js'; //import './engine/modern/themes/modernmaterialsmallest/modern.material.smallest.js';
-
-import './engine/modern/themes/modernmaterialsmallest/modern.material.smallest.js'; //import { addRuntime} from './util.js';
+import { doIt } from './engine/modern/modern.enterprise.SDK_LOAD.js';
+import './engine/modern/modern.material.fewest.SDK_LOAD.js'; //import './engine/modern/themes/modernmaterialsmallest/modern.material.smallest.SDK_LOAD.js';
+//import { doIt } from './engine/modern/modern.enterprise.js';
+//import './engine/modern/themes/modernmaterialsmallest/modern.material.smallest.js';
+//import { addRuntime} from './util.js';
 
 var ElementParser = function () {
   var toolkit = 'modern'; //var theme = 'material';
@@ -30,7 +32,6 @@ var ElementParser = function () {
   //}
 
   if (window['Ext'] == undefined) {
-    console.log('importing engine');
     doIt(); //addRuntime(toolkit, theme);
   }
 
