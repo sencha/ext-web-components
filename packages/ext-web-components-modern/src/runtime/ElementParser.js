@@ -1,10 +1,14 @@
-import { doIt } from './engine/modern/modern.enterprise.js';
+import { doIt } from './engine/modern/modern.enterprise.SDK_LOAD.js';
+import './engine/modern/modern.material.fewest.SDK_LOAD.js';
+
+//import './engine/modern/themes/modernmaterialsmallest/modern.material.smallest.SDK_LOAD.js';
+//import { doIt } from './engine/modern/modern.enterprise.js';
 //import './engine/modern/themes/modernmaterialsmallest/modern.material.smallest.js';
-import './engine/modern/themes/modernmaterialsmallest/modern.material.smallest.js';
 //import { addRuntime} from './util.js';
 
 const ElementParser = (() => {
   var toolkit = 'modern';
+
   //var theme = 'material';
 
   //var themedefined = false
@@ -24,7 +28,6 @@ const ElementParser = (() => {
   //}
 
   if (window['Ext'] == undefined) {
-    console.log('importing engine')
     doIt()
     //addRuntime(toolkit, theme);
   }
