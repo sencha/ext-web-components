@@ -7,12 +7,9 @@ function _createSuper(Derived) { return function () { var Super = _getPrototypeO
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
-import { doIt } from './engine/classic/classic.enterprise.SDK_LOAD.js';
-import './engine/classic/classic.material.fewest.SDK_LOAD.js'; //import './engine/modern/themes/modernmaterialsmallest/modern.material.smallest.SDK_LOAD.js';
-//import { doIt } from './engine/classic/classic.enterprise.js';
-//import './engine/classic/themes/classicmaterialsmallest/classic.material.smallest.js';
+//import { doIt } from './engine/classic/classic.enterprise.SDK_LOAD.js';
+//import './engine/classic/classic.material.fewest.SDK_LOAD.js';
 //import { addRuntime} from './util.js';
-
 var ElementParser = function () {
   var toolkit = 'classic'; //var theme = 'material';
   //var themedefined = false
@@ -30,10 +27,10 @@ var ElementParser = function () {
   //     console.log('importing theme');
   //  });
   //}
-
-  if (window['Ext'] == undefined) {
-    doIt(); //addRuntime(toolkit, theme);
-  }
+  //if (window['Ext'] == undefined) {
+  //  doIt()
+  //  //addRuntime(toolkit, theme);
+  //}
 
   if (Ext.isModern == true) {
     var ElementCell = Ext.define('Ext.ElementCell', {

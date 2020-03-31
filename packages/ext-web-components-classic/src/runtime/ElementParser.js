@@ -1,9 +1,6 @@
-import { doIt } from './engine/classic/classic.enterprise.SDK_LOAD.js';
-import './engine/classic/classic.material.fewest.SDK_LOAD.js';
+//import { doIt } from './engine/classic/classic.enterprise.SDK_LOAD.js';
+//import './engine/classic/classic.material.fewest.SDK_LOAD.js';
 
-//import './engine/modern/themes/modernmaterialsmallest/modern.material.smallest.SDK_LOAD.js';
-//import { doIt } from './engine/classic/classic.enterprise.js';
-//import './engine/classic/themes/classicmaterialsmallest/classic.material.smallest.js';
 //import { addRuntime} from './util.js';
 
 const ElementParser = (() => {
@@ -27,10 +24,10 @@ const ElementParser = (() => {
   //  });
   //}
 
-  if (window['Ext'] == undefined) {
-    doIt()
-    //addRuntime(toolkit, theme);
-  }
+  //if (window['Ext'] == undefined) {
+  //  doIt()
+  //  //addRuntime(toolkit, theme);
+  //}
 
   if (Ext.isModern == true) {
     const ElementCell = Ext.define('Ext.ElementCell', {

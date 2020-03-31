@@ -1,9 +1,6 @@
-import { doIt } from './engine/modern/modern.enterprise.SDK_LOAD.js';
-import './engine/modern/modern.material.fewest.SDK_LOAD.js';
+//import { doIt } from './engine/modern/modern.enterprise.SDK_LOAD.js';
+//import './engine/modern/modern.material.fewest.SDK_LOAD.js';
 
-//import './engine/modern/themes/modernmaterialsmallest/modern.material.smallest.SDK_LOAD.js';
-//import { doIt } from './engine/modern/modern.enterprise.js';
-//import './engine/modern/themes/modernmaterialsmallest/modern.material.smallest.js';
 //import { addRuntime} from './util.js';
 
 const ElementParser = (() => {
@@ -27,10 +24,10 @@ const ElementParser = (() => {
   //  });
   //}
 
-  if (window['Ext'] == undefined) {
-    doIt()
-    //addRuntime(toolkit, theme);
-  }
+  //if (window['Ext'] == undefined) {
+  //  doIt()
+  //  //addRuntime(toolkit, theme);
+  //}
 
   if (Ext.isModern == true) {
     const ElementCell = Ext.define('Ext.ElementCell', {
