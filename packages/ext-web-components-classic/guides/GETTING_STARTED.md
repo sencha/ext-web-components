@@ -46,7 +46,7 @@ cd ext-web-components-classic-demo
     "@sencha/ext-web-components-classic": "~7.2.0",
     "@sencha/ext-classic-enterprise": "~7.2.0",
     "@sencha/ext-classic-material": "~7.2.0",
-    "servor": "~3.1.0"
+    "servor": "~3.2.0"
   },
   "author": "",
   "license": "ISC",
