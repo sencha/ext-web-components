@@ -44,8 +44,8 @@ cd ext-web-components-modern-demo
   },
   "devDependencies": {
     "@sencha/ext-web-components-modern": "~7.2.0",
-    "@sencha/ext-web-components-modern-enterprise": "~7.2.0",
-    "@sencha/ext-web-components-modern-material": "~7.2.0",
+    "@sencha/ext-modern-enterprise": "~7.2.0",
+    "@sencha/ext-modern-material": "~7.2.0",
     "servor": "~3.1.0"
   },
   "author": "",

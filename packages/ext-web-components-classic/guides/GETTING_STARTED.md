@@ -44,8 +44,8 @@ cd ext-web-components-classic-demo
   },
   "devDependencies": {
     "@sencha/ext-web-components-classic": "~7.2.0",
-    "@sencha/ext-web-components-classic-enterprise": "~7.2.0",
-    "@sencha/ext-web-components-classic-material": "~7.2.0",
+    "@sencha/ext-classic-enterprise": "~7.2.0",
+    "@sencha/ext-classic-material": "~7.2.0",
     "servor": "~3.1.0"
   },
   "author": "",
