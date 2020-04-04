@@ -1,5 +1,5 @@
 import Ext_TitleBar from './Ext/TitleBar.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCTitlebar extends Ext_TitleBar {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCTitlebar extends Ext_TitleBar {
   }
 }
 try {
-  window.customElements.define('ext-titlebar', ElementParser.withParsedCallback(EWCTitlebar));
+  if (window.customElements.get('ext-titlebar') == undefined) {
+    window.customElements.define('ext-titlebar', ElementParser.withParsedCallback(EWCTitlebar));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-titlebar', EWCTitlebar);
+  if (window.customElements.get('ext-titlebar') == undefined) {
+    window.customElements.define('ext-titlebar', EWCTitlebar);
+  }
 }

@@ -1,5 +1,5 @@
 import Ext_Title from './Ext/Title.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCTitle extends Ext_Title {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCTitle extends Ext_Title {
   }
 }
 try {
-  window.customElements.define('ext-title', ElementParser.withParsedCallback(EWCTitle));
+  if (window.customElements.get('ext-title') == undefined) {
+    window.customElements.define('ext-title', ElementParser.withParsedCallback(EWCTitle));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-title', EWCTitle);
+  if (window.customElements.get('ext-title') == undefined) {
+    window.customElements.define('ext-title', EWCTitle);
+  }
 }

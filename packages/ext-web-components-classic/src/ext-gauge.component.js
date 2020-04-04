@@ -1,5 +1,5 @@
 import Ext_ux_Gauge from './Ext/ux/Gauge.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCGauge extends Ext_ux_Gauge {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCGauge extends Ext_ux_Gauge {
   }
 }
 try {
-  window.customElements.define('ext-gauge', ElementParser.withParsedCallback(EWCGauge));
+  if (window.customElements.get('ext-gauge') == undefined) {
+    window.customElements.define('ext-gauge', ElementParser.withParsedCallback(EWCGauge));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-gauge', EWCGauge);
+  if (window.customElements.get('ext-gauge') == undefined) {
+    window.customElements.define('ext-gauge', EWCGauge);
+  }
 }

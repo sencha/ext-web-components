@@ -1,5 +1,5 @@
 import Ext_form_Radio from './Ext/form/Radio.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCRadio extends Ext_form_Radio {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCRadio extends Ext_form_Radio {
   }
 }
 try {
-  window.customElements.define('ext-radio', ElementParser.withParsedCallback(EWCRadio));
+  if (window.customElements.get('ext-radio') == undefined) {
+    window.customElements.define('ext-radio', ElementParser.withParsedCallback(EWCRadio));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-radio', EWCRadio);
+  if (window.customElements.get('ext-radio') == undefined) {
+    window.customElements.define('ext-radio', EWCRadio);
+  }
 }

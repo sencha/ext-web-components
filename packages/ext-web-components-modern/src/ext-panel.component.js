@@ -1,5 +1,5 @@
 import Ext_panel_Panel from './Ext/panel/Panel.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCPanel extends Ext_panel_Panel {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCPanel extends Ext_panel_Panel {
   }
 }
 try {
-  window.customElements.define('ext-panel', ElementParser.withParsedCallback(EWCPanel));
+  if (window.customElements.get('ext-panel') == undefined) {
+    window.customElements.define('ext-panel', ElementParser.withParsedCallback(EWCPanel));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-panel', EWCPanel);
+  if (window.customElements.get('ext-panel') == undefined) {
+    window.customElements.define('ext-panel', EWCPanel);
+  }
 }

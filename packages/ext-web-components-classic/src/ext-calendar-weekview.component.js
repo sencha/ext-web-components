@@ -1,5 +1,5 @@
 import Ext_calendar_view_Week from './Ext/calendar/view/Week.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCCalendar_weekview extends Ext_calendar_view_Week {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCCalendar_weekview extends Ext_calendar_view_Week {
   }
 }
 try {
-  window.customElements.define('ext-calendar-weekview', ElementParser.withParsedCallback(EWCCalendar_weekview));
+  if (window.customElements.get('ext-calendar-weekview') == undefined) {
+    window.customElements.define('ext-calendar-weekview', ElementParser.withParsedCallback(EWCCalendar_weekview));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-calendar-weekview', EWCCalendar_weekview);
+  if (window.customElements.get('ext-calendar-weekview') == undefined) {
+    window.customElements.define('ext-calendar-weekview', EWCCalendar_weekview);
+  }
 }

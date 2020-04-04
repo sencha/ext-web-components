@@ -1,5 +1,5 @@
 import Ext_menu_DatePicker from './Ext/menu/DatePicker.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCDatemenu extends Ext_menu_DatePicker {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCDatemenu extends Ext_menu_DatePicker {
   }
 }
 try {
-  window.customElements.define('ext-datemenu', ElementParser.withParsedCallback(EWCDatemenu));
+  if (window.customElements.get('ext-datemenu') == undefined) {
+    window.customElements.define('ext-datemenu', ElementParser.withParsedCallback(EWCDatemenu));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-datemenu', EWCDatemenu);
+  if (window.customElements.get('ext-datemenu') == undefined) {
+    window.customElements.define('ext-datemenu', EWCDatemenu);
+  }
 }

@@ -1,5 +1,5 @@
 import Ext_slider_Toggle from './Ext/slider/Toggle.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCToggleslider extends Ext_slider_Toggle {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCToggleslider extends Ext_slider_Toggle {
   }
 }
 try {
-  window.customElements.define('ext-toggleslider', ElementParser.withParsedCallback(EWCToggleslider));
+  if (window.customElements.get('ext-toggleslider') == undefined) {
+    window.customElements.define('ext-toggleslider', ElementParser.withParsedCallback(EWCToggleslider));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-toggleslider', EWCToggleslider);
+  if (window.customElements.get('ext-toggleslider') == undefined) {
+    window.customElements.define('ext-toggleslider', EWCToggleslider);
+  }
 }

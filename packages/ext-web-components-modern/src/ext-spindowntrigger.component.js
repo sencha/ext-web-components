@@ -1,5 +1,5 @@
 import Ext_field_trigger_SpinDown from './Ext/field/trigger/SpinDown.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCSpindowntrigger extends Ext_field_trigger_SpinDown {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCSpindowntrigger extends Ext_field_trigger_SpinDown {
   }
 }
 try {
-  window.customElements.define('ext-spindowntrigger', ElementParser.withParsedCallback(EWCSpindowntrigger));
+  if (window.customElements.get('ext-spindowntrigger') == undefined) {
+    window.customElements.define('ext-spindowntrigger', ElementParser.withParsedCallback(EWCSpindowntrigger));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-spindowntrigger', EWCSpindowntrigger);
+  if (window.customElements.get('ext-spindowntrigger') == undefined) {
+    window.customElements.define('ext-spindowntrigger', EWCSpindowntrigger);
+  }
 }

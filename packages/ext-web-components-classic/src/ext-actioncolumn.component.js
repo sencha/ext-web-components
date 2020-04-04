@@ -1,5 +1,5 @@
 import Ext_grid_ActionColumn from './Ext/grid/ActionColumn.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCActioncolumn extends Ext_grid_ActionColumn {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCActioncolumn extends Ext_grid_ActionColumn {
   }
 }
 try {
-  window.customElements.define('ext-actioncolumn', ElementParser.withParsedCallback(EWCActioncolumn));
+  if (window.customElements.get('ext-actioncolumn') == undefined) {
+    window.customElements.define('ext-actioncolumn', ElementParser.withParsedCallback(EWCActioncolumn));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-actioncolumn', EWCActioncolumn);
+  if (window.customElements.get('ext-actioncolumn') == undefined) {
+    window.customElements.define('ext-actioncolumn', EWCActioncolumn);
+  }
 }

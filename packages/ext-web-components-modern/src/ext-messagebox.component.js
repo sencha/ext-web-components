@@ -1,5 +1,5 @@
 import Ext_MessageBox from './Ext/MessageBox.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCMessagebox extends Ext_MessageBox {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCMessagebox extends Ext_MessageBox {
   }
 }
 try {
-  window.customElements.define('ext-messagebox', ElementParser.withParsedCallback(EWCMessagebox));
+  if (window.customElements.get('ext-messagebox') == undefined) {
+    window.customElements.define('ext-messagebox', ElementParser.withParsedCallback(EWCMessagebox));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-messagebox', EWCMessagebox);
+  if (window.customElements.get('ext-messagebox') == undefined) {
+    window.customElements.define('ext-messagebox', EWCMessagebox);
+  }
 }

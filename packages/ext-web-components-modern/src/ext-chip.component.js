@@ -1,5 +1,5 @@
 import Ext_Chip from './Ext/Chip.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCChip extends Ext_Chip {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCChip extends Ext_Chip {
   }
 }
 try {
-  window.customElements.define('ext-chip', ElementParser.withParsedCallback(EWCChip));
+  if (window.customElements.get('ext-chip') == undefined) {
+    window.customElements.define('ext-chip', ElementParser.withParsedCallback(EWCChip));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-chip', EWCChip);
+  if (window.customElements.get('ext-chip') == undefined) {
+    window.customElements.define('ext-chip', EWCChip);
+  }
 }

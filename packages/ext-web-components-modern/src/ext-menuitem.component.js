@@ -1,5 +1,5 @@
 import Ext_menu_TextItem from './Ext/menu/TextItem.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCMenuitem extends Ext_menu_TextItem {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCMenuitem extends Ext_menu_TextItem {
   }
 }
 try {
-  window.customElements.define('ext-menuitem', ElementParser.withParsedCallback(EWCMenuitem));
+  if (window.customElements.get('ext-menuitem') == undefined) {
+    window.customElements.define('ext-menuitem', ElementParser.withParsedCallback(EWCMenuitem));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-menuitem', EWCMenuitem);
+  if (window.customElements.get('ext-menuitem') == undefined) {
+    window.customElements.define('ext-menuitem', EWCMenuitem);
+  }
 }

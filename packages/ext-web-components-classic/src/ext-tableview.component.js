@@ -1,5 +1,5 @@
 import Ext_grid_View from './Ext/grid/View.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCTableview extends Ext_grid_View {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCTableview extends Ext_grid_View {
   }
 }
 try {
-  window.customElements.define('ext-tableview', ElementParser.withParsedCallback(EWCTableview));
+  if (window.customElements.get('ext-tableview') == undefined) {
+    window.customElements.define('ext-tableview', ElementParser.withParsedCallback(EWCTableview));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-tableview', EWCTableview);
+  if (window.customElements.get('ext-tableview') == undefined) {
+    window.customElements.define('ext-tableview', EWCTableview);
+  }
 }

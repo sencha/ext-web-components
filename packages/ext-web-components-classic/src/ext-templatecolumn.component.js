@@ -1,5 +1,5 @@
 import Ext_grid_TemplateColumn from './Ext/grid/TemplateColumn.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCTemplatecolumn extends Ext_grid_TemplateColumn {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCTemplatecolumn extends Ext_grid_TemplateColumn {
   }
 }
 try {
-  window.customElements.define('ext-templatecolumn', ElementParser.withParsedCallback(EWCTemplatecolumn));
+  if (window.customElements.get('ext-templatecolumn') == undefined) {
+    window.customElements.define('ext-templatecolumn', ElementParser.withParsedCallback(EWCTemplatecolumn));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-templatecolumn', EWCTemplatecolumn);
+  if (window.customElements.get('ext-templatecolumn') == undefined) {
+    window.customElements.define('ext-templatecolumn', EWCTemplatecolumn);
+  }
 }

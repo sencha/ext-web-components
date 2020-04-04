@@ -1,5 +1,5 @@
 import Ext_field_Picker from './Ext/field/Picker.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCPickerfield extends Ext_field_Picker {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCPickerfield extends Ext_field_Picker {
   }
 }
 try {
-  window.customElements.define('ext-pickerfield', ElementParser.withParsedCallback(EWCPickerfield));
+  if (window.customElements.get('ext-pickerfield') == undefined) {
+    window.customElements.define('ext-pickerfield', ElementParser.withParsedCallback(EWCPickerfield));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-pickerfield', EWCPickerfield);
+  if (window.customElements.get('ext-pickerfield') == undefined) {
+    window.customElements.define('ext-pickerfield', EWCPickerfield);
+  }
 }

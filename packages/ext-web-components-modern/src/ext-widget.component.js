@@ -1,5 +1,5 @@
 import Ext_Gadget from './Ext/Gadget.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCWidget extends Ext_Gadget {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCWidget extends Ext_Gadget {
   }
 }
 try {
-  window.customElements.define('ext-widget', ElementParser.withParsedCallback(EWCWidget));
+  if (window.customElements.get('ext-widget') == undefined) {
+    window.customElements.define('ext-widget', ElementParser.withParsedCallback(EWCWidget));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-widget', EWCWidget);
+  if (window.customElements.get('ext-widget') == undefined) {
+    window.customElements.define('ext-widget', EWCWidget);
+  }
 }

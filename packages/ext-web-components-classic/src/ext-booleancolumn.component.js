@@ -1,5 +1,5 @@
 import Ext_grid_BooleanColumn from './Ext/grid/BooleanColumn.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCBooleancolumn extends Ext_grid_BooleanColumn {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCBooleancolumn extends Ext_grid_BooleanColumn {
   }
 }
 try {
-  window.customElements.define('ext-booleancolumn', ElementParser.withParsedCallback(EWCBooleancolumn));
+  if (window.customElements.get('ext-booleancolumn') == undefined) {
+    window.customElements.define('ext-booleancolumn', ElementParser.withParsedCallback(EWCBooleancolumn));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-booleancolumn', EWCBooleancolumn);
+  if (window.customElements.get('ext-booleancolumn') == undefined) {
+    window.customElements.define('ext-booleancolumn', EWCBooleancolumn);
+  }
 }

@@ -1,5 +1,5 @@
 import Ext_field_trigger_Menu from './Ext/field/trigger/Menu.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCMenutrigger extends Ext_field_trigger_Menu {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCMenutrigger extends Ext_field_trigger_Menu {
   }
 }
 try {
-  window.customElements.define('ext-menutrigger', ElementParser.withParsedCallback(EWCMenutrigger));
+  if (window.customElements.get('ext-menutrigger') == undefined) {
+    window.customElements.define('ext-menutrigger', ElementParser.withParsedCallback(EWCMenutrigger));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-menutrigger', EWCMenutrigger);
+  if (window.customElements.get('ext-menutrigger') == undefined) {
+    window.customElements.define('ext-menutrigger', EWCMenutrigger);
+  }
 }

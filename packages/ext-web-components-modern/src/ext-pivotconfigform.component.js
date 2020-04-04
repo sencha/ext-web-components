@@ -1,5 +1,5 @@
 import Ext_pivot_plugin_configurator_Form from './Ext/pivot/plugin/configurator/Form.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCPivotconfigform extends Ext_pivot_plugin_configurator_Form {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCPivotconfigform extends Ext_pivot_plugin_configurator_Fo
   }
 }
 try {
-  window.customElements.define('ext-pivotconfigform', ElementParser.withParsedCallback(EWCPivotconfigform));
+  if (window.customElements.get('ext-pivotconfigform') == undefined) {
+    window.customElements.define('ext-pivotconfigform', ElementParser.withParsedCallback(EWCPivotconfigform));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-pivotconfigform', EWCPivotconfigform);
+  if (window.customElements.get('ext-pivotconfigform') == undefined) {
+    window.customElements.define('ext-pivotconfigform', EWCPivotconfigform);
+  }
 }

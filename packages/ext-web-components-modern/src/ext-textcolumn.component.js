@@ -1,5 +1,5 @@
 import Ext_grid_column_Text from './Ext/grid/column/Text.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCTextcolumn extends Ext_grid_column_Text {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCTextcolumn extends Ext_grid_column_Text {
   }
 }
 try {
-  window.customElements.define('ext-textcolumn', ElementParser.withParsedCallback(EWCTextcolumn));
+  if (window.customElements.get('ext-textcolumn') == undefined) {
+    window.customElements.define('ext-textcolumn', ElementParser.withParsedCallback(EWCTextcolumn));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-textcolumn', EWCTextcolumn);
+  if (window.customElements.get('ext-textcolumn') == undefined) {
+    window.customElements.define('ext-textcolumn', EWCTextcolumn);
+  }
 }

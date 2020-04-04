@@ -1,5 +1,5 @@
 import Ext_panel_DateTitle from './Ext/panel/DateTitle.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCDatetitle extends Ext_panel_DateTitle {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCDatetitle extends Ext_panel_DateTitle {
   }
 }
 try {
-  window.customElements.define('ext-datetitle', ElementParser.withParsedCallback(EWCDatetitle));
+  if (window.customElements.get('ext-datetitle') == undefined) {
+    window.customElements.define('ext-datetitle', ElementParser.withParsedCallback(EWCDatetitle));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-datetitle', EWCDatetitle);
+  if (window.customElements.get('ext-datetitle') == undefined) {
+    window.customElements.define('ext-datetitle', EWCDatetitle);
+  }
 }

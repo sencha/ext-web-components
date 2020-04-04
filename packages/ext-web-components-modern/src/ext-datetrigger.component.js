@@ -1,5 +1,5 @@
 import Ext_field_trigger_Date from './Ext/field/trigger/Date.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCDatetrigger extends Ext_field_trigger_Date {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCDatetrigger extends Ext_field_trigger_Date {
   }
 }
 try {
-  window.customElements.define('ext-datetrigger', ElementParser.withParsedCallback(EWCDatetrigger));
+  if (window.customElements.get('ext-datetrigger') == undefined) {
+    window.customElements.define('ext-datetrigger', ElementParser.withParsedCallback(EWCDatetrigger));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-datetrigger', EWCDatetrigger);
+  if (window.customElements.get('ext-datetrigger') == undefined) {
+    window.customElements.define('ext-datetrigger', EWCDatetrigger);
+  }
 }

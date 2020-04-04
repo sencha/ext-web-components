@@ -1,5 +1,5 @@
 import Ext_form_Toggle from './Ext/form/Toggle.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCTogglefield extends Ext_form_Toggle {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCTogglefield extends Ext_form_Toggle {
   }
 }
 try {
-  window.customElements.define('ext-togglefield', ElementParser.withParsedCallback(EWCTogglefield));
+  if (window.customElements.get('ext-togglefield') == undefined) {
+    window.customElements.define('ext-togglefield', ElementParser.withParsedCallback(EWCTogglefield));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-togglefield', EWCTogglefield);
+  if (window.customElements.get('ext-togglefield') == undefined) {
+    window.customElements.define('ext-togglefield', EWCTogglefield);
+  }
 }

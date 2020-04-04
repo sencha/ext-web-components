@@ -1,5 +1,5 @@
 import Ext_grid_LockedGrid from './Ext/grid/LockedGrid.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCLockedgrid extends Ext_grid_LockedGrid {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCLockedgrid extends Ext_grid_LockedGrid {
   }
 }
 try {
-  window.customElements.define('ext-lockedgrid', ElementParser.withParsedCallback(EWCLockedgrid));
+  if (window.customElements.get('ext-lockedgrid') == undefined) {
+    window.customElements.define('ext-lockedgrid', ElementParser.withParsedCallback(EWCLockedgrid));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-lockedgrid', EWCLockedgrid);
+  if (window.customElements.get('ext-lockedgrid') == undefined) {
+    window.customElements.define('ext-lockedgrid', EWCLockedgrid);
+  }
 }

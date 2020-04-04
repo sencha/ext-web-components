@@ -1,5 +1,5 @@
 import Ext_NavigationView from './Ext/NavigationView.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCNavigationview extends Ext_NavigationView {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCNavigationview extends Ext_NavigationView {
   }
 }
 try {
-  window.customElements.define('ext-navigationview', ElementParser.withParsedCallback(EWCNavigationview));
+  if (window.customElements.get('ext-navigationview') == undefined) {
+    window.customElements.define('ext-navigationview', ElementParser.withParsedCallback(EWCNavigationview));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-navigationview', EWCNavigationview);
+  if (window.customElements.get('ext-navigationview') == undefined) {
+    window.customElements.define('ext-navigationview', EWCNavigationview);
+  }
 }

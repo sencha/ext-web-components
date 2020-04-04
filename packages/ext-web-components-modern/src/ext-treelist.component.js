@@ -1,5 +1,5 @@
 import Ext_list_Tree from './Ext/list/Tree.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCTreelist extends Ext_list_Tree {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCTreelist extends Ext_list_Tree {
   }
 }
 try {
-  window.customElements.define('ext-treelist', ElementParser.withParsedCallback(EWCTreelist));
+  if (window.customElements.get('ext-treelist') == undefined) {
+    window.customElements.define('ext-treelist', ElementParser.withParsedCallback(EWCTreelist));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-treelist', EWCTreelist);
+  if (window.customElements.get('ext-treelist') == undefined) {
+    window.customElements.define('ext-treelist', EWCTreelist);
+  }
 }

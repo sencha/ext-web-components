@@ -1,4 +1,4 @@
-import WebComponentsBaseComponent from '../runtime/webcomponentsbase.js'
+import WebComponentsBaseComponent from '../common/webcomponentsbase.js'
 
 export default class Ext_Base extends WebComponentsBaseComponent {
 

@@ -1,5 +1,5 @@
 import Ext_draw_Component from './Ext/draw/Component.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCDraw extends Ext_draw_Component {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCDraw extends Ext_draw_Component {
   }
 }
 try {
-  window.customElements.define('ext-draw', ElementParser.withParsedCallback(EWCDraw));
+  if (window.customElements.get('ext-draw') == undefined) {
+    window.customElements.define('ext-draw', ElementParser.withParsedCallback(EWCDraw));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-draw', EWCDraw);
+  if (window.customElements.get('ext-draw') == undefined) {
+    window.customElements.define('ext-draw', EWCDraw);
+  }
 }

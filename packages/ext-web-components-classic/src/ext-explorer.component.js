@@ -1,5 +1,5 @@
 import Ext_ux_Explorer from './Ext/ux/Explorer.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCExplorer extends Ext_ux_Explorer {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCExplorer extends Ext_ux_Explorer {
   }
 }
 try {
-  window.customElements.define('ext-explorer', ElementParser.withParsedCallback(EWCExplorer));
+  if (window.customElements.get('ext-explorer') == undefined) {
+    window.customElements.define('ext-explorer', ElementParser.withParsedCallback(EWCExplorer));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-explorer', EWCExplorer);
+  if (window.customElements.get('ext-explorer') == undefined) {
+    window.customElements.define('ext-explorer', EWCExplorer);
+  }
 }

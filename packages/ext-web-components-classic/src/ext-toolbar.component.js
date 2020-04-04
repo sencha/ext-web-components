@@ -1,5 +1,5 @@
 import Ext_Toolbar from './Ext/Toolbar.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCToolbar extends Ext_Toolbar {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCToolbar extends Ext_Toolbar {
   }
 }
 try {
-  window.customElements.define('ext-toolbar', ElementParser.withParsedCallback(EWCToolbar));
+  if (window.customElements.get('ext-toolbar') == undefined) {
+    window.customElements.define('ext-toolbar', ElementParser.withParsedCallback(EWCToolbar));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-toolbar', EWCToolbar);
+  if (window.customElements.get('ext-toolbar') == undefined) {
+    window.customElements.define('ext-toolbar', EWCToolbar);
+  }
 }

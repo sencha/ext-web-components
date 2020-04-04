@@ -1,5 +1,5 @@
 import Ext_grid_menu_SortAsc from './Ext/grid/menu/SortAsc.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCGridsortascmenuitem extends Ext_grid_menu_SortAsc {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCGridsortascmenuitem extends Ext_grid_menu_SortAsc {
   }
 }
 try {
-  window.customElements.define('ext-gridsortascmenuitem', ElementParser.withParsedCallback(EWCGridsortascmenuitem));
+  if (window.customElements.get('ext-gridsortascmenuitem') == undefined) {
+    window.customElements.define('ext-gridsortascmenuitem', ElementParser.withParsedCallback(EWCGridsortascmenuitem));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-gridsortascmenuitem', EWCGridsortascmenuitem);
+  if (window.customElements.get('ext-gridsortascmenuitem') == undefined) {
+    window.customElements.define('ext-gridsortascmenuitem', EWCGridsortascmenuitem);
+  }
 }

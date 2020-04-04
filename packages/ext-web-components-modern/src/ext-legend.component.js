@@ -1,5 +1,5 @@
 import Ext_chart_Legend from './Ext/chart/Legend.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCLegend extends Ext_chart_Legend {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCLegend extends Ext_chart_Legend {
   }
 }
 try {
-  window.customElements.define('ext-legend', ElementParser.withParsedCallback(EWCLegend));
+  if (window.customElements.get('ext-legend') == undefined) {
+    window.customElements.define('ext-legend', ElementParser.withParsedCallback(EWCLegend));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-legend', EWCLegend);
+  if (window.customElements.get('ext-legend') == undefined) {
+    window.customElements.define('ext-legend', EWCLegend);
+  }
 }

@@ -1,5 +1,5 @@
 import Ext_field_DatePicker from './Ext/field/DatePicker.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCDatefield extends Ext_field_DatePicker {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCDatefield extends Ext_field_DatePicker {
   }
 }
 try {
-  window.customElements.define('ext-datefield', ElementParser.withParsedCallback(EWCDatefield));
+  if (window.customElements.get('ext-datefield') == undefined) {
+    window.customElements.define('ext-datefield', ElementParser.withParsedCallback(EWCDatefield));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-datefield', EWCDatefield);
+  if (window.customElements.get('ext-datefield') == undefined) {
+    window.customElements.define('ext-datefield', EWCDatefield);
+  }
 }

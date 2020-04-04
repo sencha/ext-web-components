@@ -1,5 +1,5 @@
 import Ext_field_trigger_Expand from './Ext/field/trigger/Expand.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCExpandtrigger extends Ext_field_trigger_Expand {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCExpandtrigger extends Ext_field_trigger_Expand {
   }
 }
 try {
-  window.customElements.define('ext-expandtrigger', ElementParser.withParsedCallback(EWCExpandtrigger));
+  if (window.customElements.get('ext-expandtrigger') == undefined) {
+    window.customElements.define('ext-expandtrigger', ElementParser.withParsedCallback(EWCExpandtrigger));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-expandtrigger', EWCExpandtrigger);
+  if (window.customElements.get('ext-expandtrigger') == undefined) {
+    window.customElements.define('ext-expandtrigger', EWCExpandtrigger);
+  }
 }

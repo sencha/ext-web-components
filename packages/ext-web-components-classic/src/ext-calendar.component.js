@@ -1,5 +1,5 @@
 import Ext_calendar_panel_Panel from './Ext/calendar/panel/Panel.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCCalendar extends Ext_calendar_panel_Panel {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCCalendar extends Ext_calendar_panel_Panel {
   }
 }
 try {
-  window.customElements.define('ext-calendar', ElementParser.withParsedCallback(EWCCalendar));
+  if (window.customElements.get('ext-calendar') == undefined) {
+    window.customElements.define('ext-calendar', ElementParser.withParsedCallback(EWCCalendar));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-calendar', EWCCalendar);
+  if (window.customElements.get('ext-calendar') == undefined) {
+    window.customElements.define('ext-calendar', EWCCalendar);
+  }
 }

@@ -1,5 +1,5 @@
 import Ext_ActionSheet from './Ext/ActionSheet.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCActionsheet extends Ext_ActionSheet {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCActionsheet extends Ext_ActionSheet {
   }
 }
 try {
-  window.customElements.define('ext-actionsheet', ElementParser.withParsedCallback(EWCActionsheet));
+  if (window.customElements.get('ext-actionsheet') == undefined) {
+    window.customElements.define('ext-actionsheet', ElementParser.withParsedCallback(EWCActionsheet));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-actionsheet', EWCActionsheet);
+  if (window.customElements.get('ext-actionsheet') == undefined) {
+    window.customElements.define('ext-actionsheet', EWCActionsheet);
+  }
 }

@@ -1,5 +1,5 @@
 import Ext_field_SingleSlider from './Ext/field/SingleSlider.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCSinglesliderfield extends Ext_field_SingleSlider {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCSinglesliderfield extends Ext_field_SingleSlider {
   }
 }
 try {
-  window.customElements.define('ext-singlesliderfield', ElementParser.withParsedCallback(EWCSinglesliderfield));
+  if (window.customElements.get('ext-singlesliderfield') == undefined) {
+    window.customElements.define('ext-singlesliderfield', ElementParser.withParsedCallback(EWCSinglesliderfield));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-singlesliderfield', EWCSinglesliderfield);
+  if (window.customElements.get('ext-singlesliderfield') == undefined) {
+    window.customElements.define('ext-singlesliderfield', EWCSinglesliderfield);
+  }
 }

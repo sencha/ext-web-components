@@ -1,5 +1,5 @@
 import Ext_pivot_d3_HeatMap from './Ext/pivot/d3/HeatMap.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCPivotheatmap extends Ext_pivot_d3_HeatMap {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCPivotheatmap extends Ext_pivot_d3_HeatMap {
   }
 }
 try {
-  window.customElements.define('ext-pivotheatmap', ElementParser.withParsedCallback(EWCPivotheatmap));
+  if (window.customElements.get('ext-pivotheatmap') == undefined) {
+    window.customElements.define('ext-pivotheatmap', ElementParser.withParsedCallback(EWCPivotheatmap));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-pivotheatmap', EWCPivotheatmap);
+  if (window.customElements.get('ext-pivotheatmap') == undefined) {
+    window.customElements.define('ext-pivotheatmap', EWCPivotheatmap);
+  }
 }

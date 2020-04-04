@@ -1,5 +1,5 @@
 import Ext_chart_Chart from './Ext/chart/Chart.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCChart extends Ext_chart_Chart {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCChart extends Ext_chart_Chart {
   }
 }
 try {
-  window.customElements.define('ext-chart', ElementParser.withParsedCallback(EWCChart));
+  if (window.customElements.get('ext-chart') == undefined) {
+    window.customElements.define('ext-chart', ElementParser.withParsedCallback(EWCChart));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-chart', EWCChart);
+  if (window.customElements.get('ext-chart') == undefined) {
+    window.customElements.define('ext-chart', EWCChart);
+  }
 }

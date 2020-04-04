@@ -1,5 +1,5 @@
 import Ext_form_Number from './Ext/form/Number.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCNumberfield extends Ext_form_Number {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCNumberfield extends Ext_form_Number {
   }
 }
 try {
-  window.customElements.define('ext-numberfield', ElementParser.withParsedCallback(EWCNumberfield));
+  if (window.customElements.get('ext-numberfield') == undefined) {
+    window.customElements.define('ext-numberfield', ElementParser.withParsedCallback(EWCNumberfield));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-numberfield', EWCNumberfield);
+  if (window.customElements.get('ext-numberfield') == undefined) {
+    window.customElements.define('ext-numberfield', EWCNumberfield);
+  }
 }

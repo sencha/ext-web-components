@@ -1,5 +1,5 @@
 import Ext_form_Date from './Ext/form/Date.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCDatefield extends Ext_form_Date {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCDatefield extends Ext_form_Date {
   }
 }
 try {
-  window.customElements.define('ext-datefield', ElementParser.withParsedCallback(EWCDatefield));
+  if (window.customElements.get('ext-datefield') == undefined) {
+    window.customElements.define('ext-datefield', ElementParser.withParsedCallback(EWCDatefield));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-datefield', EWCDatefield);
+  if (window.customElements.get('ext-datefield') == undefined) {
+    window.customElements.define('ext-datefield', EWCDatefield);
+  }
 }

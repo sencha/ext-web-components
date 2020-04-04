@@ -1,5 +1,5 @@
 import Ext_grid_SummaryRow from './Ext/grid/SummaryRow.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCGridsummaryrow extends Ext_grid_SummaryRow {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCGridsummaryrow extends Ext_grid_SummaryRow {
   }
 }
 try {
-  window.customElements.define('ext-gridsummaryrow', ElementParser.withParsedCallback(EWCGridsummaryrow));
+  if (window.customElements.get('ext-gridsummaryrow') == undefined) {
+    window.customElements.define('ext-gridsummaryrow', ElementParser.withParsedCallback(EWCGridsummaryrow));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-gridsummaryrow', EWCGridsummaryrow);
+  if (window.customElements.get('ext-gridsummaryrow') == undefined) {
+    window.customElements.define('ext-gridsummaryrow', EWCGridsummaryrow);
+  }
 }

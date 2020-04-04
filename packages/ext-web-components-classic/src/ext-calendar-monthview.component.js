@@ -1,5 +1,5 @@
 import Ext_calendar_view_Month from './Ext/calendar/view/Month.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCCalendar_monthview extends Ext_calendar_view_Month {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCCalendar_monthview extends Ext_calendar_view_Month {
   }
 }
 try {
-  window.customElements.define('ext-calendar-monthview', ElementParser.withParsedCallback(EWCCalendar_monthview));
+  if (window.customElements.get('ext-calendar-monthview') == undefined) {
+    window.customElements.define('ext-calendar-monthview', ElementParser.withParsedCallback(EWCCalendar_monthview));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-calendar-monthview', EWCCalendar_monthview);
+  if (window.customElements.get('ext-calendar-monthview') == undefined) {
+    window.customElements.define('ext-calendar-monthview', EWCCalendar_monthview);
+  }
 }

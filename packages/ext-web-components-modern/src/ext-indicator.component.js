@@ -1,5 +1,5 @@
 import Ext_Indicator from './Ext/Indicator.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCIndicator extends Ext_Indicator {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCIndicator extends Ext_Indicator {
   }
 }
 try {
-  window.customElements.define('ext-indicator', ElementParser.withParsedCallback(EWCIndicator));
+  if (window.customElements.get('ext-indicator') == undefined) {
+    window.customElements.define('ext-indicator', ElementParser.withParsedCallback(EWCIndicator));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-indicator', EWCIndicator);
+  if (window.customElements.get('ext-indicator') == undefined) {
+    window.customElements.define('ext-indicator', EWCIndicator);
+  }
 }

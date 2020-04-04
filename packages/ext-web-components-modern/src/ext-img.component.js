@@ -1,5 +1,5 @@
 import Ext_Image from './Ext/Image.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCImg extends Ext_Image {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCImg extends Ext_Image {
   }
 }
 try {
-  window.customElements.define('ext-img', ElementParser.withParsedCallback(EWCImg));
+  if (window.customElements.get('ext-img') == undefined) {
+    window.customElements.define('ext-img', ElementParser.withParsedCallback(EWCImg));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-img', EWCImg);
+  if (window.customElements.get('ext-img') == undefined) {
+    window.customElements.define('ext-img', EWCImg);
+  }
 }

@@ -1,5 +1,5 @@
 import Ext_ux_colorpick_Selector from './Ext/ux/colorpick/Selector.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCColorselector extends Ext_ux_colorpick_Selector {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCColorselector extends Ext_ux_colorpick_Selector {
   }
 }
 try {
-  window.customElements.define('ext-colorselector', ElementParser.withParsedCallback(EWCColorselector));
+  if (window.customElements.get('ext-colorselector') == undefined) {
+    window.customElements.define('ext-colorselector', ElementParser.withParsedCallback(EWCColorselector));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-colorselector', EWCColorselector);
+  if (window.customElements.get('ext-colorselector') == undefined) {
+    window.customElements.define('ext-colorselector', EWCColorselector);
+  }
 }

@@ -1,5 +1,5 @@
 import Ext_window_Window from './Ext/window/Window.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCWindow extends Ext_window_Window {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCWindow extends Ext_window_Window {
   }
 }
 try {
-  window.customElements.define('ext-window', ElementParser.withParsedCallback(EWCWindow));
+  if (window.customElements.get('ext-window') == undefined) {
+    window.customElements.define('ext-window', ElementParser.withParsedCallback(EWCWindow));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-window', EWCWindow);
+  if (window.customElements.get('ext-window') == undefined) {
+    window.customElements.define('ext-window', EWCWindow);
+  }
 }

@@ -1,5 +1,5 @@
 import Ext_grid_menu_GroupByThis from './Ext/grid/menu/GroupByThis.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCGridgroupbythismenuitem extends Ext_grid_menu_GroupByThis {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCGridgroupbythismenuitem extends Ext_grid_menu_GroupByThi
   }
 }
 try {
-  window.customElements.define('ext-gridgroupbythismenuitem', ElementParser.withParsedCallback(EWCGridgroupbythismenuitem));
+  if (window.customElements.get('ext-gridgroupbythismenuitem') == undefined) {
+    window.customElements.define('ext-gridgroupbythismenuitem', ElementParser.withParsedCallback(EWCGridgroupbythismenuitem));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-gridgroupbythismenuitem', EWCGridgroupbythismenuitem);
+  if (window.customElements.get('ext-gridgroupbythismenuitem') == undefined) {
+    window.customElements.define('ext-gridgroupbythismenuitem', EWCGridgroupbythismenuitem);
+  }
 }

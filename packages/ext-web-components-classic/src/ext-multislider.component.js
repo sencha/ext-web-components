@@ -1,5 +1,5 @@
 import Ext_slider_MultiSlider from './Ext/slider/MultiSlider.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCMultislider extends Ext_slider_MultiSlider {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCMultislider extends Ext_slider_MultiSlider {
   }
 }
 try {
-  window.customElements.define('ext-multislider', ElementParser.withParsedCallback(EWCMultislider));
+  if (window.customElements.get('ext-multislider') == undefined) {
+    window.customElements.define('ext-multislider', ElementParser.withParsedCallback(EWCMultislider));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-multislider', EWCMultislider);
+  if (window.customElements.get('ext-multislider') == undefined) {
+    window.customElements.define('ext-multislider', EWCMultislider);
+  }
 }

@@ -1,5 +1,5 @@
 import Ext_slider_Slider from './Ext/slider/Slider.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCSlider extends Ext_slider_Slider {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCSlider extends Ext_slider_Slider {
   }
 }
 try {
-  window.customElements.define('ext-slider', ElementParser.withParsedCallback(EWCSlider));
+  if (window.customElements.get('ext-slider') == undefined) {
+    window.customElements.define('ext-slider', ElementParser.withParsedCallback(EWCSlider));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-slider', EWCSlider);
+  if (window.customElements.get('ext-slider') == undefined) {
+    window.customElements.define('ext-slider', EWCSlider);
+  }
 }

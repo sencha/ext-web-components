@@ -1,5 +1,5 @@
 import Ext_d3_hierarchy_TreeMap from './Ext/d3/hierarchy/TreeMap.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCD3_treemap extends Ext_d3_hierarchy_TreeMap {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCD3_treemap extends Ext_d3_hierarchy_TreeMap {
   }
 }
 try {
-  window.customElements.define('ext-d3-treemap', ElementParser.withParsedCallback(EWCD3_treemap));
+  if (window.customElements.get('ext-d3-treemap') == undefined) {
+    window.customElements.define('ext-d3-treemap', ElementParser.withParsedCallback(EWCD3_treemap));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-d3-treemap', EWCD3_treemap);
+  if (window.customElements.get('ext-d3-treemap') == undefined) {
+    window.customElements.define('ext-d3-treemap', EWCD3_treemap);
+  }
 }

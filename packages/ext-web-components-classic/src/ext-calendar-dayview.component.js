@@ -1,5 +1,5 @@
 import Ext_calendar_view_Day from './Ext/calendar/view/Day.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCCalendar_dayview extends Ext_calendar_view_Day {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCCalendar_dayview extends Ext_calendar_view_Day {
   }
 }
 try {
-  window.customElements.define('ext-calendar-dayview', ElementParser.withParsedCallback(EWCCalendar_dayview));
+  if (window.customElements.get('ext-calendar-dayview') == undefined) {
+    window.customElements.define('ext-calendar-dayview', ElementParser.withParsedCallback(EWCCalendar_dayview));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-calendar-dayview', EWCCalendar_dayview);
+  if (window.customElements.get('ext-calendar-dayview') == undefined) {
+    window.customElements.define('ext-calendar-dayview', EWCCalendar_dayview);
+  }
 }

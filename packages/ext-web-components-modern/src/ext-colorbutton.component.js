@@ -1,5 +1,5 @@
 import Ext_ux_colorpick_Button from './Ext/ux/colorpick/Button.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCColorbutton extends Ext_ux_colorpick_Button {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCColorbutton extends Ext_ux_colorpick_Button {
   }
 }
 try {
-  window.customElements.define('ext-colorbutton', ElementParser.withParsedCallback(EWCColorbutton));
+  if (window.customElements.get('ext-colorbutton') == undefined) {
+    window.customElements.define('ext-colorbutton', ElementParser.withParsedCallback(EWCColorbutton));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-colorbutton', EWCColorbutton);
+  if (window.customElements.get('ext-colorbutton') == undefined) {
+    window.customElements.define('ext-colorbutton', EWCColorbutton);
+  }
 }

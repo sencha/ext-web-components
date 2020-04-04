@@ -1,5 +1,5 @@
 import Ext_d3_canvas_Canvas from './Ext/d3/canvas/Canvas.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCD3_canvas extends Ext_d3_canvas_Canvas {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCD3_canvas extends Ext_d3_canvas_Canvas {
   }
 }
 try {
-  window.customElements.define('ext-d3-canvas', ElementParser.withParsedCallback(EWCD3_canvas));
+  if (window.customElements.get('ext-d3-canvas') == undefined) {
+    window.customElements.define('ext-d3-canvas', ElementParser.withParsedCallback(EWCD3_canvas));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-d3-canvas', EWCD3_canvas);
+  if (window.customElements.get('ext-d3-canvas') == undefined) {
+    window.customElements.define('ext-d3-canvas', EWCD3_canvas);
+  }
 }

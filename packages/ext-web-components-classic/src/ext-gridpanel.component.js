@@ -1,5 +1,5 @@
 import Ext_grid_GridPanel from './Ext/grid/GridPanel.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCGridpanel extends Ext_grid_GridPanel {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCGridpanel extends Ext_grid_GridPanel {
   }
 }
 try {
-  window.customElements.define('ext-gridpanel', ElementParser.withParsedCallback(EWCGridpanel));
+  if (window.customElements.get('ext-gridpanel') == undefined) {
+    window.customElements.define('ext-gridpanel', ElementParser.withParsedCallback(EWCGridpanel));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-gridpanel', EWCGridpanel);
+  if (window.customElements.get('ext-gridpanel') == undefined) {
+    window.customElements.define('ext-gridpanel', EWCGridpanel);
+  }
 }

@@ -1,5 +1,5 @@
 import Ext_ux_desktop_Wallpaper from './Ext/ux/desktop/Wallpaper.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCWallpaper extends Ext_ux_desktop_Wallpaper {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCWallpaper extends Ext_ux_desktop_Wallpaper {
   }
 }
 try {
-  window.customElements.define('ext-wallpaper', ElementParser.withParsedCallback(EWCWallpaper));
+  if (window.customElements.get('ext-wallpaper') == undefined) {
+    window.customElements.define('ext-wallpaper', ElementParser.withParsedCallback(EWCWallpaper));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-wallpaper', EWCWallpaper);
+  if (window.customElements.get('ext-wallpaper') == undefined) {
+    window.customElements.define('ext-wallpaper', EWCWallpaper);
+  }
 }

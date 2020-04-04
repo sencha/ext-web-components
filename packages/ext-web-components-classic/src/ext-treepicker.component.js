@@ -1,5 +1,5 @@
 import Ext_ux_TreePicker from './Ext/ux/TreePicker.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCTreepicker extends Ext_ux_TreePicker {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCTreepicker extends Ext_ux_TreePicker {
   }
 }
 try {
-  window.customElements.define('ext-treepicker', ElementParser.withParsedCallback(EWCTreepicker));
+  if (window.customElements.get('ext-treepicker') == undefined) {
+    window.customElements.define('ext-treepicker', ElementParser.withParsedCallback(EWCTreepicker));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-treepicker', EWCTreepicker);
+  if (window.customElements.get('ext-treepicker') == undefined) {
+    window.customElements.define('ext-treepicker', EWCTreepicker);
+  }
 }

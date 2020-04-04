@@ -1,5 +1,5 @@
 import Ext_field_FileButton from './Ext/field/FileButton.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCFilebutton extends Ext_field_FileButton {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCFilebutton extends Ext_field_FileButton {
   }
 }
 try {
-  window.customElements.define('ext-filebutton', ElementParser.withParsedCallback(EWCFilebutton));
+  if (window.customElements.get('ext-filebutton') == undefined) {
+    window.customElements.define('ext-filebutton', ElementParser.withParsedCallback(EWCFilebutton));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-filebutton', EWCFilebutton);
+  if (window.customElements.get('ext-filebutton') == undefined) {
+    window.customElements.define('ext-filebutton', EWCFilebutton);
+  }
 }

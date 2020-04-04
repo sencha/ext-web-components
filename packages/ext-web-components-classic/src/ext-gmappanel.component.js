@@ -1,5 +1,5 @@
 import Ext_ux_GMapPanel from './Ext/ux/GMapPanel.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCGmappanel extends Ext_ux_GMapPanel {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCGmappanel extends Ext_ux_GMapPanel {
   }
 }
 try {
-  window.customElements.define('ext-gmappanel', ElementParser.withParsedCallback(EWCGmappanel));
+  if (window.customElements.get('ext-gmappanel') == undefined) {
+    window.customElements.define('ext-gmappanel', ElementParser.withParsedCallback(EWCGmappanel));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-gmappanel', EWCGmappanel);
+  if (window.customElements.get('ext-gmappanel') == undefined) {
+    window.customElements.define('ext-gmappanel', EWCGmappanel);
+  }
 }

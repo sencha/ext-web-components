@@ -1,5 +1,5 @@
 import Ext_ux_Multiselect from './Ext/ux/Multiselect.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCMultiselectfield extends Ext_ux_Multiselect {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCMultiselectfield extends Ext_ux_Multiselect {
   }
 }
 try {
-  window.customElements.define('ext-multiselectfield', ElementParser.withParsedCallback(EWCMultiselectfield));
+  if (window.customElements.get('ext-multiselectfield') == undefined) {
+    window.customElements.define('ext-multiselectfield', ElementParser.withParsedCallback(EWCMultiselectfield));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-multiselectfield', EWCMultiselectfield);
+  if (window.customElements.get('ext-multiselectfield') == undefined) {
+    window.customElements.define('ext-multiselectfield', EWCMultiselectfield);
+  }
 }

@@ -1,5 +1,5 @@
 import Ext_tip_ToolTip from './Ext/tip/ToolTip.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCTooltip extends Ext_tip_ToolTip {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCTooltip extends Ext_tip_ToolTip {
   }
 }
 try {
-  window.customElements.define('ext-tooltip', ElementParser.withParsedCallback(EWCTooltip));
+  if (window.customElements.get('ext-tooltip') == undefined) {
+    window.customElements.define('ext-tooltip', ElementParser.withParsedCallback(EWCTooltip));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-tooltip', EWCTooltip);
+  if (window.customElements.get('ext-tooltip') == undefined) {
+    window.customElements.define('ext-tooltip', EWCTooltip);
+  }
 }

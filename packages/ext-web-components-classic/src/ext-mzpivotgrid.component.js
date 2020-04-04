@@ -1,5 +1,5 @@
 import Mz_pivot_Table from './Mz/pivot/Table.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCMzpivotgrid extends Mz_pivot_Table {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCMzpivotgrid extends Mz_pivot_Table {
   }
 }
 try {
-  window.customElements.define('ext-mzpivotgrid', ElementParser.withParsedCallback(EWCMzpivotgrid));
+  if (window.customElements.get('ext-mzpivotgrid') == undefined) {
+    window.customElements.define('ext-mzpivotgrid', ElementParser.withParsedCallback(EWCMzpivotgrid));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-mzpivotgrid', EWCMzpivotgrid);
+  if (window.customElements.get('ext-mzpivotgrid') == undefined) {
+    window.customElements.define('ext-mzpivotgrid', EWCMzpivotgrid);
+  }
 }

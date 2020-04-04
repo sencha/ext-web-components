@@ -1,5 +1,5 @@
 import Ext_ColorPalette from './Ext/ColorPalette.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCColorpicker extends Ext_ColorPalette {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCColorpicker extends Ext_ColorPalette {
   }
 }
 try {
-  window.customElements.define('ext-colorpicker', ElementParser.withParsedCallback(EWCColorpicker));
+  if (window.customElements.get('ext-colorpicker') == undefined) {
+    window.customElements.define('ext-colorpicker', ElementParser.withParsedCallback(EWCColorpicker));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-colorpicker', EWCColorpicker);
+  if (window.customElements.get('ext-colorpicker') == undefined) {
+    window.customElements.define('ext-colorpicker', EWCColorpicker);
+  }
 }

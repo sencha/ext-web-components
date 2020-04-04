@@ -1,5 +1,5 @@
 import Ext_grid_menu_ShowInGroups from './Ext/grid/menu/ShowInGroups.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCGridshowingroupsmenuitem extends Ext_grid_menu_ShowInGroups {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCGridshowingroupsmenuitem extends Ext_grid_menu_ShowInGro
   }
 }
 try {
-  window.customElements.define('ext-gridshowingroupsmenuitem', ElementParser.withParsedCallback(EWCGridshowingroupsmenuitem));
+  if (window.customElements.get('ext-gridshowingroupsmenuitem') == undefined) {
+    window.customElements.define('ext-gridshowingroupsmenuitem', ElementParser.withParsedCallback(EWCGridshowingroupsmenuitem));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-gridshowingroupsmenuitem', EWCGridshowingroupsmenuitem);
+  if (window.customElements.get('ext-gridshowingroupsmenuitem') == undefined) {
+    window.customElements.define('ext-gridshowingroupsmenuitem', EWCGridshowingroupsmenuitem);
+  }
 }

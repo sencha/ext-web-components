@@ -1,5 +1,5 @@
 import Ext_chart_navigator_Container from './Ext/chart/navigator/Container.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCChartnavigator extends Ext_chart_navigator_Container {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCChartnavigator extends Ext_chart_navigator_Container {
   }
 }
 try {
-  window.customElements.define('ext-chartnavigator', ElementParser.withParsedCallback(EWCChartnavigator));
+  if (window.customElements.get('ext-chartnavigator') == undefined) {
+    window.customElements.define('ext-chartnavigator', ElementParser.withParsedCallback(EWCChartnavigator));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-chartnavigator', EWCChartnavigator);
+  if (window.customElements.get('ext-chartnavigator') == undefined) {
+    window.customElements.define('ext-chartnavigator', EWCChartnavigator);
+  }
 }

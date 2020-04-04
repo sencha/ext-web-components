@@ -1,5 +1,5 @@
 import Ext_draw_Surface from './Ext/draw/Surface.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCSurface extends Ext_draw_Surface {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCSurface extends Ext_draw_Surface {
   }
 }
 try {
-  window.customElements.define('ext-surface', ElementParser.withParsedCallback(EWCSurface));
+  if (window.customElements.get('ext-surface') == undefined) {
+    window.customElements.define('ext-surface', ElementParser.withParsedCallback(EWCSurface));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-surface', EWCSurface);
+  if (window.customElements.get('ext-surface') == undefined) {
+    window.customElements.define('ext-surface', EWCSurface);
+  }
 }

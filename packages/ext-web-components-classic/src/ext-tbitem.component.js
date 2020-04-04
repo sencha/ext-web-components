@@ -1,5 +1,5 @@
 import Ext_toolbar_Item from './Ext/toolbar/Item.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCTbitem extends Ext_toolbar_Item {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCTbitem extends Ext_toolbar_Item {
   }
 }
 try {
-  window.customElements.define('ext-tbitem', ElementParser.withParsedCallback(EWCTbitem));
+  if (window.customElements.get('ext-tbitem') == undefined) {
+    window.customElements.define('ext-tbitem', ElementParser.withParsedCallback(EWCTbitem));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-tbitem', EWCTbitem);
+  if (window.customElements.get('ext-tbitem') == undefined) {
+    window.customElements.define('ext-tbitem', EWCTbitem);
+  }
 }

@@ -1,5 +1,5 @@
 import Ext_pivot_cell_Cell from './Ext/pivot/cell/Cell.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCPivotgridcell extends Ext_pivot_cell_Cell {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCPivotgridcell extends Ext_pivot_cell_Cell {
   }
 }
 try {
-  window.customElements.define('ext-pivotgridcell', ElementParser.withParsedCallback(EWCPivotgridcell));
+  if (window.customElements.get('ext-pivotgridcell') == undefined) {
+    window.customElements.define('ext-pivotgridcell', ElementParser.withParsedCallback(EWCPivotgridcell));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-pivotgridcell', EWCPivotgridcell);
+  if (window.customElements.get('ext-pivotgridcell') == undefined) {
+    window.customElements.define('ext-pivotgridcell', EWCPivotgridcell);
+  }
 }

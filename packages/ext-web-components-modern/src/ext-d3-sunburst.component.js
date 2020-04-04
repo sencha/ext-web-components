@@ -1,5 +1,5 @@
 import Ext_d3_hierarchy_partition_Sunburst from './Ext/d3/hierarchy/partition/Sunburst.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCD3_sunburst extends Ext_d3_hierarchy_partition_Sunburst {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCD3_sunburst extends Ext_d3_hierarchy_partition_Sunburst 
   }
 }
 try {
-  window.customElements.define('ext-d3-sunburst', ElementParser.withParsedCallback(EWCD3_sunburst));
+  if (window.customElements.get('ext-d3-sunburst') == undefined) {
+    window.customElements.define('ext-d3-sunburst', ElementParser.withParsedCallback(EWCD3_sunburst));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-d3-sunburst', EWCD3_sunburst);
+  if (window.customElements.get('ext-d3-sunburst') == undefined) {
+    window.customElements.define('ext-d3-sunburst', EWCD3_sunburst);
+  }
 }

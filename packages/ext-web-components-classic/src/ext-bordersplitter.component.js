@@ -1,5 +1,5 @@
 import Ext_resizer_BorderSplitter from './Ext/resizer/BorderSplitter.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCBordersplitter extends Ext_resizer_BorderSplitter {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCBordersplitter extends Ext_resizer_BorderSplitter {
   }
 }
 try {
-  window.customElements.define('ext-bordersplitter', ElementParser.withParsedCallback(EWCBordersplitter));
+  if (window.customElements.get('ext-bordersplitter') == undefined) {
+    window.customElements.define('ext-bordersplitter', ElementParser.withParsedCallback(EWCBordersplitter));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-bordersplitter', EWCBordersplitter);
+  if (window.customElements.get('ext-bordersplitter') == undefined) {
+    window.customElements.define('ext-bordersplitter', EWCBordersplitter);
+  }
 }

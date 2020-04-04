@@ -1,5 +1,5 @@
 import Ext_form_Search from './Ext/form/Search.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCSearchfield extends Ext_form_Search {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCSearchfield extends Ext_form_Search {
   }
 }
 try {
-  window.customElements.define('ext-searchfield', ElementParser.withParsedCallback(EWCSearchfield));
+  if (window.customElements.get('ext-searchfield') == undefined) {
+    window.customElements.define('ext-searchfield', ElementParser.withParsedCallback(EWCSearchfield));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-searchfield', EWCSearchfield);
+  if (window.customElements.get('ext-searchfield') == undefined) {
+    window.customElements.define('ext-searchfield', EWCSearchfield);
+  }
 }

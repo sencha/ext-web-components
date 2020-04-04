@@ -1,5 +1,5 @@
 import Ext_form_Spinner from './Ext/form/Spinner.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCSpinnerfield extends Ext_form_Spinner {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCSpinnerfield extends Ext_form_Spinner {
   }
 }
 try {
-  window.customElements.define('ext-spinnerfield', ElementParser.withParsedCallback(EWCSpinnerfield));
+  if (window.customElements.get('ext-spinnerfield') == undefined) {
+    window.customElements.define('ext-spinnerfield', ElementParser.withParsedCallback(EWCSpinnerfield));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-spinnerfield', EWCSpinnerfield);
+  if (window.customElements.get('ext-spinnerfield') == undefined) {
+    window.customElements.define('ext-spinnerfield', EWCSpinnerfield);
+  }
 }

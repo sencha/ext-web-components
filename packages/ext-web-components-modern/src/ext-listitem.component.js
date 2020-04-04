@@ -1,5 +1,5 @@
 import Ext_dataview_component_ListItem from './Ext/dataview/component/ListItem.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCListitem extends Ext_dataview_component_ListItem {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCListitem extends Ext_dataview_component_ListItem {
   }
 }
 try {
-  window.customElements.define('ext-listitem', ElementParser.withParsedCallback(EWCListitem));
+  if (window.customElements.get('ext-listitem') == undefined) {
+    window.customElements.define('ext-listitem', ElementParser.withParsedCallback(EWCListitem));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-listitem', EWCListitem);
+  if (window.customElements.get('ext-listitem') == undefined) {
+    window.customElements.define('ext-listitem', EWCListitem);
+  }
 }

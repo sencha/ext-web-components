@@ -1,5 +1,5 @@
 import Ext_grid_LockedGridRegion from './Ext/grid/LockedGridRegion.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCLockedgridregion extends Ext_grid_LockedGridRegion {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCLockedgridregion extends Ext_grid_LockedGridRegion {
   }
 }
 try {
-  window.customElements.define('ext-lockedgridregion', ElementParser.withParsedCallback(EWCLockedgridregion));
+  if (window.customElements.get('ext-lockedgridregion') == undefined) {
+    window.customElements.define('ext-lockedgridregion', ElementParser.withParsedCallback(EWCLockedgridregion));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-lockedgridregion', EWCLockedgridregion);
+  if (window.customElements.get('ext-lockedgridregion') == undefined) {
+    window.customElements.define('ext-lockedgridregion', EWCLockedgridregion);
+  }
 }

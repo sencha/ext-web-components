@@ -1,5 +1,5 @@
 import Ext_form_FieldSet from './Ext/form/FieldSet.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCFieldset extends Ext_form_FieldSet {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCFieldset extends Ext_form_FieldSet {
   }
 }
 try {
-  window.customElements.define('ext-fieldset', ElementParser.withParsedCallback(EWCFieldset));
+  if (window.customElements.get('ext-fieldset') == undefined) {
+    window.customElements.define('ext-fieldset', ElementParser.withParsedCallback(EWCFieldset));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-fieldset', EWCFieldset);
+  if (window.customElements.get('ext-fieldset') == undefined) {
+    window.customElements.define('ext-fieldset', EWCFieldset);
+  }
 }

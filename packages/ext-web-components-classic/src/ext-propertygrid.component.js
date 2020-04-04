@@ -1,5 +1,5 @@
 import Ext_grid_PropertyGrid from './Ext/grid/PropertyGrid.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCPropertygrid extends Ext_grid_PropertyGrid {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCPropertygrid extends Ext_grid_PropertyGrid {
   }
 }
 try {
-  window.customElements.define('ext-propertygrid', ElementParser.withParsedCallback(EWCPropertygrid));
+  if (window.customElements.get('ext-propertygrid') == undefined) {
+    window.customElements.define('ext-propertygrid', ElementParser.withParsedCallback(EWCPropertygrid));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-propertygrid', EWCPropertygrid);
+  if (window.customElements.get('ext-propertygrid') == undefined) {
+    window.customElements.define('ext-propertygrid', EWCPropertygrid);
+  }
 }

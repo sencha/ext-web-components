@@ -1,5 +1,5 @@
 import Ext_chart_axis_Axis from './Ext/chart/axis/Axis.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCAxis extends Ext_chart_axis_Axis {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCAxis extends Ext_chart_axis_Axis {
   }
 }
 try {
-  window.customElements.define('ext-axis', ElementParser.withParsedCallback(EWCAxis));
+  if (window.customElements.get('ext-axis') == undefined) {
+    window.customElements.define('ext-axis', ElementParser.withParsedCallback(EWCAxis));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-axis', EWCAxis);
+  if (window.customElements.get('ext-axis') == undefined) {
+    window.customElements.define('ext-axis', EWCAxis);
+  }
 }

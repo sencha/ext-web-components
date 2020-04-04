@@ -1,5 +1,5 @@
 import Ext_dataview_ListItemPlaceholder from './Ext/dataview/ListItemPlaceholder.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCListitemplaceholder extends Ext_dataview_ListItemPlaceholder {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCListitemplaceholder extends Ext_dataview_ListItemPlaceho
   }
 }
 try {
-  window.customElements.define('ext-listitemplaceholder', ElementParser.withParsedCallback(EWCListitemplaceholder));
+  if (window.customElements.get('ext-listitemplaceholder') == undefined) {
+    window.customElements.define('ext-listitemplaceholder', ElementParser.withParsedCallback(EWCListitemplaceholder));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-listitemplaceholder', EWCListitemplaceholder);
+  if (window.customElements.get('ext-listitemplaceholder') == undefined) {
+    window.customElements.define('ext-listitemplaceholder', EWCListitemplaceholder);
+  }
 }

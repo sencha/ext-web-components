@@ -1,5 +1,5 @@
 import Ext_grid_View from './Ext/grid/View.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCGridview extends Ext_grid_View {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCGridview extends Ext_grid_View {
   }
 }
 try {
-  window.customElements.define('ext-gridview', ElementParser.withParsedCallback(EWCGridview));
+  if (window.customElements.get('ext-gridview') == undefined) {
+    window.customElements.define('ext-gridview', ElementParser.withParsedCallback(EWCGridview));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-gridview', EWCGridview);
+  if (window.customElements.get('ext-gridview') == undefined) {
+    window.customElements.define('ext-gridview', EWCGridview);
+  }
 }

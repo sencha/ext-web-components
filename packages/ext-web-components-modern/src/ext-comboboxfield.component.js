@@ -1,5 +1,5 @@
 import Ext_form_field_ComboBox from './Ext/form/field/ComboBox.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCComboboxfield extends Ext_form_field_ComboBox {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCComboboxfield extends Ext_form_field_ComboBox {
   }
 }
 try {
-  window.customElements.define('ext-comboboxfield', ElementParser.withParsedCallback(EWCComboboxfield));
+  if (window.customElements.get('ext-comboboxfield') == undefined) {
+    window.customElements.define('ext-comboboxfield', ElementParser.withParsedCallback(EWCComboboxfield));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-comboboxfield', EWCComboboxfield);
+  if (window.customElements.get('ext-comboboxfield') == undefined) {
+    window.customElements.define('ext-comboboxfield', EWCComboboxfield);
+  }
 }

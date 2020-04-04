@@ -1,5 +1,5 @@
 import Ext_form_File from './Ext/form/File.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCFilefield extends Ext_form_File {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCFilefield extends Ext_form_File {
   }
 }
 try {
-  window.customElements.define('ext-filefield', ElementParser.withParsedCallback(EWCFilefield));
+  if (window.customElements.get('ext-filefield') == undefined) {
+    window.customElements.define('ext-filefield', ElementParser.withParsedCallback(EWCFilefield));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-filefield', EWCFilefield);
+  if (window.customElements.get('ext-filefield') == undefined) {
+    window.customElements.define('ext-filefield', EWCFilefield);
+  }
 }

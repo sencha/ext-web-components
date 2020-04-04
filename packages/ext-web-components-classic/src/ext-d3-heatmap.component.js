@@ -1,5 +1,5 @@
 import Ext_d3_HeatMap from './Ext/d3/HeatMap.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCD3_heatmap extends Ext_d3_HeatMap {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCD3_heatmap extends Ext_d3_HeatMap {
   }
 }
 try {
-  window.customElements.define('ext-d3-heatmap', ElementParser.withParsedCallback(EWCD3_heatmap));
+  if (window.customElements.get('ext-d3-heatmap') == undefined) {
+    window.customElements.define('ext-d3-heatmap', ElementParser.withParsedCallback(EWCD3_heatmap));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-d3-heatmap', EWCD3_heatmap);
+  if (window.customElements.get('ext-d3-heatmap') == undefined) {
+    window.customElements.define('ext-d3-heatmap', EWCD3_heatmap);
+  }
 }
