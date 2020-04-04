@@ -1,5 +1,5 @@
 import Ext_form_FormPanel from './Ext/form/FormPanel.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCFormpanel extends Ext_form_FormPanel {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCFormpanel extends Ext_form_FormPanel {
   }
 }
 try {
-  window.customElements.define('ext-formpanel', ElementParser.withParsedCallback(EWCFormpanel));
+  if (window.customElements.get('ext-formpanel') == undefined) {
+    window.customElements.define('ext-formpanel', ElementParser.withParsedCallback(EWCFormpanel));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-formpanel', EWCFormpanel);
+  if (window.customElements.get('ext-formpanel') == undefined) {
+    window.customElements.define('ext-formpanel', EWCFormpanel);
+  }
 }

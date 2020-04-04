@@ -1,5 +1,5 @@
 import Ext_sparkline_Discrete from './Ext/sparkline/Discrete.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCSparklinediscrete extends Ext_sparkline_Discrete {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCSparklinediscrete extends Ext_sparkline_Discrete {
   }
 }
 try {
-  window.customElements.define('ext-sparklinediscrete', ElementParser.withParsedCallback(EWCSparklinediscrete));
+  if (window.customElements.get('ext-sparklinediscrete') == undefined) {
+    window.customElements.define('ext-sparklinediscrete', ElementParser.withParsedCallback(EWCSparklinediscrete));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-sparklinediscrete', EWCSparklinediscrete);
+  if (window.customElements.get('ext-sparklinediscrete') == undefined) {
+    window.customElements.define('ext-sparklinediscrete', EWCSparklinediscrete);
+  }
 }

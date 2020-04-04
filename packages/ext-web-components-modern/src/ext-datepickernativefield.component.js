@@ -1,5 +1,5 @@
 import Ext_form_DatePickerNative from './Ext/form/DatePickerNative.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCDatepickernativefield extends Ext_form_DatePickerNative {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCDatepickernativefield extends Ext_form_DatePickerNative 
   }
 }
 try {
-  window.customElements.define('ext-datepickernativefield', ElementParser.withParsedCallback(EWCDatepickernativefield));
+  if (window.customElements.get('ext-datepickernativefield') == undefined) {
+    window.customElements.define('ext-datepickernativefield', ElementParser.withParsedCallback(EWCDatepickernativefield));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-datepickernativefield', EWCDatepickernativefield);
+  if (window.customElements.get('ext-datepickernativefield') == undefined) {
+    window.customElements.define('ext-datepickernativefield', EWCDatepickernativefield);
+  }
 }

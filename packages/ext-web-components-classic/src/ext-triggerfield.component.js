@@ -1,5 +1,5 @@
 import Ext_form_Trigger from './Ext/form/Trigger.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCTriggerfield extends Ext_form_Trigger {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCTriggerfield extends Ext_form_Trigger {
   }
 }
 try {
-  window.customElements.define('ext-triggerfield', ElementParser.withParsedCallback(EWCTriggerfield));
+  if (window.customElements.get('ext-triggerfield') == undefined) {
+    window.customElements.define('ext-triggerfield', ElementParser.withParsedCallback(EWCTriggerfield));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-triggerfield', EWCTriggerfield);
+  if (window.customElements.get('ext-triggerfield') == undefined) {
+    window.customElements.define('ext-triggerfield', EWCTriggerfield);
+  }
 }

@@ -1,5 +1,5 @@
 import Ext_Mask from './Ext/Mask.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCMask extends Ext_Mask {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCMask extends Ext_Mask {
   }
 }
 try {
-  window.customElements.define('ext-mask', ElementParser.withParsedCallback(EWCMask));
+  if (window.customElements.get('ext-mask') == undefined) {
+    window.customElements.define('ext-mask', ElementParser.withParsedCallback(EWCMask));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-mask', EWCMask);
+  if (window.customElements.get('ext-mask') == undefined) {
+    window.customElements.define('ext-mask', EWCMask);
+  }
 }

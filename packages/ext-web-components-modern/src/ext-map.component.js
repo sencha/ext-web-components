@@ -1,5 +1,5 @@
 import Ext_Map from './Ext/Map.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCMap extends Ext_Map {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCMap extends Ext_Map {
   }
 }
 try {
-  window.customElements.define('ext-map', ElementParser.withParsedCallback(EWCMap));
+  if (window.customElements.get('ext-map') == undefined) {
+    window.customElements.define('ext-map', ElementParser.withParsedCallback(EWCMap));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-map', EWCMap);
+  if (window.customElements.get('ext-map') == undefined) {
+    window.customElements.define('ext-map', EWCMap);
+  }
 }

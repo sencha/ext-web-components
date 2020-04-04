@@ -1,5 +1,5 @@
 import Ext_container_Container from './Ext/container/Container.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCContainer extends Ext_container_Container {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCContainer extends Ext_container_Container {
   }
 }
 try {
-  window.customElements.define('ext-container', ElementParser.withParsedCallback(EWCContainer));
+  if (window.customElements.get('ext-container') == undefined) {
+    window.customElements.define('ext-container', ElementParser.withParsedCallback(EWCContainer));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-container', EWCContainer);
+  if (window.customElements.get('ext-container') == undefined) {
+    window.customElements.define('ext-container', EWCContainer);
+  }
 }

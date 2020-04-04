@@ -1,5 +1,5 @@
 import Ext_panel_Header from './Ext/panel/Header.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCHeader extends Ext_panel_Header {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCHeader extends Ext_panel_Header {
   }
 }
 try {
-  window.customElements.define('ext-header', ElementParser.withParsedCallback(EWCHeader));
+  if (window.customElements.get('ext-header') == undefined) {
+    window.customElements.define('ext-header', ElementParser.withParsedCallback(EWCHeader));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-header', EWCHeader);
+  if (window.customElements.get('ext-header') == undefined) {
+    window.customElements.define('ext-header', EWCHeader);
+  }
 }

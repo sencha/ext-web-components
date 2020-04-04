@@ -1,5 +1,5 @@
 import Ext_Spacer from './Ext/Spacer.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCSpacer extends Ext_Spacer {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCSpacer extends Ext_Spacer {
   }
 }
 try {
-  window.customElements.define('ext-spacer', ElementParser.withParsedCallback(EWCSpacer));
+  if (window.customElements.get('ext-spacer') == undefined) {
+    window.customElements.define('ext-spacer', ElementParser.withParsedCallback(EWCSpacer));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-spacer', EWCSpacer);
+  if (window.customElements.get('ext-spacer') == undefined) {
+    window.customElements.define('ext-spacer', EWCSpacer);
+  }
 }

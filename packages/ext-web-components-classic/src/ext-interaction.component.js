@@ -1,5 +1,5 @@
 import Ext_chart_interactions_Abstract from './Ext/chart/interactions/Abstract.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCInteraction extends Ext_chart_interactions_Abstract {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCInteraction extends Ext_chart_interactions_Abstract {
   }
 }
 try {
-  window.customElements.define('ext-interaction', ElementParser.withParsedCallback(EWCInteraction));
+  if (window.customElements.get('ext-interaction') == undefined) {
+    window.customElements.define('ext-interaction', ElementParser.withParsedCallback(EWCInteraction));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-interaction', EWCInteraction);
+  if (window.customElements.get('ext-interaction') == undefined) {
+    window.customElements.define('ext-interaction', EWCInteraction);
+  }
 }

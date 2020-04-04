@@ -1,5 +1,5 @@
 import Ext_menu_Bar from './Ext/menu/Bar.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCMenubar extends Ext_menu_Bar {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCMenubar extends Ext_menu_Bar {
   }
 }
 try {
-  window.customElements.define('ext-menubar', ElementParser.withParsedCallback(EWCMenubar));
+  if (window.customElements.get('ext-menubar') == undefined) {
+    window.customElements.define('ext-menubar', ElementParser.withParsedCallback(EWCMenubar));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-menubar', EWCMenubar);
+  if (window.customElements.get('ext-menubar') == undefined) {
+    window.customElements.define('ext-menubar', EWCMenubar);
+  }
 }

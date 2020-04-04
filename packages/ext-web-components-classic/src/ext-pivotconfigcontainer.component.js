@@ -1,5 +1,5 @@
 import Ext_pivot_plugin_configurator_Container from './Ext/pivot/plugin/configurator/Container.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCPivotconfigcontainer extends Ext_pivot_plugin_configurator_Container {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCPivotconfigcontainer extends Ext_pivot_plugin_configurat
   }
 }
 try {
-  window.customElements.define('ext-pivotconfigcontainer', ElementParser.withParsedCallback(EWCPivotconfigcontainer));
+  if (window.customElements.get('ext-pivotconfigcontainer') == undefined) {
+    window.customElements.define('ext-pivotconfigcontainer', ElementParser.withParsedCallback(EWCPivotconfigcontainer));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-pivotconfigcontainer', EWCPivotconfigcontainer);
+  if (window.customElements.get('ext-pivotconfigcontainer') == undefined) {
+    window.customElements.define('ext-pivotconfigcontainer', EWCPivotconfigcontainer);
+  }
 }

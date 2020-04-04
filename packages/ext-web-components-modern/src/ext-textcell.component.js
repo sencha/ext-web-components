@@ -1,5 +1,5 @@
 import Ext_grid_cell_Text from './Ext/grid/cell/Text.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCTextcell extends Ext_grid_cell_Text {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCTextcell extends Ext_grid_cell_Text {
   }
 }
 try {
-  window.customElements.define('ext-textcell', ElementParser.withParsedCallback(EWCTextcell));
+  if (window.customElements.get('ext-textcell') == undefined) {
+    window.customElements.define('ext-textcell', ElementParser.withParsedCallback(EWCTextcell));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-textcell', EWCTextcell);
+  if (window.customElements.get('ext-textcell') == undefined) {
+    window.customElements.define('ext-textcell', EWCTextcell);
+  }
 }

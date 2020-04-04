@@ -1,5 +1,5 @@
 import Ext_panel_Tool from './Ext/panel/Tool.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCPaneltool extends Ext_panel_Tool {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCPaneltool extends Ext_panel_Tool {
   }
 }
 try {
-  window.customElements.define('ext-paneltool', ElementParser.withParsedCallback(EWCPaneltool));
+  if (window.customElements.get('ext-paneltool') == undefined) {
+    window.customElements.define('ext-paneltool', ElementParser.withParsedCallback(EWCPaneltool));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-paneltool', EWCPaneltool);
+  if (window.customElements.get('ext-paneltool') == undefined) {
+    window.customElements.define('ext-paneltool', EWCPaneltool);
+  }
 }

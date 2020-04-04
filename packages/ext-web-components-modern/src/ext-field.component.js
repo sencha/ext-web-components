@@ -1,5 +1,5 @@
 import Ext_form_Field from './Ext/form/Field.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCField extends Ext_form_Field {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCField extends Ext_form_Field {
   }
 }
 try {
-  window.customElements.define('ext-field', ElementParser.withParsedCallback(EWCField));
+  if (window.customElements.get('ext-field') == undefined) {
+    window.customElements.define('ext-field', ElementParser.withParsedCallback(EWCField));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-field', EWCField);
+  if (window.customElements.get('ext-field') == undefined) {
+    window.customElements.define('ext-field', EWCField);
+  }
 }

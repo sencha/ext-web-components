@@ -1,5 +1,5 @@
 import Ext_ProgressBar from './Ext/ProgressBar.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCProgressbar extends Ext_ProgressBar {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCProgressbar extends Ext_ProgressBar {
   }
 }
 try {
-  window.customElements.define('ext-progressbar', ElementParser.withParsedCallback(EWCProgressbar));
+  if (window.customElements.get('ext-progressbar') == undefined) {
+    window.customElements.define('ext-progressbar', ElementParser.withParsedCallback(EWCProgressbar));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-progressbar', EWCProgressbar);
+  if (window.customElements.get('ext-progressbar') == undefined) {
+    window.customElements.define('ext-progressbar', EWCProgressbar);
+  }
 }

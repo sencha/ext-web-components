@@ -1,5 +1,5 @@
 import Ext_tree_Column from './Ext/tree/Column.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCTreecolumn extends Ext_tree_Column {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCTreecolumn extends Ext_tree_Column {
   }
 }
 try {
-  window.customElements.define('ext-treecolumn', ElementParser.withParsedCallback(EWCTreecolumn));
+  if (window.customElements.get('ext-treecolumn') == undefined) {
+    window.customElements.define('ext-treecolumn', ElementParser.withParsedCallback(EWCTreecolumn));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-treecolumn', EWCTreecolumn);
+  if (window.customElements.get('ext-treecolumn') == undefined) {
+    window.customElements.define('ext-treecolumn', EWCTreecolumn);
+  }
 }

@@ -1,5 +1,5 @@
 import Ext_Tab from './Ext/Tab.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCTab extends Ext_Tab {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCTab extends Ext_Tab {
   }
 }
 try {
-  window.customElements.define('ext-tab', ElementParser.withParsedCallback(EWCTab));
+  if (window.customElements.get('ext-tab') == undefined) {
+    window.customElements.define('ext-tab', ElementParser.withParsedCallback(EWCTab));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-tab', EWCTab);
+  if (window.customElements.get('ext-tab') == undefined) {
+    window.customElements.define('ext-tab', EWCTab);
+  }
 }

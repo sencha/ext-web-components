@@ -1,5 +1,5 @@
 import Ext_Carousel from './Ext/Carousel.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCCarousel extends Ext_Carousel {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCCarousel extends Ext_Carousel {
   }
 }
 try {
-  window.customElements.define('ext-carousel', ElementParser.withParsedCallback(EWCCarousel));
+  if (window.customElements.get('ext-carousel') == undefined) {
+    window.customElements.define('ext-carousel', ElementParser.withParsedCallback(EWCCarousel));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-carousel', EWCCarousel);
+  if (window.customElements.get('ext-carousel') == undefined) {
+    window.customElements.define('ext-carousel', EWCCarousel);
+  }
 }

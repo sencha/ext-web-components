@@ -1,5 +1,5 @@
 import Ext_calendar_form_TimeField from './Ext/calendar/form/TimeField.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCCalendar_timefield extends Ext_calendar_form_TimeField {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCCalendar_timefield extends Ext_calendar_form_TimeField {
   }
 }
 try {
-  window.customElements.define('ext-calendar-timefield', ElementParser.withParsedCallback(EWCCalendar_timefield));
+  if (window.customElements.get('ext-calendar-timefield') == undefined) {
+    window.customElements.define('ext-calendar-timefield', ElementParser.withParsedCallback(EWCCalendar_timefield));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-calendar-timefield', EWCCalendar_timefield);
+  if (window.customElements.get('ext-calendar-timefield') == undefined) {
+    window.customElements.define('ext-calendar-timefield', EWCCalendar_timefield);
+  }
 }

@@ -1,5 +1,5 @@
 import Ext_grid_RowEditorButtons from './Ext/grid/RowEditorButtons.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCRoweditorbuttons extends Ext_grid_RowEditorButtons {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCRoweditorbuttons extends Ext_grid_RowEditorButtons {
   }
 }
 try {
-  window.customElements.define('ext-roweditorbuttons', ElementParser.withParsedCallback(EWCRoweditorbuttons));
+  if (window.customElements.get('ext-roweditorbuttons') == undefined) {
+    window.customElements.define('ext-roweditorbuttons', ElementParser.withParsedCallback(EWCRoweditorbuttons));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-roweditorbuttons', EWCRoweditorbuttons);
+  if (window.customElements.get('ext-roweditorbuttons') == undefined) {
+    window.customElements.define('ext-roweditorbuttons', EWCRoweditorbuttons);
+  }
 }

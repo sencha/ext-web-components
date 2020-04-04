@@ -1,5 +1,5 @@
 import Ext_sparkline_Pie from './Ext/sparkline/Pie.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCSparklinepie extends Ext_sparkline_Pie {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCSparklinepie extends Ext_sparkline_Pie {
   }
 }
 try {
-  window.customElements.define('ext-sparklinepie', ElementParser.withParsedCallback(EWCSparklinepie));
+  if (window.customElements.get('ext-sparklinepie') == undefined) {
+    window.customElements.define('ext-sparklinepie', ElementParser.withParsedCallback(EWCSparklinepie));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-sparklinepie', EWCSparklinepie);
+  if (window.customElements.get('ext-sparklinepie') == undefined) {
+    window.customElements.define('ext-sparklinepie', EWCSparklinepie);
+  }
 }

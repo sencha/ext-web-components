@@ -1,5 +1,5 @@
 import Ext_field_trigger_Reveal from './Ext/field/trigger/Reveal.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCRevealtrigger extends Ext_field_trigger_Reveal {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCRevealtrigger extends Ext_field_trigger_Reveal {
   }
 }
 try {
-  window.customElements.define('ext-revealtrigger', ElementParser.withParsedCallback(EWCRevealtrigger));
+  if (window.customElements.get('ext-revealtrigger') == undefined) {
+    window.customElements.define('ext-revealtrigger', ElementParser.withParsedCallback(EWCRevealtrigger));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-revealtrigger', EWCRevealtrigger);
+  if (window.customElements.get('ext-revealtrigger') == undefined) {
+    window.customElements.define('ext-revealtrigger', EWCRevealtrigger);
+  }
 }

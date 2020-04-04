@@ -1,5 +1,5 @@
 import Ext_field_FieldGroupContainer from './Ext/field/FieldGroupContainer.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCGroupcontainer extends Ext_field_FieldGroupContainer {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCGroupcontainer extends Ext_field_FieldGroupContainer {
   }
 }
 try {
-  window.customElements.define('ext-groupcontainer', ElementParser.withParsedCallback(EWCGroupcontainer));
+  if (window.customElements.get('ext-groupcontainer') == undefined) {
+    window.customElements.define('ext-groupcontainer', ElementParser.withParsedCallback(EWCGroupcontainer));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-groupcontainer', EWCGroupcontainer);
+  if (window.customElements.get('ext-groupcontainer') == undefined) {
+    window.customElements.define('ext-groupcontainer', EWCGroupcontainer);
+  }
 }

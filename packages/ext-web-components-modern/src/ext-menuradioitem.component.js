@@ -1,5 +1,5 @@
 import Ext_menu_RadioItem from './Ext/menu/RadioItem.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCMenuradioitem extends Ext_menu_RadioItem {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCMenuradioitem extends Ext_menu_RadioItem {
   }
 }
 try {
-  window.customElements.define('ext-menuradioitem', ElementParser.withParsedCallback(EWCMenuradioitem));
+  if (window.customElements.get('ext-menuradioitem') == undefined) {
+    window.customElements.define('ext-menuradioitem', ElementParser.withParsedCallback(EWCMenuradioitem));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-menuradioitem', EWCMenuradioitem);
+  if (window.customElements.get('ext-menuradioitem') == undefined) {
+    window.customElements.define('ext-menuradioitem', EWCMenuradioitem);
+  }
 }

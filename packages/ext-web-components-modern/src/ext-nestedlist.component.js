@@ -1,5 +1,5 @@
 import Ext_NestedList from './Ext/NestedList.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCNestedlist extends Ext_NestedList {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCNestedlist extends Ext_NestedList {
   }
 }
 try {
-  window.customElements.define('ext-nestedlist', ElementParser.withParsedCallback(EWCNestedlist));
+  if (window.customElements.get('ext-nestedlist') == undefined) {
+    window.customElements.define('ext-nestedlist', ElementParser.withParsedCallback(EWCNestedlist));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-nestedlist', EWCNestedlist);
+  if (window.customElements.get('ext-nestedlist') == undefined) {
+    window.customElements.define('ext-nestedlist', EWCNestedlist);
+  }
 }

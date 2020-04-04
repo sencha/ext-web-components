@@ -1,5 +1,5 @@
 import Ext_form_Checkbox from './Ext/form/Checkbox.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCCheckbox extends Ext_form_Checkbox {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCCheckbox extends Ext_form_Checkbox {
   }
 }
 try {
-  window.customElements.define('ext-checkbox', ElementParser.withParsedCallback(EWCCheckbox));
+  if (window.customElements.get('ext-checkbox') == undefined) {
+    window.customElements.define('ext-checkbox', ElementParser.withParsedCallback(EWCCheckbox));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-checkbox', EWCCheckbox);
+  if (window.customElements.get('ext-checkbox') == undefined) {
+    window.customElements.define('ext-checkbox', EWCCheckbox);
+  }
 }

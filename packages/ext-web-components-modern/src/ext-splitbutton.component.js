@@ -1,5 +1,5 @@
 import Ext_SplitButton from './Ext/SplitButton.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCSplitbutton extends Ext_SplitButton {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCSplitbutton extends Ext_SplitButton {
   }
 }
 try {
-  window.customElements.define('ext-splitbutton', ElementParser.withParsedCallback(EWCSplitbutton));
+  if (window.customElements.get('ext-splitbutton') == undefined) {
+    window.customElements.define('ext-splitbutton', ElementParser.withParsedCallback(EWCSplitbutton));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-splitbutton', EWCSplitbutton);
+  if (window.customElements.get('ext-splitbutton') == undefined) {
+    window.customElements.define('ext-splitbutton', EWCSplitbutton);
+  }
 }

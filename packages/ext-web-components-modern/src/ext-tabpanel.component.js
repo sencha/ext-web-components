@@ -1,5 +1,5 @@
 import Ext_TabPanel from './Ext/TabPanel.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCTabpanel extends Ext_TabPanel {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCTabpanel extends Ext_TabPanel {
   }
 }
 try {
-  window.customElements.define('ext-tabpanel', ElementParser.withParsedCallback(EWCTabpanel));
+  if (window.customElements.get('ext-tabpanel') == undefined) {
+    window.customElements.define('ext-tabpanel', ElementParser.withParsedCallback(EWCTabpanel));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-tabpanel', EWCTabpanel);
+  if (window.customElements.get('ext-tabpanel') == undefined) {
+    window.customElements.define('ext-tabpanel', EWCTabpanel);
+  }
 }

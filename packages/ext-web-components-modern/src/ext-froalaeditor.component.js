@@ -1,5 +1,5 @@
 import Ext_froala_Editor from './Ext/froala/Editor.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCFroalaeditor extends Ext_froala_Editor {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCFroalaeditor extends Ext_froala_Editor {
   }
 }
 try {
-  window.customElements.define('ext-froalaeditor', ElementParser.withParsedCallback(EWCFroalaeditor));
+  if (window.customElements.get('ext-froalaeditor') == undefined) {
+    window.customElements.define('ext-froalaeditor', ElementParser.withParsedCallback(EWCFroalaeditor));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-froalaeditor', EWCFroalaeditor);
+  if (window.customElements.get('ext-froalaeditor') == undefined) {
+    window.customElements.define('ext-froalaeditor', EWCFroalaeditor);
+  }
 }

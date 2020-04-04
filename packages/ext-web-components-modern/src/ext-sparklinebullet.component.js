@@ -1,5 +1,5 @@
 import Ext_sparkline_Bullet from './Ext/sparkline/Bullet.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCSparklinebullet extends Ext_sparkline_Bullet {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCSparklinebullet extends Ext_sparkline_Bullet {
   }
 }
 try {
-  window.customElements.define('ext-sparklinebullet', ElementParser.withParsedCallback(EWCSparklinebullet));
+  if (window.customElements.get('ext-sparklinebullet') == undefined) {
+    window.customElements.define('ext-sparklinebullet', ElementParser.withParsedCallback(EWCSparklinebullet));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-sparklinebullet', EWCSparklinebullet);
+  if (window.customElements.get('ext-sparklinebullet') == undefined) {
+    window.customElements.define('ext-sparklinebullet', EWCSparklinebullet);
+  }
 }

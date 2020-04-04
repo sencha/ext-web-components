@@ -1,5 +1,5 @@
 import Ext_panel_YearPicker from './Ext/panel/YearPicker.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCYearpicker extends Ext_panel_YearPicker {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCYearpicker extends Ext_panel_YearPicker {
   }
 }
 try {
-  window.customElements.define('ext-yearpicker', ElementParser.withParsedCallback(EWCYearpicker));
+  if (window.customElements.get('ext-yearpicker') == undefined) {
+    window.customElements.define('ext-yearpicker', ElementParser.withParsedCallback(EWCYearpicker));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-yearpicker', EWCYearpicker);
+  if (window.customElements.get('ext-yearpicker') == undefined) {
+    window.customElements.define('ext-yearpicker', EWCYearpicker);
+  }
 }

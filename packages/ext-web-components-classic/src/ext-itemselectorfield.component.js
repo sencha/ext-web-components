@@ -1,5 +1,5 @@
 import Ext_ux_ItemSelector from './Ext/ux/ItemSelector.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCItemselectorfield extends Ext_ux_ItemSelector {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCItemselectorfield extends Ext_ux_ItemSelector {
   }
 }
 try {
-  window.customElements.define('ext-itemselectorfield', ElementParser.withParsedCallback(EWCItemselectorfield));
+  if (window.customElements.get('ext-itemselectorfield') == undefined) {
+    window.customElements.define('ext-itemselectorfield', ElementParser.withParsedCallback(EWCItemselectorfield));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-itemselectorfield', EWCItemselectorfield);
+  if (window.customElements.get('ext-itemselectorfield') == undefined) {
+    window.customElements.define('ext-itemselectorfield', EWCItemselectorfield);
+  }
 }

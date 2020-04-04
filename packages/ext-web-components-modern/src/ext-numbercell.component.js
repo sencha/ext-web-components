@@ -1,5 +1,5 @@
 import Ext_grid_cell_Number from './Ext/grid/cell/Number.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCNumbercell extends Ext_grid_cell_Number {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCNumbercell extends Ext_grid_cell_Number {
   }
 }
 try {
-  window.customElements.define('ext-numbercell', ElementParser.withParsedCallback(EWCNumbercell));
+  if (window.customElements.get('ext-numbercell') == undefined) {
+    window.customElements.define('ext-numbercell', ElementParser.withParsedCallback(EWCNumbercell));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-numbercell', EWCNumbercell);
+  if (window.customElements.get('ext-numbercell') == undefined) {
+    window.customElements.define('ext-numbercell', EWCNumbercell);
+  }
 }

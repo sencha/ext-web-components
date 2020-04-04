@@ -1,5 +1,5 @@
 import Ext_calendar_List from './Ext/calendar/List.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCCalendar_list extends Ext_calendar_List {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCCalendar_list extends Ext_calendar_List {
   }
 }
 try {
-  window.customElements.define('ext-calendar-list', ElementParser.withParsedCallback(EWCCalendar_list));
+  if (window.customElements.get('ext-calendar-list') == undefined) {
+    window.customElements.define('ext-calendar-list', ElementParser.withParsedCallback(EWCCalendar_list));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-calendar-list', EWCCalendar_list);
+  if (window.customElements.get('ext-calendar-list') == undefined) {
+    window.customElements.define('ext-calendar-list', EWCCalendar_list);
+  }
 }

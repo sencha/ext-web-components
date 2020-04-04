@@ -1,5 +1,5 @@
 import Ext_dataview_Component from './Ext/dataview/Component.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCComponentdataview extends Ext_dataview_Component {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCComponentdataview extends Ext_dataview_Component {
   }
 }
 try {
-  window.customElements.define('ext-componentdataview', ElementParser.withParsedCallback(EWCComponentdataview));
+  if (window.customElements.get('ext-componentdataview') == undefined) {
+    window.customElements.define('ext-componentdataview', ElementParser.withParsedCallback(EWCComponentdataview));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-componentdataview', EWCComponentdataview);
+  if (window.customElements.get('ext-componentdataview') == undefined) {
+    window.customElements.define('ext-componentdataview', EWCComponentdataview);
+  }
 }

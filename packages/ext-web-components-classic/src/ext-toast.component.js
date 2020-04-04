@@ -1,5 +1,5 @@
 import Ext_window_Toast from './Ext/window/Toast.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCToast extends Ext_window_Toast {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCToast extends Ext_window_Toast {
   }
 }
 try {
-  window.customElements.define('ext-toast', ElementParser.withParsedCallback(EWCToast));
+  if (window.customElements.get('ext-toast') == undefined) {
+    window.customElements.define('ext-toast', ElementParser.withParsedCallback(EWCToast));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-toast', EWCToast);
+  if (window.customElements.get('ext-toast') == undefined) {
+    window.customElements.define('ext-toast', EWCToast);
+  }
 }

@@ -1,5 +1,5 @@
 import Ext_slider_Thumb from './Ext/slider/Thumb.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCThumb extends Ext_slider_Thumb {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCThumb extends Ext_slider_Thumb {
   }
 }
 try {
-  window.customElements.define('ext-thumb', ElementParser.withParsedCallback(EWCThumb));
+  if (window.customElements.get('ext-thumb') == undefined) {
+    window.customElements.define('ext-thumb', ElementParser.withParsedCallback(EWCThumb));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-thumb', EWCThumb);
+  if (window.customElements.get('ext-thumb') == undefined) {
+    window.customElements.define('ext-thumb', EWCThumb);
+  }
 }

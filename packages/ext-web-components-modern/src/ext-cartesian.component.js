@@ -1,5 +1,5 @@
 import Ext_chart_Chart from './Ext/chart/Chart.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCCartesian extends Ext_chart_Chart {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCCartesian extends Ext_chart_Chart {
   }
 }
 try {
-  window.customElements.define('ext-cartesian', ElementParser.withParsedCallback(EWCCartesian));
+  if (window.customElements.get('ext-cartesian') == undefined) {
+    window.customElements.define('ext-cartesian', ElementParser.withParsedCallback(EWCCartesian));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-cartesian', EWCCartesian);
+  if (window.customElements.get('ext-cartesian') == undefined) {
+    window.customElements.define('ext-cartesian', EWCCartesian);
+  }
 }

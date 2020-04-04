@@ -1,5 +1,5 @@
 import Ext_grid_cell_Date from './Ext/grid/cell/Date.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCDatecell extends Ext_grid_cell_Date {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCDatecell extends Ext_grid_cell_Date {
   }
 }
 try {
-  window.customElements.define('ext-datecell', ElementParser.withParsedCallback(EWCDatecell));
+  if (window.customElements.get('ext-datecell') == undefined) {
+    window.customElements.define('ext-datecell', ElementParser.withParsedCallback(EWCDatecell));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-datecell', EWCDatecell);
+  if (window.customElements.get('ext-datecell') == undefined) {
+    window.customElements.define('ext-datecell', EWCDatecell);
+  }
 }

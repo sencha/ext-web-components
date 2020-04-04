@@ -1,5 +1,5 @@
 import Ext_grid_rowedit_Editor from './Ext/grid/rowedit/Editor.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCRoweditor extends Ext_grid_rowedit_Editor {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCRoweditor extends Ext_grid_rowedit_Editor {
   }
 }
 try {
-  window.customElements.define('ext-roweditor', ElementParser.withParsedCallback(EWCRoweditor));
+  if (window.customElements.get('ext-roweditor') == undefined) {
+    window.customElements.define('ext-roweditor', ElementParser.withParsedCallback(EWCRoweditor));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-roweditor', EWCRoweditor);
+  if (window.customElements.get('ext-roweditor') == undefined) {
+    window.customElements.define('ext-roweditor', EWCRoweditor);
+  }
 }

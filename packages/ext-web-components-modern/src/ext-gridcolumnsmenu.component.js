@@ -1,5 +1,5 @@
 import Ext_grid_menu_Columns from './Ext/grid/menu/Columns.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCGridcolumnsmenu extends Ext_grid_menu_Columns {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCGridcolumnsmenu extends Ext_grid_menu_Columns {
   }
 }
 try {
-  window.customElements.define('ext-gridcolumnsmenu', ElementParser.withParsedCallback(EWCGridcolumnsmenu));
+  if (window.customElements.get('ext-gridcolumnsmenu') == undefined) {
+    window.customElements.define('ext-gridcolumnsmenu', ElementParser.withParsedCallback(EWCGridcolumnsmenu));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-gridcolumnsmenu', EWCGridcolumnsmenu);
+  if (window.customElements.get('ext-gridcolumnsmenu') == undefined) {
+    window.customElements.define('ext-gridcolumnsmenu', EWCGridcolumnsmenu);
+  }
 }

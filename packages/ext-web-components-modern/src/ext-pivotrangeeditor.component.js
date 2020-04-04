@@ -1,5 +1,5 @@
 import Ext_pivot_plugin_rangeeditor_Panel from './Ext/pivot/plugin/rangeeditor/Panel.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCPivotrangeeditor extends Ext_pivot_plugin_rangeeditor_Panel {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCPivotrangeeditor extends Ext_pivot_plugin_rangeeditor_Pa
   }
 }
 try {
-  window.customElements.define('ext-pivotrangeeditor', ElementParser.withParsedCallback(EWCPivotrangeeditor));
+  if (window.customElements.get('ext-pivotrangeeditor') == undefined) {
+    window.customElements.define('ext-pivotrangeeditor', ElementParser.withParsedCallback(EWCPivotrangeeditor));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-pivotrangeeditor', EWCPivotrangeeditor);
+  if (window.customElements.get('ext-pivotrangeeditor') == undefined) {
+    window.customElements.define('ext-pivotrangeeditor', EWCPivotrangeeditor);
+  }
 }

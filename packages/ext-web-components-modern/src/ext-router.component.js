@@ -1,5 +1,5 @@
-import WebComponentsBaseComponent from './runtime/webcomponentsbase';
-import ElementParser from './runtime/ElementParser.js';
+import WebComponentsBaseComponent from './common/webcomponentsbase';
+import ElementParser from './common/ElementParser.js';
 
 import {
     //doProp,
@@ -9,7 +9,7 @@ import {
     isParentGridAndChildColumn,
     isTooltip,
     isPlugin
-} from './runtime/util.js';
+} from './common/util.js';
 
 export class ExtRouter extends WebComponentsBaseComponent {
     //prettier-ignore

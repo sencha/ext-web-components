@@ -1,5 +1,5 @@
 import Ext_toolbar_Breadcrumb from './Ext/toolbar/Breadcrumb.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCBreadcrumb extends Ext_toolbar_Breadcrumb {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCBreadcrumb extends Ext_toolbar_Breadcrumb {
   }
 }
 try {
-  window.customElements.define('ext-breadcrumb', ElementParser.withParsedCallback(EWCBreadcrumb));
+  if (window.customElements.get('ext-breadcrumb') == undefined) {
+    window.customElements.define('ext-breadcrumb', ElementParser.withParsedCallback(EWCBreadcrumb));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-breadcrumb', EWCBreadcrumb);
+  if (window.customElements.get('ext-breadcrumb') == undefined) {
+    window.customElements.define('ext-breadcrumb', EWCBreadcrumb);
+  }
 }

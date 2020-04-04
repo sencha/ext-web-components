@@ -1,5 +1,5 @@
 import Ext_form_Hidden from './Ext/form/Hidden.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCHidden extends Ext_form_Hidden {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCHidden extends Ext_form_Hidden {
   }
 }
 try {
-  window.customElements.define('ext-hidden', ElementParser.withParsedCallback(EWCHidden));
+  if (window.customElements.get('ext-hidden') == undefined) {
+    window.customElements.define('ext-hidden', ElementParser.withParsedCallback(EWCHidden));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-hidden', EWCHidden);
+  if (window.customElements.get('ext-hidden') == undefined) {
+    window.customElements.define('ext-hidden', EWCHidden);
+  }
 }

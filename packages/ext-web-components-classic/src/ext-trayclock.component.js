@@ -1,5 +1,5 @@
 import Ext_ux_desktop_TrayClock from './Ext/ux/desktop/TrayClock.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCTrayclock extends Ext_ux_desktop_TrayClock {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCTrayclock extends Ext_ux_desktop_TrayClock {
   }
 }
 try {
-  window.customElements.define('ext-trayclock', ElementParser.withParsedCallback(EWCTrayclock));
+  if (window.customElements.get('ext-trayclock') == undefined) {
+    window.customElements.define('ext-trayclock', ElementParser.withParsedCallback(EWCTrayclock));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-trayclock', EWCTrayclock);
+  if (window.customElements.get('ext-trayclock') == undefined) {
+    window.customElements.define('ext-trayclock', EWCTrayclock);
+  }
 }

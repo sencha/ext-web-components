@@ -1,5 +1,5 @@
 import Ext_toolbar_Spacer from './Ext/toolbar/Spacer.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCTbspacer extends Ext_toolbar_Spacer {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCTbspacer extends Ext_toolbar_Spacer {
   }
 }
 try {
-  window.customElements.define('ext-tbspacer', ElementParser.withParsedCallback(EWCTbspacer));
+  if (window.customElements.get('ext-tbspacer') == undefined) {
+    window.customElements.define('ext-tbspacer', ElementParser.withParsedCallback(EWCTbspacer));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-tbspacer', EWCTbspacer);
+  if (window.customElements.get('ext-tbspacer') == undefined) {
+    window.customElements.define('ext-tbspacer', EWCTbspacer);
+  }
 }

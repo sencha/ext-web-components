@@ -1,5 +1,5 @@
 import Ext_menu_CheckItem from './Ext/menu/CheckItem.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCMenucheckitem extends Ext_menu_CheckItem {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCMenucheckitem extends Ext_menu_CheckItem {
   }
 }
 try {
-  window.customElements.define('ext-menucheckitem', ElementParser.withParsedCallback(EWCMenucheckitem));
+  if (window.customElements.get('ext-menucheckitem') == undefined) {
+    window.customElements.define('ext-menucheckitem', ElementParser.withParsedCallback(EWCMenucheckitem));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-menucheckitem', EWCMenucheckitem);
+  if (window.customElements.get('ext-menucheckitem') == undefined) {
+    window.customElements.define('ext-menucheckitem', EWCMenucheckitem);
+  }
 }

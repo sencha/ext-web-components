@@ -1,5 +1,5 @@
 import Ext_dataview_EmptyText from './Ext/dataview/EmptyText.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCEmptytext extends Ext_dataview_EmptyText {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCEmptytext extends Ext_dataview_EmptyText {
   }
 }
 try {
-  window.customElements.define('ext-emptytext', ElementParser.withParsedCallback(EWCEmptytext));
+  if (window.customElements.get('ext-emptytext') == undefined) {
+    window.customElements.define('ext-emptytext', ElementParser.withParsedCallback(EWCEmptytext));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-emptytext', EWCEmptytext);
+  if (window.customElements.get('ext-emptytext') == undefined) {
+    window.customElements.define('ext-emptytext', EWCEmptytext);
+  }
 }

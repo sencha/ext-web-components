@@ -1,5 +1,5 @@
 import Ext_grid_Row from './Ext/grid/Row.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCGridrow extends Ext_grid_Row {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCGridrow extends Ext_grid_Row {
   }
 }
 try {
-  window.customElements.define('ext-gridrow', ElementParser.withParsedCallback(EWCGridrow));
+  if (window.customElements.get('ext-gridrow') == undefined) {
+    window.customElements.define('ext-gridrow', ElementParser.withParsedCallback(EWCGridrow));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-gridrow', EWCGridrow);
+  if (window.customElements.get('ext-gridrow') == undefined) {
+    window.customElements.define('ext-gridrow', EWCGridrow);
+  }
 }

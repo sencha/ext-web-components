@@ -1,5 +1,5 @@
 import Ext_window_Window from './Ext/window/Window.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCDialog extends Ext_window_Window {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCDialog extends Ext_window_Window {
   }
 }
 try {
-  window.customElements.define('ext-dialog', ElementParser.withParsedCallback(EWCDialog));
+  if (window.customElements.get('ext-dialog') == undefined) {
+    window.customElements.define('ext-dialog', ElementParser.withParsedCallback(EWCDialog));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-dialog', EWCDialog);
+  if (window.customElements.get('ext-dialog') == undefined) {
+    window.customElements.define('ext-dialog', EWCDialog);
+  }
 }

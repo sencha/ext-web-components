@@ -1,5 +1,5 @@
 import Ext_ux_event_RecorderManager from './Ext/ux/event/RecorderManager.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCEventrecordermanager extends Ext_ux_event_RecorderManager {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCEventrecordermanager extends Ext_ux_event_RecorderManage
   }
 }
 try {
-  window.customElements.define('ext-eventrecordermanager', ElementParser.withParsedCallback(EWCEventrecordermanager));
+  if (window.customElements.get('ext-eventrecordermanager') == undefined) {
+    window.customElements.define('ext-eventrecordermanager', ElementParser.withParsedCallback(EWCEventrecordermanager));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-eventrecordermanager', EWCEventrecordermanager);
+  if (window.customElements.get('ext-eventrecordermanager') == undefined) {
+    window.customElements.define('ext-eventrecordermanager', EWCEventrecordermanager);
+  }
 }

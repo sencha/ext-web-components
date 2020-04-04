@@ -1,5 +1,5 @@
 import Ext_sparkline_Box from './Ext/sparkline/Box.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCSparklinebox extends Ext_sparkline_Box {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCSparklinebox extends Ext_sparkline_Box {
   }
 }
 try {
-  window.customElements.define('ext-sparklinebox', ElementParser.withParsedCallback(EWCSparklinebox));
+  if (window.customElements.get('ext-sparklinebox') == undefined) {
+    window.customElements.define('ext-sparklinebox', ElementParser.withParsedCallback(EWCSparklinebox));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-sparklinebox', EWCSparklinebox);
+  if (window.customElements.get('ext-sparklinebox') == undefined) {
+    window.customElements.define('ext-sparklinebox', EWCSparklinebox);
+  }
 }

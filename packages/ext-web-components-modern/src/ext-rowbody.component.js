@@ -1,5 +1,5 @@
 import Ext_grid_RowBody from './Ext/grid/RowBody.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCRowbody extends Ext_grid_RowBody {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCRowbody extends Ext_grid_RowBody {
   }
 }
 try {
-  window.customElements.define('ext-rowbody', ElementParser.withParsedCallback(EWCRowbody));
+  if (window.customElements.get('ext-rowbody') == undefined) {
+    window.customElements.define('ext-rowbody', ElementParser.withParsedCallback(EWCRowbody));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-rowbody', EWCRowbody);
+  if (window.customElements.get('ext-rowbody') == undefined) {
+    window.customElements.define('ext-rowbody', EWCRowbody);
+  }
 }

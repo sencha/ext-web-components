@@ -1,5 +1,5 @@
 import Ext_toolbar_Fill from './Ext/toolbar/Fill.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCTbfill extends Ext_toolbar_Fill {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCTbfill extends Ext_toolbar_Fill {
   }
 }
 try {
-  window.customElements.define('ext-tbfill', ElementParser.withParsedCallback(EWCTbfill));
+  if (window.customElements.get('ext-tbfill') == undefined) {
+    window.customElements.define('ext-tbfill', ElementParser.withParsedCallback(EWCTbfill));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-tbfill', EWCTbfill);
+  if (window.customElements.get('ext-tbfill') == undefined) {
+    window.customElements.define('ext-tbfill', EWCTbfill);
+  }
 }

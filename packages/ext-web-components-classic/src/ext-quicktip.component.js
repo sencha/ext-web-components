@@ -1,5 +1,5 @@
 import Ext_QuickTip from './Ext/QuickTip.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCQuicktip extends Ext_QuickTip {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCQuicktip extends Ext_QuickTip {
   }
 }
 try {
-  window.customElements.define('ext-quicktip', ElementParser.withParsedCallback(EWCQuicktip));
+  if (window.customElements.get('ext-quicktip') == undefined) {
+    window.customElements.define('ext-quicktip', ElementParser.withParsedCallback(EWCQuicktip));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-quicktip', EWCQuicktip);
+  if (window.customElements.get('ext-quicktip') == undefined) {
+    window.customElements.define('ext-quicktip', EWCQuicktip);
+  }
 }

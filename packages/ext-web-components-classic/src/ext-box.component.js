@@ -1,5 +1,5 @@
 import Ext_AbstractComponent from './Ext/AbstractComponent.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCBox extends Ext_AbstractComponent {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCBox extends Ext_AbstractComponent {
   }
 }
 try {
-  window.customElements.define('ext-box', ElementParser.withParsedCallback(EWCBox));
+  if (window.customElements.get('ext-box') == undefined) {
+    window.customElements.define('ext-box', ElementParser.withParsedCallback(EWCBox));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-box', EWCBox);
+  if (window.customElements.get('ext-box') == undefined) {
+    window.customElements.define('ext-box', EWCBox);
+  }
 }

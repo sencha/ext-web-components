@@ -1,5 +1,5 @@
 import Ext_grid_rowedit_Gap from './Ext/grid/rowedit/Gap.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCRoweditorgap extends Ext_grid_rowedit_Gap {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCRoweditorgap extends Ext_grid_rowedit_Gap {
   }
 }
 try {
-  window.customElements.define('ext-roweditorgap', ElementParser.withParsedCallback(EWCRoweditorgap));
+  if (window.customElements.get('ext-roweditorgap') == undefined) {
+    window.customElements.define('ext-roweditorgap', ElementParser.withParsedCallback(EWCRoweditorgap));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-roweditorgap', EWCRoweditorgap);
+  if (window.customElements.get('ext-roweditorgap') == undefined) {
+    window.customElements.define('ext-roweditorgap', EWCRoweditorgap);
+  }
 }

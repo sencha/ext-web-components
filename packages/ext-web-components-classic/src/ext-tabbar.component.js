@@ -1,5 +1,5 @@
 import Ext_tab_Bar from './Ext/tab/Bar.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCTabbar extends Ext_tab_Bar {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCTabbar extends Ext_tab_Bar {
   }
 }
 try {
-  window.customElements.define('ext-tabbar', ElementParser.withParsedCallback(EWCTabbar));
+  if (window.customElements.get('ext-tabbar') == undefined) {
+    window.customElements.define('ext-tabbar', ElementParser.withParsedCallback(EWCTabbar));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-tabbar', EWCTabbar);
+  if (window.customElements.get('ext-tabbar') == undefined) {
+    window.customElements.define('ext-tabbar', EWCTabbar);
+  }
 }

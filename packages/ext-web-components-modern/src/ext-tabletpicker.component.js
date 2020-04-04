@@ -1,5 +1,5 @@
 import Ext_picker_Tablet from './Ext/picker/Tablet.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCTabletpicker extends Ext_picker_Tablet {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCTabletpicker extends Ext_picker_Tablet {
   }
 }
 try {
-  window.customElements.define('ext-tabletpicker', ElementParser.withParsedCallback(EWCTabletpicker));
+  if (window.customElements.get('ext-tabletpicker') == undefined) {
+    window.customElements.define('ext-tabletpicker', ElementParser.withParsedCallback(EWCTabletpicker));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-tabletpicker', EWCTabletpicker);
+  if (window.customElements.get('ext-tabletpicker') == undefined) {
+    window.customElements.define('ext-tabletpicker', EWCTabletpicker);
+  }
 }

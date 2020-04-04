@@ -1,5 +1,5 @@
 import Ext_button_Segmented from './Ext/button/Segmented.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCSegmentedbutton extends Ext_button_Segmented {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCSegmentedbutton extends Ext_button_Segmented {
   }
 }
 try {
-  window.customElements.define('ext-segmentedbutton', ElementParser.withParsedCallback(EWCSegmentedbutton));
+  if (window.customElements.get('ext-segmentedbutton') == undefined) {
+    window.customElements.define('ext-segmentedbutton', ElementParser.withParsedCallback(EWCSegmentedbutton));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-segmentedbutton', EWCSegmentedbutton);
+  if (window.customElements.get('ext-segmentedbutton') == undefined) {
+    window.customElements.define('ext-segmentedbutton', EWCSegmentedbutton);
+  }
 }

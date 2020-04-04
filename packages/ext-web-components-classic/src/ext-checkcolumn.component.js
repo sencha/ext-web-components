@@ -1,5 +1,5 @@
 import Ext_grid_column_CheckColumn from './Ext/grid/column/CheckColumn.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCCheckcolumn extends Ext_grid_column_CheckColumn {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCCheckcolumn extends Ext_grid_column_CheckColumn {
   }
 }
 try {
-  window.customElements.define('ext-checkcolumn', ElementParser.withParsedCallback(EWCCheckcolumn));
+  if (window.customElements.get('ext-checkcolumn') == undefined) {
+    window.customElements.define('ext-checkcolumn', ElementParser.withParsedCallback(EWCCheckcolumn));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-checkcolumn', EWCCheckcolumn);
+  if (window.customElements.get('ext-checkcolumn') == undefined) {
+    window.customElements.define('ext-checkcolumn', EWCCheckcolumn);
+  }
 }

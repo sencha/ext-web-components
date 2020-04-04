@@ -1,5 +1,5 @@
 import Ext_form_Select from './Ext/form/Select.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCSelectfield extends Ext_form_Select {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCSelectfield extends Ext_form_Select {
   }
 }
 try {
-  window.customElements.define('ext-selectfield', ElementParser.withParsedCallback(EWCSelectfield));
+  if (window.customElements.get('ext-selectfield') == undefined) {
+    window.customElements.define('ext-selectfield', ElementParser.withParsedCallback(EWCSelectfield));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-selectfield', EWCSelectfield);
+  if (window.customElements.get('ext-selectfield') == undefined) {
+    window.customElements.define('ext-selectfield', EWCSelectfield);
+  }
 }

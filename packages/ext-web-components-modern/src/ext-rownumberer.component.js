@@ -1,5 +1,5 @@
 import Ext_grid_column_RowNumberer from './Ext/grid/column/RowNumberer.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCRownumberer extends Ext_grid_column_RowNumberer {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCRownumberer extends Ext_grid_column_RowNumberer {
   }
 }
 try {
-  window.customElements.define('ext-rownumberer', ElementParser.withParsedCallback(EWCRownumberer));
+  if (window.customElements.get('ext-rownumberer') == undefined) {
+    window.customElements.define('ext-rownumberer', ElementParser.withParsedCallback(EWCRownumberer));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-rownumberer', EWCRownumberer);
+  if (window.customElements.get('ext-rownumberer') == undefined) {
+    window.customElements.define('ext-rownumberer', EWCRownumberer);
+  }
 }

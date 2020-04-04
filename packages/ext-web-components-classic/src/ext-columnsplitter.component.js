@@ -1,5 +1,5 @@
 import Ext_layout_container_ColumnSplitter from './Ext/layout/container/ColumnSplitter.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCColumnsplitter extends Ext_layout_container_ColumnSplitter {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCColumnsplitter extends Ext_layout_container_ColumnSplitt
   }
 }
 try {
-  window.customElements.define('ext-columnsplitter', ElementParser.withParsedCallback(EWCColumnsplitter));
+  if (window.customElements.get('ext-columnsplitter') == undefined) {
+    window.customElements.define('ext-columnsplitter', ElementParser.withParsedCallback(EWCColumnsplitter));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-columnsplitter', EWCColumnsplitter);
+  if (window.customElements.get('ext-columnsplitter') == undefined) {
+    window.customElements.define('ext-columnsplitter', EWCColumnsplitter);
+  }
 }

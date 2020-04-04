@@ -44,6 +44,8 @@ cd ext-web-components-modern-demo
   },
   "devDependencies": {
     "@sencha/ext-web-components-modern": "~7.2.0",
+    "@sencha/ext-web-components-modern-enterprise": "~7.2.0",
+    "@sencha/ext-web-components-modern-material": "~7.2.0",
     "servor": "~3.1.0"
   },
   "author": "",
@@ -62,13 +64,9 @@ cd ext-web-components-modern-demo
 </head>
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 
-<!--
-<script src="node_modules/@sencha/ext-web-components-classic/ext-runtime-classic/classic.engine.enterprise.js"></script>
-<link  href="node_modules/@sencha/ext-web-components-classic/ext-runtime-classic/material/material-all.css" rel="stylesheet" type="text/css"></link>
--->
-
-<script type="module" src="./node_modules/@sencha/ext-web-components-modern/src/ext-toolbar.component.js"></script>
-<script type="module" src="./node_modules/@sencha/ext-web-components-modern/src/ext-button.component.js"></script>
+<script type="module" src="./node_modules/@sencha/ext-modern-enterprise/ext.modern.enterprise.js"></script>
+<script type="module" src="./node_modules/@sencha/ext-modern-material/ext.modern.material.js"></script>
+<script type="module" src="./node_modules/@sencha/ext-web-components-modern/ext-web-components-modern.js"></script>
 
 <script>
   getNow = function() {

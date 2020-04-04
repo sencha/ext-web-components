@@ -1,5 +1,5 @@
 import Ext_dataview_ChipView from './Ext/dataview/ChipView.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCChipview extends Ext_dataview_ChipView {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCChipview extends Ext_dataview_ChipView {
   }
 }
 try {
-  window.customElements.define('ext-chipview', ElementParser.withParsedCallback(EWCChipview));
+  if (window.customElements.get('ext-chipview') == undefined) {
+    window.customElements.define('ext-chipview', ElementParser.withParsedCallback(EWCChipview));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-chipview', EWCChipview);
+  if (window.customElements.get('ext-chipview') == undefined) {
+    window.customElements.define('ext-chipview', EWCChipview);
+  }
 }

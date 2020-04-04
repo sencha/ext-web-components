@@ -1,5 +1,5 @@
 import Ext_LoadMask from './Ext/LoadMask.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCLoadmask extends Ext_LoadMask {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCLoadmask extends Ext_LoadMask {
   }
 }
 try {
-  window.customElements.define('ext-loadmask', ElementParser.withParsedCallback(EWCLoadmask));
+  if (window.customElements.get('ext-loadmask') == undefined) {
+    window.customElements.define('ext-loadmask', ElementParser.withParsedCallback(EWCLoadmask));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-loadmask', EWCLoadmask);
+  if (window.customElements.get('ext-loadmask') == undefined) {
+    window.customElements.define('ext-loadmask', EWCLoadmask);
+  }
 }

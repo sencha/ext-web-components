@@ -1,5 +1,5 @@
 import Ext_view_MultiSelector from './Ext/view/MultiSelector.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCMultiselector extends Ext_view_MultiSelector {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCMultiselector extends Ext_view_MultiSelector {
   }
 }
 try {
-  window.customElements.define('ext-multiselector', ElementParser.withParsedCallback(EWCMultiselector));
+  if (window.customElements.get('ext-multiselector') == undefined) {
+    window.customElements.define('ext-multiselector', ElementParser.withParsedCallback(EWCMultiselector));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-multiselector', EWCMultiselector);
+  if (window.customElements.get('ext-multiselector') == undefined) {
+    window.customElements.define('ext-multiselector', EWCMultiselector);
+  }
 }

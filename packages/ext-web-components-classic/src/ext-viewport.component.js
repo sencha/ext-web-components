@@ -1,5 +1,5 @@
 import Ext_Viewport from './Ext/Viewport.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCViewport extends Ext_Viewport {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCViewport extends Ext_Viewport {
   }
 }
 try {
-  window.customElements.define('ext-viewport', ElementParser.withParsedCallback(EWCViewport));
+  if (window.customElements.get('ext-viewport') == undefined) {
+    window.customElements.define('ext-viewport', ElementParser.withParsedCallback(EWCViewport));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-viewport', EWCViewport);
+  if (window.customElements.get('ext-viewport') == undefined) {
+    window.customElements.define('ext-viewport', EWCViewport);
+  }
 }

@@ -1,5 +1,5 @@
 import Ext_Sheet from './Ext/Sheet.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCSheet extends Ext_Sheet {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCSheet extends Ext_Sheet {
   }
 }
 try {
-  window.customElements.define('ext-sheet', ElementParser.withParsedCallback(EWCSheet));
+  if (window.customElements.get('ext-sheet') == undefined) {
+    window.customElements.define('ext-sheet', ElementParser.withParsedCallback(EWCSheet));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-sheet', EWCSheet);
+  if (window.customElements.get('ext-sheet') == undefined) {
+    window.customElements.define('ext-sheet', EWCSheet);
+  }
 }

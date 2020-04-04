@@ -1,5 +1,5 @@
 import Ext_ux_colorpick_SliderValue from './Ext/ux/colorpick/SliderValue.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCColorpickerslidervalue extends Ext_ux_colorpick_SliderValue {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCColorpickerslidervalue extends Ext_ux_colorpick_SliderVa
   }
 }
 try {
-  window.customElements.define('ext-colorpickerslidervalue', ElementParser.withParsedCallback(EWCColorpickerslidervalue));
+  if (window.customElements.get('ext-colorpickerslidervalue') == undefined) {
+    window.customElements.define('ext-colorpickerslidervalue', ElementParser.withParsedCallback(EWCColorpickerslidervalue));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-colorpickerslidervalue', EWCColorpickerslidervalue);
+  if (window.customElements.get('ext-colorpickerslidervalue') == undefined) {
+    window.customElements.define('ext-colorpickerslidervalue', EWCColorpickerslidervalue);
+  }
 }

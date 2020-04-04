@@ -1,5 +1,5 @@
 import Ext_grid_NumberColumn from './Ext/grid/NumberColumn.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCNumbercolumn extends Ext_grid_NumberColumn {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCNumbercolumn extends Ext_grid_NumberColumn {
   }
 }
 try {
-  window.customElements.define('ext-numbercolumn', ElementParser.withParsedCallback(EWCNumbercolumn));
+  if (window.customElements.get('ext-numbercolumn') == undefined) {
+    window.customElements.define('ext-numbercolumn', ElementParser.withParsedCallback(EWCNumbercolumn));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-numbercolumn', EWCNumbercolumn);
+  if (window.customElements.get('ext-numbercolumn') == undefined) {
+    window.customElements.define('ext-numbercolumn', EWCNumbercolumn);
+  }
 }

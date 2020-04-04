@@ -1,5 +1,5 @@
 import Ext_grid_DateColumn from './Ext/grid/DateColumn.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCDatecolumn extends Ext_grid_DateColumn {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCDatecolumn extends Ext_grid_DateColumn {
   }
 }
 try {
-  window.customElements.define('ext-datecolumn', ElementParser.withParsedCallback(EWCDatecolumn));
+  if (window.customElements.get('ext-datecolumn') == undefined) {
+    window.customElements.define('ext-datecolumn', ElementParser.withParsedCallback(EWCDatecolumn));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-datecolumn', EWCDatecolumn);
+  if (window.customElements.get('ext-datecolumn') == undefined) {
+    window.customElements.define('ext-datecolumn', EWCDatecolumn);
+  }
 }

@@ -1,5 +1,5 @@
 import Ext_grid_cell_Boolean from './Ext/grid/cell/Boolean.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCBooleancell extends Ext_grid_cell_Boolean {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCBooleancell extends Ext_grid_cell_Boolean {
   }
 }
 try {
-  window.customElements.define('ext-booleancell', ElementParser.withParsedCallback(EWCBooleancell));
+  if (window.customElements.get('ext-booleancell') == undefined) {
+    window.customElements.define('ext-booleancell', ElementParser.withParsedCallback(EWCBooleancell));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-booleancell', EWCBooleancell);
+  if (window.customElements.get('ext-booleancell') == undefined) {
+    window.customElements.define('ext-booleancell', EWCBooleancell);
+  }
 }

@@ -1,5 +1,5 @@
 import Ext_ux_IFrame from './Ext/ux/IFrame.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCUxiframe extends Ext_ux_IFrame {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCUxiframe extends Ext_ux_IFrame {
   }
 }
 try {
-  window.customElements.define('ext-uxiframe', ElementParser.withParsedCallback(EWCUxiframe));
+  if (window.customElements.get('ext-uxiframe') == undefined) {
+    window.customElements.define('ext-uxiframe', ElementParser.withParsedCallback(EWCUxiframe));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-uxiframe', EWCUxiframe);
+  if (window.customElements.get('ext-uxiframe') == undefined) {
+    window.customElements.define('ext-uxiframe', EWCUxiframe);
+  }
 }

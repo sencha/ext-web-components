@@ -1,5 +1,5 @@
 import Ext_menu_Separator from './Ext/menu/Separator.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCMenuseparator extends Ext_menu_Separator {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCMenuseparator extends Ext_menu_Separator {
   }
 }
 try {
-  window.customElements.define('ext-menuseparator', ElementParser.withParsedCallback(EWCMenuseparator));
+  if (window.customElements.get('ext-menuseparator') == undefined) {
+    window.customElements.define('ext-menuseparator', ElementParser.withParsedCallback(EWCMenuseparator));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-menuseparator', EWCMenuseparator);
+  if (window.customElements.get('ext-menuseparator') == undefined) {
+    window.customElements.define('ext-menuseparator', EWCMenuseparator);
+  }
 }

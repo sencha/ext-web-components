@@ -1,5 +1,5 @@
 import Ext_grid_header_Container from './Ext/grid/header/Container.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCHeadercontainer extends Ext_grid_header_Container {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCHeadercontainer extends Ext_grid_header_Container {
   }
 }
 try {
-  window.customElements.define('ext-headercontainer', ElementParser.withParsedCallback(EWCHeadercontainer));
+  if (window.customElements.get('ext-headercontainer') == undefined) {
+    window.customElements.define('ext-headercontainer', ElementParser.withParsedCallback(EWCHeadercontainer));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-headercontainer', EWCHeadercontainer);
+  if (window.customElements.get('ext-headercontainer') == undefined) {
+    window.customElements.define('ext-headercontainer', EWCHeadercontainer);
+  }
 }

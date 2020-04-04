@@ -1,5 +1,5 @@
 import Ext_picker_Slot from './Ext/picker/Slot.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCPickerslot extends Ext_picker_Slot {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCPickerslot extends Ext_picker_Slot {
   }
 }
 try {
-  window.customElements.define('ext-pickerslot', ElementParser.withParsedCallback(EWCPickerslot));
+  if (window.customElements.get('ext-pickerslot') == undefined) {
+    window.customElements.define('ext-pickerslot', ElementParser.withParsedCallback(EWCPickerslot));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-pickerslot', EWCPickerslot);
+  if (window.customElements.get('ext-pickerslot') == undefined) {
+    window.customElements.define('ext-pickerslot', EWCPickerslot);
+  }
 }

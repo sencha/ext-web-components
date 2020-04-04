@@ -1,5 +1,5 @@
 import Ext_picker_Time from './Ext/picker/Time.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCTimepicker extends Ext_picker_Time {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCTimepicker extends Ext_picker_Time {
   }
 }
 try {
-  window.customElements.define('ext-timepicker', ElementParser.withParsedCallback(EWCTimepicker));
+  if (window.customElements.get('ext-timepicker') == undefined) {
+    window.customElements.define('ext-timepicker', ElementParser.withParsedCallback(EWCTimepicker));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-timepicker', EWCTimepicker);
+  if (window.customElements.get('ext-timepicker') == undefined) {
+    window.customElements.define('ext-timepicker', EWCTimepicker);
+  }
 }

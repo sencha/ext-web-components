@@ -1,5 +1,5 @@
 import Ext_form_Url from './Ext/form/Url.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCUrlfield extends Ext_form_Url {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCUrlfield extends Ext_form_Url {
   }
 }
 try {
-  window.customElements.define('ext-urlfield', ElementParser.withParsedCallback(EWCUrlfield));
+  if (window.customElements.get('ext-urlfield') == undefined) {
+    window.customElements.define('ext-urlfield', ElementParser.withParsedCallback(EWCUrlfield));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-urlfield', EWCUrlfield);
+  if (window.customElements.get('ext-urlfield') == undefined) {
+    window.customElements.define('ext-urlfield', EWCUrlfield);
+  }
 }

@@ -1,5 +1,5 @@
 import Ext_chart_SpaceFillingChart from './Ext/chart/SpaceFillingChart.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCSpacefilling extends Ext_chart_SpaceFillingChart {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCSpacefilling extends Ext_chart_SpaceFillingChart {
   }
 }
 try {
-  window.customElements.define('ext-spacefilling', ElementParser.withParsedCallback(EWCSpacefilling));
+  if (window.customElements.get('ext-spacefilling') == undefined) {
+    window.customElements.define('ext-spacefilling', ElementParser.withParsedCallback(EWCSpacefilling));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-spacefilling', EWCSpacefilling);
+  if (window.customElements.get('ext-spacefilling') == undefined) {
+    window.customElements.define('ext-spacefilling', EWCSpacefilling);
+  }
 }

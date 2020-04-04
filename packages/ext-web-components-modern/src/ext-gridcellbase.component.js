@@ -1,5 +1,5 @@
 import Ext_grid_cell_Base from './Ext/grid/cell/Base.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCGridcellbase extends Ext_grid_cell_Base {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCGridcellbase extends Ext_grid_cell_Base {
   }
 }
 try {
-  window.customElements.define('ext-gridcellbase', ElementParser.withParsedCallback(EWCGridcellbase));
+  if (window.customElements.get('ext-gridcellbase') == undefined) {
+    window.customElements.define('ext-gridcellbase', ElementParser.withParsedCallback(EWCGridcellbase));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-gridcellbase', EWCGridcellbase);
+  if (window.customElements.get('ext-gridcellbase') == undefined) {
+    window.customElements.define('ext-gridcellbase', EWCGridcellbase);
+  }
 }

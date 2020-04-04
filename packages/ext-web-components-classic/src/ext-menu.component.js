@@ -1,5 +1,5 @@
 import Ext_menu_Menu from './Ext/menu/Menu.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCMenu extends Ext_menu_Menu {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCMenu extends Ext_menu_Menu {
   }
 }
 try {
-  window.customElements.define('ext-menu', ElementParser.withParsedCallback(EWCMenu));
+  if (window.customElements.get('ext-menu') == undefined) {
+    window.customElements.define('ext-menu', ElementParser.withParsedCallback(EWCMenu));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-menu', EWCMenu);
+  if (window.customElements.get('ext-menu') == undefined) {
+    window.customElements.define('ext-menu', EWCMenu);
+  }
 }

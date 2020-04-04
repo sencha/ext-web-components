@@ -1,5 +1,5 @@
 import Ext_form_Time from './Ext/form/Time.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCTimefield extends Ext_form_Time {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCTimefield extends Ext_form_Time {
   }
 }
 try {
-  window.customElements.define('ext-timefield', ElementParser.withParsedCallback(EWCTimefield));
+  if (window.customElements.get('ext-timefield') == undefined) {
+    window.customElements.define('ext-timefield', ElementParser.withParsedCallback(EWCTimefield));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-timefield', EWCTimefield);
+  if (window.customElements.get('ext-timefield') == undefined) {
+    window.customElements.define('ext-timefield', EWCTimefield);
+  }
 }

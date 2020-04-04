@@ -1,5 +1,5 @@
 import Ext_Button from './Ext/Button.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCButton extends Ext_Button {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCButton extends Ext_Button {
   }
 }
 try {
-  window.customElements.define('ext-button', ElementParser.withParsedCallback(EWCButton));
+  if (window.customElements.get('ext-button') == undefined) {
+    window.customElements.define('ext-button', ElementParser.withParsedCallback(EWCButton));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-button', EWCButton);
+  if (window.customElements.get('ext-button') == undefined) {
+    window.customElements.define('ext-button', EWCButton);
+  }
 }

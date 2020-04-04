@@ -1,5 +1,5 @@
 import Ext_form_FieldContainer from './Ext/form/FieldContainer.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCFieldcontainer extends Ext_form_FieldContainer {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCFieldcontainer extends Ext_form_FieldContainer {
   }
 }
 try {
-  window.customElements.define('ext-fieldcontainer', ElementParser.withParsedCallback(EWCFieldcontainer));
+  if (window.customElements.get('ext-fieldcontainer') == undefined) {
+    window.customElements.define('ext-fieldcontainer', ElementParser.withParsedCallback(EWCFieldcontainer));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-fieldcontainer', EWCFieldcontainer);
+  if (window.customElements.get('ext-fieldcontainer') == undefined) {
+    window.customElements.define('ext-fieldcontainer', EWCFieldcontainer);
+  }
 }

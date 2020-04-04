@@ -1,5 +1,5 @@
 import Ext_form_HtmlEditor from './Ext/form/HtmlEditor.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCHtmleditor extends Ext_form_HtmlEditor {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCHtmleditor extends Ext_form_HtmlEditor {
   }
 }
 try {
-  window.customElements.define('ext-htmleditor', ElementParser.withParsedCallback(EWCHtmleditor));
+  if (window.customElements.get('ext-htmleditor') == undefined) {
+    window.customElements.define('ext-htmleditor', ElementParser.withParsedCallback(EWCHtmleditor));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-htmleditor', EWCHtmleditor);
+  if (window.customElements.get('ext-htmleditor') == undefined) {
+    window.customElements.define('ext-htmleditor', EWCHtmleditor);
+  }
 }

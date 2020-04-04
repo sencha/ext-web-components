@@ -1,5 +1,5 @@
 import Ext_toolbar_Separator from './Ext/toolbar/Separator.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCTbseparator extends Ext_toolbar_Separator {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCTbseparator extends Ext_toolbar_Separator {
   }
 }
 try {
-  window.customElements.define('ext-tbseparator', ElementParser.withParsedCallback(EWCTbseparator));
+  if (window.customElements.get('ext-tbseparator') == undefined) {
+    window.customElements.define('ext-tbseparator', ElementParser.withParsedCallback(EWCTbseparator));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-tbseparator', EWCTbseparator);
+  if (window.customElements.get('ext-tbseparator') == undefined) {
+    window.customElements.define('ext-tbseparator', EWCTbseparator);
+  }
 }

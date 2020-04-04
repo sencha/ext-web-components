@@ -1,5 +1,5 @@
 import Ext_dataview_component_SimpleListItem from './Ext/dataview/component/SimpleListItem.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCSimplelistitem extends Ext_dataview_component_SimpleListItem {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCSimplelistitem extends Ext_dataview_component_SimpleList
   }
 }
 try {
-  window.customElements.define('ext-simplelistitem', ElementParser.withParsedCallback(EWCSimplelistitem));
+  if (window.customElements.get('ext-simplelistitem') == undefined) {
+    window.customElements.define('ext-simplelistitem', ElementParser.withParsedCallback(EWCSimplelistitem));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-simplelistitem', EWCSimplelistitem);
+  if (window.customElements.get('ext-simplelistitem') == undefined) {
+    window.customElements.define('ext-simplelistitem', EWCSimplelistitem);
+  }
 }

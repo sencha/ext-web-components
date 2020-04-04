@@ -1,5 +1,5 @@
 import Ext_Tip from './Ext/Tip.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCTip extends Ext_Tip {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCTip extends Ext_Tip {
   }
 }
 try {
-  window.customElements.define('ext-tip', ElementParser.withParsedCallback(EWCTip));
+  if (window.customElements.get('ext-tip') == undefined) {
+    window.customElements.define('ext-tip', ElementParser.withParsedCallback(EWCTip));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-tip', EWCTip);
+  if (window.customElements.get('ext-tip') == undefined) {
+    window.customElements.define('ext-tip', EWCTip);
+  }
 }

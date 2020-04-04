@@ -1,5 +1,5 @@
 import Ext_grid_column_Tree from './Ext/grid/column/Tree.js';
-import ElementParser from './runtime/ElementParser.js';
+import ElementParser from './common/ElementParser.js';
 
 export default class EWCTreecolumn extends Ext_grid_column_Tree {
   constructor() {
@@ -8,8 +8,12 @@ export default class EWCTreecolumn extends Ext_grid_column_Tree {
   }
 }
 try {
-  window.customElements.define('ext-treecolumn', ElementParser.withParsedCallback(EWCTreecolumn));
+  if (window.customElements.get('ext-treecolumn') == undefined) {
+    window.customElements.define('ext-treecolumn', ElementParser.withParsedCallback(EWCTreecolumn));
+  }
 }
 catch(e) {
-  window.customElements.define('ext-treecolumn', EWCTreecolumn);
+  if (window.customElements.get('ext-treecolumn') == undefined) {
+    window.customElements.define('ext-treecolumn', EWCTreecolumn);
+  }
 }
