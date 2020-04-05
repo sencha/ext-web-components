@@ -44,8 +44,7 @@ cd ext-web-components-classic-demo
   },
   "devDependencies": {
     "@sencha/ext-web-components-classic": "~7.2.0",
-    "@sencha/ext-classic-enterprise": "~7.2.0",
-    "@sencha/ext-classic-material": "~7.2.0",
+    "@sencha/ext-classic-runtime": "~7.2.0",
     "servor": "~3.2.0"
   },
   "author": "",
@@ -64,8 +63,8 @@ cd ext-web-components-classic-demo
 </head>
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 
-<script type="module" src="./node_modules/@sencha/ext-classic-enterprise/ext.classic.enterprise.js"></script>
-<script type="module" src="./node_modules/@sencha/ext-classic-material/ext.classic.material.js"></script>
+<script src="./node_modules/@sencha/ext-classic-runtime/classic.engine.enterprise.js"></script>
+<link href="./node_modules/@sencha/ext-classic-runtime/material/material-all.css" rel="stylesheet" type="text/css"></link>
 <script type="module" src="./node_modules/@sencha/ext-web-components-classic/ext-web-components-classic.js"></script>
 
 <script>

@@ -44,8 +44,7 @@ cd ext-web-components-modern-demo
   },
   "devDependencies": {
     "@sencha/ext-web-components-modern": "~7.2.0",
-    "@sencha/ext-modern-enterprise": "~7.2.0",
-    "@sencha/ext-modern-material": "~7.2.0",
+    "@sencha/ext-modern-runtime": "~7.2.0",
     "servor": "~3.2.0"
   },
   "author": "",
@@ -64,8 +63,8 @@ cd ext-web-components-modern-demo
 </head>
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 
-<script type="module" src="./node_modules/@sencha/ext-modern-enterprise/ext.modern.enterprise.js"></script>
-<script type="module" src="./node_modules/@sencha/ext-modern-material/ext.modern.material.js"></script>
+<script src="./node_modules/@sencha/ext-modern-runtime/modern.engine.enterprise.js"></script>
+<link href="./node_modules/@sencha/ext-modern-runtime/material/material-all.css" rel="stylesheet" type="text/css"></link>
 <script type="module" src="./node_modules/@sencha/ext-web-components-modern/ext-web-components-modern.js"></script>
 
 <script>
