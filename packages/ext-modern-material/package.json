@@ -1,7 +1,7 @@
 {
   "name": "@sencha/ext-modern-material",
   "version": "7.2.0",
-  "main": "modern.material.js",
+  "main": "ext.modern.material.js",
   "private": false,
   "scripts": {
   },

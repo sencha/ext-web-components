@@ -1,9 +1,10 @@
 {
   "name": "@sencha/ext-classic-triton",
   "version": "7.2.0",
-  "main": "classic.triton.js",
+  "main": "ext.classic.triton.js",
   "private": false,
-  "scripts": {},
+  "scripts": {
+  },
   "homepage": "https://github.com/sencha/ext-web-components#readme",
   "peerDependencies": {},
   "dependencies": {},
