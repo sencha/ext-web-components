@@ -1,6 +1,6 @@
 {
     "name": "@sencha/ext-web-components-tests",
-    "version": "7.2.0",
+    "version": "7.2.1",
     "description": "ext-web-components-tests",
     "scripts": {
         "start": "npm run dev",
@@ -14,21 +14,19 @@
         "defaultverbose": "no"
     },
     "devDependencies": {
-
-        "@sencha/ext": "~7.2.0",
-        "@sencha/ext-calendar": "~7.2.0",
-        "@sencha/ext-charts": "~7.2.0",
-        "@sencha/ext-d3": "~7.2.0",
-        "@sencha/ext-exporter": "~7.2.0",
-        "@sencha/ext-modern": "~7.2.0",
-        "@sencha/ext-modern-theme-material": "~7.2.0",
-        "@sencha/ext-modern-treegrid": "~7.2.0",
-        "@sencha/ext-pivot": "~7.2.0",
-        "@sencha/ext-pivot-d3": "~7.2.0",
-        "@sencha/ext-ux": "~7.2.0",
-        "@sencha/ext-web-components-modern": "~7.2.0",
-        "@sencha/ext-webpack-plugin": "~7.2.0",
-
+        "@sencha/ext": "~7.2.1",
+        "@sencha/ext-calendar": "~7.2.1",
+        "@sencha/ext-charts": "~7.2.1",
+        "@sencha/ext-d3": "~7.2.1",
+        "@sencha/ext-exporter": "~7.2.1",
+        "@sencha/ext-modern": "~7.2.1",
+        "@sencha/ext-modern-theme-material": "~7.2.1",
+        "@sencha/ext-modern-treegrid": "~7.2.1",
+        "@sencha/ext-pivot": "~7.2.1",
+        "@sencha/ext-pivot-d3": "~7.2.1",
+        "@sencha/ext-ux": "~7.2.1",
+        "@sencha/ext-web-components-modern": "~7.2.1",
+        "@sencha/ext-webpack-plugin": "~7.2.1",
         "@babel/core": "^7.8.4",
         "@babel/preset-env": "^7.8.4",
         "@babel/runtime": "^7.8.4",
@@ -42,7 +40,6 @@
         "@babel/plugin-proposal-numeric-separator": "^7.8.3",
         "@babel/plugin-proposal-throw-expressions": "^7.8.3",
         "@babel/plugin-syntax-import-meta": "^7.8.3",
-
         "@webcomponents/webcomponentsjs": "~2.4.1",
         "babel-eslint": "^10.0.3",
         "babel-loader": "^8.0.6",

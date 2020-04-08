@@ -37,14 +37,14 @@ cd ext-web-components-modern-demo
 ```sh
 {
   "name": "ext-web-components-modern-demo",
-  "version": "7.2.0",
+  "version": "7.2.1",
   "description": "ext-web-components-modern-demo",
   "scripts": {
     "start": "npx servor . index.html 8080 --reload --browse"
   },
   "devDependencies": {
-    "@sencha/ext-web-components-modern": "~7.2.0",
-    "@sencha/ext-modern-runtime": "~7.2.0",
+    "@sencha/ext-web-components-modern": "~7.2.1",
+    "@sencha/ext-modern-runtime": "~7.2.1",
     "servor": "~3.2.0"
   },
   "author": "",
