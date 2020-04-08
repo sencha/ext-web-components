@@ -1,18 +1,9 @@
 import _createClass from "@babel/runtime/helpers/createClass";
-import _possibleConstructorReturn from "@babel/runtime/helpers/possibleConstructorReturn";
-import _getPrototypeOf from "@babel/runtime/helpers/getPrototypeOf";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-
-function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
 import Ext_calendar_EventBase from '../../Ext/calendar/EventBase.js';
 
 var Ext_calendar_Event = /*#__PURE__*/function (_Ext_calendar_EventBa) {
   _inheritsLoose(Ext_calendar_Event, _Ext_calendar_EventBa);
-
-  var _super = _createSuper(Ext_calendar_Event);
 
   Ext_calendar_Event.PROPERTIES = function PROPERTIES() {
     return ['ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'bind', 'border', 'cls', 'controller', 'defaultListenerScope', 'defaultTitle', 'disabled', 'endDate', 'focusCls', 'height', 'hidden', 'hideMode', 'instanceCls', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'listeners', 'margin', 'mode', 'model', 'name', 'nameable', 'palette', 'plugins', 'publishes', 'reference', 'renderTo', 'resize', 'ripple', 'session', 'shareableName', 'startDate', 'style', 'timeFormat', 'title', 'touchAction', 'twoWayBindable', 'ui', 'userCls', 'view', 'viewModel', 'width'];

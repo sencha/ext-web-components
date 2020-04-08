@@ -1,18 +1,9 @@
 import _createClass from "@babel/runtime/helpers/createClass";
-import _possibleConstructorReturn from "@babel/runtime/helpers/possibleConstructorReturn";
-import _getPrototypeOf from "@babel/runtime/helpers/getPrototypeOf";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-
-function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
 import Ext_layout_container_Container from '../../../Ext/layout/container/Container.js';
 
 var Ext_layout_container_Fit = /*#__PURE__*/function (_Ext_layout_container) {
   _inheritsLoose(Ext_layout_container_Fit, _Ext_layout_container);
-
-  var _super = _createSuper(Ext_layout_container_Fit);
 
   Ext_layout_container_Fit.PROPERTIES = function PROPERTIES() {
     return ['animatePolicy', 'childEls', 'itemCls'];
