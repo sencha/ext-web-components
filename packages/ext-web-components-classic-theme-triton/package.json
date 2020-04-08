@@ -1,21 +1,18 @@
 {
-  "name": "@sencha/ext-web-components-classic-theme-triton",
-  "version": "7.2.0",
-  "main": "ext-web-components-classic-theme-triton.js",
-  "private": false,
-  "scripts": {
-  },
-  "homepage": "https://github.com/sencha/ext-web-components#readme",
-  "peerDependencies": {},
-  "dependencies": {
-  },
-  "devDependencies": {
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sencha/ext-web-components"
-  },
-  "keywords": [],
-  "author": "Sencha",
-  "license": "ISC"
+    "name": "@sencha/ext-web-components-classic-theme-triton",
+    "version": "7.2.1",
+    "main": "ext-web-components-classic-theme-triton.js",
+    "private": false,
+    "scripts": {},
+    "homepage": "https://github.com/sencha/ext-web-components#readme",
+    "peerDependencies": {},
+    "dependencies": {},
+    "devDependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sencha/ext-web-components"
+    },
+    "keywords": [],
+    "author": "Sencha",
+    "license": "ISC"
 }

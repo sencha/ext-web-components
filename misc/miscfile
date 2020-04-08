@@ -11,9 +11,9 @@ git remote add upstream https://github.com/sencha/ext-components.git
 
 git fetch upstream
 git merge upstream/master
-git merge upstream/ext-web-components-7.2.x
+git merge upstream/ext-web-components-7.2.1
 
-git merge upstream/ext-7.0.x
+
 
 rm ~/.npmrc
 cat ~/.npmrc

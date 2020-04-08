@@ -6,7 +6,7 @@
         "start": "npx http-server -o"
     },
     "devDependencies": {
-        "@sencha/ext-elements-all": "~7.2.0",
+        "@sencha/ext-elements-all": "~7.2.1",
         "@sencha/cmd": "~7.0.0",
         "http-server": "^0.11.1"
     },
