@@ -1,0 +1,107 @@
+
+  <ext-toolbar docked="top" weight="10" padding="0">
+  <!-- Breadcrumb starts-->
+    <ext-breadcrumbbar
+        showIcons= "true"
+        onready="main.readyBreadcrumb"
+        onChange="main.clickBreadcrumb"
+        useSplitButtons="true"
+        width="100%"
+        height="100%"
+    >
+    </ext-breadcrumbbar>
+    <ext-button
+      weight="5"
+      hidden="true"
+      onready="main.readyCodeButton"
+      ui="fab"
+      right="15"
+      top="-4"
+      text="<>"
+      zIndex="10000"
+      ontap="main.toggleCode"
+    >
+    </ext-button>
+  </ext-toolbar>
+  <!-- Navtree starts-->
+  <ext-panel
+    docked="left"
+    border="true"
+    shadow="true"
+    scrollable="y"
+    resizable='{"edges": "east", "dynamic": "true"}'
+    header="false"
+    collapsible='{"direction": "left"}'
+    collapsed="false"
+    width="375px"
+    onready="main.readyNavTreePanel"
+  >
+    <ext-searchfield
+      flex="1"
+      docked="top"
+      ui="faded"
+      margin="7px"
+      onchange="main.filterNav"
+    >
+    </ext-searchfield>
+    <ext-treelist
+      ui="nav"
+      expanderFirst="false"
+      expanderOnly="true"
+      selectOnExpander="true"
+      onready="main.readyNavTreelist"
+      onselectionchange="main.navTreelistSelectionChange"
+    >
+    </ext-treelist>
+  </ext-panel>
+  <!-- Navtree ends-->
+  <!-- selections starts-->
+  <ext-panel scrollable="y" hidden="false" onready="main.readySelection" padding="15">
+    <ext-dataview
+      inline="true"
+      centered="true"
+      onchildtap="main.dataviewNavClick"
+      onready="main.readyDataviewNav"
+      itemCls="div.app-thumbnail"
+      itemsFocusable="false"
+    >
+    </ext-dataview>
+  </ext-panel>
+  <!-- selections ends-->
+  <!-- Router starts-->
+  <ext-router
+    hidden=true
+    onready="main.readyRouter"
+    style="overflow:scroll;"
+    padding="10px"
+  >
+  </ext-router>
+  <!-- Router ends-->
+  <!-- code window starts-->
+  <ext-panel
+    onready="main.readyCodePanel"
+    docked="right"
+    hidden="false"
+    collapsed="true"
+    weight="5"
+    width="900"
+    layout="fit"
+    resizable='{"edges": "west", "dynamic": "true"}'
+    header=false
+    collapsible='{"direction": "right"}'
+  >
+    <ext-tabpanel
+      shadow="true"
+      height="100%"
+      tabConfig='{
+        "title": "Custom Title"
+        "tooltip": "A button tooltip".
+        "margin": "0 0 0 -15"
+    }'
+      tabBarPosition="top"
+      tabBar='{"layout": {"pack": "start"}}'
+      onready="main.readyTabPanel"
+    >
+    </ext-tabpanel>
+  </ext-panel>
+  <!-- code window ends-->

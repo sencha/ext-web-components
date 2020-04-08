@@ -21,7 +21,9 @@ module.exports = {
             toolkit: 'modern',
             emit: 'yes',
             browser: 'no',
-            packages: [],
+            packages: [
+              'charts'
+            ],
             profile: '',
             verbose: 'no',
             treeshake:'no',

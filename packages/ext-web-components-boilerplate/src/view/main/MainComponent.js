@@ -12,65 +12,37 @@ export default class MainComponent {
             rootVisible: true,
             root: navTreeRoot
         });
-        this.wait = 3;
         this.collapsed = false;
         this.isInitial = true;
+        // if (Ext.os.is.Phone) {
+        //     this.collapsed = true;
+        // }
+    }
 
-        if (Ext.os.is.Phone) {
-            this.collapsed = true;
+    extnameToProperty = (cmpObj, me, suffix) => {
+      if (suffix == undefined) {
+          suffix = 'Cmp';
+      }
+      for (var prop in cmpObj) {
+          me[prop+suffix] = cmpObj[prop];
+      }
+    }
+
+    readyMainPanel = (event) => {
+        this.extnameToProperty(event.detail.cmpObj, this, '');
+        this.navButton.setHidden(false);
+        this.navTreelist.setStore(this.treeStore);
+        let hash = window.location.hash.substr(1);
+        if (hash == '') {
+            hash = 'home';
         }
-    }
-
-    afterAllLoaded = () => {
-        this.wait = this.wait - 1;
-
-        if (this.wait == 0) {
-            let hash = window.location.hash.substr(1);
-
-            if (hash == '') {
-                hash = 'home';
-            }
-
-            const node = this.navTreelistCmp.getStore().findNode('hash', hash);
-            this.navTreelistCmp.setSelection(node);
-            this.navigate(node);
-        }
-    }
-
-    readyNavTreePanel = (event) => {
-        this.navTreePanelCmp = event.detail.cmp;
-        this.afterAllLoaded('readyNavTreePanel');
-        if(Ext.os.is.Phone) {
-            let collapsed = this.navTreePanelCmp.getCollapsed();
-    
-            if (collapsed === true) {
-                collapsed = false;
-            } else {
-                collapsed = true;
-            }
-            this.navTreePanelCmp.setCollapsed(collapsed);
-        }
-    }
-
-    readyNavTreelist = (event) => {
-        this.navTreelistCmp = event.detail.cmp;
-        this.navTreelistCmp.setStore(this.treeStore);
-        this.afterAllLoaded('readyNavTreelist');
-    }
-
-    readyRouter = (event) => {
-        this.router = event.target;
-        this.afterAllLoaded('readyRouter');
-    }
-
-    readyToggleButton = (event) => {
-        const navButton = event.detail.cmp;
-
-        if (Ext.os.is.Phone) {
-            navButton.setHidden(false);
-        } else {
-            navButton.setHidden(true);
-        }
+        const node = this.navTreelist.getStore().findNode('hash', hash);
+        this.navTreelist.setSelection(node);
+        // if (Ext.os.is.Phone) {
+        //     navButton.setHidden(false);
+        // } else {
+        //     navButton.setHidden(true);
+        // }
     }
 
     navTreelistSelectionChange = (event) => {
@@ -88,17 +60,18 @@ export default class MainComponent {
 
         if (childNum == 0 && hash != undefined) {
             window.location.hash = '#' + hash;
+            if (window['router']) {window['router'].routeMe();}
         }
 
         if(Ext.os.is.Phone) {
-            let collapsed = this.navTreePanelCmp.getCollapsed();
+            let collapsed = this.navTreePanel.getCollapsed();
 
             if (collapsed === true) {
                 collapsed = false;
             } else {
                 collapsed = true;
             }
-            this.navTreePanelCmp.setCollapsed(collapsed);
+            this.navTreepanel.setCollapsed(collapsed);
         }
     }
 
@@ -107,20 +80,17 @@ export default class MainComponent {
         if (found) {
             node.expand();
         }
-
         node.data.text = node.data.name.replace(this.filterRegex, '<span style="color:#2196F3;font-weight:bold">$1</span>');
         return found;
     }
 
     toggleTree = () => {
-        let collapsed = this.navTreePanelCmp.getCollapsed();
-
+        let collapsed = this.navTreepanel.getCollapsed();
         if (collapsed == true) {
             collapsed = false;
         } else {
             collapsed = true;
         }
-        this.navTreePanelCmp.setCollapsed(collapsed);
+        this.navTreepanel.setCollapsed(collapsed);
     }
-
 }

@@ -139,8 +139,8 @@ class App extends React.Component {
 
         return (
             <Router history={this.history}>
-                <ext-panel layout="fit" bodyPadding="0" width="100%" height="100%">
-                    <ext-titlebar docked="top" weight="10" title="Sencha ExtWebComponents React 7.0 Boilerplate">
+                <ext-panel layout="fit" viewport="true" bodyPadding="0">
+                    <ext-titlebar docked="top" weight="10" title="Sencha ExtWebComponents React 7.1 Boilerplate">
                         {window.Ext.platformTags.phone && (
                             <ext-button iconCls="x-fa fa-bars" onTap="app.toggleAppMenu"></ext-button>
                         )}

@@ -7,7 +7,7 @@ export default class BasicEventComponent {
         this.panel = event.detail.cmp;
     }
 
-    onButtonTap = (event) => {
+    onButtontap = (event) => {
         this.panel.setHtml('Tapped');
         event.currentTarget.text = 'Tapped';
     }

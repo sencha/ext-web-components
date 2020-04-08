@@ -85,8 +85,10 @@ export default class FilledComponent {
     }
 
     onMenuItemReady = (event) => {
-        this.menuCmpArray.push(event.detail.cmp);
-        event.detail.cmp.on('click', this.onThemeChange.bind(this));
+        if (event.detail.cmp) {
+          this.menuCmpArray.push(event.detail.cmp);
+          event.detail.cmp.on('click', this.onThemeChange.bind(this));
+        }
     }
 
     onThemeChange = (event) => {

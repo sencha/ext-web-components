@@ -1,11 +1,18 @@
-<ext-container padding="10" layout="fit" fitToParent="true" height="100%" width="100%">
+<ext-container
+    padding="10"
+    layout="fit"
+    fitToParent="true"
+    height="100%"
+    width="100%"
+>
   <ext-grid
+    extname="grid"
     multiColumnSort="true"
-    onready="basicgrid.onGridReady"
     shadow="true"
     title="Stock Prices"
     grouped="true"
     enableColumnMove="true"
+    onready="basicgrid.onPageReady"
   >
     <ext-column
       text="Company"
@@ -24,13 +31,13 @@
       text="Change"
       width="100"
       dataIndex="priceChange"
-      renderer="basicgrid.renderSign"
+      onready="basicgrid.changeColumnReady"
     >
     </ext-column>
     <ext-column
       text="% Change"
       dataIndex="priceChangePct"
-      renderer="basicgrid.renderSignPctChange"
+      onready="basicgrid.percentChangeColumnReady"
     >
     </ext-column>
     <ext-column

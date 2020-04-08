@@ -1,14 +1,15 @@
-<ext-container layout="fit" bodyPadding="0">
+<ext-container viewport="true" (ready)="readyPage($event)">
   <ext-titlebar docked="top">
     <ext-button
-        align="left"
-        iconCls="x-fa fa-bars"
-        (ready)="readyToggleButton($event)"
-      >
-      </ext-button>
-    <span style="height:18px;" href="#" class="app-title">Sencha ExtWebComponents 7.0 Boilerplate App in Angular</span>
+      extname="toggleButton"
+      align="left"
+      iconCls="x-fa fa-bars"
+    >
+    </ext-button>
+    <span style="height:18px;" href="#" class="app-title">Sencha ExtWebComponentsModern 7.1 Boilerplate App in Angular</span>
   </ext-titlebar>
   <ext-panel
+    extname="navTreePanel"
     docked="left"
     border="true"
     shadow="true"
@@ -17,17 +18,16 @@
     header="false"
     collapsible='{"direction": "left"}'
     width="200px"
-    (ready)="readyNavTreePanel($event)"
   >
     <ext-treelist
+      extname="navTreelist"
       ui="nav"
       expanderFirst="false"
       expanderOnly="false"
-      (ready)="readyNavTreelist($event)"
       (itemclick)="navTreelistSelectionChange($event)">
     </ext-treelist>
   </ext-panel>
-  <ext-container width="100%">
+  <ext-container fitToParent="true">
     <router-outlet></router-outlet>
   </ext-container>
 </ext-container>

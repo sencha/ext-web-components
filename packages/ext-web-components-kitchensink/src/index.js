@@ -1,12 +1,8 @@
-import './ewc';
+import '@sencha/ext-web-components-modern';
+import '@sencha/ext-web-components-modern/dist/ext-router.component.js';
+import { getRoutes } from '@sencha/ext-web-components-modern/dist/ext-router.component.js';
 import getMenu from './menu';
-import { getRoutes } from '@sencha/ext-web-components/dist/ext-router.component';
 import MainComponent from './view/main/MainComponent.js';
-
-Ext.require([
-    'Ext.webcomponents.RendererCell'
-]);
-
 import './Data.js';
 import * as d3 from 'd3';
 import * as FroalaEditor from 'froala-editor/js/froala_editor.pkgd.min.js';
@@ -20,4 +16,6 @@ function init() {
     document.body.innerHTML = window._code['main']['MainComponent.html'];
 }
 
-init();
+Ext.onReady(function() {
+    init();
+});

@@ -3,9 +3,7 @@ import 'highlightjs/styles/atom-one-dark.css';
 import './MainComponent.css';
 import './MainComponent.html';
 
-Ext.require([
-    'Ext.data.TreeStore'
-]);
+Ext.require(['Ext.data.TreeStore']);
 
 export default class MainComponent {
     constructor() {
@@ -20,62 +18,27 @@ export default class MainComponent {
             rootVisible: true,
             root: navTreeRoot
         });
-
-        this.navTreeView = Ext.create('Ext.data.TreeStore', {
-            rootVisible: true,
-            root: navTreeRoot
-        });
-
-        this.wait = 5;
-
         if (Ext.os.is.Phone) {
             this.collapsed = true;
         }
     }
 
-    readyRightContainer = (event) => {
-        this.rightContainerCmp = event.detail.cmp;
-        this.rightContainerCmp.updateHtml('Build: ' + BUILD_VERSION); // eslint-disable-line no-undef
-    }
-
-    afterAllLoaded = () => {
-        this.wait = this.wait - 1;
-
-        if (this.wait == 0) {
-            var hash = window.location.hash.substr(1);
-            if (hash == '') {hash = 'all';}
-            var node = this.navTreelistCmp.getStore().findNode('hash', hash);
-            this.navTreelistCmp.setSelection(node);
-            this.navigate(node);
+    extnameToProperty = (cmpObj, me, suffix) => {
+        if (suffix == undefined) {
+            suffix = 'Cmp';
+        }
+        for (var prop in cmpObj) {
+            me[prop+suffix] = cmpObj[prop];
         }
     }
 
-    readyCodeButton = (event) => {
-        this.codeButtonCmp = event.detail.cmp;
-    }
-
-    readyDataviewBreadcrumb = (event) => {
-        this.dataviewBreadcrumbCmp = event.detail.cmp;
-        this.dataviewBreadcrumbCmp.setStore(this.treeStore);
-        this.afterAllLoaded('readyDataviewBreadcrumb');
-    }
-
-    readyNavTreePanel = (event) => {
-        this.navTreePanelCmp = event.detail.cmp;
-
-        if(Ext.os.is.Phone) {
-            this.navTreePanelCmp.setWidth('100%');
-        }
-    }
-
-    readyNavTreelist = (event) => {
-        this.navTreelistCmp = event.detail.cmp;
-        this.navTreelistCmp.setStore(this.navTreeView);
-        this.afterAllLoaded('readyNavTreelist');
-    }
-
-    readySelection = (event) => {
-        this.selectionCmp = event.detail.cmp;
+    viewportReady = event => {
+        this.navInProcess = false;
+        //mjg be good to find a way for this to be run automatically
+        this.extnameToProperty(event.detail.cmpObj, this, '');
+        this.rightContainer.updateHtml('Build: ' + BUILD_VERSION); // eslint-disable-line no-undef
+        this.breadcrumb.setStore(this.treeStore);
+        this.navTreelist.setStore(this.treeStore);
         var bodyStyle = `
             backgroundSize: 20px 20px;
             borderWidth: 0px;
@@ -84,175 +47,195 @@ export default class MainComponent {
             linear-gradient(0deg, #f5f5f5 1.1px, transparent 0),
             linear-gradient(90deg, #f5f5f5 1.1px, transparent 0)
         `;
-        this.selectionCmp.setBodyStyle(bodyStyle);
-    }
-
-    readyDataviewNav = (event) => {
-        this.dataviewNavCmp = event.detail.cmp;
-        this.dataviewNavCmp.setStyle({'background':'top', 'display':'block', 'text-align':'center'});
-
-        if(Ext.os.is.Phone) {
-            this.dataviewNavCmp.setCentered(false);
+        this.selection.setBodyStyle(bodyStyle);
+        this.dataviewNav.setStyle({
+            background: 'top',
+            display: 'block',
+            'text-align': 'center'
+        });
+        if (Ext.os.is.Phone) {
+            this.dataviewNav.setCentered(false);
         }
-
         var tpl = `
-            <div class="app-thumbnail">
-              <div class="app-thumbnail-icon-wrap">
-                <div class="app-thumbnail-icon {iconCls}"></div>
+            <div class='app-thumbnail'>
+              <div class='app-thumbnail-icon-wrap'>
+                <div class='app-thumbnail-icon {iconCls}'></div>
               </div>
-              <div class="app-thumbnail-text">{text}</div>
-              <div class="{premiumClass}"></div>
+              <div class='app-thumbnail-text'>{text}</div>
+              <div class='{premiumClass}'></div>
             </div>
         `;
-        this.dataviewNavCmp.setItemTpl(tpl);
-        this.dataviewNavCmp.setStore(this.treeStore);
-        this.afterAllLoaded('readyDataviewNav');
-    }
+        this.dataviewNav.setItemTpl(tpl);
+        this.dataviewNav.setStore(this.treeStore);
 
-    readyRouter = (event) => {
-        this.router = event.target;
-        this.afterAllLoaded('readyRouter');
-    }
+        var hash = window.location.hash.substr(1);
+        if (hash == '') {
+            hash = 'all';
+        }
+        var node = this.navTreelist.getStore().findNode('hash', hash);
+        this.navigate('load', node);
+    };
 
-    readyCodePanel = (event) => {
-        this.codePanelCmp = event.detail.cmp;
-    }
+    changeBreadcrumb = ({detail: {sender, node, prevNode, eOpts}}) => {
+        this.navigate('breadcrumb', node);
+    };
 
-    readyTabPanel = (event) => {
-        this.tabPanelCmp = event.detail.cmp;
-        this.afterAllLoaded('readyTabPanel');
-    }
+    dataviewNavClick = event => {
+        var node = event.detail.location.record;
+        this.navigate('dataview', node);
+    };
 
-    dataviewBreadcrumbClick = (event) => {
-        this.navigate(event.detail.node);
-    }
+    navTreelistSelectionChange = event => {
+        var node = event.detail.record;
+        this.navigate('tree', node);
+    };
 
-    dataviewNavClick = (event) => {
-        var record = event.detail.location.record;
-        this.navigate(record);
-    }
-
-    navTreelistSelectionChange = (event) => {
-        var record = event.detail.record;
-        this.navigate(record);
-    }
-
-    navigate = (record) => {
-        if (record == null) {
+    navigate = (who, node) => {
+        if (this.navInProcess == true) {
+            //console.log('nav in process, request from ' + who);
             return;
         }
-
-        var hash = record.data.hash;
-        var childNum = record.childNodes.length;
-        var node = this.dataviewNavCmp.getStore().findNode('hash', hash);
-        this.dataviewBreadcrumbCmp.setSelection(node);
+        if (node == null) {
+            return;
+        }
+        this.navInProcess = true;
+        var hash = node.data.hash;
+        var childNum = node.childNodes.length;
 
         if (childNum == 0 && hash != undefined) {
             window.location.hash = '#' + hash;
             this.showRouter();
-        }
-        else {
-            this.dataviewNavCmp.setData(node.childNodes);
+        } else {
+            this.componentsView.setHidden(true);
+            this.dataviewNav.setData(node.childNodes);
             this.showSelection();
         }
 
-        if(Ext.os.is.Phone) {
-            this.navTreePanelCmp.setCollapsed(true);
-        }
-    }
+        this.breadcrumb.setSelection(node);
+        this.navTreelist.setSelection(node);
 
-    showSelection = () => {
-        this.selectionCmp.setHidden(false);
-        this.router.hidden = true;
-        this.codeButtonCmp.setHidden(true);
-    }
+        //if(Ext.os.is.Phone) {this.navTreePanel.setCollapsed(true);}
+
+        this.navInProcess = false;
+    };
 
     showRouter = () => {
-        this.selectionCmp.setHidden(true);
-        this.router.hidden = false;
-        this.codeButtonCmp.setHidden(false);
-
-        if(Ext.os.is.Phone) {
-            this.navTreePanelCmp.setCollapsed(true);
-        }
-
+        this.selection.setHidden(true);
+        window['router'].hidden = false;
+        this.codeButton.setHidden(false);
+        this.componentsView.setHidden(false);
+        window['router'].routeMe();
         this.setCodeTabs();
-    }
+    };
+
+    showSelection = () => {
+        this.selection.setHidden(false);
+        window.router.hidden = true;
+        this.codeButton.setHidden(true);
+    };
 
     doClickToolbar = () => {
-        var collapsed = this.navTreePanelCmp.getCollapsed();
-        if (collapsed == true){collapsed = false;} else {collapsed = true;}
-        this.navTreePanelCmp.setCollapsed(collapsed);
-    }
+        var collapsed = this.navTreePanel.getCollapsed();
+        if (collapsed == true) {
+            collapsed = false;
+        } else {
+            collapsed = true;
+        }
+        this.navTreePanel.setCollapsed(collapsed);
+    };
 
-    containsMatches = (node) => {
-        const found = node.data.name.match(this.filterRegex) || node.childNodes.some(child => this.containsMatches(child));
+    containsMatches = node => {
+        const found =
+            node.data.text.match(this.filterRegex) ||
+            node.childNodes.some(child => this.containsMatches(child));
         if (found) node.expand();
-        node.data.text = node.data.name.replace(this.filterRegex, '<span style="color:#2196F3;font-weight:bold">$1</span>');
         return found;
-    }
+    };
 
-    filterNav = (event) => {
+    filterNav = event => {
         var value = event.detail.newValue;
-        this.filterRegex = new RegExp(`(${Ext.String.escapeRegex(value)})`, 'i');
-        this.navTreelistCmp.getStore().filterBy(record => this.containsMatches(record));
-    }
+        this.filterRegex = new RegExp(
+            `(${Ext.String.escapeRegex(value)})`,
+            'i'
+        );
+        this.navTreelist
+            .getStore()
+            .filterBy(record => this.containsMatches(record));
+    };
 
     toggleCode = () => {
-        var collapsed = this.codePanelCmp.getHidden();
-        if(collapsed == true) {collapsed = false;}
-        else {collapsed = true;}
-        this.codePanelCmp.setHidden(collapsed);
-    }
+        var collapsed = this.codePanel.getHidden();
+        if (collapsed == true) {
+            collapsed = false;
+        } else {
+            collapsed = true;
+        }
+        this.codePanel.setHidden(collapsed);
+    };
 
     toggleTree = () => {
-        let collapsed = this.navTreePanelCmp.getCollapsed();
+        let collapsed = this.navTreePanel.getCollapsed();
 
         if (collapsed == true) {
             collapsed = false;
         } else {
             collapsed = true;
         }
-        this.navTreePanelCmp.setCollapsed(collapsed);
-    }
+        this.navTreePanel.setCollapsed(collapsed);
+    };
 
     setCodeTabs = () => {
         var hash = window.location.hash.substr(1);
         var currentRoute = {};
-        window.routes.forEach((route) => {
-            if(hash == '') {
-                if (route.default == true) {currentRoute = route;}
-            }
-            else {
-                if (route.hash == hash) {currentRoute = route;}
+        window.routes.forEach(route => {
+            if (hash == '') {
+                if (route.default == true) {
+                    currentRoute = route;
+                }
+            } else {
+                if (route.hash == hash) {
+                    currentRoute = route;
+                }
             }
         });
 
         var codeMap = window._code[currentRoute.hashlower];
-        this.tabPanelCmp.removeAll();
+        this.tabPanel.removeAll();
         var componentName = currentRoute.hash + 'Component';
 
         this.setTab(codeMap, componentName + '.html');
-        this.setTab(codeMap, componentName + '.js',);
-        this.setTab(codeMap, componentName + '.scss',);
-        this.setTab(codeMap, componentName + '.css',);
+        this.setTab(codeMap, componentName + '.js');
+        this.setTab(codeMap, componentName + '.scss');
+        this.setTab(codeMap, componentName + '.css');
         this.setTab(codeMap, componentName + 'Data.js');
         this.setTab(codeMap, componentName + 'Dummy.js');
-        document.querySelectorAll('pre code').forEach((block) => {
+        document.querySelectorAll('pre code').forEach(block => {
             hljs.highlightBlock(block);
         });
-    }
+    };
 
     setTab = (codeMap, file) => {
         var codeMapFile = codeMap[file];
         if (codeMapFile != undefined) {
-            this.tabPanelCmp.add(
-                {
-                    xtype: 'panel', title: file, ui: 'code-panel', layout: 'fit', userSelectable: true, scrollable: true,
-                    tab: {ui: 'app-code-tab', flex: 0, padding: '0 5 0 0', minWidth: 220, maxWidth: 250},
-                    html: `<pre><code class='code'>${codeMapFile.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`
-                }
-            );
+            this.tabPanel.add({
+                xtype: 'panel',
+                title: file,
+
+                ui: 'code-panel',
+                layout: 'fit',
+                userSelectable: true,
+                scrollable: true,
+                tab: {
+                    ui: 'app-code-tab',
+                    flex: 0,
+                    padding: '0 5 0 0',
+                    minWidth: 220,
+                    maxWidth: 250
+                },
+                html: `<pre style='user-select: text;'><code class='code'>${codeMapFile
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')}</code></pre>`
+            });
         }
-    }
+    };
 }

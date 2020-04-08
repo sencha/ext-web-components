@@ -5,37 +5,37 @@
   height="100%"
   onready="rowexpander.gridReady"
 >
-  <ext-column
+  <ext-gridcolumn
     text="Company"
     dataIndex="name"
     width="150"
   >
-  </ext-column>
-  <ext-column
+  </ext-gridcolumn>
+  <ext-gridcolumn
     text="Price"
     dataIndex="price"
     width="75"
     formatter="usMoney"
   >
-  </ext-column>
-  <ext-column
+  </ext-gridcolumn>
+  <ext-gridcolumn
     text="Change"
     width="100"
     dataIndex="priceChange"
     onready="rowexpander.changeColumnReady"
   >
-  </ext-column>
-  <ext-column
+  </ext-gridcolumn>
+  <ext-gridcolumn
     text="% Change"
     dataIndex="priceChangePct"
     onready="rowexpander.percentChangeColumnReady"
   >
-  </ext-column>
-  <ext-column
+  </ext-gridcolumn>
+  <ext-gridcolumn
     text="Last Updated"
     dataIndex="priceLastChange"
     width="125"
     formatter="date('m/d/Y')"
   >
-  </ext-column>
+  </ext-gridcolumn>
 </ext-grid>

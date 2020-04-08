@@ -2,9 +2,21 @@
   <ext-panel
     shadow="true"
     fitToParent="true"
-    layout="fit"
     onready="timezonesupport.panelReady"
   >
+    <ext-panelheader
+      layout="hbox"
+      onready="timezonesupport.panelheaderReady"
+    >
+      <ext-selectfield
+        id="selector"
+        width="150"
+        value="0"
+        onready="timezonesupport.selectFieldReady"
+        onchange="timezonesupport.changeOptions"
+      >
+      </ext-selectfield>
+    </ext-panelheader>
     <ext-calendar-day
         height="100%"
         startTime= "6"
@@ -18,3 +30,4 @@
     </ext-calendar-day>
   </ext-panel>
 </ext-container>
+

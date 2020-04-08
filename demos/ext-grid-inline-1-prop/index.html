@@ -5,10 +5,8 @@
     <link rel="icon" type="image/x-icon" href="public/resources/favicon.ico">
     <script src="public/ext.js"></script>
     <link href="public/ext.css" rel='stylesheet'/>
-
+    <script src="grid2.js"></script>
 <script>
-
-
 
     window['mjg'] = function onReady(event) {
         console.log('onReady')
@@ -46,23 +44,23 @@ class ExtGrid extends HTMLElement {
     static get observedAttributes() {return ['config', 'onready']};
 
     attributeChangedCallback(attr, oldVal, newVal) {
-        console.log('attr: ' + attr)
+        //console.log('attr: ' + attr)
 
         if (/^on/.test(attr)) {
             if (newVal) {
-                console.log('newVal: ' + newVal)
+                //console.log('newVal: ' + newVal)
                 this.addEventListener('ready', function (event) {
-                    console.log('eventlistener')
-                    console.log(event)
+                    //console.log('eventlistener')
+                    //console.log(event)
                     var functionString = newVal;
                     // todo: error check for only 1 dot
                     var r = functionString.split('.');
-                    console.log(r)
-                    console.log(window['mjg'])
+                    //console.log(r)
+                    //console.log(window['mjg'])
                     var obj = r[0];
                     var func = r[1];
                     if (obj && func) {
-                        console.log(window[obj])
+                        //console.log(window[obj])
                         //window[obj][func](event);
                         window[obj](event);
                     }
@@ -73,7 +71,10 @@ class ExtGrid extends HTMLElement {
 
     connectedCallback() {
         console.log('connectedCallback')
-        console.log(this.onready)
+        console.log(this.attributes.config)
+        console.log(this.getAttribute('config'))
+        //console.log(this.onready)
+
         var o = JSON.parse(this.config)
         o.xtype = 'grid'
         console.dir(this)
@@ -91,7 +92,7 @@ Ext.onReady(function() {
 
 </head>
 <body>
-    <ext-grid
+    <!-- <ext-grid
         onready='mjg.onReady'
         config='
         {
@@ -109,6 +110,27 @@ Ext.onReady(function() {
                 {"name": "Marge", "email": "marge@simpsons.com", "phone": "555-222-1254"}
             ]
         }'>
-    </ext-grid>
+    </ext-grid> -->
+
+    <ext-grid2
+        onready='mjg.onReady'
+        config='
+        {
+            "title":"Grid with a single config",
+            "height":"300px",
+            "columns": [
+                {"text": "Name", "width": "250", "dataIndex": "name"},
+                {"text": "Email Address", "flex": "1", "dataIndex": "email"},
+                {"text": "Phone Number", "width": "250", "dataIndex": "phone"}
+            ],
+            "data": [
+                {"name": "Lisa", "email": "lisa@simpsons.com", "phone": "555-111-1224"},
+                {"name": "Bart", "email": "bart@simpsons.com", "phone": "555-222-1234"},
+                {"name": "Homer", "email": "homer@simpsons.com", "phone": "555-222-1244"},
+                {"name": "Marge", "email": "marge@simpsons.com", "phone": "555-222-1254"}
+            ]
+        }'>
+    </ext-grid2>
+
 </body>
 </html>

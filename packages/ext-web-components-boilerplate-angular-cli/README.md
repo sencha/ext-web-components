@@ -1,8 +1,6 @@
-
-
 ## Adding Sencha ExtWebComponents to an Angular CLI application
 
-This document defines the steps needed to add Sencha ExtWebComponents to a Angular application generated with Angular CLI.  Angular CLI is described in the [Angular CLI Overview](https://cli.angular.io/)
+This document defines the steps needed to add Sencha ExtWebComponents to a Angular application generated with Angular CLI. Angular CLI is described in the [Angular CLI Overview](https://cli.angular.io/)
 
 If you don’t want to follow the below mentioned steps, then you can consume the boilerplate code with a sample ExtWebComponents application at [ext-web-components-boilerplate-angular-cli](https://github.com/sencha/ext-web-components/tree/ext-components-7.0.x/packages/ext-web-components-boilerplate-angular-cli).
 
@@ -12,7 +10,6 @@ more details at: https://angular.io/cli#installing-angular-cli
 
 To install Angular CLI, bring up a terminal or command window and use the following command:
 
-
 ```sh
 npm install -g @angular/cli
 ```
@@ -21,7 +18,7 @@ npm install -g @angular/cli
 
 more details at: https://angular.io/cli/new#ng-new
 
-To create an Angular CLI starter application, continue in the terminal or command window and 'cd' to the folder where you want to create your new application.  Then, use the following command to create your new Angular CLI application.
+To create an Angular CLI starter application, continue in the terminal or command window and 'cd' to the folder where you want to create your new application. Then, use the following command to create your new Angular CLI application.
 
 ```sh
 ng new ext-web-components-boilerplate-angular-cli
@@ -29,8 +26,8 @@ ng new ext-web-components-boilerplate-angular-cli
 
 The Angular CLI starts up and then asks a series of questions as selections - either refer to the Angular documentation noted above and you may choose on the basis of application or you may follow the steps below:
 
-* For 'Would you like to add Angular routing?' , write 'y' and press 'enter'
-* For 'Which stylesheet format would you like to use?', select 'CSS' and press 'enter'
+- For 'Would you like to add Angular routing?' , write 'y' and press 'enter'
+- For 'Which stylesheet format would you like to use?', select 'CSS' and press 'enter'
 
 The 'ng new' command will run and create the base angular application.
 
@@ -41,9 +38,9 @@ cd  ext-web-components-boilerplate-angular-cli
 ng serve
 ```
 
-Browse to http://localhost:4200/ in your browser.  You should see the 'Welcome to ext-web-components-boilerplate-angular-cli!' page in the browser.
+Browse to http://localhost:4200/ in your browser. You should see the 'Welcome to ext-web-components-boilerplate-angular-cli!' page in the browser.
 
-Now, stop the 'ng serve' app from running in the terminal/command window (ctrl-c).  This prepares you for the next steps.
+Now, stop the 'ng serve' app from running in the terminal/command window (ctrl-c). This prepares you for the next steps.
 
 ### Add Sencha ExtWebComponents to your Angular CLI starter application
 
@@ -61,7 +58,7 @@ either...
 Add the following to the dependencies section of package.json:
 
 ```sh
-"@sencha/ext-web-components": "^7.0.0",
+"@sencha/ext-web-components-modern": "~7.2.0",
 "@sencha/ext": "^7.0.0",
 "@sencha/ext-modern": "^7.0.0",
 "@sencha/ext-modern-theme-material": "^7.0.0",
@@ -92,27 +89,28 @@ npm install --save @angular-builders/dev-server
 
 To introduce custom webpack configuration, we first need to make changes inside angular.json file.
 
-For **ng build** command, configure the architect/build object in the angular.json file and update the builder from *@angular-devkit/build-angular:browser* to *@angular-builders/custom-webpack:browser* and add the customWebpackConfig key inside options like:
+For **ng build** command, configure the architect/build object in the angular.json file and update the builder from _@angular-devkit/build-angular:browser_ to _@angular-builders/custom-webpack:browser_ and add the customWebpackConfig key inside options like:
 
- ```sh
- "builder": "@angular-builders/custom-webpack:browser",
- "options": {
-   "customWebpackConfig": {
-     "path": "./custom-webpack.config.js",
-     "replaceDuplicatePlugins": true
-   },
-   ... other options
+```sh
+"builder": "@angular-builders/custom-webpack:browser",
+"options": {
+  "customWebpackConfig": {
+    "path": "./custom-webpack.config.js",
+    "replaceDuplicatePlugins": true
+  },
+  ... other options
 ```
 
 For **ng serve** command, update the serve/builder in the angular.json file:
 
- ```sh
- "serve": {
-   "builder": "@angular-builders/custom-webpack:dev-server",
+```sh
+"serve": {
+  "builder": "@angular-builders/custom-webpack:dev-server",
 ... other options
 ```
 
 To configure the ext-webpack-plugin for webpack in Angular, create a file named **custom-webpack.config.js** at the root directory (where the package.json is), and add the following:
+
 ```sh
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtWebpackPlugin = require('@sencha/ext-webpack-plugin');
@@ -221,6 +219,6 @@ or
 npm start
 ```
 
-Browse to http://localhost:4200 in your browser.  You should see the Angular starter application with an ExtWebComponents Panel in the browser.
+Browse to http://localhost:4200 in your browser. You should see the Angular starter application with an ExtWebComponents Panel in the browser.
 
 ![Angular with ExtWebComponents](Angular.png)

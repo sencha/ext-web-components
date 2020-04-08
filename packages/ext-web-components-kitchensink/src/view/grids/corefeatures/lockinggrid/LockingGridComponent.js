@@ -86,7 +86,6 @@ export default class LockingGridComponent {
                 'dataIndex': 'industry'
             }
         ];
-
         const lockedGridCmp = event.detail.cmp;
         lockedGridCmp.setStore(store);
         lockedGridCmp.setColumns(columns);

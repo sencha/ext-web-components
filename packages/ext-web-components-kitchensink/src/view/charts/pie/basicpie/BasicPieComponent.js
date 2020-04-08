@@ -24,8 +24,10 @@ export default class BasicPieComponent {
     }
 
     onMenuItemReady = (event) => {
+      if (event.detail.cmp) {
         this.menuCmpArray.push(event.detail.cmp);
         event.detail.cmp.on('click', this.onThemeChange.bind(this));
+      }
     }
 
     onThemeChange = (event) => {

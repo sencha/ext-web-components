@@ -1,174 +1,174 @@
 <ext-formpanel
-  onready="formpanel.formPanelReady"
-  layout='{"type": "vbox", "align": "stretch"}'
-  width="300"
-  height="600"
-  bodyPadding="10"
-  shadow="true"
+    onready="formpanel.formPanelReady"
+    layout='{"type": "vbox", "align": "stretch"}'
+    width="300"
+    height="600"
+    bodyPadding="10"
+    shadow="true"
 >
-  <ext-fieldset
-    ref="personal"
-    title="Personal Info"
-    defaults='{"labelAlign": "placeholder"}'
-  >
-    <ext-textfield
-      onready="formpanel.componentReady"
-      label="Name"
-      required="true"
-      placeholder="This field is required"
+    <ext-fieldset
+        ref="personal"
+        title="Personal Info"
+        defaults='{"labelAlign": "placeholder"}'
     >
-    </ext-textfield>
-    <ext-passwordfield
-      onready="formpanel.componentReady"
-      label="Password"
-      required="true"
-      revealable="true"
-    >
-    </ext-passwordfield>
-    <ext-emailfield
-      onready="formpanel.componentReady"
-      label="Email"
-      placeholder="me@sencha.com"
-    >
-    </ext-emailfield>
-    <ext-textfield
-      onready="formpanel.componentReady"
-      label="Phone Number"
-      inputMask="(999) 999-9999"
-      inputType="tel">
-    </ext-textfield>
-    <ext-urlfield
-      onready="formpanel.componentReady"
-      label="URL" placeholder="http://sencha.com"
-    >
-    </ext-urlfield>
-    <ext-spinnerfield
-      onready="formpanel.spinnerReady"
-      label="Spinner"
-      maxValue="1000"
-      stepValue="1"
-      cycle="true"
-      margin="15 0 0 0"
-      labelAlign="top"
-    >
-    </ext-spinnerfield>
-    <ext-datepickerfield
-      onready="formpanel.componentReady"
-      picker='{
+        <ext-textfield
+            onready="formpanel.componentReady"
+            label="Name"
+            required="true"
+            placeholder="This field is required"
+        >
+        </ext-textfield>
+        <ext-passwordfield
+            onready="formpanel.componentReady"
+            label="Password"
+            required="true"
+            revealable="true"
+        >
+        </ext-passwordfield>
+        <ext-emailfield
+            onready="formpanel.componentReady"
+            label="Email"
+            placeholder="me@sencha.com"
+        >
+        </ext-emailfield>
+        <ext-textfield
+            onready="formpanel.componentReady"
+            label="Phone Number"
+            inputMask="(999) 999-9999"
+            inputType="tel">
+        </ext-textfield>
+        <ext-urlfield
+            onready="formpanel.componentReady"
+            label="URL" placeholder="http://sencha.com"
+        >
+        </ext-urlfield>
+        <ext-spinnerfield
+            onready="formpanel.spinnerReady"
+            label="Spinner"
+            maxValue="1000"
+            stepValue="1"
+            cycle="true"
+            margin="15 0 0 0"
+            labelAlign="top"
+        >
+        </ext-spinnerfield>
+        <ext-datefield
+            onready="formpanel.componentReady"
+            picker='{
       "yearFrom": "1990"
     }'
-      label="Start Date"
-    >
-    </ext-datepickerfield>
-    <ext-selectfield
-      onready="formpanel.componentReady"
-      label="Rank"
-      options='[
+            label="Start Date"
+        >
+        </ext-datefield>
+        <ext-selectfield
+            onready="formpanel.componentReady"
+            label="Rank"
+            options='[
         { "text": "Master" , "value": "master" },
         { "text":"Journeyman" , "value": "journeyman" },
         { "text": "Apprentice" , "value": "apprentice" }
       ]'
+        >
+        </ext-selectfield>
+        <ext-textfield
+            onready="formpanel.componentReady"
+            label="With Error"
+            errorMessage="This field is invalid"
+            errorTarget="under"
+        >
+        </ext-textfield>
+        <ext-sliderfield
+            onready="formpanel.componentReady"
+            label="Slider"
+        >
+        </ext-sliderfield>
+        <ext-togglefield
+            onready="formpanel.componentReady"
+            label="Toggle"
+        >
+        </ext-togglefield>
+        <ext-textareafield
+            onready="formpanel.componentReady"
+            label="Bio"
+            maxRows="5"
+        >
+        </ext-textareafield>
+    </ext-fieldset>
+    <ext-fieldset
+        title="Roles"
+        layout='{"type": "vbox", "align": "left"}'
+        margin="15 0"
+        defaults='{"labelAlign": "placeholder"}'
     >
-    </ext-selectfield>
-    <ext-textfield
-      onready="formpanel.componentReady"
-      label="With Error"
-      errorMessage="This field is invalid"
-      errorTarget="under"
-    >
-    </ext-textfield>
-    <ext-sliderfield
-      onready="formpanel.componentReady"
-      label="Slider"
-    >
-    </ext-sliderfield>
-    <ext-togglefield
-      onready="formpanel.componentReady"
-      label="Toggle"
-    >
-    </ext-togglefield>
-    <ext-textareafield
-      onready="formpanel.componentReady"
-      label="Bio"
-      maxRows="5"
-    >
-    </ext-textareafield>
-  </ext-fieldset>
-  <ext-fieldset
-    title="Roles"
-    layout='{"type": "vbox", "align": "left"}'
-    margin="15 0"
-    defaults='{"labelAlign": "placeholder"}'
-  >
-    <ext-checkboxfield
-      onready="formpanel.componentReady"
-      boxLabel="Admin"
-    >
-    </ext-checkboxfield>
-    <ext-checkboxfield
-      onready="formpanel.componentReady"
-      boxLabel="Power User"
-    >
-    </ext-checkboxfield>
-  </ext-fieldset>
-  <ext-fieldset
-    title="Favorite Color"
-    layout='{ "type": "vbox", "align": "left" }'
-    defaults='{
+        <ext-checkbox
+            onready="formpanel.componentReady"
+            boxLabel="Admin"
+        >
+        </ext-checkbox>
+        <ext-checkbox
+            onready="formpanel.componentReady"
+            boxLabel="Power User"
+        >
+        </ext-checkbox>
+    </ext-fieldset>
+    <ext-fieldset
+        title="Favorite Color"
+        layout='{ "type": "vbox", "align": "left" }'
+        defaults='{
                 "labelAlign": "placeholder",
                 "name": "color",
                 "labelAlign": "right",
                 "labelWidth": "auto",
                 "padding": "0"
               }'
-  >
-    <ext-radiofield
-      onready="formpanel.componentReady"
-      name="color"
-      boxLabel="Red"
-      value="red"
     >
-    </ext-radiofield>
-    <ext-radiofield
-      onready="formpanel.componentReady"
-      name="color"
-      boxLabel="Blue"
-      value="blue"
-    >
-    </ext-radiofield>
-    <ext-radiofield
-      onready="formpanel.componentReady"
-      name="color"
-      boxLabel="Green"
-      value="green"
-    >
-    </ext-radiofield>
-    <ext-radiofield
-      onready="formpanel.componentReady"
-      name="color"
-      boxLabel="Purple"
-      value="purple"
-    >
-    </ext-radiofield>
+        <ext-radio
+            onready="formpanel.componentReady"
+            name="color"
+            boxLabel="Red"
+            value="red"
+        >
+        </ext-radio>
+        <ext-radio
+            onready="formpanel.componentReady"
+            name="color"
+            boxLabel="Blue"
+            value="blue"
+        >
+        </ext-radio>
+        <ext-radio
+            onready="formpanel.componentReady"
+            name="color"
+            boxLabel="Green"
+            value="green"
+        >
+        </ext-radio>
+        <ext-radio
+            onready="formpanel.componentReady"
+            name="color"
+            boxLabel="Purple"
+            value="purple"
+        >
+        </ext-radio>
     </ext-fieldset>
     <ext-toolbar
-      shadow="false"
-      docked="bottom"
-      layout='{
+        shadow="false"
+        docked="bottom"
+        layout='{
         "type": "hbox", "pack": "right"
       }'
     >
-    <ext-button
-      onready="formpanel.buttonReady"
-      text="Disable All"
-      margin="0 10 0 0"
-      onTap="formpanel.toggleDisable"
-    >
-    </ext-button>
-    <ext-button
-      text="Reset"
-      onTap="formpanel.resetForm"
-    >
-    </ext-button>
-  </ext-toolbar>
-</ext-formpanel>
+        <ext-button
+            onready="formpanel.buttonReady"
+            text="Disable All"
+            margin="0 10 0 0"
+            onTap="formpanel.toggleDisable"
+        >
+        </ext-button>
+        <ext-button
+            text="Reset"
+            onTap="formpanel.resetForm"
+        >
+        </ext-button>
+    </ext-toolbar>
+</ext-formpanel>;

@@ -1,11 +1,15 @@
-<ext-panel layout="fit" bodyPadding="0" viewport=true>
+<ext-panel
+  layout="fit"
+  bodyPadding="0"
+  viewport=true
+  onReady="main.readyPage"
+>
   <ext-sheet
-    onready="main.sheetReady"
     layout="vbox"
     padding="0"
     width="100%"
     height="100%"
- >
+  >
     <ext-toolbar>
       <ext-searchfield
         flex="1"
@@ -22,7 +26,7 @@
     </ext-toolbar>
     <ext-list
       height="100%"
-      onready="main.mobileListReady"
+      extname="mobileList"
       hideMode="offsets"
       rowLines="true"
       itemCls="app-list-item"
@@ -37,7 +41,6 @@
   </ext-sheet>
 
   <ext-titlebar
-    onready="main.titleReady"
     platformConfig='{
       "!desktop": {
         "titleAlign": "center"
@@ -50,39 +53,39 @@
     weight="10"
     title='<div>
       <div class="sencha-logo"></div>
-      <a href="#" class="app-title">Sencha Ext Components 7.0 Conference App</a>
+      <a href="#" class="app-title">Sencha ExtWebComponentsModern 7.2 Conference App</a>
     </div>'
   >
     <ext-button
       align="left"
       iconCls="x-fa fa-bars"
-      onReady="main.toggleButtonReady"
+      extname="navButton"
       onTap="main.toggleTree"
     >
     </ext-button>
     <ext-button
+    extname="searchIcon"
       align="right"
       iconCls="md-icon-search"
-      onReady="main.searchReady"
     >
     </ext-button>
     <ext-combobox
-        align="right"
-        ui="alt"
-        placeholder="Search"
-        queryMode="local"
-        clearable="true"
-        hideTrigger="true"
-        valueField="id"
-        matchFieldWidth="false"
-        floatedPicker='{ "width": "500" }'
-        onready="main.comboboxReady"
-        triggers='{ "search": { "type": "search", "side": "left" }}'
+      extname="searchComboBox"
+      align="right"
+      ui="alt"
+      placeholder="Search"
+      queryMode="local"
+      clearable="true"
+      hideTrigger="true"
+      valueField="id"
+      matchFieldWidth="false"
+      floatedPicker='{ "width": "500" }'
+      triggers='{ "search": { "type": "search", "side": "left" }}'
     >
     </ext-combobox>
   </ext-titlebar>
-
   <ext-panel
+    extname="navTreePanel"
     docked="left"
     border="true"
     shadow="true"
@@ -92,15 +95,21 @@
     collapsible='{"direction": "left"}'
     width="200px"
     collapsed="false"
-    onready="main.readyNavTreePanel"
   >
     <ext-treelist
+      extname="navTreelist"
       ui="nav"
       expanderFirst="false"
       expanderOnly="false"
-      onready="main.readyNavTreelist"
       onselectionchange="main.navTreelistSelectionChange">
     </ext-treelist>
   </ext-panel>
-  <ext-router hidden=false onready="main.readyRouter" padding="2"></ext-router>
+  <ext-container>
+    <ext-router
+      hidden=false
+      style="overflow:scroll;"
+      padding="10px"
+    >
+    </ext-router>
+  </ext-container>
 </ext-panel>

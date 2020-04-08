@@ -1,6 +1,6 @@
-import './ewc';
+import '@sencha/ext-web-components-modern';
 import getMenu from './menu';
-import { getRoutes } from '@sencha/ext-web-components/lib/ext-router.component';
+import { getRoutes } from '@sencha/ext-web-components-modern/src/ext-router.component';
 import MainComponent from './view/main/MainComponent.js';
 
 function init() {
@@ -10,4 +10,6 @@ function init() {
     document.body.innerHTML = window._code['main']['MainComponent.html'];
 }
 
-init();
+Ext.onReady(function() {
+    init();
+});

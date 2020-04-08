@@ -1,3 +1,4 @@
+//import { getCmp } from '../../../../util.js';
 import './BasicGridComponent.scss';
 import './BasicGridComponent.html';
 import model from '../../data/CompanyModel';
@@ -20,24 +21,28 @@ export default class BasicGridComponent {
         });
     }
 
-    onGridReady = (event) => {
+    onPageReady(event) {
         this.gridCmp = event.detail.cmp;
         this.gridCmp.setStore(this.store);
     }
 
-    renderSign = (value) => {
-        var formattedValue = Ext.util.Format.number(value, '0.00');
-        var col = '';
-        if(value > 0) {col = 'green';}
-        else if(value < 0) {col = 'red';}
-        return `<span style='color:${col}'>${formattedValue}</span>`;
+    changeColumnReady = (event) => {
+        this.changeColumnCmp = event.detail.cmp;
+        this.changeColumnCmp.setRenderer(this.renderSign.bind(this, '0.00'));
+    }
+    percentChangeColumnReady = (event) => {
+        this.pctChangeColumnCmp = event.detail.cmp;
+        this.pctChangeColumnCmp.setRenderer(this.renderSign.bind(this, '0.00%'));
     }
 
-    renderSignPctChange = (value) => {
-        var formattedValue = Ext.util.Format.number(value, '0.00%');
-        var col = '';
-        if(value > 0) {col = 'green';}
-        else if(value < 0) {col = 'red';}
-        return `<span style='color:${col}'>${formattedValue}</span>`;
+    renderSign = (format, value, record, dataIndex, cell) => {
+        if(value>0) {
+            cell.setCls('greenClass');
+        }
+        else if(value<0){
+            cell.setCls('redClass');
+        }
+
+        return Ext.util.Format.number(value, format);
     }
 }

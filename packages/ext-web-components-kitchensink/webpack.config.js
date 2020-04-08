@@ -17,15 +17,15 @@ module.exports = function(env) {
         }
     }
 
+    var environment= get('environment', 'development');
     var profile=get('profile', '');
     var emit=get('emit', 'yes');
-    var environment= get('environment', 'development');
     var treeshake= get('treeshake', 'no');
     var browser= get('browser', 'yes');
     var watch= get('watch', 'yes');
     var verbose= get('verbose', 'no');
     var basehref= get('basehref', '/');
-    var build_v= get('build_v', '7.0.0.0');
+    var build_v= get('build_v', '7.2.0.0');
 
     const isProd = environment === 'production';
     const outputFolder = 'build';
@@ -43,7 +43,6 @@ module.exports = function(env) {
                 script: './extract-code.js',
                 port: port,
                 packages: [
-                    'renderercell',
                     'font-ext',
                     'ux',
                     'd3',
@@ -121,7 +120,7 @@ module.exports = function(env) {
                 disableHostCheck: false,
                 compress: isProd,
                 inline:!isProd,
-                stats: 'none'
+                stats: 'errors-only'
             }
         };
     });

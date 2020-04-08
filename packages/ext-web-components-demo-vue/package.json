@@ -1,20 +1,19 @@
 {
-  "name": "ext-web-components-demo-vue",
-  "version": "7.0.0",
-  "private": true,
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
-  },
-  "dependencies": {
-    "vue": "^2.6.6"
-  },
-  "devDependencies": {
-    "@sencha/ext-web-components": "~7.0.0",
-    "@sencha/ext-webpack-plugin": "~7.0.0",
-    
-    "@vue/cli-plugin-babel": "^3.6.0",
-    "@vue/cli-service": "^3.6.0",
-    "vue-template-compiler": "^2.6.10"
-  }
+    "name": "ext-web-components-demo-vue",
+    "version": "7.2.0",
+    "private": true,
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build"
+    },
+    "dependencies": {
+        "vue": "^2.6.6"
+    },
+    "devDependencies": {
+        "@sencha/ext-web-components-modern": "~7.2.0",
+        "@sencha/ext-webpack-plugin": "~7.2.0",
+        "@vue/cli-plugin-babel": "^3.6.0",
+        "@vue/cli-service": "^3.6.0",
+        "vue-template-compiler": "^2.6.10"
+    }
 }

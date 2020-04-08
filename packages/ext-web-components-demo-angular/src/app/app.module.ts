@@ -1,7 +1,7 @@
 declare var Ext: any
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser'
-import '@sencha/ext-web-components';
+import '@sencha/ext-web-components-modern';
 import { AppComponent } from './app.component'
 
 @NgModule({
