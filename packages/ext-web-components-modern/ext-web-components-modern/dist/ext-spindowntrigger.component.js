@@ -1,0 +1,29 @@
+import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
+import Ext_field_trigger_SpinDown from './Ext/field/trigger/SpinDown.js';
+import ElementParser from './common/ElementParser.js';
+
+var EWCSpindowntrigger = /*#__PURE__*/function (_Ext_field_trigger_Sp) {
+  _inheritsLoose(EWCSpindowntrigger, _Ext_field_trigger_Sp);
+
+  function EWCSpindowntrigger() {
+    var _this;
+
+    _this = _Ext_field_trigger_Sp.call(this, [], []) || this;
+    _this.xtype = 'spindowntrigger';
+    return _this;
+  }
+
+  return EWCSpindowntrigger;
+}(Ext_field_trigger_SpinDown);
+
+export { EWCSpindowntrigger as default };
+
+try {
+  if (window.customElements.get('ext-spindowntrigger') == undefined) {
+    window.customElements.define('ext-spindowntrigger', ElementParser.withParsedCallback(EWCSpindowntrigger));
+  }
+} catch (e) {
+  if (window.customElements.get('ext-spindowntrigger') == undefined) {
+    window.customElements.define('ext-spindowntrigger', EWCSpindowntrigger);
+  }
+}

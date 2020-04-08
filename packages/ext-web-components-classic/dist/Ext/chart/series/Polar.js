@@ -1,18 +1,9 @@
 import _createClass from "@babel/runtime/helpers/createClass";
-import _possibleConstructorReturn from "@babel/runtime/helpers/possibleConstructorReturn";
-import _getPrototypeOf from "@babel/runtime/helpers/getPrototypeOf";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-
-function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
 import Ext_chart_series_Series from '../../../Ext/chart/series/Series.js';
 
 var Ext_chart_series_Polar = /*#__PURE__*/function (_Ext_chart_series_Ser) {
   _inheritsLoose(Ext_chart_series_Polar, _Ext_chart_series_Ser);
-
-  var _super = _createSuper(Ext_chart_series_Polar);
 
   Ext_chart_series_Polar.PROPERTIES = function PROPERTIES() {
     return ['angleField', 'animation', 'background', 'bind', 'center', 'chart', 'colors', 'controller', 'defaultListenerScope', 'hidden', 'highlight', 'highlightCfg', 'itemInstancing', 'label', 'labelOverflowPadding', 'listeners', 'marker', 'markerSubStyle', 'nameable', 'offsetX', 'offsetY', 'overlaySurface', 'publishes', 'radius', 'radiusField', 'reference', 'renderer', 'rotation', 'session', 'shareableName', 'showInLegend', 'showMarkers', 'store', 'style', 'subStyle', 'surface', 'theme', 'themeStyle', 'title', 'tooltip', 'triggerAfterDraw', 'twoWayBindable', 'useDarkerStrokeColor', 'viewModel', 'xField', 'yField'];

@@ -1,18 +1,9 @@
 import _createClass from "@babel/runtime/helpers/createClass";
-import _possibleConstructorReturn from "@babel/runtime/helpers/possibleConstructorReturn";
-import _getPrototypeOf from "@babel/runtime/helpers/getPrototypeOf";
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
-
-function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
 import Ext_Gadget from '../../../Ext/Gadget.js';
 
 var Ext_ux_rating_Picker = /*#__PURE__*/function (_Ext_Gadget) {
   _inheritsLoose(Ext_ux_rating_Picker, _Ext_Gadget);
-
-  var _super = _createSuper(Ext_ux_rating_Picker);
 
   Ext_ux_rating_Picker.PROPERTIES = function PROPERTIES() {
     return ['animate', 'ariaAttributes', 'ariaDescribedBy', 'ariaLabel', 'ariaLabelledBy', 'bind', 'border', 'cls', 'controller', 'defaultListenerScope', 'disabled', 'family', 'focusCls', 'glyphs', 'height', 'hidden', 'hideMode', 'instanceCls', 'keyMap', 'keyMapEnabled', 'keyMapTarget', 'limit', 'listeners', 'margin', 'minimum', 'name', 'nameable', 'overStyle', 'plugins', 'publishes', 'reference', 'renderTo', 'ripple', 'rounding', 'scale', 'selectedStyle', 'session', 'shareableName', 'style', 'tip', 'tooltipText', 'touchAction', 'trackingValue', 'trackOver', 'twoWayBindable', 'ui', 'userCls', 'value', 'viewModel', 'width'];
