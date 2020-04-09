@@ -38,7 +38,7 @@
     "@sencha/ext-modern": "^7.1.0",
     "@sencha/ext-modern-theme-material": "^7.1.0",
     "@sencha/ext-web-components-modern": "^7.1.0",
-    "@sencha/ext-webpack-plugin": "~7.2.1",
+    "@sencha/ext-webpack-plugin": "~7.2.0",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.8",
     "@types/node": "~13.1.2",
