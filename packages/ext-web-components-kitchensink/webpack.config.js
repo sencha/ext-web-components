@@ -43,11 +43,11 @@ module.exports = function(env) {
                 script: './extract-code.js',
                 port: port,
                 packages: [
-                    'font-ext',
+                //    'font-ext',
                     'ux',
                     'd3',
                     'pivot-d3',
-                    'font-awesome',
+                //    'font-awesome',
                     'exporter',
                     'pivot',
                     'calendar',
