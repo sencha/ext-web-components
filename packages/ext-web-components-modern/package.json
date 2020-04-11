@@ -11,7 +11,7 @@
     "ext-web-components": "./bin/ext-web-components.js"
   },
   "scripts": {
-    "build": "npx babel ./src --out-dir ./dist && webpack",
+    "build": "npx babel ./src --out-dir ./dist",
     "prepare": "npm run build"
   },
   "homepage": "https://github.com/sencha/ext-web-components#readme",
