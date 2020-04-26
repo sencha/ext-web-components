@@ -7,7 +7,7 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-//Wed Apr 15 2020 10:08:24 GMT-0400 (Eastern Daylight Time)
+//Fri Apr 24 2020 17:58:24 GMT-0400 (Eastern Daylight Time)
 import { doProp, filterProp, isClassicDock, isMenu, isRenderercell, isParentGridAndChildToolbar, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var WebComponentsBaseComponent = /*#__PURE__*/function (_HTMLElement) {
