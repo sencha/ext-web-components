@@ -1,4 +1,4 @@
-//Wed Apr 15 2020 10:07:09 GMT-0400 (Eastern Daylight Time)
+//Wed May 06 2020 11:35:55 GMT-0400 (Eastern Daylight Time)
 
 import {
   doProp,
@@ -17,6 +17,7 @@ export default class WebComponentsBaseComponent extends HTMLElement {
   constructor(properties, events) {
     super ();
 
+    this.theDeleted = [];
     const distinct = (value, index, self) => {
         return self.indexOf(value) === index;
     };
@@ -338,21 +339,49 @@ export default class WebComponentsBaseComponent extends HTMLElement {
         console.error('import for ' + me.parentNode.nodeName.toLowerCase() + ' is missing')
         return
       }
+
+
       if (me.parentNode.A.ext !== undefined) {
-        var found = false;
-        for (var i = 0; i < me.parentNode.A.ITEMS.length; i++) {
-          if (me.parentNode.A.ITEMS[i].child.outerHTML == me.A.ext.childouterHTML) {
-            found = true;
-            me.addTheChild(me.parentNode.A.ext, me.A.ext, i);
+        var totalLength = me.parentNode.A.ITEMS.length;
+        var currentLength = me.parentNode.A.ext.items.items.length;
+        if (totalLength > currentLength) {
+          var filteredresult = this.theDeleted.filter(obj => {
+            if (obj.parentNode === me.parentNode) {
+              return obj.count;
+            }
+          })
+          if (filteredresult.length > 0) {
+            me.addTheChild(me.parentNode.A.ext, me.A.ext, filteredresult[0].count);
+            this.theDeleted.shift()
           }
-        }
-        if (found == false) {
-          me.addTheChild(me.parentNode.A.ext, me.A.ext);
         }
       }
       else {
-        me.parentNode.A.CHILDREN.push(me.A.ext);
+        me.addTheChild(me.parentNode.A.ext, me.A.ext);
       }
+
+
+
+      //if (me.parentNode.A.ext !== undefined) {
+      //  var found = false;
+      //  for (var i = 0; i < me.parentNode.A.ITEMS.length; i++) {
+      //    if (me.parentNode.A.ITEMS[i].child.outerHTML == me.A.ext.childouterHTML) {
+      //      found = true;
+      //      me.addTheChild(me.parentNode.A.ext, me.A.ext, i);
+      //    }
+      //  }
+      //  if (found == false) {
+      //    me.addTheChild(me.parentNode.A.ext, me.A.ext);
+      //  }
+      //}
+      //else {
+      //  me.parentNode.A.CHILDREN.push(me.A.ext);
+      //}
+
+
+
+
+
     }
 
     WebComponentsBaseComponent.elementcount--;
@@ -596,6 +625,14 @@ export default class WebComponentsBaseComponent extends HTMLElement {
 
   disconnectedCallback() {
     //console.log('ExtBase disconnectedCallback ' + this.A.ext.xtype)
+
+    var o = {
+      //what: this,
+      parentNode: this.A.parentNode,
+      count: this.A.count
+    }
+    theDeleted.push(o)
+
     try {
     Ext.destroy(this.A.ext);
     }
