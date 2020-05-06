@@ -7,7 +7,7 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-//Wed May 06 2020 11:35:55 GMT-0400 (Eastern Daylight Time)
+//Wed May 06 2020 14:24:04 GMT-0400 (Eastern Daylight Time)
 import { doProp, filterProp, isClassicDock, isMenu, isRenderercell, isParentGridAndChildToolbar, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var WebComponentsBaseComponent = /*#__PURE__*/function (_HTMLElement) {
@@ -17,7 +17,6 @@ var WebComponentsBaseComponent = /*#__PURE__*/function (_HTMLElement) {
     var _this;
 
     _this = _HTMLElement.call(this) || this;
-    _this.theDeleted = [];
 
     var distinct = function distinct(value, index, self) {
       return self.indexOf(value) === index;
@@ -329,7 +328,7 @@ var WebComponentsBaseComponent = /*#__PURE__*/function (_HTMLElement) {
         var currentLength = me.parentNode.A.ext.items.items.length;
 
         if (totalLength > currentLength) {
-          var filteredresult = this.theDeleted.filter(function (obj) {
+          var filteredresult = WebComponentsBaseComponent.theDeleted.filter(function (obj) {
             if (obj.parentNode === me.parentNode) {
               return obj.count;
             }
@@ -337,11 +336,13 @@ var WebComponentsBaseComponent = /*#__PURE__*/function (_HTMLElement) {
 
           if (filteredresult.length > 0) {
             me.addTheChild(me.parentNode.A.ext, me.A.ext, filteredresult[0].count);
-            this.theDeleted.shift();
+            WebComponentsBaseComponent.theDeleted.shift();
           }
         }
       } else {
-        me.addTheChild(me.parentNode.A.ext, me.A.ext);
+        me.A.count = me.parentNode.A.CHILDREN.length;
+        me.A.parentNode = me.parentNode;
+        me.parentNode.A.CHILDREN.push(me.A.ext);
       } //if (me.parentNode.A.ext !== undefined) {
       //  var found = false;
       //  for (var i = 0; i < me.parentNode.A.ITEMS.length; i++) {
@@ -614,7 +615,7 @@ var WebComponentsBaseComponent = /*#__PURE__*/function (_HTMLElement) {
       parentNode: this.A.parentNode,
       count: this.A.count
     };
-    theDeleted.push(o);
+    WebComponentsBaseComponent.theDeleted.push(o);
 
     try {
       Ext.destroy(this.A.ext);
@@ -627,6 +628,7 @@ var WebComponentsBaseComponent = /*#__PURE__*/function (_HTMLElement) {
 }( /*#__PURE__*/_wrapNativeSuper(HTMLElement));
 
 export { WebComponentsBaseComponent as default };
+WebComponentsBaseComponent.theDeleted = [];
 WebComponentsBaseComponent.attributeFirst = true;
 WebComponentsBaseComponent.attributeEarly = true;
 WebComponentsBaseComponent.elementcountnew = 0;

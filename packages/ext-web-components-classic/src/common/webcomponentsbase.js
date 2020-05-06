@@ -1,4 +1,4 @@
-//Wed May 06 2020 11:35:55 GMT-0400 (Eastern Daylight Time)
+//Wed May 06 2020 14:24:04 GMT-0400 (Eastern Daylight Time)
 
 import {
   doProp,
@@ -17,7 +17,6 @@ export default class WebComponentsBaseComponent extends HTMLElement {
   constructor(properties, events) {
     super ();
 
-    this.theDeleted = [];
     const distinct = (value, index, self) => {
         return self.indexOf(value) === index;
     };
@@ -345,19 +344,21 @@ export default class WebComponentsBaseComponent extends HTMLElement {
         var totalLength = me.parentNode.A.ITEMS.length;
         var currentLength = me.parentNode.A.ext.items.items.length;
         if (totalLength > currentLength) {
-          var filteredresult = this.theDeleted.filter(obj => {
+          var filteredresult = WebComponentsBaseComponent.theDeleted.filter(obj => {
             if (obj.parentNode === me.parentNode) {
               return obj.count;
             }
           })
           if (filteredresult.length > 0) {
             me.addTheChild(me.parentNode.A.ext, me.A.ext, filteredresult[0].count);
-            this.theDeleted.shift()
+            WebComponentsBaseComponent.theDeleted.shift()
           }
         }
       }
       else {
-        me.addTheChild(me.parentNode.A.ext, me.A.ext);
+        me.A.count = me.parentNode.A.CHILDREN.length
+        me.A.parentNode = me.parentNode
+        me.parentNode.A.CHILDREN.push(me.A.ext);
       }
 
 
@@ -631,7 +632,7 @@ export default class WebComponentsBaseComponent extends HTMLElement {
       parentNode: this.A.parentNode,
       count: this.A.count
     }
-    theDeleted.push(o)
+    WebComponentsBaseComponent.theDeleted.push(o)
 
     try {
     Ext.destroy(this.A.ext);
@@ -642,6 +643,8 @@ export default class WebComponentsBaseComponent extends HTMLElement {
   }
 
 }
+
+WebComponentsBaseComponent.theDeleted = [];
 
 WebComponentsBaseComponent.attributeFirst = true;
 WebComponentsBaseComponent.attributeEarly = true;
