@@ -1,4 +1,4 @@
-//Wed Apr 15 2020 10:08:24 GMT-0400 (Eastern Daylight Time)
+//Thu May 14 2020 14:28:32 GMT-0400 (Eastern Daylight Time)
 
 import {
   doProp,
@@ -338,6 +338,32 @@ export default class WebComponentsBaseComponent extends HTMLElement {
         console.error('import for ' + me.parentNode.nodeName.toLowerCase() + ' is missing')
         return
       }
+
+
+/*
+      if (me.parentNode.A.ext !== undefined) {
+        var totalLength = me.parentNode.A.ITEMS.length;
+        var currentLength = me.parentNode.A.ext.items.items.length;
+        if (totalLength > currentLength) {
+          var filteredresult = WebComponentsBaseComponent.theDeleted.filter(obj => {
+            if (obj.parentNode === me.parentNode) {
+              return obj.count;
+            }
+          })
+          if (filteredresult.length > 0) {
+            me.addTheChild(me.parentNode.A.ext, me.A.ext, filteredresult[0].count);
+            WebComponentsBaseComponent.theDeleted.shift()
+          }
+        }
+      }
+      else {
+        //me.A.count = me.parentNode.A.CHILDREN.length
+        //me.A.parentNode = me.parentNode
+        me.parentNode.A.CHILDREN.push(me.A.ext);
+      }
+*/
+
+
       if (me.parentNode.A.ext !== undefined) {
         var found = false;
         for (var i = 0; i < me.parentNode.A.ITEMS.length; i++) {
@@ -353,6 +379,11 @@ export default class WebComponentsBaseComponent extends HTMLElement {
       else {
         me.parentNode.A.CHILDREN.push(me.A.ext);
       }
+
+
+
+
+
     }
 
     WebComponentsBaseComponent.elementcount--;
@@ -596,6 +627,14 @@ export default class WebComponentsBaseComponent extends HTMLElement {
 
   disconnectedCallback() {
     //console.log('ExtBase disconnectedCallback ' + this.A.ext.xtype)
+
+    //var o = {
+    //  //what: this,
+    //  parentNode: this.A.parentNode,
+    //  count: this.A.count
+    //}
+    //WebComponentsBaseComponent.theDeleted.push(o)
+
     try {
     Ext.destroy(this.A.ext);
     }
@@ -605,6 +644,8 @@ export default class WebComponentsBaseComponent extends HTMLElement {
   }
 
 }
+
+WebComponentsBaseComponent.theDeleted = [];
 
 WebComponentsBaseComponent.attributeFirst = true;
 WebComponentsBaseComponent.attributeEarly = true;
