@@ -3,11 +3,11 @@ import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
 
 function _createForOfIteratorHelperLoose(o) { var i = 0; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) return function () { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }; throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } i = o[Symbol.iterator](); return i.next.bind(i); }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-//Wed Apr 15 2020 10:08:24 GMT-0400 (Eastern Daylight Time)
+//Thu May 14 2020 14:28:32 GMT-0400 (Eastern Daylight Time)
 import { doProp, filterProp, isClassicDock, isMenu, isRenderercell, isParentGridAndChildToolbar, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var WebComponentsBaseComponent = /*#__PURE__*/function (_HTMLElement) {
@@ -322,6 +322,29 @@ var WebComponentsBaseComponent = /*#__PURE__*/function (_HTMLElement) {
         console.error('import for ' + me.parentNode.nodeName.toLowerCase() + ' is missing');
         return;
       }
+      /*
+            if (me.parentNode.A.ext !== undefined) {
+              var totalLength = me.parentNode.A.ITEMS.length;
+              var currentLength = me.parentNode.A.ext.items.items.length;
+              if (totalLength > currentLength) {
+                var filteredresult = WebComponentsBaseComponent.theDeleted.filter(obj => {
+                  if (obj.parentNode === me.parentNode) {
+                    return obj.count;
+                  }
+                })
+                if (filteredresult.length > 0) {
+                  me.addTheChild(me.parentNode.A.ext, me.A.ext, filteredresult[0].count);
+                  WebComponentsBaseComponent.theDeleted.shift()
+                }
+              }
+            }
+            else {
+              //me.A.count = me.parentNode.A.CHILDREN.length
+              //me.A.parentNode = me.parentNode
+              me.parentNode.A.CHILDREN.push(me.A.ext);
+            }
+      */
+
 
       if (me.parentNode.A.ext !== undefined) {
         var found = false;
@@ -590,6 +613,12 @@ var WebComponentsBaseComponent = /*#__PURE__*/function (_HTMLElement) {
 
   _proto.disconnectedCallback = function disconnectedCallback() {
     //console.log('ExtBase disconnectedCallback ' + this.A.ext.xtype)
+    //var o = {
+    //  //what: this,
+    //  parentNode: this.A.parentNode,
+    //  count: this.A.count
+    //}
+    //WebComponentsBaseComponent.theDeleted.push(o)
     try {
       Ext.destroy(this.A.ext);
     } catch (e) {
@@ -601,6 +630,7 @@ var WebComponentsBaseComponent = /*#__PURE__*/function (_HTMLElement) {
 }( /*#__PURE__*/_wrapNativeSuper(HTMLElement));
 
 export { WebComponentsBaseComponent as default };
+WebComponentsBaseComponent.theDeleted = [];
 WebComponentsBaseComponent.attributeFirst = true;
 WebComponentsBaseComponent.attributeEarly = true;
 WebComponentsBaseComponent.elementcountnew = 0;
