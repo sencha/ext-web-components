@@ -1,6 +1,6 @@
 {
     "name": "@sencha/ext-web-components-kitchensink",
-    "version": "7.2.1",
+    "version": "7.2.2",
     "description": "ext-web-components-kitchensink",
     "scripts": {
         "start": "npm run dev",
