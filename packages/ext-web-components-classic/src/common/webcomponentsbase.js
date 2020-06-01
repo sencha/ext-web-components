@@ -1,4 +1,4 @@
-//Wed May 27 2020 13:34:33 GMT-0400 (Eastern Daylight Time)
+//Mon Jun 01 2020 07:38:39 GMT-0400 (Eastern Daylight Time)
 
 import {
   doProp,
@@ -357,6 +357,18 @@ export default class WebComponentsBaseComponent extends HTMLElement {
           else {
             me.addTheChild(me.parentNode.A.ext, me.A.ext, 0);
           }
+        }
+        else {
+          var theSibling = me.previousSibling.A.ext.id
+          var foundIt = false;
+          me.parentNode.A.ext.items.items.forEach((item, index) => {
+            if (foundIt == false) {
+              if (theSibling == item.id) {
+                foundIt = true
+                me.addTheChild(me.parentNode.A.ext,me.A.ext, index+1);
+              }
+            }
+          })
         }
       }
       else {
