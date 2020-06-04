@@ -1,6 +1,6 @@
 {
   "name": "@sencha/ext-web-components-classic",
-  "version": "7.2.0",
+  "version": "7.2.2",
   "main2wcx": "ext-web-components-classic.module.js",
   "main": "dist/index.js",
   "private": false,
@@ -11,7 +11,7 @@
     "ext-web-components": "./bin/ext-web-components.js"
   },
   "scripts": {
-    "build": "npx babel ./src --out-dir ./dist && webpack",
+    "build": "npx babel ./src --out-dir ./dist",
     "prepare": "npm run build"
   },
   "homepage": "https://github.com/sencha/ext-web-components#readme",

@@ -12,9 +12,9 @@
         "name": "@sencha/ext-web-components-modern",
         "escapedName": "@sencha%2fext-web-components-modern",
         "scope": "@sencha",
-        "rawSpec": "~7.2.0",
+        "rawSpec": "~7.2.1",
         "saveSpec": null,
-        "fetchSpec": "~7.2.0"
+        "fetchSpec": "~7.2.1"
     },
     "_requiredBy": [
         "#DEV:/"
@@ -77,5 +77,5 @@
         "prepare": "npm run build",
         "watch": "npx babel ./src --out-dir ./dist --watch"
     },
-    "version": "7.2.0"
+    "version": "7.2.1"
 }

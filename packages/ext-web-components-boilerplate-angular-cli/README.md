@@ -58,7 +58,7 @@ either...
 Add the following to the dependencies section of package.json:
 
 ```sh
-"@sencha/ext-web-components-modern": "~7.2.0",
+"@sencha/ext-web-components-modern": "~7.2.1",
 "@sencha/ext": "^7.0.0",
 "@sencha/ext-modern": "^7.0.0",
 "@sencha/ext-modern-theme-material": "^7.0.0",

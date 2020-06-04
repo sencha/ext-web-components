@@ -47,7 +47,7 @@ cd ext-web-components-modern-demo
     "start": "npx http-server -o"
   },
   "devDependencies": {
-    "@sencha/ext-web-components-modern": "~7.2.0",
+    "@sencha/ext-web-components-modern": "~7.2.1",
     "http-server": "^0.12.1"
   },
   "author": "",
