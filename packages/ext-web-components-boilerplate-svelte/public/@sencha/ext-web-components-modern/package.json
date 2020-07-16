@@ -73,9 +73,9 @@
         "url": "git+https://github.com/sencha/ext-web-components.git"
     },
     "scripts": {
-        "build": "npx babel ./src --out-dir ./dist",
+        "build": "babel ./src --out-dir ./dist",
         "prepare": "npm run build",
-        "watch": "npx babel ./src --out-dir ./dist --watch"
+        "watch": "babel ./src --out-dir ./dist --watch"
     },
     "version": "7.2.1"
 }
