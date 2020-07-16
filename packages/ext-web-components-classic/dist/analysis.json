@@ -1,0 +1,209 @@
+{
+  "schema_version": "1.0.0",
+  "functions": [
+    {
+      "name": "addRuntime",
+      "description": "",
+      "summary": "",
+      "sourceRange": {
+        "file": "common/util.js",
+        "start": {
+          "line": 0,
+          "column": 7
+        },
+        "end": {
+          "line": 93,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "params": [],
+      "return": {
+        "type": "void"
+      }
+    },
+    {
+      "name": "doProp",
+      "description": "",
+      "summary": "",
+      "sourceRange": {
+        "file": "common/util.js",
+        "start": {
+          "line": 94,
+          "column": 7
+        },
+        "end": {
+          "line": 105,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "params": [],
+      "return": {
+        "type": "void"
+      }
+    },
+    {
+      "name": "filterProp",
+      "description": "",
+      "summary": "",
+      "sourceRange": {
+        "file": "common/util.js",
+        "start": {
+          "line": 160,
+          "column": 7
+        },
+        "end": {
+          "line": 176,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "params": []
+    },
+    {
+      "name": "isClassicDock",
+      "description": "",
+      "summary": "",
+      "sourceRange": {
+        "file": "common/util.js",
+        "start": {
+          "line": 177,
+          "column": 7
+        },
+        "end": {
+          "line": 191,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "params": []
+    },
+    {
+      "name": "isMenu",
+      "description": "",
+      "summary": "",
+      "sourceRange": {
+        "file": "common/util.js",
+        "start": {
+          "line": 192,
+          "column": 7
+        },
+        "end": {
+          "line": 198,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "params": []
+    },
+    {
+      "name": "isRenderercell",
+      "description": "",
+      "summary": "",
+      "sourceRange": {
+        "file": "common/util.js",
+        "start": {
+          "line": 199,
+          "column": 7
+        },
+        "end": {
+          "line": 205,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "params": []
+    },
+    {
+      "name": "isParentGridAndChildToolbar",
+      "description": "",
+      "summary": "",
+      "sourceRange": {
+        "file": "common/util.js",
+        "start": {
+          "line": 206,
+          "column": 7
+        },
+        "end": {
+          "line": 212,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "params": []
+    },
+    {
+      "name": "isParentGridAndChildColumn",
+      "description": "",
+      "summary": "",
+      "sourceRange": {
+        "file": "common/util.js",
+        "start": {
+          "line": 213,
+          "column": 7
+        },
+        "end": {
+          "line": 219,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "params": []
+    },
+    {
+      "name": "isTooltip",
+      "description": "",
+      "summary": "",
+      "sourceRange": {
+        "file": "common/util.js",
+        "start": {
+          "line": 220,
+          "column": 7
+        },
+        "end": {
+          "line": 226,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "params": []
+    },
+    {
+      "name": "isPlugin",
+      "description": "",
+      "summary": "",
+      "sourceRange": {
+        "file": "common/util.js",
+        "start": {
+          "line": 227,
+          "column": 7
+        },
+        "end": {
+          "line": 233,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "params": []
+    },
+    {
+      "name": "getRoutes",
+      "description": "",
+      "summary": "",
+      "sourceRange": {
+        "file": "ext-router.component.js",
+        "start": {
+          "line": 179,
+          "column": 7
+        },
+        "end": {
+          "line": 187,
+          "column": 1
+        }
+      },
+      "privacy": "public",
+      "params": []
+    }
+  ]
+}
