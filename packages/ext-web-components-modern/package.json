@@ -55,7 +55,19 @@
     "type": "git",
     "url": "git+https://github.com/sencha/ext-web-components"
   },
-  "keywords": [],
+    "keywords": [
+    "webcomponents",
+    "ExtWebComponents",
+    "html",
+    "javascript",
+    "framework",
+    "components",
+    "widgets",
+    "ui",
+    "datagrid",
+    "pivotgrid",
+    "chart",
+    "treelist"],
   "author": "Sencha",
   "license": "ISC"
 }
