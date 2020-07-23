@@ -9,10 +9,20 @@
     "scripts": {
         "install": "node ./install.js"
     },
-    "keywords": [
-        "Ext JS",
-        "ext-web-components-gen"
-    ],
+      "keywords": [
+    "webcomponents",
+    "ExtWebComponents",
+    "html",
+    "javascript",
+    "framework",
+    "components",
+    "widgets",
+    "ui",
+    "datagrid",
+    "pivotgrid",
+    "chart",
+    "treelist",
+    "ext-web-components-gen"],
     "directories": {
         "lib": "lib"
     },
