@@ -1,6 +1,6 @@
 {
     "name": "@sencha/ext-classic-triton",
-    "version": "7.2.1",
+    "version": "7.3.0",
     "main": "ext.classic.triton.js",
     "private": false,
     "scripts": {},

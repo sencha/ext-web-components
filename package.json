@@ -1,6 +1,6 @@
 {
     "name": "ext-web-components",
-    "version": "7.2.1",
+    "version": "7.3.0",
     "description": "Use Ext JS with Web Components",
     "main": "index.js",
     "scripts": {

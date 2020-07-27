@@ -1,6 +1,6 @@
 {
     "name": "@sencha/ext-web-components-classic-engine-enterprise",
-    "version": "7.2.1",
+    "version": "7.3.0",
     "main": "./ext-web-components-classic-engine-enterprise.js",
     "private": false,
     "scripts": {},

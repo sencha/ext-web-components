@@ -1,6 +1,6 @@
 {
     "name": "@sencha/ext-web-components-modern-theme-material",
-    "version": "7.2.1",
+    "version": "7.3.0",
     "main": "ext-web-components-modern-theme-material.js",
     "private": false,
     "scripts": {},
