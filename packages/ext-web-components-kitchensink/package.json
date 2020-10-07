@@ -36,7 +36,6 @@
         "@sencha/ext-pivot": "~7.2.0",
         "@sencha/ext-pivot-d3": "~7.2.0",
         "@sencha/ext-ux": "~7.2.0",
-
         "@babel/core": "^7.8.4",
         "@babel/preset-env": "^7.8.4",
         "@babel/runtime": "^7.8.4",
@@ -50,7 +49,6 @@
         "@babel/plugin-proposal-numeric-separator": "^7.8.3",
         "@babel/plugin-proposal-throw-expressions": "^7.8.3",
         "@babel/plugin-syntax-import-meta": "^7.8.3",
-
         "@webcomponents/webcomponentsjs": "^2.4.1",
         "rimraf": "^3.0.2",
         "cross-env": "^7.0.0",
