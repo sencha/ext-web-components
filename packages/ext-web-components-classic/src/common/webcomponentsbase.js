@@ -1,4 +1,4 @@
-//Wed Apr 08 2020 10:57:57 GMT-0400 (Eastern Daylight Time)
+//Mon Jun 01 2020 13:36:43 GMT-0400 (Eastern Daylight Time)
 
 import {
   doProp,
@@ -338,21 +338,71 @@ export default class WebComponentsBaseComponent extends HTMLElement {
         console.error('import for ' + me.parentNode.nodeName.toLowerCase() + ' is missing')
         return
       }
+
+
+
       if (me.parentNode.A.ext !== undefined) {
-        var found = false;
-        for (var i = 0; i < me.parentNode.A.ITEMS.length; i++) {
-          if (me.parentNode.A.ITEMS[i].child.outerHTML == me.A.ext.childouterHTML) {
-            found = true;
-            me.addTheChild(me.parentNode.A.ext, me.A.ext, i);
+        var totalLength = me.parentNode.A.ITEMS.length;
+        var currentLength = me.parentNode.A.ext.items.items.length;
+        if (totalLength > currentLength) {
+          var filteredresult = WebComponentsBaseComponent.theDeleted.filter(obj => {
+            if (obj.parentNode === me.parentNode) {
+              return obj.count;
+            }
+          });
+          if (filteredresult.length > 0) {
+            me.addTheChild(me.parentNode.A.ext, me.A.ext, filteredresult[0].count);
+            WebComponentsBaseComponent.theDeleted.shift();
+          }
+          else {
+            me.addTheChild(me.parentNode.A.ext, me.A.ext, 0);
           }
         }
-        if (found == false) {
-          me.addTheChild(me.parentNode.A.ext, me.A.ext);
+        else {
+          if (me.previousSibling !== null) {
+            var theSibling = me.previousSibling.A.ext.id
+            var foundIt = false;
+            me.parentNode.A.ext.items.items.forEach((item, index) => {
+              if (foundIt == false) {
+                if (theSibling == item.id) {
+                  foundIt = true
+                  me.addTheChild(me.parentNode.A.ext,me.A.ext, index+1);
+                }
+              }
+            })
+          }
+          else {
+            me.addTheChild(me.parentNode.A.ext,me.A.ext, 0);
+          }
         }
       }
       else {
+        //me.A.count = me.parentNode.A.CHILDREN.length
+        //me.A.parentNode = me.parentNode
         me.parentNode.A.CHILDREN.push(me.A.ext);
       }
+
+
+
+      // if (me.parentNode.A.ext !== undefined) {
+      //   var found = false;
+      //   for (var i = 0; i < me.parentNode.A.ITEMS.length; i++) {
+      //     if (me.parentNode.A.ITEMS[i].child.outerHTML == me.A.ext.childouterHTML) {
+      //       found = true;
+      //       me.addTheChild(me.parentNode.A.ext, me.A.ext, i);
+      //     }
+      //   }
+      //   if (found == false) {
+      //     me.addTheChild(me.parentNode.A.ext, me.A.ext);
+      //   }
+      // }
+      // else {
+      //   me.parentNode.A.CHILDREN.push(me.A.ext);
+      // }
+
+
+
+
     }
 
     WebComponentsBaseComponent.elementcount--;
@@ -596,6 +646,14 @@ export default class WebComponentsBaseComponent extends HTMLElement {
 
   disconnectedCallback() {
     //console.log('ExtBase disconnectedCallback ' + this.A.ext.xtype)
+
+    //var o = {
+    //  //what: this,
+    //  parentNode: this.A.parentNode,
+    //  count: this.A.count
+    //}
+    //WebComponentsBaseComponent.theDeleted.push(o)
+
     try {
     Ext.destroy(this.A.ext);
     }
@@ -605,6 +663,8 @@ export default class WebComponentsBaseComponent extends HTMLElement {
   }
 
 }
+
+WebComponentsBaseComponent.theDeleted = [];
 
 WebComponentsBaseComponent.attributeFirst = true;
 WebComponentsBaseComponent.attributeEarly = true;

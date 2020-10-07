@@ -1,6 +1,6 @@
 {
     "name": "@sencha/ext-web-components-demo",
-    "version": "7.2.0",
+    "version": "7.2.1",
     "description": "ext-web-components-demo",
     "scripts": {
         "start": "npm run dev",
@@ -9,7 +9,7 @@
         "build": "npm run clean && cross-env webpack --env.environment=production --env.treeshake=yes --env.basehref=/"
     },
     "devDependencies": {
-        "@sencha/ext-web-components-modern": "~7.2.0",
+        "@sencha/ext-web-components-modern": "~7.2.1",
         "@sencha/ext-webpack-plugin": "~7.2.0",
         "@sencha/ext": "~7.2.0",
         "@sencha/ext-modern": "~7.2.0",
