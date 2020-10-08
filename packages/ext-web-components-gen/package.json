@@ -1,6 +1,6 @@
 {
     "name": "@sencha/ext-web-components-gen",
-    "version": "7.2.1",
+    "version": "7.3.0",
     "description": "Sencha ExtWebComponents code generator",
     "bin": {
         "ext-web-components-gen": "ext-web-components-gen.js",
@@ -18,7 +18,7 @@
     },
     "preferGlobal": true,
     "dependencies": {
-        "@sencha/ext-web-components-boilerplate": "~7.2.1",
+        "@sencha/ext-web-components-boilerplate": "~7.3.0",
         "chalk": "^2.4.2",
         "glob": "^7.1.4",
         "boxen": "^4.1.0",
