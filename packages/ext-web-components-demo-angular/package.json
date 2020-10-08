@@ -10,7 +10,7 @@
         "buildexample": "npm run clean && cross-env webpack --env.environment=production --env.treeshake=yes --env.basehref=/ExtComponents/7.1.0/demoangular/"
     },
     "devDependencies": {
-        "@sencha/ext-web-components-modern": "~7.2.0",
+        "@sencha/ext-web-components-modern": "~7.2.1",
         "@sencha/ext-webpack-plugin": "~7.2.0",
         "@sencha/ext": "~7.2.0",
         "@sencha/ext-modern": "~7.2.0",

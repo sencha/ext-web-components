@@ -1,6 +1,6 @@
 {
     "name": "@sencha/ext-web-components-kitchensink",
-    "version": "7.2.0",
+    "version": "7.2.2",
     "description": "ext-web-components-kitchensink",
     "scripts": {
         "start": "npm run dev",
@@ -22,8 +22,8 @@
         "buildexampleold": "npm run clean && cross-env webpack --env.verbose=no --env.environment=production --env.treeshake=yes --env.basehref=/ExtWebComponents/7.2.0/kitchensink/"
     },
     "dependencies": {
-        "@sencha/ext-web-components-modern": "~7.2.0",
-        "@sencha/ext-webpack-plugin": "~7.2.0",
+        "@sencha/ext-web-components-modern": "~7.2.1",
+        "@sencha/ext-webpack-plugin": "~7.2.1",
         "@sencha/ext": "~7.2.0",
         "@sencha/ext-modern": "~7.2.0",
         "@sencha/ext-modern-treegrid": "~7.2.0",

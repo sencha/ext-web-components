@@ -1,13 +1,13 @@
 import _inheritsLoose from "@babel/runtime/helpers/inheritsLoose";
 import _wrapNativeSuper from "@babel/runtime/helpers/wrapNativeSuper";
 
-function _createForOfIteratorHelperLoose(o) { var i = 0; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) return function () { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }; throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } i = o[Symbol.iterator](); return i.next.bind(i); }
+function _createForOfIteratorHelperLoose(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; return function () { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } it = o[Symbol.iterator](); return it.next.bind(it); }
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(n); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-//Wed Apr 08 2020 10:57:57 GMT-0400 (Eastern Daylight Time)
+//Mon Jun 01 2020 13:36:43 GMT-0400 (Eastern Daylight Time)
 import { doProp, filterProp, isClassicDock, isMenu, isRenderercell, isParentGridAndChildToolbar, isParentGridAndChildColumn, isTooltip, isPlugin } from './util.js';
 
 var WebComponentsBaseComponent = /*#__PURE__*/function (_HTMLElement) {
@@ -324,21 +324,58 @@ var WebComponentsBaseComponent = /*#__PURE__*/function (_HTMLElement) {
       }
 
       if (me.parentNode.A.ext !== undefined) {
-        var found = false;
+        var totalLength = me.parentNode.A.ITEMS.length;
+        var currentLength = me.parentNode.A.ext.items.items.length;
 
-        for (var i = 0; i < me.parentNode.A.ITEMS.length; i++) {
-          if (me.parentNode.A.ITEMS[i].child.outerHTML == me.A.ext.childouterHTML) {
-            found = true;
-            me.addTheChild(me.parentNode.A.ext, me.A.ext, i);
+        if (totalLength > currentLength) {
+          var filteredresult = WebComponentsBaseComponent.theDeleted.filter(function (obj) {
+            if (obj.parentNode === me.parentNode) {
+              return obj.count;
+            }
+          });
+
+          if (filteredresult.length > 0) {
+            me.addTheChild(me.parentNode.A.ext, me.A.ext, filteredresult[0].count);
+            WebComponentsBaseComponent.theDeleted.shift();
+          } else {
+            me.addTheChild(me.parentNode.A.ext, me.A.ext, 0);
+          }
+        } else {
+          if (me.previousSibling !== null) {
+            var theSibling = me.previousSibling.A.ext.id;
+            var foundIt = false;
+            me.parentNode.A.ext.items.items.forEach(function (item, index) {
+              if (foundIt == false) {
+                if (theSibling == item.id) {
+                  foundIt = true;
+                  me.addTheChild(me.parentNode.A.ext, me.A.ext, index + 1);
+                }
+              }
+            });
+          } else {
+            me.addTheChild(me.parentNode.A.ext, me.A.ext, 0);
           }
         }
-
-        if (found == false) {
-          me.addTheChild(me.parentNode.A.ext, me.A.ext);
-        }
       } else {
+        //me.A.count = me.parentNode.A.CHILDREN.length
+        //me.A.parentNode = me.parentNode
         me.parentNode.A.CHILDREN.push(me.A.ext);
-      }
+      } // if (me.parentNode.A.ext !== undefined) {
+      //   var found = false;
+      //   for (var i = 0; i < me.parentNode.A.ITEMS.length; i++) {
+      //     if (me.parentNode.A.ITEMS[i].child.outerHTML == me.A.ext.childouterHTML) {
+      //       found = true;
+      //       me.addTheChild(me.parentNode.A.ext, me.A.ext, i);
+      //     }
+      //   }
+      //   if (found == false) {
+      //     me.addTheChild(me.parentNode.A.ext, me.A.ext);
+      //   }
+      // }
+      // else {
+      //   me.parentNode.A.CHILDREN.push(me.A.ext);
+      // }
+
     }
 
     WebComponentsBaseComponent.elementcount--; //console.log('reduced: ' + me.tagName + ': elementcount reduced to ' + WebComponentsBaseComponent.elementcount)
@@ -590,6 +627,12 @@ var WebComponentsBaseComponent = /*#__PURE__*/function (_HTMLElement) {
 
   _proto.disconnectedCallback = function disconnectedCallback() {
     //console.log('ExtBase disconnectedCallback ' + this.A.ext.xtype)
+    //var o = {
+    //  //what: this,
+    //  parentNode: this.A.parentNode,
+    //  count: this.A.count
+    //}
+    //WebComponentsBaseComponent.theDeleted.push(o)
     try {
       Ext.destroy(this.A.ext);
     } catch (e) {
@@ -601,6 +644,7 @@ var WebComponentsBaseComponent = /*#__PURE__*/function (_HTMLElement) {
 }( /*#__PURE__*/_wrapNativeSuper(HTMLElement));
 
 export { WebComponentsBaseComponent as default };
+WebComponentsBaseComponent.theDeleted = [];
 WebComponentsBaseComponent.attributeFirst = true;
 WebComponentsBaseComponent.attributeEarly = true;
 WebComponentsBaseComponent.elementcountnew = 0;

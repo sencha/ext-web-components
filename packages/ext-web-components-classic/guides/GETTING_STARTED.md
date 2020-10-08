@@ -37,14 +37,14 @@ cd ext-web-components-classic-demo
 ```sh
 {
   "name": "ext-web-components-classic-demo",
-  "version": "7.2.0",
+  "version": "7.2.1",
   "description": "ext-web-components-classic-demo",
   "scripts": {
     "start": "npx servor . index.html 8080 --reload --browse"
   },
   "devDependencies": {
-    "@sencha/ext-web-components-classic": "~7.2.0",
-    "@sencha/ext-classic-runtime": "~7.2.0",
+    "@sencha/ext-web-components-classic": "~7.2.1",
+    "@sencha/ext-classic-runtime": "~7.2.1",
     "servor": "~3.2.0"
   },
   "author": "",
