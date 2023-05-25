@@ -47,11 +47,3 @@ On Debian-based platforms, you can install OpenJDK using:
 ```
 sudo apt-get install openjdk-8-jdk
 ```
-
-... or you can install Oracle's JDK using:
-
-```
-sudo add-apt-repository ppa:webupd8team/java -y
-sudo apt-get update
-sudo apt-get install oracle-java8-installer
-```
