@@ -1,11 +1,11 @@
 {
     "name": "ext-web-components-demo-react",
-    "version": "7.2.1",
+    "version": "7.3.0",
     "private": true,
     "scripts": {},
     "dependencies": {},
     "devDependencies": {
-        "@sencha/ext-web-components-modern": "~7.2.1",
-        "@sencha/ext-webpack-plugin": "~7.1.0"
+        "@sencha/ext-web-components-modern": "~7.3.0",
+        "@sencha/ext-webpack-plugin": "~7.3.0"
     }
 }

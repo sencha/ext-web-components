@@ -7,7 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "@sencha/ext-web-components-modern": "^7.2.0",
+    "@sencha/ext-web-components-modern": "^7.3.0",
     "core-js": "^3.6.4",
     "vue": "^2.6.11"
   },

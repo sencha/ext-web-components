@@ -1,6 +1,6 @@
 {
     "name": "@sencha/ext-modern-enterprise",
-    "version": "7.2.1",
+    "version": "7.3.0",
     "main": "ext.modern.enterprise.js",
     "private": false,
     "scripts": {},

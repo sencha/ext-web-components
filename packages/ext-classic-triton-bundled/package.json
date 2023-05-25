@@ -1,6 +1,6 @@
 {
     "name": "@sencha/ext-classic-triton-bundled",
-    "version": "7.2.1",
+    "version": "7.3.0",
     "main": "classic.triton.bundled.js",
     "private": false,
     "scripts": {},

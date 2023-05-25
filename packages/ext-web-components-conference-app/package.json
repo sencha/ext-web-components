@@ -1,6 +1,6 @@
 {
   "name": "@sencha/ext-web-components-conference-app",
-  "version": "7.2.1",
+  "version": "7.3.0",
   "description": "ext-web-components-conference-app",
   "scripts": {
     "start": "npm run dev",
@@ -9,14 +9,14 @@
     "build": "npm run clean && cross-env webpack --env.verbose=no --env.environment=production --env.treeshake=yes --env.basehref=/"
   },
   "devDependencies": {
-    "@sencha/ext-web-components-modern": "~7.2.1",
-    "@sencha/ext": "~7.2.0",
-    "@sencha/ext-calendar": "~7.2.0",
-    "@sencha/ext-d3": "~7.2.0",
-    "@sencha/ext-modern": "~7.2.0",
-    "@sencha/ext-modern-theme-material": "~7.2.0",
-    "@sencha/ext-modern-treegrid": "~7.2.0",
-    "@sencha/ext-webpack-plugin": "~7.2.0",
+    "@sencha/ext-web-components-modern": "~7.3.0",
+    "@sencha/ext": "~7.3.0",
+    "@sencha/ext-calendar": "~7.3.0",
+    "@sencha/ext-d3": "~7.3.0",
+    "@sencha/ext-modern": "~7.3.0",
+    "@sencha/ext-modern-theme-material": "~7.3.0",
+    "@sencha/ext-modern-treegrid": "~7.3.0",
+    "@sencha/ext-webpack-plugin": "~7.3.0",
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
     "@babel/runtime": "^7.8.4",

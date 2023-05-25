@@ -1,6 +1,6 @@
 {
     "name": "@sencha/ext-modern-material-bundled",
-    "version": "7.2.1",
+    "version": "7.3.0",
     "main": "ext.modern.material.bundled.js",
     "private": false,
     "scripts": {},

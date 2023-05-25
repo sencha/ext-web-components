@@ -1,6 +1,6 @@
 {
   "name": "@sencha/ext-web-components-classic",
-  "version": "7.2.2",
+  "version": "7.3.0",
   "main2wcx": "ext-web-components-classic.module.js",
   "main": "dist/index.js",
   "private": false,

@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@sencha/ext-web-components": "~7.0.0",
+    "@sencha/ext-web-components": "~7.3.0",
     
     "eslint": "^5.16.0",
     "eslint-loader": "^2.1.2",

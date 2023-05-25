@@ -1,6 +1,6 @@
 {
   "name": "@sencha/ext-web-components-modern",
-  "version": "7.2.1",
+  "version": "7.3.0",
   "main2wcx": "ext-web-components-modern.module.js",
   "main": "dist/index.js",
   "private": false,
